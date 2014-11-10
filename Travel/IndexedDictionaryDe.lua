@@ -178,7 +178,8 @@ function TravelDictionaries:CreateDictionaries()
 	racialLocations:AddData("Rückkehr ins Auenland (Rasse)","0x700062C8","Rückkehr ins Auenland");
 	racialLocations:AddData("Rückkehr zu Thorins Tor (Rasse)","0x70006346","Rückkehr zu Thorins Tor");
 	racialLocations:AddData("Rückkehr nach Bruchtal (Rasse)","0x7000631F","Rückkehr nach Bruchtal");
-
+    racialLocations:AddData("Zurück zu Grimbeorns Hütte (Rasse)","0x70041a22","Zum 1. Heim zurückkehren");
+	
    -- check if a function that only exists in the newest update exists,
    -- if so, add the Return Home skills
    if(Turbine.UI.Control.IsDisplayed ~= nil) then
@@ -200,20 +201,20 @@ function TravelDictionaries:CreateDictionaries()
 
 	repLocations:AddData("Rückkehr nach Thorins Tor","0x7001BF91","Rückkehr zu Thorins Tor");
 	repLocations:AddData("Rückkehr nach Bree","0x7001BF90","Rückkehr nach Bree");
-	repLocations:AddData("Rückkehr zu Lalia's Markt","0x700364B1","Kehrt zu Lalias Markt zurück");
+	repLocations:AddData("Rückkehr zu Lalias Markt","0x700364B1","Kehrt zu Lalias Markt zurück");
 	repLocations:AddData("Rückkehr nach Michelbinge","0x70023262","Rückkehr nach Michelbinge"); 
-	repLocations:AddData("Rückkehr nach Bruchtal","0x70023263","Rückkehr nach Bruchtal"); 
+	repLocations:AddData("Rückkehr nach Bruchtal","0x70023263","Rückkehr nach Bruchtal."); 
 	repLocations:AddData("Rückkehr zur Feste Guruth","0x70020441","Rückkehr zur Feste Guruth");
 	repLocations:AddData("Rückkehr nach Düsterwald","0x7001F374","Rückkehr zum Düsterwald");
 	repLocations:AddData("Rückkehr nach Enedwaith","0x70021FA2","Rückkehr nach Enedwaith");
-	repLocations:AddData("Rückkehr nach Galtrev","0x7002C647","Kehrt nach Galtrev zurück");
-	repLocations:AddData("Rückkehr nach Stangard","0x7002C65D","Kehrt nach Stangard zurück");
+	repLocations:AddData("Rückkehr nach Galtrev","0x7002C647","Kehrt nach Galtrev zurück.");
+	repLocations:AddData("Rückkehr nach Stangard","0x7002C65D","Kehrt nach Stangard zurück.");
 	repLocations:AddData("Rückkehr nach Schneegrenze","0x70031A46","Kehrt nach Schneegrenze zurück");
 	repLocations:AddData("Rückkehr nach Forlach","0x70036B5E","Rückkehr nach Forlach");
-	repLocations:AddData("Rückkehr nach Aldburg","0x7003DC81","Kehrt nach Aldburg zurück");
-	repLocations:AddData("Rückkehr nach Derndingle (Rep)","0x7004128F","Rückkehr nach Derndingle"); -- thanks to Rrys for the travel code and translation	
-	repLocations:AddData("Rückkehr nach Helms Klamm","0x7003DC82","Kehrt nach Helms Klamm zurück");
-	repLocations:AddData("Kehrt nach Dol Amroth","0x700411AC","Kehrt nach Dol Amroth zurück"); -- thanks to Rrys for the translation	
+	repLocations:AddData("Rückkehr nach Aldburg","0x7003DC81","Kehrt nach Aldburg zurück.");
+	repLocations:AddData("Rückkehr ins Geheimnistal","0x7004128F","Rückkehr ins Geheimnistal");
+	repLocations:AddData("Rückkehr nach Helms Klamm","0x7003DC82","Kehrt nach Helms Klamm zurück.");
+	repLocations:AddData("Rückkehr nach Dol Amroth","0x700411AC","Rückkehr nach Dol Amroth");
 
 	creepLocations:AddData("Grobe Isenbinge-Karte","0x70028BB3");
 	creepLocations:AddData("Grobe Tol Ascarnen-Karte","0x70028BB6");

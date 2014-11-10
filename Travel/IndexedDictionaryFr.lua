@@ -178,7 +178,8 @@ function TravelDictionaries:CreateDictionaries()
 	racialLocations:AddData("Retournez dans la Comté","0x700062C8","Retournez dans la Comté");
 	racialLocations:AddData("Retour à la porte de Thorin","0x70006346","Retour à Thorin's Gate");
 	racialLocations:AddData("Retour à Fondcombe","0x7000631F","Retour à Fondcombe");	
-
+	racialLocations:AddData("Retour à la maison","0x70041a22","Retour à la maison");
+	
    -- check if a function that only exists in the newest update exists,
    -- if so, add the Return Home skills
    if(Turbine.UI.Control.IsDisplayed ~= nil) then
@@ -200,8 +201,8 @@ function TravelDictionaries:CreateDictionaries()
 
 	repLocations:AddData("Revenir à la Porte de Thorin (Rep)","0x7001BF91","Revenir à la Porte de Thorin");
 	repLocations:AddData("Retour à Bree (Rep)","0x7001BF90","Retour à Bree");
-	repLocations:AddData("Retour au Marché de Lalia (Rep)","0x700364B1","Retour au Marché de Lalia");
-	repLocations:AddData("Retour dans La Comté (Rep)","0x70023262","Retour à Michel Delving");
+	repLocations:AddData("Retour au Marché de Lalia","0x700364B1","Retour au Marché de Lalia");
+	repLocations:AddData("Retour à Grand'Cave (Rep)","0x70023262","Retour à Grand'Cave");
 	repLocations:AddData("Retour à Fondcombe (Rep)","0x70023263","Retour à Fondcombe");
 	repLocations:AddData("Retournez à Ost Guruth (Rep)","0x70020441","Retournez à Ost Guruth.");
 	repLocations:AddData("Retour dans La Forêt Noire (Rep)","0x7001F374","Retour dans la Forêt Noire");
@@ -210,10 +211,10 @@ function TravelDictionaries:CreateDictionaries()
 	repLocations:AddData("Retour à Stangarde (Rep)","0x7002C65D","Retour à Stangarde"); 
 	repLocations:AddData("Retourner à Neigebronne (Rep)","0x70031A46","Retourner à Neigebronne");
 	repLocations:AddData("Retour à Forloi (Rep)","0x70036B5E","Retour à Forloi");
-	repLocations:AddData("Retour à Aldburg","0x7003DC81","Retour à Aldburg");
-	repLocations:AddData("Retour au Derndingle (Rep)","0x7004128F","Retour au Derndingle"); -- thanks to Rrys for the travel code and translation
-	repLocations:AddData("Retour au Gouffre de Helm","0x7003DC82","Retour au Gouffre de Helm");	
-	repLocations:AddData("Retour au Dol Amroth","0x700411AC","Retour au Dol Amroth");	 -- thanks to Rrys for the translation
+	repLocations:AddData("Retour à Aldburg (Rep)","0x7003DC81","Retour à Aldburg");
+	repLocations:AddData("Retour à Derunant (Rep)","0x7004128F","Retour à Derunant");
+	repLocations:AddData("Retour au Gouffre de Helm (Rep)","0x7003DC82","Retour au Gouffre de Helm");	
+	repLocations:AddData("Retour à Dol Amroth (Rep)","0x700411AC","Retour à Dol Amroth");
                            
 	creepLocations:AddData("Carte grossière pour aller au Gouffre d'Isen","0x70028BB3");
 	creepLocations:AddData("Carte grossière pour aller à Tol Ascarnen","0x70028BB6");

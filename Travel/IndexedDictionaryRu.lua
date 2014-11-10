@@ -181,7 +181,8 @@ function TravelDictionaries:CreateDictionaries()
 	racialLocations:AddData("Дорога в Бри (Рас.)","0x700062F6","Дорога в Бри");
 	racialLocations:AddData("Дорога в Шир (Рас.)","0x700062C8","Дорога в Шир");
 	racialLocations:AddData("Дорога к Вратам Торина (Рас.)","0x70006346","Дорога к Вратам Торина");
-	racialLocations:AddData("Дорога в Ривенделл (Рас.)","0x7000631F","Дорога в Ривенделл"); 
+	racialLocations:AddData("Дорога в Ривенделл (Рас.)","0x7000631F","Дорога в Ривенделл");
+	racialLocations:AddData("Return Home","0x70041a22","Return Home");
 
    -- check if a function that only exists in the newest update exists,
    -- if so, add the Return Home skills
