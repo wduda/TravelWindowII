@@ -177,7 +177,8 @@ function TravelDictionaries:CreateDictionaries()
 	racialLocations:AddData("Return to Bree","0x700062F6","Return to Bree");
 	racialLocations:AddData("Return to the Shire","0x700062C8","Return to the Shire");
 	racialLocations:AddData("Return to Thorin's Gate","0x70006346","Return to Thorin's Gate");
-	racialLocations:AddData("Return to Rivendell","0x7000631F","Return to Rivendell");	
+	racialLocations:AddData("Return to Rivendell","0x7000631F","Return to Rivendell");
+	racialLocations:AddData("Return Home (Racial)","0x70041a22","Return Home");
 
    -- check if a function that only exists in the newest update exists,
    -- if so, add the Return Home skills
