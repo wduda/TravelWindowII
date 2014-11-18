@@ -156,8 +156,8 @@ function TravelDictionaries:CreateDictionaries()
 	hunterLocations:AddData("Путь в Мглистые горы","0x7002E756","Путь в Мглистые горы"); 
 	hunterLocations:AddData("Путь в Сноуборн","0x7003198E","Путь в Сноуборн");
 	hunterLocations:AddData("Путь в Форлоу","0x70036B5D","Путь в Форлоу");
-	hunterLocations:AddData("Guide to Aldburg","0x7003DC71","Guide to Aldburg"); --  waiting for translation	
-	hunterLocations:AddData("Guide to Helm's Deep","0x7003DC72","Guide to Helm's Deep"); -- waiting for translation	
+	hunterLocations:AddData("Путь в Альдбург","0x7003DC71","Путь в Альдбург");
+	hunterLocations:AddData("Путь в Хельмову Падь","0x7003DC72","Путь в Хельмову Падь");
 	hunterLocations:AddData("Guide to Dol Amroth","0x70041197","Guide to Dol Amroth"); -- waiting for translation	
 	
 	wardenLocations:AddData("Сбор в Ост Гуруте","0x70014786","Сбор в Ост Гуруте");
@@ -174,8 +174,8 @@ function TravelDictionaries:CreateDictionaries()
 	wardenLocations:AddData("Сбор в Мглистых горах","0x700303DD","Сбор в Мглистых горах"); 
 	wardenLocations:AddData("Сбор в Сноуборне","0x7003198D","Сбор в Сноуборне");				
 	wardenLocations:AddData("Сбор в Форлоу","0x70036B5B","Сбор в Форлоу");		
-	wardenLocations:AddData("Muster in Aldburg","0x7003DC7A","Muster in Aldburg"); -- waiting for translation	
-	wardenLocations:AddData("Muster in Helm's Deep","0x7003DC79","Muster in Helm's Deep"); -- waiting for translation	
+	wardenLocations:AddData("Сбор в Альбурге","0x7003DC7A","Сбор в Альбурге");
+	wardenLocations:AddData("Сбор в Хельмовой Пади","0x7003DC79","Сбор в Хельмовой Пади");	
 	wardenLocations:AddData("Muster in Dol Amroth","0x70041198","Muster in Dol Amroth"); -- waiting for translation	
 
 	racialLocations:AddData("Дорога в Бри (Рас.)","0x700062F6","Дорога в Бри");
@@ -215,9 +215,9 @@ function TravelDictionaries:CreateDictionaries()
 	repLocations:AddData("Возвращение в Стангард (Реп.)","0x7002C65D","Возвращение в Стангард"); 
 	repLocations:AddData("Возвращение в Сноуборн (Реп.)","0x70031A46","Возвращение в Сноуборн");
 	repLocations:AddData("Возвращение в Форлоу (Реп.)","0x70036B5E","Возвращение в Форлоу");
-	repLocations:AddData("Return to Aldburg (Rep)","0x7003DC81","Return to Aldburg"); --  waiting for translation	
-    repLocations:AddData("Return to Derndingle (Rep)","0x7004128F","Return to Derndingle"); -- waiting for translation (Thanks to Rrys for the travel code) 
-	repLocations:AddData("Return to Helm's Deep (Rep)","0x7003DC82","Return to Helm's Deep"); -- waiting for translation	
+	repLocations:AddData("Возвращение в Альдбург (Реп.)","0x7003DC81","Возвращение в Альдбург");
+    repLocations:AddData("Return to Derndingle (Rep)","0x7004128F","Return to Derndingle"); -- waiting for translation
+	repLocations:AddData("Возвращение в Хельмову Падь (Реп.)","0x7003DC82","Возвращение в Хельмову Падь");	
 	repLocations:AddData("Return to Dol Amroth (Rep)","0x700411AC","Return to Dol Amroth"); -- waiting for translation	
 
 	-- Crude Map to Gramsfoot for newb creeps
