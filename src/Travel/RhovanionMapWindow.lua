@@ -15,8 +15,8 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
     self.loaded = false;
 
     -- set size of window
-    self.width = 1078;
-    self.height = 680;
+    self.width = 1044;
+    self.height = 817;
     self.windowWidth, self.windowHeight = Turbine.UI.Display:GetSize();
 
     self.mainWindow = parent;
@@ -37,14 +37,15 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
 
     mapLabel = Turbine.UI.Label();
     mapLabel:SetPosition(10, 40);
-    mapLabel:SetSize(1058, 631);
+    mapLabel:SetSize(1024, 768);
     GLocale = Turbine.Engine.GetLanguage();
-    if GLocale == 268435459 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/rhovanionmapfr.jpg");
-    elseif GLocale == 268435460 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/rhovanionmapde.jpg");
-    elseif GLocale == 268435463 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/rhovanionmapru.jpg"); -- by PulseDiver
-    else mapLabel:SetBackground("DhorPlugins/Travel/Resources/rhovanionmap.jpg");
+
+    if GLocale == 268435463 then
+        mapLabel:SetBackground("DhorPlugins/Travel/Resources/rhovanionmapru.jpg");
+    else
+        mapLabel:SetBackground(0x410E868B);
     end
-    -- mapLabel:SetBackground("DhorPlugins/Travel/Resources/rhovanionmap.tga");
+
     mapLabel:SetParent(self);
     mapLabel:SetVisible(true);
 
