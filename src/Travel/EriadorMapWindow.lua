@@ -15,8 +15,8 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
     self.loaded = false;
 
     -- set size of window
-    self.width = 1078;
-    self.height = 680;
+    self.width = 1044;
+    self.height = 817;
     self.windowWidth, self.windowHeight = Turbine.UI.Display:GetSize();
 
     self.mainWindow = parent;
@@ -37,81 +37,91 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
 
     mapLabel = Turbine.UI.Label();
     mapLabel:SetPosition(10, 40);
-    mapLabel:SetSize(1058, 631);
+    mapLabel:SetSize(1024, 768);
     GLocale = Turbine.Engine.GetLanguage();
-    if GLocale == 268435459 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/eriadormapfr.jpg");
-    elseif GLocale == 268435460 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/eriadormapde.jpg");
-    elseif GLocale == 268435463 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/eriadormapru.jpg"); -- by PulseDiver
-    else mapLabel:SetBackground("DhorPlugins/Travel/Resources/eriadormap.jpg");
+
+    if     GLocale == 268435459 then
+        mapLabel:SetBackground(0x41008138);
+    elseif GLocale == 268435460 then
+        mapLabel:SetBackground(0x41008138);
+    elseif GLocale == 268435463 then
+        mapLabel:SetBackground("DhorPlugins/Travel/Resources/eriadormapru.jpg");
+    else
+        mapLabel:SetBackground(0x41008138);
     end
-    -- mapLabel:SetBackground("DhorPlugins/Travel/Resources/eriadormap.tga");
+
     mapLabel:SetParent(self);
     mapLabel:SetVisible(true);
 
     self.mapLocations = {
-        { -1, -1 }, -- start of hunter skills, camp
-        { 615, 340 }, -- bree
-        { 305, 250 }, -- thorins
-        { 465, 350 }, -- md
-        { 670, 225 }, -- est
-        { 515, 280 }, -- evendim
-        { 735, 325 }, -- og
-        { 905, 310 }, -- riv
-        { 445, 150 }, -- suri
-        { 730, 185 }, -- w ang
-        { 805, 185 }, -- e ang
-        { 805, 455 }, -- echad dunann
-        { -1, -1 }, -- 21
-        { -1, -1 }, -- mirk
-        { 865, 500 }, -- harn
-        { 850, 565 }, -- galtrev
-        { -1, -1 }, -- stan
-        { -1, -1 }, -- CG
-        { 960, 175 }, -- MM
-        { -1, -1 }, -- Snowbourn
-        { -1, -1 }, -- Forlaw
-        { -1, -1 }, -- Aldburg
-        { -1, -1 }, --Helms Deep
-        { -1, -1 }, --Dol Amroth
-        { 735, 325 }, -- start of warden skills, og
-        { 700, 225 }, -- est
-        { 515, 280 }, -- even
-        { 905, 310 }, -- riv
-        { 445, 150 }, -- suri
-        { -1, -1 }, -- 21
-        { -1, -1 }, -- mirk
-        { 865, 500 }, -- harn
-        { 850, 565 }, -- galtrev
-        { -1, -1 }, -- stan
-        { -1, -1 }, -- CG
-        { 960, 175 }, -- MM
-        { -1, -1 }, -- Snowbourn
-        { -1, -1 }, -- Forlaw
-        { -1, -1 }, -- Aldburg
-        { -1, -1 }, --Helms Deep
-        { -1, -1 }, --Dol Amroth
-        { 330, 250 }, -- start of rep, thorins
-        { 640, 340 }, -- bree
-        { 650, 350 }, -- lalia
-        { 490, 350 }, -- shire
-        { 930, 310 }, -- riv
-        { 760, 325 }, -- og
-        { -1, -1 }, -- mirk
-        { 885, 500 }, -- harn
-        { 870, 565 }, -- galtrev
-        { -1, -1 }, -- stangard
-        { -1, -1 }, -- snowbourn
-        { -1, -1 }, -- Forlaw
-        { -1, -1 }, -- Aldburg
-        { -1, -1 }, -- Derndingle
-        { -1, -1 }, --Helms Deep
-        { -1, -1 }, --Dol Amroth
-        { 665, 340 }, -- start of racial, bree
-        { 515, 350 }, -- shire
-        { 355, 250 }, -- thorins
-        { 955, 310 }, -- riv
-        { -1, -1 }, -- beo
-        { 845, 245 } -- Ettenmoors
+        -- Hunter skills
+        { -1, -1 },     -- Camp
+        { 575, 415 },   -- Bree
+        { 305, 300 },   -- Thorin's Hall
+        { 450, 415 },   -- Michel Delving
+        { 640, 270 },   -- Esteldin
+        { 485, 340 },   -- Evendim
+        { 710, 390 },   -- Ost Guruth
+        { 870, 375 },   -- Rivendell
+        { 435, 180 },   -- Suri-Kyla
+        { 710, 220 },   -- West Angmar
+        { 750, 220 },   -- East Angmar
+        { 870, 535 },   -- Echad Dunann
+        { -1, -1 },     -- 21st Hall
+        { -1, -1 },     -- Mirkwood
+        { 815, 645 },   -- Enedwaith Harndirion
+        { 790, 715 },   -- Galtrev
+        { -1, -1 },     -- Stangard
+        { -1, -1 },     -- Caras Galadhon
+        { 930, 270 },   -- Misty Mountains
+        { -1, -1 },     -- Snowbourn
+        { -1, -1 },     -- Forlaw
+        { -1, -1 },     -- Aldburg
+        { -1, -1 },     -- Helm's Deep
+        { -1, -1 },     -- Dol Amroth
+        -- Muster skills
+        { 710, 390 },   -- Ost Guruth
+        { 640, 270 },   -- Esteldin
+        { 485, 340 },   -- Evendim
+        { 870, 375 },   -- Rivendell
+        { 435, 180 },   -- Suri-Kyla
+        { -1, -1 },     -- 21st Hall
+        { -1, -1 },     -- Mirkwood
+        { 815, 645 },   -- Enedwaith Harndirion
+        { 790, 715 },   -- Galtrev
+        { -1, -1 },     -- Stangard
+        { -1, -1 },     -- Caras Galadhon
+        { 930, 270 },   -- Misty Mountains
+        { -1, -1 },     -- Snowbourn
+        { -1, -1 },     -- Forlaw
+        { -1, -1 },     -- Aldburg
+        { -1, -1 },     -- Helm's Deep
+        { -1, -1 },     -- Dol Amroth
+        -- Reputation skills
+        { 330, 300 },   -- Thorin's Hall
+        { 600, 415 },   -- Bree
+        { 650, 415 },   -- Lalia's Market
+        { 475, 415 },   -- Michel Delving
+        { 895, 375 },   -- Rivendell
+        { 735, 390 },   -- Ost Guruth
+        { -1, -1 },     -- Mirkwood
+        { 840, 645 },   -- Enedwaith Lhanuch
+        { 815, 715 },   -- Galtrev
+        { -1, -1 },     -- Stangard
+        { -1, -1 },     -- Snowbourn
+        { -1, -1 },     -- Forlaw
+        { -1, -1 },     -- Aldburg
+        { -1, -1 },     -- Derndingle
+        { -1, -1 },     -- Helm's Deep
+        { -1, -1 },     -- Dol Amroth
+        -- Racial skills
+        { 625, 340 },   -- Bree
+        { 500, 415 },   -- Michel Delving
+        { 355, 300 },   -- Thorin's Hall
+        { 920, 375 },   -- Rivendell
+        { -1, -1 },     -- Grimbeorn's House
+        -- Moors Map
+        { 815, 300 }    -- Ettenmoors
     };
 
     self:AddShortcuts();
