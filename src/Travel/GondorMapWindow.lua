@@ -109,7 +109,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- start of racial, bree
         { -1, -1 }, -- shire
         { -1, -1 }, -- thorins
-        { -1, -1 } -- riv
+        { -1, -1 }, -- riv
+        { -1, -1 } -- beo
     };
     self:AddShortcuts();
 

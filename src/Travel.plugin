@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Plugin>
     <Information>
-        <Name>TravelWindowRedux</Name>
-        <Author>Hyoss</Author>
-        <Version>1.0</Version>
+        <Name>Travel</Name>
+        <Author>Dhor / DaBear78 / Shugotenshi / Hyoss</Author>
+        <Version>15.3</Version>
         <Description>For hunters, wardens, and all those who wish to go "there and back again".</Description>
-        <Image>DhorPlugins/Travel/Resources/travel.tga</Image>
+        <Image>DhorPlugins/travel/Resources/travel.tga</Image>
     </Information>
     <Package>DhorPlugins.Travel.Main</Package>
     <!--<Configuration Apartment="Travel">

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PluginConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <Id>897</Id>
-    <Name>Travel Window Redux</Name>
-    <Version>1.0</Version>
-    <Author>Hyoss</Author>
+    <Name>Travel Window</Name>
+    <Version>15.3</Version>
+    <Author>Dhor / DaBear78 / Shugotenshi / Hyoss</Author>
     <InfoUrl>http://www.lotrointerface.com/downloads/info897</InfoUrl>
     <DownloadUrl>http://www.lotrointerface.com/downloads/download897</DownloadUrl>
     <Descriptors>

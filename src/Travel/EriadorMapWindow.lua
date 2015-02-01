@@ -110,6 +110,7 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { 515, 350 }, -- shire
         { 355, 250 }, -- thorins
         { 955, 310 }, -- riv
+        { -1, -1 }, -- beo
         { 845, 245 } -- Ettenmoors
     };
 
