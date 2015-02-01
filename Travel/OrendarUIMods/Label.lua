@@ -3,8 +3,8 @@ import "Turbine.UI";
 Label = class(Turbine.UI.Label);
 
 -- colors
-Label.ItemColor = Turbine.UI.Color(245/255, 222/255, 147/255);
-Label.DisabledColor = Turbine.UI.Color(162/255, 162/255, 162/255);
+Label.ItemColor = Turbine.UI.Color(245 / 255, 222 / 255, 147 / 255);
+Label.DisabledColor = Turbine.UI.Color(162 / 255, 162 / 255, 162 / 255);
 
 function Label:Constructor()
     Turbine.UI.Label.Constructor(self);
