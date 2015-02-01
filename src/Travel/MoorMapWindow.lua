@@ -41,7 +41,6 @@ function MoorMapWindow:Constructor(parent)
     elseif GLocale == 268435463 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/moormapru.jpg"); -- by PulseDiver
     else mapLabel:SetBackground("DhorPlugins/Travel/Resources/moormap.jpg");
     end
-    -- mapLabel:SetBackground("DhorPlugins/Travel/Resources/moormap.tga");
     mapLabel:SetParent(self);
     mapLabel:SetVisible(true);
 

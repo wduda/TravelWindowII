@@ -43,8 +43,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
     elseif GLocale == 268435460 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/gondormapde.jpg");
     elseif GLocale == 268435463 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/gondormapru.jpg"); -- by PulseDiver
     else mapLabel:SetBackground("DhorPlugins/Travel/Resources/gondormap.jpg");
+    -- mapLabel:SetBackground(0x41154336);
     end
-    -- mapLabel:SetBackground("DhorPlugins/Travel/Resources/gondormap.tga");
     mapLabel:SetParent(self);
     mapLabel:SetVisible(true);
 
