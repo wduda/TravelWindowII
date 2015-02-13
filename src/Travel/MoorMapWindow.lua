@@ -15,8 +15,8 @@ function MoorMapWindow:Constructor(parent)
     self.loaded = false;
 
     -- set size of window
-    self.width = 620;
-    self.height = 467;
+    self.width = 1044;
+    self.height = 817
     self.windowWidth, self.windowHeight = Turbine.UI.Display:GetSize();
 
     self.mainWindow = parent;
@@ -34,12 +34,14 @@ function MoorMapWindow:Constructor(parent)
 
     mapLabel = Turbine.UI.Label();
     mapLabel:SetPosition(10, 40);
-    mapLabel:SetSize(600, 407);
+    mapLabel:SetSize(1024, 768);
+
     GLocale = Turbine.Engine.GetLanguage();
-    if GLocale == 268435459 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/moormapfr.jpg");
-    elseif GLocale == 268435460 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/moormapde.jpg");
-    elseif GLocale == 268435463 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/moormapru.jpg"); -- by PulseDiver
-    else mapLabel:SetBackground("DhorPlugins/Travel/Resources/moormap.jpg");
+
+    if GLocale == 268435463 then
+        mapLabel:SetBackground("DhorPlugins/Travel/Resources/moormapru.jpg");
+    else
+        mapLabel:SetBackground(0x41008133);
     end
     mapLabel:SetParent(self);
     mapLabel:SetVisible(true);
