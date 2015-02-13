@@ -38,8 +38,8 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
     mapLabel = Turbine.UI.Label();
     mapLabel:SetPosition(10, 40);
     mapLabel:SetSize(1024, 768);
-    GLocale = Turbine.Engine.GetLanguage();
 
+    GLocale = Turbine.Engine.GetLanguage();
     if GLocale == 268435463 then
         mapLabel:SetBackground("DhorPlugins/Travel/Resources/rhovanionmapru.jpg");
     else
