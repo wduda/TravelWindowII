@@ -37,7 +37,7 @@ resetOrderString = "Your order settings have been reset due to a change in " ..
 resetEnabledString = "Vos talents selectionnés ont étés remis a zéro a cause  " ..
         "d'une erreur dans les objets sauvegardés.\n";
 
-skillnottrainedString = "Compétence non utilisée: ";
+skillNotTrainedString = "Compétence non utilisée: ";
 
 -- options window strings
 generalTabString = "General";
