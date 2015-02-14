@@ -9,7 +9,7 @@ GLocale = Turbine.Engine.GetLanguage();
 if GLocale == 268435459 then import "DhorPlugins.Travel.IndexedDictionaryFr";
 elseif GLocale == 268435460 then import "DhorPlugins.Travel.IndexedDictionaryDe";
 elseif GLocale == 268435463 then import "DhorPlugins.Travel.IndexedDictionaryRu";
-else import "DhorPlugins.Travel.IndexedDictionary";
+else import "DhorPlugins.Travel.IndexedDictionaryEn";
 end
 
 import "DhorPlugins.Travel.TravelShortcut";

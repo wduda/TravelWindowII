@@ -36,8 +36,6 @@ function MoorMapWindow:Constructor(parent)
     mapLabel:SetPosition(10, 40);
     mapLabel:SetSize(1024, 768);
 
-    GLocale = Turbine.Engine.GetLanguage();
-
     mapLabel:SetBackground(0x41008133);
     mapLabel:SetParent(self);
     mapLabel:SetVisible(true);

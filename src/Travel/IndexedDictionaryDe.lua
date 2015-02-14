@@ -36,6 +36,8 @@ resetOrderString = "Deine Sortiereinstellungen wurden aufgrund einer Änderung d
 resetEnabledString = "Deine ausgewählten Fertigkeiten wurden aufgrund eines Fehlers " ..
         "auf die Zahl der zuletzt gespeicherten zurückgesetzt.\n";
 
+skillNotTrainedString = "Nicht gelernter Skill: ";
+
 -- options window strings
 generalTabString = "Allgemein";
 selectTabString = "Auswählen";
