@@ -2,8 +2,8 @@
 <Plugin>
     <Information>
         <Name>Travel</Name>
-        <Author>Dhor / DaBear78 / Shugotenshi / Hyoss</Author>
-        <Version>15.3.2</Version>
+        <Author>Hyoss</Author>
+        <Version>16.0.beta</Version>
         <Description>For hunters, wardens, and all those who wish to go "there and back again".</Description>
         <Image>DhorPlugins/travel/Resources/travel.tga</Image>
     </Information>
