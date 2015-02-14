@@ -1,11 +1,12 @@
--- Перевод: Уухты (содружество «Союз Кольца», Мирквуд)
+-- Перевод: PulseDiver (содружество «Эсельсиор», Мирквуд)
 -- http://theringunion.ru
+-- http://eselsior.com
 
 
 --[[ string constants ]] --
 --[[ put all the strings that might require translation in ]] --
 --[[ one location for easier access ]] --
-helpString = "Travel v10.3. Translated by PulseDiver.\n" ..
+helpString = "Travel. Translated by PulseDiver.\n" ..
         "\n Команды:\n" ..
         "ntrav show: Показать окно путешествий\n" ..
         "trav hide: Срыть окно путешествий\n" ..
@@ -40,6 +41,8 @@ resetOrderString = "Your order settings have been reset due to a change in " ..
 
 resetEnabledString = "Your selected skills have been reset due to an error " ..
         "in the number of items previously saved.\n";
+
+skillnottrainedString = "Умение не получено: ";
 
 -- options window strings
 generalTabString = "Основные";
@@ -80,7 +83,7 @@ menuOptionsString = "Настройки";
 moorMapString = "Открыть карту Эттен";
 eriadorMapString = "Открыть карту Эриадора";
 rhovanionMapString = "Открыть карту Рованиона";
-gondorMapString = "открыть карту Гондора"
+gondorMapString = nil -- !!! will be added and translated when RU is U14
 menuSkillsString = "Список неполученных умений";
 
 --[[ travel skills ]] --
@@ -158,7 +161,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Путь в Форлоу", "0x70036B5D", "Путь в Форлоу");
     hunterLocations:AddData("Путь в Альдбург", "0x7003DC71", "Путь в Альдбург");
     hunterLocations:AddData("Путь в Хельмову Падь", "0x7003DC72", "Путь в Хельмову Падь");
-    hunterLocations:AddData("Guide to Dol Amroth", "0x70041197", "Guide to Dol Amroth"); -- waiting for translation
+    -- !!! will be translated when RU is U14
+    -- hunterLocations:AddData("Guide to Dol Amroth", "0x70041197", "Guide to Dol Amroth");
 
     wardenLocations:AddData("Сбор в Ост Гуруте", "0x70014786", "Сбор в Ост Гуруте");
     wardenLocations:AddData("Сбор в Эстельдине", "0x70014798", "Сбор в Эстельдине");
@@ -176,13 +180,15 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Сбор в Форлоу", "0x70036B5B", "Сбор в Форлоу");
     wardenLocations:AddData("Сбор в Альбурге", "0x7003DC7A", "Сбор в Альбурге");
     wardenLocations:AddData("Сбор в Хельмовой Пади", "0x7003DC79", "Сбор в Хельмовой Пади");
-    wardenLocations:AddData("Muster in Dol Amroth", "0x70041198", "Muster in Dol Amroth"); -- waiting for translation
+    -- !!! will be translated when RU is U14
+    -- wardenLocations:AddData("Muster in Dol Amroth", "0x70041198", "Muster in Dol Amroth");
 
     racialLocations:AddData("Дорога в Бри (Рас.)", "0x700062F6", "Дорога в Бри");
     racialLocations:AddData("Дорога в Шир (Рас.)", "0x700062C8", "Дорога в Шир");
     racialLocations:AddData("Дорога к Вратам Торина (Рас.)", "0x70006346", "Дорога к Вратам Торина");
     racialLocations:AddData("Дорога в Ривенделл (Рас.)", "0x7000631F", "Дорога в Ривенделл");
-    racialLocations:AddData("Return Home", "0x70041a22", "Return Home");
+    -- !!! beorning travel skill, will be translated when RU is U15
+    -- racialLocations:AddData("Return Home (Racial)", "0x70041a22", "Return Home");
 
     -- check if a function that only exists in the newest update exists,
     -- if so, add the Return Home skills
@@ -216,9 +222,10 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Возвращение в Сноуборн (Реп.)", "0x70031A46", "Возвращение в Сноуборн");
     repLocations:AddData("Возвращение в Форлоу (Реп.)", "0x70036B5E", "Возвращение в Форлоу");
     repLocations:AddData("Возвращение в Альдбург (Реп.)", "0x7003DC81", "Возвращение в Альдбург");
-    repLocations:AddData("Return to Derndingle (Rep)", "0x7004128F", "Return to Derndingle"); -- waiting for translation
     repLocations:AddData("Возвращение в Хельмову Падь (Реп.)", "0x7003DC82", "Возвращение в Хельмову Падь");
-    repLocations:AddData("Return to Dol Amroth (Rep)", "0x700411AC", "Return to Dol Amroth"); -- waiting for translation
+    -- !!! will be translated when RU is U14
+    -- repLocations:AddData("Return to Derndingle (Rep)", "0x7004128F", "Return to Derndingle");
+    -- repLocations:AddData("Return to Dol Amroth (Rep)", "0x700411AC", "Return to Dol Amroth");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Грубая карта пути к Подножию Грэм", "0x70028BBC", "Грубая карта пути к Подножию Грэм");

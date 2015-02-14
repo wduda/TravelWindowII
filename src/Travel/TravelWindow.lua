@@ -1268,7 +1268,7 @@ function TravelWindow:CheckSkills()
         elseif (travelShortcuts[i]:GetSkillName() == "skip") then
             -- do nothing
         else
-            Turbine.Shell.WriteLine("Skill not trained: " .. travelShortcuts[i]:GetName());
+            Turbine.Shell.WriteLine(skillNotTrainedString .. travelShortcuts[i]:GetName())
         end
         --end
         --end

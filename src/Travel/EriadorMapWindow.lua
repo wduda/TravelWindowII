@@ -39,8 +39,6 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
     mapLabel:SetPosition(10, 40);
     mapLabel:SetSize(1024, 768);
 
-    GLocale = Turbine.Engine.GetLanguage();
-
     mapLabel:SetBackground(0x41008138);
     mapLabel:SetParent(self);
     mapLabel:SetVisible(true);
