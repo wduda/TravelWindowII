@@ -3,15 +3,14 @@ import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
 import "DhorPlugins.Extensions";
-import "DhorPlugins.Travel.IndexedDictionary";
 import "DhorPlugins.Travel.SettingsMenu";
 import "DhorPlugins.Utils.BitOps";
 import "DhorPlugins.Travel.OrendarUIMods.ComboBox"
 
---[[ This is the window for the pulldown list tab of the 	]] --
---[[ Travel UI.  It handles creating all UI controls on ]] --
---[[ the tab, and updating the UI when the settings are	]] --
---[[ changed.											]] --
+--[[ This is the window for the pulldown list tab of the  ]] --
+--[[ Travel UI.  It handles creating all UI controls on   ]] --
+--[[ the tab, and updating the UI when the settings are   ]] --
+--[[ changed.                                             ]] --
 
 
 TravelPulldownTab = class(Turbine.UI.Control);
@@ -21,18 +20,6 @@ function TravelPulldownTab:Constructor(toplevel)
 
     -- need top level window in order to close it
     self.parent = toplevel;
-
-    -- for displaying the number of travel rations
-    -- self.rationCount = 0;
-    -- self.rationLabel = Turbine.UI.Label();
-    -- self.rationLabel:SetPosition(0,0);
-    -- self.rationLabel:SetSize(180,20);
-    -- self.rationLabel:SetForeColor(Turbine.UI.Color(1,0,0.5,0));
-    -- self.rationLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
-    -- self.rationLabel:SetText(rationLabelString);
-    -- self.rationLabel:SetVisible(true);
-    -- self.rationLabel:SetParent(self);
-    -- self.rationLabel:SetZOrder(100);
 
     -- this label is used to catch wheel moves
     self.scrollLabel = Turbine.UI.Label();
@@ -79,16 +66,6 @@ function TravelPulldownTab:Constructor(toplevel)
     -- if(args.Button == Turbine.UI.MouseButton.Right) then
     menu:ShowMenu();
     -- end
-    -- end
-
-    -- close the drop down window if the label is clicked
-    -- self.rationLabel.MouseDown = function( sender, args )
-    -- self.pulldown:CloseDropDown();
-    -- end
-
-    -- handle mousewheel events
-    -- self.rationLabel.MouseWheel = function( sender, args )
-    -- self:DoScroll(sender,args);
     -- end
 
     -- check for a right mouse button event to open menu
@@ -162,12 +139,6 @@ function TravelPulldownTab:SetItems()
         end)
     end
 end
-
--- function to change the ration count lable
--- function TravelPulldownTab:SetRationCount(value)
--- self.rationCount = value;
--- self.rationLabel:SetText(rationLabelString .. " " .. self.rationCount)
--- end
 
 -- function to adjust the size of the tab and all items in the tab
 function TravelPulldownTab:SetSize(width, height)

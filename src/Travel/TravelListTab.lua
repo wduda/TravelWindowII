@@ -4,7 +4,6 @@ import "Turbine.UI";
 import "Turbine.UI.Lotro";
 import "DhorPlugins.Extensions";
 import "DhorPlugins.Travel.TravelGridTab"
-import "DhorPlugins.Travel.IndexedDictionary";
 import "DhorPlugins.Travel.SettingsMenu";
 import "DhorPlugins.Utils.BitOps";
 

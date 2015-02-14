@@ -7,10 +7,10 @@ import "DhorPlugins.Extensions";
 import "DhorPlugins.Utils.BitOps";
 
 
---[[ This is the main window for the Travel Window UI	                      ]] --
---[[ It handles the loading and saving the settings,	                      ]] --
---[[ creating the lists of travel shortcuts, creates	                      ]] --
---[[ and handles the context menu.						                         ]] --
+--[[ This is the main window for the Travel Window UI      ]] --
+--[[ It handles the loading and saving the settings,       ]] --
+--[[ creating the lists of travel shortcuts, creates       ]] --
+--[[ and handles the context menu.                         ]] --
 
 
 TravelWindow = class(Turbine.UI.Lotro.Window);
@@ -84,10 +84,6 @@ function TravelWindow:Constructor()
     -- get the list of trained skills the player has
     if (Turbine.Gameplay.LocalPlayer.GetTrainedSkills ~= nil) then
         trainedSkills = player:GetTrainedSkills();
-
-        --for i = 1,trainedSkills:GetCount(),1 do
-        --Turbine.Shell.WriteLine(trainedSkills:GetItem(i):GetSkillInfo():GetName());
-        --end
     end
 
     -- set the racial travel skill to add
@@ -100,7 +96,6 @@ function TravelWindow:Constructor()
     elseif (playerRace == Turbine.Gameplay.Race.Man) then
         self.racetype = 1;
     else
-        --Turbine.Engine.WriteLine("What race are you?");
         self.racetype = 5;
     end
 
@@ -149,10 +144,6 @@ function TravelWindow:Constructor()
     self.sizeControl:SetPosition(self:GetWidth() - self.sizeControl:GetWidth(),
         self:GetHeight() - self.sizeControl:GetHeight());
 
-    -- track if the number of rations the player has changes
-    -- self.rationCount = 0;
-    -- self.oldRationCount = 1;
-
     -- display the tab that was last selected
     self.MainPanel:SetTab(settings.mode);
     self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
@@ -191,21 +182,6 @@ function TravelWindow:Constructor()
         self.PullTab:ClosePulldown();
     end
 
-    -- check the ration count once every 5 seconds
-    -- or imediately on startup, but only if the
-    -- window is visible
-    -- self.Update = function( sender,args)
-    -- if(Turbine.Engine.GetGameTime() - self.lastTime > 5
-    -- and self:IsVisible() or self.lastTime == 0) then
-
-
-
-    -- self:CountRations();
-    -- self.lastTime = Turbine.Engine.GetGameTime();
-
-    -- end
-    -- end
-
     -- manage hiding the UI
     self.KeyDown = function(sender, args)
         if (args.Action == 268435635) then
@@ -220,7 +196,6 @@ function TravelWindow:Constructor()
                 self.ToggleButton:SetVisible(settings.showButton == 1);
             end
         else
-            --Turbine.Shell.WriteLine(args.Action);
         end
     end
 
@@ -336,8 +311,8 @@ function TravelWindow:Constructor()
         end
     end
 
-    Plugins["Travel"].Load = function(sender, args)
-        Turbine.Shell.WriteLine("Travel Window version " .. Plugins["Travel"]:GetVersion() .. " loaded");
+    Plugins["Travel Window"].Load = function(sender, args)
+        Turbine.Shell.WriteLine("Travel Window v" .. Plugins["Travel Window"]:GetVersion() .. " loaded");
     end
 end
 
@@ -682,65 +657,6 @@ function TravelWindow:UpdateSettings()
     self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
     self.MainPanel:UpdateTabs();
 end
-
--- function TravelWindow:CountRationsBypass()
--- self.rationCount = 0;
--- self.ListTab:SetRationCount(self.rationCount);
--- self.GridTab:SetRationCount(self.rationCount);
--- self.CaroTab:SetRationCount(self.rationCount);
--- self.PullTab:SetRationCount(self.rationCount);
--- end
-
--- function TravelWindow:CountRations() 
-
--- get the player's inventory
--- backpack = player:GetBackpack();
-
--- scan the inventory for specific image IDs.
--- when the icon image and background image match
--- then we are fairly confident we have found
--- the travel rations, add the quantity to the total
--- self.rationCount = 0;
--- for i = 1, backpack:GetSize(),1 do
--- local item = backpack:GetItem(i);
-
--- if(item ~= nil) then
--- check the item is a travel ration
-
--- if(string.find(item:GetName(),rationItemString)) then
--- add the quantity to the total
--- self.rationCount = self.rationCount + item:GetQuantity();
--- end
-
--- if(self.reloadGVMap == true) then
--- if(string.find(item:GetName(),glanMapItemString)) then
--- add the quantity to the total
--- Turbine.Shell.WriteLine("Adding Glan Vraig map after loading.");
--- self.reloadGVMap = false;
--- genLocations:InsertData(2,glanMapString,settings.mapGlanVraig);
-
--- TravelInfo:GetCounts();
--- self:CheckEnabledSettings()
--- self:SetShortcuts();
--- self:UpdateSettings();
--- end
--- end
-
--- end
--- end
-
--- if the ration count has changed since last
--- checked, then update all the tabs with the
--- new value
--- if(self.rationCount ~= self.oldRationCount) then
--- self.ListTab:SetRationCount(self.rationCount);
--- self.GridTab:SetRationCount(self.rationCount);
--- self.CaroTab:SetRationCount(self.rationCount);
--- self.PullTab:SetRationCount(self.rationCount);
-
--- self.oldRationCount = self.rationCount;
--- end
--- end
 
 function TravelWindow:SetMapHome()
 

@@ -42,7 +42,7 @@ resetOrderString = "Your order settings have been reset due to a change in " ..
 resetEnabledString = "Your selected skills have been reset due to an error " ..
         "in the number of items previously saved.\n";
 
-skillnottrainedString = "Умение не получено: ";
+skillNotTrainedString = "Умение не получено: ";
 
 -- options window strings
 generalTabString = "Основные";
