@@ -41,12 +41,7 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
 
     GLocale = Turbine.Engine.GetLanguage();
 
-    if GLocale == 268435463 then
-        mapLabel:SetBackground("DhorPlugins/Travel/Resources/eriadormapru.jpg");
-    else
-        mapLabel:SetBackground(0x41008138);
-    end
-
+    mapLabel:SetBackground(0x41008138);
     mapLabel:SetParent(self);
     mapLabel:SetVisible(true);
 

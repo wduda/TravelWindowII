@@ -39,14 +39,7 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
     mapLabel:SetPosition(10, 40);
     mapLabel:SetSize(1024, 768);
 
-    GLocale = Turbine.Engine.GetLanguage();
-
-    if GLocale == 268435463 then
-        mapLabel:SetBackground("DhorPlugins/Travel/Resources/gondormapru.jpg");
-    else
-        mapLabel:SetBackground(0x41154336);
-    end
-
+    mapLabel:SetBackground(0x41154336);
     mapLabel:SetParent(self);
     mapLabel:SetVisible(true);
 

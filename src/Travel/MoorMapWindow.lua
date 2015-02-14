@@ -38,11 +38,7 @@ function MoorMapWindow:Constructor(parent)
 
     GLocale = Turbine.Engine.GetLanguage();
 
-    if GLocale == 268435463 then
-        mapLabel:SetBackground("DhorPlugins/Travel/Resources/moormapru.jpg");
-    else
-        mapLabel:SetBackground(0x41008133);
-    end
+    mapLabel:SetBackground(0x41008133);
     mapLabel:SetParent(self);
     mapLabel:SetVisible(true);
 
