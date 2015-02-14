@@ -15,8 +15,8 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
     self.loaded = false;
 
     -- set size of window
-    self.width = 1078;
-    self.height = 680;
+    self.width = 1044;
+    self.height = 817;
     self.windowWidth, self.windowHeight = Turbine.UI.Display:GetSize();
 
     self.mainWindow = parent;
@@ -37,80 +37,79 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
 
     mapLabel = Turbine.UI.Label();
     mapLabel:SetPosition(10, 40);
-    mapLabel:SetSize(1058, 631);
-    GLocale = Turbine.Engine.GetLanguage();
-    if GLocale == 268435459 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/rhovanionmapfr.jpg");
-    elseif GLocale == 268435460 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/rhovanionmapde.jpg");
-    elseif GLocale == 268435463 then mapLabel:SetBackground("DhorPlugins/Travel/Resources/rhovanionmapru.jpg"); -- by PulseDiver
-    else mapLabel:SetBackground("DhorPlugins/Travel/Resources/rhovanionmap.jpg");
-    end
-    -- mapLabel:SetBackground("DhorPlugins/Travel/Resources/rhovanionmap.tga");
+    mapLabel:SetSize(1024, 768);
+
+    mapLabel:SetBackground(0x410E868B);
     mapLabel:SetParent(self);
     mapLabel:SetVisible(true);
 
     self.mapLocations = {
-        { -1, -1 }, -- camp
-        { -1, -1 }, -- bree
-        { -1, -1 }, -- thorins
-        { -1, -1 }, -- md
-        { -1, -1 }, -- est
-        { -1, -1 }, -- evendim
-        { -1, -1 }, -- og
-        { -1, -1 }, -- riv
-        { -1, -1 }, -- suri
-        { -1, -1 }, -- w ang
-        { -1, -1 }, -- e ang
-        { -1, -1 }, -- echad dunann
-        { 270, 260 }, -- 21
-        { 545, 265 }, -- mirk
-        { -1, -1 }, -- harn
-        { -1, -1 }, -- galtrev
-        { 435, 335 }, -- stan
-        { 395, 240 }, -- CG
-        { -1, -1 }, -- MM
-        { 435, 435 }, -- Snowbourn
-        { 460, 360 }, -- Forlaw
-        { 375, 465 }, -- Aldburg
-        { 295, 460 }, --Helms Deep
-        { -1, -1 }, --Dol Amroth
-        { -1, -1 }, -- start of warden skills, og
-        { -1, -1 }, -- est
-        { -1, -1 }, -- even
-        { -1, -1 }, -- riv
-        { -1, -1 }, -- suri
-        { 270, 260 }, -- 21
-        { 545, 265 }, -- mirk
-        { -1, -1 }, -- harn
-        { -1, -1 }, -- galtrev
-        { 435, 335 }, -- stan
-        { 395, 240 }, -- CG
-        { -1, -1 }, -- MM
-        { 435, 435 }, -- Snowbourn
-        { 460, 360 }, -- Forlaw
-        { 375, 465 }, -- Aldburg
-        { 295, 460 }, --Helms Deep
-        { -1, -1 }, --Dol Amroth
-        { -1, -1 }, -- start of rep, thorins
-        { -1, -1 }, -- bree
-        { -1, -1 }, -- shire
-        { -1, -1 }, -- lalia
-        { -1, -1 }, -- riv
-        { -1, -1 }, -- og
-        { 570, 265 }, -- mirk
-        { -1, -1 }, -- enedwaith
-        { -1, -1 }, -- galtrev
-        { 450, 320 }, -- stangard
-        { 435, 435 }, -- Snowbourn
-        { 460, 360 }, -- Forlaw
-        { 375, 480 }, -- Aldburg
-        { 320, 375 }, -- Derndingle
-        { 295, 475 }, --Helms Deep
-        { -1, -1 }, --Dol Amroth
-        { -1, -1 }, -- start of racial, bree
-        { -1, -1 }, -- shire
-        { -1, -1 }, -- thorins
-        { -1, -1 }, -- riv
-        { 490, 100 } -- beo
+        -- Hunter skills
+        { -1, -1 },     -- Camp
+        { -1, -1 },     -- Bree
+        { -1, -1 },     -- Thorin's Hall
+        { -1, -1 },     -- Michel Delving
+        { -1, -1 },     -- Esteldin
+        { -1, -1 },     -- Evendim
+        { -1, -1 },     -- Ost Guruth
+        { -1, -1 },     -- Rivendell
+        { -1, -1 },     -- Suri-Kyla
+        { -1, -1 },     -- West Angmar
+        { -1, -1 },     -- East Angmar
+        { -1, -1 },     -- Echad Dunann
+        { 265, 315 },   -- 21st Hall
+        { 510, 330 },   -- Mirkwood
+        { -1, -1 },     -- Enedwaith Harndirion
+        { -1, -1 },     -- Galtrev
+        { 415, 360 },   -- Stangard
+        { 370, 335 },   -- Caras Galadhon
+        { -1, -1 },     -- Misty Mountains
+        { 425, 500 },   -- Snowbourn
+        { 410, 425 },   -- Forlaw
+        { 350, 515 },   -- Aldburg
+        { 280, 515 },   -- Helm's Deep
+        { -1, -1 },     -- Dol Amroth
+        -- Muster skills
+        { -1, -1 },     -- Ost Guruth
+        { -1, -1 },     -- Esteldin
+        { -1, -1 },     -- Evendim
+        { -1, -1 },     -- Rivendell
+        { -1, -1 },     -- Suri-Kyla
+        { 265, 315 },   -- 21st Hall
+        { 510, 330 },   -- Mirkwood
+        { -1, -1 },     -- Enedwaith Harndirion
+        { -1, -1 },     -- Galtrev
+        { 415, 360 },   -- Stangard
+        { 370, 335 },   -- Caras Galadhon
+        { -1, -1 },     -- Misty Mountains
+        { 425, 500 },   -- Snowbourn
+        { 410, 425 },   -- Forlaw
+        { 350, 515 },   -- Aldburg
+        { 280, 515 },   -- Helm's Deep
+        { -1, -1 },     -- Dol Amroth
+        -- Reputation skills
+        { -1, -1 },     -- Thorin's Hall
+        { -1, -1 },     -- Bree
+        { -1, -1 },     -- Lalia's Market
+        { -1, -1 },     -- Michel Delving
+        { -1, -1 },     -- Rivendell
+        { -1, -1 },     -- Ost Guruth
+        { 540, 330 },   -- Mirkwood
+        { -1, -1 },     -- Enedwaith Lhanuch
+        { -1, -1 },     -- Galtrev
+        { 440, 360 },   -- Stangard
+        { 450, 500 },   -- Snowbourn
+        { 435, 425 },   -- Forlaw
+        { 350, 540 },   -- Aldburg
+        { 310, 470 },   -- Derndingle
+        { 280, 540 },   -- Helm's Deep
+        { -1, -1 },     -- Dol Amroth
+        -- Racial skills
+        { -1, -1 },     -- Bree
+        { -1, -1 },     -- Michel Delving
+        { -1, -1 },     -- Thorin's Hall
+        { -1, -1 },     -- Rivendell
+        { 490, 100 },   -- Grimbeorn's House
     };
     self:AddShortcuts();
 
