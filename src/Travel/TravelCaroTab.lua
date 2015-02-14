@@ -3,7 +3,6 @@ import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
 import "DhorPlugins.Extensions";
-import "DhorPlugins.Travel.IndexedDictionary";
 import "DhorPlugins.Travel.SettingsMenu";
 import "DhorPlugins.Utils.BitOps";
 
@@ -26,17 +25,6 @@ function TravelCaroTab:Constructor(toplevel)
     -- need top level window in order to close it
     self.parent = toplevel;
 
-    -- label for displaying the number of travel rations
-    -- self.rationLabel = Turbine.UI.Label();
-    -- self.rationLabel:SetPosition(0,0);
-    -- self.rationLabel:SetSize(180,20);
-    -- self.rationLabel:SetForeColor(Turbine.UI.Color(1,0,0.5,0));
-    -- self.rationLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
-    -- self.rationLabel:SetText(rationLabelString);
-    -- self.rationLabel:SetVisible(true);
-    -- self.rationLabel:SetParent(self);
-    -- self.rationLabel:SetZOrder(100);
-
     -- this label is used to catch wheel moves
     self.scrollLabel = Turbine.UI.Label();
     self.scrollLabel:SetSize(180, 155);
@@ -58,18 +46,6 @@ function TravelCaroTab:Constructor(toplevel)
             menu:ShowMenu();
         end
     end
-
-    -- check for a right mouse button event to open menu
-    -- self.rationLabel.MouseClick = function( sender, args )
-    -- if(args.Button == Turbine.UI.MouseButton.Right) then
-    -- menu:ShowMenu();
-    -- end
-    -- end
-
-    -- check if the mouse wheel was moved
-    -- self.rationLabel.MouseWheel = function( sender, args )
-    -- self:DoScroll(sender,args);
-    -- end
 
     -- check for a right mouse button event to open menu
     self.scrollLabel.MouseClick = function(sender, args)
@@ -249,20 +225,10 @@ function TravelCaroTab:CreateQuickslots()
     self.quickslots[5]:SetZOrder(98);
 end
 
--- function to set the value of the ration count label
--- function TravelCaroTab:SetRationCount(value)
--- self.rationCount = value;
--- self.rationLabel:SetText(rationLabelString .. " " .. self.rationCount)
--- end
-
 -- function to adjust the size of the tab and all items in the tab
 function TravelCaroTab:SetSize(width, height)
 
     Turbine.UI.Control.SetSize(self, width, height);
-
-    -- adjust the ration and scroll labels
-    -- self.rationLabel:SetSize(self:GetWidth(),20);
-    -- self.scrollLabel:SetSize(self:GetWidth(),self:GetHeight());
 
     -- adjust the size and location of the 5 quickslots
     self.quickslots[1]:SetStretchMode(1);

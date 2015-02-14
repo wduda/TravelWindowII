@@ -3,7 +3,6 @@ import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
 import "DhorPlugins.Extensions";
-import "DhorPlugins.Travel.IndexedDictionary";
 import "DhorPlugins.Travel.SettingsMenu";
 import "DhorPlugins.Utils.BitOps";
 
@@ -25,17 +24,6 @@ function TravelGridTab:Constructor(toplevel)
 
     -- need top level window in order to close it
     self.parent = toplevel;
-
-    -- for displaying the number of travel rations
-    -- self.rationLabel = Turbine.UI.Label();
-    -- self.rationLabel:SetPosition(0,0);
-    -- self.rationLabel:SetSize(180,20);
-    -- self.rationLabel:SetForeColor(Turbine.UI.Color(1,0,0.5,0));
-    -- self.rationLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
-    -- self.rationLabel:SetText(rationLabelString);
-    -- self.rationLabel:SetVisible(true);
-    -- self.rationLabel:SetParent(self);
-    -- self.rationLabel:SetZOrder(100);
 
     -- a subwindow (now a control) for containing all the quickslots
     self.SubWindow = Turbine.UI.Control();
@@ -63,12 +51,6 @@ function TravelGridTab:Constructor(toplevel)
         end
     end
 
-    -- check for a right mouse button event to open menu
-    -- self.rationLabel.MouseClick = function( sender, args )
-    -- if(args.Button == Turbine.UI.MouseButton.Right) then
-    -- menu:ShowMenu();
-    -- end
-    -- end
 end
 
 -- function to handle mouse scrollwheel events
@@ -273,12 +255,6 @@ function TravelGridTab:SetScrollBar()
         self:UpdateSubWindow();
     end
 end
-
--- function to update the ration label
--- function TravelGridTab:SetRationCount(value)
--- self.rationCount = value;
--- self.rationLabel:SetText(rationLabelString .. " " .. self.rationCount)
--- end
 
 -- function to adjust the size of the tab and all items in the tab
 function TravelGridTab:SetSize(width, height)
