@@ -36,8 +36,6 @@ function MoorMapWindow:Constructor(parent)
     mapLabel:SetPosition(10, 40);
     mapLabel:SetSize(1024, 768);
 
-    GLocale = Turbine.Engine.GetLanguage();
-
     mapLabel:SetBackground(0x41008133);
     mapLabel:SetParent(self);
     mapLabel:SetVisible(true);
@@ -64,23 +62,23 @@ function MoorMapWindow:AddShortcuts()
         { 180, 120 },  -- Crude Map to Gramsfoot
         { 215, 120 },  -- Map to Gramsfoot
 
-        { 520, 95 },   -- Crude Map to Isendeep
-        { 385, 420 },  -- Crude Map to Tol Ascarnen
-        { 205, 320 },  -- Crude Map to Lugazag
-        { 590, 470 },  -- Crude Map to Tirith Rhaw
-        { 375, 520 },  -- Crude Map to Grimwood
+        { 700, 200 },  -- Crude Map to Isendeep
+        { 350, 440 },  -- Crude Map to Tol Ascarnen
+        { 180, 380 },  -- Crude Map to Lugazag
+        { 500, 295 },  -- Crude Map to Tirith Rhaw
+        { 340, 510 },  -- Crude Map to Grimwood
 
-        { 555, 95 },   -- Poor Map to Isendeep
-        { 420, 420 },  -- Poor Map to Tol Ascarnen
-        { 240, 320 },  -- Poor Map to Lugazag
-        { 625, 470 },  -- Poor Map to Tirith Rhaw
-        { 410, 520 },  -- Poor Map to Grimwood
+        { 610, 300 },  -- Poor Map to Isendeep
+        { 435, 365 },  -- Poor Map to Tol Ascarnen
+        { 180, 270 },  -- Poor Map to Lugazag
+        { 625, 365 },  -- Poor Map to Tirith Rhaw
+        { 380, 540 },  -- Poor Map to Grimwood
 
-        { 590, 95 },   -- Good Map to Isendeep
-        { 455, 420 },  -- Good Map to Tol Ascarnen
-        { 275, 320 },  -- Good Map to Lugazag
-        { 660, 470 },  -- Good Map to Tirith Rhaw
-        { 445, 520 }   -- Good Map to Grimwood
+        { 310, 95 },   -- Good Map to Isendeep
+        { 375, 480 },  -- Good Map to Tol Ascarnen
+        { 305, 275 },  -- Good Map to Lugazag
+        { 555, 470 },  -- Good Map to Tirith Rhaw
+        { 445, 650 }   -- Good Map to Grimwood
     };
 
 
