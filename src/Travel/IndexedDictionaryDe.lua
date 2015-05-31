@@ -155,7 +155,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Führer nach Forlach", "0x70036B5D", "Führer nach Forlach");
     hunterLocations:AddData("Führer nach Aldburg", "0x7003DC71", "Führer nach Aldburg");
     hunterLocations:AddData("Führer nach Helms Klamm", "0x7003DC72", "Führer nach Helms Klamm");
-    hunterLocations:AddData("Führer nach Dol Amroth", "0x70041197", "Führer nach Dol Amroth"); -- thanks to Rrys for the translation
+    hunterLocations:AddData("Führer nach Dol Amroth", "0x70041197", "Führer nach Dol Amroth");
+    hunterLocations:AddData("Führer nach Arnach", "0x70043A63", "Führer nach Arnach");
 
     wardenLocations:AddData("Appell in der Feste Guruth", "0x70014786", "Appell in der Feste Guruth");
     wardenLocations:AddData("Appell in Esteldín", "0x70014798", "Appell in Esteldín");
@@ -173,7 +174,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Appell in Forlach", "0x70036B5B", "Appell in Forlach");
     wardenLocations:AddData("Appell in Aldburg", "0x7003DC7A", "Appell in Aldburg");
     wardenLocations:AddData("Appell in Helms Klamm", "0x7003DC79", "Appell in Helms Klamm");
-    wardenLocations:AddData("Appell in Dol Amroth", "0x70041198", "Appell in Dol Amroth"); -- thanks to Rrys for the translation
+    wardenLocations:AddData("Appell in Dol Amroth", "0x70041198", "Appell in Dol Amroth");
+    wardenLocations:AddData("Appell in Arnach", "0x70043A66", "Appell in Arnach");
 
     racialLocations:AddData("Rückkehr nach Bree (Rasse)", "0x700062F6", "Rückkehr nach Bree");
     racialLocations:AddData("Rückkehr ins Auenland (Rasse)", "0x700062C8", "Rückkehr ins Auenland");
@@ -216,6 +218,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Rückkehr ins Geheimnistal", "0x7004128F", "Rückkehr ins Geheimnistal");
     repLocations:AddData("Rückkehr nach Helms Klamm", "0x7003DC82", "Kehrt nach Helms Klamm zurück.");
     repLocations:AddData("Rückkehr nach Dol Amroth", "0x700411AC", "Rückkehr nach Dol Amroth");
+    repLocations:AddData("Rückkehr nach Arnach", "0x70043A6A", "Rückkehr nach Arnach");
 
     creepLocations:AddData("Grobe Isenbinge-Karte", "0x70028BB3");
     creepLocations:AddData("Grobe Tol Ascarnen-Karte", "0x70028BB6");
