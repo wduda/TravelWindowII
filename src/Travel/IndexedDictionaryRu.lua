@@ -163,6 +163,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Путь в Хельмову Падь", "0x7003DC72", "Путь в Хельмову Падь");
     -- !!! will be translated when RU is U14
     -- hunterLocations:AddData("Guide to Dol Amroth", "0x70041197", "Guide to Dol Amroth");
+    -- hunterLocations:AddData("Guide to Arnach", "0x70043A63", "Guide to Arnach");
 
     wardenLocations:AddData("Сбор в Ост Гуруте", "0x70014786", "Сбор в Ост Гуруте");
     wardenLocations:AddData("Сбор в Эстельдине", "0x70014798", "Сбор в Эстельдине");
@@ -180,8 +181,9 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Сбор в Форлоу", "0x70036B5B", "Сбор в Форлоу");
     wardenLocations:AddData("Сбор в Альбурге", "0x7003DC7A", "Сбор в Альбурге");
     wardenLocations:AddData("Сбор в Хельмовой Пади", "0x7003DC79", "Сбор в Хельмовой Пади");
-    -- !!! will be translated when RU is U14
+    -- !!! will be translated when RU is past U13
     -- wardenLocations:AddData("Muster in Dol Amroth", "0x70041198", "Muster in Dol Amroth");
+    -- wardenLocations:AddData("Muster in Arnach", "0x70043A66", "Muster in Arnach");
 
     racialLocations:AddData("Дорога в Бри (Рас.)", "0x700062F6", "Дорога в Бри");
     racialLocations:AddData("Дорога в Шир (Рас.)", "0x700062C8", "Дорога в Шир");
@@ -226,6 +228,7 @@ function TravelDictionaries:CreateDictionaries()
     -- !!! will be translated when RU is U14
     -- repLocations:AddData("Return to Derndingle (Rep)", "0x7004128F", "Return to Derndingle");
     -- repLocations:AddData("Return to Dol Amroth (Rep)", "0x700411AC", "Return to Dol Amroth");
+    -- repLocations:AddData("Return to Arnach (Rep)", "0x70043A6A", "Return to Arnach");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Грубая карта пути к Подножию Грэм", "0x70028BBC", "Грубая карта пути к Подножию Грэм");
