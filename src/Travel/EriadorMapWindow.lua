@@ -69,6 +69,7 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Aldburg
         { -1, -1 },     -- Helm's Deep
         { -1, -1 },     -- Dol Amroth
+        { -1, -1 },     -- Arnach
         -- Muster skills
         { 710, 390 },   -- Ost Guruth
         { 640, 270 },   -- Esteldin
@@ -87,6 +88,7 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Aldburg
         { -1, -1 },     -- Helm's Deep
         { -1, -1 },     -- Dol Amroth
+        { -1, -1 },     -- Arnach
         -- Reputation skills
         { 330, 300 },   -- Thorin's Hall
         { 600, 415 },   -- Bree
@@ -104,6 +106,7 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Derndingle
         { -1, -1 },     -- Helm's Deep
         { -1, -1 },     -- Dol Amroth
+        { -1, -1 },     -- Arnach
         -- Racial skills
         { 625, 340 },   -- Bree
         { 500, 415 },   -- Michel Delving
