@@ -2,7 +2,7 @@
 <PluginConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <Id>897</Id>
     <Name>Travel Window</Name>
-    <Version>16.1.0</Version>
+    <Version>16.1.1</Version>
     <Author>Hyoss</Author>
     <InfoUrl>http://www.lotrointerface.com/downloads/info897</InfoUrl>
     <DownloadUrl>http://www.lotrointerface.com/downloads/download897</DownloadUrl>
