@@ -161,9 +161,10 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Путь в Форлоу", "0x70036B5D", "Путь в Форлоу");
     hunterLocations:AddData("Путь в Альдбург", "0x7003DC71", "Путь в Альдбург");
     hunterLocations:AddData("Путь в Хельмову Падь", "0x7003DC72", "Путь в Хельмову Падь");
-    -- !!! will be translated when RU is U14
+    -- !!! will be translated when RU is past U13
     -- hunterLocations:AddData("Guide to Dol Amroth", "0x70041197", "Guide to Dol Amroth");
     -- hunterLocations:AddData("Guide to Arnach", "0x70043A63", "Guide to Arnach");
+    -- hunterLocations:AddData("Guide to Minas Tirith", "0x70044985", "Guide to Minas Tirith");
 
     wardenLocations:AddData("Сбор в Ост Гуруте", "0x70014786", "Сбор в Ост Гуруте");
     wardenLocations:AddData("Сбор в Эстельдине", "0x70014798", "Сбор в Эстельдине");
@@ -184,6 +185,7 @@ function TravelDictionaries:CreateDictionaries()
     -- !!! will be translated when RU is past U13
     -- wardenLocations:AddData("Muster in Dol Amroth", "0x70041198", "Muster in Dol Amroth");
     -- wardenLocations:AddData("Muster in Arnach", "0x70043A66", "Muster in Arnach");
+    -- wardenLocations:AddData("Muster in Minas Tirith", "0x70044982", "Muster in Minas Tirith");
 
     racialLocations:AddData("Дорога в Бри (Рас.)", "0x700062F6", "Дорога в Бри");
     racialLocations:AddData("Дорога в Шир (Рас.)", "0x700062C8", "Дорога в Шир");
@@ -229,6 +231,7 @@ function TravelDictionaries:CreateDictionaries()
     -- repLocations:AddData("Return to Derndingle (Rep)", "0x7004128F", "Return to Derndingle");
     -- repLocations:AddData("Return to Dol Amroth (Rep)", "0x700411AC", "Return to Dol Amroth");
     -- repLocations:AddData("Return to Arnach (Rep)", "0x70043A6A", "Return to Arnach");
+    -- repLocations:AddData("Return to Minas Tirith (Rep)", "0x7004497E", "Return to Minas Tirith");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Грубая карта пути к Подножию Грэм", "0x70028BBC", "Грубая карта пути к Подножию Грэм");

@@ -70,6 +70,7 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Helm's Deep
         { 275, 470 },   -- Dol Amroth
         { 600, 450 },   -- Arnach
+        { 600, 370 },   -- Arnach
         -- Muster skills
         { -1, -1 },     -- Ost Guruth
         { -1, -1 },     -- Esteldin
@@ -89,6 +90,7 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Helm's Deep
         { 275, 470 },   -- Dol Amroth
         { 600, 450 },   -- Arnach
+        { 600, 370 },   -- Arnach
         -- Reputation skills
         { -1, -1 },     -- Thorin's Hall
         { -1, -1 },     -- Bree
@@ -107,6 +109,7 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Helm's Deep
         { 300, 470 },   -- Dol Amroth
         { 625, 450 },   -- Arnach
+        { 625, 370 },   -- Minas Tirith
         -- Racial skills
         { -1, -1 },     -- Bree
         { -1, -1 },     -- Michel Delving
