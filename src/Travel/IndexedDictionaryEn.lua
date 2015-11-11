@@ -157,6 +157,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Guide to Helm's Deep", "0x7003DC72", "Guide to Helm's Deep");
     hunterLocations:AddData("Guide to Dol Amroth", "0x70041197", "Guide to Dol Amroth");
     hunterLocations:AddData("Guide to Arnach", "0x70043A63", "Guide to Arnach");
+    hunterLocations:AddData("Guide to Minas Tirith", "0x70044985", "Guide to Minas Tirith");
 
     wardenLocations:AddData("Muster in Ost Guruth", "0x70014786", "Muster in Ost Guruth");
     wardenLocations:AddData("Muster in Esteldín", "0x70014798", "Muster in Esteldín");
@@ -176,6 +177,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Muster in Helm's Deep", "0x7003DC79", "Muster in Helm's Deep");
     wardenLocations:AddData("Muster in Dol Amroth", "0x70041198", "Muster in Dol Amroth");
     wardenLocations:AddData("Muster in Arnach", "0x70043A66", "Muster in Arnach");
+    wardenLocations:AddData("Muster in Minas Tirith", "0x70044982", "Muster in Minas Tirith");
 
     racialLocations:AddData("Return to Bree", "0x700062F6", "Return to Bree");
     racialLocations:AddData("Return to the Shire", "0x700062C8", "Return to the Shire");
@@ -219,6 +221,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Return to Helm's Deep (Rep)", "0x7003DC82", "Return to Helm's Deep");
     repLocations:AddData("Return to Dol Amroth (Rep)", "0x700411AC", "Return to Dol Amroth");
     repLocations:AddData("Return to Arnach (Rep)", "0x70043A6A", "Return to Arnach");
+    repLocations:AddData("Return to Minas Tirith (Rep)", "0x7004497E", "Return to Minas Tirith");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Crude Map to Gramsfoot", "0x70028BBC");

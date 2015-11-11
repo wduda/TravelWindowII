@@ -70,6 +70,7 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { 280, 515 },   -- Helm's Deep
         { -1, -1 },     -- Dol Amroth
         { -1, -1 },     -- Arnach
+        { -1, -1 },     -- Minas Tirith
         -- Muster skills
         { -1, -1 },     -- Ost Guruth
         { -1, -1 },     -- Esteldin
@@ -89,6 +90,7 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { 280, 515 },   -- Helm's Deep
         { -1, -1 },     -- Dol Amroth
         { -1, -1 },     -- Arnach
+        { -1, -1 },     -- Minas Tirith
         -- Reputation skills
         { -1, -1 },     -- Thorin's Hall
         { -1, -1 },     -- Bree
@@ -107,6 +109,7 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { 280, 540 },   -- Helm's Deep
         { -1, -1 },     -- Dol Amroth
         { -1, -1 },     -- Arnach
+        { -1, -1 },     -- Minas Tirith
         -- Racial skills
         { -1, -1 },     -- Bree
         { -1, -1 },     -- Michel Delving

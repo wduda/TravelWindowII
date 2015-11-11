@@ -157,6 +157,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Führer nach Helms Klamm", "0x7003DC72", "Führer nach Helms Klamm");
     hunterLocations:AddData("Führer nach Dol Amroth", "0x70041197", "Führer nach Dol Amroth");
     hunterLocations:AddData("Führer nach Arnach", "0x70043A63", "Führer nach Arnach");
+    hunterLocations:AddData("Führer nach Minas Tirith", "0x70044985", "Führer nach Minas Tirith");
 
     wardenLocations:AddData("Appell in der Feste Guruth", "0x70014786", "Appell in der Feste Guruth");
     wardenLocations:AddData("Appell in Esteldín", "0x70014798", "Appell in Esteldín");
@@ -176,6 +177,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Appell in Helms Klamm", "0x7003DC79", "Appell in Helms Klamm");
     wardenLocations:AddData("Appell in Dol Amroth", "0x70041198", "Appell in Dol Amroth");
     wardenLocations:AddData("Appell in Arnach", "0x70043A66", "Appell in Arnach");
+    wardenLocations:AddData("Appell in Minas Tirith", "0x70044982", "Appell in Minas Tirith");
 
     racialLocations:AddData("Rückkehr nach Bree (Rasse)", "0x700062F6", "Rückkehr nach Bree");
     racialLocations:AddData("Rückkehr ins Auenland (Rasse)", "0x700062C8", "Rückkehr ins Auenland");
@@ -219,6 +221,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Rückkehr nach Helms Klamm", "0x7003DC82", "Kehrt nach Helms Klamm zurück.");
     repLocations:AddData("Rückkehr nach Dol Amroth", "0x700411AC", "Rückkehr nach Dol Amroth");
     repLocations:AddData("Rückkehr nach Arnach", "0x70043A6A", "Rückkehr nach Arnach");
+    repLocations:AddData("Rückkehr nach Minas Tirith (Rep)", "0x7004497E", "Rückkehr nach Minas Tirith");
 
     creepLocations:AddData("Grobe Isenbinge-Karte", "0x70028BB3");
     creepLocations:AddData("Grobe Tol Ascarnen-Karte", "0x70028BB6");

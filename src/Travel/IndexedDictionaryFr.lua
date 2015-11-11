@@ -158,6 +158,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Guide vers le Gouffre de Helm", "0x7003DC72", "Guide vers le Gouffre de Helm");
     hunterLocations:AddData("Guide vers Dol Amroth", "0x70041197", "Guide vers Dol Amroth");
     hunterLocations:AddData("Guide vers Arnach", "0x70043A63", "Guide vers Arnach");
+    hunterLocations:AddData("Guide vers Minas Tirith", "0x70044985", "Guide vers Minas Tirith");
 
     wardenLocations:AddData("Rassemblement à Ost Guruth", "0x70014786", "Rassemblement à Ost Guruth");
     wardenLocations:AddData("Rassemblement à Esteldin", "0x70014798", "Rassemblement à Esteldin");
@@ -177,6 +178,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Rassemblement au Gouffre de Helm", "0x7003DC79", "Rassemblement au Gouffre de Helm");
     wardenLocations:AddData("Rassemblement au Dol Amroth", "0x70041198", "Rassemblement au Dol Amroth");
     wardenLocations:AddData("Rassemblement au Arnach", "0x70043A66", "Rassemblement au Arnach");
+    wardenLocations:AddData("Rassemblement au Minas Tirith", "0x70044982", "Rassemblement au Minas Tirith");
 
     racialLocations:AddData("Retour à Bree", "0x700062F6", "Retour à Bree");
     racialLocations:AddData("Retournez dans la Comté", "0x700062C8", "Retournez dans la Comté");
@@ -220,6 +222,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Retour au Gouffre de Helm (Rep)", "0x7003DC82", "Retour au Gouffre de Helm");
     repLocations:AddData("Retour à Dol Amroth (Rep)", "0x700411AC", "Retour à Dol Amroth");
     repLocations:AddData("Retour à Arnach (Rep)", "0x70043A6A", "Retour à Arnach");
+    repLocations:AddData("Retour à Minas Tirith (Rep)", "0x7004497E", "Retour à Minas Tirith");
 
     creepLocations:AddData("Carte grossière pour aller au Gouffre d'Isen", "0x70028BB3");
     creepLocations:AddData("Carte grossière pour aller à Tol Ascarnen", "0x70028BB6");
