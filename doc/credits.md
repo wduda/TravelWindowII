@@ -12,5 +12,6 @@ RRys
 IceBear
 ardinendlil
 Shugotenshi
-Pulse aka PulseDiver
+Plague
+Eleador
 Hyoss
