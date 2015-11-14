@@ -12,4 +12,6 @@ RRys
 IceBear
 ardinendlil
 Shugotenshi
+Plague
+Eleador
 Hyoss
