@@ -6,7 +6,6 @@ import "Turbine.UI.Lotro";
 import "DhorPlugins.Extensions";
 import "DhorPlugins.Utils.BitOps";
 
---OptionsWindow = class(Turbine.UI.Lotro.Window);
 OptionsPanel = class(Turbine.UI.Control);
 
 function OptionsPanel:Constructor(parent)
@@ -31,12 +30,8 @@ function OptionsPanel:Constructor(parent)
     self.sortMaxItem = 0;
 
     -- set the default window settings
-    --self:SetPosition(self.windowWidth /2 - self.width/2,self.windowHeight/2 - self.height/2);
     self:SetSize(self.width, self.height);
-    --self:SetBlendMode(Turbine.UI.BlendMode.Undefined);
-    --self:SetBackColor( Turbine.UI.Color(0.0,0,0,0) );
-    --self:SetText( optionsTitleString );
-    --self:SetOpacity( 1 );
+
 
     -- add a tabbed panel
     self.OptionTabs = DhorPlugins.Extensions.DPanel();
@@ -409,7 +404,7 @@ function OptionsPanel:AddItems()
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         offsetCounter = 0;
         for i = 1, travelCount[4], 1 do
-            self:Add(counter, repLocations:KeyAtIndex(i), 5, 355, offsetCounter);
+            self:Add(counter, repLocations:KeyAtIndex(i), 5, 335, offsetCounter);
             counter = counter + 1;
             offsetCounter = offsetCounter + 1;
         end
@@ -486,7 +481,7 @@ function OptionsPanel:AddBoxes()
         -- add a label and box for the reputation travel skills
         self.repLabel = Turbine.UI.Label();
         self.repLabel:SetSize(200, 20);
-        self.repLabel:SetPosition(0, 330);
+        self.repLabel:SetPosition(0, 310);
         self.repLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
         self.repLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
         self.repLabel:SetText(repLabelString);
@@ -494,10 +489,8 @@ function OptionsPanel:AddBoxes()
         self.repLabel:SetVisible(true);
 
         self.repBox = Turbine.UI.Lotro.TextBox();
-        -- self.repBox:SetSize(230,210);
-        -- self.repBox:SetSize(230,230);
-        self.repBox:SetSize(230, 330);
-        self.repBox:SetPosition(0, 350);
+        self.repBox:SetSize(230, 370);
+        self.repBox:SetPosition(0, 330);
         self.repBox:SetZOrder(0);
         self.repBox:SetParent(self.EnabledTab);
         self.repBox:SetReadOnly(true);
@@ -516,11 +509,11 @@ function OptionsPanel:AddBoxes()
 
             self.classBox = Turbine.UI.Lotro.TextBox();
             if (playerClass == Turbine.Gameplay.Class.Hunter) then
-                -- self.classBox:SetSize(230,410);
-                self.classBox:SetSize(230, 490);
+                -- self.classBox:SetSize(230, 490);
+                self.classBox:SetSize(230, 530);
             else
-                -- self.classBox:SetSize(230,270);
-                self.classBox:SetSize(230, 290);
+                -- self.classBox:SetSize(230, 290);
+                self.classBox:SetSize(230, 340);
             end
             self.classBox:SetPosition(245, 20);
             self.classBox:SetZOrder(0);
@@ -551,8 +544,7 @@ function OptionsPanel:AddBoxes()
     -- add a check skills button
     self.checkSkillsButton = Turbine.UI.Lotro.Button();
     self.checkSkillsButton:SetSize(200, 20);
-    -- self.checkSkillsButton:SetPosition(150, 590);
-    self.checkSkillsButton:SetPosition(150, 690);
+    self.checkSkillsButton:SetPosition(250, 690);
     self.checkSkillsButton:SetText(checkSkillsString);
     self.checkSkillsButton:SetParent(self.EnabledTab);
     self.checkSkillsButton:SetVisible(true);
@@ -614,7 +606,7 @@ function OptionsPanel:AddSortList()
     self.listBoxScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
     self.listBoxScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
     --	self.listBoxScrollBar:SetSize( 10,490 );
-    self.listBoxScrollBar:SetSize(10, 655);
+    self.listBoxScrollBar:SetSize(10, 670);
     self.listBoxScrollBar:SetPosition(270, 0);
     self.listBoxScrollBar:SetZOrder(100);
     self.listBoxScrollBar:SetVisible(true);
