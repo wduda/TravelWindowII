@@ -144,7 +144,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Führer nach West-Angmar", "0x7000A2C5", "Führer in das westliche Angmar");
     hunterLocations:AddData("Führer nach Ost-Angmar", "0x7000A2C6", "Führer nach Ost-Angmar");
     hunterLocations:AddData("Führer nach Echad Dúnann", "0x70017C81", "Führer nach Echad Dúnann");
-    hunterLocations:AddData("Führer zur 21. Halle", "0x70017C7A", "Führer zur Einundzwanzigsten Halle.");
+    hunterLocations:AddData("Führer zur 21. Halle", "0x70017C7A", "Führer zur Einundzwanzigsten Halle");
     hunterLocations:AddData("Führer zur Dunkelsenke", "0x7001F459", "Führer zur Dunkelsenke");
     hunterLocations:AddData("Führer nach Harndirion", "0x700235EF", "Führer nach Harndirion");
     hunterLocations:AddData("Führer nach Galtrev", "0x7002A93F", "Führer nach Galtrev");
@@ -194,12 +194,12 @@ function TravelDictionaries:CreateDictionaries()
         genLocations:AddData("zum 4. Heim zurückkehren", "0x70025794", "skip");
         genLocations:AddData("zum 5. Heim zurückkehren", "0x70025795", "skip");
         genLocations:AddData("zum 6. Heim zurückkehren", "0x70025796", "skip");
-        genLocations:AddData("zum 7. Heim zurückkehren", "0x7002FF5E", "skip");
-        genLocations:AddData("zum 8. Heim zurückkehren", "0x7002FF5F", "skip");
-        genLocations:AddData("zum 9. Heim zurückkehren", "0x7002FF60", "skip");
-        genLocations:AddData("zum 10. Heim zurückkehren", "0x7002FF61", "skip");
-        genLocations:AddData("zum 11. Heim zurückkehren", "0x7002FF62", "skip");
-        genLocations:AddData("zum 12. Heim zurückkehren", "0x7002FF63", "skip");
+        genLocations:AddData("zum 7. Heim zurückkehren", "0x7002FF5F", "skip");
+        genLocations:AddData("zum 8. Heim zurückkehren", "0x7002FF60", "skip");
+        genLocations:AddData("zum 9. Heim zurückkehren", "0x7002FF61", "skip");
+        genLocations:AddData("zum 10. Heim zurückkehren", "0x7002FF62", "skip");
+        genLocations:AddData("zum 11. Heim zurückkehren", "0x7002FF63", "skip");
+        genLocations:AddData("zum 12. Heim zurückkehren", "0x7002FF64", "skip");
     end
     genLocations:AddData("Zum eigenen Haus reisen", "0x7000D046", "Reist zu Eurem eigenen Heim");
     genLocations:AddData("Zum Sippenhaus reisen", "0x7000D047", "Reist zum Haus Eurer Sippe");
@@ -212,35 +212,39 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Rückkehr zur Feste Guruth", "0x70020441", "Rückkehr zur Feste Guruth");
     repLocations:AddData("Rückkehr nach Düsterwald", "0x7001F374", "Rückkehr zum Düsterwald");
     repLocations:AddData("Rückkehr nach Enedwaith", "0x70021FA2", "Rückkehr nach Enedwaith");
-    repLocations:AddData("Rückkehr nach Galtrev", "0x7002C647", "Kehrt nach Galtrev zurück.");
-    repLocations:AddData("Rückkehr nach Stangard", "0x7002C65D", "Kehrt nach Stangard zurück.");
+    repLocations:AddData("Rückkehr nach Galtrev", "0x7002C647", "Kehrt nach Galtrev zurück");
+    repLocations:AddData("Rückkehr nach Stangard", "0x7002C65D", "Kehrt nach Stangard zurück");
     repLocations:AddData("Rückkehr nach Schneegrenze", "0x70031A46", "Kehrt nach Schneegrenze zurück");
     repLocations:AddData("Rückkehr nach Forlach", "0x70036B5E", "Rückkehr nach Forlach");
-    repLocations:AddData("Rückkehr nach Aldburg", "0x7003DC81", "Kehrt nach Aldburg zurück.");
+    repLocations:AddData("Rückkehr nach Aldburg", "0x7003DC81", "Kehrt nach Aldburg zurück");
     repLocations:AddData("Rückkehr ins Geheimnistal", "0x7004128F", "Rückkehr ins Geheimnistal");
-    repLocations:AddData("Rückkehr nach Helms Klamm", "0x7003DC82", "Kehrt nach Helms Klamm zurück.");
+    repLocations:AddData("Rückkehr nach Helms Klamm", "0x7003DC82", "Kehrt nach Helms Klamm zurück");
     repLocations:AddData("Rückkehr nach Dol Amroth", "0x700411AC", "Rückkehr nach Dol Amroth");
     repLocations:AddData("Rückkehr nach Arnach", "0x70043A6A", "Rückkehr nach Arnach");
-    repLocations:AddData("Rückkehr nach Minas Tirith (Rep)", "0x7004497E", "Rückkehr nach Minas Tirith");
+    repLocations:AddData("Rückkehr nach Minas Tirith", "0x7004497E", "Kehrt nach Minas Tirith zurück.");
+
+    -- Crude Map to Gramsfoot for newb creeps
+    creepLocations:AddData("Grobe Karte nach Gramfuß", "0x70028BBC");
+    creepLocations:AddData("Karte nach Gramfuß", "0x70028BC1");
 
     creepLocations:AddData("Grobe Isenbinge-Karte", "0x70028BB3");
     creepLocations:AddData("Grobe Tol Ascarnen-Karte", "0x70028BB6");
     creepLocations:AddData("Grobe Karte zum Lugazag", "0x70028BB7");
-    creepLocations:AddData("Grobe Karte nach Gramfuß", "0x70028BBC");
     creepLocations:AddData("Grobe Tirith Rhaw-Karte", "0x70028BBE");
     creepLocations:AddData("Grobe Karte nach Grimmwald", "0x70028BBF");
+
     creepLocations:AddData("Minderwertige Isenbinge-Karte", "0x70028BAF");
     creepLocations:AddData("Minderwertige Karte zum Tol Ascarnen", "0x70028BB1");
     creepLocations:AddData("Minderwertige Karte zum Lugazag", "0x70028BB2");
-    -- creepLocations:AddData("Minderwertige Tirith-Rhaw-Karte","0x70028BB0"); -- by PulseDiver
-    creepLocations:AddData("Minderwertige Tirith-Rhaw-Karte", "0x70028BB4"); -- by PulseDiver
+    creepLocations:AddData("Minderwertige Tirith-Rhaw-Karte", "0x70028BB4");
+    -- creepLocations:AddData("Minderwertige Tirith-Rhaw-Karte","0x70028BB0");
     creepLocations:AddData("Minderwertige Karte nach Grimmwald", "0x70028BB9");
+
     creepLocations:AddData("Gute Isenbinge-Karte", "0x70028BC0");
     creepLocations:AddData("Gute Tol Ascarnen-Karte", "0x70028BC2");
     creepLocations:AddData("Gute Lugazag-Karte", "0x70028BB5");
-    creepLocations:AddData("Karte nach Gramfuß", "0x70028BC1");
-    -- creepLocations:AddData("Gute Karte zum Tirith Rhaw","0x70028BB4"); -- by PulseDiver
-    creepLocations:AddData("Gute Karte zum Tirith Rhaw", "0x70028BB0"); -- by PulseDiver
+    creepLocations:AddData("Gute Karte zum Tirith Rhaw", "0x70028BB0");
+    -- creepLocations:AddData("Gute Karte zum Tirith Rhaw","0x70028BB4");
     creepLocations:AddData("Gute Grimmwald-Karte", "0x70028BBD");
 end
 

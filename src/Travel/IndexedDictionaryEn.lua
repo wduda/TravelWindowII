@@ -236,15 +236,15 @@ function TravelDictionaries:CreateDictionaries()
     creepLocations:AddData("Poor Map to Isendeep", "0x70028BAF");
     creepLocations:AddData("Poor Map to Tol Ascarnen", "0x70028BB1");
     creepLocations:AddData("Poor Map to Lugazag", "0x70028BB2");
-    creepLocations:AddData("Poor Map to Tirith Rhaw", "0x70028BB4"); -- by PulseDiver
-    -- creepLocations:AddData("Poor Map to Tirith Rhaw","0x70028BB0"); -- by PulseDiver
+    creepLocations:AddData("Poor Map to Tirith Rhaw", "0x70028BB4");
+    -- creepLocations:AddData("Poor Map to Tirith Rhaw","0x70028BB0");
     creepLocations:AddData("Poor Map to Grimwood", "0x70028BB9");
 
     creepLocations:AddData("Good Map to Isendeep", "0x70028BC0");
     creepLocations:AddData("Good Map to Tol Ascarnen", "0x70028BC2");
     creepLocations:AddData("Good Map to Lugazag", "0x70028BB5");
-    creepLocations:AddData("Good Map to Tirith Rhaw", "0x70028BB0"); -- by PulseDiver
-    -- creepLocations:AddData("Good Map to Tirith Rhaw","0x70028BB4"); -- by PulseDiver
+    creepLocations:AddData("Good Map to Tirith Rhaw", "0x70028BB0");
+    -- creepLocations:AddData("Good Map to Tirith Rhaw","0x70028BB4");
     creepLocations:AddData("Good Map to Grimwood", "0x70028BBD");
 end
 
