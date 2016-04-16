@@ -6,7 +6,7 @@ import "Turbine.UI.Lotro";
 import "DhorPlugins.Extensions";
 import "DhorPlugins.Utils.BitOps";
 
---[[ This is the simple window that can be used to toggle 	]] --
+--[[ This is the simple window that can be used to toggle ]] --
 --[[ the main Travel Window visible.]] --
 
 TravelButton = class(Turbine.UI.Extensions.SimpleWindow);
@@ -115,7 +115,3 @@ end
 function TravelButton:UpdateOpacity()
     self:SetOpacity(settings.toggleMinOpacity);
 end
-
-
-
-	

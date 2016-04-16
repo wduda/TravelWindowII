@@ -6,9 +6,9 @@ import "Turbine.UI.Lotro";
 import "DhorPlugins.Extensions";
 
 --[[
-	This is an extension of the scrollable control
-	It will allow the creation of a panel that can
-	contain its own controls
+    This is an extension of the scrollable control
+    It will allow the creation of a panel that can
+    contain its own controls
 ]] --
 
 DPanel = class(Turbine.UI.Control);
@@ -57,9 +57,9 @@ function DPanel:Update(sender, args)
 end
 
 --[[ 
-	This is the function that is called when
-	when a DTabButton registers a Mouse
-	Click Event
+    This is the function that is called when
+    when a DTabButton registers a Mouse
+    Click Event
 ]] --
 function DPanel:TabMouseClick(sender)
     self.selectedPage = sender:GetIndex();
@@ -71,8 +71,8 @@ function DPanel:SetTab(value)
 end
 
 --[[
-	Call this function to add a page to
-	the tab panel. Use a TextBox as a panel
+    Call this function to add a page to
+    the tab panel. Use a TextBox as a panel
 ]] --
 function DPanel:AddTab(Tab)
     self.pageCount = self.pageCount + 1;
@@ -100,10 +100,10 @@ function DPanel:AddTab(Tab)
 end
 
 --[[
-	This function will go through each button
-	in the list and adjust them based on how
-	wide the panel is, and on how many panels
-	are in the tabbed panel
+    This function will go through each button
+    in the list and adjust them based on how
+    wide the panel is, and on how many panels
+    are in the tabbed panel
 ]] --
 function DPanel:UpdateTabs()
 
@@ -137,7 +137,7 @@ function DPanel:UpdateTabs()
 end
 
 
---	Function for changing the button visibility
+-- function for changing the button visibility
 function DPanel:SetButtonsVisible(value)
     self.showButtons = value;
     self:UpdateTabs();
