@@ -25,10 +25,6 @@ mapHomeString = "Дорога домой";
 glanMapString = "Точная карта дороги в Глан Врайг";
 glanMapItemString = "Точная карта дороги в Глан Врайг";
 
--- travel ration strings
-rationItemString = "Дорожные припасы";
-rationLabelString = "Дорожные припасы:";
-
 -- adding map strings
 mapInstructionString = "Перетащите карту из сумки в слот ниже " ..
         "для добавления новой карты.";
@@ -232,6 +228,7 @@ function TravelDictionaries:CreateDictionaries()
     -- repLocations:AddData("Return to Dol Amroth (Rep)", "0x700411AC", "Return to Dol Amroth");
     -- repLocations:AddData("Return to Arnach (Rep)", "0x70043A6A", "Return to Arnach");
     -- repLocations:AddData("Return to Minas Tirith (Rep)", "0x7004497E", "Return to Minas Tirith");
+    -- repLocations:AddData("Return to the War-Stead (Rep)", "0x700459A9", "Return to the War-Stead");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Грубая карта пути к Подножию Грэм", "0x70028BBC", "Грубая карта пути к Подножию Грэм");

@@ -18,10 +18,6 @@ mapHomeString = "Map Home";
 glanMapString = "Glân Vraig Map";
 glanMapItemString = "Map to Glân Vraig";
 
--- travel ration strings
-rationItemString = "Travelling Ration";
-rationLabelString = "Travel Rations:";
-
 -- adding map strings
 mapInstructionString = "Drag your maps from your inventory onto the " ..
         "quickslot below.  Then press the button " ..
@@ -129,9 +125,8 @@ function TravelDictionaries:GetLocations()
     return genLocations, hunterLocations, wardenLocations, racialLocations, repLocations;
 end
 
+-- add the data to custom dictionaries to maintain the order
 function TravelDictionaries:CreateDictionaries()
-    -- add the data to custom dictionaries to maintain the order
-
     hunterLocations:AddData("Return to Camp", "0x7000A2C1", "Return to Camp");
     hunterLocations:AddData("Guide to Bree", "0x70003F42", "Guide to Bree");
     hunterLocations:AddData("Guide to Thorin's Hall", "0x70003F41", "Guide to Thorin's Hall");
@@ -222,6 +217,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Return to Dol Amroth (Rep)", "0x700411AC", "Return to Dol Amroth");
     repLocations:AddData("Return to Arnach (Rep)", "0x70043A6A", "Return to Arnach");
     repLocations:AddData("Return to Minas Tirith (Rep)", "0x7004497E", "Return to Minas Tirith");
+    repLocations:AddData("Return to the War-Stead (Rep)", "0x700459A9", "Return to the War-Stead");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Crude Map to Gramsfoot", "0x70028BBC");

@@ -110,6 +110,8 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Dol Amroth
         { -1, -1 },     -- Arnach
         { -1, -1 },     -- Minas Tirith
+        { -1, -1 },     -- War-Stead
+
         -- Racial skills
         { -1, -1 },     -- Bree
         { -1, -1 },     -- Michel Delving

@@ -19,10 +19,6 @@ mapHomeString = "Map Home";
 glanMapString = "Carte précise pour aller à Glân Vraig";
 glanMapItemString = "Carte précise pour aller à Glân Vraig";
 
--- travel ration strings
-rationItemString = "Ration de  voyage";
-rationLabelString = "Ration de  voyage :";
-
 -- adding map strings
 mapInstructionString = "Drag your maps from your inventory onto the " ..
         "quickslot below.  Then press the button " ..
@@ -223,6 +219,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Retour à Dol Amroth (Rep)", "0x700411AC", "Retour à Dol Amroth");
     repLocations:AddData("Retour à Arnach (Rep)", "0x70043A6A", "Retour à Arnach");
     repLocations:AddData("Retour à Minas Tirith (Rep)", "0x7004497E", "Retour à Minas Tirith");
+    repLocations:AddData("Return to the War-Stead (Rep)", "0x700459A9", "Return to the War-Stead");
 
     creepLocations:AddData("Carte grossière pour aller au Gouffre d'Isen", "0x70028BB3");
     creepLocations:AddData("Carte grossière pour aller à Tol Ascarnen", "0x70028BB6");

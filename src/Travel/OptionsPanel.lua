@@ -15,8 +15,7 @@ function OptionsPanel:Constructor(parent)
     self.loaded = false;
 
     -- set size of window
-    self.width = 500;
-    -- self.height = 700;
+    self.width = 800;
     self.height = 800;
     self.windowWidth, self.windowHeight = Turbine.UI.Display:GetSize();
 
@@ -44,16 +43,16 @@ function OptionsPanel:Constructor(parent)
     self.OptionTabs:SetVisible(true);
 
     -- create the tabs
+    self.GeneralTab = Turbine.UI.Control();
     self.EnabledTab = Turbine.UI.Control();
     self.SortTab = Turbine.UI.Control();
-    self.GeneralTab = Turbine.UI.Control();
 
     -- populate each tab
+    self:AddGeneralItems();
     self:AddBoxes();
     self:AddItems();
     self:AddSortList();
     self:AddSortButtons();
-    self:AddGeneralItems();
 
     -- add the tabs
     self.OptionTabs:AddTab(self.GeneralTab);
@@ -384,7 +383,7 @@ function OptionsPanel:AddItems()
     if (playerClass == Turbine.Gameplay.Class.Hunter) then
         offsetCounter = 0;
         for i = 1, travelCount[1], 1 do
-            self:Add(counter, hunterLocations:KeyAtIndex(i), 250, 25, offsetCounter);
+            self:Add(counter, hunterLocations:KeyAtIndex(i), 525, 25, offsetCounter);
             counter = counter + 1;
             offsetCounter = offsetCounter + 1;
         end
@@ -394,7 +393,7 @@ function OptionsPanel:AddItems()
     if (playerClass == 194) then
         offsetCounter = 0;
         for i = 1, travelCount[2], 1 do
-            self:Add(counter, wardenLocations:KeyAtIndex(i), 250, 25, offsetCounter);
+            self:Add(counter, wardenLocations:KeyAtIndex(i), 525, 25, offsetCounter);
             counter = counter + 1;
             offsetCounter = offsetCounter + 1;
         end
@@ -404,7 +403,7 @@ function OptionsPanel:AddItems()
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         offsetCounter = 0;
         for i = 1, travelCount[4], 1 do
-            self:Add(counter, repLocations:KeyAtIndex(i), 5, 335, offsetCounter);
+            self:Add(counter, repLocations:KeyAtIndex(i), 265, 25, offsetCounter);
             counter = counter + 1;
             offsetCounter = offsetCounter + 1;
         end
@@ -471,7 +470,7 @@ function OptionsPanel:AddBoxes()
         self.genLabel:SetVisible(true);
 
         self.genBox = Turbine.UI.Lotro.TextBox();
-        self.genBox:SetSize(230, 290);
+        self.genBox:SetSize(230, 310);
         self.genBox:SetPosition(0, 20);
         self.genBox:SetZOrder(0);
         self.genBox:SetParent(self.EnabledTab);
@@ -481,7 +480,7 @@ function OptionsPanel:AddBoxes()
         -- add a label and box for the reputation travel skills
         self.repLabel = Turbine.UI.Label();
         self.repLabel:SetSize(200, 20);
-        self.repLabel:SetPosition(0, 310);
+        self.repLabel:SetPosition(260, 0);
         self.repLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
         self.repLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
         self.repLabel:SetText(repLabelString);
@@ -489,8 +488,8 @@ function OptionsPanel:AddBoxes()
         self.repLabel:SetVisible(true);
 
         self.repBox = Turbine.UI.Lotro.TextBox();
-        self.repBox:SetSize(230, 370);
-        self.repBox:SetPosition(0, 330);
+        self.repBox:SetSize(230, 390);
+        self.repBox:SetPosition(260, 20);
         self.repBox:SetZOrder(0);
         self.repBox:SetParent(self.EnabledTab);
         self.repBox:SetReadOnly(true);
@@ -500,7 +499,7 @@ function OptionsPanel:AddBoxes()
         if ((playerClass == Turbine.Gameplay.Class.Hunter) or (playerClass == 194)) then
             self.classLabel = Turbine.UI.Label();
             self.classLabel:SetSize(200, 20);
-            self.classLabel:SetPosition(245, 0);
+            self.classLabel:SetPosition(520, 0);
             self.classLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
             self.classLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
             self.classLabel:SetText(classLabelString);
@@ -509,13 +508,11 @@ function OptionsPanel:AddBoxes()
 
             self.classBox = Turbine.UI.Lotro.TextBox();
             if (playerClass == Turbine.Gameplay.Class.Hunter) then
-                -- self.classBox:SetSize(230, 490);
                 self.classBox:SetSize(230, 530);
             else
-                -- self.classBox:SetSize(230, 290);
-                self.classBox:SetSize(230, 340);
+                self.classBox:SetSize(230, 390);
             end
-            self.classBox:SetPosition(245, 20);
+            self.classBox:SetPosition(520, 20);
             self.classBox:SetZOrder(0);
             self.classBox:SetParent(self.EnabledTab);
             self.classBox:SetReadOnly(true);
@@ -544,7 +541,7 @@ function OptionsPanel:AddBoxes()
     -- add a check skills button
     self.checkSkillsButton = Turbine.UI.Lotro.Button();
     self.checkSkillsButton:SetSize(200, 20);
-    self.checkSkillsButton:SetPosition(250, 690);
+    self.checkSkillsButton:SetPosition(300, 690);
     self.checkSkillsButton:SetText(checkSkillsString);
     self.checkSkillsButton:SetParent(self.EnabledTab);
     self.checkSkillsButton:SetVisible(true);
@@ -560,7 +557,6 @@ function OptionsPanel:AddSortList()
 
     -- create a listbox for all the shortcuts to be sorted
     self.sortListBox = Turbine.UI.ListBox();
-    --   self.sortListBox:SetSize(280,490);
     self.sortListBox:SetSize(280, 670);
     self.sortListBox:SetPosition(200, 5);
     self.sortListBox:SetParent(self.SortTab);
