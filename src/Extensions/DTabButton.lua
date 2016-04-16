@@ -1,6 +1,6 @@
 --[[
-	This is an extension of the Turbine Control class used to create
-	a button composed of 3 images that can be used on a tab panel.
+    This is an extension of the Turbine Control class used to create
+    a button composed of 3 images that can be used on a tab panel.
 ]] --
 
 import "Turbine";

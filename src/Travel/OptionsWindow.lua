@@ -12,8 +12,7 @@ function OptionsWindow:Constructor(parent)
     Turbine.UI.Lotro.Window.Constructor(self);
 
     self.loaded = false;
-    self.width = 500;
-    -- self.height = 700;
+    self.width = 800;
     self.height = 800;
     self.windowWidth, self.windowHeight = Turbine.UI.Display:GetSize();
 

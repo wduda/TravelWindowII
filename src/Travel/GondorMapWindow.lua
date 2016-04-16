@@ -110,6 +110,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { 300, 470 },   -- Dol Amroth
         { 625, 450 },   -- Arnach
         { 625, 370 },   -- Minas Tirith
+        { 525, 290 },   -- War-Stead
+
         -- Racial skills
         { -1, -1 },     -- Bree
         { -1, -1 },     -- Michel Delving

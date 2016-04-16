@@ -62,13 +62,6 @@ function TravelPulldownTab:Constructor(toplevel)
     end
 
     -- check for a right mouse button event to open menu
-    -- self.rationLabel.MouseClick = function( sender, args )
-    -- if(args.Button == Turbine.UI.MouseButton.Right) then
-    menu:ShowMenu();
-    -- end
-    -- end
-
-    -- check for a right mouse button event to open menu
     self.scrollLabel.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
             menu:ShowMenu();

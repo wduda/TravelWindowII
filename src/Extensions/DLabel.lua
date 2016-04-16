@@ -1,6 +1,6 @@
 --[[
-	This is an extension of the Turbine Label class.  It can store it's own data,
-	and index.
+    This is an extension of the Turbine Label class.  It can store it's own data,
+    and index.
 ]] --
 
 import "Turbine";
