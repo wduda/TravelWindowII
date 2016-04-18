@@ -228,7 +228,7 @@ function TravelDictionaries:CreateDictionaries()
     -- repLocations:AddData("Return to Dol Amroth (Rep)", "0x700411AC", "Return to Dol Amroth");
     -- repLocations:AddData("Return to Arnach (Rep)", "0x70043A6A", "Return to Arnach");
     -- repLocations:AddData("Return to Minas Tirith (Rep)", "0x7004497E", "Return to Minas Tirith");
-    -- repLocations:AddData("Return to the War-Stead (Rep)", "0x700459A9", "Return to the War-Stead");
+    -- repLocations:AddData("Return to the War-stead (Rep)", "0x700459A9", "Return to the War-stead");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Грубая карта пути к Подножию Грэм", "0x70028BBC", "Грубая карта пути к Подножию Грэм");

@@ -219,7 +219,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Retour à Dol Amroth (Rep)", "0x700411AC", "Retour à Dol Amroth");
     repLocations:AddData("Retour à Arnach (Rep)", "0x70043A6A", "Retour à Arnach");
     repLocations:AddData("Retour à Minas Tirith (Rep)", "0x7004497E", "Retour à Minas Tirith");
-    repLocations:AddData("Return to the War-Stead (Rep)", "0x700459A9", "Return to the War-Stead");
+    repLocations:AddData("Return to the War-stead (Rep)", "0x700459A9", "Return to the War-stead");
 
     creepLocations:AddData("Carte grossière pour aller au Gouffre d'Isen", "0x70028BB3");
     creepLocations:AddData("Carte grossière pour aller à Tol Ascarnen", "0x70028BB6");
