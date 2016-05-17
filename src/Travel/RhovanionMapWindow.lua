@@ -71,6 +71,8 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Dol Amroth
         { -1, -1 },     -- Arnach
         { -1, -1 },     -- Minas Tirith
+        { -1, -1 },     -- War-stead
+
         -- Muster skills
         { -1, -1 },     -- Ost Guruth
         { -1, -1 },     -- Esteldin
@@ -91,6 +93,8 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Dol Amroth
         { -1, -1 },     -- Arnach
         { -1, -1 },     -- Minas Tirith
+        { -1, -1 },     -- War-stead
+
         -- Reputation skills
         { -1, -1 },     -- Thorin's Hall
         { -1, -1 },     -- Bree
@@ -180,7 +184,6 @@ function RhovanionMapWindow:AddShortcuts()
             end
         end
 
-        --Turbine.Shell.WriteLine(counter);
         counter = counter + 1;
     end
 end

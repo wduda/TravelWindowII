@@ -154,6 +154,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Führer nach Dol Amroth", "0x70041197", "Führer nach Dol Amroth");
     hunterLocations:AddData("Führer nach Arnach", "0x70043A63", "Führer nach Arnach");
     hunterLocations:AddData("Führer nach Minas Tirith", "0x70044985", "Führer nach Minas Tirith");
+    hunterLocations:AddData("Guide to the War-stead", "0x700459AF", "Guide to the War-stead");
 
     wardenLocations:AddData("Appell in der Feste Guruth", "0x70014786", "Appell in der Feste Guruth");
     wardenLocations:AddData("Appell in Esteldín", "0x70014798", "Appell in Esteldín");
@@ -174,6 +175,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Appell in Dol Amroth", "0x70041198", "Appell in Dol Amroth");
     wardenLocations:AddData("Appell in Arnach", "0x70043A66", "Appell in Arnach");
     wardenLocations:AddData("Appell in Minas Tirith", "0x70044982", "Appell in Minas Tirith");
+    wardenLocations:AddData("Muster in the War-stead", "0x700459AA", "Muster in the War-stead");
 
     racialLocations:AddData("Rückkehr nach Bree (Rasse)", "0x700062F6", "Rückkehr nach Bree");
     racialLocations:AddData("Rückkehr ins Auenland (Rasse)", "0x700062C8", "Rückkehr ins Auenland");

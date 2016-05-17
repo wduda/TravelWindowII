@@ -161,6 +161,8 @@ function TravelDictionaries:CreateDictionaries()
     -- hunterLocations:AddData("Guide to Dol Amroth", "0x70041197", "Guide to Dol Amroth");
     -- hunterLocations:AddData("Guide to Arnach", "0x70043A63", "Guide to Arnach");
     -- hunterLocations:AddData("Guide to Minas Tirith", "0x70044985", "Guide to Minas Tirith");
+    -- hunterLocations:AddData("Guide to the War-stead", "0x700459AF", "Guide to the War-stead");
+
 
     wardenLocations:AddData("Сбор в Ост Гуруте", "0x70014786", "Сбор в Ост Гуруте");
     wardenLocations:AddData("Сбор в Эстельдине", "0x70014798", "Сбор в Эстельдине");
@@ -182,6 +184,7 @@ function TravelDictionaries:CreateDictionaries()
     -- wardenLocations:AddData("Muster in Dol Amroth", "0x70041198", "Muster in Dol Amroth");
     -- wardenLocations:AddData("Muster in Arnach", "0x70043A66", "Muster in Arnach");
     -- wardenLocations:AddData("Muster in Minas Tirith", "0x70044982", "Muster in Minas Tirith");
+    -- wardenLocations:AddData("Muster in the War-stead", "0x700459AA", "Muster in the War-stead");
 
     racialLocations:AddData("Дорога в Бри (Рас.)", "0x700062F6", "Дорога в Бри");
     racialLocations:AddData("Дорога в Шир (Рас.)", "0x700062C8", "Дорога в Шир");

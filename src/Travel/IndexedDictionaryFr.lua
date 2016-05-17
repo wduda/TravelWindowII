@@ -155,6 +155,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Guide vers Dol Amroth", "0x70041197", "Guide vers Dol Amroth");
     hunterLocations:AddData("Guide vers Arnach", "0x70043A63", "Guide vers Arnach");
     hunterLocations:AddData("Guide vers Minas Tirith", "0x70044985", "Guide vers Minas Tirith");
+    hunterLocations:AddData("Guide to the War-stead", "0x700459AF", "Guide to the War-stead");
 
     wardenLocations:AddData("Rassemblement à Ost Guruth", "0x70014786", "Rassemblement à Ost Guruth");
     wardenLocations:AddData("Rassemblement à Esteldin", "0x70014798", "Rassemblement à Esteldin");
@@ -175,6 +176,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Rassemblement au Dol Amroth", "0x70041198", "Rassemblement au Dol Amroth");
     wardenLocations:AddData("Rassemblement au Arnach", "0x70043A66", "Rassemblement au Arnach");
     wardenLocations:AddData("Rassemblement au Minas Tirith", "0x70044982", "Rassemblement au Minas Tirith");
+    wardenLocations:AddData("Muster in the War-stead", "0x700459AA", "Muster in the War-stead");
 
     racialLocations:AddData("Retour à Bree", "0x700062F6", "Retour à Bree");
     racialLocations:AddData("Retournez dans la Comté", "0x700062C8", "Retournez dans la Comté");
