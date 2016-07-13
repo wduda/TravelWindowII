@@ -155,7 +155,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Guide vers Dol Amroth", "0x70041197", "Guide vers Dol Amroth");
     hunterLocations:AddData("Guide vers Arnach", "0x70043A63", "Guide vers Arnach");
     hunterLocations:AddData("Guide vers Minas Tirith", "0x70044985", "Guide vers Minas Tirith");
-    hunterLocations:AddData("Guide to the War-stead", "0x700459AF", "Guide to the War-stead");
+    hunterLocations:AddData("Guide pour se rendre au Camp Militaire", "0x700459AF", "Guide pour se rendre au Camp Militaire");
 
     wardenLocations:AddData("Rassemblement à Ost Guruth", "0x70014786", "Rassemblement à Ost Guruth");
     wardenLocations:AddData("Rassemblement à Esteldin", "0x70014798", "Rassemblement à Esteldin");
@@ -176,7 +176,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Rassemblement au Dol Amroth", "0x70041198", "Rassemblement au Dol Amroth");
     wardenLocations:AddData("Rassemblement au Arnach", "0x70043A66", "Rassemblement au Arnach");
     wardenLocations:AddData("Rassemblement au Minas Tirith", "0x70044982", "Rassemblement au Minas Tirith");
-    wardenLocations:AddData("Muster in the War-stead", "0x700459AA", "Muster in the War-stead");
+    wardenLocations:AddData("Rassemblement au Camp Militaire", "0x700459AA", "Rassemblement au Camp Militaire");
 
     racialLocations:AddData("Retour à Bree", "0x700062F6", "Retour à Bree");
     racialLocations:AddData("Retournez dans la Comté", "0x700062C8", "Retournez dans la Comté");
@@ -208,7 +208,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Retour au Marché de Lalia", "0x700364B1", "Retour au Marché de Lalia");
     repLocations:AddData("Retour à Grand'Cave (Rep)", "0x70023262", "Retour à Grand'Cave");
     repLocations:AddData("Retour à Fondcombe (Rep)", "0x70023263", "Retour à Fondcombe");
-    repLocations:AddData("Retournez à Ost Guruth (Rep)", "0x70020441", "Retournez à Ost Guruth.");
+    repLocations:AddData("Retournez à Ost Guruth (Rep)", "0x70020441", "Retournez à Ost Guruth");
     repLocations:AddData("Retour dans La Forêt Noire (Rep)", "0x7001F374", "Retour dans la Forêt Noire");
     repLocations:AddData("Retour en Enedwaith (Rep)", "0x70021FA2", "Retour en Enedwaith");
     repLocations:AddData("Retour à Galtrev (Rep)", "0x7002C647", "Retour à Galtrev");
@@ -221,7 +221,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Retour à Dol Amroth (Rep)", "0x700411AC", "Retour à Dol Amroth");
     repLocations:AddData("Retour à Arnach (Rep)", "0x70043A6A", "Retour à Arnach");
     repLocations:AddData("Retour à Minas Tirith (Rep)", "0x7004497E", "Retour à Minas Tirith");
-    repLocations:AddData("Return to the War-stead (Rep)", "0x700459A9", "Return to the War-stead");
+    repLocations:AddData("Retour au Camp Militaire (Rep)", "0x700459A9", "Retour au Camp Militaire");
 
     creepLocations:AddData("Carte grossière pour aller au Gouffre d'Isen", "0x70028BB3");
     creepLocations:AddData("Carte grossière pour aller à Tol Ascarnen", "0x70028BB6");

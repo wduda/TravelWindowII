@@ -154,7 +154,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Führer nach Dol Amroth", "0x70041197", "Führer nach Dol Amroth");
     hunterLocations:AddData("Führer nach Arnach", "0x70043A63", "Führer nach Arnach");
     hunterLocations:AddData("Führer nach Minas Tirith", "0x70044985", "Führer nach Minas Tirith");
-    hunterLocations:AddData("Guide to the War-stead", "0x700459AF", "Guide to the War-stead");
+    hunterLocations:AddData("Führer zum Kriegslager der Rohirrim", "0x700459AF", "Führer zum Kriegslager der Rohirrim");
 
     wardenLocations:AddData("Appell in der Feste Guruth", "0x70014786", "Appell in der Feste Guruth");
     wardenLocations:AddData("Appell in Esteldín", "0x70014798", "Appell in Esteldín");
@@ -175,7 +175,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Appell in Dol Amroth", "0x70041198", "Appell in Dol Amroth");
     wardenLocations:AddData("Appell in Arnach", "0x70043A66", "Appell in Arnach");
     wardenLocations:AddData("Appell in Minas Tirith", "0x70044982", "Appell in Minas Tirith");
-    wardenLocations:AddData("Muster in the War-stead", "0x700459AA", "Muster in the War-stead");
+    wardenLocations:AddData("Appell im Kriegslager", "0x700459AA", "Appell im Kriegslager");
 
     racialLocations:AddData("Rückkehr nach Bree (Rasse)", "0x700062F6", "Rückkehr nach Bree");
     racialLocations:AddData("Rückkehr ins Auenland (Rasse)", "0x700062C8", "Rückkehr ins Auenland");
@@ -220,7 +220,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Rückkehr nach Dol Amroth", "0x700411AC", "Rückkehr nach Dol Amroth");
     repLocations:AddData("Rückkehr nach Arnach", "0x70043A6A", "Rückkehr nach Arnach");
     repLocations:AddData("Rückkehr nach Minas Tirith", "0x7004497E", "Kehrt nach Minas Tirith zurück.");
-    repLocations:AddData("Return to the War-stead (Rep)", "0x700459A9", "Return to the War-stead");
+    repLocations:AddData("Zurück zum Kriegslager der Rohirrim", "0x700459A9", "Zurück zum Kriegslager der Rohirrim");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Grobe Karte nach Gramfuß", "0x70028BBC");
