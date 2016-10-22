@@ -156,6 +156,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Guide vers Arnach", "0x70043A63", "Guide vers Arnach");
     hunterLocations:AddData("Guide vers Minas Tirith", "0x70044985", "Guide vers Minas Tirith");
     hunterLocations:AddData("Guide pour se rendre au Camp Militaire", "0x700459AF", "Guide pour se rendre au Camp Militaire");
+    hunterLocations:AddData("Guide to after-battle Minas Tirith", "0x70046CBB", "Guide to after-battle Minas Tirith");
 
     wardenLocations:AddData("Rassemblement à Ost Guruth", "0x70014786", "Rassemblement à Ost Guruth");
     wardenLocations:AddData("Rassemblement à Esteldin", "0x70014798", "Rassemblement à Esteldin");
@@ -177,6 +178,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Rassemblement au Arnach", "0x70043A66", "Rassemblement au Arnach");
     wardenLocations:AddData("Rassemblement au Minas Tirith", "0x70044982", "Rassemblement au Minas Tirith");
     wardenLocations:AddData("Rassemblement au Camp Militaire", "0x700459AA", "Rassemblement au Camp Militaire");
+    wardenLocations:AddData("Muster in after-battle Minas Tirith", "0x70046CBF", "Muster in after-battle Minas Tirith");
 
     racialLocations:AddData("Retour à Bree", "0x700062F6", "Retour à Bree");
     racialLocations:AddData("Retournez dans la Comté", "0x700062C8", "Retournez dans la Comté");
@@ -222,6 +224,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Retour à Arnach (Rep)", "0x70043A6A", "Retour à Arnach");
     repLocations:AddData("Retour à Minas Tirith (Rep)", "0x7004497E", "Retour à Minas Tirith");
     repLocations:AddData("Retour au Camp Militaire (Rep)", "0x700459A9", "Retour au Camp Militaire");
+    repLocations:AddData("Return to after-battle Minas Tirith (Rep)", "0x70046CC0", "Return to after-battle Minas Tirith");
 
     creepLocations:AddData("Carte grossière pour aller au Gouffre d'Isen", "0x70028BB3");
     creepLocations:AddData("Carte grossière pour aller à Tol Ascarnen", "0x70028BB6");

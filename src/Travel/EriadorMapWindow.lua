@@ -72,6 +72,7 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Arnach
         { -1, -1 },     -- Minas Tirith
         { -1, -1 },     -- War-Stead
+        { -1, -1 },     -- After-Battle Minas Tirith
 
         -- Muster skills
         { 710, 390 },   -- Ost Guruth
@@ -94,6 +95,7 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Arnach
         { -1, -1 },     -- Minas Tirith
         { -1, -1 },     -- War-Stead
+        { -1, -1 },     -- After-Battle Minas Tirith
 
         -- Reputation skills
         { 330, 300 },   -- Thorin's Hall
@@ -115,6 +117,7 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Arnach
         { -1, -1 },     -- Minas Tirith
         { -1, -1 },     -- War-Stead
+        { -1, -1 },     -- After-Battle Minas Tirith
 
         -- Racial skills
         { 625, 340 },   -- Bree

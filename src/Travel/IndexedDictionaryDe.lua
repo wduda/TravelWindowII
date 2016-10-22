@@ -155,6 +155,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Führer nach Arnach", "0x70043A63", "Führer nach Arnach");
     hunterLocations:AddData("Führer nach Minas Tirith", "0x70044985", "Führer nach Minas Tirith");
     hunterLocations:AddData("Führer zum Kriegslager der Rohirrim", "0x700459AF", "Führer zum Kriegslager der Rohirrim");
+    hunterLocations:AddData("Guide to after-battle Minas Tirith", "0x70046CBB", "Guide to after-battle Minas Tirith");
 
     wardenLocations:AddData("Appell in der Feste Guruth", "0x70014786", "Appell in der Feste Guruth");
     wardenLocations:AddData("Appell in Esteldín", "0x70014798", "Appell in Esteldín");
@@ -176,6 +177,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Appell in Arnach", "0x70043A66", "Appell in Arnach");
     wardenLocations:AddData("Appell in Minas Tirith", "0x70044982", "Appell in Minas Tirith");
     wardenLocations:AddData("Appell im Kriegslager", "0x700459AA", "Appell im Kriegslager");
+    wardenLocations:AddData("Muster in after-battle Minas Tirith", "0x70046CBF", "Muster in after-battle Minas Tirith");
 
     racialLocations:AddData("Rückkehr nach Bree (Rasse)", "0x700062F6", "Rückkehr nach Bree");
     racialLocations:AddData("Rückkehr ins Auenland (Rasse)", "0x700062C8", "Rückkehr ins Auenland");
@@ -221,6 +223,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Rückkehr nach Arnach", "0x70043A6A", "Rückkehr nach Arnach");
     repLocations:AddData("Rückkehr nach Minas Tirith", "0x7004497E", "Kehrt nach Minas Tirith zurück.");
     repLocations:AddData("Zurück zum Kriegslager der Rohirrim", "0x700459A9", "Zurück zum Kriegslager der Rohirrim");
+    repLocations:AddData("Return to after-battle Minas Tirith (Rep)", "0x70046CC0", "Return to after-battle Minas Tirith");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Grobe Karte nach Gramfuß", "0x70028BBC");

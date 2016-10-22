@@ -72,6 +72,7 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { 600, 450 },   -- Arnach
         { 600, 370 },   -- Minas Tirith
         { 500, 290 },   -- War-Stead
+        { 600, 395 },   -- Minas Tirith
 
         -- Muster skills
         { -1, -1 },     -- Ost Guruth
@@ -94,6 +95,7 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { 600, 450 },   -- Arnach
         { 600, 370 },   -- Minas Tirith
         { 500, 290 },   -- War-Stead
+        { 600, 395 },   -- Minas Tirith
 
         -- Reputation skills
         { -1, -1 },     -- Thorin's Hall
@@ -115,6 +117,7 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { 625, 450 },   -- Arnach
         { 625, 370 },   -- Minas Tirith
         { 525, 290 },   -- War-Stead
+        { 625, 395 },   -- Minas Tirith
 
         -- Racial skills
         { -1, -1 },     -- Bree
