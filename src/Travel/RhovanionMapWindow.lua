@@ -73,6 +73,8 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Minas Tirith
         { -1, -1 },     -- War-stead
         { -1, -1 },     -- After-Battle Minas Tirith
+        { -1, -1 },     -- Osgiliath
+        { -1, -1 },     -- Henneth Annûn
 
         -- Muster skills
         { -1, -1 },     -- Ost Guruth
@@ -96,6 +98,8 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Minas Tirith
         { -1, -1 },     -- War-stead
         { -1, -1 },     -- After-Battle Minas Tirith
+        { -1, -1 },     -- Osgiliath
+        { -1, -1 },     -- Henneth Annûn
 
         -- Reputation skills
         { -1, -1 },     -- Thorin's Hall
@@ -118,6 +122,8 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Minas Tirith
         { -1, -1 },     -- War-Stead
         { -1, -1 },     -- After-Battle Minas Tirith
+        { -1, -1 },     -- Henneth Annûn
+        { -1, -1 },     -- Osgiliath
 
         -- Racial skills
         { -1, -1 },     -- Bree

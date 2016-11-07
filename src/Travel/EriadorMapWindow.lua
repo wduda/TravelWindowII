@@ -73,6 +73,8 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Minas Tirith
         { -1, -1 },     -- War-Stead
         { -1, -1 },     -- After-Battle Minas Tirith
+        { -1, -1 },     -- Henneth Annûn
+        { -1, -1 },     -- Osgiliath
 
         -- Muster skills
         { 710, 390 },   -- Ost Guruth
@@ -96,6 +98,8 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Minas Tirith
         { -1, -1 },     -- War-Stead
         { -1, -1 },     -- After-Battle Minas Tirith
+        { -1, -1 },     -- Henneth Annûn
+        { -1, -1 },     -- Osgiliath
 
         -- Reputation skills
         { 330, 300 },   -- Thorin's Hall
@@ -118,6 +122,8 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Minas Tirith
         { -1, -1 },     -- War-Stead
         { -1, -1 },     -- After-Battle Minas Tirith
+        { -1, -1 },     -- Henneth Annûn
+        { -1, -1 },     -- Osgiliath
 
         -- Racial skills
         { 625, 340 },   -- Bree

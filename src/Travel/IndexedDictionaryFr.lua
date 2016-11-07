@@ -157,6 +157,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Guide vers Minas Tirith", "0x70044985", "Guide vers Minas Tirith");
     hunterLocations:AddData("Guide pour se rendre au Camp Militaire", "0x700459AF", "Guide pour se rendre au Camp Militaire");
     hunterLocations:AddData("Guide to after-battle Minas Tirith", "0x70046CBB", "Guide to after-battle Minas Tirith");
+    hunterLocations:AddData("Guide to Henneth Annûn", "0x70047077", "Guide to Henneth Annûn");
+    hunterLocations:AddData("Guide to after-battle Osgiliath", "0x70047074", "Guide to after-battle Osgiliath");
 
     wardenLocations:AddData("Rassemblement à Ost Guruth", "0x70014786", "Rassemblement à Ost Guruth");
     wardenLocations:AddData("Rassemblement à Esteldin", "0x70014798", "Rassemblement à Esteldin");
@@ -179,6 +181,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Rassemblement au Minas Tirith", "0x70044982", "Rassemblement au Minas Tirith");
     wardenLocations:AddData("Rassemblement au Camp Militaire", "0x700459AA", "Rassemblement au Camp Militaire");
     wardenLocations:AddData("Muster in after-battle Minas Tirith", "0x70046CBF", "Muster in after-battle Minas Tirith");
+    wardenLocations:AddData("Muster in Henneth Annûn", "0x70047075", "Muster in Henneth Annûn");
+    wardenLocations:AddData("Muster in after-battle Osgiliath", "0x70047076", "Muster in after-battle Osgiliath");
 
     racialLocations:AddData("Retour à Bree", "0x700062F6", "Retour à Bree");
     racialLocations:AddData("Retournez dans la Comté", "0x700062C8", "Retournez dans la Comté");
@@ -203,6 +207,7 @@ function TravelDictionaries:CreateDictionaries()
         genLocations:AddData("Return Home 12", "0x7002FF63", "skip");
     end
     genLocations:AddData("Maison personnelle", "0x7000D046", "Retour à la maison personnelle");
+    genLocations:AddData("Premium House", "0x70046EE4", "Travel to Premium House");
     genLocations:AddData("Maison de confrérie", "0x7000D047", "Retour à la maison de confrérie");
 
     repLocations:AddData("Revenir à la Porte de Thorin (Rep)", "0x7001BF91", "Revenir à la Porte de Thorin");
@@ -225,6 +230,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Retour à Minas Tirith (Rep)", "0x7004497E", "Retour à Minas Tirith");
     repLocations:AddData("Retour au Camp Militaire (Rep)", "0x700459A9", "Retour au Camp Militaire");
     repLocations:AddData("Return to after-battle Minas Tirith (Rep)", "0x70046CC0", "Return to after-battle Minas Tirith");
+    repLocations:AddData("Return to after-battle Osgiliath (Rep)", "0x7004707D", "Return to after-battle Osgiliath");
+    repLocations:AddData("Return to after-battle Henneth Annûn (Rep)", "0x70047080", "Return to after-battle Henneth Annûn");
 
     creepLocations:AddData("Carte grossière pour aller au Gouffre d'Isen", "0x70028BB3");
     creepLocations:AddData("Carte grossière pour aller à Tol Ascarnen", "0x70028BB6");

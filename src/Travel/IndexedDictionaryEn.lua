@@ -155,6 +155,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Guide to Minas Tirith", "0x70044985", "Guide to Minas Tirith");
     hunterLocations:AddData("Guide to the War-stead", "0x700459AF", "Guide to the War-stead");
     hunterLocations:AddData("Guide to after-battle Minas Tirith", "0x70046CBB", "Guide to after-battle Minas Tirith");
+    hunterLocations:AddData("Guide to Henneth Annûn", "0x70047077", "Guide to Henneth Annûn");
+    hunterLocations:AddData("Guide to after-battle Osgiliath", "0x70047074", "Guide to after-battle Osgiliath");
 
     wardenLocations:AddData("Muster in Ost Guruth", "0x70014786", "Muster in Ost Guruth");
     wardenLocations:AddData("Muster in Esteldín", "0x70014798", "Muster in Esteldín");
@@ -177,6 +179,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Muster in Minas Tirith", "0x70044982", "Muster in Minas Tirith");
     wardenLocations:AddData("Muster in the War-stead", "0x700459AA", "Muster in the War-stead");
     wardenLocations:AddData("Muster in after-battle Minas Tirith", "0x70046CBF", "Muster in after-battle Minas Tirith");
+    wardenLocations:AddData("Muster in Henneth Annûn", "0x70047075", "Muster in Henneth Annûn");
+    wardenLocations:AddData("Muster in after-battle Osgiliath", "0x70047076", "Muster in after-battle Osgiliath");
 
     racialLocations:AddData("Return to Bree", "0x700062F6", "Return to Bree");
     racialLocations:AddData("Return to the Shire", "0x700062C8", "Return to the Shire");
@@ -201,6 +205,7 @@ function TravelDictionaries:CreateDictionaries()
         genLocations:AddData("Return Home 12", "0x7002FF64", "skip");
     end
     genLocations:AddData("Personal House", "0x7000D046", "Travel to Personal House");
+    genLocations:AddData("Premium House", "0x70046EE4", "Travel to Premium House");
     genLocations:AddData("Kinship House", "0x7000D047", "Travel to Kinship House");
 
     repLocations:AddData("Return to Thorin's Gate (Rep)", "0x7001BF91", "Return to Thorin's Gate");
@@ -223,6 +228,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Return to Minas Tirith (Rep)", "0x7004497E", "Return to Minas Tirith");
     repLocations:AddData("Return to the War-stead (Rep)", "0x700459A9", "Return to the War-stead");
     repLocations:AddData("Return to after-battle Minas Tirith (Rep)", "0x70046CC0", "Return to after-battle Minas Tirith");
+    repLocations:AddData("Return to after-battle Henneth Annûn (Rep)", "0x70047080", "Return to after-battle Henneth Annûn");
+    repLocations:AddData("Return to after-battle Osgiliath (Rep)", "0x7004707D", "Return to after-battle Osgiliath");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Crude Map to Gramsfoot", "0x70028BBC");

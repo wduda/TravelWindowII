@@ -455,11 +455,11 @@ function OptionsPanel:Add(index, text, xOffset, yOffset, offset)
 end
 
 
--- this function adds the boxes to the enabled tab for cosmetic purpose
+-- this function adds the labels to the enabled tab for cosmetic purpose
 function OptionsPanel:AddBoxes()
 
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        -- add a label and box for the generic travel settings
+        -- add a label and box for the generic travel skills
         self.genLabel = Turbine.UI.Label();
         self.genLabel:SetSize(200, 20);
         self.genLabel:SetPosition(0, 0);
@@ -468,14 +468,6 @@ function OptionsPanel:AddBoxes()
         self.genLabel:SetText(genericLabelString);
         self.genLabel:SetParent(self.EnabledTab);
         self.genLabel:SetVisible(true);
-
-        self.genBox = Turbine.UI.Lotro.TextBox();
-        self.genBox:SetSize(230, 310);
-        self.genBox:SetPosition(0, 20);
-        self.genBox:SetZOrder(0);
-        self.genBox:SetParent(self.EnabledTab);
-        self.genBox:SetReadOnly(true);
-        self.genBox:SetVisible(true);
 
         -- add a label and box for the reputation travel skills
         self.repLabel = Turbine.UI.Label();
@@ -487,15 +479,7 @@ function OptionsPanel:AddBoxes()
         self.repLabel:SetParent(self.EnabledTab);
         self.repLabel:SetVisible(true);
 
-        self.repBox = Turbine.UI.Lotro.TextBox();
-        self.repBox:SetSize(230, 390);
-        self.repBox:SetPosition(260, 20);
-        self.repBox:SetZOrder(0);
-        self.repBox:SetParent(self.EnabledTab);
-        self.repBox:SetReadOnly(true);
-        self.repBox:SetVisible(true);
-
-        -- if the player is a hunter or warden, add a label and box
+        -- if the player is a hunter or warden, add a label
         if ((playerClass == Turbine.Gameplay.Class.Hunter) or (playerClass == 194)) then
             self.classLabel = Turbine.UI.Label();
             self.classLabel:SetSize(200, 20);
@@ -505,18 +489,6 @@ function OptionsPanel:AddBoxes()
             self.classLabel:SetText(classLabelString);
             self.classLabel:SetParent(self.EnabledTab);
             self.classLabel:SetVisible(true);
-
-            self.classBox = Turbine.UI.Lotro.TextBox();
-            if (playerClass == Turbine.Gameplay.Class.Hunter) then
-                self.classBox:SetSize(230, 530);
-            else
-                self.classBox:SetSize(230, 390);
-            end
-            self.classBox:SetPosition(520, 20);
-            self.classBox:SetZOrder(0);
-            self.classBox:SetParent(self.EnabledTab);
-            self.classBox:SetReadOnly(true);
-            self.classBox:SetVisible(true);
         end
     else
         -- add a label and box for the Monster Maps settings
@@ -529,13 +501,6 @@ function OptionsPanel:AddBoxes()
         self.genLabel:SetParent(self.EnabledTab);
         self.genLabel:SetVisible(true);
 
-        self.genBox = Turbine.UI.Lotro.TextBox();
-        self.genBox:SetSize(230, 430);
-        self.genBox:SetPosition(0, 20);
-        self.genBox:SetZOrder(0);
-        self.genBox:SetParent(self.EnabledTab);
-        self.genBox:SetReadOnly(true);
-        self.genBox:SetVisible(true);
     end
 
     -- add a check skills button
