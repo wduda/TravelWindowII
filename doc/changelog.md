@@ -1,3 +1,36 @@
+v19.0.0
+- added new U19 skills (rep + housing)
+- removed boxes in options panel for better readability
+- German and French skills from U18.2 and U19 are not supported yet, but will be fixed - please submit names of those skills as I am no longer actively playing
+
+v18.0.4
+- added travel skills for after-battle Minas Tirith
+- German and French client are not supported yet
+
+v18.0.3
+- added German and French translations for U18 travel skills
+- fixed bug in French client with Ost Guruth (Rep) skill not being recognized
+
+v18.0.2
+- added U18.1 class travel skills
+
+v18.0.1
+- fixed typo in name of new travel skill
+
+v18.0.0
+- added new U18 travel skill
+- reorganized options window so all travel skills should fit
+
+v17.1.0
+- incorporated updates to German skill names by Eleador
+- incorporated updates to options window by Eleador
+- added Eleador and Plague as contributors to credits.md file =)
+
+v17.0.0
+- added U17 travel skills
+
+v16.0.0beta
+
 v15.3.2
 - removed unnecessary Thumbs.db file from Resources folder
 
