@@ -159,6 +159,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Guide to after-battle Minas Tirith", "0x70046CBB", "Guide to after-battle Minas Tirith");
     hunterLocations:AddData("Guide vers Henneth Annûn", "0x70047077", "Guide vers Henneth Annûn");
     hunterLocations:AddData("Guide vers Osgiliath après la bataille", "0x70047074", "Guide vers Osgiliath après la bataille");
+    hunterLocations:AddData("Guide vers le Camp de l'armée", "0x70047BFA", "Guide to the Camp of the Host");
+    hunterLocations:AddData("Guide vers Haerondir", "0x70047C1D", "Guide vers Haerondir");
 
     wardenLocations:AddData("Rassemblement à Ost Guruth", "0x70014786", "Rassemblement à Ost Guruth");
     wardenLocations:AddData("Rassemblement à Esteldin", "0x70014798", "Rassemblement à Esteldin");
@@ -183,6 +185,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Rassemblement à Minas Tirith après la bataille", "0x70046CBF", "Rassemblement à Minas Tirith après la bataille");
     wardenLocations:AddData("Rassemblement à Henneth Annûn", "0x70047075", "Rassemblement à Henneth Annûn");
     wardenLocations:AddData("Rassemblement à Osgiliath après la bataille", "0x70047076", "Rassemblement à Osgiliath après la bataille");
+    wardenLocations:AddData("Rassemblement à Haerondir", "0x70047C23", "Rassemblement à Haerondir");
+    wardenLocations:AddData("Rassemblement au Camp de l'armée", "0x70047BFC", "Rassemblement au Camp de l'armée");
 
     racialLocations:AddData("Retour à Bree", "0x700062F6", "Retour à Bree");
     racialLocations:AddData("Retournez dans la Comté", "0x700062C8", "Retournez dans la Comté");
@@ -232,6 +236,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Retour à Minas Tirith après la bataille (Rep)", "0x70046CC0", "Retour à Minas Tirith après la bataille");
     repLocations:AddData("Retour à Henneth Annûn après la bataille (Rep)", "0x70047080", "Retour à Henneth Annûn après la bataille");
     repLocations:AddData("Retour à Osgiliath après la bataille (Rep)", "0x7004707D", "Retour à Osgiliath après la bataille");
+    repLocations:AddData("Retour au Camp de l'armée (Rep)", "0x70047BF4", "Retour au Camp de l'armée");
+    repLocations:AddData("Retour à Haerondir (Rep)", "0x70047C1B", "Retour à Haerondir")
 
     creepLocations:AddData("Carte grossière pour aller au Gouffre d'Isen", "0x70028BB3");
     creepLocations:AddData("Carte grossière pour aller à Tol Ascarnen", "0x70028BB6");

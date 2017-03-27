@@ -75,6 +75,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { 600, 395 },   -- After-Battle Minas Tirith
         { 700, 290 },   -- Henneth Annûn
         { 700, 370 },   -- Osgiliath
+        { 675, 240 },   -- Camp of the Host
+        { 700, 215 },       -- Haerondir
 
         -- Muster skills
         { -1, -1 },     -- Ost Guruth
@@ -100,6 +102,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { 600, 395 },   -- After-Battle Minas Tirith
         { 700, 290 },   -- Henneth Annûn
         { 700, 370 },   -- Osgiliath
+        { 675, 240 },   -- Camp of the Host
+        { 700, 215 },       -- Haerondir
 
         -- Reputation skills
         { -1, -1 },     -- Thorin's Hall
@@ -124,6 +128,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { 625, 395 },   -- After-Battle Minas Tirith
         { 725, 290 },   -- Henneth Annûn
         { 725, 370 },   -- Osgiliath
+        { 700, 240 },   -- Camp of the Host
+        { 725, 215 },       -- Haerondir
 
         -- Racial skills
         { -1, -1 },     -- Bree
