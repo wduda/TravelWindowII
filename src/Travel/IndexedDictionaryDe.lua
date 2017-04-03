@@ -158,8 +158,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Führer zum schlachtgezeichneten Minas Tirith", "0x70046CBB", "Führer zum schlachtgezeichneten Minas Tirith");
     hunterLocations:AddData("Führer zu Henneth Annûn", "0x70047077", "Führer zu Henneth Annûn");
     hunterLocations:AddData("Führer zum schlachtgezeichneten Osgiliath", "0x70047074", "Führer zum schlachtgezeichneten Osgiliath");
-    hunterLocations:AddData("Guide to the Camp of the Host", "0x70047BFA", "Guide to the Camp of the Host");
-    hunterLocations:AddData("Guide to Haerondir", "0x70047C1D", "Guide to Haerondir");
+    hunterLocations:AddData("Führer zum Lager des Heeres", "0x70047BFA", "Führer zum Lager des Heeres");
+    hunterLocations:AddData("Führer nach Haerondir", "0x70047C1D", "Führer nach Haerondir");
 
     wardenLocations:AddData("Appell in der Feste Guruth", "0x70014786", "Appell in der Feste Guruth");
     wardenLocations:AddData("Appell in Esteldín", "0x70014798", "Appell in Esteldín");
@@ -184,8 +184,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Appell im schlachtgezeichneten Minas Tirith", "0x70046CBF", "Appell im schlachtgezeichneten Minas Tirith");
     wardenLocations:AddData("Appell in Henneth Annûn", "0x70047075", "Appell in Henneth Annûn");
     wardenLocations:AddData("Appell im schlachtgezeichneten Osgiliath", "0x70047076", "Appell im schlachtgezeichneten Osgiliath");
-    wardenLocations:AddData("Muster in Haerondir", "0x70047C23", "Muster in Haerondir");
-    wardenLocations:AddData("Muster in the Camp of the Host ", "0x70047BFC", "Muster in the Camp of the Host ");
+    wardenLocations:AddData("Appell im Lager des Heeres", "0x70047BFC", "Appell im Lager des Heeres");
+    wardenLocations:AddData("Appell in Haerondir", "0x70047C23", "Appell in Haerondir");
 
     racialLocations:AddData("Rückkehr nach Bree (Rasse)", "0x700062F6", "Rückkehr nach Bree");
     racialLocations:AddData("Rückkehr ins Auenland (Rasse)", "0x700062C8", "Rückkehr ins Auenland");
@@ -217,7 +217,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Rückkehr nach Bree", "0x7001BF90", "Rückkehr nach Bree");
     repLocations:AddData("Rückkehr zu Lalias Markt", "0x700364B1", "Kehrt zu Lalias Markt zurück");
     repLocations:AddData("Rückkehr nach Michelbinge", "0x70023262", "Rückkehr nach Michelbinge");
-    repLocations:AddData("Rückkehr nach Bruchtal", "0x70023263", "Rückkehr nach Bruchtal.");
+    repLocations:AddData("Rückkehr nach Bruchtal", "0x70023263", "Rückkehr nach Bruchtal");
     repLocations:AddData("Rückkehr zur Feste Guruth", "0x70020441", "Rückkehr zur Feste Guruth");
     repLocations:AddData("Rückkehr nach Düsterwald", "0x7001F374", "Rückkehr zum Düsterwald");
     repLocations:AddData("Rückkehr nach Enedwaith", "0x70021FA2", "Rückkehr nach Enedwaith");
@@ -235,8 +235,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Rückkehr ins schlachtgezeichnete Minas Tirith" , "0x70046CC0", "Rückkehr ins schlachtgezeichnete Minas Tirith");
     repLocations:AddData("Rückkehr ins schlachtgezeichnete Henneth Annûn", "0x70047080", "Rückkehr ins schlachtgezeichnete Henneth Annûn");
     repLocations:AddData("Rückkehr ins schlachtgezeichnete Osgiliath", "0x7004707D", "Rückkehr ins schlachtgezeichnete Osgiliath");
-    repLocations:AddData("Return to the Camp of the Host (Rep)", "0x70047BF4", "Return to the Camp of the Host");
-    repLocations:AddData("Return to Haerondir (Rep)", "0x70047C1B", "Return to Haerondir");
+    repLocations:AddData("Rückkehr ins Lager des Heeres", "0x70047BF4", "Rückkehr ins Lager des Heeres");
+    repLocations:AddData("Rückkehr nach Haerondir (Rep)", "0x70047C1B", "Rückkehr nach Haerondir");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Grobe Karte nach Gramfuß", "0x70028BBC");

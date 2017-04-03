@@ -192,8 +192,8 @@ function TravelDictionaries:CreateDictionaries()
     -- wardenLocations:AddData("Muster in after-battle Minas Tirith", "0x70046CBF", "Muster in after-battle Minas Tirith");
     -- wardenLocations:AddData("Muster in Henneth Annûn", "0x70047075", "Muster in Henneth Annûn");
     -- wardenLocations:AddData("Muster in after-battle Osgiliath", "0x70047076", "Muster in after-battle Osgiliath");
-    -- wardenLocations:AddData("Muster in Haerondir", "0x70047C23", "Muster in Haerondir");
     -- wardenLocations:AddData("Muster in the Camp of the Host ", "0x70047BFC", "Muster in the Camp of the Host ");
+    -- wardenLocations:AddData("Muster in Haerondir", "0x70047C23", "Muster in Haerondir");
 
     racialLocations:AddData("Дорога в Бри (Рас.)", "0x700062F6", "Дорога в Бри");
     racialLocations:AddData("Дорога в Шир (Рас.)", "0x700062C8", "Дорога в Шир");

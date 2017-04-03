@@ -185,8 +185,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Rassemblement à Minas Tirith après la bataille", "0x70046CBF", "Rassemblement à Minas Tirith après la bataille");
     wardenLocations:AddData("Rassemblement à Henneth Annûn", "0x70047075", "Rassemblement à Henneth Annûn");
     wardenLocations:AddData("Rassemblement à Osgiliath après la bataille", "0x70047076", "Rassemblement à Osgiliath après la bataille");
-    wardenLocations:AddData("Rassemblement à Haerondir", "0x70047C23", "Rassemblement à Haerondir");
     wardenLocations:AddData("Rassemblement au Camp de l'armée", "0x70047BFC", "Rassemblement au Camp de l'armée");
+    wardenLocations:AddData("Rassemblement à Haerondir", "0x70047C23", "Rassemblement à Haerondir");
 
     racialLocations:AddData("Retour à Bree", "0x700062F6", "Retour à Bree");
     racialLocations:AddData("Retournez dans la Comté", "0x700062C8", "Retournez dans la Comté");
