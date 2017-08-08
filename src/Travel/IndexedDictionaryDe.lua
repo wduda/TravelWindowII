@@ -160,6 +160,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Führer zum schlachtgezeichneten Osgiliath", "0x70047074", "Führer zum schlachtgezeichneten Osgiliath");
     hunterLocations:AddData("Führer zum Lager des Heeres", "0x70047BFA", "Führer zum Lager des Heeres");
     hunterLocations:AddData("Führer nach Haerondir", "0x70047C1D", "Führer nach Haerondir");
+    hunterLocations:AddData("Guide to the Udûn Foothold", "0x7004AE1D", "Guide to the Udûn Foothold");
 
     wardenLocations:AddData("Appell in der Feste Guruth", "0x70014786", "Appell in der Feste Guruth");
     wardenLocations:AddData("Appell in Esteldín", "0x70014798", "Appell in Esteldín");
@@ -186,12 +187,14 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Appell im schlachtgezeichneten Osgiliath", "0x70047076", "Appell im schlachtgezeichneten Osgiliath");
     wardenLocations:AddData("Appell im Lager des Heeres", "0x70047BFC", "Appell im Lager des Heeres");
     wardenLocations:AddData("Appell in Haerondir", "0x70047C23", "Appell in Haerondir");
+    wardenLocations:AddData("Muster in the Udûn Foothold", "0x7004AE1F", "Muster in the Udûn Foothold");
 
     racialLocations:AddData("Rückkehr nach Bree (Rasse)", "0x700062F6", "Rückkehr nach Bree");
     racialLocations:AddData("Rückkehr ins Auenland (Rasse)", "0x700062C8", "Rückkehr ins Auenland");
     racialLocations:AddData("Rückkehr zu Thorins Tor (Rasse)", "0x70006346", "Rückkehr zu Thorins Tor");
     racialLocations:AddData("Rückkehr nach Bruchtal (Rasse)", "0x7000631F", "Rückkehr nach Bruchtal");
-    racialLocations:AddData("Zurück zu Grimbeorns Hütte (Rasse)", "0x70041a22", "Zum 1. Heim zurückkehren");
+    racialLocations:AddData("Zurück zu Grimbeorns Hütte (Rasse)", "0x70041A22", "Zum 1. Heim zurückkehren");
+    racialLocations:AddData("Return to Caras Galadhon in Lothlórien", "0x70048C8C", "Return to Caras Galadhon in Lothlórien");
 
     -- check if a function that only exists in the newest update exists,
     -- if so, add the Return Home skills
@@ -237,6 +240,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Rückkehr ins schlachtgezeichnete Osgiliath", "0x7004707D", "Rückkehr ins schlachtgezeichnete Osgiliath");
     repLocations:AddData("Rückkehr ins Lager des Heeres", "0x70047BF4", "Rückkehr ins Lager des Heeres");
     repLocations:AddData("Rückkehr nach Haerondir (Rep)", "0x70047C1B", "Rückkehr nach Haerondir");
+    repLocations:AddData("Return to the Udûn Foothold", "0x7004AE1D", "Return to the Udûn Foothold");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Grobe Karte nach Gramfuß", "0x70028BBC");
@@ -252,14 +256,12 @@ function TravelDictionaries:CreateDictionaries()
     creepLocations:AddData("Minderwertige Karte zum Tol Ascarnen", "0x70028BB1");
     creepLocations:AddData("Minderwertige Karte zum Lugazag", "0x70028BB2");
     creepLocations:AddData("Minderwertige Tirith-Rhaw-Karte", "0x70028BB4");
-    -- creepLocations:AddData("Minderwertige Tirith-Rhaw-Karte","0x70028BB0");
     creepLocations:AddData("Minderwertige Karte nach Grimmwald", "0x70028BB9");
 
     creepLocations:AddData("Gute Isenbinge-Karte", "0x70028BC0");
     creepLocations:AddData("Gute Tol Ascarnen-Karte", "0x70028BC2");
     creepLocations:AddData("Gute Lugazag-Karte", "0x70028BB5");
     creepLocations:AddData("Gute Karte zum Tirith Rhaw", "0x70028BB0");
-    -- creepLocations:AddData("Gute Karte zum Tirith Rhaw","0x70028BB4");
     creepLocations:AddData("Gute Grimmwald-Karte", "0x70028BBD");
 end
 

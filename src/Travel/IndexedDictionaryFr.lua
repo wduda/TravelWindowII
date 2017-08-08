@@ -1,4 +1,3 @@
--- Version FR 1.05 --
 --[[ string constants ]] --
 --[[ put all the strings that might require translation in ]] --
 --[[ one location for easier access ]] --
@@ -161,6 +160,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Guide vers Osgiliath après la bataille", "0x70047074", "Guide vers Osgiliath après la bataille");
     hunterLocations:AddData("Guide vers le Camp de l'armée", "0x70047BFA", "Guide to the Camp of the Host");
     hunterLocations:AddData("Guide vers Haerondir", "0x70047C1D", "Guide vers Haerondir");
+    hunterLocations:AddData("Guide to the Udûn Foothold", "0x7004AE1D", "Guide to the Udûn Foothold");
 
     wardenLocations:AddData("Rassemblement à Ost Guruth", "0x70014786", "Rassemblement à Ost Guruth");
     wardenLocations:AddData("Rassemblement à Esteldin", "0x70014798", "Rassemblement à Esteldin");
@@ -187,12 +187,14 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Rassemblement à Osgiliath après la bataille", "0x70047076", "Rassemblement à Osgiliath après la bataille");
     wardenLocations:AddData("Rassemblement au Camp de l'armée", "0x70047BFC", "Rassemblement au Camp de l'armée");
     wardenLocations:AddData("Rassemblement à Haerondir", "0x70047C23", "Rassemblement à Haerondir");
+    wardenLocations:AddData("Muster in the Udûn Foothold", "0x7004AE1F", "Muster in the Udûn Foothold");
 
     racialLocations:AddData("Retour à Bree", "0x700062F6", "Retour à Bree");
     racialLocations:AddData("Retournez dans la Comté", "0x700062C8", "Retournez dans la Comté");
     racialLocations:AddData("Retour à la porte de Thorin", "0x70006346", "Retour à Thorin's Gate");
     racialLocations:AddData("Retour à Fondcombe", "0x7000631F", "Retour à Fondcombe");
     racialLocations:AddData("Retour à la maison", "0x70041a22", "Retour à la maison");
+    racialLocations:AddData("Return to Caras Galadhon in Lothlórien", "0x70048C8C", "Return to Caras Galadhon in Lothlórien");
 
     -- check if a function that only exists in the newest update exists,
     -- if so, add the Return Home skills
@@ -238,6 +240,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Retour à Osgiliath après la bataille (Rep)", "0x7004707D", "Retour à Osgiliath après la bataille");
     repLocations:AddData("Retour au Camp de l'armée (Rep)", "0x70047BF4", "Retour au Camp de l'armée");
     repLocations:AddData("Retour à Haerondir (Rep)", "0x70047C1B", "Retour à Haerondir")
+    repLocations:AddData("Return to the Udûn Foothold", "0x7004AE1D", "Return to the Udûn Foothold");
 
     creepLocations:AddData("Carte grossière pour aller au Gouffre d'Isen", "0x70028BB3");
     creepLocations:AddData("Carte grossière pour aller à Tol Ascarnen", "0x70028BB6");

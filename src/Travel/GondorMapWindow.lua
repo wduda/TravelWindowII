@@ -76,7 +76,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { 700, 290 },   -- Henneth Annûn
         { 700, 370 },   -- Osgiliath
         { 675, 240 },   -- Camp of the Host
-        { 700, 215 },       -- Haerondir
+        { 700, 215 },   -- Haerondir
+        { 800, 290 },   -- Udûn Foothold
 
         -- Muster skills
         { -1, -1 },     -- Ost Guruth
@@ -103,7 +104,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { 700, 290 },   -- Henneth Annûn
         { 700, 370 },   -- Osgiliath
         { 675, 240 },   -- Camp of the Host
-        { 700, 215 },       -- Haerondir
+        { 700, 215 },   -- Haerondir
+        { 800, 290 },   -- Udûn Foothold
 
         -- Reputation skills
         { -1, -1 },     -- Thorin's Hall
@@ -129,7 +131,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { 725, 290 },   -- Henneth Annûn
         { 725, 370 },   -- Osgiliath
         { 700, 240 },   -- Camp of the Host
-        { 725, 215 },       -- Haerondir
+        { 725, 215 },   -- Haerondir
+        { 825, 290 },   -- Udûn Foothold
 
         -- Racial skills
         { -1, -1 },     -- Bree
@@ -137,6 +140,7 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Thorin's Hall
         { -1, -1 },     -- Rivendell
         { -1, -1 },     -- Grimbeorn's House
+        { -1, -1 },     -- Caras Galadhon
 
     };
     self:AddShortcuts();

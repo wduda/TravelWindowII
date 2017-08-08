@@ -75,8 +75,9 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- After-Battle Minas Tirith
         { -1, -1 },     -- Osgiliath
         { -1, -1 },     -- Henneth Annûn
-        { 0, 0 },       -- Camp of the Host
-        { 0, 0 },       -- Haerondir
+        { -1, -1 },     -- Camp of the Host
+        { -1, -1 },     -- Haerondir
+        { -1, -1 },     -- Udûn Foothold
 
         -- Muster skills
         { -1, -1 },     -- Ost Guruth
@@ -102,8 +103,9 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- After-Battle Minas Tirith
         { -1, -1 },     -- Osgiliath
         { -1, -1 },     -- Henneth Annûn
-        { 0, 0 },       -- Camp of the Host
-        { 0, 0 },       -- Haerondir
+        { -1, -1 },     -- Camp of the Host
+        { -1, -1 },     -- Haerondir
+        { -1, -1 },     -- Udûn Foothold
 
         -- Reputation skills
         { -1, -1 },     -- Thorin's Hall
@@ -128,8 +130,9 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- After-Battle Minas Tirith
         { -1, -1 },     -- Henneth Annûn
         { -1, -1 },     -- Osgiliath
-        { 0, 0 },       -- Camp of the Host
-        { 0, 0 },       -- Haerondir
+        { -1, -1 },     -- Camp of the Host
+        { -1, -1 },     -- Haerondir
+        { -1, -1 },     -- Udûn Foothold
 
         -- Racial skills
         { -1, -1 },     -- Bree
@@ -137,6 +140,7 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Thorin's Hall
         { -1, -1 },     -- Rivendell
         { 490, 100 },   -- Grimbeorn's House
+        { -1, -1 },     -- Caras Galadhon
     };
     self:AddShortcuts();
 

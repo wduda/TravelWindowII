@@ -159,6 +159,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Guide to after-battle Osgiliath", "0x70047074", "Guide to after-battle Osgiliath");
     hunterLocations:AddData("Guide to the Camp of the Host", "0x70047BFA", "Guide to the Camp of the Host");
     hunterLocations:AddData("Guide to Haerondir", "0x70047C1D", "Guide to Haerondir");
+    hunterLocations:AddData("Guide to the Udûn Foothold", "0x7004AE1D", "Guide to the Udûn Foothold");
 
     wardenLocations:AddData("Muster in Ost Guruth", "0x70014786", "Muster in Ost Guruth");
     wardenLocations:AddData("Muster in Esteldín", "0x70014798", "Muster in Esteldín");
@@ -185,12 +186,14 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Muster in after-battle Osgiliath", "0x70047076", "Muster in after-battle Osgiliath");
     wardenLocations:AddData("Muster in the Camp of the Host", "0x70047BFC", "Muster in the Camp of the Host");
     wardenLocations:AddData("Muster in Haerondir", "0x70047C23", "Muster in Haerondir");
+    wardenLocations:AddData("Muster in the Udûn Foothold", "0x7004AE1F", "Muster in the Udûn Foothold");
 
     racialLocations:AddData("Return to Bree", "0x700062F6", "Return to Bree");
     racialLocations:AddData("Return to the Shire", "0x700062C8", "Return to the Shire");
     racialLocations:AddData("Return to Thorin's Gate", "0x70006346", "Return to Thorin's Gate");
     racialLocations:AddData("Return to Rivendell", "0x7000631F", "Return to Rivendell");
-    racialLocations:AddData("Return Home (Racial)", "0x70041a22", "Return Home");
+    racialLocations:AddData("Return Home (Racial)", "0x70041A22", "Return Home");
+    racialLocations:AddData("Return to Caras Galadhon in Lothlórien", "0x70048C8C", "Return to Caras Galadhon in Lothlórien");
 
     -- check if a function that only exists in the newest update exists,
     -- if so, add the Return Home skills
@@ -225,7 +228,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Return to Snowbourn (Rep)", "0x70031A46", "Return to Snowbourn");
     repLocations:AddData("Return to Forlaw (Rep)", "0x70036B5E", "Return to Forlaw");
     repLocations:AddData("Return to Aldburg (Rep)", "0x7003DC81", "Return to Aldburg");
-    repLocations:AddData("Return to Derndingle (Rep)", "0x7004128F", "Return to Derndingle"); -- thanks to Rrys for the travel code
+    repLocations:AddData("Return to Derndingle (Rep)", "0x7004128F", "Return to Derndingle");
     repLocations:AddData("Return to Helm's Deep (Rep)", "0x7003DC82", "Return to Helm's Deep");
     repLocations:AddData("Return to Dol Amroth (Rep)", "0x700411AC", "Return to Dol Amroth");
     repLocations:AddData("Return to Arnach (Rep)", "0x70043A6A", "Return to Arnach");
@@ -236,6 +239,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Return to after-battle Osgiliath (Rep)", "0x7004707D", "Return to after-battle Osgiliath");
     repLocations:AddData("Return to the Camp of the Host (Rep)", "0x70047BF4", "Return to the Camp of the Host");
     repLocations:AddData("Return to Haerondir (Rep)", "0x70047C1B", "Return to Haerondir");
+    repLocations:AddData("Return to the Udûn Foothold", "0x7004AE1D", "Return to the Udûn Foothold");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Crude Map to Gramsfoot", "0x70028BBC");
@@ -251,17 +255,14 @@ function TravelDictionaries:CreateDictionaries()
     creepLocations:AddData("Poor Map to Tol Ascarnen", "0x70028BB1");
     creepLocations:AddData("Poor Map to Lugazag", "0x70028BB2");
     creepLocations:AddData("Poor Map to Tirith Rhaw", "0x70028BB4");
-    -- creepLocations:AddData("Poor Map to Tirith Rhaw","0x70028BB0");
     creepLocations:AddData("Poor Map to Grimwood", "0x70028BB9");
 
     creepLocations:AddData("Good Map to Isendeep", "0x70028BC0");
     creepLocations:AddData("Good Map to Tol Ascarnen", "0x70028BC2");
     creepLocations:AddData("Good Map to Lugazag", "0x70028BB5");
     creepLocations:AddData("Good Map to Tirith Rhaw", "0x70028BB0");
-    -- creepLocations:AddData("Good Map to Tirith Rhaw","0x70028BB4");
     creepLocations:AddData("Good Map to Grimwood", "0x70028BBD");
 end
-
 
 --[[ use a modified table that can maintain a key value for each entry ]] --
 IndexedDictionary = class()

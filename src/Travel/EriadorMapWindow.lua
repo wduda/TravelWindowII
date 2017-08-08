@@ -77,8 +77,9 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Osgiliath
         { 0, 0 },       -- Camp of the Host
         { 0, 0 },       -- Haerondir
+        { 0, 0 },       -- Udûn Foothold
 
-        -- Muster skills
+        -- Warden skills
         { 710, 390 },   -- Ost Guruth
         { 640, 270 },   -- Esteldin
         { 485, 340 },   -- Evendim
@@ -104,6 +105,7 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Osgiliath
         { 0, 0 },       -- Camp of the Host
         { 0, 0 },       -- Haerondir
+        { 0, 0 },       -- Udûn Foothold
 
         -- Reputation skills
         { 330, 300 },   -- Thorin's Hall
@@ -130,6 +132,7 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 },     -- Osgiliath
         { 0, 0 },       -- Camp of the Host
         { 0, 0 },       -- Haerondir
+        { 0, 0 },       -- Udûn Foothold
 
         -- Racial skills
         { 625, 340 },   -- Bree
@@ -137,6 +140,7 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { 355, 300 },   -- Thorin's Hall
         { 920, 375 },   -- Rivendell
         { -1, -1 },     -- Grimbeorn's House
+        { -1, -1 },     -- Caras Galadhon
 
         -- Moors Map
         { 815, 300 }    -- Ettenmoors
