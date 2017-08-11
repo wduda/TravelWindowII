@@ -45,98 +45,102 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
 
     self.mapLocations = {
         -- Hunter skills
-        { -1, -1 },     -- Camp
-        { -1, -1 },     -- Bree
-        { -1, -1 },     -- Thorin's Hall
-        { -1, -1 },     -- Michel Delving
-        { -1, -1 },     -- Esteldin
-        { -1, -1 },     -- Evendim
-        { -1, -1 },     -- Ost Guruth
-        { -1, -1 },     -- Rivendell
-        { -1, -1 },     -- Suri-Kyla
-        { -1, -1 },     -- West Angmar
-        { -1, -1 },     -- East Angmar
-        { -1, -1 },     -- Echad Dunann
-        { -1, -1 },     -- 21st Hall
-        { -1, -1 },     -- Mirkwood
-        { -1, -1 },     -- Enedwaith Harndirion
-        { -1, -1 },     -- Galtrev
-        { -1, -1 },     -- Stangard
-        { -1, -1 },     -- Caras Galadhon
-        { -1, -1 },     -- Misty Mountains
-        { -1, -1 },     -- Snowbourn
-        { -1, -1 },     -- Forlaw
-        { -1, -1 },     -- Aldburg
-        { -1, -1 },     -- Helm's Deep
-        { 275, 470 },   -- Dol Amroth
-        { 600, 450 },   -- Arnach
-        { 600, 370 },   -- Minas Tirith
-        { 500, 290 },   -- War-Stead
-        { 600, 395 },   -- After-Battle Minas Tirith
-        { 700, 290 },   -- Henneth Annûn
-        { 700, 370 },   -- Osgiliath
-        { 675, 240 },   -- Camp of the Host
-        { 700, 215 },       -- Haerondir
+        { -1, -1 }, -- Camp
+        { -1, -1 }, -- Bree
+        { -1, -1 }, -- Thorin's Hall
+        { -1, -1 }, -- Michel Delving
+        { -1, -1 }, -- Esteldin
+        { -1, -1 }, -- Evendim
+        { -1, -1 }, -- Ost Guruth
+        { -1, -1 }, -- Rivendell
+        { -1, -1 }, -- Suri-Kyla
+        { -1, -1 }, -- West Angmar
+        { -1, -1 }, -- East Angmar
+        { -1, -1 }, -- Echad Dunann
+        { -1, -1 }, -- 21st Hall
+        { -1, -1 }, -- Mirkwood
+        { -1, -1 }, -- Enedwaith Harndirion
+        { -1, -1 }, -- Galtrev
+        { -1, -1 }, -- Stangard
+        { -1, -1 }, -- Caras Galadhon
+        { -1, -1 }, -- Misty Mountains
+        { -1, -1 }, -- Snowbourn
+        { -1, -1 }, -- Forlaw
+        { -1, -1 }, -- Aldburg
+        { -1, -1 }, -- Helm's Deep
+        { 275, 470 }, -- Dol Amroth
+        { 600, 450 }, -- Arnach
+        { 600, 370 }, -- Minas Tirith
+        { 500, 290 }, -- War-Stead
+        { 600, 395 }, -- After-Battle Minas Tirith
+        { 700, 290 }, -- Henneth Annûn
+        { 700, 370 }, -- Osgiliath
+        { 675, 240 }, -- Camp of the Host
+        { 700, 215 }, -- Haerondir
+        { 800, 290 }, -- Udûn Foothold
 
         -- Muster skills
-        { -1, -1 },     -- Ost Guruth
-        { -1, -1 },     -- Esteldin
-        { -1, -1 },     -- Evendim
-        { -1, -1 },     -- Rivendell
-        { -1, -1 },     -- Suri-Kyla
-        { -1, -1 },     -- 21st Hall
-        { -1, -1 },     -- Mirkwood
-        { -1, -1 },     -- Enedwaith Harndirion
-        { -1, -1 },     -- Galtrev
-        { -1, -1 },     -- Stangard
-        { -1, -1 },     -- Caras Galadhon
-        { -1, -1 },     -- Misty Mountains
-        { -1, -1 },     -- Snowbourn
-        { -1, -1 },     -- Forlaw
-        { -1, -1 },     -- Aldburg
-        { -1, -1 },     -- Helm's Deep
-        { 275, 470 },   -- Dol Amroth
-        { 600, 450 },   -- Arnach
-        { 600, 370 },   -- Minas Tirith
-        { 500, 290 },   -- War-Stead
-        { 600, 395 },   -- After-Battle Minas Tirith
-        { 700, 290 },   -- Henneth Annûn
-        { 700, 370 },   -- Osgiliath
-        { 675, 240 },   -- Camp of the Host
-        { 700, 215 },       -- Haerondir
+        { -1, -1 }, -- Ost Guruth
+        { -1, -1 }, -- Esteldin
+        { -1, -1 }, -- Evendim
+        { -1, -1 }, -- Rivendell
+        { -1, -1 }, -- Suri-Kyla
+        { -1, -1 }, -- 21st Hall
+        { -1, -1 }, -- Mirkwood
+        { -1, -1 }, -- Enedwaith Harndirion
+        { -1, -1 }, -- Galtrev
+        { -1, -1 }, -- Stangard
+        { -1, -1 }, -- Caras Galadhon
+        { -1, -1 }, -- Misty Mountains
+        { -1, -1 }, -- Snowbourn
+        { -1, -1 }, -- Forlaw
+        { -1, -1 }, -- Aldburg
+        { -1, -1 }, -- Helm's Deep
+        { 275, 470 }, -- Dol Amroth
+        { 600, 450 }, -- Arnach
+        { 600, 370 }, -- Minas Tirith
+        { 500, 290 }, -- War-Stead
+        { 600, 395 }, -- After-Battle Minas Tirith
+        { 700, 290 }, -- Henneth Annûn
+        { 700, 370 }, -- Osgiliath
+        { 675, 240 }, -- Camp of the Host
+        { 700, 215 }, -- Haerondir
+        { 800, 290 }, -- Udûn Foothold
 
         -- Reputation skills
-        { -1, -1 },     -- Thorin's Hall
-        { -1, -1 },     -- Bree
-        { -1, -1 },     -- Lalia's Market
-        { -1, -1 },     -- Michel Delving
-        { -1, -1 },     -- Rivendell
-        { -1, -1 },     -- Ost Guruth
-        { -1, -1 },     -- Mirkwood
-        { -1, -1 },     -- Enedwaith Lhanuch
-        { -1, -1 },     -- Galtrev
-        { -1, -1 },     -- Stangard
-        { -1, -1 },     -- Snowbourn
-        { -1, -1 },     -- Forlaw
-        { -1, -1 },     -- Aldburg
-        { -1, -1 },     -- Derndingle
-        { -1, -1 },     -- Helm's Deep
-        { 300, 470 },   -- Dol Amroth
-        { 625, 450 },   -- Arnach
-        { 625, 370 },   -- Minas Tirith
-        { 525, 290 },   -- War-Stead
-        { 625, 395 },   -- After-Battle Minas Tirith
-        { 725, 290 },   -- Henneth Annûn
-        { 725, 370 },   -- Osgiliath
-        { 700, 240 },   -- Camp of the Host
-        { 725, 215 },       -- Haerondir
+        { -1, -1 }, -- Thorin's Hall
+        { -1, -1 }, -- Bree
+        { -1, -1 }, -- Lalia's Market
+        { -1, -1 }, -- Michel Delving
+        { -1, -1 }, -- Rivendell
+        { -1, -1 }, -- Ost Guruth
+        { -1, -1 }, -- Mirkwood
+        { -1, -1 }, -- Enedwaith Lhanuch
+        { -1, -1 }, -- Galtrev
+        { -1, -1 }, -- Stangard
+        { -1, -1 }, -- Snowbourn
+        { -1, -1 }, -- Forlaw
+        { -1, -1 }, -- Aldburg
+        { -1, -1 }, -- Derndingle
+        { -1, -1 }, -- Helm's Deep
+        { 300, 470 }, -- Dol Amroth
+        { 625, 450 }, -- Arnach
+        { 625, 370 }, -- Minas Tirith
+        { 525, 290 }, -- War-Stead
+        { 625, 395 }, -- After-Battle Minas Tirith
+        { 725, 290 }, -- Henneth Annûn
+        { 725, 370 }, -- Osgiliath
+        { 700, 240 }, -- Camp of the Host
+        { 725, 215 }, -- Haerondir
+        { 825, 290 }, -- Udûn Foothold
 
         -- Racial skills
-        { -1, -1 },     -- Bree
-        { -1, -1 },     -- Michel Delving
-        { -1, -1 },     -- Thorin's Hall
-        { -1, -1 },     -- Rivendell
-        { -1, -1 },     -- Grimbeorn's House
+        { -1, -1 }, -- Bree
+        { -1, -1 }, -- Michel Delving
+        { -1, -1 }, -- Thorin's Hall
+        { -1, -1 }, -- Rivendell
+        { -1, -1 }, -- Grimbeorn's House
+        { -1, -1 }, -- Caras Galadhon
 
     };
     self:AddShortcuts();

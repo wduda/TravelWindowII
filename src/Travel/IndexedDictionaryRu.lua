@@ -7,10 +7,10 @@
 --[[ put all the strings that might require translation in ]] --
 --[[ one location for easier access ]] --
 helpString = "Travel. Translated by PulseDiver.\n" ..
-        "\n Команды:\n" ..
-        "ntrav show: Показать окно путешествий\n" ..
-        "trav hide: Срыть окно путешествий\n" ..
-        "trav toggle: Вызвать\скрыть окно путешествий\n";
+"\n Команды:\n" ..
+"ntrav show: Показать окно путешествий\n" ..
+"trav hide: Срыть окно путешествий\n" ..
+"trav toggle: Вызвать\скрыть окно путешествий\n";
 
 -- window title strings
 mainTitleString = "Travel";
@@ -27,16 +27,16 @@ glanMapItemString = "Точная карта дороги в Глан Врайг
 
 -- adding map strings
 mapInstructionString = "Перетащите карту из сумки в слот ниже " ..
-        "для добавления новой карты.";
+"для добавления новой карты.";
 mapErrorString = "Новых карт не обнаружено, никаких обновлений не сделано.";
 
 -- error messages
 resetOrderString = "Your order settings have been reset due to a change in " ..
-        "the number of items saved.  This should only occur once.\n" ..
-        "Sorry for the inconvenience.";
+"the number of items saved.  This should only occur once.\n" ..
+"Sorry for the inconvenience.";
 
 resetEnabledString = "Your selected skills have been reset due to an error " ..
-        "in the number of items previously saved.\n";
+"in the number of items previously saved.\n";
 
 skillNotTrainedString = "Умение не получено: ";
 

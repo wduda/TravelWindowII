@@ -51,7 +51,7 @@ function TravelWindow:Constructor()
     -- configure the external toggle button
     self.ToggleButton = DhorPlugins.Travel.TravelButton(self);
     self.ToggleButton:SetPosition(settings.buttonPositionX,
-        settings.buttonPositionY);
+    settings.buttonPositionY);
     self.ToggleButton:SetVisible(settings.showButton == 1);
     self.ToggleButton:SetOpacity(settings.toggleMinOpacity);
 
@@ -111,9 +111,9 @@ function TravelWindow:Constructor()
     -- create a single context menu to use on all panels
     menu = SettingsMenu(self);
     menu:SetSettings(settings.race,
-        settings.class,
-        settings.mode,
-        settings.filters);
+    settings.class,
+    settings.mode,
+    settings.filters);
 
     -- create the Tabbed Panel to hold all the other panels
     self.MainPanel = DhorPlugins.Extensions.DPanel();
@@ -142,7 +142,7 @@ function TravelWindow:Constructor()
     self.sizeControl:SetBackColorBlendMode(Turbine.UI.BlendMode.Screen)
     self.sizeControl:SetBackColor(Turbine.UI.Color(0.1, 1, 1, 1));
     self.sizeControl:SetPosition(self:GetWidth() - self.sizeControl:GetWidth(),
-        self:GetHeight() - self.sizeControl:GetHeight());
+    self:GetHeight() - self.sizeControl:GetHeight());
 
     -- display the tab that was last selected
     self.MainPanel:SetTab(settings.mode);
@@ -294,7 +294,7 @@ function TravelWindow:Constructor()
         -- if resize dragging, then resize the window
         if (sender.dragging) then
             self:SetSize(width + (args.X - sender.dragStartX),
-                height + (args.Y - sender.dragStartY));
+            height + (args.Y - sender.dragStartY));
         end
 
         -- update the size of the window
@@ -302,7 +302,7 @@ function TravelWindow:Constructor()
 
         -- check time since last move
         if (Turbine.Engine.GetGameTime() - self.lastMove > 0.1
-                and self:IsVisible() or self.lastMove == 0) then
+        and self:IsVisible() or self.lastMove == 0) then
 
             -- update the tabbed panels
             self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
@@ -329,7 +329,7 @@ function TravelWindow:UpdateSize()
 
     -- set the new location of the resize control
     self.sizeControl:SetPosition(self:GetWidth() - self.sizeControl:GetWidth(),
-        self:GetHeight() - self.sizeControl:GetHeight());
+    self:GetHeight() - self.sizeControl:GetHeight());
 end
 
 function TravelWindow:LoadSettings()
@@ -339,7 +339,7 @@ function TravelWindow:LoadSettings()
 
     pcall(function()
         settingsString = Turbine.PluginData.Load(Turbine.DataScope.Character,
-            "TravelWindowSettings");
+        "TravelWindowSettings");
     end);
 
     if (type(settingsString) ~= "table") then
@@ -356,22 +356,22 @@ function TravelWindow:LoadSettings()
 
     if (not settingsString.positionX or settingsString.positionX == "nil") then
         settingsString.positionX = tostring(Turbine.UI.Display.GetWidth()
-                - self:GetWidth() - 50);
+        - self:GetWidth() - 50);
     end
 
     if (not settingsString.positionY or settingsString.positionY == "nil") then
         settingsString.positionY = tostring(Turbine.UI.Display.GetHeight()
-                - self:GetHeight() - 50 * 1.5);
+        - self:GetHeight() - 50 * 1.5);
     end
 
     if (not settingsString.buttonPositionX or settingsString.buttonPositionX == "nil") then
         settingsString.buttonPositionX = tostring(Turbine.UI.Display.GetWidth()
-                - self:GetWidth() - 50);
+        - self:GetWidth() - 50);
     end
 
     if (not settingsString.buttonPositionY or settingsString.buttonPositionY == "nil") then
         settingsString.buttonPositionY = tostring(Turbine.UI.Display.GetHeight()
-                - self:GetHeight() - 50 * 1.5);
+        - self:GetHeight() - 50 * 1.5);
     end
 
     if (not settingsString.hideOnStart or settingsString.hideOnStart == "nil") then
@@ -618,7 +618,7 @@ function TravelWindow:SaveSettings()
 
     -- save the settings
     Turbine.PluginData.Save(Turbine.DataScope.Character,
-        "TravelWindowSettings", settingsString);
+    "TravelWindowSettings", settingsString);
 end
 
 function TravelWindow:UpdateSettings()
@@ -688,7 +688,7 @@ function TravelWindow:SetMapHome()
     -- add an empty quickslot to the window
     self.mapQuickSlot1 = Turbine.UI.Lotro.Quickslot();
     self.mapQuickSlot1:SetPosition(self.MapWindow:GetWidth() / 2 - 18,
-        self.MapWindow:GetHeight() - 80);
+    self.MapWindow:GetHeight() - 80);
     self.mapQuickSlot1:SetSize(36, 36);
     self.mapQuickSlot1:SetParent(self.MapWindow);
     self.mapQuickSlot1:SetUseOnRightClick(false);
@@ -698,8 +698,8 @@ function TravelWindow:SetMapHome()
     self.mapButton = Turbine.UI.Lotro.Button();
     self.mapButton:SetSize(60, 50);
     self.mapButton:SetPosition(self.MapWindow:GetWidth() / 2 -
-            self.mapButton:GetWidth() / 2,
-        self.MapWindow:GetHeight() - 35);
+    self.mapButton:GetWidth() / 2,
+    self.MapWindow:GetHeight() - 35);
     self.mapButton:SetText("OK");
     self.mapButton:SetParent(self.MapWindow);
     self.mapButton:SetVisible(true);
@@ -710,7 +710,7 @@ function TravelWindow:SetMapHome()
 
         -- check if there is a shortcut in the quickslot
         if (self.mapQuickSlot1:GetShortcut():GetType() ~=
-                Turbine.UI.Lotro.ShortcutType.Undef) then
+        Turbine.UI.Lotro.ShortcutType.Undef) then
 
             -- save the shortcut data to the settings
             self:SaveMapHome(self.mapQuickSlot1:GetShortcut());
@@ -795,55 +795,55 @@ function TravelWindow:SetShortcuts()
             -- if the shortcut is the map home or not
             if (string.len(genLocations:DataAtIndex(i)) > 12) then
                 table.insert(travelShortcuts, TravelShortcut(2.0,
-                    genLocations:DataAtIndex(i),
-                    genLocations:KeyAtIndex(i),
-                    1,
-                    counter,
-                    settings.enabled[genLocations:KeyAtIndex(i)],
-                    genLocations:NameAtIndex(i)));
+                genLocations:DataAtIndex(i),
+                genLocations:KeyAtIndex(i),
+                1,
+                counter,
+                settings.enabled[genLocations:KeyAtIndex(i)],
+                genLocations:NameAtIndex(i)));
             else
                 table.insert(travelShortcuts, TravelShortcut(6.0,
-                    genLocations:DataAtIndex(i),
-                    genLocations:KeyAtIndex(i),
-                    1,
-                    counter,
-                    settings.enabled[genLocations:KeyAtIndex(i)],
-                    genLocations:NameAtIndex(i)));
+                genLocations:DataAtIndex(i),
+                genLocations:KeyAtIndex(i),
+                1,
+                counter,
+                settings.enabled[genLocations:KeyAtIndex(i)],
+                genLocations:NameAtIndex(i)));
             end
         end
 
         -- add the race travel to the list
         counter = self:TableIndex(settings.order, racialLocations:KeyAtIndex(self.racetype));
         table.insert(travelShortcuts, TravelShortcut(6.0,
-            racialLocations:DataAtIndex(self.racetype),
-            racialLocations:KeyAtIndex(self.racetype),
-            2,
-            counter,
-            settings.enabled[racialLocations:KeyAtIndex(self.racetype)],
-            racialLocations:NameAtIndex(self.racetype)));
+        racialLocations:DataAtIndex(self.racetype),
+        racialLocations:KeyAtIndex(self.racetype),
+        2,
+        counter,
+        settings.enabled[racialLocations:KeyAtIndex(self.racetype)],
+        racialLocations:NameAtIndex(self.racetype)));
 
         -- set the reputation travel items
         for i = 1, travelCount[4], 1 do
             counter = self:TableIndex(settings.order, repLocations:KeyAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
-                repLocations:DataAtIndex(i),
-                repLocations:KeyAtIndex(i),
-                3,
-                counter,
-                settings.enabled[repLocations:KeyAtIndex(i)],
-                repLocations:NameAtIndex(i)));
+            repLocations:DataAtIndex(i),
+            repLocations:KeyAtIndex(i),
+            3,
+            counter,
+            settings.enabled[repLocations:KeyAtIndex(i)],
+            repLocations:NameAtIndex(i)));
         end
     else
         -- set the creep travel items
         for i = 1, travelCount[6], 1 do
             counter = self:TableIndex(settings.order, creepLocations:KeyAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
-                creepLocations:DataAtIndex(i),
-                creepLocations:KeyAtIndex(i),
-                3,
-                counter,
-                settings.enabled[creepLocations:KeyAtIndex(i)],
-                creepLocations:NameAtIndex(i)));
+            creepLocations:DataAtIndex(i),
+            creepLocations:KeyAtIndex(i),
+            3,
+            counter,
+            settings.enabled[creepLocations:KeyAtIndex(i)],
+            creepLocations:NameAtIndex(i)));
         end
     end
 
@@ -852,12 +852,12 @@ function TravelWindow:SetShortcuts()
         for i = 1, travelCount[1], 1 do
             counter = self:TableIndex(settings.order, hunterLocations:KeyAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
-                hunterLocations:DataAtIndex(i),
-                hunterLocations:KeyAtIndex(i),
-                4,
-                counter,
-                settings.enabled[hunterLocations:KeyAtIndex(i)],
-                hunterLocations:NameAtIndex(i)));
+            hunterLocations:DataAtIndex(i),
+            hunterLocations:KeyAtIndex(i),
+            4,
+            counter,
+            settings.enabled[hunterLocations:KeyAtIndex(i)],
+            hunterLocations:NameAtIndex(i)));
         end
     end
 
@@ -866,12 +866,12 @@ function TravelWindow:SetShortcuts()
         for i = 1, travelCount[2], 1 do
             counter = self:TableIndex(settings.order, wardenLocations:KeyAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
-                wardenLocations:DataAtIndex(i),
-                wardenLocations:KeyAtIndex(i),
-                4,
-                counter,
-                settings.enabled[wardenLocations:KeyAtIndex(i)],
-                wardenLocations:NameAtIndex(i)));
+            wardenLocations:DataAtIndex(i),
+            wardenLocations:KeyAtIndex(i),
+            4,
+            counter,
+            settings.enabled[wardenLocations:KeyAtIndex(i)],
+            wardenLocations:NameAtIndex(i)));
         end
     end
 
@@ -919,7 +919,7 @@ function TravelWindow:CheckEnabledSettings()
 
             -- if the skill is not in the order list, add it and increase the counter
             if (self:TableContains(settings.order,
-                genLocations:KeyAtIndex(i)) == false) then
+            genLocations:KeyAtIndex(i)) == false) then
                 table.insert(settings.order, counter, genLocations:KeyAtIndex(i));
                 counter = counter + 1;
             end
@@ -1105,13 +1105,13 @@ function TravelWindow:ResetSettings()
     settings.width = self.minWidth;
     settings.height = self.minHeight;
     settings.positionX = Turbine.UI.Display.GetWidth()
-            - self:GetWidth() - 50;
+    - self:GetWidth() - 50;
     settings.positionY = Turbine.UI.Display.GetHeight()
-            - self:GetHeight() - 50 * 1.5;
+    - self:GetHeight() - 50 * 1.5;
     settings.buttonPositionX = Turbine.UI.Display.GetWidth()
-            - self:GetWidth() - 50;
+    - self:GetWidth() - 50;
     settings.buttonPositionY = Turbine.UI.Display.GetHeight()
-            - self:GetHeight() - 50 * 1.5;
+    - self:GetHeight() - 50 * 1.5;
     settings.hideOnStart = 0;
     settings.hideOnCombat = 0;
     settings.pulldownTravel = 0;
@@ -1133,7 +1133,7 @@ function TravelWindow:ResetSettings()
 
     -- move the toggle button and main window
     self.ToggleButton:SetPosition(settings.buttonPositionX,
-        settings.buttonPositionY);
+    settings.buttonPositionY);
     self:SetPosition(settings.positionX, settings.positionY);
     self:SetSize(settings.width, settings.height);
 
