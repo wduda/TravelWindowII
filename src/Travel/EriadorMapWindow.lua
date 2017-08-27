@@ -75,9 +75,9 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- After-Battle Minas Tirith
         { -1, -1 }, -- Henneth Annûn
         { -1, -1 }, -- Osgiliath
-        { 0, 0 }, -- Camp of the Host
-        { 0, 0 }, -- Haerondir
-        { 0, 0 }, -- Udûn Foothold
+        { -1, -1 }, -- Camp of the Host
+        { -1, -1 }, -- Haerondir
+        { -1, -1 }, -- Udûn Foothold
 
         -- Warden skills
         { 710, 390 }, -- Ost Guruth
@@ -103,9 +103,9 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- After-Battle Minas Tirith
         { -1, -1 }, -- Henneth Annûn
         { -1, -1 }, -- Osgiliath
-        { 0, 0 }, -- Camp of the Host
-        { 0, 0 }, -- Haerondir
-        { 0, 0 }, -- Udûn Foothold
+        { -1, -1 }, -- Camp of the Host
+        { -1, -1 }, -- Haerondir
+        { -1, -1 }, -- Udûn Foothold
 
         -- Reputation skills
         { 330, 300 }, -- Thorin's Hall
@@ -130,9 +130,13 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- After-Battle Minas Tirith
         { -1, -1 }, -- Henneth Annûn
         { -1, -1 }, -- Osgiliath
-        { 0, 0 }, -- Camp of the Host
-        { 0, 0 }, -- Haerondir
-        { 0, 0 }, -- Udûn Foothold
+        { -1, -1 }, -- Camp of the Host
+        { -1, -1 }, -- Haerondir
+        { -1, -1 }, -- Udûn Foothold
+        { -1, -1 }, -- Court of Lothlórien
+        { -1, -1 }, -- Hall of the King
+        { -1, -1 }, -- Bâr Thorenion
+        { -1, -1 }, -- Hall Under the Mountain
 
         -- Racial skills
         { 625, 340 }, -- Bree

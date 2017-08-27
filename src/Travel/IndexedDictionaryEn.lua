@@ -239,7 +239,11 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Return to after-battle Osgiliath (Rep)", "0x7004707D", "Return to after-battle Osgiliath");
     repLocations:AddData("Return to the Camp of the Host (Rep)", "0x70047BF4", "Return to the Camp of the Host");
     repLocations:AddData("Return to Haerondir (Rep)", "0x70047C1B", "Return to Haerondir");
-    repLocations:AddData("Return to the Udûn Foothold", "0x7004AE1D", "Return to the Udûn Foothold");
+    repLocations:AddData("Return to the Udûn Foothold (Rep)", "0x7004AE1D", "Return to the Udûn Foothold");
+    repLocations:AddData("Journey to the Court of Lothlórien", "0x7004b8c2", "Journey to the Court of Lothlórien");
+    repLocations:AddData("Journey to the Hall of the King", "0x7004b8c3", "Journey to the Hall of the King");
+    repLocations:AddData("Journey to Bâr Thorenion", "0x7004b8c4", "Journey to Bâr Thorenion");
+    repLocations:AddData("Journey to the Hall Under the Mountain", "0x7004b8c5", "Journey to the Hall Under the Mountain");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Crude Map to Gramsfoot", "0x70028BBC");

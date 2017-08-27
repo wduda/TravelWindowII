@@ -95,8 +95,12 @@ function TravelWindow:Constructor()
         self.racetype = 2;
     elseif (playerRace == Turbine.Gameplay.Race.Man) then
         self.racetype = 1;
-    else
+    elseif (playerRace == Turbine.Gameplay.Race.Beorning) then
         self.racetype = 5;
+    elseif (playerRace == Turbine.Gameplay.Race.Highelf) then
+        self.racetype = 6;
+    else
+        self.racetype = 7;
     end
 
     -- save the player's combat states for managing hiding the window
@@ -862,7 +866,7 @@ function TravelWindow:SetShortcuts()
     end
 
     -- set the warden travel items
-    if (playerClass == 194) then
+    if (playerClass == Turbine.Gameplay.Class.Warden) then
         for i = 1, travelCount[2], 1 do
             counter = self:TableIndex(settings.order, wardenLocations:KeyAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
@@ -1153,6 +1157,10 @@ function TravelWindow:ResetSettings()
         self.racetype = 2;
     elseif (playerRace == Turbine.Gameplay.Race.Man) then
         self.racetype = 1;
+    elseif (playerRace == Turbine.Gameplay.Race.Beorning) then
+        self.racetype = 5;
+    elseif (playerRace == Turbine.Gameplay.Race.Highelf) then
+        self.racetype = 6;
     else
         Turbine.Engine.WriteLine("What race are you?");
         return;

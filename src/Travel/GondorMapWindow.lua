@@ -133,6 +133,10 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { 700, 240 }, -- Camp of the Host
         { 725, 215 }, -- Haerondir
         { 825, 290 }, -- Udûn Foothold
+        { -1, -1 }, -- Court of Lothlórien
+        { -1, -1 }, -- Hall of the King
+        { -1, -1 }, -- Bâr Thorenion
+        { -1, -1 }, -- Hall Under the Mountain
 
         -- Racial skills
         { -1, -1 }, -- Bree
