@@ -866,7 +866,7 @@ function TravelWindow:SetShortcuts()
     end
 
     -- set the warden travel items
-    if (playerClass == Turbine.Gameplay.Class.Warden) then
+    if (playerClass == 194) then
         for i = 1, travelCount[2], 1 do
             counter = self:TableIndex(settings.order, wardenLocations:KeyAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
