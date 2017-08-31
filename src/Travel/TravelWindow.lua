@@ -97,7 +97,7 @@ function TravelWindow:Constructor()
         self.racetype = 1;
     elseif (playerRace == Turbine.Gameplay.Race.Beorning) then
         self.racetype = 5;
-    elseif (playerRace == Turbine.Gameplay.Race.Highelf) then
+    elseif (playerRace == Turbine.Gameplay.Race.HighElf) then
         self.racetype = 6;
     else
         self.racetype = 7;
