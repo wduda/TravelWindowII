@@ -241,10 +241,10 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Rückkehr ins Lager des Heeres", "0x70047BF4", "Rückkehr ins Lager des Heeres");
     repLocations:AddData("Rückkehr nach Haerondir (Rep)", "0x70047C1B", "Rückkehr nach Haerondir");
     repLocations:AddData("Zurück zum Udûn-Brückenkopf (Rep)", "0x7004AE1D", "Zurück zum Udûn-Brückenkopf");
-    repLocations:AddData("Begebt Euch zum Hof von Lothlórien.", "0x7004b8c2", "Begebt Euch zum Hof von Lothlórien.");
-    repLocations:AddData("Begebt Euch zur Halle des Königs.", "0x7004b8c3", "Begebt Euch zur Halle des Königs.");
-    repLocations:AddData("Begebt Euch zur Halle unter dem Berg.", "0x7004b8c4", "Begebt Euch zur Halle unter dem Berg.");
-    repLocations:AddData("Begebt Euch nach Bâr Thorenion.", "0x7004b8c5", "Begebt Euch nach Bâr Thorenion.");
+    repLocations:AddData("Begebt Euch zum Hof von Lothlórien.", "0x7004B8C2", "Begebt Euch zum Hof von Lothlórien.");
+    repLocations:AddData("Begebt Euch zur Halle des Königs.", "0x7004B8C3", "Begebt Euch zur Halle des Königs.");
+    repLocations:AddData("Begebt Euch zur Halle unter dem Berg.", "0x7004B8C4", "Begebt Euch zur Halle unter dem Berg.");
+    repLocations:AddData("Begebt Euch nach Bâr Thorenion.", "0x7004B8C5", "Begebt Euch nach Bâr Thorenion.");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Grobe Karte nach Gramfuß", "0x70028BBC");

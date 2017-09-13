@@ -135,8 +135,8 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Udûn Foothold
         { -1, -1 }, -- Court of Lothlórien
         { -1, -1 }, -- Hall of the King
-        { -1, -1 }, -- Bâr Thorenion
         { -1, -1 }, -- Hall Under the Mountain
+        { -1, -1 }, -- Bâr Thorenion
 
         -- Racial skills
         { 625, 340 }, -- Bree
