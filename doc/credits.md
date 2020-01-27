@@ -14,4 +14,5 @@ ardinendlil
 Shugotenshi
 Plague
 Eleador
+Lumbago
 Hyoss
