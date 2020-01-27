@@ -2,11 +2,21 @@
 <Plugin>
     <Information>
         <Name>Travel Window</Name>
-        <Author>Hyoss</Author>
-        <Version>17.1.0</Version>
+        <Author>Thaliruth</Author>
+        <Version>25.3</Version>
         <Description>
-            For hunters, wardens, and all those who wish to go "there and back again".
-        </Description>
+     
+Changelog English and French Client: Version 25.3 (12/16/19)
+** Please report errors! info@thaliruth.de
+Race Skills Troubleshooting
+_______________________________
+       
+Changelog German Client: Version 25.3 (16.12.19) 
+** Bei Fehlern bitte melden! info@thaliruth.de
+Fehlerbehebungen bei den Rassen Reise Skills
+		
+		</Description>
+
         <Image>DhorPlugins/Travel/Resources/travel.tga</Image>
     </Information>
     <Package>DhorPlugins.Travel.Main</Package>

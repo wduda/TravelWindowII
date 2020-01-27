@@ -7,10 +7,10 @@
 --[[ put all the strings that might require translation in ]] --
 --[[ one location for easier access ]] --
 helpString = "Travel. Translated by PulseDiver.\n" ..
-        "\n Команды:\n" ..
-        "ntrav show: Показать окно путешествий\n" ..
-        "trav hide: Срыть окно путешествий\n" ..
-        "trav toggle: Вызвать\скрыть окно путешествий\n";
+"\n Команды:\n" ..
+"ntrav show: Показать окно путешествий\n" ..
+"trav hide: Срыть окно путешествий\n" ..
+"trav toggle: Вызвать\скрыть окно путешествий\n";
 
 -- window title strings
 mainTitleString = "Travel";
@@ -25,22 +25,18 @@ mapHomeString = "Дорога домой";
 glanMapString = "Точная карта дороги в Глан Врайг";
 glanMapItemString = "Точная карта дороги в Глан Врайг";
 
--- travel ration strings
-rationItemString = "Дорожные припасы";
-rationLabelString = "Дорожные припасы:";
-
 -- adding map strings
 mapInstructionString = "Перетащите карту из сумки в слот ниже " ..
-        "для добавления новой карты.";
+"для добавления новой карты.";
 mapErrorString = "Новых карт не обнаружено, никаких обновлений не сделано.";
 
 -- error messages
 resetOrderString = "Your order settings have been reset due to a change in " ..
-        "the number of items saved.  This should only occur once.\n" ..
-        "Sorry for the inconvenience.";
+"the number of items saved.  This should only occur once.\n" ..
+"Sorry for the inconvenience.";
 
 resetEnabledString = "Your selected skills have been reset due to an error " ..
-        "in the number of items previously saved.\n";
+"in the number of items previously saved.\n";
 
 skillNotTrainedString = "Умение не получено: ";
 
@@ -165,6 +161,12 @@ function TravelDictionaries:CreateDictionaries()
     -- hunterLocations:AddData("Guide to Dol Amroth", "0x70041197", "Guide to Dol Amroth");
     -- hunterLocations:AddData("Guide to Arnach", "0x70043A63", "Guide to Arnach");
     -- hunterLocations:AddData("Guide to Minas Tirith", "0x70044985", "Guide to Minas Tirith");
+    -- hunterLocations:AddData("Guide to the War-stead", "0x700459AF", "Guide to the War-stead");
+    -- hunterLocations:AddData("Guide to after-battle Minas Tirith", "0x70046CBB", "Guide to after-battle Minas Tirith");
+    -- hunterLocations:AddData("Guide to Henneth Annûn", "0x70047077", "Guide to Henneth Annûn");
+    -- hunterLocations:AddData("Guide to after-battle Osgiliath", "0x70047074", "Guide to after-battle Osgiliath");
+    -- hunterLocations:AddData("Guide to the Camp of the Host", "0x70047BFA", "Guide to the Camp of the Host");
+    -- hunterLocations:AddData("Guide to Haerondir", "0x70047C1D", "Guide to Haerondir");
 
     wardenLocations:AddData("Сбор в Ост Гуруте", "0x70014786", "Сбор в Ост Гуруте");
     wardenLocations:AddData("Сбор в Эстельдине", "0x70014798", "Сбор в Эстельдине");
@@ -186,6 +188,12 @@ function TravelDictionaries:CreateDictionaries()
     -- wardenLocations:AddData("Muster in Dol Amroth", "0x70041198", "Muster in Dol Amroth");
     -- wardenLocations:AddData("Muster in Arnach", "0x70043A66", "Muster in Arnach");
     -- wardenLocations:AddData("Muster in Minas Tirith", "0x70044982", "Muster in Minas Tirith");
+    -- wardenLocations:AddData("Muster in the War-stead", "0x700459AA", "Muster in the War-stead");
+    -- wardenLocations:AddData("Muster in after-battle Minas Tirith", "0x70046CBF", "Muster in after-battle Minas Tirith");
+    -- wardenLocations:AddData("Muster in Henneth Annûn", "0x70047075", "Muster in Henneth Annûn");
+    -- wardenLocations:AddData("Muster in after-battle Osgiliath", "0x70047076", "Muster in after-battle Osgiliath");
+    -- wardenLocations:AddData("Muster in the Camp of the Host ", "0x70047BFC", "Muster in the Camp of the Host ");
+    -- wardenLocations:AddData("Muster in Haerondir", "0x70047C23", "Muster in Haerondir");
 
     racialLocations:AddData("Дорога в Бри (Рас.)", "0x700062F6", "Дорога в Бри");
     racialLocations:AddData("Дорога в Шир (Рас.)", "0x700062C8", "Дорога в Шир");
@@ -211,6 +219,7 @@ function TravelDictionaries:CreateDictionaries()
         genLocations:AddData("Возвращение к путевому камню 12", "0x7002FF64", "skip");
     end
     genLocations:AddData("Возвращение домой", "0x7000D046", "Возвращение домой");
+    genLocations:AddData("Premium House", "0x70046EE4", "Travel to Premium House");
     genLocations:AddData("Путешествие в дом содружества", "0x7000D047", "Путешествие в дом содружества");
 
     repLocations:AddData("Возвращение к Вратам Торина (Реп.)", "0x7001BF91", "Путь к Вратам Торина");
@@ -232,6 +241,12 @@ function TravelDictionaries:CreateDictionaries()
     -- repLocations:AddData("Return to Dol Amroth (Rep)", "0x700411AC", "Return to Dol Amroth");
     -- repLocations:AddData("Return to Arnach (Rep)", "0x70043A6A", "Return to Arnach");
     -- repLocations:AddData("Return to Minas Tirith (Rep)", "0x7004497E", "Return to Minas Tirith");
+    -- repLocations:AddData("Return to the War-stead (Rep)", "0x700459A9", "Return to the War-stead");
+    -- repLocations:AddData("Return to after-battle Minas Tirith (Rep)", "0x70046CC0", "Return to after-battle Minas Tirith");
+    -- repLocations:AddData("Return to after-battle Osgiliath (Rep)", "0x7004707D", "Return to after-battle Osgiliath");
+    -- repLocations:AddData("Return to after-battle Henneth Annûn (Rep)", "0x70047080", "Return to after-battle Henneth Annûn");
+    -- repLocations:AddData("Return to the Camp of the Host (Rep)", "0x70047BF4", "Return to the Camp of the Host");
+    -- repLocations:AddData("Return to Haerondir (Rep)", "0x70047C1B", "Return to Haerondir");
 
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Грубая карта пути к Подножию Грэм", "0x70028BBC", "Грубая карта пути к Подножию Грэм");

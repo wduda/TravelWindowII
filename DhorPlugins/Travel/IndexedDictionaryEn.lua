@@ -2,8 +2,8 @@
 --[[ put all the strings that might require translation in ]] --
 --[[ one location for easier access ]] --
 helpString = "Travel\n\ntrav show: Display the Travel Window\n" ..
-        "trav hide: Hides the Travel Window\n" ..
-        "trav toggle: Toggle the Travel Window\n";
+"trav hide: Hides the Travel Window\n" ..
+"trav toggle: Toggle the Travel Window\n";
 
 -- window title strings
 mainTitleString = "Travel";
@@ -18,23 +18,19 @@ mapHomeString = "Map Home";
 glanMapString = "Glân Vraig Map";
 glanMapItemString = "Map to Glân Vraig";
 
--- travel ration strings
-rationItemString = "Travelling Ration";
-rationLabelString = "Travel Rations:";
-
 -- adding map strings
 mapInstructionString = "Drag your maps from your inventory onto the " ..
-        "quickslot below.  Then press the button " ..
-        "to set your map home skills.";
+"quickslot below.  Then press the button " ..
+"to set your map home skills.";
 mapErrorString = "No maps detected, no updates made.";
 
 -- error messages
 resetOrderString = "Your order settings have been reset due to a change in " ..
-        "the number of items saved.  This should only occur once.\n" ..
-        "Sorry for the inconvenience.";
+"the number of items saved.  This should only occur once.\n" ..
+"Sorry for the inconvenience.";
 
 resetEnabledString = "Your selected skills have been reset due to an error " ..
-        "in the number of items previously saved.\n";
+"in the number of items previously saved.\n";
 
 skillNotTrainedString = "Skill not trained: ";
 
@@ -129,9 +125,8 @@ function TravelDictionaries:GetLocations()
     return genLocations, hunterLocations, wardenLocations, racialLocations, repLocations;
 end
 
+-- add the data to custom dictionaries to maintain the order
 function TravelDictionaries:CreateDictionaries()
-    -- add the data to custom dictionaries to maintain the order
-
     hunterLocations:AddData("Return to Camp", "0x7000A2C1", "Return to Camp");
     hunterLocations:AddData("Guide to Bree", "0x70003F42", "Guide to Bree");
     hunterLocations:AddData("Guide to Thorin's Hall", "0x70003F41", "Guide to Thorin's Hall");
@@ -158,7 +153,20 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Guide to Dol Amroth", "0x70041197", "Guide to Dol Amroth");
     hunterLocations:AddData("Guide to Arnach", "0x70043A63", "Guide to Arnach");
     hunterLocations:AddData("Guide to Minas Tirith", "0x70044985", "Guide to Minas Tirith");
-
+    hunterLocations:AddData("Guide to the War-stead", "0x700459AF", "Guide to the War-stead");
+    hunterLocations:AddData("Guide to after-battle Minas Tirith", "0x70046CBB", "Guide to after-battle Minas Tirith");
+    hunterLocations:AddData("Guide to Henneth Annûn", "0x70047077", "Guide to Henneth Annûn");
+    hunterLocations:AddData("Guide to after-battle Osgiliath", "0x70047074", "Guide to after-battle Osgiliath");
+    hunterLocations:AddData("Guide to the Camp of the Host", "0x70047BFA", "Guide to the Camp of the Host");
+    hunterLocations:AddData("Guide to Haerondir", "0x70047C1D", "Guide to Haerondir");
+    hunterLocations:AddData("Guide to the Udûn Foothold", "0x7004AE1E", "Guide to the Udûn Foothold");
+    hunterLocations:AddData("Guide to Dale", "0x7004d73b", "Guide to Dale");
+	hunterLocations:AddData("Guide to Járnfast", "0x7004FACC", "Guide to Járnfast");
+    hunterLocations:AddData("Guide to Skarháld", "0x7004FACB", "Guide to Skarháld");
+	hunterLocations:AddData("Guide to Beorninghús", "0x70052F07", "Guide to Beorninghús");
+    hunterLocations:AddData("Guide to Hultvís", "0x70052F08", "Guide to Hultvís");
+    hunterLocations:AddData("Guide to Estolad Lân", "0x700551F4", "Guide to Estolad Lân");
+	
     wardenLocations:AddData("Muster in Ost Guruth", "0x70014786", "Muster in Ost Guruth");
     wardenLocations:AddData("Muster in Esteldín", "0x70014798", "Muster in Esteldín");
     wardenLocations:AddData("Muster in Evendim", "0x7001478E", "Muster in Evendim");
@@ -178,12 +186,27 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Muster in Dol Amroth", "0x70041198", "Muster in Dol Amroth");
     wardenLocations:AddData("Muster in Arnach", "0x70043A66", "Muster in Arnach");
     wardenLocations:AddData("Muster in Minas Tirith", "0x70044982", "Muster in Minas Tirith");
-
-    racialLocations:AddData("Return to Bree", "0x700062F6", "Return to Bree");
-    racialLocations:AddData("Return to the Shire", "0x700062C8", "Return to the Shire");
-    racialLocations:AddData("Return to Thorin's Gate", "0x70006346", "Return to Thorin's Gate");
-    racialLocations:AddData("Return to Rivendell", "0x7000631F", "Return to Rivendell");
-    racialLocations:AddData("Return Home (Racial)", "0x70041a22", "Return Home");
+    wardenLocations:AddData("Muster in the War-stead", "0x700459AA", "Muster in the War-stead");
+    wardenLocations:AddData("Muster in after-battle Minas Tirith", "0x70046CBF", "Muster in after-battle Minas Tirith");
+    wardenLocations:AddData("Muster in Henneth Annûn", "0x70047075", "Muster in Henneth Annûn");
+    wardenLocations:AddData("Muster in after-battle Osgiliath", "0x70047076", "Muster in after-battle Osgiliath");
+    wardenLocations:AddData("Muster in the Camp of the Host", "0x70047BFC", "Muster in the Camp of the Host");
+    wardenLocations:AddData("Muster in Haerondir", "0x70047C23", "Muster in Haerondir");
+    wardenLocations:AddData("Muster in the Udûn Foothold", "0x7004AE1F", "Muster in the Udûn Foothold");
+    wardenLocations:AddData("Muster in Dale", "0x7004d73a", "Muster in Dale");
+	wardenLocations:AddData("Muster in Járnfast", "0x7004FACA", "Muster in Járnfast");
+    wardenLocations:AddData("Muster in Skarháld", "0x7004FACD", "Muster in Skarháld");
+	wardenLocations:AddData("Muster in Beorninghús", "0x70052F0A", "Muster in Beorninghús");
+    wardenLocations:AddData("Muster in Hultvís", "0x70052F06", "Muster in Hultvís");
+    wardenLocations:AddData("Muster in Estolad Lân", "0x700551F2", "Muster in Estolad Lân");
+	
+    racialLocations:AddData("To Bree (Racial Human)", "0x700062F6", "Return to Bree");
+    racialLocations:AddData("To the Shire (Racial Hobbit)", "0x700062C8", "Return to the Shire");
+    racialLocations:AddData("To Thorin's Gate (Raciail Dwarf)", "0x70006346", "Return to Thorin's Gate");
+    racialLocations:AddData("To Rivendell (Racial Elb)", "0x7000631F", "Return to Rivendell");
+    racialLocations:AddData("To Home (Racial Beo)", "0x70041A22", "Return Home");
+    racialLocations:AddData("To Caras Galadhon (Racial High Elb)", "0x70048C8C", "Travel to Caras Galadhon in Lothlórien");
+    racialLocations:AddData("To Thorin's Hall (Racial Stout Ace)", "0x70053C0F", "Travel to Thorin's Hall");
 
     -- check if a function that only exists in the newest update exists,
     -- if so, add the Return Home skills
@@ -202,27 +225,45 @@ function TravelDictionaries:CreateDictionaries()
         genLocations:AddData("Return Home 12", "0x7002FF64", "skip");
     end
     genLocations:AddData("Personal House", "0x7000D046", "Travel to Personal House");
+    genLocations:AddData("Premium House", "0x70046EE4", "Travel to Premium House");
     genLocations:AddData("Kinship House", "0x7000D047", "Travel to Kinship House");
 
-    repLocations:AddData("Return to Thorin's Gate (Rep)", "0x7001BF91", "Return to Thorin's Gate");
-    repLocations:AddData("Return to Bree (Rep)", "0x7001BF90", "Return to Bree");
-    repLocations:AddData("Return to Lalia's Market", "0x700364B1", "Return to Lalia's Market");
-    repLocations:AddData("Return to the Shire (Rep)", "0x70023262", "Return to Michel Delving");
-    repLocations:AddData("Return to Rivendell (Rep)", "0x70023263", "Return to Rivendell");
-    repLocations:AddData("Return to Ost Guruth (Rep)", "0x70020441", "Return to Ost Guruth");
-    repLocations:AddData("Return to Mirkwood (Rep)", "0x7001F374", "Return to Mirkwood");
-    repLocations:AddData("Return to Enedwaith (Rep)", "0x70021FA2", "Return to Enedwaith");
-    repLocations:AddData("Return to Galtrev (Rep)", "0x7002C647", "Return to Galtrev");
-    repLocations:AddData("Return to Stangard (Rep)", "0x7002C65D", "Return to Stangard");
-    repLocations:AddData("Return to Snowbourn (Rep)", "0x70031A46", "Return to Snowbourn");
-    repLocations:AddData("Return to Forlaw (Rep)", "0x70036B5E", "Return to Forlaw");
-    repLocations:AddData("Return to Aldburg (Rep)", "0x7003DC81", "Return to Aldburg");
-    repLocations:AddData("Return to Derndingle (Rep)", "0x7004128F", "Return to Derndingle"); -- thanks to Rrys for the travel code
-    repLocations:AddData("Return to Helm's Deep (Rep)", "0x7003DC82", "Return to Helm's Deep");
-    repLocations:AddData("Return to Dol Amroth (Rep)", "0x700411AC", "Return to Dol Amroth");
-    repLocations:AddData("Return to Arnach (Rep)", "0x70043A6A", "Return to Arnach");
-    repLocations:AddData("Return to Minas Tirith (Rep)", "0x7004497E", "Return to Minas Tirith");
-
+    repLocations:AddData("To Thorin's Gate", "0x7001BF91", "Return to Thorin's Gate");
+    repLocations:AddData("To Bree", "0x7001BF90", "Return to Bree");
+    repLocations:AddData("To Lalia's Market", "0x700364B1", "Return to Lalia's Market");
+    repLocations:AddData("To the Shire", "0x70023262", "Return to Michel Delving");
+    repLocations:AddData("To Rivendell", "0x70023263", "Return to Rivendell");
+    repLocations:AddData("To Ost Guruth", "0x70020441", "Return to Ost Guruth");
+    repLocations:AddData("To Mirkwood", "0x7001F374", "Return to Mirkwood");
+    repLocations:AddData("To Enedwaith", "0x70021FA2", "Return to Enedwaith");
+    repLocations:AddData("To Galtrev", "0x7002C647", "Return to Galtrev");
+    repLocations:AddData("To Stangard", "0x7002C65D", "Return to Stangard");
+    repLocations:AddData("To Snowbourn", "0x70031A46", "Return to Snowbourn");
+    repLocations:AddData("To Forlaw", "0x70036B5E", "Return to Forlaw");
+    repLocations:AddData("To Aldburg", "0x7003DC81", "Return to Aldburg");
+    repLocations:AddData("To Derndingle", "0x7004128F", "Return to Derndingle");
+    repLocations:AddData("To Helm's Deep", "0x7003DC82", "Return to Helm's Deep");
+    repLocations:AddData("To Dol Amroth", "0x700411AC", "Return to Dol Amroth");
+    repLocations:AddData("To Arnach", "0x70043A6A", "Return to Arnach");
+    repLocations:AddData("To Minas Tirith", "0x7004497E", "Return to Minas Tirith");
+    repLocations:AddData("To the War-stead", "0x700459A9", "Return to the War-stead");
+    repLocations:AddData("To after-battle Minas Tirith", "0x70046CC0", "Return to after-battle Minas Tirith");
+    repLocations:AddData("To after-battle Henneth A.", "0x70047080", "Return to after-battle Henneth Annûn");
+    repLocations:AddData("To after-battle Osgiliath", "0x7004707D", "Return to after-battle Osgiliath");
+    repLocations:AddData("To the Camp of the Host", "0x70047BF4", "Return to the Camp of the Host");
+    repLocations:AddData("To Haerondir", "0x70047C1B", "Return to Haerondir");
+    repLocations:AddData("To the Udûn Foothold", "0x7004AE1D", "Return to the Udûn Foothold");
+    repLocations:AddData("To the Court of Lothlórien", "0x7004B8C2", "Journey to the Court of Lothlórien");
+    repLocations:AddData("To the Hall of the King", "0x7004B8C3", "Journey to the Hall of the King");
+    repLocations:AddData("To the Hall Under the M.", "0x7004B8C4", "Journey to the Hall Under the Mountain");
+    repLocations:AddData("To Bâr Thorenion", "0x7004B8C5", "Journey to Bâr Thorenion");
+    repLocations:AddData("To Dale", "0x7004d738", "Return to Dale");
+	repLocations:AddData("To Járnfast", "0x7004FAC3", "Return to Járnfast");
+    repLocations:AddData("To Skarháld", "0x7004FAC5", "Return to Skarháld");
+	repLocations:AddData("To Beorninghús", "0x70052F12", "Return to Beorninghús");
+    repLocations:AddData("To Hultvís", "0x70052F04", "Return to Hultvís");
+    repLocations:AddData("To Estolad Lân", "0x700551F8", "Return to Estolad Lân");
+	
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Crude Map to Gramsfoot", "0x70028BBC");
     creepLocations:AddData("Map to Gramsfoot", "0x70028BC1");
@@ -237,17 +278,14 @@ function TravelDictionaries:CreateDictionaries()
     creepLocations:AddData("Poor Map to Tol Ascarnen", "0x70028BB1");
     creepLocations:AddData("Poor Map to Lugazag", "0x70028BB2");
     creepLocations:AddData("Poor Map to Tirith Rhaw", "0x70028BB4");
-    -- creepLocations:AddData("Poor Map to Tirith Rhaw","0x70028BB0");
     creepLocations:AddData("Poor Map to Grimwood", "0x70028BB9");
 
     creepLocations:AddData("Good Map to Isendeep", "0x70028BC0");
     creepLocations:AddData("Good Map to Tol Ascarnen", "0x70028BC2");
     creepLocations:AddData("Good Map to Lugazag", "0x70028BB5");
     creepLocations:AddData("Good Map to Tirith Rhaw", "0x70028BB0");
-    -- creepLocations:AddData("Good Map to Tirith Rhaw","0x70028BB4");
     creepLocations:AddData("Good Map to Grimwood", "0x70028BBD");
 end
-
 
 --[[ use a modified table that can maintain a key value for each entry ]] --
 IndexedDictionary = class()

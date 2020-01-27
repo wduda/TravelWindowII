@@ -119,11 +119,12 @@ function TravelListTab:SetScrollBar()
     numOfRows = math.ceil(numOfSlots / self.numOfCols);
 
     self.max = numOfRows * 22 - self:GetHeight() + 35;
-    if (self.max < 0) then -- the max cannot be less than one
-    self.max = 0;
-    self.myScrollBar:SetMaximum(self.max);
-    self.myScrollBar:SetParent(self.SubWindow);
-    self.myScrollBar:SetVisible(false);
+    if (self.max < 0) then
+        -- the max cannot be less than one
+        self.max = 0;
+        self.myScrollBar:SetMaximum(self.max);
+        self.myScrollBar:SetParent(self.SubWindow);
+        self.myScrollBar:SetVisible(false);
     else
         self.myScrollBar:SetMaximum(self.max);
         self.myScrollBar:SetParent(self.SubWindow);
