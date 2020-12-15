@@ -102,7 +102,7 @@ function TravelWindow:Constructor()
     elseif (playerRace == Turbine.Gameplay.Race.StoutAxe) then                
         self.racetype = 7;   
     else
-        self.racetype = 8;
+        self.racetype = 1; -- default to man race to prevent errors
     end
 
     -- save the player's combat states for managing hiding the window
@@ -190,7 +190,13 @@ function TravelWindow:Constructor()
 
     -- manage hiding the UI
     self.KeyDown = function(sender, args)
-        if (args.Action == 268435635) then
+        if (args.Action == Turbine.UI.Lotro.Action.Escape) then
+            self:SetVisible(false);
+            self:CloseGondorMap();
+            self:CloseMoorMap();
+            self:CloseEriadorMap();
+            self:CloseRhovanionMap();
+        elseif (args.Action == 268435635) then
             if (self.hidden == false) then
                 self.currentVisState = self:IsVisible();
                 self.hidden = true;
@@ -1163,6 +1169,8 @@ function TravelWindow:ResetSettings()
         self.racetype = 5;
     elseif (playerRace == Turbine.Gameplay.Race.Highelf) then
         self.racetype = 6;
+    elseif (playerRace == Turbine.Gameplay.Race.StoutAxe) then
+        self.racetype = 7;
     else
         Turbine.Engine.WriteLine("What race are you?");
         return;

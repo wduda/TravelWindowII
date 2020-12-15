@@ -18,11 +18,6 @@ mapHomeString = "Karte zum Ausgangspunkt";
 glanMapString = "Genaue Karte nach Glân Vraig";
 glanMapItemString = "Genaue Karte nach Glân Vraig";
 
--- adding map strings
-mapInstructionString = "Ziehe deine Karten aus deinem Inventar in den  " ..
-"Quickslot unten. Dann drücke den Button " ..
-"um deine Karte zu setzen.";
-mapErrorString = "Keine Karten gefunden, keine Aktualisierungen durchgeführt.";
 
 -- error messages
 resetOrderString = "Deine Sortiereinstellungen wurden aufgrund einer Änderung der Anzahl" ..
@@ -68,7 +63,6 @@ menuTextString = "Liste";
 menuIconString = "Icon-Gitternetz";
 menuCaroString = "Karussell";
 menuPullString = "Pulldown-Liste";
-menuMapString = "Karte hinzufuegen";
 menuOptionsString = "Optionen";
 moorMapString = "Öffne Etten-Karte";
 eriadorMapString = "Öffne Eriador-Karte";
@@ -164,9 +158,11 @@ function TravelDictionaries:CreateDictionaries()
 	hunterLocations:AddData("Führer nach Thal", "0x7004d73b", "Führer nach Thal");
 	hunterLocations:AddData("Führer nach Járnfast", "0x7004facc", "Führer nach Járnfast");
     hunterLocations:AddData("Führer nach Skarháld", "0x7004facb", "Führer nach Skarháld");
-	hunterLocations:AddData("Führer nach Beorninghús", "0x70052F07", "Führer nach Beorninghús");
+	hunterLocations:AddData("Führer nach Beorninghús", "0x70052F07", "Führer nach Beorningerhús");
     hunterLocations:AddData("Führer nach Hultvís", "0x70052F08", "Leitfaden für Hultvís");
-    hunterLocations:AddData("Führer nach Estolad Lân", "0x700551F4", "Führer nach Estolad Lân");
+    hunterLocations:AddData("Führer nach Estolad Lân", "0x700551F4", "Führer nach Estolad Lân"); -- Need to get the right Skill-ID
+    hunterLocations:AddData("Führer nach Limlók", "0x7005762d", "Führer nach Limlók");
+    hunterLocations:AddData("Führer nach Annâk-khurfu", "0x70058571", "Führer nach Annâk-khurfu");
 
     wardenLocations:AddData("Appell in der Feste Guruth", "0x70014786", "Appell in der Feste Guruth");
     wardenLocations:AddData("Appell in Esteldín", "0x70014798", "Appell in Esteldín");
@@ -195,19 +191,21 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Appell in Haerondir", "0x70047C23", "Appell in Haerondir");
     wardenLocations:AddData("Appell im Udûn-Brückenkopf", "0x7004AE1F", "Appell im Udûn-Brückenkopf");
     wardenLocations:AddData("Appell in Thal", "0x7004d73a", "Appell in Thal");
-	wardenLocations:AddData("Appell in Jarnfast", "0x7004FACA", "Musterung in Járnfast");
-    wardenLocations:AddData("Appell in Skarhald", "0x7004FACD",  "Musterung in Skarháld");
-	wardenLocations:AddData("Appell in Beorninghús", "0x70052F0A", "Appell im Beorninghús");
+	wardenLocations:AddData("Appell in Járnfast", "0x7004FACA", "Musterung in Jarnfast");
+    wardenLocations:AddData("Appell in Skarháld", "0x7004FACD",  "Musterung  in Skarhald");
+	wardenLocations:AddData("Appell in Beorninghús", "0x70052F0A", "Appell in Beorninghús");
     wardenLocations:AddData("Appell in Hultvís", "0x70052F06", "Appell in Hultvís");
     wardenLocations:AddData("Appell in Estolad Lân", "0x700551F2", "Appell in Estolad Lân");
-	
+	wardenLocations:AddData("Appell in Limlók", "0x70057635", "Appell in Limlók");
+    wardenLocations:AddData("Appell in Annâk-khurfu", "0x70058572", "Appell in Annâk-khurfu");
+
     racialLocations:AddData("Nach Bree (Rasse)", "0x700062F6", "Rückkehr nach Bree");
-    racialLocations:AddData("Zum Auenland (Rasse)", "0x700062C8", "Rückkehr ins Auenland");
+    racialLocations:AddData("Ins Auenland (Rasse)", "0x700062C8", "Rückkehr ins Auenland");
     racialLocations:AddData("Zu Thorins Tor (Rasse Zwerg)", "0x70006346", "Rückkehr zu Thorins Tor");
-    racialLocations:AddData("Nach Bruchtal (Rasse Elb)", "0x7000631F", "Rückkehr nach Bruchtal");
-    racialLocations:AddData("Zu Grimbeorns Hütte (Rasse Beorninger)", "0x70041A22", "Zum 1. Heim zurückkehren");
-    racialLocations:AddData("Nach Caras Galadhon (Rasse Hochelb)", "0x70048C8C", "Reise nach Caras Galadhon in Lothlórien");
-    racialLocations:AddData("Zu Thorins Tor (Rasse Starkaxt)", "0x70053C0F", "Rückkehr zu Thorins Halle");
+    racialLocations:AddData("Nach Bruchtal (Rasse)", "0x7000631F", "Rückkehr nach Bruchtal");
+    racialLocations:AddData("Zu Grimbeorns Hütte (Rasse)", "0x70041A22", "Zum 1. Heim zurückkehren");
+    racialLocations:AddData("Nach Caras Galadhon (Rasse)", "0x70048C8C", "Reise nach Caras Galadhon in Lothlórien");
+    racialLocations:AddData("Reise zu Thorins Halle (Rasse Starkaxt)", "0x70053C0F", "Reise zu Thorins Halle");
 
     -- check if a function that only exists in the newest update exists,
     -- if so, add the Return Home skills
@@ -226,7 +224,7 @@ function TravelDictionaries:CreateDictionaries()
         genLocations:AddData("zum 12. Markstein zurück", "0x7002FF64", "skip");
     end
     genLocations:AddData("Zum eigenen Haus reisen", "0x7000D046", "Reist zu Eurem eigenen Heim");
-    genLocations:AddData("Reist zu Eurem Premiumheim", "0x70046EE4", "Reist zu Eurem Premiumheim");
+    genLocations:AddData("Zu Premiumheim", "0x70046EE4", "Reist zu Eurem Premiumheim");
     genLocations:AddData("Zum Sippenhaus reisen", "0x7000D047", "Reist zum Haus Eurer Sippe");
 
     repLocations:AddData("Nach Thorins Tor", "0x7001BF91", "Rückkehr zu Thorins Tor");
@@ -248,9 +246,9 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Nach Arnach", "0x70043A6A", "Rückkehr nach Arnach");
     repLocations:AddData("Nach Minas Tirith", "0x7004497E", "Kehrt nach Minas Tirith zurück.");
     repLocations:AddData("Kriegslager der Rohirrim", "0x700459A9", "Zurück zum Kriegslager der Rohirrim");
-    repLocations:AddData("Minas Tirith nach der Schl.", "0x70046CC0", "Rückkehr ins schlachtgezeichnete Minas Tirith");
-    repLocations:AddData("Henneth Annûn nach der Schl.", "0x70047080", "Rückkehr ins schlachtgezeichnete Henneth Annûn");
-    repLocations:AddData("Osgiliath nach der Schlacht", "0x7004707D", "Rückkehr ins schlachtgezeichnete Osgiliath");
+    repLocations:AddData("Minas Tirith n.d. Schlacht", "0x70046CC0", "Rückkehr ins schlachtgezeichnete Minas Tirith");
+    repLocations:AddData("Henneth Annûn", "0x70047080", "Rückkehr nach Henneth Annûn");
+    repLocations:AddData("Osgiliath n.d. Schlacht", "0x7004707D", "Rückkehr ins schlachtgezeichnete Osgiliath");
     repLocations:AddData("Ins Lager des Heeres", "0x70047BF4", "Rückkehr ins Lager des Heeres");
     repLocations:AddData("Nach Haerondir", "0x70047C1B", "Rückkehr nach Haerondir");
     repLocations:AddData("Zum Udûn-Brückenkopf", "0x7004AE1D", "Zurück zum Udûn-Brückenkopf");
@@ -264,8 +262,9 @@ function TravelDictionaries:CreateDictionaries()
 	repLocations:AddData("Nach Beorninghús", "0x70052F12", "Kehrt zum Beorningerhús zurück.");
     repLocations:AddData("Nach Hultvís", "0x70052F04", "Kehrt zum Hultvís zurück.");
     repLocations:AddData("Nach Estolad Lân", "0x700551F8", "Zurück nach Estolad Lân");
-
-
+    repLocations:AddData("Nach Limlók", "0x70057629", "Rückkehr nach Limlók");
+    repLocations:AddData("Nach Annâk-khurfu", "0x7005856F", "Rückkehr nach Annâk-khurfu");
+    
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddData("Grobe Karte nach Gramfuß", "0x70028BBC");
     creepLocations:AddData("Karte nach Gramfuß", "0x70028BC1");
