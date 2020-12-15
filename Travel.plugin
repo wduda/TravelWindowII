@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Plugin>
+    <Information>
+        <Name>Travel Window II</Name>
+        <Author>Hyoss</Author>
+        <Version>1.0</Version>
+        <Description>
+        Please report bugs and feature requests at https://github.com/wduda/TravelWindowII/issues
+		</Description>
+        <Image>TravelWindowII/src/resources/travel.tga</Image>
+    </Information>
+    <Package>TravelWindowII.src.Main</Package>
+    <!--<Configuration Apartment="Travel">
+    </Configuration>-->
+</Plugin>
