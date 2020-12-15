@@ -52,7 +52,7 @@ function SettingsMenu:Constructor(parentWindow)
     OptionsMenu = TravelWindowII.src.extensions.DMenuList(menuOptionsString);
     SkillsMenu = TravelWindowII.src.extensions.DMenuList(menuSkillsString);
 
-    -- create the item to opem the moors map window
+    -- create the item to open the moors map window
     MoorMapMenu = TravelWindowII.src.extensions.DMenuList(moorMapString);
     EriadorMapMenu = TravelWindowII.src.extensions.DMenuList(eriadorMapString);
     RhovanionMapMenu = TravelWindowII.src.extensions.DMenuList(rhovanionMapString);
@@ -131,7 +131,7 @@ end
 
 function SettingsMenu:SetSelections()
 
-    -- set the filters using the .utils.BitOps functions
+    -- set the filters using the BitOps functions
     self.Filters1:SetChecked(hasbit(self.filters, bit(1)));
     self.Filters2:SetChecked(hasbit(self.filters, bit(2)));
     self.Filters3:SetChecked(hasbit(self.filters, bit(3)));
