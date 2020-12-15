@@ -202,25 +202,23 @@ function TravelDictionaries:CreateDictionaries()
     racialLocations:AddData("Return to Thorin's Gate", "0x70006346", "Return to Thorin's Gate");
     racialLocations:AddData("Return to Rivendell", "0x7000631F", "Return to Rivendell");
     racialLocations:AddData("Return Home (Racial)", "0x70041A22", "Return Home");
-    racialLocations:AddData("Return to Caras Galadhon in Lothlórien", "0x70048C8C", "Return to Caras Galadhon in Lothlórien");
+    racialLocations:AddData("Travel to Caras Galadhon in Lothlórien", "0x70048C8C", "Travel to Caras Galadhon in Lothlórien");
     racialLocations:AddData("Travel to Thorin's Hall", "0x70053C0F", "Travel to Thorin's Hall");
 
     -- check if a function that only exists in the newest update exists,
     -- if so, add the Return Home skills
-    if (Turbine.UI.Control.IsDisplayed ~= nil) then
-        genLocations:AddData("Return Home 1", "0x700256BA", "skip");
-        genLocations:AddData("Return Home 2", "0x70025792", "skip");
-        genLocations:AddData("Return Home 3", "0x70025793", "skip");
-        genLocations:AddData("Return Home 4", "0x70025794", "skip");
-        genLocations:AddData("Return Home 5", "0x70025795", "skip");
-        genLocations:AddData("Return Home 6", "0x70025796", "skip");
-        genLocations:AddData("Return Home 7", "0x7002FF5F", "skip");
-        genLocations:AddData("Return Home 8", "0x7002FF60", "skip");
-        genLocations:AddData("Return Home 9", "0x7002FF61", "skip");
-        genLocations:AddData("Return Home 10", "0x7002FF62", "skip");
-        genLocations:AddData("Return Home 11", "0x7002FF63", "skip");
-        genLocations:AddData("Return Home 12", "0x7002FF64", "skip");
-    end
+    genLocations:AddData("Return Home 1", "0x700256BA", "skip");
+    genLocations:AddData("Return Home 2", "0x70025792", "skip");
+    genLocations:AddData("Return Home 3", "0x70025793", "skip");
+    genLocations:AddData("Return Home 4", "0x70025794", "skip");
+    genLocations:AddData("Return Home 5", "0x70025795", "skip");
+    genLocations:AddData("Return Home 6", "0x70025796", "skip");
+    genLocations:AddData("Return Home 7", "0x7002FF5F", "skip");
+    genLocations:AddData("Return Home 8", "0x7002FF60", "skip");
+    genLocations:AddData("Return Home 9", "0x7002FF61", "skip");
+    genLocations:AddData("Return Home 10", "0x7002FF62", "skip");
+    genLocations:AddData("Return Home 11", "0x7002FF63", "skip");
+    genLocations:AddData("Return Home 12", "0x7002FF64", "skip");
     genLocations:AddData("Personal House", "0x7000D046", "Travel to Personal House");
     genLocations:AddData("Premium House", "0x70046EE4", "Travel to Premium House");
     genLocations:AddData("Kinship House", "0x7000D047", "Travel to Kinship House");
