@@ -64,26 +64,26 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Stangard
         { -1, -1 }, -- Caras Galadhon
         { -1, -1 }, -- Misty Mountains
-        { 425, 100 }, -- Snowbourn
+        { -1, -1 }, -- Snowbourn
         { -1, -1 }, -- Forlaw
-        { 425, 225 }, -- Aldburg
-        { 175, 150 }, -- Helm's Deep
-        { 250, 500 }, -- Dol Amroth
-        { 700, 525 }, -- Arnach
-        { 750, 370 }, -- Minas Tirith
-        { 650, 225 }, -- War-Stead
-        { 750, 395 }, -- After-Battle Minas Tirith
-        { 850, 250 }, -- Henneth Annûn
-        { 825, 400 }, -- Osgiliath
-        { 825, 200 }, -- Camp of the Host
-        { 850, 150 }, -- Haerondir
-        { 925, 225 }, -- Udûn Foothold
+        { -1, -1 }, -- Aldburg
+        { -1, -1 }, -- Helm's Deep
+        { 275, 470 }, -- Dol Amroth
+        { 600, 450 }, -- Arnach
+        { 600, 370 }, -- Minas Tirith
+        { 500, 290 }, -- War-Stead
+        { 600, 395 }, -- After-Battle Minas Tirith
+        { 700, 290 }, -- Henneth Annûn
+        { 700, 370 }, -- Osgiliath
+        { 675, 240 }, -- Camp of the Host
+        { 700, 215 }, -- Haerondir
+        { 800, 290 }, -- Udûn Foothold
         { -1, -1 }, -- Dale
-        { -1, -1 }, -- Jarnfast
+        { -1, -1 }, -- Jarnafst
         { -1, -1 }, -- Skarhald
-        { -1, -1 }, -- Beorningerhus
-        { -1, -1 }, -- Hultvis
-        { -1, -1 }, -- Estolad Lan
+        { -1, -1 }, -- Estolad Lân
+        { -1, -1 }, -- Limlók
+        { -1, -1 }, -- Annâk-khurfu
         
         -- Muster skills
         { -1, -1 }, -- Ost Guruth
@@ -98,26 +98,26 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Stangard
         { -1, -1 }, -- Caras Galadhon
         { -1, -1 }, -- Misty Mountains
-        { 425, 100 }, -- Snowbourn
+        { -1, -1 }, -- Snowbourn
         { -1, -1 }, -- Forlaw
-        { 425, 225 }, -- Aldburg
-        { 175, 150 }, -- Helm's Deep
-        { 250, 500 }, -- Dol Amroth
-        { 700, 525 }, -- Arnach
-        { 750, 370 }, -- Minas Tirith
-        { 650, 225 }, -- War-Stead
-        { 750, 395 }, -- After-Battle Minas Tirith
-        { 850, 250 }, -- Henneth Annûn
-        { 825, 400 }, -- Osgiliath
-        { 825, 200 }, -- Camp of the Host
-        { 850, 150 }, -- Haerondir
-        { 925, 225 }, -- Udûn Foothold
+        { -1, -1 }, -- Aldburg
+        { -1, -1 }, -- Helm's Deep
+        { 275, 470 }, -- Dol Amroth
+        { 600, 450 }, -- Arnach
+        { 600, 370 }, -- Minas Tirith
+        { 500, 290 }, -- War-Stead
+        { 600, 395 }, -- After-Battle Minas Tirith
+        { 700, 290 }, -- Henneth Annûn
+        { 700, 370 }, -- Osgiliath
+        { 675, 240 }, -- Camp of the Host
+        { 700, 215 }, -- Haerondir
+        { 800, 290 }, -- Udûn Foothold
         { -1, -1 }, -- Dale
-        { -1, -1 }, -- Jarnfast
+        { -1, -1 }, -- Jarnafst
         { -1, -1 }, -- Skarhald
-        { -1, -1 }, -- Beorningerhus
-        { -1, -1 }, -- Hultvis
-        { -1, -1 }, -- Estolad Lan
+        { -1, -1 }, -- Estolad Lân
+        { -1, -1 }, -- Limlók
+        { -1, -1 }, -- Annâk-khurfu
         
         -- Reputation skills
         { -1, -1 }, -- Thorin's Hall
@@ -130,31 +130,31 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Enedwaith Lhanuch
         { -1, -1 }, -- Galtrev
         { -1, -1 }, -- Stangard
-        { 450, 100 }, -- Snowbourn
+        { -1, -1 }, -- Snowbourn
         { -1, -1 }, -- Forlaw
-        { 450, 225 }, -- Aldburg
+        { -1, -1 }, -- Aldburg
         { -1, -1 }, -- Derndingle
-        { 200, 150 }, -- Helm's Deep
-        { 275, 500 }, -- Dol Amroth
-        { 700, 500 }, -- Arnach
-        { 775, 370 }, -- Minas Tirith
-        { 675, 225 }, -- War-Stead
-        { 775, 395 }, -- After-Battle Minas Tirith
-        { 875, 250 }, -- Henneth Annûn
-        { 850, 400 }, -- Osgiliath
-        { 850, 200 }, -- Camp of the Host
-        { 875, 150 }, -- Haerondir
-        { 950, 225 }, -- Udûn Foothold
+        { -1, -1 }, -- Helm's Deep
+        { 300, 470 }, -- Dol Amroth
+        { 625, 450 }, -- Arnach
+        { 625, 370 }, -- Minas Tirith
+        { 525, 290 }, -- War-Stead
+        { 625, 395 }, -- After-Battle Minas Tirith
+        { 725, 290 }, -- Henneth Annûn
+        { 725, 370 }, -- Osgiliath
+        { 700, 240 }, -- Camp of the Host
+        { 725, 215 }, -- Haerondir
+        { 825, 290 }, -- Udûn Foothold
         { -1, -1 }, -- Court of Lothlórien
-        { 750, 325 }, -- Hall of the King
+        { -1, -1 }, -- Hall of the King
         { -1, -1 }, -- Hall Under the Mountain
         { -1, -1 }, -- Bâr Thorenion
         { -1, -1 }, -- Dale
-        { -1, -1 }, -- Jarnfast
+        { -1, -1 }, -- Jarnafst
         { -1, -1 }, -- Skarhald
-        { -1, -1 }, -- Beorningerhus
-        { -1, -1 }, -- Hultvis
-        { -1, -1 }, -- Estolad Lan
+        { -1, -1 }, -- Estolad Lân
+        { -1, -1 }, -- Limlók
+        { -1, -1 }, -- Annâk-khurfu
         
         -- Racial skills
         { -1, -1 }, -- Bree
@@ -163,7 +163,7 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Rivendell
         { -1, -1 }, -- Grimbeorn's House
         { -1, -1 }, -- Caras Galadhon
-        { -1, -1 }, -- Thorin's Gate
+        { -1, -1 }, -- Thorin's Hall
 
     };
     self:AddShortcuts();

@@ -16,8 +16,11 @@ function OptionsPanel:Constructor(parent)
 
     -- set size of window
     self.width = 800;
-    self.height = 1024;
+    self.height = 840;
     self.windowWidth, self.windowHeight = Turbine.UI.Display:GetSize();
+    if self.height + 40 > self.windowHeight then
+        self.height = self.windowHeight - 20;
+    end
 
     -- create array of labels and check boxes
     self.labels = {};
@@ -46,6 +49,19 @@ function OptionsPanel:Constructor(parent)
     self.GeneralTab = Turbine.UI.Control();
     self.EnabledTab = Turbine.UI.Control();
     self.SortTab = Turbine.UI.Control();
+
+    self.EnabledTab:SetSize(self.width - 20, self.height - 60)
+    self.ListBox = Turbine.UI.ListBox()
+	  self.ListBox:SetParent(self.EnabledTab)	
+	  self.ListBox:SetPosition(5,5)
+	  self.ListBox:SetSize(self:GetWidth()-20,self:GetHeight()-120)
+    self.Scroll = Turbine.UI.Lotro.ScrollBar()
+    self.Scroll:SetOrientation(Turbine.UI.Orientation.Vertical)
+    self.Scroll:SetParent(self.EnabledTab)
+    self.Scroll:SetPosition(0,0)
+    self.Scroll:SetWidth(10)
+    self.Scroll:SetHeight(self.ListBox:GetHeight())
+    self.ListBox:SetVerticalScrollBar(self.Scroll)
 
     -- populate each tab
     self:AddGeneralItems();
@@ -423,23 +439,28 @@ end
 -- add a single shortcut to the enabled tab at the given location
 function OptionsPanel:Add(index, text, xOffset, yOffset, offset)
 
+    
+    control = Turbine.UI.Label();
+    control:SetSize(self.ListBox:GetWidth() - 20, 20);
+    
     -- create the label for the shortcut setting
     self.labels[index] = Turbine.UI.Label();
-    self.labels[index]:SetSize(200, 20);
-    self.labels[index]:SetPosition(xOffset, yOffset + (offset) * 20);
+    self.labels[index]:SetSize(control:GetWidth() - 20, 20);
+    self.labels[index]:SetPosition(30, 0)
     self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.labels[index]:SetParent(self.EnabledTab);
+    self.labels[index]:SetParent(control);
     self.labels[index]:SetText(text);
     self.labels[index]:SetVisible(true);
 
     -- create the checkbox for the shortcut setting
     self.checks[index] = Turbine.UI.Lotro.CheckBox();
     self.checks[index]:SetSize(19, 19);
-    self.checks[index]:SetPosition(xOffset + 200, yOffset + (offset) * 20);
+    self.checks[index]:SetPosition(10, 0);
     self.checks[index]:SetChecked(settings.enabled[text]);
-    self.checks[index]:SetParent(self.EnabledTab);
+    self.checks[index]:SetParent(control);
     self.checks[index]:SetWantsUpdates(true);
     self.checks[index]:SetVisible(true);
+    self.ListBox:AddItem(control)
 
     -- handle the event of the check box value changing
     self.checks[index].CheckedChanged = function(sender, args)
@@ -457,7 +478,7 @@ end
 
 -- this function adds the labels to the enabled tab for cosmetic purpose
 function OptionsPanel:AddBoxes()
-
+    --[[
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- add a label and box for the generic travel skills
         self.genLabel = Turbine.UI.Label();
@@ -502,11 +523,12 @@ function OptionsPanel:AddBoxes()
         self.genLabel:SetVisible(true);
 
     end
+    --]]
 
     -- add a check skills button
     self.checkSkillsButton = Turbine.UI.Lotro.Button();
     self.checkSkillsButton:SetSize(200, 20);
-    self.checkSkillsButton:SetPosition(300, 740);
+    self.checkSkillsButton:SetPosition(300, self.EnabledTab:GetHeight()-50);
     self.checkSkillsButton:SetText(checkSkillsString);
     self.checkSkillsButton:SetParent(self.EnabledTab);
     self.checkSkillsButton:SetVisible(true);

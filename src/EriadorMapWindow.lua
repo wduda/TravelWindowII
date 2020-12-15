@@ -3,8 +3,8 @@ import "Turbine.Debug";
 import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
-import "TravelWindowII.src.extensions";
-import "TravelWindowII.src.utils.BitOps";
+import "DhorPlugins.Extensions";
+import "DhorPlugins.Utils.BitOps";
 
 EriadorMapWindow = class(Turbine.UI.Lotro.Window);
 
@@ -46,20 +46,20 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
     self.mapLocations = {
         -- Hunter skills
         { -1, -1 }, -- Camp
-        { 575, 415 }, -- Bree
-        { 305, 300 }, -- Thorin's Hall
-        { 370, 415 }, -- Michel Delving
-        { 672, 286 }, -- Esteldin
-        { 485, 236 }, -- Evendim
-        { 710, 390 }, -- Ost Guruth
-        { 870, 375 }, -- Rivendell
-        { 450,  44 }, -- Suri-Kyla
-        { 710, 220 }, -- West Angmar
-        { 782, 145 }, -- East Angmar
-        { 870, 490 }, -- Echad Dunann
-        { 945, 485 }, -- 21st Hall
+        { 570, 400 }, -- Bree
+        { 280, 330 }, -- Thorin's Hall
+        { 395, 415 }, -- Michel Delving
+        { 650, 280 }, -- Esteldin
+        { 455, 245 }, -- Evendim
+        { 725, 400 }, -- Ost Guruth
+        { 845, 390 }, -- Rivendell
+        { 450, 110 }, -- Suri-Kyla
+        { 700, 205 }, -- West Angmar
+        { 800, 150 }, -- East Angmar
+        { 850, 475 }, -- Echad Dunann
+        { 960, 480 }, -- 21st Hall
         { -1, -1 }, -- Mirkwood
-        { 815, 645 }, -- Enedwaith Harndirion
+        { 815, 635 }, -- Enedwaith Harndirion
         { 790, 715 }, -- Galtrev
         { -1, -1 }, -- Stangard
         { -1, -1 }, -- Caras Galadhon
@@ -81,22 +81,22 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Dale
         { -1, -1 }, -- Jarnafst
         { -1, -1 }, -- Skarhald
-        { -1, -1 }, -- Beorningerhus
-        { -1, -1 }, -- Hultvis
-        { -1, -1 }, -- Estolad Lan
+        { -1, -1 }, -- Estolad Lân
+        { -1, -1 }, -- Limlók
+        { -1, -1 }, -- Annâk-khurfu
 
         -- Warden skills
-        { 710, 390 }, -- Ost Guruth
-        { 640, 270 }, -- Esteldin
-        { 485, 236 }, -- Evendim
-        { 870, 375 }, -- Rivendell
-        { 450,  44 }, -- Suri-Kyla
-        { 945, 485 }, -- 21st Hall
+        { 725, 400 }, -- Ost Guruth
+        { 650, 280 }, -- Esteldin
+        { 455, 345 }, -- Evendim
+        { 845, 390 }, -- Rivendell
+        { 450, 110 }, -- Suri-Kyla
+        { -1, -1 }, -- 21st Hall
         { -1, -1 }, -- Mirkwood
-        { 815, 645 }, -- Enedwaith Harndirion
+        { 815, 635 }, -- Enedwaith Harndirion
         { 790, 715 }, -- Galtrev
-        { -1, -1 }, -- Stangard
-        { -1, -1 }, -- Caras Galadhon
+        { -1, -1 },   -- Stangard
+        { -1, -1 },   -- Caras Galadhon
         { 930, 270 }, -- Misty Mountains
         { -1, -1 }, -- Snowbourn
         { -1, -1 }, -- Forlaw
@@ -113,19 +113,19 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Haerondir
         { -1, -1 }, -- Udûn Foothold
         { -1, -1 }, -- Dale
-        { -1, -1 }, -- Jarnfast
+        { -1, -1 }, -- Jarnafst
         { -1, -1 }, -- Skarhald
-        { -1, -1 }, -- Beorningerhus
-        { -1, -1 }, -- Hultvis
-        { -1, -1 }, -- Estolad Lan
+        { -1, -1 }, -- Estolad Lân
+        { -1, -1 }, -- Limlók
+        { -1, -1 }, -- Annâk-khurfu
 
         -- Reputation skills
-        { 330, 300 }, -- Thorin's Hall
-        { 600, 415 }, -- Bree
-        { 650, 415 }, -- Lalia's Market
-        { 370, 415 }, -- Michel Delving
-        { 895, 375 }, -- Rivendell
-        { 735, 390 }, -- Ost Guruth
+        { 305, 330 }, -- Thorin's Hall
+        { 595, 400 }, -- Bree
+        { 620, 400 }, -- Lalia's Market
+        { 420, 415 }, -- Michel Delving
+        { 870, 390 }, -- Rivendell
+        { 750, 400 }, -- Ost Guruth
         { -1, -1 }, -- Mirkwood
         { 840, 645 }, -- Enedwaith Lhanuch
         { 815, 715 }, -- Galtrev
@@ -150,21 +150,20 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Hall Under the Mountain
         { -1, -1 }, -- Bâr Thorenion
         { -1, -1 }, -- Dale
-        { -1, -1 }, -- Jarnfast
+        { -1, -1 }, -- Jarnafst
         { -1, -1 }, -- Skarhald
-        { -1, -1 }, -- Beorningerhus
-        { -1, -1 }, -- Hultvis
-        { -1, -1 }, -- Estolad Lan
-        
+        { -1, -1 }, -- Estolad Lân
+        { -1, -1 }, -- Limlók
+        { -1, -1 }, -- Annâk-khurfu
+
         -- Racial skills
-        { 600, 435 }, -- Bree
+        { 620, 400 }, -- Bree
+        { 445, 415 }, -- Michel Delving
         { 330, 330 }, -- Thorin's Hall
-        { 500, 415 }, -- Michel Delving
-        { 355, 300 }, -- Thorin's Hall
-        { 920, 375 }, -- Rivendell
-        { -1, -1 }, -- Grimbeorn's House
-        { -1, -1 }, -- Caras Galadhon
-        { -1, -1 }, -- Thorin's Gate
+        { 895, 390 }, -- Rivendell
+        { -1, -1 },   -- Grimbeorn's House
+        { -1, -1 },   -- Caras Galadhon
+        { 330, 330 }, -- Thorin's Gate
 
         -- Moors Map
         { 815, 300 }    -- Ettenmoors

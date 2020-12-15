@@ -57,17 +57,17 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- West Angmar
         { -1, -1 }, -- East Angmar
         { -1, -1 }, -- Echad Dunann
-        { 265, 315 }, -- 21st Hall
-        { 435, 360 }, -- Mirkwood
+        { 285, 325 }, -- 21st Hall
+        { 460, 360 }, -- Mirkwood
         { -1, -1 }, -- Enedwaith Harndirion
         { -1, -1 }, -- Galtrev
-        { 387, 419 }, -- Stangard
-        { 363, 358 }, -- Caras Galadhon
+        { 400, 360 }, -- Stangard
+        { 360, 345 }, -- Caras Galadhon
         { -1, -1 }, -- Misty Mountains
-        { 391, 654 }, -- Snowbourn
-        { 370, 460 }, -- Forlaw
-        { 359, 716 }, -- Aldburg
-        { 225, 690 }, -- Helm's Deep
+        { 420, 650 }, -- Snowbourn
+        { 380, 460 }, -- Forlaw
+        { 320, 715 }, -- Aldburg
+        { 235, 700 }, -- Helm's Deep
         { -1, -1 }, -- Dol Amroth
         { -1, -1 }, -- Arnach
         { -1, -1 }, -- Minas Tirith
@@ -77,13 +77,13 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Henneth Annûn
         { -1, -1 }, -- Camp of the Host
         { -1, -1 }, -- Haerondir
-        { 736, 726 }, -- Udûn Foothold
-        { 621, 128 }, -- Dale
-        { 715, 85 }, -- Jarnfast
-        { 555, 70 }, -- Skarhald
-        { 451, 133 }, -- Beorningerhus
-        { 431, 233 }, -- Hultvis
-        { -1, -1 }, -- Estolad Lan
+        { -1, -1 }, -- Udûn Foothold
+        { -1, -1 }, -- Dale
+        { -1, -1 }, -- Jarnafst
+        { -1, -1 }, -- Skarhald
+        { -1, -1 }, -- Estolad Lân
+        { -1, -1 }, -- Limlók
+        { -1, -1 }, -- Annâk-khurfu
 
         -- Muster skills
         { -1, -1 }, -- Ost Guruth
@@ -91,17 +91,17 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Evendim
         { -1, -1 }, -- Rivendell
         { -1, -1 }, -- Suri-Kyla
-        { 265, 315 }, -- 21st Hall
-        { 510, 330 }, -- Mirkwood
+        { 285, 325 }, -- 21st Hall
+        { 460, 360 }, -- Mirkwood
         { -1, -1 }, -- Enedwaith Harndirion
         { -1, -1 }, -- Galtrev
-        { 387, 419 }, -- Stangard
-        { 363, 358 }, -- Caras Galadhon
+        { 400, 360 }, -- Stangard
+        { 360, 345 }, -- Caras Galadhon
         { -1, -1 }, -- Misty Mountains
-        { 391, 654 }, -- Snowbourn
-        { 370, 460 }, -- Forlaw
-        { 359, 716 }, -- Aldburg
-        { 225, 690 }, -- Helm's Deep
+        { 425, 650 }, -- Snowbourn
+        { 385, 460 }, -- Forlaw
+        { 325, 715 }, -- Aldburg
+        { 240, 700 }, -- Helm's Deep
         { -1, -1 }, -- Dol Amroth
         { -1, -1 }, -- Arnach
         { -1, -1 }, -- Minas Tirith
@@ -111,13 +111,13 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Henneth Annûn
         { -1, -1 }, -- Camp of the Host
         { -1, -1 }, -- Haerondir
-        { 736, 726 }, -- Udûn Foothold
-        { 621, 128 }, -- Dale
-        { 715, 85 }, -- Jarnfast
-        { 555, 70 }, -- Skarhald
-        { 451, 133 }, -- Beorningerhus
-        { 431, 233 }, -- Hultvis
-        { -1, -1 }, -- Estolad Lan
+        { -1, -1 }, -- Udûn Foothold
+        { -1, -1 }, -- Dale
+        { -1, -1 }, -- Jarnafst
+        { -1, -1 }, -- Skarhald
+        { -1, -1 }, -- Estolad Lân
+        { -1, -1 }, -- Limlók
+        { -1, -1 }, -- Annâk-khurfu
 
         -- Reputation skills
         { -1, -1 }, -- Thorin's Hall
@@ -126,15 +126,15 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Michel Delving
         { -1, -1 }, -- Rivendell
         { -1, -1 }, -- Ost Guruth
-        { 540, 330 }, -- Mirkwood
+        { 485, 360 }, -- Mirkwood
         { -1, -1 }, -- Enedwaith Lhanuch
         { -1, -1 }, -- Galtrev
-        { 402, 419 }, -- Stangard
-        { 411, 654 }, -- Snowbourn
-        { 390, 460 }, -- Forlaw
-        { 374, 716 }, -- Aldburg
-        { 302, 543 }, -- Derndingle
-        { 240, 690 }, -- Helm's Deep
+        { 425, 360 }, -- Stangard
+        { 400, 650 }, -- Snowbourn
+        { 360, 460 }, -- Forlaw
+        { 300, 715 }, -- Aldburg
+        { 280, 520 }, -- Derndingle
+        { 215, 700 }, -- Helm's Deep
         { -1, -1 }, -- Dol Amroth
         { -1, -1 }, -- Arnach
         { -1, -1 }, -- Minas Tirith
@@ -144,27 +144,26 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Osgiliath
         { -1, -1 }, -- Camp of the Host
         { -1, -1 }, -- Haerondir
-        { 756, 726 }, -- Udûn Foothold
+        { -1, -1 }, -- Udûn Foothold
         { -1, -1 }, -- Court of Lothlórien
         { -1, -1 }, -- Hall of the King
-        { 650, 85 }, -- Hall Under the Mountain
+        { -1, -1 }, -- Hall Under the Mountain
         { -1, -1 }, -- Bâr Thorenion
-        { 641, 128 }, -- Dale
-        { 735, 85 }, -- Jarnfast
-        { 575, 70 }, -- Skarhald
-        { 471, 133 }, -- Beorningerhus
-        { 451, 233 }, -- Hultvis
-        { -1, -1 }, -- Estolad Lan
+        { -1, -1 }, -- Dale
+        { -1, -1 }, -- Jarnafst
+        { -1, -1 }, -- Skarhald
+        { -1, -1 }, -- Estolad Lân
+        { -1, -1 }, -- Limlók
+        { -1, -1 }, -- Annâk-khurfu
         
         -- Racial skills
         { -1, -1 }, -- Bree
         { -1, -1 }, -- Michel Delving
         { -1, -1 }, -- Thorin's Hall
         { -1, -1 }, -- Rivendell
-        { 490, 100 }, -- Grimbeorn's House
-        { 378, 358 }, -- Caras Galadhon
-        { -1, -1 }, -- Thorin's Gate
-
+        { 405, 180 }, -- Grimbeorn's House
+        { -1, -1 }, -- Caras Galadhon
+        { -1, -1 }, -- Thorin's Hall
     };
     self:AddShortcuts();
 
