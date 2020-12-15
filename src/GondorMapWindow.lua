@@ -81,6 +81,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Dale
         { -1, -1 }, -- Jarnafst
         { -1, -1 }, -- Skarhald
+        { -1, -1 }, -- Beorningus
+        { -1, -1 }, -- Hultvis
         { -1, -1 }, -- Estolad Lân
         { -1, -1 }, -- Limlók
         { -1, -1 }, -- Annâk-khurfu
@@ -115,6 +117,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Dale
         { -1, -1 }, -- Jarnafst
         { -1, -1 }, -- Skarhald
+        { -1, -1 }, -- Beorningus
+        { -1, -1 }, -- Hultvis
         { -1, -1 }, -- Estolad Lân
         { -1, -1 }, -- Limlók
         { -1, -1 }, -- Annâk-khurfu
@@ -152,6 +156,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Dale
         { -1, -1 }, -- Jarnafst
         { -1, -1 }, -- Skarhald
+        { -1, -1 }, -- Beorningus
+        { -1, -1 }, -- Hultvis
         { -1, -1 }, -- Estolad Lân
         { -1, -1 }, -- Limlók
         { -1, -1 }, -- Annâk-khurfu

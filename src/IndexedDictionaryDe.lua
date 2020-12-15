@@ -207,22 +207,18 @@ function TravelDictionaries:CreateDictionaries()
     racialLocations:AddData("Nach Caras Galadhon (Rasse)", "0x70048C8C", "Reise nach Caras Galadhon in Lothlórien");
     racialLocations:AddData("Reise zu Thorins Halle (Rasse Starkaxt)", "0x70053C0F", "Reise zu Thorins Halle");
 
-    -- check if a function that only exists in the newest update exists,
-    -- if so, add the Return Home skills
-    if (Turbine.UI.Control.IsDisplayed ~= nil) then
-        genLocations:AddData("zum 1. Markstein zurück", "0x700256BA", "skip");
-        genLocations:AddData("zum 2. Markstein zurück", "0x70025792", "skip");
-        genLocations:AddData("zum 3. Markstein zurück", "0x70025793", "skip");
-        genLocations:AddData("zum 4. Markstein zurück", "0x70025794", "skip");
-        genLocations:AddData("zum 5. Markstein zurück", "0x70025795", "skip");
-        genLocations:AddData("zum 6. Markstein zurück", "0x70025796", "skip");
-        genLocations:AddData("zum 7. Markstein zurück", "0x7002FF5F", "skip");
-        genLocations:AddData("zum 8. Markstein zurück", "0x7002FF60", "skip");
-        genLocations:AddData("zum 9. Markstein zurück", "0x7002FF61", "skip");
-        genLocations:AddData("zum 10. Markstein zurück", "0x7002FF62", "skip");
-        genLocations:AddData("zum 11. Markstein zurück", "0x7002FF63", "skip");
-        genLocations:AddData("zum 12. Markstein zurück", "0x7002FF64", "skip");
-    end
+    genLocations:AddData("zum 1. Markstein zurück", "0x700256BA", "skip");
+    genLocations:AddData("zum 2. Markstein zurück", "0x70025792", "skip");
+    genLocations:AddData("zum 3. Markstein zurück", "0x70025793", "skip");
+    genLocations:AddData("zum 4. Markstein zurück", "0x70025794", "skip");
+    genLocations:AddData("zum 5. Markstein zurück", "0x70025795", "skip");
+    genLocations:AddData("zum 6. Markstein zurück", "0x70025796", "skip");
+    genLocations:AddData("zum 7. Markstein zurück", "0x7002FF5F", "skip");
+    genLocations:AddData("zum 8. Markstein zurück", "0x7002FF60", "skip");
+    genLocations:AddData("zum 9. Markstein zurück", "0x7002FF61", "skip");
+    genLocations:AddData("zum 10. Markstein zurück", "0x7002FF62", "skip");
+    genLocations:AddData("zum 11. Markstein zurück", "0x7002FF63", "skip");
+    genLocations:AddData("zum 12. Markstein zurück", "0x7002FF64", "skip");
     genLocations:AddData("Zum eigenen Haus reisen", "0x7000D046", "Reist zu Eurem eigenen Heim");
     genLocations:AddData("Zu Premiumheim", "0x70046EE4", "Reist zu Eurem Premiumheim");
     genLocations:AddData("Zum Sippenhaus reisen", "0x7000D047", "Reist zum Haus Eurer Sippe");

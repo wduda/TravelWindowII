@@ -120,7 +120,6 @@ end
 
 function TravelDictionaries:CreateDictionaries()
     -- add the data to custom dictionaries to maintain the order
-
     hunterLocations:AddData("Retour au campement", "0x7000A2C1", "Retour au campement");
     hunterLocations:AddData("Guide vers Bree", "0x70003F42", "Guide vers Bree");
     hunterLocations:AddData("Guide vers le Palais de Thorin", "0x70003F41", "Guide vers le Palais de Thorin");
@@ -163,8 +162,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Guide vers Limlok", "0x7005762d", "Guide de Limlok");
     hunterLocations:AddData("Guide vers Annâk-khurfu", "0x7005856F", "Guide de Annâk-khurfu");
 
-	
-    wardenLocations:AddData("Rassemblement à Ost Guruth", "0x70014786", "Rassemblement à Ost Guruth");
+	wardenLocations:AddData("Rassemblement à Ost Guruth", "0x70014786", "Rassemblement à Ost Guruth");
     wardenLocations:AddData("Rassemblement à Esteldin", "0x70014798", "Rassemblement à Esteldin");
     wardenLocations:AddData("Rassemblement à Evendim", "0x7001478E", "Rassemblement dans la région d'Evendim");
     wardenLocations:AddData("Rassemblement à Fondcombe", "0x70014791", "Rassemblement à Fondcombe");
@@ -199,31 +197,26 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Rassemblement à Limlok", "0x70057635", "Rassemblement à Limlok");
     wardenLocations:AddData("Rassemblement à Annâk-khurfu", "0x7005856F", "Rassemblement à Annâk-khurfu");
 
-	
-    racialLocations:AddData("Retour à Bree", "0x700062F6", "Retour à Bree");
+	racialLocations:AddData("Retour à Bree", "0x700062F6", "Retour à Bree");
     racialLocations:AddData("Retournez dans la Comté", "0x700062C8", "Retournez dans la Comté");
     racialLocations:AddData("Retour à la porte de Thorin", "0x7001BF91", "Retour : Porte de Thorin");
     racialLocations:AddData("Retour à Fondcombe", "0x7000631F", "Retour à Fondcombe");
     racialLocations:AddData("Retour à la maison", "0x70041A22", "Retour à la maison");
-    racialLocations:AddData("Retour à Caras Galadhon dans Lothlórien", "0x70048C8C", "Voyage vers Caras Galadhon, en Lothlórien");
-    racialLocations:AddData("Revenir au Palais de Thorin", "0x70053C0F", "Aller au Palais de Thorin");
+    racialLocations:AddData("Retour à Caras Galadhon dans Lothlórien", "0x70048C8C", "Retour à Caras Galadhon dans Lothlórien");
+    racialLocations:AddData("Revenir au Palais de Thorin", "0x70053C0F", "Revenir au Palais de Thorin");
 
-    -- check if a function that only exists in the newest update exists,
-    -- if so, add the Return Home skills
-    if (Turbine.UI.Control.IsDisplayed ~= nil) then
-        genLocations:AddData("Return Home 1", "0x700256BA", "skip");
-        genLocations:AddData("Return Home 2", "0x70025792", "skip");
-        genLocations:AddData("Return Home 3", "0x70025793", "skip");
-        genLocations:AddData("Return Home 4", "0x70025794", "skip");
-        genLocations:AddData("Return Home 5", "0x70025795", "skip");
-        genLocations:AddData("Return Home 6", "0x70025796", "skip");
-        genLocations:AddData("Return Home 7", "0x7002FF5E", "skip");
-        genLocations:AddData("Return Home 8", "0x7002FF5F", "skip");
-        genLocations:AddData("Return Home 9", "0x7002FF60", "skip");
-        genLocations:AddData("Return Home 10", "0x7002FF61", "skip");
-        genLocations:AddData("Return Home 11", "0x7002FF62", "skip");
-        genLocations:AddData("Return Home 12", "0x7002FF63", "skip");
-    end
+    genLocations:AddData("Return Home 1", "0x700256BA", "skip");
+    genLocations:AddData("Return Home 2", "0x70025792", "skip");
+    genLocations:AddData("Return Home 3", "0x70025793", "skip");
+    genLocations:AddData("Return Home 4", "0x70025794", "skip");
+    genLocations:AddData("Return Home 5", "0x70025795", "skip");
+    genLocations:AddData("Return Home 6", "0x70025796", "skip");
+    genLocations:AddData("Return Home 7", "0x7002FF5E", "skip");
+    genLocations:AddData("Return Home 8", "0x7002FF5F", "skip");
+    genLocations:AddData("Return Home 9", "0x7002FF60", "skip");
+    genLocations:AddData("Return Home 10", "0x7002FF61", "skip");
+    genLocations:AddData("Return Home 11", "0x7002FF62", "skip");
+    genLocations:AddData("Return Home 12", "0x7002FF63", "skip");
     genLocations:AddData("Maison personnelle", "0x7000D046", "Retour à la maison personnelle");
     genLocations:AddData("Allez à une maison premium", "0x70046EE4", "Allez à une maison premium");
     genLocations:AddData("Maison de confrérie", "0x7000D047", "Retour à la maison de confrérie");
