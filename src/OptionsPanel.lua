@@ -424,6 +424,17 @@ function OptionsPanel:AddItems()
             offsetCounter = offsetCounter + 1;
         end
     end
+    
+    -- add the racial travel skills
+    if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+        offsetCounter = 0;
+        for i = 1, travelCount[5], 1 do
+            self:Add(counter, racialLocations:KeyAtIndex(i), 5, 25, offsetCounter);
+            counter = counter + 1;
+            offsetCounter = offsetCounter + 1;
+        end
+    end
+
 
     -- add the creep travel skills
     if (playerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then

@@ -2,10 +2,10 @@
 <PluginConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Id>1019</Id>
   <Name>Travel Window II</Name>
-  <Version>1.0beta</Version>
+  <Version>1.0.1beta</Version>
   <Author>Hyoss</Author>
-  <InfoUrl>http://www.lotrointerface.com/downloads/info1019</InfoUrl>
-  <DownloadUrl>http://www.lotrointerface.com/downloads/download1019</DownloadUrl>
+  <InfoUrl>http://www.lotrointerface.com/downloads/info1113</InfoUrl>
+  <DownloadUrl>http://www.lotrointerface.com/downloads/download1113</DownloadUrl>
   <Descriptors>
     <descriptor>TravelWindowII\Travel.plugin</descriptor>
   </Descriptors>

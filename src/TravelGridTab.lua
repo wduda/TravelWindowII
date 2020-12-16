@@ -6,10 +6,10 @@ import "TravelWindowII.src.extensions";
 import "TravelWindowII.src.SettingsMenu";
 import "TravelWindowII.src.utils.BitOps";
 
---[[ This is the window for the icon grid tab of the 	                      ]] --
---[[ Travel UI.  It handles creating all UI controls on                     ]] --
---[[ the tab, and updating the UI when the settings are	                   ]] --
---[[ changed.											                               ]] --
+--[[ This is the window for the icon grid tab of the 	 ]] --
+--[[ Travel UI.  It handles creating all UI controls on  ]] --
+--[[ the tab, and updating the UI when the settings are	 ]] --
+--[[ changed.											 ]] --
 
 TravelGridTab = class(Turbine.UI.Control);
 
