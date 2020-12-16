@@ -381,7 +381,7 @@ function IndexedDictionary:IndexByKey(key)
     end
 
     -- loop through the list of keys and search for the key value
-    for i = 1, table.getn(self.listOfKeys), 1 do
+    for i = 1, #self.listOfKeys, 1 do
         -- return the index value if a match is made
         if (self.listOfKeys[i] == key) then
             return i;
