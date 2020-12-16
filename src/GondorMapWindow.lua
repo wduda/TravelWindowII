@@ -265,7 +265,7 @@ end
 function GondorMapWindow:IsShortcutEnabled(name)
 
     -- loop through all the shortcuts and add those that are enabled
-    for i = 1, table.getn(self.shortcuts), 1 do
+    for i = 1, #self.shortcuts, 1 do
         if (self.shortcuts[i]:GetName() == name) then
             if (self.shortcuts[i]:IsEnabled()) then
                 return 1;

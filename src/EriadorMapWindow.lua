@@ -3,8 +3,8 @@ import "Turbine.Debug";
 import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
-import "DhorPlugins.Extensions";
-import "DhorPlugins.Utils.BitOps";
+import "TravelWindowII.src.extensions";
+import "TravelWindowII.src.utils.BitOps";
 
 EriadorMapWindow = class(Turbine.UI.Lotro.Window);
 
@@ -241,7 +241,7 @@ function EriadorMapWindow:AddShortcuts()
     end
 
     -- Glan Vraig
-    for i = 1, table.getn(self.shortcuts), 1 do
+    for i = 1, #self.shortcuts, 1 do
         if (self.shortcuts[i]:GetName() == glanMapString) then
             if (self.shortcuts[i]:IsEnabled()) then
                 self:AddSingleShortcut(counter, self.shortcuts[i]);
@@ -277,7 +277,7 @@ end
 function EriadorMapWindow:IsShortcutEnabled(name)
 
     -- loop through all the shortcuts and add those that are enabled
-    for i = 1, table.getn(self.shortcuts), 1 do
+    for i = 1, #self.shortcuts, 1 do
         if (self.shortcuts[i]:GetName() == name) then
             if (self.shortcuts[i]:IsEnabled()) then
                 return 1;
