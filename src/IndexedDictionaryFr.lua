@@ -199,11 +199,11 @@ function TravelDictionaries:CreateDictionaries()
 
 	racialLocations:AddData("Retour à Bree", "0x700062F6", "Retour à Bree");
     racialLocations:AddData("Retournez dans la Comté", "0x700062C8", "Retournez dans la Comté");
-    racialLocations:AddData("Retour à la porte de Thorin", "0x7001BF91", "Retour : Porte de Thorin");
+    racialLocations:AddData("Retour à la porte de Thorin", "0x70006346", "Retour : Porte de Thorin");
     racialLocations:AddData("Retour à Fondcombe", "0x7000631F", "Retour à Fondcombe");
     racialLocations:AddData("Retour à la maison", "0x70041A22", "Retour à la maison");
-    racialLocations:AddData("Retour à Caras Galadhon dans Lothlórien", "0x70048C8C", "Retour à Caras Galadhon dans Lothlórien");
-    racialLocations:AddData("Revenir au Palais de Thorin", "0x70053C0F", "Revenir au Palais de Thorin");
+    racialLocations:AddData("Retour à Caras Galadhon dans Lothlórien", "0x70048C8C", "Voyage vers Caras Galadhon, en Lothlórien");
+    racialLocations:AddData("Revenir au Palais de Thorin", "0x70053C0F", "Aller au Palais de Thorin");
 
     genLocations:AddData("Return Home 1", "0x700256BA", "skip");
     genLocations:AddData("Return Home 2", "0x70025792", "skip");
@@ -221,7 +221,7 @@ function TravelDictionaries:CreateDictionaries()
     genLocations:AddData("Allez à une maison premium", "0x70046EE4", "Allez à une maison premium");
     genLocations:AddData("Maison de confrérie", "0x7000D047", "Retour à la maison de confrérie");
 
-    repLocations:AddData("La Porte de Thorin", "0x7001BF91", "Retour : Porte de Thorin");
+    repLocations:AddData("La Porte de Thorin", "0x7001BF91", "Retour : Porte de Thorin");
     repLocations:AddData("Bree", "0x7001BF90", "Retour à Bree");
     repLocations:AddData("Marché de Lalia", "0x700364B1", "Retour au Marché de Lalia");
     repLocations:AddData("Grand'Cave", "0x70023262", "Retour à Grand'Cave");
@@ -280,7 +280,6 @@ function TravelDictionaries:CreateDictionaries()
 
     creepLocations:AddData("Carte pour aller au Pied de Gram", "0x70028BC1");
 end
-
 
 --[[ use a modified table that can maintain a key value for each entry ]] --
 IndexedDictionary = class()
