@@ -10,7 +10,7 @@ helpString = "Travel. Translated by PulseDiver.\n" ..
 "\n Команды:\n" ..
 "ntrav show: Показать окно путешествий\n" ..
 "trav hide: Срыть окно путешествий\n" ..
-"trav toggle: Вызвать\скрыть окно путешествий\n";
+"trav toggle: Вызвать скрыть окно путешествий\n";
 
 -- window title strings
 mainTitleString = "Travel";
