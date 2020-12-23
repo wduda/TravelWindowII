@@ -85,12 +85,12 @@ function TravelListTab:AddItem(shortcut, i)
 
     -- change the background colour of the label with the mouse enters
     self.quickslots[index].MouseEnter = function(sender, args)
-        self.labels[i]:SetBackColor(Turbine.UI.Color(0.87, 0.17, 0.17, 0.17));
+        self.labels[index]:SetBackColor(Turbine.UI.Color(0.87, 0.17, 0.17, 0.17));
     end
 
     -- return the background colour when the mouse leaves the label
     self.quickslots[index].MouseLeave = function(sender, args)
-        self.labels[i]:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
+        self.labels[index]:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
     end
 
     -- increase the row number when the column

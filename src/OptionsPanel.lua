@@ -55,16 +55,16 @@ function OptionsPanel:Constructor(parent)
 
     self.EnabledTab:SetSize(self.width - 20, self.height - 60)
     self.ListBox = Turbine.UI.ListBox()
-	  self.ListBox:SetParent(self.EnabledTab)	
-	  self.ListBox:SetPosition(5,5)
-	  self.ListBox:SetSize(self:GetWidth()-20,self:GetHeight()-120)
-    self.Scroll = Turbine.UI.Lotro.ScrollBar()
-    self.Scroll:SetOrientation(Turbine.UI.Orientation.Vertical)
-    self.Scroll:SetParent(self.EnabledTab)
-    self.Scroll:SetPosition(0,0)
-    self.Scroll:SetWidth(10)
-    self.Scroll:SetHeight(self.ListBox:GetHeight())
-    self.ListBox:SetVerticalScrollBar(self.Scroll)
+    self.ListBox:SetParent(self.EnabledTab)
+    self.ListBox:SetPosition(5,5)
+    self.ListBox:SetSize(self:GetWidth()-20,self:GetHeight()-120)
+    self.scrollBar = Turbine.UI.Lotro.ScrollBar()
+    self.scrollBar:SetOrientation(Turbine.UI.Orientation.Vertical)
+    self.scrollBar:SetParent(self.EnabledTab)
+    self.scrollBar:SetPosition(0,0)
+    self.scrollBar:SetWidth(10)
+    self.scrollBar:SetHeight(self.ListBox:GetHeight())
+    self.ListBox:SetVerticalScrollBar(self.scrollBar)
 
     -- populate each tab
     self:AddGeneralItems();
@@ -273,8 +273,6 @@ function OptionsPanel:AddGeneralItems()
     self.resetButton:SetParent(self.GeneralTab);
     self.resetButton:SetVisible(true);
 
-
-
     -- do the settings reset
     self.resetButton.Click = function(sender, args)
         self.mainWindow:ResetSettings();
@@ -428,7 +426,6 @@ function OptionsPanel:AddItems()
         counter = counter + 1;
     end
 
-
     -- add the creep travel skills
     if (playerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
         for i = 1, travelCount[6], 1 do
@@ -475,7 +472,6 @@ function OptionsPanel:Add(index, key, label)
         self.mainWindow:UpdateSettings();
     end
 end
-
 
 -- this function adds the labels to the enabled tab for cosmetic purpose
 function OptionsPanel:AddBoxes()
@@ -545,7 +541,7 @@ function OptionsPanel:AddSortList()
 
     -- create a listbox for all the shortcuts to be sorted
     self.sortListBox = Turbine.UI.ListBox();
-    self.sortListBox:SetSize(280, 670);
+    self.sortListBox:SetSize(480, self.height - 120);
     self.sortListBox:SetPosition(200, 5);
     self.sortListBox:SetParent(self.SortTab);
     self.sortListBox:SetVisible(true);
@@ -555,7 +551,7 @@ function OptionsPanel:AddSortList()
     -- create a label to add to the listbox for each shortcut
     for i, v in pairs(travelShortcuts) do
         tempLabel = Turbine.UI.Label();
-        tempLabel:SetText(v:GetName());
+        tempLabel:SetText(v:GetSkillLabel());
         tempLabel:SetSize(280, 20);
         tempLabel:SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
         tempLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
@@ -579,17 +575,17 @@ function OptionsPanel:AddSortList()
 
     -- set the first item as selected
     self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.6));
-
+    
     -- set up the scrollbar for the list
     self.listBoxScrollBar = self.sortListBox:GetVerticalScrollBar();
-
+    
     if (self.listBoxScrollBar == nil) then
         self.listBoxScrollBar = Turbine.UI.Lotro.ScrollBar();
     end
 
     self.listBoxScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
     self.listBoxScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
-    self.listBoxScrollBar:SetSize(10, 670);
+    self.listBoxScrollBar:SetSize(10, self.height - 120);
     self.listBoxScrollBar:SetPosition(270, 0);
     self.listBoxScrollBar:SetZOrder(100);
     self.listBoxScrollBar:SetVisible(true);
