@@ -61,7 +61,7 @@ function TravelListTab:AddItem(shortcut, i)
     self.labels[index]:SetMouseVisible(false);
     self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.labels[index]:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
-    self.labels[index]:SetText(shortcut:GetName());
+    self.labels[index]:SetText(shortcut:GetSkillLabel());
     self.labels[index]:SetParent(self.SubWindow);
 
     -- set all quickslots to be visible and
@@ -83,7 +83,7 @@ function TravelListTab:AddItem(shortcut, i)
         self:DoScroll(sender, args);
     end
 
-    -- change the background colour of the lable with the mouse enters
+    -- change the background colour of the label with the mouse enters
     self.quickslots[index].MouseEnter = function(sender, args)
         self.labels[i]:SetBackColor(Turbine.UI.Color(0.87, 0.17, 0.17, 0.17));
     end
@@ -115,7 +115,7 @@ function TravelListTab:SetScrollBar()
 
     -- set the maximum value of the scrollbar
     -- based on the number of rows in the subwindow
-    numOfSlots = table.getn(self.quickslots);
+    numOfSlots = #self.quickslots;
     numOfRows = math.ceil(numOfSlots / self.numOfCols);
 
     self.max = numOfRows * 22 - self:GetHeight() + 35;
@@ -148,7 +148,7 @@ end
 
 function TravelListTab:UpdateSubWindow()
     -- loop through all the quickslots
-    for i = 1, table.getn(self.quickslots), 1 do
+    for i = 1, #self.quickslots, 1 do
         -- get the number of rows
         self.row = math.ceil(i / self.numOfCols);
 
