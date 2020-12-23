@@ -329,7 +329,7 @@ end
 
 function ComboBox:ShowDropDown()
     --local itemCount = self.listBox:GetItemCount();
-    local itemCount = table.getn(self.labels);
+    local itemCount = #self.labels;
 
     if ((itemCount > 0) and not (self.dropped)) then
         self.dropped = true;
@@ -411,7 +411,7 @@ end
 
 function ComboBox:UpdateSubWindow()
     -- loop through all the quickslots
-    for i = 1, table.getn(self.quickslots), 1 do
+    for i = 1, #self.quickslots, 1 do
         -- get the number of rows
         self.row = math.ceil(i / 1);
 
