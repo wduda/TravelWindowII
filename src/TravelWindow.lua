@@ -919,7 +919,7 @@ function TravelWindow:CheckEnabledSettings()
     end
 
     -- need to find the highest sort number now
-    local counter = table.getn(settings.order) + 1;
+    local counter = #settings.order + 1;
 
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- update generic travel settings
@@ -1193,7 +1193,7 @@ end
 function TravelWindow:CheckSkills()
     -- loop through all the shortcuts and add those that are enabled
     counter = 1;
-    for i = 1, table.getn(travelShortcuts), 1 do
+    for i = 1, #travelShortcuts, 1 do
         --if(travelShortcuts[i]:IsEnabled()) then
         --if(hasbit(settings.filters,bit(travelShortcuts[i]:GetTravelType()))) then
 

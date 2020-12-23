@@ -80,7 +80,7 @@ end
 function TravelGridTab:UpdateSubWindow()
 
     -- loop through all the quickslots
-    for i = 1, table.getn(self.quickslots), 1 do
+    for i = 1, #self.quickslots, 1 do
         -- get the number of rows
         self.row = math.ceil(i / self.numOfCols);
 
@@ -122,7 +122,7 @@ function TravelGridTab:SetItems()
 
     -- loop through all the shortcuts and add those that are enabled
     counter = 1;
-    for i = 1, table.getn(travelShortcuts), 1 do
+    for i = 1, #travelShortcuts, 1 do
         if (travelShortcuts[i]:IsEnabled()) then
             if (hasbit(settings.filters, bit(travelShortcuts[i]:GetTravelType()))) then
 
@@ -226,7 +226,7 @@ function TravelGridTab:SetScrollBar()
 
     -- set the maximum value of the scrollbar
     -- based on the number of rows in the subwindow
-    numOfSlots = table.getn(self.quickslots);
+    numOfSlots = #self.quickslots;
     numOfRows = math.ceil(numOfSlots / self.numOfCols);
 
     self.max = numOfRows * 38 - self:GetHeight() + 35;

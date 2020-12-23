@@ -63,7 +63,7 @@ end
 function TravelCaroTab:DoScroll(sender, args)
 
     -- if there is only one item, then do nothing
-    if (table.getn(self.shortcuts) == 1) then
+    if (#self.shortcuts == 1) then
         return;
     else
         -- adjust the shortcuts table based on which way the
@@ -77,8 +77,8 @@ function TravelCaroTab:DoScroll(sender, args)
         else
             -- move the last item in the table
             -- to the start
-            self.shortcut2 = self.shortcuts[table.getn(self.shortcuts)];
-            table.remove(self.shortcuts, table.getn(self.shortcuts));
+            self.shortcut2 = self.shortcuts[#self.shortcuts];
+            table.remove(self.shortcuts, #self.shortcuts);
             table.insert(self.shortcuts, 1, self.shortcut2);
         end
     end
@@ -96,7 +96,7 @@ function TravelCaroTab:SetItems()
     self.selectedIndex = 1;
 
     -- loop through all the shortcuts and add those that are enabled
-    for i = 1, table.getn(travelShortcuts), 1 do
+    for i = 1, #travelShortcuts, 1 do
         if (travelShortcuts[i]:IsEnabled()) then
             if (hasbit(settings.filters, bit(travelShortcuts[i]:GetTravelType()))) then
 
@@ -119,19 +119,19 @@ end
 function TravelCaroTab:SetShortcuts()
 
     -- set all quickslots to nil if there are no items in the shortcuts table
-    if (table.getn(self.shortcuts) == 0) then
+    if (#self.shortcuts == 0) then
         for i = 1, 5, 1 do
             self.quickslots[i]:SetShortcut(nil);
         end
         -- set all quickslots the same if only 1 item in shortcuts table
-    elseif (table.getn(self.shortcuts) == 1) then
+    elseif (#self.shortcuts == 1) then
         for i = 1, 5, 1 do
             pcall(function()
                 self.quickslots[i]:SetShortcut(self.shortcuts[1]);
             end)
         end
         -- set the quickslots alternating if only 2 items in the shortcuts table
-    elseif (table.getn(self.shortcuts) == 2) then
+    elseif (#self.shortcuts == 2) then
         pcall(function()
             self.quickslots[1]:SetShortcut(self.shortcuts[1]);
             self.quickslots[2]:SetShortcut(self.shortcuts[2]);
@@ -142,8 +142,8 @@ function TravelCaroTab:SetShortcuts()
         -- set the quickslots for 3 or more shortcuts
     else
         pcall(function()
-            self.quickslots[1]:SetShortcut(self.shortcuts[table.getn(self.shortcuts) - 1]);
-            self.quickslots[2]:SetShortcut(self.shortcuts[table.getn(self.shortcuts)]);
+            self.quickslots[1]:SetShortcut(self.shortcuts[#self.shortcuts - 1]);
+            self.quickslots[2]:SetShortcut(self.shortcuts[#self.shortcuts]);
             self.quickslots[3]:SetShortcut(self.shortcuts[1]);
             self.quickslots[4]:SetShortcut(self.shortcuts[2]);
             self.quickslots[5]:SetShortcut(self.shortcuts[3]);

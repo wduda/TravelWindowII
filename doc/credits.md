@@ -16,3 +16,6 @@ Plague
 Eleador
 Lumbago
 Hyoss
+Thaliruth
+Drogo
+Adra

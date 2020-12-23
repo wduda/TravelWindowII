@@ -10,7 +10,7 @@ helpString = "Travel. Translated by PulseDiver.\n" ..
 "\n Команды:\n" ..
 "ntrav show: Показать окно путешествий\n" ..
 "trav hide: Срыть окно путешествий\n" ..
-"trav toggle: Вызвать\скрыть окно путешествий\n";
+"trav toggle: Вызвать скрыть окно путешествий\n";
 
 -- window title strings
 mainTitleString = "Travel";
@@ -381,7 +381,7 @@ function IndexedDictionary:IndexByKey(key)
     end
 
     -- loop through the list of keys and search for the key value
-    for i = 1, table.getn(self.listOfKeys), 1 do
+    for i = 1, #self.listOfKeys, 1 do
         -- return the index value if a match is made
         if (self.listOfKeys[i] == key) then
             return i;

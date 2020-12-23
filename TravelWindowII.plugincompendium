@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PluginConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Id>1019</Id>
+  <Id>1113</Id>
   <Name>Travel Window II</Name>
-  <Version>1.0.1beta</Version>
+  <Version>1.0.3beta</Version>
   <Author>Hyoss</Author>
   <InfoUrl>http://www.lotrointerface.com/downloads/info1113</InfoUrl>
   <DownloadUrl>http://www.lotrointerface.com/downloads/download1113</DownloadUrl>
   <Descriptors>
-    <descriptor>TravelWindowII\Travel.plugin</descriptor>
+    <descriptor>TravelWindowII\TravelWindowII.plugin</descriptor>
   </Descriptors>
   <Dependencies />
 </PluginConfig>
