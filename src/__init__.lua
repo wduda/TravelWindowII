@@ -11,8 +11,6 @@ if GLocale == 268435459 then
     import "TravelWindowII.src.IndexedDictionaryFr";
 elseif GLocale == 268435460 then
     import "TravelWindowII.src.IndexedDictionaryDe";
-elseif GLocale == 268435463 then
-    import "TravelWindowII.src.IndexedDictionaryRu";
 else
     import "TravelWindowII.src.IndexedDictionaryEn";
 end
