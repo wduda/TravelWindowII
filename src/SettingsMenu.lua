@@ -47,7 +47,7 @@ function SettingsMenu:Constructor(parentWindow)
 
     -- create the menu item to add map home
     -- @TODO has to be reintroduced
-    -- MapMenu = TravelWindowII.src.extensions.DMenuList(menuMapString);
+    MapMenu = TravelWindowII.src.extensions.DMenuList("");
 
     -- create the menu item to open the options window
     OptionsMenu = TravelWindowII.src.extensions.DMenuList(menuOptionsString);
@@ -68,7 +68,7 @@ function SettingsMenu:Constructor(parentWindow)
     else
         menuItems:Add(Filters);
         menuItems:Add(Mode);
-        -- menuItems:Add(MapMenu); @TODO needs to be reintroduced
+        menuItems:Add(MapMenu); -- @TODO needs to be reintroduced
         menuItems:Add(OptionsMenu);
         menuItems:Add(SkillsMenu);
         menuItems:Add(EriadorMapMenu);
