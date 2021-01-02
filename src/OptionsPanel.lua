@@ -27,6 +27,9 @@ function OptionsPanel:Constructor(parent)
     self.checks = {};
     self.mainWindow = parent;
 
+    -- store race to only add racial skill that applies
+    self.racetype = parent.racetype;
+
     -- keep track of which item is selected on the sort tab
     self.sortSelectedIndex = 1;
     self.sortMaxItem = 0;
@@ -52,16 +55,16 @@ function OptionsPanel:Constructor(parent)
 
     self.EnabledTab:SetSize(self.width - 20, self.height - 60)
     self.ListBox = Turbine.UI.ListBox()
-	  self.ListBox:SetParent(self.EnabledTab)	
-	  self.ListBox:SetPosition(5,5)
-	  self.ListBox:SetSize(self:GetWidth()-20,self:GetHeight()-120)
-    self.Scroll = Turbine.UI.Lotro.ScrollBar()
-    self.Scroll:SetOrientation(Turbine.UI.Orientation.Vertical)
-    self.Scroll:SetParent(self.EnabledTab)
-    self.Scroll:SetPosition(0,0)
-    self.Scroll:SetWidth(10)
-    self.Scroll:SetHeight(self.ListBox:GetHeight())
-    self.ListBox:SetVerticalScrollBar(self.Scroll)
+    self.ListBox:SetParent(self.EnabledTab)
+    self.ListBox:SetPosition(5,5)
+    self.ListBox:SetSize(self:GetWidth()-20,self:GetHeight()-120)
+    self.scrollBar = Turbine.UI.Lotro.ScrollBar()
+    self.scrollBar:SetOrientation(Turbine.UI.Orientation.Vertical)
+    self.scrollBar:SetParent(self.EnabledTab)
+    self.scrollBar:SetPosition(0,0)
+    self.scrollBar:SetWidth(10)
+    self.scrollBar:SetHeight(self.ListBox:GetHeight())
+    self.ListBox:SetVerticalScrollBar(self.scrollBar)
 
     -- populate each tab
     self:AddGeneralItems();
@@ -270,8 +273,6 @@ function OptionsPanel:AddGeneralItems()
     self.resetButton:SetParent(self.GeneralTab);
     self.resetButton:SetVisible(true);
 
-
-
     -- do the settings reset
     self.resetButton.Click = function(sender, args)
         self.mainWindow:ResetSettings();
@@ -388,69 +389,55 @@ function OptionsPanel:AddItems()
     -- add the generic travels skills
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         for i = 1, travelCount[3], 1 do
-            -- add the single skill, starting at location 5,25 and add any offset
-            self:Add(counter, genLocations:KeyAtIndex(i), 5, 25, offsetCounter);
+            self:Add(counter, genLocations:KeyAtIndex(i), genLocations:LabelAtIndex(i));
             counter = counter + 1;
             offsetCounter = offsetCounter + 1;
         end
     end
 
-    -- add the hunter skills if the player is a hunter
+    -- add the hunter guide skills if the character is a hunter
     if (playerClass == Turbine.Gameplay.Class.Hunter) then
         offsetCounter = 0;
         for i = 1, travelCount[1], 1 do
-            self:Add(counter, hunterLocations:KeyAtIndex(i), 525, 25, offsetCounter);
+            self:Add(counter, hunterLocations:KeyAtIndex(i), hunterLocations:LabelAtIndex(i));
             counter = counter + 1;
             offsetCounter = offsetCounter + 1;
         end
     end
-
-    -- add the warden skills if the player is a warden
-    if (playerClass == 194) then
-        offsetCounter = 0;
+    -- add the warden muster skills if the character is a warden
+    if (playerClass == Turbine.Gameplay.Class.Warden) then
         for i = 1, travelCount[2], 1 do
-            self:Add(counter, wardenLocations:KeyAtIndex(i), 525, 25, offsetCounter);
+            self:Add(counter, wardenLocations:KeyAtIndex(i), wardenLocations:LabelAtIndex(i));
             counter = counter + 1;
-            offsetCounter = offsetCounter + 1;
         end
     end
 
     -- add the reputation travel skills
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        offsetCounter = 0;
         for i = 1, travelCount[4], 1 do
-            self:Add(counter, repLocations:KeyAtIndex(i), 265, 25, offsetCounter);
+            self:Add(counter, repLocations:KeyAtIndex(i), repLocations:LabelAtIndex(i));
             counter = counter + 1;
-            offsetCounter = offsetCounter + 1;
         end
     end
     
-    -- add the racial travel skills
+    -- add the race specific travel skill for the character
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        offsetCounter = 0;
-        for i = 1, travelCount[5], 1 do
-            self:Add(counter, racialLocations:KeyAtIndex(i), 5, 25, offsetCounter);
-            counter = counter + 1;
-            offsetCounter = offsetCounter + 1;
-        end
+        self:Add(counter, racialLocations:KeyAtIndex(self.racetype), racialLocations:LabelAtIndex(self.racetype));
+        counter = counter + 1;
     end
-
 
     -- add the creep travel skills
     if (playerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
-        offsetCounter = 0;
         for i = 1, travelCount[6], 1 do
-            self:Add(counter, creepLocations:KeyAtIndex(i), 5, 25, offsetCounter);
+            self:Add(counter, creepLocations:KeyAtIndex(i), creepLocations:LabelAtIndex(i));
             counter = counter + 1;
-            offsetCounter = offsetCounter + 1;
         end
     end
 end
 
 -- add a single shortcut to the enabled tab at the given location
-function OptionsPanel:Add(index, text, xOffset, yOffset, offset)
+function OptionsPanel:Add(index, key, label)
 
-    
     control = Turbine.UI.Label();
     control:SetSize(self.ListBox:GetWidth() - 20, 20);
     
@@ -460,14 +447,14 @@ function OptionsPanel:Add(index, text, xOffset, yOffset, offset)
     self.labels[index]:SetPosition(30, 0)
     self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.labels[index]:SetParent(control);
-    self.labels[index]:SetText(text);
+    self.labels[index]:SetText(label);
     self.labels[index]:SetVisible(true);
 
     -- create the checkbox for the shortcut setting
     self.checks[index] = Turbine.UI.Lotro.CheckBox();
     self.checks[index]:SetSize(19, 19);
     self.checks[index]:SetPosition(10, 0);
-    self.checks[index]:SetChecked(settings.enabled[text]);
+    self.checks[index]:SetChecked(settings.enabled[key]);
     self.checks[index]:SetParent(control);
     self.checks[index]:SetWantsUpdates(true);
     self.checks[index]:SetVisible(true);
@@ -476,7 +463,7 @@ function OptionsPanel:Add(index, text, xOffset, yOffset, offset)
     -- handle the event of the check box value changing
     self.checks[index].CheckedChanged = function(sender, args)
         -- change the setting on the main window
-        settings.enabled[text] = sender:IsChecked();
+        settings.enabled[key] = sender:IsChecked();
 
         -- reset the shortcuts on the main window
         self.mainWindow:SetShortcuts();
@@ -485,7 +472,6 @@ function OptionsPanel:Add(index, text, xOffset, yOffset, offset)
         self.mainWindow:UpdateSettings();
     end
 end
-
 
 -- this function adds the labels to the enabled tab for cosmetic purpose
 function OptionsPanel:AddBoxes()
@@ -555,7 +541,7 @@ function OptionsPanel:AddSortList()
 
     -- create a listbox for all the shortcuts to be sorted
     self.sortListBox = Turbine.UI.ListBox();
-    self.sortListBox:SetSize(280, 670);
+    self.sortListBox:SetSize(480, self.height - 120);
     self.sortListBox:SetPosition(200, 5);
     self.sortListBox:SetParent(self.SortTab);
     self.sortListBox:SetVisible(true);
@@ -565,7 +551,7 @@ function OptionsPanel:AddSortList()
     -- create a label to add to the listbox for each shortcut
     for i, v in pairs(travelShortcuts) do
         tempLabel = Turbine.UI.Label();
-        tempLabel:SetText(v:GetName());
+        tempLabel:SetText(v:GetSkillLabel());
         tempLabel:SetSize(280, 20);
         tempLabel:SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
         tempLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
@@ -589,18 +575,17 @@ function OptionsPanel:AddSortList()
 
     -- set the first item as selected
     self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.6));
-
+    
     -- set up the scrollbar for the list
     self.listBoxScrollBar = self.sortListBox:GetVerticalScrollBar();
-
+    
     if (self.listBoxScrollBar == nil) then
         self.listBoxScrollBar = Turbine.UI.Lotro.ScrollBar();
     end
 
     self.listBoxScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
     self.listBoxScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
-    --	self.listBoxScrollBar:SetSize( 10,490 );
-    self.listBoxScrollBar:SetSize(10, 670);
+    self.listBoxScrollBar:SetSize(10, self.height - 120);
     self.listBoxScrollBar:SetPosition(270, 0);
     self.listBoxScrollBar:SetZOrder(100);
     self.listBoxScrollBar:SetVisible(true);

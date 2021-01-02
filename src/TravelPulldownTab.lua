@@ -109,17 +109,14 @@ function TravelPulldownTab:SetItems()
 
     -- add the shortcuts to the combo box
     counter = 1;
-    for i = 1, table.getn(travelShortcuts), 1 do
+    for i = 1, #travelShortcuts, 1 do
         if (travelShortcuts[i]:IsEnabled()) then
+            -- apply skill type filter if set in options
             if (hasbit(settings.filters, bit(travelShortcuts[i]:GetTravelType()))) then
-                if (TravelWindow:FindSkill(travelShortcuts[i]:GetSkillName())) then
+                -- make sure skill is trained, lookup by ingame name
+                if (TravelWindow:FindSkill(travelShortcuts[i]:GetName())) then
                     self.pulldown:AddItem(travelShortcuts[i], counter, i);
                     counter = counter + 1;
-                elseif (travelShortcuts[i]:GetSkillName() == "skip") then
-                    self.pulldown:AddItem(travelShortcuts[i], counter, i);
-                    counter = counter + 1;
-                else
-                    --Turbine.Shell.WriteLine("Skill not trained: " .. travelShortcuts[i]:GetSkillName());
                 end
             end
         end

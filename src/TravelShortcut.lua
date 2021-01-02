@@ -4,7 +4,7 @@
 
 TravelShortcut = class(Turbine.UI.Lotro.Shortcut);
 
-function TravelShortcut:Constructor(sType, data, name, tType, index, enabled, sName)
+function TravelShortcut:Constructor(sType, data, name, tType, index, enabled, skillLabel)
     Turbine.UI.Lotro.Shortcut.Constructor(self);
 
     -- the data to keep track of
@@ -12,7 +12,7 @@ function TravelShortcut:Constructor(sType, data, name, tType, index, enabled, sN
     self.travelType = tType;
     self.Index = index;
     self.Enabled = enabled;
-    self.skillName = sName;
+    self.skillLabel = skillLabel;
 
     self:SetType(sType);
     self:SetData(data);
@@ -48,14 +48,14 @@ function TravelShortcut:SetName(text)
     self.Name = text;
 end
 
--- function to return the name of the shortcut
+-- function to return the ingame skill name of the shortcut
 function TravelShortcut:GetName()
     return self.Name;
 end
 
--- function to return the skill name of the shortcut
-function TravelShortcut:GetSkillName()
-    return self.skillName;
+-- function to return the plugin specific skill label of the shortcut
+function TravelShortcut:GetSkillLabel()
+    return self.skillLabel;
 end
 
 -- function to set the index of the shortcut

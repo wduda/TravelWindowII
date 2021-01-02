@@ -168,7 +168,7 @@ function ComboBox:AddItem(shortcut, index, value)
     self.labels[index]:SetFont(Turbine.UI.Lotro.Font.TrajanPro14);
     self.labels[index]:SetOutlineColor(ComboBox.HighlightColor);
     self.labels[index]:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
-    self.labels[index]:SetText(shortcut:GetName());
+    self.labels[index]:SetText(shortcut:GetSkillLabel());
     self.labels[index]:SetZOrder(100);
     self.labels[index]:SetMouseVisible(self.travelOnSelect == 0);
     self.labels[index]:SetParent(self.listBox);
@@ -252,11 +252,6 @@ function ComboBox:RemoveItem(value)
     end
 end
 
---function ComboBox:SetParent(parent)
---Turbine.UI.Control.SetParent(self, parent);
---self.dropDownWindow:SetParent(parent);
---end
-
 function ComboBox:SetSelection(value)
     for i = 1, self.listBox:GetItemCount() do
         local item = self.listBox:GetItem(i);
@@ -328,15 +323,13 @@ function ComboBox:Layout()
 end
 
 function ComboBox:ShowDropDown()
-    --local itemCount = self.listBox:GetItemCount();
-    local itemCount = table.getn(self.labels);
+    local itemCount = #self.labels;
 
     if ((itemCount > 0) and not (self.dropped)) then
         self.dropped = true;
         self.label:SetForeColor(ComboBox.SelectionColor);
         self.arrow:SetBackground("TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_open_rollover.tga");
         local width, height = self:GetSize();
-        --width = width + 10;
 
         -- max size
         local maxItems = itemCount;
@@ -349,7 +342,6 @@ function ComboBox:ShowDropDown()
         -- list item sizes
         local listHeight = 0;
         for i = 1, itemCount do
-            --local item = self.listBox:GetItem(i);
             local item = self.labels[1];
             item:SetWidth(width - 14);
             if (i <= maxItems) then
@@ -411,7 +403,7 @@ end
 
 function ComboBox:UpdateSubWindow()
     -- loop through all the quickslots
-    for i = 1, table.getn(self.quickslots), 1 do
+    for i = 1, #self.quickslots, 1 do
         -- get the number of rows
         self.row = math.ceil(i / 1);
 

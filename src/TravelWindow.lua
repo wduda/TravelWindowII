@@ -55,16 +55,6 @@ function TravelWindow:Constructor()
     self.ToggleButton:SetVisible(settings.showButton == 1);
     self.ToggleButton:SetOpacity(settings.toggleMinOpacity);
 
-    -- check if a function that only exists in the newest update exists
-    -- and don't add the map home skill if it does
-    if (Turbine.UI.Control.IsDisplayed == nil) then
-        -- if the player has set the map home skill, insert that
-        -- into the list of locations
-        if (settings.mapHome ~= nil) then
-            genLocations:InsertData(1, mapHomeString, settings.mapHome);
-        end
-    end
-
     -- if the player has a PvMP map, then insert it into the list
     if ((settings.mapGlanVraig ~= nil) and (settings.mapGlanVraig ~= "nil")) then
         --self.reloadGVMap = true;
@@ -87,23 +77,7 @@ function TravelWindow:Constructor()
     end
 
     -- set the racial travel skill to add
-    if (playerRace == Turbine.Gameplay.Race.Dwarf) then
-        self.racetype = 3;
-    elseif (playerRace == Turbine.Gameplay.Race.Elf) then
-        self.racetype = 4;
-    elseif (playerRace == Turbine.Gameplay.Race.Hobbit) then
-        self.racetype = 2;
-    elseif (playerRace == Turbine.Gameplay.Race.Man) then
-        self.racetype = 1;
-    elseif (playerRace == Turbine.Gameplay.Race.Beorning) then
-        self.racetype = 5;
-    elseif (playerRace == Turbine.Gameplay.Race.HighElf) then
-        self.racetype = 6;
-    elseif (playerRace == Turbine.Gameplay.Race.StoutAxe) then                
-        self.racetype = 7;   
-    else
-        self.racetype = 1; -- default to man race to prevent errors
-    end
+    self:DetermineRaceKey();
 
     -- save the player's combat states for managing hiding the window
     -- when the player enters combat
@@ -325,6 +299,27 @@ function TravelWindow:Constructor()
 
     Plugins["Travel Window II"].Load = function(sender, args)
         Turbine.Shell.WriteLine("<u><rgb=#DAA520>Travel Window II v" .. Plugins["Travel Window II"]:GetVersion() .. " by Hyoss</rgb></u>");
+    end
+end
+
+function TravelWindow:DetermineRaceKey()
+    -- set the racial travel skill to add
+    if (playerRace == Turbine.Gameplay.Race.Dwarf) then
+        self.racetype = 3;
+    elseif (playerRace == Turbine.Gameplay.Race.Elf) then
+        self.racetype = 4;
+    elseif (playerRace == Turbine.Gameplay.Race.Hobbit) then
+        self.racetype = 2;
+    elseif (playerRace == Turbine.Gameplay.Race.Man) then
+        self.racetype = 1;
+    elseif (playerRace == Turbine.Gameplay.Race.Beorning) then
+        self.racetype = 5;
+    elseif (playerRace == Turbine.Gameplay.Race.HighElf) then
+        self.racetype = 6;
+    elseif (playerRace == Turbine.Gameplay.Race.StoutAxe) then                
+        self.racetype = 7;
+    else
+        self.racetype = 1; -- default to man race to prevent errors
     end
 end
 
@@ -685,7 +680,7 @@ function TravelWindow:SetMapHome()
     self.MapWindow:SetParent(self);
     self.MapWindow:SetZOrder(300);
 
-    -- add an label to the window for instructions
+    -- add a label to the window for instructions
     self.mapLabel = Turbine.UI.Label();
     self.mapLabel:SetForeColor(Turbine.UI.Color(1, 0.2, 0.2, 0.6));
     self.mapLabel:SetPosition(0, 15);
@@ -695,7 +690,7 @@ function TravelWindow:SetMapHome()
     self.mapLabel:SetFont(Turbine.UI.Lotro.Font.Verdana14);
     self.mapLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.mapLabel:SetMultiline(true);
-    self.mapLabel:SetText(mapInstructionString);
+    self.mapLabel:SetText("@TODO");
 
     -- add an empty quickslot to the window
     self.mapQuickSlot1 = Turbine.UI.Lotro.Quickslot();
@@ -746,23 +741,8 @@ function TravelWindow:SaveMapHome(shortcut)
 
     local mapItem = shortcut:GetItem();
 
-    -- do this if it is the basic map home item
-    if (mapItem:GetName() == mapHomeString) then
-
-        -- remove the old shortcut if it exists
-        if (genLocations:IndexByKey(mapHomeString) == 1) then
-            genLocations:RemoveAtIndex(1);
-        end
-
-        -- set the value
-        settings.mapHome = shortcut:GetData();
-
-        -- update the location lists
-        genLocations:InsertData(1, mapHomeString, settings.mapHome);
-        TravelInfo:GetCounts();
-
-        -- else do this if it is the glan vrag map
-    elseif (string.find(mapItem:GetName(), glanMapItemString)) then
+    -- do this if it is the glan vraig map
+    if (string.find(mapItem:GetName(), glanMapItemString)) then
 
         -- remove the old shortcut if it exists
         if (genLocations:IndexByKey(glanMapString) == 2) then
@@ -778,7 +758,7 @@ function TravelWindow:SaveMapHome(shortcut)
 
         -- else, do nothing but report the error
     else
-        Turbine.Shell.WriteLine(mapErrorString);
+        Turbine.Shell.WriteLine("@TODO");
     end
     -- update and save everything
     self:UpdateSettings();
@@ -794,7 +774,6 @@ function TravelWindow:SetShortcuts()
     -- set default values
     travelShortcuts = {};
     counter = 1;
-    racetype = 1;
 
     -- set the travel skills for free people
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
@@ -812,7 +791,7 @@ function TravelWindow:SetShortcuts()
                 1,
                 counter,
                 settings.enabled[genLocations:KeyAtIndex(i)],
-                genLocations:NameAtIndex(i)));
+                genLocations:LabelAtIndex(i)));
             else
                 table.insert(travelShortcuts, TravelShortcut(6.0,
                 genLocations:DataAtIndex(i),
@@ -820,7 +799,7 @@ function TravelWindow:SetShortcuts()
                 1,
                 counter,
                 settings.enabled[genLocations:KeyAtIndex(i)],
-                genLocations:NameAtIndex(i)));
+                genLocations:LabelAtIndex(i)));
             end
         end
 
@@ -832,7 +811,7 @@ function TravelWindow:SetShortcuts()
         2,
         counter,
         settings.enabled[racialLocations:KeyAtIndex(self.racetype)],
-        racialLocations:NameAtIndex(self.racetype)));
+        racialLocations:LabelAtIndex(self.racetype)));
 
         -- set the reputation travel items
         for i = 1, travelCount[4], 1 do
@@ -843,7 +822,7 @@ function TravelWindow:SetShortcuts()
             3,
             counter,
             settings.enabled[repLocations:KeyAtIndex(i)],
-            repLocations:NameAtIndex(i)));
+            repLocations:LabelAtIndex(i)));
         end
     else
         -- set the creep travel items
@@ -855,7 +834,7 @@ function TravelWindow:SetShortcuts()
             3,
             counter,
             settings.enabled[creepLocations:KeyAtIndex(i)],
-            creepLocations:NameAtIndex(i)));
+            creepLocations:LabelAtIndex(i)));
         end
     end
 
@@ -869,12 +848,12 @@ function TravelWindow:SetShortcuts()
             4,
             counter,
             settings.enabled[hunterLocations:KeyAtIndex(i)],
-            hunterLocations:NameAtIndex(i)));
+            hunterLocations:LabelAtIndex(i)));
         end
     end
 
     -- set the warden travel items
-    if (playerClass == 194) then
+    if (playerClass == Turbine.Gameplay.Class.Warden) then
         for i = 1, travelCount[2], 1 do
             counter = self:TableIndex(settings.order, wardenLocations:KeyAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
@@ -883,7 +862,7 @@ function TravelWindow:SetShortcuts()
             4,
             counter,
             settings.enabled[wardenLocations:KeyAtIndex(i)],
-            wardenLocations:NameAtIndex(i)));
+            wardenLocations:LabelAtIndex(i)));
         end
     end
 
@@ -898,7 +877,7 @@ function TravelWindow:CheckEnabledSettings()
         itemCount = travelCount[3] + travelCount[4] + 1;
         if (playerClass == Turbine.Gameplay.Class.Hunter) then
             itemCount = itemCount + travelCount[1];
-        elseif (playerClass == 194) then
+        elseif (playerClass == Turbine.Gameplay.Class.Warden) then
             itemCount = itemCount + travelCount[2]
         end
     else
@@ -971,7 +950,7 @@ function TravelWindow:CheckEnabledSettings()
         end
 
         -- update warden travel settings
-        if (playerClass == 194) then
+        if (playerClass == Turbine.Gameplay.Class.Warden) then
             for i = 1, travelCount[2], 1 do
                 if (settings.enabled[wardenLocations:KeyAtIndex(i)] == nil) then
                     settings.enabled[wardenLocations:KeyAtIndex(i)] = true;
@@ -1140,7 +1119,6 @@ function TravelWindow:ResetSettings()
     settings.toggleMinOpacity = 0.2;
 
     -- clear the maps
-    settings.mapHome = nil;
     settings.mapGlanVraig = nil;
 
     -- move the toggle button and main window
@@ -1154,27 +1132,7 @@ function TravelWindow:ResetSettings()
     player = Turbine.Gameplay.LocalPlayer.GetInstance();
     playerClass = player:GetClass();
     playerRace = player:GetRace();
-    self.racetype = 0;
-
-    -- set the racial travel skill to add
-    if (playerRace == Turbine.Gameplay.Race.Dwarf) then
-        self.racetype = 3;
-    elseif (playerRace == Turbine.Gameplay.Race.Elf) then
-        self.racetype = 4;
-    elseif (playerRace == Turbine.Gameplay.Race.Hobbit) then
-        self.racetype = 2;
-    elseif (playerRace == Turbine.Gameplay.Race.Man) then
-        self.racetype = 1;
-    elseif (playerRace == Turbine.Gameplay.Race.Beorning) then
-        self.racetype = 5;
-    elseif (playerRace == Turbine.Gameplay.Race.Highelf) then
-        self.racetype = 6;
-    elseif (playerRace == Turbine.Gameplay.Race.StoutAxe) then
-        self.racetype = 7;
-    else
-        Turbine.Engine.WriteLine("What race are you?");
-        return;
-    end
+    self:DetermineRaceKey();
 
     -- update everything
     self:CheckEnabledSettings()
@@ -1191,28 +1149,20 @@ function TravelWindow:AddGVMap()
 end
 
 function TravelWindow:CheckSkills()
-    -- loop through all the shortcuts and add those that are enabled
+    -- loop through all the shortcuts and list those those that are not learned
     counter = 1;
     for i = 1, #travelShortcuts, 1 do
-        --if(travelShortcuts[i]:IsEnabled()) then
-        --if(hasbit(settings.filters,bit(travelShortcuts[i]:GetTravelType()))) then
-
-        if (TravelWindow:FindSkill(travelShortcuts[i]:GetSkillName())) then
-            -- do nothing
-        elseif (travelShortcuts[i]:GetSkillName() == "skip") then
-            -- do nothing
+        if (TravelWindow:FindSkill(travelShortcuts[i]:GetName())) then
+            -- do nothing, skill is known
         else
             Turbine.Shell.WriteLine(skillNotTrainedString .. travelShortcuts[i]:GetName())
         end
-        --end
-        --end
     end
 end
 
 function TravelWindow:FindSkill(name)
     for i = 1, trainedSkills:GetCount(), 1 do
         local skill = Turbine.Gameplay.Skill;
-        local skillInfo = Turbine.Gameplay.SkillInfo;
         skill = trainedSkills:GetItem(i);
 
         if (skill:GetSkillInfo():GetName() == name) then
@@ -1233,6 +1183,7 @@ function TravelWindow:ListTrainedSkills()
         skill = trainedSkills:GetItem(i);
 
         Turbine.Shell.WriteLine(skill:GetSkillInfo():GetName());
+
     end
 end
 

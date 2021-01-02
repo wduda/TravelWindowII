@@ -34,6 +34,9 @@ function OptionsWindow:Constructor(parent)
     -- set the window to be visible
     self:SetVisible(true);
 
+    -- store race to only add racial skill that applies
+    self.racetype = parent.racetype;
+
     -- have the main window close the options
     self.VisibleChanged = function(sender, args)
         if (self:IsVisible() == false) then
