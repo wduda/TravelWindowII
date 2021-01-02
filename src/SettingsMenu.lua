@@ -46,13 +46,14 @@ function SettingsMenu:Constructor(parentWindow)
     ModeItems:Add(self.Mode4);
 
     -- create the menu item to add map home
-    MapMenu = TravelWindowII.src.extensions.DMenuList(menuMapString);
+    -- @TODO has to be reintroduced
+    -- MapMenu = TravelWindowII.src.extensions.DMenuList(menuMapString);
 
     -- create the menu item to open the options window
     OptionsMenu = TravelWindowII.src.extensions.DMenuList(menuOptionsString);
     SkillsMenu = TravelWindowII.src.extensions.DMenuList(menuSkillsString);
 
-    -- create the item to open the moors map window
+    -- create the items to open the map windows
     MoorMapMenu = TravelWindowII.src.extensions.DMenuList(moorMapString);
     EriadorMapMenu = TravelWindowII.src.extensions.DMenuList(eriadorMapString);
     RhovanionMapMenu = TravelWindowII.src.extensions.DMenuList(rhovanionMapString);
@@ -67,7 +68,7 @@ function SettingsMenu:Constructor(parentWindow)
     else
         menuItems:Add(Filters);
         menuItems:Add(Mode);
-        menuItems:Add(MapMenu);
+        -- menuItems:Add(MapMenu); @TODO needs to be reintroduced
         menuItems:Add(OptionsMenu);
         menuItems:Add(SkillsMenu);
         menuItems:Add(EriadorMapMenu);
@@ -178,8 +179,8 @@ function SettingsMenu:Update(string)
         self.mode = 3;
     elseif (string == menuPullString) then
         self.mode = 4;
-    elseif (string == menuMapString) then
-        self.parent:SetMapHome();
+    --elseif (string == menuMapString) then @TODO has to be reintroduced
+    --    self.parent:SetMapHome();
     elseif (string == menuOptionsString) then
         self.parent:OpenOptions();
     elseif (string == menuSkillsString) then
