@@ -11,10 +11,9 @@ optionsTitleString = "Options de Travel";
 moorMapTitleString = "Map Locations";
 eriadorMapTitleString = "Carte de l'Eriador";
 rhovanionMapTitleString = "Carte de Rhovanion";
-gondorMapTitleString = "Carte de Dol Amroth"
+gondorMapTitleString = "Carte de Gondor"
 
 -- strings for maps
-mapHomeString = "Map Home";
 glanMapString = "Carte précise pour aller à Glân Vraig";
 glanMapItemString = "Carte précise pour aller à Glân Vraig";
 
@@ -205,21 +204,21 @@ function TravelDictionaries:CreateDictionaries()
     racialLocations:AddData("Retour à Caras Galadhon dans Lothlórien", "0x70048C8C", "Voyage vers Caras Galadhon, en Lothlórien");
     racialLocations:AddData("Revenir au Palais de Thorin", "0x70053C0F", "Aller au Palais de Thorin");
 
-    genLocations:AddData("Return Home 1", "0x700256BA", "skip");
-    genLocations:AddData("Return Home 2", "0x70025792", "skip");
-    genLocations:AddData("Return Home 3", "0x70025793", "skip");
-    genLocations:AddData("Return Home 4", "0x70025794", "skip");
-    genLocations:AddData("Return Home 5", "0x70025795", "skip");
-    genLocations:AddData("Return Home 6", "0x70025796", "skip");
-    genLocations:AddData("Return Home 7", "0x7002FF5E", "skip");
-    genLocations:AddData("Return Home 8", "0x7002FF5F", "skip");
-    genLocations:AddData("Return Home 9", "0x7002FF60", "skip");
-    genLocations:AddData("Return Home 10", "0x7002FF61", "skip");
-    genLocations:AddData("Return Home 11", "0x7002FF62", "skip");
-    genLocations:AddData("Return Home 12", "0x7002FF63", "skip");
+    genLocations:AddData("Return Home 1", "0x700256BA", "Return Home 1");
+    genLocations:AddData("Return Home 2", "0x70025792", "Return Home 2");
+    genLocations:AddData("Return Home 3", "0x70025793", "Return Home 3");
+    genLocations:AddData("Return Home 4", "0x70025794", "Return Home 4");
+    genLocations:AddData("Return Home 5", "0x70025795", "Return Home 5");
+    genLocations:AddData("Return Home 6", "0x70025796", "Return Home 6");
+    genLocations:AddData("Return Home 7", "0x7002FF5E", "Return Home 7");
+    genLocations:AddData("Return Home 8", "0x7002FF5F", "Return Home 8");
+    genLocations:AddData("Return Home 9", "0x7002FF60", "Return Home 9");
+    genLocations:AddData("Return Home 10", "0x7002FF61", "Return Home 10");
+    genLocations:AddData("Return Home 11", "0x7002FF62", "Return Home 11");
     genLocations:AddData("Maison personnelle", "0x7000D046", "Retour à la maison personnelle");
     genLocations:AddData("Allez à une maison premium", "0x70046EE4", "Allez à une maison premium");
     genLocations:AddData("Maison de confrérie", "0x7000D047", "Retour à la maison de confrérie");
+    genLocations:AddData("Maison confrerie colleague", "0x70057C36", "Maison confrerie colleague"); --@TODO
 
     repLocations:AddData("La Porte de Thorin", "0x7001BF91", "Retour : Porte de Thorin");
     repLocations:AddData("Bree", "0x7001BF90", "Retour à Bree");
@@ -289,7 +288,7 @@ function IndexedDictionary:Constructor()
     -- set default tables
     self.listOfKeys = {};
     self.dataPairs = {};
-    self.skillNames = {};
+    self.skillLabels = {};
     self.numberOfPairs = 0;
 end
 
@@ -299,7 +298,7 @@ function IndexedDictionary:GetCount()
 end
 
 -- function to add a key/data pair to the end of the dictionary
-function IndexedDictionary:AddData(key, data, name)
+function IndexedDictionary:AddData(key, data, label)
     -- increase the counter
     self.numberOfPairs = self.numberOfPairs + 1;
 
@@ -307,11 +306,11 @@ function IndexedDictionary:AddData(key, data, name)
     table.insert(self.listOfKeys, key);
     -- add the key/data into the table
     self.dataPairs[key] = data;
-    self.skillNames[key] = name;
+    self.skillLabels[key] = label;
 end
 
 -- function to add a key/data pair at a specific index
-function IndexedDictionary:InsertData(index, key, data, name)
+function IndexedDictionary:InsertData(index, key, data, label)
     -- increase the counter
     self.numberOfPairs = self.numberOfPairs + 1;
 
@@ -319,7 +318,7 @@ function IndexedDictionary:InsertData(index, key, data, name)
     table.insert(self.listOfKeys, index, key);
     -- add the key/data into the table
     self.dataPairs[key] = data;
-    self.skillNames[key] = name;
+    self.skillLabels[key] = label;
 end
 
 -- function to remove a key/data pair at an index
@@ -361,9 +360,9 @@ function IndexedDictionary:DataAtIndex(index)
 end
 
 -- function to return the name at a specified index
-function IndexedDictionary:NameAtIndex(index)
+function IndexedDictionary:LabelAtIndex(index)
     local string = self.listOfKeys[index];
-    local data = self.skillNames[string];
+    local data = self.skillLabels[string];
 
     return data;
 end

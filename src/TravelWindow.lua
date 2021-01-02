@@ -55,16 +55,6 @@ function TravelWindow:Constructor()
     self.ToggleButton:SetVisible(settings.showButton == 1);
     self.ToggleButton:SetOpacity(settings.toggleMinOpacity);
 
-    -- check if a function that only exists in the newest update exists
-    -- and don't add the map home skill if it does
-    if (Turbine.UI.Control.IsDisplayed == nil) then
-        -- if the player has set the map home skill, insert that
-        -- into the list of locations
-        if (settings.mapHome ~= nil) then
-            genLocations:InsertData(1, mapHomeString, settings.mapHome);
-        end
-    end
-
     -- if the player has a PvMP map, then insert it into the list
     if ((settings.mapGlanVraig ~= nil) and (settings.mapGlanVraig ~= "nil")) then
         --self.reloadGVMap = true;
@@ -690,7 +680,7 @@ function TravelWindow:SetMapHome()
     self.MapWindow:SetParent(self);
     self.MapWindow:SetZOrder(300);
 
-    -- add an label to the window for instructions
+    -- add a label to the window for instructions
     self.mapLabel = Turbine.UI.Label();
     self.mapLabel:SetForeColor(Turbine.UI.Color(1, 0.2, 0.2, 0.6));
     self.mapLabel:SetPosition(0, 15);
@@ -700,7 +690,7 @@ function TravelWindow:SetMapHome()
     self.mapLabel:SetFont(Turbine.UI.Lotro.Font.Verdana14);
     self.mapLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.mapLabel:SetMultiline(true);
-    self.mapLabel:SetText(mapInstructionString);
+    self.mapLabel:SetText("@TODO");
 
     -- add an empty quickslot to the window
     self.mapQuickSlot1 = Turbine.UI.Lotro.Quickslot();
@@ -751,23 +741,8 @@ function TravelWindow:SaveMapHome(shortcut)
 
     local mapItem = shortcut:GetItem();
 
-    -- do this if it is the basic map home item
-    if (mapItem:GetName() == mapHomeString) then
-
-        -- remove the old shortcut if it exists
-        if (genLocations:IndexByKey(mapHomeString) == 1) then
-            genLocations:RemoveAtIndex(1);
-        end
-
-        -- set the value
-        settings.mapHome = shortcut:GetData();
-
-        -- update the location lists
-        genLocations:InsertData(1, mapHomeString, settings.mapHome);
-        TravelInfo:GetCounts();
-
-        -- else do this if it is the glan vrag map
-    elseif (string.find(mapItem:GetName(), glanMapItemString)) then
+    -- do this if it is the glan vraig map
+    if (string.find(mapItem:GetName(), glanMapItemString)) then
 
         -- remove the old shortcut if it exists
         if (genLocations:IndexByKey(glanMapString) == 2) then
@@ -783,7 +758,7 @@ function TravelWindow:SaveMapHome(shortcut)
 
         -- else, do nothing but report the error
     else
-        Turbine.Shell.WriteLine(mapErrorString);
+        Turbine.Shell.WriteLine("@TODO");
     end
     -- update and save everything
     self:UpdateSettings();
@@ -1144,7 +1119,6 @@ function TravelWindow:ResetSettings()
     settings.toggleMinOpacity = 0.2;
 
     -- clear the maps
-    settings.mapHome = nil;
     settings.mapGlanVraig = nil;
 
     -- move the toggle button and main window

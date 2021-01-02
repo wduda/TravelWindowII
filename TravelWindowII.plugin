@@ -3,13 +3,13 @@
     <Information>
         <Name>Travel Window II</Name>
         <Author>Hyoss</Author>
-        <Version>1.0.2beta</Version>
+        <Version>1.0.5beta</Version>
         <Description>
         Please report bugs and feature requests at https://github.com/wduda/TravelWindowII/issues
 		</Description>
         <Image>TravelWindowII/src/resources/travel.tga</Image>
     </Information>
     <Package>TravelWindowII.src.Main</Package>
-    <!--<Configuration Apartment="Travel">
-    </Configuration>-->
+    <Configuration Apartment="TravelWindowII">
+    </Configuration>
 </Plugin>
