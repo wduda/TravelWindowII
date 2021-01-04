@@ -202,8 +202,8 @@ function TravelDictionaries:CreateDictionaries()
     racialLocations:AddData("Rückkehr ins Auenland", "0x700062C8", "Michelbinge (Rasse)");
     racialLocations:AddData("Rückkehr zu Thorins Tor", "0x70006346", "Thorins Tor (Rasse Zwerg)");
     racialLocations:AddData("Rückkehr nach Bruchtal", "0x7000631F", "Bruchtal (Rasse)");
-    racialLocations:AddData("Zu Grimbeorns Hütte", "0x70041A22", "Grimbeorns Hütte (Rasse)");
-    racialLocations:AddData("Nach Caras Galadhon", "0x70048C8C", "Caras Galadhon (Rasse)");
+    racialLocations:AddData("Zum 1. Heim zurückkehren", "0x70041A22", "Grimbeorns Hütte (Rasse)");
+    racialLocations:AddData("Reise nach Caras Galadhon in Lothlórien", "0x70048C8C", "Caras Galadhon (Rasse)");
     racialLocations:AddData("Reise zu Thorins Halle", "0x70053C0F", "Thorins Halle (Rasse Starkaxt)");
 
     genLocations:AddData("Zum 1. Heim zurückkehren", "0x700256BA", "1. Markstein");
