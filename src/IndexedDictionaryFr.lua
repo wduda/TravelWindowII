@@ -2,49 +2,49 @@
 --[[ put all the strings that might require translation in ]] --
 --[[ one location for easier access ]] --
 helpString = "Travel\n\ntrav show: Afficher Travel Window\n" ..
-"trav hide: Masqer Travel Window\n" ..
+"trav hide: Masquer Travel Window\n" ..
 "trav toggle: Toggle the Travel Window\n";
 
 -- window title strings
 mainTitleString = "Travel";
 optionsTitleString = "Options de Travel";
-moorMapTitleString = "Map Locations";
+moorMapTitleString = "Carte des Landes d'Etten";
 eriadorMapTitleString = "Carte de l'Eriador";
-rhovanionMapTitleString = "Carte de Rhovanion";
-gondorMapTitleString = "Carte de Gondor"
+rhovanionMapTitleString = "Carte du Rhovanion";
+gondorMapTitleString = "Carte du Gondor"
 
 -- strings for maps
 glanMapString = "Carte précise pour aller à Glân Vraig";
 glanMapItemString = "Carte précise pour aller à Glân Vraig";
 
 -- error messages
-resetOrderString = "Your order settings have been reset due to a change in " ..
-"the number of items saved.  This should only occur once.\n" ..
+resetOrderString = "Votre ordre personnalisé a été ré-initialisé du fait d'un changement dans " ..
+"le nombre d'éléments sauvegardés.  Ceci ne devrait se produire qu'une fois.\n" ..
 "Sorry for the inconvenience.";
 
-resetEnabledString = "Vos talents selectionnés ont étés remis a zéro a cause  " ..
+resetEnabledString = "Vos talents selectionnés ont étés remis a zéro à cause  " ..
 "d'une erreur dans les objets sauvegardés.\n";
 
 skillNotTrainedString = "Compétence non utilisée: ";
 
 -- options window strings
-generalTabString = "General";
-selectTabString = "Selection";
+generalTabString = "Général";
+selectTabString = "Sélection";
 sortTabString = "Tri";
 hideString = "Cacher la fenêtre Travel au démarrage ";
 toggleString = "Montrer le bouton Travel";
 pulldownTravelString = "Voyager lorsque la compétence déroulante est sélectionnée";
-hideOnCombatString = "Cacher la fenêtre a l'entrée en combat";
+hideOnCombatString = "Cacher la fenêtre à l'entrée en combat";
 genericLabelString = "Compétences générales";
-racialLabelString = "Compétences Raciales";
-classLabelString = "Compétences de Classe";
-repLabelString = "Compétences de Réputation";
-moveUpString = "Vers le Haut";
+racialLabelString = "Compétences raciales";
+classLabelString = "Compétences de classe";
+repLabelString = "Compétences de réputation";
+moveUpString = "Vers le haut";
 moveDownString = "Vers le bas";
 moveTopString = "Tout en haut";
 moveBottomString = "Tout en bas";
-toggleSlidersString = "Modifier l'opacitée du bouton";
-mainSlidersString = "Modifier l'opacitée de la fenêtre";
+toggleSlidersString = "Modifier l'opacité du bouton";
+mainSlidersString = "Modifier l'opacité de la fenêtre";
 minString = "Min: ";
 maxString = "Max: ";
 resetSettingsString = "Remise a zéro";
@@ -52,20 +52,20 @@ checkSkillsString = "Vérification des compétences non utilisées";
 
 -- menu strings
 menuFiltersString = "Filtres";
-menuGenString = "Voir les voyages Génériques";
-menuRaceString = "Voir les voyages Raciaux";
-menuRepString = "Voir les voyages de Réputation";
-menuClassString = "Voir les voyages de Classe";
+menuGenString = "Voir les voyages génériques";
+menuRaceString = "Voir les voyages raciaux";
+menuRepString = "Voir les voyages de réputation";
+menuClassString = "Voir les voyages de classe";
 menuModeString = "Mode";
 menuTextString = "Liste de texte";
 menuIconString = "Grille d'icône";
 menuCaroString = "Caroussel";
 menuPullString = "Menu déroulant";
 menuOptionsString = "Options";
-moorMapString = "Ouvrir la carte de Moor";
-eriadorMapString = "Ouvrir la carte de l'Eriador";
-rhovanionMapString = "Ouvrir la carte du Rhovanion";
-gondorMapString = "Ouvrir la carte de Gondor"
+moorMapString = "Destinations aux Landes d'Etten";
+eriadorMapString = "Destinations en Eriador";
+rhovanionMapString = "Destination dans le Rhovanion";
+gondorMapString = "Destinations dans le Gondor"
 menuSkillsString = "Lister les compétences non apprises";
 
 --[[ travel skills ]] --
@@ -218,7 +218,7 @@ function TravelDictionaries:CreateDictionaries()
     genLocations:AddSkill("Maison personnelle", "0x7000D046", "Retour à la maison personnelle");
     genLocations:AddSkill("Allez à une maison premium", "0x70046EE4", "Allez à une maison premium");
     genLocations:AddSkill("Maison de confrérie", "0x7000D047", "Retour à la maison de confrérie");
-    genLocations:AddSkill("Maison confrerie colleague", "0x70057C36", "Maison confrerie colleague"); --@TODO
+    genLocations:AddSkill("Maison d'un confrère", "0x70057C36", "Retour à la maison d'un membre de confrérie");
 
     repLocations:AddSkill("La Porte de Thorin", "0x7001BF91", "Retour : Porte de Thorin");
     repLocations:AddSkill("Bree", "0x7001BF90", "Retour à Bree");
