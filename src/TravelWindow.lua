@@ -884,14 +884,13 @@ function TravelWindow:CheckEnabledSettings()
         itemCount = travelCount[6] + 1;
     end
 
-    -- reset the order if there are too many items in the previously saved
-    -- list.  This should only be true once, when folks update to version 6.0
+    -- reset the sort order list if there are too many items in the previously saved list
     if (#settings.order > itemCount) then
         Turbine.Shell.WriteLine(resetOrderString);
         settings.order = {};
     end
 
-    -- same as the order settings, reset if necessary
+    -- reset the enabled list if there are too many items in the previously saved list
     if (#settings.enabled > itemCount) then
         Turbine.Shell.WriteLine(resetEnabledString);
         settings.enabled = {};
@@ -903,7 +902,7 @@ function TravelWindow:CheckEnabledSettings()
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- update generic travel settings
         for i = 1, travelCount[3], 1 do
-            -- if the setting for the skill is nil, set it to default
+            -- if the enabled setting for the skill is nil, set it to true as default 
             if (settings.enabled[genLocations:KeyAtIndex(i)] == nil) then
                 settings.enabled[genLocations:KeyAtIndex(i)] = true;
             end
@@ -1095,14 +1094,10 @@ function TravelWindow:ResetSettings()
     settings = {};
     settings.width = self.minWidth;
     settings.height = self.minHeight;
-    settings.positionX = Turbine.UI.Display.GetWidth()
-    - self:GetWidth() - 50;
-    settings.positionY = Turbine.UI.Display.GetHeight()
-    - self:GetHeight() - 50 * 1.5;
-    settings.buttonPositionX = Turbine.UI.Display.GetWidth()
-    - self:GetWidth() - 50;
-    settings.buttonPositionY = Turbine.UI.Display.GetHeight()
-    - self:GetHeight() - 50 * 1.5;
+    settings.positionX = Turbine.UI.Display.GetWidth() - self:GetWidth() - 50;
+    settings.positionY = Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5;
+    settings.buttonPositionX = Turbine.UI.Display.GetWidth() - self:GetWidth() - 50;
+    settings.buttonPositionY = Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5;
     settings.hideOnStart = 0;
     settings.hideOnCombat = 0;
     settings.pulldownTravel = 0;
@@ -1122,11 +1117,9 @@ function TravelWindow:ResetSettings()
     settings.mapGlanVraig = nil;
 
     -- move the toggle button and main window
-    self.ToggleButton:SetPosition(settings.buttonPositionX,
-    settings.buttonPositionY);
+    self.ToggleButton:SetPosition(settings.buttonPositionX, settings.buttonPositionY);
     self:SetPosition(settings.positionX, settings.positionY);
     self:SetSize(settings.width, settings.height);
-
 
     -- get the player class and race
     player = Turbine.Gameplay.LocalPlayer.GetInstance();
