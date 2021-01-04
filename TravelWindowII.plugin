@@ -3,9 +3,14 @@
     <Information>
         <Name>Travel Window II</Name>
         <Author>Hyoss</Author>
-        <Version>1.0.5beta</Version>
+        <Version>1.0.6beta</Version>
         <Description>
-        Please report bugs and feature requests at https://github.com/wduda/TravelWindowII/issues
+        This plugin creates a single window that contains all the available travel skills, including the race, class and reputation skills.
+        It is a further development of Travel Window, that has been worked on by multiple authors before.
+
+        Please report bugs and feature requests at 
+        https://www.lotrointerface.com/downloads/fileinfo.php?id=1113 or 
+        https://github.com/wduda/TravelWindowII/issues
 		</Description>
         <Image>TravelWindowII/src/resources/travel.tga</Image>
     </Information>
