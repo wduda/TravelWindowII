@@ -19,14 +19,14 @@ glanMapItemString = "Map to Glân Vraig";
 
 -- error messages
 resetOrderString = "Your order settings have been reset due to a change in " ..
-"the number of items saved.  This should only occur once.\n" ..
+"the number of items previously saved. This should only occur once.\n" ..
 "Sorry for the inconvenience.";
 
-resetEnabledString = "Your selected skills have been reset due to an error " ..
-"in the number of items previously saved.\n" ..
+resetEnabledString = "Your selected skills have been reset due to a change in " ..
+"the number of items previously saved.\n" ..
 "Sorry for the inconvenience.";
 
-skillNotTrainedString = "Skill not trained: ";
+skillNotTrainedString = "Skills not trained: ";
 
 -- options window strings
 generalTabString = "General";
@@ -198,7 +198,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Muster in Annâk-khurfu", "0x70058572", "Annâk-khurfu (Muster)");
 
     racialLocations:AddData("Return to Bree", "0x700062F6", "Bree (Racial)");
-    racialLocations:AddData("Return to the Shire", "0x700062C8", "Michel Delving (Racial)");
+    racialLocations:AddData("Return to the Shire", "0x700062C8", "Shire (Racial)");
     racialLocations:AddData("Return to Thorin's Gate", "0x70006346", "Thorin's Gate (Racial Dwarf)");
     racialLocations:AddData("Return to Rivendell", "0x7000631F", "Rivendell (Racial)");
     racialLocations:AddData("Return Home (Racial)", "0x70041A22", "Beorning Home (Racial)");
@@ -226,8 +226,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Return to Thorin's Gate", "0x7001BF91", "Thorin's Gate (Rep)");
     repLocations:AddData("Return to Bree", "0x7001BF90", "Bree (Rep)");
     repLocations:AddData("Return to Lalia's Market", "0x700364B1", "Lalia's Market (Mithril)");
-    repLocations:AddData("Return to Michel Delving", "0x70023262", "Michel Delving (Store)");
-    repLocations:AddData("Return to Rivendell", "0x70023263", "Rivendell (Rep)");
+    repLocations:AddData("Return to Michel Delving", "0x70023262", "Shire (Store)");
+    repLocations:AddData("Return to Rivendell", "0x70023263", "Rivendell (Store)");
     repLocations:AddData("Return to Ost Guruth", "0x70020441", "Ost Guruth (Rep)");
     repLocations:AddData("Return to Mirkwood", "0x7001F374", "Mirkwood (Rep)");
     repLocations:AddData("Return to Enedwaith", "0x70021FA2", "Enedwaith (Rep)");
