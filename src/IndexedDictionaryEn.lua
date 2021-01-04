@@ -120,288 +120,167 @@ end
 
 -- add the data to custom dictionaries to maintain the order
 function TravelDictionaries:CreateDictionaries()
-    hunterLocations:AddData("Return to Camp", "0x7000A2C1", "Return to Camp");
-    hunterLocations:AddData("Guide to Bree", "0x70003F42", "Bree (Guide)");
-    hunterLocations:AddData("Guide to Thorin's Hall", "0x70003F41", "Thorin's Hall (Guide)");
-    hunterLocations:AddData("Guide to Michel Delving", "0x7000A2C3", "Michel Delving (Guide)");
-    hunterLocations:AddData("Guide to Esteldín", "0x70003F43", "Esteldín (Guide)");
-    hunterLocations:AddData("Guide to Evendim", "0x7000A2C4", "Evendim (Guide)");
-    hunterLocations:AddData("Guide to Ost Guruth", "0x7000A2C2", "Ost Guruth (Guide)");
-    hunterLocations:AddData("Guide to Rivendell", "0x70003F44", "Rivendell (Guide)");
-    hunterLocations:AddData("Guide to Sûri-Kylä", "0x70017C82", "Sûri-kylä (Guide)");
-    hunterLocations:AddData("Guide to West Angmar", "0x7000A2C5", "West Angmar (Guide)");
-    hunterLocations:AddData("Guide to East Angmar", "0x7000A2C6", "East Angmar (Guide)");
-    hunterLocations:AddData("Guide to Echad Dúnann", "0x70017C81", "Echad Dúnann (Guide)");
-    hunterLocations:AddData("Guide to Twenty-First Hall", "0x70017C7A", "Twenty-First Hall (Guide)");
-    hunterLocations:AddData("Guide to Mirk-Eaves", "0x7001F459", "Mirk-eaves (Guide)");
-    hunterLocations:AddData("Guide to Harndirion", "0x700235EF", "Harndirion (Guide)");
-    hunterLocations:AddData("Guide to Galtrev", "0x7002A93F", "Galtrev (Guide)");
-    hunterLocations:AddData("Guide to Stangard", "0x7002C62C", "Stangard (Guide)");
-    hunterLocations:AddData("Guide to Caras Galadhon", "0x7002E754", "Caras Galadhon (Guide)");
-    hunterLocations:AddData("Guide to the Misty Mountains", "0x7002E756", "Misty Mountains (Guide)");
-    hunterLocations:AddData("Guide to Snowbourn", "0x7003198E", "Snowbourn (Guide)");
-    hunterLocations:AddData("Guide to Forlaw", "0x70036B5D", "Forlaw (Guide)");
-    hunterLocations:AddData("Guide to Aldburg", "0x7003DC71", "Aldburg");
-    hunterLocations:AddData("Guide to Helm's Deep", "0x7003DC72", "Helm's Deep (Guide)");
-    hunterLocations:AddData("Guide to Dol Amroth", "0x70041197", "Dol Amroth (Guide)");
-    hunterLocations:AddData("Guide to Arnach", "0x70043A63", "Arnach (Guide)");
-    hunterLocations:AddData("Guide to Minas Tirith", "0x70044985", "Minas Tirith (Guide)");
-    hunterLocations:AddData("Guide to the War-stead", "0x700459AF", "War-stead (Guide)");
-    hunterLocations:AddData("Guide to after-battle Minas Tirith", "0x70046CBB", "Minas Tirith after battle (Guide)");
-    hunterLocations:AddData("Guide to Henneth Annûn", "0x70047077", "Henneth Annûn (Guide)");
-    hunterLocations:AddData("Guide to after-battle Osgiliath", "0x70047074", "Osgiliath after battle (Guide)");
-    hunterLocations:AddData("Guide to the Camp of the Host", "0x70047BFA", "Camp of the Host (Guide)");
-    hunterLocations:AddData("Guide to Haerondir", "0x70047C1D", "Haerondir (Guide)");
-    hunterLocations:AddData("Guide to the Udûn Foothold", "0x7004AE1E", "Udûn Foothold (Guide)");
-    hunterLocations:AddData("Guide to Dale", "0x7004d73b", "Dale (Guide)");
-	hunterLocations:AddData("Guide to Járnfast", "0x7004FACC", "Járnfast (Guide)");
-    hunterLocations:AddData("Guide to Skarháld", "0x7004FACB", "Skarháld (Guide)");
-	hunterLocations:AddData("Guide to Beorninghús", "0x70052F07", "Beorninghús (Guide)");
-    hunterLocations:AddData("Guide to Hultvís", "0x70052F08", "Hultvís (Guide)");
-    hunterLocations:AddData("Guide to Estolad Lân", "0x700551F4", "Estolad Lân (Guide)"); -- Need to get the right Skill-ID
-    hunterLocations:AddData("Guide to Limlók", "0x7005762D", "Limlók (Guide)");
-    hunterLocations:AddData("Guide to Annâk-khurfu", "0x70058571", "Annâk-khurfu (Guide)");
+    hunterLocations:AddSkill("Return to Camp", "0x7000A2C1", "Return to Camp");
+    hunterLocations:AddSkill("Guide to Bree", "0x70003F42", "Bree (Guide)");
+    hunterLocations:AddSkill("Guide to Thorin's Hall", "0x70003F41", "Thorin's Hall (Guide)");
+    hunterLocations:AddSkill("Guide to Michel Delving", "0x7000A2C3", "Michel Delving (Guide)");
+    hunterLocations:AddSkill("Guide to Esteldín", "0x70003F43", "Esteldín (Guide)");
+    hunterLocations:AddSkill("Guide to Evendim", "0x7000A2C4", "Evendim (Guide)");
+    hunterLocations:AddSkill("Guide to Ost Guruth", "0x7000A2C2", "Ost Guruth (Guide)");
+    hunterLocations:AddSkill("Guide to Rivendell", "0x70003F44", "Rivendell (Guide)");
+    hunterLocations:AddSkill("Guide to Sûri-Kylä", "0x70017C82", "Sûri-kylä (Guide)");
+    hunterLocations:AddSkill("Guide to West Angmar", "0x7000A2C5", "West Angmar (Guide)");
+    hunterLocations:AddSkill("Guide to East Angmar", "0x7000A2C6", "East Angmar (Guide)");
+    hunterLocations:AddSkill("Guide to Echad Dúnann", "0x70017C81", "Echad Dúnann (Guide)");
+    hunterLocations:AddSkill("Guide to Twenty-First Hall", "0x70017C7A", "Twenty-First Hall (Guide)");
+    hunterLocations:AddSkill("Guide to Mirk-Eaves", "0x7001F459", "Mirk-eaves (Guide)");
+    hunterLocations:AddSkill("Guide to Harndirion", "0x700235EF", "Harndirion (Guide)");
+    hunterLocations:AddSkill("Guide to Galtrev", "0x7002A93F", "Galtrev (Guide)");
+    hunterLocations:AddSkill("Guide to Stangard", "0x7002C62C", "Stangard (Guide)");
+    hunterLocations:AddSkill("Guide to Caras Galadhon", "0x7002E754", "Caras Galadhon (Guide)");
+    hunterLocations:AddSkill("Guide to the Misty Mountains", "0x7002E756", "Misty Mountains (Guide)");
+    hunterLocations:AddSkill("Guide to Snowbourn", "0x7003198E", "Snowbourn (Guide)");
+    hunterLocations:AddSkill("Guide to Forlaw", "0x70036B5D", "Forlaw (Guide)");
+    hunterLocations:AddSkill("Guide to Aldburg", "0x7003DC71", "Aldburg");
+    hunterLocations:AddSkill("Guide to Helm's Deep", "0x7003DC72", "Helm's Deep (Guide)");
+    hunterLocations:AddSkill("Guide to Dol Amroth", "0x70041197", "Dol Amroth (Guide)");
+    hunterLocations:AddSkill("Guide to Arnach", "0x70043A63", "Arnach (Guide)");
+    hunterLocations:AddSkill("Guide to Minas Tirith", "0x70044985", "Minas Tirith (Guide)");
+    hunterLocations:AddSkill("Guide to the War-stead", "0x700459AF", "War-stead (Guide)");
+    hunterLocations:AddSkill("Guide to after-battle Minas Tirith", "0x70046CBB", "Minas Tirith after battle (Guide)");
+    hunterLocations:AddSkill("Guide to Henneth Annûn", "0x70047077", "Henneth Annûn (Guide)");
+    hunterLocations:AddSkill("Guide to after-battle Osgiliath", "0x70047074", "Osgiliath after battle (Guide)");
+    hunterLocations:AddSkill("Guide to the Camp of the Host", "0x70047BFA", "Camp of the Host (Guide)");
+    hunterLocations:AddSkill("Guide to Haerondir", "0x70047C1D", "Haerondir (Guide)");
+    hunterLocations:AddSkill("Guide to the Udûn Foothold", "0x7004AE1E", "Udûn Foothold (Guide)");
+    hunterLocations:AddSkill("Guide to Dale", "0x7004d73b", "Dale (Guide)");
+	hunterLocations:AddSkill("Guide to Járnfast", "0x7004FACC", "Járnfast (Guide)");
+    hunterLocations:AddSkill("Guide to Skarháld", "0x7004FACB", "Skarháld (Guide)");
+	hunterLocations:AddSkill("Guide to Beorninghús", "0x70052F07", "Beorninghús (Guide)");
+    hunterLocations:AddSkill("Guide to Hultvís", "0x70052F08", "Hultvís (Guide)");
+    hunterLocations:AddSkill("Guide to Estolad Lân", "0x700551F4", "Estolad Lân (Guide)"); -- Need to get the right Skill-ID
+    hunterLocations:AddSkill("Guide to Limlók", "0x7005762D", "Limlók (Guide)");
+    hunterLocations:AddSkill("Guide to Annâk-khurfu", "0x70058571", "Annâk-khurfu (Guide)");
 
-    wardenLocations:AddData("Muster in Ost Guruth", "0x70014786", "Ost Guruth (Muster)");
-    wardenLocations:AddData("Muster in Esteldín", "0x70014798", "Esteldín (Muster)");
-    wardenLocations:AddData("Muster in Evendim", "0x7001478E", "Evendim (Muster)");
-    wardenLocations:AddData("Muster in Rivendell", "0x70014791", "Rivendell (Muster)");
-    wardenLocations:AddData("Muster in Sûri-Kylä", "0x700237D4", "Sûri-kylä (Muster)");
-    wardenLocations:AddData("Muster in Twenty-First Hall", "0x7001819E", "Twenty-First Hall (Muster)");
-    wardenLocations:AddData("Muster in Mirk-Eaves", "0x7001F45C", "Mirk-Eaves (Muster)");
-    wardenLocations:AddData("Muster in Harndirion", "0x700235EB", "Harndirion (Muster)");
-    wardenLocations:AddData("Muster in Galtrev", "0x7002A90A", "Galtrev (Muster)");
-    wardenLocations:AddData("Muster in Stangard", "0x7002C646", "Stangard (Muster)");
-    wardenLocations:AddData("Muster in Caras Galadhon", "0x700303DF", "Caras Galadhon (Muster)");
-    wardenLocations:AddData("Muster in the Misty Mountains", "0x700303DD", "Misty Mountains (Muster)");
-    wardenLocations:AddData("Muster in Snowbourn", "0x7003198D", "Snowbourn (Muster)");
-    wardenLocations:AddData("Muster in Forlaw", "0x70036B5B", "Forlaw (Muster)");
-    wardenLocations:AddData("Muster in Aldburg", "0x7003DC7A", "Aldburg (Muster)");
-    wardenLocations:AddData("Muster in Helm's Deep", "0x7003DC79", "Helm's Deep (Muster)");
-    wardenLocations:AddData("Muster in Dol Amroth", "0x70041198", "Dol Amroth (Muster)");
-    wardenLocations:AddData("Muster in Arnach", "0x70043A66", "Arnach (Muster)");
-    wardenLocations:AddData("Muster in Minas Tirith", "0x70044982", "Minas Tirith (Muster)");
-    wardenLocations:AddData("Muster in the War-stead", "0x700459AA", "War-stead (Muster)");
-    wardenLocations:AddData("Muster in after-battle Minas Tirith", "0x70046CBF", "Minas Tirith after battle (Muster)");
-    wardenLocations:AddData("Muster in Henneth Annûn", "0x70047075", "Henneth Annûn (Muster)");
-    wardenLocations:AddData("Muster in after-battle Osgiliath", "0x70047076", "Osgiliath after battle (Muster)");
-    wardenLocations:AddData("Muster in the Camp of the Host", "0x70047BFC", "Camp of the Host (Muster)");
-    wardenLocations:AddData("Muster in Haerondir", "0x70047C23", "Haerondir (Muster)");
-    wardenLocations:AddData("Muster in the Udûn Foothold", "0x7004AE1F", "Udûn Foothold (Muster)");
-    wardenLocations:AddData("Muster in Dale", "0x7004d73a", "Dale (Muster)");
-	wardenLocations:AddData("Muster in Járnfast", "0x7004FACA", "Járnfast (Muster)");
-    wardenLocations:AddData("Muster in Skarháld", "0x7004FACD", "Skarháld (Muster)");
-	wardenLocations:AddData("Muster in Beorninghús", "0x70052F0A", "Beorninghús (Muster)");
-    wardenLocations:AddData("Muster in Hultvís", "0x70052F06", "Hultvís (Muster)");
-    wardenLocations:AddData("Muster in Estolad Lân", "0x700551F2", "Estolad Lân (Muster)");
-    wardenLocations:AddData("Muster in Limlók", "0x70057635", "Limlók (Muster)");
-    wardenLocations:AddData("Muster in Annâk-khurfu", "0x70058572", "Annâk-khurfu (Muster)");
+    wardenLocations:AddSkill("Muster in Ost Guruth", "0x70014786", "Ost Guruth (Muster)");
+    wardenLocations:AddSkill("Muster in Esteldín", "0x70014798", "Esteldín (Muster)");
+    wardenLocations:AddSkill("Muster in Evendim", "0x7001478E", "Evendim (Muster)");
+    wardenLocations:AddSkill("Muster in Rivendell", "0x70014791", "Rivendell (Muster)");
+    wardenLocations:AddSkill("Muster in Sûri-Kylä", "0x700237D4", "Sûri-kylä (Muster)");
+    wardenLocations:AddSkill("Muster in Twenty-First Hall", "0x7001819E", "Twenty-First Hall (Muster)");
+    wardenLocations:AddSkill("Muster in Mirk-Eaves", "0x7001F45C", "Mirk-Eaves (Muster)");
+    wardenLocations:AddSkill("Muster in Harndirion", "0x700235EB", "Harndirion (Muster)");
+    wardenLocations:AddSkill("Muster in Galtrev", "0x7002A90A", "Galtrev (Muster)");
+    wardenLocations:AddSkill("Muster in Stangard", "0x7002C646", "Stangard (Muster)");
+    wardenLocations:AddSkill("Muster in Caras Galadhon", "0x700303DF", "Caras Galadhon (Muster)");
+    wardenLocations:AddSkill("Muster in the Misty Mountains", "0x700303DD", "Misty Mountains (Muster)");
+    wardenLocations:AddSkill("Muster in Snowbourn", "0x7003198D", "Snowbourn (Muster)");
+    wardenLocations:AddSkill("Muster in Forlaw", "0x70036B5B", "Forlaw (Muster)");
+    wardenLocations:AddSkill("Muster in Aldburg", "0x7003DC7A", "Aldburg (Muster)");
+    wardenLocations:AddSkill("Muster in Helm's Deep", "0x7003DC79", "Helm's Deep (Muster)");
+    wardenLocations:AddSkill("Muster in Dol Amroth", "0x70041198", "Dol Amroth (Muster)");
+    wardenLocations:AddSkill("Muster in Arnach", "0x70043A66", "Arnach (Muster)");
+    wardenLocations:AddSkill("Muster in Minas Tirith", "0x70044982", "Minas Tirith (Muster)");
+    wardenLocations:AddSkill("Muster in the War-stead", "0x700459AA", "War-stead (Muster)");
+    wardenLocations:AddSkill("Muster in after-battle Minas Tirith", "0x70046CBF", "Minas Tirith after battle (Muster)");
+    wardenLocations:AddSkill("Muster in Henneth Annûn", "0x70047075", "Henneth Annûn (Muster)");
+    wardenLocations:AddSkill("Muster in after-battle Osgiliath", "0x70047076", "Osgiliath after battle (Muster)");
+    wardenLocations:AddSkill("Muster in the Camp of the Host", "0x70047BFC", "Camp of the Host (Muster)");
+    wardenLocations:AddSkill("Muster in Haerondir", "0x70047C23", "Haerondir (Muster)");
+    wardenLocations:AddSkill("Muster in the Udûn Foothold", "0x7004AE1F", "Udûn Foothold (Muster)");
+    wardenLocations:AddSkill("Muster in Dale", "0x7004d73a", "Dale (Muster)");
+	wardenLocations:AddSkill("Muster in Járnfast", "0x7004FACA", "Járnfast (Muster)");
+    wardenLocations:AddSkill("Muster in Skarháld", "0x7004FACD", "Skarháld (Muster)");
+	wardenLocations:AddSkill("Muster in Beorninghús", "0x70052F0A", "Beorninghús (Muster)");
+    wardenLocations:AddSkill("Muster in Hultvís", "0x70052F06", "Hultvís (Muster)");
+    wardenLocations:AddSkill("Muster in Estolad Lân", "0x700551F2", "Estolad Lân (Muster)");
+    wardenLocations:AddSkill("Muster in Limlók", "0x70057635", "Limlók (Muster)");
+    wardenLocations:AddSkill("Muster in Annâk-khurfu", "0x70058572", "Annâk-khurfu (Muster)");
 
-    racialLocations:AddData("Return to Bree", "0x700062F6", "Bree (Racial)");
-    racialLocations:AddData("Return to the Shire", "0x700062C8", "Shire (Racial)");
-    racialLocations:AddData("Return to Thorin's Gate", "0x70006346", "Thorin's Gate (Racial Dwarf)");
-    racialLocations:AddData("Return to Rivendell", "0x7000631F", "Rivendell (Racial)");
-    racialLocations:AddData("Return Home (Racial)", "0x70041A22", "Beorning Home (Racial)");
-    racialLocations:AddData("Travel to Caras Galadhon in Lothlórien", "0x70048C8C", "Caras Galadhon (Racial)");
-    racialLocations:AddData("Travel to Thorin's Hall", "0x70053C0F", "Thorin's Hall (Racial StoutAxe)");
+    -- add the racial travel skills
+    racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)");
+    racialLocations:AddSkill("Return to the Shire", "0x700062C8", "Shire (Racial)");
+    racialLocations:AddSkill("Return to Thorin's Gate", "0x70006346", "Thorin's Gate (Racial Dwarf)");
+    racialLocations:AddSkill("Return to Rivendell", "0x7000631F", "Rivendell (Racial)");
+    racialLocations:AddSkill("Return Home (Racial)", "0x70041A22", "Beorning Home (Racial)");
+    racialLocations:AddSkill("Travel to Caras Galadhon in Lothlórien", "0x70048C8C", "Caras Galadhon (Racial)");
+    racialLocations:AddSkill("Travel to Thorin's Hall", "0x70053C0F", "Thorin's Hall (Racial StoutAxe)");
 
     -- add the Return Home and housing skills
-    genLocations:AddData("Return Home", "0x700256BA", "Return Home");
-    genLocations:AddData("Return Home 2", "0x70025792", "Return Home 2");
-    genLocations:AddData("Return Home 3", "0x70025793", "Return Home 3");
-    genLocations:AddData("Return Home 4", "0x70025794", "Return Home 4");
-    genLocations:AddData("Return Home 5", "0x70025795", "Return Home 5");
-    genLocations:AddData("Return Home 6", "0x70025796", "Return Home 6");
-    genLocations:AddData("Return Home 7", "0x7002FF5F", "Return Home 7");
-    genLocations:AddData("Return Home 8", "0x7002FF60", "Return Home 8");
-    genLocations:AddData("Return Home 9", "0x7002FF61", "Return Home 9");
-    genLocations:AddData("Return Home 10", "0x7002FF62", "Return Home 10");
-    genLocations:AddData("Return Home 11", "0x7002FF63", "Return Home 11");
-    genLocations:AddData("Travel to Personal House", "0x7000D046", "Personal House");
-    genLocations:AddData("Travel to Premium House", "0x70046EE4", "Premium House");
-    genLocations:AddData("Travel to Kinship House", "0x7000D047", "Kinship House");
-    genLocations:AddData("Travel to Kinship Member's House", "0x70057C36", "Kinship Member's House");
+    genLocations:AddSkill("Return Home", "0x700256BA", "Return Home");
+    genLocations:AddSkill("Return Home 2", "0x70025792", "Return Home 2");
+    genLocations:AddSkill("Return Home 3", "0x70025793", "Return Home 3");
+    genLocations:AddSkill("Return Home 4", "0x70025794", "Return Home 4");
+    genLocations:AddSkill("Return Home 5", "0x70025795", "Return Home 5");
+    genLocations:AddSkill("Return Home 6", "0x70025796", "Return Home 6");
+    genLocations:AddSkill("Return Home 7", "0x7002FF5F", "Return Home 7");
+    genLocations:AddSkill("Return Home 8", "0x7002FF60", "Return Home 8");
+    genLocations:AddSkill("Return Home 9", "0x7002FF61", "Return Home 9");
+    genLocations:AddSkill("Return Home 10", "0x7002FF62", "Return Home 10");
+    genLocations:AddSkill("Return Home 11", "0x7002FF63", "Return Home 11");
+    genLocations:AddSkill("Travel to Personal House", "0x7000D046", "Personal House");
+    genLocations:AddSkill("Travel to Premium House", "0x70046EE4", "Premium House");
+    genLocations:AddSkill("Travel to Kinship House", "0x7000D047", "Kinship House");
+    genLocations:AddSkill("Travel to Kinship Member's House", "0x70057C36", "Kinship Member's House");
 
     -- add the obtainable travel skills
-    repLocations:AddData("Return to Thorin's Gate", "0x7001BF91", "Thorin's Gate (Rep)");
-    repLocations:AddData("Return to Bree", "0x7001BF90", "Bree (Rep)");
-    repLocations:AddData("Return to Lalia's Market", "0x700364B1", "Lalia's Market (Mithril)");
-    repLocations:AddData("Return to Michel Delving", "0x70023262", "Shire (Store)");
-    repLocations:AddData("Return to Rivendell", "0x70023263", "Rivendell (Store)");
-    repLocations:AddData("Return to Ost Guruth", "0x70020441", "Ost Guruth (Rep)");
-    repLocations:AddData("Return to Mirkwood", "0x7001F374", "Mirkwood (Rep)");
-    repLocations:AddData("Return to Enedwaith", "0x70021FA2", "Enedwaith (Rep)");
-    repLocations:AddData("Return to Galtrev", "0x7002C647", "Galtrev (Rep)");
-    repLocations:AddData("Return to Stangard", "0x7002C65D", "Stangard (Rep)");
-    repLocations:AddData("Return to Snowbourn", "0x70031A46", "Snowbourn (Rep)");
-    repLocations:AddData("Return to Forlaw", "0x70036B5E", "Forlaw (Rep)");
-    repLocations:AddData("Return to Aldburg", "0x7003DC81", "Aldburg (Rep)");
-    repLocations:AddData("Return to Derndingle", "0x7004128F", "Derndingle (Rep)");
-    repLocations:AddData("Return to Helm's Deep", "0x7003DC82", "Helm's Deep (Rep)");
-    repLocations:AddData("Return to Dol Amroth", "0x700411AC", "Dol Amroth (Rep)");
-    repLocations:AddData("Return to Arnach", "0x70043A6A", "Arnach (Rep)");
-    repLocations:AddData("Return to Minas Tirith", "0x7004497E", "Minas Tirith (Rep)");
-    repLocations:AddData("Return to the War-stead", "0x700459A9", "War-stead (Rep)");
-    repLocations:AddData("Return to after-battle Minas Tirith", "0x70046CC0", "Minas Tirith after-battle (Rep)");
-    repLocations:AddData("Return to Henneth Annûn", "0x70047080", "Henneth Annûn (Rep)");
-    repLocations:AddData("Return to after-battle Osgiliath", "0x7004707D", "Osgiliath after-battle (Rep)");
-    repLocations:AddData("Return to the Camp of the Host", "0x70047BF4", "Camp of the Host (Rep)");
-    repLocations:AddData("Return to Haerondir", "0x70047C1B", "Haerondir (Rep)");
-    repLocations:AddData("Return to the Udûn Foothold", "0x7004AE1D", "Udûn Foothold (Rep)");
-    repLocations:AddData("Journey to the Court of Lothlórien", "0x7004B8C2", "Court of Lothlórien (Rep)");
-    repLocations:AddData("Journey to the Hall of the King", "0x7004B8C3", "Hall of the King (Rep)");
-    repLocations:AddData("Journey to the Hall Under the Mountain", "0x7004B8C4", "Hall Under the Mountain (Rep)");
-    repLocations:AddData("Journey to Bâr Thorenion", "0x7004B8C5", "Bâr Thorenion (Rep)");
-    repLocations:AddData("Return to Dale", "0x7004d738", "Dale (Rep)");
-	repLocations:AddData("Return to Járnfast", "0x7004FAC3", "Járnfast (Rep)");
-    repLocations:AddData("Return to Skarháld", "0x7004FAC5", "Skarháld (Rep)");
-	repLocations:AddData("Return to Beorninghús", "0x70052F12", "Beorninghús (Rep)");
-    repLocations:AddData("Return to Hultvís", "0x70052F04", "Hultvís (Rep)");
-    repLocations:AddData("Return to Estolad Lân", "0x700551F8", "Estolad Lân (Rep)");	
-    repLocations:AddData("Return to Limlók", "0x70057629", "Limlók (Rep)");
-    repLocations:AddData("Return to Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Rep)");
+    repLocations:AddSkill("Return to Thorin's Gate", "0x7001BF91", "Thorin's Gate (Rep)");
+    repLocations:AddSkill("Return to Bree", "0x7001BF90", "Bree (Rep)");
+    repLocations:AddSkill("Return to Lalia's Market", "0x700364B1", "Lalia's Market (Mithril)");
+    repLocations:AddSkill("Return to Michel Delving", "0x70023262", "Shire (Store)");
+    repLocations:AddSkill("Return to Rivendell", "0x70023263", "Rivendell (Store)");
+    repLocations:AddSkill("Return to Ost Guruth", "0x70020441", "Ost Guruth (Rep)");
+    repLocations:AddSkill("Return to Mirkwood", "0x7001F374", "Mirkwood (Rep)");
+    repLocations:AddSkill("Return to Enedwaith", "0x70021FA2", "Enedwaith (Rep)");
+    repLocations:AddSkill("Return to Galtrev", "0x7002C647", "Galtrev (Rep)");
+    repLocations:AddSkill("Return to Stangard", "0x7002C65D", "Stangard (Rep)");
+    repLocations:AddSkill("Return to Snowbourn", "0x70031A46", "Snowbourn (Rep)");
+    repLocations:AddSkill("Return to Forlaw", "0x70036B5E", "Forlaw (Rep)");
+    repLocations:AddSkill("Return to Aldburg", "0x7003DC81", "Aldburg (Rep)");
+    repLocations:AddSkill("Return to Derndingle", "0x7004128F", "Derndingle (Rep)");
+    repLocations:AddSkill("Return to Helm's Deep", "0x7003DC82", "Helm's Deep (Rep)");
+    repLocations:AddSkill("Return to Dol Amroth", "0x700411AC", "Dol Amroth (Rep)");
+    repLocations:AddSkill("Return to Arnach", "0x70043A6A", "Arnach (Rep)");
+    repLocations:AddSkill("Return to Minas Tirith", "0x7004497E", "Minas Tirith (Rep)");
+    repLocations:AddSkill("Return to the War-stead", "0x700459A9", "War-stead (Rep)");
+    repLocations:AddSkill("Return to after-battle Minas Tirith", "0x70046CC0", "Minas Tirith after-battle (Rep)");
+    repLocations:AddSkill("Return to Henneth Annûn", "0x70047080", "Henneth Annûn (Rep)");
+    repLocations:AddSkill("Return to after-battle Osgiliath", "0x7004707D", "Osgiliath after-battle (Rep)");
+    repLocations:AddSkill("Return to the Camp of the Host", "0x70047BF4", "Camp of the Host (Rep)");
+    repLocations:AddSkill("Return to Haerondir", "0x70047C1B", "Haerondir (Rep)");
+    repLocations:AddSkill("Return to the Udûn Foothold", "0x7004AE1D", "Udûn Foothold (Rep)");
+    repLocations:AddSkill("Journey to the Court of Lothlórien", "0x7004B8C2", "Court of Lothlórien (Rep)");
+    repLocations:AddSkill("Journey to the Hall of the King", "0x7004B8C3", "Hall of the King (Rep)");
+    repLocations:AddSkill("Journey to the Hall Under the Mountain", "0x7004B8C4", "Hall Under the Mountain (Rep)");
+    repLocations:AddSkill("Journey to Bâr Thorenion", "0x7004B8C5", "Bâr Thorenion (Rep)");
+    repLocations:AddSkill("Return to Dale", "0x7004d738", "Dale (Rep)");
+	repLocations:AddSkill("Return to Járnfast", "0x7004FAC3", "Járnfast (Rep)");
+    repLocations:AddSkill("Return to Skarháld", "0x7004FAC5", "Skarháld (Rep)");
+	repLocations:AddSkill("Return to Beorninghús", "0x70052F12", "Beorninghús (Rep)");
+    repLocations:AddSkill("Return to Hultvís", "0x70052F04", "Hultvís (Rep)");
+    repLocations:AddSkill("Return to Estolad Lân", "0x700551F8", "Estolad Lân (Rep)");	
+    repLocations:AddSkill("Return to Limlók", "0x70057629", "Limlók (Rep)");
+    repLocations:AddSkill("Return to Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Rep)");
     
     -- Crude Map to Gramsfoot for newb creeps
-    creepLocations:AddData("Crude Map to Gramsfoot", "0x70028BBC");
-    creepLocations:AddData("Map to Gramsfoot", "0x70028BC1");
+    creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");
+    creepLocations:AddSkill("Map to Gramsfoot", "0x70028BC1");
 
-    creepLocations:AddData("Crude Map to Isendeep", "0x70028BB3");
-    creepLocations:AddData("Crude Map to Tol Ascarnen", "0x70028BB6");
-    creepLocations:AddData("Crude Map to Lugazag", "0x70028BB7");
-    creepLocations:AddData("Crude Map to Tirith Rhaw", "0x70028BBE");
-    creepLocations:AddData("Crude Map to Grimwood", "0x70028BBF");
+    creepLocations:AddSkill("Crude Map to Isendeep", "0x70028BB3");
+    creepLocations:AddSkill("Crude Map to Tol Ascarnen", "0x70028BB6");
+    creepLocations:AddSkill("Crude Map to Lugazag", "0x70028BB7");
+    creepLocations:AddSkill("Crude Map to Tirith Rhaw", "0x70028BBE");
+    creepLocations:AddSkill("Crude Map to Grimwood", "0x70028BBF");
 
-    creepLocations:AddData("Poor Map to Isendeep", "0x70028BAF");
-    creepLocations:AddData("Poor Map to Tol Ascarnen", "0x70028BB1");
-    creepLocations:AddData("Poor Map to Lugazag", "0x70028BB2");
-    creepLocations:AddData("Poor Map to Tirith Rhaw", "0x70028BB4");
-    creepLocations:AddData("Poor Map to Grimwood", "0x70028BB9");
+    creepLocations:AddSkill("Poor Map to Isendeep", "0x70028BAF");
+    creepLocations:AddSkill("Poor Map to Tol Ascarnen", "0x70028BB1");
+    creepLocations:AddSkill("Poor Map to Lugazag", "0x70028BB2");
+    creepLocations:AddSkill("Poor Map to Tirith Rhaw", "0x70028BB4");
+    creepLocations:AddSkill("Poor Map to Grimwood", "0x70028BB9");
 
-    creepLocations:AddData("Good Map to Isendeep", "0x70028BC0");
-    creepLocations:AddData("Good Map to Tol Ascarnen", "0x70028BC2");
-    creepLocations:AddData("Good Map to Lugazag", "0x70028BB5");
-    creepLocations:AddData("Good Map to Tirith Rhaw", "0x70028BB0");
-    creepLocations:AddData("Good Map to Grimwood", "0x70028BBD");
+    creepLocations:AddSkill("Good Map to Isendeep", "0x70028BC0");
+    creepLocations:AddSkill("Good Map to Tol Ascarnen", "0x70028BC2");
+    creepLocations:AddSkill("Good Map to Lugazag", "0x70028BB5");
+    creepLocations:AddSkill("Good Map to Tirith Rhaw", "0x70028BB0");
+    creepLocations:AddSkill("Good Map to Grimwood", "0x70028BBD");
 end
-
---[[ use a modified table that can maintain a key value for each entry ]] --
-IndexedDictionary = class()
-
-function IndexedDictionary:Constructor()
-
-    -- set default tables
-    self.listOfKeys = {};
-    self.dataPairs = {};
-    self.skillLabels = {};
-    self.numberOfPairs = 0;
-end
-
--- function to get the total number of entries in the dictionary
-function IndexedDictionary:GetCount()
-    return self.numberOfPairs;
-end
-
--- function to add a key/data pair to the end of the dictionary
-function IndexedDictionary:AddData(key, data, label)
-    -- increase the counter
-    self.numberOfPairs = self.numberOfPairs + 1;
-
-    -- insert the key into the list of keys
-    table.insert(self.listOfKeys, key);
-    -- add the key/data into the table
-    self.dataPairs[key] = data;
-    self.skillLabels[key] = label;
-end
-
--- function to add a key/data pair at a specific index
-function IndexedDictionary:InsertData(index, key, data, label)
-    -- increase the counter
-    self.numberOfPairs = self.numberOfPairs + 1;
-
-    -- add the key to the list of keys at the specified index
-    table.insert(self.listOfKeys, index, key);
-    -- add the key/data into the table
-    self.dataPairs[key] = data;
-    self.skillLabels[key] = label;
-end
-
--- function to remove a key/data pair at an index
-function IndexedDictionary:RemoveAtIndex(index)
-
-    self.location = 0;
-    self.counter = 0;
-
-    -- loop through the main table
-    for k, v in pairs(self.dataPairs) do
-        self.counter = self.counter + 1;
-
-        -- if the keys match, set the location to remove from the table
-        if (k == self.listOfKeys[index]) then
-            self.location = self.counter;
-        end
-    end
-
-    -- remove the item and the key from the tables
-    table.remove(self.dataPairs, self.location);
-    table.remove(self.listOfKeys, index);
-
-    -- decrease the counters
-    self.numberOfPairs = self.numberOfPairs - 1;
-end
-
--- function to get the key at a specified index
-function IndexedDictionary:KeyAtIndex(index)
-    local string = self.listOfKeys[index];
-    return string;
-end
-
--- function to return the data at a specified index
-function IndexedDictionary:DataAtIndex(index)
-    local string = self.listOfKeys[index];
-    local data = self.dataPairs[string];
-
-    return data;
-end
-
--- function to return the label at a specified index
-function IndexedDictionary:LabelAtIndex(index)
-    local string = self.listOfKeys[index];
-    local data = self.skillLabels[string];
-
-    return data;
-end
-
--- function to return the data pair at an index
-function IndexedDictionary:PairAtIndex(index)
-    local string = self.listOfKeys[index];
-    local data = self.dataPairs[string];
-
-    return string, data;
-end
-
--- function to get the data by a key value
-function IndexedDictionary:DataByKey(key)
-    return self.dataPairs[key];
-end
-
--- function to find the index value based on a key
-function IndexedDictionary:IndexByKey(key)
-
-    -- return if the list of keys is empty
-    if (self.listOfKeys == {}) then
-        return -1;
-    end
-
-    -- loop through the list of keys and search for the key value
-    for i = 1, #self.listOfKeys, 1 do
-        -- return the index value if a match is made
-        if (self.listOfKeys[i] == key) then
-            return i;
-        end
-    end
-
-    -- return -1 since we did not find a key
-    return -1;
-end
-
-

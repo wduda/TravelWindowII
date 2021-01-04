@@ -389,7 +389,7 @@ function OptionsPanel:AddItems()
     -- add the generic travels skills
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         for i = 1, travelCount[3], 1 do
-            self:Add(counter, genLocations:KeyAtIndex(i), genLocations:LabelAtIndex(i));
+            self:Add(counter, genLocations:NameAtIndex(i), genLocations:LabelAtIndex(i));
             counter = counter + 1;
             offsetCounter = offsetCounter + 1;
         end
@@ -399,7 +399,7 @@ function OptionsPanel:AddItems()
     if (playerClass == Turbine.Gameplay.Class.Hunter) then
         offsetCounter = 0;
         for i = 1, travelCount[1], 1 do
-            self:Add(counter, hunterLocations:KeyAtIndex(i), hunterLocations:LabelAtIndex(i));
+            self:Add(counter, hunterLocations:NameAtIndex(i), hunterLocations:LabelAtIndex(i));
             counter = counter + 1;
             offsetCounter = offsetCounter + 1;
         end
@@ -407,7 +407,7 @@ function OptionsPanel:AddItems()
     -- add the warden muster skills if the character is a warden
     if (playerClass == Turbine.Gameplay.Class.Warden) then
         for i = 1, travelCount[2], 1 do
-            self:Add(counter, wardenLocations:KeyAtIndex(i), wardenLocations:LabelAtIndex(i));
+            self:Add(counter, wardenLocations:NameAtIndex(i), wardenLocations:LabelAtIndex(i));
             counter = counter + 1;
         end
     end
@@ -415,21 +415,21 @@ function OptionsPanel:AddItems()
     -- add the reputation travel skills
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         for i = 1, travelCount[4], 1 do
-            self:Add(counter, repLocations:KeyAtIndex(i), repLocations:LabelAtIndex(i));
+            self:Add(counter, repLocations:NameAtIndex(i), repLocations:LabelAtIndex(i));
             counter = counter + 1;
         end
     end
     
     -- add the race specific travel skill for the character
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        self:Add(counter, racialLocations:KeyAtIndex(self.racetype), racialLocations:LabelAtIndex(self.racetype));
+        self:Add(counter, racialLocations:NameAtIndex(self.racetype), racialLocations:LabelAtIndex(self.racetype));
         counter = counter + 1;
     end
 
     -- add the creep travel skills
     if (playerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
         for i = 1, travelCount[6], 1 do
-            self:Add(counter, creepLocations:KeyAtIndex(i), creepLocations:LabelAtIndex(i));
+            self:Add(counter, creepLocations:NameAtIndex(i), creepLocations:LabelAtIndex(i));
             counter = counter + 1;
         end
     end
