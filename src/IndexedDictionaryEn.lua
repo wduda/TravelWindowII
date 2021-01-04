@@ -19,14 +19,14 @@ glanMapItemString = "Map to Glân Vraig";
 
 -- error messages
 resetOrderString = "Your order settings have been reset due to a change in " ..
-"the number of items saved.  This should only occur once.\n" ..
+"the number of items previously saved. This should only occur once.\n" ..
 "Sorry for the inconvenience.";
 
-resetEnabledString = "Your selected skills have been reset due to an error " ..
-"in the number of items previously saved.\n" ..
+resetEnabledString = "Your selected skills have been reset due to a change in " ..
+"the number of items previously saved.\n" ..
 "Sorry for the inconvenience.";
 
-skillNotTrainedString = "Skill not trained: ";
+skillNotTrainedString = "Skills not trained: ";
 
 -- options window strings
 generalTabString = "General";

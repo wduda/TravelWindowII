@@ -19,7 +19,7 @@ glanMapItemString = "Genaue Karte nach Glân Vraig";
 
 
 -- error messages
-resetOrderString = "Deine Sortiereinstellungen wurden aufgrund einer Änderung der Anzahl" ..
+resetOrderString = "Deine Sortiereinstellungen wurden aufgrund einer Änderung der Anzahl " ..
 "der zu speichernden Elemente zurückgesetzt. Dies sollte nur einmal passieren.\n" ..
 "Entschuldige die Unannehmlichkeiten.";
 
@@ -138,7 +138,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddData("Führer nach Harndirion", "0x700235EF", "Harndirion (Führer)");--@TODO
     hunterLocations:AddData("Führer nach Galtrev", "0x7002A93F", "Galtrev (Führer)");--@TODO
     hunterLocations:AddData("Führer nach Stangard", "0x7002C62C", "Stangard (Führer)");--@TODO
-    hunterLocations:AddData("Führer nach Caras Galadhon", "0x7002E754", "Caras Galadhon (Führe--@TODOr)");
+    hunterLocations:AddData("Führer nach Caras Galadhon", "0x7002E754", "Caras Galadhon (Führer)");--@TODO
     hunterLocations:AddData("Führer ins Nebelgebirge", "0x7002E756", "Nebelgebirge (Führer)");--@TODO
     hunterLocations:AddData("Führer nach Schneegrenze", "0x7003198E", "Schneegrenze (Führer)");--@TODO
     hunterLocations:AddData("Führer nach Forlach", "0x70036B5D", "Forlach (Führer)");--@TODO
