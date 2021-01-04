@@ -9,5 +9,7 @@
   <Descriptors>
     <descriptor>TravelWindowII\TravelWindowII.plugin</descriptor>
   </Descriptors>
-  <Dependencies />
+  <Dependencies>
+    <dependency>0</dependency>
+  </Dependencies>
 </PluginConfig>
