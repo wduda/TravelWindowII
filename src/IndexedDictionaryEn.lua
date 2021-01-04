@@ -198,7 +198,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddData("Muster in Annâk-khurfu", "0x70058572", "Annâk-khurfu (Muster)");
 
     racialLocations:AddData("Return to Bree", "0x700062F6", "Bree (Racial)");
-    racialLocations:AddData("Return to the Shire", "0x700062C8", "Michel Delving (Racial)");
+    racialLocations:AddData("Return to the Shire", "0x700062C8", "Shire (Racial)");
     racialLocations:AddData("Return to Thorin's Gate", "0x70006346", "Thorin's Gate (Racial Dwarf)");
     racialLocations:AddData("Return to Rivendell", "0x7000631F", "Rivendell (Racial)");
     racialLocations:AddData("Return Home (Racial)", "0x70041A22", "Beorning Home (Racial)");
@@ -226,7 +226,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Return to Thorin's Gate", "0x7001BF91", "Thorin's Gate (Rep)");
     repLocations:AddData("Return to Bree", "0x7001BF90", "Bree (Rep)");
     repLocations:AddData("Return to Lalia's Market", "0x700364B1", "Lalia's Market (Mithril)");
-    repLocations:AddData("Return to Michel Delving", "0x70023262", "Michel Delving (Store)");
+    repLocations:AddData("Return to Michel Delving", "0x70023262", "Shire (Store)");
     repLocations:AddData("Return to Rivendell", "0x70023263", "Rivendell (Rep)");
     repLocations:AddData("Return to Ost Guruth", "0x70020441", "Ost Guruth (Rep)");
     repLocations:AddData("Return to Mirkwood", "0x7001F374", "Mirkwood (Rep)");
