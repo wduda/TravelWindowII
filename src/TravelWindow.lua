@@ -788,7 +788,7 @@ function TravelWindow:SetShortcuts()
                 genLocations:NameAtIndex(i),
                 1,
                 counter,
-                settings.enabled[genLocations:NameAtIndex(i)],
+                settings.enabled[genLocations:IdAtIndex(i)],
                 genLocations:LabelAtIndex(i)));
             else
                 table.insert(travelShortcuts, TravelShortcut(6.0,
@@ -796,7 +796,7 @@ function TravelWindow:SetShortcuts()
                 genLocations:NameAtIndex(i),
                 1,
                 counter,
-                settings.enabled[genLocations:NameAtIndex(i)],
+                settings.enabled[genLocations:IdAtIndex(i)],
                 genLocations:LabelAtIndex(i)));
             end
         end
@@ -808,7 +808,7 @@ function TravelWindow:SetShortcuts()
         racialLocations:NameAtIndex(self.racetype),
         2,
         counter,
-        settings.enabled[racialLocations:NameAtIndex(self.racetype)],
+        settings.enabled[racialLocations:IdAtIndex(self.racetype)],
         racialLocations:LabelAtIndex(self.racetype)));
 
         -- set the reputation travel items
@@ -819,7 +819,7 @@ function TravelWindow:SetShortcuts()
             repLocations:NameAtIndex(i),
             3,
             counter,
-            settings.enabled[repLocations:NameAtIndex(i)],
+            settings.enabled[repLocations:IdAtIndex(i)],
             repLocations:LabelAtIndex(i)));
         end
     else
@@ -831,7 +831,7 @@ function TravelWindow:SetShortcuts()
             creepLocations:NameAtIndex(i),
             3,
             counter,
-            settings.enabled[creepLocations:NameAtIndex(i)],
+            settings.enabled[creepLocations:IdAtIndex(i)],
             creepLocations:LabelAtIndex(i)));
         end
     end
@@ -845,7 +845,7 @@ function TravelWindow:SetShortcuts()
             hunterLocations:NameAtIndex(i),
             4,
             counter,
-            settings.enabled[hunterLocations:NameAtIndex(i)],
+            settings.enabled[hunterLocations:IdAtIndex(i)],
             hunterLocations:LabelAtIndex(i)));
         end
     end
@@ -859,7 +859,7 @@ function TravelWindow:SetShortcuts()
             wardenLocations:NameAtIndex(i),
             4,
             counter,
-            settings.enabled[wardenLocations:NameAtIndex(i)],
+            settings.enabled[wardenLocations:IdAtIndex(i)],
             wardenLocations:LabelAtIndex(i)));
         end
     end
@@ -900,9 +900,9 @@ function TravelWindow:CheckEnabledSettings()
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- update generic travel settings
         for i = 1, travelCount[3], 1 do
-            -- if the enabled setting for the skill is nil, set it to true as default 
-            if (settings.enabled[genLocations:NameAtIndex(i)] == nil) then
-                settings.enabled[genLocations:NameAtIndex(i)] = true;
+            -- if the enabled setting for the skill is nil, set it to true as default
+            if (settings.enabled[genLocations:IdAtIndex(i)] == nil) then
+                settings.enabled[genLocations:IdAtIndex(i)] = true;
             end
 
             -- if the skill is not in the order list, add it and increase the counter
@@ -915,8 +915,8 @@ function TravelWindow:CheckEnabledSettings()
 
         -- update reputation travel settings
         for i = 1, travelCount[4], 1 do
-            if (settings.enabled[repLocations:NameAtIndex(i)] == nil) then
-                settings.enabled[repLocations:NameAtIndex(i)] = true;
+            if (settings.enabled[repLocations:IdAtIndex(i)] == nil) then
+                settings.enabled[repLocations:IdAtIndex(i)] = true;
             end
             if (self:TableContains(settings.order, repLocations:NameAtIndex(i)) == false) then
                 table.insert(settings.order, counter, repLocations:NameAtIndex(i));
@@ -925,8 +925,8 @@ function TravelWindow:CheckEnabledSettings()
         end
 
         -- update racial travel settings
-        if (settings.enabled[racialLocations:NameAtIndex(self.racetype)] == nil) then
-            settings.enabled[racialLocations:NameAtIndex(self.racetype)] = true;
+        if (settings.enabled[racialLocations:IdAtIndex(self.racetype)] == nil) then
+            settings.enabled[racialLocations:IdAtIndex(self.racetype)] = true;
         end
         if (self:TableContains(settings.order, racialLocations:NameAtIndex(self.racetype)) == false) then
             table.insert(settings.order, counter, racialLocations:NameAtIndex(self.racetype));
@@ -936,8 +936,8 @@ function TravelWindow:CheckEnabledSettings()
         -- update hunter travel settings
         if (playerClass == Turbine.Gameplay.Class.Hunter) then
             for i = 1, travelCount[1], 1 do
-                if (settings.enabled[hunterLocations:NameAtIndex(i)] == nil) then
-                    settings.enabled[hunterLocations:NameAtIndex(i)] = true;
+                if (settings.enabled[hunterLocations:IdAtIndex(i)] == nil) then
+                    settings.enabled[hunterLocations:IdAtIndex(i)] = true;
                 end
                 if (self:TableContains(settings.order, hunterLocations:NameAtIndex(i)) == false) then
                     table.insert(settings.order, counter, hunterLocations:NameAtIndex(i));
@@ -949,8 +949,8 @@ function TravelWindow:CheckEnabledSettings()
         -- update warden travel settings
         if (playerClass == Turbine.Gameplay.Class.Warden) then
             for i = 1, travelCount[2], 1 do
-                if (settings.enabled[wardenLocations:NameAtIndex(i)] == nil) then
-                    settings.enabled[wardenLocations:NameAtIndex(i)] = true;
+                if (settings.enabled[wardenLocations:IdAtIndex(i)] == nil) then
+                    settings.enabled[wardenLocations:IdAtIndex(i)] = true;
                 end
                 if (self:TableContains(settings.order, wardenLocations:NameAtIndex(i)) == false) then
                     table.insert(settings.order, counter, wardenLocations:NameAtIndex(i));
@@ -961,8 +961,8 @@ function TravelWindow:CheckEnabledSettings()
     else
         -- update creep travel settings
         for i = 1, travelCount[6], 1 do
-            if (settings.enabled[creepLocations:NameAtIndex(i)] == nil) then
-                settings.enabled[creepLocations:NameAtIndex(i)] = true;
+            if (settings.enabled[creepLocations:IdAtIndex(i)] == nil) then
+                settings.enabled[creepLocations:IdAtIndex(i)] = true;
             end
             if (self:TableContains(settings.order, creepLocations:NameAtIndex(i)) == false) then
                 table.insert(settings.order, counter, creepLocations:NameAtIndex(i));

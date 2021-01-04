@@ -196,7 +196,7 @@ function GondorMapWindow:AddShortcuts()
     for i = 1, travelCount[1], 1 do
 
         -- add hunter locations if they should be on this map
-        if (self.mapLocations[counter][1] > 0 and self.playerClass == Turbine.Gameplay.Class.Hunter and self:IsShortcutEnabled(hunterLocations:NameAtIndex(i)) == 1) then
+        if (self.mapLocations[counter][1] > 0 and self.playerClass == Turbine.Gameplay.Class.Hunter and self:IsShortcutEnabled(hunterLocations:IdAtIndex(i)) == 1) then
             self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, hunterLocations:IdAtIndex(i)));
         end
 
@@ -207,7 +207,7 @@ function GondorMapWindow:AddShortcuts()
     for i = 1, travelCount[2], 1 do
 
         -- add warden locations if they should be on this map
-        if (self.mapLocations[counter][1] > 0 and self.playerClass == 194 and self:IsShortcutEnabled(wardenLocations:NameAtIndex(i)) == 1) then
+        if (self.mapLocations[counter][1] > 0 and self.playerClass == Turbine.Gameplay.Class.Warden and self:IsShortcutEnabled(wardenLocations:IdAtIndex(i)) == 1) then
             self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, wardenLocations:IdAtIndex(i)));
         end
         counter = counter + 1;
@@ -217,7 +217,7 @@ function GondorMapWindow:AddShortcuts()
     for i = 1, travelCount[4], 1 do
 
         -- add rep locations if they should be on this map
-        if (self.mapLocations[counter][1] > 0 and self:IsShortcutEnabled(repLocations:NameAtIndex(i)) == 1) then
+        if (self.mapLocations[counter][1] > 0 and self:IsShortcutEnabled(repLocations:IdAtIndex(i)) == 1) then
             self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, repLocations:IdAtIndex(i)));
         end
 
@@ -227,13 +227,12 @@ function GondorMapWindow:AddShortcuts()
     -- racial locations
     for i = 1, travelCount[5], 1 do
 
-        if (self.mapLocations[counter][1] > 0 and self:IsShortcutEnabled(racialLocations:NameAtIndex(i)) == 1) then
+        if (self.mapLocations[counter][1] > 0 and self:IsShortcutEnabled(racialLocations:IdAtIndex(i)) == 1) then
             if (i == self.playerRace) then
                 self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, racialLocations:IdAtIndex(i)));
             end
         end
 
-        --Turbine.Shell.WriteLine(counter);
         counter = counter + 1;
     end
 end
@@ -262,11 +261,11 @@ function GondorMapWindow:AddSingleShortcut(index, shortcut)
     end
 end
 
-function GondorMapWindow:IsShortcutEnabled(name)
+function GondorMapWindow:IsShortcutEnabled(id)
 
     -- loop through all the shortcuts and add those that are enabled
     for i = 1, #self.shortcuts, 1 do
-        if (self.shortcuts[i]:GetName() == name) then
+        if (self.shortcuts[i]:GetData() == id) then
             if (self.shortcuts[i]:IsEnabled()) then
                 return 1;
             end
