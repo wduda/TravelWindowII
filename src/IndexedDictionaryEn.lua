@@ -227,7 +227,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Return to Bree", "0x7001BF90", "Bree (Rep)");
     repLocations:AddData("Return to Lalia's Market", "0x700364B1", "Lalia's Market (Mithril)");
     repLocations:AddData("Return to Michel Delving", "0x70023262", "Shire (Store)");
-    repLocations:AddData("Return to Rivendell", "0x70023263", "Rivendell (Rep)");
+    repLocations:AddData("Return to Rivendell", "0x70023263", "Rivendell (Store)");
     repLocations:AddData("Return to Ost Guruth", "0x70020441", "Ost Guruth (Rep)");
     repLocations:AddData("Return to Mirkwood", "0x7001F374", "Mirkwood (Rep)");
     repLocations:AddData("Return to Enedwaith", "0x70021FA2", "Enedwaith (Rep)");

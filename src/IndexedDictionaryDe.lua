@@ -226,7 +226,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Rückkehr nach Bree", "0x7001BF90", "Bree (Ruf)");
     repLocations:AddData("Kehrt zu Lalias Markt zurück", "0x700364B1", "Lalias Markt (Mithril)");
     repLocations:AddData("Rückkehr nach Michelbinge", "0x70023262", "Michelbinge (Shop)");
-    repLocations:AddData("Rückkehr nach Bruchtal", "0x70023263", "Bruchtal (Ruf)");
+    repLocations:AddData("Rückkehr nach Bruchtal", "0x70023263", "Bruchtal (Shop)");
     repLocations:AddData("Rückkehr zur Feste Guruth", "0x70020441", "Feste Guruth (Ruf)");
     repLocations:AddData("Rückkehr zum Düsterwald", "0x7001F374", "Düsterwald (Ruf)");
     repLocations:AddData("Rückkehr nach Enedwaith", "0x70021FA2", "Enedwaith (Ruf)");

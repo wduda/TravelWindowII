@@ -224,7 +224,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddData("Bree", "0x7001BF90", "Retour à Bree");
     repLocations:AddData("Marché de Lalia", "0x700364B1", "Retour au Marché de Lalia");
     repLocations:AddData("Grand'Cave", "0x70023262", "Retour à Grand'Cave");
-    repLocations:AddData("Fondcombe", "0x70023263", "Retour à Fondcombe");
+    repLocations:AddData("Fondcombe", "0x70023263", "Fondcombe (Shop)");
     repLocations:AddData("Ost Guruth", "0x70020441", "Retournez à Ost Guruth");
     repLocations:AddData("Enedwaith", "0x70021FA2", "Retour en Enedwaith");
     repLocations:AddData("Galtrev", "0x7002C647", "Retour à Galtrev");

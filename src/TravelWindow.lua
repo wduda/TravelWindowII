@@ -76,7 +76,7 @@ function TravelWindow:Constructor()
         trainedSkills = player:GetTrainedSkills();
     end
 
-    -- set the racial travel skill to add
+    -- set the racial key used later in multiple places
     self:DetermineRaceKey();
 
     -- save the player's combat states for managing hiding the window
@@ -345,8 +345,7 @@ function TravelWindow:LoadSettings()
     settings = {};
 
     pcall(function()
-        settingsString = Turbine.PluginData.Load(Turbine.DataScope.Character,
-        "TravelWindowSettings");
+        settingsString = Turbine.PluginData.Load(Turbine.DataScope.Character, "TravelWindowSettings");
     end);
 
     if (type(settingsString) ~= "table") then
