@@ -128,12 +128,12 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Evendim", "0x7000A2C4", "Evendim (Guide)");
     hunterLocations:AddSkill("Guide to Ost Guruth", "0x7000A2C2", "Ost Guruth (Guide)");
     hunterLocations:AddSkill("Guide to Rivendell", "0x70003F44", "Rivendell (Guide)");
-    hunterLocations:AddSkill("Guide to Sûri-Kylä", "0x70017C82", "Sûri-kylä (Guide)");
+    hunterLocations:AddSkill("Guide to Sûri-kylä", "0x70017C82", "Sûri-kylä (Guide)");
     hunterLocations:AddSkill("Guide to West Angmar", "0x7000A2C5", "West Angmar (Guide)");
     hunterLocations:AddSkill("Guide to East Angmar", "0x7000A2C6", "East Angmar (Guide)");
     hunterLocations:AddSkill("Guide to Echad Dúnann", "0x70017C81", "Echad Dúnann (Guide)");
-    hunterLocations:AddSkill("Guide to Twenty-First Hall", "0x70017C7A", "Twenty-First Hall (Guide)");
-    hunterLocations:AddSkill("Guide to Mirk-Eaves", "0x7001F459", "Mirk-eaves (Guide)");
+    hunterLocations:AddSkill("Guide to Twenty-first Hall", "0x70017C7A", "Twenty-First Hall (Guide)");
+    hunterLocations:AddSkill("Guide to Mirk-eaves", "0x7001F459", "Mirk-eaves (Guide)");
     hunterLocations:AddSkill("Guide to Harndirion", "0x700235EF", "Harndirion (Guide)");
     hunterLocations:AddSkill("Guide to Galtrev", "0x7002A93F", "Galtrev (Guide)");
     hunterLocations:AddSkill("Guide to Stangard", "0x7002C62C", "Stangard (Guide)");
@@ -154,9 +154,9 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Haerondir", "0x70047C1D", "Haerondir (Guide)");
     hunterLocations:AddSkill("Guide to the Udûn Foothold", "0x7004AE1E", "Udûn Foothold (Guide)");
     hunterLocations:AddSkill("Guide to Dale", "0x7004d73b", "Dale (Guide)");
-	hunterLocations:AddSkill("Guide to Járnfast", "0x7004FACC", "Járnfast (Guide)");
+    hunterLocations:AddSkill("Guide to Járnfast", "0x7004FACC", "Járnfast (Guide)");
     hunterLocations:AddSkill("Guide to Skarháld", "0x7004FACB", "Skarháld (Guide)");
-	hunterLocations:AddSkill("Guide to Beorninghús", "0x70052F07", "Beorninghús (Guide)");
+    hunterLocations:AddSkill("Guide to Beorninghús", "0x70052F07", "Beorninghús (Guide)");
     hunterLocations:AddSkill("Guide to Hultvís", "0x70052F08", "Hultvís (Guide)");
     hunterLocations:AddSkill("Guide to Estolad Lân", "0x700551F4", "Estolad Lân (Guide)"); -- Need to get the right Skill-ID
     hunterLocations:AddSkill("Guide to Limlók", "0x7005762D", "Limlók (Guide)");
@@ -166,9 +166,9 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster in Esteldín", "0x70014798", "Esteldín (Muster)");
     wardenLocations:AddSkill("Muster in Evendim", "0x7001478E", "Evendim (Muster)");
     wardenLocations:AddSkill("Muster in Rivendell", "0x70014791", "Rivendell (Muster)");
-    wardenLocations:AddSkill("Muster in Sûri-Kylä", "0x700237D4", "Sûri-kylä (Muster)");
-    wardenLocations:AddSkill("Muster in Twenty-First Hall", "0x7001819E", "Twenty-First Hall (Muster)");
-    wardenLocations:AddSkill("Muster in Mirk-Eaves", "0x7001F45C", "Mirk-Eaves (Muster)");
+    wardenLocations:AddSkill("Muster in Sûri-kylä", "0x700237D4", "Sûri-kylä (Muster)");
+    wardenLocations:AddSkill("Muster in Twenty-first Hall", "0x7001819E", "Twenty-First Hall (Muster)");
+    wardenLocations:AddSkill("Muster in Mirk-eaves", "0x7001F45C", "Mirk-Eaves (Muster)");
     wardenLocations:AddSkill("Muster in Harndirion", "0x700235EB", "Harndirion (Muster)");
     wardenLocations:AddSkill("Muster in Galtrev", "0x7002A90A", "Galtrev (Muster)");
     wardenLocations:AddSkill("Muster in Stangard", "0x7002C646", "Stangard (Muster)");
@@ -189,9 +189,9 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster in Haerondir", "0x70047C23", "Haerondir (Muster)");
     wardenLocations:AddSkill("Muster in the Udûn Foothold", "0x7004AE1F", "Udûn Foothold (Muster)");
     wardenLocations:AddSkill("Muster in Dale", "0x7004d73a", "Dale (Muster)");
-	wardenLocations:AddSkill("Muster in Járnfast", "0x7004FACA", "Járnfast (Muster)");
+    wardenLocations:AddSkill("Muster in Járnfast", "0x7004FACA", "Járnfast (Muster)");
     wardenLocations:AddSkill("Muster in Skarháld", "0x7004FACD", "Skarháld (Muster)");
-	wardenLocations:AddSkill("Muster in Beorninghús", "0x70052F0A", "Beorninghús (Muster)");
+    wardenLocations:AddSkill("Muster in Beorninghús", "0x70052F0A", "Beorninghús (Muster)");
     wardenLocations:AddSkill("Muster in Hultvís", "0x70052F06", "Hultvís (Muster)");
     wardenLocations:AddSkill("Muster in Estolad Lân", "0x700551F2", "Estolad Lân (Muster)");
     wardenLocations:AddSkill("Muster in Limlók", "0x70057635", "Limlók (Muster)");
@@ -254,14 +254,14 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Journey to the Hall Under the Mountain", "0x7004B8C4", "Hall Under the Mountain (Rep)");
     repLocations:AddSkill("Journey to Bâr Thorenion", "0x7004B8C5", "Bâr Thorenion (Rep)");
     repLocations:AddSkill("Return to Dale", "0x7004d738", "Dale (Rep)");
-	repLocations:AddSkill("Return to Járnfast", "0x7004FAC3", "Járnfast (Rep)");
+    repLocations:AddSkill("Return to Járnfast", "0x7004FAC3", "Járnfast (Rep)");
     repLocations:AddSkill("Return to Skarháld", "0x7004FAC5", "Skarháld (Rep)");
-	repLocations:AddSkill("Return to Beorninghús", "0x70052F12", "Beorninghús (Rep)");
+    repLocations:AddSkill("Return to Beorninghús", "0x70052F12", "Beorninghús (Rep)");
     repLocations:AddSkill("Return to Hultvís", "0x70052F04", "Hultvís (Rep)");
-    repLocations:AddSkill("Return to Estolad Lân", "0x700551F8", "Estolad Lân (Rep)");	
+    repLocations:AddSkill("Return to Estolad Lân", "0x700551F8", "Estolad Lân (Rep)");
     repLocations:AddSkill("Return to Limlók", "0x70057629", "Limlók (Rep)");
     repLocations:AddSkill("Return to Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Rep)");
-    
+
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");
     creepLocations:AddSkill("Map to Gramsfoot", "0x70028BC1");
