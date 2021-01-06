@@ -132,7 +132,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to West Angmar", "0x7000A2C5", "West Angmar (Guide)");
     hunterLocations:AddSkill("Guide to East Angmar", "0x7000A2C6", "East Angmar (Guide)");
     hunterLocations:AddSkill("Guide to Echad Dúnann", "0x70017C81", "Echad Dúnann (Guide)");
-    hunterLocations:AddSkill("Guide to Twenty-first Hall", "0x70017C7A", "Twenty-First Hall (Guide)");
+    hunterLocations:AddSkill("Guide to the Twenty-first Hall", "0x70017C7A", "Twenty-first Hall (Guide)");
     hunterLocations:AddSkill("Guide to Mirk-eaves", "0x7001F459", "Mirk-eaves (Guide)");
     hunterLocations:AddSkill("Guide to Harndirion", "0x700235EF", "Harndirion (Guide)");
     hunterLocations:AddSkill("Guide to Galtrev", "0x7002A93F", "Galtrev (Guide)");
@@ -158,7 +158,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Skarháld", "0x7004FACB", "Skarháld (Guide)");
     hunterLocations:AddSkill("Guide to Beorninghús", "0x70052F07", "Beorninghús (Guide)");
     hunterLocations:AddSkill("Guide to Hultvís", "0x70052F08", "Hultvís (Guide)");
-    hunterLocations:AddSkill("Guide to Estolad Lân", "0x700551F4", "Estolad Lân (Guide)"); -- Need to get the right Skill-ID
+    hunterLocations:AddSkill("Guide to Estolad Lân", "0x700551F4", "Estolad Lân (Guide)");
     hunterLocations:AddSkill("Guide to Limlók", "0x7005762D", "Limlók (Guide)");
     hunterLocations:AddSkill("Guide to Annâk-khurfu", "0x70058571", "Annâk-khurfu (Guide)");
 
@@ -167,7 +167,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster in Evendim", "0x7001478E", "Evendim (Muster)");
     wardenLocations:AddSkill("Muster in Rivendell", "0x70014791", "Rivendell (Muster)");
     wardenLocations:AddSkill("Muster in Sûri-kylä", "0x700237D4", "Sûri-kylä (Muster)");
-    wardenLocations:AddSkill("Muster in Twenty-first Hall", "0x7001819E", "Twenty-First Hall (Muster)");
+    wardenLocations:AddSkill("Muster in the Twenty-first Hall", "0x7001819E", "Twenty-first Hall (Muster)");
     wardenLocations:AddSkill("Muster in Mirk-eaves", "0x7001F45C", "Mirk-Eaves (Muster)");
     wardenLocations:AddSkill("Muster in Harndirion", "0x700235EB", "Harndirion (Muster)");
     wardenLocations:AddSkill("Muster in Galtrev", "0x7002A90A", "Galtrev (Muster)");
@@ -202,7 +202,7 @@ function TravelDictionaries:CreateDictionaries()
     racialLocations:AddSkill("Return to the Shire", "0x700062C8", "Shire (Racial)");
     racialLocations:AddSkill("Return to Thorin's Gate", "0x70006346", "Thorin's Gate (Racial Dwarf)");
     racialLocations:AddSkill("Return to Rivendell", "0x7000631F", "Rivendell (Racial)");
-    racialLocations:AddSkill("Return Home (Racial)", "0x70041A22", "Beorning Home (Racial)");
+    racialLocations:AddSkill("Return Home", "0x70041A22", "Beorning Home (Racial)");
     racialLocations:AddSkill("Travel to Caras Galadhon in Lothlórien", "0x70048C8C", "Caras Galadhon (Racial)");
     racialLocations:AddSkill("Travel to Thorin's Hall", "0x70053C0F", "Thorin's Hall (Racial StoutAxe)");
 
