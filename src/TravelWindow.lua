@@ -58,7 +58,7 @@ function TravelWindow:Constructor()
     -- if the player has a PvMP map, then insert it into the list
     if ((settings.mapGlanVraig ~= nil) and (settings.mapGlanVraig ~= "nil")) then
         --self.reloadGVMap = true;
-        genLocations:InsertData(2, glanMapString, settings.mapGlanVraig, "skip");
+        genLocations:InsertSkill(2, glanMapString, settings.mapGlanVraig, "skip");
     end
 
     -- redo the counts
@@ -234,7 +234,7 @@ function TravelWindow:Constructor()
         self:SetOpacity(settings.mainMaxOpacity);
     end
 
-    -- go to low opacity when mosue is not over
+    -- go to low opacity when mouse is not over
     self.MouseLeave = function(sender, args)
         self:SetOpacity(settings.mainMinOpacity);
     end
@@ -345,7 +345,7 @@ function TravelWindow:LoadSettings()
     settings = {};
 
     pcall(function()
-        settingsString = Turbine.PluginData.Load(Turbine.DataScope.Character, "TravelWindowSettings");
+        settingsString = Turbine.PluginData.Load(Turbine.DataScope.Character, "TravelWindowIISettings");
     end);
 
     if (type(settingsString) ~= "table") then
@@ -621,10 +621,8 @@ function TravelWindow:SaveSettings()
 
     self:OrderTableStringIndex();
 
-
     -- save the settings
-    Turbine.PluginData.Save(Turbine.DataScope.Character,
-    "TravelWindowSettings", settingsString);
+    Turbine.PluginData.Save(Turbine.DataScope.Character, "TravelWindowIISettings", settingsString);
 end
 
 function TravelWindow:UpdateSettings()
@@ -744,8 +742,8 @@ function TravelWindow:SaveMapHome(shortcut)
     if (string.find(mapItem:GetName(), glanMapItemString)) then
 
         -- remove the old shortcut if it exists
-        if (genLocations:IndexByKey(glanMapString) == 2) then
-            genLocations:RemoveAtIndex(2);
+        if (genLocations:IndexByName(glanMapString) == 2) then
+            genLocations:RemoveSkillAtIndex(2);
         end
 
         -- set the value
@@ -772,67 +770,67 @@ end
 function TravelWindow:SetShortcuts()
     -- set default values
     travelShortcuts = {};
-    counter = 1;
+    local shortcutIndex = 1;
 
     -- set the travel skills for free people
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- set the generic travel items
         for i = 1, travelCount[3], 1 do
             -- get the order number for the item
-            counter = self:TableIndex(settings.order, genLocations:KeyAtIndex(i));
+            shortcutIndex = self:TableIndex(settings.order, genLocations:IdAtIndex(i));
 
             -- set the shortcut for the quickslot, check
             -- if the shortcut is the map home or not
-            if (string.len(genLocations:DataAtIndex(i)) > 12) then
+            if (string.len(genLocations:IdAtIndex(i)) > 12) then
                 table.insert(travelShortcuts, TravelShortcut(2.0,
-                genLocations:DataAtIndex(i),
-                genLocations:KeyAtIndex(i),
+                genLocations:IdAtIndex(i),
+                genLocations:NameAtIndex(i),
                 1,
-                counter,
-                settings.enabled[genLocations:KeyAtIndex(i)],
+                shortcutIndex,
+                settings.enabled[genLocations:IdAtIndex(i)],
                 genLocations:LabelAtIndex(i)));
             else
                 table.insert(travelShortcuts, TravelShortcut(6.0,
-                genLocations:DataAtIndex(i),
-                genLocations:KeyAtIndex(i),
+                genLocations:IdAtIndex(i),
+                genLocations:NameAtIndex(i),
                 1,
-                counter,
-                settings.enabled[genLocations:KeyAtIndex(i)],
+                shortcutIndex,
+                settings.enabled[genLocations:IdAtIndex(i)],
                 genLocations:LabelAtIndex(i)));
             end
         end
 
         -- add the race travel to the list
-        counter = self:TableIndex(settings.order, racialLocations:KeyAtIndex(self.racetype));
+        local racialShortcutIndex = self:TableIndex(settings.order, racialLocations:IdAtIndex(self.racetype));
         table.insert(travelShortcuts, TravelShortcut(6.0,
-        racialLocations:DataAtIndex(self.racetype),
-        racialLocations:KeyAtIndex(self.racetype),
+        racialLocations:IdAtIndex(self.racetype),
+        racialLocations:NameAtIndex(self.racetype),
         2,
-        counter,
-        settings.enabled[racialLocations:KeyAtIndex(self.racetype)],
+        racialShortcutIndex,
+        settings.enabled[racialLocations:IdAtIndex(self.racetype)],
         racialLocations:LabelAtIndex(self.racetype)));
 
         -- set the reputation travel items
         for i = 1, travelCount[4], 1 do
-            counter = self:TableIndex(settings.order, repLocations:KeyAtIndex(i));
+            shortcutIndex = self:TableIndex(settings.order, repLocations:IdAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
-            repLocations:DataAtIndex(i),
-            repLocations:KeyAtIndex(i),
+            repLocations:IdAtIndex(i),
+            repLocations:NameAtIndex(i),
             3,
-            counter,
-            settings.enabled[repLocations:KeyAtIndex(i)],
+            shortcutIndex,
+            settings.enabled[repLocations:IdAtIndex(i)],
             repLocations:LabelAtIndex(i)));
         end
     else
         -- set the creep travel items
         for i = 1, travelCount[6], 1 do
-            counter = self:TableIndex(settings.order, creepLocations:KeyAtIndex(i));
+            shortcutIndex = self:TableIndex(settings.order, creepLocations:IdAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
-            creepLocations:DataAtIndex(i),
-            creepLocations:KeyAtIndex(i),
+            creepLocations:IdAtIndex(i),
+            creepLocations:NameAtIndex(i),
             3,
-            counter,
-            settings.enabled[creepLocations:KeyAtIndex(i)],
+            shortcutIndex,
+            settings.enabled[creepLocations:IdAtIndex(i)],
             creepLocations:LabelAtIndex(i)));
         end
     end
@@ -840,13 +838,13 @@ function TravelWindow:SetShortcuts()
     -- set the hunter travel items
     if (playerClass == Turbine.Gameplay.Class.Hunter) then
         for i = 1, travelCount[1], 1 do
-            counter = self:TableIndex(settings.order, hunterLocations:KeyAtIndex(i));
+            shortcutIndex = self:TableIndex(settings.order, hunterLocations:IdAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
-            hunterLocations:DataAtIndex(i),
-            hunterLocations:KeyAtIndex(i),
+            hunterLocations:IdAtIndex(i),
+            hunterLocations:NameAtIndex(i),
             4,
-            counter,
-            settings.enabled[hunterLocations:KeyAtIndex(i)],
+            shortcutIndex,
+            settings.enabled[hunterLocations:IdAtIndex(i)],
             hunterLocations:LabelAtIndex(i)));
         end
     end
@@ -854,13 +852,13 @@ function TravelWindow:SetShortcuts()
     -- set the warden travel items
     if (playerClass == Turbine.Gameplay.Class.Warden) then
         for i = 1, travelCount[2], 1 do
-            counter = self:TableIndex(settings.order, wardenLocations:KeyAtIndex(i));
+            shortcutIndex = self:TableIndex(settings.order, wardenLocations:IdAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
-            wardenLocations:DataAtIndex(i),
-            wardenLocations:KeyAtIndex(i),
+            wardenLocations:IdAtIndex(i),
+            wardenLocations:NameAtIndex(i),
             4,
-            counter,
-            settings.enabled[wardenLocations:KeyAtIndex(i)],
+            shortcutIndex,
+            settings.enabled[wardenLocations:IdAtIndex(i)],
             wardenLocations:LabelAtIndex(i)));
         end
     end
@@ -873,13 +871,17 @@ function TravelWindow:CheckEnabledSettings()
     -- count the min number of items that should be in the list
     local itemCount = 0;
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+        -- generic skills + reputation skills + one racial skill
         itemCount = travelCount[3] + travelCount[4] + 1;
         if (playerClass == Turbine.Gameplay.Class.Hunter) then
+            -- hunters have hunter skills
             itemCount = itemCount + travelCount[1];
         elseif (playerClass == Turbine.Gameplay.Class.Warden) then
+            -- wardens have warden skills
             itemCount = itemCount + travelCount[2]
         end
     else
+        -- monster player skills
         itemCount = travelCount[6] + 1;
     end
 
@@ -901,47 +903,47 @@ function TravelWindow:CheckEnabledSettings()
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- update generic travel settings
         for i = 1, travelCount[3], 1 do
-            -- if the enabled setting for the skill is nil, set it to true as default 
-            if (settings.enabled[genLocations:KeyAtIndex(i)] == nil) then
-                settings.enabled[genLocations:KeyAtIndex(i)] = true;
+            -- if the enabled setting for the skill is nil, set it to true as default
+            if (settings.enabled[genLocations:IdAtIndex(i)] == nil) then
+                settings.enabled[genLocations:IdAtIndex(i)] = true;
             end
 
             -- if the skill is not in the order list, add it and increase the counter
             if (self:TableContains(settings.order,
-            genLocations:KeyAtIndex(i)) == false) then
-                table.insert(settings.order, counter, genLocations:KeyAtIndex(i));
+            genLocations:IdAtIndex(i)) == false) then
+                table.insert(settings.order, counter, genLocations:IdAtIndex(i));
                 counter = counter + 1;
             end
         end
 
         -- update reputation travel settings
         for i = 1, travelCount[4], 1 do
-            if (settings.enabled[repLocations:KeyAtIndex(i)] == nil) then
-                settings.enabled[repLocations:KeyAtIndex(i)] = true;
+            if (settings.enabled[repLocations:IdAtIndex(i)] == nil) then
+                settings.enabled[repLocations:IdAtIndex(i)] = true;
             end
-            if (self:TableContains(settings.order, repLocations:KeyAtIndex(i)) == false) then
-                table.insert(settings.order, counter, repLocations:KeyAtIndex(i));
+            if (self:TableContains(settings.order, repLocations:IdAtIndex(i)) == false) then
+                table.insert(settings.order, counter, repLocations:IdAtIndex(i));
                 counter = counter + 1;
             end
         end
 
         -- update racial travel settings
-        if (settings.enabled[racialLocations:KeyAtIndex(self.racetype)] == nil) then
-            settings.enabled[racialLocations:KeyAtIndex(self.racetype)] = true;
+        if (settings.enabled[racialLocations:IdAtIndex(self.racetype)] == nil) then
+            settings.enabled[racialLocations:IdAtIndex(self.racetype)] = true;
         end
-        if (self:TableContains(settings.order, racialLocations:KeyAtIndex(self.racetype)) == false) then
-            table.insert(settings.order, counter, racialLocations:KeyAtIndex(self.racetype));
+        if (self:TableContains(settings.order, racialLocations:IdAtIndex(self.racetype)) == false) then
+            table.insert(settings.order, counter, racialLocations:IdAtIndex(self.racetype));
             counter = counter + 1;
         end
 
         -- update hunter travel settings
         if (playerClass == Turbine.Gameplay.Class.Hunter) then
             for i = 1, travelCount[1], 1 do
-                if (settings.enabled[hunterLocations:KeyAtIndex(i)] == nil) then
-                    settings.enabled[hunterLocations:KeyAtIndex(i)] = true;
+                if (settings.enabled[hunterLocations:IdAtIndex(i)] == nil) then
+                    settings.enabled[hunterLocations:IdAtIndex(i)] = true;
                 end
-                if (self:TableContains(settings.order, hunterLocations:KeyAtIndex(i)) == false) then
-                    table.insert(settings.order, counter, hunterLocations:KeyAtIndex(i));
+                if (self:TableContains(settings.order, hunterLocations:IdAtIndex(i)) == false) then
+                    table.insert(settings.order, counter, hunterLocations:IdAtIndex(i));
                     counter = counter + 1;
                 end
             end
@@ -950,11 +952,11 @@ function TravelWindow:CheckEnabledSettings()
         -- update warden travel settings
         if (playerClass == Turbine.Gameplay.Class.Warden) then
             for i = 1, travelCount[2], 1 do
-                if (settings.enabled[wardenLocations:KeyAtIndex(i)] == nil) then
-                    settings.enabled[wardenLocations:KeyAtIndex(i)] = true;
+                if (settings.enabled[wardenLocations:IdAtIndex(i)] == nil) then
+                    settings.enabled[wardenLocations:IdAtIndex(i)] = true;
                 end
-                if (self:TableContains(settings.order, wardenLocations:KeyAtIndex(i)) == false) then
-                    table.insert(settings.order, counter, wardenLocations:KeyAtIndex(i));
+                if (self:TableContains(settings.order, wardenLocations:IdAtIndex(i)) == false) then
+                    table.insert(settings.order, counter, wardenLocations:IdAtIndex(i));
                     counter = counter + 1;
                 end
             end
@@ -962,11 +964,11 @@ function TravelWindow:CheckEnabledSettings()
     else
         -- update creep travel settings
         for i = 1, travelCount[6], 1 do
-            if (settings.enabled[creepLocations:KeyAtIndex(i)] == nil) then
-                settings.enabled[creepLocations:KeyAtIndex(i)] = true;
+            if (settings.enabled[creepLocations:IdAtIndex(i)] == nil) then
+                settings.enabled[creepLocations:IdAtIndex(i)] = true;
             end
-            if (self:TableContains(settings.order, creepLocations:KeyAtIndex(i)) == false) then
-                table.insert(settings.order, counter, creepLocations:KeyAtIndex(i));
+            if (self:TableContains(settings.order, creepLocations:IdAtIndex(i)) == false) then
+                table.insert(settings.order, counter, creepLocations:IdAtIndex(i));
                 counter = counter + 1;
             end
         end
@@ -1035,9 +1037,9 @@ function TravelWindow:CloseGondorMap()
 end
 
 -- function to check if a table contains a specific element
-function TravelWindow:TableContains(data, element)
-    for i, value in pairs(data) do
-        if (value == element) then
+function TravelWindow:TableContains(tableToSearch, elementToSearchFor)
+    for i, value in pairs(tableToSearch) do
+        if (value == elementToSearchFor) then
             return true;
         end
     end
@@ -1045,9 +1047,9 @@ function TravelWindow:TableContains(data, element)
 end
 
 -- function to check if a table contains a specific element index
-function TravelWindow:TableIndex(data, element)
-    for i, value in pairs(data) do
-        if (value == element) then
+function TravelWindow:TableIndex(tableToSearch, elementToSearchFor)
+    for i, value in pairs(tableToSearch) do
+        if (value == elementToSearchFor) then
             return i;
         end
     end
@@ -1055,7 +1057,6 @@ function TravelWindow:TableIndex(data, element)
 end
 
 function TravelWindow:SortShortcuts()
-
     -- ensure we have more than 2 shortcuts
     if #travelShortcuts < 2 then
         Turbine.Engine.WriteLine("Table does not have enough data in it");
@@ -1085,7 +1086,6 @@ function TravelWindow:UpdateOpacity()
 end
 
 function TravelWindow:ResetSettings()
-
     -- close the option window
     self:CloseOptions()
 
@@ -1110,7 +1110,7 @@ function TravelWindow:ResetSettings()
     settings.mainMaxOpacity = 1;
     settings.mainMinOpacity = 0.5;
     settings.toggleMaxOpacity = 1;
-    settings.toggleMinOpacity = 0.2;
+    settings.toggleMinOpacity = 0.5;
 
     -- clear the maps
     settings.mapGlanVraig = nil;
@@ -1142,7 +1142,7 @@ end
 
 function TravelWindow:CheckSkills()
     -- loop through all the shortcuts and list those those that are not learned
-    counter = 1;
+    shortcutIndex = 1;
     for i = 1, #travelShortcuts, 1 do
         if (TravelWindow:FindSkill(travelShortcuts[i]:GetName())) then
             -- do nothing, skill is known

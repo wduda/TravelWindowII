@@ -381,15 +381,15 @@ end
 -- function to add all the travel shortcuts that can be toggled
 -- to the enabled tab
 function OptionsPanel:AddItems()
-    counter = 1;
+    local counter = 1;
 
     -- use an offset counter to set the final position of the skill on the tab
-    offsetCounter = 0;
+    local offsetCounter = 0;
 
     -- add the generic travels skills
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         for i = 1, travelCount[3], 1 do
-            self:Add(counter, genLocations:KeyAtIndex(i), genLocations:LabelAtIndex(i));
+            self:AddSkillItemForEnabling(counter, genLocations:IdAtIndex(i), genLocations:LabelAtIndex(i));
             counter = counter + 1;
             offsetCounter = offsetCounter + 1;
         end
@@ -399,7 +399,7 @@ function OptionsPanel:AddItems()
     if (playerClass == Turbine.Gameplay.Class.Hunter) then
         offsetCounter = 0;
         for i = 1, travelCount[1], 1 do
-            self:Add(counter, hunterLocations:KeyAtIndex(i), hunterLocations:LabelAtIndex(i));
+            self:AddSkillItemForEnabling(counter, hunterLocations:IdAtIndex(i), hunterLocations:LabelAtIndex(i));
             counter = counter + 1;
             offsetCounter = offsetCounter + 1;
         end
@@ -407,7 +407,7 @@ function OptionsPanel:AddItems()
     -- add the warden muster skills if the character is a warden
     if (playerClass == Turbine.Gameplay.Class.Warden) then
         for i = 1, travelCount[2], 1 do
-            self:Add(counter, wardenLocations:KeyAtIndex(i), wardenLocations:LabelAtIndex(i));
+            self:AddSkillItemForEnabling(counter, wardenLocations:IdAtIndex(i), wardenLocations:LabelAtIndex(i));
             counter = counter + 1;
         end
     end
@@ -415,32 +415,32 @@ function OptionsPanel:AddItems()
     -- add the reputation travel skills
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         for i = 1, travelCount[4], 1 do
-            self:Add(counter, repLocations:KeyAtIndex(i), repLocations:LabelAtIndex(i));
+            self:AddSkillItemForEnabling(counter, repLocations:IdAtIndex(i), repLocations:LabelAtIndex(i));
             counter = counter + 1;
         end
     end
     
     -- add the race specific travel skill for the character
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        self:Add(counter, racialLocations:KeyAtIndex(self.racetype), racialLocations:LabelAtIndex(self.racetype));
+        self:AddSkillItemForEnabling(counter, racialLocations:IdAtIndex(self.racetype), racialLocations:LabelAtIndex(self.racetype));
         counter = counter + 1;
     end
 
     -- add the creep travel skills
     if (playerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
         for i = 1, travelCount[6], 1 do
-            self:Add(counter, creepLocations:KeyAtIndex(i), creepLocations:LabelAtIndex(i));
+            self:AddSkillItemForEnabling(counter, creepLocations:IdAtIndex(i), creepLocations:LabelAtIndex(i));
             counter = counter + 1;
         end
     end
 end
 
 -- add a single shortcut to the enabled tab at the given location
-function OptionsPanel:Add(index, key, label)
+function OptionsPanel:AddSkillItemForEnabling(index, id, label)
 
     control = Turbine.UI.Label();
     control:SetSize(self.ListBox:GetWidth() - 20, 20);
-    
+
     -- create the label for the shortcut setting
     self.labels[index] = Turbine.UI.Label();
     self.labels[index]:SetSize(control:GetWidth() - 20, 20);
@@ -454,7 +454,7 @@ function OptionsPanel:Add(index, key, label)
     self.checks[index] = Turbine.UI.Lotro.CheckBox();
     self.checks[index]:SetSize(19, 19);
     self.checks[index]:SetPosition(10, 0);
-    self.checks[index]:SetChecked(settings.enabled[key]);
+    self.checks[index]:SetChecked(settings.enabled[id]);
     self.checks[index]:SetParent(control);
     self.checks[index]:SetWantsUpdates(true);
     self.checks[index]:SetVisible(true);
@@ -463,7 +463,7 @@ function OptionsPanel:Add(index, key, label)
     -- handle the event of the check box value changing
     self.checks[index].CheckedChanged = function(sender, args)
         -- change the setting on the main window
-        settings.enabled[key] = sender:IsChecked();
+        settings.enabled[id] = sender:IsChecked();
 
         -- reset the shortcuts on the main window
         self.mainWindow:SetShortcuts();
@@ -498,7 +498,7 @@ function OptionsPanel:AddBoxes()
         self.repLabel:SetVisible(true);
 
         -- if the player is a hunter or warden, add a label
-        if ((playerClass == Turbine.Gameplay.Class.Hunter) or (playerClass == 194)) then
+        if ((playerClass == Turbine.Gameplay.Class.Hunter) or (playerClass == Turbine.Gameplay.Class.Warden)) then
             self.classLabel = Turbine.UI.Label();
             self.classLabel:SetSize(200, 20);
             self.classLabel:SetPosition(520, 0);
@@ -546,11 +546,11 @@ function OptionsPanel:AddSortList()
     self.sortListBox:SetParent(self.SortTab);
     self.sortListBox:SetVisible(true);
 
-    counter = 1;
+    local labelCounter = 1;
 
     -- create a label to add to the listbox for each shortcut
     for i, v in pairs(travelShortcuts) do
-        tempLabel = Turbine.UI.Label();
+        local tempLabel = Turbine.UI.Label();
         tempLabel:SetText(v:GetSkillLabel());
         tempLabel:SetSize(280, 20);
         tempLabel:SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
@@ -569,16 +569,16 @@ function OptionsPanel:AddSortList()
         self.sortListBox:AddItem(tempLabel);
 
         -- set the maximum index value in the list
-        self.sortMaxItem = counter;
-        counter = counter + 1;
+        self.sortMaxItem = labelCounter;
+        labelCounter = labelCounter + 1;
     end
 
     -- set the first item as selected
     self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.6));
-    
+
     -- set up the scrollbar for the list
     self.listBoxScrollBar = self.sortListBox:GetVerticalScrollBar();
-    
+
     if (self.listBoxScrollBar == nil) then
         self.listBoxScrollBar = Turbine.UI.Lotro.ScrollBar();
     end
@@ -704,12 +704,12 @@ function OptionsPanel:SwapShortcuts(first, second)
         -- a temp variable, setting the value of the first index to the value of
         -- the second index, then setting the value of the second index to the
         -- temp value
-        temp = settings.order[first];
+        local tempValue = settings.order[first];
         settings.order[first] = settings.order[second];
-        settings.order[second] = temp;
+        settings.order[second] = tempValue;
 
         -- swap the items in the listbox using the same method
-        tempItem = self.sortListBox:GetItem(first);
+        local tempItem = self.sortListBox:GetItem(first);
         self.sortListBox:RemoveItemAt(first);
         self.sortListBox:InsertItem(second, tempItem);
     end

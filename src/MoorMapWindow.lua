@@ -94,7 +94,7 @@ function MoorMapWindow:AddShortcuts()
         self.quickslots[i]:SetAllowDrop(false);
         self.quickslots[i]:SetPosition(mapLocations[i][1], mapLocations[i][2]);
         self.quickslots[i]:SetZOrder(98);
-        self.quickslots[i]:SetShortcut(Turbine.UI.Lotro.Shortcut(6.0, creepLocations:DataAtIndex(i)));
+        self.quickslots[i]:SetShortcut(Turbine.UI.Lotro.Shortcut(6.0, creepLocations:IdAtIndex(i)));
         self.quickslots[i]:SetMouseVisible(true);
         self.quickslots[i]:SetUseOnRightClick(false);
         self.quickslots[i]:SetVisible(true);

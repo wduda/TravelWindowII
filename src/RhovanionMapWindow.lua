@@ -195,8 +195,8 @@ function RhovanionMapWindow:AddShortcuts()
     for i = 1, travelCount[1], 1 do
 
         -- add hunter locations if they should be on this map
-        if (self.mapLocations[counter][1] > 0 and self.playerClass == Turbine.Gameplay.Class.Hunter and self:IsShortcutEnabled(hunterLocations:KeyAtIndex(i)) == 1) then
-            self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, hunterLocations:DataAtIndex(i)));
+        if (self.mapLocations[counter][1] > 0 and self.playerClass == Turbine.Gameplay.Class.Hunter and self:IsShortcutEnabled(hunterLocations:IdAtIndex(i)) == 1) then
+            self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, hunterLocations:IdAtIndex(i)));
         end
 
         counter = counter + 1;
@@ -206,8 +206,8 @@ function RhovanionMapWindow:AddShortcuts()
     for i = 1, travelCount[2], 1 do
 
         -- add warden locations if they should be on this map
-        if (self.mapLocations[counter][1] > 0 and self.playerClass == 194 and self:IsShortcutEnabled(wardenLocations:KeyAtIndex(i)) == 1) then
-            self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, wardenLocations:DataAtIndex(i)));
+        if (self.mapLocations[counter][1] > 0 and self.playerClass == Turbine.Gameplay.Class.Warden and self:IsShortcutEnabled(wardenLocations:IdAtIndex(i)) == 1) then
+            self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, wardenLocations:IdAtIndex(i)));
         end
         counter = counter + 1;
     end
@@ -216,8 +216,8 @@ function RhovanionMapWindow:AddShortcuts()
     for i = 1, travelCount[4], 1 do
 
         -- add rep locations if they should be on this map
-        if (self.mapLocations[counter][1] > 0 and self:IsShortcutEnabled(repLocations:KeyAtIndex(i)) == 1) then
-            self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, repLocations:DataAtIndex(i)));
+        if (self.mapLocations[counter][1] > 0 and self:IsShortcutEnabled(repLocations:IdAtIndex(i)) == 1) then
+            self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, repLocations:IdAtIndex(i)));
         end
 
         counter = counter + 1;
@@ -226,9 +226,9 @@ function RhovanionMapWindow:AddShortcuts()
     -- racial locations
     for i = 1, travelCount[5], 1 do
 
-        if (self.mapLocations[counter][1] > 0 and self:IsShortcutEnabled(racialLocations:KeyAtIndex(i)) == 1) then
+        if (self.mapLocations[counter][1] > 0 and self:IsShortcutEnabled(racialLocations:IdAtIndex(i)) == 1) then
             if (i == self.playerRace) then
-                self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, racialLocations:DataAtIndex(i)));
+                self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, racialLocations:IdAtIndex(i)));
             end
         end
 
@@ -260,11 +260,11 @@ function RhovanionMapWindow:AddSingleShortcut(index, shortcut)
     end
 end
 
-function RhovanionMapWindow:IsShortcutEnabled(name)
+function RhovanionMapWindow:IsShortcutEnabled(id)
 
     -- loop through all the shortcuts and add those that are enabled
     for i = 1, #self.shortcuts, 1 do
-        if (self.shortcuts[i]:GetName() == name) then
+        if (self.shortcuts[i]:GetData() == id) then
             if (self.shortcuts[i]:IsEnabled()) then
                 return 1;
             end
