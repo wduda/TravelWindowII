@@ -119,8 +119,8 @@ function TravelDictionaries:GetLocations()
     return genLocations, hunterLocations, wardenLocations, racialLocations, repLocations;
 end
 
+-- add the data to custom dictionaries to maintain the order
 function TravelDictionaries:CreateDictionaries()
-    -- add the data to custom dictionaries to maintain the order
     hunterLocations:AddSkill("Zurück zum Lager", "0x7000A2C1", "Zurück zum Lager");
     hunterLocations:AddSkill("Führer nach Bree", "0x70003F42", "Bree (Führer)");
     hunterLocations:AddSkill("Führer zu Thorins Halle", "0x70003F41", "Thorins Halle (Führer)");
@@ -212,10 +212,10 @@ function TravelDictionaries:CreateDictionaries()
     genLocations:AddSkill("Zum 4. Heim zurückkehren",  "0x70025794", "4. Markstein");
     genLocations:AddSkill("Zum 5. Heim zurückkehren",  "0x70025795", "5. Markstein");
     genLocations:AddSkill("Zum 6. Heim zurückkehren",  "0x70025796", "6. Markstein");
-    genLocations:AddSkill("Zum 7. Heim zurückkehren",  "0x7002FF5F", "7. Markstein");
-    genLocations:AddSkill("Zum 8. Heim zurückkehren",  "0x7002FF60", "8. Markstein");
-    genLocations:AddSkill("Zum 9. Heim zurückkehren",  "0x7002FF61", "9. Markstein");
-    genLocations:AddSkill("Zum 10. Heim zurückkehren", "0x7002FF62", "10. Markstein");
+    genLocations:AddSkill("Zum 7. Heim zurückkehren",  "0x7002FF62", "7. Markstein");
+    genLocations:AddSkill("Zum 8. Heim zurückkehren",  "0x7002FF61", "8. Markstein");
+    genLocations:AddSkill("Zum 9. Heim zurückkehren",  "0x7002FF60", "9. Markstein");
+    genLocations:AddSkill("Zum 10. Heim zurückkehren", "0x7002FF5F", "10. Markstein");
     genLocations:AddSkill("Zum 11. Heim zurückkehren", "0x7002FF63", "11. Markstein");
     genLocations:AddSkill("Reist zu Eurem eigenen Heim", "0x7000D046", "Eigenes Heim");
     genLocations:AddSkill("Reist zu Eurem Premiumheim", "0x70046EE4", "Premiumheim");
