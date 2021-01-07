@@ -153,7 +153,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to the Camp of the Host", "0x70047BFA", "Camp of the Host (Guide)");
     hunterLocations:AddSkill("Guide to Haerondir", "0x70047C1D", "Haerondir (Guide)");
     hunterLocations:AddSkill("Guide to the Udûn Foothold", "0x7004AE1E", "Udûn Foothold (Guide)");
-    hunterLocations:AddSkill("Guide to Dale", "0x7004d73b", "Dale (Guide)");
+    hunterLocations:AddSkill("Guide to Dale", "0x7004D73B", "Dale (Guide)");
     hunterLocations:AddSkill("Guide to Járnfast", "0x7004FACC", "Járnfast (Guide)");
     hunterLocations:AddSkill("Guide to Skarháld", "0x7004FACB", "Skarháld (Guide)");
     hunterLocations:AddSkill("Guide to Beorninghús", "0x70052F07", "Beorninghús (Guide)");
@@ -188,7 +188,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster in the Camp of the Host", "0x70047BFC", "Camp of the Host (Muster)");
     wardenLocations:AddSkill("Muster in Haerondir", "0x70047C23", "Haerondir (Muster)");
     wardenLocations:AddSkill("Muster in the Udûn Foothold", "0x7004AE1F", "Udûn Foothold (Muster)");
-    wardenLocations:AddSkill("Muster in Dale", "0x7004d73a", "Dale (Muster)");
+    wardenLocations:AddSkill("Muster in Dale", "0x7004D73A", "Dale (Muster)");
     wardenLocations:AddSkill("Muster in Járnfast", "0x7004FACA", "Járnfast (Muster)");
     wardenLocations:AddSkill("Muster in Skarháld", "0x7004FACD", "Skarháld (Muster)");
     wardenLocations:AddSkill("Muster in Beorninghús", "0x70052F0A", "Beorninghús (Muster)");
@@ -253,7 +253,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Journey to the Hall of the King", "0x7004B8C3", "Hall of the King (Rep)");
     repLocations:AddSkill("Journey to the Hall Under the Mountain", "0x7004B8C4", "Hall Under the Mountain (Rep)");
     repLocations:AddSkill("Journey to Bâr Thorenion", "0x7004B8C5", "Bâr Thorenion (Rep)");
-    repLocations:AddSkill("Return to Dale", "0x7004d738", "Dale (Rep)");
+    repLocations:AddSkill("Return to Dale", "0x7004D738", "Dale (Rep)");
     repLocations:AddSkill("Return to Járnfast", "0x7004FAC3", "Járnfast (Rep)");
     repLocations:AddSkill("Return to Skarháld", "0x7004FAC5", "Skarháld (Rep)");
     repLocations:AddSkill("Return to Beorninghús", "0x70052F12", "Beorninghús (Rep)");
