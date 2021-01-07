@@ -258,7 +258,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retour à Limlok", "0x70057629", "Limlok (Rep)");
     repLocations:AddSkill("Retournez à Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Rep)");
 
-
+    -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");
     creepLocations:AddSkill("Carte pour aller au Pied de Gram", "0x70028BC1");
 

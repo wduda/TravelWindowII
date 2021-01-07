@@ -260,7 +260,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Rückkehr nach Limlók", "0x70057629", "Limlók (Ruf)");
     repLocations:AddSkill("Rückkehr nach Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Ruf)");
 
-    -- Crude Map to Gramsfoot for newb creeps
+-- monster player maps
     creepLocations:AddSkill("Kartenskizze zum Gramfuss", "0x70028BBC");
     creepLocations:AddSkill("Karte zum Gramfuss", "0x70028BC1");
 
