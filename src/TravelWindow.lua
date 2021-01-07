@@ -234,7 +234,7 @@ function TravelWindow:Constructor()
         self:SetOpacity(settings.mainMaxOpacity);
     end
 
-    -- go to low opacity when mosue is not over
+    -- go to low opacity when mouse is not over
     self.MouseLeave = function(sender, args)
         self:SetOpacity(settings.mainMinOpacity);
     end
@@ -345,7 +345,7 @@ function TravelWindow:LoadSettings()
     settings = {};
 
     pcall(function()
-        settingsString = Turbine.PluginData.Load(Turbine.DataScope.Character, "TravelWindowSettings");
+        settingsString = Turbine.PluginData.Load(Turbine.DataScope.Character, "TravelWindowIISettings");
     end);
 
     if (type(settingsString) ~= "table") then
@@ -621,9 +621,8 @@ function TravelWindow:SaveSettings()
 
     self:OrderTableStringIndex();
 
-
     -- save the settings
-    Turbine.PluginData.Save(Turbine.DataScope.Character, "TravelWindowSettings", settingsString);
+    Turbine.PluginData.Save(Turbine.DataScope.Character, "TravelWindowIISettings", settingsString);
 end
 
 function TravelWindow:UpdateSettings()
