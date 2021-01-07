@@ -156,11 +156,11 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Führer zum Udûn-Brückenkopf", "0x7004AE1E", "Udûn-Brückenkopf (Führer)");
 	hunterLocations:AddSkill("Führer nach Thal", "0x7004D73B", "Thal (Führer)");
 	hunterLocations:AddSkill("Führer nach Járnfast", "0x7004FACC", "Járnfast (Führer)");
-    hunterLocations:AddSkill("Führer nach Skarháld", "0x7004facb", "Skarháld (Führer)");
+    hunterLocations:AddSkill("Führer nach Skarháld", "0x7004FACB", "Skarháld (Führer)");
 	hunterLocations:AddSkill("Führer nach Beorningerhús", "0x70052F07", "Beorningerhús (Führer)");
     hunterLocations:AddSkill("Leitfaden für Hultvís", "0x70052F08", "Hultvís (Führer)");
     hunterLocations:AddSkill("Führer nach Estolad Lân", "0x700551F4", "Estolad Lân (Führer)");
-    hunterLocations:AddSkill("Führer nach Limlók", "0x7005762d", "Limlók (Führer)");
+    hunterLocations:AddSkill("Führer nach Limlók", "0x7005762D", "Limlók (Führer)");
     hunterLocations:AddSkill("Führer nach Annâk-khurfu", "0x70058571", "Annâk-khurfu (Führer)");
 
     wardenLocations:AddSkill("Appell in der Feste Guruth", "0x70014786", "Feste Guruth (Appell)");
