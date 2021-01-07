@@ -13,10 +13,17 @@ This has to be extracted to your "Documents\The Lord of the Rings Online\Plugins
 
 Version history:
 v1.0.7beta
-[SIZE="1"]- Plugin Compendium will now install Turbine libraries if they are not installed yet when you install Travel Window (enhancement)
-- changed Shire and Rivendell skill labels to be closer to user expectations (they are now Shire (Store), Shire (Racial), Rivendell (Store)) (bugfix)
-- fixed Premium house skill in German client (bugfix)
-- fixed about 30 skills in German client that were not working before (bugfix)
+[SIZE="1"]- changed enabled/disabled function to identify skills by ID - fixes problems with skills sharing names, like racial/rep, map home/Beorning racial (bugfix) closes #25 #17
+- changed sorting identify skills by ID - sorting will now work and save its settings properly (bugfix) closes #15 
+- fixed wrong order of milestone skills (bugfix) closes #9 
+- made it so Travel Window II has its own config file - settings will reset once! (enhancement)
+- verified all 151 skills in English client, fixed 7 broken skills, with some fixed by Drono
+- verified all 151 skills in German client, fixed 41 broken skills
+- verified all 151 skills in German client, fixed 74 (!) broken skills, with some help from Adra
+- updated English localization (enhancement)
+- updated French localization thanks to Adra (enhancment)
+- updated German localization (enhancement)
+- reduced code duplication in indexedDictionaries so future development will become easier (internal)
 [/SIZE]
 
 
