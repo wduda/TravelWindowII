@@ -440,7 +440,7 @@ function OptionsPanel:AddSkillItemForEnabling(index, id, label)
 
     control = Turbine.UI.Label();
     control:SetSize(self.ListBox:GetWidth() - 20, 20);
-    
+
     -- create the label for the shortcut setting
     self.labels[index] = Turbine.UI.Label();
     self.labels[index]:SetSize(control:GetWidth() - 20, 20);
@@ -546,11 +546,11 @@ function OptionsPanel:AddSortList()
     self.sortListBox:SetParent(self.SortTab);
     self.sortListBox:SetVisible(true);
 
-    counter = 1;
+    local labelCounter = 1;
 
     -- create a label to add to the listbox for each shortcut
     for i, v in pairs(travelShortcuts) do
-        tempLabel = Turbine.UI.Label();
+        local tempLabel = Turbine.UI.Label();
         tempLabel:SetText(v:GetSkillLabel());
         tempLabel:SetSize(280, 20);
         tempLabel:SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
@@ -569,16 +569,16 @@ function OptionsPanel:AddSortList()
         self.sortListBox:AddItem(tempLabel);
 
         -- set the maximum index value in the list
-        self.sortMaxItem = counter;
-        counter = counter + 1;
+        self.sortMaxItem = labelCounter;
+        labelCounter = labelCounter + 1;
     end
 
     -- set the first item as selected
     self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.6));
-    
+
     -- set up the scrollbar for the list
     self.listBoxScrollBar = self.sortListBox:GetVerticalScrollBar();
-    
+
     if (self.listBoxScrollBar == nil) then
         self.listBoxScrollBar = Turbine.UI.Lotro.ScrollBar();
     end
@@ -704,12 +704,12 @@ function OptionsPanel:SwapShortcuts(first, second)
         -- a temp variable, setting the value of the first index to the value of
         -- the second index, then setting the value of the second index to the
         -- temp value
-        temp = settings.order[first];
+        local tempValue = settings.order[first];
         settings.order[first] = settings.order[second];
-        settings.order[second] = temp;
+        settings.order[second] = tempValue;
 
         -- swap the items in the listbox using the same method
-        tempItem = self.sortListBox:GetItem(first);
+        local tempItem = self.sortListBox:GetItem(first);
         self.sortListBox:RemoveItemAt(first);
         self.sortListBox:InsertItem(second, tempItem);
     end

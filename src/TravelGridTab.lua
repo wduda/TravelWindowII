@@ -121,7 +121,7 @@ function TravelGridTab:SetItems()
     self.col = 1;
 
     -- loop through all the shortcuts and add those that are enabled
-    counter = 1;
+    local shortcutIndex = 1;
     for i = 1, #travelShortcuts, 1 do
         if (travelShortcuts[i]:IsEnabled()) then
             -- apply skill type filter if set in options
@@ -129,7 +129,7 @@ function TravelGridTab:SetItems()
                 -- make sure skill is trained, lookup by ingame name
                 if (TravelWindow:FindSkill(travelShortcuts[i]:GetName())) then
                     self:AddItem(travelShortcuts[i]);
-                    counter = counter + 1;
+                    shortcutIndex = shortcutIndex + 1;
                 end
             end
         end

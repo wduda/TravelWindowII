@@ -771,14 +771,14 @@ end
 function TravelWindow:SetShortcuts()
     -- set default values
     travelShortcuts = {};
-    counter = 1;
+    local shortcutIndex = 1;
 
     -- set the travel skills for free people
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- set the generic travel items
         for i = 1, travelCount[3], 1 do
             -- get the order number for the item
-            counter = self:TableIndex(settings.order, genLocations:NameAtIndex(i));
+            shortcutIndex = self:TableIndex(settings.order, genLocations:IdAtIndex(i));
 
             -- set the shortcut for the quickslot, check
             -- if the shortcut is the map home or not
@@ -787,7 +787,7 @@ function TravelWindow:SetShortcuts()
                 genLocations:IdAtIndex(i),
                 genLocations:NameAtIndex(i),
                 1,
-                counter,
+                shortcutIndex,
                 settings.enabled[genLocations:IdAtIndex(i)],
                 genLocations:LabelAtIndex(i)));
             else
@@ -795,42 +795,42 @@ function TravelWindow:SetShortcuts()
                 genLocations:IdAtIndex(i),
                 genLocations:NameAtIndex(i),
                 1,
-                counter,
+                shortcutIndex,
                 settings.enabled[genLocations:IdAtIndex(i)],
                 genLocations:LabelAtIndex(i)));
             end
         end
 
         -- add the race travel to the list
-        counter = self:TableIndex(settings.order, racialLocations:NameAtIndex(self.racetype));
+        local racialShortcutIndex = self:TableIndex(settings.order, racialLocations:IdAtIndex(self.racetype));
         table.insert(travelShortcuts, TravelShortcut(6.0,
         racialLocations:IdAtIndex(self.racetype),
         racialLocations:NameAtIndex(self.racetype),
         2,
-        counter,
+        racialShortcutIndex,
         settings.enabled[racialLocations:IdAtIndex(self.racetype)],
         racialLocations:LabelAtIndex(self.racetype)));
 
         -- set the reputation travel items
         for i = 1, travelCount[4], 1 do
-            counter = self:TableIndex(settings.order, repLocations:NameAtIndex(i));
+            shortcutIndex = self:TableIndex(settings.order, repLocations:IdAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
             repLocations:IdAtIndex(i),
             repLocations:NameAtIndex(i),
             3,
-            counter,
+            shortcutIndex,
             settings.enabled[repLocations:IdAtIndex(i)],
             repLocations:LabelAtIndex(i)));
         end
     else
         -- set the creep travel items
         for i = 1, travelCount[6], 1 do
-            counter = self:TableIndex(settings.order, creepLocations:NameAtIndex(i));
+            shortcutIndex = self:TableIndex(settings.order, creepLocations:IdAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
             creepLocations:IdAtIndex(i),
             creepLocations:NameAtIndex(i),
             3,
-            counter,
+            shortcutIndex,
             settings.enabled[creepLocations:IdAtIndex(i)],
             creepLocations:LabelAtIndex(i)));
         end
@@ -839,12 +839,12 @@ function TravelWindow:SetShortcuts()
     -- set the hunter travel items
     if (playerClass == Turbine.Gameplay.Class.Hunter) then
         for i = 1, travelCount[1], 1 do
-            counter = self:TableIndex(settings.order, hunterLocations:NameAtIndex(i));
+            shortcutIndex = self:TableIndex(settings.order, hunterLocations:IdAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
             hunterLocations:IdAtIndex(i),
             hunterLocations:NameAtIndex(i),
             4,
-            counter,
+            shortcutIndex,
             settings.enabled[hunterLocations:IdAtIndex(i)],
             hunterLocations:LabelAtIndex(i)));
         end
@@ -853,12 +853,12 @@ function TravelWindow:SetShortcuts()
     -- set the warden travel items
     if (playerClass == Turbine.Gameplay.Class.Warden) then
         for i = 1, travelCount[2], 1 do
-            counter = self:TableIndex(settings.order, wardenLocations:NameAtIndex(i));
+            shortcutIndex = self:TableIndex(settings.order, wardenLocations:IdAtIndex(i));
             table.insert(travelShortcuts, TravelShortcut(6.0,
             wardenLocations:IdAtIndex(i),
             wardenLocations:NameAtIndex(i),
             4,
-            counter,
+            shortcutIndex,
             settings.enabled[wardenLocations:IdAtIndex(i)],
             wardenLocations:LabelAtIndex(i)));
         end
@@ -872,13 +872,17 @@ function TravelWindow:CheckEnabledSettings()
     -- count the min number of items that should be in the list
     local itemCount = 0;
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+        -- generic skills + reputation skills + one racial skill
         itemCount = travelCount[3] + travelCount[4] + 1;
         if (playerClass == Turbine.Gameplay.Class.Hunter) then
+            -- hunters have hunter skills
             itemCount = itemCount + travelCount[1];
         elseif (playerClass == Turbine.Gameplay.Class.Warden) then
+            -- wardens have warden skills
             itemCount = itemCount + travelCount[2]
         end
     else
+        -- monster player skills
         itemCount = travelCount[6] + 1;
     end
 
@@ -907,8 +911,8 @@ function TravelWindow:CheckEnabledSettings()
 
             -- if the skill is not in the order list, add it and increase the counter
             if (self:TableContains(settings.order,
-            genLocations:NameAtIndex(i)) == false) then
-                table.insert(settings.order, counter, genLocations:NameAtIndex(i));
+            genLocations:IdAtIndex(i)) == false) then
+                table.insert(settings.order, counter, genLocations:IdAtIndex(i));
                 counter = counter + 1;
             end
         end
@@ -918,8 +922,8 @@ function TravelWindow:CheckEnabledSettings()
             if (settings.enabled[repLocations:IdAtIndex(i)] == nil) then
                 settings.enabled[repLocations:IdAtIndex(i)] = true;
             end
-            if (self:TableContains(settings.order, repLocations:NameAtIndex(i)) == false) then
-                table.insert(settings.order, counter, repLocations:NameAtIndex(i));
+            if (self:TableContains(settings.order, repLocations:IdAtIndex(i)) == false) then
+                table.insert(settings.order, counter, repLocations:IdAtIndex(i));
                 counter = counter + 1;
             end
         end
@@ -928,8 +932,8 @@ function TravelWindow:CheckEnabledSettings()
         if (settings.enabled[racialLocations:IdAtIndex(self.racetype)] == nil) then
             settings.enabled[racialLocations:IdAtIndex(self.racetype)] = true;
         end
-        if (self:TableContains(settings.order, racialLocations:NameAtIndex(self.racetype)) == false) then
-            table.insert(settings.order, counter, racialLocations:NameAtIndex(self.racetype));
+        if (self:TableContains(settings.order, racialLocations:IdAtIndex(self.racetype)) == false) then
+            table.insert(settings.order, counter, racialLocations:IdAtIndex(self.racetype));
             counter = counter + 1;
         end
 
@@ -939,8 +943,8 @@ function TravelWindow:CheckEnabledSettings()
                 if (settings.enabled[hunterLocations:IdAtIndex(i)] == nil) then
                     settings.enabled[hunterLocations:IdAtIndex(i)] = true;
                 end
-                if (self:TableContains(settings.order, hunterLocations:NameAtIndex(i)) == false) then
-                    table.insert(settings.order, counter, hunterLocations:NameAtIndex(i));
+                if (self:TableContains(settings.order, hunterLocations:IdAtIndex(i)) == false) then
+                    table.insert(settings.order, counter, hunterLocations:IdAtIndex(i));
                     counter = counter + 1;
                 end
             end
@@ -952,8 +956,8 @@ function TravelWindow:CheckEnabledSettings()
                 if (settings.enabled[wardenLocations:IdAtIndex(i)] == nil) then
                     settings.enabled[wardenLocations:IdAtIndex(i)] = true;
                 end
-                if (self:TableContains(settings.order, wardenLocations:NameAtIndex(i)) == false) then
-                    table.insert(settings.order, counter, wardenLocations:NameAtIndex(i));
+                if (self:TableContains(settings.order, wardenLocations:IdAtIndex(i)) == false) then
+                    table.insert(settings.order, counter, wardenLocations:IdAtIndex(i));
                     counter = counter + 1;
                 end
             end
@@ -964,8 +968,8 @@ function TravelWindow:CheckEnabledSettings()
             if (settings.enabled[creepLocations:IdAtIndex(i)] == nil) then
                 settings.enabled[creepLocations:IdAtIndex(i)] = true;
             end
-            if (self:TableContains(settings.order, creepLocations:NameAtIndex(i)) == false) then
-                table.insert(settings.order, counter, creepLocations:NameAtIndex(i));
+            if (self:TableContains(settings.order, creepLocations:IdAtIndex(i)) == false) then
+                table.insert(settings.order, counter, creepLocations:IdAtIndex(i));
                 counter = counter + 1;
             end
         end
@@ -1034,9 +1038,9 @@ function TravelWindow:CloseGondorMap()
 end
 
 -- function to check if a table contains a specific element
-function TravelWindow:TableContains(data, element)
-    for i, value in pairs(data) do
-        if (value == element) then
+function TravelWindow:TableContains(tableToSearch, elementToSearchFor)
+    for i, value in pairs(tableToSearch) do
+        if (value == elementToSearchFor) then
             return true;
         end
     end
@@ -1044,9 +1048,9 @@ function TravelWindow:TableContains(data, element)
 end
 
 -- function to check if a table contains a specific element index
-function TravelWindow:TableIndex(data, element)
-    for i, value in pairs(data) do
-        if (value == element) then
+function TravelWindow:TableIndex(tableToSearch, elementToSearchFor)
+    for i, value in pairs(tableToSearch) do
+        if (value == elementToSearchFor) then
             return i;
         end
     end
@@ -1139,7 +1143,7 @@ end
 
 function TravelWindow:CheckSkills()
     -- loop through all the shortcuts and list those those that are not learned
-    counter = 1;
+    shortcutIndex = 1;
     for i = 1, #travelShortcuts, 1 do
         if (TravelWindow:FindSkill(travelShortcuts[i]:GetName())) then
             -- do nothing, skill is known
