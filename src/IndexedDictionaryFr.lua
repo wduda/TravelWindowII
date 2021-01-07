@@ -201,20 +201,20 @@ function TravelDictionaries:CreateDictionaries()
     racialLocations:AddSkill("Retour : Porte de Thorin", "0x70006346", "Porte de Thorin (Race)"); --@TODO
     racialLocations:AddSkill("Retour à Fondcombe", "0x7000631F", "Fondcombe (Race)");
     racialLocations:AddSkill("Retour à la maison", "0x70041A22", "Retour à la maison (Race)"); --@TODO
-    racialLocations:AddSkill("Retour à Caras Galadhon dans Lothlórien", "0x70048C8C", "Voyage vers Caras Galadhon, en Lothlórien (Race)"); --@TODO
+    racialLocations:AddSkill("Voyage vers Caras Galadhon, en Lothlórien", "0x70048C8C", "Voyage vers Caras Galadhon, en Lothlórien (Race)");
     racialLocations:AddSkill("Revenir au Palais de Thorin", "0x70053C0F", "Aller au Palais de Thorin (Race)"); --@TODO
 
-    genLocations:AddSkill("Return Home 1", "0x700256BA", "Return Home 1"); --@TODO
-    genLocations:AddSkill("Compétence Point de repère 2", "0x70025792", "Point De Repère 2"); --@TODO
-    genLocations:AddSkill("Return Home 3", "0x70025793", "Return Home 3"); --@TODO
-    genLocations:AddSkill("Return Home 4", "0x70025794", "Return Home 4"); --@TODO
-    genLocations:AddSkill("Return Home 5", "0x70025795", "Return Home 5"); --@TODO
-    genLocations:AddSkill("Return Home 6", "0x70025796", "Return Home 6"); --@TODO
-    genLocations:AddSkill("Return Home 7", "0x7002FF5E", "Return Home 7"); --@TODO
-    genLocations:AddSkill("Return Home 8", "0x7002FF5F", "Return Home 8"); --@TODO
-    genLocations:AddSkill("Return Home 9", "0x7002FF60", "Return Home 9"); --@TODO
-    genLocations:AddSkill("Return Home 10", "0x7002FF61", "Return Home 10"); --@TODO
-    genLocations:AddSkill("Return Home 11", "0x7002FF62", "Return Home 11"); --@TODO
+    genLocations:AddSkill("Retour à la maison",    "0x700256BA", "Point de repère 1");
+    genLocations:AddSkill("Retour à la maison 2",  "0x70025792", "Point de repère 2");
+    genLocations:AddSkill("Retour à la maison 3",  "0x70025793", "Point de repère 3");
+    genLocations:AddSkill("Retour à la maison 4",  "0x70025794", "Point de repère 4");
+    genLocations:AddSkill("Retour à la maison 5",  "0x70025795", "Point de repère 5");
+    genLocations:AddSkill("Retour à la maison 6",  "0x70025796", "Point de repère 6");
+    genLocations:AddSkill("Retour à la maison 7",  "0x7002FF62", "Point de repère 7");
+    genLocations:AddSkill("Retour à la maison 8",  "0x7002FF61", "Point de repère 8");
+    genLocations:AddSkill("Retour à la maison 9",  "0x7002FF60", "Point de repère 9");
+    genLocations:AddSkill("Retour à la maison 10", "0x7002FF5F", "Point de repère 10");
+    genLocations:AddSkill("Retour à la maison 11", "0x7002FF63", "Point de repère 11");
     genLocations:AddSkill("Retour à la maison personnelle", "0x7000D046", "Maison personnelle");
     genLocations:AddSkill("Aller à une maison premium", "0x70046EE4", "Maison premium");
     genLocations:AddSkill("Retour à la maison de confrérie", "0x7000D047", "Maison de confrérie");
@@ -249,14 +249,14 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Palais du roi", "0x7004B8C3", "Voyager jusqu'au Palais du roi"); --@TODO
     repLocations:AddSkill("Bâr Thorenion", "0x7004B8C5", "Voyager jusqu'à Bâr Thorenion"); --@TODO
     repLocations:AddSkill("Palais sous la Montagne", "0x7004B8C4", "Voyager jusqu'au Palais sous la Montagne"); --@TODO
-    repLocations:AddSkill("Dale", "0x7004d738", "Revenir à Dale"); --@TODO
+    repLocations:AddSkill("Dale", "0x7004d738", "Dale (Rep)"); --@TODO
     repLocations:AddSkill("Jarnfast", "0x7004fac3", "Revenir à Jarnfast"); --@TODO
     repLocations:AddSkill("Skarhald", "0x7004fac5", "Revenir à Skarhald"); --@TODO
-    repLocations:AddSkill("Beorninghus", "0x70052F12", "Retournez auprès de Beorninghus"); --@TODO
-    repLocations:AddSkill("Hultvis", "0x70052F04", "Retournez auprès de Hultvis"); --@TODO
-    repLocations:AddSkill("Estolad Lân", "0x700551F8", "Retour à Estolad Lân"); --@TODO
-    repLocations:AddSkill("Limlok", "0x70057629", "Retour à Limlok"); --@TODO
-    repLocations:AddSkill("Annâk-khurfu", "0x7005856F", "Retournez à Annâk-khurfu"); --@TODO
+    repLocations:AddSkill("Retournez auprès de Beorninghus", "0x70052F12", "Beorninghus (Rep)");
+    repLocations:AddSkill("Retournez auprès de Hultvis", "0x70052F04", "Hultvis (Rep)");
+    repLocations:AddSkill("Retour à Estolad Lân", "0x700551F8", "Estolad Lân (Rep)");
+    repLocations:AddSkill("Retour à Limlok", "0x70057629", "Limlok (Rep)");
+    repLocations:AddSkill("Retournez à Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Rep)");
 
     creepLocations:AddSkill("Carte grossière pour aller au Gouffre d'Isen", "0x70028BB3"); --@TODO
     creepLocations:AddSkill("Carte grossière pour aller à Tol Ascarnen", "0x70028BB6"); --@TODO

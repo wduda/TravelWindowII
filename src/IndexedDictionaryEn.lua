@@ -207,15 +207,15 @@ function TravelDictionaries:CreateDictionaries()
     racialLocations:AddSkill("Travel to Thorin's Hall", "0x70053C0F", "Thorin's Hall (Racial StoutAxe)");
 
     -- add the Return Home and housing skills
-    genLocations:AddSkill("Return Home", "0x700256BA", "Return Home");
-    genLocations:AddSkill("Return Home 2", "0x70025792", "Return Home 2");
-    genLocations:AddSkill("Return Home 3", "0x70025793", "Return Home 3");
-    genLocations:AddSkill("Return Home 4", "0x70025794", "Return Home 4");
-    genLocations:AddSkill("Return Home 5", "0x70025795", "Return Home 5");
-    genLocations:AddSkill("Return Home 6", "0x70025796", "Return Home 6");
-    genLocations:AddSkill("Return Home 7", "0x7002FF5F", "Return Home 7");
-    genLocations:AddSkill("Return Home 8", "0x7002FF60", "Return Home 8");
-    genLocations:AddSkill("Return Home 9", "0x7002FF61", "Return Home 9");
+    genLocations:AddSkill("Return Home",    "0x700256BA", "Return Home");
+    genLocations:AddSkill("Return Home 2",  "0x70025792", "Return Home 2");
+    genLocations:AddSkill("Return Home 3",  "0x70025793", "Return Home 3");
+    genLocations:AddSkill("Return Home 4",  "0x70025794", "Return Home 4");
+    genLocations:AddSkill("Return Home 5",  "0x70025795", "Return Home 5");
+    genLocations:AddSkill("Return Home 6",  "0x70025796", "Return Home 6");
+    genLocations:AddSkill("Return Home 7",  "0x7002FF5F", "Return Home 7");
+    genLocations:AddSkill("Return Home 8",  "0x7002FF60", "Return Home 8");
+    genLocations:AddSkill("Return Home 9",  "0x7002FF61", "Return Home 9");
     genLocations:AddSkill("Return Home 10", "0x7002FF62", "Return Home 10");
     genLocations:AddSkill("Return Home 11", "0x7002FF63", "Return Home 11");
     genLocations:AddSkill("Travel to Personal House", "0x7000D046", "Personal House");
