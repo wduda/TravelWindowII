@@ -27,7 +27,7 @@ resetEnabledString = "Deine ausgewählten Fertigkeiten wurden aufgrund einer Än
 "der zu speichernden Elemente zurückgesetzt. Dies sollte nur einmal passieren.\n" ..
 "Entschuldige die Unannehmlichkeiten.";
 
-skillNotTrainedString = "Nicht erlernter Fertigkeit: ";
+skillNotTrainedString = "Nicht erlernte Fertigkeit: ";
 
 -- options window strings
 generalTabString = "Allgemein";
@@ -154,10 +154,10 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Führer zum Lager des Heeres", "0x70047BFA", "Lager des Heeres (Führer)");
     hunterLocations:AddSkill("Führer nach Haerondir", "0x70047C1D", "Haerondir (Führer)");
     hunterLocations:AddSkill("Führer zum Udûn-Brückenkopf", "0x7004AE1E", "Udûn-Brückenkopf (Führer)");
-	hunterLocations:AddSkill("Führer nach Thal", "0x7004D73B", "Thal (Führer)");
-	hunterLocations:AddSkill("Führer nach Járnfast", "0x7004FACC", "Járnfast (Führer)");
+    hunterLocations:AddSkill("Führer nach Thal", "0x7004D73B", "Thal (Führer)");
+    hunterLocations:AddSkill("Führer nach Járnfast", "0x7004FACC", "Járnfast (Führer)");
     hunterLocations:AddSkill("Führer nach Skarháld", "0x7004FACB", "Skarháld (Führer)");
-	hunterLocations:AddSkill("Führer nach Beorningerhús", "0x70052F07", "Beorningerhús (Führer)");
+    hunterLocations:AddSkill("Führer nach Beorningerhús", "0x70052F07", "Beorningerhús (Führer)");
     hunterLocations:AddSkill("Leitfaden für Hultvís", "0x70052F08", "Hultvís (Führer)");
     hunterLocations:AddSkill("Führer nach Estolad Lân", "0x700551F4", "Estolad Lân (Führer)");
     hunterLocations:AddSkill("Führer nach Limlók", "0x7005762D", "Limlók (Führer)");
@@ -190,12 +190,12 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell in Haerondir", "0x70047C23", "Haerondir (Appell)");
     wardenLocations:AddSkill("Appell im Udûn-Brückenkopf", "0x7004AE1F", "Udûn-Brückenkopf (Appell)");
     wardenLocations:AddSkill("Appell in Thal", "0x7004d73a", "Thal (Appell)");
-	wardenLocations:AddSkill("Musterung in Járnfast", "0x7004FACA", "Jarnfast (Appell)");
+    wardenLocations:AddSkill("Musterung in Járnfast", "0x7004FACA", "Jarnfast (Appell)");
     wardenLocations:AddSkill("Musterung in Skarháld", "0x7004FACD",  "Skarhald (Appell)");
-	wardenLocations:AddSkill("Appell im Beorningerhús", "0x70052F0A", "Beorningerhús (Appell)");
+    wardenLocations:AddSkill("Appell im Beorningerhús", "0x70052F0A", "Beorningerhús (Appell)");
     wardenLocations:AddSkill("Appell in Hultvís", "0x70052F06", "Hultvís (Appell)");
     wardenLocations:AddSkill("Appell in Estolad Lân", "0x700551F2", "Estolad Lân (Appell)");
-	wardenLocations:AddSkill("Appell in Limlók", "0x70057635", "Limlók (Appell)");
+    wardenLocations:AddSkill("Appell in Limlók", "0x70057635", "Limlók (Appell)");
     wardenLocations:AddSkill("Appell in Annâk-khurfu", "0x70058572", "Annâk-khurfu (Appell)");
 
     racialLocations:AddSkill("Rückkehr nach Bree", "0x700062F6", "Bree (Rasse)");
@@ -251,15 +251,15 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Reise zur Halle des Königs", "0x7004B8C3", "Halle des Königs (Ruf)");
     repLocations:AddSkill("Reise zur Halle unter dem Berg", "0x7004B8C4", "Halle unter dem Berg (Ruf)");
     repLocations:AddSkill("Reise nach Bâr Thorenion", "0x7004B8C5", "Bâr Thorenion (Ruf)");
-	repLocations:AddSkill("Rückkehr nach Thal.", "0x7004D738", "Thal (Ruf)");
-	repLocations:AddSkill("Rückkehr nach Járnfast", "0x7004FAC3", "Járnfast (Ruf)");
+    repLocations:AddSkill("Rückkehr nach Thal.", "0x7004D738", "Thal (Ruf)");
+    repLocations:AddSkill("Rückkehr nach Járnfast", "0x7004FAC3", "Járnfast (Ruf)");
     repLocations:AddSkill("Kehrt nach Skarháld zurück.", "0x7004FAC5", "Skarháld (Ruf)");
-	repLocations:AddSkill("Kehrt zum Beorningerhús zurück.", "0x70052F12", "Beorningerhús (Ruf)");
+    repLocations:AddSkill("Kehrt zum Beorningerhús zurück.", "0x70052F12", "Beorningerhús (Ruf)");
     repLocations:AddSkill("Kehrt zum Hultvís zurück.", "0x70052F04", "Hultvís (Ruf)");
     repLocations:AddSkill("Zurück nach Estolad Lân", "0x700551F8", "Estolad Lân (Ruf)");
     repLocations:AddSkill("Rückkehr nach Limlók", "0x70057629", "Limlók (Ruf)");
     repLocations:AddSkill("Rückkehr nach Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Ruf)");
-    
+
     -- Crude Map to Gramsfoot for newb creeps
     creepLocations:AddSkill("Kartenskizze zum Gramfuss", "0x70028BBC");
     creepLocations:AddSkill("Karte zum Gramfuss", "0x70028BC1");
