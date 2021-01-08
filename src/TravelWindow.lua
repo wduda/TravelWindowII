@@ -344,9 +344,19 @@ function TravelWindow:LoadSettings()
 
     settings = {};
 
+    -- load TWII settings file
     pcall(function()
         settingsString = Turbine.PluginData.Load(Turbine.DataScope.Character, "TravelWindowIISettings");
     end);
+
+    -- try loading old settings if new settings could not be loaded
+    local importOldSettings = false;
+    if(settingsString == nil) then
+        local result;
+        importOldSettings, result = pcall(function()
+            settingsString = Turbine.PluginData.Load(Turbine.DataScope.Character, "TravelWindowSettings");
+        end);
+    end
 
     if (type(settingsString) ~= "table") then
         settingsString = {};
@@ -412,11 +422,11 @@ function TravelWindow:LoadSettings()
         settingsString.filters = tostring(0x0F);
     end
 
-    if (not settingsString.enabled) then
+    if (not settingsString.enabled or importOldSettings) then
         settingsString.enabled = {};
     end
 
-    if (not settingsString.order) then
+    if ((not settingsString.order) or importOldSettings) then
         settingsString.order = {};
     end
 
