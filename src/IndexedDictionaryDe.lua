@@ -251,7 +251,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Reise zur Halle des Königs", "0x7004B8C3", "Halle des Königs (Ruf)");
     repLocations:AddSkill("Reise zur Halle unter dem Berg", "0x7004B8C4", "Halle unter dem Berg (Ruf)");
     repLocations:AddSkill("Reise nach Bâr Thorenion", "0x7004B8C5", "Bâr Thorenion (Ruf)");
-    repLocations:AddSkill("Rückkehr nach Thal.", "0x7004D738", "Thal (Ruf)");
+    repLocations:AddSkill("Rückkehr nach Thal", "0x7004D738", "Thal (Ruf)");
     repLocations:AddSkill("Rückkehr nach Járnfast", "0x7004FAC3", "Járnfast (Ruf)");
     repLocations:AddSkill("Kehrt nach Skarháld zurück.", "0x7004FAC5", "Skarháld (Ruf)");
     repLocations:AddSkill("Kehrt zum Beorningerhús zurück.", "0x70052F12", "Beorningerhús (Ruf)");
