@@ -20,16 +20,18 @@ jobs:
 
     steps:
       # checks out master under $GITHUB_WORKSPACE
-      - uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v2
         with:
           ref: '${{ github.event.inputs.tag }}'
 
       - name: get the version name from tag
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
       # create a zip as a release archive
       - name: create release archive
-       uses: thedoctor0/zip-release@master
+        uses: thedoctor0/zip-release@master
         with:
           filename: 'TravelWindowII-${{ steps.get_version.outputs.version }}.zip'
           exclusions: '*.git* .github* *.vscode* *.gitignore*'
