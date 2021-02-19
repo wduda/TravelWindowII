@@ -31,3 +31,9 @@ jobs:
         with:
           filename: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
           exclusions: '*.git* .github* *.vscode* *.gitignore*'
+
+      - name: upload release archive
+        uses: actions/upload-artifact@v2
+        with:
+          name: new release
+          path: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
