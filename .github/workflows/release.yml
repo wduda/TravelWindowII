@@ -10,6 +10,9 @@ on:
   #    - 'v*'
   # also allows job to be run manually from actions tab
   workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Version'
   
 jobs:
   build_artefact:
@@ -18,6 +21,8 @@ jobs:
     steps:
       # checks out master under $GITHUB_WORKSPACE
       - uses: actions/checkout@v2
+        with:
+          ref: '${{ github.event.inputs.tag }}'
 
       - name: get the version name from tag
         id: get_version
