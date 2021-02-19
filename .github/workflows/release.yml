@@ -1,0 +1,35 @@
+# This workflow will create the release artifact and a release on GitHub
+name: release
+
+on:
+  # on push of new release tag to master
+  #push:
+  #  branches:
+  #    - 'master'
+  #  tags:
+  #    - 'v*'
+  # also allows job to be run manually from actions tab
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Version'
+  
+jobs:
+  build_artefact:
+    runs-on: ubuntu-latest
+
+    steps:
+      # checks out master under $GITHUB_WORKSPACE
+      - uses: actions/checkout@v2
+        with:
+          ref: '${{ github.event.inputs.tag }}'
+
+      - name: get the version name from tag
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+      # create a zip as a release archive
+#      - name: create release archive
+#       uses: thedoctor0/zip-release@master
+#        with:
+#          filename: 'TravelWindowII-${{ steps.get_version.outputs.version }}.zip'
+#          exclusions: '*.git* .github* *.vscode* *.gitignore*'
