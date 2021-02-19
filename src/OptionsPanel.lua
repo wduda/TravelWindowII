@@ -333,7 +333,6 @@ function OptionsPanel:AddGeneralItems()
 
         -- do updates
         settings.toggleMinOpacity = self.toggleMinScrollBar:GetValue() / 100;
-        self.mainWindow:UpdateSettings();
         self.mainWindow:UpdateOpacity();
     end
 
@@ -346,7 +345,6 @@ function OptionsPanel:AddGeneralItems()
 
         -- do updates
         settings.toggleMaxOpacity = self.toggleMaxScrollBar:GetValue() / 100;
-        self.mainWindow:UpdateSettings();
         self.mainWindow:UpdateOpacity();
     end
 
@@ -360,7 +358,6 @@ function OptionsPanel:AddGeneralItems()
 
         -- do updates
         settings.mainMinOpacity = self.mainMinScrollBar:GetValue() / 100;
-        self.mainWindow:UpdateSettings();
         self.mainWindow:UpdateOpacity();
     end
 
@@ -373,7 +370,6 @@ function OptionsPanel:AddGeneralItems()
 
         -- do updates
         settings.mainMaxOpacity = self.mainMaxScrollBar:GetValue() / 100;
-        self.mainWindow:UpdateSettings();
         self.mainWindow:UpdateOpacity();
     end
 end

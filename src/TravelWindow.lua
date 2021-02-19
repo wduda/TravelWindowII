@@ -993,6 +993,7 @@ end
 -- function to close the options window if it exists
 function TravelWindow:CloseOptions()
     if (self.options ~= nil) then
+        self:UpdateSettings();
         self.options:SetVisible(false);
     end
     self.options = nil;
