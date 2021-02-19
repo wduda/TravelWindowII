@@ -25,6 +25,6 @@ jobs:
       # create a zip as a release archive
       - name: create release archive
         uses: thedoctor0/zip-release@master
-          with:
-            filename: 'TravelWindowII-${{ steps.get_version.outputs.version }}.zip'
-            exclusions: '*.git* .github* *.vscode* *.gitignore*'
+        with:
+          filename: 'TravelWindowII-${{ steps.get_version.outputs.version }}.zip'
+          exclusions: '*.git* .github* *.vscode* *.gitignore*'
