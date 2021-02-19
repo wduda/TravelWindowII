@@ -5,9 +5,9 @@ on:
   # on push of new release tag to master
   push:
     branches:
-      - master
+      - 'master'
     tags:
-      - v*
+      - 'v*'
   # also allows job to be run manually from actions tab
   workflow_dispatch:
   
@@ -24,7 +24,7 @@ jobs:
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       # create a zip as a release archive
       - name: create release archive
-          uses: thedoctor0/zip-release@master
+        uses: thedoctor0/zip-release@master
           with:
-            filename: TravelWindowII-${{ steps.get_version.outputs.version }}.zip 
+            filename: 'TravelWindowII-${{ steps.get_version.outputs.version }}.zip'
             exclusions: '*.git* .github* *.vscode* *.gitignore*'
