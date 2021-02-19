@@ -3,11 +3,11 @@ name: release
 
 on:
   # on push of new release tag to master
-  push:
-    branches:
-      - 'master'
-    tags:
-      - 'v*'
+  #push:
+  #  branches:
+  #    - 'master'
+  #  tags:
+  #    - 'v*'
   # also allows job to be run manually from actions tab
   workflow_dispatch:
   
