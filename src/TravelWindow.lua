@@ -641,9 +641,6 @@ function TravelWindow:UpdateSettings()
     settings.race,
     settings.class, settings.mode, settings.filters = menu:GetSettings();
 
-    -- save the settings
-    self:SaveSettings();
-
     -- set which page of the tab panel to show
     self.MainPanel:SetTab(settings.mode);
 
@@ -993,6 +990,7 @@ end
 -- function to close the options window if it exists
 function TravelWindow:CloseOptions()
     if (self.options ~= nil) then
+        self:SaveSettings();
         self.options:SetVisible(false);
     end
     self.options = nil;

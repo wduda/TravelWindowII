@@ -200,6 +200,7 @@ function SettingsMenu:Update(string)
 
     -- update the main window settings
     self.parent:UpdateSettings();
+    self.parent:SaveSettings();
 end
 
 
