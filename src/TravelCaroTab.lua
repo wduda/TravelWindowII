@@ -43,14 +43,14 @@ function TravelCaroTab:Constructor(toplevel)
     -- check for a right mouse button event to open menu
     self.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
-            menu:ShowMenu();
+            Menu:ShowMenu();
         end
     end
 
     -- check for a right mouse button event to open menu
     self.scrollLabel.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
-            menu:ShowMenu();
+            Menu:ShowMenu();
         end
     end
 
@@ -191,7 +191,7 @@ function TravelCaroTab:CreateQuickslots()
         -- when right clicked
         self.quickslots[i].MouseClick = function(sender, args)
             if (args.Button == Turbine.UI.MouseButton.Right) then
-                menu:ShowMenu();
+                Menu:ShowMenu();
             else
                 self.parent:SetVisible(false);
             end
