@@ -89,8 +89,8 @@ function TravelWindow:Constructor()
     self:SetShortcuts();
 
     -- create a single context menu to use on all panels
-    menu = SettingsMenu(self);
-    menu:SetSettings(settings.race,
+    Menu = SettingsMenu(self);
+    Menu:SetSettings(settings.race,
     settings.class,
     settings.mode,
     settings.filters);
@@ -139,11 +139,11 @@ function TravelWindow:Constructor()
     self.hidden = false;
     self.currentVisState = self:IsVisible();
 
-    optionsPanel = TravelWindowII.src.OptionsPanel(self);
+    OptionsPanel = TravelWindowII.src.OptionsPanel(self);
 
     pcall(function()
         plugin.GetOptionsPanel = function(self)
-            return optionsPanel;
+            return OptionsPanel;
         end
     end);
 
@@ -639,7 +639,7 @@ function TravelWindow:UpdateSettings()
 
     -- get the settings from the menu
     settings.race,
-    settings.class, settings.mode, settings.filters = menu:GetSettings();
+    settings.class, settings.mode, settings.filters = Menu:GetSettings();
 
     -- set which page of the tab panel to show
     self.MainPanel:SetTab(settings.mode);
