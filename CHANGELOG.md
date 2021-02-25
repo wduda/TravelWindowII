@@ -1,7 +1,11 @@
 # Changelog
 
 ## v1.0.9beta
-- automated builds for faster releases (internal)
+- fixed bug where pressing Esc did not close the options window (bugfix)
+- fixed bug where changing options was lagging the client, especially on chamging opacity sliders (bugfix)
+- automated github builds for faster releases (internal)
+- cleaned up settings stored by plugin to remove unused data (internal)
+- cleaned up some code for better readability (internal)
 
 ## v1.0.8beta
 - made it so the plugin can attempt to import all settings from v1.06beta or earlier if new settings file is not present, so an import can be forced by deleting TravelWindowII.plugindata - see FAQ
