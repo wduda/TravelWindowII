@@ -163,7 +163,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide vers Quai des marchands", "0x70059D0C", "Quai des marchands (Guide)");
     hunterLocations:AddSkill("Guide vers Pont-à-Tréteaux", "0x70059D16", "Pont-à-Tréteaux (Guide)");
 
-	wardenLocations:AddSkill("Rassemblement à Ost Guruth", "0x70014786", "Ost Guruth (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Ost Guruth", "0x70014786", "Ost Guruth (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Esteldin", "0x70014798", "Esteldin (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement dans la région d'Evendim", "0x7001478E", "Evendim (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Fondcombe", "0x70014791", "Fondcombe (Rassemblement)");
@@ -200,7 +200,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Rassemblement à Quai des marchands", "0x70059D09", "Quai des marchands (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Pont-à-Tréteaux", "0x700559D10", "Pont-à-Tréteaux (Rassemblement)");
 
-	racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
+    racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
     racialLocations:AddSkill("Retournez dans la Comté", "0x700062C8", "Comté (Race)");
     racialLocations:AddSkill("Retour : Porte de Thorin", "0x70006346", "Porte de Thorin (Race)");
     racialLocations:AddSkill("Retour à Fondcombe", "0x7000631F", "Fondcombe (Race)");
