@@ -27,9 +27,6 @@ function OptionsPanel:Constructor(parent)
     self.checks = {};
     self.mainWindow = parent;
 
-    -- store race to only add racial skill that applies
-    self.racetype = parent.racetype;
-
     -- keep track of which item is selected on the sort tab
     self.sortSelectedIndex = 1;
     self.sortMaxItem = 0;
@@ -423,7 +420,7 @@ function OptionsPanel:AddItems()
     
     -- add the race specific travel skill for the character
     if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        self:AddSkillItemForEnabling(counter, racialLocations:IdAtIndex(self.racetype), racialLocations:LabelAtIndex(self.racetype));
+        self:AddSkillItemForEnabling(counter, racialLocations:IdAtIndex(self.raceKey), racialLocations:LabelAtIndex(self.raceKey));
         counter = counter + 1;
     end
 

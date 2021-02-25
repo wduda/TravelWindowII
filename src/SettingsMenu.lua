@@ -14,8 +14,6 @@ function SettingsMenu:Constructor(parentWindow)
     togglebit = TravelWindowII.togglebit;
 
     -- set the default values
-    self.race = 1;
-    self.class = 1;
     self.mode = 1;
     self.filters = 0x0F;
 
@@ -147,15 +145,13 @@ end
 
 -- get the setting from the main window
 function SettingsMenu:GetSettings()
-    return self.race, self.class, self.mode, self.filters;
+    return self.mode, self.filters;
 end
 
 -- function to change the settings of the menu programmatically
-function SettingsMenu:SetSettings(s1, s2, s3, s4)
-    self.race = s1;
-    self.class = s2;
-    self.mode = s3;
-    self.filters = s4;
+function SettingsMenu:SetSettings(s1, s2)
+    self.mode = s1;
+    self.filters = s2;
 
     self:SetSelections();
 end
