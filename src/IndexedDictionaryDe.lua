@@ -162,6 +162,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Führer nach Estolad Lân", "0x700551F4", "Estolad Lân (Führer)");
     hunterLocations:AddSkill("Führer nach Limlók", "0x7005762D", "Limlók (Führer)");
     hunterLocations:AddSkill("Führer nach Annâk-khurfu", "0x70058571", "Annâk-khurfu (Führer)");
+    hunterLocations:AddSkill("Führer nach Händlerkai", "0x70059D0C", "Händlerkai (Führer)");
+    hunterLocations:AddSkill("Führer nach Schragen", "0x70059D16", "Schragen (Führer)");
 
     wardenLocations:AddSkill("Appell in der Feste Guruth", "0x70014786", "Feste Guruth (Appell)");
     wardenLocations:AddSkill("Appell in Esteldín", "0x70014798", "Esteldín (Appell)");
@@ -197,6 +199,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell in Estolad Lân", "0x700551F2", "Estolad Lân (Appell)");
     wardenLocations:AddSkill("Appell in Limlók", "0x70057635", "Limlók (Appell)");
     wardenLocations:AddSkill("Appell in Annâk-khurfu", "0x70058572", "Annâk-khurfu (Appell)");
+    wardenLocations:AddSkill("Appell in Händlerkai", "0x70059D09", "Händlerkai (Appell)");
+    wardenLocations:AddSkill("Appell in Schragen", "0x700559D10", "Schragen (Appell)");
 
     racialLocations:AddSkill("Rückkehr nach Bree", "0x700062F6", "Bree (Rasse)");
     racialLocations:AddSkill("Rückkehr ins Auenland", "0x700062C8", "Michelbinge (Rasse)");
@@ -259,6 +263,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Zurück nach Estolad Lân", "0x700551F8", "Estolad Lân (Ruf)");
     repLocations:AddSkill("Rückkehr nach Limlók", "0x70057629", "Limlók (Ruf)");
     repLocations:AddSkill("Rückkehr nach Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Ruf)");
+    repLocations:AddSkill("Rückkehr nach Händlerkai", "0x70059D0E", "Händlerkai (Rep)");
+    repLocations:AddSkill("Rückkehr nach Schragen", "0x70059D12", "Schragen (Ruf)");
 
 -- monster player maps
     creepLocations:AddSkill("Kartenskizze zum Gramfuss", "0x70028BBC");
