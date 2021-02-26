@@ -27,12 +27,7 @@ jobs:
           filename: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
           exclusions: '*.git* *.github* *.vscode* *.gitignore*'
 
-      - name: upload release archive
-        uses: actions/upload-artifact@v2
-        with:
-          name: 'Release archive ${{ github.event.inputs.tag }}'
-          path: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
-
+      # create the actual release
       - name: create a github release
         id: create_release
         uses: actions/create-release@v1
@@ -44,6 +39,7 @@ jobs:
           draft: true
           prerelease: false
 
+      # upload the asset into the release
       - name: upload release asset
         id: upload-release-asset 
         uses: actions/upload-release-asset@v1
