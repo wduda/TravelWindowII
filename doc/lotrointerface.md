@@ -1,8 +1,9 @@
-This plugin creates a single window that contains available travel skills, including the race, class, housing and reputation skills. It is a further development of the "Travel Window" plugin, that has been worked on by multiple authors before.
+[SIZE="4"]Description:[/SIZE]
+This plugin creates a single window that contains available travel skills, including race, class, housing and reputation skills. It is a further development of the "Travel Window" plugin, that has been worked on by multiple authors before.
 
 [B]Since this plugin is a 100% replacement for "Travel Window" you should not have both enabled at the same time. You can keep them both installed though.[/B]
 
-[SIZE="3"]Installation:[/SIZE]
+[SIZE="4"]Installation:[/SIZE]
 This is a full plugin and can be installed standalone. Follow the general plugin installation instructions to install Travel Window II or update the install (depends on your OS).
 I recommend you install and manage your plugins with the LOTRO Plugin Compendium found at this URL, since it will install plugins cleanly and take care of installing the Turbine utilities for you: [URL="http://www.lotrointerface.com/downloads/info663-LOTROPluginCompendium.html"]LOTRO Plugin Compendium App[/URL]
 
@@ -10,7 +11,21 @@ If you do not use Plugin Compendium, you need to manually install Turbine utilit
 [URL="http://content.turbine.com/sites/lotro/lua/Beta_LuaPlugins.7z"]http://content.turbine.com/sites/lotro/lua/Beta_LuaPlugins.7z[/URL]
 This has to be extracted to your "Documents\The Lord of the Rings Online\Plugins" folder (if you are on Windows) so two folders called Turbine and TurbinePlugins show up there.
 
-[SIZE="3"]FAQ:[/SIZE]
+[SIZE="4"]Usage:[/SIZE]
+[SIZE="3"]The Menu[/SIZE]
+You can right-click almost anywhere on the window to open the context menu to select the mode and to filter what type of skills you want to show. 
+
+[SIZE="3"]Resizing[/SIZE]
+At the bottom right corner is a slightly lighter box. This is the area where you can grab to resize the window.
+
+[SIZE="3"]Modes[/SIZE]
+Text List - All the travel skills are listed as text. Click on one to activate the skill.
+Icon Grid - Display all the skills displayed as icons in a grid, much like inventory bags.
+Carousel - Use your mouse wheel to scroll through your skills. Only the middle icon will actually work.
+Pulldown List - All the skills are in a dropdown list. Open the list, select the locations, then click on the icon to go. You can also set the option to automatically start the travel as soon as you select a location.
+Moors Map - If you are playing Creep, you can right-click on the button and select 'Open Moor Map' to show a map of the moors and the approximate location for each creep travel skill. Each location is a clickable shortcut.
+
+[SIZE="4"]FAQ:[/SIZE]
 How to handle the settings reset introduced by v1.0.7beta?
 [LIST]
 [*] if you had v1.0.6beta or earlier and update to v1.0.8beta or newer, you will keep your settings, but enable/disable and sorting will have to be reset - this is the best case where most settings can be kept
@@ -31,12 +46,10 @@ Why does a reputation or store version of my racial skill show up even though I 
 
 Version history:
 v1.0.9beta
-[SIZE="1"]
 - fixed bug where pressing Esc did not close the options window (bugfix)
 - fixed bug where changing options was lagging the client, especially on chamging opacity sliders (bugfix)
 - automated github builds for faster releases (internal)
 - cleaned up settings stored by plugin to remove unused data (internal)
 - cleaned up some code for better readability (internal)
-[/SIZE]
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
