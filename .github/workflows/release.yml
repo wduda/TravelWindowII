@@ -18,13 +18,14 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: '${{ github.event.inputs.tag }}'
+          path: 'TravelWindowII'
 
       # create a zip as a release archive
       - name: create release archive
         uses: thedoctor0/zip-release@master
         with:
           filename: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
-          exclusions: '*.git* .github* *.vscode* *.gitignore*'
+          exclusions: '*.git* *.github* *.vscode* *.gitignore*'
 
       - name: upload release archive
         uses: actions/upload-artifact@v2
