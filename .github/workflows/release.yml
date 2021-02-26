@@ -18,16 +18,35 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: '${{ github.event.inputs.tag }}'
+          path: 'TravelWindowII'
 
       # create a zip as a release archive
       - name: create release archive
         uses: thedoctor0/zip-release@master
         with:
           filename: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
-          exclusions: '*.git* .github* *.vscode* *.gitignore*'
+          exclusions: '*.git* *.github* *.vscode* *.gitignore*'
 
-      - name: upload release archive
-        uses: actions/upload-artifact@v2
+      # create the actual release
+      - name: create a github release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: 'Release archive ${{ github.event.inputs.tag }}'
-          path: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
+          tag_name:  ${{ github.event.inputs.tag }}
+          release_name: ${{ github.event.inputs.tag }}
+          draft: true
+          prerelease: false
+
+      # upload the asset into the release
+      - name: upload release asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: './TravelWindowII-${{ github.event.inputs.tag }}.zip'
+          asset_name: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
+          asset_content_type: application/zip
