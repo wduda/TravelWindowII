@@ -69,15 +69,15 @@ function TravelWindow:Constructor()
     playerClass = player:GetClass();
     playerAlignment = player:GetAlignment();
     playerRace = player:GetRace();
-    self.racetype = 0;
+
+    -- set the racial key used later in multiple places
+        self:DetermineRaceKey();
 
     -- get the list of trained skills the player has
     if (Turbine.Gameplay.LocalPlayer.GetTrainedSkills ~= nil) then
         trainedSkills = player:GetTrainedSkills();
     end
 
-    -- set the racial key used later in multiple places
-    self:DetermineRaceKey();
 
     -- save the player's combat states for managing hiding the window
     -- when the player enters combat
@@ -89,11 +89,8 @@ function TravelWindow:Constructor()
     self:SetShortcuts();
 
     -- create a single context menu to use on all panels
-    Menu = SettingsMenu(self);
-    Menu:SetSettings(settings.race,
-    settings.class,
-    settings.mode,
-    settings.filters);
+    menu = SettingsMenu(self);
+    menu:SetSettings(settings.mode, settings.filters);
 
     -- create the Tabbed Panel to hold all the other panels
     self.MainPanel = TravelWindowII.src.extensions.DPanel();
@@ -166,6 +163,7 @@ function TravelWindow:Constructor()
     self.KeyDown = function(sender, args)
         if (args.Action == Turbine.UI.Lotro.Action.Escape) then
             self:SetVisible(false);
+            self:CloseOptions();
             self:CloseGondorMap();
             self:CloseMoorMap();
             self:CloseEriadorMap();
@@ -305,21 +303,21 @@ end
 function TravelWindow:DetermineRaceKey()
     -- set the racial travel skill to add
     if (playerRace == Turbine.Gameplay.Race.Dwarf) then
-        self.racetype = 3;
+        settings.playerRaceKey = 3;
     elseif (playerRace == Turbine.Gameplay.Race.Elf) then
-        self.racetype = 4;
+        settings.playerRaceKey = 4;
     elseif (playerRace == Turbine.Gameplay.Race.Hobbit) then
-        self.racetype = 2;
+        settings.playerRaceKey = 2;
     elseif (playerRace == Turbine.Gameplay.Race.Man) then
-        self.racetype = 1;
+        settings.playerRaceKey = 1;
     elseif (playerRace == Turbine.Gameplay.Race.Beorning) then
-        self.racetype = 5;
+        settings.playerRaceKey = 5;
     elseif (playerRace == Turbine.Gameplay.Race.HighElf) then
-        self.racetype = 6;
+        settings.playerRaceKey = 6;
     elseif (playerRace == Turbine.Gameplay.Race.StoutAxe) then                
-        self.racetype = 7;
+        settings.playerRaceKey = 7;
     else
-        self.racetype = 1; -- default to man race to prevent errors
+        settings.playerRaceKey = 1; -- default to man race to prevent errors
     end
 end
 
@@ -404,14 +402,6 @@ function TravelWindow:LoadSettings()
 
     if (not settingsString.showButton or settingsString.showButton == "nil") then
         settingsString.showButton = tostring(1);
-    end
-
-    if (not settingsString.class or settingsString.class == "nil") then
-        settingsString.class = tostring(1);
-    end
-
-    if (not settingsString.race or settingsString.race == "nil") then
-        settingsString.race = tostring(1);
     end
 
     if (not settingsString.mode or settingsString.mode == "nil") then
@@ -507,18 +497,6 @@ function TravelWindow:LoadSettings()
         settings.showButton = settingsString.showButton;
     end
 
-    if (type(settingsString.class) == "string") then
-        settings.class = tonumber(settingsString.class);
-    else
-        settings.class = settingsString.class;
-    end
-
-    if (type(settingsString.race) == "string") then
-        settings.race = tonumber(settingsString.race);
-    else
-        settings.race = settingsString.race;
-    end
-
     if (type(settingsString.mode) == "string") then
         settings.mode = tonumber(settingsString.mode);
     else
@@ -529,18 +507,6 @@ function TravelWindow:LoadSettings()
         settings.filters = tonumber(settingsString.filters);
     else
         settings.filters = settingsString.filters;
-    end
-
-    if (type(settingsString.class) == "string") then
-        settings.class = tonumber(settingsString.class);
-    else
-        settings.class = settingsString.class;
-    end
-
-    if (type(settingsString.race) == "string") then
-        settings.race = tonumber(settingsString.race);
-    else
-        settings.race = settingsString.race;
     end
 
     if (type(settingsString.mainMaxOpacity) == "string") then
@@ -618,8 +584,6 @@ function TravelWindow:SaveSettings()
     settingsString.hideOnCombat = tostring(settings.hideOnCombat);
     settingsString.pulldownTravel = tostring(settings.pulldownTravel);
     settingsString.showButton = tostring(settings.showButton);
-    settingsString.class = tostring(settings.class);
-    settingsString.race = tostring(settings.race);
     settingsString.mode = tostring(settings.mode);
     settingsString.filters = tostring(settings.filters);
     settingsString.mainMaxOpacity = tostring(settings.mainMaxOpacity);
@@ -637,9 +601,8 @@ end
 
 function TravelWindow:UpdateSettings()
 
-    -- get the settings from the menu
-    settings.race,
-    settings.class, settings.mode, settings.filters = Menu:GetSettings();
+    -- get some settings from the menu
+    settings.mode, settings.filters = menu:GetSettings();
 
     -- set which page of the tab panel to show
     self.MainPanel:SetTab(settings.mode);
@@ -808,14 +771,14 @@ function TravelWindow:SetShortcuts()
         end
 
         -- add the race travel to the list
-        local racialShortcutIndex = self:TableIndex(settings.order, racialLocations:IdAtIndex(self.racetype));
+        local racialShortcutIndex = self:TableIndex(settings.order, racialLocations:IdAtIndex(settings.playerRaceKey));
         table.insert(travelShortcuts, TravelShortcut(6.0,
-        racialLocations:IdAtIndex(self.racetype),
-        racialLocations:NameAtIndex(self.racetype),
+        racialLocations:IdAtIndex(settings.playerRaceKey),
+        racialLocations:NameAtIndex(settings.playerRaceKey),
         2,
         racialShortcutIndex,
-        settings.enabled[racialLocations:IdAtIndex(self.racetype)],
-        racialLocations:LabelAtIndex(self.racetype)));
+        settings.enabled[racialLocations:IdAtIndex(settings.playerRaceKey)],
+        racialLocations:LabelAtIndex(settings.playerRaceKey)));
 
         -- set the reputation travel items
         for i = 1, travelCount[4], 1 do
@@ -935,11 +898,11 @@ function TravelWindow:CheckEnabledSettings()
         end
 
         -- update racial travel settings
-        if (settings.enabled[racialLocations:IdAtIndex(self.racetype)] == nil) then
-            settings.enabled[racialLocations:IdAtIndex(self.racetype)] = true;
+        if (settings.enabled[racialLocations:IdAtIndex(settings.playerRaceKey)] == nil) then
+            settings.enabled[racialLocations:IdAtIndex(settings.playerRaceKey)] = true;
         end
-        if (self:TableContains(settings.order, racialLocations:IdAtIndex(self.racetype)) == false) then
-            table.insert(settings.order, counter, racialLocations:IdAtIndex(self.racetype));
+        if (self:TableContains(settings.order, racialLocations:IdAtIndex(settings.playerRaceKey)) == false) then
+            table.insert(settings.order, counter, racialLocations:IdAtIndex(settings.playerRaceKey));
             counter = counter + 1;
         end
 
@@ -1009,7 +972,7 @@ function TravelWindow:CloseMoorMap()
 end
 
 function TravelWindow:OpenEriadorMap()
-    self.eriadorMapWindow = TravelWindowII.src.EriadorMapWindow(self, playerClass, self.racetype, travelShortcuts);
+    self.eriadorMapWindow = TravelWindowII.src.EriadorMapWindow(self, playerClass, settings.playerRaceKey, travelShortcuts);
 end
 
 -- function to close the eriador map window if it exists
@@ -1021,7 +984,7 @@ function TravelWindow:CloseEriadorMap()
 end
 
 function TravelWindow:OpenRhovanionMap()
-    self.rhovanionMapWindow = TravelWindowII.src.RhovanionMapWindow(self, playerClass, self.racetype, travelShortcuts);
+    self.rhovanionMapWindow = TravelWindowII.src.RhovanionMapWindow(self, playerClass, settings.playerRaceKey, travelShortcuts);
 end
 
 -- function to close the rhovanion map window if it exists
@@ -1033,7 +996,7 @@ function TravelWindow:CloseRhovanionMap()
 end
 
 function TravelWindow:OpenGondorMap()
-    self.gondorMapWindow = TravelWindowII.src.GondorMapWindow(self, playerClass, self.racetype, travelShortcuts);
+    self.gondorMapWindow = TravelWindowII.src.GondorMapWindow(self, playerClass, settings.playerRaceKey, travelShortcuts);
 end
 
 -- function to close the gondor map window if it exists
@@ -1109,8 +1072,6 @@ function TravelWindow:ResetSettings()
     settings.hideOnCombat = 0;
     settings.pulldownTravel = 0;
     settings.showButton = 1;
-    settings.class = 1;
-    settings.race = 1;
     settings.mode = 1;
     settings.filters = 0x0F;
     settings.enabled = {};
