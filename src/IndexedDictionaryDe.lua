@@ -17,16 +17,6 @@ gondorMapTitleString = "Gondor Reiseziele";
 glanMapString = "Genaue Karte nach Glân Vraig";
 glanMapItemString = "Genaue Karte nach Glân Vraig";
 
-
--- error messages
-resetOrderString = "Deine Sortiereinstellungen wurden aufgrund einer Änderung der Anzahl " ..
-"der zu speichernden Elemente zurückgesetzt. Dies sollte nur einmal passieren.\n" ..
-"Entschuldige die Unannehmlichkeiten.";
-
-resetEnabledString = "Deine ausgewählten Fertigkeiten wurden aufgrund einer Änderung der Anzahl " ..
-"der zu speichernden Elemente zurückgesetzt. Dies sollte nur einmal passieren.\n" ..
-"Entschuldige die Unannehmlichkeiten.";
-
 skillNotTrainedString = "Nicht erlernte Fertigkeit: ";
 
 -- options window strings
