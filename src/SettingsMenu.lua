@@ -59,7 +59,7 @@ function SettingsMenu:Constructor(parentWindow)
 
     -- add everything to the main menu
     menuItems = self:GetItems();
-    if (playerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
         menuItems:Add(Mode);
         menuItems:Add(OptionsMenu);
         menuItems:Add(MoorMapMenu);
@@ -91,7 +91,7 @@ function SettingsMenu:Constructor(parentWindow)
     end
 
     -- handle the last item's event
-    if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         menuItems:Get(3).Click = function(sender, args)
             self:Update(sender:GetText());
         end

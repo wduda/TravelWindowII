@@ -19,9 +19,9 @@ function TravelWindow:Constructor()
     Turbine.UI.Lotro.Window.Constructor(self);
 
     settings = {};
-    settingsStrings = {}; -- save the settings as strings due to locale issue
-    travelShortcuts = {}; -- put all the shortcuts into one table
-    trainedSkills = Turbine.Gameplay.SkillList;
+    SettingsStrings = {}; -- save the settings as strings due to locale issue
+    TravelShortcuts = {}; -- put all the shortcuts into one table
+    TrainedSkills = Turbine.Gameplay.SkillList;
     self.minWidth = 240;
     self.minHeight = 150;
     self.disableResize = false;
@@ -66,16 +66,16 @@ function TravelWindow:Constructor()
 
     -- get the player class and race
     player = Turbine.Gameplay.LocalPlayer.GetInstance();
-    playerClass = player:GetClass();
-    playerAlignment = player:GetAlignment();
-    playerRace = player:GetRace();
+    PlayerClass = player:GetClass();
+    PlayerAlignment = player:GetAlignment();
+    PlayerRace = player:GetRace();
 
     -- set the racial key used later in multiple places
         self:DetermineRaceKey();
 
     -- get the list of trained skills the player has
     if (Turbine.Gameplay.LocalPlayer.GetTrainedSkills ~= nil) then
-        trainedSkills = player:GetTrainedSkills();
+        TrainedSkills = player:GetTrainedSkills();
     end
 
 
@@ -152,7 +152,7 @@ function TravelWindow:Constructor()
 
     -- check if our position has changed, and save the settings if so
     self.PositionChanged = function(sender, args)
-        one, two = self:GetPosition();
+        local one, two = self:GetPosition();
         settings.positionX = one;
         settings.positionY = two;
         self:SaveSettings();
@@ -186,7 +186,7 @@ function TravelWindow:Constructor()
 
     -- check if the combat state of the player changed, in case we want
     -- to hide the window
-    incombatChangedHandler = function(sender, args)
+    IncombatChangedHandler = function(sender, args)
         -- first check if we are going into combat
         if (self.previousCombatState == false) then
 
@@ -218,7 +218,7 @@ function TravelWindow:Constructor()
             self.previousCombatState = false;
         end
     end
-    AddCallback(player, "InCombatChanged", incombatChangedHandler);
+    AddCallback(player, "InCombatChanged", IncombatChangedHandler);
 
     -- if the visible status of the window changes, close the pulldown tab
     self.VisibleChanged = function(sender, args)
@@ -302,19 +302,19 @@ end
 
 function TravelWindow:DetermineRaceKey()
     -- set the racial travel skill to add
-    if (playerRace == Turbine.Gameplay.Race.Dwarf) then
+    if (PlayerRace == Turbine.Gameplay.Race.Dwarf) then
         settings.playerRaceKey = 3;
-    elseif (playerRace == Turbine.Gameplay.Race.Elf) then
+    elseif (PlayerRace == Turbine.Gameplay.Race.Elf) then
         settings.playerRaceKey = 4;
-    elseif (playerRace == Turbine.Gameplay.Race.Hobbit) then
+    elseif (PlayerRace == Turbine.Gameplay.Race.Hobbit) then
         settings.playerRaceKey = 2;
-    elseif (playerRace == Turbine.Gameplay.Race.Man) then
+    elseif (PlayerRace == Turbine.Gameplay.Race.Man) then
         settings.playerRaceKey = 1;
-    elseif (playerRace == Turbine.Gameplay.Race.Beorning) then
+    elseif (PlayerRace == Turbine.Gameplay.Race.Beorning) then
         settings.playerRaceKey = 5;
-    elseif (playerRace == Turbine.Gameplay.Race.HighElf) then
+    elseif (PlayerRace == Turbine.Gameplay.Race.HighElf) then
         settings.playerRaceKey = 6;
-    elseif (playerRace == Turbine.Gameplay.Race.StoutAxe) then                
+    elseif (PlayerRace == Turbine.Gameplay.Race.StoutAxe) then                
         settings.playerRaceKey = 7;
     else
         settings.playerRaceKey = 1; -- default to man race to prevent errors
@@ -340,207 +340,205 @@ end
 function TravelWindow:LoadSettings()
     -- load the self.settings.  If a value is not available, set a default value
 
-    settings = {};
-
     -- load TWII settings file
     pcall(function()
-        settingsString = Turbine.PluginData.Load(Turbine.DataScope.Character, "TravelWindowIISettings");
+        SettingsStrings = Turbine.PluginData.Load(Turbine.DataScope.Character, "TravelWindowIISettings");
     end);
 
     -- try loading old settings if new settings could not be loaded
     local importOldSettings = false;
-    if(settingsString == nil) then
+    if(SettingsStrings == nil) then
         local result;
         importOldSettings, result = pcall(function()
-            settingsString = Turbine.PluginData.Load(Turbine.DataScope.Character, "TravelWindowSettings");
+            SettingsStrings = Turbine.PluginData.Load(Turbine.DataScope.Character, "TravelWindowSettings");
         end);
     end
 
-    if (type(settingsString) ~= "table") then
-        settingsString = {};
+    if (type(SettingsStrings) ~= "table") then
+        SettingsStrings = {};
     end
 
-    if (not settingsString.width or settingsString.width == "nil") then
-        settingsString.width = tostring(self.minWidth);
+    if (not SettingsStrings.width or SettingsStrings.width == "nil") then
+        SettingsStrings.width = tostring(self.minWidth);
     end
 
-    if (not settingsString.height or settingsString.height == "nil") then
-        settingsString.height = tostring(self.minHeight);
+    if (not SettingsStrings.height or SettingsStrings.height == "nil") then
+        SettingsStrings.height = tostring(self.minHeight);
     end
 
-    if (not settingsString.positionX or settingsString.positionX == "nil") then
-        settingsString.positionX = tostring(Turbine.UI.Display.GetWidth()
+    if (not SettingsStrings.positionX or SettingsStrings.positionX == "nil") then
+        SettingsStrings.positionX = tostring(Turbine.UI.Display.GetWidth()
         - self:GetWidth() - 50);
     end
 
-    if (not settingsString.positionY or settingsString.positionY == "nil") then
-        settingsString.positionY = tostring(Turbine.UI.Display.GetHeight()
+    if (not SettingsStrings.positionY or SettingsStrings.positionY == "nil") then
+        SettingsStrings.positionY = tostring(Turbine.UI.Display.GetHeight()
         - self:GetHeight() - 50 * 1.5);
     end
 
-    if (not settingsString.buttonPositionX or settingsString.buttonPositionX == "nil") then
-        settingsString.buttonPositionX = tostring(Turbine.UI.Display.GetWidth()
+    if (not SettingsStrings.buttonPositionX or SettingsStrings.buttonPositionX == "nil") then
+        SettingsStrings.buttonPositionX = tostring(Turbine.UI.Display.GetWidth()
         - self:GetWidth() - 50);
     end
 
-    if (not settingsString.buttonPositionY or settingsString.buttonPositionY == "nil") then
-        settingsString.buttonPositionY = tostring(Turbine.UI.Display.GetHeight()
+    if (not SettingsStrings.buttonPositionY or SettingsStrings.buttonPositionY == "nil") then
+        SettingsStrings.buttonPositionY = tostring(Turbine.UI.Display.GetHeight()
         - self:GetHeight() - 50 * 1.5);
     end
 
-    if (not settingsString.hideOnStart or settingsString.hideOnStart == "nil") then
-        settingsString.hideOnStart = tostring(0);
+    if (not SettingsStrings.hideOnStart or SettingsStrings.hideOnStart == "nil") then
+        SettingsStrings.hideOnStart = tostring(0);
     end
 
-    if (not settingsString.hideOnCombat or settingsString.hideOnCombat == "nil") then
-        settingsString.hideOnCombat = tostring(0);
+    if (not SettingsStrings.hideOnCombat or SettingsStrings.hideOnCombat == "nil") then
+        SettingsStrings.hideOnCombat = tostring(0);
     end
 
-    if (not settingsString.pulldownTravel or settingsString.pulldownTravel == "nil") then
-        settingsString.pulldownTravel = tostring(0);
+    if (not SettingsStrings.pulldownTravel or SettingsStrings.pulldownTravel == "nil") then
+        SettingsStrings.pulldownTravel = tostring(0);
     end
 
-    if (not settingsString.showButton or settingsString.showButton == "nil") then
-        settingsString.showButton = tostring(1);
+    if (not SettingsStrings.showButton or SettingsStrings.showButton == "nil") then
+        SettingsStrings.showButton = tostring(1);
     end
 
-    if (not settingsString.mode or settingsString.mode == "nil") then
-        settingsString.mode = tostring(1);
+    if (not SettingsStrings.mode or SettingsStrings.mode == "nil") then
+        SettingsStrings.mode = tostring(1);
     end
 
-    if (not settingsString.filters or settingsString.filters == "nil") then
-        settingsString.filters = tostring(0x0F);
+    if (not SettingsStrings.filters or SettingsStrings.filters == "nil") then
+        SettingsStrings.filters = tostring(0x0F);
     end
 
-    if (not settingsString.enabled or importOldSettings) then
-        settingsString.enabled = {};
+    if (not SettingsStrings.enabled or importOldSettings) then
+        SettingsStrings.enabled = {};
     end
 
-    if ((not settingsString.order) or importOldSettings) then
-        settingsString.order = {};
+    if ((not SettingsStrings.order) or importOldSettings) then
+        SettingsStrings.order = {};
     end
 
-    if (not settingsString.mainMaxOpacity or settingsString.mainMaxOpacity == "nil") then
-        settingsString.mainMaxOpacity = tostring(1);
+    if (not SettingsStrings.mainMaxOpacity or SettingsStrings.mainMaxOpacity == "nil") then
+        SettingsStrings.mainMaxOpacity = tostring(1);
     end
 
-    if (not settingsString.mainMinOpacity or settingsString.mainMinOpacity == "nil") then
-        settingsString.mainMinOpacity = tostring(0.5);
+    if (not SettingsStrings.mainMinOpacity or SettingsStrings.mainMinOpacity == "nil") then
+        SettingsStrings.mainMinOpacity = tostring(0.5);
     end
 
-    if (not settingsString.toggleMaxOpacity or settingsString.toggleMaxOpacity == "nil") then
-        settingsString.toggleMaxOpacity = tostring(1);
+    if (not SettingsStrings.toggleMaxOpacity or SettingsStrings.toggleMaxOpacity == "nil") then
+        SettingsStrings.toggleMaxOpacity = tostring(1);
     end
 
-    if (not settingsString.toggleMinOpacity or settingsString.toggleMinOpacity == "nil") then
-        settingsString.toggleMinOpacity = tostring(0.2);
+    if (not SettingsStrings.toggleMinOpacity or SettingsStrings.toggleMinOpacity == "nil") then
+        SettingsStrings.toggleMinOpacity = tostring(0.2);
     end
 
     -- convert from strings if necessary
-    if (type(settingsString.width) == "string") then
-        settings.width = tonumber(settingsString.width);
+    if (type(SettingsStrings.width) == "string") then
+        settings.width = tonumber(SettingsStrings.width);
     else
-        settings.width = settingsString.width;
+        settings.width = SettingsStrings.width;
     end
 
-    if (type(settingsString.height) == "string") then
-        settings.height = tonumber(settingsString.height);
+    if (type(SettingsStrings.height) == "string") then
+        settings.height = tonumber(SettingsStrings.height);
     else
-        settings.height = settingsString.height;
+        settings.height = SettingsStrings.height;
     end
 
-    if (type(settingsString.positionX) == "string") then
-        settings.positionX = tonumber(settingsString.positionX);
+    if (type(SettingsStrings.positionX) == "string") then
+        settings.positionX = tonumber(SettingsStrings.positionX);
     else
-        settings.positionX = settingsString.positionX;
+        settings.positionX = SettingsStrings.positionX;
     end
 
-    if (type(settingsString.positionY) == "string") then
-        settings.positionY = tonumber(settingsString.positionY);
+    if (type(SettingsStrings.positionY) == "string") then
+        settings.positionY = tonumber(SettingsStrings.positionY);
     else
-        settings.positionY = settingsString.positionY;
+        settings.positionY = SettingsStrings.positionY;
     end
 
-    if (type(settingsString.buttonPositionX) == "string") then
-        settings.buttonPositionX = tonumber(settingsString.buttonPositionX);
+    if (type(SettingsStrings.buttonPositionX) == "string") then
+        settings.buttonPositionX = tonumber(SettingsStrings.buttonPositionX);
     else
-        settings.buttonPositionX = settingsString.buttonPositionX;
+        settings.buttonPositionX = SettingsStrings.buttonPositionX;
     end
 
-    if (type(settingsString.positionY) == "string") then
-        settings.buttonPositionY = tonumber(settingsString.buttonPositionY);
+    if (type(SettingsStrings.positionY) == "string") then
+        settings.buttonPositionY = tonumber(SettingsStrings.buttonPositionY);
     else
-        settings.buttonPositionY = settingsString.buttonPositionY;
+        settings.buttonPositionY = SettingsStrings.buttonPositionY;
     end
 
-    if (type(settingsString.hideOnStart) == "string") then
-        settings.hideOnStart = tonumber(settingsString.hideOnStart);
+    if (type(SettingsStrings.hideOnStart) == "string") then
+        settings.hideOnStart = tonumber(SettingsStrings.hideOnStart);
     else
-        settings.hideOnStart = settingsString.hideOnStart;
+        settings.hideOnStart = SettingsStrings.hideOnStart;
     end
 
-    if (type(settingsString.hideOnCombat) == "string") then
-        settings.hideOnCombat = tonumber(settingsString.hideOnCombat);
+    if (type(SettingsStrings.hideOnCombat) == "string") then
+        settings.hideOnCombat = tonumber(SettingsStrings.hideOnCombat);
     else
-        settings.hideOnCombat = settingsString.hideOnCombat;
+        settings.hideOnCombat = SettingsStrings.hideOnCombat;
     end
 
-    if (type(settingsString.pulldownTravel) == "string") then
-        settings.pulldownTravel = tonumber(settingsString.pulldownTravel);
+    if (type(SettingsStrings.pulldownTravel) == "string") then
+        settings.pulldownTravel = tonumber(SettingsStrings.pulldownTravel);
     else
-        settings.pulldownTravel = settingsString.pulldownTravel;
+        settings.pulldownTravel = SettingsStrings.pulldownTravel;
     end
 
-    if (type(settingsString.showButton) == "string") then
-        settings.showButton = tonumber(settingsString.showButton);
+    if (type(SettingsStrings.showButton) == "string") then
+        settings.showButton = tonumber(SettingsStrings.showButton);
     else
-        settings.showButton = settingsString.showButton;
+        settings.showButton = SettingsStrings.showButton;
     end
 
-    if (type(settingsString.mode) == "string") then
-        settings.mode = tonumber(settingsString.mode);
+    if (type(SettingsStrings.mode) == "string") then
+        settings.mode = tonumber(SettingsStrings.mode);
     else
-        settings.mode = settingsString.mode;
+        settings.mode = SettingsStrings.mode;
     end
 
-    if (type(settingsString.filters) == "string") then
-        settings.filters = tonumber(settingsString.filters);
+    if (type(SettingsStrings.filters) == "string") then
+        settings.filters = tonumber(SettingsStrings.filters);
     else
-        settings.filters = settingsString.filters;
+        settings.filters = SettingsStrings.filters;
     end
 
-    if (type(settingsString.mainMaxOpacity) == "string") then
-        settings.mainMaxOpacity = tonumber(settingsString.mainMaxOpacity);
+    if (type(SettingsStrings.mainMaxOpacity) == "string") then
+        settings.mainMaxOpacity = tonumber(SettingsStrings.mainMaxOpacity);
     else
-        settings.mainMaxOpacity = settingsString.mainMaxOpacity;
+        settings.mainMaxOpacity = SettingsStrings.mainMaxOpacity;
     end
 
-    if (type(settingsString.mainMinOpacity) == "string") then
-        settings.mainMinOpacity = tonumber(settingsString.mainMinOpacity);
+    if (type(SettingsStrings.mainMinOpacity) == "string") then
+        settings.mainMinOpacity = tonumber(SettingsStrings.mainMinOpacity);
     else
-        settings.mainMinOpacity = settingsString.mainMinOpacity;
+        settings.mainMinOpacity = SettingsStrings.mainMinOpacity;
     end
 
-    if (type(settingsString.toggleMaxOpacity) == "string") then
-        settings.toggleMaxOpacity = tonumber(settingsString.toggleMaxOpacity);
+    if (type(SettingsStrings.toggleMaxOpacity) == "string") then
+        settings.toggleMaxOpacity = tonumber(SettingsStrings.toggleMaxOpacity);
     else
-        settings.toggleMaxOpacity = settingsString.toggleMaxOpacity;
+        settings.toggleMaxOpacity = SettingsStrings.toggleMaxOpacity;
     end
 
-    if (type(settingsString.toggleMinOpacity) == "string") then
-        settings.toggleMinOpacity = tonumber(settingsString.toggleMinOpacity);
+    if (type(SettingsStrings.toggleMinOpacity) == "string") then
+        settings.toggleMinOpacity = tonumber(SettingsStrings.toggleMinOpacity);
     else
-        settings.toggleMinOpacity = settingsString.toggleMinOpacity;
+        settings.toggleMinOpacity = SettingsStrings.toggleMinOpacity;
     end
 
-    if (settingsString.mapGlanVraig ~= nil) then
-        settings.mapGlanVraig = settingsString.mapGlanVraig;
+    if (SettingsStrings.mapGlanVraig ~= nil) then
+        settings.mapGlanVraig = SettingsStrings.mapGlanVraig;
     end
 
-    settings.enabled = settingsString.enabled;
+    settings.enabled = SettingsStrings.enabled;
 
     local convertTableIndex = false;
-    for i, v in pairs(settingsString.order) do
+    for i, v in pairs(SettingsStrings.order) do
         if (type(i) == "string") then
             convertTableIndex = true;
         end
@@ -549,16 +547,16 @@ function TravelWindow:LoadSettings()
     if (convertTableIndex) then
         self:OrderTableNumberIndex();
     else
-        settings.order = settingsString.order;
+        settings.order = SettingsStrings.order;
     end
 end
 
 function TravelWindow:OrderTableStringIndex()
 
-    settingsString.order = {};
+    SettingsStrings.order = {};
 
     for i, v in ipairs(settings.order) do
-        settingsString.order[tostring(i)] = v;
+        SettingsStrings.order[tostring(i)] = v;
     end
 end
 
@@ -566,7 +564,7 @@ function TravelWindow:OrderTableNumberIndex()
 
     settings.order = {};
 
-    for i, v in pairs(settingsString.order) do
+    for i, v in pairs(SettingsStrings.order) do
         settings.order[tonumber(i)] = v;
     end
 end
@@ -574,29 +572,29 @@ end
 function TravelWindow:SaveSettings()
 
     -- convert the settings to strings
-    settingsString.height = tostring(settings.height);
-    settingsString.width = tostring(settings.width);
-    settingsString.positionX = tostring(settings.positionX);
-    settingsString.positionY = tostring(settings.positionY);
-    settingsString.buttonPositionX = tostring(settings.buttonPositionX);
-    settingsString.buttonPositionY = tostring(settings.buttonPositionY);
-    settingsString.hideOnStart = tostring(settings.hideOnStart);
-    settingsString.hideOnCombat = tostring(settings.hideOnCombat);
-    settingsString.pulldownTravel = tostring(settings.pulldownTravel);
-    settingsString.showButton = tostring(settings.showButton);
-    settingsString.mode = tostring(settings.mode);
-    settingsString.filters = tostring(settings.filters);
-    settingsString.mainMaxOpacity = tostring(settings.mainMaxOpacity);
-    settingsString.mainMinOpacity = tostring(settings.mainMinOpacity);
-    settingsString.toggleMaxOpacity = tostring(settings.toggleMaxOpacity);
-    settingsString.toggleMinOpacity = tostring(settings.toggleMinOpacity);
-    settingsString.enabled = settings.enabled;
-    settingsString.mapGlanVraig = tostring(settings.mapGlanVraig);
+    SettingsStrings.height = tostring(settings.height);
+    SettingsStrings.width = tostring(settings.width);
+    SettingsStrings.positionX = tostring(settings.positionX);
+    SettingsStrings.positionY = tostring(settings.positionY);
+    SettingsStrings.buttonPositionX = tostring(settings.buttonPositionX);
+    SettingsStrings.buttonPositionY = tostring(settings.buttonPositionY);
+    SettingsStrings.hideOnStart = tostring(settings.hideOnStart);
+    SettingsStrings.hideOnCombat = tostring(settings.hideOnCombat);
+    SettingsStrings.pulldownTravel = tostring(settings.pulldownTravel);
+    SettingsStrings.showButton = tostring(settings.showButton);
+    SettingsStrings.mode = tostring(settings.mode);
+    SettingsStrings.filters = tostring(settings.filters);
+    SettingsStrings.mainMaxOpacity = tostring(settings.mainMaxOpacity);
+    SettingsStrings.mainMinOpacity = tostring(settings.mainMinOpacity);
+    SettingsStrings.toggleMaxOpacity = tostring(settings.toggleMaxOpacity);
+    SettingsStrings.toggleMinOpacity = tostring(settings.toggleMinOpacity);
+    SettingsStrings.enabled = settings.enabled;
+    SettingsStrings.mapGlanVraig = tostring(settings.mapGlanVraig);
 
     self:OrderTableStringIndex();
 
     -- save the settings
-    Turbine.PluginData.Save(Turbine.DataScope.Character, "TravelWindowIISettings", settingsString);
+    Turbine.PluginData.Save(Turbine.DataScope.Character, "TravelWindowIISettings", SettingsStrings);
 end
 
 function TravelWindow:UpdateSettings()
@@ -739,11 +737,11 @@ end
 
 function TravelWindow:SetShortcuts()
     -- set default values
-    travelShortcuts = {};
+    TravelShortcuts = {};
     local shortcutIndex = 1;
 
     -- set the travel skills for free people
-    if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- set the generic travel items
         for i = 1, travelCount[3], 1 do
             -- get the order number for the item
@@ -752,7 +750,7 @@ function TravelWindow:SetShortcuts()
             -- set the shortcut for the quickslot, check
             -- if the shortcut is the map home or not
             if (string.len(genLocations:IdAtIndex(i)) > 12) then
-                table.insert(travelShortcuts, TravelShortcut(2.0,
+                table.insert(TravelShortcuts, TravelShortcut(2.0,
                 genLocations:IdAtIndex(i),
                 genLocations:NameAtIndex(i),
                 1,
@@ -760,7 +758,7 @@ function TravelWindow:SetShortcuts()
                 settings.enabled[genLocations:IdAtIndex(i)],
                 genLocations:LabelAtIndex(i)));
             else
-                table.insert(travelShortcuts, TravelShortcut(6.0,
+                table.insert(TravelShortcuts, TravelShortcut(6.0,
                 genLocations:IdAtIndex(i),
                 genLocations:NameAtIndex(i),
                 1,
@@ -772,7 +770,7 @@ function TravelWindow:SetShortcuts()
 
         -- add the race travel to the list
         local racialShortcutIndex = self:TableIndex(settings.order, racialLocations:IdAtIndex(settings.playerRaceKey));
-        table.insert(travelShortcuts, TravelShortcut(6.0,
+        table.insert(TravelShortcuts, TravelShortcut(6.0,
         racialLocations:IdAtIndex(settings.playerRaceKey),
         racialLocations:NameAtIndex(settings.playerRaceKey),
         2,
@@ -783,7 +781,7 @@ function TravelWindow:SetShortcuts()
         -- set the reputation travel items
         for i = 1, travelCount[4], 1 do
             shortcutIndex = self:TableIndex(settings.order, repLocations:IdAtIndex(i));
-            table.insert(travelShortcuts, TravelShortcut(6.0,
+            table.insert(TravelShortcuts, TravelShortcut(6.0,
             repLocations:IdAtIndex(i),
             repLocations:NameAtIndex(i),
             3,
@@ -795,7 +793,7 @@ function TravelWindow:SetShortcuts()
         -- set the creep travel items
         for i = 1, travelCount[6], 1 do
             shortcutIndex = self:TableIndex(settings.order, creepLocations:IdAtIndex(i));
-            table.insert(travelShortcuts, TravelShortcut(6.0,
+            table.insert(TravelShortcuts, TravelShortcut(6.0,
             creepLocations:IdAtIndex(i),
             creepLocations:NameAtIndex(i),
             3,
@@ -806,10 +804,10 @@ function TravelWindow:SetShortcuts()
     end
 
     -- set the hunter travel items
-    if (playerClass == Turbine.Gameplay.Class.Hunter) then
+    if (PlayerClass == Turbine.Gameplay.Class.Hunter) then
         for i = 1, travelCount[1], 1 do
             shortcutIndex = self:TableIndex(settings.order, hunterLocations:IdAtIndex(i));
-            table.insert(travelShortcuts, TravelShortcut(6.0,
+            table.insert(TravelShortcuts, TravelShortcut(6.0,
             hunterLocations:IdAtIndex(i),
             hunterLocations:NameAtIndex(i),
             4,
@@ -820,10 +818,10 @@ function TravelWindow:SetShortcuts()
     end
 
     -- set the warden travel items
-    if (playerClass == Turbine.Gameplay.Class.Warden) then
+    if (PlayerClass == Turbine.Gameplay.Class.Warden) then
         for i = 1, travelCount[2], 1 do
             shortcutIndex = self:TableIndex(settings.order, wardenLocations:IdAtIndex(i));
-            table.insert(travelShortcuts, TravelShortcut(6.0,
+            table.insert(TravelShortcuts, TravelShortcut(6.0,
             wardenLocations:IdAtIndex(i),
             wardenLocations:NameAtIndex(i),
             4,
@@ -840,13 +838,13 @@ end
 function TravelWindow:CheckEnabledSettings()
     -- count the min number of items that should be in the list
     local itemCount = 0;
-    if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- generic skills + reputation skills + one racial skill
         itemCount = travelCount[3] + travelCount[4] + 1;
-        if (playerClass == Turbine.Gameplay.Class.Hunter) then
+        if (PlayerClass == Turbine.Gameplay.Class.Hunter) then
             -- hunters have hunter skills
             itemCount = itemCount + travelCount[1];
-        elseif (playerClass == Turbine.Gameplay.Class.Warden) then
+        elseif (PlayerClass == Turbine.Gameplay.Class.Warden) then
             -- wardens have warden skills
             itemCount = itemCount + travelCount[2]
         end
@@ -870,7 +868,7 @@ function TravelWindow:CheckEnabledSettings()
     -- need to find the highest sort number now
     local counter = #settings.order + 1;
 
-    if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- update generic travel settings
         for i = 1, travelCount[3], 1 do
             -- if the enabled setting for the skill is nil, set it to true as default
@@ -907,7 +905,7 @@ function TravelWindow:CheckEnabledSettings()
         end
 
         -- update hunter travel settings
-        if (playerClass == Turbine.Gameplay.Class.Hunter) then
+        if (PlayerClass == Turbine.Gameplay.Class.Hunter) then
             for i = 1, travelCount[1], 1 do
                 if (settings.enabled[hunterLocations:IdAtIndex(i)] == nil) then
                     settings.enabled[hunterLocations:IdAtIndex(i)] = true;
@@ -920,7 +918,7 @@ function TravelWindow:CheckEnabledSettings()
         end
 
         -- update warden travel settings
-        if (playerClass == Turbine.Gameplay.Class.Warden) then
+        if (PlayerClass == Turbine.Gameplay.Class.Warden) then
             for i = 1, travelCount[2], 1 do
                 if (settings.enabled[wardenLocations:IdAtIndex(i)] == nil) then
                     settings.enabled[wardenLocations:IdAtIndex(i)] = true;
@@ -972,7 +970,7 @@ function TravelWindow:CloseMoorMap()
 end
 
 function TravelWindow:OpenEriadorMap()
-    self.eriadorMapWindow = TravelWindowII.src.EriadorMapWindow(self, playerClass, settings.playerRaceKey, travelShortcuts);
+    self.eriadorMapWindow = TravelWindowII.src.EriadorMapWindow(self, PlayerClass, settings.playerRaceKey, TravelShortcuts);
 end
 
 -- function to close the eriador map window if it exists
@@ -984,7 +982,7 @@ function TravelWindow:CloseEriadorMap()
 end
 
 function TravelWindow:OpenRhovanionMap()
-    self.rhovanionMapWindow = TravelWindowII.src.RhovanionMapWindow(self, playerClass, settings.playerRaceKey, travelShortcuts);
+    self.rhovanionMapWindow = TravelWindowII.src.RhovanionMapWindow(self, PlayerClass, settings.playerRaceKey, TravelShortcuts);
 end
 
 -- function to close the rhovanion map window if it exists
@@ -996,7 +994,7 @@ function TravelWindow:CloseRhovanionMap()
 end
 
 function TravelWindow:OpenGondorMap()
-    self.gondorMapWindow = TravelWindowII.src.GondorMapWindow(self, playerClass, settings.playerRaceKey, travelShortcuts);
+    self.gondorMapWindow = TravelWindowII.src.GondorMapWindow(self, PlayerClass, settings.playerRaceKey, TravelShortcuts);
 end
 
 -- function to close the gondor map window if it exists
@@ -1029,21 +1027,21 @@ end
 
 function TravelWindow:SortShortcuts()
     -- ensure we have more than 2 shortcuts
-    if #travelShortcuts < 2 then
+    if #TravelShortcuts < 2 then
         Turbine.Engine.WriteLine("Table does not have enough data in it");
         return;
     end
 
     -- perform the bubble sort
-    for i = 1, #travelShortcuts do
-        for j = 2, #travelShortcuts do
+    for i = 1, #TravelShortcuts do
+        for j = 2, #TravelShortcuts do
 
             -- if the index of the second shortcut is lower than the index of
             -- the first, switch the shortcuts
-            if travelShortcuts[j]:GetIndex() < travelShortcuts[j - 1]:GetIndex() then
-                temp = travelShortcuts[j - 1];
-                travelShortcuts[j - 1] = travelShortcuts[j];
-                travelShortcuts[j] = temp;
+            if TravelShortcuts[j]:GetIndex() < TravelShortcuts[j - 1]:GetIndex() then
+                local temp = TravelShortcuts[j - 1];
+                TravelShortcuts[j - 1] = TravelShortcuts[j];
+                TravelShortcuts[j] = temp;
             end
         end
     end
@@ -1091,8 +1089,8 @@ function TravelWindow:ResetSettings()
 
     -- get the player class and race
     player = Turbine.Gameplay.LocalPlayer.GetInstance();
-    playerClass = player:GetClass();
-    playerRace = player:GetRace();
+    PlayerClass = player:GetClass();
+    PlayerRace = player:GetRace();
     self:DetermineRaceKey();
 
     -- update everything
@@ -1111,20 +1109,22 @@ end
 
 function TravelWindow:CheckSkills()
     -- loop through all the shortcuts and list those those that are not learned
-    shortcutIndex = 1;
-    for i = 1, #travelShortcuts, 1 do
-        if (TravelWindow:FindSkill(travelShortcuts[i]:GetName())) then
+    for i = 1, #TravelShortcuts, 1 do
+        if (TravelWindow:FindSkill(TravelShortcuts[i]:GetName())) then
             -- do nothing, skill is known
         else
-            Turbine.Shell.WriteLine(skillNotTrainedString .. travelShortcuts[i]:GetName())
+            Turbine.Shell.WriteLine(skillNotTrainedString .. TravelShortcuts[i]:GetName())
         end
     end
+
+    -- make sure list of shortcuts is rescanned and new skills added
+    self:SetShortcuts();
 end
 
 function TravelWindow:FindSkill(name)
-    for i = 1, trainedSkills:GetCount(), 1 do
+    for i = 1, TrainedSkills:GetCount(), 1 do
         local skill = Turbine.Gameplay.Skill;
-        skill = trainedSkills:GetItem(i);
+        skill = TrainedSkills:GetItem(i);
 
         if (skill:GetSkillInfo():GetName() == name) then
             return true;
@@ -1138,10 +1138,10 @@ function TravelWindow:ListTrainedSkills()
 
     Turbine.Shell.WriteLine("\n\nTrained Skills\n\n");
 
-    for i = 1, trainedSkills:GetCount(), 1 do
+    for i = 1, TrainedSkills:GetCount(), 1 do
         local skill = Turbine.Gameplay.Skill;
         local skillInfo = Turbine.Gameplay.SkillInfo;
-        skill = trainedSkills:GetItem(i);
+        skill = TrainedSkills:GetItem(i);
 
         Turbine.Shell.WriteLine(skill:GetSkillInfo():GetName());
 
