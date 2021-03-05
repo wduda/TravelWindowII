@@ -2,7 +2,7 @@
 
 ## v1.0.9beta
 - fixed bug where pressing Esc did not close the options window (bugfix)
-- fixed bug where changing options was lagging the client, especially on chamging opacity sliders (bugfix)
+- fixed bug where changing options was lagging the client, especially on changing opacity sliders (bugfix)
 - automated github builds for faster releases (internal)
 - cleaned up settings stored by plugin to remove unused data (internal)
 - cleaned up some code for better readability (internal)
