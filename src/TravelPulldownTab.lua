@@ -53,7 +53,7 @@ function TravelPulldownTab:Constructor(toplevel)
     -- check for a right mouse button event to open menu
     self.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
-            menu:ShowMenu();
+            Menu:ShowMenu();
         end
     end
 
@@ -64,7 +64,7 @@ function TravelPulldownTab:Constructor(toplevel)
     -- check for a right mouse button event to open menu
     self.scrollLabel.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
-            menu:ShowMenu();
+            Menu:ShowMenu();
         end
     end
 
@@ -86,7 +86,7 @@ function TravelPulldownTab:Constructor(toplevel)
     -- open the option window if the quickslot is right-clicked
     self.quickslot.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
-            menu:ShowMenu();
+            Menu:ShowMenu();
         else
             self.parent:SetVisible(false);
         end

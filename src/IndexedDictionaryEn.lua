@@ -161,6 +161,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Estolad Lân", "0x700551F4", "Estolad Lân (Guide)");
     hunterLocations:AddSkill("Guide to Limlók", "0x7005762D", "Limlók (Guide)");
     hunterLocations:AddSkill("Guide to Annâk-khurfu", "0x70058571", "Annâk-khurfu (Guide)");
+    hunterLocations:AddSkill("Guide to Trader's Wharf", "0x70059D0C", "Trader's Wharf (Guide)");
+    hunterLocations:AddSkill("Guide to Trestlebridge", "0x70059D16", "Trestlebridge (Guide)");
 
     wardenLocations:AddSkill("Muster in Ost Guruth", "0x70014786", "Ost Guruth (Muster)");
     wardenLocations:AddSkill("Muster in Esteldín", "0x70014798", "Esteldín (Muster)");
@@ -196,6 +198,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster in Estolad Lân", "0x700551F2", "Estolad Lân (Muster)");
     wardenLocations:AddSkill("Muster in Limlók", "0x70057635", "Limlók (Muster)");
     wardenLocations:AddSkill("Muster in Annâk-khurfu", "0x70058572", "Annâk-khurfu (Muster)");
+    wardenLocations:AddSkill("Muster in Trader's Wharf", "0x70059D09", "Trader's Wharf (Muster)");
+    wardenLocations:AddSkill("Muster in Treslebridge", "0x700559D10", "Trestlebridge (Muster)");
 
     -- add the racial travel skills
     racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)");
@@ -261,6 +265,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Estolad Lân", "0x700551F8", "Estolad Lân (Rep)");
     repLocations:AddSkill("Return to Limlók", "0x70057629", "Limlók (Rep)");
     repLocations:AddSkill("Return to Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Rep)");
+    repLocations:AddSkill("Return to Trader's Wharf", "0x70059D0E", "Trader's Wharf (Rep)");
+    repLocations:AddSkill("Return to Trestlebridge", "0x70059D12", "Trestlebridge (Rep)");
 
     -- monster player maps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");

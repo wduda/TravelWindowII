@@ -86,6 +86,8 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Estolad Lân
         { -1, -1 }, -- Limlók
         { -1, -1 }, -- Annâk-khurfu
+        { -1, -1 }, -- Trader's Wharf
+        { -1, -1 }, -- Trestlebridge
 
         -- Muster skills
         { -1, -1 }, -- Ost Guruth
@@ -122,6 +124,8 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Estolad Lân
         { -1, -1 }, -- Limlók
         { -1, -1 }, -- Annâk-khurfu
+        { -1, -1 }, -- Trader's Wharf
+        { -1, -1 }, -- Trestlebridge
 
         -- Reputation skills
         { -1, -1 }, -- Thorin's Hall
@@ -161,7 +165,9 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         { -1, -1 }, -- Estolad Lân
         { -1, -1 }, -- Limlók
         { -1, -1 }, -- Annâk-khurfu
-        
+        { -1, -1 }, -- Trader's Wharf
+        { -1, -1 }, -- Trestlebridge
+
         -- Racial skills
         { -1, -1 }, -- Bree
         { -1, -1 }, -- Michel Delving

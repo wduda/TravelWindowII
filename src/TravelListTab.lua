@@ -72,7 +72,7 @@ function TravelListTab:AddItem(shortcut, i)
     -- show the menu when right clicked
     self.quickslots[index].MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
-            menu:ShowMenu();
+            Menu:ShowMenu();
         else
             self.parent:SetVisible(false);
         end
@@ -134,7 +134,7 @@ function TravelListTab:SetScrollBar()
     -- show the menu when right clicked
     self.myScrollBar.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
-            menu:ShowMenu();
+            Menu:ShowMenu();
         end
     end
 
