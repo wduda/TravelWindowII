@@ -17,14 +17,6 @@ gondorMapTitleString = "Carte du Gondor"
 glanMapString = "Carte précise pour aller à Glân Vraig";
 glanMapItemString = "Carte précise pour aller à Glân Vraig";
 
--- error messages
-resetOrderString = "Votre ordre personnalisé a été ré-initialisé du fait d'un changement dans " ..
-"le nombre d'éléments sauvegardés.  Ceci ne devrait se produire qu'une fois.\n" ..
-"Sorry for the inconvenience.";
-
-resetEnabledString = "Vos talents selectionnés ont étés remis a zéro à cause  " ..
-"d'une erreur dans les objets sauvegardés.\n";
-
 skillNotTrainedString = "Compétence non utilisée: ";
 
 -- options window strings

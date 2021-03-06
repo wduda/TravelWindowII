@@ -6,6 +6,7 @@ function IndexedDictionary:Constructor()
     -- set default tables
     self.skillNames = {};
     self.skillIds = {};
+    self.skillIdList = {};
     self.skillLabels = {};
     self.numberOfItems = 0;
 end
@@ -26,6 +27,9 @@ function IndexedDictionary:AddSkill(name, id, label)
     -- add the skill id and label into the table with name as index
     self.skillIds[name] = id;
     self.skillLabels[name] = label;
+
+    -- add the skill id to a list of Ids
+    self.skillIdList[id] = true;
 end
 
 -- function to add a skills name, and data pair of ID and label, to the dictionary at a specific index
@@ -100,6 +104,16 @@ end
 function IndexedDictionary:IdByName(name)
     return self.skillIds[name];
 end
+
+-- function to check if ID exists
+function IndexedDictionary:VerifyId(id)
+    if (self.skillIdList[id] == true) then
+        return true;
+    else
+        return false;
+    end
+end
+
 
 -- function to find the index value based on a key
 function IndexedDictionary:IndexByName(name)
