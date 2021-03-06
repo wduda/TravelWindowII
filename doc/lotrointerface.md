@@ -1,4 +1,4 @@
-This plugin creates a single window that contains available travel skills, including the race, class, housing and reputation skills. It is a further development of the "Travel Window" plugin, that has been worked on by multiple authors before.
+This plugin creates a single window that contains available travel skills, including race, class, housing and reputation skills. It is a further development of the "Travel Window" plugin, that has been worked on by multiple authors before.
 
 [B]Since this plugin is a 100% replacement for "Travel Window" you should not have both enabled at the same time. You can keep them both installed though.[/B]
 
@@ -13,19 +13,19 @@ This has to be extracted to your "Documents\The Lord of the Rings Online\Plugins
 [SIZE="3"]FAQ:[/SIZE]
 How can I make a newly learned skill show up in Travel Window II?
 [LIST]
-[*] rightclick anywhere on TW II, select "Check untrained skills" from menu, skill will show up
-[*] open options window, go to Enable tab, click "Check untrained skills" button, skill will show up
+[*] right-click anywhere on TW II, select "Check untrained skills" from the menu, the skill will show up
+[*] open options window, go to Enable tab, click "Check untrained skills" button, the skill will show up
 [*] relog thew character
 [/LIST]
 
 Why does my racial skill show up even though I do not have the racial trait equipped?
 [LIST]
-[*]Because once the trait is aquired, it is classified as a "learned" skill by LOTRO itself, even though it is greyed out. Travel Window II, unfortunately, has no way of knowing if you have the racial trait equipped and the skill is usable. If you are not using the skill permanently, you can use the Enable/Disable options to hide it like any other skill.
+[*]Because once the trait is acquired, it is classified as a "learned" skill by LOTRO itself, even though it is greyed out. Travel Window II, unfortunately, has no way of knowing if you have the racial trait equipped and the skill is usable. If you are not using the skill permanently, you can use the Enable/Disable options to hide it like any other skill.
 [/LIST]
 
 Why does a reputation or store version of my racial skill show up even though I have not obtained or bought it?
 [LIST]
-[*]This is because the racial and those store-bought skills have identical names ingame (i.e. "Return to Bree") and the plugin obtains a list of learned skills that includes that name at least once. Based on that name alone the plugin cannot know which of the two skills you have obtained, while you can get both through Racial+Store combo. You can use the Enable/Disable options to hide the skill you do not have that is greyed out.
+[*]This is because the racial and those store-bought skills have identical names ingame (i.e. "Return to Bree") and the plugin obtains a list of learned skills that includes that name at least once. Based on that name alone the plugin cannot know which of the two skills you have obtained, while you can get both through the Racial+Store combo. You can use the Enable/Disable options to hide the skill you do not have that is greyed out.
 [/LIST]
 
 How to handle the settings reset introduced by v1.0.7beta?
@@ -34,7 +34,7 @@ How to handle the settings reset introduced by v1.0.7beta?
 [*] if you updated to v.1.0.7beta but never logged that character in, an update to v1.0.8beta or newer will work as the above best case
 [*] if you updated to v.1.0.7beta and logged that character in, you lost all settings, you now have two choices
 [*]1. keep the settings you made manually after logging in with v1.0.7beta installed
-[*]2. delete the TravelWindowII.plugindata file, and your settings from before will be imported by v1.0.8beta or newer, same as the best-case scenario
+[*]2. delete the TravelWindowII.plugindata file, and your settings from before will be imported by v1.0.8beta or newer, the same as the best-case scenario
 [*]The file can be found at C:\Users\%USERNAME%\Documents\The Lord of the Rings Online\PluginData\%ACCOUNTNAME%\%SERVERNAME%\%CHARACTERNAME%
 [/LIST]
 
@@ -44,10 +44,10 @@ v1.0.10beta
 ## v1.0.10beta
 - U29 travel skills support for EN (enhancement)
 - attempted U29 travel skills support for DE and FR - no translations for skills were available on Bullroarer (enhancement)
-- checking for untrained skills both through options button and menu item will now add newly learned skills immediately (enhancement)
-- fixed bug in textlist mode where only last skill was highlighted on mouseover (bugfix)
+- checking for untrained skills both through the options button and menu item will now add newly learned skills immediately (enhancement)
+- fixed bug in text list mode where only the last skill was highlighted on mouseover (bugfix)
 - fixed bug that caused skill enabled list and skill order to reset after SSG releases an update (bugfix)
-- automated github builds to create github releases for easy access to finished zip (internal)
+- automated GitHub builds to create GitHub releases for easy access to finished zip (internal)
 - cleaned up a lot of global/local internal variables and names (internal)
 [/SIZE]
 
