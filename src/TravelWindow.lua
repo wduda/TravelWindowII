@@ -837,32 +837,38 @@ end
 
 function TravelWindow:CheckEnabledSettings()
     -- count the min number of items that should be in the list
-    local itemCount = 0;
+    ItemCount = 0;
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- generic skills + reputation skills + one racial skill
-        itemCount = travelCount[3] + travelCount[4] + 1;
+        ItemCount = travelCount[3] + travelCount[4] + 1;
         if (PlayerClass == Turbine.Gameplay.Class.Hunter) then
             -- hunters have hunter skills
-            itemCount = itemCount + travelCount[1];
+            ItemCount = ItemCount + travelCount[1];
         elseif (PlayerClass == Turbine.Gameplay.Class.Warden) then
             -- wardens have warden skills
-            itemCount = itemCount + travelCount[2]
+            ItemCount = ItemCount + travelCount[2]
         end
     else
         -- monster player skills
-        itemCount = travelCount[6] + 1;
+        ItemCount = travelCount[6] + 1;
     end
 
-    -- reset the sort order list if there are too many items in the previously saved list
-    if (#settings.order > itemCount) then
-        Turbine.Shell.WriteLine(resetOrderString);
-        settings.order = {};
+    -- remove superfluous entries in order list in case skills get deleted from game
+    if (#settings.order > ItemCount) then
+        for id, order in pairs(settings.order) do
+            if (not genLocations:VerifyId(id) and not wardenLocations:VerifyId(id) and not repLocations:VerifyId(id) and not genLocations:VerifyId(id)) then
+                settings.order[id] = nil;
+            end
+        end
     end
 
-    -- reset the enabled list if there are too many items in the previously saved list
-    if (#settings.enabled > itemCount) then
-        Turbine.Shell.WriteLine(resetEnabledString);
-        settings.enabled = {};
+    -- remove superfluous entries in enabled list in case skills get deleted from game
+    if (#settings.enabled > ItemCount) then
+        for id, status in pairs(settings.enabled) do
+            if (not genLocations:VerifyId(id) and not wardenLocations:VerifyId(id) and not repLocations:VerifyId(id) and not genLocations:VerifyId(id)) then
+                settings.enabled[id] = nil;
+            end
+        end
     end
 
     -- need to find the highest sort number now
