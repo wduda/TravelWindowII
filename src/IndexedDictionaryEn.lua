@@ -21,7 +21,7 @@ skillNotTrainedString = "Skills not trained: ";
 
 -- options window strings
 generalTabString = "General";
-selectTabString = "Select";
+selectTabString = "Enable";
 sortTabString = "Sort";
 hideString = "Hide Travel Window at Startup";
 toggleString = "Show Toggle Button";
@@ -40,7 +40,7 @@ mainSlidersString = "Main Window Opacity";
 minString = "Min: ";
 maxString = "Max: ";
 resetSettingsString = "Reset all to default";
-checkSkillsString = "Check untrained skills";
+checkSkillsString = "Check Untrained Skills";
 
 -- menu strings
 menuFiltersString = "Filters";
@@ -58,7 +58,7 @@ moorMapString = "Open Moor Map";
 eriadorMapString = "Open Eriador Map";
 rhovanionMapString = "Open Rhovanion Map";
 gondorMapString = "Open Gondor Map"
-menuSkillsString = "List Untrained Skills";
+menuSkillsString = "Check Untrained Skills";
 
 --[[ travel skills ]] --
 --[[ Add all the travel skills ]] --

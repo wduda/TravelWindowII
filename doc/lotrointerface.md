@@ -11,6 +11,23 @@ If you do not use Plugin Compendium, you need to manually install Turbine utilit
 This has to be extracted to your "Documents\The Lord of the Rings Online\Plugins" folder (if you are on Windows) so two folders called Turbine and TurbinePlugins show up there.
 
 [SIZE="3"]FAQ:[/SIZE]
+How can I make a newly learned skill show up in Travel Window II?
+[LIST]
+[*] rightclick anywhere on TW II, select "Check untrained skills" from menu, skill will show up
+[*] open options window, go to Enable tab, click "Check untrained skills" button, skill will show up
+[*] relog thew character
+[/LIST]
+
+Why does my racial skill show up even though I do not have the racial trait equipped?
+[LIST]
+[*]Because once the trait is aquired, it is classified as a "learned" skill by LOTRO itself, even though it is greyed out. Travel Window II, unfortunately, has no way of knowing if you have the racial trait equipped and the skill is usable. If you are not using the skill permanently, you can use the Enable/Disable options to hide it like any other skill.
+[/LIST]
+
+Why does a reputation or store version of my racial skill show up even though I have not obtained or bought it?
+[LIST]
+[*]This is because the racial and those store-bought skills have identical names ingame (i.e. "Return to Bree") and the plugin obtains a list of learned skills that includes that name at least once. Based on that name alone the plugin cannot know which of the two skills you have obtained, while you can get both through Racial+Store combo. You can use the Enable/Disable options to hide the skill you do not have that is greyed out.
+[/LIST]
+
 How to handle the settings reset introduced by v1.0.7beta?
 [LIST]
 [*] if you had v1.0.6beta or earlier and update to v1.0.8beta or newer, you will keep your settings, but enable/disable and sorting will have to be reset - this is the best case where most settings can be kept
@@ -20,23 +37,18 @@ How to handle the settings reset introduced by v1.0.7beta?
 [*]2. delete the TravelWindowII.plugindata file, and your settings from before will be imported by v1.0.8beta or newer, same as the best-case scenario
 [*]The file can be found at C:\Users\%USERNAME%\Documents\The Lord of the Rings Online\PluginData\%ACCOUNTNAME%\%SERVERNAME%\%CHARACTERNAME%
 [/LIST]
-Why does my racial skill show up even though I do not have the racial trait equipped?
-[LIST]
-[*]Because once the trait is aquired, it is classified as a "learned" skill by LOTRO itself, even though it is greyed out. Travel Window II, unfortunately, has no way of knowing if you have the racial trait equipped and the skill is usable. If you are not using the skill permanently, you can use the Enable/Disable options to hide it like any other skill.
-[/LIST]
-Why does a reputation or store version of my racial skill show up even though I have not obtained or bought it?
-[LIST]
-[*]This is because the racial and those store-bought skills have identical names ingame (i.e. "Return to Bree") and the plugin obtains a list of learned skills that includes that name at least once. Based on that name alone the plugin cannot know which of the two skills you have obtained, while you can get both through Racial+Store combo. You can use the Enable/Disable options to hide the skill you do not have that is greyed out.
-[/LIST]
 
 Version history:
-v1.0.9beta
+v1.0.10beta
 [SIZE="1"]
-- fixed bug where pressing Esc did not close the options window (bugfix)
-- fixed bug where changing options was lagging the client, especially on chamging opacity sliders (bugfix)
-- automated github builds for faster releases (internal)
-- cleaned up settings stored by plugin to remove unused data (internal)
-- cleaned up some code for better readability (internal)
+## v1.0.10beta
+- U29 travel skills support for EN (enhancement)
+- attempted U29 travel skills support for DE and FR - no translations for skills were available on Bullroarer (enhancement)
+- checking for untrained skills both through options button and menu item will now add newly learned skills immediately (enhancement)
+- fixed bug in textlist mode where only last skill was highlighted on mouseover (bugfix)
+- fixed bug that caused skill enabled list and skill order to reset after SSG releases an update (bugfix)
+- automated github builds to create github releases for easy access to finished zip (internal)
+- cleaned up a lot of global/local internal variables and names (internal)
 [/SIZE]
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
