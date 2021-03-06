@@ -37,10 +37,10 @@ function TravelListTab:AddItem(shortcut, i)
     itemHeight = 22;
 
     -- set the index value based on the row and column
-    index = (self.row - 1) * self.numOfCols + self.col;
+    local index = (self.row - 1) * self.numOfCols + self.col;
 
-    --	create new quickslots setting the position
-    --  based on the row and column locations
+    -- create new quickslots setting the position
+    -- based on the row and column locations
     self.quickslots[index] = Turbine.UI.Lotro.Quickslot();
     self.quickslots[index]:SetSize(itemWidth, itemHeight);
     self.quickslots[index]:SetPosition(10 + ((self.col - 1) * (itemWidth + 2)), ((self.row - 1) * (itemHeight)));
