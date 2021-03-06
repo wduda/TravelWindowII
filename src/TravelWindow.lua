@@ -136,11 +136,11 @@ function TravelWindow:Constructor()
     self.hidden = false;
     self.currentVisState = self:IsVisible();
 
-    OptionsPanel = TravelWindowII.src.OptionsPanel(self);
+    optionsPanel = TravelWindowII.src.OptionsPanel(self);
 
     pcall(function()
         plugin.GetOptionsPanel = function(self)
-            return OptionsPanel;
+            return optionsPanel;
         end
     end);
 
