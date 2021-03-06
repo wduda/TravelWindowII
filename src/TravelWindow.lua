@@ -89,8 +89,8 @@ function TravelWindow:Constructor()
     self:SetShortcuts();
 
     -- create a single context menu to use on all panels
-    menu = SettingsMenu(self);
-    menu:SetSettings(settings.mode, settings.filters);
+    Menu = SettingsMenu(self);
+    Menu:SetSettings(settings.mode, settings.filters);
 
     -- create the Tabbed Panel to hold all the other panels
     self.MainPanel = TravelWindowII.src.extensions.DPanel();
@@ -600,7 +600,7 @@ end
 function TravelWindow:UpdateSettings()
 
     -- get some settings from the menu
-    settings.mode, settings.filters = menu:GetSettings();
+    settings.mode, settings.filters = Menu:GetSettings();
 
     -- set which page of the tab panel to show
     self.MainPanel:SetTab(settings.mode);
