@@ -97,7 +97,7 @@ function TravelButton:Constructor(parent)
                 self.mainWindow:SetVisible(not self.mainWindow:IsVisible());
             end
         else
-            menu:ShowMenu();
+            Menu:ShowMenu();
         end
     end
 

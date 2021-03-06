@@ -17,14 +17,6 @@ gondorMapTitleString = "Carte du Gondor"
 glanMapString = "Carte précise pour aller à Glân Vraig";
 glanMapItemString = "Carte précise pour aller à Glân Vraig";
 
--- error messages
-resetOrderString = "Votre ordre personnalisé a été ré-initialisé du fait d'un changement dans " ..
-"le nombre d'éléments sauvegardés.  Ceci ne devrait se produire qu'une fois.\n" ..
-"Sorry for the inconvenience.";
-
-resetEnabledString = "Vos talents selectionnés ont étés remis a zéro à cause  " ..
-"d'une erreur dans les objets sauvegardés.\n";
-
 skillNotTrainedString = "Compétence non utilisée: ";
 
 -- options window strings
@@ -66,7 +58,7 @@ moorMapString = "Destinations aux Landes d'Etten";
 eriadorMapString = "Destinations en Eriador";
 rhovanionMapString = "Destination dans le Rhovanion";
 gondorMapString = "Destinations dans le Gondor"
-menuSkillsString = "Lister les compétences non apprises";
+menuSkillsString = "Vérification des compétences non utilisées";
 
 --[[ travel skills ]] --
 --[[ Add all the travel skills ]] --
@@ -160,8 +152,10 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide vers Estolad Lân", "0x700551F4", "Estolad Lân (Guide)");
     hunterLocations:AddSkill("Guide de Limlok", "0x7005762D", "Limlok (Guide)");
     hunterLocations:AddSkill("Guide vers Annâk-khurfu", "0x70058571", "Annâk-khurfu (Guide)");
+    hunterLocations:AddSkill("Guide vers Quai des marchands", "0x70059D0C", "Quai des marchands (Guide)");
+    hunterLocations:AddSkill("Guide vers Pont-à-Tréteaux", "0x70059D16", "Pont-à-Tréteaux (Guide)");
 
-	wardenLocations:AddSkill("Rassemblement à Ost Guruth", "0x70014786", "Ost Guruth (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Ost Guruth", "0x70014786", "Ost Guruth (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Esteldin", "0x70014798", "Esteldin (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement dans la région d'Evendim", "0x7001478E", "Evendim (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Fondcombe", "0x70014791", "Fondcombe (Rassemblement)");
@@ -195,8 +189,10 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Rassemblement à Estolad Lân", "0x700551F2", "Estolad Lân (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Limlok", "0x70057635", "Limlok (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Annâk-khurfu", "0x70058572", "Annâk-khurfu (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Quai des marchands", "0x70059D09", "Quai des marchands (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Pont-à-Tréteaux", "0x700559D10", "Pont-à-Tréteaux (Rassemblement)");
 
-	racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
+    racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
     racialLocations:AddSkill("Retournez dans la Comté", "0x700062C8", "Comté (Race)");
     racialLocations:AddSkill("Retour : Porte de Thorin", "0x70006346", "Porte de Thorin (Race)");
     racialLocations:AddSkill("Retour à Fondcombe", "0x7000631F", "Fondcombe (Race)");
@@ -257,6 +253,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retour à Estolad Lân", "0x700551F8", "Estolad Lân (Rep)");
     repLocations:AddSkill("Retour à Limlok", "0x70057629", "Limlok (Rep)");
     repLocations:AddSkill("Retournez à Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Rep)");
+    repLocations:AddSkill("Retour à Quai des marchands", "0x70059D0E", "Quai des marchands (Rep)");
+    repLocations:AddSkill("Retour à Pont-à-Tréteaux", "0x70059D12", "Pont-à-Tréteaux (Rep)");
 
     -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");

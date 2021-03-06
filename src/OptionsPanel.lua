@@ -385,7 +385,7 @@ function OptionsPanel:AddItems()
     local offsetCounter = 0;
 
     -- add the generic travels skills
-    if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         for i = 1, travelCount[3], 1 do
             self:AddSkillItemForEnabling(counter, genLocations:IdAtIndex(i), genLocations:LabelAtIndex(i));
             counter = counter + 1;
@@ -394,7 +394,7 @@ function OptionsPanel:AddItems()
     end
 
     -- add the hunter guide skills if the character is a hunter
-    if (playerClass == Turbine.Gameplay.Class.Hunter) then
+    if (PlayerClass == Turbine.Gameplay.Class.Hunter) then
         offsetCounter = 0;
         for i = 1, travelCount[1], 1 do
             self:AddSkillItemForEnabling(counter, hunterLocations:IdAtIndex(i), hunterLocations:LabelAtIndex(i));
@@ -403,7 +403,7 @@ function OptionsPanel:AddItems()
         end
     end
     -- add the warden muster skills if the character is a warden
-    if (playerClass == Turbine.Gameplay.Class.Warden) then
+    if (PlayerClass == Turbine.Gameplay.Class.Warden) then
         for i = 1, travelCount[2], 1 do
             self:AddSkillItemForEnabling(counter, wardenLocations:IdAtIndex(i), wardenLocations:LabelAtIndex(i));
             counter = counter + 1;
@@ -411,7 +411,7 @@ function OptionsPanel:AddItems()
     end
 
     -- add the reputation travel skills
-    if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         for i = 1, travelCount[4], 1 do
             self:AddSkillItemForEnabling(counter, repLocations:IdAtIndex(i), repLocations:LabelAtIndex(i));
             counter = counter + 1;
@@ -419,13 +419,13 @@ function OptionsPanel:AddItems()
     end
 
     -- add the race specific travel skill for the character
-    if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         self:AddSkillItemForEnabling(counter, racialLocations:IdAtIndex(settings.playerRaceKey), racialLocations:LabelAtIndex(settings.playerRaceKey));
         counter = counter + 1;
     end
 
     -- add the creep travel skills
-    if (playerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
         for i = 1, travelCount[6], 1 do
             self:AddSkillItemForEnabling(counter, creepLocations:IdAtIndex(i), creepLocations:LabelAtIndex(i));
             counter = counter + 1;
@@ -474,7 +474,7 @@ end
 -- this function adds the labels to the enabled tab for cosmetic purpose
 function OptionsPanel:AddBoxes()
     --[[
-    if (playerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- add a label and box for the generic travel skills
         self.genLabel = Turbine.UI.Label();
         self.genLabel:SetSize(200, 20);
@@ -496,7 +496,7 @@ function OptionsPanel:AddBoxes()
         self.repLabel:SetVisible(true);
 
         -- if the player is a hunter or warden, add a label
-        if ((playerClass == Turbine.Gameplay.Class.Hunter) or (playerClass == Turbine.Gameplay.Class.Warden)) then
+        if ((PlayerClass == Turbine.Gameplay.Class.Hunter) or (PlayerClass == Turbine.Gameplay.Class.Warden)) then
             self.classLabel = Turbine.UI.Label();
             self.classLabel:SetSize(200, 20);
             self.classLabel:SetPosition(520, 0);
@@ -547,7 +547,7 @@ function OptionsPanel:AddSortList()
     local labelCounter = 1;
 
     -- create a label to add to the listbox for each shortcut
-    for i, v in pairs(travelShortcuts) do
+    for i, v in pairs(TravelShortcuts) do
         local tempLabel = Turbine.UI.Label();
         tempLabel:SetText(v:GetSkillLabel());
         tempLabel:SetSize(280, 20);

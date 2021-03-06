@@ -53,7 +53,7 @@ function TravelPulldownTab:Constructor(toplevel)
     -- check for a right mouse button event to open menu
     self.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
-            menu:ShowMenu();
+            Menu:ShowMenu();
         end
     end
 
@@ -64,7 +64,7 @@ function TravelPulldownTab:Constructor(toplevel)
     -- check for a right mouse button event to open menu
     self.scrollLabel.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
-            menu:ShowMenu();
+            Menu:ShowMenu();
         end
     end
 
@@ -86,7 +86,7 @@ function TravelPulldownTab:Constructor(toplevel)
     -- open the option window if the quickslot is right-clicked
     self.quickslot.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
-            menu:ShowMenu();
+            Menu:ShowMenu();
         else
             self.parent:SetVisible(false);
         end
@@ -109,13 +109,13 @@ function TravelPulldownTab:SetItems()
 
     -- add the shortcuts to the combo box
     local shortcutIndex = 1;
-    for i = 1, #travelShortcuts, 1 do
-        if (travelShortcuts[i]:IsEnabled()) then
+    for i = 1, #TravelShortcuts, 1 do
+        if (TravelShortcuts[i]:IsEnabled()) then
             -- apply skill type filter if set in options
-            if (hasbit(settings.filters, bit(travelShortcuts[i]:GetTravelType()))) then
+            if (hasbit(settings.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
                 -- make sure skill is trained, lookup by ingame name
-                if (TravelWindow:FindSkill(travelShortcuts[i]:GetName())) then
-                    self.pulldown:AddItem(travelShortcuts[i], shortcutIndex, i);
+                if (TravelWindow:FindSkill(TravelShortcuts[i]:GetName())) then
+                    self.pulldown:AddItem(TravelShortcuts[i], shortcutIndex, i);
                     shortcutIndex = shortcutIndex + 1;
                 end
             end
@@ -125,7 +125,7 @@ function TravelPulldownTab:SetItems()
     -- handle the event if the selected item changes
     self.pulldown.SelectedIndexChanged = function(sender, args)
         pcall(function()
-            self.quickslot:SetShortcut(travelShortcuts[sender:GetSelection()]);
+            self.quickslot:SetShortcut(TravelShortcuts[sender:GetSelection()]);
         end)
     end
 end

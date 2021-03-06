@@ -1,8 +1,16 @@
 # Changelog
+## v1.0.10beta
+- U29 travel skills support for EN (enhancement)
+- attempted U29 travel skills support for DE and FR - no translations for skills were available on Bullroarer (enhancement)
+- checking for untrained skills both through options button and menu item will now add newly learned skills immediately (enhancement)
+- fixed bug in textlist mode where only last skill was highlighted on mouseover (bugfix)
+- fixed bug that caused skill enabled list and skill order to reset after SSG releases an update (bugfix)
+- automated github builds to create github releases for easy access to finished zip (internal)
+- cleaned up a lot of global/local internal variables and names (internal)
 
 ## v1.0.9beta
 - fixed bug where pressing Esc did not close the options window (bugfix)
-- fixed bug where changing options was lagging the client, especially on chamging opacity sliders (bugfix)
+- fixed bug where changing options was lagging the client, especially on changing opacity sliders (bugfix)
 - automated github builds for faster releases (internal)
 - cleaned up settings stored by plugin to remove unused data (internal)
 - cleaned up some code for better readability (internal)
