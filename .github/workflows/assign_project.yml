@@ -3,8 +3,6 @@ name: Auto assign issues and PRs to project
 on:
   issues:
     types: [opened]
-  pull_request:
-    types: [opened]
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -15,13 +13,6 @@ jobs:
     steps:
     - name: Assign new issues to project into triage column
       uses: srggrs/assign-one-project-github-action@1.2.0
-      if: github.event == 'issue'
       with:
         project: 'https://github.com/wduda/TravelWindowII/projects/1'
         column_name: 'Triage'
-    - name: Assign new pull requests to project into in progress column
-      uses: srggrs/assign-one-project-github-action@1.2.0
-      if: github.event == 'pull_request'
-      with:
-        project: 'https://github.com/wduda/TravelWindowII/projects/1'
-        column_name: 'In Progress'
