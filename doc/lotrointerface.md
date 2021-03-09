@@ -12,10 +12,12 @@ This has to be extracted to your "Documents\The Lord of the Rings Online\Plugins
 
 [SIZE="3"]FAQ:[/SIZE]
 How can I make a newly learned skill show up in Travel Window II?
+These three options work:
 [LIST]
 [*] right-click anywhere on TW II, select "Check untrained skills" from the menu, the skill will show up
 [*] open options window, go to Enable tab, click "Check untrained skills" button, the skill will show up
-[*] relog thew character
+[*] relog the character
+
 [/LIST]
 
 Why does my racial skill show up even though I do not have the racial trait equipped?
@@ -40,8 +42,6 @@ How to handle the settings reset introduced by v1.0.7beta?
 
 Version history:
 v1.0.10beta
-[SIZE="1"]
-## v1.0.10beta
 - U29 travel skills support for EN (enhancement)
 - attempted U29 travel skills support for DE and FR - no translations for skills were available on Bullroarer (enhancement)
 - checking for untrained skills both through the options button and menu item will now add newly learned skills immediately (enhancement)
@@ -49,6 +49,5 @@ v1.0.10beta
 - fixed bug that caused skill enabled list and skill order to reset after SSG releases an update (bugfix)
 - automated GitHub builds to create GitHub releases for easy access to finished zip (internal)
 - cleaned up a lot of global/local internal variables and names (internal)
-[/SIZE]
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
