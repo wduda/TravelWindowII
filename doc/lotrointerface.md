@@ -41,6 +41,9 @@ How to handle the settings reset introduced by v1.0.7beta?
 [/LIST]
 
 Version history:
+v1.0.11beta
+- full U29 travel skills support for DE and FR (enhancement)
+
 v1.0.10beta
 - U29 travel skills support for EN (enhancement)
 - attempted U29 travel skills support for DE and FR - no translations for skills were available on Bullroarer (enhancement)
