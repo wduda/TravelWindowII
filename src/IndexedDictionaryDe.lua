@@ -189,7 +189,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell in Estolad Lân", "0x700551F2", "Estolad Lân (Appell)");
     wardenLocations:AddSkill("Appell in Limlók", "0x70057635", "Limlók (Appell)");
     wardenLocations:AddSkill("Appell in Annâk-khurfu", "0x70058572", "Annâk-khurfu (Appell)");
-    wardenLocations:AddSkill("Appell im Händlerkai", "0x70059D09", "Händlerkai (Appell)");
+    wardenLocations:AddSkill("Appell am Händlerkai", "0x70059D09", "Händlerkai (Appell)");
     wardenLocations:AddSkill("Appell in Schragen", "0x700559D10", "Schragen (Appell)");
 
     racialLocations:AddSkill("Rückkehr nach Bree", "0x700062F6", "Bree (Rasse)");
@@ -253,8 +253,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Zurück nach Estolad Lân", "0x700551F8", "Estolad Lân (Ruf)");
     repLocations:AddSkill("Rückkehr nach Limlók", "0x70057629", "Limlók (Ruf)");
     repLocations:AddSkill("Rückkehr nach Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Ruf)");
-    repLocations:AddSkill("Rückkehr zum Händlerkai", "0x70059D0E", "Händlerkai (Rep)");
-    repLocations:AddSkill("Rückkehr nach Schragen", "0x70059D12", "Schragen (Ruf)");
+    repLocations:AddSkill("Kehrt zum Händlerkai zurück.", "0x70059D0E", "Händlerkai (Rep)");
+    repLocations:AddSkill("Kehrt nach Schragen zurück.", "0x70059D12", "Schragen (Ruf)");
 
 -- monster player maps
     creepLocations:AddSkill("Kartenskizze zum Gramfuss", "0x70028BBC");
