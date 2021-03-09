@@ -17,6 +17,7 @@ These three options work:
 [*] right-click anywhere on TW II, select "Check untrained skills" from the menu, the skill will show up
 [*] open options window, go to Enable tab, click "Check untrained skills" button, the skill will show up
 [*] relog the character
+
 [/LIST]
 
 Why does my racial skill show up even though I do not have the racial trait equipped?
