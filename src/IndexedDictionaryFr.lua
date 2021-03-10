@@ -190,7 +190,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Rassemblement à Limlok", "0x70057635", "Limlok (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Annâk-khurfu", "0x70058572", "Annâk-khurfu (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement au Quai des marchands", "0x70059D09", "Quai des marchands (Rassemblement)");
-    wardenLocations:AddSkill("Rassemblement à Pont-à-Tréteaux", "0x700559D10", "Pont-à-Tréteaux (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Pont-à-Tréteaux", "0x70059D10", "Pont-à-Tréteaux (Rassemblement)");
 
     racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
     racialLocations:AddSkill("Retournez dans la Comté", "0x700062C8", "Comté (Race)");
