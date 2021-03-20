@@ -1,4 +1,5 @@
 # Changelog
+
 ## v1.0.12beta
 - fixed unloadable settings for 64bit DE and FR clients (bugfix)
 - fixed label of Hultvis hunter guide in FR client (enhancement)
@@ -8,9 +9,6 @@
 
 ## v1.0.11hotfix1
 - fixed one French U29 skill - thanks homeopatix for the bug report
-
-## v1.0.11beta
-- full U29 travel skills support for DE and FR (enhancement)
 
 ## v1.0.11beta
 - full U29 travel skills support for DE and FR (enhancement)
