@@ -298,7 +298,7 @@ function TravelWindow:Constructor()
     end
 
     Plugins["Travel Window II"].Load = function(sender, args)
-        Turbine.Shell.WriteLine("<u><rgb=#DAA520>Travel Window II v" .. Plugins["Travel Window II"]:GetVersion() .. " by Hyoss</rgb></u>");
+        Turbine.Shell.WriteLine("<u><rgb=#DAA520>Travel Window II " .. Plugins["Travel Window II"]:GetVersion() .. " by Hyoss</rgb></u>");
     end
 end
 
