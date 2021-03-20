@@ -21,11 +21,7 @@ function travelCommand:Execute(command, arguments)
     end
 end
 
-function travelCommand:GetHelp()
-    Turbine.Shell.WriteLine(helpString);
-end
+function travelCommand:GetHelp() Turbine.Shell.WriteLine(helpString); end
 
 -- add the command to the shell
 Turbine.Shell.AddCommand("trav,travel", travelCommand);
-
-

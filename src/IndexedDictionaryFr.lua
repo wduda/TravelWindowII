@@ -148,7 +148,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide vers Jarnfast", "0x7004FACC", "Jarnfast (Guide)");
     hunterLocations:AddSkill("Guide vers Skarhald", "0x7004FACB", "Skarhald (Guide)");
     hunterLocations:AddSkill("Guide pour Beorninghus", "0x70052F07", "Beorninghus (Guide)");
-    hunterLocations:AddSkill("Guide de Hultvis", "0x70052F08", "Guide vers Hultvis (Guide)");
+    hunterLocations:AddSkill("Guide de Hultvis", "0x70052F08", "Hultvis (Guide)");
     hunterLocations:AddSkill("Guide vers Estolad Lân", "0x700551F4", "Estolad Lân (Guide)");
     hunterLocations:AddSkill("Guide de Limlok", "0x7005762D", "Limlok (Guide)");
     hunterLocations:AddSkill("Guide vers Annâk-khurfu", "0x70058571", "Annâk-khurfu (Guide)");

@@ -5,6 +5,8 @@ import "Turbine.UI";
 import "Turbine.UI.Lotro";
 import "TravelWindowII.src.extensions";
 import "TravelWindowII.src.utils.BitOps";
+import "TravelWindowII.src.VindarPatch";
+import "TravelWindowII.src.EuroNormalize";
 
 
 --[[ This is the main window for the Travel Window UI      ]] --
@@ -338,11 +340,12 @@ function TravelWindow:UpdateSize()
 end
 
 function TravelWindow:LoadSettings()
-    -- load the self.settings.  If a value is not available, set a default value
+    -- load the self.settings
+    -- If a value is not available, set a default value
 
     -- load TWII settings file
     pcall(function()
-        SettingsStrings = Turbine.PluginData.Load(Turbine.DataScope.Character, "TravelWindowIISettings");
+        SettingsStrings = PatchDataLoad(Turbine.DataScope.Character, "TravelWindowIISettings");
     end);
 
     -- try loading old settings if new settings could not be loaded
@@ -350,7 +353,7 @@ function TravelWindow:LoadSettings()
     if(SettingsStrings == nil) then
         local result;
         importOldSettings, result = pcall(function()
-            SettingsStrings = Turbine.PluginData.Load(Turbine.DataScope.Character, "TravelWindowSettings");
+            SettingsStrings = PatchDataLoad(Turbine.DataScope.Character, "TravelWindowSettings");
         end);
     end
 
@@ -508,25 +511,25 @@ function TravelWindow:LoadSettings()
     end
 
     if (type(SettingsStrings.mainMaxOpacity) == "string") then
-        settings.mainMaxOpacity = tonumber(SettingsStrings.mainMaxOpacity);
+        settings.mainMaxOpacity = EuroNormalize(SettingsStrings.mainMaxOpacity);
     else
         settings.mainMaxOpacity = SettingsStrings.mainMaxOpacity;
     end
 
     if (type(SettingsStrings.mainMinOpacity) == "string") then
-        settings.mainMinOpacity = tonumber(SettingsStrings.mainMinOpacity);
+        settings.mainMinOpacity = EuroNormalize(SettingsStrings.mainMinOpacity);
     else
         settings.mainMinOpacity = SettingsStrings.mainMinOpacity;
     end
 
     if (type(SettingsStrings.toggleMaxOpacity) == "string") then
-        settings.toggleMaxOpacity = tonumber(SettingsStrings.toggleMaxOpacity);
+        settings.toggleMaxOpacity = EuroNormalize(SettingsStrings.toggleMaxOpacity);
     else
         settings.toggleMaxOpacity = SettingsStrings.toggleMaxOpacity;
     end
 
     if (type(SettingsStrings.toggleMinOpacity) == "string") then
-        settings.toggleMinOpacity = tonumber(SettingsStrings.toggleMinOpacity);
+        settings.toggleMinOpacity = EuroNormalize(SettingsStrings.toggleMinOpacity);
     else
         settings.toggleMinOpacity = SettingsStrings.toggleMinOpacity;
     end
@@ -594,7 +597,7 @@ function TravelWindow:SaveSettings()
     self:OrderTableStringIndex();
 
     -- save the settings
-    Turbine.PluginData.Save(Turbine.DataScope.Character, "TravelWindowIISettings", SettingsStrings);
+    PatchDataSave(Turbine.DataScope.Character, "TravelWindowIISettings", SettingsStrings);
 end
 
 function TravelWindow:UpdateSettings()
