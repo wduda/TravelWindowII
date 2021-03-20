@@ -41,16 +41,8 @@ How to handle the settings reset introduced by v1.0.7beta?
 [/LIST]
 
 Version history:
-v1.0.11beta
-- full U29 travel skills support for DE and FR (enhancement)
-
-v1.0.10beta
-- U29 travel skills support for EN (enhancement)
-- attempted U29 travel skills support for DE and FR - no translations for skills were available on Bullroarer (enhancement)
-- checking for untrained skills both through the options button and menu item will now add newly learned skills immediately (enhancement)
-- fixed bug in text list mode where only the last skill was highlighted on mouseover (bugfix)
-- fixed bug that caused skill enabled list and skill order to reset after SSG releases an update (bugfix)
-- automated GitHub builds to create GitHub releases for easy access to finished zip (internal)
-- cleaned up a lot of global/local internal variables and names (internal)
+v1.0.12beta
+- fixed unloadable settings for 64bit DE and FR clients (bugfix)
+- fixed label of Hultvis hunter guide in FR client (bugfix)
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
