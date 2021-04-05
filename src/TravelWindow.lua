@@ -341,7 +341,7 @@ end
 
 function TravelWindow:LoadSettings()
     -- load the self.settings
-    -- If a value is not available, set a default value
+    -- if a value is not available, set a default value
 
     -- load TWII settings file
     pcall(function()
@@ -743,7 +743,7 @@ function TravelWindow:SetShortcuts()
     TravelShortcuts = {};
     local shortcutIndex = 1;
 
-    -- set the travel skills for free people
+    -- set the either the travel skills for free people or monsters
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- set the generic travel items
         for i = 1, travelCount[3], 1 do
@@ -774,12 +774,12 @@ function TravelWindow:SetShortcuts()
         -- add the race travel to the list
         local racialShortcutIndex = self:TableIndex(settings.order, racialLocations:IdAtIndex(settings.playerRaceKey));
         table.insert(TravelShortcuts, TravelShortcut(6.0,
-        racialLocations:IdAtIndex(settings.playerRaceKey),
-        racialLocations:NameAtIndex(settings.playerRaceKey),
-        2,
-        racialShortcutIndex,
-        settings.enabled[racialLocations:IdAtIndex(settings.playerRaceKey)],
-        racialLocations:LabelAtIndex(settings.playerRaceKey)));
+            racialLocations:IdAtIndex(settings.playerRaceKey),
+            racialLocations:NameAtIndex(settings.playerRaceKey),
+            2,
+            racialShortcutIndex,
+            settings.enabled[racialLocations:IdAtIndex(settings.playerRaceKey)],
+            racialLocations:LabelAtIndex(settings.playerRaceKey)));
 
         -- set the reputation travel items
         for i = 1, travelCount[4], 1 do
@@ -1035,16 +1035,14 @@ function TravelWindow:TableIndex(tableToSearch, elementToSearchFor)
 end
 
 function TravelWindow:SortShortcuts()
-    -- ensure we have more than 2 shortcuts
+    -- do not sort if there is one or less shortcuts
     if #TravelShortcuts < 2 then
-        Turbine.Engine.WriteLine("Table does not have enough data in it");
         return;
     end
 
-    -- perform the bubble sort
+    -- perform a bubble sort
     for i = 1, #TravelShortcuts do
         for j = 2, #TravelShortcuts do
-
             -- if the index of the second shortcut is lower than the index of
             -- the first, switch the shortcuts
             if TravelShortcuts[j]:GetIndex() < TravelShortcuts[j - 1]:GetIndex() then
