@@ -253,7 +253,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Zurück nach Estolad Lân", "0x700551F8", "Estolad Lân (Ruf)");
     repLocations:AddSkill("Rückkehr nach Limlók", "0x70057629", "Limlók (Ruf)");
     repLocations:AddSkill("Rückkehr nach Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Ruf)");
-    repLocations:AddSkill("Kehrt zum Händlerkai zurück.", "0x70059D0E", "Händlerkai (Rep)");
+    repLocations:AddSkill("Kehrt zum Händlerkai zurück.", "0x70059D0E", "Händlerkai (Ruf)");
     repLocations:AddSkill("Kehrt nach Schragen zurück.", "0x70059D12", "Schragen (Ruf)");
 
 -- monster player maps
