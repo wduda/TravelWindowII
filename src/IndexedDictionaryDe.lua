@@ -190,7 +190,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell in Limlók", "0x70057635", "Limlók (Appell)");
     wardenLocations:AddSkill("Appell in Annâk-khurfu", "0x70058572", "Annâk-khurfu (Appell)");
     wardenLocations:AddSkill("Appell am Händlerkai", "0x70059D09", "Händlerkai (Appell)");
-    wardenLocations:AddSkill("Appell in Schragen", "0x700559D10", "Schragen (Appell)");
+    wardenLocations:AddSkill("Appell in Schragen", "0x70059D10", "Schragen (Appell)");
 
     racialLocations:AddSkill("Rückkehr nach Bree", "0x700062F6", "Bree (Rasse)");
     racialLocations:AddSkill("Rückkehr ins Auenland", "0x700062C8", "Michelbinge (Rasse)");
