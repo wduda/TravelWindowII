@@ -190,7 +190,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster in Limlók", "0x70057635", "Limlók (Muster)");
     wardenLocations:AddSkill("Muster in Annâk-khurfu", "0x70058572", "Annâk-khurfu (Muster)");
     wardenLocations:AddSkill("Muster in Trader's Wharf", "0x70059D09", "Trader's Wharf (Muster)");
-    wardenLocations:AddSkill("Muster in Trestlebridge", "0x700559D10", "Trestlebridge (Muster)");
+    wardenLocations:AddSkill("Muster in Trestlebridge", "0x70059D10", "Trestlebridge (Muster)");
 
     -- add the racial travel skills
     racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)");

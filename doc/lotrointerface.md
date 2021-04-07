@@ -41,6 +41,9 @@ How to handle the settings reset introduced by v1.0.7beta?
 [/LIST]
 
 Version history:
+v1.0.13beta
+- fixed plugin crash for Wardens with travel to Trestlebridge learned (bugfix)
+
 v1.0.12beta
 - fixed unloadable settings for 64bit DE and FR clients (bugfix)
 - fixed label of Hultvis hunter guide in FR client (bugfix)
