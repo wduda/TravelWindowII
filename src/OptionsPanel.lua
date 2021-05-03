@@ -420,7 +420,7 @@ function OptionsPanel:AddItems()
 
     -- add the race specific travel skill for the character
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        self:AddSkillItemForEnabling(counter, racialLocations:IdAtIndex(settings.playerRaceKey), racialLocations:LabelAtIndex(settings.playerRaceKey));
+        self:AddSkillItemForEnabling(counter, racialLocations:IdAtIndex(PlayerRaceKey), racialLocations:LabelAtIndex(PlayerRaceKey));
         counter = counter + 1;
     end
 
