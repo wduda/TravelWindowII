@@ -1,7 +1,5 @@
 -- get the actual value of the 1 based index of the bit
-TravelWindowII.bit = function(p)
-    return 2 ^ (p - 1);
-end
+TravelWindowII.bit = function(p) return 2 ^ (p - 1); end
 
 -- Typical call:  if hasbit(x, bit(3)) then ...
 TravelWindowII.hasbit = function(x, p)
@@ -12,13 +10,9 @@ TravelWindowII.hasbit = function(x, p)
     end
 end
 
-TravelWindowII.setbit = function(x, p)
-    return hasbit(x, p) and x or x + p;
-end
+TravelWindowII.setbit = function(x, p) return hasbit(x, p) and x or x + p; end
 
-TravelWindowII.clearbit = function(x, p)
-    return hasbit(x, p) and x - p or x;
-end
+TravelWindowII.clearbit = function(x, p) return hasbit(x, p) and x - p or x; end
 
 TravelWindowII.togglebit = function(x, p)
     if (hasbit(x, p)) then
@@ -27,6 +21,3 @@ TravelWindowII.togglebit = function(x, p)
         return setbit(x, p);
     end
 end
-
-
-

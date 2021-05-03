@@ -2,9 +2,7 @@
 Originally from OrendarPlugins.UI
 
 Minor modifications from Frell
---]]
-
-import "Turbine.UI";
+--]] import "Turbine.UI";
 
 CheckBox = class(Turbine.UI.Control);
 
@@ -36,28 +34,23 @@ function CheckBox:Constructor()
     self.check:SetParent(self);
     self.check:SetSize(16, 16);
     self.check:SetBlendMode(Turbine.UI.BlendMode.AlphaBlend);
-    self.check:SetBackground("TravelWindowII/src/OrendarUIMods/Resources/checkbox_02_empty.tga");
+    self.check:SetBackground(
+        "TravelWindowII/src/OrendarUIMods/Resources/checkbox_02_empty.tga");
 
     self:Layout();
 
     -- listeners
     self.check.MouseClick = function(sender, args)
-        if (not self:IsEnabled()) then
-            return;
-        end
+        if (not self:IsEnabled()) then return; end
 
         if (args.Button == Turbine.UI.MouseButton.Left) then
             self:SetChecked(not self.checked);
-            if (type(self.Click) == "function") then
-                self:Click({});
-            end
+            if (type(self.Click) == "function") then self:Click({}); end
         end
     end
 end
 
-function CheckBox:IsChecked()
-    return self.checked;
-end
+function CheckBox:IsChecked() return self.checked; end
 
 function CheckBox:SetChecked(checked)
     self.checked = checked;
@@ -69,18 +62,14 @@ function CheckBox:SetEnabled(enabled)
     self:UpdateState();
 end
 
-function CheckBox:SetText(text)
-    self.label:SetText(text);
-end
+function CheckBox:SetText(text) self.label:SetText(text); end
 
 function CheckBox:SetSize(width, height)
     self.base.SetSize(self, width, height);
     self:Layout();
 end
 
-function CheckBox:SetCheckBoxLocation(location)
-    self.checkboxLocation = location;
-end
+function CheckBox:SetCheckBoxLocation(location) self.checkboxLocation = location; end
 
 function CheckBox:Layout()
     local width, height = self:GetSize();
@@ -98,10 +87,15 @@ end
 
 function CheckBox:UpdateState()
     local enabled = self:IsEnabled();
-    self.label:SetForeColor(enabled and CheckBox.ItemColor or CheckBox.DisabledColor);
+    self.label:SetForeColor(enabled and CheckBox.ItemColor or
+                                CheckBox.DisabledColor);
     if (self.checked) then
-        self.check:SetBackground("TravelWindowII/src/OrendarUIMods/Resources/checkbox_02" .. (enabled and "" or "_ghosted") .. ".tga");
+        self.check:SetBackground(
+            "TravelWindowII/src/OrendarUIMods/Resources/checkbox_02" ..
+                (enabled and "" or "_ghosted") .. ".tga");
     else
-        self.check:SetBackground("TravelWindowII/src/OrendarUIMods/Resources/checkbox_02_empty" .. (enabled and "" or "_ghosted") .. ".tga");
+        self.check:SetBackground(
+            "TravelWindowII/src/OrendarUIMods/Resources/checkbox_02_empty" ..
+                (enabled and "" or "_ghosted") .. ".tga");
     end
 end

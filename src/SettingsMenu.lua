@@ -54,7 +54,8 @@ function SettingsMenu:Constructor(parentWindow)
     -- create the items to open the map windows
     MoorMapMenu = TravelWindowII.src.extensions.DMenuList(moorMapString);
     EriadorMapMenu = TravelWindowII.src.extensions.DMenuList(eriadorMapString);
-    RhovanionMapMenu = TravelWindowII.src.extensions.DMenuList(rhovanionMapString);
+    RhovanionMapMenu = TravelWindowII.src.extensions.DMenuList(
+                           rhovanionMapString);
     GondorMapMenu = TravelWindowII.src.extensions.DMenuList(gondorMapString);
 
     -- add everything to the main menu
@@ -144,9 +145,7 @@ function SettingsMenu:SetSelections()
 end
 
 -- get the setting from the main window
-function SettingsMenu:GetSettings()
-    return self.mode, self.filters;
-end
+function SettingsMenu:GetSettings() return self.mode, self.filters; end
 
 -- function to change the settings of the menu programmatically
 function SettingsMenu:SetSettings(s1, s2)
@@ -175,8 +174,8 @@ function SettingsMenu:Update(string)
         self.mode = 3;
     elseif (string == menuPullString) then
         self.mode = 4;
-    --elseif (string == menuMapString) then @TODO has to be reintroduced
-    --    self.parent:SetMapHome();
+        -- elseif (string == menuMapString) then @TODO has to be reintroduced
+        --    self.parent:SetMapHome();
     elseif (string == menuOptionsString) then
         self.parent:OpenOptions();
     elseif (string == menuSkillsString) then
@@ -198,7 +197,4 @@ function SettingsMenu:Update(string)
     self.parent:UpdateSettings();
     self.parent:SaveSettings();
 end
-
-
-
 

@@ -8,12 +8,10 @@ import "TravelWindowII.src.utils.BitOps";
 import "TravelWindowII.src.VindarPatch";
 import "TravelWindowII.src.EuroNormalize";
 
-
 --[[ This is the main window for the Travel Window UI      ]] --
 --[[ It handles the loading and saving the settings,       ]] --
 --[[ creating the lists of travel shortcuts, creates       ]] --
 --[[ and handles the context menu.                         ]] --
-
 
 TravelWindow = class(Turbine.UI.Lotro.Window);
 
@@ -53,14 +51,15 @@ function TravelWindow:Constructor()
 
     -- configure the external toggle button
     self.ToggleButton = TravelWindowII.src.TravelButton(self);
-    self.ToggleButton:SetPosition(settings.buttonPositionX, settings.buttonPositionY);
+    self.ToggleButton:SetPosition(settings.buttonPositionX,
+                                  settings.buttonPositionY);
     self.ToggleButton:SetVisible(settings.showButton == 1);
     self.ToggleButton:SetOpacity(settings.toggleMinOpacity);
 
     -- if the player has a PvMP map, then insert it into the list
     -- if ((settings.mapGlanVraig ~= nil) and (settings.mapGlanVraig ~= "nil")) then
-        --self.reloadGVMap = true;
-        --genLocations:InsertSkill(2, glanMapString, settings.mapGlanVraig, "skip");
+    -- self.reloadGVMap = true;
+    -- genLocations:InsertSkill(2, glanMapString, settings.mapGlanVraig, "skip");
     -- end
 
     -- redo the counts
@@ -79,7 +78,6 @@ function TravelWindow:Constructor()
     if (Turbine.Gameplay.LocalPlayer.GetTrainedSkills ~= nil) then
         TrainedSkills = player:GetTrainedSkills();
     end
-
 
     -- save the player's combat states for managing hiding the window
     -- when the player enters combat
@@ -121,7 +119,7 @@ function TravelWindow:Constructor()
     self.sizeControl:SetBackColorBlendMode(Turbine.UI.BlendMode.Screen)
     self.sizeControl:SetBackColor(Turbine.UI.Color(0.1, 1, 1, 1));
     self.sizeControl:SetPosition(self:GetWidth() - self.sizeControl:GetWidth(),
-    self:GetHeight() - self.sizeControl:GetHeight());
+                                 self:GetHeight() - self.sizeControl:GetHeight());
 
     -- display the tab that was last selected
     self.MainPanel:SetTab(settings.mode);
@@ -141,9 +139,7 @@ function TravelWindow:Constructor()
     optionsPanel = TravelWindowII.src.OptionsPanel(self);
 
     pcall(function()
-        plugin.GetOptionsPanel = function(self)
-            return optionsPanel;
-        end
+        plugin.GetOptionsPanel = function(self) return optionsPanel; end
     end);
 
     --[[ Event Handlers ]] --
@@ -185,7 +181,6 @@ function TravelWindow:Constructor()
         end
     end
 
-
     -- check if the combat state of the player changed, in case we want
     -- to hide the window
     IncombatChangedHandler = function(sender, args)
@@ -224,9 +219,7 @@ function TravelWindow:Constructor()
 
     -- if the visible status of the window changes, close the pulldown tab
     self.VisibleChanged = function(sender, args)
-        if (self:IsVisible() == false) then
-            self.PullTab:ClosePulldown();
-        end
+        if (self:IsVisible() == false) then self.PullTab:ClosePulldown(); end
     end
 
     -- go to full opacity if mouse is over
@@ -254,9 +247,7 @@ function TravelWindow:Constructor()
     self.sizeControl.MouseDown = function(sender, args)
 
         -- check if resize has been disabled
-        if (self.disableResize) then
-            return;
-        end
+        if (self.disableResize) then return; end
 
         -- set start location of resize and enable dragging
         sender.dragStartX = args.X;
@@ -280,15 +271,15 @@ function TravelWindow:Constructor()
         -- if resize dragging, then resize the window
         if (sender.dragging) then
             self:SetSize(width + (args.X - sender.dragStartX),
-            height + (args.Y - sender.dragStartY));
+                         height + (args.Y - sender.dragStartY));
         end
 
         -- update the size of the window
         self:UpdateSize();
 
         -- check time since last move
-        if (Turbine.Engine.GetGameTime() - self.lastMove > 0.1
-        and self:IsVisible() or self.lastMove == 0) then
+        if (Turbine.Engine.GetGameTime() - self.lastMove > 0.1 and
+            self:IsVisible() or self.lastMove == 0) then
 
             -- update the tabbed panels
             self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
@@ -298,7 +289,9 @@ function TravelWindow:Constructor()
     end
 
     Plugins["Travel Window II"].Load = function(sender, args)
-        Turbine.Shell.WriteLine("<u><rgb=#DAA520>Travel Window II " .. Plugins["Travel Window II"]:GetVersion() .. " by Hyoss</rgb></u>");
+        Turbine.Shell.WriteLine("<u><rgb=#DAA520>Travel Window II " ..
+                                    Plugins["Travel Window II"]:GetVersion() ..
+                                    " by Hyoss</rgb></u>");
     end
 end
 
@@ -316,7 +309,7 @@ function TravelWindow:SetPlayerRaceKey()
         PlayerRaceKey = 5;
     elseif (PlayerRace == Turbine.Gameplay.Race.HighElf) then
         PlayerRaceKey = 6;
-    elseif (PlayerRace == Turbine.Gameplay.Race.StoutAxe) then                
+    elseif (PlayerRace == Turbine.Gameplay.Race.StoutAxe) then
         PlayerRaceKey = 7;
     else
         PlayerRaceKey = 1; -- default to man race to prevent errors
@@ -325,9 +318,7 @@ end
 
 function TravelWindow:UpdateSize()
     -- check that the window is not smaller than min width
-    if (self:GetWidth() < self.minWidth) then
-        self:SetWidth(self.minWidth);
-    end
+    if (self:GetWidth() < self.minWidth) then self:SetWidth(self.minWidth); end
 
     -- check that the window is not smaller than min height
     if (self:GetHeight() < self.minHeight) then
@@ -336,7 +327,7 @@ function TravelWindow:UpdateSize()
 
     -- set the new location of the resize control
     self.sizeControl:SetPosition(self:GetWidth() - self.sizeControl:GetWidth(),
-    self:GetHeight() - self.sizeControl:GetHeight());
+                                 self:GetHeight() - self.sizeControl:GetHeight());
 end
 
 function TravelWindow:SetMapHome()
@@ -369,7 +360,7 @@ function TravelWindow:SetMapHome()
     -- add an empty quickslot to the window
     self.mapQuickSlot1 = Turbine.UI.Lotro.Quickslot();
     self.mapQuickSlot1:SetPosition(self.MapWindow:GetWidth() / 2 - 18,
-    self.MapWindow:GetHeight() - 80);
+                                   self.MapWindow:GetHeight() - 80);
     self.mapQuickSlot1:SetSize(36, 36);
     self.mapQuickSlot1:SetParent(self.MapWindow);
     self.mapQuickSlot1:SetUseOnRightClick(false);
@@ -379,8 +370,8 @@ function TravelWindow:SetMapHome()
     self.mapButton = Turbine.UI.Lotro.Button();
     self.mapButton:SetSize(60, 50);
     self.mapButton:SetPosition(self.MapWindow:GetWidth() / 2 -
-    self.mapButton:GetWidth() / 2,
-    self.MapWindow:GetHeight() - 35);
+                                   self.mapButton:GetWidth() / 2,
+                               self.MapWindow:GetHeight() - 35);
     self.mapButton:SetText("OK");
     self.mapButton:SetParent(self.MapWindow);
     self.mapButton:SetVisible(true);
@@ -391,7 +382,7 @@ function TravelWindow:SetMapHome()
 
         -- check if there is a shortcut in the quickslot
         if (self.mapQuickSlot1:GetShortcut():GetType() ~=
-        Turbine.UI.Lotro.ShortcutType.Undef) then
+            Turbine.UI.Lotro.ShortcutType.Undef) then
 
             -- save the shortcut data to the settings
             self:SaveMapHome(self.mapQuickSlot1:GetShortcut());
@@ -449,89 +440,93 @@ function TravelWindow:SetShortcuts()
         -- set the generic travel items
         for i = 1, travelCount[3], 1 do
             -- get the order number for the item
-            shortcutIndex = self:TableIndex(settings.order, genLocations:IdAtIndex(i));
+            shortcutIndex = self:TableIndex(settings.order,
+                                            genLocations:IdAtIndex(i));
 
             -- set the shortcut for the quickslot, check
             -- if the shortcut is the map home or not
             if (string.len(genLocations:IdAtIndex(i)) > 12) then
-                table.insert(TravelShortcuts, TravelShortcut(2.0,
-                genLocations:IdAtIndex(i),
-                genLocations:NameAtIndex(i),
-                1,
-                shortcutIndex,
-                settings.enabled[genLocations:IdAtIndex(i)],
-                genLocations:LabelAtIndex(i)));
+                table.insert(TravelShortcuts,
+                             TravelShortcut(2.0, genLocations:IdAtIndex(i),
+                                            genLocations:NameAtIndex(i), 1,
+                                            shortcutIndex,
+                                            settings.enabled[genLocations:IdAtIndex(
+                                                i)],
+                                            genLocations:LabelAtIndex(i)));
             else
-                table.insert(TravelShortcuts, TravelShortcut(6.0,
-                genLocations:IdAtIndex(i),
-                genLocations:NameAtIndex(i),
-                1,
-                shortcutIndex,
-                settings.enabled[genLocations:IdAtIndex(i)],
-                genLocations:LabelAtIndex(i)));
+                table.insert(TravelShortcuts,
+                             TravelShortcut(6.0, genLocations:IdAtIndex(i),
+                                            genLocations:NameAtIndex(i), 1,
+                                            shortcutIndex,
+                                            settings.enabled[genLocations:IdAtIndex(
+                                                i)],
+                                            genLocations:LabelAtIndex(i)));
             end
         end
 
         -- add the race travel to the list
-        local racialShortcutIndex = self:TableIndex(settings.order, racialLocations:IdAtIndex(PlayerRaceKey));
-        table.insert(TravelShortcuts, TravelShortcut(6.0,
-            racialLocations:IdAtIndex(PlayerRaceKey),
-            racialLocations:NameAtIndex(PlayerRaceKey),
-            2,
-            racialShortcutIndex,
-            settings.enabled[racialLocations:IdAtIndex(PlayerRaceKey)],
-            racialLocations:LabelAtIndex(PlayerRaceKey)));
+        local racialShortcutIndex = self:TableIndex(settings.order,
+                                                    racialLocations:IdAtIndex(
+                                                        PlayerRaceKey));
+        table.insert(TravelShortcuts,
+                     TravelShortcut(6.0,
+                                    racialLocations:IdAtIndex(PlayerRaceKey),
+                                    racialLocations:NameAtIndex(PlayerRaceKey),
+                                    2, racialShortcutIndex,
+                                    settings.enabled[racialLocations:IdAtIndex(
+                                        PlayerRaceKey)],
+                                    racialLocations:LabelAtIndex(PlayerRaceKey)));
 
         -- set the reputation travel items
         for i = 1, travelCount[4], 1 do
-            shortcutIndex = self:TableIndex(settings.order, repLocations:IdAtIndex(i));
-            table.insert(TravelShortcuts, TravelShortcut(6.0,
-            repLocations:IdAtIndex(i),
-            repLocations:NameAtIndex(i),
-            3,
-            shortcutIndex,
-            settings.enabled[repLocations:IdAtIndex(i)],
-            repLocations:LabelAtIndex(i)));
+            shortcutIndex = self:TableIndex(settings.order,
+                                            repLocations:IdAtIndex(i));
+            table.insert(TravelShortcuts,
+                         TravelShortcut(6.0, repLocations:IdAtIndex(i),
+                                        repLocations:NameAtIndex(i), 3,
+                                        shortcutIndex,
+                                        settings.enabled[repLocations:IdAtIndex(
+                                            i)], repLocations:LabelAtIndex(i)));
         end
     else
         -- set the creep travel items
         for i = 1, travelCount[6], 1 do
-            shortcutIndex = self:TableIndex(settings.order, creepLocations:IdAtIndex(i));
-            table.insert(TravelShortcuts, TravelShortcut(6.0,
-            creepLocations:IdAtIndex(i),
-            creepLocations:NameAtIndex(i),
-            3,
-            shortcutIndex,
-            settings.enabled[creepLocations:IdAtIndex(i)],
-            creepLocations:LabelAtIndex(i)));
+            shortcutIndex = self:TableIndex(settings.order,
+                                            creepLocations:IdAtIndex(i));
+            table.insert(TravelShortcuts,
+                         TravelShortcut(6.0, creepLocations:IdAtIndex(i),
+                                        creepLocations:NameAtIndex(i), 3,
+                                        shortcutIndex,
+                                        settings.enabled[creepLocations:IdAtIndex(
+                                            i)], creepLocations:LabelAtIndex(i)));
         end
     end
 
     -- set the hunter travel items
     if (PlayerClass == Turbine.Gameplay.Class.Hunter) then
         for i = 1, travelCount[1], 1 do
-            shortcutIndex = self:TableIndex(settings.order, hunterLocations:IdAtIndex(i));
-            table.insert(TravelShortcuts, TravelShortcut(6.0,
-            hunterLocations:IdAtIndex(i),
-            hunterLocations:NameAtIndex(i),
-            4,
-            shortcutIndex,
-            settings.enabled[hunterLocations:IdAtIndex(i)],
-            hunterLocations:LabelAtIndex(i)));
+            shortcutIndex = self:TableIndex(settings.order,
+                                            hunterLocations:IdAtIndex(i));
+            table.insert(TravelShortcuts,
+                         TravelShortcut(6.0, hunterLocations:IdAtIndex(i),
+                                        hunterLocations:NameAtIndex(i), 4,
+                                        shortcutIndex,
+                                        settings.enabled[hunterLocations:IdAtIndex(
+                                            i)], hunterLocations:LabelAtIndex(i)));
         end
     end
 
     -- set the warden travel items
     if (PlayerClass == Turbine.Gameplay.Class.Warden) then
         for i = 1, travelCount[2], 1 do
-            shortcutIndex = self:TableIndex(settings.order, wardenLocations:IdAtIndex(i));
-            table.insert(TravelShortcuts, TravelShortcut(6.0,
-            wardenLocations:IdAtIndex(i),
-            wardenLocations:NameAtIndex(i),
-            4,
-            shortcutIndex,
-            settings.enabled[wardenLocations:IdAtIndex(i)],
-            wardenLocations:LabelAtIndex(i)));
+            shortcutIndex = self:TableIndex(settings.order,
+                                            wardenLocations:IdAtIndex(i));
+            table.insert(TravelShortcuts,
+                         TravelShortcut(6.0, wardenLocations:IdAtIndex(i),
+                                        wardenLocations:NameAtIndex(i), 4,
+                                        shortcutIndex,
+                                        settings.enabled[wardenLocations:IdAtIndex(
+                                            i)], wardenLocations:LabelAtIndex(i)));
         end
     end
 
@@ -560,7 +555,9 @@ function TravelWindow:CheckEnabledSettings()
     -- remove superfluous entries in order list in case skills get deleted from game
     if (#settings.order > ItemCount) then
         for id, order in pairs(settings.order) do
-            if (not genLocations:VerifyId(id) and not wardenLocations:VerifyId(id) and not repLocations:VerifyId(id) and not genLocations:VerifyId(id)) then
+            if (not genLocations:VerifyId(id) and
+                not wardenLocations:VerifyId(id) and
+                not repLocations:VerifyId(id) and not genLocations:VerifyId(id)) then
                 settings.order[id] = nil;
             end
         end
@@ -569,7 +566,9 @@ function TravelWindow:CheckEnabledSettings()
     -- remove superfluous entries in enabled list in case skills get deleted from game
     if (#settings.enabled > ItemCount) then
         for id, status in pairs(settings.enabled) do
-            if (not genLocations:VerifyId(id) and not wardenLocations:VerifyId(id) and not repLocations:VerifyId(id) and not genLocations:VerifyId(id)) then
+            if (not genLocations:VerifyId(id) and
+                not wardenLocations:VerifyId(id) and
+                not repLocations:VerifyId(id) and not genLocations:VerifyId(id)) then
                 settings.enabled[id] = nil;
             end
         end
@@ -587,8 +586,8 @@ function TravelWindow:CheckEnabledSettings()
             end
 
             -- if the skill is not in the order list, add it and increase the counter
-            if (self:TableContains(settings.order,
-            genLocations:IdAtIndex(i)) == false) then
+            if (self:TableContains(settings.order, genLocations:IdAtIndex(i)) ==
+                false) then
                 table.insert(settings.order, counter, genLocations:IdAtIndex(i));
                 counter = counter + 1;
             end
@@ -599,7 +598,8 @@ function TravelWindow:CheckEnabledSettings()
             if (settings.enabled[repLocations:IdAtIndex(i)] == nil) then
                 settings.enabled[repLocations:IdAtIndex(i)] = true;
             end
-            if (self:TableContains(settings.order, repLocations:IdAtIndex(i)) == false) then
+            if (self:TableContains(settings.order, repLocations:IdAtIndex(i)) ==
+                false) then
                 table.insert(settings.order, counter, repLocations:IdAtIndex(i));
                 counter = counter + 1;
             end
@@ -609,8 +609,11 @@ function TravelWindow:CheckEnabledSettings()
         if (settings.enabled[racialLocations:IdAtIndex(PlayerRaceKey)] == nil) then
             settings.enabled[racialLocations:IdAtIndex(PlayerRaceKey)] = true;
         end
-        if (self:TableContains(settings.order, racialLocations:IdAtIndex(PlayerRaceKey)) == false) then
-            table.insert(settings.order, counter, racialLocations:IdAtIndex(PlayerRaceKey));
+        if (self:TableContains(settings.order,
+                               racialLocations:IdAtIndex(PlayerRaceKey)) ==
+            false) then
+            table.insert(settings.order, counter,
+                         racialLocations:IdAtIndex(PlayerRaceKey));
             counter = counter + 1;
         end
 
@@ -620,8 +623,10 @@ function TravelWindow:CheckEnabledSettings()
                 if (settings.enabled[hunterLocations:IdAtIndex(i)] == nil) then
                     settings.enabled[hunterLocations:IdAtIndex(i)] = true;
                 end
-                if (self:TableContains(settings.order, hunterLocations:IdAtIndex(i)) == false) then
-                    table.insert(settings.order, counter, hunterLocations:IdAtIndex(i));
+                if (self:TableContains(settings.order,
+                                       hunterLocations:IdAtIndex(i)) == false) then
+                    table.insert(settings.order, counter,
+                                 hunterLocations:IdAtIndex(i));
                     counter = counter + 1;
                 end
             end
@@ -633,8 +638,10 @@ function TravelWindow:CheckEnabledSettings()
                 if (settings.enabled[wardenLocations:IdAtIndex(i)] == nil) then
                     settings.enabled[wardenLocations:IdAtIndex(i)] = true;
                 end
-                if (self:TableContains(settings.order, wardenLocations:IdAtIndex(i)) == false) then
-                    table.insert(settings.order, counter, wardenLocations:IdAtIndex(i));
+                if (self:TableContains(settings.order,
+                                       wardenLocations:IdAtIndex(i)) == false) then
+                    table.insert(settings.order, counter,
+                                 wardenLocations:IdAtIndex(i));
                     counter = counter + 1;
                 end
             end
@@ -645,8 +652,10 @@ function TravelWindow:CheckEnabledSettings()
             if (settings.enabled[creepLocations:IdAtIndex(i)] == nil) then
                 settings.enabled[creepLocations:IdAtIndex(i)] = true;
             end
-            if (self:TableContains(settings.order, creepLocations:IdAtIndex(i)) == false) then
-                table.insert(settings.order, counter, creepLocations:IdAtIndex(i));
+            if (self:TableContains(settings.order, creepLocations:IdAtIndex(i)) ==
+                false) then
+                table.insert(settings.order, counter,
+                             creepLocations:IdAtIndex(i));
                 counter = counter + 1;
             end
         end
@@ -673,14 +682,15 @@ end
 
 -- function to close the moor map window if it exists
 function TravelWindow:CloseMoorMap()
-    if (self.moorMapWindow ~= nil) then
-        self.moorMapWindow:SetVisible(false);
-    end
+    if (self.moorMapWindow ~= nil) then self.moorMapWindow:SetVisible(false); end
     self.moorMapWindow = nil;
 end
 
 function TravelWindow:OpenEriadorMap()
-    self.eriadorMapWindow = TravelWindowII.src.EriadorMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
+    self.eriadorMapWindow = TravelWindowII.src.EriadorMapWindow(self,
+                                                                PlayerClass,
+                                                                PlayerRaceKey,
+                                                                TravelShortcuts);
 end
 
 -- function to close the eriador map window if it exists
@@ -692,7 +702,10 @@ function TravelWindow:CloseEriadorMap()
 end
 
 function TravelWindow:OpenRhovanionMap()
-    self.rhovanionMapWindow = TravelWindowII.src.RhovanionMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
+    self.rhovanionMapWindow = TravelWindowII.src.RhovanionMapWindow(self,
+                                                                    PlayerClass,
+                                                                    PlayerRaceKey,
+                                                                    TravelShortcuts);
 end
 
 -- function to close the rhovanion map window if it exists
@@ -704,7 +717,9 @@ function TravelWindow:CloseRhovanionMap()
 end
 
 function TravelWindow:OpenGondorMap()
-    self.gondorMapWindow = TravelWindowII.src.GondorMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
+    self.gondorMapWindow = TravelWindowII.src.GondorMapWindow(self, PlayerClass,
+                                                              PlayerRaceKey,
+                                                              TravelShortcuts);
 end
 
 -- function to close the gondor map window if it exists
@@ -718,9 +733,7 @@ end
 -- function to check if a table contains a specific element
 function TravelWindow:TableContains(tableToSearch, elementToSearchFor)
     for i, value in pairs(tableToSearch) do
-        if (value == elementToSearchFor) then
-            return true;
-        end
+        if (value == elementToSearchFor) then return true; end
     end
     return false;
 end
@@ -728,18 +741,14 @@ end
 -- function to check if a table contains a specific element index
 function TravelWindow:TableIndex(tableToSearch, elementToSearchFor)
     for i, value in pairs(tableToSearch) do
-        if (value == elementToSearchFor) then
-            return i;
-        end
+        if (value == elementToSearchFor) then return i; end
     end
     return 0;
 end
 
 function TravelWindow:SortShortcuts()
     -- do not sort if there is one or less shortcuts
-    if #TravelShortcuts < 2 then
-        return;
-    end
+    if #TravelShortcuts < 2 then return; end
 
     -- perform a bubble sort
     for i = 1, #TravelShortcuts do
@@ -768,28 +777,31 @@ function TravelWindow:LoadSettings()
 
     -- load TWII settings file
     pcall(function()
-        SettingsStrings = PatchDataLoad(Turbine.DataScope.Character, "TravelWindowIISettings");
+        SettingsStrings = PatchDataLoad(Turbine.DataScope.Character,
+                                        "TravelWindowIISettings");
     end);
 
     -- save a daily backup of settings
     if (SettingsStrings) then
         SettingsStrings.backupTime = "#" .. Turbine.Engine.GetGameTime();
         local dateInfo = Turbine.Engine.GetDate();
-        PatchDataSave(Turbine.DataScope.Account, "TravelWindowIISettings_backup" .. dateInfo.DayOfWeek, SettingsStrings);
+        PatchDataSave(Turbine.DataScope.Account,
+                      "TravelWindowIISettings_backup" .. dateInfo.DayOfWeek,
+                      SettingsStrings);
     end
 
     -- try importing Travel Window I settings if new settings were not found
     local importOldSettings = false;
-    if(SettingsStrings == nil) then
+    if (SettingsStrings == nil) then
         local result;
-        importOldSettings, result = pcall(function()
-            SettingsStrings = PatchDataLoad(Turbine.DataScope.Character, "TravelWindowSettings");
-        end);
+        importOldSettings, result = pcall(
+                                        function()
+                SettingsStrings = PatchDataLoad(Turbine.DataScope.Character,
+                                                "TravelWindowSettings");
+            end);
     end
 
-    if (type(SettingsStrings) ~= "table") then
-        SettingsStrings = {};
-    end
+    if (type(SettingsStrings) ~= "table") then SettingsStrings = {}; end
 
     if (not SettingsStrings.width or SettingsStrings.width == "nil") then
         SettingsStrings.width = tostring(self.minWidth);
@@ -800,36 +812,39 @@ function TravelWindow:LoadSettings()
     end
 
     if (not SettingsStrings.positionX or SettingsStrings.positionX == "nil") then
-        SettingsStrings.positionX = tostring(Turbine.UI.Display.GetWidth()
-        - self:GetWidth() - 50);
+        SettingsStrings.positionX = tostring(
+                                        Turbine.UI.Display.GetWidth() -
+                                            self:GetWidth() - 50);
     end
 
     if (not SettingsStrings.positionY or SettingsStrings.positionY == "nil") then
-        SettingsStrings.positionY = tostring(Turbine.UI.Display.GetHeight()
-        - self:GetHeight() - 50 * 1.5);
+        SettingsStrings.positionY = tostring(
+                                        Turbine.UI.Display.GetHeight() -
+                                            self:GetHeight() - 50 * 1.5);
     end
 
-    if (not SettingsStrings.buttonPositionX or SettingsStrings.buttonPositionX == "nil") then
-        SettingsStrings.buttonPositionX = tostring(Turbine.UI.Display.GetWidth()
-        - self:GetWidth() - 50);
+    if (not SettingsStrings.buttonPositionX or SettingsStrings.buttonPositionX ==
+        "nil") then
+        SettingsStrings.buttonPositionX =
+            tostring(Turbine.UI.Display.GetWidth() - self:GetWidth() - 50);
     end
 
-    if (not SettingsStrings.buttonPositionY or SettingsStrings.buttonPositionY == "nil") then
-        SettingsStrings.buttonPositionY = tostring(Turbine.UI.Display.GetHeight()
-        - self:GetHeight() - 50 * 1.5);
+    if (not SettingsStrings.buttonPositionY or SettingsStrings.buttonPositionY ==
+        "nil") then
+        SettingsStrings.buttonPositionY =
+            tostring(Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 *
+                         1.5);
     end
 
     if (not SettingsStrings.hideOnStart or SettingsStrings.hideOnStart == "nil") then
         SettingsStrings.hideOnStart = tostring(0);
     end
 
-    if (not SettingsStrings.hideOnCombat or SettingsStrings.hideOnCombat == "nil") then
-        SettingsStrings.hideOnCombat = tostring(0);
-    end
+    if (not SettingsStrings.hideOnCombat or SettingsStrings.hideOnCombat ==
+        "nil") then SettingsStrings.hideOnCombat = tostring(0); end
 
-    if (not SettingsStrings.pulldownTravel or SettingsStrings.pulldownTravel == "nil") then
-        SettingsStrings.pulldownTravel = tostring(0);
-    end
+    if (not SettingsStrings.pulldownTravel or SettingsStrings.pulldownTravel ==
+        "nil") then SettingsStrings.pulldownTravel = tostring(0); end
 
     if (not SettingsStrings.showButton or SettingsStrings.showButton == "nil") then
         SettingsStrings.showButton = tostring(1);
@@ -851,21 +866,17 @@ function TravelWindow:LoadSettings()
         SettingsStrings.order = {};
     end
 
-    if (not SettingsStrings.mainMaxOpacity or SettingsStrings.mainMaxOpacity == "nil") then
-        SettingsStrings.mainMaxOpacity = tostring(1);
-    end
+    if (not SettingsStrings.mainMaxOpacity or SettingsStrings.mainMaxOpacity ==
+        "nil") then SettingsStrings.mainMaxOpacity = tostring(1); end
 
-    if (not SettingsStrings.mainMinOpacity or SettingsStrings.mainMinOpacity == "nil") then
-        SettingsStrings.mainMinOpacity = tostring(0.5);
-    end
+    if (not SettingsStrings.mainMinOpacity or SettingsStrings.mainMinOpacity ==
+        "nil") then SettingsStrings.mainMinOpacity = tostring(0.5); end
 
-    if (not SettingsStrings.toggleMaxOpacity or SettingsStrings.toggleMaxOpacity == "nil") then
-        SettingsStrings.toggleMaxOpacity = tostring(1);
-    end
+    if (not SettingsStrings.toggleMaxOpacity or SettingsStrings.toggleMaxOpacity ==
+        "nil") then SettingsStrings.toggleMaxOpacity = tostring(1); end
 
-    if (not SettingsStrings.toggleMinOpacity or SettingsStrings.toggleMinOpacity == "nil") then
-        SettingsStrings.toggleMinOpacity = tostring(0.2);
-    end
+    if (not SettingsStrings.toggleMinOpacity or SettingsStrings.toggleMinOpacity ==
+        "nil") then SettingsStrings.toggleMinOpacity = tostring(0.2); end
 
     -- convert from strings if necessary
     if (type(SettingsStrings.width) == "string") then
@@ -953,13 +964,15 @@ function TravelWindow:LoadSettings()
     end
 
     if (type(SettingsStrings.toggleMaxOpacity) == "string") then
-        settings.toggleMaxOpacity = EuroNormalize(SettingsStrings.toggleMaxOpacity);
+        settings.toggleMaxOpacity = EuroNormalize(
+                                        SettingsStrings.toggleMaxOpacity);
     else
         settings.toggleMaxOpacity = SettingsStrings.toggleMaxOpacity;
     end
 
     if (type(SettingsStrings.toggleMinOpacity) == "string") then
-        settings.toggleMinOpacity = EuroNormalize(SettingsStrings.toggleMinOpacity);
+        settings.toggleMinOpacity = EuroNormalize(
+                                        SettingsStrings.toggleMinOpacity);
     else
         settings.toggleMinOpacity = SettingsStrings.toggleMinOpacity;
     end
@@ -972,9 +985,7 @@ function TravelWindow:LoadSettings()
 
     local convertTableIndex = false;
     for i, v in pairs(SettingsStrings.order) do
-        if (type(i) == "string") then
-            convertTableIndex = true;
-        end
+        if (type(i) == "string") then convertTableIndex = true; end
     end
 
     if (convertTableIndex) then
@@ -1009,7 +1020,8 @@ function TravelWindow:SaveSettings()
     self:OrderTableStringIndex();
 
     -- save the settings
-    PatchDataSave(Turbine.DataScope.Character, "TravelWindowIISettings", SettingsStrings);
+    PatchDataSave(Turbine.DataScope.Character, "TravelWindowIISettings",
+                  SettingsStrings);
 end
 
 function TravelWindow:UpdateSettings()
@@ -1054,9 +1066,12 @@ function TravelWindow:ResetSettings()
     settings.width = self.minWidth;
     settings.height = self.minHeight;
     settings.positionX = Turbine.UI.Display.GetWidth() - self:GetWidth() - 50;
-    settings.positionY = Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5;
-    settings.buttonPositionX = Turbine.UI.Display.GetWidth() - self:GetWidth() - 50;
-    settings.buttonPositionY = Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5;
+    settings.positionY =
+        Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5;
+    settings.buttonPositionX = Turbine.UI.Display.GetWidth() - self:GetWidth() -
+                                   50;
+    settings.buttonPositionY =
+        Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5;
     settings.hideOnStart = 0;
     settings.hideOnCombat = 0;
     settings.pulldownTravel = 0;
@@ -1074,7 +1089,8 @@ function TravelWindow:ResetSettings()
     settings.mapGlanVraig = nil;
 
     -- move the toggle button and main window
-    self.ToggleButton:SetPosition(settings.buttonPositionX, settings.buttonPositionY);
+    self.ToggleButton:SetPosition(settings.buttonPositionX,
+                                  settings.buttonPositionY);
     self:SetPosition(settings.positionX, settings.positionY);
     self:SetSize(settings.width, settings.height);
 
@@ -1122,7 +1138,8 @@ function TravelWindow:CheckSkills()
         if (TravelWindow:FindSkill(TravelShortcuts[i]:GetName())) then
             -- do nothing, skill is known
         else
-            Turbine.Shell.WriteLine(skillNotTrainedString .. TravelShortcuts[i]:GetName())
+            Turbine.Shell.WriteLine(skillNotTrainedString ..
+                                        TravelShortcuts[i]:GetName())
         end
     end
 
@@ -1135,9 +1152,7 @@ function TravelWindow:FindSkill(name)
         local skill = Turbine.Gameplay.Skill;
         skill = TrainedSkills:GetItem(i);
 
-        if (skill:GetSkillInfo():GetName() == name) then
-            return true;
-        end
+        if (skill:GetSkillInfo():GetName() == name) then return true; end
     end
 
     return false;
@@ -1158,9 +1173,7 @@ function TravelWindow:ListTrainedSkills()
 end
 
 -- for debug purposes
-function TravelWindow:DoDump()
-    Turbine.Debug.Table.Dump(TravelWindowII.src);
-end
+function TravelWindow:DoDump() Turbine.Debug.Table.Dump(TravelWindowII.src); end
 
 function AddCallback(object, event, callback)
     if (object[event] == nil) then
@@ -1169,7 +1182,7 @@ function AddCallback(object, event, callback)
         if (type(object[event]) == "table") then
             table.insert(object[event], callback);
         else
-            object[event] = { object[event], callback };
+            object[event] = {object[event], callback};
         end
     end
     return callback;

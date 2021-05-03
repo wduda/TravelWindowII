@@ -34,7 +34,6 @@ function OptionsPanel:Constructor(parent)
     -- set the default window settings
     self:SetSize(self.width, self.height);
 
-
     -- add a tabbed panel
     self.OptionTabs = TravelWindowII.src.extensions.DPanel();
     self.OptionTabs:SetOpacity(1);
@@ -53,12 +52,12 @@ function OptionsPanel:Constructor(parent)
     self.EnabledTab:SetSize(self.width - 20, self.height - 60)
     self.ListBox = Turbine.UI.ListBox()
     self.ListBox:SetParent(self.EnabledTab)
-    self.ListBox:SetPosition(5,5)
-    self.ListBox:SetSize(self:GetWidth()-20,self:GetHeight()-120)
+    self.ListBox:SetPosition(5, 5)
+    self.ListBox:SetSize(self:GetWidth() - 20, self:GetHeight() - 120)
     self.scrollBar = Turbine.UI.Lotro.ScrollBar()
     self.scrollBar:SetOrientation(Turbine.UI.Orientation.Vertical)
     self.scrollBar:SetParent(self.EnabledTab)
-    self.scrollBar:SetPosition(0,0)
+    self.scrollBar:SetPosition(0, 0)
     self.scrollBar:SetWidth(10)
     self.scrollBar:SetHeight(self.ListBox:GetHeight())
     self.ListBox:SetVerticalScrollBar(self.scrollBar)
@@ -85,18 +84,14 @@ function OptionsPanel:Constructor(parent)
     -- have the main window close the options
     self.VisibleChanged = function(sender, args)
         if (self:IsVisible() == false) then
-            if (parent ~= nil) then
-                parent:CloseOptions();
-            end
+            if (parent ~= nil) then parent:CloseOptions(); end
         end
     end
 
     self.loaded = true;
 end
 
-function OptionsPanel:GetLoaded()
-    return self.loaded;
-end
+function OptionsPanel:GetLoaded() return self.loaded; end
 
 -- function to add items to the general tab
 function OptionsPanel:AddGeneralItems()
@@ -104,7 +99,8 @@ function OptionsPanel:AddGeneralItems()
     self.HideOnStartLabel = Turbine.UI.Label();
     self.HideOnStartLabel:SetSize(300, 20);
     self.HideOnStartLabel:SetPosition(20, 20);
-    self.HideOnStartLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.HideOnStartLabel:SetTextAlignment(
+        Turbine.UI.ContentAlignment.MiddleLeft);
     self.HideOnStartLabel:SetParent(self.GeneralTab);
     self.HideOnStartLabel:SetText(hideString);
     self.HideOnStartLabel:SetVisible(true);
@@ -121,7 +117,8 @@ function OptionsPanel:AddGeneralItems()
     self.HideOnCombatLabel = Turbine.UI.Label();
     self.HideOnCombatLabel:SetSize(300, 20);
     self.HideOnCombatLabel:SetPosition(20, 50);
-    self.HideOnCombatLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.HideOnCombatLabel:SetTextAlignment(
+        Turbine.UI.ContentAlignment.MiddleLeft);
     self.HideOnCombatLabel:SetParent(self.GeneralTab);
     self.HideOnCombatLabel:SetText(hideOnCombatString);
     self.HideOnCombatLabel:SetVisible(true);
@@ -155,7 +152,8 @@ function OptionsPanel:AddGeneralItems()
     self.PulldownTravelLabel = Turbine.UI.Label();
     self.PulldownTravelLabel:SetSize(300, 20);
     self.PulldownTravelLabel:SetPosition(20, 110);
-    self.PulldownTravelLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.PulldownTravelLabel:SetTextAlignment(
+        Turbine.UI.ContentAlignment.MiddleLeft);
     self.PulldownTravelLabel:SetParent(self.GeneralTab);
     self.PulldownTravelLabel:SetText(pulldownTravelString);
     self.PulldownTravelLabel:SetVisible(true);
@@ -172,7 +170,8 @@ function OptionsPanel:AddGeneralItems()
     self.toggleSlidersLabel = Turbine.UI.Label();
     self.toggleSlidersLabel:SetSize(300, 20);
     self.toggleSlidersLabel:SetPosition(20, 140);
-    self.toggleSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.toggleSlidersLabel:SetTextAlignment(
+        Turbine.UI.ContentAlignment.MiddleLeft);
     self.toggleSlidersLabel:SetParent(self.GeneralTab);
     self.toggleSlidersLabel:SetText(toggleSlidersString);
     self.toggleSlidersLabel:SetVisible(true);
@@ -181,7 +180,8 @@ function OptionsPanel:AddGeneralItems()
     self.toggleMinSlidersLabel = Turbine.UI.Label();
     self.toggleMinSlidersLabel:SetSize(50, 20);
     self.toggleMinSlidersLabel:SetPosition(20, 160);
-    self.toggleMinSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.toggleMinSlidersLabel:SetTextAlignment(
+        Turbine.UI.ContentAlignment.MiddleLeft);
     self.toggleMinSlidersLabel:SetParent(self.GeneralTab);
     self.toggleMinSlidersLabel:SetText(minString);
     self.toggleMinSlidersLabel:SetVisible(true);
@@ -200,7 +200,8 @@ function OptionsPanel:AddGeneralItems()
     self.toggleMaxSlidersLabel = Turbine.UI.Label();
     self.toggleMaxSlidersLabel:SetSize(50, 20);
     self.toggleMaxSlidersLabel:SetPosition(20, 180);
-    self.toggleMaxSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.toggleMaxSlidersLabel:SetTextAlignment(
+        Turbine.UI.ContentAlignment.MiddleLeft);
     self.toggleMaxSlidersLabel:SetParent(self.GeneralTab);
     self.toggleMaxSlidersLabel:SetText(maxString);
     self.toggleMaxSlidersLabel:SetVisible(true);
@@ -228,7 +229,8 @@ function OptionsPanel:AddGeneralItems()
     self.mainMinSlidersLabel = Turbine.UI.Label();
     self.mainMinSlidersLabel:SetSize(50, 20);
     self.mainMinSlidersLabel:SetPosition(20, 230);
-    self.mainMinSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.mainMinSlidersLabel:SetTextAlignment(
+        Turbine.UI.ContentAlignment.MiddleLeft);
     self.mainMinSlidersLabel:SetParent(self.GeneralTab);
     self.mainMinSlidersLabel:SetText(minString);
     self.mainMinSlidersLabel:SetVisible(true);
@@ -247,7 +249,8 @@ function OptionsPanel:AddGeneralItems()
     self.mainMaxSlidersLabel = Turbine.UI.Label();
     self.mainMaxSlidersLabel:SetSize(50, 20);
     self.mainMaxSlidersLabel:SetPosition(20, 250);
-    self.mainMaxSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.mainMaxSlidersLabel:SetTextAlignment(
+        Turbine.UI.ContentAlignment.MiddleLeft);
     self.mainMaxSlidersLabel:SetParent(self.GeneralTab);
     self.mainMaxSlidersLabel:SetText(maxString);
     self.mainMaxSlidersLabel:SetVisible(true);
@@ -276,104 +279,118 @@ function OptionsPanel:AddGeneralItems()
     end
 
     -- set the hide on start option when changed
-    self.HideOnStartCheck.CheckedChanged = function(sender, args)
-        if (sender:IsChecked()) then
-            settings.hideOnStart = 1;
-        else
-            settings.hideOnStart = 0;
+    self.HideOnStartCheck.CheckedChanged =
+        function(sender, args)
+            if (sender:IsChecked()) then
+                settings.hideOnStart = 1;
+            else
+                settings.hideOnStart = 0;
+            end
+            self.mainWindow:SetShortcuts();
+            self.mainWindow:UpdateSettings();
         end
-        self.mainWindow:SetShortcuts();
-        self.mainWindow:UpdateSettings();
-    end
 
     -- set the hide on combat option when changed
-    self.HideOnCombatCheck.CheckedChanged = function(sender, args)
-        if (sender:IsChecked()) then
-            settings.hideOnCombat = 1;
-        else
-            settings.hideOnCombat = 0;
+    self.HideOnCombatCheck.CheckedChanged =
+        function(sender, args)
+            if (sender:IsChecked()) then
+                settings.hideOnCombat = 1;
+            else
+                settings.hideOnCombat = 0;
+            end
+            self.mainWindow:SetShortcuts();
+            self.mainWindow:UpdateSettings();
         end
-        self.mainWindow:SetShortcuts();
-        self.mainWindow:UpdateSettings();
-    end
 
     -- set the show toggle button option when changed
-    self.ShowButtonCheck.CheckedChanged = function(sender, args)
-        if (sender:IsChecked()) then
-            settings.showButton = 1;
-        else
-            settings.showButton = 0;
+    self.ShowButtonCheck.CheckedChanged =
+        function(sender, args)
+            if (sender:IsChecked()) then
+                settings.showButton = 1;
+            else
+                settings.showButton = 0;
+            end
+            self.mainWindow:SetShortcuts();
+            self.mainWindow:UpdateSettings();
+            self.mainWindow.ToggleButton:SetVisible(sender:IsChecked());
         end
-        self.mainWindow:SetShortcuts();
-        self.mainWindow:UpdateSettings();
-        self.mainWindow.ToggleButton:SetVisible(sender:IsChecked());
-    end
 
     -- set the fire on pulldown selection option when changed
-    self.PulldownTravelCheck.CheckedChanged = function(sender, args)
-        if (sender:IsChecked()) then
-            settings.pulldownTravel = 1;
-        else
-            settings.pulldownTravel = 0;
+    self.PulldownTravelCheck.CheckedChanged =
+        function(sender, args)
+            if (sender:IsChecked()) then
+                settings.pulldownTravel = 1;
+            else
+                settings.pulldownTravel = 0;
+            end
+            self.mainWindow:SetShortcuts();
+            self.mainWindow:UpdateSettings();
         end
-        self.mainWindow:SetShortcuts();
-        self.mainWindow:UpdateSettings();
-    end
 
     -- update settings when sliders change
-    self.toggleMinScrollBar.ValueChanged = function(sender, args)
+    self.toggleMinScrollBar.ValueChanged =
+        function(sender, args)
 
-        -- check that the min opacity does not go higher than the max opacity
-        if (self.toggleMinScrollBar:GetValue() > self.toggleMaxScrollBar:GetValue()) then
-            self.toggleMinScrollBar:SetValue(self.toggleMaxScrollBar:GetValue());
+            -- check that the min opacity does not go higher than the max opacity
+            if (self.toggleMinScrollBar:GetValue() >
+                self.toggleMaxScrollBar:GetValue()) then
+                self.toggleMinScrollBar:SetValue(
+                    self.toggleMaxScrollBar:GetValue());
+            end
+
+            -- do updates
+            settings.toggleMinOpacity = self.toggleMinScrollBar:GetValue() / 100;
+            self.mainWindow:UpdateOpacity();
+            self.mainWindow:UpdateSettings();
         end
 
-        -- do updates
-        settings.toggleMinOpacity = self.toggleMinScrollBar:GetValue() / 100;
-        self.mainWindow:UpdateOpacity();
-        self.mainWindow:UpdateSettings();
-    end
+    self.toggleMaxScrollBar.ValueChanged =
+        function(sender, args)
 
-    self.toggleMaxScrollBar.ValueChanged = function(sender, args)
+            -- check that the max opacity does not go lower than the min opacity
+            if (self.toggleMaxScrollBar:GetValue() <
+                self.toggleMinScrollBar:GetValue()) then
+                self.toggleMaxScrollBar:SetValue(
+                    self.toggleMinScrollBar:GetValue());
+            end
 
-        -- check that the max opacity does not go lower than the min opacity
-        if (self.toggleMaxScrollBar:GetValue() < self.toggleMinScrollBar:GetValue()) then
-            self.toggleMaxScrollBar:SetValue(self.toggleMinScrollBar:GetValue());
+            -- do updates
+            settings.toggleMaxOpacity = self.toggleMaxScrollBar:GetValue() / 100;
+            self.mainWindow:UpdateOpacity();
+            self.mainWindow:UpdateSettings();
+
         end
-
-        -- do updates
-        settings.toggleMaxOpacity = self.toggleMaxScrollBar:GetValue() / 100;
-        self.mainWindow:UpdateOpacity();
-        self.mainWindow:UpdateSettings();
-
-    end
 
     -- update settings when sliders change
-    self.mainMinScrollBar.ValueChanged = function(sender, args)
+    self.mainMinScrollBar.ValueChanged =
+        function(sender, args)
 
-        -- check that the min opacity does not go higher than the max opacity
-        if (self.mainMinScrollBar:GetValue() > self.mainMaxScrollBar:GetValue()) then
-            self.mainMinScrollBar:SetValue(self.mainMaxScrollBar:GetValue());
+            -- check that the min opacity does not go higher than the max opacity
+            if (self.mainMinScrollBar:GetValue() >
+                self.mainMaxScrollBar:GetValue()) then
+                self.mainMinScrollBar:SetValue(self.mainMaxScrollBar:GetValue());
+            end
+
+            -- do updates
+            settings.mainMinOpacity = self.mainMinScrollBar:GetValue() / 100;
+            self.mainWindow:UpdateOpacity();
+            self.mainWindow:UpdateSettings();
         end
 
-        -- do updates
-        settings.mainMinOpacity = self.mainMinScrollBar:GetValue() / 100;
-        self.mainWindow:UpdateOpacity();
-        self.mainWindow:UpdateSettings();
-    end
+    self.mainMaxScrollBar.ValueChanged =
+        function(sender, args)
 
-    self.mainMaxScrollBar.ValueChanged = function(sender, args)
+            -- check that the max opacity does not go lower than the min opacity
+            if (self.mainMaxScrollBar:GetValue() <
+                self.mainMinScrollBar:GetValue()) then
+                self.mainMaxScrollBar:SetValue(self.mainMinScrollBar:GetValue());
+            end
 
-        -- check that the max opacity does not go lower than the min opacity
-        if (self.mainMaxScrollBar:GetValue() < self.mainMinScrollBar:GetValue()) then
-            self.mainMaxScrollBar:SetValue(self.mainMinScrollBar:GetValue());
+            -- do updates
+            settings.mainMaxOpacity = self.mainMaxScrollBar:GetValue() / 100;
+            self.mainWindow:UpdateOpacity();
+            self.mainWindow:UpdateSettings();
         end
-
-        -- do updates
-        settings.mainMaxOpacity = self.mainMaxScrollBar:GetValue() / 100;
-        self.mainWindow:UpdateOpacity();
-        self.mainWindow:UpdateSettings();
-    end
 end
 
 -- function to add all the travel shortcuts that can be toggled
@@ -387,7 +404,8 @@ function OptionsPanel:AddItems()
     -- add the generic travels skills
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         for i = 1, travelCount[3], 1 do
-            self:AddSkillItemForEnabling(counter, genLocations:IdAtIndex(i), genLocations:LabelAtIndex(i));
+            self:AddSkillItemForEnabling(counter, genLocations:IdAtIndex(i),
+                                         genLocations:LabelAtIndex(i));
             counter = counter + 1;
             offsetCounter = offsetCounter + 1;
         end
@@ -397,7 +415,8 @@ function OptionsPanel:AddItems()
     if (PlayerClass == Turbine.Gameplay.Class.Hunter) then
         offsetCounter = 0;
         for i = 1, travelCount[1], 1 do
-            self:AddSkillItemForEnabling(counter, hunterLocations:IdAtIndex(i), hunterLocations:LabelAtIndex(i));
+            self:AddSkillItemForEnabling(counter, hunterLocations:IdAtIndex(i),
+                                         hunterLocations:LabelAtIndex(i));
             counter = counter + 1;
             offsetCounter = offsetCounter + 1;
         end
@@ -405,7 +424,8 @@ function OptionsPanel:AddItems()
     -- add the warden muster skills if the character is a warden
     if (PlayerClass == Turbine.Gameplay.Class.Warden) then
         for i = 1, travelCount[2], 1 do
-            self:AddSkillItemForEnabling(counter, wardenLocations:IdAtIndex(i), wardenLocations:LabelAtIndex(i));
+            self:AddSkillItemForEnabling(counter, wardenLocations:IdAtIndex(i),
+                                         wardenLocations:LabelAtIndex(i));
             counter = counter + 1;
         end
     end
@@ -413,21 +433,25 @@ function OptionsPanel:AddItems()
     -- add the reputation travel skills
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         for i = 1, travelCount[4], 1 do
-            self:AddSkillItemForEnabling(counter, repLocations:IdAtIndex(i), repLocations:LabelAtIndex(i));
+            self:AddSkillItemForEnabling(counter, repLocations:IdAtIndex(i),
+                                         repLocations:LabelAtIndex(i));
             counter = counter + 1;
         end
     end
 
     -- add the race specific travel skill for the character
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        self:AddSkillItemForEnabling(counter, racialLocations:IdAtIndex(PlayerRaceKey), racialLocations:LabelAtIndex(PlayerRaceKey));
+        self:AddSkillItemForEnabling(counter,
+                                     racialLocations:IdAtIndex(PlayerRaceKey),
+                                     racialLocations:LabelAtIndex(PlayerRaceKey));
         counter = counter + 1;
     end
 
     -- add the creep travel skills
     if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
         for i = 1, travelCount[6], 1 do
-            self:AddSkillItemForEnabling(counter, creepLocations:IdAtIndex(i), creepLocations:LabelAtIndex(i));
+            self:AddSkillItemForEnabling(counter, creepLocations:IdAtIndex(i),
+                                         creepLocations:LabelAtIndex(i));
             counter = counter + 1;
         end
     end
@@ -523,7 +547,7 @@ function OptionsPanel:AddBoxes()
     -- add a check skills button
     self.checkSkillsButton = Turbine.UI.Lotro.Button();
     self.checkSkillsButton:SetSize(200, 20);
-    self.checkSkillsButton:SetPosition(300, self.EnabledTab:GetHeight()-50);
+    self.checkSkillsButton:SetPosition(300, self.EnabledTab:GetHeight() - 50);
     self.checkSkillsButton:SetText(checkSkillsString);
     self.checkSkillsButton:SetParent(self.EnabledTab);
     self.checkSkillsButton:SetVisible(true);
@@ -558,7 +582,8 @@ function OptionsPanel:AddSortList()
         -- highlight the item that is selected by changing the colour of the
         -- the label when it is clicked
         tempLabel.MouseClick = function(sender, args)
-            self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
+            self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(
+                Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
             sender:SetBackColor(Turbine.UI.Color(0.95, 0.1, 0.1, 0.6));
             self.sortSelectedIndex = self.sortListBox:IndexOfItem(sender);
         end
@@ -572,7 +597,8 @@ function OptionsPanel:AddSortList()
     end
 
     -- set the first item as selected
-    self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.6));
+    self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(
+        Turbine.UI.Color(0.87, 0.1, 0.1, 0.6));
 
     -- set up the scrollbar for the list
     self.listBoxScrollBar = self.sortListBox:GetVerticalScrollBar();
@@ -629,7 +655,8 @@ function OptionsPanel:AddSortButtons()
         -- loop while selected item is not already at the top
         while (self.sortSelectedIndex > 1) do
             -- swap the selected item with the one before it
-            self:SwapShortcuts(self.sortSelectedIndex, self.sortSelectedIndex - 1);
+            self:SwapShortcuts(self.sortSelectedIndex,
+                               self.sortSelectedIndex - 1);
 
             -- resort the list
             self.sortSelectedIndex = self.sortSelectedIndex - 1;
@@ -643,9 +670,7 @@ function OptionsPanel:AddSortButtons()
     -- handle the move up button click
     self.moveUpButton.Click = function(sender, args)
         -- exit if the selected item is already at the top
-        if (self.sortSelectedIndex == 1) then
-            return;
-        end
+        if (self.sortSelectedIndex == 1) then return; end
 
         -- swap the selected item with the previous in the list
         self:SwapShortcuts(self.sortSelectedIndex, self.sortSelectedIndex - 1);
@@ -661,9 +686,7 @@ function OptionsPanel:AddSortButtons()
     -- handle the move down button click
     self.moveDownButton.Click = function(sender, args)
         -- exit if the selected item is already at the bottom
-        if (self.sortSelectedIndex == self.sortMaxItem) then
-            return;
-        end
+        if (self.sortSelectedIndex == self.sortMaxItem) then return; end
 
         -- swap the selected item with the next item in the list
         self:SwapShortcuts(self.sortSelectedIndex, self.sortSelectedIndex + 1);
@@ -682,7 +705,8 @@ function OptionsPanel:AddSortButtons()
         -- loop while the selected item is not at the bottom of the list
         while (self.sortSelectedIndex < self.sortMaxItem) do
             -- swap the item with the next item
-            self:SwapShortcuts(self.sortSelectedIndex, self.sortSelectedIndex + 1);
+            self:SwapShortcuts(self.sortSelectedIndex,
+                               self.sortSelectedIndex + 1);
             -- increment the selected index
             self.sortSelectedIndex = self.sortSelectedIndex + 1;
         end

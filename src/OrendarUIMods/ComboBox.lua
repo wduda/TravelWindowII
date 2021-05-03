@@ -3,9 +3,7 @@ Originally from OrendarPlugins.UI
 
 Minor modifications from Frell
 additional modifications by Dhor
---]]
-
-import "Turbine.UI";
+--]] import "Turbine.UI";
 import "TravelWindowII.src.extensions";
 
 ComboBox = class(Turbine.UI.Control);
@@ -47,7 +45,8 @@ function ComboBox:Constructor(toplevel)
     self.arrow:SetSize(16, 16);
     self.arrow:SetZOrder(20);
     self.arrow:SetBlendMode(Turbine.UI.BlendMode.AlphaBlend);
-    self.arrow:SetBackground("TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_closed.tga");
+    self.arrow:SetBackground(
+        "TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_closed.tga");
     self.arrow:SetMouseVisible(false);
 
     -- drop down window
@@ -77,40 +76,34 @@ function ComboBox:Constructor(toplevel)
     end
 end
 
-function ComboBox:SetTravelOnSelect(value)
-    self.travelOnSelect = value;
-end
+function ComboBox:SetTravelOnSelect(value) self.travelOnSelect = value; end
 
 function ComboBox:MouseEnter(args)
-    if (not self:IsEnabled()) then
-        return;
-    end
+    if (not self:IsEnabled()) then return; end
 
     self.label:SetFontStyle(Turbine.UI.FontStyle.Outline);
     self.label:SetForeColor(ComboBox.ItemColor);
     self.label:SetText(self.label:GetText());
 
-    self.arrow:SetBackground("TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_" .. (self.dropped and "open_rollover" or "closed_rollover") .. ".tga");
+    self.arrow:SetBackground(
+        "TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_" ..
+            (self.dropped and "open_rollover" or "closed_rollover") .. ".tga");
 end
 
 function ComboBox:MouseLeave(args)
-    if (not self:IsEnabled()) then
-        return;
-    end
+    if (not self:IsEnabled()) then return; end
 
     self.label:SetFontStyle(Turbine.UI.FontStyle.None);
-    if (self.dropped) then
-        self.label:SetForeColor(ComboBox.SelectionColor);
-    end
+    if (self.dropped) then self.label:SetForeColor(ComboBox.SelectionColor); end
     self.label:SetText(self.label:GetText());
 
-    self.arrow:SetBackground("TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_" .. (self.dropped and "open" or "closed") .. ".tga");
+    self.arrow:SetBackground(
+        "TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_" ..
+            (self.dropped and "open" or "closed") .. ".tga");
 end
 
 function ComboBox:MouseClick(args)
-    if (not self:IsEnabled()) then
-        return;
-    end
+    if (not self:IsEnabled()) then return; end
 
     if (args.Button == Turbine.UI.MouseButton.Left) then
         if (self.dropped) then
@@ -123,7 +116,7 @@ end
 
 function ComboBox:FireEvent()
     if (type(self.SelectedIndexChanged) == "function") then
-        self:SelectedIndexChanged({ selection = self:GetSelection() });
+        self:SelectedIndexChanged({selection = self:GetSelection()});
     end
 end
 
@@ -133,7 +126,7 @@ function ComboBox:ItemSelected(index)
         old:SetForeColor(ComboBox.ItemColor);
     end
 
-    --local item = self.listBox:GetItem(index);
+    -- local item = self.listBox:GetItem(index);
     local item = self.labels[index];
     self.selection = index;
     item:SetForeColor(ComboBox.SelectionColor);
@@ -159,7 +152,7 @@ function ComboBox:AddItem(shortcut, index, value)
     self.quickslots[index]:SetParent(self.listBox);
     self.quickslots[index]:SetShortcut(shortcut);
 
-    --self.labels[index] = Turbine.UI.Label();
+    -- self.labels[index] = Turbine.UI.Label();
     self.labels[index] = TravelWindowII.src.extensions.DLabel();
     self.labels[index]:SetSize(width, 20);
     self.labels[index]:SetPosition(0, ((index - 1) * (20)));
@@ -204,8 +197,6 @@ function ComboBox:AddItem(shortcut, index, value)
         self:DoScroll(sender, args);
     end
 
-
-
     self.quickslots[index].MouseEnter = function(sender, args)
         self.labels[index]:SetFontStyle(Turbine.UI.FontStyle.Outline);
         self.labels[index]:SetForeColor(ComboBox.ItemColor);
@@ -247,7 +238,7 @@ function ComboBox:RemoveItem(value)
                     self.label:SetText("");
                 end
             end
-            break;
+            break
         end
     end
 end
@@ -258,7 +249,7 @@ function ComboBox:SetSelection(value)
         if (item.value == value) then
             self:ItemSelected(i);
             self:FireEvent();
-            break;
+            break
         end
     end
 end
@@ -289,9 +280,7 @@ function ComboBox:UpdateSelectionText(text)
     end
 end
 
-function ComboBox:GetItemCount()
-    return self.listBox:GetItemCount();
-end
+function ComboBox:GetItemCount() return self.listBox:GetItemCount(); end
 
 function ComboBox:GetItem(index)
     local item = self.listBox:GetItem(index);
@@ -307,11 +296,13 @@ function ComboBox:SetEnabled(enabled)
     Turbine.UI.Control.SetEnabled(self, enabled);
     if (enabled) then
         self.label:SetForeColor(ComboBox.ItemColor);
-        self.arrow:SetBackground("TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_closed.tga");
+        self.arrow:SetBackground(
+            "TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_closed.tga");
     else
         self:CloseDropDown();
         self.label:SetForeColor(ComboBox.DisabledColor);
-        self.arrow:SetBackground("TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_closed_ghosted.tga");
+        self.arrow:SetBackground(
+            "TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_closed_ghosted.tga");
     end
 end
 
@@ -328,7 +319,8 @@ function ComboBox:ShowDropDown()
     if ((itemCount > 0) and not (self.dropped)) then
         self.dropped = true;
         self.label:SetForeColor(ComboBox.SelectionColor);
-        self.arrow:SetBackground("TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_open_rollover.tga");
+        self.arrow:SetBackground(
+            "TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_open_rollover.tga");
         local width, height = self:GetSize();
 
         -- max size
@@ -361,7 +353,8 @@ function ComboBox:ShowDropDown()
 
         -- position
         local x, y = self:GetPosition();
-        local parentX, parentY = self:GetParent():GetParent():GetParent():GetPosition();
+        local parentX, parentY = self:GetParent():GetParent():GetParent()
+                                     :GetPosition();
         self.dropDownWindow:SetPosition(parentX + 10, parentY + 93);
 
         self.dropDownWindow:SetVisible(true);
@@ -377,7 +370,8 @@ function ComboBox:CloseDropDown()
         self.dropped = false;
         self.dropDownWindow:SetVisible(false);
         self.label:SetForeColor(ComboBox.ItemColor);
-        self.arrow:SetBackground("TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_closed_rollover.tga");
+        self.arrow:SetBackground(
+            "TravelWindowII/src/OrendarUIMods/Resources/dropdown_arrow_closed_rollover.tga");
     end
 end
 
@@ -387,9 +381,7 @@ function ComboBox:DoScroll(sender, args)
     newValue = self.scrollBar:GetValue() - args.Direction * 20;
 
     -- make sure the value does not go below zero
-    if (newValue < 0) then
-        newValue = 0;
-    end
+    if (newValue < 0) then newValue = 0; end
 
     -- set the new value
     self.scrollBar:SetValue(newValue);
@@ -409,7 +401,8 @@ function ComboBox:UpdateSubWindow()
 
         -- set the top position of the quickslots based on row
         -- number and the value of the scrollbar
-        self.quickslots[i]:SetTop((self.row - 1) * 20 - self.scrollBar:GetValue());
+        self.quickslots[i]:SetTop((self.row - 1) * 20 -
+                                      self.scrollBar:GetValue());
         self.labels[i]:SetTop((self.row - 1) * 20 - self.scrollBar:GetValue());
     end
 end

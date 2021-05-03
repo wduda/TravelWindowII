@@ -23,9 +23,7 @@ _G.class = function(base)
         local m = getmetatable(self);
 
         while m do
-            if m == klass then
-                return true;
-            end
+            if m == klass then return true; end
 
             m = m.base;
         end
@@ -46,10 +44,11 @@ _G.class = function(base)
 
         -- Create the new class instance.
         local instance = {};
-        setmetatable(instance, { __index = c });
+        setmetatable(instance, {__index = c});
 
         -- Invoke the constructor if it exists.
-        if ((instance.Constructor ~= nil) and (type(instance.Constructor) == 'function')) then
+        if ((instance.Constructor ~= nil) and
+            (type(instance.Constructor) == 'function')) then
             instance:Constructor(...);
         end
 
