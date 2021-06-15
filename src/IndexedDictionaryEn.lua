@@ -154,7 +154,9 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Annâk-khurfu", "0x70058571", "Annâk-khurfu (Guide)");
     hunterLocations:AddSkill("Guide to Trader's Wharf", "0x70059D0C", "Trader's Wharf (Guide)");
     hunterLocations:AddSkill("Guide to Trestlebridge", "0x70059D16", "Trestlebridge (Guide)");
-
+    hunterLocations:AddSkill("Guide to Akrâz-zahar", "0x7005AA91", "Akrâz-zahar (Guide)");
+    hunterLocations:AddSkill("Guide to Azanulbizar", "0x7005AA95", "Azanulbizar (Guide)");
+    
     wardenLocations:AddSkill("Muster in Ost Guruth", "0x70014786", "Ost Guruth (Muster)");
     wardenLocations:AddSkill("Muster in Esteldín", "0x70014798", "Esteldín (Muster)");
     wardenLocations:AddSkill("Muster in Evendim", "0x7001478E", "Evendim (Muster)");
@@ -191,6 +193,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster in Annâk-khurfu", "0x70058572", "Annâk-khurfu (Muster)");
     wardenLocations:AddSkill("Muster in Trader's Wharf", "0x70059D09", "Trader's Wharf (Muster)");
     wardenLocations:AddSkill("Muster in Trestlebridge", "0x70059D10", "Trestlebridge (Muster)");
+    wardenLocations:AddSkill("Muster in Akrâz-zahar", "0x7005AA8F", "Akrâz-zahar (Muster)");
+    wardenLocations:AddSkill("Muster in Azanulbizar", "0x7005AA8C", "Azanulbizar (Muster)");
 
     -- add the racial travel skills
     racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)");
@@ -258,6 +262,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Rep)");
     repLocations:AddSkill("Return to Trader's Wharf", "0x70059D0E", "Trader's Wharf (Rep)");
     repLocations:AddSkill("Return to Trestlebridge", "0x70059D12", "Trestlebridge (Rep)");
+    repLocations:AddSkill("Return to Akrâz-zahar", "0x7005AA90", "Akrâz-zahar (Rep)");
+    repLocations:AddSkill("Return to Azanulbizar", "0x7005AA92", "Azanulbizar (Rep)");
 
     -- monster player maps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");

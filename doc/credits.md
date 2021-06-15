@@ -19,3 +19,4 @@ Hyoss
 Thaliruth
 Drogo
 Adra
+Lossensinome

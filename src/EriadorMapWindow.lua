@@ -89,6 +89,9 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Annâk-khurfu
         {-1, -1}, -- Trader's Wharf
         {-1, -1}, -- Trestlebridge
+        {-1, -1}, -- U30 A
+        {-1, -1}, -- U30 B
+
         -- Warden skills
         {725, 400}, -- Ost Guruth
         {650, 280}, -- Esteldin
@@ -126,6 +129,9 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Annâk-khurfu
         {-1, -1}, -- Trader's Wharf
         {-1, -1}, -- Trestlebridge
+        {-1, -1}, -- U30 A
+        {-1, -1}, -- U30 B
+
         -- Reputation skills
         {305, 330}, -- Thorin's Hall
         {595, 400}, -- Bree
@@ -166,6 +172,9 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Annâk-khurfu
         {-1, -1}, -- Trader's Wharf
         {-1, -1}, -- Trestlebridge
+        {-1, -1}, -- U30 A
+        {-1, -1}, -- U30 B
+
         -- Racial skills
         {620, 400}, -- Bree
         {445, 415}, -- Michel Delving
