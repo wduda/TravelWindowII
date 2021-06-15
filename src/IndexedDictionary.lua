@@ -1,6 +1,6 @@
 --[[ use a modified table to maintain data for travel skills
-     specifically skill name, ID and label                   ]]
-IndexedDictionary = class()
+     specifically skill name, ID and label                   ]] IndexedDictionary =
+    class()
 
 function IndexedDictionary:Constructor()
     -- set default tables
@@ -12,9 +12,7 @@ function IndexedDictionary:Constructor()
 end
 
 -- function to get the total number of entries in the dictionary
-function IndexedDictionary:GetCount()
-    return self.numberOfItems;
-end
+function IndexedDictionary:GetCount() return self.numberOfItems; end
 
 -- function to add a skills name, ID and label to the end of the dictionary
 function IndexedDictionary:AddSkill(name, id, label)
@@ -56,9 +54,7 @@ function IndexedDictionary:RemoveSkillAtIndex(index)
         counter = counter + 1;
 
         -- if the keys match, set the location to remove from the table
-        if (k == self.skillNames[index]) then
-            location = counter;
-        end
+        if (k == self.skillNames[index]) then location = counter; end
     end
 
     -- remove the name, ID and label from the tables
@@ -101,9 +97,7 @@ function IndexedDictionary:PairAtIndex(index)
 end
 
 -- function to get the ID by a name value
-function IndexedDictionary:IdByName(name)
-    return self.skillIds[name];
-end
+function IndexedDictionary:IdByName(name) return self.skillIds[name]; end
 
 -- function to check if ID exists
 function IndexedDictionary:VerifyId(id)
@@ -114,21 +108,16 @@ function IndexedDictionary:VerifyId(id)
     end
 end
 
-
 -- function to find the index value based on a key
 function IndexedDictionary:IndexByName(name)
 
     -- return if the list of keys is empty
-    if (self.skillNames == {}) then
-        return -1;
-    end
+    if (self.skillNames == {}) then return -1; end
 
     -- loop through the list of names and search for the given value
     for i = 1, #self.skillNames, 1 do
         -- return the index value if a match is made
-        if (self.skillNames[i] == name) then
-            return i;
-        end
+        if (self.skillNames[i] == name) then return i; end
     end
 
     -- return -1 since we did not find a key

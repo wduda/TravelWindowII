@@ -154,6 +154,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide vers Annâk-khurfu", "0x70058571", "Annâk-khurfu (Guide)");
     hunterLocations:AddSkill("Guide vers le Quai des marchands", "0x70059D0C", "Quai des marchands (Guide)");
     hunterLocations:AddSkill("Guide vers Pont-à-Tréteaux", "0x70059D16", "Pont-à-Tréteaux (Guide)");
+    hunterLocations:AddSkill("Guide vers Akrâz-zahar", "0x7005AA91", "Akrâz-zahar (Guide)");
+    hunterLocations:AddSkill("Guide vers Azanulbizar", "0x7005AA95", "Azanulbizar (Guide)");
 
     wardenLocations:AddSkill("Rassemblement à Ost Guruth", "0x70014786", "Ost Guruth (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Esteldin", "0x70014798", "Esteldin (Rassemblement)");
@@ -191,6 +193,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Rassemblement à Annâk-khurfu", "0x70058572", "Annâk-khurfu (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement au Quai des marchands", "0x70059D09", "Quai des marchands (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Pont-à-Tréteaux", "0x70059D10", "Pont-à-Tréteaux (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Akrâz-zahar", "0x7005AA8F", "Akrâz-zahar (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Azanulbizar", "0x7005AA8C", "Azanulbizar (Rassemblement)");
 
     racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
     racialLocations:AddSkill("Retournez dans la Comté", "0x700062C8", "Comté (Race)");
@@ -255,6 +259,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retournez à Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Rep)");
     repLocations:AddSkill("Retournez au Quai des marchands", "0x70059D0E", "Quai des marchands (Rep)");
     repLocations:AddSkill("Retournez à Pont-à-Tréteaux", "0x70059D12", "Pont-à-Tréteaux (Rep)");
+    repLocations:AddSkill("Retour à Akrâz-zahar", "0x7005AA90", "Akrâz-zahar (Rep)");
+    repLocations:AddSkill("Retour à Azanulbizar", "0x7005AA92", "Azanulbizar (Rep)");
 
     -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");

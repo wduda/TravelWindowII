@@ -61,14 +61,10 @@ end
     when a DTabButton registers a Mouse
     Click Event
 ]] --
-function DPanel:TabMouseClick(sender)
-    self.selectedPage = sender:GetIndex();
-end
+function DPanel:TabMouseClick(sender) self.selectedPage = sender:GetIndex(); end
 
 -- function to programmatically change which tab is visible
-function DPanel:SetTab(value)
-    self.selectedPage = value;
-end
+function DPanel:SetTab(value) self.selectedPage = value; end
 
 --[[
     Call this function to add a page to
@@ -113,7 +109,8 @@ function DPanel:UpdateTabs()
         if (self.showButtons) then
             self.tabPages[i]:SetSize(self:GetWidth(), self:GetHeight() - 25);
             self.tabPages[i]:SetPosition(0, 25);
-            self.tabButtons[i]:SetPosition((i - 1) * (self:GetWidth() / self.pageCount), 0);
+            self.tabButtons[i]:SetPosition(
+                (i - 1) * (self:GetWidth() / self.pageCount), 0);
             self.tabButtons[i]:SetWidth(self:GetWidth() / self.pageCount);
             self.tabButtons[i]:SetHeight(25);
             self.tabButtons[i]:SetVisible(true);
@@ -122,7 +119,6 @@ function DPanel:UpdateTabs()
             self.tabPages[i]:SetPosition(0, 0);
             self.tabButtons[i]:SetVisible(false);
         end
-
 
         self.tabButtons[i]:SetSelected(false);
         self.tabPages[i]:SetVisible(false);
@@ -135,7 +131,6 @@ function DPanel:UpdateTabs()
         self:SetVisible(true);
     end
 end
-
 
 -- function for changing the button visibility
 function DPanel:SetButtonsVisible(value)
@@ -151,14 +146,10 @@ end
 
 -- function to handle drag drop event
 function DPanel:DragDrop(sender, args)
-    pcall(function()
-        self.tabPages[sender:GetIndex()]:DragDrop(self, args);
-    end)
+    pcall(function() self.tabPages[sender:GetIndex()]:DragDrop(self, args); end)
 end
 
 -- function to handle drag enter events
 function DPanel:DragEnter(sender, args)
-    pcall(function()
-        self.tabPages[sender:GetIndex()]:DragEnter(self, args);
-    end)
+    pcall(function() self.tabPages[sender:GetIndex()]:DragEnter(self, args); end)
 end

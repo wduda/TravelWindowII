@@ -1,6 +1,5 @@
 --[[ this is an extension of the Turbine MenuItem, but allows the MenuItem
      to return sub menu information  ]] --
-
 DMenuList = class(Turbine.UI.MenuItem)
 
 function DMenuList:Constructor(input)

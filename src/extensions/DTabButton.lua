@@ -2,7 +2,6 @@
     This is an extension of the Turbine Control class used to create
     a button composed of 3 images that can be used on a tab panel.
 ]] --
-
 import "Turbine";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
@@ -61,26 +60,14 @@ function DTabButton:Constructor()
     end
 
     --[[ Mouse Over Event Handlers ]] --
-    self.left.MouseEnter = function(sender, args)
-        self.mouseOver = true;
-    end
-    self.center.MouseEnter = function(sender, args)
-        self.mouseOver = true;
-    end
-    self.right.MouseEnter = function(sender, args)
-        self.mouseOver = true;
-    end
+    self.left.MouseEnter = function(sender, args) self.mouseOver = true; end
+    self.center.MouseEnter = function(sender, args) self.mouseOver = true; end
+    self.right.MouseEnter = function(sender, args) self.mouseOver = true; end
 
     --[[ Mouse Leave Event Handlers ]] --
-    self.left.MouseLeave = function(sender, args)
-        self.mouseOver = false;
-    end
-    self.center.MouseLeave = function(sender, args)
-        self.mouseOver = false;
-    end
-    self.right.MouseLeave = function(sender, args)
-        self.mouseOver = false;
-    end
+    self.left.MouseLeave = function(sender, args) self.mouseOver = false; end
+    self.center.MouseLeave = function(sender, args) self.mouseOver = false; end
+    self.right.MouseLeave = function(sender, args) self.mouseOver = false; end
 
     --[[ Drag Events ]] --
     self.DragEnter = function(sender, args)
@@ -101,52 +88,50 @@ end
 function DTabButton:SetSelected(value)
     if (type(value) ~= "boolean") then
         self.selected = nil;
-        error(string.format("Invalid input %q for DTabButton:SetSelected", value));
+        error(
+            string.format("Invalid input %q for DTabButton:SetSelected", value));
         return;
     end
 
     self.selected = value;
 end
 
-function DTabButton:IsSelected()
-    return self.selected;
-end
+function DTabButton:IsSelected() return self.selected; end
 
 function DTabButton:SetIndex(value)
     -- make sure to accept only numbers
     if (type(value) ~= "number") then
         self.index = 0;
-        error(string.format("Invalid input arg for DTabButton:SetIndex.  %q", value));
+        error(string.format("Invalid input arg for DTabButton:SetIndex.  %q",
+                            value));
         return;
     end
 
     -- make sure the index is not negative
     if (value < 0) then
         self.index = 0;
-        error(string.format("Input for DTabButton:SetIndex should not be negative"));
+        error(string.format(
+                  "Input for DTabButton:SetIndex should not be negative"));
         return;
     end
 
     self.index = value;
 end
 
-function DTabButton:GetIndex()
-    return self.index;
-end
+function DTabButton:GetIndex() return self.index; end
 
 function DTabButton:SetText(value)
     if (type(value) ~= "string") then
         self.center:SetText("Error");
-        error(string.format("Invalid arguement for DTabButton:SetText.  %q", value));
+        error(string.format("Invalid arguement for DTabButton:SetText.  %q",
+                            value));
         return;
     end
 
     self.center:SetText(value);
 end
 
-function DTabButton:GetText()
-    return self.center:GetText();
-end
+function DTabButton:GetText() return self.center:GetText(); end
 
 function DTabButton:Update(sender, args)
 
@@ -163,15 +148,20 @@ function DTabButton:Update(sender, args)
         -- set the image of the button depending if the mouse is over or the
         -- button is the selected tab.
         if (self.selected or self.mouseOver) then
-            self.left:SetBackground("TravelWindowII/src/extensions/Resources/tab_tier1_middle_front_w.tga");
-            self.center:SetBackground("TravelWindowII/src/extensions/Resources/tab_tier1_middle_front_n.tga");
-            self.right:SetBackground("TravelWindowII/src/extensions/Resources/tab_tier1_middle_front_e.tga");
+            self.left:SetBackground(
+                "TravelWindowII/src/extensions/Resources/tab_tier1_middle_front_w.tga");
+            self.center:SetBackground(
+                "TravelWindowII/src/extensions/Resources/tab_tier1_middle_front_n.tga");
+            self.right:SetBackground(
+                "TravelWindowII/src/extensions/Resources/tab_tier1_middle_front_e.tga");
         else
-            self.left:SetBackground("TravelWindowII/src/extensions/Resources/tab_tier1_middle_back_w.tga");
-            self.center:SetBackground("TravelWindowII/src/extensions/Resources/tab_tier1_middle_back_n.tga");
-            self.right:SetBackground("TravelWindowII/src/extensions/Resources/tab_tier1_middle_back_e.tga");
+            self.left:SetBackground(
+                "TravelWindowII/src/extensions/Resources/tab_tier1_middle_back_w.tga");
+            self.center:SetBackground(
+                "TravelWindowII/src/extensions/Resources/tab_tier1_middle_back_n.tga");
+            self.right:SetBackground(
+                "TravelWindowII/src/extensions/Resources/tab_tier1_middle_back_e.tga");
         end
     end
 end
-
 

@@ -2,7 +2,6 @@
     This is an extension of the Turbine Label class.  It can store it's own data,
     and index.
 ]] --
-
 import "Turbine";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
@@ -21,16 +20,15 @@ function DLabel:SetData(stringData)
     -- make sure to only accept actual strings
     if (type(stringData) ~= "string") then
         self.data = "Not a proper string";
-        error(string.format("Invalid input arg %q for DLabel:SetData", stringData));
+        error(string.format("Invalid input arg %q for DLabel:SetData",
+                            stringData));
         return;
     end
 
     self.data = stringData;
 end
 
-function DLabel:GetData()
-    return self.data;
-end
+function DLabel:GetData() return self.data; end
 
 function DLabel:SetIndex(value)
     -- make sure to accept only numbers
@@ -50,7 +48,5 @@ function DLabel:SetIndex(value)
     self.index = value;
 end
 
-function DLabel:GetIndex()
-    return self.index;
-end
+function DLabel:GetIndex() return self.index; end
 

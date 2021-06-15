@@ -43,20 +43,20 @@ function TravelListTab:AddItem(shortcut, i)
     -- based on the row and column locations
     self.quickslots[index] = Turbine.UI.Lotro.Quickslot();
     self.quickslots[index]:SetSize(itemWidth, itemHeight);
-    self.quickslots[index]:SetPosition(10 + ((self.col - 1) * (itemWidth + 2)), ((self.row - 1) * (itemHeight)));
+    self.quickslots[index]:SetPosition(10 + ((self.col - 1) * (itemWidth + 2)),
+                                       ((self.row - 1) * (itemHeight)));
     self.quickslots[index]:SetZOrder(90);
     self.quickslots[index]:SetOpacity(1);
     self.quickslots[index]:SetUseOnRightClick(false);
     self.quickslots[index]:SetParent(self.SubWindow);
 
-    pcall(function()
-        self.quickslots[index]:SetShortcut(shortcut);
-    end)
+    pcall(function() self.quickslots[index]:SetShortcut(shortcut); end)
 
     -- create the label that will cover the shortcut
     self.labels[index] = Turbine.UI.Label();
     self.labels[index]:SetSize(itemWidth, itemHeight);
-    self.labels[index]:SetPosition(10 + ((self.col - 1) * (itemWidth + 2)), ((self.row - 1) * (itemHeight)));
+    self.labels[index]:SetPosition(10 + ((self.col - 1) * (itemWidth + 2)),
+                                   ((self.row - 1) * (itemHeight)));
     self.labels[index]:SetZOrder(100);
     self.labels[index]:SetMouseVisible(false);
     self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
@@ -154,7 +154,8 @@ function TravelListTab:UpdateSubWindow()
 
         -- set the top position of the quickslots based on row
         -- number and the value of the scrollbar
-        self.quickslots[i]:SetTop((self.row - 1) * 22 - self.myScrollBar:GetValue());
+        self.quickslots[i]:SetTop((self.row - 1) * 22 -
+                                      self.myScrollBar:GetValue());
         self.labels[i]:SetTop((self.row - 1) * 22 - self.myScrollBar:GetValue());
     end
 end
