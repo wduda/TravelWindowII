@@ -89,6 +89,9 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Annâk-khurfu
         {-1, -1}, -- Trader's Wharf
         {-1, -1}, -- Trestlebridge
+        {-1, -1}, -- U30 A
+        {-1, -1}, -- U30 B
+
         -- Muster skills
         {-1, -1}, -- Ost Guruth
         {-1, -1}, -- Esteldin
@@ -126,6 +129,9 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Annâk-khurfu
         {-1, -1}, -- Trader's Wharf
         {-1, -1}, -- Trestlebridge
+        {-1, -1}, -- U30 A
+        {-1, -1}, -- U30 B
+
         -- Reputation skills
         {-1, -1}, -- Thorin's Hall
         {-1, -1}, -- Bree
@@ -166,6 +172,9 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Annâk-khurfu
         {-1, -1}, -- Trader's Wharf
         {-1, -1}, -- Trestlebridge
+        {-1, -1}, -- U30 A
+        {-1, -1}, -- U30 B
+
         -- Racial skills
         {-1, -1}, -- Bree
         {-1, -1}, -- Michel Delving

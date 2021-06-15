@@ -154,6 +154,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Führer nach Annâk-khurfu", "0x70058571", "Annâk-khurfu (Führer)");
     hunterLocations:AddSkill("Führer zum Händlerkai", "0x70059D0C", "Händlerkai (Führer)");
     hunterLocations:AddSkill("Führer nach Schragen", "0x70059D16", "Schragen (Führer)");
+    hunterLocations:AddSkill("Führer nach Akrâz-zahar", "0x7005AA91", "Akrâz-zahar (Führer)");
+    hunterLocations:AddSkill("Führer nach Azanulbizar", "0x7005AA95", "Azanulbizar (Führer)");
 
     wardenLocations:AddSkill("Appell in der Feste Guruth", "0x70014786", "Feste Guruth (Appell)");
     wardenLocations:AddSkill("Appell in Esteldín", "0x70014798", "Esteldín (Appell)");
@@ -191,6 +193,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell in Annâk-khurfu", "0x70058572", "Annâk-khurfu (Appell)");
     wardenLocations:AddSkill("Appell am Händlerkai", "0x70059D09", "Händlerkai (Appell)");
     wardenLocations:AddSkill("Appell in Schragen", "0x70059D10", "Schragen (Appell)");
+    wardenLocations:AddSkill("Appell in Akrâz-zahar", "0x7005AA8F", "Akrâz-zahar (Appell)");
+    wardenLocations:AddSkill("Appell in Azanulbizar", "0x7005AA8C", "Azanulbizar (Appell)");
 
     racialLocations:AddSkill("Rückkehr nach Bree", "0x700062F6", "Bree (Rasse)");
     racialLocations:AddSkill("Rückkehr ins Auenland", "0x700062C8", "Michelbinge (Rasse)");
@@ -255,6 +259,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Rückkehr nach Annâk-khurfu", "0x7005856F", "Annâk-khurfu (Ruf)");
     repLocations:AddSkill("Kehrt zum Händlerkai zurück.", "0x70059D0E", "Händlerkai (Ruf)");
     repLocations:AddSkill("Kehrt nach Schragen zurück.", "0x70059D12", "Schragen (Ruf)");
+    repLocations:AddSkill("Rückkehr nach Akrâz-zahar", "0x7005AA90", "Akrâz-zahar (Ruf)");
+    repLocations:AddSkill("Rückkehre nach Azanulbizar", "0x7005AA92", "Azanulbizar (Ruf)");
 
 -- monster player maps
     creepLocations:AddSkill("Kartenskizze zum Gramfuss", "0x70028BBC");

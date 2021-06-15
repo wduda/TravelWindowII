@@ -1,5 +1,6 @@
 # Changelog
-
+## v1.0.14beta
+- added new travel skills for U30 in EN, DE, FR
 ## v1.0.13beta
 - fixed plugin crash for Wardens with travel to Trestlebridge learned (bugfix)
 ## v1.0.12beta
