@@ -76,7 +76,7 @@ function TravelDictionaries:Constructor()
 
     -- a table to store the number of each type of travel skill
     travelCount = { 0, 0, 0, 0, 0, 0 };
-    totalLocations = 0;
+    LocationsTotal = 0;
 
     self:CreateDictionaries();
     self:GetCounts();
@@ -91,7 +91,7 @@ function TravelDictionaries:GetCounts()
     travelCount[5] = racialLocations:GetCount();
     travelCount[6] = creepLocations:GetCount();
 
-    totalLocations = travelCount[1] + travelCount[2] + travelCount[3] + travelCount[4] + travelCount[5];
+    LocationsTotal = travelCount[1] + travelCount[2] + travelCount[3] + travelCount[4] + travelCount[5];
 end
 
 -- function to return the count of a specific type of travel
@@ -101,7 +101,7 @@ end
 
 -- function to get the total number of travel skills
 function TravelDictionaries:GetTotalCount()
-    return totalLocations;
+    return LocationsTotal;
 end
 
 -- function to return the 5 tables containing the travel skills
