@@ -557,8 +557,10 @@ function TravelWindow:CheckEnabledSettings()
         for id, order in pairs(settings.order) do
             if (not genLocations:VerifyId(id) and
                 not wardenLocations:VerifyId(id) and
-                not repLocations:VerifyId(id) and not genLocations:VerifyId(id)) then
-                settings.order[id] = nil;
+                not repLocations:VerifyId(id) and
+                not genLocations:VerifyId(id)) 
+                then
+                    settings.order[id] = nil;
             end
         end
     end
@@ -568,8 +570,10 @@ function TravelWindow:CheckEnabledSettings()
         for id, status in pairs(settings.enabled) do
             if (not genLocations:VerifyId(id) and
                 not wardenLocations:VerifyId(id) and
-                not repLocations:VerifyId(id) and not genLocations:VerifyId(id)) then
-                settings.enabled[id] = nil;
+                not repLocations:VerifyId(id) and
+                not genLocations:VerifyId(id))
+                then
+                    settings.enabled[id] = nil;
             end
         end
     end
@@ -785,7 +789,7 @@ function TravelWindow:LoadSettings()
     if (SettingsStrings) then
         SettingsStrings.backupTime = "#" .. Turbine.Engine.GetGameTime();
         local dateInfo = Turbine.Engine.GetDate();
-        PatchDataSave(Turbine.DataScope.Account,
+        PatchDataSave(Turbine.DataScope.Character,
                       "TravelWindowIISettings_backup" .. dateInfo.DayOfWeek,
                       SettingsStrings);
     end
