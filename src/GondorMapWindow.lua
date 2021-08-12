@@ -36,7 +36,7 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
     self:SetText(gondorMapTitleString);
     self:SetOpacity(1);
 
-    mapLabel = Turbine.UI.Label();
+    local mapLabel = Turbine.UI.Label();
     mapLabel:SetPosition(10, 40);
     mapLabel:SetSize(1024, 768);
 
