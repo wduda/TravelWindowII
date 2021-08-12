@@ -57,7 +57,7 @@ end
 function TravelGridTab:DoScroll(sender, args)
 
     -- calculate how far to move the scrollbar
-    newValue = self.myScrollBar:GetValue() - args.Direction * 20;
+    local newValue = self.myScrollBar:GetValue() - args.Direction * 20;
 
     -- make sure the value does not go below zero
     if (newValue < 0) then newValue = 0; end
@@ -124,7 +124,7 @@ function TravelGridTab:SetItems()
     for i = 1, #TravelShortcuts, 1 do
         if (TravelShortcuts[i]:IsEnabled()) then
             -- apply skill type filter if set in options
-            if (hasbit(.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
+            if (hasbit(Settings.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
                 -- make sure skill is trained, lookup by ingame name
                 if (TravelWindow:FindSkill(TravelShortcuts[i]:GetName())) then
                     self:AddItem(TravelShortcuts[i]);

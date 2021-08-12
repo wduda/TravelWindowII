@@ -57,12 +57,12 @@ function TravelButton:Constructor(parent)
 
     -- go to full opacity if mouse is over
     self.MouseEnter = function(sender, args)
-        self:SetOpacity(.toggleMaxOpacity);
+        self:SetOpacity(Settings.toggleMaxOpacity);
     end
 
     -- go to low opacity when mosue is not over
     self.MouseLeave = function(sender, args)
-        self:SetOpacity(.toggleMinOpacity);
+        self:SetOpacity(Settings.toggleMinOpacity);
     end
 
     -- if the mouse button is press, prepare to maybe move the button
@@ -87,8 +87,8 @@ function TravelButton:Constructor(parent)
             -- the visibility of the button
             if (hasMoved) then
                 local one, two = self:GetPosition();
-                .buttonPositionX = one;
-                .buttonPositionY = two;
+                Settings.buttonPositionX = one;
+                Settings.buttonPositionY = two;
                 self.mainWindow:UpdateSettings();
                 hasMoved = false;
                 self:SetBackColor(Turbine.UI.Color(0, 0.5, 0.5, 0.5));
@@ -112,4 +112,4 @@ function TravelButton:Constructor(parent)
     end
 end
 
-function TravelButton:UpdateOpacity() self:SetOpacity(.toggleMinOpacity); end
+function TravelButton:UpdateOpacity() self:SetOpacity(Settings.toggleMinOpacity); end
