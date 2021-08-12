@@ -156,7 +156,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Trestlebridge", "0x70059D16", "Trestlebridge (Guide)");
     hunterLocations:AddSkill("Guide to Akrâz-zahar", "0x7005AA91", "Akrâz-zahar (Guide)");
     hunterLocations:AddSkill("Guide to Azanulbizar", "0x7005AA95", "Azanulbizar (Guide)");
-    
+
     wardenLocations:AddSkill("Muster in Ost Guruth", "0x70014786", "Ost Guruth (Muster)");
     wardenLocations:AddSkill("Muster in Esteldín", "0x70014798", "Esteldín (Muster)");
     wardenLocations:AddSkill("Muster in Evendim", "0x7001478E", "Evendim (Muster)");
