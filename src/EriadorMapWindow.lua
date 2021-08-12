@@ -37,12 +37,12 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
     self:SetOpacity(1);
 
     local mapLabel = Turbine.UI.Label();
-    mapLabel:SetPosition(10, 40);
-    mapLabel:SetSize(1024, 768);
+    self.mapLabel:SetPosition(10, 40);
+    self.mapLabel:SetSize(1024, 768);
 
-    mapLabel:SetBackground(0x41008138);
-    mapLabel:SetParent(self);
-    mapLabel:SetVisible(true);
+    self.mapLabel:SetBackground(0x41008138);
+    self.mapLabel:SetParent(self);
+    self.mapLabel:SetVisible(true);
 
     self.mapLocations = {
         -- Hunter skills
@@ -281,7 +281,7 @@ function EriadorMapWindow:AddSingleShortcut(index, shortcut)
     self.quickslots[index]:SetShortcut(shortcut);
 
     self.quickslots[index]:SetOpacity(1);
-    self.quickslots[index]:SetParent(mapLabel);
+    self.quickslots[index]:SetParent(self.mapLabel);
     self.quickslots[index]:SetAllowDrop(false);
     self.quickslots[index]:SetMouseVisible(true);
     self.quickslots[index]:SetUseOnRightClick(false);
