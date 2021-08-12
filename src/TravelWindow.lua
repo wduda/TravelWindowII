@@ -444,22 +444,20 @@ function TravelWindow:SetShortcuts()
                                             genLocations:IdAtIndex(i));
 
             -- set the shortcut for the quickslot, check
-            -- if the shortcut is the map home or not
+            -- if the shortcut is the glan vraig map or not
             if (string.len(genLocations:IdAtIndex(i)) > 12) then
                 table.insert(TravelShortcuts,
                              TravelShortcut(2.0, genLocations:IdAtIndex(i),
                                             genLocations:NameAtIndex(i), 1,
                                             shortcutIndex,
-                                            Settings.enabled[genLocations:IdAtIndex(
-                                                i)],
+                                            Settings.enabled[genLocations:IdAtIndex(i)],
                                             genLocations:LabelAtIndex(i)));
             else
                 table.insert(TravelShortcuts,
                              TravelShortcut(6.0, genLocations:IdAtIndex(i),
                                             genLocations:NameAtIndex(i), 1,
                                             shortcutIndex,
-                                            Settings.enabled[genLocations:IdAtIndex(
-                                                i)],
+                                            Settings.enabled[genLocations:IdAtIndex(i)],
                                             genLocations:LabelAtIndex(i)));
             end
         end
@@ -1125,7 +1123,7 @@ function TravelWindow:AddGVMap()
     -- if the player has a PvMP map, then insert it into the list
     if ((Settings.mapGlanVraig ~= nil) and (Settings.mapGlanVraig ~= "nil")) then
         self.reloadGVMap = false;
-        genLocations:InsertData(2, glanMapString, Settings.mapGlanVraig);
+        genLocations:InsertSkill(2, glanMapString, Settings.mapGlanVraig, "Glan Vraig");
     end
 end
 
