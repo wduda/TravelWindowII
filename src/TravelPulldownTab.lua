@@ -102,14 +102,14 @@ function TravelPulldownTab:SetItems()
     self.pulldown:SetSize(200, 30);
     self.pulldown:SetParent(self);
     self.pulldown:SetVisible(true);
-    self.pulldown:SetTravelOnSelect(settings.pulldownTravel);
+    self.pulldown:SetTravelOnSelect(.pulldownTravel);
 
     -- add the shortcuts to the combo box
     local shortcutIndex = 1;
     for i = 1, #TravelShortcuts, 1 do
         if (TravelShortcuts[i]:IsEnabled()) then
             -- apply skill type filter if set in options
-            if (hasbit(settings.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
+            if (hasbit(.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
                 -- make sure skill is trained, lookup by ingame name
                 if (TravelWindow:FindSkill(TravelShortcuts[i]:GetName())) then
                     self.pulldown:AddItem(TravelShortcuts[i], shortcutIndex, i);
