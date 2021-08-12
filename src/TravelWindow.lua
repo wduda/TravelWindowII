@@ -1062,7 +1062,7 @@ function TravelWindow:ResetSettings()
     self:CloseOptions()
 
     -- set all saved settings to default values
-     Settings = {};
+    Settings = {};
     Settings.width = self.minWidth;
     Settings.height = self.minHeight;
     Settings.positionX = Turbine.UI.Display.GetWidth() - self:GetWidth() - 50;
