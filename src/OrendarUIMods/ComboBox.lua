@@ -378,7 +378,7 @@ end
 function ComboBox:DoScroll(sender, args)
 
     -- calculate how far to move the scrollbar
-    newValue = self.scrollBar:GetValue() - args.Direction * 20;
+    local newValue = self.scrollBar:GetValue() - args.Direction * 20;
 
     -- make sure the value does not go below zero
     if (newValue < 0) then newValue = 0; end

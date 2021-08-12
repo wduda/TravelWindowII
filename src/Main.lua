@@ -4,10 +4,10 @@ import "TravelWindowII.src";
 travel = TravelWindow();
 
 -- create a new command line command for the travel window
-travelCommand = Turbine.ShellCommand();
+TravelCommand = Turbine.ShellCommand();
 
 -- handle the travel commands
-function travelCommand:Execute(command, arguments)
+function TravelCommand:Execute(command, arguments)
     if (arguments == "show") then
         travel:SetVisible(true);
     elseif (arguments == "hide") then
@@ -17,11 +17,11 @@ function travelCommand:Execute(command, arguments)
     elseif (arguments == "dump") then
         travel:DoDump();
     elseif (arguments ~= nil) then
-        travelCommand:GetHelp();
+        TravelCommand:GetHelp();
     end
 end
 
-function travelCommand:GetHelp() Turbine.Shell.WriteLine(helpString); end
+function TravelCommand:GetHelp() Turbine.Shell.WriteLine(helpString); end
 
 -- add the command to the shell
-Turbine.Shell.AddCommand("trav,travel", travelCommand);
+Turbine.Shell.AddCommand("trav,travel", TravelCommand);

@@ -76,7 +76,7 @@ function TravelDictionaries:Constructor()
 
     -- a table to store the number of each type of travel skill
     travelCount = { 0, 0, 0, 0, 0, 0 };
-    totalLocations = 0;
+    LocationsTotal = 0;
 
     self:CreateDictionaries();
     self:GetCounts();
@@ -91,7 +91,7 @@ function TravelDictionaries:GetCounts()
     travelCount[5] = racialLocations:GetCount();
     travelCount[6] = creepLocations:GetCount();
 
-    totalLocations = travelCount[1] + travelCount[2] + travelCount[3] + travelCount[4] + travelCount[5];
+    LocationsTotal = travelCount[1] + travelCount[2] + travelCount[3] + travelCount[4] + travelCount[5];
 end
 
 -- function to return the count of a specific type of travel
@@ -101,7 +101,7 @@ end
 
 -- function to get the total number of travel skills
 function TravelDictionaries:GetTotalCount()
-    return totalLocations;
+    return LocationsTotal;
 end
 
 -- function to return the 5 tables containing the travel skills
@@ -225,13 +225,13 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retour au Marché de Lalia", "0x700364B1", "Retour au Marché de Lalia (Mithril)");
     repLocations:AddSkill("Retour à Grand'Cave", "0x70023262", "Retour à Grand'Cave (Shop)");
     repLocations:AddSkill("Retour à Fondcombe", "0x70023263", "Retour à Fondcombe (Shop)");
-    repLocations:AddSkill("Retournez à Ost Guruth", "0x70020441", "Retournez à Ost Guruth");
-    repLocations:AddSkill("Retour dans la Forêt Noire", "0x7001F374", "Retour dans la Forêt Noire");
-    repLocations:AddSkill("Retour en Enedwaith", "0x70021FA2", "Retour en Enedwaith");
-    repLocations:AddSkill("Retour à Galtrev", "0x7002C647", "Retour à Galtrev");
-    repLocations:AddSkill("Retour à Stangarde", "0x7002C65D", "Retour à Stangarde");
-    repLocations:AddSkill("Retourner à Neigebronne", "0x70031A46", "Retourner à Neigebronne");
-    repLocations:AddSkill("Retour à Forloi", "0x70036B5E", "Retour à Forloi");
+    repLocations:AddSkill("Retournez à Ost Guruth", "0x70020441", "Retournez à Ost Guruth (Rep)");
+    repLocations:AddSkill("Retour dans la Forêt Noire", "0x7001F374", "Retour dans la Forêt Noire (Rep)");
+    repLocations:AddSkill("Retour en Enedwaith", "0x70021FA2", "Retour en Enedwaith (Rep)");
+    repLocations:AddSkill("Retour à Galtrev", "0x7002C647", "Retour à Galtrev (Rep)");
+    repLocations:AddSkill("Retour à Stangarde", "0x7002C65D", "Retour à Stangarde (Rep)");
+    repLocations:AddSkill("Retourner à Neigebronne", "0x70031A46", "Retourner à Neigebronne (Rep)");
+    repLocations:AddSkill("Retour à Forloi", "0x70036B5E", "Retour à Forloi (Rep)");
     repLocations:AddSkill("Retour à Aldburg", "0x7003DC81", "Aldburg (Rep)");
     repLocations:AddSkill("Retour à Derunant", "0x7004128F", "Derunant (Rep)");
     repLocations:AddSkill("Retour au Gouffre de Helm", "0x7003DC82", "Gouffre de Helm(Rep)");
@@ -243,8 +243,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retour à Henneth Annûn", "0x70047080", "Henneth Annûn (Rep)");
     repLocations:AddSkill("Retour à Osgiliath après la bataille", "0x7004707D", "Osgiliath après la bataille (Rep)");
     repLocations:AddSkill("Retour au Camp de l'armée", "0x70047BF4", "Camp de l'armée (Rep)");
-    repLocations:AddSkill("Retour à Haerondir", "0x70047C1B", "Haerondir");
-    repLocations:AddSkill("Retour au fort d'Udûn", "0x7004AE1D", "Fort d'Udûn");
+    repLocations:AddSkill("Retour à Haerondir", "0x70047C1B", "Haerondir (Rep)");
+    repLocations:AddSkill("Retour au fort d'Udûn", "0x7004AE1D", "Fort d'Udûn (Rep)");
     repLocations:AddSkill("Voyager jusqu'à la Cour de Lothlórien", "0x7004B8C2", "Cour de Lothlórien (Rep)");
     repLocations:AddSkill("Voyager jusqu'au Palais du roi", "0x7004B8C3", "Palais du roi (Rep)");
     repLocations:AddSkill("Voyager jusqu'au Palais sous la Montagne", "0x7004B8C4", "Palais sous la Montagne (Rep)");

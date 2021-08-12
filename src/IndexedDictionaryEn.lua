@@ -76,7 +76,7 @@ function TravelDictionaries:Constructor()
 
     -- a table to store the number of each type of travel skill
     travelCount = { 0, 0, 0, 0, 0, 0 };
-    totalLocations = 0;
+    LocationsTotal = 0;
 
     self:CreateDictionaries();
     self:GetCounts();
@@ -91,7 +91,7 @@ function TravelDictionaries:GetCounts()
     travelCount[5] = racialLocations:GetCount();
     travelCount[6] = creepLocations:GetCount();
 
-    totalLocations = travelCount[1] + travelCount[2] + travelCount[3] + travelCount[4] + travelCount[5];
+    LocationsTotal = travelCount[1] + travelCount[2] + travelCount[3] + travelCount[4] + travelCount[5];
 end
 
 -- function to return the count of a specific type of travel
@@ -101,7 +101,7 @@ end
 
 -- function to get the total number of travel skills
 function TravelDictionaries:GetTotalCount()
-    return totalLocations;
+    return LocationsTotal;
 end
 
 -- function to return the 5 tables containing the travel skills
@@ -156,7 +156,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Trestlebridge", "0x70059D16", "Trestlebridge (Guide)");
     hunterLocations:AddSkill("Guide to Akrâz-zahar", "0x7005AA91", "Akrâz-zahar (Guide)");
     hunterLocations:AddSkill("Guide to Azanulbizar", "0x7005AA95", "Azanulbizar (Guide)");
-    
+
     wardenLocations:AddSkill("Muster in Ost Guruth", "0x70014786", "Ost Guruth (Muster)");
     wardenLocations:AddSkill("Muster in Esteldín", "0x70014798", "Esteldín (Muster)");
     wardenLocations:AddSkill("Muster in Evendim", "0x7001478E", "Evendim (Muster)");
