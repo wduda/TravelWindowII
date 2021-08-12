@@ -109,7 +109,7 @@ function OptionsPanel:AddGeneralItems()
     self.HideOnStartCheck = Turbine.UI.Lotro.CheckBox();
     self.HideOnStartCheck:SetSize(19, 19);
     self.HideOnStartCheck:SetPosition(450, 20);
-    self.HideOnStartCheck:SetChecked(.hideOnStart == 1);
+    self.HideOnStartCheck:SetChecked(Settings.hideOnStart == 1);
     self.HideOnStartCheck:SetParent(self.GeneralTab);
     self.HideOnStartCheck:SetVisible(true);
 
@@ -127,7 +127,7 @@ function OptionsPanel:AddGeneralItems()
     self.HideOnCombatCheck = Turbine.UI.Lotro.CheckBox();
     self.HideOnCombatCheck:SetSize(19, 19);
     self.HideOnCombatCheck:SetPosition(450, 50);
-    self.HideOnCombatCheck:SetChecked(.hideOnCombat == 1);
+    self.HideOnCombatCheck:SetChecked(Settings.hideOnCombat == 1);
     self.HideOnCombatCheck:SetParent(self.GeneralTab);
     self.HideOnCombatCheck:SetVisible(true);
 
@@ -144,7 +144,7 @@ function OptionsPanel:AddGeneralItems()
     self.ShowButtonCheck = Turbine.UI.Lotro.CheckBox();
     self.ShowButtonCheck:SetSize(19, 19);
     self.ShowButtonCheck:SetPosition(450, 80);
-    self.ShowButtonCheck:SetChecked(.showButton == 1);
+    self.ShowButtonCheck:SetChecked(Settings.showButton == 1);
     self.ShowButtonCheck:SetParent(self.GeneralTab);
     self.ShowButtonCheck:SetVisible(true);
 
@@ -162,7 +162,7 @@ function OptionsPanel:AddGeneralItems()
     self.PulldownTravelCheck = Turbine.UI.Lotro.CheckBox();
     self.PulldownTravelCheck:SetSize(19, 19);
     self.PulldownTravelCheck:SetPosition(450, 110);
-    self.PulldownTravelCheck:SetChecked(.pulldownTravel == 1);
+    self.PulldownTravelCheck:SetChecked(Settings.pulldownTravel == 1);
     self.PulldownTravelCheck:SetParent(self.GeneralTab);
     self.PulldownTravelCheck:SetVisible(true);
 
@@ -193,7 +193,7 @@ function OptionsPanel:AddGeneralItems()
     self.toggleMinScrollBar:SetPosition(70, 165);
     self.toggleMinScrollBar:SetMinimum(0);
     self.toggleMinScrollBar:SetMaximum(100);
-    self.toggleMinScrollBar:SetValue(.toggleMinOpacity * 100);
+    self.toggleMinScrollBar:SetValue(Settings.toggleMinOpacity * 100);
     self.toggleMinScrollBar:SetParent(self.GeneralTab);
 
     -- toggle button max slider
@@ -213,7 +213,7 @@ function OptionsPanel:AddGeneralItems()
     self.toggleMaxScrollBar:SetPosition(70, 185);
     self.toggleMaxScrollBar:SetMinimum(0);
     self.toggleMaxScrollBar:SetMaximum(100);
-    self.toggleMaxScrollBar:SetValue(.toggleMaxOpacity * 100);
+    self.toggleMaxScrollBar:SetValue(Settings.toggleMaxOpacity * 100);
     self.toggleMaxScrollBar:SetParent(self.GeneralTab);
 
     -- label for main window sliders
@@ -242,7 +242,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainMinScrollBar:SetPosition(70, 235);
     self.mainMinScrollBar:SetMinimum(0);
     self.mainMinScrollBar:SetMaximum(100);
-    self.mainMinScrollBar:SetValue(.mainMinOpacity * 100);
+    self.mainMinScrollBar:SetValue(Settings.mainMinOpacity * 100);
     self.mainMinScrollBar:SetParent(self.GeneralTab);
 
     -- toggle button max slider
@@ -262,7 +262,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainMaxScrollBar:SetPosition(70, 255);
     self.mainMaxScrollBar:SetMinimum(0);
     self.mainMaxScrollBar:SetMaximum(100);
-    self.mainMaxScrollBar:SetValue(.mainMaxOpacity * 100);
+    self.mainMaxScrollBar:SetValue(Settings.mainMaxOpacity * 100);
     self.mainMaxScrollBar:SetParent(self.GeneralTab);
 
     -- reset all setting button
@@ -282,9 +282,9 @@ function OptionsPanel:AddGeneralItems()
     self.HideOnStartCheck.CheckedChanged =
         function(sender, args)
             if (sender:IsChecked()) then
-                .hideOnStart = 1;
+                Settings.hideOnStart = 1;
             else
-                .hideOnStart = 0;
+                Settings.hideOnStart = 0;
             end
             self.mainWindow:SetShortcuts();
             self.mainWindow:UpdateSettings();
@@ -294,9 +294,9 @@ function OptionsPanel:AddGeneralItems()
     self.HideOnCombatCheck.CheckedChanged =
         function(sender, args)
             if (sender:IsChecked()) then
-                .hideOnCombat = 1;
+                Settings.hideOnCombat = 1;
             else
-                .hideOnCombat = 0;
+                Settings.hideOnCombat = 0;
             end
             self.mainWindow:SetShortcuts();
             self.mainWindow:UpdateSettings();
@@ -306,9 +306,9 @@ function OptionsPanel:AddGeneralItems()
     self.ShowButtonCheck.CheckedChanged =
         function(sender, args)
             if (sender:IsChecked()) then
-                .showButton = 1;
+                Settings.showButton = 1;
             else
-                .showButton = 0;
+                Settings.showButton = 0;
             end
             self.mainWindow:SetShortcuts();
             self.mainWindow:UpdateSettings();
@@ -319,9 +319,9 @@ function OptionsPanel:AddGeneralItems()
     self.PulldownTravelCheck.CheckedChanged =
         function(sender, args)
             if (sender:IsChecked()) then
-                .pulldownTravel = 1;
+                Settings.pulldownTravel = 1;
             else
-                .pulldownTravel = 0;
+                Settings.pulldownTravel = 0;
             end
             self.mainWindow:SetShortcuts();
             self.mainWindow:UpdateSettings();
@@ -339,7 +339,7 @@ function OptionsPanel:AddGeneralItems()
             end
 
             -- do updates
-            .toggleMinOpacity = self.toggleMinScrollBar:GetValue() / 100;
+            Settings.toggleMinOpacity = self.toggleMinScrollBar:GetValue() / 100;
             self.mainWindow:UpdateOpacity();
             self.mainWindow:UpdateSettings();
         end
@@ -355,7 +355,7 @@ function OptionsPanel:AddGeneralItems()
             end
 
             -- do updates
-            .toggleMaxOpacity = self.toggleMaxScrollBar:GetValue() / 100;
+            Settings.toggleMaxOpacity = self.toggleMaxScrollBar:GetValue() / 100;
             self.mainWindow:UpdateOpacity();
             self.mainWindow:UpdateSettings();
 
@@ -372,7 +372,7 @@ function OptionsPanel:AddGeneralItems()
             end
 
             -- do updates
-            .mainMinOpacity = self.mainMinScrollBar:GetValue() / 100;
+            Settings.mainMinOpacity = self.mainMinScrollBar:GetValue() / 100;
             self.mainWindow:UpdateOpacity();
             self.mainWindow:UpdateSettings();
         end
@@ -387,7 +387,7 @@ function OptionsPanel:AddGeneralItems()
             end
 
             -- do updates
-            .mainMaxOpacity = self.mainMaxScrollBar:GetValue() / 100;
+            Settings.mainMaxOpacity = self.mainMaxScrollBar:GetValue() / 100;
             self.mainWindow:UpdateOpacity();
             self.mainWindow:UpdateSettings();
         end
@@ -476,7 +476,7 @@ function OptionsPanel:AddSkillItemForEnabling(index, id, label)
     self.checks[index] = Turbine.UI.Lotro.CheckBox();
     self.checks[index]:SetSize(19, 19);
     self.checks[index]:SetPosition(10, 0);
-    self.checks[index]:SetChecked(.enabled[id]);
+    self.checks[index]:SetChecked(Settings.enabled[id]);
     self.checks[index]:SetParent(control);
     self.checks[index]:SetWantsUpdates(true);
     self.checks[index]:SetVisible(true);
@@ -485,7 +485,7 @@ function OptionsPanel:AddSkillItemForEnabling(index, id, label)
     -- handle the event of the check box value changing
     self.checks[index].CheckedChanged = function(sender, args)
         -- change the setting on the main window
-        .enabled[id] = sender:IsChecked();
+        Settings.enabled[id] = sender:IsChecked();
 
         -- reset the shortcuts on the main window
         self.mainWindow:SetShortcuts();
@@ -726,9 +726,9 @@ function OptionsPanel:SwapShortcuts(first, second)
         -- a temp variable, setting the value of the first index to the value of
         -- the second index, then setting the value of the second index to the
         -- temp value
-        local tempValue = .order[first];
-        .order[first] = .order[second];
-        .order[second] = tempValue;
+        local tempValue = Settings.order[first];
+        Settings.order[first] = Settings.order[second];
+        Settings.order[second] = tempValue;
 
         -- swap the items in the listbox using the same method
         local tempItem = self.sortListBox:GetItem(first);
