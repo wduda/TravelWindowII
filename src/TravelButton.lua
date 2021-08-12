@@ -60,12 +60,12 @@ function TravelButton:Constructor(parent)
         self:SetOpacity(Settings.toggleMaxOpacity);
     end
 
-    -- go to low opacity when mosue is not over
+    -- go to low opacity when mouse is not over
     self.MouseLeave = function(sender, args)
         self:SetOpacity(Settings.toggleMinOpacity);
     end
 
-    -- if the mouse button is press, prepare to maybe move the button
+    -- if the mouse button is pressed, prepare to maybe move the button
     self.MouseDown = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Left) then
             buttonDownTime = Turbine.Engine.GetGameTime();
