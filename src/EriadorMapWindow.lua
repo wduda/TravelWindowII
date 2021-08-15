@@ -36,7 +36,7 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
     self:SetText(eriadorMapTitleString);
     self:SetOpacity(1);
 
-    local mapLabel = Turbine.UI.Label();
+    self.mapLabel = Turbine.UI.Label();
     self.mapLabel:SetPosition(10, 40);
     self.mapLabel:SetSize(1024, 768);
 
