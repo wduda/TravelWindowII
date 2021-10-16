@@ -262,6 +262,8 @@ function TravelWindow:Constructor()
         Settings.width = self:GetWidth();
         Settings.height = self:GetHeight();
         self:UpdateSettings();
+        self:SaveSettings();
+
     end
 
     -- perform the resize
