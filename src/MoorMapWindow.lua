@@ -33,13 +33,13 @@ function MoorMapWindow:Constructor(parent)
     self:SetText(moorMapTitleString);
     self:SetOpacity(1);
 
-    mapLabel = Turbine.UI.Label();
-    mapLabel:SetPosition(10, 40);
-    mapLabel:SetSize(1024, 768);
+    self.mapLabel = Turbine.UI.Label();
+    self.mapLabel:SetPosition(10, 40);
+    self.mapLabel:SetSize(1024, 768);
 
-    mapLabel:SetBackground(0x41008133);
-    mapLabel:SetParent(self);
-    mapLabel:SetVisible(true);
+    self.mapLabel:SetBackground(0x41008133);
+    self.mapLabel:SetParent(self);
+    self.mapLabel:SetVisible(true);
 
     self:AddShortcuts();
 
@@ -85,7 +85,7 @@ function MoorMapWindow:AddShortcuts()
         self.quickslots[i]:SetVisible(true);
         self.quickslots[i]:SetZOrder(100);
         self.quickslots[i]:SetOpacity(1);
-        self.quickslots[i]:SetParent(mapLabel);
+        self.quickslots[i]:SetParent(self.mapLabel);
         self.quickslots[i]:SetAllowDrop(false);
         self.quickslots[i]:SetPosition(mapLocations[i][1], mapLocations[i][2]);
         self.quickslots[i]:SetZOrder(98);
