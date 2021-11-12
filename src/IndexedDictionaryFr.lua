@@ -156,6 +156,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide vers Pont-à-Tréteaux", "0x70059D16", "Pont-à-Tréteaux (Guide)");
     hunterLocations:AddSkill("Guide vers Akrâz-zahar", "0x7005AA91", "Akrâz-zahar (Guide)");
     hunterLocations:AddSkill("Guide vers Azanulbizar", "0x7005AA95", "Azanulbizar (Guide)");
+    hunterLocations:AddSkill("Guide vers la Porte Noble", "0x7005D487", "Porte Noble (Guide)");
+    hunterLocations:AddSkill("Guide vers Leitstath", "0x7005D47D", "Leitstath (Guide)");
 
     wardenLocations:AddSkill("Rassemblement à Ost Guruth", "0x70014786", "Ost Guruth (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Esteldin", "0x70014798", "Esteldin (Rassemblement)");
@@ -195,6 +197,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Rassemblement à Pont-à-Tréteaux", "0x70059D10", "Pont-à-Tréteaux (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Akrâz-zahar", "0x7005AA8F", "Akrâz-zahar (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Azanulbizar", "0x7005AA8C", "Azanulbizar (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à la Porte Noble", "0x7005D48A", "Porte Noble (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Leitstath", "0x7005D488", "Leitstath (Rassemblement)");
 
     racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
     racialLocations:AddSkill("Retournez dans la Comté", "0x700062C8", "Comté (Race)");
@@ -261,6 +265,9 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retournez à Pont-à-Tréteaux", "0x70059D12", "Pont-à-Tréteaux (Rep)");
     repLocations:AddSkill("Retour à Akrâz-zahar", "0x7005AA90", "Akrâz-zahar (Rep)");
     repLocations:AddSkill("Retour à Azanulbizar", "0x7005AA92", "Azanulbizar (Rep)");
+    repLocations:AddSkill("Voyage jusq'à la Grande salle de Vérnozal", "0x7005A596", "Vérnozal (Rep)");
+    repLocations:AddSkill("Retournez à la Porte Noble", "0x7005D47C", "Porte Noble (Rep)");
+    repLocations:AddSkill("Retournez à Leitstath", "0x7005D484", "Leitstath (Rep)");
 
     -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");

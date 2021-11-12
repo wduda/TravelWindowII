@@ -91,6 +91,8 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Trestlebridge
         {-1, -1}, -- U30 A
         {-1, -1}, -- U30 B
+        {-1, -1}, -- U31 A
+        {-1, -1}, -- U31 B
 
         -- Warden skills
         {725, 400}, -- Ost Guruth
@@ -131,6 +133,8 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Trestlebridge
         {-1, -1}, -- U30 A
         {-1, -1}, -- U30 B
+        {-1, -1}, -- U31 A
+        {-1, -1}, -- U31 B
 
         -- Reputation skills
         {305, 330}, -- Thorin's Hall
@@ -174,6 +178,9 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Trestlebridge
         {-1, -1}, -- U30 A
         {-1, -1}, -- U30 B
+        {-1, -1}, -- U31 A
+        {-1, -1}, -- U31 B
+        {-1, -1}, -- U31 C
 
         -- Racial skills
         {620, 400}, -- Bree
