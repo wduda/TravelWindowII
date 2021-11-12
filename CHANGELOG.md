@@ -1,4 +1,7 @@
 # Changelog
+
+## v1.0.16beta
+- added 7 new skills for U31
 ## v1.0.15beta
 - made the icon grid the default view on new characters
 - fixed bug causing window size not being saved on logout
