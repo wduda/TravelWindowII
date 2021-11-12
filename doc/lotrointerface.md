@@ -41,9 +41,7 @@ How to handle the settings reset introduced by v1.0.7beta?
 [/LIST]
 
 Version history:
-v1.0.15beta
-- made the icon grid the default view on new characters
-- fixed bug causing window size not being saved on logout
-- cleaned code from references to Map Home item that existed before Milestone skills
+v1.0.16beta
+- added 7 new skills for U31
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
