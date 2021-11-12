@@ -156,6 +156,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Trestlebridge", "0x70059D16", "Trestlebridge (Guide)");
     hunterLocations:AddSkill("Guide to Akrâz-zahar", "0x7005AA91", "Akrâz-zahar (Guide)");
     hunterLocations:AddSkill("Guide to Azanulbizar", "0x7005AA95", "Azanulbizar (Guide)");
+    hunterLocations:AddSkill("Guide to the Noble Gate", "0x7005D487", "Noble Gate (Guide)");
+    hunterLocations:AddSkill("Guide to Leitstáth", "0x7005D47D", "Leitstáth (Guide)");
 
     wardenLocations:AddSkill("Muster in Ost Guruth", "0x70014786", "Ost Guruth (Muster)");
     wardenLocations:AddSkill("Muster in Esteldín", "0x70014798", "Esteldín (Muster)");
@@ -195,6 +197,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster in Trestlebridge", "0x70059D10", "Trestlebridge (Muster)");
     wardenLocations:AddSkill("Muster in Akrâz-zahar", "0x7005AA8F", "Akrâz-zahar (Muster)");
     wardenLocations:AddSkill("Muster in Azanulbizar", "0x7005AA8C", "Azanulbizar (Muster)");
+    wardenLocations:AddSkill("Muster at the Noble Gate", "0x7005D48A", "Noble Gate (Muster)");
+    wardenLocations:AddSkill("Muster at Leitstáth", "0x7005D488", "Leitstáth (Muster)");
 
     -- add the racial travel skills
     racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)");
@@ -264,6 +268,9 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Trestlebridge", "0x70059D12", "Trestlebridge (Rep)");
     repLocations:AddSkill("Return to Akrâz-zahar", "0x7005AA90", "Akrâz-zahar (Rep)");
     repLocations:AddSkill("Return to Azanulbizar", "0x7005AA92", "Azanulbizar (Rep)");
+    repLocations:AddSkill("Journey to the Hall of Vérnozal", "0x7005A596", "Vérnozal (Rep)");
+    repLocations:AddSkill("Return to the Noble Gate", "0x7005D47C", "Noble Gate (Rep)");
+    repLocations:AddSkill("Return to Leitstáth", "0x7005D484", "Leitstáth (Rep)");
 
     -- monster player maps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");

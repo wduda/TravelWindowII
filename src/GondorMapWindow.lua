@@ -91,6 +91,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Trestlebridge
         {-1, -1}, -- U30 A
         {-1, -1}, -- U30 B
+        {-1, -1}, -- U31 A
+        {-1, -1}, -- U31 B
 
         -- Muster skills
         {-1, -1}, -- Ost Guruth
@@ -131,6 +133,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Trestlebridge
         {-1, -1}, -- U30 A
         {-1, -1}, -- U30 B
+        {-1, -1}, -- U31 A
+        {-1, -1}, -- U31 B
 
         -- Reputation skills
         {-1, -1}, -- Thorin's Hall
@@ -174,6 +178,9 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Trestlebridge
         {-1, -1}, -- U30 A
         {-1, -1}, -- U30 B
+        {-1, -1}, -- U31 A
+        {-1, -1}, -- U31 B
+        {-1, -1}, -- U31 C
 
         -- Racial skills
         {-1, -1}, -- Bree

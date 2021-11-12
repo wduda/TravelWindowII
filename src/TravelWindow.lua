@@ -485,8 +485,8 @@ function TravelWindow:SetShortcuts()
                          TravelShortcut(6.0, repLocations:IdAtIndex(i),
                                         repLocations:NameAtIndex(i), 3,
                                         shortcutIndex,
-                                        Settings.enabled[repLocations:IdAtIndex(
-                                            i)], repLocations:LabelAtIndex(i)));
+                                        Settings.enabled[repLocations:IdAtIndex(i)],
+                                        repLocations:LabelAtIndex(i)));
         end
     else
         -- set the creep travel items
@@ -767,7 +767,6 @@ function TravelWindow:SortShortcuts()
         end
     end
 
-    return;
 end
 
 function TravelWindow:UpdateOpacity()
