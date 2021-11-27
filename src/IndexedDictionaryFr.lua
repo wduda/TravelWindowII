@@ -265,7 +265,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retournez à Pont-à-Tréteaux", "0x70059D12", "Pont-à-Tréteaux (Rep)");
     repLocations:AddSkill("Retour à Akrâz-zahar", "0x7005AA90", "Akrâz-zahar (Rep)");
     repLocations:AddSkill("Retour à Azanulbizar", "0x7005AA92", "Azanulbizar (Rep)");
-    repLocations:AddSkill("Voyage jusq'à la Grande salle de Vérnozal", "0x7005A596", "Vérnozal (Rep)");
+    repLocations:AddSkill("Voyage jusqu'à la Grande salle de Vérnozal", "0x7005A596", "Vérnozal (Rep)");
     repLocations:AddSkill("Retournez à la Porte Noble", "0x7005D47C", "Porte Noble (Rep)");
     repLocations:AddSkill("Retournez à Leitstath", "0x7005D484", "Leitstath (Rep)");
 
