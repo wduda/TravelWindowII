@@ -41,7 +41,7 @@ How to handle the settings reset introduced by v1.0.7beta?
 [/LIST]
 
 Version history:
-v1.0.16beta
-- added 7 new skills for U31
+v1.0.17beta
+- fixed Allegiance skill for FR
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
