@@ -41,7 +41,7 @@ How to handle the settings reset introduced by v1.0.7beta?
 [/LIST]
 
 Version history:
-v1.0.17beta
-- fixed Allegiance skill for FR
+v1.0.18beta
+- fixed changed Gundabad translations for FR 
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].

@@ -1,5 +1,7 @@
 # Changelog
 
+## v1.0.18beta
+- fixed changed Gundabad translations for FR 
 ## v1.0.17beta
 - added 7 new skills for U31
 ## v1.0.16beta

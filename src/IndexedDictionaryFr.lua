@@ -266,8 +266,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retour à Akrâz-zahar", "0x7005AA90", "Akrâz-zahar (Rep)");
     repLocations:AddSkill("Retour à Azanulbizar", "0x7005AA92", "Azanulbizar (Rep)");
     repLocations:AddSkill("Voyage jusqu'à la Grande salle de Vérnozal", "0x7005A596", "Vérnozal (Rep)");
-    repLocations:AddSkill("Retournez à la Porte Noble", "0x7005D47C", "Porte Noble (Rep)");
-    repLocations:AddSkill("Retournez à Leitstath", "0x7005D484", "Leitstath (Rep)");
+    repLocations:AddSkill("Retourner à la Porte Noble", "0x7005D47C", "Porte Noble (Rep)");
+    repLocations:AddSkill("Retourner à Leitstath", "0x7005D484", "Leitstath (Rep)");
 
     -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");
