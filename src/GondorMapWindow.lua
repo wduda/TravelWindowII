@@ -28,8 +28,7 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
     self.quickslots = {};
 
     -- set the default window settings
-    self:SetPosition(self.windowWidth / 2 - self.width / 2,
-                     self.windowHeight / 2 - self.height / 2);
+    self:SetPosition(self.windowWidth / 2 - self.width / 2, self.windowHeight / 2 - self.height / 2);
     self:SetSize(self.width, self.height);
     self:SetBlendMode(Turbine.UI.BlendMode.Undefined);
     self:SetBackColor(Turbine.UI.Color(0.0, 0, 0, 0));
@@ -93,7 +92,6 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U30 B
         {-1, -1}, -- U31 A
         {-1, -1}, -- U31 B
-
         -- Muster skills
         {-1, -1}, -- Ost Guruth
         {-1, -1}, -- Esteldin
@@ -135,7 +133,6 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U30 B
         {-1, -1}, -- U31 A
         {-1, -1}, -- U31 B
-
         -- Reputation skills
         {-1, -1}, -- Thorin's Hall
         {-1, -1}, -- Bree
@@ -181,7 +178,6 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U31 A
         {-1, -1}, -- U31 B
         {-1, -1}, -- U31 C
-
         -- Racial skills
         {-1, -1}, -- Bree
         {-1, -1}, -- Michel Delving
@@ -199,7 +195,9 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
     -- have the main window close the options
     self.VisibleChanged = function(sender, args)
         if (self:IsVisible() == false) then
-            if (parent ~= nil) then parent:CloseEriadorMap(); end
+            if (parent ~= nil) then
+                parent:CloseEriadorMap();
+            end
         end
     end
 
@@ -214,12 +212,9 @@ function GondorMapWindow:AddShortcuts()
     for i = 1, travelCount[1], 1 do
 
         -- add hunter locations if they should be on this map
-        if (self.mapLocations[counter][1] > 0 and self.PlayerClass ==
-            Turbine.Gameplay.Class.Hunter and
+        if (self.mapLocations[counter][1] > 0 and self.PlayerClass == Turbine.Gameplay.Class.Hunter and
             self:IsShortcutEnabled(hunterLocations:IdAtIndex(i)) == 1) then
-            self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0,
-                                                                      hunterLocations:IdAtIndex(
-                                                                          i)));
+            self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, hunterLocations:IdAtIndex(i)));
         end
 
         counter = counter + 1;
@@ -229,12 +224,9 @@ function GondorMapWindow:AddShortcuts()
     for i = 1, travelCount[2], 1 do
 
         -- add warden locations if they should be on this map
-        if (self.mapLocations[counter][1] > 0 and self.PlayerClass ==
-            Turbine.Gameplay.Class.Warden and
+        if (self.mapLocations[counter][1] > 0 and self.PlayerClass == Turbine.Gameplay.Class.Warden and
             self:IsShortcutEnabled(wardenLocations:IdAtIndex(i)) == 1) then
-            self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0,
-                                                                      wardenLocations:IdAtIndex(
-                                                                          i)));
+            self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, wardenLocations:IdAtIndex(i)));
         end
         counter = counter + 1;
     end
@@ -243,11 +235,8 @@ function GondorMapWindow:AddShortcuts()
     for i = 1, travelCount[4], 1 do
 
         -- add rep locations if they should be on this map
-        if (self.mapLocations[counter][1] > 0 and
-            self:IsShortcutEnabled(repLocations:IdAtIndex(i)) == 1) then
-            self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0,
-                                                                      repLocations:IdAtIndex(
-                                                                          i)));
+        if (self.mapLocations[counter][1] > 0 and self:IsShortcutEnabled(repLocations:IdAtIndex(i)) == 1) then
+            self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, repLocations:IdAtIndex(i)));
         end
 
         counter = counter + 1;
@@ -256,12 +245,9 @@ function GondorMapWindow:AddShortcuts()
     -- racial locations
     for i = 1, travelCount[5], 1 do
 
-        if (self.mapLocations[counter][1] > 0 and
-            self:IsShortcutEnabled(racialLocations:IdAtIndex(i)) == 1) then
+        if (self.mapLocations[counter][1] > 0 and self:IsShortcutEnabled(racialLocations:IdAtIndex(i)) == 1) then
             if (i == self.PlayerRace) then
-                self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0,
-                                                                          racialLocations:IdAtIndex(
-                                                                              i)));
+                self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, racialLocations:IdAtIndex(i)));
             end
         end
 
@@ -284,8 +270,7 @@ function GondorMapWindow:AddSingleShortcut(index, shortcut)
 
     self.quickslots[index]:SetStretchMode(1);
     self.quickslots[index]:SetSize(22, 22);
-    self.quickslots[index]:SetPosition(self.mapLocations[index][1],
-                                       self.mapLocations[index][2]);
+    self.quickslots[index]:SetPosition(self.mapLocations[index][1], self.mapLocations[index][2]);
     self.quickslots[index]:SetZOrder(98);
     self.quickslots[index]:SetVisible(true);
 
@@ -299,7 +284,9 @@ function GondorMapWindow:IsShortcutEnabled(id)
     -- loop through all the shortcuts and add those that are enabled
     for i = 1, #self.shortcuts, 1 do
         if (self.shortcuts[i]:GetData() == id) then
-            if (self.shortcuts[i]:IsEnabled()) then return 1; end
+            if (self.shortcuts[i]:IsEnabled()) then
+                return 1;
+            end
         end
     end
 
