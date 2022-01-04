@@ -60,7 +60,9 @@ function TravelGridTab:DoScroll(sender, args)
     local newValue = self.myScrollBar:GetValue() - args.Direction * 20;
 
     -- make sure the value does not go below zero
-    if (newValue < 0) then newValue = 0; end
+    if (newValue < 0) then
+        newValue = 0;
+    end
 
     -- set the new value
     self.myScrollBar:SetValue(newValue);
@@ -84,8 +86,7 @@ function TravelGridTab:UpdateSubWindow()
 
         -- set the top position of the quickslots based on row
         -- number and the value of the scrollbar
-        self.quickslots[i]:SetTop((self.row - 1) * 38 -
-                                      self.myScrollBar:GetValue());
+        self.quickslots[i]:SetTop((self.row - 1) * 38 - self.myScrollBar:GetValue());
     end
 end
 
@@ -169,15 +170,16 @@ function TravelGridTab:AddItem(shortcut)
     --  based on the row and column locations
     self.quickslots[self.index] = Turbine.UI.Lotro.Quickslot();
     self.quickslots[self.index]:SetSize(36, 36);
-    self.quickslots[self.index]:SetPosition(10 + ((self.col - 1) * 38),
-                                            ((self.row - 1) * 38));
+    self.quickslots[self.index]:SetPosition(10 + ((self.col - 1) * 38), ((self.row - 1) * 38));
     self.quickslots[self.index]:SetZOrder(90);
     self.quickslots[self.index]:SetOpacity(1);
     self.quickslots[self.index]:SetUseOnRightClick(false);
     self.quickslots[self.index]:SetParent(self.SubWindow);
 
     -- attempt to create the shortcut
-    pcall(function() self.quickslots[self.index]:SetShortcut(shortcut); end)
+    pcall(function()
+        self.quickslots[self.index]:SetShortcut(shortcut);
+    end)
 
     -- set all quickslots to be visible and
     -- disable dropping new shortcuts onto them
@@ -185,18 +187,18 @@ function TravelGridTab:AddItem(shortcut)
     self.quickslots[self.index]:SetVisible(true);
 
     -- show the menu when right clicked
-    self.quickslots[self.index].MouseClick =
-        function(sender, args)
-            if (args.Button == Turbine.UI.MouseButton.Right) then
-                Menu:ShowMenu();
-            else
-                self.parent:SetVisible(false);
-            end
+    self.quickslots[self.index].MouseClick = function(sender, args)
+        if (args.Button == Turbine.UI.MouseButton.Right) then
+            Menu:ShowMenu();
+        else
+            self.parent:SetVisible(false);
         end
+    end
 
     -- handle the mouse wheel scroll
-    self.quickslots[self.index].MouseWheel =
-        function(sender, args) self:DoScroll(sender, args); end
+    self.quickslots[self.index].MouseWheel = function(sender, args)
+        self:DoScroll(sender, args);
+    end
 
     -- increase the row number when the column
     -- number is greater than the number of columns

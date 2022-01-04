@@ -56,7 +56,9 @@ function TravelPulldownTab:Constructor(toplevel)
         end
     end
 
-    self.MouseDown = function(sender, args) self.pulldown:CloseDropDown(); end
+    self.MouseDown = function(sender, args)
+        self.pulldown:CloseDropDown();
+    end
 
     -- check for a right mouse button event to open menu
     self.scrollLabel.MouseClick = function(sender, args)
@@ -120,13 +122,11 @@ function TravelPulldownTab:SetItems()
     end
 
     -- handle the event if the selected item changes
-    self.pulldown.SelectedIndexChanged =
-        function(sender, args)
-            pcall(function()
-                self.quickslot:SetShortcut(
-                    TravelShortcuts[sender:GetSelection()]);
-            end)
-        end
+    self.pulldown.SelectedIndexChanged = function(sender, args)
+        pcall(function()
+            self.quickslot:SetShortcut(TravelShortcuts[sender:GetSelection()]);
+        end)
+    end
 end
 
 -- function to adjust the size of the tab and all items in the tab
@@ -143,4 +143,6 @@ function TravelPulldownTab:SetSize(width, height)
 end
 
 -- function to close the pulldown if necessary
-function TravelPulldownTab:ClosePulldown() self.pulldown:CloseDropDown() end
+function TravelPulldownTab:ClosePulldown()
+    self.pulldown:CloseDropDown()
+end
