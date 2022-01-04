@@ -3,8 +3,7 @@
 --[[ and enabled status	]] --
 TravelShortcut = class(Turbine.UI.Lotro.Shortcut);
 
-function TravelShortcut:Constructor(sType, data, name, tType, index, enabled,
-                                    skillLabel)
+function TravelShortcut:Constructor(sType, data, name, tType, index, enabled, skillLabel)
     Turbine.UI.Lotro.Shortcut.Constructor(self);
 
     -- the data to keep track of
@@ -23,8 +22,7 @@ function TravelShortcut:SetEnabled(value)
     -- if the value type is not boolean, set an error
     if (type(value) ~= "boolean") then
         self.Enabled = nil;
-        error(string.format(
-                  "Invalid input arg for TravelShortcut:SetEnabled: %q", value));
+        error(string.format("Invalid input arg for TravelShortcut:SetEnabled: %q", value));
         return;
     end
 
@@ -33,7 +31,9 @@ function TravelShortcut:SetEnabled(value)
 end
 
 -- function to check the enabled status of the shortcut
-function TravelShortcut:IsEnabled() return self.Enabled; end
+function TravelShortcut:IsEnabled()
+    return self.Enabled;
+end
 
 -- function to set the name of the shortcut
 function TravelShortcut:SetName(text)
@@ -48,16 +48,24 @@ function TravelShortcut:SetName(text)
 end
 
 -- function to return the ingame skill name of the shortcut
-function TravelShortcut:GetName() return self.Name; end
+function TravelShortcut:GetName()
+    return self.Name;
+end
 
 -- function to return the plugin specific skill label of the shortcut
-function TravelShortcut:GetSkillLabel() return self.skillLabel; end
+function TravelShortcut:GetSkillLabel()
+    return self.skillLabel;
+end
 
 -- function to set the index of the shortcut
-function TravelShortcut:SetIndex(value) self.Index = value; end
+function TravelShortcut:SetIndex(value)
+    self.Index = value;
+end
 
 -- function to return the index of the shortcut
-function TravelShortcut:GetIndex() return self.Index; end
+function TravelShortcut:GetIndex()
+    return self.Index;
+end
 
 -- function to set the type of the shortcut
 function TravelShortcut:SetTravelType(type)
@@ -65,5 +73,7 @@ function TravelShortcut:SetTravelType(type)
 end
 
 -- function to get the type of shortcut
-function TravelShortcut:GetTravelType() return self.travelType; end
+function TravelShortcut:GetTravelType()
+    return self.travelType;
+end
 

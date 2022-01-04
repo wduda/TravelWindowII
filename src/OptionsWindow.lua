@@ -19,8 +19,7 @@ function OptionsWindow:Constructor(parent)
         self.height = self.windowHeight - 20;
     end
 
-    self:SetPosition(self.windowWidth / 2 - self.width / 2,
-                     self.windowHeight / 2 - self.height / 2);
+    self:SetPosition(self.windowWidth / 2 - self.width / 2, self.windowHeight / 2 - self.height / 2);
     self:SetSize(self.width, self.height);
     self:SetBlendMode(Turbine.UI.BlendMode.Undefined);
     self:SetBackColor(Turbine.UI.Color(0.0, 0, 0, 0));
@@ -38,11 +37,15 @@ function OptionsWindow:Constructor(parent)
     -- have the main window close the options
     self.VisibleChanged = function(sender, args)
         if (self:IsVisible() == false) then
-            if (parent ~= nil) then parent:CloseOptions(); end
+            if (parent ~= nil) then
+                parent:CloseOptions();
+            end
         end
     end
 
     self.loaded = true;
 end
 
-function OptionsWindow:GetLoaded() return self.loaded; end
+function OptionsWindow:GetLoaded()
+    return self.loaded;
+end
