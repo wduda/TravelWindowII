@@ -133,44 +133,10 @@ function OptionsPanel:AddGeneralItems()
     self.HideOnCombatCheck:SetParent(self.GeneralTab);
     self.HideOnCombatCheck:SetVisible(true);
 
-    -- label for show toggle button option
-    self.ShowButtonLabel = Turbine.UI.Label();
-    self.ShowButtonLabel:SetSize(300, 20);
-    self.ShowButtonLabel:SetPosition(20, 80);
-    self.ShowButtonLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.ShowButtonLabel:SetParent(self.GeneralTab);
-    self.ShowButtonLabel:SetText(toggleString);
-    self.ShowButtonLabel:SetVisible(true);
-
-    -- checkbox for show toggle button option
-    self.ShowButtonCheck = Turbine.UI.Lotro.CheckBox();
-    self.ShowButtonCheck:SetSize(19, 19);
-    self.ShowButtonCheck:SetPosition(450, 80);
-    self.ShowButtonCheck:SetChecked(Settings.showButton == 1);
-    self.ShowButtonCheck:SetParent(self.GeneralTab);
-    self.ShowButtonCheck:SetVisible(true);
-
-    -- label for option to fire skill on pulldown selection
-    self.PulldownTravelLabel = Turbine.UI.Label();
-    self.PulldownTravelLabel:SetSize(300, 20);
-    self.PulldownTravelLabel:SetPosition(20, 110);
-    self.PulldownTravelLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.PulldownTravelLabel:SetParent(self.GeneralTab);
-    self.PulldownTravelLabel:SetText(pulldownTravelString);
-    self.PulldownTravelLabel:SetVisible(true);
-
-    -- checkbox for option to fire skill on pulldown selection
-    self.PulldownTravelCheck = Turbine.UI.Lotro.CheckBox();
-    self.PulldownTravelCheck:SetSize(19, 19);
-    self.PulldownTravelCheck:SetPosition(450, 110);
-    self.PulldownTravelCheck:SetChecked(Settings.pulldownTravel == 1);
-    self.PulldownTravelCheck:SetParent(self.GeneralTab);
-    self.PulldownTravelCheck:SetVisible(true);
-
     -- label for option to close window on travel skill use
     self.hideOnTravelLabel = Turbine.UI.Label();
     self.hideOnTravelLabel:SetSize(300, 20);
-    self.hideOnTravelLabel:SetPosition(20, 140);
+    self.hideOnTravelLabel:SetPosition(20, 80);
     self.hideOnTravelLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.hideOnTravelLabel:SetParent(self.GeneralTab);
     self.hideOnTravelLabel:SetText(hideOnTravelString);
@@ -179,10 +145,44 @@ function OptionsPanel:AddGeneralItems()
     -- checkbox for option to close window on travel skill use
     self.hideOnTravelCheck = Turbine.UI.Lotro.CheckBox();
     self.hideOnTravelCheck:SetSize(19, 19);
-    self.hideOnTravelCheck:SetPosition(450, 140);
+    self.hideOnTravelCheck:SetPosition(450, 80);
     self.hideOnTravelCheck:SetChecked(Settings.hideOnTravel == 1);
     self.hideOnTravelCheck:SetParent(self.GeneralTab);
     self.hideOnTravelCheck:SetVisible(true);
+
+    -- label for show toggle button option
+    self.ShowButtonLabel = Turbine.UI.Label();
+    self.ShowButtonLabel:SetSize(300, 20);
+    self.ShowButtonLabel:SetPosition(20, 110);
+    self.ShowButtonLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.ShowButtonLabel:SetParent(self.GeneralTab);
+    self.ShowButtonLabel:SetText(toggleString);
+    self.ShowButtonLabel:SetVisible(true);
+
+    -- checkbox for show toggle button option
+    self.ShowButtonCheck = Turbine.UI.Lotro.CheckBox();
+    self.ShowButtonCheck:SetSize(19, 19);
+    self.ShowButtonCheck:SetPosition(450, 110);
+    self.ShowButtonCheck:SetChecked(Settings.showButton == 1);
+    self.ShowButtonCheck:SetParent(self.GeneralTab);
+    self.ShowButtonCheck:SetVisible(true);
+
+    -- label for option to fire skill on pulldown selection
+    self.PulldownTravelLabel = Turbine.UI.Label();
+    self.PulldownTravelLabel:SetSize(300, 20);
+    self.PulldownTravelLabel:SetPosition(20, 140);
+    self.PulldownTravelLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.PulldownTravelLabel:SetParent(self.GeneralTab);
+    self.PulldownTravelLabel:SetText(pulldownTravelString);
+    self.PulldownTravelLabel:SetVisible(true);
+
+    -- checkbox for option to fire skill on pulldown selection
+    self.PulldownTravelCheck = Turbine.UI.Lotro.CheckBox();
+    self.PulldownTravelCheck:SetSize(19, 19);
+    self.PulldownTravelCheck:SetPosition(450, 140);
+    self.PulldownTravelCheck:SetChecked(Settings.pulldownTravel == 1);
+    self.PulldownTravelCheck:SetParent(self.GeneralTab);
+    self.PulldownTravelCheck:SetVisible(true);
 
     -- label for toggle button sliders
     self.toggleSlidersLabel = Turbine.UI.Label();
@@ -313,6 +313,17 @@ function OptionsPanel:AddGeneralItems()
         self.mainWindow:UpdateSettings();
     end
 
+    -- set the close on travel option when changed
+    self.hideOnTravelCheck.CheckedChanged = function(sender, args)
+        if (sender:IsChecked()) then
+            Settings.hideOnTravel = 1;
+        else
+            Settings.hideOnTravel = 0;
+        end
+        self.mainWindow:SetShortcuts();
+        self.mainWindow:UpdateSettings();
+    end
+
     -- set the show toggle button option when changed
     self.ShowButtonCheck.CheckedChanged = function(sender, args)
         if (sender:IsChecked()) then
@@ -331,17 +342,6 @@ function OptionsPanel:AddGeneralItems()
             Settings.pulldownTravel = 1;
         else
             Settings.pulldownTravel = 0;
-        end
-        self.mainWindow:SetShortcuts();
-        self.mainWindow:UpdateSettings();
-    end
-
-    -- set the close on travel option when changed
-    self.hideOnTravelCheck.CheckedChanged = function(sender, args)
-        if (sender:IsChecked()) then
-            Settings.hideOnTravel = 1;
-        else
-            Settings.hideOnTravel = 0;
         end
         self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
