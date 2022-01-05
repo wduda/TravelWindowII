@@ -167,6 +167,11 @@ function TravelWindow:Constructor()
             self:CloseMoorMap();
             self:CloseEriadorMap();
             self:CloseRhovanionMap();
+            if (self.hidden == true) then
+                self.hidden = false;
+                self:SetVisible(self.currentVisState);
+                self.ToggleButton:SetVisible(Settings.showButton == 1);
+            end
         elseif (args.Action == 268435635) then
             if (self.hidden == false) then
                 self.currentVisState = self:IsVisible();
