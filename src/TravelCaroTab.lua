@@ -191,7 +191,9 @@ function TravelCaroTab:CreateQuickslots()
             if (args.Button == Turbine.UI.MouseButton.Right) then
                 Menu:ShowMenu();
             else
-                self.parent:SetVisible(false);
+                if (Settings.hideOnTravel == 1) then
+                    self.parent:SetVisible(false);
+                end
             end
         end
     end
