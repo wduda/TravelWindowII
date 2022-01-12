@@ -222,10 +222,10 @@ function TravelGridTab:SetScrollBar()
 
     -- set the maximum value of the scrollbar
     -- based on the number of rows in the subwindow
-    numOfSlots = #self.quickslots;
-    numOfRows = math.ceil(numOfSlots / self.numOfCols);
+    NumberOfSlots = #self.quickslots;
+    NumberOfRows = math.ceil(NumberOfSlots / self.numOfCols);
 
-    self.max = numOfRows * 38 - self:GetHeight() + 35;
+    self.max = NumberOfRows * 38 - self:GetHeight() + 35;
     if (self.max < 0) then
         -- the max cannot be less than one
         self.max = 0;
