@@ -770,6 +770,10 @@ function TravelWindow:LoadSettings()
         SettingsStrings = {};
     end
 
+    if (not SettingsStrings.lastLoadedVersion or SettingsStrings.lastLoadedVersion == "nil") then
+        SettingsStrings.lastLoadedVersion = tostring(Plugins["Travel Window II"]:GetVersion());
+    end
+
     if (not SettingsStrings.width or SettingsStrings.width == "nil") then
         SettingsStrings.width = tostring(self.minWidth);
     end
@@ -953,6 +957,7 @@ function TravelWindow:LoadSettings()
         Settings.mapGlanVraig = SettingsStrings.mapGlanVraig;
     end
 
+    Settings.lastLoadedVersion = SettingsStrings.lastLoadedVersion;
     Settings.enabled = SettingsStrings.enabled;
 
     local convertTableIndex = false;
@@ -977,6 +982,7 @@ function TravelWindow:SaveSettings()
     SettingsStrings = {};
     
     -- convert the settings to strings
+    SettingsStrings.lastLoadedVersion = tostring(Settings.lastLoadedVersion);
     SettingsStrings.height = tostring(Settings.height);
     SettingsStrings.width = tostring(Settings.width);
     SettingsStrings.positionX = tostring(Settings.positionX);
@@ -1042,6 +1048,7 @@ function TravelWindow:ResetSettings()
 
     -- set all saved settings to default values
     Settings = {};
+    Settings.lastLoadedVersion = Plugins["Travel Window II"]:GetVersion();
     Settings.width = self.minWidth;
     Settings.height = self.minHeight;
     Settings.positionX = Turbine.UI.Display.GetWidth() - self:GetWidth() - 50;
