@@ -187,6 +187,9 @@ function ComboBox:AddItem(shortcut, index, value)
         if (args.Button == Turbine.UI.MouseButton.Left) then
             self:ItemSelected(index);
             self:FireEvent();
+            if (Settings.hideOnTravel == 1) then
+                self.parent:SetVisible(false);
+            end
         end
     end
 

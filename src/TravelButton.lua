@@ -112,4 +112,6 @@ function TravelButton:Constructor(parent)
     end
 end
 
-function TravelButton:UpdateOpacity() self:SetOpacity(Settings.toggleMinOpacity); end
+function TravelButton:UpdateOpacity()
+    self:SetOpacity(Settings.toggleMinOpacity);
+end

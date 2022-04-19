@@ -25,8 +25,7 @@ function MoorMapWindow:Constructor(parent)
     self.quickslots = {};
 
     -- set the default window settings
-    self:SetPosition(self.windowWidth / 2 - self.width / 2,
-                     self.windowHeight / 2 - self.height / 2);
+    self:SetPosition(self.windowWidth / 2 - self.width / 2, self.windowHeight / 2 - self.height / 2);
     self:SetSize(self.width, self.height);
     self:SetBlendMode(Turbine.UI.BlendMode.Undefined);
     self:SetBackColor(Turbine.UI.Color(0.0, 0, 0, 0));
@@ -48,7 +47,9 @@ function MoorMapWindow:Constructor(parent)
     -- have the main window close the options
     self.VisibleChanged = function(sender, args)
         if (self:IsVisible() == false) then
-            if (parent ~= nil) then parent:CloseMoorMap(); end
+            if (parent ~= nil) then
+                parent:CloseMoorMap();
+            end
         end
     end
 
@@ -89,9 +90,7 @@ function MoorMapWindow:AddShortcuts()
         self.quickslots[i]:SetAllowDrop(false);
         self.quickslots[i]:SetPosition(mapLocations[i][1], mapLocations[i][2]);
         self.quickslots[i]:SetZOrder(98);
-        self.quickslots[i]:SetShortcut(Turbine.UI.Lotro.Shortcut(6.0,
-                                                                 creepLocations:IdAtIndex(
-                                                                     i)));
+        self.quickslots[i]:SetShortcut(Turbine.UI.Lotro.Shortcut(6.0, creepLocations:IdAtIndex(i)));
         self.quickslots[i]:SetMouseVisible(true);
         self.quickslots[i]:SetUseOnRightClick(false);
         self.quickslots[i]:SetVisible(true);

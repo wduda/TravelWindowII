@@ -54,35 +54,34 @@ function SettingsMenu:Constructor(parentWindow)
     -- create the items to open the map windows
     MoorMapMenu = TravelWindowII.src.extensions.DMenuList(moorMapString);
     EriadorMapMenu = TravelWindowII.src.extensions.DMenuList(eriadorMapString);
-    RhovanionMapMenu = TravelWindowII.src.extensions.DMenuList(
-                           rhovanionMapString);
+    RhovanionMapMenu = TravelWindowII.src.extensions.DMenuList(rhovanionMapString);
     GondorMapMenu = TravelWindowII.src.extensions.DMenuList(gondorMapString);
 
     -- add everything to the main menu
-    menuItems = self:GetItems();
+    MenuItems = self:GetItems();
     if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
-        menuItems:Add(Mode);
-        menuItems:Add(OptionsMenu);
-        menuItems:Add(MoorMapMenu);
+        MenuItems:Add(Mode);
+        MenuItems:Add(OptionsMenu);
+        MenuItems:Add(MoorMapMenu);
     else
-        menuItems:Add(Filters);
-        menuItems:Add(Mode);
-        menuItems:Add(MapMenu); -- @TODO needs to be reintroduced
-        menuItems:Add(OptionsMenu);
-        menuItems:Add(SkillsMenu);
-        menuItems:Add(EriadorMapMenu);
-        menuItems:Add(RhovanionMapMenu);
-        menuItems:Add(GondorMapMenu);
+        MenuItems:Add(Filters);
+        MenuItems:Add(Mode);
+        MenuItems:Add(MapMenu); -- @TODO needs to be reintroduced
+        MenuItems:Add(OptionsMenu);
+        MenuItems:Add(SkillsMenu);
+        MenuItems:Add(EriadorMapMenu);
+        MenuItems:Add(RhovanionMapMenu);
+        MenuItems:Add(GondorMapMenu);
     end
 
     -- set up the event handler
     -- loop through top level of menu
-    for i = 1, menuItems:GetCount(), 1 do
-        local menuList = menuItems:Get(i);
+    for i = 1, MenuItems:GetCount(), 1 do
+        local MenuList = MenuItems:Get(i);
 
         -- loop through the sub menu
-        for j = 1, menuList:GetCount(), 1 do
-            local menuItem = menuList:Get(j);
+        for j = 1, MenuList:GetCount(), 1 do
+            local menuItem = MenuList:Get(j);
 
             -- set the function to handle the event
             menuItem.Click = function(sender, args)
@@ -93,35 +92,35 @@ function SettingsMenu:Constructor(parentWindow)
 
     -- handle the last item's event
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        menuItems:Get(3).Click = function(sender, args)
+        MenuItems:Get(3).Click = function(sender, args)
             self:Update(sender:GetText());
         end
 
-        menuItems:Get(4).Click = function(sender, args)
+        MenuItems:Get(4).Click = function(sender, args)
             self:Update(sender:GetText());
         end
 
-        menuItems:Get(5).Click = function(sender, args)
+        MenuItems:Get(5).Click = function(sender, args)
             self:Update(sender:GetText());
         end
 
-        menuItems:Get(6).Click = function(sender, args)
+        MenuItems:Get(6).Click = function(sender, args)
             self:Update(sender:GetText());
         end
 
-        menuItems:Get(7).Click = function(sender, args)
+        MenuItems:Get(7).Click = function(sender, args)
             self:Update(sender:GetText());
         end
 
-        menuItems:Get(8).Click = function(sender, args)
+        MenuItems:Get(8).Click = function(sender, args)
             self:Update(sender:GetText());
         end
     else
-        menuItems:Get(2).Click = function(sender, args)
+        MenuItems:Get(2).Click = function(sender, args)
             self:Update(sender:GetText());
         end
 
-        menuItems:Get(3).Click = function(sender, args)
+        MenuItems:Get(3).Click = function(sender, args)
             self:Update(sender:GetText());
         end
     end
@@ -145,7 +144,9 @@ function SettingsMenu:SetSelections()
 end
 
 -- get the setting from the main window
-function SettingsMenu:GetSettings() return self.mode, self.filters; end
+function SettingsMenu:GetSettings()
+    return self.mode, self.filters;
+end
 
 -- function to change the settings of the menu programmatically
 function SettingsMenu:SetSettings(s1, s2)

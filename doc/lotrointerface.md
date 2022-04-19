@@ -2,6 +2,8 @@ This plugin creates a single window that contains available travel skills, inclu
 
 [B]Since this plugin is a 100% replacement for "Travel Window" you should not have both enabled at the same time. You can keep them both installed though.[/B]
 
+The plugin has four modes of operation - icon grid, text list, pulldown list and carousel. These can be switched from the menu that opens when you right-click the plugin. This menu also gives you access to the options window. 
+
 [SIZE="3"]Installation:[/SIZE]
 This is a full plugin and can be installed standalone. Follow the general plugin installation instructions to install Travel Window II or update the install (depends on your OS).
 I recommend you install and manage your plugins with the LOTRO Plugin Compendium found at this URL, since it will install plugins cleanly and take care of installing the Turbine utilities for you: [URL="http://www.lotrointerface.com/downloads/info663-LOTROPluginCompendium.html"]LOTRO Plugin Compendium App[/URL]
@@ -27,7 +29,7 @@ Why does my racial skill show up even though I do not have the racial trait equi
 
 Why does a reputation or store version of my racial skill show up even though I have not obtained or bought it?
 [LIST]
-[*]This is because the racial and those store-bought skills have identical names ingame (i.e. "Return to Bree") and the plugin obtains a list of learned skills that includes that name at least once. Based on that name alone the plugin cannot know which of the two skills you have obtained, while you can get both through the Racial+Store combo. You can use the Enable/Disable options to hide the skill you do not have that is greyed out.
+[*]This is because the racial and those store-bought skills have identical names ingame (i.e. "Return to Bree") and the plugin obtains a list of learned skills for your character that includes that particular name at least once. Based on that name alone the plugin cannot know which of the two skills you have obtained, while you can get both through the Racial+Store combo. You can use the Enable/Disable options to hide the skill you do not have that is greyed out.
 [/LIST]
 
 How to handle the settings reset introduced by v1.0.7beta?
@@ -41,7 +43,10 @@ How to handle the settings reset introduced by v1.0.7beta?
 [/LIST]
 
 Version history:
-v1.0.18beta
-- fixed changed Gundabad translations for FR 
+v1.0.19beta
+- added new option to close Travel Window when using a travel skill regardless of window mode
+- updated behaviour of Travel Window when using function key and escape to hide the UI, should now handle all cases correctly
+- added Tornhad travel skills
+- fixed many French Warden skills that were renamed by SSG
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].

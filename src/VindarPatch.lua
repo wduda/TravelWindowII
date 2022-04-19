@@ -3,19 +3,29 @@
 ]] --
 -- return a copy of the object obj in a safe format
 local function _convSafe(obj)
-    if type(obj) == "number" then return (tostring(obj)) end
-    if type(obj) ~= "string" then return (obj) end
+    if type(obj) == "number" then
+        return (tostring(obj))
+    end
+    if type(obj) ~= "string" then
+        return (obj)
+    end
     local res = ""
     for i, v in ipairs({obj:byte(1, -1)}) do
         if (v < 32) or (v > 125) then
             res = res .. "#" .. tonumber(v) .. "#"
         else
             res = res .. string.char(v)
-            if v == 35 then res = res .. "#" end
+            if v == 35 then
+                res = res .. "#"
+            end
         end
     end
-    if res:byte(1, 1) == 35 then return ("#" .. res) end
-    if (tonumber(res) ~= nil) then return ("#" .. res) end
+    if res:byte(1, 1) == 35 then
+        return ("#" .. res)
+    end
+    if (tonumber(res) ~= nil) then
+        return ("#" .. res)
+    end
     return res
 end
 local function _copySafe(obj)
@@ -26,7 +36,9 @@ local function _copySafe(obj)
     end
     local newt = {}
     lookupSafe[obj] = newt
-    for i, v in pairs(obj) do newt[_copySafe(i)] = _copySafe(v) end
+    for i, v in pairs(obj) do
+        newt[_copySafe(i)] = _copySafe(v)
+    end
     return setmetatable(newt, getmetatable(obj))
 end
 function convSafe(obj)
@@ -38,12 +50,20 @@ end
 
 -- the inverse operation
 local function _convBack(obj)
-    if type(obj) ~= "string" then return obj end
-    if obj == "" then return "" end
+    if type(obj) ~= "string" then
+        return obj
+    end
+    if obj == "" then
+        return ""
+    end
     local num = tonumber(obj)
-    if num ~= nil then return num end
+    if num ~= nil then
+        return num
+    end
     local res = ""
-    if obj:byte(1, 1) == 35 then obj = string.sub(obj, 2, -1) end
+    if obj:byte(1, 1) == 35 then
+        obj = string.sub(obj, 2, -1)
+    end
     while string.len(obj) ~= 0 do
         if obj:byte(1, 1) ~= 35 then
             res = res .. string.char(obj:byte(1, 1));
@@ -61,7 +81,9 @@ local function _convBack(obj)
                 error("convBack : parse error 1 !")
             end
             local v = tonumber(string.sub(obj, 1, k - 1))
-            if v == nil then error("convBack : parse error 2 !") end
+            if v == nil then
+                error("convBack : parse error 2 !")
+            end
             res = res .. string.char(v)
             obj = string.sub(obj, k + 1, -1)
         end
@@ -76,7 +98,9 @@ local function _copyBack(obj)
     end
     local newt = {}
     lookupBack[obj] = newt
-    for i, v in pairs(obj) do newt[_copyBack(i)] = _copyBack(v) end
+    for i, v in pairs(obj) do
+        newt[_copyBack(i)] = _copyBack(v)
+    end
     return setmetatable(newt, getmetatable(obj))
 end
 function convBack(obj)
@@ -96,17 +120,14 @@ function PatchDataLoad(a, b, c)
             return results;
         else
             Turbine.Shell.WriteLine("Error:" .. tostring(results))
-            Turbine.Shell.WriteLine(
-                "While processing convBack(Turbine.PluginData.Load(" ..
-                    tostring(a) .. ", " .. tostring(b) .. ", " .. tostring(c) ..
-                    "))")
+            Turbine.Shell.WriteLine("While processing convBack(Turbine.PluginData.Load(" .. tostring(a) .. ", " ..
+                                        tostring(b) .. ", " .. tostring(c) .. "))")
             return nil;
         end
     else
         Turbine.Shell.WriteLine("Error:" .. tostring(results))
-        Turbine.Shell.WriteLine("While processing Turbine.PluginData.Load(" ..
-                                    tostring(a) .. ", " .. tostring(b) .. ", " ..
-                                    tostring(c) .. ")")
+        Turbine.Shell.WriteLine("While processing Turbine.PluginData.Load(" .. tostring(a) .. ", " .. tostring(b) ..
+                                    ", " .. tostring(c) .. ")")
         return nil;
     end
 end

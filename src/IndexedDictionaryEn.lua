@@ -23,10 +23,11 @@ skillNotTrainedString = "Skills not trained: ";
 generalTabString = "General";
 selectTabString = "Enable";
 sortTabString = "Sort";
-hideString = "Hide Travel Window at Startup";
+hideString = "Hide main window at startup";
 toggleString = "Show Toggle Button";
 pulldownTravelString = "Travel when pulldown skill selected";
-hideOnCombatString = "Hide window when entering combat";
+hideOnTravelString = "Hide main window on travel";
+hideOnCombatString = "Hide main window when entering combat";
 genericLabelString = "Generic Skills";
 racialLabelString = "Racial Skills";
 classLabelString = "Class Skills";
@@ -158,6 +159,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Azanulbizar", "0x7005AA95", "Azanulbizar (Guide)");
     hunterLocations:AddSkill("Guide to the Noble Gate", "0x7005D487", "Noble Gate (Guide)");
     hunterLocations:AddSkill("Guide to Leitstáth", "0x7005D47D", "Leitstáth (Guide)");
+    hunterLocations:AddSkill("Guide to Tornhad", "0x70060EA6", "Tornhad (Guide)");
 
     wardenLocations:AddSkill("Muster in Ost Guruth", "0x70014786", "Ost Guruth (Muster)");
     wardenLocations:AddSkill("Muster in Esteldín", "0x70014798", "Esteldín (Muster)");
@@ -199,6 +201,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster in Azanulbizar", "0x7005AA8C", "Azanulbizar (Muster)");
     wardenLocations:AddSkill("Muster at the Noble Gate", "0x7005D48A", "Noble Gate (Muster)");
     wardenLocations:AddSkill("Muster at Leitstáth", "0x7005D488", "Leitstáth (Muster)");
+    wardenLocations:AddSkill("Muster at Tornhad", "0x70060EA5", "Tornhad (Muster)");
 
     -- add the racial travel skills
     racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)");
@@ -271,6 +274,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Journey to the Hall of Vérnozal", "0x7005A596", "Vérnozal (Rep)");
     repLocations:AddSkill("Return to the Noble Gate", "0x7005D47C", "Noble Gate (Rep)");
     repLocations:AddSkill("Return to Leitstáth", "0x7005D484", "Leitstáth (Rep)");
+    repLocations:AddSkill("Return to Tornhad", "0x70060EA8", "Tornhad (Rep)");
 
     -- monster player maps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");

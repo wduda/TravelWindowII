@@ -115,7 +115,9 @@ function TravelCaroTab:SetShortcuts()
 
     -- set all quickslots to nil if there are no items in the shortcuts table
     if (#self.shortcuts == 0) then
-        for i = 1, 5, 1 do self.quickslots[i]:SetShortcut(nil); end
+        for i = 1, 5, 1 do
+            self.quickslots[i]:SetShortcut(nil);
+        end
         -- set all quickslots the same if only 1 item in shortcuts table
     elseif (#self.shortcuts == 1) then
         for i = 1, 5, 1 do
@@ -189,7 +191,9 @@ function TravelCaroTab:CreateQuickslots()
             if (args.Button == Turbine.UI.MouseButton.Right) then
                 Menu:ShowMenu();
             else
-                self.parent:SetVisible(false);
+                if (Settings.hideOnTravel == 1) then
+                    self.parent:SetVisible(false);
+                end
             end
         end
     end
@@ -226,28 +230,23 @@ function TravelCaroTab:SetSize(width, height)
     -- adjust the size and location of the 5 quickslots
     self.quickslots[1]:SetStretchMode(1);
     self.quickslots[1]:SetSize(22, 22);
-    self.quickslots[1]:SetPosition(self:GetWidth() / 2 - 67,
-                                   (self:GetHeight() - 20) / 2);
+    self.quickslots[1]:SetPosition(self:GetWidth() / 2 - 67, (self:GetHeight() - 20) / 2);
 
     self.quickslots[2]:SetStretchMode(1);
     self.quickslots[2]:SetSize(28, 28);
-    self.quickslots[2]:SetPosition(self:GetWidth() / 2 - 45,
-                                   (self:GetHeight() - 20) / 2 + 3);
+    self.quickslots[2]:SetPosition(self:GetWidth() / 2 - 45, (self:GetHeight() - 20) / 2 + 3);
 
     self.quickslots[3]:SetStretchMode(1);
     self.quickslots[3]:SetSize(36, 36);
-    self.quickslots[3]:SetPosition(self:GetWidth() / 2 - 18,
-                                   (self:GetHeight() - 20) / 2 + 5);
+    self.quickslots[3]:SetPosition(self:GetWidth() / 2 - 18, (self:GetHeight() - 20) / 2 + 5);
 
     self.quickslots[4]:SetStretchMode(1);
     self.quickslots[4]:SetSize(28, 28);
-    self.quickslots[4]:SetPosition(self:GetWidth() / 2 + 17,
-                                   (self:GetHeight() - 20) / 2 + 3);
+    self.quickslots[4]:SetPosition(self:GetWidth() / 2 + 17, (self:GetHeight() - 20) / 2 + 3);
 
     self.quickslots[5]:SetStretchMode(1);
     self.quickslots[5]:SetSize(22, 22);
-    self.quickslots[5]:SetPosition(self:GetWidth() / 2 + 45,
-                                   (self:GetHeight() - 20) / 2);
+    self.quickslots[5]:SetPosition(self:GetWidth() / 2 + 45, (self:GetHeight() - 20) / 2);
 
     Turbine.UI.Control.SetOpacity(self, 1);
 end
