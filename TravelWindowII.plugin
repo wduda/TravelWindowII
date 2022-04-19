@@ -13,6 +13,5 @@ Please report bugs and feature requests at Lotrointeface or GitHub.
         <Image>TravelWindowII/src/resources/travel.tga</Image>
     </Information>
     <Package>TravelWindowII.src.Main</Package>
-    <Configuration Apartment="TravelWindowII">
-    </Configuration>
+    <Configuration Apartment="TravelWindowII"/>
 </Plugin>
