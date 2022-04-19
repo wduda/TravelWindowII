@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.19beta
+- added new option to close Travel Window when using a travel skill regardless of window mode
+- updated behaviour of Travel Window when using function key and escape to hide the UI, should now handle all cases correctly
+
 ## v1.0.18beta
 - fixed changed Gundabad translations for FR 
 ## v1.0.17beta
