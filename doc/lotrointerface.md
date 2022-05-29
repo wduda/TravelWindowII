@@ -19,7 +19,6 @@ These three options work:
 [*] right-click anywhere on TW II, select "Check untrained skills" from the menu, the skill will show up
 [*] open options window, go to Enable tab, click "Check untrained skills" button, the skill will show up
 [*] relog the character
-
 [/LIST]
 
 Why does my racial skill show up even though I do not have the racial trait equipped?
@@ -43,10 +42,9 @@ How to handle the settings reset introduced by v1.0.7beta?
 [/LIST]
 
 Version history:
-v1.0.19beta
-- added new option to close Travel Window when using a travel skill regardless of window mode
-- updated behaviour of Travel Window when using function key and escape to hide the UI, should now handle all cases correctly
-- added Tornhad travel skills
-- fixed many French Warden skills that were renamed by SSG
+v1.0.20beta
+- added Yondershire port
+- worked around plugin manager causing client crash; replaced the manager options with a button opening the actual options window
+
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
