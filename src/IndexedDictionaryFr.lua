@@ -160,6 +160,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide vers la Porte Noble", "0x7005D487", "Porte Noble (Guide)");
     hunterLocations:AddSkill("Guide vers Leitstath", "0x7005D47D", "Leitstath (Guide)");
     hunterLocations:AddSkill("Guide vers Tornhad", "0x70060EA6", "Tornhad (Guide)");
+    hunterLocations:AddSkill("Guide vers Bourdeneuve", "0x7006133F", "Bourdeneuve (Guide)");
 
     wardenLocations:AddSkill("Rassemblement : Ost Guruth", "0x70014786", "Ost Guruth (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement : Esteldin", "0x70014798", "Esteldin (Rassemblement)");
@@ -202,6 +203,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Rassemblement : La Porte Noble", "0x7005D48A", "Porte Noble (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement : Leitstath", "0x7005D488", "Leitstath (Rassemblement)");
     wardenLocations:AddSkill("Retour à Tornhad", "0x70060EA5", "Tornhad (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Bourdeneuve", "0x7006133E", "Bourdeneuve (Rassemblement)");
 
     racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
     racialLocations:AddSkill("Retournez dans la Comté", "0x700062C8", "Comté (Race)");
@@ -272,6 +274,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retourner à la Porte Noble", "0x7005D47C", "Porte Noble (Rep)");
     repLocations:AddSkill("Retourner à Leitstath", "0x7005D484", "Leitstath (Rep)");
     repLocations:AddSkill("Retournez voir Tornhad", "0x70060EA8", "Tornhad (Rep)");
+    repLocations:AddSkill("Retour à Bourdeneuve", "0x70061340", "Bourdeneuve (Rep)");
 
     -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");

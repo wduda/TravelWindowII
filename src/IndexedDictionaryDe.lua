@@ -160,6 +160,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Führer zum Prachttor", "0x7005D487", "Prachttor (Führer)");
     hunterLocations:AddSkill("Führer nach Leitstáth", "0x7005D47D", "Leitstáth (Führer)");
     hunterLocations:AddSkill("Führer nach Tornhad", "0x70060EA6", "Tornhad (Führer)");
+    hunterLocations:AddSkill("Führer nach Neuhausen", "0x7006133F", "Neuhausen (Führer)");
 
     wardenLocations:AddSkill("Appell in der Feste Guruth", "0x70014786", "Feste Guruth (Appell)");
     wardenLocations:AddSkill("Appell in Esteldín", "0x70014798", "Esteldín (Appell)");
@@ -202,6 +203,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Heerschau am Prachttor", "0x7005D48A", "Prachttor (Appell)");
     wardenLocations:AddSkill("Heerschau in Leitstáth", "0x7005D488", "Leitstáth (Appell)");
     wardenLocations:AddSkill("Heerschau in Tornhad", "0x70060EA5", "Tornhad (Appell)");
+    wardenLocations:AddSkill("Heerschau in Neuhausen", "0x7006133E", "Neuhausen (Appell)");
 
     racialLocations:AddSkill("Rückkehr nach Bree", "0x700062F6", "Bree (Rasse)");
     racialLocations:AddSkill("Rückkehr ins Auenland", "0x700062C8", "Michelbinge (Rasse)");
@@ -268,10 +270,11 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Kehrt nach Schragen zurück.", "0x70059D12", "Schragen (Ruf)");
     repLocations:AddSkill("Rückkehr nach Akrâz-zahar", "0x7005AA90", "Akrâz-zahar (Ruf)");
     repLocations:AddSkill("Rückkehre nach Azanulbizar", "0x7005AA92", "Azanulbizar (Ruf)");
-    repLocations:AddSkill("Reise zur Halle Vérnozal", "0x7005A596", "Vérnozal (Rep)");
-    repLocations:AddSkill("Rückkehr zum Prachttor", "0x7005D47C", "Prachttor (Rep)");
-    repLocations:AddSkill("Rückkehr nach Leitstáth", "0x7005D484", "Leitstáth (Rep)");
-    repLocations:AddSkill("Kehrt nach Tornhad zurück.", "0x70060EA8", "Tornhad (Rep)");
+    repLocations:AddSkill("Reise zur Halle Vérnozal", "0x7005A596", "Vérnozal (Ruf)");
+    repLocations:AddSkill("Rückkehr zum Prachttor", "0x7005D47C", "Prachttor (Ruf)");
+    repLocations:AddSkill("Rückkehr nach Leitstáth", "0x7005D484", "Leitstáth (Ruf)");
+    repLocations:AddSkill("Kehrt nach Tornhad zurück.", "0x70060EA8", "Tornhad (Ruf)");
+    repLocations:AddSkill("Kehrt nach Neuhausen zurück.", "0x70061340", "Neuhausen (Ruf)");
 
 -- monster player maps
     creepLocations:AddSkill("Kartenskizze zum Gramfuss", "0x70028BBC");
