@@ -139,7 +139,20 @@ function TravelWindow:Constructor()
 
     pcall(function()
         plugin.GetOptionsPanel = function(self)
-            return optionsPanel;
+            local options = Turbine.UI.Control()
+            options:SetSize(500, 200)
+
+            local OptionsButton = Turbine.UI.Lotro.Button()
+            OptionsButton:SetParent(options)
+            OptionsButton:SetPosition(100, 100)
+            OptionsButton:SetSize(200,15)
+            OptionsButton:SetText(menuOptionsString)
+            OptionsButton:SetVisible(true)
+
+            OptionsButton.Click = function()
+                TravelWindow:OpenOptions();
+            end
+            return options;
         end
     end);
 
