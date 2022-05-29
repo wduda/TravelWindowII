@@ -822,7 +822,7 @@ function TravelWindow:LoadSettings()
     if (not SettingsStrings.pulldownTravel or SettingsStrings.pulldownTravel == "nil") then
         SettingsStrings.pulldownTravel = tostring(0);
     end
-
+  
     if (not SettingsStrings.hideOnTravel or SettingsStrings.hideOnTravel == "nil") then
         SettingsStrings.hideOnTravel = tostring(0);
     end

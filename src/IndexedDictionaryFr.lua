@@ -276,6 +276,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retournez voir Tornhad", "0x70060EA8", "Tornhad (Rep)");
     repLocations:AddSkill("Retour à Bourdeneuve", "0x70061340", "Bourdeneuve (Rep)");
 
+
     -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");
     creepLocations:AddSkill("Carte pour aller au Pied de Gram", "0x70028BC1");

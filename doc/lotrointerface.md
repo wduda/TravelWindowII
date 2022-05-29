@@ -46,4 +46,5 @@ v1.0.20beta
 - added Yondershire port
 - worked around plugin manager causing client crash; replaced the manager options with a button opening the actual options window
 
+
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
