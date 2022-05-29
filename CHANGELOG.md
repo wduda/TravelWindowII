@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.0.20beta
+- added Yondershire port
+- worked around plugin manager causing client crash; replaced the manager options with a button opening the actual options window
 ## v1.0.19beta
 - added new option to close Travel Window when using a travel skill regardless of window mode
 - updated behaviour of Travel Window when using function key and escape to hide the UI, should now handle all cases correctly
