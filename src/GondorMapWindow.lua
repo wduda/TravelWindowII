@@ -92,6 +92,9 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U30 B
         {-1, -1}, -- U31 A
         {-1, -1}, -- U31 B
+        {-1, -1}, -- Tornhad
+        {-1, -1}, -- Nobottle
+
         -- Muster skills
         {-1, -1}, -- Ost Guruth
         {-1, -1}, -- Esteldin
@@ -133,6 +136,9 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U30 B
         {-1, -1}, -- U31 A
         {-1, -1}, -- U31 B
+        {-1, -1}, -- Tornhad
+        {-1, -1}, -- Nobottle
+
         -- Reputation skills
         {-1, -1}, -- Thorin's Hall
         {-1, -1}, -- Bree
@@ -178,6 +184,9 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U31 A
         {-1, -1}, -- U31 B
         {-1, -1}, -- U31 C
+        {-1, -1}, -- Tornhad
+        {-1, -1}, -- Nobottle
+
         -- Racial skills
         {-1, -1}, -- Bree
         {-1, -1}, -- Michel Delving
@@ -185,7 +194,7 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Rivendell
         {-1, -1}, -- Grimbeorn's House
         {-1, -1}, -- Caras Galadhon
-        {-1, -1} -- Thorin's Hall
+        {-1, -1}  -- Thorin's Hall
 
     };
     self:AddShortcuts();

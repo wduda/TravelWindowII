@@ -92,6 +92,9 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U30 B
         {-1, -1}, -- U31 A
         {-1, -1}, -- U31 B
+        {-1, -1}, -- Tornhad
+        {-1, -1}, -- Nobottle
+
         -- Warden skills
         {725, 400}, -- Ost Guruth
         {650, 280}, -- Esteldin
@@ -133,6 +136,9 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U30 B
         {-1, -1}, -- U31 A
         {-1, -1}, -- U31 B
+        {-1, -1}, -- Tornhad
+        {-1, -1}, -- Nobottle
+
         -- Reputation skills
         {305, 330}, -- Thorin's Hall
         {595, 400}, -- Bree
@@ -178,13 +184,16 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U31 A
         {-1, -1}, -- U31 B
         {-1, -1}, -- U31 C
+        {-1, -1}, -- Tornhad
+        {-1, -1}, -- Nobottle
+
         -- Racial skills
         {620, 400}, -- Bree
         {445, 415}, -- Michel Delving
         {330, 330}, -- Thorin's Hall
         {895, 390}, -- Rivendell
-        {-1, -1}, -- Grimbeorn's House
-        {-1, -1}, -- Caras Galadhon
+        {-1, -1},   -- Grimbeorn's House
+        {-1, -1},   -- Caras Galadhon
         {330, 330}, -- Thorin's Gate
         -- Moors Map
         {815, 300} -- Ettenmoors
