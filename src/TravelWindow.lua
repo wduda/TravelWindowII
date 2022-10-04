@@ -135,26 +135,25 @@ function TravelWindow:Constructor()
     self.hidden = false;
     self.currentVisState = self:IsVisible();
 
-    optionsPanel = TravelWindowII.src.OptionsPanel(self);
+    self.optionsWindow = TravelWindowII.src.OptionsWindow(self);
 
-    pcall(function()
-        plugin.GetOptionsPanel = function(self)
-            local options = Turbine.UI.Control()
-            options:SetSize(500, 200)
+    local PluginManagerOptionsPanel = Turbine.UI.Control()
+    PluginManagerOptionsPanel:SetSize(500, 200)
 
-            local OptionsButton = Turbine.UI.Lotro.Button()
-            OptionsButton:SetParent(options)
-            OptionsButton:SetPosition(100, 100)
-            OptionsButton:SetSize(200,15)
-            OptionsButton:SetText(menuOptionsString)
-            OptionsButton:SetVisible(true)
+    local OptionsButton = Turbine.UI.Lotro.Button()
+    OptionsButton:SetParent(PluginManagerOptionsPanel)
+    OptionsButton:SetPosition(100, 100)
+    OptionsButton:SetSize(200,15)
+    OptionsButton:SetText(menuOptionsString)
+    OptionsButton:SetVisible(true)
 
-            OptionsButton.Click = function()
-                TravelWindow:OpenOptions();
-            end
-            return options;
-        end
-    end);
+    OptionsButton.Click = function()
+        self.optionsWindow:SetVisible(true);
+    end
+
+    plugin.GetOptionsPanel = function(self)
+        return PluginManagerOptionsPanel;
+    end
 
     --[[ Event Handlers ]] --
 
@@ -647,7 +646,7 @@ end
 
 -- simple function to open the options window
 function TravelWindow:OpenOptions()
-    self.options = TravelWindowII.src.OptionsWindow(self);
+    self.optionsWindow:SetVisible(true);
 end
 
 -- function to close the options window if it exists

@@ -32,7 +32,7 @@ function OptionsWindow:Constructor(parent)
     self.Panel:SetPosition(0, 35);
 
     -- set the window to be visible
-    self:SetVisible(true);
+    self:SetVisible(false);
 
     -- have the main window close the options
     self.VisibleChanged = function(sender, args)
