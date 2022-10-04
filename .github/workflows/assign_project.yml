@@ -2,9 +2,8 @@ name: Auto assign issues and PRs to project
 
 on:
   issues:
-    types: [opened]
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    types:
+      - opened
 
 jobs:
   assign_project:
@@ -12,7 +11,7 @@ jobs:
     name: Auto assign issues and PRs to project
     steps:
     - name: Assign new issues to project into triage column
-      uses: srggrs/assign-one-project-github-action@1.2.0
+      uses: actions/add-to-project@0.3.0
       with:
-        project: 'https://github.com/wduda/TravelWindowII/projects/1'
-        column_name: 'Triage'
+        project: 'https://github.com/users/wduda/projects/1'
+        github-token: ${{ secrets.ACTIONS_SECRET_TWII }}
