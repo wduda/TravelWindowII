@@ -94,6 +94,9 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U31 B
         {-1, -1}, -- Tornhad
         {-1, -1}, -- Nobottle
+        {-1, -1}, -- Andrath
+        {-1, -1}, -- Swanfleet
+        {-1, -1}, -- Cardolan
 
         -- Warden skills
         {725, 400}, -- Ost Guruth
@@ -138,6 +141,9 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U31 B
         {-1, -1}, -- Tornhad
         {-1, -1}, -- Nobottle
+        {-1, -1}, -- Andrath
+        {-1, -1}, -- Swanfleet
+        {-1, -1}, -- Cardolan
 
         -- Reputation skills
         {305, 330}, -- Thorin's Hall
@@ -186,6 +192,9 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U31 C
         {-1, -1}, -- Tornhad
         {-1, -1}, -- Nobottle
+        {-1, -1}, -- Andrath
+        {-1, -1}, -- Swanfleet
+        {-1, -1}, -- Cardolan
 
         -- Racial skills
         {620, 400}, -- Bree
