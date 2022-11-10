@@ -195,6 +195,7 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Andrath
         {-1, -1}, -- Swanfleet
         {-1, -1}, -- Cardolan
+        {-1, -1}, -- Tracery Archive
 
         -- Racial skills
         {-1, -1}, -- Bree

@@ -195,6 +195,7 @@ function EriadorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Andrath
         {-1, -1}, -- Swanfleet
         {-1, -1}, -- Cardolan
+        {-1, -1}, -- Tracery Archive
 
         -- Racial skills
         {620, 400}, -- Bree
