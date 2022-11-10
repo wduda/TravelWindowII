@@ -161,6 +161,9 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Führer nach Leitstáth", "0x7005D47D", "Leitstáth (Führer)");
     hunterLocations:AddSkill("Führer nach Tornhad", "0x70060EA6", "Tornhad (Führer)");
     hunterLocations:AddSkill("Führer nach Neuhausen", "0x7006133F", "Neuhausen (Führer)");
+    hunterLocations:AddSkill("Guide to Andrath", "0x7006323C", "Andrath (Führer)");
+    hunterLocations:AddSkill("Guide to Swanfleet", "0x700634AA", "Swanfleet (Führer)");
+    hunterLocations:AddSkill("Guide to Cardolan", "0x700634A7", "Cardolan (Führer)");
 
     wardenLocations:AddSkill("Appell in der Feste Guruth", "0x70014786", "Feste Guruth (Appell)");
     wardenLocations:AddSkill("Appell in Esteldín", "0x70014798", "Esteldín (Appell)");
@@ -189,8 +192,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell in Haerondir", "0x70047C23", "Haerondir (Appell)");
     wardenLocations:AddSkill("Appell im Udûn-Brückenkopf", "0x7004AE1F", "Udûn-Brückenkopf (Appell)");
     wardenLocations:AddSkill("Appell in Thal", "0x7004d73a", "Thal (Appell)");
-    wardenLocations:AddSkill("Musterung in Járnfast", "0x7004FACA", "Jarnfast (Appell)");
-    wardenLocations:AddSkill("Musterung in Skarháld", "0x7004FACD",  "Skarhald (Appell)");
+    wardenLocations:AddSkill("Appell in Járnfast", "0x7004FACA", "Jarnfast (Appell)");
+    wardenLocations:AddSkill("Appell in Skarháld", "0x7004FACD",  "Skarhald (Appell)");
     wardenLocations:AddSkill("Appell im Beorningerhús", "0x70052F0A", "Beorningerhús (Appell)");
     wardenLocations:AddSkill("Appell in Hultvís", "0x70052F06", "Hultvís (Appell)");
     wardenLocations:AddSkill("Appell in Estolad Lân", "0x700551F2", "Estolad Lân (Appell)");
@@ -200,10 +203,13 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell in Schragen", "0x70059D10", "Schragen (Appell)");
     wardenLocations:AddSkill("Appell in Akrâz-zahar", "0x7005AA8F", "Akrâz-zahar (Appell)");
     wardenLocations:AddSkill("Appell in Azanulbizar", "0x7005AA8C", "Azanulbizar (Appell)");
-    wardenLocations:AddSkill("Heerschau am Prachttor", "0x7005D48A", "Prachttor (Appell)");
-    wardenLocations:AddSkill("Heerschau in Leitstáth", "0x7005D488", "Leitstáth (Appell)");
+    wardenLocations:AddSkill("Appell am Prachttor", "0x7005D48A", "Prachttor (Appell)");
+    wardenLocations:AddSkill("Appell in Leitstáth", "0x7005D488", "Leitstáth (Appell)");
     wardenLocations:AddSkill("Heerschau in Tornhad", "0x70060EA5", "Tornhad (Appell)");
     wardenLocations:AddSkill("Heerschau in Neuhausen", "0x7006133E", "Neuhausen (Appell)");
+    wardenLocations:AddSkill("Muster at Andrath", "0x70063242", "Andrath (Muster)");
+    wardenLocations:AddSkill("Muster at Swanfleet", "0x700634B6", "Swanfleet (Muster)");
+    wardenLocations:AddSkill("Muster at Cardolan", "0x700634AD", "Cardolan (Muster)");
 
     racialLocations:AddSkill("Rückkehr nach Bree", "0x700062F6", "Bree (Rasse)");
     racialLocations:AddSkill("Rückkehr ins Auenland", "0x700062C8", "Michelbinge (Rasse)");
@@ -275,6 +281,10 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Rückkehr nach Leitstáth", "0x7005D484", "Leitstáth (Ruf)");
     repLocations:AddSkill("Kehrt nach Tornhad zurück.", "0x70060EA8", "Tornhad (Ruf)");
     repLocations:AddSkill("Kehrt nach Neuhausen zurück.", "0x70061340", "Neuhausen (Ruf)");
+    repLocations:AddSkill("Return to Andrath", "0x7006323D", "Andrath (Rep)");
+    repLocations:AddSkill("Return to Swanfleet", "0x700634A4", "Swanfleet (Rep)");
+    repLocations:AddSkill("Return to Cardolan", "0x700634AE", "Cardolan (Rep)");
+    repLocations:AddSkill("Return to the Tracery Archives in Rivendell", "0x700634AE", "Tracery Archive (Item Drop)");
 
 -- monster player maps
     creepLocations:AddSkill("Kartenskizze zum Gramfuss", "0x70028BBC");

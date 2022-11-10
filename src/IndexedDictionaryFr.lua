@@ -161,6 +161,9 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide vers Leitstath", "0x7005D47D", "Leitstath (Guide)");
     hunterLocations:AddSkill("Guide vers Tornhad", "0x70060EA6", "Tornhad (Guide)");
     hunterLocations:AddSkill("Guide vers Bourdeneuve", "0x7006133F", "Bourdeneuve (Guide)");
+    hunterLocations:AddSkill("Guide to Andrath", "0x7006323C", "Andrath (Guide)");
+    hunterLocations:AddSkill("Guide to Swanfleet", "0x700634AA", "Swanfleet (Guide)");
+    hunterLocations:AddSkill("Guide to Cardolan", "0x700634A7", "Cardolan (Guide)");
 
     wardenLocations:AddSkill("Rassemblement : Ost Guruth", "0x70014786", "Ost Guruth (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement : Esteldin", "0x70014798", "Esteldin (Rassemblement)");
@@ -204,6 +207,9 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Rassemblement : Leitstath", "0x7005D488", "Leitstath (Rassemblement)");
     wardenLocations:AddSkill("Retour à Tornhad", "0x70060EA5", "Tornhad (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Bourdeneuve", "0x7006133E", "Bourdeneuve (Rassemblement)");
+    wardenLocations:AddSkill("Muster at Andrath", "0x70063242", "Andrath (Rassemblement)");
+    wardenLocations:AddSkill("Muster at Swanfleet", "0x700634B6", "Swanfleet (Rassemblement)");
+    wardenLocations:AddSkill("Muster at Cardolan", "0x700634AD", "Cardolan (Rassemblement)");
 
     racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
     racialLocations:AddSkill("Retournez dans la Comté", "0x700062C8", "Comté (Race)");
@@ -275,7 +281,10 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retourner à Leitstath", "0x7005D484", "Leitstath (Rep)");
     repLocations:AddSkill("Retournez voir Tornhad", "0x70060EA8", "Tornhad (Rep)");
     repLocations:AddSkill("Retour à Bourdeneuve", "0x70061340", "Bourdeneuve (Rep)");
-
+    repLocations:AddSkill("Return to Andrath", "0x7006323D", "Andrath (Rep)");
+    repLocations:AddSkill("Return to Swanfleet", "0x700634A4", "Swanfleet (Rep)");
+    repLocations:AddSkill("Return to Cardolan", "0x700634AE", "Cardolan (Rep)");
+    repLocations:AddSkill("Return to the Tracery Archives in Rivendell", "0x700634AE", "Tracery Archive (Item Drop)");
 
     -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");
