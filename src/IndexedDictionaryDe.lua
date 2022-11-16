@@ -192,8 +192,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell in Haerondir", "0x70047C23", "Haerondir (Appell)");
     wardenLocations:AddSkill("Appell im Udûn-Brückenkopf", "0x7004AE1F", "Udûn-Brückenkopf (Appell)");
     wardenLocations:AddSkill("Appell in Thal", "0x7004d73a", "Thal (Appell)");
-    wardenLocations:AddSkill("Appell in Járnfast", "0x7004FACA", "Jarnfast (Appell)");
-    wardenLocations:AddSkill("Appell in Skarháld", "0x7004FACD",  "Skarhald (Appell)");
+    wardenLocations:AddSkill("Musterung in Járnfast", "0x7004FACA", "Jarnfast (Appell)");
+    wardenLocations:AddSkill("Musterung in Skarháld", "0x7004FACD",  "Skarhald (Appell)");
     wardenLocations:AddSkill("Appell im Beorningerhús", "0x70052F0A", "Beorningerhús (Appell)");
     wardenLocations:AddSkill("Appell in Hultvís", "0x70052F06", "Hultvís (Appell)");
     wardenLocations:AddSkill("Appell in Estolad Lân", "0x700551F2", "Estolad Lân (Appell)");
