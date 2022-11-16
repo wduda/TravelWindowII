@@ -287,7 +287,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Andrath", "0x7006323D", "Andrath (Rep)");
     repLocations:AddSkill("Return to Swanfleet", "0x700634A4", "Swanfleet (Rep)");
     repLocations:AddSkill("Return to Cardolan", "0x700634AE", "Cardolan (Rep)");
-    repLocations:AddSkill("Return to the Tracery Archives in Rivendell", "0x700634AE", "Tracery Archive (Item Drop)");
+    repLocations:AddSkill("Return to the Tracery Archives in Rivendell", "0x700634AE", "Tracery Archive (Delving)");
 
     -- monster player maps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");
