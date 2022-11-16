@@ -161,6 +161,9 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide vers Leitstath", "0x7005D47D", "Leitstath (Guide)");
     hunterLocations:AddSkill("Guide vers Tornhad", "0x70060EA6", "Tornhad (Guide)");
     hunterLocations:AddSkill("Guide vers Bourdeneuve", "0x7006133F", "Bourdeneuve (Guide)");
+    hunterLocations:AddSkill("Guide vers Andrath", "0x7006323C", "Andrath (Guide)");
+    hunterLocations:AddSkill("Guide vers les Noues des cygnes", "0x700634AA", "Noues des cygnes (Guide)");
+    hunterLocations:AddSkill("Guide vers le Cardolan", "0x700634A7", "Cardolan (Guide)");
 
     wardenLocations:AddSkill("Rassemblement : Ost Guruth", "0x70014786", "Ost Guruth (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement : Esteldin", "0x70014798", "Esteldin (Rassemblement)");
@@ -204,6 +207,9 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Rassemblement : Leitstath", "0x7005D488", "Leitstath (Rassemblement)");
     wardenLocations:AddSkill("Retour à Tornhad", "0x70060EA5", "Tornhad (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Bourdeneuve", "0x7006133E", "Bourdeneuve (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Andrath", "0x70063242", "Andrath (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement aux Noues des cygnes", "0x700634B6", "Noues des cygnes (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement au Cardolan", "0x700634AD", "Cardolan (Rassemblement)");
 
     racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
     racialLocations:AddSkill("Retournez dans la Comté", "0x700062C8", "Comté (Race)");
@@ -275,7 +281,10 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retourner à Leitstath", "0x7005D484", "Leitstath (Rep)");
     repLocations:AddSkill("Retournez voir Tornhad", "0x70060EA8", "Tornhad (Rep)");
     repLocations:AddSkill("Retour à Bourdeneuve", "0x70061340", "Bourdeneuve (Rep)");
-
+    repLocations:AddSkill("Retour à Andrath", "0x7006323D", "Andrath (Rep)");
+    repLocations:AddSkill("Retour aux Noues des cygnes", "0x700634A4", "Noues des cygnes (Rep)");
+    repLocations:AddSkill("Retour au Cardolan", "0x700634AE", "Cardolan (Rep)");
+    repLocations:AddSkill("Retour aux Archives de gravures de Fondcombe", "0x700634AE", "Archives de gravures (Delving)");
 
     -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");

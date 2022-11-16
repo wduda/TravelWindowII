@@ -161,6 +161,9 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Leitstáth", "0x7005D47D", "Leitstáth (Guide)");
     hunterLocations:AddSkill("Guide to Tornhad", "0x70060EA6", "Tornhad (Guide)");
     hunterLocations:AddSkill("Guide to Nobottle", "0x7006133F", "Nobottle (Guide)");
+    hunterLocations:AddSkill("Guide to Andrath", "0x7006323C", "Andrath (Guide)");
+    hunterLocations:AddSkill("Guide to Swanfleet", "0x700634AA", "Swanfleet (Guide)");
+    hunterLocations:AddSkill("Guide to Cardolan", "0x700634A7", "Cardolan (Guide)");
 
     wardenLocations:AddSkill("Muster in Ost Guruth", "0x70014786", "Ost Guruth (Muster)");
     wardenLocations:AddSkill("Muster in Esteldín", "0x70014798", "Esteldín (Muster)");
@@ -204,6 +207,9 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster at Leitstáth", "0x7005D488", "Leitstáth (Muster)");
     wardenLocations:AddSkill("Muster at Tornhad", "0x70060EA5", "Tornhad (Muster)");
     wardenLocations:AddSkill("Muster at Nobottle", "0x7006133E", "Nobottle (Muster)");
+    wardenLocations:AddSkill("Muster at Andrath", "0x70063242", "Andrath (Muster)");
+    wardenLocations:AddSkill("Muster at Swanfleet", "0x700634B6", "Swanfleet (Muster)");
+    wardenLocations:AddSkill("Muster at Cardolan", "0x700634AD", "Cardolan (Muster)");
 
     -- add the racial travel skills
     racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)");
@@ -278,6 +284,10 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Leitstáth", "0x7005D484", "Leitstáth (Rep)");
     repLocations:AddSkill("Return to Tornhad", "0x70060EA8", "Tornhad (Rep)");
     repLocations:AddSkill("Return to Nobottle", "0x70061340", "Nobottle (Rep)");
+    repLocations:AddSkill("Return to Andrath", "0x7006323D", "Andrath (Rep)");
+    repLocations:AddSkill("Return to Swanfleet", "0x700634A4", "Swanfleet (Rep)");
+    repLocations:AddSkill("Return to Cardolan", "0x700634AE", "Cardolan (Rep)");
+    repLocations:AddSkill("Return to the Tracery Archives in Rivendell", "0x700634AE", "Tracery Archive (Delving)");
 
     -- monster player maps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");

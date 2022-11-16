@@ -94,6 +94,9 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U31 B
         {-1, -1}, -- Tornhad
         {-1, -1}, -- Nobottle
+        {-1, -1}, -- Andrath
+        {-1, -1}, -- Swanfleet
+        {-1, -1}, -- Cardolan
 
         -- Muster skills
         {-1, -1}, -- Ost Guruth
@@ -138,6 +141,9 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U31 B
         {-1, -1}, -- Tornhad
         {-1, -1}, -- Nobottle
+        {-1, -1}, -- Andrath
+        {-1, -1}, -- Swanfleet
+        {-1, -1}, -- Cardolan
 
         -- Reputation skills
         {-1, -1}, -- Thorin's Hall
@@ -186,6 +192,10 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- U31 C
         {-1, -1}, -- Tornhad
         {-1, -1}, -- Nobottle
+        {-1, -1}, -- Andrath
+        {-1, -1}, -- Swanfleet
+        {-1, -1}, -- Cardolan
+        {-1, -1}, -- Tracery Archive
 
         -- Racial skills
         {-1, -1}, -- Bree
