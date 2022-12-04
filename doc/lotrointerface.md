@@ -42,12 +42,9 @@ How to handle the settings reset introduced by v1.0.7beta?
 [/LIST]
 
 Version history:
-v1.0.21beta
-- added U34 skills for EN/DE/FR
-- fixed two Muster skills in DE
-- PluginManager button for options no longer opens a second copy of options window
-- Maps open again but are still buggy in terms of showing travel locations
-- error message when using dropdown view should no longer show up
-
+v1.0.22beta
+- fixed bug with duplicate skillID affecting hunters trying to sort their travel skills
+- fixed TWII button not saving position when being moved
+- fixed error message when resetting skills to default
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].

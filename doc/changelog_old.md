@@ -1,8 +1,4 @@
 # Changelog
-v1.0.20beta
-- added Yondershire port
-- worked around plugin manager causing client crash; replaced the manager options with a button opening the actual options window
-
 v19.0.0
 
 - added new U19 skills (rep + housing)
