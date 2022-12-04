@@ -284,7 +284,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retour à Andrath", "0x7006323D", "Andrath (Rep)");
     repLocations:AddSkill("Retour aux Noues des cygnes", "0x700634A4", "Noues des cygnes (Rep)");
     repLocations:AddSkill("Retour au Cardolan", "0x700634AE", "Cardolan (Rep)");
-    repLocations:AddSkill("Retour aux Archives de gravures de Fondcombe", "0x700634AE", "Archives de gravures (Delving)");
+    repLocations:AddSkill("Retour aux Archives de gravures de Fondcombe", "0x700634A5", "Archives de gravures (Delving)");
 
     -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");

@@ -284,7 +284,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Rückkehr nach Andrath", "0x7006323D", "Andrath (Rep)");
     repLocations:AddSkill("Rückkehr nach Schwanenfleet", "0x700634A4", "Swanfleet (Rep)");
     repLocations:AddSkill("Rückkehr nach Cardolan", "0x700634AE", "Cardolan (Rep)");
-    repLocations:AddSkill("Rückkehr zu den Filigranmuster-Archiven in Bruchtal", "0x700634AE", "Filigranmuster-Archiv (Delving)");
+    repLocations:AddSkill("Rückkehr zu den Filigranmuster-Archiven in Bruchtal", "0x700634A5", "Filigranmuster-Archiv (Delving)");
 
 -- monster player maps
     creepLocations:AddSkill("Kartenskizze zum Gramfuss", "0x70028BBC");

@@ -91,18 +91,11 @@ function TravelDictionaries:GetCounts()
     travelCount[4] = repLocations:GetCount();
     travelCount[5] = racialLocations:GetCount();
     travelCount[6] = creepLocations:GetCount();
-
-    LocationsTotal = travelCount[1] + travelCount[2] + travelCount[3] + travelCount[4] + travelCount[5];
 end
 
 -- function to return the count of a specific type of travel
 function TravelDictionaries:GetCount(index)
     return travelCount[index];
-end
-
--- function to get the total number of travel skills
-function TravelDictionaries:GetTotalCount()
-    return LocationsTotal;
 end
 
 -- function to return the 5 tables containing the travel skills
@@ -133,7 +126,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to the Misty Mountains", "0x7002E756", "Misty Mountains (Guide)");
     hunterLocations:AddSkill("Guide to Snowbourn", "0x7003198E", "Snowbourn (Guide)");
     hunterLocations:AddSkill("Guide to Forlaw", "0x70036B5D", "Forlaw (Guide)");
-    hunterLocations:AddSkill("Guide to Aldburg", "0x7003DC71", "Aldburg");
+    hunterLocations:AddSkill("Guide to Aldburg", "0x7003DC71", "Aldburg (Guide)");
     hunterLocations:AddSkill("Guide to Helm's Deep", "0x7003DC72", "Helm's Deep (Guide)");
     hunterLocations:AddSkill("Guide to Dol Amroth", "0x70041197", "Dol Amroth (Guide)");
     hunterLocations:AddSkill("Guide to Arnach", "0x70043A63", "Arnach (Guide)");
@@ -287,7 +280,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Andrath", "0x7006323D", "Andrath (Rep)");
     repLocations:AddSkill("Return to Swanfleet", "0x700634A4", "Swanfleet (Rep)");
     repLocations:AddSkill("Return to Cardolan", "0x700634AE", "Cardolan (Rep)");
-    repLocations:AddSkill("Return to the Tracery Archives in Rivendell", "0x700634AE", "Tracery Archive (Delving)");
+    repLocations:AddSkill("Return to the Tracery Archives in Rivendell", "0x700634A5", "Tracery Archive (Delving)");
 
     -- monster player maps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");
