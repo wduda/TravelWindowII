@@ -992,7 +992,6 @@ function TravelWindow:SaveSettings()
 
     -- make sure to delete old settings to delete unused fields
     SettingsStrings = {};
-    
     -- convert the settings to strings
     SettingsStrings.lastLoadedVersion = tostring(Settings.lastLoadedVersion);
     SettingsStrings.height = tostring(Settings.height);
@@ -1093,7 +1092,7 @@ function TravelWindow:ResetSettings()
     player = Turbine.Gameplay.LocalPlayer.GetInstance();
     PlayerClass = player:GetClass();
     PlayerRace = player:GetRace();
-    self:DetermineRaceKey();
+    self:SetPlayerRaceKey();
 
     -- update everything
     self:CheckEnabledSettings()
