@@ -157,6 +157,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Andrath", "0x7006323C", "Andrath (Guide)");
     hunterLocations:AddSkill("Guide to Swanfleet", "0x700634AA", "Swanfleet (Guide)");
     hunterLocations:AddSkill("Guide to Cardolan", "0x700634A7", "Cardolan (Guide)");
+    hunterLocations:AddSkill("Guide to Carn Dûm", "0x70064AC8", "Carn Dûm (Guide)");
+    hunterLocations:AddSkill("Guide to Clegur", "0x70064F4C", "Clegur (Guide)");
 
     wardenLocations:AddSkill("Muster in Ost Guruth", "0x70014786", "Ost Guruth (Muster)");
     wardenLocations:AddSkill("Muster in Esteldín", "0x70014798", "Esteldín (Muster)");
@@ -203,6 +205,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster at Andrath", "0x70063242", "Andrath (Muster)");
     wardenLocations:AddSkill("Muster at Swanfleet", "0x700634B6", "Swanfleet (Muster)");
     wardenLocations:AddSkill("Muster at Cardolan", "0x700634AD", "Cardolan (Muster)");
+    wardenLocations:AddSkill("Muster at Carn Dûm", "0x70064ACB", "Carn Dûm (Muster)");
+    wardenLocations:AddSkill("Muster at Clegur", "0x70064F4D", "Clegur (Muster)");
 
     -- add the racial travel skills
     racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)");
@@ -281,6 +285,9 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Swanfleet", "0x700634A4", "Swanfleet (Rep)");
     repLocations:AddSkill("Return to Cardolan", "0x700634AE", "Cardolan (Rep)");
     repLocations:AddSkill("Return to the Tracery Archives in Rivendell", "0x700634A5", "Tracery Archive (Delving)");
+    repLocations:AddSkill("Return to  Carn Dûm", "0x70064ACA", " Carn Dûm (Rep)");
+    repLocations:AddSkill("Return to Clegur", "0x70064F47", "Clegur (Rep)");
+
 
     -- monster player maps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");
