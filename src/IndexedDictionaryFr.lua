@@ -164,6 +164,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide vers Andrath", "0x7006323C", "Andrath (Guide)");
     hunterLocations:AddSkill("Guide vers les Noues des cygnes", "0x700634AA", "Noues des cygnes (Guide)");
     hunterLocations:AddSkill("Guide vers le Cardolan", "0x700634A7", "Cardolan (Guide)");
+    hunterLocations:AddSkill("Guide vers Carn Dûm", "0x70064AC8", "Carn Dûm (Guide)");
+    hunterLocations:AddSkill("Guide vers Clegur", "0x70064F4C", "Clegur (Guide)");
 
     wardenLocations:AddSkill("Rassemblement : Ost Guruth", "0x70014786", "Ost Guruth (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement : Esteldin", "0x70014798", "Esteldin (Rassemblement)");
@@ -210,6 +212,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Rassemblement à Andrath", "0x70063242", "Andrath (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement aux Noues des cygnes", "0x700634B6", "Noues des cygnes (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement au Cardolan", "0x700634AD", "Cardolan (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement : Carn Dûm", "0x70064ACB", "Carn Dûm (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Clegur", "0x70064F4D", "Clegur (Rassemblement)");
 
     racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
     racialLocations:AddSkill("Retournez dans la Comté", "0x700062C8", "Comté (Race)");
@@ -285,6 +289,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retour aux Noues des cygnes", "0x700634A4", "Noues des cygnes (Rep)");
     repLocations:AddSkill("Retour au Cardolan", "0x700634AE", "Cardolan (Rep)");
     repLocations:AddSkill("Retour aux Archives de gravures de Fondcombe", "0x700634A5", "Archives de gravures (Delving)");
+    repLocations:AddSkill("Retour à Carn Dûm", "0x70064ACA", " Carn Dûm (Rep)");
+    repLocations:AddSkill("Retournez voir Clegur", "0x70064F47", "Clegur (Rep)");
 
     -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");
