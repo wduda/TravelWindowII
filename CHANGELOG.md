@@ -1,5 +1,15 @@
 # Changelog
-v1.0.21beta
+## v1.0.24beta
+- added Clegur skills from U35 in EN/DE/FR
+- added Carn Dum skills from U35 in EN/DE/FR
+- fixed some DE/FR skills that had their names changed
+## v1.0.23beta
+- saving options is now reliably done on every logout
+## v1.0.22beta
+- fixed bug with duplicate skillID affecting hunters trying to sort their travel skills
+- fixed TWII button not saving position when being moved
+- fixed error message when resetting skills to default
+## v1.0.21beta
 - added U34 skills for EN/DE/FR
 - fixed two Muster skills in DE
 - PluginManager button for options no longer opens a second copy of options window
