@@ -15,7 +15,7 @@ jobs:
     steps:
       # checks out master under $GITHUB_WORKSPACE
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: '${{ github.event.inputs.tag }}'
           path: 'TravelWindowII'
@@ -27,26 +27,13 @@ jobs:
           filename: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
           exclusions: '*.git* *.github* *.vscode* *.gitignore*'
 
-      # create the actual release
-      - name: create a github release
+      # create the GitHub release
+      - name: create github release
         id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
-          tag_name:  ${{ github.event.inputs.tag }}
-          release_name: ${{ github.event.inputs.tag }}
           draft: true
           prerelease: false
-
-      # upload the asset into the release
-      - name: upload release asset
-        id: upload-release-asset 
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: './TravelWindowII-${{ github.event.inputs.tag }}.zip'
-          asset_name: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
-          asset_content_type: application/zip
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: ${{ github.event.inputs.tag }}
+          files: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
