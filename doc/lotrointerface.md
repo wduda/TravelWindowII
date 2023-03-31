@@ -42,9 +42,9 @@ How to handle the settings reset introduced by v1.0.7beta?
 [/LIST]
 
 Version history:
-v1.0.22beta
-- fixed bug with duplicate skillID affecting hunters trying to sort their travel skills
-- fixed TWII button not saving position when being moved
-- fixed error message when resetting skills to default
+v1.0.24beta
+- added Clegur skills from U35 in EN/DE/FR
+- added Carn Dum skills from U35 in EN/DE/FR
+- fixed some DE/FR skills that had their names changed
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
