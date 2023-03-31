@@ -1,7 +1,12 @@
 import "TravelWindowII.src";
 
 -- create the travel window
-travel = TravelWindow();
+_G.travel = TravelWindow();
+
+-- handle unload event and save settings
+plugin.Unload = function()
+    _G.travel:SaveSettings();
+end
 
 -- create a new command line command for the travel window
 TravelCommand = Turbine.ShellCommand();
@@ -9,13 +14,13 @@ TravelCommand = Turbine.ShellCommand();
 -- handle the travel commands
 function TravelCommand:Execute(command, arguments)
     if (arguments == "show") then
-        travel:SetVisible(true);
+        _G.travel:SetVisible(true);
     elseif (arguments == "hide") then
-        travel:SetVisible(false);
+        _G.travel:SetVisible(false);
     elseif (arguments == "toggle") then
-        travel:SetVisible(not travel:IsVisible());
+        _G.travel:SetVisible(not _G.travel:IsVisible());
     elseif (arguments == "dump") then
-        travel:DoDump();
+        _G.travel:DoDump();
     elseif (arguments ~= nil) then
         TravelCommand:GetHelp();
     end

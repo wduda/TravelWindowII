@@ -166,7 +166,6 @@ function TravelWindow:Constructor()
         local one, two = self:GetPosition();
         Settings.positionX = one;
         Settings.positionY = two;
-        self:SaveSettings();
         self.PullTab:ClosePulldown();
     end
 
@@ -284,8 +283,6 @@ function TravelWindow:Constructor()
         Settings.width = self:GetWidth();
         Settings.height = self:GetHeight();
         self:UpdateSettings();
-        self:SaveSettings();
-
     end
 
     -- perform the resize
@@ -447,7 +444,6 @@ function TravelWindow:SaveMapHome(shortcut)
     end
     -- update and save everything
     self:UpdateSettings();
-    self:SaveSettings();
 end
 
 function TravelWindow:SetShortcuts()
@@ -652,7 +648,6 @@ end
 -- function to close the options window if it exists
 function TravelWindow:CloseOptions()
     if (self.options ~= nil) then
-        self:SaveSettings();
         self.options:SetVisible(false);
     end
     self.options = nil;

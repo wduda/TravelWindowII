@@ -90,7 +90,6 @@ function TravelButton:Constructor(parent)
                 Settings.buttonPositionX = one;
                 Settings.buttonPositionY = two;
                 self.mainWindow:UpdateSettings();
-                self.mainWindow:SaveSettings();
                 hasMoved = false;
                 self:SetBackColor(Turbine.UI.Color(0, 0.5, 0.5, 0.5));
 
