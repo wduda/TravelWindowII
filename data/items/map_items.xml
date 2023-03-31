@@ -1,0 +1,191 @@
+<item key="1879089679" name="Precise Map to Glân Vraig" description="A good map allowing you to frequently travel to Glân Vraig, the base of the Free Peoples in the Ettenmoors." valueTableId="1879052065">
+<item key="1879088537" name="Tattered Map to Glân Vraig" description="A simple map allowing you travel to Glân Vraig, the base of the Free Peoples in the Ettenmoors." valueTableId="1879052065">
+<item key="1879187029" name="Map to Moria - Hadudbab" description="A map to, Hadudbab, the Scholar's crafting dungeon, found in the Durin's Way area of Moria. This map will take you to the entrance of the dungeon." valueTableId="1879185018">
+<item key="1879187030" name="Map to Moria - Mezer-serej" description="A map to Mezer-serej, the Forester's crafting dungeon, found in the Zelem-melek area of Moria. This map will take you to the entrance of the dungeon." valueTableId="1879185018">
+<item key="1879187031" name="Map to Moria - Gharaf-fehem" description="A map to Gharaf-fehem, the Prospector's crafting dungeon, found in the Redhorn Lodes area of Moria. This map will take you to the entrance of the dungeon." valueTableId="1879185018">
+<item key="1879187032" name="Map to Misty Mtns - Cirith Imladris" description="A map to Cirith Imladris, located to the north of Rivendell, in western Misty Mountains." valueTableId="1879185018">
+<item key="1879187033" name="Map to Bree-land - W. Bree-town" description="A map to west Bree-town, located in the centre of Bree-land." valueTableId="1879185018">
+<item key="1879187034" name="Map to the Evendim - Eavespires" description="A map to the Eavespires, located in the Emyn Uial area of northern Evendim." valueTableId="1879185018">
+<item key="1879187035" name="Map to Eregion - Echad Mirobel" description="A map to Echad Mirobel, located in southwest Eregion." valueTableId="1879185018">
+<item key="1879187036" name="Map to Angmar - Aughaire" description="A map to Aughaire, located north of Ram Duath in western Angmar." valueTableId="1879185018">
+<item key="1879187037" name="Map to the Lone-lands - Forsaken Inn" description="A map to The Forsaken Inn, located in the Annunlos area of western Lone-lands." valueTableId="1879185018">
+<item key="1879187038" name="Map to Lone-lands - Ost Guruth" description="A map to Ost Guruth, located east of the Nain Enidh area in the Lone-lands." valueTableId="1879185018">
+<item key="1879187039" name="Map to Trollshaws - Rivendell" description="A map to Rivendell, located in the northeast of the Trollshaws." valueTableId="1879185018">
+<item key="1879187040" name="Map to Evendim - Tinnudir" description="A map to Tinnudir, located in the centre of Evendim, along the coast of Lake Evendim." valueTableId="1879185018">
+<item key="1879187041" name="Map to North Downs - Esteldín" description="A map to Esteldín, located northeast of the Kingsfell area in the North Downs." valueTableId="1879185018">
+<item key="1879187042" name="Map to Forochel - Sûri-kylä" description="A map to Sûri-kylä, located northwest of Ja-rannit, along the shore of the Ice Bay, in northern Forochel." valueTableId="1879185018">
+<item key="1879187043" name="Map to Bree-land - N. Barrow-downs" description="A map to the Northern Barrow-downs, located west of Bree-town in Bree-land." valueTableId="1879185018">
+<item key="1879187044" name="Map to the Shire - Hobbiton" description="A map to Hobbiton-Bywater, located in the Shire." valueTableId="1879185018">
+<item key="1879187194" name="Map to Ered Luin - Duillond" description="A map to Duillond, located east of Rath Teraig in Ered Luin." valueTableId="1879185018">
+<item key="1879187195" name="Map to Eregion - Echad Dúnann" description="A map to Echad Dúnann, located in southern Eregion, west of the Walls of Moria." valueTableId="1879185018">
+<item key="1879187196" name="Map to Ered Luin - Thorin's Hall" description="A map to Thorin's Hall, located in northern Ered Luin." valueTableId="1879185018">
+<item key="1879187198" name="Map to Mirkwood - Emyn Lûm" description="A map to Emyn Lûm, located south of the Scuttledells, in the centre of Mirkwood." valueTableId="1879185018">
+<item key="1879189600" name="Map to Hadudbab" description="Hadudbab is the location of the Scholar's crafting dungeon. This map will take you to the entrance of the dungeon." valueTableId="1879049280">
+<item key="1879189601" name="Map to Mezer-serej" description="Mezer-serej is the location of the Forester's crafting dungeon. This map will take you to the entrance of the dungeon." valueTableId="1879049280">
+<item key="1879189602" name="Map to Rivendell" description="A map to Rivendell." valueTableId="1879049280">
+<item key="1879189603" name="Map to Echad Mirobel" description="A map to Echad Mirobel, located in Eregion." valueTableId="1879049280">
+<item key="1879189604" name="Map to Hobbiton" description="A map to Hobbiton-Bywater, located in the Shire." valueTableId="1879049280">
+<item key="1879189605" name="Map to the Lone-lands" description="A map to The Forsaken Inn, located in the Lone-lands." valueTableId="1879049280">
+<item key="1879189606" name="Map to West Bree" description="A map to west Bree-town." valueTableId="1879049280">
+<item key="1879189607" name="Map to Esteldín" description="A map to Esteldín, located in the North Downs." valueTableId="1879049280">
+<item key="1879189608" name="Map to Sûri-kylä" description="A map to Sûri-kylä, located in Forochel." valueTableId="1879049280">
+<item key="1879189609" name="Map to Aughaire" description="A map to Aughaire, located in Angmar." valueTableId="1879049280">
+<item key="1879189610" name="Map to the Misty Mountains" description="A map to Cirith Imladris, located to the north of Rivendell, in western Misty Mountains." valueTableId="1879049280">
+<item key="1879189611" name="Map to Tinnudir" description="A map to Tinnudir, located in Evendim." valueTableId="1879049280">
+<item key="1879189612" name="Map to the Eavespires" description="A map to the Eavespires, located in Evendim." valueTableId="1879049280">
+<item key="1879189613" name="Map to Northern Barrow-downs" description="A map to the Northern Barrow-downs, located in Bree-land." valueTableId="1879049280">
+<item key="1879189614" name="Map to Ost Guruth" description="A map to Ost Guruth, located in the Lone-lands." valueTableId="1879049280">
+<item key="1879189615" name="Map to Thorin's Hall" description="A map to Thorin's Hall, located in Ered Luin." valueTableId="1879049280">
+<item key="1879189616" name="Map to Duillond" description="A map to Duillond, located in Ered Luin." valueTableId="1879049280">
+<item key="1879189617" name="Map to Echad Dúnann" description="A map to Echad Dúnann, located in Eregion." valueTableId="1879049280">
+<item key="1879189618" name="Map to Emyn Lûm" description="A map to Emyn Lûm, located in Mirkwood." valueTableId="1879049280">
+<item key="1879189625" name="Map to Gharaf-fehem" description="Gharaf-fehem is the location of the Prospector's crafting dungeon. This map will take you to the entrance of the dungeon." valueTableId="1879049280">
+<item key="1879198839" name="Map to Evendim - Annúminas" description="A map to the Annúminas Ranger-camp, located along the southern coast of Lake Evendim." valueTableId="1879185018">
+<item key="1879198840" name="Map to Annúminas Ranger-camp" description="A map to the Annúminas Ranger-camp, located in Evendim." valueTableId="1879049280">
+<item key="1879203774" name="Map to Misty Mtns - Hrimbarg" description="A map to Hrimbarg, located between North High Pass and South High Pass in eastern Misty Mountains." valueTableId="1879185018">
+<item key="1879203775" name="Map to Moria - First Hall" description="A map to the First Hall, located in the Nud-melek area of Moria." valueTableId="1879185018">
+<item key="1879203776" name="Map to North Downs - Trestlebridge" description="A map to Trestlebridge, located in southern North Downs." valueTableId="1879185018">
+<item key="1879203777" name="Map to Angmar - Tármunn Súrsa" description="A map to Tármunn Súrsa, located east of Carn Dûm, in northern Angmar." valueTableId="1879185018">
+<item key="1879203778" name="Map to Forochel - Kauppa-kohta" description="A map to Kauppa-kohta, located in the Taur Orthon area of southeastern Forochel." valueTableId="1879185018">
+<item key="1879203779" name="Map to Moria - Twenty-first Hall" description="A map to the Twenty-first Hall, located in the Zelem-melek area of Moria." valueTableId="1879185018">
+<item key="1879203780" name="Map to Moria - Shadowed Refuge" description="A map to the Shadowed Refuge, located in the Foundations of Stone area of Moria." valueTableId="1879185018">
+<item key="1879203781" name="Map to Trollshaws - Echad Candelleth" description="A map to Echad Candelleth, located in the Tal Bruinen area of southern Trollshaws." valueTableId="1879185018">
+<item key="1879203782" name="Map to Angmar - Gath Forthnír" description="A map to Gath Forthnír, located west of the Rift of Núrz Gháshu in northern Angmar." valueTableId="1879185018">
+<item key="1879203783" name="Map to Moria - Dolven-view" description="A map to Dolven-view, located in the Great Delving area of Moria." valueTableId="1879185018">
+<item key="1879203784" name="Map to Moria - Rotting Cellar" description="A map to the Rotting Cellar, located in the Water-works area of Moria." valueTableId="1879185018">
+<item key="1879210673" name="Map to Lothlórien - Echad Andestel" description="A map to Echad Andestel, located on the outskirts of Lothlórien." valueTableId="1879185018">
+<item key="1879210674" name="Map to Moria - Flaming Deeps" description="A map to Anazarmekhem, located in the Flaming Deeps area of Moria." valueTableId="1879185018">
+<item key="1879210675" name="Map to Moria - Redhorn Lodes" description="A map to the Orc Watch, located in the Redhorn Lodes area of Moria." valueTableId="1879185018">
+<item key="1879217078" name="Map to Dunland - Lhan Rhos" description="A map to Lhan Rhos, located in the Dunbog area of Dunland." valueTableId="1879185018">
+<item key="1879217079" name="Map to Enedwaith - Nár's Peak" description="A map to Nár's Peak, located in eastern Enedwaith, along the northern mountain ranges of Thror's Coomb." valueTableId="1879185018">
+<item key="1879217080" name="Map to Dunland - Grimbold's Camp" description="A map to Grimbold's Camp, located in the Heathfells area of Dunland." valueTableId="1879185018">
+<item key="1879217081" name="Map to Dunland - Galtrev" description="A map to Galtrev, located in the Pren Gwydh area of Dunland." valueTableId="1879185018">
+<item key="1879217082" name="Map to Enedwaith - Echad Saeradan" description="A map to a Ranger camp, located north of Nan Laeglin, in Enedwaith." valueTableId="1879185018">
+<item key="1879218421" name="Map to Angmar - Western Malenhad" description="A map to Tyrn Lhuig, a small camp located in the sulphur swamps of Western Malenhad in Angmar." valueTableId="1879185018">
+<item key="1879218422" name="Map to Bree-land - Hengstacer Farm" description="A map to the Hengstacer Farm, located in the Northern Breefields, northwest of the Bree Festival Grounds." valueTableId="1879185018">
+<item key="1879218423" name="Map to Bree-land - The Old Forest" description="A map to Tom Bombadil's house, located at the edge of the Old Forest, west of the Barrow-downs." valueTableId="1879185018">
+<item key="1879218424" name="Map to Angmar - Imlad Balchorth" description="A map to Myrkworth, a dwarven camp located south of Gath Forthnir and on the eastern side of Imlad Balchorth in Angmar." valueTableId="1879185018">
+<item key="1879218425" name="Map to Bree-land - Buckland" description="A map to Buckland, located east of the Shire and west of Bree." valueTableId="1879185018">
+<item key="1879218426" name="Map to Misty Mtns - Goblin-town" description="A map to Goblin-town, a goblin dungeon located at the Mountain's Throat in the Misty Mountains." valueTableId="1879185018">
+<item key="1879218427" name="Map to Evendim - Oatbarton" description="A map to Oatbarton, a hobbit settlement located in southern Evendim just north of the Shire." valueTableId="1879185018">
+<item key="1879218428" name="Map to North Downs - Amon Raith" description="A map to Amon Raith, a ranger camp located on a hill in the west-central North Downs." valueTableId="1879185018">
+<item key="1879218429" name="Map to Lone-lands - Agamaur" description="A map to Agamaur, located north of Haragmar, west of Garth Agarwen, and northeast of Ost Guruth." valueTableId="1879185018">
+<item key="1879218430" name="Map to North Downs - Othrikar" description="A map to Othrikar, a dwarven outpost located in the mountains of Nan Amlug West in the North Downs." valueTableId="1879185018">
+<item key="1879218431" name="Map to Forochel - Pynti-peldot" description="A map to Pynti-peldot, a Lossoth settlement located directly south of Sûri-kylä across the ice bay." valueTableId="1879185018">
+<item key="1879218432" name="Map to North Downs - Meluinen" description="A map to Meluinen, an Elf-retreat located in the North Downs, in the southern part of Kingsfell." valueTableId="1879185018">
+<item key="1879218433" name="Map to Lone-lands - Harloeg" description="A map to Ost Haer, an ancient fortress located in the wetlands of southern Harloeg." valueTableId="1879185018">
+<item key="1879218434" name="Map to Trollshaws - Thorenhad" description="A map to Thorenhad, an Elf-scout camp located north of the Bruinen Gorges in the Trollshaws." valueTableId="1879185018">
+<item key="1879218435" name="Map to Trollshaws - Barachen's Camp" description="A map to Barachen's Camp, a small camp located in the southern Trollshaws just off the road to Rivendell." valueTableId="1879185018">
+<item key="1879222485" name="Map to Forochel - Pynti-peldot" description="A map to Pynti-peldot, a Lossoth settlement located directly south of Sûri-kylä across the ice bay." valueTableId="1879049280">
+<item key="1879222486" name="Map to Misty Mtns - Hrimbarg" description="A map to Hrimbarg, located between North High Pass and South High Pass in eastern Misty Mountains." valueTableId="1879049280">
+<item key="1879222487" name="Map to Bree-land - Buckland" description="A map to Buckland, located east of the Shire and west of Bree." valueTableId="1879049280">
+<item key="1879222488" name="Map to Misty Mtns - Goblin-town" description="A map to Goblin-town, a goblin dungeon located at the Mountain's Throat in the Misty Mountains." valueTableId="1879049280">
+<item key="1879222489" name="Map to Bree-land - Hengstacer Farm"  description="A map to Hengstacer Farm, located in the Northern Breefields, northwest of the Bree Festival Grounds." valueTableId="1879049581">
+<item key="1879222490" name="Map to Moria - First Hall" description="A map to the First Hall, located in the Nud-melek area of Moria." valueTableId="1879049280">
+<item key="1879222491" name="Map to Dunland - Grimbold's Camp" description="A map to Grimbold's Camp, located in the Heathfells area of Dunland." valueTableId="1879049280">
+<item key="1879222492" name="Map to Dunland - Galtrev" description="A map to Galtrev, located in the Pren Gwydh area of Dunland." valueTableId="1879049280">
+<item key="1879222493" name="Map to Lone-lands - Agamaur" description="A map to Agamaur, located north of Haragmar, west of Garth Agarwen, and northeast of Ost Guruth." valueTableId="1879049280">
+<item key="1879222494" name="Map to Evendim - Oatbarton" description="A map to Oatbarton, a hobbit settlement located in southern Evendim just north of the Shire." valueTableId="1879049280">
+<item key="1879222495" name="Map to Angmar - Tármunn Súrsa" description="A map to Tármunn Súrsa, located east of Carn Dûm, in northern Angmar." valueTableId="1879049280">
+<item key="1879222496" name="Map to Angmar - Imlad Balchorth" description="A map to Myrkworth, a dwarven camp located south of Gath Forthnir and on the eastern side of Imlad Balchorth in Angmar." valueTableId="1879049280">
+<item key="1879222497" name="Map to Bree-land - The Old Forest" description="A map to Tom Bombadil's house, located at the edge of the Old Forest, west of the Barrow-downs." valueTableId="1879049280">
+<item key="1879222498" name="Map to Enedwaith - Echad Saeradan" description="A map to a Ranger camp, located north of Nan Laeglin, in Enedwaith." valueTableId="1879049280">
+<item key="1879222499" name="Map to Angmar - Gath Forthnír" description="A map to Gath Forthnír, located west of the Rift of Núrz Gháshu in northern Angmar." valueTableId="1879049280">
+<item key="1879222500" name="Map to Lothlórien - Echad Andestel" description="A map to Echad Andestel, located on the outskirts of Lothlórien." valueTableId="1879049280">
+<item key="1879222501" name="Map to Lone-lands - Harloeg" description="A map to Ost Haer, an ancient fortress located in the wetlands of southern Harloeg." valueTableId="1879049280">
+<item key="1879222502" name="Map to Forochel - Kauppa-kohta" description="A map to Kauppa-kohta, located in the Taur Orthon area of southeastern Forochel." valueTableId="1879049280">
+<item key="1879222503" name="Map to Angmar - Western Malenhad" description="A map to Tyrn Lhuig, a small camp located in the sulphur swamps of Western Malenhad in Angmar." valueTableId="1879049280">
+<item key="1879222504" name="Map to Moria - Shadowed Refuge" description="A map to the Shadowed Refuge, located in the Foundations of Stone area of Moria." valueTableId="1879049280">
+<item key="1879222505" name="Map to North Downs - Othrikar" description="A map to Othrikar, a dwarven outpost located in the mountains of Nan Amlug West in the North Downs." valueTableId="1879049280">
+<item key="1879222506" name="Map to Enedwaith - Nár's Peak" description="A map to Nár's Peak, located in eastern Enedwaith, along the northern mountain ranges of Thror's Coomb." valueTableId="1879049280">
+<item key="1879222507" name="Map to North Downs - Amon Raith" description="A map to Amon Raith, a ranger camp located on a hill in the west-central North Downs." valueTableId="1879049280">
+<item key="1879222508" name="Map to Moria - Twenty-first Hall" description="A map to the Twenty-first Hall, located in the Zelem-melek area of Moria." valueTableId="1879049280">
+<item key="1879222509" name="Map to Dunland - Lhan Rhos" description="A map to Lhan Rhos, located in the Dunbog area of Dunland." valueTableId="1879049280">
+<item key="1879222510" name="Map to Moria - Dolven-view" description="A map to Dolven-view, located in the Great Delving area of Moria." valueTableId="1879049280">
+<item key="1879222511" name="Map to Moria - Rotting Cellar" description="A map to the Rotting Cellar, located in the Water-works area of Moria." valueTableId="1879049280">
+<item key="1879222512" name="Map to Trollshaws - Echad Candelleth" description="A map to Echad Candelleth, located in the Tal Bruinen area of southern Trollshaws." valueTableId="1879049280">
+<item key="1879222513" name="Map to North Downs - Meluinen" description="A map to Meluinen, an Elf-retreat located in the North Downs, in the southern part of Kingsfell." valueTableId="1879049280">
+<item key="1879222514" name="Map to Moria - Flaming Deeps" description="A map to Anazarmekhem, located in the Flaming Deeps area of Moria." valueTableId="1879049280">
+<item key="1879222515" name="Map to Trollshaws - Barachen's Camp" description="A map to Barachen's Camp, a small camp located in the southern Trollshaws just off the road to Rivendell." valueTableId="1879049280">
+<item key="1879222516" name="Map to Moria - Redhorn Lodes" description="A map to the Orc Watch, located in the Redhorn Lodes area of Moria." valueTableId="1879049280">
+<item key="1879222517" name="Map to Trollshaws - Thorenhad" description="A map to Thorenhad, an Elf-scout camp located north of the Bruinen Gorges in the Trollshaws." valueTableId="1879049280">
+<item key="1879222518" name="Map to North Downs - Trestlebridge" description="A map to Trestlebridge, located in southern North Downs." valueTableId="1879049280">
+<item key="1879229209" name="Map to Moria - Chamber of the Crossroads" description="A map to the Chamber of the Crossroads, located in Durin's Way." valueTableId="1879049280">
+<item key="1879229210" name="Map to the Scuttledells" description="A map to the Scuttledells, located in Mirkwood." valueTableId="1879049280">
+<item key="1879229211" name="Map to Weathertop" description="A map to Weathertop, located in the Lone-lands." valueTableId="1879049280">
+<item key="1879229212" name="Map to Gwingris" description="A map to Gwingris, located in Eregion." valueTableId="1879049280">
+<item key="1879229239" name="Map to the Thorin's Hall Homesteads" description="A map to the Thorin's Hall Homesteads." valueTableId="1879049280">
+<item key="1879229240" name="Map to the Bree-land Homesteads" description="A map to the Bree-land Homesteads." valueTableId="1879049280">
+<item key="1879229241" name="Map to the Falathlorn Homesteads" description="A map to the Falathlorn Homesteads, located in Duillond." valueTableId="1879049280">
+<item key="1879229242" name="Map to the Shire Homesteads" description="A map to the Shire Homesteads." valueTableId="1879049280">
+<item key="1879229441" name="Map to Lone-lands - Weathertop" description="A map to Weathertop, located in the Lone-lands, southeast of Candaith's Encampment." valueTableId="1879185018">
+<item key="1879229442" name="Map to Eregion - Gwingris" description="A map to Gwingris, located in Eregion, south of the Trollshaws." valueTableId="1879185018">
+<item key="1879229443" name="Map to Moria - Chamber of the Crossroads" description="A map to the Chamber of the Crossroads, located in Durin's Way, north of The Great Delving." valueTableId="1879185018">
+<item key="1879229444" name="Map to Mirkwood - Scuttledells" description="A map to the Scuttledells, located in Mirkwood, north of Emyn Lûm." valueTableId="1879185018">
+<item key="1879229445" name="Map to Bree-land - Bree-land Homesteads" description="A map to the Bree-land Homesteads, located in the southern part of Bree-land." valueTableId="1879185018">
+<item key="1879229446" name="Map to Ered Luin - Falathlorn Homesteads" description="A map to the Falathlorn Homesteads, located southeast of Duillond." valueTableId="1879185018">
+<item key="1879229447" name="Map to the Shire - Shire Homesteads" description="A map to the Shire Homesteads, located south of Michel Delving." valueTableId="1879185018">
+<item key="1879229448" name="Map to Thorin's Hall - Thorin's Hall Homesteads" description="A map to the Thorin's Hall Homesteads, located southwest of Thorin's Gate." valueTableId="1879185018">
+<item key="1879239008" name="Map to Moria - Zirakzigil" description="A map to the entrance to Zirakzigil, located in the Durin's Way area of Moria." valueTableId="1879185018">
+<item key="1879239010" name="Map to Moria – Deep Descent" description="A map to the Deep Descent, located in the Silvertine Lodes  area of Moria." valueTableId="1879185018">
+<item key="1879239011" name="Map to Moria - Jazârgund" description="A map to Jazârgund, located in the Durin's Way area of Moria." valueTableId="1879185018">
+<item key="1879239035" name="Map to Moria - Jazârgund" description="A map to Jazârgund, located in the Durin's Way area of Moria." valueTableId="1879185018">
+<item key="1879239036" name="Map to Moria – Deep Descent" description="A map to the Deep Descent, located in the Silvertine Lodes  area of Moria." valueTableId="1879185018">
+<item key="1879239037" name="Map to Moria - Zirakzigil" description="A map to the entrance to Zirakzigil, located in the Durin's Way area of Moria." valueTableId="1879185018">
+<item key="1879250782" name="Map to  the Sutcrofts - Snowbourn" description="A map to Snowbourn, a town located in the west-central edge of the Sutcrofts." valueTableId="1879049280">
+<item key="1879250784" name="Map to the Norcrofts - Faldham" description="A map to Faldham, a small town located in the south-western area of the Norcrofts." valueTableId="1879049280">
+<item key="1879250786" name="Map to the Entwash Vale - Eaworth" description="A map to Eaworth, a city located in the west-central edge of the Entwash Vale." valueTableId="1879049280">
+<item key="1879250789" name="Map to the Wold - Harwick" description="A map to Harwick, a city located below Langhold in the central region of the Wold." valueTableId="1879049280">
+<item key="1879250804" name="Map to the Entwash Vale - Eaworth" description="A map to Eaworth, a city located in the west-central edge of the Entwash Vale." valueTableId="1879185018">
+<item key="1879250805" name="Map to The Wold - Harwick" description="A map to Harwick, a city located below Langhold in the central region of the Wold." valueTableId="1879185018">
+<item key="1879250806" name="Map to  the Sutcrofts - Snowbourn" description="A map to Snowbourn, a town located in the west-central edge of the Sutcrofts." valueTableId="1879185018">
+<item key="1879250807" name="Map to the Norcrofts - Faldham" description="A map to Faldham, a small town located in the south-western area of the Norcrofts." valueTableId="1879185018">
+<item key="1879253173" name="Map to Eorlsmead - Stangard" description="A map to Standgard, a city located to the east of the Wailing Hills and south-west of Eorlsmead, on the south-central border of the Great River region." valueTableId="1879185018">
+<item key="1879253176" name="Map to the Entwash Vale - Entwash Fishing Camp" description="A map to the Entwash Fishing Camp, a small fishing camp on the edge of the Entwash River. This is the closest access point to Fangorn." valueTableId="1879185018">
+<item key="1879253177" name="Map to the Limlight Gorge - Limlight Gatehouse" description="A map to the Limlight Gatehouse, an outpost located at the entrance to the Limlight Gorge area of the Great River." valueTableId="1879185018">
+<item key="1879253181" name="Map to the East Wall - Dead Orc Glade" description="A map to the Dead Orc Glade, located in the centre of the East Wall where a great battle took place." valueTableId="1879185018">
+<item key="1879253184" name="Map to the Sutcrofts - Hytbold" description="A map to Hytbold, an important outpost for defence on the eastern end of the Sutcrofts." valueTableId="1879185018">
+<item key="1879253185" name="Map to Parth Celebrant" description="A map to a small camp in the north of Parth Celebrant, an area in the Great River." valueTableId="1879185018">
+<item key="1879253187" name="Map to the East Wall - Parth Galen" description="A map to Parth Galen, a small camp located on the south-western banks of Nen Hithoel in the East Wall." valueTableId="1879185018">
+<item key="1879253188" name="Map to the East Wall - Mansig's Encampment" description="A map to Mansig's Encampment, a camp located in the north-western corner of the East Wall." valueTableId="1879185018">
+<item key="1879253190" name="Map to the Norcrofts - Cliving" description="A map to Cliving, a town located on the far northern edge of the Norcrofts." valueTableId="1879185018">
+<item key="1879253191" name="Map to The Wold - Langhold" description="A map to Langhold, a town located north of Harwick in the north-west of the Wold." valueTableId="1879185018">
+<item key="1879253193" name="Map to Thinglad - Haldirith" description="A map to Haldirith, located in the northern area of Thinglad in the Great River." valueTableId="1879185018">
+<item key="1879253194" name="Map to the Norcrofts - Elthengels" description="A map to Elthengels, a village on the eastern border of the Norcrofts." valueTableId="1879185018">
+<item key="1879253201" name="Map to Parth Celebrant" description="A map to a small camp in the north of Parth Celebrant, an area in the Great River." valueTableId="1879049280">
+<item key="1879253202" name="Map to the East Wall - Dead Orc Glade" description="A map to the Dead Orc Glade, located in the centre of the East Wall where a great battle took place." valueTableId="1879049280">
+<item key="1879253203" name="Map to the Norcrofts - Hytbold" description="A map to Hytbold, an important outpost for defence along the border between the Norcrofts and the East Wall." valueTableId="1879049280">
+<item key="1879253204" name="Map to Thinglad - Haldirith" description="A map to Haldirith, located in the northern area of Thinglad in the Great River." valueTableId="1879049280">
+<item key="1879253205" name="Map to the Limlight Gorge - Limlight Gatehouse" description="A map to the Limlight Gatehouse, an outpost located at the entrance to the Limlight Gorge area of the Great River." valueTableId="1879049280">
+<item key="1879253206" name="Map to the Norcrofts - Cliving" description="A map to Cliving, a town located on the far northern edge of the Norcrofts." valueTableId="1879049280">
+<item key="1879253207" name="Map to the East Wall - Mansig's Encampment" description="A map to Mansig's Encampment, a camp located in the north-western corner of the East Wall." valueTableId="1879049280">
+<item key="1879253208" name="Map to the Norcrofts - Elthengels" description="A map to Elthengels, a village on the eastern border of the Norcrofts." valueTableId="1879049280">
+<item key="1879253209" name="Map to the East Wall - Parth Galen" description="A map to Parth Galen, a small camp located on the south-western banks of Nen Hithoel in the East Wall." valueTableId="1879049280">
+<item key="1879253210" name="Map to the Wold - Langhold" description="A map to Langhold, a town located north of Harwick in the north-west of the Wold." valueTableId="1879049280">
+<item key="1879253211" name="Map to Eorlsmead - Stangard" description="A map to Standgard, a city located to the east of the Wailing Hills and south-west of Eorlsmead, on the south-central border of the Great River region." valueTableId="1879049280">
+<item key="1879253212" name="Map to the Entwash Vale - Entwash Fishing Camp" description="A map to the Entwash Fishing Camp, a small fishing camp on the edge of the Entwash River. This is the closest access point to Fangorn." valueTableId="1879049280">
+<item key="1879275875" name="Map to the Treasure Field"  description="A map to the Treasure Field Base Camp, located in the north-central area of Ered Luin." valueTableId="1879049280">
+<item key="1879289069" name="Map to Kingstead - Entwade" description="A map to Entwade, a Rohirrim settlement in Kingstead." valueTableId="1879185018">
+<item key="1879289070" name="Map to Westfold - Grimslade" description="A map to Grimslade, a Rohirrim settlement in the Westfold." valueTableId="1879185018">
+<item key="1879289071" name="Map to Stonedeans - Woodhurst" description="A map to Woodhurst, a Rohirrim settlement in the Stonedeans." valueTableId="1879185018">
+<item key="1879289072" name="Map to Kingstead - Edoras" description="A map to Edoras, the home of Théoden, King of the Rohirrim." valueTableId="1879185018">
+<item key="1879289073" name="Map to Westfold - Helm's Deep" description="A map to the keep of Helm's Deep." valueTableId="1879185018">
+<item key="1879289074" name="Map to Eastfold - Aldburg" description="A map to Aldburg, a Rohirrim settlement in the Eastfold." valueTableId="1879185018">
+<item key="1879289075" name="Map to Broadacres - Stoke" description="A map to Stoke, a Rohirrim settlement in Broadacres." valueTableId="1879185018">
+<item key="1879302499" name="Map to Winter-home"  description="A map to Winter-home, the town centre of Frostbluff." valueTableId="1879049280">
+<item key="1879303586" name="Map to Bree - Anniversary"  description="A map to the fireworks event in northern Bree-town." valueTableId="1879049280">
+<item key="1879305263" name="Map to the Party Tree"  description="A map to the Party Tree in Hobbiton." valueTableId="1879049280">
+<item key="1879305264" name="Map to Bywater"  description="A map to the Farmers Faire in Bywater." valueTableId="1879049280">
+<item key="1879305265" name="Map to the Party Tree"  description="A map to the Party Tree in Hobbiton." valueTableId="1879049280">
+<item key="1879305266" name="Map to the Spring Festival"  description="A map to the Horsefields in Bree-land." valueTableId="1879049280">
+<item key="1879305991" name="Map to Hobnanigans"  description="A map to the Hobnanigans Fields in Bree-land." valueTableId="1879049280">
+<item key="1879329487" name="Map to Aldburg"  description="A map to Aldburg in West Rohan." valueTableId="1879049280">
+<item key="1879329488" name="Map to Helm's Deep"  description="A map to Helm's Deep in West Rohan." valueTableId="1879049280">
+<item key="1879329489" name="Map to Dol Amroth"  description="A map to Dol Amroth in West Gondor." valueTableId="1879049280">
+<item key="1879329490" name="Map to Minas Tirith"  description="A map to Minas Tirith in Old Anórien." valueTableId="1879049280">
+<item key="1879329491" name="Map to Pelargir"  description="A map to Pelargir in Central Gondor." valueTableId="1879049280">
+<item key="1879329492" name="Map to Arnach"  description="A map to Arnach in East Gondor." valueTableId="1879049280">
+<item key="1879375445" name="Map to Rhosgobel"  description="A map to Rhosgobel given to you by Radagast the Brown." valueTableId="1879049280">
+<item key="1879397779" name="Map to Dale - Dale-lands" valueTableId="1879185018">
+<item key="1879397781" name="Map to the Camp of the Host - The Wastes" valueTableId="1879185018">
+<item key="1879406262" name="Map to Minas Tirith (Midsummer)"  description="A map to the Midsummer festival in Minas Tirith." valueTableId="1879049280">

@@ -262,8 +262,5 @@ function TravelGridTab:SetSize(width, height)
     -- reset all the quickslots of the tab
     self:SetItems();
 
-    -- update the size of the ration label
-    -- self.rationLabel:SetSize(self:GetWidth(),20);
-
     Turbine.UI.Control.SetOpacity(self, 1);
 end

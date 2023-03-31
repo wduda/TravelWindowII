@@ -1,4 +1,8 @@
 # Changelog
+## v1.0.24beta
+- added Clegur skills from U35 in EN/DE/FR
+- added Carn Dum skills from U35 in EN/DE/FR
+- fixed some DE/FR skills that had their names changed
 ## v1.0.23beta
 - saving options is now reliably done on every logout
 ## v1.0.22beta
