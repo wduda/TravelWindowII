@@ -1,4 +1,7 @@
-# Changelog
+## v1.0.25beta
+- fixed typo in Carn Dum skills introduced in v1.0.24beta
+- added Glan Vraig skill in EN/DE/FR
+- fixed some DE/FR skill labels to better reflect the source of the skill
 ## v1.0.24beta
 - added Clegur skills from U35 in EN/DE/FR
 - added Carn Dum skills from U35 in EN/DE/FR

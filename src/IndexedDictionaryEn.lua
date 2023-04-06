@@ -211,11 +211,11 @@ function TravelDictionaries:CreateDictionaries()
     -- add the racial travel skills
     racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)");
     racialLocations:AddSkill("Return to the Shire", "0x700062C8", "Shire (Racial)");
-    racialLocations:AddSkill("Return to Thorin's Gate", "0x70006346", "Thorin's Gate (Racial Dwarf)");
+    racialLocations:AddSkill("Return to Thorin's Gate", "0x70006346", "Thorin's Gate (Racial)"); -- dwarf
     racialLocations:AddSkill("Return to Rivendell", "0x7000631F", "Rivendell (Racial)");
     racialLocations:AddSkill("Return Home", "0x70041A22", "Beorning Home (Racial)");
     racialLocations:AddSkill("Travel to Caras Galadhon in Lothlórien", "0x70048C8C", "Caras Galadhon (Racial)");
-    racialLocations:AddSkill("Travel to Thorin's Hall", "0x70053C0F", "Thorin's Hall (Racial StoutAxe)");
+    racialLocations:AddSkill("Travel to Thorin's Hall", "0x70053C0F", "Thorin's Hall (Racial)"); -- stoutaxe
 
     -- add the Return Home and housing skills
     genLocations:AddSkill("Return Home",    "0x700256BA", "Return Home");
@@ -276,7 +276,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Trestlebridge", "0x70059D12", "Trestlebridge (Rep)");
     repLocations:AddSkill("Return to Akrâz-zahar", "0x7005AA90", "Akrâz-zahar (Rep)");
     repLocations:AddSkill("Return to Azanulbizar", "0x7005AA92", "Azanulbizar (Rep)");
-    repLocations:AddSkill("Journey to the Hall of Vérnozal", "0x7005A596", "Vérnozal (Rep)");
+    repLocations:AddSkill("Journey to the Hall of Vérnozal", "0x7005A596", "Vérnozal (Quest)");
     repLocations:AddSkill("Return to the Noble Gate", "0x7005D47C", "Noble Gate (Rep)");
     repLocations:AddSkill("Return to Leitstáth", "0x7005D484", "Leitstáth (Rep)");
     repLocations:AddSkill("Return to Tornhad", "0x70060EA8", "Tornhad (Rep)");
@@ -285,10 +285,10 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Swanfleet", "0x700634A4", "Swanfleet (Rep)");
     repLocations:AddSkill("Return to Cardolan", "0x700634AE", "Cardolan (Rep)");
     repLocations:AddSkill("Return to the Tracery Archives in Rivendell", "0x700634A5", "Tracery Archive (Delving)");
-    repLocations:AddSkill("Return to  Carn Dûm", "0x70064ACA", " Carn Dûm (Rep)");
+    repLocations:AddSkill("Return to Carn Dûm", "0x70064ACA", "Carn Dûm (Rep)");
     repLocations:AddSkill("Return to Clegur", "0x70064F47", "Clegur (Rep)");
-
-
+    repLocations:AddSkill("Return to Glân Vraig", "0x7005B38E", "Glân Vraig (Quest)");
+    
     -- monster player maps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");
     creepLocations:AddSkill("Map to Gramsfoot", "0x70028BC1");

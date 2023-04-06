@@ -280,17 +280,18 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Kehrt nach Schragen zurück.", "0x70059D12", "Schragen (Ruf)");
     repLocations:AddSkill("Rückkehr nach Akrâz-zahar", "0x7005AA90", "Akrâz-zahar (Ruf)");
     repLocations:AddSkill("Rückkehre nach Azanulbizar", "0x7005AA92", "Azanulbizar (Ruf)");
-    repLocations:AddSkill("Reise zur Halle Vérnozal", "0x7005A596", "Vérnozal (Ruf)");
+    repLocations:AddSkill("Reise zur Halle Vérnozal", "0x7005A596", "Vérnozal (Aufgabe)");
     repLocations:AddSkill("Rückkehr zum Prachttor", "0x7005D47C", "Prachttor (Ruf)");
     repLocations:AddSkill("Rückkehr nach Leitstáth", "0x7005D484", "Leitstáth (Ruf)");
     repLocations:AddSkill("Kehrt nach Tornhad zurück.", "0x70060EA8", "Tornhad (Ruf)");
     repLocations:AddSkill("Kehrt nach Neuhausen zurück.", "0x70061340", "Neuhausen (Ruf)");
-    repLocations:AddSkill("Rückkehr nach Andrath", "0x7006323D", "Andrath (Rep)");
-    repLocations:AddSkill("Rückkehr nach Schwanenfleet", "0x700634A4", "Swanfleet (Rep)");
-    repLocations:AddSkill("Rückkehr nach Cardolan", "0x700634AE", "Cardolan (Rep)");
+    repLocations:AddSkill("Rückkehr nach Andrath", "0x7006323D", "Andrath (Ruf)");
+    repLocations:AddSkill("Rückkehr nach Schwanenfleet", "0x700634A4", "Swanfleet (Ruf)");
+    repLocations:AddSkill("Rückkehr nach Cardolan", "0x700634AE", "Cardolan (Ruf)");
     repLocations:AddSkill("Rückkehr zu den Filigranmuster-Archiven in Bruchtal", "0x700634A5", "Filigranmuster-Archiv (Delving)");
-    repLocations:AddSkill("Rückkehr nach Carn Dûm", "0x70064ACA", "Carn Dûm (Rep)");
-    repLocations:AddSkill("Rückkehr nach Clegur", "0x70064F47", "Clegur (Rep)");
+    repLocations:AddSkill("Rückkehr nach Carn Dûm", "0x70064ACA", "Carn Dûm (Ruf)");
+    repLocations:AddSkill("Rückkehr nach Clegur", "0x70064F47", "Clegur (Ruf)");
+    repLocations:AddSkill("Nach Glân Vraig zurückkehren", "0x7005B38E", "Glân Vraig (Aufgabe)");
 
 -- monster player maps
     creepLocations:AddSkill("Kartenskizze zum Gramfuss", "0x70028BBC");
