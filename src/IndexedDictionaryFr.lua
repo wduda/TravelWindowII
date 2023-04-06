@@ -280,7 +280,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retournez à Pont-à-Tréteaux", "0x70059D12", "Pont-à-Tréteaux (Rep)");
     repLocations:AddSkill("Retour à Akrâz-zahar", "0x7005AA90", "Akrâz-zahar (Rep)");
     repLocations:AddSkill("Retour à Azanulbizar", "0x7005AA92", "Azanulbizar (Rep)");
-    repLocations:AddSkill("Voyage jusqu'à la Grande salle de Vérnozal", "0x7005A596", "Vérnozal (Rep)");
+    repLocations:AddSkill("Voyage jusqu'à la Grande salle de Vérnozal", "0x7005A596", "Vérnozal (Quête)");
     repLocations:AddSkill("Retourner à la Porte Noble", "0x7005D47C", "Porte Noble (Rep)");
     repLocations:AddSkill("Retourner à Leitstath", "0x7005D484", "Leitstath (Rep)");
     repLocations:AddSkill("Retournez voir Tornhad", "0x70060EA8", "Tornhad (Rep)");
@@ -291,6 +291,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retour aux Archives de gravures de Fondcombe", "0x700634A5", "Archives de gravures (Delving)");
     repLocations:AddSkill("Retour à Carn Dûm", "0x70064ACA", " Carn Dûm (Rep)");
     repLocations:AddSkill("Retournez voir Clegur", "0x70064F47", "Clegur (Rep)");
+    repLocations:AddSkill("Retour à Glân Vraig", "0x7005B38E", "Glân Vraig (Quête)");
 
     -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");
