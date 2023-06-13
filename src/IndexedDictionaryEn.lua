@@ -17,7 +17,7 @@ gondorMapTitleString = "Gondor Destinations"
 glanMapString = "Glân Vraig Map";
 glanMapItemString = "Map to Glân Vraig";
 
-skillNotTrainedString = "Skills not trained: ";
+skillNotTrainedString = "Skills not trained:";
 
 -- options window strings
 generalTabString = "General";
@@ -159,6 +159,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Cardolan", "0x700634A7", "Cardolan (Guide)");
     hunterLocations:AddSkill("Guide to Carn Dûm", "0x70064AC8", "Carn Dûm (Guide)");
     hunterLocations:AddSkill("Guide to Clegur", "0x70064F4C", "Clegur (Guide)");
+    hunterLocations:AddSkill("Guide to Pelargir", "0x700658EA", "Pelargir (Guide)");
 
     wardenLocations:AddSkill("Muster in Ost Guruth", "0x70014786", "Ost Guruth (Muster)");
     wardenLocations:AddSkill("Muster in Esteldín", "0x70014798", "Esteldín (Muster)");
@@ -207,6 +208,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster at Cardolan", "0x700634AD", "Cardolan (Muster)");
     wardenLocations:AddSkill("Muster at Carn Dûm", "0x70064ACB", "Carn Dûm (Muster)");
     wardenLocations:AddSkill("Muster at Clegur", "0x70064F4D", "Clegur (Muster)");
+    wardenLocations:AddSkill("Muster at Pelargir", "0x700658E8", "Pelargir (Muster)");
 
     -- add the racial travel skills
     racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)");
@@ -288,7 +290,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Carn Dûm", "0x70064ACA", "Carn Dûm (Rep)");
     repLocations:AddSkill("Return to Clegur", "0x70064F47", "Clegur (Rep)");
     repLocations:AddSkill("Return to Glân Vraig", "0x7005B38E", "Glân Vraig (Quest)");
-    
+    repLocations:AddSkill("Return to Pelargir", "0x700658EB", "Pelargir (Rep)");
+
     -- monster player maps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");
     creepLocations:AddSkill("Map to Gramsfoot", "0x70028BC1");
