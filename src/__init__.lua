@@ -4,7 +4,7 @@ import "TravelWindowII.src.TravelListTab";
 import "TravelWindowII.src.TravelGridTab";
 import "TravelWindowII.src.TravelCaroTab";
 import "TravelWindowII.src.TravelPulldownTab"
--- import "TravelWindowII.src.IndexedDictionary"
+import "TravelWindowII.src.IndexedDictionary"
 
 -- get language from Turbine API to load corresponding translated strings
 GLocale = Turbine.Engine.GetLanguage();
