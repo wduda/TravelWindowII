@@ -1,5 +1,6 @@
 --[[ use a modified table to maintain data for travel skills
-     specifically skill name, ID and label                   ]] IndexedDictionary = class()
+     specifically skill name, ID and label                   ]]
+IndexedDictionary = class()
 
 function IndexedDictionary:Constructor()
     -- set default tables

@@ -31,20 +31,13 @@ Why does a reputation or store version of my racial skill show up even though I 
 [*]This is because the racial and those store-bought skills have identical names ingame (i.e. "Return to Bree") and the plugin obtains a list of learned skills for your character that includes that particular name at least once. Based on that name alone the plugin cannot know which of the two skills you have obtained, while you can get both through the Racial+Store combo. You can use the Enable/Disable options to hide the skill you do not have that is greyed out.
 [/LIST]
 
-How to handle the settings reset introduced by v1.0.7beta?
+How do I use the Carousel mode?
 [LIST]
-[*] if you had v1.0.6beta or earlier and update to v1.0.8beta or newer, you will keep your settings, but enable/disable and sorting will have to be reset - this is the best case where most settings can be kept
-[*] if you updated to v.1.0.7beta but never logged that character in, an update to v1.0.8beta or newer will work as the above best case
-[*] if you updated to v.1.0.7beta and logged that character in, you lost all settings, you now have two choices
-[*]1. keep the settings you made manually after logging in with v1.0.7beta installed
-[*]2. delete the TravelWindowII.plugindata file, and your settings from before will be imported by v1.0.8beta or newer, the same as the best-case scenario
-[*]The file can be found at C:\Users\%USERNAME%\Documents\The Lord of the Rings Online\PluginData\%ACCOUNTNAME%\%SERVERNAME%\%CHARACTERNAME%
+Use the mousewheel while hovering over the travel skill icon to change the selected skill.
 [/LIST]
 
 Version history:
-v1.0.25beta
-- fixed typo in Carn Dum skills introduced in v1.0.24beta
-- added Glan Vraig skill in EN/DE/FR
-- fixed some DE/FR skill labels to better reflect the source of the skill
+v1.0.26
+- added support for U36 skills (Pelargir in King's Gondor) in EN/DE/FR
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
