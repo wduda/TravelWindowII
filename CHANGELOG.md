@@ -1,3 +1,5 @@
+## v1.0.26
+- added support for U36 skills (Pelargir in King's Gondor) in EN/DE/FR
 ## v1.0.25beta
 - fixed typo in Carn Dum skills introduced in v1.0.24beta
 - added Glan Vraig skill in EN/DE/FR

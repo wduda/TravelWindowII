@@ -2,7 +2,7 @@
 <PluginConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Id>1113</Id>
   <Name>Travel Window II</Name>
-  <Version>v1.0.25beta</Version>
+  <Version>v1.0.26beta</Version>
   <Author>Hyoss</Author>
   <InfoUrl>http://www.lotrointerface.com/downloads/info1113</InfoUrl>
   <DownloadUrl>http://www.lotrointerface.com/downloads/download1113</DownloadUrl>

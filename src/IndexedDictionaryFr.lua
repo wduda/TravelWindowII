@@ -166,6 +166,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide vers le Cardolan", "0x700634A7", "Cardolan (Guide)");
     hunterLocations:AddSkill("Guide vers Carn Dûm", "0x70064AC8", "Carn Dûm (Guide)");
     hunterLocations:AddSkill("Guide vers Clegur", "0x70064F4C", "Clegur (Guide)");
+    hunterLocations:AddSkill("Guide vers Pelargir", "0x700658EA", "Pelargir (Guide)");
 
     wardenLocations:AddSkill("Rassemblement : Ost Guruth", "0x70014786", "Ost Guruth (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement : Esteldin", "0x70014798", "Esteldin (Rassemblement)");
@@ -214,6 +215,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Rassemblement au Cardolan", "0x700634AD", "Cardolan (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement : Carn Dûm", "0x70064ACB", "Carn Dûm (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Clegur", "0x70064F4D", "Clegur (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Pelargir", "0x700658E8", "Pelargir (Rassemblement)");
 
     racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
     racialLocations:AddSkill("Retournez dans la Comté", "0x700062C8", "Comté (Race)");
@@ -292,8 +294,9 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retour à Carn Dûm", "0x70064ACA", " Carn Dûm (Rep)");
     repLocations:AddSkill("Retournez voir Clegur", "0x70064F47", "Clegur (Rep)");
     repLocations:AddSkill("Retour à Glân Vraig", "0x7005B38E", "Glân Vraig (Quête)");
+    repLocations:AddSkill("Retournez à Pelargir", "0x700658EB", "Pelargir (Rep)");
 
-    -- monster player maps
+  -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");
     creepLocations:AddSkill("Carte pour aller au Pied de Gram", "0x70028BC1");
 
