@@ -296,7 +296,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retour à Glân Vraig", "0x7005B38E", "Glân Vraig (Quête)");
     repLocations:AddSkill("Retournez à Pelargir", "0x700658EB", "Pelargir (Rep)");
 
-    -- monster player maps
+  -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");
     creepLocations:AddSkill("Carte pour aller au Pied de Gram", "0x70028BC1");
 
