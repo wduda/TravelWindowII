@@ -97,6 +97,9 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Andrath
         {-1, -1}, -- Swanfleet
         {-1, -1}, -- Cardolan
+        {-1, -1}, -- Carn Dûm
+        {-1, -1}, -- Clegur
+        {-1, -1}, -- Pelargir
 
         -- Muster skills
         {-1, -1}, -- Ost Guruth
@@ -144,6 +147,9 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Andrath
         {-1, -1}, -- Swanfleet
         {-1, -1}, -- Cardolan
+        {-1, -1}, -- Carn Dûm
+        {-1, -1}, -- Clegur
+        {-1, -1}, -- Pelargir
 
         -- Mariner skills
         {-1, -1}, -- Celondim
@@ -212,6 +218,10 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Swanfleet
         {-1, -1}, -- Cardolan
         {-1, -1}, -- Tracery Archive
+        {-1, -1}, -- Carn Dûm
+        {-1, -1}, -- Clegur
+        {-1, -1}, -- Glân Vraig
+        {-1, -1}, -- Pelargir
 
         -- Racial skills
         {-1, -1}, -- Bree
