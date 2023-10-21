@@ -329,6 +329,8 @@ function TravelWindow:SetPlayerRaceKey()
         PlayerRaceKey = 6;
     elseif (PlayerRace == Turbine.Gameplay.Race.StoutAxe) then
         PlayerRaceKey = 7;
+    elseif (PlayerRace == Turbine.Gameplay.Race.RiverHobbit) then
+        PlayerRaceKey = 8;
     else
         PlayerRaceKey = 1; -- default to man race to prevent errors
     end
