@@ -145,6 +145,22 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Swanfleet
         {-1, -1}, -- Cardolan
 
+        -- Mariner skills
+        {-1, -1}, -- Celondim
+        {-1, -1}, -- Brown Lands
+        {-1, -1}, -- Trader's Wharf
+        {-1, -1}, -- after-battle Osgiliath
+        {-1, -1}, -- Lake-town
+        {-1, -1}, -- Mirk-eaves
+        {-1, -1}, -- Tinnundir
+        {-1, -1}, -- Dol Amroth
+        {-1, -1}, -- Buckland
+        {-1, -1}, -- Pelegir
+        {-1, -1}, -- Sûri-kylä
+        {-1, -1}, -- Lothlórien
+        {-1, -1}, -- Tharbad
+        {-1, -1}, -- Snowbourn
+
         -- Reputation skills
         {-1, -1}, -- Thorin's Hall
         {-1, -1}, -- Bree
@@ -204,8 +220,8 @@ function GondorMapWindow:Constructor(parent, class, race, shortcuts)
         {-1, -1}, -- Rivendell
         {-1, -1}, -- Grimbeorn's House
         {-1, -1}, -- Caras Galadhon
-        {-1, -1}  -- Thorin's Hall
-
+        {-1, -1},  -- Thorin's Hall
+        {-1, -1}    -- Lyndelby
     };
     self:AddShortcuts();
 
@@ -246,6 +262,17 @@ function GondorMapWindow:AddShortcuts()
         if (self.mapLocations[counter][1] > 0 and self.PlayerClass == Turbine.Gameplay.Class.Warden and
             self:IsShortcutEnabled(wardenLocations:IdAtIndex(i)) == 1) then
             self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, wardenLocations:IdAtIndex(i)));
+        end
+        counter = counter + 1;
+    end
+
+    -- mariner locations
+    for i = 1, travelCount[7], 1 do
+
+        -- add mariner locations if they should be on this map
+        if (self.mapLocations[counter][1] > 0 and self.PlayerClass == Turbine.Gameplay.Class.Corsair and
+            self:IsShortcutEnabled(marinerLocations:IdAtIndex(i)) == 1) then
+            self:AddSingleShortcut(counter, Turbine.UI.Lotro.Shortcut(6.0, marinerLocations:IdAtIndex(i)));
         end
         counter = counter + 1;
     end

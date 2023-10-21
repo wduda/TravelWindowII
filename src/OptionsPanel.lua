@@ -436,6 +436,13 @@ function OptionsPanel:AddItems()
             counter = counter + 1;
         end
     end
+    -- add the mariner sailing skills if the character is a mariner
+    if (PlayerClass == Turbine.Gameplay.Class.Corsair) then
+        for i = 1, travelCount[7], 1 do
+            self:AddSkillItemForEnabling(counter, marinerLocations:IdAtIndex(i), marinerLocations:LabelAtIndex(i));
+            counter = counter + 1;
+        end
+    end
 
     -- add the reputation travel skills
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then

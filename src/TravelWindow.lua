@@ -521,6 +521,17 @@ function TravelWindow:SetShortcuts()
         end
     end
 
+    -- set the mariner travel items
+    if (PlayerClass == Turbine.Gameplay.Class.Corsair) then
+        for i = 1, travelCount[7], 1 do
+            shortcutIndex = self:TableIndex(Settings.order, marinerLocations:IdAtIndex(i));
+            table.insert(TravelShortcuts,
+                         TravelShortcut(6.0, marinerLocations:IdAtIndex(i), marinerLocations:NameAtIndex(i), 4,
+                                        shortcutIndex, Settings.enabled[marinerLocations:IdAtIndex(i)],
+                                        marinerLocations:LabelAtIndex(i)));
+        end
+    end
+
     -- sort the shortcuts
     self:SortShortcuts()
 end
@@ -537,6 +548,9 @@ function TravelWindow:CheckEnabledSettings()
         elseif (PlayerClass == Turbine.Gameplay.Class.Warden) then
             -- wardens have warden skills
             ItemCount = ItemCount + travelCount[2]
+        elseif (PlayerClass == Turbine.Gameplay.Class.Corsair) then
+            -- mariners have mariner skills
+            ItemCount = ItemCount + travelCount[7]
         end
     else
         -- monster player skills
@@ -547,7 +561,7 @@ function TravelWindow:CheckEnabledSettings()
     if (#Settings.order > ItemCount) then
         for id, order in pairs(Settings.order) do
             if (not genLocations:VerifyId(id) and not wardenLocations:VerifyId(id) and not repLocations:VerifyId(id) and
-                not genLocations:VerifyId(id)) then
+                not genLocations:VerifyId(id) and not marinerLocations:VerifyId(id)) then
                 Settings.order[id] = nil;
             end
         end
@@ -557,7 +571,7 @@ function TravelWindow:CheckEnabledSettings()
     if (#Settings.enabled > ItemCount) then
         for id, status in pairs(Settings.enabled) do
             if (not genLocations:VerifyId(id) and not wardenLocations:VerifyId(id) and not repLocations:VerifyId(id) and
-                not genLocations:VerifyId(id)) then
+                not genLocations:VerifyId(id) and not marinerLocations:VerifyId(id)) then
                 Settings.enabled[id] = nil;
             end
         end
@@ -622,6 +636,19 @@ function TravelWindow:CheckEnabledSettings()
                 end
                 if (self:TableContains(Settings.order, wardenLocations:IdAtIndex(i)) == false) then
                     table.insert(Settings.order, counter, wardenLocations:IdAtIndex(i));
+                    counter = counter + 1;
+                end
+            end
+        end
+
+        -- update mariner travel settings
+        if (PlayerClass == Turbine.Gameplay.Class.Corsair) then
+            for i = 1, travelCount[7], 1 do
+                if (Settings.enabled[marinerLocations:IdAtIndex(i)] == nil) then
+                    Settings.enabled[marinerLocations:IdAtIndex(i)] = true;
+                end
+                if (self:TableContains(Settings.order, marinerLocations:IdAtIndex(i)) == false) then
+                    table.insert(Settings.order, counter, marinerLocations:IdAtIndex(i));
                     counter = counter + 1;
                 end
             end
