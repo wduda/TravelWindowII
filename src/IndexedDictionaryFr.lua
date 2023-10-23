@@ -226,7 +226,7 @@ function TravelDictionaries:CreateDictionaries()
     racialLocations:AddSkill("Retour à la maison", "0x70041A22", "Maison Beorning (Race)");
     racialLocations:AddSkill("Voyage vers Caras Galadhon, en Lothlórien", "0x70048C8C", "Caras Galadhon (Race)");
     racialLocations:AddSkill("Aller au Palais de Thorin", "0x70053C0F", "Palais de Thorin (Race)");
-    racialLocations:AddSkill("Return to Lyndelby", "0x70066d31", "Lyndelby (Racial)") -- river hobbit
+    racialLocations:AddSkill("Retour à Lyndelby", "0x70066d31", "Lyndelby (Race)") -- river hobbit
 
     genLocations:AddSkill("Retour à la maison",    "0x700256BA", "Point de repère 1");
     genLocations:AddSkill("Retour à la maison 2",  "0x70025792", "Point de repère 2");
@@ -321,18 +321,18 @@ function TravelDictionaries:CreateDictionaries()
     creepLocations:AddSkill("Bonne carte pour aller à Tirith Rhaw", "0x70028BB0");
     creepLocations:AddSkill("Bonne carte pour aller au Bois Funeste", "0x70028BBD");
 
-    marinerLocations:AddSkill("Sail to Celondim", "0x70066100", "Celondim (Sail)")
-    marinerLocations:AddSkill("Sail to the Brown Lands", "0x70066101", "Brown Lands (Sail)")
-    marinerLocations:AddSkill("Sail to Trader's Wharf", "0x70066105", "Trader's Wharf (Sail)")
-    marinerLocations:AddSkill("Sail to after-battle Osgiliath", "0x70066109", "after-battle Osgiliath (Sail)")
-    marinerLocations:AddSkill("Sail to Lake-town", "0x7006610c", "Lake-town (Sail)")
-    marinerLocations:AddSkill("Sail to the Mirk-eaves", "0x7006610e", "Mirk-eaves (Sail)")
-    marinerLocations:AddSkill("Sail to Tinnundir", "0x7006610f", "Tinnundir (Sail)")
-    marinerLocations:AddSkill("Sail to Dol Amroth", "0x70066117", "Dol Amroth (Sail)")
-    marinerLocations:AddSkill("Sail to Buckland", "0x7006611a", "Buckland (Sail)")
-    marinerLocations:AddSkill("Sail to Pelegir", "0x7006611b", "Pelegir (Sail)")
-    marinerLocations:AddSkill("Sail to Sûri-kylä", "0x7006611c", "Sûri-kylä (Sail)")
-    marinerLocations:AddSkill("Sail to Lothlórien", "0x7006611e", "Lothlórien (Sail)")
-    marinerLocations:AddSkill("Sail to Tharbad", "0x70066120", "Tharbad (Sail)")
-    marinerLocations:AddSkill("Sail to Snowbourn", "0x70066121", "Snowbourn (Sail)")
+    marinerLocations:AddSkill("Naviguer vers Celondim", "0x70066100", "Celondim (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers les Terres brunes", "0x70066101", "les Terres brunes (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers le Quai des marchands", "0x70066105", "le Quai des marchands (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Osgiliath après la bataille", "0x70066109", "Osgiliath après la bataille (Naviguer)")
+    marinerLocations:AddSkill("Cap sur la Ville du Lac", "0x7006610c", "la Ville du Lac (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers l'Orée Noire", "0x7006610e", "l'Orée Noire (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Tinnudir", "0x7006610f", "Tinnudir (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Dol Amroth", "0x70066117", "Dol Amroth (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers le Pays de Bouc", "0x7006611a", "le Pays de Bouc (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Pelargir", "0x7006611b", "Pelegir (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Sûri-kylä", "0x7006611c", "Sûri-kylä (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers la Lothlorien", "0x7006611e", "Lothlorien (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers le Gué de Sarn", "0x70066120", "le Gué de Sarn (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Neigebronne", "0x70066121", "Neigebronne (Naviguer)")
 end
