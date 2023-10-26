@@ -1,3 +1,5 @@
+## v1.0.28
+- added support for Mariner and River Hobbits
 ## v1.0.27
 - fixed typo in init.lua causing crash on load
 ## v1.0.26
