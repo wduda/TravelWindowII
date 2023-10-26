@@ -1,4 +1,4 @@
-This plugin creates a single window that contains available travel skills, including race, class, housing and reputation skills. It is a further development of the "Travel Window" plugin, that has been worked on by multiple authors before.
+This plugin creates a single window that contains available travel skills, including race, class, housing, and reputation skills. It is a further development of the "Travel Window" plugin, that has been worked on by multiple authors before.
 
 [B]Since this plugin is a 100% replacement for "Travel Window" you should not have both enabled at the same time. You can keep them both installed though.[/B]
 
@@ -37,7 +37,7 @@ Use the mousewheel while hovering over the travel skill icon to change the selec
 [/LIST]
 
 Version history:
-v1.0.26
-- added support for U36 skills (Pelargir in King's Gondor) in EN/DE/FR
+v1.0.27
+- fixed typo in init.lua causing crash on load
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].

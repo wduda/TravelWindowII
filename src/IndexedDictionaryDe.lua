@@ -74,9 +74,10 @@ function TravelDictionaries:Constructor()
     racialLocations = IndexedDictionary();
     repLocations = IndexedDictionary();
     creepLocations = IndexedDictionary();
+    marinerLocations = IndexedDictionary();
 
     -- a table to store the number of each type of travel skill
-    travelCount = { 0, 0, 0, 0, 0, 0 };
+    travelCount = { 0, 0, 0, 0, 0, 0, 0 };
     LocationsTotal = 0;
 
     self:CreateDictionaries();
@@ -91,8 +92,9 @@ function TravelDictionaries:GetCounts()
     travelCount[4] = repLocations:GetCount();
     travelCount[5] = racialLocations:GetCount();
     travelCount[6] = creepLocations:GetCount();
+    travelCount[7] = marinerLocations:GetCount();
 
-    LocationsTotal = travelCount[1] + travelCount[2] + travelCount[3] + travelCount[4] + travelCount[5];
+    LocationsTotal = travelCount[1] + travelCount[2] + travelCount[3] + travelCount[4] + travelCount[5] + travelCount[6] + travelCount[7];
 end
 
 -- function to return the count of a specific type of travel
@@ -107,7 +109,7 @@ end
 
 -- function to return the 5 tables containing the travel skills
 function TravelDictionaries:GetLocations()
-    return genLocations, hunterLocations, wardenLocations, racialLocations, repLocations;
+    return genLocations, hunterLocations, wardenLocations, racialLocations, repLocations, creepLocations, marinerLocations;
 end
 
 -- add the data to custom dictionaries to maintain the order
@@ -224,6 +226,7 @@ function TravelDictionaries:CreateDictionaries()
     racialLocations:AddSkill("Zum 1. Heim zurückkehren", "0x70041A22", "Grimbeorns Hütte (Rasse)");
     racialLocations:AddSkill("Reise nach Caras Galadhon in Lothlórien", "0x70048C8C", "Caras Galadhon (Rasse)");
     racialLocations:AddSkill("Reise zu Thorins Halle", "0x70053C0F", "Thorins Halle (Rasse Starkaxt)");
+    racialLocations:AddSkill("Kehrt zu Lyndelby zurück", "0x70066d31", "Lyndelby (Rasse)") 
 
     genLocations:AddSkill("Zum 1. Heim zurückkehren",  "0x700256BA", "1. Markstein");
     genLocations:AddSkill("Zum 2. Heim zurückkehren",  "0x70025792", "2. Markstein");
@@ -317,4 +320,19 @@ function TravelDictionaries:CreateDictionaries()
     creepLocations:AddSkill("Gute Karte zur Feste Lugazag", "0x70028BB5");
     creepLocations:AddSkill("Gute Karte zur Feste Tirith Rhaw", "0x70028BB0");
     creepLocations:AddSkill("Gute Karte zum Grimmwald", "0x70028BBD");
+
+    marinerLocations:AddSkill("Segelt nach Celondim", "0x70066100", "Celondim (Segel)")
+    marinerLocations:AddSkill("Segelt in die Braunen Lande", "0x70066101", "die Braunen Lande (Segel)")
+    marinerLocations:AddSkill("Segelt zum Händlerkai", "0x70066105", "Händlerkai (Segel)")
+    marinerLocations:AddSkill("Segelt ins schlachtgezeichnete Osgiliath", "0x70066109", "schlachtgezeichnete Osgiliath (Segel)")
+    marinerLocations:AddSkill("Segelt nach Seestadt", "0x7006610c", "Seestadt (Segel)")
+    marinerLocations:AddSkill("Segelt zur Dunkelsenke", "0x7006610e", "Dunkelsenke (Segel)")
+    marinerLocations:AddSkill("Segelt nach Tinnudir", "0x7006610f", "Tinnundir (Segel)")
+    marinerLocations:AddSkill("Segelt nach Dol Amroth", "0x70066117", "Dol Amroth (Segel)")
+    marinerLocations:AddSkill("Segelt nach Bockland", "0x7006611a", "Bockland (Segel)")
+    marinerLocations:AddSkill("Segelt nach Pelargir", "0x7006611b", "Pelargir (Segel)")
+    marinerLocations:AddSkill("Segelt nach Sûri-kylä", "0x7006611c", "Sûri-kylä (Segel)")
+    marinerLocations:AddSkill("Segelt nach Lothlórien", "0x7006611e", "Lothlórien (Segel)")
+    marinerLocations:AddSkill("Segelt zur Sarnfurt", "0x70066120", "Sarnfurt (Segel)")
+    marinerLocations:AddSkill("Segelt nach Schneegrenze", "0x70066121", "Schneegrenze (Segel)")
 end

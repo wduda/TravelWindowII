@@ -1,3 +1,5 @@
+## v1.0.27
+- fixed typo in init.lua causing crash on load
 ## v1.0.26
 - added support for U36 skills (Pelargir in King's Gondor) in EN/DE/FR
 ## v1.0.25beta

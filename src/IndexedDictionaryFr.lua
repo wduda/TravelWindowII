@@ -74,9 +74,10 @@ function TravelDictionaries:Constructor()
     racialLocations = IndexedDictionary();
     repLocations = IndexedDictionary();
     creepLocations = IndexedDictionary();
+    marinerLocations = IndexedDictionary();
 
     -- a table to store the number of each type of travel skill
-    travelCount = { 0, 0, 0, 0, 0, 0 };
+    travelCount = { 0, 0, 0, 0, 0, 0, 0 };
     LocationsTotal = 0;
 
     self:CreateDictionaries();
@@ -91,8 +92,9 @@ function TravelDictionaries:GetCounts()
     travelCount[4] = repLocations:GetCount();
     travelCount[5] = racialLocations:GetCount();
     travelCount[6] = creepLocations:GetCount();
+    travelCount[7] = marinerLocations:GetCount();
 
-    LocationsTotal = travelCount[1] + travelCount[2] + travelCount[3] + travelCount[4] + travelCount[5];
+    LocationsTotal = travelCount[1] + travelCount[2] + travelCount[3] + travelCount[4] + travelCount[5] + travelCount[6] + travelCount[7];
 end
 
 -- function to return the count of a specific type of travel
@@ -107,7 +109,7 @@ end
 
 -- function to return the 5 tables containing the travel skills
 function TravelDictionaries:GetLocations()
-    return genLocations, hunterLocations, wardenLocations, racialLocations, repLocations;
+    return genLocations, hunterLocations, wardenLocations, racialLocations, repLocations, creepLocations, marinerLocations;
 end
 
 -- add the data to custom dictionaries to maintain the order
@@ -224,6 +226,7 @@ function TravelDictionaries:CreateDictionaries()
     racialLocations:AddSkill("Retour à la maison", "0x70041A22", "Maison Beorning (Race)");
     racialLocations:AddSkill("Voyage vers Caras Galadhon, en Lothlórien", "0x70048C8C", "Caras Galadhon (Race)");
     racialLocations:AddSkill("Aller au Palais de Thorin", "0x70053C0F", "Palais de Thorin (Race)");
+    racialLocations:AddSkill("Retour à Lyndelby", "0x70066d31", "Lyndelby (Race)") -- river hobbit
 
     genLocations:AddSkill("Retour à la maison",    "0x700256BA", "Point de repère 1");
     genLocations:AddSkill("Retour à la maison 2",  "0x70025792", "Point de repère 2");
@@ -318,4 +321,18 @@ function TravelDictionaries:CreateDictionaries()
     creepLocations:AddSkill("Bonne carte pour aller à Tirith Rhaw", "0x70028BB0");
     creepLocations:AddSkill("Bonne carte pour aller au Bois Funeste", "0x70028BBD");
 
+    marinerLocations:AddSkill("Naviguer vers Celondim", "0x70066100", "Celondim (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers les Terres brunes", "0x70066101", "les Terres brunes (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers le Quai des marchands", "0x70066105", "le Quai des marchands (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Osgiliath après la bataille", "0x70066109", "Osgiliath après la bataille (Naviguer)")
+    marinerLocations:AddSkill("Cap sur la Ville du Lac", "0x7006610c", "la Ville du Lac (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers l'Orée Noire", "0x7006610e", "l'Orée Noire (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Tinnudir", "0x7006610f", "Tinnudir (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Dol Amroth", "0x70066117", "Dol Amroth (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers le Pays de Bouc", "0x7006611a", "le Pays de Bouc (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Pelargir", "0x7006611b", "Pelegir (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Sûri-kylä", "0x7006611c", "Sûri-kylä (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers la Lothlorien", "0x7006611e", "Lothlorien (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers le Gué de Sarn", "0x70066120", "le Gué de Sarn (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Neigebronne", "0x70066121", "Neigebronne (Naviguer)")
 end
