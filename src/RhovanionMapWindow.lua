@@ -231,7 +231,7 @@ function RhovanionMapWindow:Constructor(parent, class, race, shortcuts)
         {405, 180}, -- Grimbeorn's House
         {-1, -1}, -- Caras Galadhon
         {-1, -1}, -- Thorin's Hall
-        {-1, -1}    -- Lyndelby
+        {-1, -1}  -- Lyndelby
     };
     self:AddShortcuts();
 
