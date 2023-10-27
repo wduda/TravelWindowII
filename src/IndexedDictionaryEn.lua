@@ -226,14 +226,14 @@ function TravelDictionaries:CreateDictionaries()
     marinerLocations:AddSkill("Sail to the Brown Lands", "0x70066101", "Brown Lands (Sail)")
     marinerLocations:AddSkill("Sail to Trader's Wharf", "0x70066105", "Trader's Wharf (Sail)")
     marinerLocations:AddSkill("Sail to after-battle Osgiliath", "0x70066109", "After-battle Osgiliath (Sail)")
-    marinerLocations:AddSkill("Sail to Lake-town", "0x7006610c", "Lake-town (Sail)")
-    marinerLocations:AddSkill("Sail to the Mirk-eaves", "0x7006610e", "Mirk-eaves (Sail)")
-    marinerLocations:AddSkill("Sail to Tinnudir", "0x7006610f", "Tinnudir (Sail)")
+    marinerLocations:AddSkill("Sail to Lake-town", "0x7006610C", "Lake-town (Sail)")
+    marinerLocations:AddSkill("Sail to the Mirk-eaves", "0x7006610E", "Mirk-eaves (Sail)")
+    marinerLocations:AddSkill("Sail to Tinnudir", "0x7006610F", "Tinnudir (Sail)")
     marinerLocations:AddSkill("Sail to Dol Amroth", "0x70066117", "Dol Amroth (Sail)")
-    marinerLocations:AddSkill("Sail to Buckland", "0x7006611a", "Buckland (Sail)")
-    marinerLocations:AddSkill("Sail to Pelargir", "0x7006611b", "Pelargir (Sail)")
-    marinerLocations:AddSkill("Sail to Sûri-kylä", "0x7006611c", "Sûri-kylä (Sail)")
-    marinerLocations:AddSkill("Sail to Lothlórien", "0x7006611e", "Lothlórien (Sail)")
+    marinerLocations:AddSkill("Sail to Buckland", "0x7006611A", "Buckland (Sail)")
+    marinerLocations:AddSkill("Sail to Pelargir", "0x7006611B", "Pelargir (Sail)")
+    marinerLocations:AddSkill("Sail to Sûri-kylä", "0x7006611C", "Sûri-kylä (Sail)")
+    marinerLocations:AddSkill("Sail to Lothlórien", "0x7006611E", "Lothlórien (Sail)")
     marinerLocations:AddSkill("Sail to Tharbad", "0x70066120", "Tharbad (Sail)")
     marinerLocations:AddSkill("Sail to Snowbourn", "0x70066121", "Snowbourn (Sail)")
 
@@ -245,7 +245,7 @@ function TravelDictionaries:CreateDictionaries()
     racialLocations:AddSkill("Return Home", "0x70041A22", "Beorning Home (Racial)"); -- beorning
     racialLocations:AddSkill("Travel to Caras Galadhon in Lothlórien", "0x70048C8C", "Caras Galadhon (Racial)"); -- high-elf
     racialLocations:AddSkill("Travel to Thorin's Hall", "0x70053C0F", "Thorin's Hall (Racial)"); -- stoutaxe
-    racialLocations:AddSkill("Return to Lyndelby", "0x70066d31", "Lyndelby (Racial)") -- river hobbit
+    racialLocations:AddSkill("Return to Lyndelby", "0x70066D31", "Lyndelby (Racial)") -- river hobbit
 
     -- add the Return Home and housing skills
     genLocations:AddSkill("Return Home",    "0x700256BA", "Return Home");
