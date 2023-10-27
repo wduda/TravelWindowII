@@ -1,3 +1,7 @@
+## v1.0.28
+- added support for Mariner Sail skills in EN/DE/FR
+- added support for River Hobbits racial travel
+- fixed rare bug in hunter skills sorting
 ## v1.0.27
 - fixed typo in init.lua causing crash on load
 ## v1.0.26
