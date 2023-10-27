@@ -563,7 +563,7 @@ function TravelWindow:CheckEnabledSettings()
     if (#Settings.order > ItemCount) then
         for id, order in pairs(Settings.order) do
             if (not genLocations:VerifyId(id) and not wardenLocations:VerifyId(id) and not repLocations:VerifyId(id) and
-                not genLocations:VerifyId(id) and not marinerLocations:VerifyId(id)) then
+                not hunterLocations:VerifyId(id) and not marinerLocations:VerifyId(id)) then
                 Settings.order[id] = nil;
             end
         end
@@ -573,7 +573,7 @@ function TravelWindow:CheckEnabledSettings()
     if (#Settings.enabled > ItemCount) then
         for id, status in pairs(Settings.enabled) do
             if (not genLocations:VerifyId(id) and not wardenLocations:VerifyId(id) and not repLocations:VerifyId(id) and
-                not genLocations:VerifyId(id) and not marinerLocations:VerifyId(id)) then
+                not hunterLocations:VerifyId(id) and not marinerLocations:VerifyId(id)) then
                 Settings.enabled[id] = nil;
             end
         end
