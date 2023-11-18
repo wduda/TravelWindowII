@@ -1,6 +1,6 @@
 ## v1.0.29alpha
 - fixed Mariner skills showing up twice in DE client
-- adding U38 skills in EN/DE/FR
+- adding U38 skills in EN/FR
 ## v1.0.28alpha
 - added support for Mariner Sail skills in EN/DE/FR
 - added support for River Hobbits racial travel

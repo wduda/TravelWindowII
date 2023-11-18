@@ -252,6 +252,22 @@ function TravelDictionaries:CreateDictionaries()
     marinerLocations:AddSkill("Sail to Dol Amroth", "0x70066121", "Dol Amroth (Sail)")
     marinerLocations:AddSkill("Sail to Halrax", "0x70066121", "Halrax (Sail)")
 
+    -- add the Mariner locations
+    marinerLocations:AddSkill("Sail to Celondim", "0x70066100", "Celondim (Sail)")
+    marinerLocations:AddSkill("Sail to the Brown Lands", "0x70066101", "Brown Lands (Sail)")
+    marinerLocations:AddSkill("Sail to Trader's Wharf", "0x70066105", "Trader's Wharf (Sail)")
+    marinerLocations:AddSkill("Sail to after-battle Osgiliath", "0x70066109", "After-battle Osgiliath (Sail)")
+    marinerLocations:AddSkill("Sail to Lake-town", "0x7006610C", "Lake-town (Sail)")
+    marinerLocations:AddSkill("Sail to the Mirk-eaves", "0x7006610E", "Mirk-eaves (Sail)")
+    marinerLocations:AddSkill("Sail to Tinnudir", "0x7006610F", "Tinnudir (Sail)")
+    marinerLocations:AddSkill("Sail to Dol Amroth", "0x70066117", "Dol Amroth (Sail)")
+    marinerLocations:AddSkill("Sail to Buckland", "0x7006611A", "Buckland (Sail)")
+    marinerLocations:AddSkill("Sail to Pelargir", "0x7006611B", "Pelargir (Sail)")
+    marinerLocations:AddSkill("Sail to Sûri-kylä", "0x7006611C", "Sûri-kylä (Sail)")
+    marinerLocations:AddSkill("Sail to Lothlórien", "0x7006611E", "Lothlórien (Sail)")
+    marinerLocations:AddSkill("Sail to Tharbad", "0x70066120", "Tharbad (Sail)")
+    marinerLocations:AddSkill("Sail to Snowbourn", "0x70066121", "Snowbourn (Sail)")
+
     -- add the racial travel skills
     racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)"); -- human
     racialLocations:AddSkill("Return to the Shire", "0x700062C8", "Shire (Racial)"); -- hobbit

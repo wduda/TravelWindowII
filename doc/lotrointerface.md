@@ -41,4 +41,6 @@ v1.0.29alpha
 - fixed Mariner skills showing up twice in DE client
 - adding U38 skills in EN/DE/FR
 
+There is a bug with the skills returning you to Dol Amroth - the skills are named identically by SSG and I need to see if this can be fixed. I will look into that together with the next update that will add support for the DE client. 
+
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].

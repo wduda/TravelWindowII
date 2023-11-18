@@ -335,4 +335,19 @@ function TravelDictionaries:CreateDictionaries()
     creepLocations:AddSkill("Gute Karte zur Feste Lugazag", "0x70028BB5");
     creepLocations:AddSkill("Gute Karte zur Feste Tirith Rhaw", "0x70028BB0");
     creepLocations:AddSkill("Gute Karte zum Grimmwald", "0x70028BBD");
+
+    marinerLocations:AddSkill("Segelt nach Celondim", "0x70066100", "Celondim (Segenl)")
+    marinerLocations:AddSkill("Segelt in die Braunen Lande", "0x70066101", "die Braunen Lande (Segeln)")
+    marinerLocations:AddSkill("Segelt zum Händlerkai", "0x70066105", "Händlerkai (Segel)")
+    marinerLocations:AddSkill("Segelt ins schlachtgezeichnete Osgiliath", "0x70066109", "schlachtgezeichnete Osgiliath (Segeln)")
+    marinerLocations:AddSkill("Segelt nach Seestadt", "0x7006610c", "Seestadt (Segeln)")
+    marinerLocations:AddSkill("Segelt zur Dunkelsenke", "0x7006610e", "Dunkelsenke (Segeln)")
+    marinerLocations:AddSkill("Segelt nach Tinnudir", "0x7006610f", "Tinnundir (Segeln)")
+    marinerLocations:AddSkill("Segelt nach Dol Amroth", "0x70066117", "Dol Amroth (Segeln)")
+    marinerLocations:AddSkill("Segelt nach Bockland", "0x7006611a", "Bockland (Segeln)")
+    marinerLocations:AddSkill("Segelt nach Pelargir", "0x7006611b", "Pelargir (Segeln)")
+    marinerLocations:AddSkill("Segelt nach Sûri-kylä", "0x7006611c", "Sûri-kylä (Segeln)")
+    marinerLocations:AddSkill("Segelt nach Lothlórien", "0x7006611e", "Lothlórien (Segeln)")
+    marinerLocations:AddSkill("Segelt zur Sarnfurt", "0x70066120", "Sarnfurt (Segeln)")
+    marinerLocations:AddSkill("Segelt nach Schneegrenze", "0x70066121", "Schneegrenze (Segeln)")
 end
