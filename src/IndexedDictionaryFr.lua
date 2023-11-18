@@ -169,6 +169,11 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide vers Carn Dûm", "0x70064AC8", "Carn Dûm (Guide)");
     hunterLocations:AddSkill("Guide vers Clegur", "0x70064F4C", "Clegur (Guide)");
     hunterLocations:AddSkill("Guide vers Pelargir", "0x700658EA", "Pelargir (Guide)");
+    hunterLocations:AddSkill("Guide vers Dol Amroth", "0x70068711", "Dol Amroth (Guide U38)");
+    hunterLocations:AddSkill("Guide vers Halrax", "0x70068713", "Halrax (Guide)");
+    hunterLocations:AddSkill("Guide vers Lond Cirion", "0x70068717", "Lond Cirion (Guide)");
+    hunterLocations:AddSkill("Guide vers Umbar", "0x70068718", "Umbar (Guide)");
+    hunterLocations:AddSkill("Guide vers Jax Phanâl", "0x70068719", "Jax Phanâl (Guide)");
 
     wardenLocations:AddSkill("Rassemblement : Ost Guruth", "0x70014786", "Ost Guruth (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement : Esteldin", "0x70014798", "Esteldin (Rassemblement)");
@@ -218,6 +223,11 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Rassemblement : Carn Dûm", "0x70064ACB", "Carn Dûm (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Clegur", "0x70064F4D", "Clegur (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Pelargir", "0x700658E8", "Pelargir (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Jax Phanâl","0x7006870C", "Jax Phanâl (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Umbar","0x7006870F","Umbar (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Halrax","0x70068710", "Halrax (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Dol Amroth","0x70068712", "Dol Amroth (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Lond Cirion","0x70068715", "Lond Cirion (Rassemblement)");
 
     marinerLocations:AddSkill("Naviguer vers Celondim", "0x70066100", "Celondim (Naviguer)")
     marinerLocations:AddSkill("Naviguer vers les Terres brunes", "0x70066101", "Terres brunes (Naviguer)")
@@ -233,6 +243,11 @@ function TravelDictionaries:CreateDictionaries()
     marinerLocations:AddSkill("Naviguer vers la Lothlorien", "0x7006611E", "Lothlorien (Naviguer)")
     marinerLocations:AddSkill("Naviguer vers le Gué de Sarn", "0x70066120", "le Gué de Sarn (Naviguer)")
     marinerLocations:AddSkill("Naviguer vers Neigebronne", "0x70066121", "Neigebronne (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Umbar", "0x700687BB", "Umbar (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Lond Cirion", "0x70066121", "Lond Cirion (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Jax Phanâl", "0x70066121", "Jax Phanâl (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Dol Amroth", "0x70066121", "Dol Amroth (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Halrax", "0x70066121", "Halrax (Naviguer)")
 
     racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
     racialLocations:AddSkill("Retournez dans la Comté", "0x700062C8", "Comté (Race)");
@@ -313,6 +328,13 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retournez voir Clegur", "0x70064F47", "Clegur (Rep)");
     repLocations:AddSkill("Retour à Glân Vraig", "0x7005B38E", "Glân Vraig (Quête)");
     repLocations:AddSkill("Retournez à Pelargir", "0x700658EB", "Pelargir (Rep)");
+    repLocations:AddSkill("Retour auprès de l'Ordre de l'Aigle", "0x700686FE", "L'Ordre de l'Aigle (Rep)");
+    repLocations:AddSkill("Retour à Umbar", "0x700686FF", "Umbar (Rep)");
+    repLocations:AddSkill("Retour à Dol Amroth", "0x70068700", "Dol Amroth (Rep U38)");
+    repLocations:AddSkill("Retour à Jax Phanâl", "0x70068701", "Jax Phanâl (Rep)");
+    repLocations:AddSkill("Retournez voir Halrax", "0x70068702", "Halrax (Rep)");
+    repLocations:AddSkill("Retour à Lond Cirion", "0x70068703", "Lond Cirion (Rep)");
+    repLocations:AddSkill("Retour auprès des Gardiens des écrits", "0x70068704", "Gardiens des écrits (Rep)");
 
   -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");
