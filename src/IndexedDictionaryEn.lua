@@ -170,6 +170,11 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Carn Dûm", "0x70064AC8", "Carn Dûm (Guide)");
     hunterLocations:AddSkill("Guide to Clegur", "0x70064F4C", "Clegur (Guide)");
     hunterLocations:AddSkill("Guide to Pelargir", "0x700658EA", "Pelargir (Guide)");
+    hunterLocations:AddSkill("Guide to Dol Amroth", "0x70068711", "Dol Amroth (Guide U38)");
+    hunterLocations:AddSkill("Guide to Halrax", "0x70068713", "Halrax (Guide)");
+    hunterLocations:AddSkill("Guide to Lond Cirion", "0x70068717", "Lond Cirion (Guide)");
+    hunterLocations:AddSkill("Guide to Umbar", "0x70068718", "Umbar (Guide)");
+    hunterLocations:AddSkill("Guide to Jax Phanâl", "0x70068719", "Jax Phanâl (Guide)");
 
     -- add the Warden locations
     wardenLocations:AddSkill("Muster in Ost Guruth", "0x70014786", "Ost Guruth (Muster)");
@@ -220,6 +225,32 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster at Carn Dûm", "0x70064ACB", "Carn Dûm (Muster)");
     wardenLocations:AddSkill("Muster at Clegur", "0x70064F4D", "Clegur (Muster)");
     wardenLocations:AddSkill("Muster at Pelargir", "0x700658E8", "Pelargir (Muster)");
+    wardenLocations:AddSkill("Muster at Jax Phanâl","0x7006870C", "Jax Phanâl (Muster)");
+    wardenLocations:AddSkill("Muster at Umbar","0x7006870F","Umbar (Muster)");
+    wardenLocations:AddSkill("Muster at Halrax","0x70068710", "Halrax (Muster)");
+    wardenLocations:AddSkill("Muster at Dol Amroth","0x70068712", "Dol Amroth (Muster)");
+    wardenLocations:AddSkill("Muster at Lond Cirion","0x70068715", "Lond Cirion (Muster)");
+
+    -- add the Mariner locations
+    marinerLocations:AddSkill("Sail to Celondim", "0x70066100", "Celondim (Sail)")
+    marinerLocations:AddSkill("Sail to the Brown Lands", "0x70066101", "Brown Lands (Sail)")
+    marinerLocations:AddSkill("Sail to Trader's Wharf", "0x70066105", "Trader's Wharf (Sail)")
+    marinerLocations:AddSkill("Sail to after-battle Osgiliath", "0x70066109", "After-battle Osgiliath (Sail)")
+    marinerLocations:AddSkill("Sail to Lake-town", "0x7006610C", "Lake-town (Sail)")
+    marinerLocations:AddSkill("Sail to the Mirk-eaves", "0x7006610E", "Mirk-eaves (Sail)")
+    marinerLocations:AddSkill("Sail to Tinnudir", "0x7006610F", "Tinnudir (Sail)")
+    marinerLocations:AddSkill("Sail to Dol Amroth", "0x70066117", "Dol Amroth (Sail)")
+    marinerLocations:AddSkill("Sail to Buckland", "0x7006611A", "Buckland (Sail)")
+    marinerLocations:AddSkill("Sail to Pelargir", "0x7006611B", "Pelargir (Sail)")
+    marinerLocations:AddSkill("Sail to Sûri-kylä", "0x7006611C", "Sûri-kylä (Sail)")
+    marinerLocations:AddSkill("Sail to Lothlórien", "0x7006611E", "Lothlórien (Sail)")
+    marinerLocations:AddSkill("Sail to Tharbad", "0x70066120", "Tharbad (Sail)")
+    marinerLocations:AddSkill("Sail to Snowbourn", "0x70066121", "Snowbourn (Sail)")
+    marinerLocations:AddSkill("Sail to Umbar", "0x700687BB", "Umbar (Sail)")
+    marinerLocations:AddSkill("Sail to Lond Cirion", "0x70066121", "Lond Cirion (Sail)")
+    marinerLocations:AddSkill("Sail to Jax Phanâl", "0x70066121", "Jax Phanâl (Sail)")
+    marinerLocations:AddSkill("Sail to Dol Amroth", "0x70066121", "Dol Amroth (Sail)")
+    marinerLocations:AddSkill("Sail to Halrax", "0x70066121", "Halrax (Sail)")
 
     -- add the Mariner locations
     marinerLocations:AddSkill("Sail to Celondim", "0x70066100", "Celondim (Sail)")
@@ -319,6 +350,13 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Clegur", "0x70064F47", "Clegur (Rep)");
     repLocations:AddSkill("Return to Glân Vraig", "0x7005B38E", "Glân Vraig (Quest)");
     repLocations:AddSkill("Return to Pelargir", "0x700658EB", "Pelargir (Rep)");
+    repLocations:AddSkill("Return to The Order of the Eagle", "0x700686FE", "Order of the Eagle (Rep)");
+    repLocations:AddSkill("Return to Umbar", "0x700686FF", "Umbar (Rep)");
+    repLocations:AddSkill("Return to Dol Amroth", "0x70068700", "Dol Amroth (Rep U38)");
+    repLocations:AddSkill("Return to Jax Phanal", "0x70068701", "Jax Phanal (Rep)");
+    repLocations:AddSkill("Return to Harlax", "0x70068702", "Harlax (Rep)");
+    repLocations:AddSkill("Return to Lond Cirion", "0x70068703", "Lord Cirion (Rep)");
+    repLocations:AddSkill("Return to Ledger-Keepers", "0x70068704", "Ledger-Keepers (Rep)");
 
     -- monster player maps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");
