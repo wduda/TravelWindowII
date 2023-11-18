@@ -37,9 +37,8 @@ Use the mousewheel while hovering over the travel skill icon to change the selec
 [/LIST]
 
 Version history:
-v1.0.28alpha
-- added support for Mariner Sail skills in EN/DE/FR
-- added support for River Hobbits racial travel
-- fixed rare bug in hunter skills sorting
+v1.0.29alpha
+- fixed Mariner skills showing up twice in DE client
+- adding U38 skills in EN/DE/FR
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
