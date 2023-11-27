@@ -114,6 +114,7 @@ end
 
 -- add the data to custom dictionaries to maintain the order
 function TravelDictionaries:CreateDictionaries()
+    -- add the hunter locations
     hunterLocations:AddSkill("Zurück zum Lager", "0x7000A2C1", "Zurück zum Lager");
     hunterLocations:AddSkill("Führer nach Bree", "0x70003F42", "Bree (Führer)");
     hunterLocations:AddSkill("Führer zu Thorins Halle", "0x70003F41", "Thorins Halle (Führer)");
@@ -164,12 +165,18 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Führer nach Tornhad", "0x70060EA6", "Tornhad (Führer)");
     hunterLocations:AddSkill("Führer nach Neuhausen", "0x7006133F", "Neuhausen (Führer)");
     hunterLocations:AddSkill("Führer nach Andrath", "0x7006323C", "Andrath (Führer)");
-    hunterLocations:AddSkill("Führer nach Schwanenfleet", "0x700634AA", "Swanfleet (Führer)");
+    hunterLocations:AddSkill("Führer nach Schwanenfleet", "0x700634AA", "Schwanenfleet (Führer)");
     hunterLocations:AddSkill("Führer nach Cardolan", "0x700634A7", "Cardolan (Führer)");
     hunterLocations:AddSkill("Führer nach Carn Dûm", "0x70064AC8", "Carn Dûm (Führer)");
     hunterLocations:AddSkill("Führer nach Clegur", "0x70064F4C", "Clegur (Führer)");
     hunterLocations:AddSkill("Führer nach Pelargir", "0x700658EA", "Pelargir (Führer)");
+    hunterLocations:AddSkill("Führer nach Dol Amroth", "0x70068711", "Dol Amroth (Führer U38)");
+    hunterLocations:AddSkill("Führer nach Halrax", "0x70068713", "Halrax (Führer)");
+    hunterLocations:AddSkill("Führer nach Lond Cirion", "0x70068717", "Lond Cirion (Führer)");
+    hunterLocations:AddSkill("Führer nach Umbar", "0x70068718", "Umbar (Führer)");
+    hunterLocations:AddSkill("Führer nach Jax Phanâl", "0x70068719", "Jax Phanâl (Führer)");
 
+    -- add the Warden locations
     wardenLocations:AddSkill("Appell in der Feste Guruth", "0x70014786", "Feste Guruth (Appell)");
     wardenLocations:AddSkill("Appell in Esteldín", "0x70014798", "Esteldín (Appell)");
     wardenLocations:AddSkill("Appell in Evendim", "0x7001478E", "Evendim (Appell)");
@@ -218,12 +225,18 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell in Carn Dûm", "0x70064ACB", "Carn Dûm (Appell)");
     wardenLocations:AddSkill("Appell in Clegur", "0x70064F4D", "Clegur (Appell)");
     wardenLocations:AddSkill("Heerschau in Pelargir", "0x700658E8", "Pelargir (Appell)");
+    wardenLocations:AddSkill("Appell in Jax Phanâl","0x7006870C", "Jax Phanâl (Appell)");
+    wardenLocations:AddSkill("Appell in Umbar","0x7006870F","Umbar (Appell)");
+    wardenLocations:AddSkill("Appell in Halrax","0x70068710", "Halrax (Appell)");
+    wardenLocations:AddSkill("Appell in Dol Amroth","0x70068712", "Dol Amroth (Appell)");
+    wardenLocations:AddSkill("Appell in Lond Cirion","0x70068715", "Lond Cirion (Appell)");
 
+    -- add the Mariner locations
     marinerLocations:AddSkill("Segelt nach Celondim", "0x70066100", "Celondim (Segeln)")
-    marinerLocations:AddSkill("Segelt in die Braunen Lande", "0x70066101", "die Braunen Lande (Segeln)")
+    marinerLocations:AddSkill("Segelt in die Braunen Lande", "0x70066101", "Braune Lande (Segeln)")
     marinerLocations:AddSkill("Segelt zum Händlerkai", "0x70066105", "Händlerkai (Segel)")
-    marinerLocations:AddSkill("Segelt ins schlachtgezeichnete Osgiliath", "0x70066109", "schlachtgezeichnete Osgiliath (Segeln)")
-    marinerLocations:AddSkill("Segelt nach Seestadt", "0x7006610C", "Seestadt (Segeln)")
+    marinerLocations:AddSkill("Segelt ins schlachtgezeichnete Osgiliath", "0x70066109", "Schlachtgezeichnetes Osgiliath (Segeln)")
+    marinerLocations:AddSkill("Segelt nach Seestadt.", "0x7006610C", "Seestadt (Segeln)")
     marinerLocations:AddSkill("Segelt zur Dunkelsenke", "0x7006610E", "Dunkelsenke (Segeln)")
     marinerLocations:AddSkill("Segelt nach Tinnudir", "0x7006610F", "Tinnundir (Segeln)")
     marinerLocations:AddSkill("Segelt nach Dol Amroth", "0x70066117", "Dol Amroth (Segeln)")
@@ -231,8 +244,13 @@ function TravelDictionaries:CreateDictionaries()
     marinerLocations:AddSkill("Segelt nach Pelargir", "0x7006611B", "Pelargir (Segeln)")
     marinerLocations:AddSkill("Segelt nach Sûri-kylä", "0x7006611C", "Sûri-kylä (Segeln)")
     marinerLocations:AddSkill("Segelt nach Lothlórien", "0x7006611E", "Lothlórien (Segeln)")
-    marinerLocations:AddSkill("Segelt zur Sarnfurt", "0x70066120", "Sarnfurt (Segeln)")
+    marinerLocations:AddSkill("Nach Tharbad segeln", "0x70066120", "Tharbad (Segeln)")
     marinerLocations:AddSkill("Segelt nach Schneegrenze", "0x70066121", "Schneegrenze (Segeln)")
+    marinerLocations:AddSkill("Nach Umbar segeln", "0x700687BB", "Umbar (Segeln)")
+    marinerLocations:AddSkill("Nach Lond Cirion segeln", "0x700687BD", "Lond Cirion (Segeln)")
+    marinerLocations:AddSkill("Nach Jax Phanâl segeln", "0x700687C0", "Jax Phanâl (Segeln)")
+    marinerLocations:AddSkill("Segelt nach Dol Amroth", "0x700687C1", "Dol Amroth (Segeln)")
+    marinerLocations:AddSkill("Nach Halrax segeln", "0x700687C3", "Halrax (Segeln)")
 
     racialLocations:AddSkill("Rückkehr nach Bree", "0x700062F6", "Bree (Rasse)");
     racialLocations:AddSkill("Rückkehr ins Auenland", "0x700062C8", "Michelbinge (Rasse)");
@@ -241,7 +259,7 @@ function TravelDictionaries:CreateDictionaries()
     racialLocations:AddSkill("Zum 1. Heim zurückkehren", "0x70041A22", "Grimbeorns Hütte (Rasse)");
     racialLocations:AddSkill("Reise nach Caras Galadhon in Lothlórien", "0x70048C8C", "Caras Galadhon (Rasse)");
     racialLocations:AddSkill("Reise zu Thorins Halle", "0x70053C0F", "Thorins Halle (Rasse Starkaxt)");
-    racialLocations:AddSkill("Kehrt zu Lyndelby zurück", "0x70066D31", "Lyndelby (Rasse)") 
+    racialLocations:AddSkill("Kehrt zu Lyndelby zurück.", "0x70066D31", "Lyndelby (Rasse)") 
 
     genLocations:AddSkill("Zum 1. Heim zurückkehren",  "0x700256BA", "1. Markstein");
     genLocations:AddSkill("Zum 2. Heim zurückkehren",  "0x70025792", "2. Markstein");
@@ -313,6 +331,13 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Rückkehr nach Clegur", "0x70064F47", "Clegur (Ruf)");
     repLocations:AddSkill("Nach Glân Vraig zurückkehren", "0x7005B38E", "Glân Vraig (Aufgabe)");
     repLocations:AddSkill("Rückkehr nach Pelargir", "0x700658EB", "Pelargir (Ruf)");
+    repLocations:AddSkill("Zum Orden des Adlers zurückkehren", "0x700686FE", "Orden des Adlers (Ruf)");
+    repLocations:AddSkill("Nach Umbar zurückkehren", "0x700686FF", "Umbar (Ruf)");
+    repLocations:AddSkill("Rückkehr nach Dol Amroth", "0x70068700", "Dol Amroth (Ruf U38)");
+    repLocations:AddSkill("Nach Jax Phanâl zurückkehren", "0x70068701", "Jax Phanâl (Ruf)");
+    repLocations:AddSkill("Kehrt zu Halrax zurück.", "0x70068702", "Halrax (Ruf)");
+    repLocations:AddSkill("Nach Lond Cirion zurückkehren", "0x70068703", "Lond Cirion (Ruf)");
+    repLocations:AddSkill("Zu den Buchhütern zurückkehren", "0x70068704", "Ledger-Keepers (Ruf)");
 
     -- monster player maps
     creepLocations:AddSkill("Kartenskizze zum Gramfuss", "0x70028BBC");
@@ -335,19 +360,4 @@ function TravelDictionaries:CreateDictionaries()
     creepLocations:AddSkill("Gute Karte zur Feste Lugazag", "0x70028BB5");
     creepLocations:AddSkill("Gute Karte zur Feste Tirith Rhaw", "0x70028BB0");
     creepLocations:AddSkill("Gute Karte zum Grimmwald", "0x70028BBD");
-
-    marinerLocations:AddSkill("Segelt nach Celondim", "0x70066100", "Celondim (Segenl)")
-    marinerLocations:AddSkill("Segelt in die Braunen Lande", "0x70066101", "die Braunen Lande (Segeln)")
-    marinerLocations:AddSkill("Segelt zum Händlerkai", "0x70066105", "Händlerkai (Segel)")
-    marinerLocations:AddSkill("Segelt ins schlachtgezeichnete Osgiliath", "0x70066109", "schlachtgezeichnete Osgiliath (Segeln)")
-    marinerLocations:AddSkill("Segelt nach Seestadt", "0x7006610c", "Seestadt (Segeln)")
-    marinerLocations:AddSkill("Segelt zur Dunkelsenke", "0x7006610e", "Dunkelsenke (Segeln)")
-    marinerLocations:AddSkill("Segelt nach Tinnudir", "0x7006610f", "Tinnundir (Segeln)")
-    marinerLocations:AddSkill("Segelt nach Dol Amroth", "0x70066117", "Dol Amroth (Segeln)")
-    marinerLocations:AddSkill("Segelt nach Bockland", "0x7006611a", "Bockland (Segeln)")
-    marinerLocations:AddSkill("Segelt nach Pelargir", "0x7006611b", "Pelargir (Segeln)")
-    marinerLocations:AddSkill("Segelt nach Sûri-kylä", "0x7006611c", "Sûri-kylä (Segeln)")
-    marinerLocations:AddSkill("Segelt nach Lothlórien", "0x7006611e", "Lothlórien (Segeln)")
-    marinerLocations:AddSkill("Segelt zur Sarnfurt", "0x70066120", "Sarnfurt (Segeln)")
-    marinerLocations:AddSkill("Segelt nach Schneegrenze", "0x70066121", "Schneegrenze (Segeln)")
 end
