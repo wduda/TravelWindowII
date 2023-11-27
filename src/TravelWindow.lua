@@ -524,7 +524,7 @@ function TravelWindow:SetShortcuts()
     end
 
     -- set the mariner travel items
-    if (PlayerClass == Turbine.Gameplay.Class.Corsair) then
+    if (PlayerClass == Turbine.Gameplay.Class.Mariner) then
         for i = 1, travelCount[7], 1 do
             shortcutIndex = self:TableIndex(Settings.order, marinerLocations:IdAtIndex(i));
             table.insert(TravelShortcuts,
@@ -550,7 +550,7 @@ function TravelWindow:CheckEnabledSettings()
         elseif (PlayerClass == Turbine.Gameplay.Class.Warden) then
             -- wardens have warden skills
             ItemCount = ItemCount + travelCount[2]
-        elseif (PlayerClass == Turbine.Gameplay.Class.Corsair) then
+        elseif (PlayerClass == Turbine.Gameplay.Class.Mariner) then
             -- mariners have mariner skills
             ItemCount = ItemCount + travelCount[7]
         end
@@ -644,7 +644,7 @@ function TravelWindow:CheckEnabledSettings()
         end
 
         -- update mariner travel settings
-        if (PlayerClass == Turbine.Gameplay.Class.Corsair) then
+        if (PlayerClass == Turbine.Gameplay.Class.Mariner) then
             for i = 1, travelCount[7], 1 do
                 if (Settings.enabled[marinerLocations:IdAtIndex(i)] == nil) then
                     Settings.enabled[marinerLocations:IdAtIndex(i)] = true;
