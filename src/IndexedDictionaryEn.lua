@@ -350,13 +350,13 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Clegur", "0x70064F47", "Clegur (Rep)");
     repLocations:AddSkill("Return to Glân Vraig", "0x7005B38E", "Glân Vraig (Quest)");
     repLocations:AddSkill("Return to Pelargir", "0x700658EB", "Pelargir (Rep)");
-    repLocations:AddSkill("Return to The Order of the Eagle", "0x700686FE", "Order of the Eagle (Rep)");
+    repLocations:AddSkill("Return to the Order of the Eagle", "0x700686FE", "Order of the Eagle (Rep)");
     repLocations:AddSkill("Return to Umbar", "0x700686FF", "Umbar (Rep)");
     repLocations:AddSkill("Return to Dol Amroth", "0x70068700", "Dol Amroth (Rep U38)");
-    repLocations:AddSkill("Return to Jax Phanal", "0x70068701", "Jax Phanal (Rep)");
-    repLocations:AddSkill("Return to Harlax", "0x70068702", "Harlax (Rep)");
-    repLocations:AddSkill("Return to Lond Cirion", "0x70068703", "Lord Cirion (Rep)");
-    repLocations:AddSkill("Return to Ledger-Keepers", "0x70068704", "Ledger-Keepers (Rep)");
+    repLocations:AddSkill("Return to Jax Phanâl", "0x70068701", "Jax Phanâl (Rep)");
+    repLocations:AddSkill("Return to Halrax", "0x70068702", "Halrax (Rep)");
+    repLocations:AddSkill("Return to Lond Cirion", "0x70068703", "Lond Cirion (Rep)");
+    repLocations:AddSkill("Return to the Ledger-Keepers", "0x70068704", "Ledger-Keepers (Rep)");
 
     -- monster player maps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");
