@@ -1,3 +1,13 @@
+## v1.1.0
+- fixed two U38 reputation travel skills in EN client
+- added U38 Mariner skills in FR client
+- added U38 Mariner skills in DE client
+- cleaned up duplicate Mariner skills in EN/DE/FR files
+- fixed Swanfleet label in DE client
+- fixed River-Hobbit racial in DE client
+- fixed Mariner skills in DE client
+- fixed all Mariner skills not showing up in Enabled and Sort options tabs
+- fixed newly learned Mariner skills not being found when checking trained skills
 ## v1.0.29alpha
 - fixed Mariner skills showing up twice in DE client
 - adding U38 skills in EN/FR
