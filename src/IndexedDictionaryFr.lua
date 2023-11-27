@@ -263,6 +263,11 @@ function TravelDictionaries:CreateDictionaries()
     marinerLocations:AddSkill("Naviguer vers la Lothlorien", "0x7006611E", "Lothlorien (Naviguer)")
     marinerLocations:AddSkill("Naviguer vers le Gué de Sarn", "0x70066120", "le Gué de Sarn (Naviguer)")
     marinerLocations:AddSkill("Naviguer vers Neigebronne", "0x70066121", "Neigebronne (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Umbar", "0x700687BB", "Umbar (Naviguer)");
+    marinerLocations:AddSkill("Naviguer vers Lond Cirion", "0x700687BD", "Lond Cirion (Naviguer)");
+    marinerLocations:AddSkill("Naviguer vers Jax Phanâl", "0x700687C0", "Jax Phanâl (Naviguer)");
+    marinerLocations:AddSkill("Naviguer vers Dol Amroth", "0x700687C1", "Dol Amroth (Naviguer)");
+    marinerLocations:AddSkill("Naviguer vers Halrax", "0x700687C3", "Halrax (Naviguer)");
 
     racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
     racialLocations:AddSkill("Retournez dans la Comté", "0x700062C8", "Comté (Race)");
