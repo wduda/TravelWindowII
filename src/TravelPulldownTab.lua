@@ -115,7 +115,7 @@ function TravelPulldownTab:SetItems()
             -- apply skill type filter if set in options
             if (hasbit(Settings.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
                 -- make sure skill is trained, lookup by ingame name
-                if (TravelWindow:FindSkill(TravelShortcuts[i]:GetName())) then
+                if (TravelWindow:FindSkill(TravelShortcuts[i])) then
                     self.pulldown:AddItem(TravelShortcuts[i], shortcutIndex, i);
                     shortcutIndex = shortcutIndex + 1;
                 end
