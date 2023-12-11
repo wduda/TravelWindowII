@@ -111,8 +111,8 @@ function TravelListTab:SetScrollBar()
     self.myScrollBar = Turbine.UI.Lotro.ScrollBar();
     self.myScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
     self.myScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
-    self.myScrollBar:SetSize(10, self:GetHeight() - 35);
-    self.myScrollBar:SetPosition(self:GetWidth() - 15, 0);
+    self.myScrollBar:SetSize(10, self:GetHeight());
+    self.myScrollBar:SetPosition(self:GetWidth() - 10, 0);
     self.myScrollBar:SetMinimum(0);
 
     -- set the maximum value of the scrollbar
@@ -120,7 +120,7 @@ function TravelListTab:SetScrollBar()
     NumberOfSlots = #self.quickslots;
     NumberOfRows = math.ceil(NumberOfSlots / self.numOfCols);
 
-    self.max = NumberOfRows * 22 - self:GetHeight() + 35;
+    self.max = NumberOfRows * 22 - self:GetHeight();
     if (self.max < 0) then
         -- the max cannot be less than one
         self.max = 0;

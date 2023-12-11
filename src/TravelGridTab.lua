@@ -28,8 +28,8 @@ function TravelGridTab:Constructor(toplevel)
     -- a subwindow (now a control) for containing all the quickslots
     self.SubWindow = Turbine.UI.Control();
     self.SubWindow:SetZOrder(99);
-    self.SubWindow:SetPosition(0, 25);
-    self.SubWindow:SetSize(self:GetWidth(), self:GetHeight() - 35);
+    self.SubWindow:SetPosition(0, 0);
+    self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
     self.SubWindow:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
     self.SubWindow:SetParent(self);
     self.SubWindow:SetMouseVisible(true);
@@ -107,8 +107,8 @@ function TravelGridTab:SetItems()
     -- create a new sub window
     self.SubWindow = Turbine.UI.Control();
     self.SubWindow:SetZOrder(99);
-    self.SubWindow:SetPosition(0, 25);
-    self.SubWindow:SetSize(self:GetWidth(), self:GetHeight() - 35);
+    self.SubWindow:SetPosition(0, 0);
+    self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
     self.SubWindow:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
     self.SubWindow:SetParent(self);
     self.SubWindow:SetMouseVisible(true);
@@ -137,7 +137,7 @@ function TravelGridTab:SetItems()
 
     -- add an invisible label to intercept mouse events
     self.myLabel = Turbine.UI.Label();
-    self.myLabel:SetSize(self:GetWidth(), self:GetHeight() - 35);
+    self.myLabel:SetSize(self:GetWidth(), self:GetHeight());
     self.myLabel:SetPosition(0, 0);
     self.myLabel:SetParent(self.SubWindow);
 
@@ -216,8 +216,8 @@ function TravelGridTab:SetScrollBar()
     self.myScrollBar = Turbine.UI.Lotro.ScrollBar();
     self.myScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
     self.myScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
-    self.myScrollBar:SetSize(10, self:GetHeight() - 35);
-    self.myScrollBar:SetPosition(self:GetWidth() - 15, 0);
+    self.myScrollBar:SetSize(10, self:GetHeight());
+    self.myScrollBar:SetPosition(self:GetWidth() - 5, 0);
     self.myScrollBar:SetMinimum(0);
 
     -- set the maximum value of the scrollbar
@@ -225,7 +225,7 @@ function TravelGridTab:SetScrollBar()
     NumberOfSlots = #self.quickslots;
     NumberOfRows = math.ceil(NumberOfSlots / self.numOfCols);
 
-    self.max = NumberOfRows * 38 - self:GetHeight() + 35;
+    self.max = NumberOfRows * 38 - self:GetHeight();
     if (self.max < 0) then
         -- the max cannot be less than one
         self.max = 0;
