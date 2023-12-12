@@ -195,6 +195,8 @@ function SettingsMenu:Update(string)
     self:SetSelections();
 
     -- update the main window settings
+    self.parent.GridTab.dirty = true;
+    self.parent.ListTab.dirty = true;
     self.parent:UpdateSettings();
 end
 
