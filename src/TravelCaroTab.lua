@@ -33,12 +33,16 @@ function TravelCaroTab:Constructor(toplevel)
 
     -- create the quickslots, then set up the shortcuts
     self:CreateQuickslots();
-    self:SetItems();
 
     --[[  EVENT HANDLERS  ]] --
 
     -- make sure we listen for key presses
     self:SetWantsUpdates(true);
+
+    self.MouseEnter = function(sender, args)
+        --self:SetItems();
+        -- TODO: update SetItems() to keep the current location
+    end
 
     -- check for a right mouse button event to open menu
     self.MouseClick = function(sender, args)
@@ -89,6 +93,10 @@ end
 
 function TravelCaroTab:SetItems()
 
+    if self.tabId ~= self.parent.MainPanel.selectedPage or not(self.parent.dirty) then
+        return
+    end
+
     -- clear the shortcut table and set the selected
     -- item to 1
     self.shortcuts = {};
@@ -109,6 +117,8 @@ function TravelCaroTab:SetItems()
 
     -- update the quickslots
     self:SetShortcuts();
+
+    self.parent.dirty = false;
 end
 
 function TravelCaroTab:SetShortcuts()

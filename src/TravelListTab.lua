@@ -27,15 +27,17 @@ function TravelListTab:Constructor(toplevel)
 end
 
 function TravelListTab:SetItems()
-    if self.dirty then
+    if self.tabId == self.parent.MainPanel.selectedPage and self.parent.dirty then
         self.labels = {};
+        TravelGridTab.SetItems(self);
+        self.parent.dirty = false;
     else
         for i = 1, #self.quickslots, 1 do
             self.quickslots[i]:SetSize(self.itemWidth, self.itemHeight);
             self.labels[i]:SetSize(self.itemWidth, self.itemHeight);
         end
+        TravelGridTab.SetItems(self);
     end
-    TravelGridTab.SetItems(self);
 end
 
 function TravelListTab:AddItem(shortcut)

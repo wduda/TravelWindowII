@@ -42,12 +42,14 @@ function TravelPulldownTab:Constructor(toplevel)
     self.quickslot:SetParent(self);
     self.quickslot:SetVisible(true);
 
-    self:SetItems();
-
     --[[  EVENT HANDLERS  ]] --
 
     -- make sure we listen for key presses
     self:SetWantsUpdates(true);
+
+    self.MouseEnter = function(sender, args)
+        self:SetItems();
+    end
 
     -- check for a right mouse button event to open menu
     self.MouseClick = function(sender, args)
@@ -100,6 +102,10 @@ end
 
 function TravelPulldownTab:SetItems()
 
+    if self.tabId ~= self.parent.MainPanel.selectedPage or not(self.parent.dirty) then
+        return
+    end
+
     -- create the combo box to use in the tab
     self.pulldown = TravelWindowII.src.OrendarUIMods.ComboBox(self.parent);
     self.pulldown:SetPosition(0, 20);
@@ -129,6 +135,8 @@ function TravelPulldownTab:SetItems()
             self.quickslot:SetShortcut(TravelShortcuts[sender:GetSelection()]);
         end)
     end
+
+    self.parent.dirty = false;
 end
 
 -- function to adjust the size of the tab and all items in the tab

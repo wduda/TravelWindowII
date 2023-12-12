@@ -18,7 +18,6 @@ function TravelGridTab:Constructor(toplevel)
 
     -- set the default values
     self.quickslots = {};
-    -- self.rationCount = 0;
     self.numOfCols = 0;
     self.max = 1;
 
@@ -34,10 +33,6 @@ function TravelGridTab:Constructor(toplevel)
     self.SubWindow:SetMouseVisible(true);
     self.SubWindow:SetOpacity(1);
     self.SubWindow:SetVisible(true);
-
-    -- set up all the quickslots
-    self.dirty = true;
-    self:SetItems();
 
     --[[  EVENT HANDLERS  ]] --
 
@@ -93,7 +88,7 @@ end
 -- function to set all the quickslot items to show
 function TravelGridTab:SetItems()
 
-    if self.dirty then
+    if self.tabId == self.parent.MainPanel.selectedPage and self.parent.dirty then
 
         -- clear all the old quickslots from the Sub Window
         if self.SubWindow ~= nil then
@@ -129,7 +124,7 @@ function TravelGridTab:SetItems()
             end
         end
 
-        self.dirty = false;
+        self.parent.dirty = false;
     else
 
         self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
@@ -262,8 +257,8 @@ function TravelGridTab:SetSize(width, height)
     -- figure out the column width
     local prevNumOfCols = self.numOfCols;
     self.numOfCols = math.floor((self:GetWidth() - 36) / 36);
-    if self.numOfCols ~= prevNumOfCols then
-        self.dirty = true;
+    if self.parent.MainPanel.selectedPage == 2 and self.numOfCols ~= prevNumOfCols then
+        self.parent.dirty = true;
     end
 
     -- reset all the quickslots of the tab

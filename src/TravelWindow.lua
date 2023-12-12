@@ -28,6 +28,7 @@ function TravelWindow:Constructor()
     self.disableResize = false;
     self.reloadGVMap = false;
     self.options = nil;
+    self.dirty = true;
 
     -- create the lists of travel locations and the shortcuts
     -- that are used to execute them
@@ -106,6 +107,10 @@ function TravelWindow:Constructor()
     self.MainPanel:AddTab(self.GridTab);
     self.MainPanel:AddTab(self.CaroTab);
     self.MainPanel:AddTab(self.PullTab);
+    self.ListTab.tabId = 1;
+    self.GridTab.tabId = 2;
+    self.CaroTab.tabId = 3;
+    self.PullTab.tabId = 4;
 
     -- display the tab that was last selected
     self.MainPanel:SetTab(Settings.mode);
@@ -274,7 +279,34 @@ function TravelWindow:SetPlayerRaceKey()
     end
 end
 
+function TravelWindow:SetItems()
+    if Settings.mode == 1 then
+        self.ListTab:SetItems();
+    elseif Settings.mode == 2 then
+        self.GridTab:SetItems();
+    elseif Settings.mode == 3 then
+        self.CaroTab:SetItems();
+    else
+        self.PullTab:SetItems();
+    end
+end
+
 function TravelWindow:UpdateSize()
+    -- update the page that is showing
+    if (Settings.mode == 1) then
+        self.minWidth = 245;
+        self.minHeight = 150;
+    elseif (Settings.mode == 2) then
+        self.minWidth = 120;
+        self.minHeight = 130;
+    elseif (Settings.mode == 3) then
+        self.minWidth = 120;
+        self.minHeight = 130;
+    else
+        self.minWidth = 220;
+        self.minHeight = 150;
+    end
+
     -- check that the window is not smaller than min width
     if (self:GetWidth() < self.minWidth) then
         self:SetWidth(self.minWidth);
@@ -691,8 +723,7 @@ function TravelWindow:SortShortcuts()
         return;
     end
 
-    self.GridTab.dirty = true;
-    self.ListTab.dirty = true;
+    self.dirty = true;
 
     -- perform a bubble sort
     for i = 1, #TravelShortcuts do
@@ -982,36 +1013,19 @@ function TravelWindow:SaveSettings()
     PatchDataSave(Turbine.DataScope.Character, "TravelWindowIISettings", SettingsStrings);
 end
 
-function TravelWindow:UpdateTab()
-    -- update the page that is showing
-    if (Settings.mode == 1) then
-        self.minWidth = 245;
-        self.minHeight = 150;
-        self.ListTab:SetItems();
-    elseif (Settings.mode == 2) then
-        self.minWidth = 120;
-        self.minHeight = 130;
-        self.GridTab:SetItems();
-    elseif (Settings.mode == 3) then
-        self.minWidth = 120;
-        self.minHeight = 130;
-        self.CaroTab:SetItems();
-    else
-        self.minWidth = 220;
-        self.minHeight = 150;
-        self.PullTab:SetItems();
-    end
-end
-
 function TravelWindow:UpdateSettings()
 
     -- get some settings from the menu
+    local prevMode = Settings.mode;
     Settings.mode, Settings.filters = Menu:GetSettings();
+    if prevMode ~= Settings.mode then
+        self.dirty = true;
+    end
 
     -- set which page of the tab panel to show
     self.MainPanel:SetTab(Settings.mode);
-    self:UpdateTab();
     self:UpdateSize();
+    self:SetItems();
 
     self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
     self.MainPanel:UpdateTabs();
