@@ -21,12 +21,13 @@ function TravelWindow:Constructor()
     Settings = {};
     SettingsStrings = {};
     TravelShortcuts = {}; -- put all the shortcuts into one table
-    TrainedSkills = Turbine.Gameplay.SkillList;
+    TrainedSkills = Turbine.Gameplay.SkillList; -- TODO: update list on window open or maybe a timer
 
     self.minWidth = 240;
     self.minHeight = 150;
     self.reloadGVMap = false;
     self.options = nil;
+    self.dirty = true;
 
     -- create the lists of travel locations and the shortcuts
     -- that are used to execute them
@@ -109,16 +110,17 @@ function TravelWindow:Constructor()
     self.MainPanel:AddTab(self.GridTab);
     self.MainPanel:AddTab(self.CaroTab);
     self.MainPanel:AddTab(self.PullTab);
+    self.ListTab.tabId = 1;
+    self.GridTab.tabId = 2;
+    self.CaroTab.tabId = 3;
+    self.PullTab.tabId = 4;
 
     -- display the tab that was last selected
     self.MainPanel:SetTab(Settings.mode);
     self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
     self.MainPanel:UpdateTabs();
+    self:CheckSkills(false);
     self:UpdateSettings();
-
-    -- timers for events
-    self.lastTime = 0;
-    self.lastMove = 0;
 
     -- track the hidden state of the UI, manage previous states for window and
     -- the button
@@ -279,7 +281,34 @@ function TravelWindow:SetPlayerRaceKey()
     end
 end
 
+function TravelWindow:SetItems()
+    if Settings.mode == 1 then
+        self.ListTab:SetItems();
+    elseif Settings.mode == 2 then
+        self.GridTab:SetItems();
+    elseif Settings.mode == 3 then
+        self.CaroTab:SetItems();
+    else
+        self.PullTab:SetItems();
+    end
+end
+
 function TravelWindow:UpdateSize()
+    -- update the page that is showing
+    if (Settings.mode == 1) then
+        self.minWidth = 245;
+        self.minHeight = 150;
+    elseif (Settings.mode == 2) then
+        self.minWidth = 120;
+        self.minHeight = 130;
+    elseif (Settings.mode == 3) then
+        self.minWidth = 120;
+        self.minHeight = 130;
+    else
+        self.minWidth = 220;
+        self.minHeight = 150;
+    end
+
     -- check that the window is not smaller than min width
     if (self:GetWidth() < self.minWidth) then
         self:SetWidth(self.minWidth);
@@ -699,6 +728,7 @@ function TravelWindow:SortShortcuts()
             -- if the index of the second shortcut is lower than the index of
             -- the first, switch the shortcuts
             if TravelShortcuts[j]:GetIndex() < TravelShortcuts[j - 1]:GetIndex() then
+                self.dirty = true;
                 local temp = TravelShortcuts[j - 1];
                 TravelShortcuts[j - 1] = TravelShortcuts[j];
                 TravelShortcuts[j] = temp;
@@ -784,7 +814,7 @@ function TravelWindow:LoadSettings()
     if (not SettingsStrings.pulldownTravel or SettingsStrings.pulldownTravel == "nil") then
         SettingsStrings.pulldownTravel = tostring(0);
     end
-  
+
     if (not SettingsStrings.hideOnTravel or SettingsStrings.hideOnTravel == "nil") then
         SettingsStrings.hideOnTravel = tostring(0);
     end
@@ -986,31 +1016,16 @@ end
 function TravelWindow:UpdateSettings()
 
     -- get some settings from the menu
+    local prevMode = Settings.mode;
     Settings.mode, Settings.filters = Menu:GetSettings();
+    if prevMode ~= Settings.mode then
+        self.dirty = true;
+    end
 
     -- set which page of the tab panel to show
     self.MainPanel:SetTab(Settings.mode);
-
-    -- update the page that is showing
-    if (Settings.mode == 1) then
-        self.minWidth = 245;
-        self.minHeight = 150;
-        self.ListTab:SetItems();
-    elseif (Settings.mode == 2) then
-        self.minWidth = 120;
-        self.minHeight = 130;
-        self.GridTab:SetItems();
-    elseif (Settings.mode == 3) then
-        self.minWidth = 120;
-        self.minHeight = 130;
-        self.CaroTab:SetItems();
-    else
-        self.minWidth = 220;
-        self.minHeight = 150;
-        self.PullTab:SetItems();
-    end
-
     self:UpdateSize();
+    self:SetItems();
 
     self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
     self.MainPanel:UpdateTabs();
@@ -1060,6 +1075,7 @@ function TravelWindow:ResetSettings()
     -- update everything
     self:CheckEnabledSettings()
     self:SetShortcuts();
+    self:CheckSkills(false)
     self:UpdateSettings();
 end
 
@@ -1089,34 +1105,42 @@ function TravelWindow:AddGVMap()
     end
 end
 
-function TravelWindow:CheckSkills()
+function TravelWindow:CheckSkills(report)
+    local newShortcut = false;
     -- loop through all the shortcuts and list those those that are not learned
     for i = 1, #TravelShortcuts, 1 do
+        local wasFound = TravelShortcuts[i].shortcut;
         if (TravelWindow:FindSkill(TravelShortcuts[i])) then
-            -- do nothing, skill is known
-        else
+            if not wasFound then
+                newShortcut = true;
+            end
+        elseif report then
             Turbine.Shell.WriteLine(skillNotTrainedString .. TravelShortcuts[i]:GetName())
         end
     end
 
-    -- make sure list of shortcuts is rescanned and new skills added
-    self:SetShortcuts();
+    if newShortcut then
+        self.dirty = true; -- reset list of shortcuts
+        self:SetItems(); -- redraw current window
+    end
 end
 
 function TravelWindow:FindSkill(shortcut)
+    if shortcut.found then
+        return true;
+    end
+
     for i = 1, TrainedSkills:GetCount(), 1 do
-        local skill = Turbine.Gameplay.Skill;
-        skill = TrainedSkills:GetItem(i);
-        local skillInfo = skill:GetSkillInfo();
-        local name = shortcut:GetName();
-        local desc = shortcut:GetDescription();
-        if desc ~= nil then
-            if string.match(skillInfo:GetDescription(), desc) and
-                    (skillInfo:GetName() == name) then
-                return true;
-            end
-        else
-            if (skillInfo:GetName() == name) then
+        local skillInfo = TrainedSkills:GetItem(i):GetSkillInfo();
+        if skillInfo:GetName() == shortcut:GetName() then
+            local desc = shortcut:GetDescription();
+            if desc ~= nil then
+                if string.match(skillInfo:GetDescription(), desc) then
+                    shortcut.found = true;
+                    return true;
+                end
+            else
+                shortcut.found = true;
                 return true;
             end
         end

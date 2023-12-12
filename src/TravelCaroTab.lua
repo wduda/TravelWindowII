@@ -20,7 +20,6 @@ function TravelCaroTab:Constructor(toplevel)
     self.quickslots = {};
     self.shortcuts = {};
     self.selectedIndex = 1;
-    -- self.rationCount = 0;
 
     -- need top level window in order to close it
     self.parent = toplevel;
@@ -33,7 +32,6 @@ function TravelCaroTab:Constructor(toplevel)
 
     -- create the quickslots, then set up the shortcuts
     self:CreateQuickslots();
-    self:SetItems();
 
     --[[  EVENT HANDLERS  ]] --
 
@@ -89,6 +87,10 @@ end
 
 function TravelCaroTab:SetItems()
 
+    if self.tabId ~= self.parent.MainPanel.selectedPage or not(self.parent.dirty) then
+        return
+    end
+
     -- clear the shortcut table and set the selected
     -- item to 1
     self.shortcuts = {};
@@ -100,7 +102,7 @@ function TravelCaroTab:SetItems()
             -- apply skill type filter if set in options
             if (hasbit(Settings.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
                 -- make sure skill is trained, lookup by ingame name
-                if (TravelWindow:FindSkill(TravelShortcuts[i])) then
+                if TravelShortcuts[i].found then
                     table.insert(self.shortcuts, TravelShortcuts[i]);
                 end
             end

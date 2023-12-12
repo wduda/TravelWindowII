@@ -180,7 +180,7 @@ function SettingsMenu:Update(string)
     elseif (string == menuOptionsString) then
         self.parent:OpenOptions();
     elseif (string == menuSkillsString) then
-        self.parent:CheckSkills();
+        self.parent:CheckSkills(true);
     elseif (string == moorMapString) then
         self.parent:OpenMoorMap();
     elseif (string == eriadorMapString) then
@@ -195,6 +195,7 @@ function SettingsMenu:Update(string)
     self:SetSelections();
 
     -- update the main window settings
+    self.parent.dirty = true;
     self.parent:UpdateSettings();
     self.parent:SetOpacity(Settings.mainMinOpacity);
 end
