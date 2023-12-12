@@ -239,8 +239,8 @@ function TravelWindow:Constructor()
     end
 
     self.SizeChanged = function(sender, args)
-     --   self:UpdateSettings();
-
+        Settings.width = self:GetWidth();
+        Settings.height = self:GetHeight();
         self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
         self.MainPanel:UpdateTabs();
     end
