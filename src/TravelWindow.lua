@@ -25,7 +25,6 @@ function TravelWindow:Constructor()
 
     self.minWidth = 240;
     self.minHeight = 150;
-    self.disableResize = false;
     self.reloadGVMap = false;
     self.options = nil;
 
@@ -43,6 +42,7 @@ function TravelWindow:Constructor()
     self:SetText(mainTitleString);
     self:SetZOrder(97);
     self:SetOpacity(1);
+    self:SetResizable(true);
     if (Settings.hideOnStart == 1) then
         self:SetVisible(false);
     else
@@ -109,16 +109,6 @@ function TravelWindow:Constructor()
     self.MainPanel:AddTab(self.GridTab);
     self.MainPanel:AddTab(self.CaroTab);
     self.MainPanel:AddTab(self.PullTab);
-
-    -- create a control for resizing the window
-    self.sizeControl = Turbine.UI.Control();
-    self.sizeControl:SetParent(self);
-    self.sizeControl:SetZOrder(100);
-    self.sizeControl:SetSize(20, 20);
-    self.sizeControl:SetBackColorBlendMode(Turbine.UI.BlendMode.Screen)
-    self.sizeControl:SetBackColor(Turbine.UI.Color(0.1, 1, 1, 1));
-    self.sizeControl:SetPosition(self:GetWidth() - self.sizeControl:GetWidth(),
-                                 self:GetHeight() - self.sizeControl:GetHeight());
 
     -- display the tab that was last selected
     self.MainPanel:SetTab(Settings.mode);
@@ -253,60 +243,11 @@ function TravelWindow:Constructor()
         self:SetOpacity(Settings.mainMinOpacity);
     end
 
-    -- change the background color of the resize button on entry to help
-    -- show exactly where the button is
-    self.sizeControl.MouseEnter = function(sender, args)
-        self.sizeControl:SetBackColor(Turbine.UI.Color(0.9, 1, 1, 1));
-    end
+    self.SizeChanged = function(sender, args)
+     --   self:UpdateSettings();
 
-    -- return background color to normal on mouse leave
-    self.sizeControl.MouseLeave = function(sender, args)
-        self.sizeControl:SetBackColor(Turbine.UI.Color(0.1, 1, 1, 1));
-    end
-
-    -- check if someone is going to start dragging the resize control
-    self.sizeControl.MouseDown = function(sender, args)
-
-        -- check if resize has been disabled
-        if (self.disableResize) then
-            return;
-        end
-
-        -- set start location of resize and enable dragging
-        sender.dragStartX = args.X;
-        sender.dragStartY = args.Y;
-        sender.dragging = true;
-    end
-
-    self.sizeControl.MouseUp = function(sender, args)
-        -- disable dragging, then update settings
-        sender.dragging = false;
-
-        Settings.width = self:GetWidth();
-        Settings.height = self:GetHeight();
-        self:UpdateSettings();
-    end
-
-    -- perform the resize
-    self.sizeControl.MouseMove = function(sender, args)
-        local width, height = self:GetSize();
-
-        -- if resize dragging, then resize the window
-        if (sender.dragging) then
-            self:SetSize(width + (args.X - sender.dragStartX), height + (args.Y - sender.dragStartY));
-        end
-
-        -- update the size of the window
-        self:UpdateSize();
-
-        -- check time since last move
-        if (Turbine.Engine.GetGameTime() - self.lastMove > 0.1 and self:IsVisible() or self.lastMove == 0) then
-
-            -- update the tabbed panels
-            self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
-            self.MainPanel:UpdateTabs();
-            self.lastMove = Turbine.Engine.GetGameTime();
-        end
+        self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
+        self.MainPanel:UpdateTabs();
     end
 
     Plugins["Travel Window II"].Load = function(sender, args)
@@ -348,17 +289,11 @@ function TravelWindow:UpdateSize()
     if (self:GetHeight() < self.minHeight) then
         self:SetHeight(self.minHeight);
     end
-
-    -- set the new location of the resize control
-    self.sizeControl:SetPosition(self:GetWidth() - self.sizeControl:GetWidth(),
-                                 self:GetHeight() - self.sizeControl:GetHeight());
 end
 
 function TravelWindow:SetMapHome()
 
-    -- disable the resize while the map update window is open
     -- also close the options window
-    self.disableResize = true;
     self:CloseOptions();
 
     -- create the window used to add the map
@@ -408,9 +343,6 @@ function TravelWindow:SetMapHome()
             -- save the shortcut data to the settings
             self:SaveMapHome(self.mapQuickSlot1:GetShortcut());
         end
-
-        -- enable resize again
-        self.disableResize = false;
 
         -- update the shortcuts list
         self:CheckEnabledSettings()
