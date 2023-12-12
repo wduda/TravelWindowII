@@ -160,3 +160,14 @@ function TravelListTab:UpdateSubWindow()
         self.labels[i]:SetTop((self.row - 1) * 22 - self.myScrollBar:GetValue());
     end
 end
+
+-- function to adjust the size of the tab and all items in the tab
+function TravelListTab:SetSize(width, height)
+
+    -- set the size of the tab
+    Turbine.UI.Control.SetSize(self, width, height);
+
+    self:SetItems();
+
+    Turbine.UI.Control.SetOpacity(self, 1);
+end
