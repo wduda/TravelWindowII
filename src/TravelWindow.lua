@@ -692,6 +692,7 @@ function TravelWindow:SortShortcuts()
     end
 
     self.GridTab.dirty = true;
+    self.ListTab.dirty = true;
 
     -- perform a bubble sort
     for i = 1, #TravelShortcuts do
