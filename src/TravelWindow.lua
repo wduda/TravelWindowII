@@ -84,10 +84,6 @@ function TravelWindow:Constructor()
     self.previousCombatState = false;
     self.wasOpenBeforeCombat = false;
 
-    -- set up all the shortcuts
-    self:CheckEnabledSettings();
-    self:SetShortcuts();
-
     -- create a single context menu to use on all panels
     Menu = SettingsMenu(self);
     Menu:SetSettings(Settings.mode, Settings.filters);
@@ -115,11 +111,11 @@ function TravelWindow:Constructor()
     self.MainPanel:SetTab(Settings.mode);
     self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
     self.MainPanel:UpdateTabs();
-    self:UpdateSettings();
 
-    -- timers for events
-    self.lastTime = 0;
-    self.lastMove = 0;
+    -- set up all the shortcuts
+    self:CheckEnabledSettings();
+    self:SetShortcuts();
+    self:UpdateSettings();
 
     -- track the hidden state of the UI, manage previous states for window and
     -- the button
@@ -695,6 +691,8 @@ function TravelWindow:SortShortcuts()
         return;
     end
 
+    self.GridTab.dirty = true;
+
     -- perform a bubble sort
     for i = 1, #TravelShortcuts do
         for j = 2, #TravelShortcuts do
@@ -784,7 +782,7 @@ function TravelWindow:LoadSettings()
     if (not SettingsStrings.pulldownTravel or SettingsStrings.pulldownTravel == "nil") then
         SettingsStrings.pulldownTravel = tostring(0);
     end
-  
+
     if (not SettingsStrings.hideOnTravel or SettingsStrings.hideOnTravel == "nil") then
         SettingsStrings.hideOnTravel = tostring(0);
     end
@@ -983,14 +981,7 @@ function TravelWindow:SaveSettings()
     PatchDataSave(Turbine.DataScope.Character, "TravelWindowIISettings", SettingsStrings);
 end
 
-function TravelWindow:UpdateSettings()
-
-    -- get some settings from the menu
-    Settings.mode, Settings.filters = Menu:GetSettings();
-
-    -- set which page of the tab panel to show
-    self.MainPanel:SetTab(Settings.mode);
-
+function TravelWindow:UpdateTab()
     -- update the page that is showing
     if (Settings.mode == 1) then
         self.minWidth = 245;
@@ -1009,7 +1000,16 @@ function TravelWindow:UpdateSettings()
         self.minHeight = 150;
         self.PullTab:SetItems();
     end
+end
 
+function TravelWindow:UpdateSettings()
+
+    -- get some settings from the menu
+    Settings.mode, Settings.filters = Menu:GetSettings();
+
+    -- set which page of the tab panel to show
+    self.MainPanel:SetTab(Settings.mode);
+    self:UpdateTab();
     self:UpdateSize();
 
     self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);

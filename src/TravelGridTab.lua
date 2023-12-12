@@ -29,7 +29,6 @@ function TravelGridTab:Constructor(toplevel)
     self.SubWindow = Turbine.UI.Control();
     self.SubWindow:SetZOrder(99);
     self.SubWindow:SetPosition(0, 0);
-    self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
     self.SubWindow:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
     self.SubWindow:SetParent(self);
     self.SubWindow:SetMouseVisible(true);
@@ -37,6 +36,7 @@ function TravelGridTab:Constructor(toplevel)
     self.SubWindow:SetVisible(true);
 
     -- set up all the quickslots
+    self.dirty = true;
     self:SetItems();
 
     --[[  EVENT HANDLERS  ]] --
@@ -76,7 +76,7 @@ function TravelGridTab:DoScroll(sender, args)
     end
 end
 
--- function to force the tab to update the subwindow control	
+-- function to force the tab to update the subwindow control
 function TravelGridTab:UpdateSubWindow()
 
     -- loop through all the quickslots
@@ -93,47 +93,50 @@ end
 -- function to set all the quickslot items to show
 function TravelGridTab:SetItems()
 
-    -- clear all the old quickslots from the Sub Window
-    if (self.SubWindow ~= nil) then
-        self.controlList = self.SubWindow:GetControls();
+    if self.dirty then
 
-        if (self.controlList:GetCount() > 0) then
-            for i = self.controlList:GetCount(), 1, -1 do
-                self.controlList:RemoveAt(i);
-            end
-        end
-    end
+        -- clear all the old quickslots from the Sub Window
+        if self.SubWindow ~= nil then
 
-    -- create a new sub window
-    self.SubWindow = Turbine.UI.Control();
-    self.SubWindow:SetZOrder(99);
-    self.SubWindow:SetPosition(0, 0);
-    self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
-    self.SubWindow:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
-    self.SubWindow:SetParent(self);
-    self.SubWindow:SetMouseVisible(true);
-    self.SubWindow:SetOpacity(1);
-    self.SubWindow:SetVisible(true);
+            self.controlList = self.SubWindow:GetControls();
 
-    -- clear the quickslots table, and set row and column to 1
-    self.quickslots = {};
-    self.row = 1;
-    self.col = 1;
-
-    -- loop through all the shortcuts and add those that are enabled
-    local shortcutIndex = 1;
-    for i = 1, #TravelShortcuts, 1 do
-        if (TravelShortcuts[i]:IsEnabled()) then
-            -- apply skill type filter if set in options
-            if (hasbit(Settings.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
-                -- make sure skill is trained, lookup by ingame name
-                if (TravelWindow:FindSkill(TravelShortcuts[i])) then
-                    self:AddItem(TravelShortcuts[i]);
-                    shortcutIndex = shortcutIndex + 1;
+            if (self.controlList:GetCount() > 0) then
+                for i = self.controlList:GetCount(), 1, -1 do
+                    self.controlList:RemoveAt(i);
                 end
             end
         end
+
+        self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
+
+        -- clear the quickslots table, and set row and column to 1
+        self.quickslots = {};
+        self.row = 1;
+        self.col = 1;
+
+        -- loop through all the shortcuts and add those that are enabled
+        local shortcutIndex = 1;
+        for i = 1, #TravelShortcuts, 1 do
+            if (TravelShortcuts[i]:IsEnabled()) then
+                -- apply skill type filter if set in options
+                if (hasbit(Settings.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
+                    -- make sure skill is trained, lookup by ingame name
+                    if TravelWindow:FindSkill(TravelShortcuts[i]) then
+                        self:AddItem(TravelShortcuts[i]);
+                        shortcutIndex = shortcutIndex + 1;
+                    end
+                end
+            end
+        end
+
+        self.dirty = false;
+    else
+
+        self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
     end
+
+    -- set the scrollbar up
+    self:SetScrollBar();
 
     -- add an invisible label to intercept mouse events
     self.myLabel = Turbine.UI.Label();
@@ -152,15 +155,10 @@ function TravelGridTab:SetItems()
     self.myLabel.MouseWheel = function(sender, args)
         self:DoScroll(sender, args);
     end
-
-    -- set the scrollbar up
-    self:SetScrollBar();
 end
 
 -- function to add a single shortcut to the tab
 function TravelGridTab:AddItem(shortcut)
-    -- figure out the column width
-    self.numOfCols = math.floor((self:GetWidth() - 36) / 36);
 
     self.index = (self.row - 1) * self.numOfCols + self.col;
 
@@ -212,13 +210,29 @@ end
 
 function TravelGridTab:SetScrollBar()
 
-    -- set up the scrollbar for the list
-    self.myScrollBar = Turbine.UI.Lotro.ScrollBar();
-    self.myScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
-    self.myScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
+    if self.myScrollBar == nil then
+        -- set up the scrollbar for the list
+        self.myScrollBar = Turbine.UI.Lotro.ScrollBar();
+        self.myScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
+        self.myScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
+        self.myScrollBar:SetMinimum(0);
+
+        -- show the menu when right clicked
+        self.myScrollBar.MouseClick = function(sender, args)
+            if (args.Button == Turbine.UI.MouseButton.Right) then
+                Menu:ShowMenu();
+            end
+        end
+
+        -- call the routine to update the
+        -- sub window when the value of the
+        -- scrollbar is changed.
+        self.myScrollBar.ValueChanged = function(sender, args)
+            self:UpdateSubWindow();
+        end
+    end
     self.myScrollBar:SetSize(10, self:GetHeight());
     self.myScrollBar:SetPosition(self:GetWidth() - 5, 0);
-    self.myScrollBar:SetMinimum(0);
 
     -- set the maximum value of the scrollbar
     -- based on the number of rows in the subwindow
@@ -237,20 +251,6 @@ function TravelGridTab:SetScrollBar()
         self.myScrollBar:SetParent(self.SubWindow);
         self.myScrollBar:SetVisible(true);
     end
-
-    -- show the menu when right clicked
-    self.myScrollBar.MouseClick = function(sender, args)
-        if (args.Button == Turbine.UI.MouseButton.Right) then
-            Menu:ShowMenu();
-        end
-    end
-
-    -- call the routine to update the
-    -- sub window when the value of the
-    -- scrollbar is changed.
-    self.myScrollBar.ValueChanged = function(sender, args)
-        self:UpdateSubWindow();
-    end
 end
 
 -- function to adjust the size of the tab and all items in the tab
@@ -258,6 +258,13 @@ function TravelGridTab:SetSize(width, height)
 
     -- set the size of the tab
     Turbine.UI.Control.SetSize(self, width, height);
+
+    -- figure out the column width
+    local prevNumOfCols = self.numOfCols;
+    self.numOfCols = math.floor((self:GetWidth() - 36) / 36);
+    if self.numOfCols ~= prevNumOfCols then
+        self.dirty = true;
+    end
 
     -- reset all the quickslots of the tab
     self:SetItems();
