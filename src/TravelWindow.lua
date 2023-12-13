@@ -1108,6 +1108,10 @@ function TravelWindow:CheckSkills()
 end
 
 function TravelWindow:FindSkill(shortcut)
+    if shortcut.found then
+        return true;
+    end
+
     for i = 1, TrainedSkills:GetCount(), 1 do
         local skill = Turbine.Gameplay.Skill;
         skill = TrainedSkills:GetItem(i);
@@ -1116,11 +1120,13 @@ function TravelWindow:FindSkill(shortcut)
         local desc = shortcut:GetDescription();
         if desc ~= nil then
             if string.match(skillInfo:GetDescription(), desc) and
-                    (skillInfo:GetName() == name) then
+                    skillInfo:GetName() == name then
+                shortcut.found = true;
                 return true;
             end
         else
-            if (skillInfo:GetName() == name) then
+            if skillInfo:GetName() == name then
+                shortcut.found = true;
                 return true;
             end
         end
