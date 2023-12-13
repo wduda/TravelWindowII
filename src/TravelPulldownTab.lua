@@ -27,11 +27,12 @@ function TravelPulldownTab:Constructor(toplevel)
     self.scrollLabel:SetParent(self);
 
     -- the pulldown box
-    self.pulldown = TravelWindowII.src.OrendarUIMods.ComboBox();
-    self.pulldown:SetPosition(0, 20);
-    self.pulldown:SetSize(200, 30);
+    self.pulldown = TravelWindowII.src.OrendarUIMods.ComboBox(self);
+    self.pulldown:SetPosition(10, 20);
+    self.pulldown:SetSize(self:GetWidth() - 20, 30);
     self.pulldown:SetParent(self);
     self.pulldown:SetVisible(true);
+    self.pulldown:SetTravelOnSelect(Settings.pulldownTravel);
 
     -- the quickslot for the shortcut
     self.quickslot = Turbine.UI.Lotro.Quickslot();
@@ -106,13 +107,7 @@ function TravelPulldownTab:SetItems()
         return
     end
 
-    -- create the combo box to use in the tab
-    self.pulldown = TravelWindowII.src.OrendarUIMods.ComboBox(self.parent);
-    self.pulldown:SetPosition(0, 20);
-    self.pulldown:SetSize(200, 30);
-    self.pulldown:SetParent(self);
-    self.pulldown:SetVisible(true);
-    self.pulldown:SetTravelOnSelect(Settings.pulldownTravel);
+    self.pulldown:ClearItems();
 
     -- add the shortcuts to the combo box
     local shortcutIndex = 1;
@@ -144,7 +139,7 @@ function TravelPulldownTab:SetSize(width, height)
     Turbine.UI.Control.SetSize(self, width, height);
 
     -- set the size of the labels
-    -- self.rationLabel:SetSize(self:GetWidth(),20);
+    self.pulldown:SetSize(self:GetWidth() - 20, 30);
     self.scrollLabel:SetSize(self:GetWidth(), self:GetHeight());
 
     Turbine.UI.Control.SetOpacity(self, 1);
