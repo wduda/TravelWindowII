@@ -17,7 +17,7 @@ gondorMapTitleString = "Gondor Destinations"
 glanMapString = "Glân Vraig Map";
 glanMapItemString = "Map to Glân Vraig";
 
-skillNotTrainedString = "Skills not trained:";
+skillNotTrainedString = "Skills not trained: ";
 
 -- options window strings
 generalTabString = "General";
