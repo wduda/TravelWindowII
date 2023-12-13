@@ -25,7 +25,6 @@ function TravelWindow:Constructor()
 
     self.minWidth = 240;
     self.minHeight = 150;
-    self.disableResize = false;
     self.reloadGVMap = false;
     self.options = nil;
     self.dirty = true;
@@ -320,9 +319,7 @@ end
 
 function TravelWindow:SetMapHome()
 
-    -- disable the resize while the map update window is open
     -- also close the options window
-    self.disableResize = true;
     self:CloseOptions();
 
     -- create the window used to add the map
@@ -372,9 +369,6 @@ function TravelWindow:SetMapHome()
             -- save the shortcut data to the settings
             self:SaveMapHome(self.mapQuickSlot1:GetShortcut());
         end
-
-        -- enable resize again
-        self.disableResize = false;
 
         -- update the shortcuts list
         self:CheckEnabledSettings()
