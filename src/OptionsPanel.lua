@@ -565,7 +565,7 @@ function OptionsPanel:AddBoxes()
 
     -- do the check skills
     self.checkSkillsButton.Click = function(sender, args)
-        TravelWindow:CheckSkills();
+        TravelWindow:CheckSkills(true);
     end
 end
 

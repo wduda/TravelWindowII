@@ -21,7 +21,7 @@ function TravelWindow:Constructor()
     Settings = {};
     SettingsStrings = {};
     TravelShortcuts = {}; -- put all the shortcuts into one table
-    TrainedSkills = Turbine.Gameplay.SkillList;
+    TrainedSkills = Turbine.Gameplay.SkillList; -- TODO: update list on window open or maybe a timer
 
     self.minWidth = 240;
     self.minHeight = 150;
@@ -91,6 +91,7 @@ function TravelWindow:Constructor()
     -- set up all the shortcuts
     self:CheckEnabledSettings();
     self:SetShortcuts();
+    self:CheckSkills(false);
 
     -- create the tabbed panel to hold all the other panels
     self.MainPanel = TravelWindowII.src.extensions.DPanel();
@@ -495,6 +496,8 @@ function TravelWindow:SetShortcuts()
         end
     end
 
+    self:CheckSkills(false)
+
     -- sort the shortcuts
     self:SortShortcuts()
 end
@@ -723,6 +726,7 @@ function TravelWindow:SortShortcuts()
             -- if the index of the second shortcut is lower than the index of
             -- the first, switch the shortcuts
             if TravelShortcuts[j]:GetIndex() < TravelShortcuts[j - 1]:GetIndex() then
+                self.dirty = true;
                 local temp = TravelShortcuts[j - 1];
                 TravelShortcuts[j - 1] = TravelShortcuts[j];
                 TravelShortcuts[j] = temp;
@@ -1096,12 +1100,12 @@ function TravelWindow:AddGVMap()
     end
 end
 
-function TravelWindow:CheckSkills()
+function TravelWindow:CheckSkills(report)
     -- loop through all the shortcuts and list those those that are not learned
     for i = 1, #TravelShortcuts, 1 do
         if (TravelWindow:FindSkill(TravelShortcuts[i])) then
             -- do nothing, skill is known
-        else
+        elseif report then
             Turbine.Shell.WriteLine(skillNotTrainedString .. TravelShortcuts[i]:GetName())
         end
     end
@@ -1113,19 +1117,15 @@ function TravelWindow:FindSkill(shortcut)
     end
 
     for i = 1, TrainedSkills:GetCount(), 1 do
-        local skill = Turbine.Gameplay.Skill;
-        skill = TrainedSkills:GetItem(i);
-        local skillInfo = skill:GetSkillInfo();
-        local name = shortcut:GetName();
-        local desc = shortcut:GetDescription();
-        if desc ~= nil then
-            if string.match(skillInfo:GetDescription(), desc) and
-                    skillInfo:GetName() == name then
-                shortcut.found = true;
-                return true;
-            end
-        else
-            if skillInfo:GetName() == name then
+        local skillInfo = TrainedSkills:GetItem(i):GetSkillInfo();
+        if skillInfo:GetName() == shortcut:GetName() then
+            local desc = shortcut:GetDescription();
+            if desc ~= nil then
+                if string.match(skillInfo:GetDescription(), desc) then
+                    shortcut.found = true;
+                    return true;
+                end
+            else
                 shortcut.found = true;
                 return true;
             end

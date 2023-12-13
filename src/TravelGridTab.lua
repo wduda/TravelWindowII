@@ -123,7 +123,7 @@ function TravelGridTab:SetItems()
                 -- apply skill type filter if set in options
                 if hasbit(Settings.filters, bit(shortcut:GetTravelType())) then
                     -- make sure skill is trained, lookup by ingame name
-                    if TravelWindow:FindSkill(shortcut) then
+                    if shortcut.found then
                         self:AddItem(shortcut);
                     end
                 end
