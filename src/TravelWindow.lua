@@ -374,8 +374,6 @@ function TravelWindow:SetMapHome()
         end
 
         -- update the shortcuts list
-        self:CheckEnabledSettings()
-        self:SetShortcuts();
         self:UpdateSettings();
 
         -- close this window
