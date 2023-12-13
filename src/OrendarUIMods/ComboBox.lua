@@ -314,6 +314,21 @@ function ComboBox:Layout()
     self.label:SetSize(width - 4, height - 4);
     self.label:SetPosition(2, 2);
     self.arrow:SetPosition(width - 2 - 16, 2 + ((height - 4 - 16) / 2));
+
+    local scrollSize = 0;
+    local itemCount = #self.labels;
+    if itemCount > 10 then
+        scrollSize = 10;
+    end
+    local listWidth, listHeight = self.listBox:GetSize();
+    self.listBox:SetSize(width - 4 - scrollSize, listHeight);
+    self.dropDownWindow:SetSize(width, listHeight + 4);
+    self.scrollBar:SetPosition(width - 12, 2);
+
+    for i = 1, #self.quickslots, 1 do
+        self.quickslots[i]:SetSize(width, 20);
+        self.labels[i]:SetSize(width, 20);
+    end
 end
 
 function ComboBox:ShowDropDown()
@@ -336,11 +351,10 @@ function ComboBox:ShowDropDown()
 
         -- list item sizes
         local listHeight = 0;
+        local itemHeight = self.labels[1]:GetHeight();
         for i = 1, itemCount do
-            local item = self.labels[1];
-            item:SetWidth(width - 14);
             if (i <= maxItems) then
-                listHeight = listHeight + item:GetHeight();
+                listHeight = listHeight + itemHeight;
             end
         end
 
@@ -355,10 +369,17 @@ function ComboBox:ShowDropDown()
         self.scrollBar:SetMaximum(itemCount * 20 - 200);
 
         -- position
-        local x, y = self:GetPosition();
-        local parentX, parentY = self:GetParent():GetParent():GetParent()
-                                     :GetPosition();
-        self.dropDownWindow:SetPosition(parentX + 10, parentY + 93);
+        local parent = self:GetParent();
+        local screenX, screenY = self:GetPosition();
+        while parent ~= nil do
+            local x, y = parent:GetPosition();
+            screenX = screenX + x;
+            screenY = screenY + y;
+            if parent:GetParent() == nil then break end
+            parent = parent:GetParent();
+        end
+        local cbWidth, cbHeight = self:GetSize();
+        self.dropDownWindow:SetPosition(screenX, screenY + cbHeight + 3);
 
         self.dropDownWindow:SetVisible(true);
 
@@ -408,4 +429,3 @@ function ComboBox:UpdateSubWindow()
         self.labels[i]:SetTop((row - 1) * 20 - self.scrollBar:GetValue());
     end
 end
-
