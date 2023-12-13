@@ -21,13 +21,13 @@ function TravelWindow:Constructor()
     Settings = {};
     SettingsStrings = {};
     TravelShortcuts = {}; -- put all the shortcuts into one table
-    TrainedSkills = Turbine.Gameplay.SkillList;
+    TrainedSkills = Turbine.Gameplay.SkillList; -- TODO: update list on window open or maybe a timer
 
     self.minWidth = 240;
     self.minHeight = 150;
-    self.disableResize = false;
     self.reloadGVMap = false;
     self.options = nil;
+    self.dirty = true;
 
     -- create the lists of travel locations and the shortcuts
     -- that are used to execute them
@@ -43,6 +43,7 @@ function TravelWindow:Constructor()
     self:SetText(mainTitleString);
     self:SetZOrder(97);
     self:SetOpacity(1);
+    self:SetResizable(true);
     if (Settings.hideOnStart == 1) then
         self:SetVisible(false);
     else
@@ -83,13 +84,14 @@ function TravelWindow:Constructor()
     self.previousCombatState = false;
     self.wasOpenBeforeCombat = false;
 
-    -- set up all the shortcuts
-    self:CheckEnabledSettings();
-    self:SetShortcuts();
-
     -- create a single context menu to use on all panels
     Menu = SettingsMenu(self);
     Menu:SetSettings(Settings.mode, Settings.filters);
+
+    -- set up all the shortcuts
+    self:CheckEnabledSettings();
+    self:SetShortcuts();
+    self:CheckSkills(false);
 
     -- create the tabbed panel to hold all the other panels
     self.MainPanel = TravelWindowII.src.extensions.DPanel();
@@ -109,26 +111,16 @@ function TravelWindow:Constructor()
     self.MainPanel:AddTab(self.GridTab);
     self.MainPanel:AddTab(self.CaroTab);
     self.MainPanel:AddTab(self.PullTab);
-
-    -- create a control for resizing the window
-    self.sizeControl = Turbine.UI.Control();
-    self.sizeControl:SetParent(self);
-    self.sizeControl:SetZOrder(100);
-    self.sizeControl:SetSize(20, 20);
-    self.sizeControl:SetBackColorBlendMode(Turbine.UI.BlendMode.Screen)
-    self.sizeControl:SetBackColor(Turbine.UI.Color(0.1, 1, 1, 1));
-    self.sizeControl:SetPosition(self:GetWidth() - self.sizeControl:GetWidth(),
-                                 self:GetHeight() - self.sizeControl:GetHeight());
+    self.ListTab.tabId = 1;
+    self.GridTab.tabId = 2;
+    self.CaroTab.tabId = 3;
+    self.PullTab.tabId = 4;
 
     -- display the tab that was last selected
     self.MainPanel:SetTab(Settings.mode);
     self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
     self.MainPanel:UpdateTabs();
     self:UpdateSettings();
-
-    -- timers for events
-    self.lastTime = 0;
-    self.lastMove = 0;
 
     -- track the hidden state of the UI, manage previous states for window and
     -- the button
@@ -251,60 +243,11 @@ function TravelWindow:Constructor()
         self:SetOpacity(Settings.mainMinOpacity);
     end
 
-    -- change the background color of the resize button on entry to help
-    -- show exactly where the button is
-    self.sizeControl.MouseEnter = function(sender, args)
-        self.sizeControl:SetBackColor(Turbine.UI.Color(0.9, 1, 1, 1));
-    end
-
-    -- return background color to normal on mouse leave
-    self.sizeControl.MouseLeave = function(sender, args)
-        self.sizeControl:SetBackColor(Turbine.UI.Color(0.1, 1, 1, 1));
-    end
-
-    -- check if someone is going to start dragging the resize control
-    self.sizeControl.MouseDown = function(sender, args)
-
-        -- check if resize has been disabled
-        if (self.disableResize) then
-            return;
-        end
-
-        -- set start location of resize and enable dragging
-        sender.dragStartX = args.X;
-        sender.dragStartY = args.Y;
-        sender.dragging = true;
-    end
-
-    self.sizeControl.MouseUp = function(sender, args)
-        -- disable dragging, then update settings
-        sender.dragging = false;
-
+    self.SizeChanged = function(sender, args)
         Settings.width = self:GetWidth();
         Settings.height = self:GetHeight();
-        self:UpdateSettings();
-    end
-
-    -- perform the resize
-    self.sizeControl.MouseMove = function(sender, args)
-        local width, height = self:GetSize();
-
-        -- if resize dragging, then resize the window
-        if (sender.dragging) then
-            self:SetSize(width + (args.X - sender.dragStartX), height + (args.Y - sender.dragStartY));
-        end
-
-        -- update the size of the window
-        self:UpdateSize();
-
-        -- check time since last move
-        if (Turbine.Engine.GetGameTime() - self.lastMove > 0.1 and self:IsVisible() or self.lastMove == 0) then
-
-            -- update the tabbed panels
-            self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
-            self.MainPanel:UpdateTabs();
-            self.lastMove = Turbine.Engine.GetGameTime();
-        end
+        self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
+        self.MainPanel:UpdateTabs();
     end
 
     Plugins["Travel Window II"].Load = function(sender, args)
@@ -336,7 +279,34 @@ function TravelWindow:SetPlayerRaceKey()
     end
 end
 
+function TravelWindow:SetItems()
+    if Settings.mode == 1 then
+        self.ListTab:SetItems();
+    elseif Settings.mode == 2 then
+        self.GridTab:SetItems();
+    elseif Settings.mode == 3 then
+        self.CaroTab:SetItems();
+    else
+        self.PullTab:SetItems();
+    end
+end
+
 function TravelWindow:UpdateSize()
+    -- update the page that is showing
+    if (Settings.mode == 1) then
+        self.minWidth = 245;
+        self.minHeight = 150;
+    elseif (Settings.mode == 2) then
+        self.minWidth = 120;
+        self.minHeight = 130;
+    elseif (Settings.mode == 3) then
+        self.minWidth = 120;
+        self.minHeight = 130;
+    else
+        self.minWidth = 220;
+        self.minHeight = 150;
+    end
+
     -- check that the window is not smaller than min width
     if (self:GetWidth() < self.minWidth) then
         self:SetWidth(self.minWidth);
@@ -346,17 +316,11 @@ function TravelWindow:UpdateSize()
     if (self:GetHeight() < self.minHeight) then
         self:SetHeight(self.minHeight);
     end
-
-    -- set the new location of the resize control
-    self.sizeControl:SetPosition(self:GetWidth() - self.sizeControl:GetWidth(),
-                                 self:GetHeight() - self.sizeControl:GetHeight());
 end
 
 function TravelWindow:SetMapHome()
 
-    -- disable the resize while the map update window is open
     -- also close the options window
-    self.disableResize = true;
     self:CloseOptions();
 
     -- create the window used to add the map
@@ -406,9 +370,6 @@ function TravelWindow:SetMapHome()
             -- save the shortcut data to the settings
             self:SaveMapHome(self.mapQuickSlot1:GetShortcut());
         end
-
-        -- enable resize again
-        self.disableResize = false;
 
         -- update the shortcuts list
         self:CheckEnabledSettings()
@@ -534,6 +495,8 @@ function TravelWindow:SetShortcuts()
                                         marinerLocations:LabelAtIndex(i), marinerLocations:DescAtIndex(i)));
         end
     end
+
+    self:CheckSkills(false)
 
     -- sort the shortcuts
     self:SortShortcuts()
@@ -763,6 +726,7 @@ function TravelWindow:SortShortcuts()
             -- if the index of the second shortcut is lower than the index of
             -- the first, switch the shortcuts
             if TravelShortcuts[j]:GetIndex() < TravelShortcuts[j - 1]:GetIndex() then
+                self.dirty = true;
                 local temp = TravelShortcuts[j - 1];
                 TravelShortcuts[j - 1] = TravelShortcuts[j];
                 TravelShortcuts[j] = temp;
@@ -846,7 +810,7 @@ function TravelWindow:LoadSettings()
     if (not SettingsStrings.pulldownTravel or SettingsStrings.pulldownTravel == "nil") then
         SettingsStrings.pulldownTravel = tostring(0);
     end
-  
+
     if (not SettingsStrings.hideOnTravel or SettingsStrings.hideOnTravel == "nil") then
         SettingsStrings.hideOnTravel = tostring(0);
     end
@@ -1048,31 +1012,16 @@ end
 function TravelWindow:UpdateSettings()
 
     -- get some settings from the menu
+    local prevMode = Settings.mode;
     Settings.mode, Settings.filters = Menu:GetSettings();
+    if prevMode ~= Settings.mode then
+        self.dirty = true;
+    end
 
     -- set which page of the tab panel to show
     self.MainPanel:SetTab(Settings.mode);
-
-    -- update the page that is showing
-    if (Settings.mode == 1) then
-        self.minWidth = 245;
-        self.minHeight = 150;
-        self.ListTab:SetItems();
-    elseif (Settings.mode == 2) then
-        self.minWidth = 120;
-        self.minHeight = 130;
-        self.GridTab:SetItems();
-    elseif (Settings.mode == 3) then
-        self.minWidth = 120;
-        self.minHeight = 130;
-        self.CaroTab:SetItems();
-    else
-        self.minWidth = 220;
-        self.minHeight = 150;
-        self.PullTab:SetItems();
-    end
-
     self:UpdateSize();
+    self:SetItems();
 
     self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
     self.MainPanel:UpdateTabs();
@@ -1151,34 +1100,33 @@ function TravelWindow:AddGVMap()
     end
 end
 
-function TravelWindow:CheckSkills()
+function TravelWindow:CheckSkills(report)
     -- loop through all the shortcuts and list those those that are not learned
     for i = 1, #TravelShortcuts, 1 do
         if (TravelWindow:FindSkill(TravelShortcuts[i])) then
             -- do nothing, skill is known
-        else
+        elseif report then
             Turbine.Shell.WriteLine(skillNotTrainedString .. TravelShortcuts[i]:GetName())
         end
     end
-
-    -- make sure list of shortcuts is rescanned and new skills added
-    self:SetShortcuts();
 end
 
 function TravelWindow:FindSkill(shortcut)
+    if shortcut.found then
+        return true;
+    end
+
     for i = 1, TrainedSkills:GetCount(), 1 do
-        local skill = Turbine.Gameplay.Skill;
-        skill = TrainedSkills:GetItem(i);
-        local skillInfo = skill:GetSkillInfo();
-        local name = shortcut:GetName();
-        local desc = shortcut:GetDescription();
-        if desc ~= nil then
-            if string.match(skillInfo:GetDescription(), desc) and
-                    (skillInfo:GetName() == name) then
-                return true;
-            end
-        else
-            if (skillInfo:GetName() == name) then
+        local skillInfo = TrainedSkills:GetItem(i):GetSkillInfo();
+        if skillInfo:GetName() == shortcut:GetName() then
+            local desc = shortcut:GetDescription();
+            if desc ~= nil then
+                if string.match(skillInfo:GetDescription(), desc) then
+                    shortcut.found = true;
+                    return true;
+                end
+            else
+                shortcut.found = true;
                 return true;
             end
         end

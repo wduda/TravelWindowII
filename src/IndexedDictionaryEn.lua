@@ -17,7 +17,7 @@ gondorMapTitleString = "Gondor Destinations"
 glanMapString = "Glân Vraig Map";
 glanMapItemString = "Map to Glân Vraig";
 
-skillNotTrainedString = "Skills not trained:";
+skillNotTrainedString = "Skills not trained: ";
 
 -- options window strings
 generalTabString = "General";
@@ -253,10 +253,13 @@ function TravelDictionaries:CreateDictionaries()
     marinerLocations:AddSkill("Sail to Halrax", "0x700687C3", "Halrax (Sail)")
 
     -- add the racial travel skills
-    racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)"); -- human
+    racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)",
+                             "This enables you to quickly return"); -- human
     racialLocations:AddSkill("Return to the Shire", "0x700062C8", "Shire (Racial)"); -- hobbit
-    racialLocations:AddSkill("Return to Thorin's Gate", "0x70006346", "Thorin's Gate (Racial)"); -- dwarf
-    racialLocations:AddSkill("Return to Rivendell", "0x7000631F", "Rivendell (Racial)"); --elf
+    racialLocations:AddSkill("Return to Thorin's Gate", "0x70006346", "Thorin's Gate (Racial)",
+                             "This enables you to quickly return"); -- dwarf
+    racialLocations:AddSkill("Return to Rivendell", "0x7000631F", "Rivendell (Racial)",
+                             "This enables you to quickly return"); --elf
     racialLocations:AddSkill("Return Home", "0x70041A22", "Beorning Home (Racial)"); -- beorning
     racialLocations:AddSkill("Travel to Caras Galadhon in Lothlórien", "0x70048C8C", "Caras Galadhon (Racial)"); -- high-elf
     racialLocations:AddSkill("Travel to Thorin's Hall", "0x70053C0F", "Thorin's Hall (Racial)"); -- stoutaxe
@@ -280,11 +283,14 @@ function TravelDictionaries:CreateDictionaries()
     genLocations:AddSkill("Travel to Kinship Member's House", "0x70057C36", "Kinship Member's House");
 
     -- add the obtainable travel skills
-    repLocations:AddSkill("Return to Thorin's Gate", "0x7001BF91", "Thorin's Gate (Rep)");
-    repLocations:AddSkill("Return to Bree", "0x7001BF90", "Bree (Rep)");
+    repLocations:AddSkill("Return to Thorin's Gate", "0x7001BF91", "Thorin's Gate (Rep)",
+                          "Thanks to your friendship");
+    repLocations:AddSkill("Return to Bree", "0x7001BF90", "Bree (Rep)",
+                          "Thanks to your friendship");
     repLocations:AddSkill("Return to Lalia's Market", "0x700364B1", "Lalia's Market (Mithril)");
     repLocations:AddSkill("Return to Michel Delving", "0x70023262", "Shire (Store)");
-    repLocations:AddSkill("Return to Rivendell", "0x70023263", "Rivendell (Store)");
+    repLocations:AddSkill("Return to Rivendell", "0x70023263", "Rivendell (Store)",
+                          "Thanks to your friendship");
     repLocations:AddSkill("Return to Ost Guruth", "0x70020441", "Ost Guruth (Rep)");
     repLocations:AddSkill("Return to Mirkwood", "0x7001F374", "Mirkwood (Rep)");
     repLocations:AddSkill("Return to Enedwaith", "0x70021FA2", "Enedwaith (Rep)");
@@ -295,7 +301,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Aldburg", "0x7003DC81", "Aldburg (Rep)");
     repLocations:AddSkill("Return to Derndingle", "0x7004128F", "Derndingle (Rep)");
     repLocations:AddSkill("Return to Helm's Deep", "0x7003DC82", "Helm's Deep (Rep)");
-    repLocations:AddSkill("Return to Dol Amroth", "0x700411AC", "Dol Amroth (Rep)", "quickly return to Dol Amroth in western Gondor");
+    repLocations:AddSkill("Return to Dol Amroth", "0x700411AC", "Dol Amroth (Rep)",
+                          "quickly return to Dol Amroth in western Gondor");
     repLocations:AddSkill("Return to Arnach", "0x70043A6A", "Arnach (Rep)");
     repLocations:AddSkill("Return to Minas Tirith", "0x7004497E", "Minas Tirith (Rep)");
     repLocations:AddSkill("Return to the War-stead", "0x700459A9", "War-stead (Rep)");

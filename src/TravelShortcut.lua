@@ -13,6 +13,7 @@ function TravelShortcut:Constructor(sType, data, name, tType, index, enabled, sk
     self.Index = index;
     self.Enabled = enabled;
     self.skillLabel = skillLabel;
+    self.found = false;
 
     self:SetType(sType);
     self:SetData(data);

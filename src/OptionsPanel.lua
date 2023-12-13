@@ -298,7 +298,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnStart = 0;
         end
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
     end
 
@@ -309,7 +308,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnCombat = 0;
         end
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
     end
 
@@ -320,7 +318,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnTravel = 0;
         end
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
     end
 
@@ -331,7 +328,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.showButton = 0;
         end
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
         self.mainWindow.ToggleButton:SetVisible(sender:IsChecked());
     end
@@ -343,7 +339,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.pulldownTravel = 0;
         end
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
     end
 
@@ -497,9 +492,10 @@ function OptionsPanel:AddSkillItemForEnabling(index, id, label)
     self.checks[index].CheckedChanged = function(sender, args)
         -- change the setting on the main window
         Settings.enabled[id] = sender:IsChecked();
+        shortcutIndex = self.mainWindow:TableIndex(Settings.order, id);
+        TravelShortcuts[shortcutIndex]:SetEnabled(sender:IsChecked());
 
-        -- reset the shortcuts on the main window
-        self.mainWindow:SetShortcuts();
+        self.mainWindow.dirty = true;
 
         -- update the main window settings
         self.mainWindow:UpdateSettings();
@@ -565,7 +561,7 @@ function OptionsPanel:AddBoxes()
 
     -- do the check skills
     self.checkSkillsButton.Click = function(sender, args)
-        TravelWindow:CheckSkills();
+        TravelWindow:CheckSkills(true);
     end
 end
 
@@ -671,7 +667,6 @@ function OptionsPanel:AddSortButtons()
         end
 
         -- update the main window shortcuts and settings
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
     end
 
@@ -686,7 +681,6 @@ function OptionsPanel:AddSortButtons()
         self:SwapShortcuts(self.sortSelectedIndex, self.sortSelectedIndex - 1);
 
         -- update the main window shortcuts and settings
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
 
         -- decrease the selected index
@@ -704,7 +698,6 @@ function OptionsPanel:AddSortButtons()
         self:SwapShortcuts(self.sortSelectedIndex, self.sortSelectedIndex + 1);
 
         -- update the main window shortcuts and settings
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
 
         -- increase the selected index
@@ -723,7 +716,6 @@ function OptionsPanel:AddSortButtons()
         end
 
         -- update the main window shortcuts and settings
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
     end
 end
@@ -745,5 +737,12 @@ function OptionsPanel:SwapShortcuts(first, second)
         local tempItem = self.sortListBox:GetItem(first);
         self.sortListBox:RemoveItemAt(first);
         self.sortListBox:InsertItem(second, tempItem);
+
+        TravelShortcuts[first]:SetIndex(second);
+        TravelShortcuts[second]:SetIndex(first);
+        local tempShortcut = TravelShortcuts[first];
+        TravelShortcuts[first] = TravelShortcuts[second];
+        TravelShortcuts[second] = tempShortcut;
+        self.mainWindow.dirty = true;
     end
 end

@@ -27,11 +27,12 @@ function TravelPulldownTab:Constructor(toplevel)
     self.scrollLabel:SetParent(self);
 
     -- the pulldown box
-    self.pulldown = TravelWindowII.src.OrendarUIMods.ComboBox();
-    self.pulldown:SetPosition(0, 20);
-    self.pulldown:SetSize(200, 30);
+    self.pulldown = TravelWindowII.src.OrendarUIMods.ComboBox(self);
+    self.pulldown:SetPosition(10, 20);
+    self.pulldown:SetSize(self:GetWidth() - 20, 30);
     self.pulldown:SetParent(self);
     self.pulldown:SetVisible(true);
+    self.pulldown:SetTravelOnSelect(Settings.pulldownTravel);
 
     -- the quickslot for the shortcut
     self.quickslot = Turbine.UI.Lotro.Quickslot();
@@ -42,12 +43,14 @@ function TravelPulldownTab:Constructor(toplevel)
     self.quickslot:SetParent(self);
     self.quickslot:SetVisible(true);
 
-    self:SetItems();
-
     --[[  EVENT HANDLERS  ]] --
 
     -- make sure we listen for key presses
     self:SetWantsUpdates(true);
+
+    self.MouseEnter = function(sender, args)
+        self:SetItems();
+    end
 
     -- check for a right mouse button event to open menu
     self.MouseClick = function(sender, args)
@@ -100,13 +103,11 @@ end
 
 function TravelPulldownTab:SetItems()
 
-    -- create the combo box to use in the tab
-    self.pulldown = TravelWindowII.src.OrendarUIMods.ComboBox(self.parent);
-    self.pulldown:SetPosition(0, 20);
-    self.pulldown:SetSize(200, 30);
-    self.pulldown:SetParent(self);
-    self.pulldown:SetVisible(true);
-    self.pulldown:SetTravelOnSelect(Settings.pulldownTravel);
+    if self.tabId ~= self.parent.MainPanel.selectedPage or not(self.parent.dirty) then
+        return
+    end
+
+    self.pulldown:ClearItems();
 
     -- add the shortcuts to the combo box
     local shortcutIndex = 1;
@@ -115,7 +116,7 @@ function TravelPulldownTab:SetItems()
             -- apply skill type filter if set in options
             if (hasbit(Settings.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
                 -- make sure skill is trained, lookup by ingame name
-                if (TravelWindow:FindSkill(TravelShortcuts[i])) then
+                if TravelShortcuts[i].found then
                     self.pulldown:AddItem(TravelShortcuts[i], shortcutIndex, i);
                     shortcutIndex = shortcutIndex + 1;
                 end
@@ -129,6 +130,8 @@ function TravelPulldownTab:SetItems()
             self.quickslot:SetShortcut(TravelShortcuts[sender:GetSelection()]);
         end)
     end
+
+    self.parent.dirty = false;
 end
 
 -- function to adjust the size of the tab and all items in the tab
@@ -138,7 +141,7 @@ function TravelPulldownTab:SetSize(width, height)
     Turbine.UI.Control.SetSize(self, width, height);
 
     -- set the size of the labels
-    -- self.rationLabel:SetSize(self:GetWidth(),20);
+    self.pulldown:SetSize(self:GetWidth() - 20, 30);
     self.scrollLabel:SetSize(self:GetWidth(), self:GetHeight());
 
     Turbine.UI.Control.SetOpacity(self, 1);
