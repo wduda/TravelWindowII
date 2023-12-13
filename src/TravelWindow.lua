@@ -88,6 +88,10 @@ function TravelWindow:Constructor()
     Menu = SettingsMenu(self);
     Menu:SetSettings(Settings.mode, Settings.filters);
 
+    -- set up all the shortcuts
+    self:CheckEnabledSettings();
+    self:SetShortcuts();
+
     -- create the tabbed panel to hold all the other panels
     self.MainPanel = TravelWindowII.src.extensions.DPanel();
     self.MainPanel:SetSize(Settings.width - 20, Settings.height - 60);
@@ -115,10 +119,6 @@ function TravelWindow:Constructor()
     self.MainPanel:SetTab(Settings.mode);
     self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
     self.MainPanel:UpdateTabs();
-
-    -- set up all the shortcuts
-    self:CheckEnabledSettings();
-    self:SetShortcuts();
     self:UpdateSettings();
 
     -- track the hidden state of the UI, manage previous states for window and
@@ -717,8 +717,6 @@ function TravelWindow:SortShortcuts()
         return;
     end
 
-    self.dirty = true;
-
     -- perform a bubble sort
     for i = 1, #TravelShortcuts do
         for j = 2, #TravelShortcuts do
@@ -1107,9 +1105,6 @@ function TravelWindow:CheckSkills()
             Turbine.Shell.WriteLine(skillNotTrainedString .. TravelShortcuts[i]:GetName())
         end
     end
-
-    -- make sure list of shortcuts is rescanned and new skills added
-    self:SetShortcuts();
 end
 
 function TravelWindow:FindSkill(shortcut)
