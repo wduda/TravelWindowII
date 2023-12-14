@@ -58,7 +58,9 @@ menuOptionsString = "Options";
 moorMapString = "Open Moor Map";
 eriadorMapString = "Open Eriador Map";
 rhovanionMapString = "Open Rhovanion Map";
+rohanMapString = "Open Rohan Map";
 gondorMapString = "Open Gondor Map"
+haradwaithMapString = "Open Haradwaith Map";
 menuSkillsString = "Check Untrained Skills";
 
 --[[ travel skills ]] --

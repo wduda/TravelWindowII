@@ -58,7 +58,9 @@ menuOptionsString = "Options";
 moorMapString = "Destinations aux Landes d'Etten";
 eriadorMapString = "Destinations en Eriador";
 rhovanionMapString = "Destination dans le Rhovanion";
+rohanMapString = "Destinations dans le Rohan"
 gondorMapString = "Destinations dans le Gondor"
+haradwaithMapString = "Destinations dans le Haradwaith"
 menuSkillsString = "Vérification des compétences non utilisées";
 
 --[[ travel skills ]] --

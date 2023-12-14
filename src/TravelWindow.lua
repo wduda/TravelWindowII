@@ -3,6 +3,7 @@ import "Turbine.Debug";
 import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
+import "TravelWindowII.src.MapWindow"
 import "TravelWindowII.src.extensions";
 import "TravelWindowII.src.utils.BitOps";
 import "TravelWindowII.src.VindarPatch";
@@ -170,6 +171,8 @@ function TravelWindow:Constructor()
             self:CloseMoorMap();
             self:CloseEriadorMap();
             self:CloseRhovanionMap();
+            self:CloseRohanMap();
+            self:CloseHaradwaithMap();
             if (self.hidden == true) then
                 self.hidden = false;
                 self:SetVisible(self.currentVisState);
@@ -694,7 +697,7 @@ function TravelWindow:CloseOptions()
 end
 
 function TravelWindow:OpenMoorMap()
-    self.moorMapWindow = TravelWindowII.src.MoorMapWindow(self);
+    self.moorMapWindow = TravelWindowII.src.MapWindow(self, MapType.CREEPS);
 end
 
 -- function to close the moor map window if it exists
@@ -706,7 +709,7 @@ function TravelWindow:CloseMoorMap()
 end
 
 function TravelWindow:OpenEriadorMap()
-    self.eriadorMapWindow = TravelWindowII.src.EriadorMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
+    self.eriadorMapWindow = TravelWindowII.src.MapWindow(self, MapType.ERIADOR, PlayerClass, PlayerRaceKey, TravelShortcuts);
 end
 
 -- function to close the eriador map window if it exists
@@ -718,7 +721,7 @@ function TravelWindow:CloseEriadorMap()
 end
 
 function TravelWindow:OpenRhovanionMap()
-    self.rhovanionMapWindow = TravelWindowII.src.RhovanionMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
+    self.rhovanionMapWindow = TravelWindowII.src.MapWindow(self, MapType.RHOVANION, PlayerClass, PlayerRaceKey, TravelShortcuts);
 end
 
 -- function to close the rhovanion map window if it exists
@@ -729,8 +732,20 @@ function TravelWindow:CloseRhovanionMap()
     self.rhovanionMapWindow = nil;
 end
 
+function TravelWindow:OpenRohanMap()
+    self.rohanMapWindow = TravelWindowII.src.MapWindow(self, MapType.ROHAN, PlayerClass, PlayerRaceKey, TravelShortcuts);
+end
+
+-- function to close the rohan map window if it exists
+function TravelWindow:CloseRohanMap()
+    if (self.rohanMapWindow ~= nil) then
+        self.rohanMapWindow:SetVisible(false);
+    end
+    self.rohanMapWindow = nil;
+end
+
 function TravelWindow:OpenGondorMap()
-    self.gondorMapWindow = TravelWindowII.src.GondorMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
+    self.gondorMapWindow = TravelWindowII.src.MapWindow(self, MapType.GONDOR, PlayerClass, PlayerRaceKey, TravelShortcuts);
 end
 
 -- function to close the gondor map window if it exists
@@ -739,6 +754,19 @@ function TravelWindow:CloseGondorMap()
         self.gondorMapWindow:SetVisible(false);
     end
     self.gondorMapWindow = nil;
+end
+
+function TravelWindow:OpenHaradwaithMap()
+Turbine.Shell.WriteLine("OPEN")
+    self.haradwaithMapWindow = TravelWindowII.src.MapWindow(self, MapType.HARADWAITH, PlayerClass, PlayerRaceKey, TravelShortcuts);
+end
+
+-- function to close the haradwaith map window if it exists
+function TravelWindow:CloseHaradwaithMap()
+    if (self.haradwaithMapWindow ~= nil) then
+        self.haradwaithMapWindow:SetVisible(false);
+    end
+    self.haradwaithMapWindow = nil;
 end
 
 -- function to check if a table contains a specific element
