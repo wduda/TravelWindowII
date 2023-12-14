@@ -58,7 +58,9 @@ menuOptionsString = "Optionen";
 moorMapString = "Öffne Etten-Karte";
 eriadorMapString = "Öffne Eriador-Karte";
 rhovanionMapString = "Öffne Rhovanion-Karte";
+rohanMapString = "Öffne Rohan-Karte";
 gondorMapString = "Öffne Gondor-Karte";
+haradwaithMapString = "Öffne Haradwaith-Karte";
 menuSkillsString = "Nicht erlernte Fertigkeiten prüfen";
 
 --[[ travel skills ]] --

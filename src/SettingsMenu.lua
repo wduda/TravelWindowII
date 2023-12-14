@@ -55,7 +55,9 @@ function SettingsMenu:Constructor(parentWindow)
     MoorMapMenu = TravelWindowII.src.extensions.DMenuList(moorMapString);
     EriadorMapMenu = TravelWindowII.src.extensions.DMenuList(eriadorMapString);
     RhovanionMapMenu = TravelWindowII.src.extensions.DMenuList(rhovanionMapString);
+    RohanMapMenu = TravelWindowII.src.extensions.DMenuList(rohanMapString);
     GondorMapMenu = TravelWindowII.src.extensions.DMenuList(gondorMapString);
+    HaradwaithMapMenu = TravelWindowII.src.extensions.DMenuList(haradwaithMapString);
 
     -- add everything to the main menu
     MenuItems = self:GetItems();
@@ -71,57 +73,33 @@ function SettingsMenu:Constructor(parentWindow)
         MenuItems:Add(SkillsMenu);
         MenuItems:Add(EriadorMapMenu);
         MenuItems:Add(RhovanionMapMenu);
+        MenuItems:Add(RohanMapMenu);
         MenuItems:Add(GondorMapMenu);
+        MenuItems:Add(HaradwaithMapMenu);
     end
 
     -- set up the event handler
+    local startConnect = 2;
+    if PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer then
+        startConnect = 1;
+    end
     -- loop through top level of menu
     for i = 1, MenuItems:GetCount(), 1 do
-        local MenuList = MenuItems:Get(i);
+        local topItem = MenuItems:Get(i);
+        if topItem:GetCount() > 0 then
+            -- loop through the sub menu
+            for j = 1, topItem:GetCount(), 1 do
+                local menuItem = topItem:Get(j);
 
-        -- loop through the sub menu
-        for j = 1, MenuList:GetCount(), 1 do
-            local menuItem = MenuList:Get(j);
-
-            -- set the function to handle the event
-            menuItem.Click = function(sender, args)
+                -- set the function to handle the event
+                menuItem.Click = function(sender, args)
+                    self:Update(sender:GetText());
+                end
+            end
+        elseif i > startConnect then
+            topItem.Click = function(sender, args)
                 self:Update(sender:GetText());
             end
-        end
-    end
-
-    -- handle the last item's event
-    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        MenuItems:Get(3).Click = function(sender, args)
-            self:Update(sender:GetText());
-        end
-
-        MenuItems:Get(4).Click = function(sender, args)
-            self:Update(sender:GetText());
-        end
-
-        MenuItems:Get(5).Click = function(sender, args)
-            self:Update(sender:GetText());
-        end
-
-        MenuItems:Get(6).Click = function(sender, args)
-            self:Update(sender:GetText());
-        end
-
-        MenuItems:Get(7).Click = function(sender, args)
-            self:Update(sender:GetText());
-        end
-
-        MenuItems:Get(8).Click = function(sender, args)
-            self:Update(sender:GetText());
-        end
-    else
-        MenuItems:Get(2).Click = function(sender, args)
-            self:Update(sender:GetText());
-        end
-
-        MenuItems:Get(3).Click = function(sender, args)
-            self:Update(sender:GetText());
         end
     end
 
@@ -187,8 +165,12 @@ function SettingsMenu:Update(string)
         self.parent:OpenEriadorMap();
     elseif (string == rhovanionMapString) then
         self.parent:OpenRhovanionMap();
+    elseif (string == rohanMapString) then
+        self.parent:OpenRohanMap();
     elseif (string == gondorMapString) then
         self.parent:OpenGondorMap();
+    elseif (string == haradwaithMapString) then
+        self.parent:OpenHaradwaithMap();
     end
 
     -- set the selections
