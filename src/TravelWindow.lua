@@ -451,6 +451,7 @@ end
 function TravelWindow:SetShortcuts()
     -- set default values
     TravelShortcuts = {};
+    local sType = Turbine.UI.Lotro.ShortcutType.Skill;
     local shortcutIndex = 1;
 
     -- set the either the travel skills for free people or monsters
@@ -463,13 +464,14 @@ function TravelWindow:SetShortcuts()
             -- set the shortcut for the quickslot, check
             -- if the shortcut is the glan vraig map or not
             if (string.len(genLocations:IdAtIndex(i)) > 12) then
+                local sItem = Turbine.UI.Lotro.ShortcutType.Item;
                 table.insert(TravelShortcuts,
-                             TravelShortcut(2.0, genLocations:IdAtIndex(i), genLocations:NameAtIndex(i), 1,
+                             TravelShortcut(sItem, genLocations:IdAtIndex(i), genLocations:NameAtIndex(i), 1,
                                             shortcutIndex, Settings.enabled[genLocations:IdAtIndex(i)],
                                             genLocations:LabelAtIndex(i)));
             else
                 table.insert(TravelShortcuts,
-                             TravelShortcut(6.0, genLocations:IdAtIndex(i), genLocations:NameAtIndex(i), 1,
+                             TravelShortcut(sType, genLocations:IdAtIndex(i), genLocations:NameAtIndex(i), 1,
                                             shortcutIndex, Settings.enabled[genLocations:IdAtIndex(i)],
                                             genLocations:LabelAtIndex(i)));
             end
@@ -478,7 +480,7 @@ function TravelWindow:SetShortcuts()
         -- add the race travel to the list
         local racialShortcutIndex = self:TableIndex(Settings.order, racialLocations:IdAtIndex(PlayerRaceKey));
         table.insert(TravelShortcuts,
-                     TravelShortcut(6.0, racialLocations:IdAtIndex(PlayerRaceKey),
+                     TravelShortcut(sType, racialLocations:IdAtIndex(PlayerRaceKey),
                                     racialLocations:NameAtIndex(PlayerRaceKey), 2, racialShortcutIndex,
                                     Settings.enabled[racialLocations:IdAtIndex(PlayerRaceKey)],
                                     racialLocations:LabelAtIndex(PlayerRaceKey)));
@@ -487,7 +489,7 @@ function TravelWindow:SetShortcuts()
         for i = 1, travelCount[4], 1 do
             shortcutIndex = self:TableIndex(Settings.order, repLocations:IdAtIndex(i));
             table.insert(TravelShortcuts,
-                         TravelShortcut(6.0, repLocations:IdAtIndex(i), repLocations:NameAtIndex(i), 3, shortcutIndex,
+                         TravelShortcut(sType, repLocations:IdAtIndex(i), repLocations:NameAtIndex(i), 3, shortcutIndex,
                                         Settings.enabled[repLocations:IdAtIndex(i)], repLocations:LabelAtIndex(i),
                                         repLocations:DescAtIndex(i)));
         end
@@ -496,7 +498,7 @@ function TravelWindow:SetShortcuts()
         for i = 1, travelCount[6], 1 do
             shortcutIndex = self:TableIndex(Settings.order, creepLocations:IdAtIndex(i));
             table.insert(TravelShortcuts,
-                         TravelShortcut(6.0, creepLocations:IdAtIndex(i), creepLocations:NameAtIndex(i), 3,
+                         TravelShortcut(sType, creepLocations:IdAtIndex(i), creepLocations:NameAtIndex(i), 3,
                                         shortcutIndex, Settings.enabled[creepLocations:IdAtIndex(i)],
                                         creepLocations:LabelAtIndex(i)));
         end
@@ -507,7 +509,7 @@ function TravelWindow:SetShortcuts()
         for i = 1, travelCount[1], 1 do
             shortcutIndex = self:TableIndex(Settings.order, hunterLocations:IdAtIndex(i));
             table.insert(TravelShortcuts,
-                         TravelShortcut(6.0, hunterLocations:IdAtIndex(i), hunterLocations:NameAtIndex(i), 4,
+                         TravelShortcut(sType, hunterLocations:IdAtIndex(i), hunterLocations:NameAtIndex(i), 4,
                                         shortcutIndex, Settings.enabled[hunterLocations:IdAtIndex(i)],
                                         hunterLocations:LabelAtIndex(i), hunterLocations:DescAtIndex(i)));
         end
@@ -518,7 +520,7 @@ function TravelWindow:SetShortcuts()
         for i = 1, travelCount[2], 1 do
             shortcutIndex = self:TableIndex(Settings.order, wardenLocations:IdAtIndex(i));
             table.insert(TravelShortcuts,
-                         TravelShortcut(6.0, wardenLocations:IdAtIndex(i), wardenLocations:NameAtIndex(i), 4,
+                         TravelShortcut(sType, wardenLocations:IdAtIndex(i), wardenLocations:NameAtIndex(i), 4,
                                         shortcutIndex, Settings.enabled[wardenLocations:IdAtIndex(i)],
                                         wardenLocations:LabelAtIndex(i), wardenLocations:DescAtIndex(i)));
         end
@@ -529,7 +531,7 @@ function TravelWindow:SetShortcuts()
         for i = 1, travelCount[7], 1 do
             shortcutIndex = self:TableIndex(Settings.order, marinerLocations:IdAtIndex(i));
             table.insert(TravelShortcuts,
-                         TravelShortcut(6.0, marinerLocations:IdAtIndex(i), marinerLocations:NameAtIndex(i), 4,
+                         TravelShortcut(sType, marinerLocations:IdAtIndex(i), marinerLocations:NameAtIndex(i), 4,
                                         shortcutIndex, Settings.enabled[marinerLocations:IdAtIndex(i)],
                                         marinerLocations:LabelAtIndex(i), marinerLocations:DescAtIndex(i)));
         end
