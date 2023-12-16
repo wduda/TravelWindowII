@@ -74,6 +74,10 @@ function TravelGridTab:Constructor(toplevel)
         self:DoScroll(sender, args);
     end
 
+    self.myLabel.MouseUp = function(sender, args)
+        self.parent:MouseUp(sender, args);
+    end
+
     --[[  EVENT HANDLERS  ]] --
 
     -- make sure we check for updates

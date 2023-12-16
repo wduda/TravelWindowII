@@ -28,6 +28,8 @@ function TravelWindow:Constructor()
     self.reloadGVMap = false;
     self.options = nil;
     self.dirty = true;
+    self.isMouseDown = false;
+    self.isResizing = false;
 
     -- create the lists of travel locations and the shortcuts
     -- that are used to execute them
@@ -242,10 +244,36 @@ function TravelWindow:Constructor()
 
     -- go to low opacity when mouse is not over
     self.MouseLeave = function(sender, args)
-        self:SetOpacity(Settings.mainMinOpacity);
+        local mX, mY = self:GetMousePosition();
+        local winX, winY = self:GetSize();
+        local outsideWindow = mX < 1 or mY < 1 or mX > winX - 1 or mY > winY - 1;
+
+        if not(self.isMouseDown) and outsideWindow then
+            self:SetOpacity(Settings.mainMinOpacity);
+        end
+    end
+
+    self.MouseDown = function(sender, args)
+        self.isMouseDown = true;
+    end
+
+    self.MouseUp = function(sender, args)
+        local mX, mY = self:GetMousePosition();
+        local winX, winY = self:GetSize();
+        local outsideWindow = mX < 1 or mY < 1 or mX > winX - 1 or mY > winY - 1;
+
+        if not(self.isResizing) and outsideWindow then
+            self:SetOpacity(Settings.mainMinOpacity);
+        end
+
+        self.isMouseDown = false;
+        self.isResizing = false;
     end
 
     self.SizeChanged = function(sender, args)
+        if self.isMouseDown then
+            self.isResizing = true;
+        end
         Settings.width = self:GetWidth();
         Settings.height = self:GetHeight();
         self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
