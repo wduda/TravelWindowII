@@ -21,22 +21,36 @@ function TravelListTab:Constructor(toplevel)
     self.parent = toplevel;
     TravelGridTab.Constructor(self);
 
-    self.itemWidth = 22;
-    self.itemHeight = self:GetWidth() - 30;
+    self.itemHeight = 22;
 
+    -- set up the scrollbar for the list
+    self.myScrollBar = Turbine.UI.Lotro.ScrollBar();
+    self.myScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
+    self.myScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
+    self.myScrollBar:SetMinimum(0);
+
+    -- show the menu when right clicked
+    self.myScrollBar.MouseClick = function(sender, args)
+        if (args.Button == Turbine.UI.MouseButton.Right) then
+            Menu:ShowMenu();
+        end
+    end
+
+    -- call the routine to update the
+    -- sub window when the value of the
+    -- scrollbar is changed.
+    self.myScrollBar.ValueChanged = function(sender, args)
+        self:UpdateSubWindow();
+    end
 end
 
 function TravelListTab:SetItems()
-    if self.tabId == self.parent.MainPanel.selectedPage then
-        self.labels = {};
-        TravelGridTab.SetItems(self);
-    else
-        for i = 1, #self.quickslots, 1 do
-            self.quickslots[i]:SetSize(self.itemWidth, self.itemHeight);
-            self.labels[i]:SetSize(self.itemWidth, self.itemHeight);
-        end
-        TravelGridTab.SetItems(self);
+    if self.tabId ~= self.parent.MainPanel.selectedPage then
+        return
     end
+    self.itemWidth = self:GetWidth() - 30;
+    self.labels = {};
+    TravelGridTab.SetItems(self);
 end
 
 function TravelListTab:AddItem(shortcut)
@@ -106,49 +120,18 @@ function TravelListTab:AddItem(shortcut)
     self.row = self.row + 1;
 end
 
-function TravelListTab:SetScrollBar()
-
-    if self.myScrollBar == nil then
-        -- set up the scrollbar for the list
-        self.myScrollBar = Turbine.UI.Lotro.ScrollBar();
-        self.myScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
-        self.myScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
-        self.myScrollBar:SetMinimum(0);
-
-        -- show the menu when right clicked
-        self.myScrollBar.MouseClick = function(sender, args)
-            if (args.Button == Turbine.UI.MouseButton.Right) then
-                Menu:ShowMenu();
-            end
-        end
-
-        -- call the routine to update the
-        -- sub window when the value of the
-        -- scrollbar is changed.
-        self.myScrollBar.ValueChanged = function(sender, args)
-            self:UpdateSubWindow();
-        end
-    end
-
-    self.myScrollBar:SetSize(10, self:GetHeight());
-    self.myScrollBar:SetPosition(self:GetWidth() - 10, 0);
-
+function TravelListTab:UpdateScrollbar(numOfShortcuts)
     -- set the maximum value of the scrollbar
     -- based on the number of rows in the subwindow
-    NumberOfRows = #self.quickslots;
-
-    self.max = NumberOfRows * 22 - self:GetHeight();
-    if (self.max < 0) then
-        -- the max cannot be less than one
-        self.max = 0;
-        self.myScrollBar:SetMaximum(self.max);
-        self.myScrollBar:SetParent(self.SubWindow);
-        self.myScrollBar:SetVisible(false);
-    else
-        self.myScrollBar:SetMaximum(self.max);
-        self.myScrollBar:SetParent(self.SubWindow);
-        self.myScrollBar:SetVisible(true);
+    self.maxScroll = numOfShortcuts * 22 - self:GetHeight();
+    if self.maxScroll < 0 then
+        -- the maxScroll cannot be less than one
+        self.maxScroll = 0;
     end
+end
+
+function TravelListTab:GetMargin(numOfShortcuts)
+    return 0;
 end
 
 function TravelListTab:UpdateSubWindow()
@@ -170,7 +153,6 @@ function TravelListTab:SetSize(width, height)
     -- set the size of the tab
     Turbine.UI.Control.SetSize(self, width, height);
 
-    self.itemWidth = self:GetWidth() - 30;
     self:SetItems();
 
     Turbine.UI.Control.SetOpacity(self, 1);

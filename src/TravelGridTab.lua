@@ -19,7 +19,7 @@ function TravelGridTab:Constructor(toplevel)
     -- set the default values
     self.quickslots = {};
     self.numOfCols = 0;
-    self.max = 1;
+    self.maxScroll = 0;
 
     if self.parent == nil then
         -- need top level window in order to close it
@@ -30,7 +30,7 @@ function TravelGridTab:Constructor(toplevel)
     self.SubWindow = Turbine.UI.Control();
     self.SubWindow:SetZOrder(99);
     self.SubWindow:SetPosition(0, 0);
-    self.SubWindow:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
+    self.SubWindow:SetBackColor(Turbine.UI.Color(1, 0, 0, 0));
     self.SubWindow:SetParent(self);
     self.SubWindow:SetMouseVisible(true);
     self.SubWindow:SetOpacity(1);
@@ -97,16 +97,13 @@ function TravelGridTab:DoScroll(sender, args)
     local newValue = self.myScrollBar:GetValue() - args.Direction * 20;
 
     -- make sure the value does not go below zero
-    if (newValue < 0) then
+    if newValue < 0 then
         newValue = 0;
     end
-
-    -- set the new value
     self.myScrollBar:SetValue(newValue);
 
-    -- hide the scrollbar if the max value is 0, meaning we don't need a
-    -- scrollbar
-    self.myScrollBar:SetVisible(self.max > 0);
+    -- hide the scrollbar if the max value is 0, we don't need it
+    self.myScrollBar:SetVisible(self.maxScroll > 0);
 end
 
 -- function to force the tab to update the subwindow control
@@ -126,52 +123,48 @@ end
 -- function to set all the quickslot items to show
 function TravelGridTab:SetItems()
 
-    local width = self:GetWidth();
-    local cols = self.numOfCols;
-    if cols > #self.quickslots then
-        cols = #self.quickslots;
+    if self.tabId ~= self.parent.MainPanel.selectedPage then
+        return
     end
-    if self.max > 0 then
-        width = width - 10;
+
+    -- clear all the old quickslots from the Sub Window
+    if self.SubWindow ~= nil then
+        self.controlList = self.SubWindow:GetControls();
+        self.controlList:Clear();
     end
-    local margin = math.floor((width - cols * 38) / 2.0);
-    if self.tabId == self.parent.MainPanel.selectedPage then
 
-        -- clear all the old quickslots from the Sub Window
-        if self.SubWindow ~= nil then
-            self.controlList = self.SubWindow:GetControls();
-            self.controlList:Clear();
-        end
-
-        self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
-
-        -- clear the quickslots table, and set row and column to 1
-        self.quickslots = {};
-        self.row = 1;
-        self.col = 1;
-
-        -- loop through all the shortcuts and add those that are enabled
-        for i = 1, #TravelShortcuts, 1 do
-            local shortcut = TravelShortcuts[i];
-            if shortcut:IsEnabled() then
-                -- apply skill type filter if set in options
-                if hasbit(Settings.filters, bit(shortcut:GetTravelType())) then
-                    -- make sure skill is trained, lookup by ingame name
-                    if shortcut.found then
-                        self:AddItem(shortcut, margin);
-                    end
-                end
+    -- collect shortcuts for display
+    local slots = {}
+    for i = 1, #TravelShortcuts, 1 do
+        local shortcut = TravelShortcuts[i];
+        -- make sure skill is trained and enabled
+        if shortcut.found and shortcut:IsEnabled() then
+            -- apply skill type filter if set in options
+            if hasbit(Settings.filters, bit(shortcut:GetTravelType())) then
+                slots[#slots + 1] = shortcut;
             end
         end
-    else
-
-        self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
     end
 
-    -- set the scrollbar up
-    self:SetScrollBar();
+    -- update controls
+    self:UpdateScrollbar(#slots);
+    self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
+    self.myScrollBar:SetParent(self.SubWindow);
+    self.myScrollBar:SetSize(10, self:GetHeight());
+    self.myScrollBar:SetPosition(self:GetWidth() - 10, 0);
+    self.myScrollBar:SetMaximum(self.maxScroll);
+    self.myScrollBar:SetVisible(self.maxScroll > 0);
     self.myLabel:SetParent(self.SubWindow);
     self.myLabel:SetSize(self:GetWidth() - 10, self:GetHeight());
+
+    -- clear the quickslots table, row, and column and create new quickslots
+    self.quickslots = {};
+    self.row = 1;
+    self.col = 1;
+    local margin = self:GetMargin(#slots);
+    for i = 1, #slots, 1 do
+        self:AddItem(slots[i], margin);
+    end
 end
 
 -- function to add a single shortcut to the tab
@@ -225,24 +218,37 @@ function TravelGridTab:AddItem(shortcut, margin)
     end
 end
 
-function TravelGridTab:SetScrollBar()
+function TravelGridTab:UpdateScrollbar(numOfShortcuts)
+    -- calculate number of columns
+    local marginOffset = 1;
+    self.numOfCols = math.floor((self:GetWidth() - 4) / 38);
+    local numOfRows = math.ceil(numOfShortcuts / self.numOfCols);
 
-    self.myScrollBar:SetParent(self.SubWindow);
-    self.myScrollBar:SetSize(10, self:GetHeight());
-    self.myScrollBar:SetPosition(self:GetWidth() - 10, 0);
-
-    -- set the maximum value of the scrollbar
-    -- based on the number of rows in the subwindow
-    NumberOfSlots = #self.quickslots;
-    NumberOfRows = math.ceil(NumberOfSlots / self.numOfCols);
-
-    self.max = NumberOfRows * 38 - self:GetHeight();
-    if (self.max < 0) then
-        -- the max cannot be less than one
-        self.max = 0;
+    -- set the maximum scroll of the scrollbar
+    self.maxScroll = numOfRows * 38 - self:GetHeight();
+    if self.maxScroll < 1 then
+        self.maxScroll = 0;
+    else
+        -- include scrollbar width
+        self.numOfCols = math.floor((self:GetWidth() - 14) / 38);
+        numOfRows = math.ceil(numOfShortcuts / self.numOfCols);
     end
-    self.myScrollBar:SetMaximum(self.max);
-    self.myScrollBar:SetVisible(self.max > 0);
+end
+
+function TravelGridTab:GetMargin(numOfShortcuts)
+    -- center the grid icons by calculating start position
+    local cols = self.numOfCols;
+    if numOfShortcuts < cols then
+        cols = numOfShortcuts;
+    end
+    local width = self:GetWidth();
+    local marginOffset = 1;
+    if self.maxScroll < 1 then
+        marginOffset = 0;
+    else
+        width = width - 12; -- remove width of scrollbar
+    end
+    return math.floor((width - cols * 38) / 2.0) - marginOffset;
 end
 
 -- function to adjust the size of the tab and all items in the tab
@@ -250,9 +256,6 @@ function TravelGridTab:SetSize(width, height)
 
     -- set the size of the tab
     Turbine.UI.Control.SetSize(self, width, height);
-
-    -- figure out the column width
-    self.numOfCols = math.floor((self:GetWidth() - 36) / 36);
 
     -- reset all the quickslots of the tab
     self:SetItems();
