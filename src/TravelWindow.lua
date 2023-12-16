@@ -91,7 +91,6 @@ function TravelWindow:Constructor()
     -- set up all the shortcuts
     self:CheckEnabledSettings();
     self:SetShortcuts();
-    self:CheckSkills(false);
 
     -- create the tabbed panel to hold all the other panels
     self.MainPanel = TravelWindowII.src.extensions.DPanel();
