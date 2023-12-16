@@ -55,9 +55,10 @@ function TravelGridTab:Constructor(toplevel)
     self.myScrollBar.ValueChanged = function(sender, args)
         self:UpdateSubWindow();
     end
+
     -- add an invisible label to intercept mouse events
     self.myLabel = Turbine.UI.Label();
-    self.myLabel:SetSize(self:GetWidth(), self:GetHeight());
+    self.myLabel:SetSize(self:GetWidth() - 10, self:GetHeight());
     self.myLabel:SetPosition(0, 0);
 
     -- show the menu when right clicked
@@ -163,7 +164,7 @@ function TravelGridTab:SetItems()
     -- set the scrollbar up
     self:SetScrollBar();
     self.myLabel:SetParent(self.SubWindow);
-    self.myLabel:SetSize(self:GetWidth(), self:GetHeight());
+    self.myLabel:SetSize(self:GetWidth() - 10, self:GetHeight());
 end
 
 -- function to add a single shortcut to the tab
@@ -221,7 +222,7 @@ function TravelGridTab:SetScrollBar()
 
     self.myScrollBar:SetParent(self.SubWindow);
     self.myScrollBar:SetSize(10, self:GetHeight());
-    self.myScrollBar:SetPosition(self:GetWidth() - 5, 0);
+    self.myScrollBar:SetPosition(self:GetWidth() - 10, 0);
 
     -- set the maximum value of the scrollbar
     -- based on the number of rows in the subwindow
