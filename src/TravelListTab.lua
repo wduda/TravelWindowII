@@ -17,13 +17,13 @@ import "TravelWindowII.src.utils.BitOps";
 TravelListTab = class(TravelGridTab);
 
 function TravelListTab:Constructor(toplevel)
+    -- need top level window in order to close it
+    self.parent = toplevel;
     TravelGridTab.Constructor(self);
 
     self.itemWidth = 22;
     self.itemHeight = self:GetWidth() - 30;
 
-    -- need top level window in order to close it
-    self.parent = toplevel;
 end
 
 function TravelListTab:SetItems()

@@ -21,8 +21,10 @@ function TravelGridTab:Constructor(toplevel)
     self.numOfCols = 0;
     self.max = 1;
 
-    -- need top level window in order to close it
-    self.parent = toplevel;
+    if self.parent == nil then
+        -- need top level window in order to close it
+        self.parent = toplevel;
+    end
 
     -- a subwindow (now a control) for containing all the quickslots
     self.SubWindow = Turbine.UI.Control();
