@@ -36,6 +36,25 @@ function TravelGridTab:Constructor(toplevel)
     self.SubWindow:SetOpacity(1);
     self.SubWindow:SetVisible(true);
 
+    -- set up the scrollbar for the list
+    self.myScrollBar = Turbine.UI.Lotro.ScrollBar();
+    self.myScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
+    self.myScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
+    self.myScrollBar:SetMinimum(0);
+    self.myScrollBar:SetVisible(false);
+
+    self.myScrollBar.MouseClick = function(sender, args)
+        if (args.Button == Turbine.UI.MouseButton.Right) then
+            Menu:ShowMenu();
+        end
+    end
+
+    -- call the routine to update the
+    -- sub window when the value of the
+    -- scrollbar is changed.
+    self.myScrollBar.ValueChanged = function(sender, args)
+        self:UpdateSubWindow();
+    end
     -- add an invisible label to intercept mouse events
     self.myLabel = Turbine.UI.Label();
     self.myLabel:SetSize(self:GetWidth(), self:GetHeight());
@@ -64,7 +83,6 @@ function TravelGridTab:Constructor(toplevel)
             Menu:ShowMenu();
         end
     end
-
 end
 
 -- function to handle mouse scrollwheel events
@@ -197,27 +215,6 @@ end
 
 function TravelGridTab:SetScrollBar()
 
-    if self.myScrollBar == nil then
-        -- set up the scrollbar for the list
-        self.myScrollBar = Turbine.UI.Lotro.ScrollBar();
-        self.myScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
-        self.myScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
-        self.myScrollBar:SetMinimum(0);
-
-        -- show the menu when right clicked
-        self.myScrollBar.MouseClick = function(sender, args)
-            if (args.Button == Turbine.UI.MouseButton.Right) then
-                Menu:ShowMenu();
-            end
-        end
-
-        -- call the routine to update the
-        -- sub window when the value of the
-        -- scrollbar is changed.
-        self.myScrollBar.ValueChanged = function(sender, args)
-            self:UpdateSubWindow();
-        end
-    end
     self.myScrollBar:SetParent(self.SubWindow);
     self.myScrollBar:SetSize(10, self:GetHeight());
     self.myScrollBar:SetPosition(self:GetWidth() - 5, 0);
