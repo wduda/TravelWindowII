@@ -48,8 +48,8 @@ function TravelListTab:SetItems()
     if self.tabId ~= self.parent.MainPanel.selectedPage then
         return
     end
+
     self.itemWidth = self:GetWidth() - 30;
-    self.labels = {};
     TravelGridTab.SetItems(self);
 end
 
@@ -58,62 +58,70 @@ function TravelListTab:AddItem(shortcut)
     -- set the index value based on the row and column
     local index = (self.row - 1) + self.col;
 
-    -- create new quickslots setting the position
-    -- based on the row and column locations
-    self.quickslots[index] = Turbine.UI.Lotro.Quickslot();
-    self.quickslots[index]:SetSize(self.itemWidth, self.itemHeight);
-    self.quickslots[index]:SetPosition(10 + ((self.col - 1) * (self.itemWidth + 2)),
+    if not(self.parent.dirty) then
+        self.quickslots[index]:SetSize(self.itemWidth, self.itemHeight);
+        self.labels[index]:SetSize(self.itemWidth, self.itemHeight);
+    else
+        if index == 1 then
+            self.labels = {};
+        end
+        -- create new quickslots setting the position
+        -- based on the row and column locations
+        self.quickslots[index] = Turbine.UI.Lotro.Quickslot();
+        self.quickslots[index]:SetSize(self.itemWidth, self.itemHeight);
+        self.quickslots[index]:SetPosition(10 + ((self.col - 1) * (self.itemWidth + 2)),
+                                           (self.row - 1) * self.itemHeight);
+        self.quickslots[index]:SetZOrder(90);
+        self.quickslots[index]:SetOpacity(1);
+        self.quickslots[index]:SetUseOnRightClick(false);
+        self.quickslots[index]:SetParent(self.SubWindow);
+
+        pcall(function()
+            self.quickslots[index]:SetShortcut(shortcut);
+        end)
+
+        -- create the label that will cover the shortcut
+        self.labels[index] = Turbine.UI.Label();
+        self.labels[index]:SetSize(self.itemWidth, self.itemHeight);
+        self.labels[index]:SetPosition(10 + ((self.col - 1) * (self.itemWidth + 2)),
                                        (self.row - 1) * self.itemHeight);
-    self.quickslots[index]:SetZOrder(90);
-    self.quickslots[index]:SetOpacity(1);
-    self.quickslots[index]:SetUseOnRightClick(false);
-    self.quickslots[index]:SetParent(self.SubWindow);
+        self.labels[index]:SetZOrder(100);
+        self.labels[index]:SetMouseVisible(false);
+        self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+        self.labels[index]:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
+        self.labels[index]:SetText(shortcut:GetSkillLabel());
+        self.labels[index]:SetParent(self.SubWindow);
 
-    pcall(function()
-        self.quickslots[index]:SetShortcut(shortcut);
-    end)
+        -- set all quickslots to be visible and
+        -- disable dropping new shortcuts onto them
+        self.quickslots[index]:SetAllowDrop(false);
+        self.quickslots[index]:SetVisible(true);
 
-    -- create the label that will cover the shortcut
-    self.labels[index] = Turbine.UI.Label();
-    self.labels[index]:SetSize(self.itemWidth, self.itemHeight);
-    self.labels[index]:SetPosition(10 + ((self.col - 1) * (self.itemWidth + 2)),
-                                   (self.row - 1) * self.itemHeight);
-    self.labels[index]:SetZOrder(100);
-    self.labels[index]:SetMouseVisible(false);
-    self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.labels[index]:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
-    self.labels[index]:SetText(shortcut:GetSkillLabel());
-    self.labels[index]:SetParent(self.SubWindow);
-
-    -- set all quickslots to be visible and
-    -- disable dropping new shortcuts onto them
-    self.quickslots[index]:SetAllowDrop(false);
-    self.quickslots[index]:SetVisible(true);
-
-    -- show the menu when right clicked
-    self.quickslots[index].MouseClick = function(sender, args)
-        if (args.Button == Turbine.UI.MouseButton.Right) then
-            Menu:ShowMenu();
-        else
-            if (Settings.hideOnTravel == 1) then
-                self.parent:SetVisible(false);
+        -- show the menu when right clicked
+        self.quickslots[index].MouseClick = function(sender, args)
+            if (args.Button == Turbine.UI.MouseButton.Right) then
+                Menu:ShowMenu();
+            else
+                if (Settings.hideOnTravel == 1) then
+                    self.parent:SetVisible(false);
+                end
             end
         end
-    end
 
-    -- handle the mouse wheel scroll
-    self.quickslots[index].MouseWheel = function(sender, args)
-        self:DoScroll(sender, args);
-    end
+        -- handle the mouse wheel scroll
+        self.quickslots[index].MouseWheel = function(sender, args)
+            self:DoScroll(sender, args);
+        end
 
-    -- change the background colour of the label with the mouse enters
-    self.quickslots[index].MouseEnter = function(sender, args)
-        self.labels[index]:SetBackColor(Turbine.UI.Color(0.87, 0.17, 0.17, 0.17));
-    end
+        -- change the background colour of the label with the mouse enters
+        self.quickslots[index].MouseEnter = function(sender, args)
+            self.labels[index]:SetBackColor(Turbine.UI.Color(0.87, 0.17, 0.17, 0.17));
+        end
 
-    -- return the background colour when the mouse leaves the label
-    self.quickslots[index].MouseLeave = function(sender, args)
-        self.labels[index]:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
+        -- return the background colour when the mouse leaves the label
+        self.quickslots[index].MouseLeave = function(sender, args)
+            self.labels[index]:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
+        end
     end
 
     -- increase the row number

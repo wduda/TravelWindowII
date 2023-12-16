@@ -18,6 +18,7 @@ function TravelGridTab:Constructor(toplevel)
 
     -- set the default values
     self.quickslots = {};
+    self.selected = {};
     self.numOfCols = 0;
     self.maxScroll = 0;
 
@@ -127,44 +128,61 @@ function TravelGridTab:SetItems()
         return
     end
 
-    -- clear all the old quickslots from the Sub Window
-    if self.SubWindow ~= nil then
-        self.controlList = self.SubWindow:GetControls();
-        self.controlList:Clear();
-    end
-
-    -- collect shortcuts for display
-    local slots = {}
-    for i = 1, #TravelShortcuts, 1 do
-        local shortcut = TravelShortcuts[i];
-        -- make sure skill is trained and enabled
-        if shortcut.found and shortcut:IsEnabled() then
-            -- apply skill type filter if set in options
-            if hasbit(Settings.filters, bit(shortcut:GetTravelType())) then
-                slots[#slots + 1] = shortcut;
-            end
+    if not(self.parent.dirty) then
+        local prevNumOfCols = self.numOfCols;
+        self:UpdateScrollbar(#self.selected);
+        if self.parent.MainPanel.selectedPage == 2 and self.numOfCols ~= prevNumOfCols then
+            self.parent.dirty = true;
         end
     end
 
-    -- update controls
-    self:UpdateScrollbar(#slots);
-    self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
-    self.myScrollBar:SetParent(self.SubWindow);
-    self.myScrollBar:SetSize(10, self:GetHeight());
-    self.myScrollBar:SetPosition(self:GetWidth() - 10, 0);
-    self.myScrollBar:SetMaximum(self.maxScroll);
-    self.myScrollBar:SetVisible(self.maxScroll > 0);
-    self.myLabel:SetParent(self.SubWindow);
-    self.myLabel:SetSize(self:GetWidth() - 10, self:GetHeight());
-
-    -- clear the quickslots table, row, and column and create new quickslots
-    self.quickslots = {};
     self.row = 1;
     self.col = 1;
-    local margin = self:GetMargin(#slots);
-    for i = 1, #slots, 1 do
-        self:AddItem(slots[i], margin);
+    if self.parent.dirty then
+        -- clear all the old quickslots from the SubWindow
+        self.controlList = self.SubWindow:GetControls();
+        self.controlList:Clear();
+
+        -- collect shortcuts for display
+        self.selected = {}
+        for i = 1, #TravelShortcuts, 1 do
+            local shortcut = TravelShortcuts[i];
+            -- make sure skill is trained and enabled
+            if shortcut.found and shortcut:IsEnabled() then
+                -- apply skill type filter if set in options
+                if hasbit(Settings.filters, bit(shortcut:GetTravelType())) then
+                    self.selected[#self.selected + 1] = shortcut;
+                end
+            end
+        end
+
+        -- update controls
+        self:UpdateScrollbar(#self.selected);
+        self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
+        self.myScrollBar:SetParent(self.SubWindow);
+        self.myScrollBar:SetSize(10, self:GetHeight());
+        self.myScrollBar:SetPosition(self:GetWidth() - 10, 0);
+        self.myScrollBar:SetMaximum(self.maxScroll);
+        self.myScrollBar:SetVisible(self.maxScroll > 0);
+        self.myLabel:SetParent(self.SubWindow);
+        self.myLabel:SetSize(self:GetWidth() - 10, self:GetHeight());
+
+        -- clear the quickslots table
+        self.quickslots = {};
+    else
+        self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
+        self.myScrollBar:SetSize(10, self:GetHeight());
+        self.myScrollBar:SetPosition(self:GetWidth() - 10, 0);
+        self.myScrollBar:SetVisible(self.maxScroll > 0);
+        self.myLabel:SetSize(self:GetWidth() - 10, self:GetHeight());
     end
+
+    local margin = self:GetMargin(#self.selected);
+    for i = 1, #self.selected, 1 do
+        self:AddItem(self.selected[i], margin);
+    end
+
+    self.parent.dirty = false;
 end
 
 -- function to add a single shortcut to the tab
@@ -172,40 +190,44 @@ function TravelGridTab:AddItem(shortcut, margin)
 
     local index = (self.row - 1) * self.numOfCols + self.col;
 
-    --	create new quickslots setting the position
-    --  based on the row and column locations
-    self.quickslots[index] = Turbine.UI.Lotro.Quickslot();
-    self.quickslots[index]:SetSize(36, 36);
-    self.quickslots[index]:SetPosition(margin + ((self.col - 1) * 38), ((self.row - 1) * 38));
-    self.quickslots[index]:SetZOrder(90);
-    self.quickslots[index]:SetOpacity(1);
-    self.quickslots[index]:SetUseOnRightClick(false);
-    self.quickslots[index]:SetParent(self.SubWindow);
+    if not(self.parent.dirty) then
+        self.quickslots[index]:SetPosition(margin + ((self.col - 1) * 38), ((self.row - 1) * 38));
+    else
+        --	create new quickslots setting the position
+        --  based on the row and column locations
+        self.quickslots[index] = Turbine.UI.Lotro.Quickslot();
+        self.quickslots[index]:SetSize(36, 36);
+        self.quickslots[index]:SetPosition(margin + ((self.col - 1) * 38), ((self.row - 1) * 38));
+        self.quickslots[index]:SetZOrder(90);
+        self.quickslots[index]:SetOpacity(1);
+        self.quickslots[index]:SetUseOnRightClick(false);
+        self.quickslots[index]:SetParent(self.SubWindow);
 
-    -- attempt to create the shortcut
-    pcall(function()
-        self.quickslots[index]:SetShortcut(shortcut);
-    end)
+        -- attempt to create the shortcut
+        pcall(function()
+            self.quickslots[index]:SetShortcut(shortcut);
+        end)
 
-    -- set all quickslots to be visible and
-    -- disable dropping new shortcuts onto them
-    self.quickslots[index]:SetAllowDrop(false);
-    self.quickslots[index]:SetVisible(true);
+        -- set all quickslots to be visible and
+        -- disable dropping new shortcuts onto them
+        self.quickslots[index]:SetAllowDrop(false);
+        self.quickslots[index]:SetVisible(true);
 
-    -- show the menu when right clicked
-    self.quickslots[index].MouseClick = function(sender, args)
-        if (args.Button == Turbine.UI.MouseButton.Right) then
-            Menu:ShowMenu();
-        else
-            if (Settings.hideOnTravel == 1) then
-                self.parent:SetVisible(false);
+        -- show the menu when right clicked
+        self.quickslots[index].MouseClick = function(sender, args)
+            if (args.Button == Turbine.UI.MouseButton.Right) then
+                Menu:ShowMenu();
+            else
+                if (Settings.hideOnTravel == 1) then
+                    self.parent:SetVisible(false);
+                end
             end
         end
-    end
 
-    -- handle the mouse wheel scroll
-    self.quickslots[index].MouseWheel = function(sender, args)
-        self:DoScroll(sender, args);
+        -- handle the mouse wheel scroll
+        self.quickslots[index].MouseWheel = function(sender, args)
+            self:DoScroll(sender, args);
+        end
     end
 
     -- increase the row number when the column

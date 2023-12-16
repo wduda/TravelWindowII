@@ -195,6 +195,7 @@ function SettingsMenu:Update(string)
     self:SetSelections();
 
     -- update the main window settings
+    self.parent.dirty = true;
     self.parent:UpdateSettings();
 end
 

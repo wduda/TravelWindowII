@@ -494,6 +494,7 @@ function OptionsPanel:AddSkillItemForEnabling(index, id, label)
         Settings.enabled[id] = sender:IsChecked();
         shortcutIndex = self.mainWindow:TableIndex(Settings.order, id);
         TravelShortcuts[shortcutIndex]:SetEnabled(sender:IsChecked());
+        self.mainWindow.dirty = true;
 
         -- update the main window settings
         self.mainWindow:UpdateSettings();
@@ -741,5 +742,6 @@ function OptionsPanel:SwapShortcuts(first, second)
         local tempShortcut = TravelShortcuts[first];
         TravelShortcuts[first] = TravelShortcuts[second];
         TravelShortcuts[second] = tempShortcut;
+        self.mainWindow.dirty = true;
     end
 end
