@@ -134,6 +134,7 @@ function TravelGridTab:SetItems()
         if self.parent.MainPanel.selectedPage == 2 and self.numOfCols ~= prevNumOfCols then
             self.parent.dirty = true;
         end
+    end
 
     self.row = 1;
     self.col = 1;
@@ -277,13 +278,6 @@ function TravelGridTab:SetSize(width, height)
 
     -- set the size of the tab
     Turbine.UI.Control.SetSize(self, width, height);
-
-    -- figure out the column width
-    local prevNumOfCols = self.numOfCols;
-    self.numOfCols = math.floor((self:GetWidth() - 36) / 36);
-    if self.parent.MainPanel.selectedPage == 2 and self.numOfCols ~= prevNumOfCols then
-        self.parent.dirty = true;
-    end
 
     -- reset all the quickslots of the tab
     self:SetItems();
