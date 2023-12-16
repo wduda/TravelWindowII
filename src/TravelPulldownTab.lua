@@ -130,6 +130,8 @@ function TravelPulldownTab:SetItems()
             self.quickslot:SetShortcut(TravelShortcuts[sender:GetSelection()]);
         end)
     end
+
+    self.parent.dirty = false;
 end
 
 -- function to adjust the size of the tab and all items in the tab

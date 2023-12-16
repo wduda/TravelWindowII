@@ -117,6 +117,8 @@ function TravelCaroTab:SetItems()
 
     -- update the quickslots
     self:SetShortcuts();
+
+    self.parent.dirty = false;
 end
 
 function TravelCaroTab:SetShortcuts()
