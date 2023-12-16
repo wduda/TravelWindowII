@@ -27,7 +27,6 @@ function TravelWindow:Constructor()
     self.minHeight = 150;
     self.reloadGVMap = false;
     self.options = nil;
-    self.dirty = true;
     self.isMouseDown = false;
     self.isResizing = false;
 
@@ -753,7 +752,6 @@ function TravelWindow:SortShortcuts()
             -- if the index of the second shortcut is lower than the index of
             -- the first, switch the shortcuts
             if TravelShortcuts[j]:GetIndex() < TravelShortcuts[j - 1]:GetIndex() then
-                self.dirty = true;
                 local temp = TravelShortcuts[j - 1];
                 TravelShortcuts[j - 1] = TravelShortcuts[j];
                 TravelShortcuts[j] = temp;
@@ -1039,11 +1037,7 @@ end
 function TravelWindow:UpdateSettings()
 
     -- get some settings from the menu
-    local prevMode = Settings.mode;
     Settings.mode, Settings.filters = Menu:GetSettings();
-    if prevMode ~= Settings.mode then
-        self.dirty = true;
-    end
 
     -- set which page of the tab panel to show
     self.MainPanel:SetTab(Settings.mode);

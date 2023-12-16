@@ -103,7 +103,7 @@ end
 
 function TravelPulldownTab:SetItems()
 
-    if self.tabId ~= self.parent.MainPanel.selectedPage or not(self.parent.dirty) then
+    if self.tabId ~= self.parent.MainPanel.selectedPage then
         return
     end
 
@@ -130,8 +130,6 @@ function TravelPulldownTab:SetItems()
             self.quickslot:SetShortcut(TravelShortcuts[sender:GetSelection()]);
         end)
     end
-
-    self.parent.dirty = false;
 end
 
 -- function to adjust the size of the tab and all items in the tab

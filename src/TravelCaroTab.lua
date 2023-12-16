@@ -93,7 +93,7 @@ end
 
 function TravelCaroTab:SetItems()
 
-    if self.tabId ~= self.parent.MainPanel.selectedPage or not(self.parent.dirty) then
+    if self.tabId ~= self.parent.MainPanel.selectedPage then
         return
     end
 
@@ -117,8 +117,6 @@ function TravelCaroTab:SetItems()
 
     -- update the quickslots
     self:SetShortcuts();
-
-    self.parent.dirty = false;
 end
 
 function TravelCaroTab:SetShortcuts()
