@@ -126,7 +126,16 @@ end
 -- function to set all the quickslot items to show
 function TravelGridTab:SetItems()
 
-    if self.tabId == self.parent.MainPanel.selectedPage and self.parent.dirty then
+    local width = self:GetWidth();
+    local cols = self.numOfCols;
+    if cols > #self.quickslots then
+        cols = #self.quickslots;
+    end
+    if self.max > 0 then
+        width = width - 10;
+    end
+    local margin = math.floor((width - cols * 38) / 2.0);
+    if self.tabId == self.parent.MainPanel.selectedPage then
 
         -- clear all the old quickslots from the Sub Window
         if self.SubWindow ~= nil then
@@ -149,7 +158,7 @@ function TravelGridTab:SetItems()
                 if hasbit(Settings.filters, bit(shortcut:GetTravelType())) then
                     -- make sure skill is trained, lookup by ingame name
                     if shortcut.found then
-                        self:AddItem(shortcut);
+                        self:AddItem(shortcut, margin);
                     end
                 end
             end
@@ -168,7 +177,7 @@ function TravelGridTab:SetItems()
 end
 
 -- function to add a single shortcut to the tab
-function TravelGridTab:AddItem(shortcut)
+function TravelGridTab:AddItem(shortcut, margin)
 
     local index = (self.row - 1) * self.numOfCols + self.col;
 
@@ -176,7 +185,7 @@ function TravelGridTab:AddItem(shortcut)
     --  based on the row and column locations
     self.quickslots[index] = Turbine.UI.Lotro.Quickslot();
     self.quickslots[index]:SetSize(36, 36);
-    self.quickslots[index]:SetPosition(10 + ((self.col - 1) * 38), ((self.row - 1) * 38));
+    self.quickslots[index]:SetPosition(margin + ((self.col - 1) * 38), ((self.row - 1) * 38));
     self.quickslots[index]:SetZOrder(90);
     self.quickslots[index]:SetOpacity(1);
     self.quickslots[index]:SetUseOnRightClick(false);
