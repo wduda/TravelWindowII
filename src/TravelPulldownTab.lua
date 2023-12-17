@@ -23,7 +23,7 @@ function TravelPulldownTab:Constructor(toplevel)
     -- this label is used to catch wheel moves
     self.scrollLabel = Turbine.UI.Label();
     self.scrollLabel:SetSize(180, 155);
-    self.scrollLabel:SetPosition(0, 20);
+    self.scrollLabel:SetPosition(0, 0);
     self.scrollLabel:SetParent(self);
 
     -- the pulldown box
@@ -37,11 +37,10 @@ function TravelPulldownTab:Constructor(toplevel)
     -- the quickslot for the shortcut
     self.quickslot = Turbine.UI.Lotro.Quickslot();
     self.quickslot:SetSize(36, 36);
-    self.quickslot:SetPosition(82, 55);
     self.quickslot:SetZOrder(98);
     self.quickslot:SetUseOnRightClick(false);
     self.quickslot:SetParent(self);
-    self.quickslot:SetVisible(true);
+    self.quickslot:SetVisible(false);
 
     --[[  EVENT HANDLERS  ]] --
 
@@ -129,6 +128,7 @@ function TravelPulldownTab:SetItems()
         pcall(function()
             self.quickslot:SetShortcut(TravelShortcuts[sender:GetSelection()]);
         end)
+        self.quickslot:SetVisible(true);
     end
 end
 
@@ -141,6 +141,8 @@ function TravelPulldownTab:SetSize(width, height)
     -- set the size of the labels
     self.pulldown:SetSize(self:GetWidth() - 20, 30);
     self.scrollLabel:SetSize(self:GetWidth(), self:GetHeight());
+    -- center the quickslot
+    self.quickslot:SetPosition(self:GetWidth() / 2.0 - 18, 55);
 
     Turbine.UI.Control.SetOpacity(self, 1);
 end
