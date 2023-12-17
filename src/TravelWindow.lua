@@ -23,8 +23,6 @@ function TravelWindow:Constructor()
     TravelShortcuts = {}; -- put all the shortcuts into one table
     TrainedSkills = Turbine.Gameplay.SkillList; -- TODO: update list on window open or maybe a timer
 
-    self.minWidth = 240;
-    self.minHeight = 150;
     self.reloadGVMap = false;
     self.options = nil;
     self.dirty = true;
@@ -327,15 +325,17 @@ function TravelWindow:UpdateSize()
         self.minWidth = 245;
         self.minHeight = 150;
     elseif (Settings.mode == 2) then
-        self.minWidth = 120;
-        self.minHeight = 130;
+        self.minWidth = 200;
+        self.minHeight = 100;
     elseif (Settings.mode == 3) then
-        self.minWidth = 120;
-        self.minHeight = 130;
+        self.minWidth = 160;
+        self.minHeight = 110;
     else
         self.minWidth = 220;
         self.minHeight = 150;
     end
+
+    self:SetMinimumSize(self.minWidth, self.minHeight);
 
     -- check that the window is not smaller than min width
     if (self:GetWidth() < self.minWidth) then
