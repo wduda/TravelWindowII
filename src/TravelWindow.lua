@@ -41,7 +41,7 @@ function TravelWindow:Constructor()
     self:SetPosition(Settings.positionX, Settings.positionY);
     self:SetSize(Settings.width, Settings.height);
     self:SetText(mainTitleString);
-    self:SetOpacity(1);
+    self:SetOpacity(Settings.mainMinOpacity);
     self:SetResizable(true);
     if (Settings.hideOnStart == 1) then
         self:SetVisible(false);
