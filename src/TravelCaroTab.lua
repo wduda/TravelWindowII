@@ -20,7 +20,6 @@ function TravelCaroTab:Constructor(toplevel)
     self.quickslots = {};
     self.shortcuts = {};
     self.selectedIndex = 1;
-    -- self.rationCount = 0;
 
     -- need top level window in order to close it
     self.parent = toplevel;
@@ -117,8 +116,6 @@ function TravelCaroTab:SetItems()
 
     -- update the quickslots
     self:SetShortcuts();
-
-    self.parent.dirty = false;
 end
 
 function TravelCaroTab:SetShortcuts()
