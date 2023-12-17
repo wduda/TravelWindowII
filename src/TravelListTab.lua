@@ -25,7 +25,6 @@ function TravelListTab:Constructor(toplevel)
 
     -- set up the scrollbar for the list
     self.myScrollBar = Turbine.UI.Lotro.ScrollBar();
-    self.myScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
     self.myScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
     self.myScrollBar:SetMinimum(0);
 
@@ -88,7 +87,7 @@ function TravelListTab:AddItem(shortcut)
         self.labels[index]:SetZOrder(100);
         self.labels[index]:SetMouseVisible(false);
         self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-        self.labels[index]:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
+        self.labels[index]:SetBackColor(Turbine.UI.Color(DefAlpha, 0, 0, 0));
         self.labels[index]:SetText(shortcut:GetSkillLabel());
         self.labels[index]:SetParent(self.SubWindow);
 
@@ -115,12 +114,12 @@ function TravelListTab:AddItem(shortcut)
 
         -- change the background colour of the label with the mouse enters
         self.quickslots[index].MouseEnter = function(sender, args)
-            self.labels[index]:SetBackColor(Turbine.UI.Color(0.87, 0.17, 0.17, 0.17));
+            self.labels[index]:SetBackColor(Turbine.UI.Color(DefAlpha, 0.17, 0.17, 0.17));
         end
 
         -- return the background colour when the mouse leaves the label
         self.quickslots[index].MouseLeave = function(sender, args)
-            self.labels[index]:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
+            self.labels[index]:SetBackColor(Turbine.UI.Color(DefAlpha, 0, 0, 0));
         end
     end
 

@@ -18,6 +18,7 @@ TravelWindow = class(Turbine.UI.Lotro.Window);
 function TravelWindow:Constructor()
     Turbine.UI.Lotro.Window.Constructor(self);
 
+    DefAlpha = 0.92;
     Settings = {};
     SettingsStrings = {};
     TravelShortcuts = {}; -- put all the shortcuts into one table
@@ -39,7 +40,6 @@ function TravelWindow:Constructor()
     -- configure the main window
     self:SetPosition(Settings.positionX, Settings.positionY);
     self:SetSize(Settings.width, Settings.height);
-    self:SetBackColor(Turbine.UI.Color(0.0, 0, 0, 0));
     self:SetText(mainTitleString);
     self:SetOpacity(Settings.mainMinOpacity);
     self:SetResizable(true);

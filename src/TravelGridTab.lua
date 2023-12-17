@@ -31,7 +31,6 @@ function TravelGridTab:Constructor(toplevel)
     self.SubWindow = Turbine.UI.Control();
     self.SubWindow:SetZOrder(99);
     self.SubWindow:SetPosition(0, 0);
-    self.SubWindow:SetBackColor(Turbine.UI.Color(1, 0, 0, 0));
     self.SubWindow:SetParent(self);
     self.SubWindow:SetMouseVisible(true);
     self.SubWindow:SetOpacity(1);
@@ -39,7 +38,6 @@ function TravelGridTab:Constructor(toplevel)
 
     -- set up the scrollbar for the list
     self.myScrollBar = Turbine.UI.Lotro.ScrollBar();
-    self.myScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
     self.myScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
     self.myScrollBar:SetMinimum(0);
     self.myScrollBar:SetVisible(false);
