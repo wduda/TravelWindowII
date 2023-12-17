@@ -199,29 +199,6 @@ function TravelCaroTab:CreateQuickslots()
             end
         end
     end
-
-    --[[ Set the size and position for the 5 quickslots ]] --
-
-    self.quickslots[1]:SetSize(22, 22);
-    self.quickslots[1]:SetPosition(25, 81);
-    self.quickslots[1]:SetZOrder(98);
-
-    self.quickslots[2]:SetSize(36, 36);
-    self.quickslots[2]:SetPosition(45, 78);
-    self.quickslots[2]:SetZOrder(99);
-
-    self.quickslots[3]:SetSize(36, 36);
-    self.quickslots[3]:SetPosition(72, 75);
-    self.quickslots[3]:SetMouseVisible(true);
-    self.quickslots[3]:SetZOrder(100);
-
-    self.quickslots[4]:SetSize(36, 36);
-    self.quickslots[4]:SetPosition(99, 78);
-    self.quickslots[4]:SetZOrder(99);
-
-    self.quickslots[5]:SetSize(36, 36);
-    self.quickslots[5]:SetPosition(119, 81);
-    self.quickslots[5]:SetZOrder(98);
 end
 
 -- function to adjust the size of the tab and all items in the tab
@@ -238,7 +215,7 @@ function TravelCaroTab:SetSize(width, height)
     self.quickslots[2]:SetSize(28, 28);
     self.quickslots[2]:SetPosition(self:GetWidth() / 2 - 45, (self:GetHeight() - 20) / 2 + 3);
 
-    self.quickslots[3]:SetStretchMode(1);
+    self.quickslots[3]:SetStretchMode(1); -- makes fuzzy but keeps lack of opacity consistent with other icons showing
     self.quickslots[3]:SetSize(36, 36);
     self.quickslots[3]:SetPosition(self:GetWidth() / 2 - 18, (self:GetHeight() - 20) / 2 + 5);
 
