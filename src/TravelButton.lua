@@ -95,6 +95,7 @@ function TravelButton:Constructor(parent)
 
             else
                 if not self.mainWindow:IsVisible() then
+                    self.mainWindow:CheckSkills(false);
                     self.mainWindow:SetOpacity(Settings.mainMinOpacity);
                 end
                 self.mainWindow:SetVisible(not self.mainWindow:IsVisible());

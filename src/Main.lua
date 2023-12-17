@@ -14,6 +14,7 @@ TravelCommand = Turbine.ShellCommand();
 -- handle the travel commands
 function TravelCommand:Execute(command, arguments)
     if (arguments == "show") then
+        _G.travel:CheckSkills(false);
         _G.travel:SetVisible(true);
     elseif (arguments == "hide") then
         _G.travel:SetVisible(false);
