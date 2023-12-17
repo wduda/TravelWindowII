@@ -41,7 +41,7 @@ function TravelWindow:Constructor()
     self:SetSize(Settings.width, Settings.height);
     self:SetBackColor(Turbine.UI.Color(0.0, 0, 0, 0));
     self:SetText(mainTitleString);
-    self:SetOpacity(1);
+    self:SetOpacity(Settings.mainMinOpacity);
     self:SetResizable(true);
     if (Settings.hideOnStart == 1) then
         self:SetVisible(false);
