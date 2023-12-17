@@ -231,6 +231,12 @@ function TravelWindow:Constructor()
         end
     end
 
+    self.MouseClick = function(sender, args)
+        if args.Button == Turbine.UI.MouseButton.Right then
+            Menu:ShowMenu();
+        end
+    end
+
     -- go to full opacity if mouse is over
     self.MouseEnter = function(sender, args)
         self:SetOpacity(Settings.mainMaxOpacity);
