@@ -94,6 +94,9 @@ function TravelButton:Constructor(parent)
                 self:SetBackColor(Turbine.UI.Color(0, 0.5, 0.5, 0.5));
 
             else
+                if not self.mainWindow:IsVisible() then
+                    self.mainWindow:SetOpacity(Settings.mainMinOpacity);
+                end
                 self.mainWindow:SetVisible(not self.mainWindow:IsVisible());
             end
         else
