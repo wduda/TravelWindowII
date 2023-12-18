@@ -29,12 +29,9 @@ function TravelGridTab:Constructor(toplevel)
 
     -- a subwindow (now a control) for containing all the quickslots
     self.SubWindow = Turbine.UI.Control();
-    self.SubWindow:SetZOrder(99);
     self.SubWindow:SetPosition(0, 0);
     self.SubWindow:SetParent(self);
     self.SubWindow:SetMouseVisible(true);
-    self.SubWindow:SetOpacity(1);
-    self.SubWindow:SetVisible(true);
 
     -- set up the scrollbar for the list
     self.myScrollBar = Turbine.UI.Lotro.ScrollBar();
@@ -204,7 +201,6 @@ function TravelGridTab:AddItem(shortcut, margin)
         self.quickslots[index]:SetPosition(margin + ((self.col - 1) * 38),
                 ((self.row - 1) * 38 - self.myScrollBar:GetValue()));
         self.quickslots[index]:SetZOrder(90);
-        self.quickslots[index]:SetOpacity(1);
         self.quickslots[index]:SetUseOnRightClick(false);
         self.quickslots[index]:SetParent(self.SubWindow);
 
@@ -288,6 +284,4 @@ function TravelGridTab:SetSize(width, height)
 
     -- reset all the quickslots of the tab
     self:SetItems();
-
-    Turbine.UI.Control.SetOpacity(self, 1);
 end
