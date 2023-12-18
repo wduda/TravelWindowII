@@ -194,6 +194,7 @@ function TravelGridTab:AddItem(shortcut, margin)
         self.quickslots[index] = Turbine.UI.Lotro.Quickslot();
         self.quickslots[index]:SetSize(36, 36);
         self.quickslots[index]:SetPosition(margin + ((self.col - 1) * 38), ((self.row - 1) * 38));
+        self.quickslots[index]:SetZOrder(90);
         self.quickslots[index]:SetUseOnRightClick(false);
         self.quickslots[index]:SetParent(self.SubWindow);
 
