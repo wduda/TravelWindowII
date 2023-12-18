@@ -236,8 +236,9 @@ end
 
 function TravelGridTab:UpdateScrollbar(numOfShortcuts)
     -- calculate number of columns
+    local padding = 4;
     local marginOffset = 1;
-    self.numOfCols = math.floor((self:GetWidth() - 4) / 38);
+    self.numOfCols = math.floor((self:GetWidth() - padding) / 38);
     local numOfRows = math.ceil(numOfShortcuts / self.numOfCols);
 
     -- set the maximum scroll of the scrollbar
@@ -246,7 +247,7 @@ function TravelGridTab:UpdateScrollbar(numOfShortcuts)
         self.maxScroll = 0;
     else
         -- include scrollbar width
-        self.numOfCols = math.floor((self:GetWidth() - 14) / 38);
+        self.numOfCols = math.floor((self:GetWidth() - padding - 10) / 38);
         numOfRows = math.ceil(numOfShortcuts / self.numOfCols);
     end
 end
