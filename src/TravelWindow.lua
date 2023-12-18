@@ -183,7 +183,7 @@ function TravelWindow:Constructor()
                 self:SetVisible(self.currentVisState);
                 self.ToggleButton:SetVisible(Settings.showButton == 1);
             end
-        elseif (args.Action == 268435635) then
+        elseif (args.Action == Turbine.UI.Lotro.Action.UI_Toggle) then
             if (self.hidden == false) then
                 self.currentVisState = self:IsVisible();
                 self.hidden = true;
