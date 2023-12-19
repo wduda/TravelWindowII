@@ -83,13 +83,13 @@ function TravelWindow:Constructor()
     self.previousCombatState = false;
     self.wasOpenBeforeCombat = false;
 
-    -- create a single context menu to use on all panels
-    Menu = SettingsMenu(self);
-    Menu:SetSettings(Settings.mode, Settings.filters);
-
     -- set up all the shortcuts
     self:CheckEnabledSettings();
     self:SetShortcuts();
+
+    -- create a single context menu to use on all panels
+    Menu = SettingsMenu(self);
+    Menu:SetSettings(Settings.mode, Settings.filters);
 
     -- create the tabbed panel to hold all the other panels
     self.MainPanel = TravelWindowII.src.extensions.DPanel();
@@ -118,6 +118,7 @@ function TravelWindow:Constructor()
     self.MainPanel:SetTab(Settings.mode);
     self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
     self.MainPanel:UpdateTabs();
+    self:CheckSkills(false);
     self:UpdateSettings();
 
     -- track the hidden state of the UI, manage previous states for window and
@@ -527,8 +528,6 @@ function TravelWindow:SetShortcuts()
                                         marinerLocations:LabelAtIndex(i), marinerLocations:DescAtIndex(i)));
         end
     end
-
-    self:CheckSkills(false)
 
     -- sort the shortcuts
     self:SortShortcuts()
@@ -1105,6 +1104,7 @@ function TravelWindow:ResetSettings()
     -- update everything
     self:CheckEnabledSettings()
     self:SetShortcuts();
+    self:CheckSkills(false)
     self:UpdateSettings();
 end
 
@@ -1135,13 +1135,22 @@ function TravelWindow:AddGVMap()
 end
 
 function TravelWindow:CheckSkills(report)
+    local newShortcut = false;
     -- loop through all the shortcuts and list those those that are not learned
     for i = 1, #TravelShortcuts, 1 do
+        local wasFound = TravelShortcuts[i].shortcut;
         if (TravelWindow:FindSkill(TravelShortcuts[i])) then
-            -- do nothing, skill is known
+            if not wasFound then
+                newShortcut = true;
+            end
         elseif report then
             Turbine.Shell.WriteLine(skillNotTrainedString .. TravelShortcuts[i]:GetName())
         end
+    end
+
+    if newShortcut then
+        self.dirty = true; -- reset list of shortcuts
+        self:SetItems(); -- redraw current window
     end
 end
 
