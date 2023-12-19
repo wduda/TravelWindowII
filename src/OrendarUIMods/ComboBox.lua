@@ -421,12 +421,11 @@ function ComboBox:UpdateSubWindow()
     -- loop through all the quickslots
     for i = 1, #self.quickslots, 1 do
         -- get the number of rows
-        self.row = math.ceil(i / 1);
+        local row = math.ceil(i / 1);
 
         -- set the top position of the quickslots based on row
         -- number and the value of the scrollbar
-        self.quickslots[i]:SetTop((self.row - 1) * 20 -
-                                      self.scrollBar:GetValue());
-        self.labels[i]:SetTop((self.row - 1) * 20 - self.scrollBar:GetValue());
+        self.quickslots[i]:SetTop((row - 1) * 20 - self.scrollBar:GetValue());
+        self.labels[i]:SetTop((row - 1) * 20 - self.scrollBar:GetValue());
     end
 end

@@ -108,11 +108,11 @@ function TravelGridTab:UpdateSubWindow()
     -- loop through all the quickslots
     for i = 1, #self.quickslots, 1 do
         -- get the number of rows
-        self.row = math.ceil(i / self.numOfCols);
+        local row = math.ceil(i / self.numOfCols);
 
         -- set the top position of the quickslots based on row
         -- number and the value of the scrollbar
-        self.quickslots[i]:SetTop((self.row - 1) * 38 - self.myScrollBar:GetValue());
+        self.quickslots[i]:SetTop((row - 1) * 38 - self.myScrollBar:GetValue());
     end
 end
 
@@ -125,7 +125,7 @@ function TravelGridTab:SetItems()
 
     if not(self.parent.dirty) then
         local prevNumOfCols = self.numOfCols;
-        self:UpdateScrollbar(#self.selected);
+        self:UpdateBounds(#self.selected);
         if self.parent.MainPanel.selectedPage == 2 and self.numOfCols ~= prevNumOfCols then
             self.parent.dirty = true;
         end
@@ -152,7 +152,7 @@ function TravelGridTab:SetItems()
         end
 
         -- update controls
-        self:UpdateScrollbar(#self.selected);
+        self:UpdateBounds(#self.selected);
         self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
         self.myScrollBar:SetParent(self.SubWindow);
         self.myScrollBar:SetSize(10, self:GetHeight());
@@ -235,7 +235,7 @@ function TravelGridTab:AddItem(shortcut, margin)
     end
 end
 
-function TravelGridTab:UpdateScrollbar(numOfShortcuts)
+function TravelGridTab:UpdateBounds(numOfShortcuts)
     -- calculate number of columns
     local padding = 4;
     local marginOffset = 1;

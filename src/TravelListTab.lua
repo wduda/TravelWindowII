@@ -127,7 +127,7 @@ function TravelListTab:AddItem(shortcut)
     self.row = self.row + 1;
 end
 
-function TravelListTab:UpdateScrollbar(numOfShortcuts)
+function TravelListTab:UpdateBounds(numOfShortcuts)
     -- set the maximum value of the scrollbar
     -- based on the number of rows in the subwindow
     self.maxScroll = numOfShortcuts * 22 - self:GetHeight();
@@ -144,13 +144,11 @@ end
 function TravelListTab:UpdateSubWindow()
     -- loop through all the quickslots
     for i = 1, #self.quickslots, 1 do
-        -- get the number of rows
-        self.row = i;
 
         -- set the top position of the quickslots based on row
         -- number and the value of the scrollbar
-        self.quickslots[i]:SetTop((self.row - 1) * 22 - self.myScrollBar:GetValue());
-        self.labels[i]:SetTop((self.row - 1) * 22 - self.myScrollBar:GetValue());
+        self.quickslots[i]:SetTop((i - 1) * 22 - self.myScrollBar:GetValue());
+        self.labels[i]:SetTop((i - 1) * 22 - self.myScrollBar:GetValue());
     end
 end
 
