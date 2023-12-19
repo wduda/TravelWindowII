@@ -808,19 +808,21 @@ function TravelWindow:LoadSettings()
     end
 
     if (not SettingsStrings.width or SettingsStrings.width == "nil") then
+        if self.minWidth == nil then self.minWidth = 245; end
         SettingsStrings.width = tostring(self.minWidth);
     end
 
     if (not SettingsStrings.height or SettingsStrings.height == "nil") then
+        if self.minHeight == nil then self.minHeight = 150; end
         SettingsStrings.height = tostring(self.minHeight);
     end
 
     if (not SettingsStrings.positionX or SettingsStrings.positionX == "nil") then
-        SettingsStrings.positionX = tostring(Turbine.UI.Display.GetWidth() - self:GetWidth() - 50);
+        SettingsStrings.positionX = tostring((Turbine.UI.Display.GetWidth() - self:GetWidth()) * 0.75);
     end
 
     if (not SettingsStrings.positionY or SettingsStrings.positionY == "nil") then
-        SettingsStrings.positionY = tostring(Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5);
+        SettingsStrings.positionY = tostring((Turbine.UI.Display.GetHeight() - self:GetHeight()) * 0.75);
     end
 
     if (not SettingsStrings.buttonPositionX or SettingsStrings.buttonPositionX == "nil") then
