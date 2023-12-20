@@ -157,6 +157,8 @@ function TravelGridTab:SetItems()
         self.myScrollBar:SetParent(self.SubWindow);
         self.myScrollBar:SetSize(10, self:GetHeight());
         self.myScrollBar:SetPosition(self:GetWidth() - 10, 0);
+        self.myScrollBar:SetSmallChange(24);
+        self.myScrollBar:SetLargeChange(24);
         self.myScrollBar:SetMaximum(self.maxScroll);
         self.myScrollBar:SetVisible(self.maxScroll > 0);
         self.myLabel:SetParent(self.SubWindow);
@@ -168,6 +170,8 @@ function TravelGridTab:SetItems()
         self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
         self.myScrollBar:SetSize(10, self:GetHeight());
         self.myScrollBar:SetPosition(self:GetWidth() - 10, 0);
+        self.myScrollBar:SetSmallChange(24);
+        self.myScrollBar:SetLargeChange(24);
         self.myScrollBar:SetMaximum(self.maxScroll);
         self.myScrollBar:SetVisible(self.maxScroll > 0);
         self.myLabel:SetSize(self:GetWidth() - 10, self:GetHeight());
