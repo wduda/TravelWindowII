@@ -250,6 +250,7 @@ function TravelGridTab:UpdateBounds(numOfShortcuts)
         -- include scrollbar width
         self.numOfCols = math.floor((self:GetWidth() - padding - 10) / 38);
         numOfRows = math.ceil(numOfShortcuts / self.numOfCols);
+        self.maxScroll = numOfRows * 38 - self:GetHeight();
     end
 end
 
