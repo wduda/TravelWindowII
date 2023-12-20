@@ -249,7 +249,7 @@ function TravelWindow:Constructor()
         local winX, winY = self:GetSize();
         local outsideWindow = mX < 1 or mY < 1 or mX > winX - 1 or mY > winY - 1;
 
-        if not(self.isResizing) and outsideWindow then
+        if not(self.isMouseDown) and outsideWindow then
             self:SetOpacity(Settings.mainMinOpacity);
         end
     end
