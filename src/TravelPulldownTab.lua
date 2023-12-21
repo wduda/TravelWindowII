@@ -40,7 +40,7 @@ function TravelPulldownTab:Constructor(toplevel)
     self.quickslot:SetZOrder(98);
     self.quickslot:SetUseOnRightClick(false);
     self.quickslot:SetParent(self);
-    self.quickslot:SetVisible(false);
+    self.quickslot:SetVisible(true);
 
     --[[  EVENT HANDLERS  ]] --
 
@@ -78,6 +78,13 @@ function TravelPulldownTab:Constructor(toplevel)
     -- check for mouse wheel movements
     self.pulldown.MouseWheel = function(sender, args)
         self:DoScroll(sender, args);
+    end
+
+    -- handle the event if the selected item changes
+    self.pulldown.SelectedIndexChanged = function(sender, args)
+        pcall(function()
+            self.quickslot:SetShortcut(TravelShortcuts[sender:GetSelection()]);
+        end)
     end
 
     -- open the option window if the quickslot is right-clicked
@@ -118,14 +125,6 @@ function TravelPulldownTab:SetItems()
     if #self.pulldown.quickslots > 0 then
         self.pulldown:ItemSelected(1);
         self.pulldown:FireEvent();
-    end
-
-    -- handle the event if the selected item changes
-    self.pulldown.SelectedIndexChanged = function(sender, args)
-        pcall(function()
-            self.quickslot:SetShortcut(TravelShortcuts[sender:GetSelection()]);
-        end)
-        self.quickslot:SetVisible(true);
     end
 end
 
