@@ -238,6 +238,10 @@ function TravelWindow:Constructor()
         if args.Button == Turbine.UI.MouseButton.Right then
             Menu:ShowMenu();
         end
+
+        if Settings.mode == 4 then
+            self.PullTab:ClosePulldown();
+        end
     end
 
     -- go to full opacity if mouse is over

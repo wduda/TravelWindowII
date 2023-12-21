@@ -21,6 +21,7 @@ function ComboBox:Constructor(toplevel)
     self:SetBackColor(ComboBox.DisabledColor);
     self.quickslots = {};
     self.labels = {};
+    self.hoverIndex = 0;
 
     self.topLevelWindow = toplevel;
 
@@ -73,6 +74,17 @@ function ComboBox:Constructor(toplevel)
     self.listBox:SetVisible(true);
     self.listBox.MouseWheel = function(sender, args)
         self:DoScroll(sender, args);
+    end
+
+    self.FocusLost = function(sender, args)
+        if self.dropped then
+            if self.hoverIndex > 0 then
+                local msArgs = { Button = Turbine.UI.MouseButton.None };
+                self.labels[self.hoverIndex]:MouseClick(sender, args)
+            else
+                self:CloseDropDown()
+            end
+        end
     end
 end
 
@@ -173,6 +185,7 @@ function ComboBox:AddItem(shortcut, index, value)
         sender:SetFontStyle(Turbine.UI.FontStyle.Outline);
         sender:SetForeColor(ComboBox.ItemColor);
         sender:SetText(sender:GetText());
+        self.hoverIndex = index;
     end
 
     self.labels[index].MouseLeave = function(sender, args)
@@ -181,6 +194,7 @@ function ComboBox:AddItem(shortcut, index, value)
             sender:SetForeColor(ComboBox.SelectionColor);
         end
         sender:SetText(sender:GetText());
+        self.hoverIndex = 0;
     end
 
     self.labels[index].MouseClick = function(sender, args)
@@ -332,6 +346,7 @@ function ComboBox:Layout()
 end
 
 function ComboBox:ShowDropDown()
+    self:Focus();
     local itemCount = #self.labels;
 
     if ((itemCount > 0) and not (self.dropped)) then
