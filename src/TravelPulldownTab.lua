@@ -47,10 +47,6 @@ function TravelPulldownTab:Constructor(toplevel)
     -- make sure we listen for key presses
     self:SetWantsUpdates(true);
 
-    self.MouseEnter = function(sender, args)
-        self:SetItems();
-    end
-
     -- check for a right mouse button event to open menu
     self.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
@@ -111,16 +107,17 @@ function TravelPulldownTab:SetItems()
     -- add the shortcuts to the combo box
     local shortcutIndex = 1;
     for i = 1, #TravelShortcuts, 1 do
-        if (TravelShortcuts[i]:IsEnabled()) then
-            -- apply skill type filter if set in options
+        if TravelShortcuts[i].found and TravelShortcuts[i]:IsEnabled() then
             if (hasbit(Settings.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
-                -- make sure skill is trained, lookup by ingame name
-                if TravelShortcuts[i].found then
-                    self.pulldown:AddItem(TravelShortcuts[i], shortcutIndex, i);
-                    shortcutIndex = shortcutIndex + 1;
-                end
+                self.pulldown:AddItem(TravelShortcuts[i], shortcutIndex, i);
+                shortcutIndex = shortcutIndex + 1;
             end
         end
+    end
+
+    if #self.pulldown.quickslots > 0 then
+        self.pulldown:ItemSelected(1);
+        self.pulldown:FireEvent();
     end
 
     -- handle the event if the selected item changes
