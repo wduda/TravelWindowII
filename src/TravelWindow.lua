@@ -281,8 +281,11 @@ function TravelWindow:Constructor()
         if self.isMouseDown then
             self.isResizing = true;
         end
-        Settings.width = self:GetWidth();
-        Settings.height = self:GetHeight();
+        if Settings.mode == 1 or Settings.mode == 2 then
+            -- only save dimensions for list & grid tabs
+            Settings.width = self:GetWidth();
+            Settings.height = self:GetHeight();
+        end
         self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
         self.MainPanel:UpdateTabs();
     end
@@ -330,30 +333,37 @@ end
 
 function TravelWindow:UpdateSize()
     -- update the page that is showing
-    if (Settings.mode == 1) then
+    if Settings.mode == 1 then
         self.minWidth = 245;
         self.minHeight = 150;
-    elseif (Settings.mode == 2) then
+    elseif Settings.mode == 2 then
         self.minWidth = 200;
         self.minHeight = 100;
-    elseif (Settings.mode == 3) then
-        self.minWidth = 160;
+    elseif Settings.mode == 3 then
+        self.minWidth = 200;
         self.minHeight = 110;
     else
-        self.minWidth = 220;
+        self.minWidth = 280;
         self.minHeight = 150;
     end
 
     self:SetMinimumSize(self.minWidth, self.minHeight);
 
-    -- check that the window is not smaller than min width
-    if (self:GetWidth() < self.minWidth) then
-        self:SetWidth(self.minWidth);
-    end
+    if Settings.mode == 3 or Settings.mode == 4 then
+        self:SetResizable(false);
+        self:SetSize(self.minWidth, self.minHeight);
+    else
+        self:SetResizable(true);
 
-    -- check that the window is not smaller than min height
-    if (self:GetHeight() < self.minHeight) then
-        self:SetHeight(self.minHeight);
+        -- check that the window is not smaller than min width
+        if (self:GetWidth() < self.minWidth) then
+            self:SetWidth(self.minWidth);
+        end
+
+        -- check that the window is not smaller than min height
+        if (self:GetHeight() < self.minHeight) then
+            self:SetHeight(self.minHeight);
+        end
     end
 end
 
@@ -1055,6 +1065,10 @@ function TravelWindow:UpdateSettings()
     Settings.mode, Settings.filters = Menu:GetSettings();
     if prevMode ~= Settings.mode then
         self.dirty = true;
+        if (prevMode == 3 or prevMode == 4) and (Settings.mode == 1 or Settings.mode == 2) then
+            -- restore previous size
+            self:SetSize(Settings.width, Settings.height);
+        end
     end
 
     -- set which page of the tab panel to show
