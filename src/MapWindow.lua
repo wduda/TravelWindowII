@@ -29,6 +29,7 @@ function MapWindow:Constructor(parent, map, class, race, shortcuts)
     self.PlayerClass = class;
     self.PlayerRaceKey = race; -- mapped as racialMap index
     self.shortcuts = shortcuts;
+    self.debug = false;
 
     -- set size of window
     self.width = 1024;
@@ -47,9 +48,66 @@ function MapWindow:Constructor(parent, map, class, race, shortcuts)
 
     self.mapLabel = Turbine.UI.Label();
     self.mapLabel:SetSize(1024, 768);
-
     self.mapLabel:SetParent(self);
     self.mapLabel:SetVisible(true);
+
+    if self.debug then
+        self.debugCoords = Turbine.UI.Label();
+        self.debugCoords:SetParent(self);
+        self.debugCoords:SetSize(75, 15);
+        self.debugCoords:SetPosition(30, 30);
+        self.debugCoords:SetBackColor(Turbine.UI.Color(1, 0, 0, 0));
+        self.debugCoords:SetVisible(true);
+
+        self.debugCoords.MouseClick = function(sender, args)
+            self:DebugSave(self.quickslots);
+        end
+
+        self.mapLabel.MouseClick = function(sender, args)
+            local mX, mY = self:GetMousePosition();
+            self.debugCoords:SetText(tostring(mX) .. " x " .. tostring(mY));
+        end
+
+        self.mapLabel.DragDrop = function(sender, args)
+            if self.debugMove then
+                self.debugMove = false;
+                -- get dropped location
+                local mX, mY = self:GetMousePosition();
+                mX = mX - self.debugX;
+                mY = mY - self.debugY;
+                -- round to nearest multiple of 5
+                local adjust = mX % 5;
+                if adjust > 2 then
+                    adjust = 5 - adjust;
+                else
+                    adjust = adjust * -1;
+                end
+                mX = mX + adjust;
+                -- round to nearest multiple of 5
+                adjust = mY % 5;
+                if adjust > 2 then
+                    adjust = 5 - adjust;
+                else
+                    adjust = adjust * -1;
+                end
+                mY = mY + adjust;
+                self.quickslots[self.debugIndex]:SetPosition(mX, mY);
+                self.debugCoords:SetText(tostring(mX) .. "x" .. tostring(mY));
+            end
+        end
+
+        self.DebugSave = function(quickslots)
+            coordinates = {}
+            for i = 1, #self.quickslots, 1 do
+                local shortcut = self.quickslots[i]:GetShortcut();
+                local name = self:DebugNameLookup(shortcut:GetData());
+                coordinates[i] = {name, self.quickslots[i]:GetPosition()}
+            end
+            pcall(function()
+                PatchDataSave(Turbine.DataScope.Character, "TravelWindowIIDebugCoords", coordinates);
+            end);
+        end
+    end
 
     self.CloseButton=Turbine.UI.Control();
     self.CloseButton:SetParent(self);
@@ -489,6 +547,16 @@ function MapWindow:AddSingleShortcut(location, shortcut)
     self.quickslots[index].MouseClick = function(sender, args)
         self:SetVisible(false);
     end
+
+    if self.debug then
+    self.debugMove = false;
+        self.quickslots[index].MouseDown = function(sender, args)
+            self.debugMove = true;
+            self.debugIndex = index;
+            self.debugX = args.X;
+            self.debugY = args.Y;
+        end
+    end
 end
 
 function MapWindow:IsShortcutEnabled(id)
@@ -518,4 +586,15 @@ function MapWindow:IsShortcutTrained(id)
     end
 
     return false;
+end
+
+function MapWindow:DebugNameLookup(id)
+    for i = 1, #TravelShortcuts, 1 do
+        local shortcut = TravelShortcuts[i]
+        if shortcut:GetData() == id then
+            return shortcut.Name;
+        end
+    end
+
+    return "ERROR " .. id;
 end
