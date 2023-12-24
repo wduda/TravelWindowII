@@ -343,7 +343,7 @@ function TravelWindow:UpdateSize()
         self.minWidth = 200;
         self.minHeight = 110;
     else
-        self.minWidth = 280;
+        self.minWidth = 360;
         self.minHeight = 150;
     end
 
