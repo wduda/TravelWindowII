@@ -147,19 +147,6 @@ function MapWindow:Constructor(parent, map, class, race, shortcuts)
 
     self:AddShortcuts();
 
-    -- have the main window close the options
-    self.VisibleChanged = function(sender, args)
-        if (self:IsVisible() == false) then
-            if (parent ~= nil) then
-                if self.mapType == MapType.CREEPS then
-                    parent:CloseMoorMap();
-                else
-                    parent:CloseEriadorMap();
-                end
-            end
-        end
-    end
-
     self.loaded = true;
 end
 
