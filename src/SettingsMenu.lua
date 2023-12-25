@@ -160,17 +160,17 @@ function SettingsMenu:Update(string)
     elseif (string == menuSkillsString) then
         self.parent:CheckSkills(true);
     elseif (string == moorMapString) then
-        self.parent:OpenMoorMap();
+        self.parent:OpenMapWindow(MapType.CREEPS);
     elseif (string == eriadorMapString) then
-        self.parent:OpenEriadorMap();
+        self.parent:OpenMapWindow(MapType.ERIADOR);
     elseif (string == rhovanionMapString) then
-        self.parent:OpenRhovanionMap();
+        self.parent:OpenMapWindow(MapType.RHOVANION);
     elseif (string == rohanMapString) then
-        self.parent:OpenRohanMap();
+        self.parent:OpenMapWindow(MapType.ROHAN);
     elseif (string == gondorMapString) then
-        self.parent:OpenGondorMap();
+        self.parent:OpenMapWindow(MapType.GONDOR);
     elseif (string == haradwaithMapString) then
-        self.parent:OpenHaradwaithMap();
+        self.parent:OpenMapWindow(MapType.HARADWAITH);
     end
 
     -- set the selections

@@ -167,12 +167,7 @@ function TravelWindow:Constructor()
             self:SetVisible(false);
             self.optionsWindow:SetVisible(false);
             self:CloseOptions();
-            self:CloseGondorMap();
-            self:CloseMoorMap();
-            self:CloseEriadorMap();
-            self:CloseRhovanionMap();
-            self:CloseRohanMap();
-            self:CloseHaradwaithMap();
+            self:CloseMapWindow();
             if (self.hidden == true) then
                 self.hidden = false;
                 self:SetVisible(self.currentVisState);
@@ -185,10 +180,16 @@ function TravelWindow:Constructor()
                 self:SetVisible(false);
                 self.optionsWindow:SetVisible(false);
                 self.ToggleButton:SetVisible(false);
+                if self.mapWindow ~= nil then
+                    self.mapWindow:SetVisible(false);
+                end
             else
                 self.hidden = false;
                 self:SetVisible(self.currentVisState);
                 self.ToggleButton:SetVisible(Settings.showButton == 1);
+                if self.mapWindow ~= nil then
+                    self.mapWindow:SetVisible(true);
+                end
             end
         else
         end
@@ -695,77 +696,19 @@ function TravelWindow:CloseOptions()
     self.options = nil;
 end
 
-function TravelWindow:OpenMoorMap()
-    self.moorMapWindow = TravelWindowII.src.MapWindow(self, MapType.CREEPS);
+function TravelWindow:OpenMapWindow(map)
+    self:CloseMapWindow();
+    self.mapWindow = TravelWindowII.src.MapWindow(self, map, PlayerClass, PlayerRaceKey, TravelShortcuts);
+    self.mapWindow:SetVisible(true);
 end
 
--- function to close the moor map window if it exists
-function TravelWindow:CloseMoorMap()
-    if (self.moorMapWindow ~= nil) then
-        self.moorMapWindow:SetVisible(false);
+-- function to close the current map window
+function TravelWindow:CloseMapWindow()
+    if (self.mapWindow ~= nil) then
+        self.mapWindow:SetVisible(false);
+        self.mapWindow:Close();
     end
-    self.moorMapWindow = nil;
-end
-
-function TravelWindow:OpenEriadorMap()
-    self.eriadorMapWindow = TravelWindowII.src.MapWindow(self, MapType.ERIADOR, PlayerClass, PlayerRaceKey, TravelShortcuts);
-end
-
--- function to close the eriador map window if it exists
-function TravelWindow:CloseEriadorMap()
-    if (self.eriadorMapWindow ~= nil) then
-        self.eriadorMapWindow:SetVisible(false);
-    end
-    self.eriadorMapWindow = nil;
-end
-
-function TravelWindow:OpenRhovanionMap()
-    self.rhovanionMapWindow = TravelWindowII.src.MapWindow(self, MapType.RHOVANION, PlayerClass, PlayerRaceKey, TravelShortcuts);
-end
-
--- function to close the rhovanion map window if it exists
-function TravelWindow:CloseRhovanionMap()
-    if (self.rhovanionMapWindow ~= nil) then
-        self.rhovanionMapWindow:SetVisible(false);
-    end
-    self.rhovanionMapWindow = nil;
-end
-
-function TravelWindow:OpenRohanMap()
-    self.rohanMapWindow = TravelWindowII.src.MapWindow(self, MapType.ROHAN, PlayerClass, PlayerRaceKey, TravelShortcuts);
-end
-
--- function to close the rohan map window if it exists
-function TravelWindow:CloseRohanMap()
-    if (self.rohanMapWindow ~= nil) then
-        self.rohanMapWindow:SetVisible(false);
-    end
-    self.rohanMapWindow = nil;
-end
-
-function TravelWindow:OpenGondorMap()
-    self.gondorMapWindow = TravelWindowII.src.MapWindow(self, MapType.GONDOR, PlayerClass, PlayerRaceKey, TravelShortcuts);
-end
-
--- function to close the gondor map window if it exists
-function TravelWindow:CloseGondorMap()
-    if (self.gondorMapWindow ~= nil) then
-        self.gondorMapWindow:SetVisible(false);
-    end
-    self.gondorMapWindow = nil;
-end
-
-function TravelWindow:OpenHaradwaithMap()
-Turbine.Shell.WriteLine("OPEN")
-    self.haradwaithMapWindow = TravelWindowII.src.MapWindow(self, MapType.HARADWAITH, PlayerClass, PlayerRaceKey, TravelShortcuts);
-end
-
--- function to close the haradwaith map window if it exists
-function TravelWindow:CloseHaradwaithMap()
-    if (self.haradwaithMapWindow ~= nil) then
-        self.haradwaithMapWindow:SetVisible(false);
-    end
-    self.haradwaithMapWindow = nil;
+    self.mapWindow = nil;
 end
 
 -- function to check if a table contains a specific element
