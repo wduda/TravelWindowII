@@ -54,6 +54,7 @@ menuTextString = "Liste";
 menuIconString = "Icons";
 menuCaroString = "Karussell";
 menuPullString = "Pulldown-Liste";
+mapWindowString = "Karten";
 menuOptionsString = "Optionen";
 moorMapString = "Öffne Etten-Karte";
 eriadorMapString = "Öffne Eriador-Karte";
