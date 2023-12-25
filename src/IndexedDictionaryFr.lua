@@ -54,6 +54,7 @@ menuTextString = "Liste de texte";
 menuIconString = "Grille d'icône";
 menuCaroString = "Caroussel";
 menuPullString = "Menu déroulant";
+mapWindowString = "Destinations";
 menuOptionsString = "Options";
 moorMapString = "Destinations aux Landes d'Etten";
 eriadorMapString = "Destinations en Eriador";

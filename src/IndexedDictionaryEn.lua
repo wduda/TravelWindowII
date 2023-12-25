@@ -54,6 +54,7 @@ menuTextString = "Text List";
 menuIconString = "Icon Grid";
 menuCaroString = "Carousel";
 menuPullString = "Pulldown List";
+mapWindowString = "Maps";
 menuOptionsString = "Options";
 moorMapString = "Open Moor Map";
 eriadorMapString = "Open Eriador Map";

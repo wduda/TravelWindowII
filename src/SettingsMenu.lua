@@ -37,11 +37,21 @@ function SettingsMenu:Constructor(parentWindow)
     self.Mode2 = Turbine.UI.MenuItem(menuIconString);
     self.Mode3 = Turbine.UI.MenuItem(menuCaroString);
     self.Mode4 = Turbine.UI.MenuItem(menuPullString);
-    ModeItems = Mode:GetItems();
+    local ModeItems = Mode:GetItems();
     ModeItems:Add(self.Mode1);
     ModeItems:Add(self.Mode2);
     ModeItems:Add(self.Mode3);
     ModeItems:Add(self.Mode4);
+
+    -- create the items to open the map windows
+    MoorMapMenu = TravelWindowII.src.extensions.DMenuList(moorMapString);
+    MapWindows = TravelWindowII.src.extensions.DMenuList(mapWindowString);
+    local MapItems = MapWindows:GetItems();
+    MapItems:Add(Turbine.UI.MenuItem(eriadorMapString));
+    MapItems:Add(Turbine.UI.MenuItem(rhovanionMapString));
+    MapItems:Add(Turbine.UI.MenuItem(rohanMapString));
+    MapItems:Add(Turbine.UI.MenuItem(gondorMapString));
+    MapItems:Add(Turbine.UI.MenuItem(haradwaithMapString));
 
     -- create the menu item to add map home
     -- @TODO has to be reintroduced
@@ -50,14 +60,6 @@ function SettingsMenu:Constructor(parentWindow)
     -- create the menu item to open the options window
     OptionsMenu = TravelWindowII.src.extensions.DMenuList(menuOptionsString);
     SkillsMenu = TravelWindowII.src.extensions.DMenuList(menuSkillsString);
-
-    -- create the items to open the map windows
-    MoorMapMenu = TravelWindowII.src.extensions.DMenuList(moorMapString);
-    EriadorMapMenu = TravelWindowII.src.extensions.DMenuList(eriadorMapString);
-    RhovanionMapMenu = TravelWindowII.src.extensions.DMenuList(rhovanionMapString);
-    RohanMapMenu = TravelWindowII.src.extensions.DMenuList(rohanMapString);
-    GondorMapMenu = TravelWindowII.src.extensions.DMenuList(gondorMapString);
-    HaradwaithMapMenu = TravelWindowII.src.extensions.DMenuList(haradwaithMapString);
 
     -- add everything to the main menu
     MenuItems = self:GetItems();
@@ -68,14 +70,10 @@ function SettingsMenu:Constructor(parentWindow)
     else
         MenuItems:Add(Filters);
         MenuItems:Add(Mode);
+        MenuItems:Add(MapWindows);
         MenuItems:Add(MapMenu); -- @TODO needs to be reintroduced
         MenuItems:Add(OptionsMenu);
         MenuItems:Add(SkillsMenu);
-        MenuItems:Add(EriadorMapMenu);
-        MenuItems:Add(RhovanionMapMenu);
-        MenuItems:Add(RohanMapMenu);
-        MenuItems:Add(GondorMapMenu);
-        MenuItems:Add(HaradwaithMapMenu);
     end
 
     -- set up the event handler
