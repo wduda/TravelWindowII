@@ -3,6 +3,7 @@ import "Turbine.Debug";
 import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
+import "TravelWindowII.src.MapWindow"
 import "TravelWindowII.src.extensions";
 import "TravelWindowII.src.utils.BitOps";
 import "TravelWindowII.src.VindarPatch";
@@ -18,16 +19,17 @@ TravelWindow = class(Turbine.UI.Lotro.Window);
 function TravelWindow:Constructor()
     Turbine.UI.Lotro.Window.Constructor(self);
 
+    DefAlpha = 0.92;
     Settings = {};
     SettingsStrings = {};
     TravelShortcuts = {}; -- put all the shortcuts into one table
     TrainedSkills = Turbine.Gameplay.SkillList; -- TODO: update list on window open or maybe a timer
 
-    self.minWidth = 240;
-    self.minHeight = 150;
     self.reloadGVMap = false;
     self.options = nil;
     self.dirty = true;
+    self.isMouseDown = false;
+    self.isResizing = false;
 
     -- create the lists of travel locations and the shortcuts
     -- that are used to execute them
@@ -39,10 +41,8 @@ function TravelWindow:Constructor()
     -- configure the main window
     self:SetPosition(Settings.positionX, Settings.positionY);
     self:SetSize(Settings.width, Settings.height);
-    self:SetBackColor(Turbine.UI.Color(0.0, 0, 0, 0));
     self:SetText(mainTitleString);
-    self:SetZOrder(97);
-    self:SetOpacity(1);
+    self:SetOpacity(Settings.mainMinOpacity);
     self:SetResizable(true);
     if (Settings.hideOnStart == 1) then
         self:SetVisible(false);
@@ -84,14 +84,13 @@ function TravelWindow:Constructor()
     self.previousCombatState = false;
     self.wasOpenBeforeCombat = false;
 
-    -- create a single context menu to use on all panels
-    Menu = SettingsMenu(self);
-    Menu:SetSettings(Settings.mode, Settings.filters);
-
     -- set up all the shortcuts
     self:CheckEnabledSettings();
     self:SetShortcuts();
-    self:CheckSkills(false);
+
+    -- create a single context menu to use on all panels
+    Menu = SettingsMenu(self);
+    Menu:SetSettings(Settings.mode, Settings.filters);
 
     -- create the tabbed panel to hold all the other panels
     self.MainPanel = TravelWindowII.src.extensions.DPanel();
@@ -120,6 +119,7 @@ function TravelWindow:Constructor()
     self.MainPanel:SetTab(Settings.mode);
     self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
     self.MainPanel:UpdateTabs();
+    self:CheckSkills(false);
     self:UpdateSettings();
 
     -- track the hidden state of the UI, manage previous states for window and
@@ -165,26 +165,31 @@ function TravelWindow:Constructor()
     self.KeyDown = function(sender, args)
         if (args.Action == Turbine.UI.Lotro.Action.Escape) then
             self:SetVisible(false);
+            self.optionsWindow:SetVisible(false);
             self:CloseOptions();
-            self:CloseGondorMap();
-            self:CloseMoorMap();
-            self:CloseEriadorMap();
-            self:CloseRhovanionMap();
+            self:CloseMapWindow();
             if (self.hidden == true) then
                 self.hidden = false;
                 self:SetVisible(self.currentVisState);
                 self.ToggleButton:SetVisible(Settings.showButton == 1);
             end
-        elseif (args.Action == 268435635) then
+        elseif (args.Action == Turbine.UI.Lotro.Action.UI_Toggle) then
             if (self.hidden == false) then
                 self.currentVisState = self:IsVisible();
                 self.hidden = true;
                 self:SetVisible(false);
+                self.optionsWindow:SetVisible(false);
                 self.ToggleButton:SetVisible(false);
+                if self.mapWindow ~= nil then
+                    self.mapWindow:SetVisible(false);
+                end
             else
                 self.hidden = false;
                 self:SetVisible(self.currentVisState);
                 self.ToggleButton:SetVisible(Settings.showButton == 1);
+                if self.mapWindow ~= nil then
+                    self.mapWindow:SetVisible(true);
+                end
             end
         else
         end
@@ -233,6 +238,16 @@ function TravelWindow:Constructor()
         end
     end
 
+    self.MouseClick = function(sender, args)
+        if args.Button == Turbine.UI.MouseButton.Right then
+            Menu:ShowMenu();
+        end
+
+        if Settings.mode == 4 then
+            self.PullTab:ClosePulldown();
+        end
+    end
+
     -- go to full opacity if mouse is over
     self.MouseEnter = function(sender, args)
         self:SetOpacity(Settings.mainMaxOpacity);
@@ -240,12 +255,41 @@ function TravelWindow:Constructor()
 
     -- go to low opacity when mouse is not over
     self.MouseLeave = function(sender, args)
-        self:SetOpacity(Settings.mainMinOpacity);
+        local mX, mY = self:GetMousePosition();
+        local winX, winY = self:GetSize();
+        local outsideWindow = mX < 1 or mY < 1 or mX > winX - 1 or mY > winY - 1;
+
+        if not(self.isMouseDown) and outsideWindow then
+            self:SetOpacity(Settings.mainMinOpacity);
+        end
+    end
+
+    self.MouseDown = function(sender, args)
+        self.isMouseDown = true;
+    end
+
+    self.MouseUp = function(sender, args)
+        local mX, mY = self:GetMousePosition();
+        local winX, winY = self:GetSize();
+        local outsideWindow = mX < 1 or mY < 1 or mX > winX - 1 or mY > winY - 1;
+
+        if not(self.isResizing) and outsideWindow then
+            self:SetOpacity(Settings.mainMinOpacity);
+        end
+
+        self.isMouseDown = false;
+        self.isResizing = false;
     end
 
     self.SizeChanged = function(sender, args)
-        Settings.width = self:GetWidth();
-        Settings.height = self:GetHeight();
+        if self.isMouseDown then
+            self.isResizing = true;
+        end
+        if Settings.mode == 1 or Settings.mode == 2 then
+            -- only save dimensions for list & grid tabs
+            Settings.width = self:GetWidth();
+            Settings.height = self:GetHeight();
+        end
         self.MainPanel:SetSize(self:GetWidth() - 20, self:GetHeight() - 60);
         self.MainPanel:UpdateTabs();
     end
@@ -293,28 +337,37 @@ end
 
 function TravelWindow:UpdateSize()
     -- update the page that is showing
-    if (Settings.mode == 1) then
+    if Settings.mode == 1 then
         self.minWidth = 245;
         self.minHeight = 150;
-    elseif (Settings.mode == 2) then
-        self.minWidth = 120;
-        self.minHeight = 130;
-    elseif (Settings.mode == 3) then
-        self.minWidth = 120;
-        self.minHeight = 130;
+    elseif Settings.mode == 2 then
+        self.minWidth = 200;
+        self.minHeight = 100;
+    elseif Settings.mode == 3 then
+        self.minWidth = 200;
+        self.minHeight = 110;
     else
-        self.minWidth = 220;
+        self.minWidth = 360;
         self.minHeight = 150;
     end
 
-    -- check that the window is not smaller than min width
-    if (self:GetWidth() < self.minWidth) then
-        self:SetWidth(self.minWidth);
-    end
+    self:SetMinimumSize(self.minWidth, self.minHeight);
 
-    -- check that the window is not smaller than min height
-    if (self:GetHeight() < self.minHeight) then
-        self:SetHeight(self.minHeight);
+    if Settings.mode == 3 or Settings.mode == 4 then
+        self:SetResizable(false);
+        self:SetSize(self.minWidth, self.minHeight);
+    else
+        self:SetResizable(true);
+
+        -- check that the window is not smaller than min width
+        if (self:GetWidth() < self.minWidth) then
+            self:SetWidth(self.minWidth);
+        end
+
+        -- check that the window is not smaller than min height
+        if (self:GetHeight() < self.minHeight) then
+            self:SetHeight(self.minHeight);
+        end
     end
 end
 
@@ -372,8 +425,6 @@ function TravelWindow:SetMapHome()
         end
 
         -- update the shortcuts list
-        self:CheckEnabledSettings()
-        self:SetShortcuts();
         self:UpdateSettings();
 
         -- close this window
@@ -412,6 +463,7 @@ end
 function TravelWindow:SetShortcuts()
     -- set default values
     TravelShortcuts = {};
+    local sType = Turbine.UI.Lotro.ShortcutType.Skill;
     local shortcutIndex = 1;
 
     -- set the either the travel skills for free people or monsters
@@ -424,13 +476,14 @@ function TravelWindow:SetShortcuts()
             -- set the shortcut for the quickslot, check
             -- if the shortcut is the glan vraig map or not
             if (string.len(genLocations:IdAtIndex(i)) > 12) then
+                local sItem = Turbine.UI.Lotro.ShortcutType.Item;
                 table.insert(TravelShortcuts,
-                             TravelShortcut(2.0, genLocations:IdAtIndex(i), genLocations:NameAtIndex(i), 1,
+                             TravelShortcut(sItem, genLocations:IdAtIndex(i), genLocations:NameAtIndex(i), 1,
                                             shortcutIndex, Settings.enabled[genLocations:IdAtIndex(i)],
                                             genLocations:LabelAtIndex(i)));
             else
                 table.insert(TravelShortcuts,
-                             TravelShortcut(6.0, genLocations:IdAtIndex(i), genLocations:NameAtIndex(i), 1,
+                             TravelShortcut(sType, genLocations:IdAtIndex(i), genLocations:NameAtIndex(i), 1,
                                             shortcutIndex, Settings.enabled[genLocations:IdAtIndex(i)],
                                             genLocations:LabelAtIndex(i)));
             end
@@ -439,7 +492,7 @@ function TravelWindow:SetShortcuts()
         -- add the race travel to the list
         local racialShortcutIndex = self:TableIndex(Settings.order, racialLocations:IdAtIndex(PlayerRaceKey));
         table.insert(TravelShortcuts,
-                     TravelShortcut(6.0, racialLocations:IdAtIndex(PlayerRaceKey),
+                     TravelShortcut(sType, racialLocations:IdAtIndex(PlayerRaceKey),
                                     racialLocations:NameAtIndex(PlayerRaceKey), 2, racialShortcutIndex,
                                     Settings.enabled[racialLocations:IdAtIndex(PlayerRaceKey)],
                                     racialLocations:LabelAtIndex(PlayerRaceKey)));
@@ -448,7 +501,7 @@ function TravelWindow:SetShortcuts()
         for i = 1, travelCount[4], 1 do
             shortcutIndex = self:TableIndex(Settings.order, repLocations:IdAtIndex(i));
             table.insert(TravelShortcuts,
-                         TravelShortcut(6.0, repLocations:IdAtIndex(i), repLocations:NameAtIndex(i), 3, shortcutIndex,
+                         TravelShortcut(sType, repLocations:IdAtIndex(i), repLocations:NameAtIndex(i), 3, shortcutIndex,
                                         Settings.enabled[repLocations:IdAtIndex(i)], repLocations:LabelAtIndex(i),
                                         repLocations:DescAtIndex(i)));
         end
@@ -457,7 +510,7 @@ function TravelWindow:SetShortcuts()
         for i = 1, travelCount[6], 1 do
             shortcutIndex = self:TableIndex(Settings.order, creepLocations:IdAtIndex(i));
             table.insert(TravelShortcuts,
-                         TravelShortcut(6.0, creepLocations:IdAtIndex(i), creepLocations:NameAtIndex(i), 3,
+                         TravelShortcut(sType, creepLocations:IdAtIndex(i), creepLocations:NameAtIndex(i), 3,
                                         shortcutIndex, Settings.enabled[creepLocations:IdAtIndex(i)],
                                         creepLocations:LabelAtIndex(i)));
         end
@@ -468,7 +521,7 @@ function TravelWindow:SetShortcuts()
         for i = 1, travelCount[1], 1 do
             shortcutIndex = self:TableIndex(Settings.order, hunterLocations:IdAtIndex(i));
             table.insert(TravelShortcuts,
-                         TravelShortcut(6.0, hunterLocations:IdAtIndex(i), hunterLocations:NameAtIndex(i), 4,
+                         TravelShortcut(sType, hunterLocations:IdAtIndex(i), hunterLocations:NameAtIndex(i), 4,
                                         shortcutIndex, Settings.enabled[hunterLocations:IdAtIndex(i)],
                                         hunterLocations:LabelAtIndex(i), hunterLocations:DescAtIndex(i)));
         end
@@ -479,7 +532,7 @@ function TravelWindow:SetShortcuts()
         for i = 1, travelCount[2], 1 do
             shortcutIndex = self:TableIndex(Settings.order, wardenLocations:IdAtIndex(i));
             table.insert(TravelShortcuts,
-                         TravelShortcut(6.0, wardenLocations:IdAtIndex(i), wardenLocations:NameAtIndex(i), 4,
+                         TravelShortcut(sType, wardenLocations:IdAtIndex(i), wardenLocations:NameAtIndex(i), 4,
                                         shortcutIndex, Settings.enabled[wardenLocations:IdAtIndex(i)],
                                         wardenLocations:LabelAtIndex(i), wardenLocations:DescAtIndex(i)));
         end
@@ -490,13 +543,11 @@ function TravelWindow:SetShortcuts()
         for i = 1, travelCount[7], 1 do
             shortcutIndex = self:TableIndex(Settings.order, marinerLocations:IdAtIndex(i));
             table.insert(TravelShortcuts,
-                         TravelShortcut(6.0, marinerLocations:IdAtIndex(i), marinerLocations:NameAtIndex(i), 4,
+                         TravelShortcut(sType, marinerLocations:IdAtIndex(i), marinerLocations:NameAtIndex(i), 4,
                                         shortcutIndex, Settings.enabled[marinerLocations:IdAtIndex(i)],
                                         marinerLocations:LabelAtIndex(i), marinerLocations:DescAtIndex(i)));
         end
     end
-
-    self:CheckSkills(false)
 
     -- sort the shortcuts
     self:SortShortcuts()
@@ -646,52 +697,19 @@ function TravelWindow:CloseOptions()
     self.options = nil;
 end
 
-function TravelWindow:OpenMoorMap()
-    self.moorMapWindow = TravelWindowII.src.MoorMapWindow(self);
+function TravelWindow:OpenMapWindow(map)
+    self:CloseMapWindow();
+    self.mapWindow = TravelWindowII.src.MapWindow(self, map, PlayerClass, PlayerRaceKey, TravelShortcuts);
+    self.mapWindow:SetVisible(true);
 end
 
--- function to close the moor map window if it exists
-function TravelWindow:CloseMoorMap()
-    if (self.moorMapWindow ~= nil) then
-        self.moorMapWindow:SetVisible(false);
+-- function to close the current map window
+function TravelWindow:CloseMapWindow()
+    if (self.mapWindow ~= nil) then
+        self.mapWindow:SetVisible(false);
+        self.mapWindow:Close();
     end
-    self.moorMapWindow = nil;
-end
-
-function TravelWindow:OpenEriadorMap()
-    self.eriadorMapWindow = TravelWindowII.src.EriadorMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
-end
-
--- function to close the eriador map window if it exists
-function TravelWindow:CloseEriadorMap()
-    if (self.eriadorMapWindow ~= nil) then
-        self.eriadorMapWindow:SetVisible(false);
-    end
-    self.eriadorMapWindow = nil;
-end
-
-function TravelWindow:OpenRhovanionMap()
-    self.rhovanionMapWindow = TravelWindowII.src.RhovanionMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
-end
-
--- function to close the rhovanion map window if it exists
-function TravelWindow:CloseRhovanionMap()
-    if (self.rhovanionMapWindow ~= nil) then
-        self.rhovanionMapWindow:SetVisible(false);
-    end
-    self.rhovanionMapWindow = nil;
-end
-
-function TravelWindow:OpenGondorMap()
-    self.gondorMapWindow = TravelWindowII.src.GondorMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
-end
-
--- function to close the gondor map window if it exists
-function TravelWindow:CloseGondorMap()
-    if (self.gondorMapWindow ~= nil) then
-        self.gondorMapWindow:SetVisible(false);
-    end
-    self.gondorMapWindow = nil;
+    self.mapWindow = nil;
 end
 
 -- function to check if a table contains a specific element
@@ -776,19 +794,21 @@ function TravelWindow:LoadSettings()
     end
 
     if (not SettingsStrings.width or SettingsStrings.width == "nil") then
+        if self.minWidth == nil then self.minWidth = 245; end
         SettingsStrings.width = tostring(self.minWidth);
     end
 
     if (not SettingsStrings.height or SettingsStrings.height == "nil") then
+        if self.minHeight == nil then self.minHeight = 150; end
         SettingsStrings.height = tostring(self.minHeight);
     end
 
     if (not SettingsStrings.positionX or SettingsStrings.positionX == "nil") then
-        SettingsStrings.positionX = tostring(Turbine.UI.Display.GetWidth() - self:GetWidth() - 50);
+        SettingsStrings.positionX = tostring((Turbine.UI.Display.GetWidth() - self:GetWidth()) * 0.75);
     end
 
     if (not SettingsStrings.positionY or SettingsStrings.positionY == "nil") then
-        SettingsStrings.positionY = tostring(Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5);
+        SettingsStrings.positionY = tostring((Turbine.UI.Display.GetHeight() - self:GetHeight()) * 0.75);
     end
 
     if (not SettingsStrings.buttonPositionX or SettingsStrings.buttonPositionX == "nil") then
@@ -1016,6 +1036,10 @@ function TravelWindow:UpdateSettings()
     Settings.mode, Settings.filters = Menu:GetSettings();
     if prevMode ~= Settings.mode then
         self.dirty = true;
+        if (prevMode == 3 or prevMode == 4) and (Settings.mode == 1 or Settings.mode == 2) then
+            -- restore previous size
+            self:SetSize(Settings.width, Settings.height);
+        end
     end
 
     -- set which page of the tab panel to show
@@ -1071,6 +1095,7 @@ function TravelWindow:ResetSettings()
     -- update everything
     self:CheckEnabledSettings()
     self:SetShortcuts();
+    self:CheckSkills(false)
     self:UpdateSettings();
 end
 
@@ -1101,13 +1126,22 @@ function TravelWindow:AddGVMap()
 end
 
 function TravelWindow:CheckSkills(report)
+    local newShortcut = false;
     -- loop through all the shortcuts and list those those that are not learned
     for i = 1, #TravelShortcuts, 1 do
+        local wasFound = TravelShortcuts[i].shortcut;
         if (TravelWindow:FindSkill(TravelShortcuts[i])) then
-            -- do nothing, skill is known
+            if not wasFound then
+                newShortcut = true;
+            end
         elseif report then
             Turbine.Shell.WriteLine(skillNotTrainedString .. TravelShortcuts[i]:GetName())
         end
+    end
+
+    if newShortcut then
+        self.dirty = true; -- reset list of shortcuts
+        self:SetItems(); -- redraw current window
     end
 end
 

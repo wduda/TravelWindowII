@@ -41,7 +41,7 @@ function OptionsPanel:Constructor(parent)
     self.OptionTabs:SetPosition(10, 0);
     self.OptionTabs:SetParent(self);
     self.OptionTabs:SetBlendMode(Turbine.UI.BlendMode.Overlay);
-    self.OptionTabs:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
+    self.OptionTabs:SetBackColor(Turbine.UI.Color(DefAlpha, 0, 0, 0));
     self.OptionTabs:SetVisible(true);
 
     -- create the tabs
@@ -494,7 +494,6 @@ function OptionsPanel:AddSkillItemForEnabling(index, id, label)
         Settings.enabled[id] = sender:IsChecked();
         shortcutIndex = self.mainWindow:TableIndex(Settings.order, id);
         TravelShortcuts[shortcutIndex]:SetEnabled(sender:IsChecked());
-
         self.mainWindow.dirty = true;
 
         -- update the main window settings
@@ -582,14 +581,14 @@ function OptionsPanel:AddSortList()
         local tempLabel = Turbine.UI.Label();
         tempLabel:SetText(v:GetSkillLabel());
         tempLabel:SetSize(280, 20);
-        tempLabel:SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
+        tempLabel:SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
         tempLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
         tempLabel:SetZOrder(90);
 
         -- highlight the item that is selected by changing the colour of the
         -- the label when it is clicked
         tempLabel.MouseClick = function(sender, args)
-            self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
+            self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
             sender:SetBackColor(Turbine.UI.Color(0.95, 0.1, 0.1, 0.6));
             self.sortSelectedIndex = self.sortListBox:IndexOfItem(sender);
         end
@@ -603,7 +602,7 @@ function OptionsPanel:AddSortList()
     end
 
     -- set the first item as selected
-    self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.6));
+    self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.6));
 
     -- set up the scrollbar for the list
     self.listBoxScrollBar = self.sortListBox:GetVerticalScrollBar();
@@ -612,7 +611,7 @@ function OptionsPanel:AddSortList()
         self.listBoxScrollBar = Turbine.UI.Lotro.ScrollBar();
     end
 
-    self.listBoxScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
+    self.listBoxScrollBar:SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
     self.listBoxScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
     self.listBoxScrollBar:SetSize(10, self.height - 120);
     self.listBoxScrollBar:SetPosition(270, 0);
