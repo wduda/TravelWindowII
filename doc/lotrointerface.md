@@ -41,5 +41,6 @@ v1.2.0
 - fixed U38 allegiance travel skills in EN/FR/DE client
 - added new U38.1.1 skill in EN/FR/DE client
 - fixed duplicate skillnames causing all kinds of sorting issues - thanks to @whiterabbit963
+- minor performance improvement - thanks to @whiterabbit963
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].

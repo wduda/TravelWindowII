@@ -2,6 +2,7 @@
 - fixed U38 allegiance travel skills in EN/FR/DE client
 - added new U38.1.1 skill in EN/FR/DE client
 - fixed duplicate skillnames causing all kinds of sorting issues - thanks to @whiterabbit963
+- minor performance improvement - thanks to @whiterabbit963
 ## v1.1.0
 - fixed two U38 reputation travel skills in EN client
 - added U38 Mariner skills in FR client
