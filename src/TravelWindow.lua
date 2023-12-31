@@ -488,7 +488,8 @@ function TravelWindow:SetShortcuts()
             shortcutIndex = self:TableIndex(Settings.order, repLocations:IdAtIndex(i));
             table.insert(TravelShortcuts,
                          TravelShortcut(6.0, repLocations:IdAtIndex(i), repLocations:NameAtIndex(i), 3, shortcutIndex,
-                                        Settings.enabled[repLocations:IdAtIndex(i)], repLocations:LabelAtIndex(i)));
+                                        Settings.enabled[repLocations:IdAtIndex(i)], repLocations:LabelAtIndex(i),
+                                        repLocations:DescAtIndex(i)));
         end
     else
         -- set the creep travel items
@@ -508,7 +509,7 @@ function TravelWindow:SetShortcuts()
             table.insert(TravelShortcuts,
                          TravelShortcut(6.0, hunterLocations:IdAtIndex(i), hunterLocations:NameAtIndex(i), 4,
                                         shortcutIndex, Settings.enabled[hunterLocations:IdAtIndex(i)],
-                                        hunterLocations:LabelAtIndex(i)));
+                                        hunterLocations:LabelAtIndex(i), hunterLocations:DescAtIndex(i)));
         end
     end
 
@@ -519,7 +520,7 @@ function TravelWindow:SetShortcuts()
             table.insert(TravelShortcuts,
                          TravelShortcut(6.0, wardenLocations:IdAtIndex(i), wardenLocations:NameAtIndex(i), 4,
                                         shortcutIndex, Settings.enabled[wardenLocations:IdAtIndex(i)],
-                                        wardenLocations:LabelAtIndex(i)));
+                                        wardenLocations:LabelAtIndex(i), wardenLocations:DescAtIndex(i)));
         end
     end
 
@@ -530,7 +531,7 @@ function TravelWindow:SetShortcuts()
             table.insert(TravelShortcuts,
                          TravelShortcut(6.0, marinerLocations:IdAtIndex(i), marinerLocations:NameAtIndex(i), 4,
                                         shortcutIndex, Settings.enabled[marinerLocations:IdAtIndex(i)],
-                                        marinerLocations:LabelAtIndex(i)));
+                                        marinerLocations:LabelAtIndex(i), marinerLocations:DescAtIndex(i)));
         end
     end
 
@@ -1153,7 +1154,7 @@ end
 function TravelWindow:CheckSkills()
     -- loop through all the shortcuts and list those those that are not learned
     for i = 1, #TravelShortcuts, 1 do
-        if (TravelWindow:FindSkill(TravelShortcuts[i]:GetName())) then
+        if (TravelWindow:FindSkill(TravelShortcuts[i])) then
             -- do nothing, skill is known
         else
             Turbine.Shell.WriteLine(skillNotTrainedString .. TravelShortcuts[i]:GetName())
@@ -1164,13 +1165,22 @@ function TravelWindow:CheckSkills()
     self:SetShortcuts();
 end
 
-function TravelWindow:FindSkill(name)
+function TravelWindow:FindSkill(shortcut)
     for i = 1, TrainedSkills:GetCount(), 1 do
         local skill = Turbine.Gameplay.Skill;
         skill = TrainedSkills:GetItem(i);
-
-        if (skill:GetSkillInfo():GetName() == name) then
-            return true;
+        local skillInfo = skill:GetSkillInfo();
+        local name = shortcut:GetName();
+        local desc = shortcut:GetDescription();
+        if desc ~= nil then
+            if string.match(skillInfo:GetDescription(), desc) and
+                    (skillInfo:GetName() == name) then
+                return true;
+            end
+        else
+            if (skillInfo:GetName() == name) then
+                return true;
+            end
         end
     end
 
