@@ -178,6 +178,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Führer nach Lond Cirion", "0x70068717", "Lond Cirion (Führer)");
     hunterLocations:AddSkill("Führer nach Umbar", "0x70068718", "Umbar (Führer)");
     hunterLocations:AddSkill("Führer nach Jax Phanâl", "0x70068719", "Jax Phanâl (Führer)");
+    hunterLocations:AddSkill("Führer zur Taverne 'Zum Blutigen Adler'", "0x700697EF", "Zum Blutigen Adler (Führer)");
 
     -- add the Warden locations
     wardenLocations:AddSkill("Appell in der Feste Guruth", "0x70014786", "Feste Guruth (Appell)");
@@ -233,6 +234,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell in Halrax","0x70068710", "Halrax (Appell)");
     wardenLocations:AddSkill("Appell in Dol Amroth","0x70068712", "Dol Amroth (Appell)");
     wardenLocations:AddSkill("Appell in Lond Cirion","0x70068715", "Lond Cirion (Appell)");
+    wardenLocations:AddSkill("Appell in der Taverne 'Zum Blutigen Adler'","0x700697F3", "Zum Blutigen Adler (Appell)");
 
     -- add the Mariner locations
     marinerLocations:AddSkill("Segelt nach Celondim", "0x70066100", "Celondim (Segeln)")
@@ -334,13 +336,14 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Rückkehr nach Clegur", "0x70064F47", "Clegur (Ruf)");
     repLocations:AddSkill("Nach Glân Vraig zurückkehren", "0x7005B38E", "Glân Vraig (Aufgabe)");
     repLocations:AddSkill("Rückkehr nach Pelargir", "0x700658EB", "Pelargir (Ruf)");
-    repLocations:AddSkill("Zum Orden des Adlers zurückkehren", "0x700686FE", "Orden des Adlers (Ruf)");
+    repLocations:AddSkill("Zum Orden des Adlers reisen", "0x700686FE", "Orden des Adlers (Ruf)");
     repLocations:AddSkill("Nach Umbar zurückkehren", "0x700686FF", "Umbar (Ruf)");
     repLocations:AddSkill("Rückkehr nach Dol Amroth", "0x70068700", "Dol Amroth (Ruf U38)");
     repLocations:AddSkill("Nach Jax Phanâl zurückkehren", "0x70068701", "Jax Phanâl (Ruf)");
     repLocations:AddSkill("Kehrt zu Halrax zurück.", "0x70068702", "Halrax (Ruf)");
     repLocations:AddSkill("Nach Lond Cirion zurückkehren", "0x70068703", "Lond Cirion (Ruf)");
-    repLocations:AddSkill("Zu den Buchhütern zurückkehren", "0x70068704", "Ledger-Keepers (Ruf)");
+    repLocations:AddSkill("Zu den Buchhütern reisen", "0x70068704", "Ledger-Keepers (Ruf)");
+    repLocations:AddSkill("Rückkehr zur Taverne 'Zum Blutigen Adler'", "0x700697F2", "Zum Blutigen Adler (Ruf)");
 
     -- monster player maps
     creepLocations:AddSkill("Kartenskizze zum Gramfuss", "0x70028BBC");

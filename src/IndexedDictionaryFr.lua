@@ -177,6 +177,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide vers Lond Cirion", "0x70068717", "Lond Cirion (Guide)");
     hunterLocations:AddSkill("Guide vers Umbar", "0x70068718", "Umbar (Guide)");
     hunterLocations:AddSkill("Guide vers Jax Phanâl", "0x70068719", "Jax Phanâl (Guide)");
+    hunterLocations:AddSkill("Guide vers la taverne de l'Aigle sanglant", "0x700697EF", "Taverne de l'Aigle sanglant (Guide)");
 
     wardenLocations:AddSkill("Rassemblement : Ost Guruth", "0x70014786", "Ost Guruth (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement : Esteldin", "0x70014798", "Esteldin (Rassemblement)");
@@ -231,6 +232,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Rassemblement à Halrax","0x70068710", "Halrax (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Dol Amroth","0x70068712", "Dol Amroth (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Lond Cirion","0x70068715", "Lond Cirion (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à la taverne de l'Aigle sanglant","0x700697F3", "Taverne de l'Aigle sanglant (Rassemblement)");
 
     marinerLocations:AddSkill("Naviguer vers Celondim", "0x70066100", "Celondim (Naviguer)")
     marinerLocations:AddSkill("Naviguer vers les Terres brunes", "0x70066101", "Terres brunes (Naviguer)")
@@ -351,13 +353,14 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retournez voir Clegur", "0x70064F47", "Clegur (Rep)");
     repLocations:AddSkill("Retour à Glân Vraig", "0x7005B38E", "Glân Vraig (Quête)");
     repLocations:AddSkill("Retournez à Pelargir", "0x700658EB", "Pelargir (Rep)");
-    repLocations:AddSkill("Retour auprès de l'Ordre de l'Aigle", "0x700686FE", "L'Ordre de l'Aigle (Rep)");
+    repLocations:AddSkill("Voyager vers l'Ordre de l'Aigle", "0x700686FE", "L'Ordre de l'Aigle (Rep)");
     repLocations:AddSkill("Retour à Umbar", "0x700686FF", "Umbar (Rep)");
     repLocations:AddSkill("Retour à Dol Amroth", "0x70068700", "Dol Amroth (Rep U38)");
     repLocations:AddSkill("Retour à Jax Phanâl", "0x70068701", "Jax Phanâl (Rep)");
     repLocations:AddSkill("Retournez voir Halrax", "0x70068702", "Halrax (Rep)");
     repLocations:AddSkill("Retour à Lond Cirion", "0x70068703", "Lond Cirion (Rep)");
-    repLocations:AddSkill("Retour auprès des Gardiens des écrits", "0x70068704", "Gardiens des écrits (Rep)");
+    repLocations:AddSkill("Voyager vers les Gardiens des écrits", "0x70068704", "Gardiens des écrits (Rep)");
+    repLocations:AddSkill("Retour à la taverne de l'Aigle Sanglant", "0x700697F2", "Taverne de l'Aigle Sanglant (Rep)");
 
   -- monster player maps
     creepLocations:AddSkill("Carte grossière pour aller au Pied de Gram", "0x70028BBC");
