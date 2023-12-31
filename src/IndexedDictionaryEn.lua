@@ -17,7 +17,7 @@ gondorMapTitleString = "Gondor Destinations"
 glanMapString = "Glân Vraig Map";
 glanMapItemString = "Map to Glân Vraig";
 
-skillNotTrainedString = "Skills not trained:";
+skillNotTrainedString = "Skills not trained: ";
 
 -- options window strings
 generalTabString = "General";
@@ -138,7 +138,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Forlaw", "0x70036B5D", "Forlaw (Guide)");
     hunterLocations:AddSkill("Guide to Aldburg", "0x7003DC71", "Aldburg (Guide)");
     hunterLocations:AddSkill("Guide to Helm's Deep", "0x7003DC72", "Helm's Deep (Guide)");
-    hunterLocations:AddSkill("Guide to Dol Amroth", "0x70041197", "Dol Amroth (Guide)");
+    hunterLocations:AddSkill("Guide to Dol Amroth", "0x70041197", "Dol Amroth (Guide)"); -- TODO: add desc
     hunterLocations:AddSkill("Guide to Arnach", "0x70043A63", "Arnach (Guide)");
     hunterLocations:AddSkill("Guide to Minas Tirith", "0x70044985", "Minas Tirith (Guide)");
     hunterLocations:AddSkill("Guide to the War-stead", "0x700459AF", "War-stead (Guide)");
@@ -170,11 +170,12 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Carn Dûm", "0x70064AC8", "Carn Dûm (Guide)");
     hunterLocations:AddSkill("Guide to Clegur", "0x70064F4C", "Clegur (Guide)");
     hunterLocations:AddSkill("Guide to Pelargir", "0x700658EA", "Pelargir (Guide)");
-    hunterLocations:AddSkill("Guide to Dol Amroth", "0x70068711", "Dol Amroth (Guide U38)");
+    hunterLocations:AddSkill("Guide to Dol Amroth", "0x70068711", "King's Dol Amroth (Guide U38)"); -- TODO: add desc
     hunterLocations:AddSkill("Guide to Halrax", "0x70068713", "Halrax (Guide)");
     hunterLocations:AddSkill("Guide to Lond Cirion", "0x70068717", "Lond Cirion (Guide)");
     hunterLocations:AddSkill("Guide to Umbar", "0x70068718", "Umbar (Guide)");
     hunterLocations:AddSkill("Guide to Jax Phanâl", "0x70068719", "Jax Phanâl (Guide)");
+    hunterLocations:AddSkill("Guide to the Bloody Eagle Tavern", "0x700697EF", "Bloody Eagle Tavern (Guide)");
 
     -- add the Warden locations
     wardenLocations:AddSkill("Muster in Ost Guruth", "0x70014786", "Ost Guruth (Muster)");
@@ -193,7 +194,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster in Forlaw", "0x70036B5B", "Forlaw (Muster)");
     wardenLocations:AddSkill("Muster in Aldburg", "0x7003DC7A", "Aldburg (Muster)");
     wardenLocations:AddSkill("Muster in Helm's Deep", "0x7003DC79", "Helm's Deep (Muster)");
-    wardenLocations:AddSkill("Muster in Dol Amroth", "0x70041198", "Dol Amroth (Muster)");
+    wardenLocations:AddSkill("Muster in Dol Amroth", "0x70041198", "Dol Amroth (Muster)");  -- TODO: add desc
     wardenLocations:AddSkill("Muster in Arnach", "0x70043A66", "Arnach (Muster)");
     wardenLocations:AddSkill("Muster in Minas Tirith", "0x70044982", "Minas Tirith (Muster)");
     wardenLocations:AddSkill("Muster in the War-stead", "0x700459AA", "War-stead (Muster)");
@@ -228,8 +229,9 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster at Jax Phanâl","0x7006870C", "Jax Phanâl (Muster)");
     wardenLocations:AddSkill("Muster at Umbar","0x7006870F","Umbar (Muster)");
     wardenLocations:AddSkill("Muster at Halrax","0x70068710", "Halrax (Muster)");
-    wardenLocations:AddSkill("Muster at Dol Amroth","0x70068712", "Dol Amroth (Muster)");
+    wardenLocations:AddSkill("Muster at Dol Amroth","0x70068712", "King's Dol Amroth (Muster)"); -- TODO: add desc
     wardenLocations:AddSkill("Muster at Lond Cirion","0x70068715", "Lond Cirion (Muster)");
+    wardenLocations:AddSkill("Muster at the Bloody Eagle Tavern","0x700697F3", "Bloody Eagle Tavern (Muster)");
 
     -- add the Mariner locations
     marinerLocations:AddSkill("Sail to Celondim", "0x70066100", "Celondim (Sail)")
@@ -239,7 +241,7 @@ function TravelDictionaries:CreateDictionaries()
     marinerLocations:AddSkill("Sail to Lake-town", "0x7006610C", "Lake-town (Sail)")
     marinerLocations:AddSkill("Sail to the Mirk-eaves", "0x7006610E", "Mirk-eaves (Sail)")
     marinerLocations:AddSkill("Sail to Tinnudir", "0x7006610F", "Tinnudir (Sail)")
-    marinerLocations:AddSkill("Sail to Dol Amroth", "0x70066117", "Dol Amroth (Sail)")
+    marinerLocations:AddSkill("Sail to Dol Amroth", "0x70066117", "Dol Amroth (Sail)") -- TODO: add desc arg
     marinerLocations:AddSkill("Sail to Buckland", "0x7006611A", "Buckland (Sail)")
     marinerLocations:AddSkill("Sail to Pelargir", "0x7006611B", "Pelargir (Sail)")
     marinerLocations:AddSkill("Sail to Sûri-kylä", "0x7006611C", "Sûri-kylä (Sail)")
@@ -249,14 +251,17 @@ function TravelDictionaries:CreateDictionaries()
     marinerLocations:AddSkill("Sail to Umbar", "0x700687BB", "Umbar (Sail)")
     marinerLocations:AddSkill("Sail to Lond Cirion", "0x700687BD", "Lond Cirion (Sail)")
     marinerLocations:AddSkill("Sail to Jax Phanâl", "0x700687C0", "Jax Phanâl (Sail)")
-    marinerLocations:AddSkill("Sail to Dol Amroth", "0x700687C1", "Dol Amroth (Sail)")
+    marinerLocations:AddSkill("Sail to Dol Amroth", "0x700687C1", "King's Dol Amroth (Sail)")  -- TODO: add desc arg
     marinerLocations:AddSkill("Sail to Halrax", "0x700687C3", "Halrax (Sail)")
 
     -- add the racial travel skills
-    racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)"); -- human
+    racialLocations:AddSkill("Return to Bree", "0x700062F6", "Bree (Racial)",
+                             "This enables you to quickly return"); -- human
     racialLocations:AddSkill("Return to the Shire", "0x700062C8", "Shire (Racial)"); -- hobbit
-    racialLocations:AddSkill("Return to Thorin's Gate", "0x70006346", "Thorin's Gate (Racial)"); -- dwarf
-    racialLocations:AddSkill("Return to Rivendell", "0x7000631F", "Rivendell (Racial)"); --elf
+    racialLocations:AddSkill("Return to Thorin's Gate", "0x70006346", "Thorin's Gate (Racial)",
+                             "This enables you to quickly return"); -- dwarf
+    racialLocations:AddSkill("Return to Rivendell", "0x7000631F", "Rivendell (Racial)",
+                             "This enables you to quickly return"); --elf
     racialLocations:AddSkill("Return Home", "0x70041A22", "Beorning Home (Racial)"); -- beorning
     racialLocations:AddSkill("Travel to Caras Galadhon in Lothlórien", "0x70048C8C", "Caras Galadhon (Racial)"); -- high-elf
     racialLocations:AddSkill("Travel to Thorin's Hall", "0x70053C0F", "Thorin's Hall (Racial)"); -- stoutaxe
@@ -280,11 +285,14 @@ function TravelDictionaries:CreateDictionaries()
     genLocations:AddSkill("Travel to Kinship Member's House", "0x70057C36", "Kinship Member's House");
 
     -- add the obtainable travel skills
-    repLocations:AddSkill("Return to Thorin's Gate", "0x7001BF91", "Thorin's Gate (Rep)");
-    repLocations:AddSkill("Return to Bree", "0x7001BF90", "Bree (Rep)");
+    repLocations:AddSkill("Return to Thorin's Gate", "0x7001BF91", "Thorin's Gate (Rep)",
+                          "Thanks to your friendship");
+    repLocations:AddSkill("Return to Bree", "0x7001BF90", "Bree (Rep)",
+                          "Thanks to your friendship");
     repLocations:AddSkill("Return to Lalia's Market", "0x700364B1", "Lalia's Market (Mithril)");
     repLocations:AddSkill("Return to Michel Delving", "0x70023262", "Shire (Store)");
-    repLocations:AddSkill("Return to Rivendell", "0x70023263", "Rivendell (Store)");
+    repLocations:AddSkill("Return to Rivendell", "0x70023263", "Rivendell (Store)",
+                          "Thanks to your friendship");
     repLocations:AddSkill("Return to Ost Guruth", "0x70020441", "Ost Guruth (Rep)");
     repLocations:AddSkill("Return to Mirkwood", "0x7001F374", "Mirkwood (Rep)");
     repLocations:AddSkill("Return to Enedwaith", "0x70021FA2", "Enedwaith (Rep)");
@@ -295,7 +303,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Aldburg", "0x7003DC81", "Aldburg (Rep)");
     repLocations:AddSkill("Return to Derndingle", "0x7004128F", "Derndingle (Rep)");
     repLocations:AddSkill("Return to Helm's Deep", "0x7003DC82", "Helm's Deep (Rep)");
-    repLocations:AddSkill("Return to Dol Amroth", "0x700411AC", "Dol Amroth (Rep)");
+    repLocations:AddSkill("Return to Dol Amroth", "0x700411AC", "Dol Amroth (Rep)",
+                          "quickly return to Dol Amroth in western Gondor");
     repLocations:AddSkill("Return to Arnach", "0x70043A6A", "Arnach (Rep)");
     repLocations:AddSkill("Return to Minas Tirith", "0x7004497E", "Minas Tirith (Rep)");
     repLocations:AddSkill("Return to the War-stead", "0x700459A9", "War-stead (Rep)");
@@ -334,13 +343,14 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Clegur", "0x70064F47", "Clegur (Rep)");
     repLocations:AddSkill("Return to Glân Vraig", "0x7005B38E", "Glân Vraig (Quest)");
     repLocations:AddSkill("Return to Pelargir", "0x700658EB", "Pelargir (Rep)");
-    repLocations:AddSkill("Return to the Order of the Eagle", "0x700686FE", "Order of the Eagle (Rep)");
+    repLocations:AddSkill("Journey to the Order of the Eagle", "0x700686FE", "Order of the Eagle (Rep)");
     repLocations:AddSkill("Return to Umbar", "0x700686FF", "Umbar (Rep)");
-    repLocations:AddSkill("Return to Dol Amroth", "0x70068700", "Dol Amroth (Rep U38)");
+    repLocations:AddSkill("Return to Dol Amroth", "0x70068700", "King's Dol Amroth (Rep U38)", "King's Gondor");
     repLocations:AddSkill("Return to Jax Phanâl", "0x70068701", "Jax Phanâl (Rep)");
     repLocations:AddSkill("Return to Halrax", "0x70068702", "Halrax (Rep)");
     repLocations:AddSkill("Return to Lond Cirion", "0x70068703", "Lond Cirion (Rep)");
-    repLocations:AddSkill("Return to the Ledger-Keepers", "0x70068704", "Ledger-Keepers (Rep)");
+    repLocations:AddSkill("Journey to the Ledger-keepers", "0x70068704", "Ledger-Keepers (Rep)");
+    repLocations:AddSkill("Return to the Bloody Eagle Tavern", "0x700697F2", "Bloody Eagle Tavern (Rep)");
 
     -- monster player maps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");
