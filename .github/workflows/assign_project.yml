@@ -11,7 +11,7 @@ jobs:
     name: Auto-assign issues and PRs to project
     steps:
     - name: Assign new issues to project into the triage column
-      uses: actions/add-to-project@RELEASE_VERSION
+      uses: actions/add-to-project@v0.5.0
       with:
         project: 'https://github.com/users/wduda/projects/1'
         github-token: ${{ secrets.ACTIONS_SECRET_TWII }}
