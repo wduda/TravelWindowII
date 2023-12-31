@@ -14,4 +14,4 @@ jobs:
       uses: actions/add-to-project@v0.5.0
       with:
         project-url: 'https://github.com/users/wduda/projects/1'
-        github-token: ${{ secrets.ACTIONS_SECRET_TWII }}
+        github-token: ${{ secrets.TW_II_PROJECT }}
