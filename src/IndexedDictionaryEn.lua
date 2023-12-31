@@ -175,6 +175,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Lond Cirion", "0x70068717", "Lond Cirion (Guide)");
     hunterLocations:AddSkill("Guide to Umbar", "0x70068718", "Umbar (Guide)");
     hunterLocations:AddSkill("Guide to Jax Phanâl", "0x70068719", "Jax Phanâl (Guide)");
+    hunterLocations:AddSkill("Guide to the Bloody Eagle Tavern", "0x700697EF", "Bloody Eagle Tavern (Guide)");
 
     -- add the Warden locations
     wardenLocations:AddSkill("Muster in Ost Guruth", "0x70014786", "Ost Guruth (Muster)");
@@ -230,6 +231,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster at Halrax","0x70068710", "Halrax (Muster)");
     wardenLocations:AddSkill("Muster at Dol Amroth","0x70068712", "King's Dol Amroth (Muster)"); -- TODO: add desc
     wardenLocations:AddSkill("Muster at Lond Cirion","0x70068715", "Lond Cirion (Muster)");
+    wardenLocations:AddSkill("Muster at the Bloody Eagle Tavern","0x700697F3", "Bloody Eagle Tavern (Muster)");
 
     -- add the Mariner locations
     marinerLocations:AddSkill("Sail to Celondim", "0x70066100", "Celondim (Sail)")
@@ -341,13 +343,14 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Clegur", "0x70064F47", "Clegur (Rep)");
     repLocations:AddSkill("Return to Glân Vraig", "0x7005B38E", "Glân Vraig (Quest)");
     repLocations:AddSkill("Return to Pelargir", "0x700658EB", "Pelargir (Rep)");
-    repLocations:AddSkill("Return to the Order of the Eagle", "0x700686FE", "Order of the Eagle (Rep)");
+    repLocations:AddSkill("Journey to the Order of the Eagle", "0x700686FE", "Order of the Eagle (Rep)");
     repLocations:AddSkill("Return to Umbar", "0x700686FF", "Umbar (Rep)");
     repLocations:AddSkill("Return to Dol Amroth", "0x70068700", "King's Dol Amroth (Rep U38)", "King's Gondor");
     repLocations:AddSkill("Return to Jax Phanâl", "0x70068701", "Jax Phanâl (Rep)");
     repLocations:AddSkill("Return to Halrax", "0x70068702", "Halrax (Rep)");
     repLocations:AddSkill("Return to Lond Cirion", "0x70068703", "Lond Cirion (Rep)");
-    repLocations:AddSkill("Return to the Ledger-Keepers", "0x70068704", "Ledger-Keepers (Rep)");
+    repLocations:AddSkill("Journey to the Ledger-keepers", "0x70068704", "Ledger-Keepers (Rep)");
+    repLocations:AddSkill("Return to the Bloody Eagle Tavern", "0x700697F2", "Bloody Eagle Tavern (Rep)");
 
     -- monster player maps
     creepLocations:AddSkill("Crude Map to Gramsfoot", "0x70028BBC");
