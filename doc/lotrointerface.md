@@ -37,17 +37,9 @@ Use the mousewheel while hovering over the travel skill icon to change the selec
 [/LIST]
 
 Version history:
-v1.1.0
-- fixed two U38 reputation travel skills in EN client
-- added U38 Mariner skills in FR client
-- added U38 Mariner skills in DE client
-- cleaned up duplicate Mariner skills in EN/DE/FR files
-- fixed Swanfleet label in DE client
-- fixed River-Hobbit racial in DE client
-- fixed Mariner skills in DE client
-- fixed all Mariner skills not showing up in Enabled and Sort options tabs
-- fixed newly learned Mariner skills not being found when checking trained skills
-
-There is a bug with the skills returning you to Dol Amroth - the skills are named identically by SSG and the change requires a significant rework to how TW II stores data about skills.
+v1.2.0
+- fixed U38 allegiance travel skills in EN/FR/DE client
+- added new U38.1.1 skill in EN/FR/DE client
+- fixed duplicate skillnames causing all kinds of sorting issues - thanks to @whiterabbit963
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
