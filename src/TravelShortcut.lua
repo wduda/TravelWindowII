@@ -3,11 +3,12 @@
 --[[ and enabled status	]] --
 TravelShortcut = class(Turbine.UI.Lotro.Shortcut);
 
-function TravelShortcut:Constructor(sType, data, name, tType, index, enabled, skillLabel)
+function TravelShortcut:Constructor(sType, data, name, tType, index, enabled, skillLabel, desc)
     Turbine.UI.Lotro.Shortcut.Constructor(self);
 
     -- the data to keep track of
     self.Name = name;
+    self.desc = desc;
     self.travelType = tType;
     self.Index = index;
     self.Enabled = enabled;
@@ -50,6 +51,11 @@ end
 -- function to return the ingame skill name of the shortcut
 function TravelShortcut:GetName()
     return self.Name;
+end
+
+-- function to return an optional skill description to disambiguate identical skill names
+function TravelShortcut:GetDescription()
+    return self.desc;
 end
 
 -- function to return the plugin specific skill label of the shortcut
