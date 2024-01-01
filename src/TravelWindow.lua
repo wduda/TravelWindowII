@@ -52,9 +52,6 @@ function TravelWindow:Constructor()
 
     -- configure the external toggle button
     self.ToggleButton = TravelWindowII.src.TravelButton(self);
-    self.ToggleButton:SetPosition(Settings.buttonPositionX, Settings.buttonPositionY);
-    self.ToggleButton:SetVisible(Settings.showButton == 1);
-    self.ToggleButton:SetOpacity(Settings.toggleMinOpacity);
 
     -- if the player has a PvMP map, then insert it into the list
     -- if ((.mapGlanVraig ~= nil) and (.mapGlanVraig ~= "nil")) then
@@ -811,12 +808,34 @@ function TravelWindow:LoadSettings()
         SettingsStrings.positionY = tostring((Turbine.UI.Display.GetHeight() - self:GetHeight()) * 0.75);
     end
 
-    if (not SettingsStrings.buttonPositionX or SettingsStrings.buttonPositionX == "nil") then
-        SettingsStrings.buttonPositionX = tostring(Turbine.UI.Display.GetWidth() - self:GetWidth() - 50);
+    local screenWidth = Turbine.UI.Display.GetWidth();
+    local screenHeight = Turbine.UI.Display.GetHeight();
+    if not SettingsStrings.buttonRelativeX or SettingsStrings.buttonRelativeX == "nil" then
+        if SettingsStrings.buttonPositionX and SettingsStrings.buttonPositionX ~= "nil" and
+                tonumber(SettingsStrings.buttonPositionX) < screenWidth then
+            -- not perfect, but assuming the same resolution, this will approximately convert to a relative value
+            SettingsStrings.buttonRelativeX = tonumber(SettingsStrings.buttonPositionX) / screenWidth;
+            if SettingsStrings.buttonRelativeX > 1.0 then
+                SettingsStrings.buttonRelativeX = 0.95;
+            end
+            SettingsStrings.buttonRelativeX = tostring(SettingsStrings.buttonRelativeX);
+        else
+            SettingsStrings.buttonRelativeX = "0.95";
+        end
     end
 
-    if (not SettingsStrings.buttonPositionY or SettingsStrings.buttonPositionY == "nil") then
-        SettingsStrings.buttonPositionY = tostring(Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5);
+    if not SettingsStrings.buttonRelativeY or SettingsStrings.buttonRelativeY == "nil" then
+        if SettingsStrings.buttonPositionY and SettingsStrings.buttonPositionY ~= "nil" and
+                tonumber(SettingsStrings.buttonPositionY) < screenHeight then
+            -- not perfect, but assuming the same resolution, this will approximately convert to a relative value
+            SettingsStrings.buttonRelativeY = tonumber(SettingsStrings.buttonPositionY) / screenHeight;
+            if SettingsStrings.buttonRelativeY > 1.0 then
+                SettingsStrings.buttonRelativeY = 0.75;
+            end
+            SettingsStrings.buttonRelativeY = tostring(SettingsStrings.buttonRelativeY);
+        else
+            SettingsStrings.buttonRelativeY = "0.75";
+        end
     end
 
     if (not SettingsStrings.hideOnStart or SettingsStrings.hideOnStart == "nil") then
@@ -896,16 +915,16 @@ function TravelWindow:LoadSettings()
         Settings.positionY = SettingsStrings.positionY;
     end
 
-    if (type(SettingsStrings.buttonPositionX) == "string") then
-        Settings.buttonPositionX = tonumber(SettingsStrings.buttonPositionX);
+    if (type(SettingsStrings.buttonRelativeX) == "string") then
+        Settings.buttonRelativeX = tonumber(SettingsStrings.buttonRelativeX);
     else
-        Settings.buttonPositionX = SettingsStrings.buttonPositionX;
+        Settings.buttonRelativeX = SettingsStrings.buttonRelativeX;
     end
 
-    if (type(SettingsStrings.positionY) == "string") then
-        Settings.buttonPositionY = tonumber(SettingsStrings.buttonPositionY);
+    if (type(SettingsStrings.buttonRelativeY) == "string") then
+        Settings.buttonRelativeY = tonumber(SettingsStrings.buttonRelativeY);
     else
-        Settings.buttonPositionY = SettingsStrings.buttonPositionY;
+        Settings.buttonRelativeY = SettingsStrings.buttonRelativeY;
     end
 
     if (type(SettingsStrings.hideOnStart) == "string") then
@@ -1007,8 +1026,8 @@ function TravelWindow:SaveSettings()
     SettingsStrings.width = tostring(Settings.width);
     SettingsStrings.positionX = tostring(Settings.positionX);
     SettingsStrings.positionY = tostring(Settings.positionY);
-    SettingsStrings.buttonPositionX = tostring(Settings.buttonPositionX);
-    SettingsStrings.buttonPositionY = tostring(Settings.buttonPositionY);
+    SettingsStrings.buttonRelativeX = tostring(Settings.buttonRelativeX);
+    SettingsStrings.buttonRelativeY = tostring(Settings.buttonRelativeY);
     SettingsStrings.hideOnStart = tostring(Settings.hideOnStart);
     SettingsStrings.hideOnCombat = tostring(Settings.hideOnCombat);
     SettingsStrings.pulldownTravel = tostring(Settings.pulldownTravel);
@@ -1062,8 +1081,8 @@ function TravelWindow:ResetSettings()
     Settings.height = self.minHeight;
     Settings.positionX = Turbine.UI.Display.GetWidth() - self:GetWidth() - 50;
     Settings.positionY = Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5;
-    Settings.buttonPositionX = Turbine.UI.Display.GetWidth() - self:GetWidth() - 50;
-    Settings.buttonPositionY = Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5;
+    Settings.buttonRelativeX = 0.95;
+    Settings.buttonRelativeY = 0.75;
     Settings.hideOnStart = 0;
     Settings.hideOnCombat = 0;
     Settings.pulldownTravel = 0;
@@ -1082,7 +1101,9 @@ function TravelWindow:ResetSettings()
     Settings.mapGlanVraig = nil;
 
     -- move the toggle button and main window
-    self.ToggleButton:SetPosition(Settings.buttonPositionX, Settings.buttonPositionY);
+    local buttonPositionX = Turbine.UI.Display.GetWidth() * SettingsStrings.buttonRelativeX;
+    local buttonPositionY = Turbine.UI.Display.GetHeight() * SettingsStrings.buttonRelativeY;
+    self.ToggleButton:SetPosition(buttonPositionX, buttonPositionY);
     self:SetPosition(Settings.positionX, Settings.positionY);
     self:SetSize(Settings.width, Settings.height);
 

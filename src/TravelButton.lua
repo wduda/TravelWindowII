@@ -19,13 +19,25 @@ function TravelButton:Constructor(parent)
 
     -- set defaults
     self:SetSize(32, 32);
-    self:SetPosition(350, 350);
     self:SetBackground("TravelWindowII/src/resources/travel.tga");
     self:SetBackColorBlendMode(Turbine.UI.BlendMode.Multiply);
     self:SetBackColor(Turbine.UI.Color(0, 0.5, 0.5, 0.5));
     self:SetWantsUpdates(true);
-    self:SetOpacity(0.2);
     self:SetZOrder(1);
+
+    local screenWidth = Turbine.UI.Display.GetWidth();
+    local screenHeight = Turbine.UI.Display.GetHeight();
+    local buttonPositionX = SettingsStrings.buttonRelativeX * screenWidth;
+    local buttonPositionY = SettingsStrings.buttonRelativeY * screenHeight;
+    if buttonPositionX + self:GetWidth() > screenWidth then
+        buttonPositionX = screenWidth - self:GetWidth();
+    end
+    if buttonPositionY + self:GetHeight() > screenHeight then
+        buttonPositionY = screenHeight - self:GetHeight();
+    end
+    self:SetPosition(buttonPositionX, buttonPositionY);
+    self:SetVisible(Settings.showButton == 1);
+    self:SetOpacity(Settings.toggleMinOpacity);
 
     --[[ EVENT HANDLERS ]] --
 
@@ -87,8 +99,9 @@ function TravelButton:Constructor(parent)
             -- the visibility of the button
             if (hasMoved) then
                 local one, two = self:GetPosition();
-                Settings.buttonPositionX = one;
-                Settings.buttonPositionY = two;
+                local screenWidth, screenHeight = Turbine.UI.Display.GetSize();
+                Settings.buttonRelativeX = one / screenWidth;
+                Settings.buttonRelativeY = two / screenHeight;
                 self.mainWindow:UpdateSettings();
                 hasMoved = false;
                 self:SetBackColor(Turbine.UI.Color(0, 0.5, 0.5, 0.5));
