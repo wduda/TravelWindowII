@@ -18,7 +18,7 @@ MapType = {
     HARADWAITH = 7,
 };
 
-function MapWindow:Constructor(parent, map, class, race, shortcuts)
+function MapWindow:Constructor(parent, map, class, race)
     Turbine.UI.Window.Constructor(self);
 
     --  add a check to see if we load completely
@@ -28,7 +28,6 @@ function MapWindow:Constructor(parent, map, class, race, shortcuts)
     self.mapType = map;
     self.PlayerClass = class;
     self.PlayerRaceKey = race; -- mapped as racialMap index
-    self.shortcuts = shortcuts;
     self.debug = false;
 
     -- set size of window
@@ -420,67 +419,79 @@ function MapWindow:AddShortcuts()
         {MapType.ERIADOR, 815, 300} -- Ettenmoors
     };
 
+    local sType = Turbine.UI.Lotro.ShortcutType.Skill;
     self:AddClassLocations(Turbine.Gameplay.Class.Hunter, hunterMap, hunterLocations);
     self:AddClassLocations(Turbine.Gameplay.Class.Warden, wardenMap, wardenLocations);
     self:AddClassLocations(Turbine.Gameplay.Class.Mariner, marinerMap, marinerLocations);
 
     -- reputation locations
-    if #repMap ~= repLocations:GetCount() then
-        Turbine.Shell.WriteLine("Error: Missing Reputation locations " .. #repMap .. " " .. repLocations:GetCount());
-        return
+    local repCount = #repMap
+    if repCount ~= repLocations:GetCount() then
+        Turbine.Shell.WriteLine("Error: Missing Reputation locations " .. (repLocations:GetCount() - repCount));
+        if repCount > repLocations:GetCount() then
+            repCount = repLocations:GetCount();
+        end
     end
 
-    local sType = Turbine.UI.Lotro.ShortcutType.Skill;
-    for i = 1, #repMap, 1 do
-        local index = repLocations:IdAtIndex(i);
-        if self.mapType == repMap[i][1] then
-            self:AddSingleShortcut(repMap[i], Turbine.UI.Lotro.Shortcut(sType, index));
+    for i = 1, repCount do
+        local id = repLocations:IdAtIndex(i);
+        if self.mapType == repMap[i][1] and self:IsShortcutEnabled(id) then
+            self:AddSingleShortcut(repMap[i], Turbine.UI.Lotro.Shortcut(sType, id));
         end
     end
 
     -- racial locations
-    if #racialMap ~= racialLocations:GetCount() then
-        Turbine.Shell.WriteLine("Error: Missing Racial locations " .. #racialMap .. " " .. racialLocations:GetCount());
-        return
-    end
-
-    if self.mapType == racialMap[self.PlayerRaceKey][1] then
-        local index = racialLocations:IdAtIndex(self.PlayerRaceKey);
-        if self.PlayerRaceKey ~= 1 or self:IsShortcutTrained(index) then
-            self:AddSingleShortcut(racialMap[self.PlayerRaceKey],
-                                   Turbine.UI.Lotro.Shortcut(sType, index));
+    if #racialMap > self.PlayerRaceKey then
+        if #racialMap ~= racialLocations:GetCount() then
+            Turbine.Shell.WriteLine("Error: Missing other Racial locations " .. (racialLocations:GetCount() - #racialMap));
         end
+        if self.mapType == racialMap[self.PlayerRaceKey][1] then
+            local id = racialLocations:IdAtIndex(self.PlayerRaceKey);
+            if self:IsShortcutEnabled(id) and self:IsShortcutTrained(id) then
+                self:AddSingleShortcut(racialMap[self.PlayerRaceKey],
+                                       Turbine.UI.Lotro.Shortcut(sType, id));
+            end
+        end
+    else
+        Turbine.Shell.WriteLine("Error: Missing Racial locations " .. (racialLocations:GetCount() - #racialMap));
     end
 
     -- Glan Vraig
-    for i = 1, #TravelShortcuts, 1 do
-        if TravelShortcuts[i]:GetName() == glanMapString then
-            if self:IsShortcutEnabled(index) then
-                self:AddSingleShortcut(moorsMap[0], self.shortcuts[i]);
-                break
+    if self.mapType == moorsMap[1][1] then
+        for i = 1, #TravelShortcuts, 1 do
+            if TravelShortcuts[i]:GetName() == glanMapString then
+                if self:IsShortcutEnabled(TravelShortcuts[i]:GetData()) then
+                    self:AddSingleShortcut(moorsMap[1], TravelShortcuts[i]);
+                    break
+                end
             end
         end
     end
 end
 
 function MapWindow:AddClassLocations(class, map, locations)
-    if class == self.PlayerClass then
-        if #map ~= locations:GetCount() then
-            local name = "Unknown";
-            if class == Turbine.Gameplay.Class.Hunter then name = "Hunter"
-            elseif class == Turbine.Gameplay.Class.Warden then name = "Warden"
-            elseif class == Turbine.Gameplay.Class.Mariner then name = "Mariner"
-            end
-            Turbine.Shell.WriteLine("Error: Missing " .. name .. " locations " .. #map .. " " .. locations:GetCount());
-            return
-        end
+    if class ~= self.PlayerClass then
+        return -- skip, not the correct class
+    end
 
-        local sType = Turbine.UI.Lotro.ShortcutType.Skill;
-        for i = 1, #map, 1 do
-            local index = locations:IdAtIndex(i);
-            if self.mapType == map[i][1] and self:IsShortcutEnabled(index) then
-                self:AddSingleShortcut(map[i], Turbine.UI.Lotro.Shortcut(sType, index));
-            end
+    local mapCount = #map;
+    if mapCount ~= locations:GetCount() then
+        local name = "Unknown";
+        if class == Turbine.Gameplay.Class.Hunter then name = "Hunter"
+        elseif class == Turbine.Gameplay.Class.Warden then name = "Warden"
+        elseif class == Turbine.Gameplay.Class.Mariner then name = "Mariner"
+        end
+        Turbine.Shell.WriteLine("Error: Missing " .. name .. " locations " .. (locations:GetCount() - mapCount));
+        if mapCount > locations:GetCount() then
+            mapCount = locations:GetCount();
+        end
+    end
+
+    local sType = Turbine.UI.Lotro.ShortcutType.Skill;
+    for i = 1, mapCount do
+        local id = locations:IdAtIndex(i);
+        if self.mapType == map[i][1] and self:IsShortcutEnabled(id) then
+            self:AddSingleShortcut(map[i], Turbine.UI.Lotro.Shortcut(sType, id));
         end
     end
 end
@@ -521,7 +532,6 @@ function MapWindow:AddSingleShortcut(location, shortcut)
     self.quickslots[index]:SetShortcut(shortcut);
     self.quickslots[index]:SetOpacity(1);
     self.quickslots[index]:SetParent(self.mapLabel);
-    self.quickslots[index]:SetAllowDrop(false);
     self.quickslots[index]:SetMouseVisible(true);
     self.quickslots[index]:SetUseOnRightClick(false);
     self.quickslots[index]:SetAllowDrop(false);

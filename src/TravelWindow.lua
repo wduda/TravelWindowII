@@ -698,7 +698,7 @@ end
 
 function TravelWindow:OpenMapWindow(map)
     self:CloseMapWindow();
-    self.mapWindow = TravelWindowII.src.MapWindow(self, map, PlayerClass, PlayerRaceKey, TravelShortcuts);
+    self.mapWindow = TravelWindowII.src.MapWindow(self, map, PlayerClass, PlayerRaceKey);
     self.mapWindow:SetVisible(true);
 end
 
