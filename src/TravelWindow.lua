@@ -761,25 +761,21 @@ function TravelWindow:TableIndex(tableToSearch, elementToSearchFor)
 end
 
 function TravelWindow:SortShortcuts()
-    -- do not sort if there is one or less shortcuts
-    if #TravelShortcuts < 2 then
-        return;
-    end
-
-    -- perform a bubble sort
-    for i = 1, #TravelShortcuts do
-        for j = 2, #TravelShortcuts do
-            -- if the index of the second shortcut is lower than the index of
-            -- the first, switch the shortcuts
-            if TravelShortcuts[j]:GetIndex() < TravelShortcuts[j - 1]:GetIndex() then
+    -- perform an optimized bubble sort
+    local n = #TravelShortcuts;
+    while n > 2 do
+        local new_n = 1;
+        for i = 2, n do
+            if TravelShortcuts[i - 1]:GetIndex() > TravelShortcuts[i]:GetIndex() then
                 self.dirty = true;
-                local temp = TravelShortcuts[j - 1];
-                TravelShortcuts[j - 1] = TravelShortcuts[j];
-                TravelShortcuts[j] = temp;
+                local temp = TravelShortcuts[i - 1];
+                TravelShortcuts[i - 1] = TravelShortcuts[i];
+                TravelShortcuts[i] = temp;
+                new_n = i;
             end
         end
+        n = new_n;
     end
-
 end
 
 function TravelWindow:UpdateOpacity()
