@@ -216,9 +216,9 @@ function MapWindow:AddShortcuts()
         {MapType.GONDOR, 210, 485}, -- King's Dol Amroth
         {MapType.HARADWAITH, 275, 160}, -- Halrax
         {MapType.GONDOR, 255, 420}, -- Lond Cirion
-        {MapType.HARADWAITH, 510, 365}, -- Umbar
+        {MapType.HARADWAITH, 505, 370}, -- Umbar
         {MapType.HARADWAITH, 305, 315}, -- Jax Phanâl
-        {MapType.HARADWAITH, -1, -1}, -- Bloody Eagle Tavern
+        {MapType.HARADWAITH, 475, 400}, -- Bloody Eagle Tavern
     };
     -- fixup map overlap
     if self.mapType == MapType.ERIADOR then
@@ -282,11 +282,11 @@ function MapWindow:AddShortcuts()
         {MapType.ERIADOR, 755, 555}, -- Clegur --
         {MapType.GONDOR, 670, 625}, -- Pelargir
         {MapType.HARADWAITH, 305, 315}, -- Jax Phanâl
-        {MapType.HARADWAITH, 510, 365}, -- Umbar
+        {MapType.HARADWAITH, 505, 370}, -- Umbar
         {MapType.HARADWAITH, 275, 260}, -- Halrax
         {MapType.GONDOR, 210, 485}, -- King's Dol Amroth
         {MapType.GONDOR, 255, 420}, -- Lond Cirion
-        {MapType.HARADWAITH, -1, -1}, -- Bloody Eagle Tavern
+        {MapType.HARADWAITH, 475, 400}, -- Bloody Eagle Tavern
     };
     -- fixup map overlap
     if self.mapType == MapType.ERIADOR then
@@ -315,7 +315,7 @@ function MapWindow:AddShortcuts()
         {MapType.RHOVANION, 245, 670}, -- Lothlórien --
         {MapType.ERIADOR, 650, 525}, -- Tharbad --
         {MapType.ROHAN, 515, 500}, -- Snowbourn
-        {MapType.HARADWAITH, 510, 365}, -- Umbar
+        {MapType.HARADWAITH, 505, 370}, -- Umbar
         {MapType.GONDOR, 255, 420}, -- Lond Cirion
         {MapType.HARADWAITH, 305, 315}, -- Jax Phanâl
         {MapType.GONDOR, 210, 485}, -- King's Dol Amroth --
@@ -384,13 +384,13 @@ function MapWindow:AddShortcuts()
         {MapType.ERIADOR, 835, 245}, -- Glân Vraig
         {MapType.GONDOR, 640, 625}, -- Pelargir --
         {MapType.HARADWAITH, 415, 370}, -- Order of the Eagle
-        {MapType.HARADWAITH, 480, 365}, -- Umbar --
+        {MapType.HARADWAITH, 475, 370}, -- Umbar --
         {MapType.GONDOR, 180, 485}, -- King's Dol Amroth
         {MapType.HARADWAITH, 335, 315}, -- Jax Phanâl
         {MapType.HARADWAITH, 245, 260}, -- Halrax --
         {MapType.GONDOR, 225, 420}, -- Lond Cirion
         {MapType.HARADWAITH, 415, 340}, -- Ledger-Keepers
-        {MapType.HARADWAITH, -1, -1}, -- Bloody Eagle Tavern
+        {MapType.HARADWAITH, 445, 400}, -- Bloody Eagle Tavern
     };
     -- fixup map overlap
     if self.mapType == MapType.ROHAN then
