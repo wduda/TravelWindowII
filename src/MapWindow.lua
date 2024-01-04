@@ -423,7 +423,7 @@ function MapWindow:GetLocations(name)
             {"0x700697F2", {{MapType.HARADWAITH, 445, 400}}}, -- Bloody Eagle Tavern
         };
     end
-    return {};
+    return nil;
 end
 
 function MapWindow:AddRacialLocation()
@@ -572,4 +572,43 @@ function MapWindow:DebugNameLookup(id)
     end
 
     return "ERROR " .. id;
+end
+
+function MapWindow:VerifyMapSkillIds(name)
+    local skills;
+    if name == "Hunter" then
+        skills = hunterLocations;
+    elseif name == "Warden" then
+        skills = wardenLocations;
+    elseif name == "Mariner" then
+        skills = marinerLocations;
+    elseif name == "Reputation" then
+        skills = repLocations;
+    else
+        return; -- invalid option
+    end
+
+    local map = self:GetLocations(name);
+    if map == nil then return end
+
+    local skillKeys = {};
+    for i = 1, skills:GetCount() do
+        skillKeys[skills:IdAtIndex(i)] = 0;
+    end
+    for i = 1, #map do
+        local id = map[i][1]
+        local uses = skillKeys[id];
+        if uses == nil then
+            Turbine.Shell.WriteLine(name .. " coords " .. id ..  " not in dictionary");
+        elseif uses == 1 then
+            Turbine.Shell.WriteLine(name .. " coords " .. id .. " used more than once");
+        else
+            skillKeys[id] = 1;
+        end
+    end
+    for k, v in pairs(skillKeys) do
+        if v == 0 then
+            Turbine.Shell.WriteLine(name .. " dictionary coords " .. k .. " not configured");
+        end
+    end
 end

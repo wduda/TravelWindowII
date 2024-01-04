@@ -296,6 +296,11 @@ function TravelWindow:Constructor()
     Plugins["Travel Window II"].Load = function(sender, args)
         Turbine.Shell.WriteLine("<u><rgb=#DAA520>Travel Window II " .. Plugins["Travel Window II"]:GetVersion() ..
                                 " by Hyoss</rgb></u>");
+
+        MapWindow:VerifyMapSkillIds("Hunter");
+        MapWindow:VerifyMapSkillIds("Warden");
+        MapWindow:VerifyMapSkillIds("Mariner");
+        MapWindow:VerifyMapSkillIds("Reputation");
     end
 end
 
