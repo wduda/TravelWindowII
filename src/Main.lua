@@ -21,6 +21,8 @@ function TravelCommand:Execute(command, arguments)
         _G.travel:SetVisible(not _G.travel:IsVisible());
     elseif (arguments == "dump") then
         _G.travel:DoDump();
+    elseif (arguments == "scan") then
+        _G.travel:ManualSkillScan();
     elseif (arguments ~= nil) then
         TravelCommand:GetHelp();
     end

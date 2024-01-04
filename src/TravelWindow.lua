@@ -1218,3 +1218,100 @@ function AddCallback(object, event, callback)
     end
     return callback;
 end
+
+-- for debug purposes
+function TravelWindow:ManualSkillScan()
+    local last = 0;
+    skillWindow=Turbine.UI.Lotro.Window()
+    skillWindow.cols=math.floor((Turbine.UI.Display:GetWidth()-10)/100)
+    skillWindow.rows=math.floor((Turbine.UI.Display:GetHeight()-105)/62)
+    skillWindow:SetSize(Turbine.UI.Display:GetWidth(),Turbine.UI.Display:GetHeight())
+    skillWindow:SetText("Skill Explorer")
+    skillWindow.StartCaption=Turbine.UI.Label()
+    skillWindow.StartCaption:SetParent(skillWindow)
+    skillWindow.StartCaption:SetText("Start:")
+    skillWindow.StartCaption:SetPosition(10,45)
+    skillWindow.StartCaption:SetSize(50,20)
+    skillWindow.Start=Turbine.UI.Lotro.TextBox()
+    skillWindow.Start:SetParent(skillWindow)
+    skillWindow.Start:SetPosition(65,45)
+    skillWindow.Start:SetSize(100,20)
+    skillWindow.Start:SetFont(Turbine.UI.Lotro.Font.Verdana16)
+    skillWindow.Prev=Turbine.UI.Lotro.Button()
+    skillWindow.Prev:SetParent(skillWindow)
+    skillWindow.Prev:SetSize(100,20)
+    skillWindow.Prev:SetPosition(170,45)
+    skillWindow.Prev:SetText("Previous")
+    skillWindow.Prev.Click=function()
+        local start=tonumber(skillWindow.Start:GetText())
+        if start==nil then start=0 end
+        start=start-skillWindow.rows*skillWindow.cols
+        if start<0 then start=0 end
+        skillWindow.Start:SetText(string.format("0x%x",start))
+        skillWindow.refresh()
+    end
+    skillWindow.Show=Turbine.UI.Lotro.Button()
+    skillWindow.Show:SetParent(skillWindow)
+    skillWindow.Show:SetSize(100,20)
+    skillWindow.Show:SetPosition(275,45)
+    skillWindow.Show:SetText("Refresh")
+    skillWindow.Show.Click=function()
+        skillWindow.refresh()
+    end
+    skillWindow.Next=Turbine.UI.Lotro.Button()
+    skillWindow.Next:SetParent(skillWindow)
+    skillWindow.Next:SetSize(100,20)
+    skillWindow.Next:SetPosition(380,45)
+    skillWindow.Next:SetText("Next")
+    skillWindow.Next.Click=function()
+        local start=tonumber(skillWindow.Start:GetText())
+        if start==nil then start=0 end
+        if last == 0 then
+            start=start+skillWindow.rows*skillWindow.cols
+        else
+            start = last
+        end
+        skillWindow.Start:SetText(string.format("0x%x",start))
+        skillWindow.refresh()
+    end
+    skillWindow:SetVisible(true)
+    skillWindow.QS={}
+    for row=1,skillWindow.rows do
+        skillWindow.QS[row]={}
+        for col=1,skillWindow.cols do
+            skillWindow.QS[row][col]=Turbine.UI.Lotro.Quickslot()
+            local qs=skillWindow.QS[row][col]
+            qs:SetParent(skillWindow)
+            qs:SetSize(34,34)
+            qs:SetPosition(col*100-32, row*62+23)
+            qs.label=Turbine.UI.Label()
+            qs.label:SetParent(skillWindow)
+            qs.label:SetSize(100,20)
+            qs.label:SetPosition(col*100-32, row*62+57)
+        end
+    end
+    skillWindow.refresh=function()
+        local start=tonumber(skillWindow.Start:GetText())
+        if start==nil then start=0 end
+
+        for row=1,skillWindow.rows do
+            local err = 0;
+            for col=1,skillWindow.cols do
+                repeat
+                    local qs=skillWindow.QS[row][col]
+                    local sc=Turbine.UI.Lotro.Shortcut();
+                    sc:SetType(Turbine.UI.Lotro.ShortcutType.Skill)
+                    local val=string.format("0x%x",start);
+                    start = start + 1;
+                    sc:SetData(val)
+                    local success, result=pcall(Turbine.UI.Lotro.Quickslot.SetShortcut,qs,sc)
+                    qs:SetVisible(success)
+                    qs.label:SetText(val)
+                    if not success then err = err + 1 end
+                until success or err > 10000
+            end
+        end
+        last = start;
+    end
+    skillWindow.Start:SetText("0x700697F2")
+end
