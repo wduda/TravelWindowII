@@ -177,7 +177,7 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Führer nach Lond Cirion", "0x70068717", "Lond Cirion (Führer)");
     hunterLocations:AddSkill("Führer nach Umbar", "0x70068718", "Umbar (Führer)");
     hunterLocations:AddSkill("Führer nach Jax Phanâl", "0x70068719", "Jax Phanâl (Führer)");
-    hunterLocations:AddSkill("Führer zur Taverne 'Zum Blutigen Adler'", "0x700697EF", "Zum Blutigen Adler (Führer)");
+    hunterLocations:AddSkill("Führer zur Taverne \"Zum Blutigen Adler\"", "0x700697EF", "Zum Blutigen Adler (Führer)");
 
     -- add the Warden locations
     wardenLocations:AddSkill("Appell in der Feste Guruth", "0x70014786", "Feste Guruth (Appell)");
@@ -235,7 +235,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell in Dol Amroth","0x70068712", "Königreich Dol Amroth (Appell)",
                              "Königreich Gondor");
     wardenLocations:AddSkill("Appell in Lond Cirion","0x70068715", "Lond Cirion (Appell)");
-    wardenLocations:AddSkill("Appell in der Taverne 'Zum Blutigen Adler'","0x700697F3", "Zum Blutigen Adler (Appell)");
+    wardenLocations:AddSkill("Appell in der Taverne \"Zum Blutigen Adler\"","0x700697F3", "Zum Blutigen Adler (Appell)");
 
     -- add the Mariner locations
     marinerLocations:AddSkill("Segelt nach Celondim", "0x70066100", "Celondim (Segeln)")
@@ -354,7 +354,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Kehrt zu Halrax zurück.", "0x70068702", "Halrax (Ruf)");
     repLocations:AddSkill("Nach Lond Cirion zurückkehren", "0x70068703", "Lond Cirion (Ruf)");
     repLocations:AddSkill("Zu den Buchhütern reisen", "0x70068704", "Ledger-Keepers (Ruf)");
-    repLocations:AddSkill("Rückkehr zur Taverne 'Zum Blutigen Adler'", "0x700697F2", "Zum Blutigen Adler (Ruf)");
+    repLocations:AddSkill("Rückkehr zur Taverne \"Zum Blutigen Adler\"", "0x700697F2", "Zum Blutigen Adler (Ruf)");
 
     -- monster player maps
     creepLocations:AddSkill("Kartenskizze zum Gramfuss", "0x70028BBC");
