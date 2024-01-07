@@ -1,5 +1,5 @@
 --[[ use a modified table to maintain data for travel skills
-     specifically skill name, ID and label                   ]]
+     specifically skill name, ID, label, description substring]]
 IndexedDictionary = class()
 
 function IndexedDictionary:Constructor()
@@ -8,7 +8,7 @@ function IndexedDictionary:Constructor()
     self.skillIds = {};
     self.skillIdList = {};
     self.skillLabels = {};
-    self.skillDesc = {}; -- used to disambiguate identical skillNames
+    self.skillDesc = {}; -- description substring used to disambiguate identical skillNames
     self.numberOfItems = 0;
 end
 
@@ -17,7 +17,7 @@ function IndexedDictionary:GetCount()
     return self.numberOfItems;
 end
 
--- function to add a skills name, ID and label to the end of the dictionary
+-- function to add a skills data to the end of the dictionary
 function IndexedDictionary:AddSkill(name, id, label, desc)
     if label == nil then
         if self.skillLabels[name] ~= nil then
@@ -42,7 +42,7 @@ function IndexedDictionary:AddSkill(name, id, label, desc)
     self.skillIdList[id] = true;
 end
 
--- function to add a skills name, and data pair of ID and label, to the dictionary at a specific index
+-- function to add a skills data to the dictionary at a specific index
 function IndexedDictionary:InsertSkill(index, name, id, label, desc)
     if label == nil then
         if self.skillLabels[name] ~= nil then
@@ -67,13 +67,13 @@ function IndexedDictionary:InsertSkill(index, name, id, label, desc)
     self.skillIdList[id] = true;
 end
 
--- function to remove a skills name, ID and label from the dictionary at a specific index
+-- function to remove a skills data from the dictionary at a specific index
 function IndexedDictionary:RemoveSkillAtIndex(index)
 
     local label = self.skillLabels[index];
     local id = self.skillIds[label];
 
-    -- remove the name, ID and label from the tables
+    -- remove the data from the tables
     table.remove(self.skillLabels, index);
     self.skillIds[label] = nil;
     self.skillNames[label] = nil;
