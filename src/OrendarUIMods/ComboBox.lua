@@ -21,6 +21,7 @@ function ComboBox:Constructor(toplevel)
     self:SetBackColor(ComboBox.DisabledColor);
     self.quickslots = {};
     self.labels = {};
+    self.hoverIndex = 0;
 
     self.topLevelWindow = toplevel;
 
@@ -73,6 +74,17 @@ function ComboBox:Constructor(toplevel)
     self.listBox:SetVisible(true);
     self.listBox.MouseWheel = function(sender, args)
         self:DoScroll(sender, args);
+    end
+
+    self.FocusLost = function(sender, args)
+        if self.dropped then
+            if self.hoverIndex > 0 then
+                local msArgs = { Button = Turbine.UI.MouseButton.None };
+                self.labels[self.hoverIndex]:MouseClick(sender, args)
+            else
+                self:CloseDropDown()
+            end
+        end
     end
 end
 
@@ -173,6 +185,7 @@ function ComboBox:AddItem(shortcut, index, value)
         sender:SetFontStyle(Turbine.UI.FontStyle.Outline);
         sender:SetForeColor(ComboBox.ItemColor);
         sender:SetText(sender:GetText());
+        self.hoverIndex = index;
     end
 
     self.labels[index].MouseLeave = function(sender, args)
@@ -181,6 +194,7 @@ function ComboBox:AddItem(shortcut, index, value)
             sender:SetForeColor(ComboBox.SelectionColor);
         end
         sender:SetText(sender:GetText());
+        self.hoverIndex = 0;
     end
 
     self.labels[index].MouseClick = function(sender, args)
@@ -314,9 +328,25 @@ function ComboBox:Layout()
     self.label:SetSize(width - 4, height - 4);
     self.label:SetPosition(2, 2);
     self.arrow:SetPosition(width - 2 - 16, 2 + ((height - 4 - 16) / 2));
+
+    local scrollSize = 0;
+    local itemCount = #self.labels;
+    if itemCount > 10 then
+        scrollSize = 10;
+    end
+    local listWidth, listHeight = self.listBox:GetSize();
+    self.listBox:SetSize(width - 4 - scrollSize, listHeight);
+    self.dropDownWindow:SetSize(width, listHeight + 4);
+    self.scrollBar:SetPosition(width - 12, 2);
+
+    for i = 1, #self.quickslots, 1 do
+        self.quickslots[i]:SetSize(width, 20);
+        self.labels[i]:SetSize(width, 20);
+    end
 end
 
 function ComboBox:ShowDropDown()
+    self:Focus();
     local itemCount = #self.labels;
 
     if ((itemCount > 0) and not (self.dropped)) then
@@ -336,11 +366,10 @@ function ComboBox:ShowDropDown()
 
         -- list item sizes
         local listHeight = 0;
+        local itemHeight = self.labels[1]:GetHeight();
         for i = 1, itemCount do
-            local item = self.labels[1];
-            item:SetWidth(width - 14);
             if (i <= maxItems) then
-                listHeight = listHeight + item:GetHeight();
+                listHeight = listHeight + itemHeight;
             end
         end
 
@@ -355,10 +384,17 @@ function ComboBox:ShowDropDown()
         self.scrollBar:SetMaximum(itemCount * 20 - 200);
 
         -- position
-        local x, y = self:GetPosition();
-        local parentX, parentY = self:GetParent():GetParent():GetParent()
-                                     :GetPosition();
-        self.dropDownWindow:SetPosition(parentX + 10, parentY + 93);
+        local parent = self:GetParent();
+        local screenX, screenY = self:GetPosition();
+        while parent ~= nil do
+            local x, y = parent:GetPosition();
+            screenX = screenX + x;
+            screenY = screenY + y;
+            if parent:GetParent() == nil then break end
+            parent = parent:GetParent();
+        end
+        local cbWidth, cbHeight = self:GetSize();
+        self.dropDownWindow:SetPosition(screenX, screenY + cbHeight + 3);
 
         self.dropDownWindow:SetVisible(true);
 
@@ -400,13 +436,11 @@ function ComboBox:UpdateSubWindow()
     -- loop through all the quickslots
     for i = 1, #self.quickslots, 1 do
         -- get the number of rows
-        self.row = math.ceil(i / 1);
+        local row = math.ceil(i / 1);
 
         -- set the top position of the quickslots based on row
         -- number and the value of the scrollbar
-        self.quickslots[i]:SetTop((self.row - 1) * 20 -
-                                      self.scrollBar:GetValue());
-        self.labels[i]:SetTop((self.row - 1) * 20 - self.scrollBar:GetValue());
+        self.quickslots[i]:SetTop((row - 1) * 20 - self.scrollBar:GetValue());
+        self.labels[i]:SetTop((row - 1) * 20 - self.scrollBar:GetValue());
     end
 end
-

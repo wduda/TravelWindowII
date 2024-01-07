@@ -1,5 +1,5 @@
 --[[ use a modified table to maintain data for travel skills
-     specifically skill name, ID and label                   ]]
+     specifically skill name, ID, label, description substring]]
 IndexedDictionary = class()
 
 function IndexedDictionary:Constructor()
@@ -8,7 +8,7 @@ function IndexedDictionary:Constructor()
     self.skillIds = {};
     self.skillIdList = {};
     self.skillLabels = {};
-    self.skillDesc = {}; -- used to disambiguate identical skillNames
+    self.skillDesc = {}; -- description substring used to disambiguate identical skillNames
     self.numberOfItems = 0;
 end
 
@@ -17,76 +17,68 @@ function IndexedDictionary:GetCount()
     return self.numberOfItems;
 end
 
--- function to add a skills name, ID and label to the end of the dictionary
+-- function to add a skills data to the end of the dictionary
 function IndexedDictionary:AddSkill(name, id, label, desc)
+    if label == nil then
+        if self.skillLabels[name] ~= nil then
+            Turbine.Shell.WriteLine("Invalid label: " .. name);
+            return
+        end
+        label = name;
+    end
+
     -- increase the number of datasets
     self.numberOfItems = self.numberOfItems + 1;
 
-    if desc == nil then
-        -- insert the skill into the list of skills
-        table.insert(self.skillNames, name);
+    -- insert the unique label into the list of skills
+    table.insert(self.skillLabels, label);
 
-        -- add the skill id and label into the table with name as index
-        self.skillIds[name] = id;
-        self.skillLabels[name] = label;
-    else
-        -- insert the unique label into the list of skills
-        table.insert(self.skillNames, label);
-
-        -- add the skill id, name, and description into the table with label as index
-        self.skillIds[label] = id;
-        self.skillLabels[label] = name;
-        self.skillDesc[label] = desc;
-    end
+    -- add the skill id, name, and description into the table with label as index
+    self.skillIds[label] = id;
+    self.skillNames[label] = name;
+    self.skillDesc[label] = desc;
 
     -- add the skill id to a list of Ids
     self.skillIdList[id] = true;
 end
 
--- function to add a skills name, and data pair of ID and label, to the dictionary at a specific index
+-- function to add a skills data to the dictionary at a specific index
 function IndexedDictionary:InsertSkill(index, name, id, label, desc)
+    if label == nil then
+        if self.skillLabels[name] ~= nil then
+            Turbine.Shell.WriteLine("Invalid label: " .. name);
+            return
+        end
+        label = name;
+    end
+
     -- increase the number of datasets
     self.numberOfItems = self.numberOfItems + 1;
 
-    if desc == nil then
-        -- add the skill name to the list of skills at the specified index
-        table.insert(self.skillNames, index, name);
+    -- insert the unique label into the list of skills at the specified index
+    table.insert(self.skillLabels, index, label);
 
-        -- add the skill id and label into the table with name as index
-        self.skillIds[name] = id;
-        self.skillLabels[name] = label;
-    else
-        -- insert the unique label into the list of skills at the specified index
-        table.insert(self.skillNames, index, label);
+    -- add the skill id, name, and description into the table with label as index
+    self.skillIds[label] = id;
+    self.skillNames[label] = name;
+    self.skillDesc[label] = desc;
 
-        -- add the skill id, name, and description into the table with label as index
-        self.skillIds[label] = id;
-        self.skillLabels[label] = name;
-        self.skillDesc[label] = desc;
-    end
+    -- add the skill id to a list of Ids
+    self.skillIdList[id] = true;
 end
 
--- function to remove a skills name, ID and label from the dictionary at a specific index
+-- function to remove a skills data from the dictionary at a specific index
 function IndexedDictionary:RemoveSkillAtIndex(index)
 
-    local location = 0;
-    local counter = 0;
+    local label = self.skillLabels[index];
+    local id = self.skillIds[label];
 
-    -- loop through the main table
-    for k, v in pairs(self.skillIds) do
-        counter = counter + 1;
-
-        -- if the keys match, set the location to remove from the table
-        if (k == self.skillNames[index]) then
-            location = counter;
-        end
-    end
-
-    -- remove the name, ID and label from the tables
-    table.remove(self.skillIds, location);
-    table.remove(self.skillLabels, location);
-    table.remove(self.skillNames, index);
-    table.remove(self.skillDesc, location);
+    -- remove the data from the tables
+    table.remove(self.skillLabels, index);
+    self.skillIds[label] = nil;
+    self.skillNames[label] = nil;
+    self.skillDesc[label] = nil;
+    self.skillIdList[id] = nil;
 
     -- decrease the counters
     self.numberOfItems = self.numberOfItems - 1;
@@ -94,53 +86,46 @@ end
 
 -- function to get the skill name at a specified index
 function IndexedDictionary:NameAtIndex(index)
-    local string = self.skillNames[index];
-    if self.skillDesc[string] ~= nil then
-        string = self.skillLabels[string];
-    end
-    return string;
+    local label = self.skillLabels[index];
+    local name = self.skillNames[label];
+    return name;
 end
 
 -- function to return the ID at a specified index
 function IndexedDictionary:IdAtIndex(index)
-    local string = self.skillNames[index];
-    local data = self.skillIds[string];
-
-    return data;
+    local label = self.skillLabels[index];
+    local id = self.skillIds[label];
+    return id;
 end
 
 -- function to return the label at a specified index
 function IndexedDictionary:LabelAtIndex(index)
-    local string = self.skillNames[index];
-    local data = string;
-    if self.skillDesc[string] == nil then
-        data = self.skillLabels[string];
-    end
-
-    return data;
+    local label = self.skillLabels[index];
+    return label;
 end
 
 function IndexedDictionary:DescAtIndex(index)
-    local string = self.skillNames[index];
-    local data = self.skillDesc[string];
-
-    return data;
+    local label = self.skillLabels[index];
+    local desc = self.skillDesc[label];
+    return desc;
 end
 
 -- function to return the skill name and ID at a specified index
 function IndexedDictionary:PairAtIndex(index)
-    local string = self.skillNames[index];
-    local data = self.skillIds[string];
-    if self.skillDesc[string] ~= nil then
-        string = self.skillLabels[string];
-    end
-
-    return string, data;
+    local label = self.skillLabels[index];
+    local id = self.skillIds[label];
+    local name = self.skillNames[label];
+    return name, id;
 end
 
 -- function to get the ID by a name value
 function IndexedDictionary:IdByName(name)
-    return self.skillIds[name];
+    for k, v in pairs(self.skillNames) do
+        if v == name then
+            return self.skillIds[k];
+        end
+    end
+    return nil;
 end
 
 -- function to check if ID exists
@@ -154,17 +139,13 @@ end
 
 -- function to find the index value based on a key
 function IndexedDictionary:IndexByName(name)
-
-    -- return if the list of keys is empty
-    if (self.skillNames == {}) then
-        return -1;
-    end
-
-    -- loop through the list of names and search for the given value
-    for i = 1, #self.skillNames, 1 do
-        -- return the index value if a match is made
-        if (self.skillNames[i] == name) then
-            return i;
+    for k, v in pairs(self.skillNames) do
+        if v == name then
+            for i = 1, #self.skillLabels, 1 do
+                if self.skillLabels[i] == k then
+                    return i;
+                end
+            end
         end
     end
 

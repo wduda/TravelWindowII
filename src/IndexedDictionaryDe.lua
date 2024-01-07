@@ -138,7 +138,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Führer nach Forlach", "0x70036B5D", "Forlach (Führer)");
     hunterLocations:AddSkill("Führer nach Aldburg", "0x7003DC71", "Aldburg (Führer)");
     hunterLocations:AddSkill("Führer nach Helms Klamm", "0x7003DC72", "Helms Klamm (Führer)");
-    hunterLocations:AddSkill("Führer nach Dol Amroth", "0x70041197", "Dol Amroth (Führer)");
+    hunterLocations:AddSkill("Führer nach Dol Amroth", "0x70041197", "Dol Amroth (Führer)",
+                             "nach Dol Amroth.");
     hunterLocations:AddSkill("Führer nach Arnach", "0x70043A63", "Arnach (Führer)");
     hunterLocations:AddSkill("Führer nach Minas Tirith", "0x70044985", "Minas Tirith (Führer)");
     hunterLocations:AddSkill("Führer zum Kriegslager der Rohirrim", "0x700459AF", "Kriegslager der Rohirrim (Führer)");
@@ -170,12 +171,13 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Führer nach Carn Dûm", "0x70064AC8", "Carn Dûm (Führer)");
     hunterLocations:AddSkill("Führer nach Clegur", "0x70064F4C", "Clegur (Führer)");
     hunterLocations:AddSkill("Führer nach Pelargir", "0x700658EA", "Pelargir (Führer)");
-    hunterLocations:AddSkill("Führer nach Dol Amroth", "0x70068711", "Dol Amroth (Führer U38)");
+    hunterLocations:AddSkill("Führer nach Dol Amroth", "0x70068711", "Königreich Dol Amroth (Führer U38)",
+                             "Königreich Gondor");
     hunterLocations:AddSkill("Führer nach Halrax", "0x70068713", "Halrax (Führer)");
     hunterLocations:AddSkill("Führer nach Lond Cirion", "0x70068717", "Lond Cirion (Führer)");
     hunterLocations:AddSkill("Führer nach Umbar", "0x70068718", "Umbar (Führer)");
     hunterLocations:AddSkill("Führer nach Jax Phanâl", "0x70068719", "Jax Phanâl (Führer)");
-    hunterLocations:AddSkill("Führer zur Taverne 'Zum Blutigen Adler'", "0x700697EF", "Zum Blutigen Adler (Führer)");
+    hunterLocations:AddSkill("Führer zur Taverne \"Zum Blutigen Adler\"", "0x700697EF", "Zum Blutigen Adler (Führer)");
 
     -- add the Warden locations
     wardenLocations:AddSkill("Appell in der Feste Guruth", "0x70014786", "Feste Guruth (Appell)");
@@ -194,7 +196,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell in Forlach", "0x70036B5B", "Forlach (Appell)");
     wardenLocations:AddSkill("Appell in Aldburg", "0x7003DC7A", "Aldburg (Appell)");
     wardenLocations:AddSkill("Appell in Helms Klamm", "0x7003DC79", "Helms Klamm (Appell)");
-    wardenLocations:AddSkill("Appell in Dol Amroth", "0x70041198", "Dol Amroth (Appell)");
+    wardenLocations:AddSkill("Appell in Dol Amroth", "0x70041198", "Dol Amroth (Appell)",
+                             "West-Gondor zu reisen");
     wardenLocations:AddSkill("Appell in Arnach", "0x70043A66", "Arnach (Appell)");
     wardenLocations:AddSkill("Appell in Minas Tirith", "0x70044982", "Minas Tirith (Appell)");
     wardenLocations:AddSkill("Appell im Kriegslager", "0x700459AA", "Kriegslager der Rohirrim (Appell)");
@@ -204,7 +207,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell im Lager des Heeres", "0x70047BFC", "Lager des Heeres (Appell)");
     wardenLocations:AddSkill("Appell in Haerondir", "0x70047C23", "Haerondir (Appell)");
     wardenLocations:AddSkill("Appell am Udûn-Brückenkopf", "0x7004AE1F", "Udûn-Brückenkopf (Appell)");
-    wardenLocations:AddSkill("Appell in Thal", "0x7004d73a", "Thal (Appell)");
+    wardenLocations:AddSkill("Appell in Thal", "0x7004A73A", "Thal (Appell)");
     wardenLocations:AddSkill("Appell in Járnfast", "0x7004FACA", "Jarnfast (Appell)");
     wardenLocations:AddSkill("Appell in Skarháld", "0x7004FACD",  "Skarhald (Appell)");
     wardenLocations:AddSkill("Appell im Beorningerhús", "0x70052F0A", "Beorningerhús (Appell)");
@@ -229,9 +232,10 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell in Jax Phanâl","0x7006870C", "Jax Phanâl (Appell)");
     wardenLocations:AddSkill("Appell in Umbar","0x7006870F","Umbar (Appell)");
     wardenLocations:AddSkill("Appell in Halrax","0x70068710", "Halrax (Appell)");
-    wardenLocations:AddSkill("Appell in Dol Amroth","0x70068712", "Dol Amroth (Appell)");
+    wardenLocations:AddSkill("Appell in Dol Amroth","0x70068712", "Königreich Dol Amroth (Appell)",
+                             "Königreich Gondor");
     wardenLocations:AddSkill("Appell in Lond Cirion","0x70068715", "Lond Cirion (Appell)");
-    wardenLocations:AddSkill("Appell in der Taverne 'Zum Blutigen Adler'","0x700697F3", "Zum Blutigen Adler (Appell)");
+    wardenLocations:AddSkill("Appell in der Taverne \"Zum Blutigen Adler\"","0x700697F3", "Zum Blutigen Adler (Appell)");
 
     -- add the Mariner locations
     marinerLocations:AddSkill("Segelt nach Celondim", "0x70066100", "Celondim (Segeln)")
@@ -241,7 +245,8 @@ function TravelDictionaries:CreateDictionaries()
     marinerLocations:AddSkill("Segelt nach Seestadt.", "0x7006610C", "Seestadt (Segeln)")
     marinerLocations:AddSkill("Segelt zur Dunkelsenke", "0x7006610E", "Dunkelsenke (Segeln)")
     marinerLocations:AddSkill("Segelt nach Tinnudir", "0x7006610F", "Tinnundir (Segeln)")
-    marinerLocations:AddSkill("Segelt nach Dol Amroth", "0x70066117", "Dol Amroth (Segeln)")
+    marinerLocations:AddSkill("Segelt nach Dol Amroth", "0x70066117", "Dol Amroth (Segeln)",
+                              "nach Dol Amroth.")
     marinerLocations:AddSkill("Segelt nach Bockland", "0x7006611A", "Bockland (Segeln)")
     marinerLocations:AddSkill("Segelt nach Pelargir", "0x7006611B", "Pelargir (Segeln)")
     marinerLocations:AddSkill("Segelt nach Sûri-kylä", "0x7006611C", "Sûri-kylä (Segeln)")
@@ -251,13 +256,17 @@ function TravelDictionaries:CreateDictionaries()
     marinerLocations:AddSkill("Nach Umbar segeln", "0x700687BB", "Umbar (Segeln)")
     marinerLocations:AddSkill("Nach Lond Cirion segeln", "0x700687BD", "Lond Cirion (Segeln)")
     marinerLocations:AddSkill("Nach Jax Phanâl segeln", "0x700687C0", "Jax Phanâl (Segeln)")
-    marinerLocations:AddSkill("Segelt nach Dol Amroth", "0x700687C1", "Dol Amroth (Segeln)")
+    marinerLocations:AddSkill("Segelt nach Dol Amroth", "0x700687C1", "Königreich Dol Amroth (Segeln)",
+                              "Königreich Gondor")
     marinerLocations:AddSkill("Nach Halrax segeln", "0x700687C3", "Halrax (Segeln)")
 
-    racialLocations:AddSkill("Rückkehr nach Bree", "0x700062F6", "Bree (Rasse)");
+    racialLocations:AddSkill("Rückkehr nach Bree", "0x700062F6", "Bree (Rasse)",
+                             "Ihr könnt schnell nach Bree");
     racialLocations:AddSkill("Rückkehr ins Auenland", "0x700062C8", "Michelbinge (Rasse)");
-    racialLocations:AddSkill("Rückkehr zu Thorins Tor", "0x70006346", "Thorins Tor (Rasse Zwerg)");
-    racialLocations:AddSkill("Rückkehr nach Bruchtal", "0x7000631F", "Bruchtal (Rasse)");
+    racialLocations:AddSkill("Rückkehr zu Thorins Tor", "0x70006346", "Thorins Tor (Rasse Zwerg)",
+                             "Hiermit gelangt Ihr schnell");
+    racialLocations:AddSkill("Rückkehr nach Bruchtal", "0x7000631F", "Bruchtal (Rasse)",
+                             "Hiermit gelangt Ihr schnell");
     racialLocations:AddSkill("Zum 1. Heim zurückkehren", "0x70041A22", "Grimbeorns Hütte (Rasse)");
     racialLocations:AddSkill("Reise nach Caras Galadhon in Lothlórien", "0x70048C8C", "Caras Galadhon (Rasse)");
     racialLocations:AddSkill("Reise zu Thorins Halle", "0x70053C0F", "Thorins Halle (Rasse Starkaxt)");
@@ -279,11 +288,14 @@ function TravelDictionaries:CreateDictionaries()
     genLocations:AddSkill("Reist zum Haus Eurer Sippe", "0x7000D047", "Heim Eurer Sippe");
     genLocations:AddSkill("Zum Haus des Sippenmitglieds reisen", "0x70057C36", "Heim des Sippenmitglieds");
 
-    repLocations:AddSkill("Rückkehr zu Thorins Tor", "0x7001BF91", "Thorins Tor (Ruf)");
-    repLocations:AddSkill("Rückkehr nach Bree", "0x7001BF90", "Bree (Ruf)");
+    repLocations:AddSkill("Rückkehr zu Thorins Tor", "0x7001BF91", "Thorins Tor (Ruf)",
+                          "Dank Eurer Freundschaft");
+    repLocations:AddSkill("Rückkehr nach Bree", "0x7001BF90", "Bree (Ruf)",
+                          "Dank Eurer Freundschaft");
     repLocations:AddSkill("Kehrt zu Lalias Markt zurück", "0x700364B1", "Lalias Markt (Mithril)");
     repLocations:AddSkill("Rückkehr nach Michelbinge", "0x70023262", "Michelbinge (Shop)");
-    repLocations:AddSkill("Rückkehr nach Bruchtal", "0x70023263", "Bruchtal (Shop)");
+    repLocations:AddSkill("Rückkehr nach Bruchtal", "0x70023263", "Bruchtal (Shop)",
+                          "Dank Eurer Freundschaft");
     repLocations:AddSkill("Rückkehr zur Feste Guruth", "0x70020441", "Feste Guruth (Ruf)");
     repLocations:AddSkill("Rückkehr zum Düsterwald", "0x7001F374", "Düsterwald (Ruf)");
     repLocations:AddSkill("Rückkehr nach Enedwaith", "0x70021FA2", "Enedwaith (Ruf)");
@@ -294,7 +306,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Kehrt nach Aldburg zurück", "0x7003DC81", "Aldburg (Ruf)");
     repLocations:AddSkill("Rückkehr ins Geheimnistal", "0x7004128F", "Geheimnistal (Ruf)");
     repLocations:AddSkill("Kehrt nach Helms Klamm zurück", "0x7003DC82", "Helms Klamm (Ruf)");
-    repLocations:AddSkill("Rückkehr nach Dol Amroth", "0x700411AC", "Dol Amroth (Ruf)");
+    repLocations:AddSkill("Rückkehr nach Dol Amroth", "0x700411AC", "Dol Amroth (Ruf)",
+                          "West-Gondor zurückkehren");
     repLocations:AddSkill("Rückkehr nach Arnach", "0x70043A6A", "Arnach (Ruf)");
     repLocations:AddSkill("Kehrt nach Minas Tirith zurück.", "0x7004497E", "Minas Tirith (Ruf)");
     repLocations:AddSkill("Zurück zum Kriegslager der Rohirrim", "0x700459A9", "Kriegslager der Rohirrim (Ruf)");
@@ -335,12 +348,13 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Rückkehr nach Pelargir", "0x700658EB", "Pelargir (Ruf)");
     repLocations:AddSkill("Zum Orden des Adlers reisen", "0x700686FE", "Orden des Adlers (Ruf)");
     repLocations:AddSkill("Nach Umbar zurückkehren", "0x700686FF", "Umbar (Ruf)");
-    repLocations:AddSkill("Rückkehr nach Dol Amroth", "0x70068700", "Dol Amroth (Ruf U38)");
+    repLocations:AddSkill("Rückkehr nach Dol Amroth", "0x70068700", "Königreich Dol Amroth (Ruf U38)",
+                          "Königreich Gondor");
     repLocations:AddSkill("Nach Jax Phanâl zurückkehren", "0x70068701", "Jax Phanâl (Ruf)");
     repLocations:AddSkill("Kehrt zu Halrax zurück.", "0x70068702", "Halrax (Ruf)");
     repLocations:AddSkill("Nach Lond Cirion zurückkehren", "0x70068703", "Lond Cirion (Ruf)");
     repLocations:AddSkill("Zu den Buchhütern reisen", "0x70068704", "Ledger-Keepers (Ruf)");
-    repLocations:AddSkill("Rückkehr zur Taverne 'Zum Blutigen Adler'", "0x700697F2", "Zum Blutigen Adler (Ruf)");
+    repLocations:AddSkill("Rückkehr zur Taverne \"Zum Blutigen Adler\"", "0x700697F2", "Zum Blutigen Adler (Ruf)");
 
     -- monster player maps
     creepLocations:AddSkill("Kartenskizze zum Gramfuss", "0x70028BBC");

@@ -14,6 +14,7 @@ TravelCommand = Turbine.ShellCommand();
 -- handle the travel commands
 function TravelCommand:Execute(command, arguments)
     if (arguments == "show") then
+        _G.travel:CheckSkills(false);
         _G.travel:SetVisible(true);
     elseif (arguments == "hide") then
         _G.travel:SetVisible(false);
@@ -21,6 +22,8 @@ function TravelCommand:Execute(command, arguments)
         _G.travel:SetVisible(not _G.travel:IsVisible());
     elseif (arguments == "dump") then
         _G.travel:DoDump();
+    elseif (arguments == "scan") then
+        _G.travel:ManualSkillScan();
     elseif (arguments ~= nil) then
         TravelCommand:GetHelp();
     end

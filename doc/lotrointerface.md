@@ -37,10 +37,14 @@ Use the mousewheel while hovering over the travel skill icon to change the selec
 [/LIST]
 
 Version history:
-v1.2.0
-- fixed U38 allegiance travel skills in EN/FR/DE client
-- added new U38.1.1 skill in EN/FR/DE client
-- fixed duplicate skillnames causing all kinds of sorting issues - thanks to @whiterabbit963
-- minor performance improvement - thanks to @whiterabbit963
+v1.3.0
+- fixed Warden Muster to Dale in DE client
+- fixed Bloody Eagle Tavern skill in DE client
+- fixed more sorting issues for Hunter, Warden and DE/FR clients caused by duplicate skillnames - thanks to @whiterabbit963
+- options window now hides on pressing Esc or UI toggle button - thanks to @whiterabbit963
+- spacing around borders of window reduced to look nicer when resizing into a small window - thanks to @whiterabbit963
+- improved layout and resizing for pulldown tab - thanks to @whiterabbit963
+- more consistent and performant setting of window opacity and options window opacity - thanks to @whiterabbit963
+- vast amounts of code quality improvements that should result in stability, faster loading and no stutters when resizing TW II - thanks to @whiterabbit963
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].

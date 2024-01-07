@@ -137,7 +137,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide vers Forloi", "0x70036B5D", "Forloi (Guide)");
     hunterLocations:AddSkill("Guide vers Aldburg", "0x7003DC71", "Aldburg (Guide)");
     hunterLocations:AddSkill("Guide vers le Gouffre de Helm", "0x7003DC72", "Gouffre de Helm (Guide)");
-    hunterLocations:AddSkill("Guide vers Dol Amroth", "0x70041197", "Dol Amroth (Guide)");
+    hunterLocations:AddSkill("Guide vers Dol Amroth", "0x70041197", "Dol Amroth (Guide)",
+                             "l'Ouest du Gondor");
     hunterLocations:AddSkill("Guide pour Arnach", "0x70043A63", "Arnach (Guide)");
     hunterLocations:AddSkill("Guide vers Minas Tirith", "0x70044985", "Minas Tirith (Guide)");
     hunterLocations:AddSkill("Guide pour se rendre au camp militaire", "0x700459AF", "Camp militaire (Guide)");
@@ -169,7 +170,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide vers Carn Dûm", "0x70064AC8", "Carn Dûm (Guide)");
     hunterLocations:AddSkill("Guide vers Clegur", "0x70064F4C", "Clegur (Guide)");
     hunterLocations:AddSkill("Guide vers Pelargir", "0x700658EA", "Pelargir (Guide)");
-    hunterLocations:AddSkill("Guide vers Dol Amroth", "0x70068711", "Dol Amroth (Guide U38)");
+    hunterLocations:AddSkill("Guide vers Dol Amroth", "0x70068711", "Dol Amroth royal (Guide U38)",
+                             "le Gondor royal");
     hunterLocations:AddSkill("Guide vers Halrax", "0x70068713", "Halrax (Guide)");
     hunterLocations:AddSkill("Guide vers Lond Cirion", "0x70068717", "Lond Cirion (Guide)");
     hunterLocations:AddSkill("Guide vers Umbar", "0x70068718", "Umbar (Guide)");
@@ -192,7 +194,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Rassemblement : Forloi", "0x70036B5B", "Forloi (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement : Aldburg", "0x7003DC7A", "Aldburg (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement : Gouffre de Helm", "0x7003DC79", "Gouffre de Helm (Rassemblement)");
-    wardenLocations:AddSkill("Rassemblement : Dol Amroth", "0x70041198", "Dol Amroth (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement : Dol Amroth", "0x70041198", "Dol Amroth (Rassemblement)",
+                             "l'Ouest du Gondor");
     wardenLocations:AddSkill("Rassemblement : Arnach", "0x70043A66", "Arnach (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement : Minas Tirith", "0x70044982", "Minas Tirith (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement : Camp militaire", "0x700459AA", "Camp militaire (Rassemblement)");
@@ -227,7 +230,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Rassemblement à Jax Phanâl","0x7006870C", "Jax Phanâl (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Umbar","0x7006870F","Umbar (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à Halrax","0x70068710", "Halrax (Rassemblement)");
-    wardenLocations:AddSkill("Rassemblement à Dol Amroth","0x70068712", "Dol Amroth (Rassemblement)");
+    wardenLocations:AddSkill("Rassemblement à Dol Amroth","0x70068712", "Dol Amroth royal (Rassemblement)",
+                             "le Gondor royal");
     wardenLocations:AddSkill("Rassemblement à Lond Cirion","0x70068715", "Lond Cirion (Rassemblement)");
     wardenLocations:AddSkill("Rassemblement à la taverne de l'Aigle sanglant","0x700697F3", "Taverne de l'Aigle sanglant (Rassemblement)");
 
@@ -238,27 +242,8 @@ function TravelDictionaries:CreateDictionaries()
     marinerLocations:AddSkill("Cap sur la Ville du Lac", "0x7006610C", "Ville du Lac (Naviguer)")
     marinerLocations:AddSkill("Naviguer vers l'Orée Noire", "0x7006610E", "Orée Noire (Naviguer)")
     marinerLocations:AddSkill("Naviguer vers Tinnudir", "0x7006610F", "Tinnudir (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers Dol Amroth", "0x70066117", "Dol Amroth (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers le Pays de Bouc", "0x7006611A", "Pays de Bouc (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers Pelargir", "0x7006611B", "Pelargir (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers Sûri-kylä", "0x7006611C", "Sûri-kylä (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers la Lothlorien", "0x7006611E", "Lothlorien (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers le Gué de Sarn", "0x70066120", "le Gué de Sarn (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers Neigebronne", "0x70066121", "Neigebronne (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers Umbar", "0x700687BB", "Umbar (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers Lond Cirion", "0x70066121", "Lond Cirion (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers Jax Phanâl", "0x70066121", "Jax Phanâl (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers Dol Amroth", "0x70066121", "Dol Amroth (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers Halrax", "0x70066121", "Halrax (Naviguer)")
-
-    marinerLocations:AddSkill("Naviguer vers Celondim", "0x70066100", "Celondim (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers les Terres brunes", "0x70066101", "Terres brunes (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers le Quai des marchands", "0x70066105", "Quai des marchands (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers Osgiliath après la bataille", "0x70066109", "Osgiliath après la bataille (Naviguer)")
-    marinerLocations:AddSkill("Cap sur la Ville du Lac", "0x7006610C", "Ville du Lac (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers l'Orée Noire", "0x7006610E", "Orée Noire (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers Tinnudir", "0x7006610F", "Tinnudir (Naviguer)")
-    marinerLocations:AddSkill("Naviguer vers Dol Amroth", "0x70066117", "Dol Amroth (Naviguer)")
+    marinerLocations:AddSkill("Naviguer vers Dol Amroth", "0x70066117", "Dol Amroth (Naviguer)",
+                              "Dol Amroth en bonne compagnie.")
     marinerLocations:AddSkill("Naviguer vers le Pays de Bouc", "0x7006611A", "Pays de Bouc (Naviguer)")
     marinerLocations:AddSkill("Naviguer vers Pelargir", "0x7006611B", "Pelargir (Naviguer)")
     marinerLocations:AddSkill("Naviguer vers Sûri-kylä", "0x7006611C", "Sûri-kylä (Naviguer)")
@@ -268,13 +253,17 @@ function TravelDictionaries:CreateDictionaries()
     marinerLocations:AddSkill("Naviguer vers Umbar", "0x700687BB", "Umbar (Naviguer)");
     marinerLocations:AddSkill("Naviguer vers Lond Cirion", "0x700687BD", "Lond Cirion (Naviguer)");
     marinerLocations:AddSkill("Naviguer vers Jax Phanâl", "0x700687C0", "Jax Phanâl (Naviguer)");
-    marinerLocations:AddSkill("Naviguer vers Dol Amroth", "0x700687C1", "Dol Amroth (Naviguer)");
+    marinerLocations:AddSkill("Naviguer vers Dol Amroth", "0x700687C1", "Dol Amroth royal (Naviguer)",
+                              "le Gondor royal");
     marinerLocations:AddSkill("Naviguer vers Halrax", "0x700687C3", "Halrax (Naviguer)");
 
-    racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)");
+    racialLocations:AddSkill("Retour à Bree", "0x700062F6", "Bree (Race)",
+                             "Permet de retourner");
     racialLocations:AddSkill("Retournez dans la Comté", "0x700062C8", "Comté (Race)");
-    racialLocations:AddSkill("Retour : Porte de Thorin", "0x70006346", "Porte de Thorin (Race)");
-    racialLocations:AddSkill("Retour à Fondcombe", "0x7000631F", "Fondcombe (Race)");
+    racialLocations:AddSkill("Retour : Porte de Thorin", "0x70006346", "Porte de Thorin (Race)",
+                             "Ceci vous permet de retourner");
+    racialLocations:AddSkill("Retour à Fondcombe", "0x7000631F", "Fondcombe (Race)",
+                             "Ceci vous permet de retourner");
     racialLocations:AddSkill("Retour à la maison", "0x70041A22", "Maison Beorning (Race)");
     racialLocations:AddSkill("Voyage vers Caras Galadhon, en Lothlórien", "0x70048C8C", "Caras Galadhon (Race)");
     racialLocations:AddSkill("Aller au Palais de Thorin", "0x70053C0F", "Palais de Thorin (Race)");
@@ -296,11 +285,14 @@ function TravelDictionaries:CreateDictionaries()
     genLocations:AddSkill("Retour à la maison de confrérie", "0x7000D047", "Maison de confrérie");
     genLocations:AddSkill("Retour à la maison d'un membre de confrérie", "0x70057C36", "Maison d'un membre de confrérie");
 
-    repLocations:AddSkill("Retour : Porte de Thorin", "0x7001BF91", "Porte de Thorin (Rep/Shop)");
-    repLocations:AddSkill("Retour à Bree", "0x7001BF90", "Retour à Bree (Rep/Shop)");
+    repLocations:AddSkill("Retour : Porte de Thorin", "0x7001BF91", "Porte de Thorin (Rep/Shop)",
+                          "Grâce à l'amitié qui vous");
+    repLocations:AddSkill("Retour à Bree", "0x7001BF90", "Retour à Bree (Rep/Shop)",
+                          "Grâce à votre amitié");
     repLocations:AddSkill("Retour au Marché de Lalia", "0x700364B1", "Retour au Marché de Lalia (Mithril)");
     repLocations:AddSkill("Retour à Grand'Cave", "0x70023262", "Retour à Grand'Cave (Shop)");
-    repLocations:AddSkill("Retour à Fondcombe", "0x70023263", "Retour à Fondcombe (Shop)");
+    repLocations:AddSkill("Retour à Fondcombe", "0x70023263", "Retour à Fondcombe (Shop)",
+                          "Grâce à votre amitié avec");
     repLocations:AddSkill("Retournez à Ost Guruth", "0x70020441", "Retournez à Ost Guruth (Rep)");
     repLocations:AddSkill("Retour dans la Forêt Noire", "0x7001F374", "Retour dans la Forêt Noire (Rep)");
     repLocations:AddSkill("Retour en Enedwaith", "0x70021FA2", "Retour en Enedwaith (Rep)");
@@ -311,7 +303,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retour à Aldburg", "0x7003DC81", "Aldburg (Rep)");
     repLocations:AddSkill("Retour à Derunant", "0x7004128F", "Derunant (Rep)");
     repLocations:AddSkill("Retour au Gouffre de Helm", "0x7003DC82", "Gouffre de Helm(Rep)");
-    repLocations:AddSkill("Retour à Dol Amroth", "0x700411AC", "Dol Amroth (Rep)");
+    repLocations:AddSkill("Retour à Dol Amroth", "0x700411AC", "Dol Amroth (Rep)",
+                          "l'Ouest du Gondor");
     repLocations:AddSkill("Retournez à Arnach", "0x70043A6A", "Arnach (Rep)");
     repLocations:AddSkill("Retour à Minas Tirith", "0x7004497E", "Retour à Minas Tirith (Rep)");
     repLocations:AddSkill("Retour au camp militaire", "0x700459A9", "Camp militaire (Rep)");
@@ -352,7 +345,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Retournez à Pelargir", "0x700658EB", "Pelargir (Rep)");
     repLocations:AddSkill("Voyager vers l'Ordre de l'Aigle", "0x700686FE", "L'Ordre de l'Aigle (Rep)");
     repLocations:AddSkill("Retour à Umbar", "0x700686FF", "Umbar (Rep)");
-    repLocations:AddSkill("Retour à Dol Amroth", "0x70068700", "Dol Amroth (Rep U38)");
+    repLocations:AddSkill("Retour à Dol Amroth", "0x70068700", "Dol Amroth royal (Rep U38)",
+                          "le Gondor royal");
     repLocations:AddSkill("Retour à Jax Phanâl", "0x70068701", "Jax Phanâl (Rep)");
     repLocations:AddSkill("Retournez voir Halrax", "0x70068702", "Halrax (Rep)");
     repLocations:AddSkill("Retour à Lond Cirion", "0x70068703", "Lond Cirion (Rep)");
