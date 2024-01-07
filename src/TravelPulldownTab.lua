@@ -23,26 +23,24 @@ function TravelPulldownTab:Constructor(toplevel)
     -- this label is used to catch wheel moves
     self.scrollLabel = Turbine.UI.Label();
     self.scrollLabel:SetSize(180, 155);
-    self.scrollLabel:SetPosition(0, 20);
+    self.scrollLabel:SetPosition(0, 0);
     self.scrollLabel:SetParent(self);
 
     -- the pulldown box
-    self.pulldown = TravelWindowII.src.OrendarUIMods.ComboBox();
-    self.pulldown:SetPosition(0, 20);
-    self.pulldown:SetSize(200, 30);
+    self.pulldown = TravelWindowII.src.OrendarUIMods.ComboBox(self);
+    self.pulldown:SetPosition(10, 20);
+    self.pulldown:SetSize(self:GetWidth() - 20, 30);
     self.pulldown:SetParent(self);
     self.pulldown:SetVisible(true);
+    self.pulldown:SetTravelOnSelect(Settings.pulldownTravel);
 
     -- the quickslot for the shortcut
     self.quickslot = Turbine.UI.Lotro.Quickslot();
     self.quickslot:SetSize(36, 36);
-    self.quickslot:SetPosition(82, 55);
     self.quickslot:SetZOrder(98);
     self.quickslot:SetUseOnRightClick(false);
     self.quickslot:SetParent(self);
     self.quickslot:SetVisible(true);
-
-    self:SetItems();
 
     --[[  EVENT HANDLERS  ]] --
 
@@ -82,6 +80,13 @@ function TravelPulldownTab:Constructor(toplevel)
         self:DoScroll(sender, args);
     end
 
+    -- handle the event if the selected item changes
+    self.pulldown.SelectedIndexChanged = function(sender, args)
+        pcall(function()
+            self.quickslot:SetShortcut(TravelShortcuts[sender:GetSelection()]);
+        end)
+    end
+
     -- open the option window if the quickslot is right-clicked
     self.quickslot.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
@@ -100,34 +105,26 @@ end
 
 function TravelPulldownTab:SetItems()
 
-    -- create the combo box to use in the tab
-    self.pulldown = TravelWindowII.src.OrendarUIMods.ComboBox(self.parent);
-    self.pulldown:SetPosition(0, 20);
-    self.pulldown:SetSize(200, 30);
-    self.pulldown:SetParent(self);
-    self.pulldown:SetVisible(true);
-    self.pulldown:SetTravelOnSelect(Settings.pulldownTravel);
+    if self.tabId ~= self.parent.MainPanel.selectedPage or not(self.parent.dirty) then
+        return
+    end
+
+    self.pulldown:ClearItems();
 
     -- add the shortcuts to the combo box
     local shortcutIndex = 1;
     for i = 1, #TravelShortcuts, 1 do
-        if (TravelShortcuts[i]:IsEnabled()) then
-            -- apply skill type filter if set in options
+        if TravelShortcuts[i].found and TravelShortcuts[i]:IsEnabled() then
             if (hasbit(Settings.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
-                -- make sure skill is trained, lookup by ingame name
-                if (TravelWindow:FindSkill(TravelShortcuts[i])) then
-                    self.pulldown:AddItem(TravelShortcuts[i], shortcutIndex, i);
-                    shortcutIndex = shortcutIndex + 1;
-                end
+                self.pulldown:AddItem(TravelShortcuts[i], shortcutIndex, i);
+                shortcutIndex = shortcutIndex + 1;
             end
         end
     end
 
-    -- handle the event if the selected item changes
-    self.pulldown.SelectedIndexChanged = function(sender, args)
-        pcall(function()
-            self.quickslot:SetShortcut(TravelShortcuts[sender:GetSelection()]);
-        end)
+    if #self.pulldown.quickslots > 0 then
+        self.pulldown:ItemSelected(1);
+        self.pulldown:FireEvent();
     end
 end
 
@@ -138,8 +135,10 @@ function TravelPulldownTab:SetSize(width, height)
     Turbine.UI.Control.SetSize(self, width, height);
 
     -- set the size of the labels
-    -- self.rationLabel:SetSize(self:GetWidth(),20);
+    self.pulldown:SetSize(self:GetWidth() - 20, 30);
     self.scrollLabel:SetSize(self:GetWidth(), self:GetHeight());
+    -- center the quickslot
+    self.quickslot:SetPosition(self:GetWidth() / 2.0 - 18, 55);
 
     Turbine.UI.Control.SetOpacity(self, 1);
 end

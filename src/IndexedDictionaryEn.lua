@@ -138,7 +138,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Forlaw", "0x70036B5D", "Forlaw (Guide)");
     hunterLocations:AddSkill("Guide to Aldburg", "0x7003DC71", "Aldburg (Guide)");
     hunterLocations:AddSkill("Guide to Helm's Deep", "0x7003DC72", "Helm's Deep (Guide)");
-    hunterLocations:AddSkill("Guide to Dol Amroth", "0x70041197", "Dol Amroth (Guide)"); -- TODO: add desc
+    hunterLocations:AddSkill("Guide to Dol Amroth", "0x70041197", "Dol Amroth (Guide)",
+                             "Dol Amroth in western Gondor");
     hunterLocations:AddSkill("Guide to Arnach", "0x70043A63", "Arnach (Guide)");
     hunterLocations:AddSkill("Guide to Minas Tirith", "0x70044985", "Minas Tirith (Guide)");
     hunterLocations:AddSkill("Guide to the War-stead", "0x700459AF", "War-stead (Guide)");
@@ -170,7 +171,8 @@ function TravelDictionaries:CreateDictionaries()
     hunterLocations:AddSkill("Guide to Carn Dûm", "0x70064AC8", "Carn Dûm (Guide)");
     hunterLocations:AddSkill("Guide to Clegur", "0x70064F4C", "Clegur (Guide)");
     hunterLocations:AddSkill("Guide to Pelargir", "0x700658EA", "Pelargir (Guide)");
-    hunterLocations:AddSkill("Guide to Dol Amroth", "0x70068711", "King's Dol Amroth (Guide U38)"); -- TODO: add desc
+    hunterLocations:AddSkill("Guide to Dol Amroth", "0x70068711", "King's Dol Amroth (Guide U38)",
+                             "King's Gondor");
     hunterLocations:AddSkill("Guide to Halrax", "0x70068713", "Halrax (Guide)");
     hunterLocations:AddSkill("Guide to Lond Cirion", "0x70068717", "Lond Cirion (Guide)");
     hunterLocations:AddSkill("Guide to Umbar", "0x70068718", "Umbar (Guide)");
@@ -194,7 +196,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster in Forlaw", "0x70036B5B", "Forlaw (Muster)");
     wardenLocations:AddSkill("Muster in Aldburg", "0x7003DC7A", "Aldburg (Muster)");
     wardenLocations:AddSkill("Muster in Helm's Deep", "0x7003DC79", "Helm's Deep (Muster)");
-    wardenLocations:AddSkill("Muster in Dol Amroth", "0x70041198", "Dol Amroth (Muster)");  -- TODO: add desc
+    wardenLocations:AddSkill("Muster in Dol Amroth", "0x70041198", "Dol Amroth (Muster)",
+                             "Dol Amroth in western Gondor");
     wardenLocations:AddSkill("Muster in Arnach", "0x70043A66", "Arnach (Muster)");
     wardenLocations:AddSkill("Muster in Minas Tirith", "0x70044982", "Minas Tirith (Muster)");
     wardenLocations:AddSkill("Muster in the War-stead", "0x700459AA", "War-stead (Muster)");
@@ -229,7 +232,8 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Muster at Jax Phanâl","0x7006870C", "Jax Phanâl (Muster)");
     wardenLocations:AddSkill("Muster at Umbar","0x7006870F","Umbar (Muster)");
     wardenLocations:AddSkill("Muster at Halrax","0x70068710", "Halrax (Muster)");
-    wardenLocations:AddSkill("Muster at Dol Amroth","0x70068712", "King's Dol Amroth (Muster)"); -- TODO: add desc
+    wardenLocations:AddSkill("Muster at Dol Amroth","0x70068712", "King's Dol Amroth (Muster)",
+                             "King's Gondor");
     wardenLocations:AddSkill("Muster at Lond Cirion","0x70068715", "Lond Cirion (Muster)");
     wardenLocations:AddSkill("Muster at the Bloody Eagle Tavern","0x700697F3", "Bloody Eagle Tavern (Muster)");
 
@@ -241,7 +245,8 @@ function TravelDictionaries:CreateDictionaries()
     marinerLocations:AddSkill("Sail to Lake-town", "0x7006610C", "Lake-town (Sail)")
     marinerLocations:AddSkill("Sail to the Mirk-eaves", "0x7006610E", "Mirk-eaves (Sail)")
     marinerLocations:AddSkill("Sail to Tinnudir", "0x7006610F", "Tinnudir (Sail)")
-    marinerLocations:AddSkill("Sail to Dol Amroth", "0x70066117", "Dol Amroth (Sail)") -- TODO: add desc arg
+    marinerLocations:AddSkill("Sail to Dol Amroth", "0x70066117", "Dol Amroth (Sail)",
+                              "Dol Amroth with nearby")
     marinerLocations:AddSkill("Sail to Buckland", "0x7006611A", "Buckland (Sail)")
     marinerLocations:AddSkill("Sail to Pelargir", "0x7006611B", "Pelargir (Sail)")
     marinerLocations:AddSkill("Sail to Sûri-kylä", "0x7006611C", "Sûri-kylä (Sail)")
@@ -251,7 +256,8 @@ function TravelDictionaries:CreateDictionaries()
     marinerLocations:AddSkill("Sail to Umbar", "0x700687BB", "Umbar (Sail)")
     marinerLocations:AddSkill("Sail to Lond Cirion", "0x700687BD", "Lond Cirion (Sail)")
     marinerLocations:AddSkill("Sail to Jax Phanâl", "0x700687C0", "Jax Phanâl (Sail)")
-    marinerLocations:AddSkill("Sail to Dol Amroth", "0x700687C1", "King's Dol Amroth (Sail)")  -- TODO: add desc arg
+    marinerLocations:AddSkill("Sail to Dol Amroth", "0x700687C1", "King's Dol Amroth (Sail)",
+                              "King's Gondor")
     marinerLocations:AddSkill("Sail to Halrax", "0x700687C3", "Halrax (Sail)")
 
     -- add the racial travel skills
@@ -304,7 +310,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Derndingle", "0x7004128F", "Derndingle (Rep)");
     repLocations:AddSkill("Return to Helm's Deep", "0x7003DC82", "Helm's Deep (Rep)");
     repLocations:AddSkill("Return to Dol Amroth", "0x700411AC", "Dol Amroth (Rep)",
-                          "quickly return to Dol Amroth in western Gondor");
+                          "Dol Amroth in western Gondor");
     repLocations:AddSkill("Return to Arnach", "0x70043A6A", "Arnach (Rep)");
     repLocations:AddSkill("Return to Minas Tirith", "0x7004497E", "Minas Tirith (Rep)");
     repLocations:AddSkill("Return to the War-stead", "0x700459A9", "War-stead (Rep)");
@@ -345,7 +351,8 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Return to Pelargir", "0x700658EB", "Pelargir (Rep)");
     repLocations:AddSkill("Journey to the Order of the Eagle", "0x700686FE", "Order of the Eagle (Rep)");
     repLocations:AddSkill("Return to Umbar", "0x700686FF", "Umbar (Rep)");
-    repLocations:AddSkill("Return to Dol Amroth", "0x70068700", "King's Dol Amroth (Rep U38)", "King's Gondor");
+    repLocations:AddSkill("Return to Dol Amroth", "0x70068700", "King's Dol Amroth (Rep U38)",
+                          "King's Gondor");
     repLocations:AddSkill("Return to Jax Phanâl", "0x70068701", "Jax Phanâl (Rep)");
     repLocations:AddSkill("Return to Halrax", "0x70068702", "Halrax (Rep)");
     repLocations:AddSkill("Return to Lond Cirion", "0x70068703", "Lond Cirion (Rep)");

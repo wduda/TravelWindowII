@@ -41,7 +41,7 @@ function OptionsPanel:Constructor(parent)
     self.OptionTabs:SetPosition(10, 0);
     self.OptionTabs:SetParent(self);
     self.OptionTabs:SetBlendMode(Turbine.UI.BlendMode.Overlay);
-    self.OptionTabs:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
+    self.OptionTabs:SetBackColor(Turbine.UI.Color(DefAlpha, 0, 0, 0));
     self.OptionTabs:SetVisible(true);
 
     -- create the tabs
@@ -298,7 +298,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnStart = 0;
         end
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
     end
 
@@ -309,7 +308,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnCombat = 0;
         end
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
     end
 
@@ -320,7 +318,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnTravel = 0;
         end
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
     end
 
@@ -331,7 +328,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.showButton = 0;
         end
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
         self.mainWindow.ToggleButton:SetVisible(sender:IsChecked());
     end
@@ -343,7 +339,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.pulldownTravel = 0;
         end
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
     end
 
@@ -497,9 +492,10 @@ function OptionsPanel:AddSkillItemForEnabling(index, id, label)
     self.checks[index].CheckedChanged = function(sender, args)
         -- change the setting on the main window
         Settings.enabled[id] = sender:IsChecked();
+        shortcutIndex = self.mainWindow:TableIndex(Settings.order, id);
+        TravelShortcuts[shortcutIndex]:SetEnabled(sender:IsChecked());
 
-        -- reset the shortcuts on the main window
-        self.mainWindow:SetShortcuts();
+        self.mainWindow.dirty = true;
 
         -- update the main window settings
         self.mainWindow:UpdateSettings();
@@ -565,7 +561,7 @@ function OptionsPanel:AddBoxes()
 
     -- do the check skills
     self.checkSkillsButton.Click = function(sender, args)
-        TravelWindow:CheckSkills();
+        TravelWindow:CheckSkills(true);
     end
 end
 
@@ -586,14 +582,14 @@ function OptionsPanel:AddSortList()
         local tempLabel = Turbine.UI.Label();
         tempLabel:SetText(v:GetSkillLabel());
         tempLabel:SetSize(280, 20);
-        tempLabel:SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
+        tempLabel:SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
         tempLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
         tempLabel:SetZOrder(90);
 
         -- highlight the item that is selected by changing the colour of the
         -- the label when it is clicked
         tempLabel.MouseClick = function(sender, args)
-            self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
+            self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
             sender:SetBackColor(Turbine.UI.Color(0.95, 0.1, 0.1, 0.6));
             self.sortSelectedIndex = self.sortListBox:IndexOfItem(sender);
         end
@@ -607,7 +603,7 @@ function OptionsPanel:AddSortList()
     end
 
     -- set the first item as selected
-    self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.6));
+    self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.6));
 
     -- set up the scrollbar for the list
     self.listBoxScrollBar = self.sortListBox:GetVerticalScrollBar();
@@ -616,7 +612,7 @@ function OptionsPanel:AddSortList()
         self.listBoxScrollBar = Turbine.UI.Lotro.ScrollBar();
     end
 
-    self.listBoxScrollBar:SetBackColor(Turbine.UI.Color(0.87, 0.1, 0.1, 0.1));
+    self.listBoxScrollBar:SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
     self.listBoxScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
     self.listBoxScrollBar:SetSize(10, self.height - 120);
     self.listBoxScrollBar:SetPosition(270, 0);
@@ -671,7 +667,6 @@ function OptionsPanel:AddSortButtons()
         end
 
         -- update the main window shortcuts and settings
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
     end
 
@@ -686,7 +681,6 @@ function OptionsPanel:AddSortButtons()
         self:SwapShortcuts(self.sortSelectedIndex, self.sortSelectedIndex - 1);
 
         -- update the main window shortcuts and settings
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
 
         -- decrease the selected index
@@ -704,7 +698,6 @@ function OptionsPanel:AddSortButtons()
         self:SwapShortcuts(self.sortSelectedIndex, self.sortSelectedIndex + 1);
 
         -- update the main window shortcuts and settings
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
 
         -- increase the selected index
@@ -723,7 +716,6 @@ function OptionsPanel:AddSortButtons()
         end
 
         -- update the main window shortcuts and settings
-        self.mainWindow:SetShortcuts();
         self.mainWindow:UpdateSettings();
     end
 end
@@ -745,5 +737,12 @@ function OptionsPanel:SwapShortcuts(first, second)
         local tempItem = self.sortListBox:GetItem(first);
         self.sortListBox:RemoveItemAt(first);
         self.sortListBox:InsertItem(second, tempItem);
+
+        TravelShortcuts[first]:SetIndex(second);
+        TravelShortcuts[second]:SetIndex(first);
+        local tempShortcut = TravelShortcuts[first];
+        TravelShortcuts[first] = TravelShortcuts[second];
+        TravelShortcuts[second] = tempShortcut;
+        self.mainWindow.dirty = true;
     end
 end
