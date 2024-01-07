@@ -204,7 +204,7 @@ function TravelDictionaries:CreateDictionaries()
     wardenLocations:AddSkill("Appell im Lager des Heeres", "0x70047BFC", "Lager des Heeres (Appell)");
     wardenLocations:AddSkill("Appell in Haerondir", "0x70047C23", "Haerondir (Appell)");
     wardenLocations:AddSkill("Appell am Udûn-Brückenkopf", "0x7004AE1F", "Udûn-Brückenkopf (Appell)");
-    wardenLocations:AddSkill("Appell in Thal", "0x7004d73a", "Thal (Appell)");
+    wardenLocations:AddSkill("Appell in Thal", "0x7004A73A", "Thal (Appell)");
     wardenLocations:AddSkill("Appell in Járnfast", "0x7004FACA", "Jarnfast (Appell)");
     wardenLocations:AddSkill("Appell in Skarháld", "0x7004FACD",  "Skarhald (Appell)");
     wardenLocations:AddSkill("Appell im Beorningerhús", "0x70052F0A", "Beorningerhús (Appell)");
@@ -340,7 +340,7 @@ function TravelDictionaries:CreateDictionaries()
     repLocations:AddSkill("Kehrt zu Halrax zurück.", "0x70068702", "Halrax (Ruf)");
     repLocations:AddSkill("Nach Lond Cirion zurückkehren", "0x70068703", "Lond Cirion (Ruf)");
     repLocations:AddSkill("Zu den Buchhütern reisen", "0x70068704", "Ledger-Keepers (Ruf)");
-    repLocations:AddSkill("Rückkehr zur Taverne 'Zum Blutigen Adler'", "0x700697F2", "Zum Blutigen Adler (Ruf)");
+    repLocations:AddSkill("Rückkehr zur Taverne \"Zum Blutigen Adler\"", "0x700697F2", "Zum Blutigen Adler (Ruf)");
 
     -- monster player maps
     creepLocations:AddSkill("Kartenskizze zum Gramfuss", "0x70028BBC");
