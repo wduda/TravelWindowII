@@ -54,14 +54,11 @@ menuTextString = "Liste de texte";
 menuIconString = "Grille d'icône";
 menuCaroString = "Caroussel";
 menuPullString = "Menu déroulant";
-mapWindowString = "Destinations";
 menuOptionsString = "Options";
 moorMapString = "Destinations aux Landes d'Etten";
 eriadorMapString = "Destinations en Eriador";
 rhovanionMapString = "Destination dans le Rhovanion";
-rohanMapString = "Destinations dans le Rohan"
 gondorMapString = "Destinations dans le Gondor"
-haradwaithMapString = "Destinations dans le Haradwaith"
 menuSkillsString = "Vérification des compétences non utilisées";
 
 --[[ travel skills ]] --
