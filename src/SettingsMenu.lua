@@ -37,21 +37,11 @@ function SettingsMenu:Constructor(parentWindow)
     self.Mode2 = Turbine.UI.MenuItem(menuIconString);
     self.Mode3 = Turbine.UI.MenuItem(menuCaroString);
     self.Mode4 = Turbine.UI.MenuItem(menuPullString);
-    local ModeItems = Mode:GetItems();
+    ModeItems = Mode:GetItems();
     ModeItems:Add(self.Mode1);
     ModeItems:Add(self.Mode2);
     ModeItems:Add(self.Mode3);
     ModeItems:Add(self.Mode4);
-
-    -- create the items to open the map windows
-    MoorMapMenu = TravelWindowII.src.extensions.DMenuList(moorMapString);
-    MapWindows = TravelWindowII.src.extensions.DMenuList(mapWindowString);
-    local MapItems = MapWindows:GetItems();
-    MapItems:Add(Turbine.UI.MenuItem(eriadorMapString));
-    MapItems:Add(Turbine.UI.MenuItem(rhovanionMapString));
-    MapItems:Add(Turbine.UI.MenuItem(rohanMapString));
-    MapItems:Add(Turbine.UI.MenuItem(gondorMapString));
-    MapItems:Add(Turbine.UI.MenuItem(haradwaithMapString));
 
     -- create the menu item to add map home
     -- @TODO has to be reintroduced
@@ -60,6 +50,12 @@ function SettingsMenu:Constructor(parentWindow)
     -- create the menu item to open the options window
     OptionsMenu = TravelWindowII.src.extensions.DMenuList(menuOptionsString);
     SkillsMenu = TravelWindowII.src.extensions.DMenuList(menuSkillsString);
+
+    -- create the items to open the map windows
+    MoorMapMenu = TravelWindowII.src.extensions.DMenuList(moorMapString);
+    EriadorMapMenu = TravelWindowII.src.extensions.DMenuList(eriadorMapString);
+    RhovanionMapMenu = TravelWindowII.src.extensions.DMenuList(rhovanionMapString);
+    GondorMapMenu = TravelWindowII.src.extensions.DMenuList(gondorMapString);
 
     -- add everything to the main menu
     MenuItems = self:GetItems();
@@ -70,34 +66,62 @@ function SettingsMenu:Constructor(parentWindow)
     else
         MenuItems:Add(Filters);
         MenuItems:Add(Mode);
-        MenuItems:Add(MapWindows);
         MenuItems:Add(MapMenu); -- @TODO needs to be reintroduced
         MenuItems:Add(OptionsMenu);
         MenuItems:Add(SkillsMenu);
+        MenuItems:Add(EriadorMapMenu);
+        MenuItems:Add(RhovanionMapMenu);
+        MenuItems:Add(GondorMapMenu);
     end
 
     -- set up the event handler
-    local startConnect = 2;
-    if PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer then
-        startConnect = 1;
-    end
     -- loop through top level of menu
     for i = 1, MenuItems:GetCount(), 1 do
-        local topItem = MenuItems:Get(i);
-        if topItem:GetCount() > 0 then
-            -- loop through the sub menu
-            for j = 1, topItem:GetCount(), 1 do
-                local menuItem = topItem:Get(j);
+        local MenuList = MenuItems:Get(i);
 
-                -- set the function to handle the event
-                menuItem.Click = function(sender, args)
-                    self:Update(sender:GetText());
-                end
-            end
-        elseif i > startConnect then
-            topItem.Click = function(sender, args)
+        -- loop through the sub menu
+        for j = 1, MenuList:GetCount(), 1 do
+            local menuItem = MenuList:Get(j);
+
+            -- set the function to handle the event
+            menuItem.Click = function(sender, args)
                 self:Update(sender:GetText());
             end
+        end
+    end
+
+    -- handle the last item's event
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+        MenuItems:Get(3).Click = function(sender, args)
+            self:Update(sender:GetText());
+        end
+
+        MenuItems:Get(4).Click = function(sender, args)
+            self:Update(sender:GetText());
+        end
+
+        MenuItems:Get(5).Click = function(sender, args)
+            self:Update(sender:GetText());
+        end
+
+        MenuItems:Get(6).Click = function(sender, args)
+            self:Update(sender:GetText());
+        end
+
+        MenuItems:Get(7).Click = function(sender, args)
+            self:Update(sender:GetText());
+        end
+
+        MenuItems:Get(8).Click = function(sender, args)
+            self:Update(sender:GetText());
+        end
+    else
+        MenuItems:Get(2).Click = function(sender, args)
+            self:Update(sender:GetText());
+        end
+
+        MenuItems:Get(3).Click = function(sender, args)
+            self:Update(sender:GetText());
         end
     end
 
@@ -158,17 +182,13 @@ function SettingsMenu:Update(string)
     elseif (string == menuSkillsString) then
         self.parent:CheckSkills(true);
     elseif (string == moorMapString) then
-        self.parent:OpenMapWindow(MapType.CREEPS);
+        self.parent:OpenMoorMap();
     elseif (string == eriadorMapString) then
-        self.parent:OpenMapWindow(MapType.ERIADOR);
+        self.parent:OpenEriadorMap();
     elseif (string == rhovanionMapString) then
-        self.parent:OpenMapWindow(MapType.RHOVANION);
-    elseif (string == rohanMapString) then
-        self.parent:OpenMapWindow(MapType.ROHAN);
+        self.parent:OpenRhovanionMap();
     elseif (string == gondorMapString) then
-        self.parent:OpenMapWindow(MapType.GONDOR);
-    elseif (string == haradwaithMapString) then
-        self.parent:OpenMapWindow(MapType.HARADWAITH);
+        self.parent:OpenGondorMap();
     end
 
     -- set the selections
