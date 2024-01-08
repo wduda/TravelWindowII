@@ -1,3 +1,8 @@
+## v1.4.0
+- reintroduces a rewritten Map Window feature - thanks to @whiterabbit963
+- toggle button will no longer be out of bounds after reducing client resolution - thanks to @whiterabbit963
+- fixes error message on check untrained skills in options - thanks to @whiterabbit963
+- fixes Muster in Dale skill in DE client properly this time - thanks to @whiterabbit963
 ## v1.3.0
 - fixed Warden Muster to Dale in DE client
 - fixed Bloody Eagle Tavern skill in DE client

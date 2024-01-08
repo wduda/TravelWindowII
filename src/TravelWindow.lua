@@ -3,6 +3,7 @@ import "Turbine.Debug";
 import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
+import "TravelWindowII.src.MapWindow"
 import "TravelWindowII.src.extensions";
 import "TravelWindowII.src.utils.BitOps";
 import "TravelWindowII.src.VindarPatch";
@@ -51,9 +52,6 @@ function TravelWindow:Constructor()
 
     -- configure the external toggle button
     self.ToggleButton = TravelWindowII.src.TravelButton(self);
-    self.ToggleButton:SetPosition(Settings.buttonPositionX, Settings.buttonPositionY);
-    self.ToggleButton:SetVisible(Settings.showButton == 1);
-    self.ToggleButton:SetOpacity(Settings.toggleMinOpacity);
 
     -- if the player has a PvMP map, then insert it into the list
     -- if ((.mapGlanVraig ~= nil) and (.mapGlanVraig ~= "nil")) then
@@ -166,10 +164,7 @@ function TravelWindow:Constructor()
             self:SetVisible(false);
             self.optionsWindow:SetVisible(false);
             self:CloseOptions();
-            self:CloseGondorMap();
-            self:CloseMoorMap();
-            self:CloseEriadorMap();
-            self:CloseRhovanionMap();
+            self:CloseMapWindow();
             if (self.hidden == true) then
                 self.hidden = false;
                 self:SetVisible(self.currentVisState);
@@ -182,10 +177,16 @@ function TravelWindow:Constructor()
                 self:SetVisible(false);
                 self.optionsWindow:SetVisible(false);
                 self.ToggleButton:SetVisible(false);
+                if self.mapWindow ~= nil then
+                    self.mapWindow:SetVisible(false);
+                end
             else
                 self.hidden = false;
                 self:SetVisible(self.currentVisState);
                 self.ToggleButton:SetVisible(Settings.showButton == 1);
+                if self.mapWindow ~= nil then
+                    self.mapWindow:SetVisible(true);
+                end
             end
         else
         end
@@ -292,6 +293,11 @@ function TravelWindow:Constructor()
     Plugins["Travel Window II"].Load = function(sender, args)
         Turbine.Shell.WriteLine("<u><rgb=#DAA520>Travel Window II " .. Plugins["Travel Window II"]:GetVersion() ..
                                 " by Hyoss</rgb></u>");
+
+        MapWindow:VerifyMapSkillIds("Hunter");
+        MapWindow:VerifyMapSkillIds("Warden");
+        MapWindow:VerifyMapSkillIds("Mariner");
+        MapWindow:VerifyMapSkillIds("Reputation");
     end
 end
 
@@ -692,52 +698,19 @@ function TravelWindow:CloseOptions()
     self.options = nil;
 end
 
-function TravelWindow:OpenMoorMap()
-    self.moorMapWindow = TravelWindowII.src.MoorMapWindow(self);
+function TravelWindow:OpenMapWindow(map)
+    self:CloseMapWindow();
+    self.mapWindow = TravelWindowII.src.MapWindow(self, map, PlayerClass, PlayerRaceKey);
+    self.mapWindow:SetVisible(true);
 end
 
--- function to close the moor map window if it exists
-function TravelWindow:CloseMoorMap()
-    if (self.moorMapWindow ~= nil) then
-        self.moorMapWindow:SetVisible(false);
+-- function to close the current map window
+function TravelWindow:CloseMapWindow()
+    if (self.mapWindow ~= nil) then
+        self.mapWindow:SetVisible(false);
+        self.mapWindow:Close();
     end
-    self.moorMapWindow = nil;
-end
-
-function TravelWindow:OpenEriadorMap()
-    self.eriadorMapWindow = TravelWindowII.src.EriadorMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
-end
-
--- function to close the eriador map window if it exists
-function TravelWindow:CloseEriadorMap()
-    if (self.eriadorMapWindow ~= nil) then
-        self.eriadorMapWindow:SetVisible(false);
-    end
-    self.eriadorMapWindow = nil;
-end
-
-function TravelWindow:OpenRhovanionMap()
-    self.rhovanionMapWindow = TravelWindowII.src.RhovanionMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
-end
-
--- function to close the rhovanion map window if it exists
-function TravelWindow:CloseRhovanionMap()
-    if (self.rhovanionMapWindow ~= nil) then
-        self.rhovanionMapWindow:SetVisible(false);
-    end
-    self.rhovanionMapWindow = nil;
-end
-
-function TravelWindow:OpenGondorMap()
-    self.gondorMapWindow = TravelWindowII.src.GondorMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
-end
-
--- function to close the gondor map window if it exists
-function TravelWindow:CloseGondorMap()
-    if (self.gondorMapWindow ~= nil) then
-        self.gondorMapWindow:SetVisible(false);
-    end
-    self.gondorMapWindow = nil;
+    self.mapWindow = nil;
 end
 
 -- function to check if a table contains a specific element
@@ -835,12 +808,34 @@ function TravelWindow:LoadSettings()
         SettingsStrings.positionY = tostring((Turbine.UI.Display.GetHeight() - self:GetHeight()) * 0.75);
     end
 
-    if (not SettingsStrings.buttonPositionX or SettingsStrings.buttonPositionX == "nil") then
-        SettingsStrings.buttonPositionX = tostring(Turbine.UI.Display.GetWidth() - self:GetWidth() - 50);
+    local screenWidth = Turbine.UI.Display.GetWidth();
+    local screenHeight = Turbine.UI.Display.GetHeight();
+    if not SettingsStrings.buttonRelativeX or SettingsStrings.buttonRelativeX == "nil" then
+        if SettingsStrings.buttonPositionX and SettingsStrings.buttonPositionX ~= "nil" and
+                tonumber(SettingsStrings.buttonPositionX) < screenWidth then
+            -- not perfect, but assuming the same resolution, this will approximately convert to a relative value
+            SettingsStrings.buttonRelativeX = tonumber(SettingsStrings.buttonPositionX) / screenWidth;
+            if SettingsStrings.buttonRelativeX > 1.0 then
+                SettingsStrings.buttonRelativeX = 0.95;
+            end
+            SettingsStrings.buttonRelativeX = tostring(SettingsStrings.buttonRelativeX);
+        else
+            SettingsStrings.buttonRelativeX = "0.95";
+        end
     end
 
-    if (not SettingsStrings.buttonPositionY or SettingsStrings.buttonPositionY == "nil") then
-        SettingsStrings.buttonPositionY = tostring(Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5);
+    if not SettingsStrings.buttonRelativeY or SettingsStrings.buttonRelativeY == "nil" then
+        if SettingsStrings.buttonPositionY and SettingsStrings.buttonPositionY ~= "nil" and
+                tonumber(SettingsStrings.buttonPositionY) < screenHeight then
+            -- not perfect, but assuming the same resolution, this will approximately convert to a relative value
+            SettingsStrings.buttonRelativeY = tonumber(SettingsStrings.buttonPositionY) / screenHeight;
+            if SettingsStrings.buttonRelativeY > 1.0 then
+                SettingsStrings.buttonRelativeY = 0.75;
+            end
+            SettingsStrings.buttonRelativeY = tostring(SettingsStrings.buttonRelativeY);
+        else
+            SettingsStrings.buttonRelativeY = "0.75";
+        end
     end
 
     if (not SettingsStrings.hideOnStart or SettingsStrings.hideOnStart == "nil") then
@@ -920,16 +915,16 @@ function TravelWindow:LoadSettings()
         Settings.positionY = SettingsStrings.positionY;
     end
 
-    if (type(SettingsStrings.buttonPositionX) == "string") then
-        Settings.buttonPositionX = tonumber(SettingsStrings.buttonPositionX);
+    if (type(SettingsStrings.buttonRelativeX) == "string") then
+        Settings.buttonRelativeX = tonumber(SettingsStrings.buttonRelativeX);
     else
-        Settings.buttonPositionX = SettingsStrings.buttonPositionX;
+        Settings.buttonRelativeX = SettingsStrings.buttonRelativeX;
     end
 
-    if (type(SettingsStrings.positionY) == "string") then
-        Settings.buttonPositionY = tonumber(SettingsStrings.buttonPositionY);
+    if (type(SettingsStrings.buttonRelativeY) == "string") then
+        Settings.buttonRelativeY = tonumber(SettingsStrings.buttonRelativeY);
     else
-        Settings.buttonPositionY = SettingsStrings.buttonPositionY;
+        Settings.buttonRelativeY = SettingsStrings.buttonRelativeY;
     end
 
     if (type(SettingsStrings.hideOnStart) == "string") then
@@ -1031,8 +1026,8 @@ function TravelWindow:SaveSettings()
     SettingsStrings.width = tostring(Settings.width);
     SettingsStrings.positionX = tostring(Settings.positionX);
     SettingsStrings.positionY = tostring(Settings.positionY);
-    SettingsStrings.buttonPositionX = tostring(Settings.buttonPositionX);
-    SettingsStrings.buttonPositionY = tostring(Settings.buttonPositionY);
+    SettingsStrings.buttonRelativeX = tostring(Settings.buttonRelativeX);
+    SettingsStrings.buttonRelativeY = tostring(Settings.buttonRelativeY);
     SettingsStrings.hideOnStart = tostring(Settings.hideOnStart);
     SettingsStrings.hideOnCombat = tostring(Settings.hideOnCombat);
     SettingsStrings.pulldownTravel = tostring(Settings.pulldownTravel);
@@ -1086,8 +1081,8 @@ function TravelWindow:ResetSettings()
     Settings.height = self.minHeight;
     Settings.positionX = Turbine.UI.Display.GetWidth() - self:GetWidth() - 50;
     Settings.positionY = Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5;
-    Settings.buttonPositionX = Turbine.UI.Display.GetWidth() - self:GetWidth() - 50;
-    Settings.buttonPositionY = Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5;
+    Settings.buttonRelativeX = 0.95;
+    Settings.buttonRelativeY = 0.75;
     Settings.hideOnStart = 0;
     Settings.hideOnCombat = 0;
     Settings.pulldownTravel = 0;
@@ -1106,7 +1101,9 @@ function TravelWindow:ResetSettings()
     Settings.mapGlanVraig = nil;
 
     -- move the toggle button and main window
-    self.ToggleButton:SetPosition(Settings.buttonPositionX, Settings.buttonPositionY);
+    local buttonPositionX = Turbine.UI.Display.GetWidth() * SettingsStrings.buttonRelativeX;
+    local buttonPositionY = Turbine.UI.Display.GetHeight() * SettingsStrings.buttonRelativeY;
+    self.ToggleButton:SetPosition(buttonPositionX, buttonPositionY);
     self:SetPosition(Settings.positionX, Settings.positionY);
     self:SetSize(Settings.width, Settings.height);
 
@@ -1153,7 +1150,7 @@ function TravelWindow:CheckSkills(report)
     local newShortcut = false;
     -- loop through all the shortcuts and list those those that are not learned
     for i = 1, #TravelShortcuts, 1 do
-        local wasFound = TravelShortcuts[i].shortcut;
+        local wasFound = TravelShortcuts[i].found;
         if (TravelWindow:FindSkill(TravelShortcuts[i])) then
             if not wasFound then
                 newShortcut = true;
