@@ -96,7 +96,7 @@ function MapWindow:Constructor(parent, map, class, race)
         end
 
         self.DebugSave = function(quickslots)
-            coordinates = {}
+            local coordinates = {}
             for i = 1, #self.quickslots, 1 do
                 local shortcut = self.quickslots[i]:GetShortcut();
                 local name = self:DebugNameLookup(shortcut:GetData());
@@ -164,9 +164,9 @@ function MapWindow:AddLocations(name)
     local sType = Turbine.UI.Lotro.ShortcutType.Skill;
     local map = self:GetLocations(name);
     for i = 1, #map do
-        local id = map[i][1];
-        for r = 1, #map[i][2] do
-            local item = map[i][2][r];
+        local id = map[i][1]; -- @TODO should handle map being nil better
+        for r = 1, #map[i][2] do -- @TODO should handle map being nil better
+            local item = map[i][2][r]; -- @TODO should handle map being nil better
             if self.mapType == item[1] and self:IsShortcutEnabled(id) then
                 self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id));
             end
@@ -175,14 +175,15 @@ function MapWindow:AddLocations(name)
 end
 
 function MapWindow:AddClassLocations()
+    local name = "";
     if self.PlayerClass == Turbine.Gameplay.Class.Hunter then
-        name = "Hunter"
+        name = "Hunter";
     elseif self.PlayerClass == Turbine.Gameplay.Class.Warden then
-        name = "Warden"
+        name = "Warden";
     elseif self.PlayerClass == Turbine.Gameplay.Class.Mariner then
-        name = "Mariner"
+        name = "Mariner";
     else
-        -- nothing to add for this class
+        -- nothing to add for other classes
         return
     end
 
