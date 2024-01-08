@@ -151,7 +151,7 @@ end
 
 function MapWindow:AddShortcuts()
     if self.mapType == MapType.CREEPS then
-        self.addCreepShortcuts();
+        self:AddCreepShortcuts();
     else
         self:AddClassLocations();
         self:AddReputationLocations();
