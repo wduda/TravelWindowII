@@ -1153,7 +1153,7 @@ function TravelWindow:CheckSkills(report)
     local newShortcut = false;
     -- loop through all the shortcuts and list those those that are not learned
     for i = 1, #TravelShortcuts, 1 do
-        local wasFound = TravelShortcuts[i].shortcut;
+        local wasFound = TravelShortcuts[i].found;
         if (TravelWindow:FindSkill(TravelShortcuts[i])) then
             if not wasFound then
                 newShortcut = true;
