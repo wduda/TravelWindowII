@@ -3,6 +3,7 @@ import "Turbine.Debug";
 import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
+import "TravelWindowII.src.MapWindow"
 import "TravelWindowII.src.extensions";
 import "TravelWindowII.src.utils.BitOps";
 import "TravelWindowII.src.VindarPatch";
@@ -166,10 +167,7 @@ function TravelWindow:Constructor()
             self:SetVisible(false);
             self.optionsWindow:SetVisible(false);
             self:CloseOptions();
-            self:CloseGondorMap();
-            self:CloseMoorMap();
-            self:CloseEriadorMap();
-            self:CloseRhovanionMap();
+            self:CloseMapWindow();
             if (self.hidden == true) then
                 self.hidden = false;
                 self:SetVisible(self.currentVisState);
@@ -182,10 +180,16 @@ function TravelWindow:Constructor()
                 self:SetVisible(false);
                 self.optionsWindow:SetVisible(false);
                 self.ToggleButton:SetVisible(false);
+                if self.mapWindow ~= nil then
+                    self.mapWindow:SetVisible(false);
+                end
             else
                 self.hidden = false;
                 self:SetVisible(self.currentVisState);
                 self.ToggleButton:SetVisible(Settings.showButton == 1);
+                if self.mapWindow ~= nil then
+                    self.mapWindow:SetVisible(true);
+                end
             end
         else
         end
@@ -292,6 +296,11 @@ function TravelWindow:Constructor()
     Plugins["Travel Window II"].Load = function(sender, args)
         Turbine.Shell.WriteLine("<u><rgb=#DAA520>Travel Window II " .. Plugins["Travel Window II"]:GetVersion() ..
                                 " by Hyoss</rgb></u>");
+
+        MapWindow:VerifyMapSkillIds("Hunter");
+        MapWindow:VerifyMapSkillIds("Warden");
+        MapWindow:VerifyMapSkillIds("Mariner");
+        MapWindow:VerifyMapSkillIds("Reputation");
     end
 end
 
@@ -692,52 +701,19 @@ function TravelWindow:CloseOptions()
     self.options = nil;
 end
 
-function TravelWindow:OpenMoorMap()
-    self.moorMapWindow = TravelWindowII.src.MoorMapWindow(self);
+function TravelWindow:OpenMapWindow(map)
+    self:CloseMapWindow();
+    self.mapWindow = TravelWindowII.src.MapWindow(self, map, PlayerClass, PlayerRaceKey);
+    self.mapWindow:SetVisible(true);
 end
 
--- function to close the moor map window if it exists
-function TravelWindow:CloseMoorMap()
-    if (self.moorMapWindow ~= nil) then
-        self.moorMapWindow:SetVisible(false);
+-- function to close the current map window
+function TravelWindow:CloseMapWindow()
+    if (self.mapWindow ~= nil) then
+        self.mapWindow:SetVisible(false);
+        self.mapWindow:Close();
     end
-    self.moorMapWindow = nil;
-end
-
-function TravelWindow:OpenEriadorMap()
-    self.eriadorMapWindow = TravelWindowII.src.EriadorMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
-end
-
--- function to close the eriador map window if it exists
-function TravelWindow:CloseEriadorMap()
-    if (self.eriadorMapWindow ~= nil) then
-        self.eriadorMapWindow:SetVisible(false);
-    end
-    self.eriadorMapWindow = nil;
-end
-
-function TravelWindow:OpenRhovanionMap()
-    self.rhovanionMapWindow = TravelWindowII.src.RhovanionMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
-end
-
--- function to close the rhovanion map window if it exists
-function TravelWindow:CloseRhovanionMap()
-    if (self.rhovanionMapWindow ~= nil) then
-        self.rhovanionMapWindow:SetVisible(false);
-    end
-    self.rhovanionMapWindow = nil;
-end
-
-function TravelWindow:OpenGondorMap()
-    self.gondorMapWindow = TravelWindowII.src.GondorMapWindow(self, PlayerClass, PlayerRaceKey, TravelShortcuts);
-end
-
--- function to close the gondor map window if it exists
-function TravelWindow:CloseGondorMap()
-    if (self.gondorMapWindow ~= nil) then
-        self.gondorMapWindow:SetVisible(false);
-    end
-    self.gondorMapWindow = nil;
+    self.mapWindow = nil;
 end
 
 -- function to check if a table contains a specific element
@@ -1153,7 +1129,7 @@ function TravelWindow:CheckSkills(report)
     local newShortcut = false;
     -- loop through all the shortcuts and list those those that are not learned
     for i = 1, #TravelShortcuts, 1 do
-        local wasFound = TravelShortcuts[i].shortcut;
+        local wasFound = TravelShortcuts[i].found;
         if (TravelWindow:FindSkill(TravelShortcuts[i])) then
             if not wasFound then
                 newShortcut = true;
