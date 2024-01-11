@@ -18,7 +18,7 @@ MapType = {
     HARADWAITH = 7,
 };
 
-function MapWindow:Constructor(parent, map, class, race)
+function MapWindow:Constructor(parent, map)
     Turbine.UI.Window.Constructor(self);
 
     --  add a check to see if we load completely
@@ -26,9 +26,7 @@ function MapWindow:Constructor(parent, map, class, race)
 
     self.mainWindow = parent;
     self.mapType = map;
-    self.PlayerClass = class;
-    self.PlayerRaceKey = race; -- mapped as racialMap index
-    self.debug = false;
+    self.debug = false; -- enable to position shortcuts on the map
 
     -- set size of window
     self.width = 1024;
@@ -176,11 +174,11 @@ end
 
 function MapWindow:AddClassLocations()
     local name = "";
-    if self.PlayerClass == Turbine.Gameplay.Class.Hunter then
+    if PlayerClass == Turbine.Gameplay.Class.Hunter then
         name = "Hunter";
-    elseif self.PlayerClass == Turbine.Gameplay.Class.Warden then
+    elseif PlayerClass == Turbine.Gameplay.Class.Warden then
         name = "Warden";
-    elseif self.PlayerClass == Turbine.Gameplay.Class.Mariner then
+    elseif PlayerClass == Turbine.Gameplay.Class.Mariner then
         name = "Mariner";
     else
         -- nothing to add for other classes
@@ -439,11 +437,11 @@ function MapWindow:AddRacialLocation()
         {"0x70066D31", {MapType.RHOVANION, 155, 165}}, -- Lyndelby
     };
 
-    if #racialMap > self.PlayerRaceKey then
+    if #racialMap > PlayerRaceKey then
         if #racialMap ~= racialLocations:GetCount() then
             Turbine.Shell.WriteLine("Error: Missing other Racial locations " .. (racialLocations:GetCount() - #racialMap));
         end
-        local item = racialMap[self.PlayerRaceKey];
+        local item = racialMap[PlayerRaceKey];
         if self.mapType == item[2][1] then
             local id = item[1]
             if self:IsShortcutTrained(id) then

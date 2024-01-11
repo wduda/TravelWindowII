@@ -700,7 +700,7 @@ end
 
 function TravelWindow:OpenMapWindow(map)
     self:CloseMapWindow();
-    self.mapWindow = TravelWindowII.src.MapWindow(self, map, PlayerClass, PlayerRaceKey);
+    self.mapWindow = TravelWindowII.src.MapWindow(self, map);
     self.mapWindow:SetVisible(true);
 end
 
