@@ -42,6 +42,8 @@ minString = "Min: ";
 maxString = "Max: ";
 resetSettingsString = "Reset all to default";
 checkSkillsString = "Check Untrained Skills";
+enableRepSkillsString = "Enable Overlapping";
+disableRepSkillsString = "Disable Overlapping";
 enableAllString = "Enable All";
 disableAllString = "Disable All";
 

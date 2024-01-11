@@ -42,6 +42,8 @@ minString = "Min: ";
 maxString = "Max: ";
 resetSettingsString = "Rücksetzen auf Standard";
 checkSkillsString = "Nicht erlernte Fertigkeiten prüfen";
+enableRepSkillsString = "Überlappung Aktivieren";
+disableRepSkillsString = "Überlappung Deaktivieren";
 enableAllString = "Alle Aktivieren";
 disableAllString = "Alle Deaktivieren";
 

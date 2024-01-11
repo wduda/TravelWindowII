@@ -42,6 +42,8 @@ minString = "Min: ";
 maxString = "Max: ";
 resetSettingsString = "Remise a zéro";
 checkSkillsString = "Vérification des compétences non utilisées";
+enableRepSkillsString = "Activer le chevauchement";
+disableRepSkillsString = "Désactiver le chevauchement";
 enableAllString = "Activer tout";
 disableAllString = "Désactiver tout";
 
