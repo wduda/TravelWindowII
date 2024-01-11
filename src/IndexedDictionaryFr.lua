@@ -42,6 +42,8 @@ minString = "Min: ";
 maxString = "Max: ";
 resetSettingsString = "Remise a zéro";
 checkSkillsString = "Vérification des compétences non utilisées";
+enableAllString = "Activer tout";
+disableAllString = "Désactiver tout";
 
 -- menu strings
 menuFiltersString = "Filtres";

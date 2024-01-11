@@ -563,6 +563,34 @@ function OptionsPanel:AddBoxes()
     self.checkSkillsButton.Click = function(sender, args)
         self.mainWindow:CheckSkills(true);
     end
+
+    self.enableAllButton = Turbine.UI.Lotro.Button();
+    self.enableAllButton:SetSize(200, 20);
+    self.enableAllButton:SetPosition(520, 30);
+    self.enableAllButton:SetText(enableAllString);
+    self.enableAllButton:SetParent(self.EnabledTab);
+    self.enableAllButton:SetVisible(true);
+
+    self.enableAllButton.Click = function(sender, args)
+        for i = 1, #self.checks do
+            self.checks[i]:SetChecked(true);
+        end
+    end
+
+    self.disableAllButton = Turbine.UI.Lotro.Button();
+    self.disableAllButton:SetSize(200, 20);
+    self.disableAllButton:SetPosition(520, 60);
+    self.disableAllButton:SetText(disableAllString);
+    self.disableAllButton:SetParent(self.EnabledTab);
+    self.disableAllButton:SetVisible(true);
+
+    self.disableAllButton.Click = function(sender, args)
+        for i = 1, #self.checks do
+            self.checks[i]:SetChecked(false);
+        end
+    end
+end
+
 end
 
 -- function to add the list of shortcuts to the sort tab

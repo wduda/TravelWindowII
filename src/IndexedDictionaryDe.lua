@@ -42,6 +42,8 @@ minString = "Min: ";
 maxString = "Max: ";
 resetSettingsString = "Rücksetzen auf Standard";
 checkSkillsString = "Nicht erlernte Fertigkeiten prüfen";
+enableAllString = "Alle Aktivieren";
+disableAllString = "Alle Deaktivieren";
 
 -- menu strings
 menuFiltersString = "Filter";
