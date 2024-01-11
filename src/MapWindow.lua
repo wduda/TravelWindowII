@@ -162,11 +162,14 @@ function MapWindow:AddLocations(name)
     local sType = Turbine.UI.Lotro.ShortcutType.Skill;
     local map = self:GetLocations(name);
     for i = 1, #map do
-        local id = map[i][1]; -- @TODO should handle map being nil better
-        for r = 1, #map[i][2] do -- @TODO should handle map being nil better
-            local item = map[i][2][r]; -- @TODO should handle map being nil better
-            if self.mapType == item[1] and self:IsShortcutEnabled(id) then
-                self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id));
+        if #map[i] == 2 then
+            local id = map[i][1];
+            for r = 1, #map[i][2] do
+                local item = map[i][2][r];
+                if item ~= nil and #item == 3 and
+                        self.mapType == item[1] and self:IsShortcutEnabled(id) then
+                    self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id));
+                end
             end
         end
     end
