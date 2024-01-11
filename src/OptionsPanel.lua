@@ -504,6 +504,9 @@ function OptionsPanel:AddSkillItemForEnabling(index, id, label)
 
         -- update the main window settings
         self.mainWindow:UpdateSettings();
+        if self.mainWindow.mapWindow ~= nil then
+            self.mainWindow.mapWindow:UpdateShortcut(id, sender:IsChecked());
+        end
     end
 end
 

@@ -166,8 +166,7 @@ function MapWindow:AddLocations(name)
             local id = map[i][1];
             for r = 1, #map[i][2] do
                 local item = map[i][2][r];
-                if item ~= nil and #item == 3 and
-                        self.mapType == item[1] and self:IsShortcutEnabled(id) then
+                if item ~= nil and #item == 3 and self.mapType == item[1] then
                     self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id));
                 end
             end
@@ -467,10 +466,8 @@ function MapWindow:AddGlanVraigMap()
     if self.mapType == moorsMap[1][1] then
         for i = 1, #TravelShortcuts, 1 do
             if TravelShortcuts[i]:GetName() == glanMapString then
-                if self:IsShortcutEnabled(TravelShortcuts[i]:GetData()) then
-                    self:AddSingleShortcut(moorsMap[1], TravelShortcuts[i]);
-                    break
-                end
+                self:AddSingleShortcut(moorsMap[1], TravelShortcuts[i]);
+                break
             end
         end
     end
@@ -519,7 +516,7 @@ function MapWindow:AddSingleShortcut(location, shortcut)
     self.quickslots[index]:SetSize(32, 32);
     self.quickslots[index]:SetPosition(location[2], location[3]);
     self.quickslots[index]:SetZOrder(98);
-    self.quickslots[index]:SetVisible(true);
+    self.quickslots[index]:SetVisible(self:IsShortcutEnabled(shortcut:GetData()));
 
     self.quickslots[index].MouseClick = function(sender, args)
         self:SetVisible(false);
@@ -536,12 +533,19 @@ function MapWindow:AddSingleShortcut(location, shortcut)
     end
 end
 
+function MapWindow:UpdateShortcut(id, enable)
+    for i = 1, #self.quickslots do
+        if self.quickslots[i]:GetShortcut():GetData() == id then
+            self.quickslots[i]:SetVisible(enable);
+        end
+    end
+end
+
 function MapWindow:IsShortcutEnabled(id)
 
     for i = 1, #TravelShortcuts, 1 do
         local shortcut = TravelShortcuts[i]
         if shortcut:GetData() == id then
-            -- must be user enabled
             return shortcut:IsEnabled()
         end
     end
@@ -554,8 +558,7 @@ function MapWindow:IsShortcutTrained(id)
     for i = 1, #TravelShortcuts, 1 do
         local shortcut = TravelShortcuts[i]
         if shortcut:GetData() == id then
-            if shortcut:IsEnabled() and shortcut.found then
-                -- must be user enabled and trained
+            if shortcut.found then
                 return true;
             end
             return false;
