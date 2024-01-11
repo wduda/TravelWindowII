@@ -13,6 +13,7 @@ function OptionsPanel:Constructor(parent)
 
     --  add a check to see if we load completely
     self.loaded = false;
+    self.disableUpdates = false;
 
     -- set size of window
     self.width = 800;
@@ -501,9 +502,9 @@ function OptionsPanel:AddSkillItemForEnabling(index, id, label)
         TravelShortcuts[shortcutIndex]:SetEnabled(sender:IsChecked());
 
         self.mainWindow.dirty = true;
-
-        -- update the main window settings
-        self.mainWindow:UpdateSettings();
+        if not self.disableUpdates then
+            self.mainWindow:UpdateSettings();
+        end
         if self.mainWindow.mapWindow ~= nil then
             self.mainWindow.mapWindow:UpdateShortcut(id, sender:IsChecked());
         end
@@ -607,9 +608,7 @@ function OptionsPanel:AddBoxes()
     self.enableAllButton:SetVisible(true);
 
     self.enableAllButton.Click = function(sender, args)
-        for i = 1, #self.checks do
-            self.checks[i]:SetChecked(true);
-        end
+        self:EnableAll(true);
     end
 
     self.disableAllButton = Turbine.UI.Lotro.Button();
@@ -620,9 +619,7 @@ function OptionsPanel:AddBoxes()
     self.disableAllButton:SetVisible(true);
 
     self.disableAllButton.Click = function(sender, args)
-        for i = 1, #self.checks do
-            self.checks[i]:SetChecked(false);
-        end
+        self:EnableAll(false);
     end
 end
 
@@ -761,6 +758,7 @@ function OptionsPanel:SetupOverlapLinks()
 end
 
 function OptionsPanel:EnableOverlapSkills(enable)
+    self.disableUpdates = true;
     for id, group in pairs(self.overlapGroup) do
         for i = 1, #group do
             for j = 1, #self.checks do
@@ -771,6 +769,17 @@ function OptionsPanel:EnableOverlapSkills(enable)
             end
         end
     end
+    self.disableUpdates = false;
+    self.mainWindow:UpdateSettings(); -- force an update now
+end
+
+function OptionsPanel:EnableAll(enable)
+    self.disableUpdates = true;
+    for i = 1, #self.checks do
+        self.checks[i]:SetChecked(enable);
+    end
+    self.disableUpdates = false;
+    self.mainWindow:UpdateSettings(); -- force an update now
 end
 
 -- function to add the list of shortcuts to the sort tab
