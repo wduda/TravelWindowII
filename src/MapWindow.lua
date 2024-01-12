@@ -440,8 +440,8 @@ function MapWindow:AddRacialLocation()
     };
 
     if #racialMap > PlayerRaceKey then
-        if #racialMap ~= racialLocations:GetCount() then
-            Turbine.Shell.WriteLine("Error: Missing other Racial locations " .. (racialLocations:GetCount() - #racialMap));
+        if #racialMap ~= TravelInfo.allRaces:GetCount() then
+            Turbine.Shell.WriteLine("Error: Missing other Racial locations " .. (TravelInfo.allRaces:GetCount() - #racialMap));
         end
         local item = racialMap[PlayerRaceKey];
         if self.mapType == item[2][1] then
@@ -453,7 +453,7 @@ function MapWindow:AddRacialLocation()
             end
         end
     else
-        Turbine.Shell.WriteLine("Error: Missing Racial locations " .. (racialLocations:GetCount() - #racialMap));
+        Turbine.Shell.WriteLine("Error: Missing Racial locations " .. (TravelInfo.allRaces:GetCount() - #racialMap));
     end
 end
 
@@ -582,13 +582,13 @@ end
 function MapWindow:VerifyMapSkillIds(name)
     local skills;
     if name == "Hunter" then
-        skills = hunterLocations;
+        skills = TravelInfo.hunter;
     elseif name == "Warden" then
-        skills = wardenLocations;
+        skills = TravelInfo.warden;
     elseif name == "Mariner" then
-        skills = marinerLocations;
+        skills = TravelInfo.mariner;
     elseif name == "Reputation" then
-        skills = repLocations;
+        skills = TravelInfo.rep;
     else
         return; -- invalid option
     end

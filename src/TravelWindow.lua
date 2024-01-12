@@ -23,7 +23,16 @@ function TravelWindow:Constructor()
     Settings = {};
     SettingsStrings = {};
     TravelShortcuts = {}; -- put all the shortcuts into one table
-    TrainedSkills = Turbine.Gameplay.SkillList; -- TODO: update list on window open or maybe a timer
+    TrainedSkills = Turbine.Gameplay.SkillList;
+
+    -- get the player class and race
+    player = Turbine.Gameplay.LocalPlayer.GetInstance();
+    PlayerClass = player:GetClass();
+    PlayerAlignment = player:GetAlignment();
+    PlayerRace = player:GetRace();
+
+    -- set the racial index used later in multiple places
+    self:SetPlayerRaceKey();
 
     self.reloadGVMap = false;
     self.options = nil;
@@ -33,7 +42,7 @@ function TravelWindow:Constructor()
 
     -- create the lists of travel locations and the shortcuts
     -- that are used to execute them
-    TravelInfo = TravelDictionaries();
+    TravelInfo = TravelDictionary();
 
     -- load the player saved settings
     self:LoadSettings();
@@ -58,18 +67,6 @@ function TravelWindow:Constructor()
     -- self.reloadGVMap = true;
     -- genLocations:InsertSkill(2, glanMapString, .mapGlanVraig, "skip");
     -- end
-
-    -- redo the counts
-    TravelInfo:GetCounts();
-
-    -- get the player class and race
-    player = Turbine.Gameplay.LocalPlayer.GetInstance();
-    PlayerClass = player:GetClass();
-    PlayerAlignment = player:GetAlignment();
-    PlayerRace = player:GetRace();
-
-    -- set the racial index used later in multiple places
-    self:SetPlayerRaceKey();
 
     -- get the list of trained skills the player has
     if (Turbine.Gameplay.LocalPlayer.GetTrainedSkills ~= nil) then
@@ -442,16 +439,15 @@ function TravelWindow:SaveMapHome(shortcut)
     if (string.find(mapItem:GetName(), glanMapItemString)) then
 
         -- remove the old shortcut if it exists
-        if (genLocations:IndexByName(glanMapString) == 2) then
-            genLocations:RemoveSkillAtIndex(2);
+        if (TravelInfo.gen:IndexByName(glanMapString) == 2) then
+            TravelInfo.gen:RemoveSkillAtIndex(2);
         end
 
         -- set the value
         Settings.mapGlanVraig = shortcut:GetData();
 
         -- update the location lists
-        genLocations:InsertData(2, glanMapString, Settings.mapGlanVraig);
-        TravelInfo:GetCounts();
+        TravelInfo.gen:InsertSkill(2, glanMapString, Settings.mapGlanVraig);
 
         -- else, do nothing but report the error
     else
@@ -464,223 +460,89 @@ end
 function TravelWindow:SetShortcuts()
     -- set default values
     TravelShortcuts = {};
-    local sType = Turbine.UI.Lotro.ShortcutType.Skill;
-    local shortcutIndex = 1;
 
     -- set the either the travel skills for free people or monsters
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- set the generic travel items
-        for i = 1, travelCount[3], 1 do
-            -- get the order number for the item
-            shortcutIndex = self:TableIndex(Settings.order, genLocations:IdAtIndex(i));
-
-            -- set the shortcut for the quickslot, check
-            -- if the shortcut is the glan vraig map or not
-            if (string.len(genLocations:IdAtIndex(i)) > 12) then
-                local sItem = Turbine.UI.Lotro.ShortcutType.Item;
-                table.insert(TravelShortcuts,
-                             TravelShortcut(sItem, genLocations:IdAtIndex(i), genLocations:NameAtIndex(i), 1,
-                                            shortcutIndex, Settings.enabled[genLocations:IdAtIndex(i)],
-                                            genLocations:LabelAtIndex(i)));
-            else
-                table.insert(TravelShortcuts,
-                             TravelShortcut(sType, genLocations:IdAtIndex(i), genLocations:NameAtIndex(i), 1,
-                                            shortcutIndex, Settings.enabled[genLocations:IdAtIndex(i)],
-                                            genLocations:LabelAtIndex(i)));
-            end
-        end
+        self:AddTravelSkills(TravelInfo.gen, 1);
 
         -- add the race travel to the list
-        local racialShortcutIndex = self:TableIndex(Settings.order, racialLocations:IdAtIndex(PlayerRaceKey));
         table.insert(TravelShortcuts,
-                     TravelShortcut(sType, racialLocations:IdAtIndex(PlayerRaceKey),
-                                    racialLocations:NameAtIndex(PlayerRaceKey), 2, racialShortcutIndex,
-                                    Settings.enabled[racialLocations:IdAtIndex(PlayerRaceKey)],
-                                    racialLocations:LabelAtIndex(PlayerRaceKey)));
+                     TravelShortcut(
+                            Turbine.UI.Lotro.ShortcutType.Skill,
+                            2,
+                            TravelInfo.racial.id,
+                            TravelInfo.racial.name,
+                            TravelInfo.racial.label,
+                            TravelInfo.racial.desc));
 
         -- set the reputation travel items
-        for i = 1, travelCount[4], 1 do
-            shortcutIndex = self:TableIndex(Settings.order, repLocations:IdAtIndex(i));
-            table.insert(TravelShortcuts,
-                         TravelShortcut(sType, repLocations:IdAtIndex(i), repLocations:NameAtIndex(i), 3, shortcutIndex,
-                                        Settings.enabled[repLocations:IdAtIndex(i)], repLocations:LabelAtIndex(i),
-                                        repLocations:DescAtIndex(i)));
-        end
+        self:AddTravelSkills(TravelInfo.rep, 3);
     else
         -- set the creep travel items
-        for i = 1, travelCount[6], 1 do
-            shortcutIndex = self:TableIndex(Settings.order, creepLocations:IdAtIndex(i));
-            table.insert(TravelShortcuts,
-                         TravelShortcut(sType, creepLocations:IdAtIndex(i), creepLocations:NameAtIndex(i), 3,
-                                        shortcutIndex, Settings.enabled[creepLocations:IdAtIndex(i)],
-                                        creepLocations:LabelAtIndex(i)));
-        end
+        self:AddTravelSkills(TravelInfo.creep, 3);
     end
 
-    -- set the hunter travel items
-    if (PlayerClass == Turbine.Gameplay.Class.Hunter) then
-        for i = 1, travelCount[1], 1 do
-            shortcutIndex = self:TableIndex(Settings.order, hunterLocations:IdAtIndex(i));
-            table.insert(TravelShortcuts,
-                         TravelShortcut(sType, hunterLocations:IdAtIndex(i), hunterLocations:NameAtIndex(i), 4,
-                                        shortcutIndex, Settings.enabled[hunterLocations:IdAtIndex(i)],
-                                        hunterLocations:LabelAtIndex(i), hunterLocations:DescAtIndex(i)));
-        end
+    -- set the class travel items
+    local classSkills = TravelInfo:GetClassSkills();
+    if classSkills ~= nil then
+        self:AddTravelSkills(classSkills, 4);
     end
 
-    -- set the warden travel items
-    if (PlayerClass == Turbine.Gameplay.Class.Warden) then
-        for i = 1, travelCount[2], 1 do
-            shortcutIndex = self:TableIndex(Settings.order, wardenLocations:IdAtIndex(i));
-            table.insert(TravelShortcuts,
-                         TravelShortcut(sType, wardenLocations:IdAtIndex(i), wardenLocations:NameAtIndex(i), 4,
-                                        shortcutIndex, Settings.enabled[wardenLocations:IdAtIndex(i)],
-                                        wardenLocations:LabelAtIndex(i), wardenLocations:DescAtIndex(i)));
-        end
-    end
-
-    -- set the mariner travel items
-    if (PlayerClass == Turbine.Gameplay.Class.Mariner) then
-        for i = 1, travelCount[7], 1 do
-            shortcutIndex = self:TableIndex(Settings.order, marinerLocations:IdAtIndex(i));
-            table.insert(TravelShortcuts,
-                         TravelShortcut(sType, marinerLocations:IdAtIndex(i), marinerLocations:NameAtIndex(i), 4,
-                                        shortcutIndex, Settings.enabled[marinerLocations:IdAtIndex(i)],
-                                        marinerLocations:LabelAtIndex(i), marinerLocations:DescAtIndex(i)));
-        end
-    end
-
-    -- sort the shortcuts
     self:SortShortcuts()
 end
 
+function TravelWindow:AddTravelSkills(skills, filter)
+    for i = 1, skills:GetCount() do
+        table.insert(TravelShortcuts,
+                     TravelShortcut(
+                        Turbine.UI.Lotro.ShortcutType.Skill,
+                        filter,
+                        skills:IdAtIndex(i),
+                        skills:NameAtIndex(i),
+                        skills:LabelAtIndex(i),
+                        skills:DescAtIndex(i)));
+    end
+end
+
 function TravelWindow:CheckEnabledSettings()
-    -- count the min number of items that should be in the list
-    ItemCount = 0;
-    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        -- generic skills + reputation skills + one racial skill
-        ItemCount = travelCount[3] + travelCount[4] + 1;
-        if (PlayerClass == Turbine.Gameplay.Class.Hunter) then
-            -- hunters have hunter skills
-            ItemCount = ItemCount + travelCount[1];
-        elseif (PlayerClass == Turbine.Gameplay.Class.Warden) then
-            -- wardens have warden skills
-            ItemCount = ItemCount + travelCount[2]
-        elseif (PlayerClass == Turbine.Gameplay.Class.Mariner) then
-            -- mariners have mariner skills
-            ItemCount = ItemCount + travelCount[7]
-        end
-    else
-        -- monster player skills
-        ItemCount = travelCount[6] + 1;
-    end
-
-    -- remove superfluous entries in order list in case skills get deleted from game
-    if (#Settings.order > ItemCount) then
-        for id, order in pairs(Settings.order) do
-            if (not genLocations:VerifyId(id) and not wardenLocations:VerifyId(id) and not repLocations:VerifyId(id) and
-                not hunterLocations:VerifyId(id) and not marinerLocations:VerifyId(id)) then
-                Settings.order[id] = nil;
-            end
-        end
-    end
-
-    -- remove superfluous entries in enabled list in case skills get deleted from game
-    if (#Settings.enabled > ItemCount) then
-        for id, status in pairs(Settings.enabled) do
-            if (not genLocations:VerifyId(id) and not wardenLocations:VerifyId(id) and not repLocations:VerifyId(id) and
-                not hunterLocations:VerifyId(id) and not marinerLocations:VerifyId(id)) then
-                Settings.enabled[id] = nil;
-            end
-        end
-    end
-
-    -- need to find the highest sort number now
-    local counter = #Settings.order + 1;
-
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- update generic travel settings
-        for i = 1, travelCount[3], 1 do
-            -- if the enabled setting for the skill is nil, set it to true as default
-            if (Settings.enabled[genLocations:IdAtIndex(i)] == nil) then
-                Settings.enabled[genLocations:IdAtIndex(i)] = true;
-            end
-
-            -- if the skill is not in the order list, add it and increase the counter
-            if (self:TableContains(Settings.order, genLocations:IdAtIndex(i)) == false) then
-                table.insert(Settings.order, counter, genLocations:IdAtIndex(i));
-                counter = counter + 1;
-            end
-        end
+        self:AddNewSettings(TravelInfo.gen);
 
         -- update reputation travel settings
-        for i = 1, travelCount[4], 1 do
-            if (Settings.enabled[repLocations:IdAtIndex(i)] == nil) then
-                Settings.enabled[repLocations:IdAtIndex(i)] = true;
-            end
-            if (self:TableContains(Settings.order, repLocations:IdAtIndex(i)) == false) then
-                table.insert(Settings.order, counter, repLocations:IdAtIndex(i));
-                counter = counter + 1;
-            end
-        end
+        self:AddNewSettings(TravelInfo.rep);
 
         -- update racial travel settings
-        if (Settings.enabled[racialLocations:IdAtIndex(PlayerRaceKey)] == nil) then
-            Settings.enabled[racialLocations:IdAtIndex(PlayerRaceKey)] = true;
+        local racialId = TravelInfo.racial.id;
+        if (Settings.enabled[racialId] == nil) then
+            Settings.enabled[racialId] = true;
         end
-        if (self:TableContains(Settings.order, racialLocations:IdAtIndex(PlayerRaceKey)) == false) then
-            table.insert(Settings.order, counter, racialLocations:IdAtIndex(PlayerRaceKey));
-            counter = counter + 1;
-        end
-
-        -- update hunter travel settings
-        if (PlayerClass == Turbine.Gameplay.Class.Hunter) then
-            for i = 1, travelCount[1], 1 do
-                if (Settings.enabled[hunterLocations:IdAtIndex(i)] == nil) then
-                    Settings.enabled[hunterLocations:IdAtIndex(i)] = true;
-                end
-                if (self:TableContains(Settings.order, hunterLocations:IdAtIndex(i)) == false) then
-                    table.insert(Settings.order, counter, hunterLocations:IdAtIndex(i));
-                    counter = counter + 1;
-                end
-            end
+        if (TableContains(Settings.order, racialId) == false) then
+            table.insert(Settings.order, racialId);
         end
 
-        -- update warden travel settings
-        if (PlayerClass == Turbine.Gameplay.Class.Warden) then
-            for i = 1, travelCount[2], 1 do
-                if (Settings.enabled[wardenLocations:IdAtIndex(i)] == nil) then
-                    Settings.enabled[wardenLocations:IdAtIndex(i)] = true;
-                end
-                if (self:TableContains(Settings.order, wardenLocations:IdAtIndex(i)) == false) then
-                    table.insert(Settings.order, counter, wardenLocations:IdAtIndex(i));
-                    counter = counter + 1;
-                end
-            end
-        end
-
-        -- update mariner travel settings
-        if (PlayerClass == Turbine.Gameplay.Class.Mariner) then
-            for i = 1, travelCount[7], 1 do
-                if (Settings.enabled[marinerLocations:IdAtIndex(i)] == nil) then
-                    Settings.enabled[marinerLocations:IdAtIndex(i)] = true;
-                end
-                if (self:TableContains(Settings.order, marinerLocations:IdAtIndex(i)) == false) then
-                    table.insert(Settings.order, counter, marinerLocations:IdAtIndex(i));
-                    counter = counter + 1;
-                end
-            end
+        local classSkills = TravelInfo:GetClassSkills();
+        if classSkills ~= nil then
+            self:AddNewSettings(classSkills);
         end
     else
         -- update creep travel settings
-        for i = 1, travelCount[6], 1 do
-            if (Settings.enabled[creepLocations:IdAtIndex(i)] == nil) then
-                Settings.enabled[creepLocations:IdAtIndex(i)] = true;
-            end
-            if (self:TableContains(Settings.order, creepLocations:IdAtIndex(i)) == false) then
-                table.insert(Settings.order, counter, creepLocations:IdAtIndex(i));
-                counter = counter + 1;
-            end
+        self:AddNewSettings(TravelInfo.creep);
+    end
+end
+
+function TravelWindow:AddNewSettings(skills)
+    for i = 1, skills:GetCount() do
+        local id = skills:IdAtIndex(i);
+        -- if the enabled setting for the skill is nil, set it to true as default
+        if (Settings.enabled[id] == nil) then
+            Settings.enabled[id] = true;
+        end
+
+        -- if the skill is not in the order list, add it
+        if (TableContains(Settings.order, id) == false) then
+            table.insert(Settings.order, id);
         end
     end
 end
@@ -714,7 +576,7 @@ function TravelWindow:CloseMapWindow()
 end
 
 -- function to check if a table contains a specific element
-function TravelWindow:TableContains(tableToSearch, elementToSearchFor)
+function TableContains(tableToSearch, elementToSearchFor)
     for i, value in pairs(tableToSearch) do
         if (value == elementToSearchFor) then
             return true;
@@ -724,7 +586,7 @@ function TravelWindow:TableContains(tableToSearch, elementToSearchFor)
 end
 
 -- function to check if a table contains a specific element index
-function TravelWindow:TableIndex(tableToSearch, elementToSearchFor)
+function TableIndex(tableToSearch, elementToSearchFor)
     for i, value in pairs(tableToSearch) do
         if (value == elementToSearchFor) then
             return i;
@@ -733,6 +595,7 @@ function TravelWindow:TableIndex(tableToSearch, elementToSearchFor)
     return 0;
 end
 
+-- TravelShortcuts are sorted by an internal index value
 function TravelWindow:SortShortcuts()
     -- perform an optimized bubble sort
     local n = #TravelShortcuts;
@@ -1107,12 +970,6 @@ function TravelWindow:ResetSettings()
     self:SetPosition(Settings.positionX, Settings.positionY);
     self:SetSize(Settings.width, Settings.height);
 
-    -- get the player class and race
-    player = Turbine.Gameplay.LocalPlayer.GetInstance();
-    PlayerClass = player:GetClass();
-    PlayerRace = player:GetRace();
-    self:SetPlayerRaceKey();
-
     -- update everything
     self:CheckEnabledSettings()
     self:SetShortcuts();
@@ -1142,7 +999,7 @@ function TravelWindow:AddGVMap()
     -- if the player has a PvMP map, then insert it into the list
     if ((Settings.mapGlanVraig ~= nil) and (Settings.mapGlanVraig ~= "nil")) then
         self.reloadGVMap = false;
-        genLocations:InsertSkill(2, glanMapString, Settings.mapGlanVraig, "Glan Vraig");
+        TravelInfo.gen:InsertSkill(2, glanMapString, Settings.mapGlanVraig, "Glan Vraig");
     end
 end
 

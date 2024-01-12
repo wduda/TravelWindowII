@@ -3,15 +3,15 @@
 --[[ and enabled status	]] --
 TravelShortcut = class(Turbine.UI.Lotro.Shortcut);
 
-function TravelShortcut:Constructor(sType, data, name, tType, index, enabled, skillLabel, desc)
+function TravelShortcut:Constructor(sType, tType, data, name, skillLabel, desc)
     Turbine.UI.Lotro.Shortcut.Constructor(self);
 
     -- the data to keep track of
     self.Name = name;
     self.desc = desc;
     self.travelType = tType;
-    self.Index = index;
-    self.Enabled = enabled;
+    self.Index = TableIndex(Settings.order, data);
+    self.Enabled = Settings.enabled[data];
     self.skillLabel = skillLabel;
     self.found = false;
 

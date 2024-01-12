@@ -406,99 +406,65 @@ end
 -- function to add all the travel shortcuts that can be toggled
 -- to the enabled tab
 function OptionsPanel:AddItems()
-    local counter = 1;
-
-    -- use an offset counter to set the final position of the skill on the tab
-    local offsetCounter = 0;
-
-    -- add the generic travels skills
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        for i = 1, travelCount[3], 1 do
-            self:AddSkillItemForEnabling(counter, genLocations:IdAtIndex(i), genLocations:LabelAtIndex(i));
-            counter = counter + 1;
-            offsetCounter = offsetCounter + 1;
-        end
+        -- add the generic travels skills
+        self:AddSkillsForEnabling(TravelInfo.gen);
+
+        -- add class specific travel skills
+        self:AddSkillsForEnabling(TravelInfo:GetClassSkills());
+
+        -- add the reputation travel skills
+        self:AddSkillsForEnabling(TravelInfo.rep);
+
+        -- add the race specific travel skill for the character
+        self:AddSkillItemForEnabling(TravelInfo.racial.id, TravelInfo.racial.label);
     end
 
-    -- add the hunter guide skills if the character is a hunter
-    if (PlayerClass == Turbine.Gameplay.Class.Hunter) then
-        offsetCounter = 0;
-        for i = 1, travelCount[1], 1 do
-            self:AddSkillItemForEnabling(counter, hunterLocations:IdAtIndex(i), hunterLocations:LabelAtIndex(i));
-            counter = counter + 1;
-            offsetCounter = offsetCounter + 1;
-        end
-    end
-    -- add the warden muster skills if the character is a warden
-    if (PlayerClass == Turbine.Gameplay.Class.Warden) then
-        for i = 1, travelCount[2], 1 do
-            self:AddSkillItemForEnabling(counter, wardenLocations:IdAtIndex(i), wardenLocations:LabelAtIndex(i));
-            counter = counter + 1;
-        end
-    end
-    -- add the mariner sailing skills if the character is a mariner
-    if (PlayerClass == Turbine.Gameplay.Class.Mariner) then
-        for i = 1, travelCount[7], 1 do
-            self:AddSkillItemForEnabling(counter, marinerLocations:IdAtIndex(i), marinerLocations:LabelAtIndex(i));
-            counter = counter + 1;
-        end
-    end
-
-    -- add the reputation travel skills
-    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        for i = 1, travelCount[4], 1 do
-            self:AddSkillItemForEnabling(counter, repLocations:IdAtIndex(i), repLocations:LabelAtIndex(i));
-            counter = counter + 1;
-        end
-    end
-
-    -- add the race specific travel skill for the character
-    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        self:AddSkillItemForEnabling(counter, racialLocations:IdAtIndex(PlayerRaceKey),
-                                     racialLocations:LabelAtIndex(PlayerRaceKey));
-        counter = counter + 1;
-    end
-
-    -- add the creep travel skills
     if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
-        for i = 1, travelCount[6], 1 do
-            self:AddSkillItemForEnabling(counter, creepLocations:IdAtIndex(i), creepLocations:LabelAtIndex(i));
-            counter = counter + 1;
-        end
+        -- add the creep travel skills
+        self:AddSkillsItemForEnabling(TravelInfo.creep);
+    end
+end
+
+function OptionsPanel:AddSkillsForEnabling(skills)
+    if skills == nil then return end
+    for i = 1, skills:GetCount() do
+        self:AddSkillItemForEnabling(skills:IdAtIndex(i), skills:LabelAtIndex(i));
     end
 end
 
 -- add a single shortcut to the enabled tab at the given location
-function OptionsPanel:AddSkillItemForEnabling(index, id, label)
-
-    control = Turbine.UI.Label();
+function OptionsPanel:AddSkillItemForEnabling(id, label)
+    local control = Turbine.UI.Label();
     control:SetSize(self.ListBox:GetWidth() - 20, 20);
 
     -- create the label for the shortcut setting
-    self.labels[index] = Turbine.UI.Label();
-    self.labels[index]:SetSize(control:GetWidth() - 20, 20);
-    self.labels[index]:SetPosition(30, 0)
-    self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.labels[index]:SetParent(control);
-    self.labels[index]:SetText(label);
-    self.labels[index]:SetVisible(true);
+    local slabel = Turbine.UI.Label();
+    slabel:SetSize(control:GetWidth() - 20, 20);
+    slabel:SetPosition(30, 0)
+    slabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    slabel:SetParent(control);
+    slabel:SetText(label);
+    slabel:SetVisible(true);
+    table.insert(self.labels, slabel);
 
     -- create the checkbox for the shortcut setting
-    self.checks[index] = Turbine.UI.Lotro.CheckBox();
-    self.checks[index]:SetSize(19, 19);
-    self.checks[index]:SetPosition(10, 0);
-    self.checks[index]:SetChecked(Settings.enabled[id]);
-    self.checks[index]:SetParent(control);
-    self.checks[index]:SetWantsUpdates(true);
-    self.checks[index]:SetVisible(true);
-    self.checks[index].skillId = id;
+    local check = Turbine.UI.Lotro.CheckBox();
+    check:SetSize(19, 19);
+    check:SetPosition(10, 0);
+    check:SetChecked(Settings.enabled[id]);
+    check:SetParent(control);
+    check:SetWantsUpdates(true);
+    check:SetVisible(true);
+    check.skillId = id;
+    table.insert(self.checks, check);
     self.ListBox:AddItem(control)
 
     -- handle the event of the check box value changing
-    self.checks[index].CheckedChanged = function(sender, args)
+    check.CheckedChanged = function(sender, args)
         -- change the setting on the main window
         Settings.enabled[id] = sender:IsChecked();
-        shortcutIndex = self.mainWindow:TableIndex(Settings.order, id);
+        shortcutIndex = TableIndex(Settings.order, id);
         TravelShortcuts[shortcutIndex]:SetEnabled(sender:IsChecked());
 
         self.mainWindow.dirty = true;
@@ -624,14 +590,8 @@ function OptionsPanel:AddBoxes()
 end
 
 function OptionsPanel:AddOverlapLinks(id, repLinks)
-    local locations = {}
-    if PlayerClass == Turbine.Gameplay.Class.Hunter then
-        locations = hunterLocations;
-    elseif PlayerClass == Turbine.Gameplay.Class.Warden then
-        locations = wardenLocations;
-    elseif PlayerClass == Turbine.Gameplay.Class.Mariner then
-        locations = marinerLocations;
-    end
+    local locations = TravelInfo:GetClassSkills();
+    if locations == nil then return end
 
     if not locations:VerifyId(id) then
         Turbine.Shell.WriteLine("Overlap Invalid ID " .. id);
