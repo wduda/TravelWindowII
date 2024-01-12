@@ -155,10 +155,27 @@ function OptionsPanel:AddGeneralItems()
     self.hideOnTravelCheck:SetParent(self.GeneralTab);
     self.hideOnTravelCheck:SetVisible(true);
 
+    -- label for ignore escape to close option
+    self.ignoreEscLabel = Turbine.UI.Label();
+    self.ignoreEscLabel:SetSize(300, 20);
+    self.ignoreEscLabel:SetPosition(20, 110);
+    self.ignoreEscLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.ignoreEscLabel:SetParent(self.GeneralTab);
+    self.ignoreEscLabel:SetText(ignoreEscString);
+    self.ignoreEscLabel:SetVisible(true);
+
+    -- checkbox for ignore escape to close option
+    self.ignoreEscCheck = Turbine.UI.Lotro.CheckBox();
+    self.ignoreEscCheck:SetSize(19, 19);
+    self.ignoreEscCheck:SetPosition(450, 110);
+    self.ignoreEscCheck:SetChecked(Settings.ignoreEsc == 1);
+    self.ignoreEscCheck:SetParent(self.GeneralTab);
+    self.ignoreEscCheck:SetVisible(true);
+
     -- label for show toggle button option
     self.ShowButtonLabel = Turbine.UI.Label();
     self.ShowButtonLabel:SetSize(300, 20);
-    self.ShowButtonLabel:SetPosition(20, 110);
+    self.ShowButtonLabel:SetPosition(20, 140);
     self.ShowButtonLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.ShowButtonLabel:SetParent(self.GeneralTab);
     self.ShowButtonLabel:SetText(toggleString);
@@ -167,7 +184,7 @@ function OptionsPanel:AddGeneralItems()
     -- checkbox for show toggle button option
     self.ShowButtonCheck = Turbine.UI.Lotro.CheckBox();
     self.ShowButtonCheck:SetSize(19, 19);
-    self.ShowButtonCheck:SetPosition(450, 110);
+    self.ShowButtonCheck:SetPosition(450, 140);
     self.ShowButtonCheck:SetChecked(Settings.showButton == 1);
     self.ShowButtonCheck:SetParent(self.GeneralTab);
     self.ShowButtonCheck:SetVisible(true);
@@ -175,7 +192,7 @@ function OptionsPanel:AddGeneralItems()
     -- label for option to fire skill on pulldown selection
     self.PulldownTravelLabel = Turbine.UI.Label();
     self.PulldownTravelLabel:SetSize(300, 20);
-    self.PulldownTravelLabel:SetPosition(20, 140);
+    self.PulldownTravelLabel:SetPosition(20, 170);
     self.PulldownTravelLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.PulldownTravelLabel:SetParent(self.GeneralTab);
     self.PulldownTravelLabel:SetText(pulldownTravelString);
@@ -184,7 +201,7 @@ function OptionsPanel:AddGeneralItems()
     -- checkbox for option to fire skill on pulldown selection
     self.PulldownTravelCheck = Turbine.UI.Lotro.CheckBox();
     self.PulldownTravelCheck:SetSize(19, 19);
-    self.PulldownTravelCheck:SetPosition(450, 140);
+    self.PulldownTravelCheck:SetPosition(450, 170);
     self.PulldownTravelCheck:SetChecked(Settings.pulldownTravel == 1);
     self.PulldownTravelCheck:SetParent(self.GeneralTab);
     self.PulldownTravelCheck:SetVisible(true);
@@ -192,7 +209,7 @@ function OptionsPanel:AddGeneralItems()
     -- label for toggle button sliders
     self.toggleSlidersLabel = Turbine.UI.Label();
     self.toggleSlidersLabel:SetSize(300, 20);
-    self.toggleSlidersLabel:SetPosition(20, 170);
+    self.toggleSlidersLabel:SetPosition(20, 200);
     self.toggleSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.toggleSlidersLabel:SetParent(self.GeneralTab);
     self.toggleSlidersLabel:SetText(toggleSlidersString);
@@ -201,7 +218,7 @@ function OptionsPanel:AddGeneralItems()
     -- toggle button min slider label
     self.toggleMinSlidersLabel = Turbine.UI.Label();
     self.toggleMinSlidersLabel:SetSize(50, 20);
-    self.toggleMinSlidersLabel:SetPosition(20, 190);
+    self.toggleMinSlidersLabel:SetPosition(20, 220);
     self.toggleMinSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.toggleMinSlidersLabel:SetParent(self.GeneralTab);
     self.toggleMinSlidersLabel:SetText(minString);
@@ -211,7 +228,7 @@ function OptionsPanel:AddGeneralItems()
     self.toggleMinScrollBar = Turbine.UI.Lotro.ScrollBar();
     self.toggleMinScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
     self.toggleMinScrollBar:SetSize(400, 10);
-    self.toggleMinScrollBar:SetPosition(70, 195);
+    self.toggleMinScrollBar:SetPosition(70, 225);
     self.toggleMinScrollBar:SetMinimum(0);
     self.toggleMinScrollBar:SetMaximum(100);
     self.toggleMinScrollBar:SetValue(Settings.toggleMinOpacity * 100);
@@ -220,7 +237,7 @@ function OptionsPanel:AddGeneralItems()
     -- toggle button max slider
     self.toggleMaxSlidersLabel = Turbine.UI.Label();
     self.toggleMaxSlidersLabel:SetSize(50, 20);
-    self.toggleMaxSlidersLabel:SetPosition(20, 210);
+    self.toggleMaxSlidersLabel:SetPosition(20, 240);
     self.toggleMaxSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.toggleMaxSlidersLabel:SetParent(self.GeneralTab);
     self.toggleMaxSlidersLabel:SetText(maxString);
@@ -230,7 +247,7 @@ function OptionsPanel:AddGeneralItems()
     self.toggleMaxScrollBar = Turbine.UI.Lotro.ScrollBar();
     self.toggleMaxScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
     self.toggleMaxScrollBar:SetSize(400, 10);
-    self.toggleMaxScrollBar:SetPosition(70, 215);
+    self.toggleMaxScrollBar:SetPosition(70, 245);
     self.toggleMaxScrollBar:SetMinimum(0);
     self.toggleMaxScrollBar:SetMaximum(100);
     self.toggleMaxScrollBar:SetValue(Settings.toggleMaxOpacity * 100);
@@ -239,7 +256,7 @@ function OptionsPanel:AddGeneralItems()
     -- label for main window sliders
     self.SlidersLabel = Turbine.UI.Label();
     self.SlidersLabel:SetSize(300, 20);
-    self.SlidersLabel:SetPosition(20, 240);
+    self.SlidersLabel:SetPosition(20, 270);
     self.SlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.SlidersLabel:SetParent(self.GeneralTab);
     self.SlidersLabel:SetText(mainSlidersString);
@@ -248,7 +265,7 @@ function OptionsPanel:AddGeneralItems()
     -- main window min slider label
     self.mainMinSlidersLabel = Turbine.UI.Label();
     self.mainMinSlidersLabel:SetSize(50, 20);
-    self.mainMinSlidersLabel:SetPosition(20, 260);
+    self.mainMinSlidersLabel:SetPosition(20, 290);
     self.mainMinSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.mainMinSlidersLabel:SetParent(self.GeneralTab);
     self.mainMinSlidersLabel:SetText(minString);
@@ -258,7 +275,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainMinScrollBar = Turbine.UI.Lotro.ScrollBar();
     self.mainMinScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
     self.mainMinScrollBar:SetSize(400, 10);
-    self.mainMinScrollBar:SetPosition(70, 265);
+    self.mainMinScrollBar:SetPosition(70, 295);
     self.mainMinScrollBar:SetMinimum(0);
     self.mainMinScrollBar:SetMaximum(100);
     self.mainMinScrollBar:SetValue(Settings.mainMinOpacity * 100);
@@ -267,7 +284,7 @@ function OptionsPanel:AddGeneralItems()
     -- toggle button max slider
     self.mainMaxSlidersLabel = Turbine.UI.Label();
     self.mainMaxSlidersLabel:SetSize(50, 20);
-    self.mainMaxSlidersLabel:SetPosition(20, 280);
+    self.mainMaxSlidersLabel:SetPosition(20, 310);
     self.mainMaxSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.mainMaxSlidersLabel:SetParent(self.GeneralTab);
     self.mainMaxSlidersLabel:SetText(maxString);
@@ -277,7 +294,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainMaxScrollBar = Turbine.UI.Lotro.ScrollBar();
     self.mainMaxScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
     self.mainMaxScrollBar:SetSize(400, 10);
-    self.mainMaxScrollBar:SetPosition(70, 285);
+    self.mainMaxScrollBar:SetPosition(70, 315);
     self.mainMaxScrollBar:SetMinimum(0);
     self.mainMaxScrollBar:SetMaximum(100);
     self.mainMaxScrollBar:SetValue(Settings.mainMaxOpacity * 100);
@@ -322,6 +339,16 @@ function OptionsPanel:AddGeneralItems()
             Settings.hideOnTravel = 1;
         else
             Settings.hideOnTravel = 0;
+        end
+        self.mainWindow:UpdateSettings();
+    end
+
+    -- set the ignore escape to close option when changed
+    self.ignoreEscCheck.CheckedChanged = function(sender, args)
+        if (sender:IsChecked()) then
+            Settings.ignoreEsc = 1;
+        else
+            Settings.ignoreEsc = 0;
         end
         self.mainWindow:UpdateSettings();
     end

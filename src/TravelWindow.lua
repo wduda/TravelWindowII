@@ -158,7 +158,9 @@ function TravelWindow:Constructor()
     -- manage hiding the UI
     self.KeyDown = function(sender, args)
         if (args.Action == Turbine.UI.Lotro.Action.Escape) then
-            self:SetVisible(false);
+            if Settings.ignoreEsc == 0 then
+                self:SetVisible(false);
+            end
             self.optionsWindow:SetVisible(false);
             self:CloseOptions();
             self:CloseMapWindow();
@@ -717,6 +719,10 @@ function TravelWindow:LoadSettings()
         SettingsStrings.hideOnTravel = tostring(0);
     end
 
+    if (not SettingsStrings.ignoreEsc or SettingsStrings.ignoreEsc == "nil") then
+        SettingsStrings.ignoreEsc = tostring(0);
+    end
+
     if (not SettingsStrings.showButton or SettingsStrings.showButton == "nil") then
         SettingsStrings.showButton = tostring(1);
     end
@@ -814,6 +820,12 @@ function TravelWindow:LoadSettings()
         Settings.hideOnTravel = SettingsStrings.hideOnTravel;
     end
 
+    if (type(SettingsStrings.ignoreEsc) == "string") then
+        Settings.ignoreEsc = tonumber(SettingsStrings.ignoreEsc);
+    else
+        Settings.ignoreEsc = SettingsStrings.ignoreEsc;
+    end
+
     if (type(SettingsStrings.showButton) == "string") then
         Settings.showButton = tonumber(SettingsStrings.showButton);
     else
@@ -895,6 +907,7 @@ function TravelWindow:SaveSettings()
     SettingsStrings.hideOnCombat = tostring(Settings.hideOnCombat);
     SettingsStrings.pulldownTravel = tostring(Settings.pulldownTravel);
     SettingsStrings.hideOnTravel = tostring(Settings.hideOnTravel);
+    SettingsStrings.ignoreEsc = tostring(Settings.ignoreEsc);
     SettingsStrings.showButton = tostring(Settings.showButton);
     SettingsStrings.mode = tostring(Settings.mode);
     SettingsStrings.filters = tostring(Settings.filters);
@@ -950,6 +963,7 @@ function TravelWindow:ResetSettings()
     Settings.hideOnCombat = 0;
     Settings.pulldownTravel = 0;
     Settings.hideOnTravel = 0;
+    Settings.ignoreEsc = 0;
     Settings.showButton = 1;
     Settings.mode = 2;
     Settings.filters = 0x0F;
