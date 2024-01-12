@@ -9,9 +9,9 @@ import "TravelWindowII.src.TravelDictionary"
 
 -- get language from Turbine API to load corresponding translated strings
 GLocale = Turbine.Engine.GetLanguage();
-if GLocale == 268435459 then
+if GLocale == Turbine.Language.French then
     import "TravelWindowII.src.IndexedDictionaryFr";
-elseif GLocale == 268435460 then
+elseif GLocale == Turbine.Language.German then
     import "TravelWindowII.src.IndexedDictionaryDe";
 else
     import "TravelWindowII.src.IndexedDictionaryEn";
