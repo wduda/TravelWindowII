@@ -205,27 +205,32 @@ end
 function TravelCaroTab:SetSize(width, height)
 
     Turbine.UI.Control.SetSize(self, width, height);
+    local offset = 40;
 
     -- adjust the size and location of the 5 quickslots
     self.quickslots[1]:SetStretchMode(1);
     self.quickslots[1]:SetSize(22, 22);
-    self.quickslots[1]:SetPosition(self:GetWidth() / 2 - 67, (self:GetHeight() - 20) / 2);
+    self.quickslots[1]:SetPosition(self:GetWidth() / 2 - 67, (self:GetHeight() - offset) / 2);
 
     self.quickslots[2]:SetStretchMode(1);
     self.quickslots[2]:SetSize(28, 28);
-    self.quickslots[2]:SetPosition(self:GetWidth() / 2 - 45, (self:GetHeight() - 20) / 2 + 3);
+    self.quickslots[2]:SetPosition(self:GetWidth() / 2 - 45, (self:GetHeight() - offset) / 2 + 3);
 
     self.quickslots[3]:SetStretchMode(1); -- makes fuzzy but keeps lack of opacity consistent with other icons showing
     self.quickslots[3]:SetSize(36, 36);
-    self.quickslots[3]:SetPosition(self:GetWidth() / 2 - 18, (self:GetHeight() - 20) / 2 + 5);
+    self.quickslots[3]:SetPosition(self:GetWidth() / 2 - 18, (self:GetHeight() - offset) / 2 + 5);
 
     self.quickslots[4]:SetStretchMode(1);
     self.quickslots[4]:SetSize(28, 28);
-    self.quickslots[4]:SetPosition(self:GetWidth() / 2 + 17, (self:GetHeight() - 20) / 2 + 3);
+    self.quickslots[4]:SetPosition(self:GetWidth() / 2 + 17, (self:GetHeight() - offset) / 2 + 3);
 
     self.quickslots[5]:SetStretchMode(1);
     self.quickslots[5]:SetSize(22, 22);
-    self.quickslots[5]:SetPosition(self:GetWidth() / 2 + 45, (self:GetHeight() - 20) / 2);
+    self.quickslots[5]:SetPosition(self:GetWidth() / 2 + 45, (self:GetHeight() - offset) / 2);
+end
 
-    Turbine.UI.Control.SetOpacity(self, 1);
+function TravelCaroTab:SetOpacityItems(value)
+    for i = 1, #self.quickslots do
+        self.quickslots[i]:SetOpacity(value);
+    end
 end

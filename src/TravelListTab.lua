@@ -22,6 +22,7 @@ function TravelListTab:Constructor(toplevel)
     TravelGridTab.Constructor(self);
 
     self.itemHeight = 22;
+    self.scrollChunk = self.itemHeight;
 
     -- set up the scrollbar for the list
     self.myScrollBar = Turbine.UI.Lotro.ScrollBar();
@@ -127,9 +128,26 @@ function TravelListTab:AddItem(shortcut)
     self.row = self.row + 1;
 end
 
-function TravelListTab:UpdateBounds(numOfShortcuts)
+function TravelListTab:FitListPixels(width, height)
+    local rowHeight = self.itemHeight;
+    local minHeight = self.parent.hPadding + rowHeight * 6 + 3;
+    local dy = height % rowHeight;
+    if dy < rowHeight / 2 then
+        height = height - dy;
+    else
+        height = height + (rowHeight - dy);
+    end
+    height = height + 3;
+    if height < minHeight then
+        height = minHeight;
+    end
+    return width, height;
+end
+
+function TravelListTab:UpdateBounds()
     -- set the maximum value of the scrollbar
     -- based on the number of rows in the subwindow
+    local numOfShortcuts = #self.selected;
     self.maxScroll = numOfShortcuts * 22 - self:GetHeight();
     if self.maxScroll < 0 then
         -- the maxScroll cannot be less than one
