@@ -18,7 +18,7 @@ MapType = {
     HARADWAITH = 7,
 };
 
-function MapWindow:Constructor(parent, map, class, race)
+function MapWindow:Constructor(parent, map)
     Turbine.UI.Window.Constructor(self);
 
     --  add a check to see if we load completely
@@ -26,9 +26,7 @@ function MapWindow:Constructor(parent, map, class, race)
 
     self.mainWindow = parent;
     self.mapType = map;
-    self.PlayerClass = class;
-    self.PlayerRaceKey = race; -- mapped as racialMap index
-    self.debug = false;
+    self.debug = false; -- enable to position shortcuts on the map
 
     -- set size of window
     self.width = 1024;
@@ -164,11 +162,13 @@ function MapWindow:AddLocations(name)
     local sType = Turbine.UI.Lotro.ShortcutType.Skill;
     local map = self:GetLocations(name);
     for i = 1, #map do
-        local id = map[i][1]; -- @TODO should handle map being nil better
-        for r = 1, #map[i][2] do -- @TODO should handle map being nil better
-            local item = map[i][2][r]; -- @TODO should handle map being nil better
-            if self.mapType == item[1] and self:IsShortcutEnabled(id) then
-                self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id));
+        if #map[i] == 2 then
+            local id = map[i][1];
+            for r = 1, #map[i][2] do
+                local item = map[i][2][r];
+                if item ~= nil and #item == 3 and self.mapType == item[1] then
+                    self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id));
+                end
             end
         end
     end
@@ -176,11 +176,11 @@ end
 
 function MapWindow:AddClassLocations()
     local name = "";
-    if self.PlayerClass == Turbine.Gameplay.Class.Hunter then
+    if PlayerClass == Turbine.Gameplay.Class.Hunter then
         name = "Hunter";
-    elseif self.PlayerClass == Turbine.Gameplay.Class.Warden then
+    elseif PlayerClass == Turbine.Gameplay.Class.Warden then
         name = "Warden";
-    elseif self.PlayerClass == Turbine.Gameplay.Class.Mariner then
+    elseif PlayerClass == Turbine.Gameplay.Class.Mariner then
         name = "Mariner";
     else
         -- nothing to add for other classes
@@ -439,11 +439,11 @@ function MapWindow:AddRacialLocation()
         {"0x70066D31", {MapType.RHOVANION, 155, 165}}, -- Lyndelby
     };
 
-    if #racialMap > self.PlayerRaceKey then
-        if #racialMap ~= racialLocations:GetCount() then
-            Turbine.Shell.WriteLine("Error: Missing other Racial locations " .. (racialLocations:GetCount() - #racialMap));
+    if #racialMap > PlayerRaceKey then
+        if #racialMap ~= TravelInfo.allRaces:GetCount() then
+            Turbine.Shell.WriteLine("Error: Missing other Racial locations " .. (TravelInfo.allRaces:GetCount() - #racialMap));
         end
-        local item = racialMap[self.PlayerRaceKey];
+        local item = racialMap[PlayerRaceKey];
         if self.mapType == item[2][1] then
             local id = item[1]
             if self:IsShortcutTrained(id) then
@@ -453,7 +453,7 @@ function MapWindow:AddRacialLocation()
             end
         end
     else
-        Turbine.Shell.WriteLine("Error: Missing Racial locations " .. (racialLocations:GetCount() - #racialMap));
+        Turbine.Shell.WriteLine("Error: Missing Racial locations " .. (TravelInfo.allRaces:GetCount() - #racialMap));
     end
 end
 
@@ -466,10 +466,8 @@ function MapWindow:AddGlanVraigMap()
     if self.mapType == moorsMap[1][1] then
         for i = 1, #TravelShortcuts, 1 do
             if TravelShortcuts[i]:GetName() == glanMapString then
-                if self:IsShortcutEnabled(TravelShortcuts[i]:GetData()) then
-                    self:AddSingleShortcut(moorsMap[1], TravelShortcuts[i]);
-                    break
-                end
+                self:AddSingleShortcut(moorsMap[1], TravelShortcuts[i]);
+                break
             end
         end
     end
@@ -518,7 +516,7 @@ function MapWindow:AddSingleShortcut(location, shortcut)
     self.quickslots[index]:SetSize(32, 32);
     self.quickslots[index]:SetPosition(location[2], location[3]);
     self.quickslots[index]:SetZOrder(98);
-    self.quickslots[index]:SetVisible(true);
+    self.quickslots[index]:SetVisible(self:IsShortcutEnabled(shortcut:GetData()));
 
     self.quickslots[index].MouseClick = function(sender, args)
         self:SetVisible(false);
@@ -535,12 +533,19 @@ function MapWindow:AddSingleShortcut(location, shortcut)
     end
 end
 
+function MapWindow:UpdateShortcut(id, enable)
+    for i = 1, #self.quickslots do
+        if self.quickslots[i]:GetShortcut():GetData() == id then
+            self.quickslots[i]:SetVisible(enable);
+        end
+    end
+end
+
 function MapWindow:IsShortcutEnabled(id)
 
     for i = 1, #TravelShortcuts, 1 do
         local shortcut = TravelShortcuts[i]
         if shortcut:GetData() == id then
-            -- must be user enabled
             return shortcut:IsEnabled()
         end
     end
@@ -553,8 +558,7 @@ function MapWindow:IsShortcutTrained(id)
     for i = 1, #TravelShortcuts, 1 do
         local shortcut = TravelShortcuts[i]
         if shortcut:GetData() == id then
-            if shortcut:IsEnabled() and shortcut.found then
-                -- must be user enabled and trained
+            if shortcut.found then
                 return true;
             end
             return false;
@@ -578,13 +582,13 @@ end
 function MapWindow:VerifyMapSkillIds(name)
     local skills;
     if name == "Hunter" then
-        skills = hunterLocations;
+        skills = TravelInfo.hunter;
     elseif name == "Warden" then
-        skills = wardenLocations;
+        skills = TravelInfo.warden;
     elseif name == "Mariner" then
-        skills = marinerLocations;
+        skills = TravelInfo.mariner;
     elseif name == "Reputation" then
-        skills = repLocations;
+        skills = TravelInfo.rep;
     else
         return; -- invalid option
     end

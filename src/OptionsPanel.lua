@@ -13,6 +13,7 @@ function OptionsPanel:Constructor(parent)
 
     --  add a check to see if we load completely
     self.loaded = false;
+    self.disableUpdates = false;
 
     -- set size of window
     self.width = 800;
@@ -21,6 +22,8 @@ function OptionsPanel:Constructor(parent)
     if self.height + 40 > self.windowHeight then
         self.height = self.windowHeight - 20;
     end
+
+    self.overlapGroup = {};
 
     -- create array of labels and check boxes
     self.labels = {};
@@ -61,6 +64,8 @@ function OptionsPanel:Constructor(parent)
     self.scrollBar:SetWidth(10)
     self.scrollBar:SetHeight(self.ListBox:GetHeight())
     self.ListBox:SetVerticalScrollBar(self.scrollBar)
+
+    self:SetupOverlapLinks();
 
     -- populate each tab
     self:AddGeneralItems();
@@ -150,10 +155,27 @@ function OptionsPanel:AddGeneralItems()
     self.hideOnTravelCheck:SetParent(self.GeneralTab);
     self.hideOnTravelCheck:SetVisible(true);
 
+    -- label for ignore escape to close option
+    self.ignoreEscLabel = Turbine.UI.Label();
+    self.ignoreEscLabel:SetSize(300, 20);
+    self.ignoreEscLabel:SetPosition(20, 110);
+    self.ignoreEscLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.ignoreEscLabel:SetParent(self.GeneralTab);
+    self.ignoreEscLabel:SetText(ignoreEscString);
+    self.ignoreEscLabel:SetVisible(true);
+
+    -- checkbox for ignore escape to close option
+    self.ignoreEscCheck = Turbine.UI.Lotro.CheckBox();
+    self.ignoreEscCheck:SetSize(19, 19);
+    self.ignoreEscCheck:SetPosition(450, 110);
+    self.ignoreEscCheck:SetChecked(Settings.ignoreEsc == 1);
+    self.ignoreEscCheck:SetParent(self.GeneralTab);
+    self.ignoreEscCheck:SetVisible(true);
+
     -- label for show toggle button option
     self.ShowButtonLabel = Turbine.UI.Label();
     self.ShowButtonLabel:SetSize(300, 20);
-    self.ShowButtonLabel:SetPosition(20, 110);
+    self.ShowButtonLabel:SetPosition(20, 140);
     self.ShowButtonLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.ShowButtonLabel:SetParent(self.GeneralTab);
     self.ShowButtonLabel:SetText(toggleString);
@@ -162,7 +184,7 @@ function OptionsPanel:AddGeneralItems()
     -- checkbox for show toggle button option
     self.ShowButtonCheck = Turbine.UI.Lotro.CheckBox();
     self.ShowButtonCheck:SetSize(19, 19);
-    self.ShowButtonCheck:SetPosition(450, 110);
+    self.ShowButtonCheck:SetPosition(450, 140);
     self.ShowButtonCheck:SetChecked(Settings.showButton == 1);
     self.ShowButtonCheck:SetParent(self.GeneralTab);
     self.ShowButtonCheck:SetVisible(true);
@@ -170,7 +192,7 @@ function OptionsPanel:AddGeneralItems()
     -- label for option to fire skill on pulldown selection
     self.PulldownTravelLabel = Turbine.UI.Label();
     self.PulldownTravelLabel:SetSize(300, 20);
-    self.PulldownTravelLabel:SetPosition(20, 140);
+    self.PulldownTravelLabel:SetPosition(20, 170);
     self.PulldownTravelLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.PulldownTravelLabel:SetParent(self.GeneralTab);
     self.PulldownTravelLabel:SetText(pulldownTravelString);
@@ -179,7 +201,7 @@ function OptionsPanel:AddGeneralItems()
     -- checkbox for option to fire skill on pulldown selection
     self.PulldownTravelCheck = Turbine.UI.Lotro.CheckBox();
     self.PulldownTravelCheck:SetSize(19, 19);
-    self.PulldownTravelCheck:SetPosition(450, 140);
+    self.PulldownTravelCheck:SetPosition(450, 170);
     self.PulldownTravelCheck:SetChecked(Settings.pulldownTravel == 1);
     self.PulldownTravelCheck:SetParent(self.GeneralTab);
     self.PulldownTravelCheck:SetVisible(true);
@@ -187,7 +209,7 @@ function OptionsPanel:AddGeneralItems()
     -- label for toggle button sliders
     self.toggleSlidersLabel = Turbine.UI.Label();
     self.toggleSlidersLabel:SetSize(300, 20);
-    self.toggleSlidersLabel:SetPosition(20, 170);
+    self.toggleSlidersLabel:SetPosition(20, 200);
     self.toggleSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.toggleSlidersLabel:SetParent(self.GeneralTab);
     self.toggleSlidersLabel:SetText(toggleSlidersString);
@@ -196,7 +218,7 @@ function OptionsPanel:AddGeneralItems()
     -- toggle button min slider label
     self.toggleMinSlidersLabel = Turbine.UI.Label();
     self.toggleMinSlidersLabel:SetSize(50, 20);
-    self.toggleMinSlidersLabel:SetPosition(20, 190);
+    self.toggleMinSlidersLabel:SetPosition(20, 220);
     self.toggleMinSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.toggleMinSlidersLabel:SetParent(self.GeneralTab);
     self.toggleMinSlidersLabel:SetText(minString);
@@ -206,7 +228,7 @@ function OptionsPanel:AddGeneralItems()
     self.toggleMinScrollBar = Turbine.UI.Lotro.ScrollBar();
     self.toggleMinScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
     self.toggleMinScrollBar:SetSize(400, 10);
-    self.toggleMinScrollBar:SetPosition(70, 195);
+    self.toggleMinScrollBar:SetPosition(70, 225);
     self.toggleMinScrollBar:SetMinimum(0);
     self.toggleMinScrollBar:SetMaximum(100);
     self.toggleMinScrollBar:SetValue(Settings.toggleMinOpacity * 100);
@@ -215,7 +237,7 @@ function OptionsPanel:AddGeneralItems()
     -- toggle button max slider
     self.toggleMaxSlidersLabel = Turbine.UI.Label();
     self.toggleMaxSlidersLabel:SetSize(50, 20);
-    self.toggleMaxSlidersLabel:SetPosition(20, 210);
+    self.toggleMaxSlidersLabel:SetPosition(20, 240);
     self.toggleMaxSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.toggleMaxSlidersLabel:SetParent(self.GeneralTab);
     self.toggleMaxSlidersLabel:SetText(maxString);
@@ -225,7 +247,7 @@ function OptionsPanel:AddGeneralItems()
     self.toggleMaxScrollBar = Turbine.UI.Lotro.ScrollBar();
     self.toggleMaxScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
     self.toggleMaxScrollBar:SetSize(400, 10);
-    self.toggleMaxScrollBar:SetPosition(70, 215);
+    self.toggleMaxScrollBar:SetPosition(70, 245);
     self.toggleMaxScrollBar:SetMinimum(0);
     self.toggleMaxScrollBar:SetMaximum(100);
     self.toggleMaxScrollBar:SetValue(Settings.toggleMaxOpacity * 100);
@@ -234,7 +256,7 @@ function OptionsPanel:AddGeneralItems()
     -- label for main window sliders
     self.SlidersLabel = Turbine.UI.Label();
     self.SlidersLabel:SetSize(300, 20);
-    self.SlidersLabel:SetPosition(20, 240);
+    self.SlidersLabel:SetPosition(20, 270);
     self.SlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.SlidersLabel:SetParent(self.GeneralTab);
     self.SlidersLabel:SetText(mainSlidersString);
@@ -243,7 +265,7 @@ function OptionsPanel:AddGeneralItems()
     -- main window min slider label
     self.mainMinSlidersLabel = Turbine.UI.Label();
     self.mainMinSlidersLabel:SetSize(50, 20);
-    self.mainMinSlidersLabel:SetPosition(20, 260);
+    self.mainMinSlidersLabel:SetPosition(20, 290);
     self.mainMinSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.mainMinSlidersLabel:SetParent(self.GeneralTab);
     self.mainMinSlidersLabel:SetText(minString);
@@ -253,7 +275,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainMinScrollBar = Turbine.UI.Lotro.ScrollBar();
     self.mainMinScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
     self.mainMinScrollBar:SetSize(400, 10);
-    self.mainMinScrollBar:SetPosition(70, 265);
+    self.mainMinScrollBar:SetPosition(70, 295);
     self.mainMinScrollBar:SetMinimum(0);
     self.mainMinScrollBar:SetMaximum(100);
     self.mainMinScrollBar:SetValue(Settings.mainMinOpacity * 100);
@@ -262,7 +284,7 @@ function OptionsPanel:AddGeneralItems()
     -- toggle button max slider
     self.mainMaxSlidersLabel = Turbine.UI.Label();
     self.mainMaxSlidersLabel:SetSize(50, 20);
-    self.mainMaxSlidersLabel:SetPosition(20, 280);
+    self.mainMaxSlidersLabel:SetPosition(20, 310);
     self.mainMaxSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.mainMaxSlidersLabel:SetParent(self.GeneralTab);
     self.mainMaxSlidersLabel:SetText(maxString);
@@ -272,7 +294,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainMaxScrollBar = Turbine.UI.Lotro.ScrollBar();
     self.mainMaxScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
     self.mainMaxScrollBar:SetSize(400, 10);
-    self.mainMaxScrollBar:SetPosition(70, 285);
+    self.mainMaxScrollBar:SetPosition(70, 315);
     self.mainMaxScrollBar:SetMinimum(0);
     self.mainMaxScrollBar:SetMaximum(100);
     self.mainMaxScrollBar:SetValue(Settings.mainMaxOpacity * 100);
@@ -317,6 +339,16 @@ function OptionsPanel:AddGeneralItems()
             Settings.hideOnTravel = 1;
         else
             Settings.hideOnTravel = 0;
+        end
+        self.mainWindow:UpdateSettings();
+    end
+
+    -- set the ignore escape to close option when changed
+    self.ignoreEscCheck.CheckedChanged = function(sender, args)
+        if (sender:IsChecked()) then
+            Settings.ignoreEsc = 1;
+        else
+            Settings.ignoreEsc = 0;
         end
         self.mainWindow:UpdateSettings();
     end
@@ -401,104 +433,74 @@ end
 -- function to add all the travel shortcuts that can be toggled
 -- to the enabled tab
 function OptionsPanel:AddItems()
-    local counter = 1;
-
-    -- use an offset counter to set the final position of the skill on the tab
-    local offsetCounter = 0;
-
-    -- add the generic travels skills
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        for i = 1, travelCount[3], 1 do
-            self:AddSkillItemForEnabling(counter, genLocations:IdAtIndex(i), genLocations:LabelAtIndex(i));
-            counter = counter + 1;
-            offsetCounter = offsetCounter + 1;
-        end
+        -- add the generic travels skills
+        self:AddSkillsForEnabling(TravelInfo.gen);
+
+        -- add class specific travel skills
+        self:AddSkillsForEnabling(TravelInfo:GetClassSkills());
+
+        -- add the reputation travel skills
+        self:AddSkillsForEnabling(TravelInfo.rep);
+
+        -- add the race specific travel skill for the character
+        self:AddSkillItemForEnabling(TravelInfo.racial.id, TravelInfo.racial.label);
     end
 
-    -- add the hunter guide skills if the character is a hunter
-    if (PlayerClass == Turbine.Gameplay.Class.Hunter) then
-        offsetCounter = 0;
-        for i = 1, travelCount[1], 1 do
-            self:AddSkillItemForEnabling(counter, hunterLocations:IdAtIndex(i), hunterLocations:LabelAtIndex(i));
-            counter = counter + 1;
-            offsetCounter = offsetCounter + 1;
-        end
-    end
-    -- add the warden muster skills if the character is a warden
-    if (PlayerClass == Turbine.Gameplay.Class.Warden) then
-        for i = 1, travelCount[2], 1 do
-            self:AddSkillItemForEnabling(counter, wardenLocations:IdAtIndex(i), wardenLocations:LabelAtIndex(i));
-            counter = counter + 1;
-        end
-    end
-    -- add the mariner sailing skills if the character is a mariner
-    if (PlayerClass == Turbine.Gameplay.Class.Mariner) then
-        for i = 1, travelCount[7], 1 do
-            self:AddSkillItemForEnabling(counter, marinerLocations:IdAtIndex(i), marinerLocations:LabelAtIndex(i));
-            counter = counter + 1;
-        end
-    end
-
-    -- add the reputation travel skills
-    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        for i = 1, travelCount[4], 1 do
-            self:AddSkillItemForEnabling(counter, repLocations:IdAtIndex(i), repLocations:LabelAtIndex(i));
-            counter = counter + 1;
-        end
-    end
-
-    -- add the race specific travel skill for the character
-    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        self:AddSkillItemForEnabling(counter, racialLocations:IdAtIndex(PlayerRaceKey),
-                                     racialLocations:LabelAtIndex(PlayerRaceKey));
-        counter = counter + 1;
-    end
-
-    -- add the creep travel skills
     if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
-        for i = 1, travelCount[6], 1 do
-            self:AddSkillItemForEnabling(counter, creepLocations:IdAtIndex(i), creepLocations:LabelAtIndex(i));
-            counter = counter + 1;
-        end
+        -- add the creep travel skills
+        self:AddSkillsItemForEnabling(TravelInfo.creep);
+    end
+end
+
+function OptionsPanel:AddSkillsForEnabling(skills)
+    if skills == nil then return end
+    for i = 1, skills:GetCount() do
+        self:AddSkillItemForEnabling(skills:IdAtIndex(i), skills:LabelAtIndex(i));
     end
 end
 
 -- add a single shortcut to the enabled tab at the given location
-function OptionsPanel:AddSkillItemForEnabling(index, id, label)
-
-    control = Turbine.UI.Label();
+function OptionsPanel:AddSkillItemForEnabling(id, label)
+    local control = Turbine.UI.Label();
     control:SetSize(self.ListBox:GetWidth() - 20, 20);
 
     -- create the label for the shortcut setting
-    self.labels[index] = Turbine.UI.Label();
-    self.labels[index]:SetSize(control:GetWidth() - 20, 20);
-    self.labels[index]:SetPosition(30, 0)
-    self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.labels[index]:SetParent(control);
-    self.labels[index]:SetText(label);
-    self.labels[index]:SetVisible(true);
+    local slabel = Turbine.UI.Label();
+    slabel:SetSize(control:GetWidth() - 20, 20);
+    slabel:SetPosition(30, 0)
+    slabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    slabel:SetParent(control);
+    slabel:SetText(label);
+    slabel:SetVisible(true);
+    table.insert(self.labels, slabel);
 
     -- create the checkbox for the shortcut setting
-    self.checks[index] = Turbine.UI.Lotro.CheckBox();
-    self.checks[index]:SetSize(19, 19);
-    self.checks[index]:SetPosition(10, 0);
-    self.checks[index]:SetChecked(Settings.enabled[id]);
-    self.checks[index]:SetParent(control);
-    self.checks[index]:SetWantsUpdates(true);
-    self.checks[index]:SetVisible(true);
+    local check = Turbine.UI.Lotro.CheckBox();
+    check:SetSize(19, 19);
+    check:SetPosition(10, 0);
+    check:SetChecked(Settings.enabled[id]);
+    check:SetParent(control);
+    check:SetWantsUpdates(true);
+    check:SetVisible(true);
+    check.skillId = id;
+    table.insert(self.checks, check);
     self.ListBox:AddItem(control)
 
     -- handle the event of the check box value changing
-    self.checks[index].CheckedChanged = function(sender, args)
+    check.CheckedChanged = function(sender, args)
         -- change the setting on the main window
         Settings.enabled[id] = sender:IsChecked();
-        shortcutIndex = self.mainWindow:TableIndex(Settings.order, id);
+        shortcutIndex = TableIndex(Settings.order, id);
         TravelShortcuts[shortcutIndex]:SetEnabled(sender:IsChecked());
 
         self.mainWindow.dirty = true;
-
-        -- update the main window settings
-        self.mainWindow:UpdateSettings();
+        if not self.disableUpdates then
+            self.mainWindow:UpdateSettings();
+        end
+        if self.mainWindow.mapWindow ~= nil then
+            self.mainWindow.mapWindow:UpdateShortcut(id, sender:IsChecked());
+        end
     end
 end
 
@@ -563,6 +565,208 @@ function OptionsPanel:AddBoxes()
     self.checkSkillsButton.Click = function(sender, args)
         self.mainWindow:CheckSkills(true);
     end
+
+    local next = next; -- optimization
+    if next(self.overlapGroup) ~= nil then
+        -- add an enable overlapping skills button
+        self.enableRepSkillsButton = Turbine.UI.Lotro.Button();
+        self.enableRepSkillsButton:SetSize(200, 20);
+        self.enableRepSkillsButton:SetPosition(520, 90);
+        self.enableRepSkillsButton:SetText(enableRepSkillsString);
+        self.enableRepSkillsButton:SetParent(self.EnabledTab);
+        self.enableRepSkillsButton:SetVisible(true);
+
+        self.enableRepSkillsButton.Click = function(sender, args)
+            self:EnableOverlapSkills(true);
+        end
+
+        -- add a disable overlapping skills button
+        self.disableRepSkillsButton = Turbine.UI.Lotro.Button();
+        self.disableRepSkillsButton:SetSize(200, 20);
+        self.disableRepSkillsButton:SetPosition(520, 120);
+        self.disableRepSkillsButton:SetText(disableRepSkillsString);
+        self.disableRepSkillsButton:SetParent(self.EnabledTab);
+        self.disableRepSkillsButton:SetVisible(true);
+
+        self.disableRepSkillsButton.Click = function(sender, args)
+            self:EnableOverlapSkills(false);
+        end
+    end
+
+    self.enableAllButton = Turbine.UI.Lotro.Button();
+    self.enableAllButton:SetSize(200, 20);
+    self.enableAllButton:SetPosition(520, 30);
+    self.enableAllButton:SetText(enableAllString);
+    self.enableAllButton:SetParent(self.EnabledTab);
+    self.enableAllButton:SetVisible(true);
+
+    self.enableAllButton.Click = function(sender, args)
+        self:EnableAll(true);
+    end
+
+    self.disableAllButton = Turbine.UI.Lotro.Button();
+    self.disableAllButton:SetSize(200, 20);
+    self.disableAllButton:SetPosition(520, 60);
+    self.disableAllButton:SetText(disableAllString);
+    self.disableAllButton:SetParent(self.EnabledTab);
+    self.disableAllButton:SetVisible(true);
+
+    self.disableAllButton.Click = function(sender, args)
+        self:EnableAll(false);
+    end
+end
+
+function OptionsPanel:AddOverlapLinks(id, repLinks)
+    local locations = TravelInfo:GetClassSkills();
+    if locations == nil then return end
+
+    if not locations:VerifyId(id) then
+        Turbine.Shell.WriteLine("Overlap Invalid ID " .. id);
+        return
+    end
+
+    self.overlapGroup[id] = repLinks;
+end
+
+function OptionsPanel:SetupOverlapLinks()
+    if PlayerClass == Turbine.Gameplay.Class.Hunter then
+        self:AddOverlapLinks("0x70003F42", {"0x700062F6", "0x7001BF90", "0x700364B1"}); -- Bree
+        self:AddOverlapLinks("0x70003F41", {"0x70006346", "0x70053C0F", "0x7001BF91"}); -- Thorin's Hall
+        self:AddOverlapLinks("0x7000A2C3", {"0x700062C8", "0x70023262"}); -- Michel Delving
+        self:AddOverlapLinks("0x7000A2C2", {"0x70020441"}); -- Ost Guruth
+        self:AddOverlapLinks("0x70003F44", {"0x7000631F", "0x70023263"}); -- Rivendell
+        self:AddOverlapLinks("0x7002A93F", {"0x7002C647"}); -- Galtrev
+        self:AddOverlapLinks("0x7002C62C", {"0x7002C65D"}); -- Stangard
+        self:AddOverlapLinks("0x7002E754", {"0x70048C8C"}); -- Caras Galadhon
+        self:AddOverlapLinks("0x7003198E", {"0x70031A46"}); -- Snowbourn
+        self:AddOverlapLinks("0x70036B5D", {"0x70036B5E"}); -- Forlaw
+        self:AddOverlapLinks("0x7003DC71", {"0x7003DC81"}); -- Aldburg
+        self:AddOverlapLinks("0x7003DC72", {"0x7003DC82"}); -- Helm's Deep
+        self:AddOverlapLinks("0x70041197", {"0x700411AC"}); -- Dol Amroth
+        self:AddOverlapLinks("0x70043A63", {"0x70043A6A"}); -- Arnach
+        self:AddOverlapLinks("0x70044985", {"0x7004497E"}); -- Minas Tirith
+        self:AddOverlapLinks("0x700459AF", {"0x700459A9"}); -- War-stead
+        self:AddOverlapLinks("0x70046CBB", {"0x70046CC0"}); -- After-battle Minas Tirith
+        self:AddOverlapLinks("0x70047077", {"0x70047080"}); -- Henneth Annûn
+        self:AddOverlapLinks("0x70047074", {"0x7004707D"}); -- After-battle Osgiliath
+        self:AddOverlapLinks("0x70047BFA", {"0x70047BF4"}); -- Camp of the Host
+        self:AddOverlapLinks("0x70047C1D", {"0x70047C1B"}); -- Haerondir
+        self:AddOverlapLinks("0x7004AE1E", {"0x7004AE1D"}); -- Udûn Foothold
+        self:AddOverlapLinks("0x7004D73B", {"0x7004D738"}); -- Dale
+        self:AddOverlapLinks("0x7004FACC", {"0x7004FAC3"}); -- Járnfast
+        self:AddOverlapLinks("0x7004FACB", {"0x7004FAC5"}); -- Skarháld
+        self:AddOverlapLinks("0x70052F07", {"0x70041A22", "0x70052F12"}); -- Beorninghús
+        self:AddOverlapLinks("0x70052F08", {"0x70052F04"}); --  Hultvís
+        self:AddOverlapLinks("0x700551F4", {"0x700551F8"}); -- Estolad Lân
+        self:AddOverlapLinks("0x7005762D", {"0x70057629"}); -- Limlók
+        self:AddOverlapLinks("0x70058571", {"0x7005856F"}); -- Annâk-khurfu
+        self:AddOverlapLinks("0x70059D0C", {"0x70059D0E"}); -- Trader's Wharf
+        self:AddOverlapLinks("0x70059D16", {"0x70059D12"}); -- Trestlebridge
+        self:AddOverlapLinks("0x7005AA91", {"0x7005AA90"}); -- Akrâz-zahar
+        self:AddOverlapLinks("0x7005AA95", {"0x7005AA92"}); -- Azanulbizar
+        self:AddOverlapLinks("0x7005D487", {"0x7005D47C"}); -- Noble Gate
+        self:AddOverlapLinks("0x7005D47D", {"0x7005D484"}); -- Leitstáth
+        self:AddOverlapLinks("0x70060EA6", {"0x70060EA8"}); -- Tornhad
+        self:AddOverlapLinks("0x7006133F", {"0x70061340"}); -- Nobottle
+        self:AddOverlapLinks("0x7006323C", {"0x7006323D"}); -- Andrath
+        self:AddOverlapLinks("0x700634AA", {"0x700634A4"}); -- Swanfleet
+        self:AddOverlapLinks("0x700634A7", {"0x700634AE"}); -- Cardolan
+        self:AddOverlapLinks("0x70064AC8", {"0x70064ACA"}); -- Carn Dûm
+        self:AddOverlapLinks("0x70064F4C", {"0x70064F47"}); -- Clegur
+        self:AddOverlapLinks("0x700658EA", {"0x700658EB"}); -- Pelargir
+        self:AddOverlapLinks("0x70068711", {"0x70068700"}); -- King's Dol Amroth
+        self:AddOverlapLinks("0x70068713", {"0x70068702"}); -- Halrax
+        self:AddOverlapLinks("0x70068717", {"0x70068703"}); -- Lond Cirion
+        self:AddOverlapLinks("0x70068718", {"0x700686FF"}); -- Umbar
+        self:AddOverlapLinks("0x70068719", {"0x70068701"}); -- Jax Phanâl
+        self:AddOverlapLinks("0x700697EF", {"0x700697F2"}); -- Bloody Eagle Tavern
+    elseif PlayerClass == Turbine.Gameplay.Class.Warden then
+        self:AddOverlapLinks("0x70014786", {"0x70020441"}); -- Ost Guruth
+        self:AddOverlapLinks("0x70014791", {"0x7000631F", "0x70023263"}); -- Rivendell
+        self:AddOverlapLinks("0x7002A90A", {"0x7002C647"}); -- Galtrev
+        self:AddOverlapLinks("0x7002C646", {"0x7002C65D"}); -- Stangard
+        self:AddOverlapLinks("0x700303DF", {"0x70048C8C"}); -- Caras Galadhon
+        self:AddOverlapLinks("0x7003198D", {"0x70031A46"}); -- Snowbourn
+        self:AddOverlapLinks("0x70036B5B", {"0x70036B5E"}); -- Forlaw
+        self:AddOverlapLinks("0x7003DC7A", {"0x7003DC81"}); -- Aldburg
+        self:AddOverlapLinks("0x7003DC79", {"0x7003DC82"}); -- Helm's Deep
+        self:AddOverlapLinks("0x70041198", {"0x700411AC"}); -- Dol Amroth
+        self:AddOverlapLinks("0x70043A66", {"0x70043A6A"}); -- Arnach
+        self:AddOverlapLinks("0x70044982", {"0x7004497E"}); -- Minas Tirith
+        self:AddOverlapLinks("0x700459AA", {"0x700459A9"}); -- War-stead
+        self:AddOverlapLinks("0x70046CBF", {"0x70046CC0"}); -- After battle Minas Tirith
+        self:AddOverlapLinks("0x70047075", {"0x70047080"}); -- Henneth Annûn
+        self:AddOverlapLinks("0x70047076", {"0x7004707D"}); -- After battle Osgiliath
+        self:AddOverlapLinks("0x70047BFC", {"0x70047BF4"}); -- Camp of the Host
+        self:AddOverlapLinks("0x70047C23", {"0x70047C1B"}); -- Haerondir
+        self:AddOverlapLinks("0x7004AE1F", {"0x7004AE1D"}); -- Udûn Foothold
+        self:AddOverlapLinks("0x7004D73A", {"0x7004D738"}); -- Dale
+        self:AddOverlapLinks("0x7004FACA", {"0x7004FAC3"}); -- Járnfast
+        self:AddOverlapLinks("0x7004FACD", {"0x7004FAC5"}); -- Skarháld
+        self:AddOverlapLinks("0x70052F0A", {"0x70041A22", "0x70052F12"}); -- Beorninghús
+        self:AddOverlapLinks("0x70052F06", {"0x70052F04"}); -- Hultvís
+        self:AddOverlapLinks("0x700551F2", {"0x700551F8"}); -- Estolad Lân
+        self:AddOverlapLinks("0x70057635", {"0x70057629"}); -- Limlók
+        self:AddOverlapLinks("0x70058572", {"0x7005856F"}); -- Annâk-khurfu
+        self:AddOverlapLinks("0x70059D09", {"0x70059D0E"}); -- Trader's Wharf
+        self:AddOverlapLinks("0x70059D10", {"0x70059D12"}); -- Trestlebridge
+        self:AddOverlapLinks("0x7005AA8F", {"0x7005AA90"}); -- Akrâz-zahar
+        self:AddOverlapLinks("0x7005AA8C", {"0x7005AA92"}); -- Azanulbizar
+        self:AddOverlapLinks("0x7005D48A", {"0x7005D47C"}); -- Noble Gate
+        self:AddOverlapLinks("0x7005D488", {"0x7005D484"}); -- Leitstáth
+        self:AddOverlapLinks("0x70060EA5", {"0x70060EA8"}); -- Tornhad
+        self:AddOverlapLinks("0x7006133E", {"0x70061340"}); -- Nobottle
+        self:AddOverlapLinks("0x70063242", {"0x7006323D"}); -- Andrath
+        self:AddOverlapLinks("0x700634B6", {"0x700634A4"}); -- Swanfleet
+        self:AddOverlapLinks("0x700634AD", {"0x700634AE"}); -- Cardolan
+        self:AddOverlapLinks("0x70064ACB", {"0x70064ACA"}); -- Carn Dûm
+        self:AddOverlapLinks("0x70064F4D", {"0x70064F47"}); -- Clegur
+        self:AddOverlapLinks("0x700658E8", {"0x700658EB"}); -- Pelargir
+        self:AddOverlapLinks("0x7006870C", {"0x70068701"}); -- Jax Phanâl
+        self:AddOverlapLinks("0x7006870F", {"0x700686FF"}); -- Umbar
+        self:AddOverlapLinks("0x70068710", {"0x70068702"}); -- Halrax
+        self:AddOverlapLinks("0x70068712", {"0x70068700"}); -- King's Dol Amroth
+        self:AddOverlapLinks("0x70068715", {"0x70068703"}); -- Lond Cirion
+        self:AddOverlapLinks("0x700697F3", {"0x700697F2"}); -- Bloody Eagle Tavern
+    elseif PlayerClass == Turbine.Gameplay.Class.Mariner then
+        self:AddOverlapLinks("0x70066105", {"0x70059D0E"}); -- Trader's Wharf
+        self:AddOverlapLinks("0x70066109", {"0x7004707D"}); -- After-battle Osgiliath
+        self:AddOverlapLinks("0x7006610C", {"0x7004D738"}); -- Lake-town
+        self:AddOverlapLinks("0x70066117", {"0x700411AC"}); -- Dol Amroth
+        self:AddOverlapLinks("0x7006611B", {"0x700658EB"}); -- Pelargir
+        self:AddOverlapLinks("0x7006611E", {"0x70048C8C"}); -- Lothlórien
+        self:AddOverlapLinks("0x70066121", {"0x70031A46"}); -- Snowbourn
+        self:AddOverlapLinks("0x700687BB", {"0x700686FF"}); -- Umbar
+        self:AddOverlapLinks("0x700687BD", {"0x70068703"}); -- Lond Cirion
+        self:AddOverlapLinks("0x700687C0", {"0x70068701"}); -- Jax Phanâl
+        self:AddOverlapLinks("0x700687C1", {"0x70068700"}); -- King's Dol Amroth
+        self:AddOverlapLinks("0x700687C3", {"0x70068702"}); -- Halrax
+    end
+end
+
+function OptionsPanel:EnableOverlapSkills(enable)
+    self.disableUpdates = true;
+    for id, group in pairs(self.overlapGroup) do
+        for i = 1, #group do
+            for j = 1, #self.checks do
+                if self.checks[j].skillId == group[i] then
+                    self.checks[j]:SetChecked(enable);
+                    break
+                end
+            end
+        end
+    end
+    self.disableUpdates = false;
+    self.mainWindow:UpdateSettings(); -- force an update now
+end
+
+function OptionsPanel:EnableAll(enable)
+    self.disableUpdates = true;
+    for i = 1, #self.checks do
+        self.checks[i]:SetChecked(enable);
+    end
+    self.disableUpdates = false;
+    self.mainWindow:UpdateSettings(); -- force an update now
 end
 
 -- function to add the list of shortcuts to the sort tab
