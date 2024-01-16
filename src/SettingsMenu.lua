@@ -156,7 +156,7 @@ function SettingsMenu:Update(string)
     elseif (string == menuOptionsString) then
         self.parent:OpenOptions();
     elseif (string == menuSkillsString) then
-        self.parent:CheckSkills(true);
+        CheckSkills(true);
     elseif (string == moorMapString) then
         self.parent:OpenMapWindow(MapType.CREEPS);
     elseif (string == eriadorMapString) then

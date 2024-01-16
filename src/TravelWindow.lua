@@ -19,21 +19,6 @@ TravelWindow = class(Turbine.UI.Window);
 function TravelWindow:Constructor()
     Turbine.UI.Window.Constructor(self);
 
-    DefAlpha = 0.92;
-    Settings = {};
-    SettingsStrings = {};
-    TravelShortcuts = {}; -- put all the shortcuts into one table
-    TrainedSkills = Turbine.Gameplay.SkillList;
-
-    -- get the player class and race
-    player = Turbine.Gameplay.LocalPlayer.GetInstance();
-    PlayerClass = player:GetClass();
-    PlayerAlignment = player:GetAlignment();
-    PlayerRace = player:GetRace();
-
-    -- set the racial index used later in multiple places
-    self:SetPlayerRaceKey();
-
     self.reloadGVMap = false;
     self.options = nil;
     self.dirty = true;
@@ -42,13 +27,6 @@ function TravelWindow:Constructor()
     self.isResizing = false;
     self.wPadding = 7;
     self.hPadding = 25;
-
-    -- create the lists of travel locations and the shortcuts
-    -- that are used to execute them
-    TravelInfo = TravelDictionary();
-
-    -- load the player saved settings
-    self:LoadSettings();
 
     -- configure the main window
     self:SetPosition(Settings.positionX, Settings.positionY);
@@ -70,19 +48,10 @@ function TravelWindow:Constructor()
     -- genLocations:InsertSkill(2, glanMapString, .mapGlanVraig, "skip");
     -- end
 
-    -- get the list of trained skills the player has
-    if (Turbine.Gameplay.LocalPlayer.GetTrainedSkills ~= nil) then
-        TrainedSkills = player:GetTrainedSkills();
-    end
-
     -- save the player's combat states for managing hiding the window
     -- when the player enters combat
     self.previousCombatState = false;
     self.wasOpenBeforeCombat = false;
-
-    -- set up all the shortcuts
-    self:CheckEnabledSettings();
-    self:SetShortcuts();
 
     -- create a single context menu to use on all panels
     Menu = SettingsMenu(self);
@@ -115,7 +84,6 @@ function TravelWindow:Constructor()
     self.MainPanel:SetTab(Settings.mode);
     self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
     self.MainPanel:UpdateTabs();
-    self:CheckSkills(false);
     self:UpdateSettings();
     self:SetOpacity(Settings.mainMinOpacity);
 
@@ -346,19 +314,9 @@ function TravelWindow:Constructor()
                                      self:GetHeight() - self.resizeLabel:GetHeight());
     end
     self:SizeChanged(); -- explicitly call to ensure correct positioning
-
-    Plugins["Travel Window II"].Load = function(sender, args)
-        Turbine.Shell.WriteLine("<u><rgb=#DAA520>Travel Window II " .. Plugins["Travel Window II"]:GetVersion() ..
-                                " by Hyoss</rgb></u>");
-
-        MapWindow:VerifyMapSkillIds("Hunter");
-        MapWindow:VerifyMapSkillIds("Warden");
-        MapWindow:VerifyMapSkillIds("Mariner");
-        MapWindow:VerifyMapSkillIds("Reputation");
-    end
 end
 
-function TravelWindow:SetPlayerRaceKey()
+function SetPlayerRaceKey()
     -- map player race to racial travel skill index for insertion into available travel skills
     if (PlayerRace == Turbine.Gameplay.Race.Dwarf) then
         PlayerRaceKey = 3;
@@ -519,14 +477,16 @@ function TravelWindow:SaveMapHome(shortcut)
     self:UpdateSettings();
 end
 
-function TravelWindow:SetShortcuts()
+function SetShortcuts()
+    CheckEnabledSettings();
+
     -- set default values
     TravelShortcuts = {};
 
     -- set the either the travel skills for free people or monsters
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- set the generic travel items
-        self:AddTravelSkills(TravelInfo.gen, 1);
+        AddTravelSkills(TravelInfo.gen, 1);
 
         -- add the race travel to the list
         table.insert(TravelShortcuts,
@@ -539,22 +499,23 @@ function TravelWindow:SetShortcuts()
                             TravelInfo.racial.desc));
 
         -- set the reputation travel items
-        self:AddTravelSkills(TravelInfo.rep, 3);
+        AddTravelSkills(TravelInfo.rep, 3);
     else
         -- set the creep travel items
-        self:AddTravelSkills(TravelInfo.creep, 3);
+        AddTravelSkills(TravelInfo.creep, 3);
     end
 
     -- set the class travel items
     local classSkills = TravelInfo:GetClassSkills();
     if classSkills ~= nil then
-        self:AddTravelSkills(classSkills, 4);
+        AddTravelSkills(classSkills, 4);
     end
 
-    self:SortShortcuts()
+    SortShortcuts();
+    CheckSkills(false);
 end
 
-function TravelWindow:AddTravelSkills(skills, filter)
+function AddTravelSkills(skills, filter)
     for i = 1, skills:GetCount() do
         table.insert(TravelShortcuts,
                      TravelShortcut(
@@ -567,13 +528,13 @@ function TravelWindow:AddTravelSkills(skills, filter)
     end
 end
 
-function TravelWindow:CheckEnabledSettings()
+function CheckEnabledSettings()
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- update generic travel settings
-        self:AddNewSettings(TravelInfo.gen);
+        AddNewSettings(TravelInfo.gen);
 
         -- update reputation travel settings
-        self:AddNewSettings(TravelInfo.rep);
+        AddNewSettings(TravelInfo.rep);
 
         -- update racial travel settings
         local racialId = TravelInfo.racial.id;
@@ -586,15 +547,15 @@ function TravelWindow:CheckEnabledSettings()
 
         local classSkills = TravelInfo:GetClassSkills();
         if classSkills ~= nil then
-            self:AddNewSettings(classSkills);
+            AddNewSettings(classSkills);
         end
     else
         -- update creep travel settings
-        self:AddNewSettings(TravelInfo.creep);
+        AddNewSettings(TravelInfo.creep);
     end
 end
 
-function TravelWindow:AddNewSettings(skills)
+function AddNewSettings(skills)
     for i = 1, skills:GetCount() do
         local id = skills:IdAtIndex(i);
         -- if the enabled setting for the skill is nil, set it to true as default
@@ -658,14 +619,13 @@ function TableIndex(tableToSearch, elementToSearchFor)
 end
 
 -- TravelShortcuts are sorted by an internal index value
-function TravelWindow:SortShortcuts()
+function SortShortcuts()
     -- perform an optimized bubble sort
     local n = #TravelShortcuts;
     while n > 2 do
         local new_n = 1;
         for i = 2, n do
             if TravelShortcuts[i - 1]:GetIndex() > TravelShortcuts[i]:GetIndex() then
-                self.dirty = true;
                 local temp = TravelShortcuts[i - 1];
                 TravelShortcuts[i - 1] = TravelShortcuts[i];
                 TravelShortcuts[i] = temp;
@@ -688,7 +648,7 @@ function TravelWindow:SetOpacity(value)
     self.CaroTab:SetOpacityItems(value);
 end
 
-function TravelWindow:LoadSettings()
+function LoadSettings()
     -- load the self.settings
     -- if a value is not available, set a default value
 
@@ -723,21 +683,19 @@ function TravelWindow:LoadSettings()
     end
 
     if (not SettingsStrings.width or SettingsStrings.width == "nil") then
-        if self.minWidth == nil then self.minWidth = 245; end
-        SettingsStrings.width = tostring(self.minWidth);
+        SettingsStrings.width = tostring(0);
     end
 
     if (not SettingsStrings.height or SettingsStrings.height == "nil") then
-        if self.minHeight == nil then self.minHeight = 150; end
-        SettingsStrings.height = tostring(self.minHeight);
+        SettingsStrings.height = tostring(0);
     end
 
     if (not SettingsStrings.positionX or SettingsStrings.positionX == "nil") then
-        SettingsStrings.positionX = tostring((Turbine.UI.Display.GetWidth() - self:GetWidth()) * 0.75);
+        SettingsStrings.positionX = tostring(Turbine.UI.Display.GetWidth() * 0.75);
     end
 
     if (not SettingsStrings.positionY or SettingsStrings.positionY == "nil") then
-        SettingsStrings.positionY = tostring((Turbine.UI.Display.GetHeight() - self:GetHeight()) * 0.75);
+        SettingsStrings.positionY = tostring(Turbine.UI.Display.GetHeight() * 0.75);
     end
 
     local screenWidth = Turbine.UI.Display.GetWidth();
@@ -950,15 +908,13 @@ function TravelWindow:LoadSettings()
     end
 
     if (convertTableIndex) then
-        self:OrderTableNumberIndex();
+        OrderTableNumberIndex();
     else
         Settings.order = SettingsStrings.order;
     end
-
-
 end
 
-function TravelWindow:SaveSettings()
+function SaveSettings()
 
     -- make sure to delete old settings to delete unused fields
     SettingsStrings = {};
@@ -985,7 +941,7 @@ function TravelWindow:SaveSettings()
     SettingsStrings.enabled = Settings.enabled;
     SettingsStrings.mapGlanVraig = tostring(Settings.mapGlanVraig);
 
-    self:OrderTableStringIndex();
+    OrderTableStringIndex();
 
     -- save the settings
     PatchDataSave(Turbine.DataScope.Character, "TravelWindowIISettings", SettingsStrings);
@@ -1052,13 +1008,11 @@ function TravelWindow:ResetSettings()
     self:SetSize(Settings.width, Settings.height);
 
     -- update everything
-    self:CheckEnabledSettings()
-    self:SetShortcuts();
-    self:CheckSkills(false)
+    SetShortcuts();
     self:UpdateSettings();
 end
 
-function TravelWindow:OrderTableStringIndex()
+function OrderTableStringIndex()
 
     SettingsStrings.order = {};
 
@@ -1067,7 +1021,7 @@ function TravelWindow:OrderTableStringIndex()
     end
 end
 
-function TravelWindow:OrderTableNumberIndex()
+function OrderTableNumberIndex()
 
     Settings.order = {};
 
@@ -1084,12 +1038,12 @@ function TravelWindow:AddGVMap()
     end
 end
 
-function TravelWindow:CheckSkills(report)
+function CheckSkills(report)
     local newShortcut = false;
     -- loop through all the shortcuts and list those those that are not learned
     for i = 1, #TravelShortcuts, 1 do
         local wasFound = TravelShortcuts[i].found;
-        if (TravelWindow:FindSkill(TravelShortcuts[i])) then
+        if (FindSkill(TravelShortcuts[i])) then
             if not wasFound then
                 newShortcut = true;
             end
@@ -1098,13 +1052,12 @@ function TravelWindow:CheckSkills(report)
         end
     end
 
-    if newShortcut then
-        self.dirty = true; -- reset list of shortcuts
-        self:SetItems(); -- redraw current window
+    if newShortcut and NewShortcutEvent then
+        NewShortcutEvent();
     end
 end
 
-function TravelWindow:FindSkill(shortcut)
+function FindSkill(shortcut)
     if shortcut.found then
         return true;
     end
@@ -1128,7 +1081,7 @@ function TravelWindow:FindSkill(shortcut)
     return false;
 end
 
-function TravelWindow:ListTrainedSkills()
+function ListTrainedSkills()
 
     Turbine.Shell.WriteLine("\n\nTrained Skills\n\n");
 

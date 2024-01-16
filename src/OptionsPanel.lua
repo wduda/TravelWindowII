@@ -563,7 +563,7 @@ function OptionsPanel:AddBoxes()
 
     -- do the check skills
     self.checkSkillsButton.Click = function(sender, args)
-        self.mainWindow:CheckSkills(true);
+        CheckSkills(true);
     end
 
     local next = next; -- optimization
