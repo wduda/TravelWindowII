@@ -11,11 +11,8 @@ import "TravelWindowII.src.utils.BitOps";
 
 TravelButton = class(Turbine.UI.Extensions.SimpleWindow);
 
-function TravelButton:Constructor(parent)
+function TravelButton:Constructor()
     Turbine.UI.Extensions.SimpleWindow.Constructor(self);
-
-    -- keep track of our parent window
-    self.mainWindow = parent;
 
     -- set defaults
     self:SetSize(32, 32);
@@ -102,16 +99,16 @@ function TravelButton:Constructor(parent)
                 local screenWidth, screenHeight = Turbine.UI.Display.GetSize();
                 Settings.buttonRelativeX = one / screenWidth;
                 Settings.buttonRelativeY = two / screenHeight;
-                self.mainWindow:UpdateSettings();
+                _G.travel:UpdateSettings();
                 hasMoved = false;
                 self:SetBackColor(Turbine.UI.Color(0, 0.5, 0.5, 0.5));
 
             else
-                if not self.mainWindow:IsVisible() then
+                if not _G.travel:IsVisible() then
                     CheckSkills(false);
-                    self.mainWindow:SetOpacity(Settings.mainMinOpacity);
+                    _G.travel:SetOpacity(Settings.mainMinOpacity);
                 end
-                self.mainWindow:SetVisible(not self.mainWindow:IsVisible());
+                _G.travel:SetVisible(not _G.travel:IsVisible());
             end
         else
             Menu:ShowMenu();

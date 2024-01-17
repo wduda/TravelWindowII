@@ -18,13 +18,12 @@ MapType = {
     HARADWAITH = 7,
 };
 
-function MapWindow:Constructor(parent, map)
+function MapWindow:Constructor(map)
     Turbine.UI.Window.Constructor(self);
 
     --  add a check to see if we load completely
     self.loaded = false;
 
-    self.mainWindow = parent;
     self.mapType = map;
     self.debug = false; -- enable to position shortcuts on the map
 

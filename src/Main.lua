@@ -1,5 +1,12 @@
 import "TravelWindowII.src";
 
+-- create shortcuts to the bitop functions
+bit = TravelWindowII.bit;
+hasbit = TravelWindowII.hasbit;
+setbit = TravelWindowII.setbit;
+clearbit = TravelWindowII.clearbit;
+togglebit = TravelWindowII.togglebit;
+
 DefAlpha = 0.92;
 Settings = {};
 SettingsStrings = {};
@@ -27,6 +34,28 @@ TravelInfo = TravelDictionary();
 
 -- set up all the shortcuts
 SetShortcuts();
+
+local PluginManagerOptionsPanel = Turbine.UI.Control()
+PluginManagerOptionsPanel:SetSize(500, 200)
+
+plugin.GetOptionsPanel = function()
+    return PluginManagerOptionsPanel;
+end
+
+OptionsWindow = TravelWindowII.src.OptionsWindow();
+local OptionsButton = Turbine.UI.Lotro.Button()
+OptionsButton:SetParent(PluginManagerOptionsPanel)
+OptionsButton:SetPosition(100, 100)
+OptionsButton:SetSize(200,15)
+OptionsButton:SetText(menuOptionsString)
+OptionsButton:SetVisible(true)
+
+OptionsButton.Click = function()
+    OptionsWindow:SetVisible(true);
+end
+
+-- configure the external toggle button
+ToggleButton = TravelWindowII.src.TravelButton();
 
 -- create the travel window
 _G.travel = TravelWindow();

@@ -84,3 +84,128 @@ function TravelShortcut:GetTravelType()
     return self.travelType;
 end
 
+function SetShortcuts()
+    CheckEnabledSettings();
+
+    -- set default values
+    TravelShortcuts = {};
+
+    -- set the either the travel skills for free people or monsters
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+        -- set the generic travel items
+        AddTravelSkills(TravelInfo.gen, 1);
+
+        -- add the race travel to the list
+        table.insert(TravelShortcuts,
+                     TravelShortcut(
+                            Turbine.UI.Lotro.ShortcutType.Skill,
+                            2,
+                            TravelInfo.racial.id,
+                            TravelInfo.racial.name,
+                            TravelInfo.racial.label,
+                            TravelInfo.racial.desc));
+
+        -- set the reputation travel items
+        AddTravelSkills(TravelInfo.rep, 3);
+    else
+        -- set the creep travel items
+        AddTravelSkills(TravelInfo.creep, 3);
+    end
+
+    -- set the class travel items
+    local classSkills = TravelInfo:GetClassSkills();
+    if classSkills ~= nil then
+        AddTravelSkills(classSkills, 4);
+    end
+
+    SortShortcuts();
+    CheckSkills(false);
+end
+
+function AddTravelSkills(skills, filter)
+    for i = 1, skills:GetCount() do
+        table.insert(TravelShortcuts,
+                     TravelShortcut(
+                        Turbine.UI.Lotro.ShortcutType.Skill,
+                        filter,
+                        skills:IdAtIndex(i),
+                        skills:NameAtIndex(i),
+                        skills:LabelAtIndex(i),
+                        skills:DescAtIndex(i)));
+    end
+end
+
+-- TravelShortcuts are sorted by an internal index value
+function SortShortcuts()
+    -- perform an optimized bubble sort
+    local n = #TravelShortcuts;
+    while n > 2 do
+        local new_n = 1;
+        for i = 2, n do
+            if TravelShortcuts[i - 1]:GetIndex() > TravelShortcuts[i]:GetIndex() then
+                local temp = TravelShortcuts[i - 1];
+                TravelShortcuts[i - 1] = TravelShortcuts[i];
+                TravelShortcuts[i] = temp;
+                new_n = i;
+            end
+        end
+        n = new_n;
+    end
+end
+
+function CheckSkills(report)
+    local newShortcut = false;
+    -- loop through all the shortcuts and list those those that are not learned
+    for i = 1, #TravelShortcuts, 1 do
+        local wasFound = TravelShortcuts[i].found;
+        if (FindSkill(TravelShortcuts[i])) then
+            if not wasFound then
+                newShortcut = true;
+            end
+        elseif report then
+            Turbine.Shell.WriteLine(skillNotTrainedString .. TravelShortcuts[i]:GetName())
+        end
+    end
+
+    if newShortcut and NewShortcutEvent then
+        NewShortcutEvent();
+    end
+end
+
+function FindSkill(shortcut)
+    if shortcut.found then
+        return true;
+    end
+
+    for i = 1, TrainedSkills:GetCount(), 1 do
+        local skillInfo = TrainedSkills:GetItem(i):GetSkillInfo();
+        if skillInfo:GetName() == shortcut:GetName() then
+            local desc = shortcut:GetDescription();
+            if desc ~= nil then
+                if string.match(skillInfo:GetDescription(), desc) then
+                    shortcut.found = true;
+                    return true;
+                end
+            else
+                shortcut.found = true;
+                return true;
+            end
+        end
+    end
+
+    return false;
+end
+
+function ListTrainedSkills()
+
+    Turbine.Shell.WriteLine("\n\nTrained Skills\n\n");
+
+    for i = 1, TrainedSkills:GetCount(), 1 do
+        local skill = Turbine.Gameplay.Skill;
+        local skillInfo = Turbine.Gameplay.SkillInfo;
+        skill = TrainedSkills:GetItem(i);
+
+        Turbine.Shell.WriteLine(skill:GetSkillInfo():GetName());
+
+    end
+end

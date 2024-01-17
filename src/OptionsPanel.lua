@@ -8,7 +8,7 @@ import "TravelWindowII.src.utils.BitOps";
 
 OptionsPanel = class(Turbine.UI.Control);
 
-function OptionsPanel:Constructor(parent)
+function OptionsPanel:Constructor()
     Turbine.UI.Control.Constructor(self);
 
     --  add a check to see if we load completely
@@ -28,7 +28,6 @@ function OptionsPanel:Constructor(parent)
     -- create array of labels and check boxes
     self.labels = {};
     self.checks = {};
-    self.mainWindow = parent;
 
     -- keep track of which item is selected on the sort tab
     self.sortSelectedIndex = 1;
@@ -89,8 +88,8 @@ function OptionsPanel:Constructor(parent)
     -- have the main window close the options
     self.VisibleChanged = function(sender, args)
         if (self:IsVisible() == false) then
-            if (parent ~= nil) then
-                parent:CloseOptions();
+            if (_G.travel ~= nil) then
+                _G.travel:CloseOptions();
             end
         end
     end
@@ -310,7 +309,7 @@ function OptionsPanel:AddGeneralItems()
 
     -- do the settings reset
     self.resetButton.Click = function(sender, args)
-        self.mainWindow:ResetSettings();
+        _G.travel:ResetSettings();
     end
 
     -- set the hide on start option when changed
@@ -320,7 +319,7 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnStart = 0;
         end
-        self.mainWindow:UpdateSettings();
+        _G.travel:UpdateSettings();
     end
 
     -- set the hide on combat option when changed
@@ -330,7 +329,7 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnCombat = 0;
         end
-        self.mainWindow:UpdateSettings();
+        _G.travel:UpdateSettings();
     end
 
     -- set the close on travel option when changed
@@ -340,7 +339,7 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnTravel = 0;
         end
-        self.mainWindow:UpdateSettings();
+        _G.travel:UpdateSettings();
     end
 
     -- set the ignore escape to close option when changed
@@ -350,7 +349,7 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.ignoreEsc = 0;
         end
-        self.mainWindow:UpdateSettings();
+        _G.travel:UpdateSettings();
     end
 
     -- set the show toggle button option when changed
@@ -360,8 +359,8 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.showButton = 0;
         end
-        self.mainWindow:UpdateSettings();
-        self.mainWindow.ToggleButton:SetVisible(sender:IsChecked());
+        _G.travel:UpdateSettings();
+        ToggleButton:SetVisible(sender:IsChecked());
     end
 
     -- set the fire on pulldown selection option when changed
@@ -371,7 +370,7 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.pulldownTravel = 0;
         end
-        self.mainWindow:UpdateSettings();
+        _G.travel:UpdateSettings();
     end
 
     -- update settings when sliders change
@@ -384,8 +383,8 @@ function OptionsPanel:AddGeneralItems()
 
         -- do updates
         Settings.toggleMinOpacity = self.toggleMinScrollBar:GetValue() / 100;
-        self.mainWindow:UpdateOpacity();
-        self.mainWindow:UpdateSettings();
+        _G.travel:UpdateOpacity();
+        _G.travel:UpdateSettings();
     end
 
     self.toggleMaxScrollBar.ValueChanged = function(sender, args)
@@ -397,8 +396,8 @@ function OptionsPanel:AddGeneralItems()
 
         -- do updates
         Settings.toggleMaxOpacity = self.toggleMaxScrollBar:GetValue() / 100;
-        self.mainWindow:UpdateOpacity();
-        self.mainWindow:UpdateSettings();
+        _G.travel:UpdateOpacity();
+        _G.travel:UpdateSettings();
 
     end
 
@@ -412,8 +411,8 @@ function OptionsPanel:AddGeneralItems()
 
         -- do updates
         Settings.mainMinOpacity = self.mainMinScrollBar:GetValue() / 100;
-        self.mainWindow:UpdateOpacity();
-        self.mainWindow:UpdateSettings();
+        _G.travel:UpdateOpacity();
+        _G.travel:UpdateSettings();
     end
 
     self.mainMaxScrollBar.ValueChanged = function(sender, args)
@@ -425,8 +424,8 @@ function OptionsPanel:AddGeneralItems()
 
         -- do updates
         Settings.mainMaxOpacity = self.mainMaxScrollBar:GetValue() / 100;
-        self.mainWindow:UpdateOpacity();
-        self.mainWindow:UpdateSettings();
+        _G.travel:UpdateOpacity();
+        _G.travel:UpdateSettings();
     end
 end
 
@@ -494,12 +493,12 @@ function OptionsPanel:AddSkillItemForEnabling(id, label)
         shortcutIndex = TableIndex(Settings.order, id);
         TravelShortcuts[shortcutIndex]:SetEnabled(sender:IsChecked());
 
-        self.mainWindow.dirty = true;
+        _G.travel.dirty = true;
         if not self.disableUpdates then
-            self.mainWindow:UpdateSettings();
+            _G.travel:UpdateSettings();
         end
-        if self.mainWindow.mapWindow ~= nil then
-            self.mainWindow.mapWindow:UpdateShortcut(id, sender:IsChecked());
+        if _G.travel.mapWindow ~= nil then
+            _G.travel.mapWindow:UpdateShortcut(id, sender:IsChecked());
         end
     end
 end
@@ -757,7 +756,7 @@ function OptionsPanel:EnableOverlapSkills(enable)
         end
     end
     self.disableUpdates = false;
-    self.mainWindow:UpdateSettings(); -- force an update now
+    _G.travel:UpdateSettings(); -- force an update now
 end
 
 function OptionsPanel:EnableAll(enable)
@@ -766,7 +765,7 @@ function OptionsPanel:EnableAll(enable)
         self.checks[i]:SetChecked(enable);
     end
     self.disableUpdates = false;
-    self.mainWindow:UpdateSettings(); -- force an update now
+    _G.travel:UpdateSettings(); -- force an update now
 end
 
 -- function to add the list of shortcuts to the sort tab
@@ -871,7 +870,7 @@ function OptionsPanel:AddSortButtons()
         end
 
         -- update the main window shortcuts and settings
-        self.mainWindow:UpdateSettings();
+        _G.travel:UpdateSettings();
     end
 
     -- handle the move up button click
@@ -885,7 +884,7 @@ function OptionsPanel:AddSortButtons()
         self:SwapShortcuts(self.sortSelectedIndex, self.sortSelectedIndex - 1);
 
         -- update the main window shortcuts and settings
-        self.mainWindow:UpdateSettings();
+        _G.travel:UpdateSettings();
 
         -- decrease the selected index
         self.sortSelectedIndex = self.sortSelectedIndex - 1;
@@ -902,7 +901,7 @@ function OptionsPanel:AddSortButtons()
         self:SwapShortcuts(self.sortSelectedIndex, self.sortSelectedIndex + 1);
 
         -- update the main window shortcuts and settings
-        self.mainWindow:UpdateSettings();
+        _G.travel:UpdateSettings();
 
         -- increase the selected index
         self.sortSelectedIndex = self.sortSelectedIndex + 1;
@@ -920,7 +919,7 @@ function OptionsPanel:AddSortButtons()
         end
 
         -- update the main window shortcuts and settings
-        self.mainWindow:UpdateSettings();
+        _G.travel:UpdateSettings();
     end
 end
 
@@ -947,6 +946,6 @@ function OptionsPanel:SwapShortcuts(first, second)
         local tempShortcut = TravelShortcuts[first];
         TravelShortcuts[first] = TravelShortcuts[second];
         TravelShortcuts[second] = tempShortcut;
-        self.mainWindow.dirty = true;
+        _G.travel.dirty = true;
     end
 end
