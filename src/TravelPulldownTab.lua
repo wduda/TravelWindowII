@@ -20,6 +20,12 @@ function TravelPulldownTab:Constructor(toplevel)
     -- need top level window in order to close it
     self.parent = toplevel;
 
+    if self.parent.isMinWindow then
+        self.wPadding = 3;
+    else
+        self.wPadding = 0;
+    end
+
     -- this label is used to catch wheel moves
     self.scrollLabel = Turbine.UI.Label();
     self.scrollLabel:SetPosition(0, 0);
@@ -27,7 +33,7 @@ function TravelPulldownTab:Constructor(toplevel)
 
     -- the pulldown box
     self.pulldown = TravelWindowII.src.OrendarUIMods.ComboBox(self);
-    self.pulldown:SetPosition(48, 5);
+    self.pulldown:SetPosition(43 + self.wPadding, 5);
     self.pulldown:SetParent(self);
     self.pulldown:SetVisible(true);
     self.pulldown:SetTravelOnSelect(Settings.pulldownTravel);
@@ -35,7 +41,7 @@ function TravelPulldownTab:Constructor(toplevel)
     -- the quickslot for the shortcut
     self.quickslot = Turbine.UI.Lotro.Quickslot();
     self.quickslot:SetSize(36, 36);
-    self.quickslot:SetPosition(5, 1);
+    self.quickslot:SetPosition(self.wPadding, 1);
     self.quickslot:SetZOrder(98);
     self.quickslot:SetUseOnRightClick(false);
     self.quickslot:SetParent(self);
@@ -136,8 +142,6 @@ function TravelPulldownTab:SetSize(width, height)
     -- set the size of the labels
     self.scrollLabel:SetSize(self:GetWidth(), self:GetHeight());
     self.pulldown:SetSize(self:GetWidth() - 58, 30);
-
-    Turbine.UI.Control.SetOpacity(self, 1);
 end
 
 -- function to close the pulldown if necessary

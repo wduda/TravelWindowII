@@ -24,6 +24,11 @@ function TravelListTab:Constructor(toplevel)
     self.itemHeight = 22;
     self.scrollChunk = self.itemHeight;
 
+    self.itemAlpha = DefAlpha;
+    if self.parent.isMinWindow then
+        self.itemAlpha = 1;
+    end
+
     -- set up the scrollbar for the list
     self.myScrollBar = Turbine.UI.Lotro.ScrollBar();
     self.myScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
@@ -88,7 +93,7 @@ function TravelListTab:AddItem(shortcut)
         self.labels[index]:SetZOrder(100);
         self.labels[index]:SetMouseVisible(false);
         self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-        self.labels[index]:SetBackColor(Turbine.UI.Color(DefAlpha, 0, 0, 0));
+        self.labels[index]:SetBackColor(Turbine.UI.Color(self.itemAlpha, 0, 0, 0));
         self.labels[index]:SetText(shortcut:GetSkillLabel());
         self.labels[index]:SetParent(self.SubWindow);
 
@@ -115,12 +120,12 @@ function TravelListTab:AddItem(shortcut)
 
         -- change the background colour of the label with the mouse enters
         self.quickslots[index].MouseEnter = function(sender, args)
-            self.labels[index]:SetBackColor(Turbine.UI.Color(DefAlpha, 0.17, 0.17, 0.17));
+            self.labels[index]:SetBackColor(Turbine.UI.Color(self.itemAlpha, 0.17, 0.17, 0.17));
         end
 
         -- return the background colour when the mouse leaves the label
         self.quickslots[index].MouseLeave = function(sender, args)
-            self.labels[index]:SetBackColor(Turbine.UI.Color(DefAlpha, 0, 0, 0));
+            self.labels[index]:SetBackColor(Turbine.UI.Color(self.itemAlpha, 0, 0, 0));
         end
     end
 
@@ -128,19 +133,29 @@ function TravelListTab:AddItem(shortcut)
     self.row = self.row + 1;
 end
 
-function TravelListTab:FitListPixels(width, height)
+function TravelListTab:GetPixelSize()
+    local height = self.numOfRows * self.itemHeight + self.parent.hPadding;
+    return self.pixelWidth, height;
+end
+
+function TravelListTab:FitToPixels(width, height)
     local rowHeight = self.itemHeight;
-    local minHeight = self.parent.hPadding + rowHeight * 6 + 3;
+    local minHeight = self.parent.hPadding + rowHeight * 6;
+    local maxHeight = self.parent.hPadding + rowHeight * #self.selected;
+    height = height - self.parent.hPadding;
     local dy = height % rowHeight;
     if dy < rowHeight / 2 then
         height = height - dy;
     else
         height = height + (rowHeight - dy);
     end
-    height = height + 3;
     if height < minHeight then
         height = minHeight;
+    elseif height > maxHeight then
+        height = maxHeight;
     end
+    self.pixelWidth = width;
+    self.numOfRows = math.floor(height / rowHeight);
     return width, height;
 end
 
@@ -148,11 +163,15 @@ function TravelListTab:UpdateBounds()
     -- set the maximum value of the scrollbar
     -- based on the number of rows in the subwindow
     local numOfShortcuts = #self.selected;
-    self.maxScroll = numOfShortcuts * 22 - self:GetHeight();
+    self.maxScroll = numOfShortcuts * self.itemHeight - self.parent:GetHeight();
     if self.maxScroll < 0 then
         -- the maxScroll cannot be less than one
         self.maxScroll = 0;
+        self.numOfRows = #self.selected;
+    elseif self.maxScroll > 0 then
+        self.numOfRows = math.floor(self.parent:GetHeight() / self.itemHeight);
     end
+    self.pixelWidth = self.parent:GetWidth();
 end
 
 function TravelListTab:GetMargin(numOfShortcuts)
@@ -165,8 +184,8 @@ function TravelListTab:UpdateSubWindow()
 
         -- set the top position of the quickslots based on row
         -- number and the value of the scrollbar
-        self.quickslots[i]:SetTop((i - 1) * 22 - self.myScrollBar:GetValue());
-        self.labels[i]:SetTop((i - 1) * 22 - self.myScrollBar:GetValue());
+        self.quickslots[i]:SetTop((i - 1) * self.itemHeight - self.myScrollBar:GetValue());
+        self.labels[i]:SetTop((i - 1) * self.itemHeight - self.myScrollBar:GetValue());
     end
 end
 
@@ -177,6 +196,4 @@ function TravelListTab:SetSize(width, height)
     Turbine.UI.Control.SetSize(self, width, height);
 
     self:SetItems();
-
-    Turbine.UI.Control.SetOpacity(self, 1);
 end

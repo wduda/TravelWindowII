@@ -47,6 +47,7 @@ disableRepSkillsString = "Désactiver le chevauchement";
 enableAllString = "Activer tout";
 disableAllString = "Désactiver tout";
 ignoreEscString = "Ignorer Escape pour fermer la fenêtre principale";
+minWindowString = "Utiliser la mini-fenêtre";
 
 -- menu strings
 menuFiltersString = "Filtres";

@@ -47,6 +47,7 @@ disableRepSkillsString = "Disable Overlapping";
 enableAllString = "Enable All";
 disableAllString = "Disable All";
 ignoreEscString = "Ignore Escape to close main window";
+minWindowString = "Use Mini-Window";
 
 -- menu strings
 menuFiltersString = "Filters";

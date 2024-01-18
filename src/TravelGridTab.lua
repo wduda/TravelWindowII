@@ -20,13 +20,18 @@ function TravelGridTab:Constructor(toplevel)
     self.quickslots = {};
     self.selected = {};
     self.numOfCols = 0;
+    self.numOfRows = 0;
     self.maxScroll = 0;
     self.colWidth = 35;
     self.scrollChunk = self.colWidth;
+    self.minCols = 5;
 
     if self.parent == nil then
         -- need top level window in order to close it
         self.parent = toplevel;
+    end
+    if self.parent.isMinWindow then
+        self.minCols = 4;
     end
 
     -- a subwindow (now a control) for containing all the quickslots
@@ -239,54 +244,75 @@ function TravelGridTab:AddItem(shortcut, margin)
     end
 end
 
-function TravelGridTab:FitGridPixels(width, height)
+function TravelGridTab:GetPixelSize()
+    local width = self.numOfCols * self.colWidth + self.parent.wPadding + 10;
+    local height = self.numOfRows * self.colWidth + self.parent.hPadding;
+    return width, height;
+end
+
+function TravelGridTab:FitToPixels(width, height)
     local wPadding = self.parent.wPadding;
     local hPadding = self.parent.hPadding;
     local cols, rows, maxScroll = self:GetGridDims(width - wPadding, height - hPadding);
-    if maxScroll > 0 then
-        rows = math.floor((height - hPadding) / self.colWidth)
-    end
-    if rows < 1 then
-        rows = 1;
-    end
-    if cols > #self.selected then
-        cols = #self.selected
-    end
-    if cols < 4 then
-        cols = 4;
-    end
-    if maxScroll > 0 then
+    if not self.parent.isMinWindow or maxScroll > 0 then
         wPadding = wPadding + 10;
     end
+    self.numOfCols = cols;
+    self.numOfRows = rows;
     local sX = cols * self.colWidth + wPadding;
     local sY = rows * self.colWidth + hPadding;
     return sX, sY;
 end
 
 function TravelGridTab:GetGridDims(width, height)
-    if width < 4 * self.colWidth then width = 4 * self.colWidth end
+    if width < self.minCols * self.colWidth then width = self.minCols * self.colWidth end
     if height < self.colWidth then height = self.colWidth end
+
+    local scrollPadding = 0;
+    if not self.parent.isMinWindow then
+        scrollPadding = 10;
+    end
     local numOfShortcuts =  #self.selected;
-    local numOfCols = math.floor(width / self.colWidth);
+    local numOfCols = math.floor((width - scrollPadding) / self.colWidth);
     local numOfRows = math.ceil(numOfShortcuts / numOfCols);
 
     -- set the maximum scroll of the scrollbar
     local maxScroll = numOfRows * self.colWidth - height;
     if maxScroll < 0 then
         maxScroll = 0;
-    elseif maxScroll > 0 then
+    elseif self.parent.isMinWindow and maxScroll > 0 then
         -- include scrollbar width
-        numOfCols = math.floor((width - 10) / self.colWidth);
+        scrollPadding = 10;
+        numOfCols = math.floor((width - scrollPadding) / self.colWidth);
         numOfRows = math.ceil(numOfShortcuts / numOfCols);
         maxScroll = numOfRows * self.colWidth - height;
+    end
+
+    -- set min/max bounds
+    if maxScroll < 0 then
+        maxScroll = 0;
+    elseif maxScroll > 0 then
+        numOfRows = math.floor(height / self.colWidth);
+    end
+    if numOfRows < 1 then
+        numOfRows = 1;
+    end
+    if numOfCols > #self.selected then
+        numOfCols = #self.selected
+    end
+    if numOfCols < self.minCols then
+        numOfCols = self.minCols;
     end
     return numOfCols, numOfRows, maxScroll;
 end
 
 function TravelGridTab:UpdateBounds()
-    local c, r, m = self:GetGridDims(self:GetWidth(), self:GetHeight());
+    local width = self.parent:GetWidth() - self.parent.wPadding;
+    local height = self.parent:GetHeight() - self.parent.hPadding;
+    local c, r, m = self:GetGridDims(width, height);
     self.numOfCols = c;
-    self.maxScroll = m
+    self.numOfRows = r;
+    self.maxScroll = m;
 end
 
 function TravelGridTab:GetMargin(numOfShortcuts)
@@ -296,7 +322,7 @@ function TravelGridTab:GetMargin(numOfShortcuts)
         cols = numOfShortcuts;
     end
     local width = self:GetWidth();
-    if self.maxScroll > 0 then
+    if not self.parent.isMinWindow or self.maxScroll > 0 then
         width = width - 10; -- remove width of scrollbar
     end
     return math.floor((width - cols * self.colWidth) / 2.0);

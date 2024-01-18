@@ -230,12 +230,20 @@ function LoadSettings()
         SettingsStrings.lastLoadedVersion = tostring(Plugins["Travel Window II"]:GetVersion());
     end
 
-    if (not SettingsStrings.width or SettingsStrings.width == "nil") then
-        SettingsStrings.width = tostring(0);
+    if (not SettingsStrings.gridCols or SettingsStrings.gridCols == "nil") then
+        SettingsStrings.gridCols = tostring(0);
     end
 
-    if (not SettingsStrings.height or SettingsStrings.height == "nil") then
-        SettingsStrings.height = tostring(0);
+    if (not SettingsStrings.gridRows or SettingsStrings.gridRows == "nil") then
+        SettingsStrings.gridRows = tostring(0);
+    end
+
+    if (not SettingsStrings.listWidth or SettingsStrings.listWidth == "nil") then
+        SettingsStrings.listWidth = tostring(0);
+    end
+
+    if (not SettingsStrings.listRows or SettingsStrings.listRows == "nil") then
+        SettingsStrings.listRows = tostring(0);
     end
 
     if (not SettingsStrings.positionX or SettingsStrings.positionX == "nil") then
@@ -274,6 +282,10 @@ function LoadSettings()
         else
             SettingsStrings.buttonRelativeY = "0.75";
         end
+    end
+
+    if (not SettingsStrings.useMinWindow or SettingsStrings.useMinWindow == "nil") then
+        SettingsStrings.useMinWindow = tostring(0);
     end
 
     if (not SettingsStrings.hideOnStart or SettingsStrings.hideOnStart == "nil") then
@@ -333,16 +345,28 @@ function LoadSettings()
     end
 
     -- convert from strings if necessary
-    if (type(SettingsStrings.width) == "string") then
-        Settings.width = tonumber(SettingsStrings.width);
+    if (type(SettingsStrings.gridCols) == "string") then
+        Settings.gridCols = tonumber(SettingsStrings.gridCols);
     else
-        Settings.width = SettingsStrings.width;
+        Settings.gridCols = SettingsStrings.gridCols;
     end
 
-    if (type(SettingsStrings.height) == "string") then
-        Settings.height = tonumber(SettingsStrings.height);
+    if (type(SettingsStrings.gridRows) == "string") then
+        Settings.gridRows = tonumber(SettingsStrings.gridRows);
     else
-        Settings.height = SettingsStrings.height;
+        Settings.gridRows = SettingsStrings.gridRows;
+    end
+
+    if (type(SettingsStrings.listWidth) == "string") then
+        Settings.listWidth = tonumber(SettingsStrings.listWidth);
+    else
+        Settings.listWidth = SettingsStrings.listWidth;
+    end
+
+    if (type(SettingsStrings.listRows) == "string") then
+        Settings.listRows = tonumber(SettingsStrings.listRows);
+    else
+        Settings.listRows = SettingsStrings.listRows;
     end
 
     if (type(SettingsStrings.positionX) == "string") then
@@ -367,6 +391,12 @@ function LoadSettings()
         Settings.buttonRelativeY = tonumber(SettingsStrings.buttonRelativeY);
     else
         Settings.buttonRelativeY = SettingsStrings.buttonRelativeY;
+    end
+
+    if (type(SettingsStrings.useMinWindow) == "string") then
+        Settings.useMinWindow = tonumber(SettingsStrings.useMinWindow);
+    else
+        Settings.useMinWindow = SettingsStrings.useMinWindow;
     end
 
     if (type(SettingsStrings.hideOnStart) == "string") then
@@ -468,12 +498,15 @@ function SaveSettings()
     SettingsStrings = {};
     -- convert the settings to strings
     SettingsStrings.lastLoadedVersion = tostring(Settings.lastLoadedVersion);
-    SettingsStrings.height = tostring(Settings.height);
-    SettingsStrings.width = tostring(Settings.width);
+    SettingsStrings.gridCols = tostring(Settings.gridCols);
+    SettingsStrings.gridRows = tostring(Settings.gridRows);
+    SettingsStrings.listWidth = tostring(Settings.listWidth);
+    SettingsStrings.listRows = tostring(Settings.listRows);
     SettingsStrings.positionX = tostring(Settings.positionX);
     SettingsStrings.positionY = tostring(Settings.positionY);
     SettingsStrings.buttonRelativeX = tostring(Settings.buttonRelativeX);
     SettingsStrings.buttonRelativeY = tostring(Settings.buttonRelativeY);
+    SettingsStrings.useMinWindow = tostring(Settings.useMinWindow);
     SettingsStrings.hideOnStart = tostring(Settings.hideOnStart);
     SettingsStrings.hideOnCombat = tostring(Settings.hideOnCombat);
     SettingsStrings.pulldownTravel = tostring(Settings.pulldownTravel);

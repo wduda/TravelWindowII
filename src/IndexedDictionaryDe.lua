@@ -47,6 +47,7 @@ disableRepSkillsString = "Überlappung Deaktivieren";
 enableAllString = "Alle Aktivieren";
 disableAllString = "Alle Deaktivieren";
 ignoreEscString = "Escape ignorieren, um das Hauptfenster zu schließen";
+minWindowString = "Mini-Fenster verwenden";
 
 -- menu strings
 menuFiltersString = "Filter";

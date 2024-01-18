@@ -16,8 +16,12 @@ import "TravelWindowII.src.EuroNormalize";
 
 TravelWindow = class(Turbine.UI.Window);
 
-function TravelWindow:Constructor()
-    Turbine.UI.Window.Constructor(self);
+function TravelWindow:Constructor(useMinWindow)
+    if useMinWindow == 1 then
+        Turbine.UI.Window.Constructor(self);
+    else
+        Turbine.UI.Lotro.Window.Constructor(self);
+    end
 
     self.reloadGVMap = false;
     self.options = nil;
@@ -25,14 +29,26 @@ function TravelWindow:Constructor()
     self.isMouseDown = false;
     self.isDragging = false;
     self.isResizing = false;
-    self.wPadding = 7;
-    self.hPadding = 25;
+    self.isMinWindow = useMinWindow == 1;
+    if self.isMinWindow then
+        self.wPos = 3;
+        self.hPos = 20;
+        self.wPadding = 7;
+        self.hPadding = 25;
+        self.resizeLabelSize = 13;
+        self.backColor = Turbine.UI.Color(1, 0, 0, 0);
+    else
+        self.wPos = 15;
+        self.hPos = 40;
+        self.wPadding = 20;
+        self.hPadding = 60;
+        self.resizeLabelSize = 20;
+    end
 
     -- configure the main window
     self:SetPosition(Settings.positionX, Settings.positionY);
-    self:SetSize(Settings.width, Settings.height);
     self:SetText(mainTitleString);
-    self:SetBackColor(Turbine.UI.Color(1, 0, 0, 0));
+    self:SetBackColor(self.backColor);
     if (Settings.hideOnStart == 1) then
         self:SetVisible(false);
     else
@@ -56,8 +72,7 @@ function TravelWindow:Constructor()
 
     -- create the tabbed panel to hold all the other panels
     self.MainPanel = TravelWindowII.src.extensions.DPanel();
-    self.MainPanel:SetSize(Settings.width - self.wPadding, Settings.height - self.hPadding);
-    self.MainPanel:SetPosition(3, 20);
+    self.MainPanel:SetPosition(self.wPos, self.hPos);
     self.MainPanel:SetButtonsVisible(false) -- make sure to hide the tab buttons
     self.MainPanel:SetParent(self);
 
@@ -76,12 +91,14 @@ function TravelWindow:Constructor()
     self.GridTab.tabId = 2;
     self.CaroTab.tabId = 3;
     self.PullTab.tabId = 4;
+    self.GridTab.numOfCols = Settings.gridCols;
+    self.GridTab.numOfRows = Settings.gridRows;
+    self.ListTab.pixelWidth = Settings.listWidth;
+    self.ListTab.numOfRows = Settings.listRows;
 
-    -- display the tab that was last selected
     self.MainPanel:SetTab(Settings.mode);
-    self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
-    self.MainPanel:UpdateTabs();
-    self:UpdateSettings();
+    self:SetItems();
+    self:UpdateMinimum();
     self:SetOpacity(Settings.mainMinOpacity);
 
     -- track the hidden state of the UI, manage previous states for window and
@@ -91,7 +108,7 @@ function TravelWindow:Constructor()
 
     self.titleLabel = Turbine.UI.Label();
     self.titleLabel:SetParent(self);
-    self.titleLabel:SetVisible(true);
+    self.titleLabel:SetVisible(self.isMinWindow);
     self.titleLabel:SetPosition(0, 0);
     self.titleLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
     self.titleLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro15);
@@ -99,7 +116,7 @@ function TravelWindow:Constructor()
 
     self.resizeLabel = Turbine.UI.Label();
     self.resizeLabel:SetParent(self);
-    self.resizeLabel:SetSize(13, 13);
+    self.resizeLabel:SetSize(self.resizeLabelSize, self.resizeLabelSize);
     self.resizeLabel:SetOpacity(0);
     self.resizeLabel:SetZOrder(100); -- put above the shortcuts; which are set to 90
 
@@ -227,7 +244,8 @@ function TravelWindow:Constructor()
             if Settings.mode == 1 or Settings.mode == 2 then
                 local mX, mY = self:GetMousePosition();
                 self.resizeStartX, self.resizeStartY = self:GetSize();
-                if self.resizeStartX - mX < 14 and self.resizeStartY - mY < 14 then
+                if self.resizeStartX - mX < self.resizeLabelSize + 1 and
+                        self.resizeStartY - mY < self.resizeLabelSize + 1 then
                     self.isResizing = true;
                 end
             end
@@ -249,10 +267,10 @@ function TravelWindow:Constructor()
             local mX, mY = self:GetMousePosition();
             sX = self.resizeStartX + (mX - self.dragStartX);
             sY = self.resizeStartY + (mY - self.dragStartY);
-            if Settings.mode == 2 then
-                sX, sY = self.GridTab:FitGridPixels(sX, sY);
-            elseif Settings.mode == 1 then
-                sX, sY = self.ListTab:FitListPixels(sX, sY);
+            if Settings.mode == 1 then
+                sX, sY = self.ListTab:FitToPixels(sX, sY);
+            elseif Settings.mode == 2 then
+                sX, sY = self.GridTab:FitToPixels(sX, sY);
             end
             self:SetSize(sX, sY);
         end
@@ -279,10 +297,12 @@ function TravelWindow:Constructor()
     self.resizeLabel.MouseClick = self.MouseClick;
 
     self.SizeChanged = function(sender, args)
-        if Settings.mode == 1 or Settings.mode == 2 then
-            -- only save dimensions for list & grid tabs
-            Settings.width = self:GetWidth();
-            Settings.height = self:GetHeight();
+        if Settings.mode == 1 then
+            Settings.listWidth = self.ListTab.pixelWidth;
+            Settings.listRows = self.ListTab.numOfRows;
+        elseif Settings.mode == 2 then
+            Settings.gridCols = self.GridTab.numOfCols;
+            Settings.gridRows = self.GridTab.numOfRows;
         end
         self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
         self.MainPanel:UpdateTabs();
@@ -291,12 +311,19 @@ function TravelWindow:Constructor()
                                      self:GetHeight() - self.resizeLabel:GetHeight());
     end
     self:SizeChanged(); -- explicitly call to ensure correct positioning
+    if Settings.mode == 1 then
+        self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
+    elseif Settings.mode == 2 then
+        self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
+    end
 end
 
 function TravelWindow:SetItems()
     if Settings.mode == 1 then
+        self:SetSize(self.ListTab:GetPixelSize());
         self.ListTab:SetItems();
     elseif Settings.mode == 2 then
+        self:SetSize(self.GridTab:GetPixelSize());
         self.GridTab:SetItems();
     elseif Settings.mode == 3 then
         self.CaroTab:SetItems();
@@ -305,41 +332,36 @@ function TravelWindow:SetItems()
     end
 end
 
-function TravelWindow:UpdateSize()
+function TravelWindow:UpdateMinimum()
     -- update the page that is showing
     if Settings.mode == 1 then
-        self.minWidth = 245;
-        self.minHeight = 150;
-    elseif Settings.mode == 2 then
+        self.minWidth = 200;
+        self.minHeight = 75;
+    elseif Settings.mode == 3 then
+        if self.isMinWindow then
+            self.minWidth = 150;
+            self.minHeight = 75;
+        else
+            self.minWidth = 200;
+            self.minHeight = 110;
+        end
+    elseif Settings.mode == 4 then
+        if self.isMinWindow then
+            self.minWidth = 360;
+            self.minHeight = 65;
+        else
+            self.minWidth = 360;
+            self.minHeight = 105;
+        end
+    else
         self.minWidth = 100;
         self.minHeight = 40;
-    elseif Settings.mode == 3 then
-        self.minWidth = 150;
-        self.minHeight = 75;
-    else
-        self.minWidth = 360;
-        self.minHeight = 65;
     end
 
     self:SetMinimumSize(self.minWidth, self.minHeight);
 
     if Settings.mode == 3 or Settings.mode == 4 then
         self:SetSize(self.minWidth, self.minHeight);
-    else
-        -- check that the window is not smaller than min width
-        if (self:GetWidth() < self.minWidth) then
-            self:SetWidth(self.minWidth);
-        end
-
-        -- check that the window is not smaller than min height
-        if (self:GetHeight() < self.minHeight) then
-            self:SetHeight(self.minHeight);
-        end
-        if Settings.mode == 2 then
-            self:SetSize(self.GridTab:FitGridPixels(self:GetSize()));
-        elseif Settings.mode == 1 then
-            self:SetSize(self.ListTab:FitListPixels(self:GetSize()));
-        end
     end
 end
 
@@ -478,16 +500,17 @@ function TravelWindow:UpdateSettings()
     Settings.mode, Settings.filters = Menu:GetSettings();
     if prevMode ~= Settings.mode then
         self.dirty = true;
-        if (prevMode == 3 or prevMode == 4) and (Settings.mode == 1 or Settings.mode == 2) then
-            -- restore previous size
-            self:SetSize(Settings.width, Settings.height);
-        end
     end
 
     -- set which page of the tab panel to show
     self.MainPanel:SetTab(Settings.mode);
+    self:UpdateMinimum();
     self:SetItems();
-    self:UpdateSize();
+    if Settings.mode == 1 then
+        self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
+    elseif Settings.mode == 2 then
+        self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
+    end
 
     self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
     self.MainPanel:UpdateTabs();
@@ -500,8 +523,10 @@ function TravelWindow:ResetSettings()
     -- set all saved settings to default values
     Settings = {};
     Settings.lastLoadedVersion = Plugins["Travel Window II"]:GetVersion();
-    Settings.width = self.minWidth;
-    Settings.height = self.minHeight;
+    Settings.gridCols = 0;
+    Settings.gridRows = 0;
+    Settings.listWidth = 0;
+    Settings.listRows = 0;
     Settings.positionX = Turbine.UI.Display.GetWidth() - self:GetWidth() - 50;
     Settings.positionY = Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5;
     Settings.buttonRelativeX = 0.95;
@@ -529,7 +554,6 @@ function TravelWindow:ResetSettings()
     local buttonPositionY = Turbine.UI.Display.GetHeight() * SettingsStrings.buttonRelativeY;
     ToggleButton:SetPosition(buttonPositionX, buttonPositionY);
     self:SetPosition(Settings.positionX, Settings.positionY);
-    self:SetSize(Settings.width, Settings.height);
 
     -- update everything
     SetShortcuts();
