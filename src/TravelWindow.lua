@@ -31,10 +31,10 @@ function TravelWindow:Constructor(useMinWindow)
     self.isResizing = false;
     self.isMinWindow = useMinWindow == 1;
     if self.isMinWindow then
-        self.wPos = 3;
+        self.wPos = -1;
         self.hPos = 20;
-        self.wPadding = 7;
-        self.hPadding = 25;
+        self.wPadding = -1;
+        self.hPadding = 20;
         self.resizeLabelSize = 13;
         self.backColor = Turbine.UI.Color(1, 0, 0, 0);
     else
