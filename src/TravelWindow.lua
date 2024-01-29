@@ -122,8 +122,6 @@ function TravelWindow:Constructor(useMinWindow)
 
     --[[ Event Handlers ]] --
 
-    -- make sure we listen for updates
-    self:SetWantsUpdates(true);
     self:SetWantsKeyEvents(true);
 
     -- check if our position has changed, and save the settings if so

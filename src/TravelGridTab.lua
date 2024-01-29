@@ -82,9 +82,6 @@ function TravelGridTab:Constructor(toplevel)
 
     --[[  EVENT HANDLERS  ]] --
 
-    -- make sure we check for updates
-    self:SetWantsUpdates(true);
-
     -- check for a right mouse button event to open menu
     self.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then

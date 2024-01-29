@@ -515,7 +515,6 @@ function OptionsPanel:AddSkillItemForEnabling(id, label)
     check:SetPosition(10, 0);
     check:SetChecked(Settings.enabled[id]);
     check:SetParent(control);
-    check:SetWantsUpdates(true);
     check:SetVisible(true);
     check.skillId = id;
     table.insert(self.checks, check);

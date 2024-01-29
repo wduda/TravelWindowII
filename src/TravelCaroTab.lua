@@ -41,9 +41,6 @@ function TravelCaroTab:Constructor(toplevel)
 
     --[[  EVENT HANDLERS  ]] --
 
-    -- make sure we listen for key presses
-    self:SetWantsUpdates(true);
-
     -- check for a right mouse button event to open menu
     self.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
