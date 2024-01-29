@@ -141,7 +141,7 @@ function TravelPulldownTab:SetSize(width, height)
 
     -- set the size of the labels
     self.scrollLabel:SetSize(self:GetWidth(), self:GetHeight());
-    self.pulldown:SetSize(self:GetWidth() - 58, 30);
+    self.pulldown:SetSize(self:GetWidth() - 58 + self.wPadding * 2, 30);
 end
 
 -- function to close the pulldown if necessary
