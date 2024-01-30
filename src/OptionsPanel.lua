@@ -294,7 +294,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainMinSlidersLabel:SetText(minString);
     self.mainMinSlidersLabel:SetVisible(true);
 
-    -- toggle button min slider
+    -- main window min slider
     self.mainMinScrollBar = Turbine.UI.Lotro.ScrollBar();
     self.mainMinScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
     self.mainMinScrollBar:SetSize(400, 10);
@@ -304,7 +304,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainMinScrollBar:SetValue(Settings.mainMinOpacity * 100);
     self.mainMinScrollBar:SetParent(self.GeneralTab);
 
-    -- toggle button max slider
+    -- main window max slider label
     self.mainMaxSlidersLabel = Turbine.UI.Label();
     self.mainMaxSlidersLabel:SetSize(50, 20);
     self.mainMaxSlidersLabel:SetPosition(20, self:NextY(15));
@@ -313,7 +313,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainMaxSlidersLabel:SetText(maxString);
     self.mainMaxSlidersLabel:SetVisible(true);
 
-    -- toggle button max slider
+    -- main window max slider
     self.mainMaxScrollBar = Turbine.UI.Lotro.ScrollBar();
     self.mainMaxScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
     self.mainMaxScrollBar:SetSize(400, 10);
@@ -322,6 +322,25 @@ function OptionsPanel:AddGeneralItems()
     self.mainMaxScrollBar:SetMaximum(100);
     self.mainMaxScrollBar:SetValue(Settings.mainMaxOpacity * 100);
     self.mainMaxScrollBar:SetParent(self.GeneralTab);
+
+    -- fade out slider label
+    self.mainFadeSlidersLabel = Turbine.UI.Label();
+    self.mainFadeSlidersLabel:SetSize(300, 20);
+    self.mainFadeSlidersLabel:SetPosition(20, self:NextY(25));
+    self.mainFadeSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.mainFadeSlidersLabel:SetParent(self.GeneralTab);
+    self.mainFadeSlidersLabel:SetText(fadeWindowString);
+    self.mainFadeSlidersLabel:SetVisible(true);
+
+    -- fade out slider
+    self.mainFadeScrollBar = Turbine.UI.Lotro.ScrollBar();
+    self.mainFadeScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
+    self.mainFadeScrollBar:SetSize(450, 10);
+    self.mainFadeScrollBar:SetPosition(20, self:NextY(25));
+    self.mainFadeScrollBar:SetMinimum(1);
+    self.mainFadeScrollBar:SetMaximum(51);
+    self.mainFadeScrollBar:SetValue(Settings.fadeOutSteps);
+    self.mainFadeScrollBar:SetParent(self.GeneralTab);
 
     -- reset all setting button
     self.resetButton = Turbine.UI.Lotro.Button();
@@ -459,6 +478,12 @@ function OptionsPanel:AddGeneralItems()
 
         -- do updates
         Settings.mainMaxOpacity = self.mainMaxScrollBar:GetValue() / 100;
+        _G.travel:UpdateOpacity();
+        _G.travel:UpdateSettings();
+    end
+
+    self.mainFadeScrollBar.ValueChanged = function(sender, args)
+        Settings.fadeOutSteps = self.mainFadeScrollBar:GetValue();
         _G.travel:UpdateOpacity();
         _G.travel:UpdateSettings();
     end

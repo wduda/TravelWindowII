@@ -336,6 +336,10 @@ function LoadSettings()
         SettingsStrings.mainMinOpacity = tostring(0.5);
     end
 
+    if (not SettingsStrings.fadeOutSteps or SettingsStrings.fadeOutSteps == "nil") then
+        SettingsStrings.fadeOutSteps = tostring(1);
+    end
+
     if (not SettingsStrings.toggleMaxOpacity or SettingsStrings.toggleMaxOpacity == "nil") then
         SettingsStrings.toggleMaxOpacity = tostring(1);
     end
@@ -459,6 +463,12 @@ function LoadSettings()
         Settings.mainMinOpacity = SettingsStrings.mainMinOpacity;
     end
 
+    if (type(SettingsStrings.fadeOutSteps) == "string") then
+        Settings.fadeOutSteps = EuroNormalize(SettingsStrings.fadeOutSteps);
+    else
+        Settings.fadeOutSteps = SettingsStrings.fadeOutSteps;
+    end
+
     if (type(SettingsStrings.toggleMaxOpacity) == "string") then
         Settings.toggleMaxOpacity = EuroNormalize(SettingsStrings.toggleMaxOpacity);
     else
@@ -517,6 +527,7 @@ function SaveSettings()
     SettingsStrings.filters = tostring(Settings.filters);
     SettingsStrings.mainMaxOpacity = tostring(Settings.mainMaxOpacity);
     SettingsStrings.mainMinOpacity = tostring(Settings.mainMinOpacity);
+    SettingsStrings.fadeOutSteps = tostring(Settings.fadeOutSteps);
     SettingsStrings.toggleMaxOpacity = tostring(Settings.toggleMaxOpacity);
     SettingsStrings.toggleMinOpacity = tostring(Settings.toggleMinOpacity);
     SettingsStrings.enabled = Settings.enabled;

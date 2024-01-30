@@ -203,6 +203,17 @@ function TravelWindow:Constructor(useMinWindow)
     end
     AddCallback(player, "InCombatChanged", IncombatChangedHandler);
 
+    self.Update = function(sender, args)
+        -- handle opacity fade out
+        local stepSize = (Settings.mainMaxOpacity - Settings.mainMinOpacity) / Settings.fadeOutSteps;
+        local opacity = self:GetOpacity() - stepSize;
+        if opacity < Settings.mainMinOpacity then
+            opacity = Settings.mainMinOpacity
+            self:SetWantsUpdates(false);
+        end
+        self:SetOpacity(opacity);
+    end
+
     -- if the visible status of the window changes, close the pulldown tab
     self.VisibleChanged = function(sender, args)
         if (self:IsVisible() == false) then
@@ -222,7 +233,7 @@ function TravelWindow:Constructor(useMinWindow)
 
     -- go to full opacity if mouse is over
     self.MouseEnter = function(sender, args)
-        self:SetOpacity(Settings.mainMaxOpacity);
+        self:SetMaxOpacity();
     end
 
     -- go to low opacity when mouse is not over
@@ -231,7 +242,7 @@ function TravelWindow:Constructor(useMinWindow)
         local winX, winY = self:GetSize();
 
         if not self.isMouseDown then
-            self:SetOpacity(Settings.mainMinOpacity);
+            self:FadeOut();
         end
     end
 
@@ -278,7 +289,7 @@ function TravelWindow:Constructor(useMinWindow)
         local winX, winY = self:GetSize();
         local outsideWindow = mX < 1 or mY < 1 or mX > winX - 1 or mY > winY - 1;
         if outsideWindow then
-            self:SetOpacity(Settings.mainMinOpacity);
+            self:FadeOut();
         end
 
         self.isMouseDown = false;
@@ -314,6 +325,15 @@ function TravelWindow:Constructor(useMinWindow)
     elseif Settings.mode == 2 then
         self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
     end
+end
+
+function TravelWindow:SetMaxOpacity()
+    self:SetOpacity(Settings.mainMaxOpacity);
+    self:SetWantsUpdates(false);
+end
+
+function TravelWindow:FadeOut()
+    self:SetWantsUpdates(true);
 end
 
 function TravelWindow:SetItems()
@@ -541,6 +561,7 @@ function TravelWindow:ResetSettings()
     Settings.order = {};
     Settings.mainMaxOpacity = 1;
     Settings.mainMinOpacity = 0.5;
+    Settings.fadeOutSteps = 1;
     Settings.toggleMaxOpacity = 1;
     Settings.toggleMinOpacity = 0.5;
 

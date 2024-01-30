@@ -48,6 +48,7 @@ enableAllString = "Alle Aktivieren";
 disableAllString = "Alle Deaktivieren";
 ignoreEscString = "Escape ignorieren, um das Hauptfenster zu schließen";
 minWindowString = "Mini-Fenster verwenden";
+fadeWindowString = "Geschwindigkeit des Fade-Fensters";
 
 -- menu strings
 menuFiltersString = "Filter";
