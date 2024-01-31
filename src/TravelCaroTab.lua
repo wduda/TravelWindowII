@@ -219,7 +219,6 @@ function TravelCaroTab:SetSize(width, height)
     self.quickslots[2]:SetSize(28, 28);
     self.quickslots[2]:SetPosition(self:GetWidth() / 2 - 49 + self.wPadding, (self:GetHeight() - offset) / 2 + 3);
 
-    self.quickslots[3]:SetStretchMode(1); -- makes fuzzy but keeps lack of opacity consistent with other icons showing
     self.quickslots[3]:SetSize(36, 36);
     self.quickslots[3]:SetPosition(self:GetWidth() / 2 - 22 + self.wPadding, (self:GetHeight() - offset) / 2 + 5);
 
@@ -233,6 +232,8 @@ function TravelCaroTab:SetSize(width, height)
 end
 
 function TravelCaroTab:SetOpacityItems(value)
+    -- quickslots in stretch mode do not get updated opacity from
+    -- the parent; update them here
     for i = 1, #self.quickslots do
         self.quickslots[i]:SetOpacity(value);
     end

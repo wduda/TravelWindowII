@@ -141,6 +141,11 @@ function TravelPulldownTab:SetSize(width, height)
     self.pulldown:SetSize(self:GetWidth() - 58 + self.wPadding * 2, 30);
 end
 
+function TravelPulldownTab:SetOpacity(value)
+    Turbine.UI.Control.SetOpacity(self, value);
+    self.pulldown.dropDownWindow:SetOpacity(value);
+end
+
 -- function to close the pulldown if necessary
 function TravelPulldownTab:ClosePulldown()
     self.pulldown:CloseDropDown()

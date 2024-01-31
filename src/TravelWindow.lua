@@ -238,13 +238,12 @@ function TravelWindow:Constructor(useMinWindow)
 
     -- go to low opacity when mouse is not over
     self.MouseLeave = function(sender, args)
-        local mX, mY = self:GetMousePosition();
-        local winX, winY = self:GetSize();
-
         if not self.isMouseDown then
             self:FadeOut();
         end
     end
+    self.PullTab.pulldown.dropDownWindow.MouseEnter = self.MouseEnter;
+    self.PullTab.pulldown.dropDownWindow.MouseLeave = self.MouseLeave;
 
     self.MouseDown = function(sender, args)
         self.isMouseDown = true;
@@ -506,9 +505,8 @@ end
 
 function TravelWindow:SetOpacity(value)
     Turbine.UI.Window.SetOpacity(self, value);
-    -- quickslots in stretch mode do not get updated opacity from
-    -- the parent; update them here
     self.CaroTab:SetOpacityItems(value);
+    self.PullTab:SetOpacity(value);
 end
 
 function TravelWindow:UpdateSettings()
