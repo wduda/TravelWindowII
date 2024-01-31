@@ -51,11 +51,10 @@ function ComboBox:Constructor(toplevel)
     self.arrow:SetMouseVisible(false);
 
     -- drop down window
-    self.dropDownWindow = Turbine.UI.Extensions.SimpleWindow();
+    self.dropDownWindow = Turbine.UI.Window();
     self.dropDownWindow:SetBackColor(ComboBox.DisabledColor);
     self.dropDownWindow:SetZOrder(98);
     self.dropDownWindow:SetVisible(false);
-    self.dropDownWindow:SetFadeSpeed(0.01);
 
     -- list scroll bar        
     self.scrollBar = Turbine.UI.Lotro.ScrollBar();

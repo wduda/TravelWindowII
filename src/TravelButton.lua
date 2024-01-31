@@ -9,10 +9,10 @@ import "TravelWindowII.src.utils.BitOps";
 --[[ This is the simple window that can be used to toggle ]] --
 --[[ the main Travel Window visible.]] --
 
-TravelButton = class(Turbine.UI.Extensions.SimpleWindow);
+TravelButton = class(Turbine.UI.Window);
 
 function TravelButton:Constructor()
-    Turbine.UI.Extensions.SimpleWindow.Constructor(self);
+    Turbine.UI.Window.Constructor(self);
 
     -- set defaults
     self:SetSize(32, 32);
