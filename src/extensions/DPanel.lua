@@ -1,7 +1,6 @@
 import "Turbine";
 import "Turbine.Gameplay";
 import "Turbine.UI";
-import "Turbine.UI.Extensions";
 import "Turbine.UI.Lotro";
 import "TravelWindowII.src.extensions";
 

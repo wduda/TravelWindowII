@@ -8,7 +8,7 @@ import "TravelWindowII.src.utils.BitOps";
 
 OptionsWindow = class(Turbine.UI.Lotro.Window);
 
-function OptionsWindow:Constructor(parent)
+function OptionsWindow:Constructor()
     Turbine.UI.Lotro.Window.Constructor(self);
 
     self.loaded = false;
@@ -27,7 +27,7 @@ function OptionsWindow:Constructor(parent)
     self:SetOpacity(1);
 
     -- add the main options panel to the window
-    self.Panel = TravelWindowII.src.OptionsPanel(parent);
+    self.Panel = TravelWindowII.src.OptionsPanel();
     self.Panel:SetParent(self);
     self.Panel:SetPosition(0, 35);
 
@@ -37,8 +37,8 @@ function OptionsWindow:Constructor(parent)
     -- have the main window close the options
     self.VisibleChanged = function(sender, args)
         if (self:IsVisible() == false) then
-            if (parent ~= nil) then
-                parent:CloseOptions();
+            if (_G.travel ~= nil) then
+                _G.travel:CloseOptions();
             end
         end
     end

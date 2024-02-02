@@ -9,20 +9,16 @@ import "TravelWindowII.src.utils.BitOps";
 --[[ This is the simple window that can be used to toggle ]] --
 --[[ the main Travel Window visible.]] --
 
-TravelButton = class(Turbine.UI.Extensions.SimpleWindow);
+TravelButton = class(Turbine.UI.Window);
 
-function TravelButton:Constructor(parent)
-    Turbine.UI.Extensions.SimpleWindow.Constructor(self);
-
-    -- keep track of our parent window
-    self.mainWindow = parent;
+function TravelButton:Constructor()
+    Turbine.UI.Window.Constructor(self);
 
     -- set defaults
     self:SetSize(32, 32);
     self:SetBackground("TravelWindowII/src/resources/travel.tga");
     self:SetBackColorBlendMode(Turbine.UI.BlendMode.Multiply);
     self:SetBackColor(Turbine.UI.Color(0, 0.5, 0.5, 0.5));
-    self:SetWantsUpdates(true);
     self:SetZOrder(1);
 
     local screenWidth = Turbine.UI.Display.GetWidth();
@@ -50,23 +46,6 @@ function TravelButton:Constructor(parent)
     local x = 0;
     local y = 0;
 
-    function TravelButton:Update(sender, args)
-
-        if (isMoving) then
-            if (not isHighlighted) then
-                if (Turbine.Engine.GetGameTime() - buttonDownTime > 0.4) then
-                    self:SetBackColor(Turbine.UI.Color(1.0, 0.5, 0.5, 0.95));
-                    isHighlighted = true;
-                    hasMoved = true;
-                else
-                    self:SetWantsUpdates(true);
-                end
-            end
-        else
-            Turbine.UI.Extensions.SimpleWindow.Update(self, args);
-        end
-    end
-
     -- go to full opacity if mouse is over
     self.MouseEnter = function(sender, args)
         self:SetOpacity(Settings.toggleMaxOpacity);
@@ -81,7 +60,6 @@ function TravelButton:Constructor(parent)
     self.MouseDown = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Left) then
             buttonDownTime = Turbine.Engine.GetGameTime();
-            self:SetWantsUpdates(true);
             isMoving = true;
             x = args.X;
             y = args.Y;
@@ -93,7 +71,6 @@ function TravelButton:Constructor(parent)
         if (args.Button == Turbine.UI.MouseButton.Left) then
             isMoving = false;
             isHighlighted = false;
-            self:SetWantsUpdates(false);
 
             -- if the window moved, update the settings, but do not toggle
             -- the visibility of the button
@@ -102,16 +79,16 @@ function TravelButton:Constructor(parent)
                 local screenWidth, screenHeight = Turbine.UI.Display.GetSize();
                 Settings.buttonRelativeX = one / screenWidth;
                 Settings.buttonRelativeY = two / screenHeight;
-                self.mainWindow:UpdateSettings();
+                _G.travel:UpdateSettings();
                 hasMoved = false;
                 self:SetBackColor(Turbine.UI.Color(0, 0.5, 0.5, 0.5));
 
             else
-                if not self.mainWindow:IsVisible() then
-                    self.mainWindow:CheckSkills(false);
-                    self.mainWindow:SetOpacity(Settings.mainMinOpacity);
+                if not _G.travel:IsVisible() then
+                    CheckSkills(false);
+                    _G.travel:SetOpacity(Settings.mainMinOpacity);
                 end
-                self.mainWindow:SetVisible(not self.mainWindow:IsVisible());
+                _G.travel:SetVisible(not _G.travel:IsVisible());
             end
         else
             Menu:ShowMenu();

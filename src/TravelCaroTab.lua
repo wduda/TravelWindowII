@@ -24,6 +24,12 @@ function TravelCaroTab:Constructor(toplevel)
     -- need top level window in order to close it
     self.parent = toplevel;
 
+    if self.parent.isMinWindow then
+        self.wPadding = 4;
+    else
+        self.wPadding = 0;
+    end
+
     -- this label is used to catch wheel moves
     self.scrollLabel = Turbine.UI.Label();
     self.scrollLabel:SetSize(180, 155);
@@ -34,9 +40,6 @@ function TravelCaroTab:Constructor(toplevel)
     self:CreateQuickslots();
 
     --[[  EVENT HANDLERS  ]] --
-
-    -- make sure we listen for key presses
-    self:SetWantsUpdates(true);
 
     -- check for a right mouse button event to open menu
     self.MouseClick = function(sender, args)
@@ -205,27 +208,33 @@ end
 function TravelCaroTab:SetSize(width, height)
 
     Turbine.UI.Control.SetSize(self, width, height);
+    local offset = 40;
 
     -- adjust the size and location of the 5 quickslots
     self.quickslots[1]:SetStretchMode(1);
     self.quickslots[1]:SetSize(22, 22);
-    self.quickslots[1]:SetPosition(self:GetWidth() / 2 - 67, (self:GetHeight() - 20) / 2);
+    self.quickslots[1]:SetPosition(self:GetWidth() / 2 - 71 + self.wPadding, (self:GetHeight() - offset) / 2);
 
     self.quickslots[2]:SetStretchMode(1);
     self.quickslots[2]:SetSize(28, 28);
-    self.quickslots[2]:SetPosition(self:GetWidth() / 2 - 45, (self:GetHeight() - 20) / 2 + 3);
+    self.quickslots[2]:SetPosition(self:GetWidth() / 2 - 49 + self.wPadding, (self:GetHeight() - offset) / 2 + 3);
 
-    self.quickslots[3]:SetStretchMode(1); -- makes fuzzy but keeps lack of opacity consistent with other icons showing
     self.quickslots[3]:SetSize(36, 36);
-    self.quickslots[3]:SetPosition(self:GetWidth() / 2 - 18, (self:GetHeight() - 20) / 2 + 5);
+    self.quickslots[3]:SetPosition(self:GetWidth() / 2 - 22 + self.wPadding, (self:GetHeight() - offset) / 2 + 5);
 
     self.quickslots[4]:SetStretchMode(1);
     self.quickslots[4]:SetSize(28, 28);
-    self.quickslots[4]:SetPosition(self:GetWidth() / 2 + 17, (self:GetHeight() - 20) / 2 + 3);
+    self.quickslots[4]:SetPosition(self:GetWidth() / 2 + 13 + self.wPadding, (self:GetHeight() - offset) / 2 + 3);
 
     self.quickslots[5]:SetStretchMode(1);
     self.quickslots[5]:SetSize(22, 22);
-    self.quickslots[5]:SetPosition(self:GetWidth() / 2 + 45, (self:GetHeight() - 20) / 2);
+    self.quickslots[5]:SetPosition(self:GetWidth() / 2 + 40 + self.wPadding, (self:GetHeight() - offset) / 2);
+end
 
-    Turbine.UI.Control.SetOpacity(self, 1);
+function TravelCaroTab:SetOpacityItems(value)
+    -- quickslots in stretch mode do not get updated opacity from
+    -- the parent; update them here
+    for i = 1, #self.quickslots do
+        self.quickslots[i]:SetOpacity(value);
+    end
 end

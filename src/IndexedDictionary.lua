@@ -157,3 +157,23 @@ function IndexedDictionary:IndexByName(name)
     -- return -1 since we did not find a key
     return -1;
 end
+
+-- function to check if a table contains a specific element
+function TableContains(tableToSearch, elementToSearchFor)
+    for i, value in pairs(tableToSearch) do
+        if (value == elementToSearchFor) then
+            return true;
+        end
+    end
+    return false;
+end
+
+-- function to check if a table contains a specific element index
+function TableIndex(tableToSearch, elementToSearchFor)
+    for i, value in pairs(tableToSearch) do
+        if (value == elementToSearchFor) then
+            return i;
+        end
+    end
+    return 0;
+end
