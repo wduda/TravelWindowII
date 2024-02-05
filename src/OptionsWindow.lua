@@ -34,18 +34,30 @@ function OptionsWindow:Constructor()
     -- set the window to be visible
     self:SetVisible(false);
 
-    -- have the main window close the options
-    self.VisibleChanged = function(sender, args)
-        if (self:IsVisible() == false) then
-            if (_G.travel ~= nil) then
-                _G.travel:CloseOptions();
-            end
-        end
-    end
-
     self.loaded = true;
 end
 
 function OptionsWindow:GetLoaded()
     return self.loaded;
+end
+
+function CreateOptionsWindow()
+    local PluginManagerOptionsPanel = Turbine.UI.Control()
+    PluginManagerOptionsPanel:SetSize(500, 200)
+
+    plugin.GetOptionsPanel = function()
+        return PluginManagerOptionsPanel;
+    end
+
+    local OptionsButton = Turbine.UI.Lotro.Button()
+    OptionsButton:SetParent(PluginManagerOptionsPanel)
+    OptionsButton:SetPosition(100, 100)
+    OptionsButton:SetSize(200,15)
+    OptionsButton:SetText(menuOptionsString)
+    OptionsButton:SetVisible(true)
+
+    OptionsWindow = TravelWindowII.src.OptionsWindow();
+    OptionsButton.Click = function()
+        OptionsWindow:SetVisible(true);
+    end
 end

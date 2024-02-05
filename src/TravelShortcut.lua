@@ -84,9 +84,7 @@ function TravelShortcut:GetTravelType()
     return self.travelType;
 end
 
-function SetShortcuts()
-    CheckEnabledSettings();
-
+function InitShortcuts()
     -- set default values
     TravelShortcuts = {};
 
@@ -133,6 +131,14 @@ function AddTravelSkills(skills, filter)
                         skills:LabelAtIndex(i),
                         skills:DescAtIndex(i)));
     end
+end
+
+function SortFromSettings()
+    for i = 1, #TravelShortcuts do
+        local id = TravelShortcuts[i]:GetData();
+        TravelShortcuts[i].Index = TableIndex(Settings.order, id);
+    end
+    SortShortcuts();
 end
 
 -- TravelShortcuts are sorted by an internal index value

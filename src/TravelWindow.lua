@@ -24,7 +24,6 @@ function TravelWindow:Constructor(useMinWindow)
     end
 
     self.reloadGVMap = false;
-    self.options = nil;
     self.dirty = true;
     self.isMouseDown = false;
     self.isDragging = false;
@@ -139,7 +138,6 @@ function TravelWindow:Constructor(useMinWindow)
                 self:SetVisible(false);
             end
             OptionsWindow:SetVisible(false);
-            self:CloseOptions();
             self:CloseMapWindow();
             if (self.hidden == true) then
                 self.hidden = false;
@@ -382,10 +380,8 @@ function TravelWindow:UpdateMinimum()
     end
 end
 
+--[[ SetMapHome() & SaveMapHome() are unused and need to be updated
 function TravelWindow:SetMapHome()
-
-    -- also close the options window
-    self:CloseOptions();
 
     -- create the window used to add the map
     self.MapWindow = Turbine.UI.Control();
@@ -469,19 +465,7 @@ function TravelWindow:SaveMapHome(shortcut)
     -- update and save everything
     self:UpdateSettings();
 end
-
--- simple function to open the options window
-function TravelWindow:OpenOptions()
-    OptionsWindow:SetVisible(true);
-end
-
--- function to close the options window if it exists
-function TravelWindow:CloseOptions()
-    if (self.options ~= nil) then
-        self.options:SetVisible(false);
-    end
-    self.options = nil;
-end
+]]--
 
 function TravelWindow:OpenMapWindow(map)
     self:CloseMapWindow();
@@ -533,48 +517,22 @@ function TravelWindow:UpdateSettings()
 end
 
 function TravelWindow:ResetSettings()
-    -- close the option window
-    self:CloseOptions()
+    InitDefaultSettings();
+    SyncUIFromSettings();
+end
 
-    -- set all saved settings to default values
-    Settings = {};
-    Settings.lastLoadedVersion = Plugins["Travel Window II"]:GetVersion();
-    Settings.gridCols = 0;
-    Settings.gridRows = 0;
-    Settings.listWidth = 0;
-    Settings.listRows = 0;
-    Settings.positionX = Turbine.UI.Display.GetWidth() - self:GetWidth() - 50;
-    Settings.positionY = Turbine.UI.Display.GetHeight() - self:GetHeight() - 50 * 1.5;
-    Settings.buttonRelativeX = 0.95;
-    Settings.buttonRelativeY = 0.75;
-    Settings.hideOnStart = 0;
-    Settings.hideOnCombat = 0;
-    Settings.pulldownTravel = 0;
-    Settings.hideOnTravel = 0;
-    Settings.ignoreEsc = 0;
-    Settings.showButton = 1;
-    Settings.mode = 2;
-    Settings.filters = 0x0F;
-    Settings.enabled = {};
-    Settings.order = {};
-    Settings.mainMaxOpacity = 1;
-    Settings.mainMinOpacity = 0.5;
-    Settings.fadeOutSteps = 1;
-    Settings.toggleMaxOpacity = 1;
-    Settings.toggleMinOpacity = 0.5;
-
-    -- clear the maps
-    Settings.mapGlanVraig = nil;
-
-    -- move the toggle button and main window
-    local buttonPositionX = Turbine.UI.Display.GetWidth() * SettingsStrings.buttonRelativeX;
-    local buttonPositionY = Turbine.UI.Display.GetHeight() * SettingsStrings.buttonRelativeY;
+function SyncUIFromSettings()
+    local buttonPositionX = Turbine.UI.Display.GetWidth() * Settings.buttonRelativeX;
+    local buttonPositionY = Turbine.UI.Display.GetHeight() * Settings.buttonRelativeY;
     ToggleButton:SetPosition(buttonPositionX, buttonPositionY);
-    self:SetPosition(Settings.positionX, Settings.positionY);
-
-    -- update everything
-    SetShortcuts();
-    self:UpdateSettings();
+    CheckEnabledSettings();
+    OptionsWindow.Panel:UpdateSettings();
+    OptionsWindow.Panel:EnableFromSettings();
+    SortFromSettings();
+    OptionsWindow.Panel:AddSortList();
+    Menu:SetSettings(Settings.mode, Settings.filters);
+    _G.travel:SetPosition(Settings.positionX, Settings.positionY);
+    _G.travel:UpdateSettings();
 end
 
 function TravelWindow:AddGVMap()

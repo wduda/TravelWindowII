@@ -23,8 +23,8 @@ function TravelButton:Constructor()
 
     local screenWidth = Turbine.UI.Display.GetWidth();
     local screenHeight = Turbine.UI.Display.GetHeight();
-    local buttonPositionX = SettingsStrings.buttonRelativeX * screenWidth;
-    local buttonPositionY = SettingsStrings.buttonRelativeY * screenHeight;
+    local buttonPositionX = Settings.buttonRelativeX * screenWidth;
+    local buttonPositionY = Settings.buttonRelativeY * screenHeight;
     if buttonPositionX + self:GetWidth() > screenWidth then
         buttonPositionX = screenWidth - self:GetWidth();
     end

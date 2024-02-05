@@ -9,7 +9,7 @@ togglebit = TravelWindowII.togglebit;
 
 DefAlpha = 0.92;
 Settings = {};
-SettingsStrings = {};
+AccountSettingsStrings = {};
 TravelShortcuts = {}; -- put all the shortcuts into one table
 TrainedSkills = Turbine.Gameplay.SkillList;
 
@@ -25,36 +25,19 @@ if (Turbine.Gameplay.LocalPlayer.GetTrainedSkills ~= nil) then
     TrainedSkills = player:GetTrainedSkills();
 end
 
--- load the player saved settings
-LoadSettings();
-
 -- create the lists of travel locations and the shortcuts
 -- that are used to execute them
 TravelInfo = TravelDictionary();
 
+-- load the player saved settings
+LoadSettings();
+
 -- set up all the shortcuts
-SetShortcuts();
+InitShortcuts();
 
-local PluginManagerOptionsPanel = Turbine.UI.Control()
-PluginManagerOptionsPanel:SetSize(500, 200)
+CreateOptionsWindow();
 
-plugin.GetOptionsPanel = function()
-    return PluginManagerOptionsPanel;
-end
-
-OptionsWindow = TravelWindowII.src.OptionsWindow();
-local OptionsButton = Turbine.UI.Lotro.Button()
-OptionsButton:SetParent(PluginManagerOptionsPanel)
-OptionsButton:SetPosition(100, 100)
-OptionsButton:SetSize(200,15)
-OptionsButton:SetText(menuOptionsString)
-OptionsButton:SetVisible(true)
-
-OptionsButton.Click = function()
-    OptionsWindow:SetVisible(true);
-end
-
--- configure the external toggle button
+-- create the external toggle button
 ToggleButton = TravelWindowII.src.TravelButton();
 
 -- create the travel window
