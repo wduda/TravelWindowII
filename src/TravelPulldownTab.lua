@@ -127,6 +127,8 @@ function TravelPulldownTab:SetItems()
     if #self.pulldown.quickslots > 0 then
         self.pulldown:ItemSelected(1);
         self.pulldown:FireEvent();
+    else
+        self.quickslot:SetShortcut(nil);
     end
 end
 

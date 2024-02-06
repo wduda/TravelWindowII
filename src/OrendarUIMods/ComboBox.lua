@@ -149,6 +149,7 @@ end
 function ComboBox:ClearItems()
     self.labels = {};
     self.quickslots = {};
+    self.label:SetText("");
 end
 
 function ComboBox:AddItem(shortcut, index, value)
