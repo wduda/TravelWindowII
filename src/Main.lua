@@ -71,10 +71,12 @@ function TravelCommand:Execute(command, arguments)
     if (arguments == "show") then
         CheckSkills(false);
         _G.travel:SetVisible(true);
+        _G.travel:Activate();
     elseif (arguments == "hide") then
         _G.travel:SetVisible(false);
     elseif (arguments == "toggle") then
         _G.travel:SetVisible(not _G.travel:IsVisible());
+        _G.travel:Activate();
     elseif (arguments == "dump") then
         _G.travel:DoDump();
     elseif (arguments == "scan") then

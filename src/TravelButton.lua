@@ -89,6 +89,7 @@ function TravelButton:Constructor()
                     _G.travel:SetOpacity(Settings.mainMinOpacity);
                 end
                 _G.travel:SetVisible(not _G.travel:IsVisible());
+                _G.travel:Activate();
             end
         else
             Menu:ShowMenu();
