@@ -99,9 +99,7 @@ function MapWindow:Constructor(map)
                 local name = self:DebugNameLookup(shortcut:GetData());
                 coordinates[i] = {name, self.quickslots[i]:GetPosition()}
             end
-            pcall(function()
-                PatchDataSave(Turbine.DataScope.Character, "TravelWindowIIDebugCoords", coordinates);
-            end);
+            PatchDataSave(Turbine.DataScope.Character, "TravelWindowIIDebugCoords", coordinates);
         end
     end
 

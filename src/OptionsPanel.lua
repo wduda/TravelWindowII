@@ -85,15 +85,6 @@ function OptionsPanel:Constructor()
 
     self:SetVisible(true);
 
-    -- have the main window close the options
-    self.VisibleChanged = function(sender, args)
-        if (self:IsVisible() == false) then
-            if (_G.travel ~= nil) then
-                _G.travel:CloseOptions();
-            end
-        end
-    end
-
     self.loaded = true;
 end
 
@@ -344,15 +335,40 @@ function OptionsPanel:AddGeneralItems()
 
     -- reset all setting button
     self.resetButton = Turbine.UI.Lotro.Button();
-    self.resetButton:SetSize(200, 20);
-    self.resetButton:SetPosition(150, 690);
+    self.resetButton:SetSize(220, 20);
+    self.resetButton:SetPosition(20, 690);
     self.resetButton:SetText(resetSettingsString);
     self.resetButton:SetParent(self.GeneralTab);
     self.resetButton:SetVisible(true);
 
+    self.saveGlobal = Turbine.UI.Lotro.Button();
+    self.saveGlobal:SetSize(220, 20);
+    self.saveGlobal:SetPosition(250, 690);
+    self.saveGlobal:SetText(saveGlobalDefaultsString);
+    self.saveGlobal:SetParent(self.GeneralTab);
+    self.saveGlobal:SetVisible(true);
+
+    self.loadGlobal = Turbine.UI.Lotro.Button();
+    self.loadGlobal:SetSize(220, 20);
+    self.loadGlobal:SetPosition(480, 690);
+    self.loadGlobal:SetText(loadGlobalDefaultsString);
+    self.loadGlobal:SetParent(self.GeneralTab);
+    self.loadGlobal:SetVisible(true);
+
+    self:UpdateSettings();
+
     -- do the settings reset
     self.resetButton.Click = function(sender, args)
         _G.travel:ResetSettings();
+    end
+
+    self.saveGlobal.Click = function(sender, args)
+        SaveSettings(Turbine.DataScope.Account);
+    end
+
+    self.loadGlobal.Click = function(sender, args)
+        SetSettings(AccountSettingsStrings);
+        SyncUIFromSettings();
     end
 
     self.UseMinWindowCheck.CheckedChanged = function(sender, args)
@@ -487,6 +503,21 @@ function OptionsPanel:AddGeneralItems()
         _G.travel:UpdateOpacity();
         _G.travel:UpdateSettings();
     end
+end
+
+function OptionsPanel:UpdateSettings()
+    self.UseMinWindowCheck:SetChecked(Settings.useMinWindow == 1);
+    self.HideOnStartCheck:SetChecked(Settings.hideOnStart == 1);
+    self.HideOnCombatCheck:SetChecked(Settings.hideOnCombat == 1);
+    self.hideOnTravelCheck:SetChecked(Settings.hideOnTravel == 1);
+    self.ignoreEscCheck:SetChecked(Settings.ignoreEsc == 1);
+    self.ShowButtonCheck:SetChecked(Settings.showButton == 1);
+    self.PulldownTravelCheck:SetChecked(Settings.pulldownTravel == 1);
+    self.toggleMinScrollBar:SetValue(Settings.toggleMinOpacity * 100);
+    self.toggleMaxScrollBar:SetValue(Settings.toggleMaxOpacity * 100);
+    self.mainMinScrollBar:SetValue(Settings.mainMinOpacity * 100);
+    self.mainMaxScrollBar:SetValue(Settings.mainMaxOpacity * 100);
+    self.mainFadeScrollBar:SetValue(Settings.fadeOutSteps);
 end
 
 -- function to add all the travel shortcuts that can be toggled
@@ -825,6 +856,16 @@ function OptionsPanel:EnableAll(enable)
     end
     self.disableUpdates = false;
     _G.travel:UpdateSettings(); -- force an update now
+end
+
+function OptionsPanel:EnableFromSettings()
+    self.disableUpdates = true;
+    for i = 1, #self.checks do
+        local id = self.checks[i].skillId;
+        self.checks[i]:SetChecked(Settings.enabled[id]);
+    end
+    self.disableUpdates = false;
+    -- TravelWindow:UpdateSettings() will be called later
 end
 
 -- function to add the list of shortcuts to the sort tab
