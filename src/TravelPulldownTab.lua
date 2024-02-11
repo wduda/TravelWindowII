@@ -26,17 +26,18 @@ function TravelPulldownTab:Constructor(toplevel)
         self.wPadding = 0;
     end
 
+    self.travelOnSelect = 0;
+
     -- this label is used to catch wheel moves
     self.scrollLabel = Turbine.UI.Label();
     self.scrollLabel:SetPosition(0, 0);
     self.scrollLabel:SetParent(self);
 
     -- the pulldown box
-    self.pulldown = TravelWindowII.src.OrendarUIMods.ComboBox(self);
+    self.pulldown = TravelWindowII.src.OrendarUIMods.ComboBox(toplevel);
     self.pulldown:SetPosition(43 + self.wPadding, 5);
     self.pulldown:SetParent(self);
     self.pulldown:SetVisible(true);
-    self.pulldown:SetTravelOnSelect(Settings.pulldownTravel);
 
     -- the quickslot for the shortcut
     self.quickslot = Turbine.UI.Lotro.Quickslot();
@@ -107,24 +108,29 @@ end
 
 function TravelPulldownTab:SetItems()
 
-    if self.tabId ~= self.parent.MainPanel.selectedPage or not(self.parent.dirty) then
+    if self.tabId ~= self.parent.MainPanel.selectedPage then
         return
     end
 
+    -- refresh items if dirty or pulldownTravel option changed
+    -- pulldownTravel requires hidden quickslots to be added
+    if Settings.pulldownTravel == self.travelOnSelect and not(self.parent.dirty) then
+        return
+    end
+
+    self.travelOnSelect = Settings.pulldownTravel;
     self.pulldown:ClearItems();
 
     -- add the shortcuts to the combo box
-    local shortcutIndex = 1;
     for i = 1, #TravelShortcuts, 1 do
         if TravelShortcuts[i].found and TravelShortcuts[i]:IsEnabled() then
             if (hasbit(Settings.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
-                self.pulldown:AddItem(TravelShortcuts[i], shortcutIndex, i);
-                shortcutIndex = shortcutIndex + 1;
+                self.pulldown:AddItem(TravelShortcuts[i], i);
             end
         end
     end
 
-    if #self.pulldown.quickslots > 0 then
+    if #self.pulldown.labels > 0 then
         self.pulldown:ItemSelected(1);
         self.pulldown:FireEvent();
     else

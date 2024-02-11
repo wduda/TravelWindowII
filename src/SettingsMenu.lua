@@ -287,29 +287,29 @@ function SetSettings(settingsArg, importOldSettings)
     -- fixup deprecated buttonPositionX
     local buttonRelativeX = Settings.buttonRelativeX;
     if settingsArg.buttonPositionX and settingsArg.buttonPositionX ~= "nil" then
-        settingsArg.buttonPositionX = nil;
         local screenWidth = Turbine.UI.Display.GetWidth();
         if tonumber(settingsArg.buttonPositionX) < screenWidth then
             -- not perfect, but assuming the same resolution, this will approximately convert to a relative value
             buttonRelativeX = tonumber(settingsArg.buttonPositionX) / screenWidth;
-            if settingsArg.buttonRelativeX > 1.0 then
+            if buttonRelativeX > 1.0 then
                 buttonRelativeX = Settings.buttonRelativeX;
             end
         end
+        settingsArg.buttonPositionX = nil;
     end
 
     -- fixup deprecated buttonPositionY
     local buttonRelativeY = Settings.buttonRelativeY;
     if settingsArg.buttonPositionY and settingsArg.buttonPositionY ~= "nil" then
-        settingsArg.buttonPositionY = nil;
         local screenHeight = Turbine.UI.Display.GetHeight();
         if tonumber(settingsArg.buttonPositionY) < screenHeight then
             -- not perfect, but assuming the same resolution, this will approximately convert to a relative value
             buttonRelativeY = tonumber(settingsArg.buttonPositionY) / screenHeight;
-            if settingsArg.buttonRelativeY > 1.0 then
+            if buttonRelativeY > 1.0 then
                 buttonRelativeY = Settings.buttonRelativeY;
             end
         end
+        settingsArg.buttonPositionY = nil;
     end
 
     InitNumberSetting(settingsArg, "gridCols");
