@@ -329,7 +329,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainFadeScrollBar:SetSize(450, 10);
     self.mainFadeScrollBar:SetPosition(20, self:NextY(25));
     self.mainFadeScrollBar:SetMinimum(1);
-    self.mainFadeScrollBar:SetMaximum(51);
+    self.mainFadeScrollBar:SetMaximum(151);
     self.mainFadeScrollBar:SetValue(Settings.fadeOutSteps);
     self.mainFadeScrollBar:SetParent(self.GeneralTab);
 
