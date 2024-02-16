@@ -100,9 +100,11 @@ function OptionsPanel:AddGeneralItems()
         return optionHeight;
     end
 
+    local labelWidth = 420;
+
     -- label for hide window on start option
     self.UseMinWindowLabel = Turbine.UI.Label();
-    self.UseMinWindowLabel:SetSize(300, 20);
+    self.UseMinWindowLabel:SetSize(labelWidth, 20);
     self.UseMinWindowLabel:SetPosition(20, NextY(20));
     self.UseMinWindowLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.UseMinWindowLabel:SetParent(self.GeneralTab);
@@ -119,7 +121,7 @@ function OptionsPanel:AddGeneralItems()
 
     -- label for hide window on start option
     self.HideOnStartLabel = Turbine.UI.Label();
-    self.HideOnStartLabel:SetSize(300, 20);
+    self.HideOnStartLabel:SetSize(labelWidth, 20);
     self.HideOnStartLabel:SetPosition(20, NextY(30));
     self.HideOnStartLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.HideOnStartLabel:SetParent(self.GeneralTab);
@@ -136,7 +138,7 @@ function OptionsPanel:AddGeneralItems()
 
     -- label for hide on combat option
     self.HideOnCombatLabel = Turbine.UI.Label();
-    self.HideOnCombatLabel:SetSize(300, 20);
+    self.HideOnCombatLabel:SetSize(labelWidth, 20);
     self.HideOnCombatLabel:SetPosition(20, NextY(30));
     self.HideOnCombatLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.HideOnCombatLabel:SetParent(self.GeneralTab);
@@ -153,7 +155,7 @@ function OptionsPanel:AddGeneralItems()
 
     -- label for option to close window on travel skill use
     self.hideOnTravelLabel = Turbine.UI.Label();
-    self.hideOnTravelLabel:SetSize(300, 20);
+    self.hideOnTravelLabel:SetSize(labelWidth, 20);
     self.hideOnTravelLabel:SetPosition(20, NextY(30));
     self.hideOnTravelLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.hideOnTravelLabel:SetParent(self.GeneralTab);
@@ -170,7 +172,7 @@ function OptionsPanel:AddGeneralItems()
 
     -- label for ignore escape to close option
     self.ignoreEscLabel = Turbine.UI.Label();
-    self.ignoreEscLabel:SetSize(300, 20);
+    self.ignoreEscLabel:SetSize(labelWidth, 20);
     self.ignoreEscLabel:SetPosition(20, NextY(30));
     self.ignoreEscLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.ignoreEscLabel:SetParent(self.GeneralTab);
@@ -187,7 +189,7 @@ function OptionsPanel:AddGeneralItems()
 
     -- label for show toggle button option
     self.ShowButtonLabel = Turbine.UI.Label();
-    self.ShowButtonLabel:SetSize(300, 20);
+    self.ShowButtonLabel:SetSize(labelWidth, 20);
     self.ShowButtonLabel:SetPosition(20, NextY(30));
     self.ShowButtonLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.ShowButtonLabel:SetParent(self.GeneralTab);
@@ -204,7 +206,7 @@ function OptionsPanel:AddGeneralItems()
 
     -- label for option to fire skill on pulldown selection
     self.PulldownTravelLabel = Turbine.UI.Label();
-    self.PulldownTravelLabel:SetSize(300, 20);
+    self.PulldownTravelLabel:SetSize(labelWidth, 20);
     self.PulldownTravelLabel:SetPosition(20, NextY(30));
     self.PulldownTravelLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.PulldownTravelLabel:SetParent(self.GeneralTab);
@@ -221,7 +223,7 @@ function OptionsPanel:AddGeneralItems()
 
     -- label for toggle button sliders
     self.toggleSlidersLabel = Turbine.UI.Label();
-    self.toggleSlidersLabel:SetSize(300, 20);
+    self.toggleSlidersLabel:SetSize(labelWidth, 20);
     self.toggleSlidersLabel:SetPosition(20, NextY(30));
     self.toggleSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.toggleSlidersLabel:SetParent(self.GeneralTab);
@@ -268,7 +270,7 @@ function OptionsPanel:AddGeneralItems()
 
     -- label for main window sliders
     self.SlidersLabel = Turbine.UI.Label();
-    self.SlidersLabel:SetSize(300, 20);
+    self.SlidersLabel:SetSize(labelWidth, 20);
     self.SlidersLabel:SetPosition(20, NextY(25));
     self.SlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.SlidersLabel:SetParent(self.GeneralTab);
@@ -315,7 +317,7 @@ function OptionsPanel:AddGeneralItems()
 
     -- fade out slider label
     self.mainFadeSlidersLabel = Turbine.UI.Label();
-    self.mainFadeSlidersLabel:SetSize(300, 20);
+    self.mainFadeSlidersLabel:SetSize(labelWidth, 20);
     self.mainFadeSlidersLabel:SetPosition(20, NextY(25));
     self.mainFadeSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.mainFadeSlidersLabel:SetParent(self.GeneralTab);
