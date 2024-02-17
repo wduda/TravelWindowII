@@ -425,13 +425,11 @@ function OrderTableNumberIndex(settingsArg)
     return order;
 end
 
+-- this method influences the default sorting order of skills
 function CheckEnabledSettings()
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- update generic travel settings
         AddNewSettings(TravelInfo.gen);
-
-        -- update reputation travel settings
-        AddNewSettings(TravelInfo.rep);
 
         -- update racial travel settings
         local racialId = TravelInfo.racial.id;
@@ -442,10 +440,11 @@ function CheckEnabledSettings()
             table.insert(Settings.order, racialId);
         end
 
-        local classSkills = TravelInfo:GetClassSkills();
-        if classSkills ~= nil then
-            AddNewSettings(classSkills);
-        end
+        -- update class travel settings
+        AddNewSettings(TravelInfo:GetClassSkills());
+
+        -- update reputation travel settings
+        AddNewSettings(TravelInfo.rep);
     else
         -- update creep travel settings
         AddNewSettings(TravelInfo.creep);
@@ -453,6 +452,7 @@ function CheckEnabledSettings()
 end
 
 function AddNewSettings(skills)
+    if skills == nil then return end
     for i = 1, skills:GetCount() do
         local id = skills:IdAtIndex(i);
         -- if the enabled setting for the skill is nil, set it to true as default
