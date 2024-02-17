@@ -532,6 +532,7 @@ function SyncUIFromSettings()
     OptionsWindow.Panel:AddSortList();
     Menu:SetSettings(Settings.mode, Settings.filters);
     _G.travel:SetPosition(Settings.positionX, Settings.positionY);
+    _G.travel.dirty = true;
     _G.travel:UpdateSettings();
 end
 
