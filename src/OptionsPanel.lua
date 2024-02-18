@@ -982,6 +982,36 @@ function OptionsPanel:AddSortButtons()
     self.moveBottomButton:SetParent(self.SortTab);
     self.moveBottomButton:SetVisible(true);
 
+    self.defaultSortButton = Turbine.UI.Lotro.Button();
+    self.defaultSortButton:SetSize(185, 20);
+    self.defaultSortButton:SetPosition(10, 375);
+    self.defaultSortButton:SetText(defaultSortString);
+    self.defaultSortButton:SetParent(self.SortTab);
+    self.defaultSortButton:SetVisible(true);
+
+    self.nameSortButton = Turbine.UI.Lotro.Button();
+    self.nameSortButton:SetSize(185, 20);
+    self.nameSortButton:SetPosition(10, 405);
+    self.nameSortButton:SetText(sortNameString);
+    self.nameSortButton:SetParent(self.SortTab);
+    self.nameSortButton:SetVisible(true);
+
+    self.defaultSortButton.Click = function(sender, args)
+        Settings.order = {};
+        CheckEnabledSettings(); -- restore default Settings.order
+        SortFromSettings();
+        self:AddSortList();
+        _G.travel.dirty = true;
+        _G.travel:UpdateSettings();
+    end
+
+    self.nameSortButton.Click = function(sender, args)
+        SortByName();
+        self:AddSortList();
+        _G.travel.dirty = true;
+        _G.travel:UpdateSettings();
+    end
+
     -- handle the move to top button click
     self.moveTopButton.Click = function(sender, args)
 
