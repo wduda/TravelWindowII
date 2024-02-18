@@ -188,7 +188,7 @@ function FindSkill(shortcut)
         if skillInfo:GetName() == shortcut:GetName() then
             local desc = shortcut:GetDescription();
             if desc ~= nil then
-                if string.match(skillInfo:GetDescription(), desc) then
+                if string.find(skillInfo:GetDescription(), desc, 1, true) ~= nil then
                     shortcut.found = true;
                     return true;
                 end
