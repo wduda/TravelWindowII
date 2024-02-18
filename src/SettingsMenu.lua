@@ -222,6 +222,7 @@ function InitDefaultSettings()
     Settings.mainMaxOpacity = 1;
     Settings.mainMinOpacity = 0.5;
     Settings.fadeOutSteps = 1;
+    Settings.fadeOutDelay = 0;
     Settings.toggleMaxOpacity = 1;
     Settings.toggleMinOpacity = 0.5;
 
@@ -332,6 +333,7 @@ function SetSettings(settingsArg, importOldSettings)
     InitNumberSetting(settingsArg, "mainMaxOpacity");
     InitNumberSetting(settingsArg, "mainMinOpacity");
     InitNumberSetting(settingsArg, "fadeOutSteps");
+    InitNumberSetting(settingsArg, "fadeOutDelay");
     InitNumberSetting(settingsArg, "toggleMaxOpacity");
     InitNumberSetting(settingsArg, "toggleMinOpacity");
 
@@ -388,6 +390,7 @@ function SaveSettings(scope)
     settingsStrings.mainMaxOpacity = tostring(Settings.mainMaxOpacity);
     settingsStrings.mainMinOpacity = tostring(Settings.mainMinOpacity);
     settingsStrings.fadeOutSteps = tostring(Settings.fadeOutSteps);
+    settingsStrings.fadeOutDelay = tostring(Settings.fadeOutDelay);
     settingsStrings.toggleMaxOpacity = tostring(Settings.toggleMaxOpacity);
     settingsStrings.toggleMinOpacity = tostring(Settings.toggleMinOpacity);
     settingsStrings.enabled = TableCopy(Settings.enabled);

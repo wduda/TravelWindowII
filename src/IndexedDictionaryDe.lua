@@ -47,6 +47,7 @@ disableAllString = "Alle Deaktivieren";
 ignoreEscString = "Escape schliesst Travel-Fenster nicht";
 minWindowString = "Mini-Fenster verwenden";
 fadeWindowString = "Geschwindigkeit des Fenster-Fadeouts";
+fadeDelayString = "Verzögerung des Fenster-Fadeouts";
 
 -- menu strings
 menuFiltersString = "Filter";

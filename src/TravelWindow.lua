@@ -197,13 +197,32 @@ function TravelWindow:Constructor(useMinWindow)
 
     self.Update = function(sender, args)
         -- handle opacity fade out
-        local stepSize = (Settings.mainMaxOpacity - Settings.mainMinOpacity) / Settings.fadeOutSteps;
-        local opacity = self:GetOpacity() - stepSize;
-        if opacity < Settings.mainMinOpacity then
-            opacity = Settings.mainMinOpacity
-            self:SetWantsUpdates(false);
+        if self.fadeOutDelay == nil then
+            self.fadeOutDelay = Settings.fadeOutDelay;
         end
-        self:SetOpacity(opacity);
+
+        if self.fadeOutDelay > 0 then
+            local now = Turbine.Engine.GetGameTime();
+            if self.fadeDelayStart == nil then
+                self.fadeDelayStart = now + 0.05 * Settings.fadeOutDelay;
+            else
+                if now > self.fadeDelayStart then
+                    self.fadeOutDelay = 0;
+                    self.fadeDelayStart = nil;
+                end
+            end
+        end
+
+        if self.fadeOutDelay == 0 then
+            local stepSize = (Settings.mainMaxOpacity - Settings.mainMinOpacity) / Settings.fadeOutSteps;
+            local opacity = self:GetOpacity() - stepSize;
+            if opacity < Settings.mainMinOpacity then
+                opacity = Settings.mainMinOpacity
+                self:SetWantsUpdates(false);
+                self.fadeOutDelay = nil;
+            end
+            self:SetOpacity(opacity);
+        end
     end
 
     -- if the visible status of the window changes, close the pulldown tab
@@ -226,6 +245,8 @@ function TravelWindow:Constructor(useMinWindow)
     -- go to full opacity if mouse is over
     self.MouseEnter = function(sender, args)
         self:SetMaxOpacity();
+        self.fadeDelayStart = nil;
+        self.fadeOutDelay = nil;
     end
 
     -- go to low opacity when mouse is not over

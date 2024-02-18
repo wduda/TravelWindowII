@@ -315,6 +315,25 @@ function OptionsPanel:AddGeneralItems()
     self.mainMaxScrollBar:SetValue(Settings.mainMaxOpacity * 100);
     self.mainMaxScrollBar:SetParent(self.GeneralTab);
 
+    -- fade out delay slider label
+    self.fadeDelaySlidersLabel = Turbine.UI.Label();
+    self.fadeDelaySlidersLabel:SetSize(labelWidth, 20);
+    self.fadeDelaySlidersLabel:SetPosition(20, NextY(25));
+    self.fadeDelaySlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.fadeDelaySlidersLabel:SetParent(self.GeneralTab);
+    self.fadeDelaySlidersLabel:SetText(fadeDelayString);
+    self.fadeDelaySlidersLabel:SetVisible(true);
+
+    -- fade out delay slider
+    self.fadeDelayScrollBar = Turbine.UI.Lotro.ScrollBar();
+    self.fadeDelayScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
+    self.fadeDelayScrollBar:SetSize(450, 10);
+    self.fadeDelayScrollBar:SetPosition(20, NextY(25));
+    self.fadeDelayScrollBar:SetMinimum(0);
+    self.fadeDelayScrollBar:SetMaximum(100);
+    self.fadeDelayScrollBar:SetValue(Settings.fadeOutDelay);
+    self.fadeDelayScrollBar:SetParent(self.GeneralTab);
+
     -- fade out slider label
     self.mainFadeSlidersLabel = Turbine.UI.Label();
     self.mainFadeSlidersLabel:SetSize(labelWidth, 20);
@@ -499,6 +518,10 @@ function OptionsPanel:AddGeneralItems()
         _G.travel:UpdateSettings();
     end
 
+    self.fadeDelayScrollBar.ValueChanged = function(sender, args)
+        Settings.fadeOutDelay = self.fadeDelayScrollBar:GetValue();
+    end
+
     self.mainFadeScrollBar.ValueChanged = function(sender, args)
         Settings.fadeOutSteps = self.mainFadeScrollBar:GetValue();
         _G.travel:UpdateOpacity();
@@ -519,6 +542,7 @@ function OptionsPanel:UpdateSettings()
     self.mainMinScrollBar:SetValue(Settings.mainMinOpacity * 100);
     self.mainMaxScrollBar:SetValue(Settings.mainMaxOpacity * 100);
     self.mainFadeScrollBar:SetValue(Settings.fadeOutSteps);
+    self.fadeDelayScrollBar:SetValue(Settings.fadeOutDelay);
 end
 
 -- function to add all the travel shortcuts that can be toggled

@@ -47,6 +47,7 @@ disableAllString = "Désactiver tout";
 ignoreEscString = "Escape ne pas fermer la fenêtre principale";
 minWindowString = "Utiliser la mini-fenêtre";
 fadeWindowString = "Fondu de la vitesse de la fenêtre";
+fadeDelayString = "Délai de la fenêtre de fondu";
 
 -- menu strings
 menuFiltersString = "Filtres";

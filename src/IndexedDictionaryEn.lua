@@ -47,6 +47,7 @@ disableAllString = "Disable All";
 ignoreEscString = "Escape does not close main window";
 minWindowString = "Use Mini-Window";
 fadeWindowString = "Fade Window Speed";
+fadeDelayString = "Fade Window Delay";
 
 -- menu strings
 menuFiltersString = "Filters";
