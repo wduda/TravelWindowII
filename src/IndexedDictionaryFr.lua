@@ -13,10 +13,6 @@ eriadorMapTitleString = "Carte de l'Eriador";
 rhovanionMapTitleString = "Carte du Rhovanion";
 gondorMapTitleString = "Carte du Gondor"
 
--- strings for maps
-glanMapString = "Carte précise pour aller à Glân Vraig";
-glanMapItemString = "Carte précise pour aller à Glân Vraig";
-
 skillNotTrainedString = "Compétence non utilisée: ";
 
 -- options window strings
@@ -48,7 +44,7 @@ enableRepSkillsString = "Activer le chevauchement";
 disableRepSkillsString = "Désactiver le chevauchement";
 enableAllString = "Activer tout";
 disableAllString = "Désactiver tout";
-ignoreEscString = "Ignorer Escape pour fermer la fenêtre principale";
+ignoreEscString = "Escape ne pas fermer la fenêtre principale";
 minWindowString = "Utiliser la mini-fenêtre";
 fadeWindowString = "Fondu de la vitesse de la fenêtre";
 

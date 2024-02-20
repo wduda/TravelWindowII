@@ -13,18 +13,14 @@ eriadorMapTitleString = "Eriador Reiseziele";
 rhovanionMapTitleString = "Rhovanion Reiseziele";
 gondorMapTitleString = "Gondor Reiseziele";
 
--- strings for maps
-glanMapString = "Genaue Karte nach Glân Vraig";
-glanMapItemString = "Genaue Karte nach Glân Vraig";
-
 skillNotTrainedString = "Nicht erlernte Fertigkeit: ";
 
 -- options window strings
 generalTabString = "Allgemein";
 selectTabString = "Auswahl";
 sortTabString = "Sortierung";
-hideString = "Verstecke Fenster beim Start";
-toggleString = "Zeige An/Aus-Knopf";
+hideString = "Verstecke Travel-Fenster beim Start";
+toggleString = "Zeige Travel-Knopf";
 pulldownTravelString = "Reise wenn Pulldown-Fertigkeit selektiert";
 hideOnTravelString = "Verstecke Fenster bei Reise";
 hideOnCombatString = "Verstecke Fenster bei Kampfbeginn";
@@ -36,7 +32,7 @@ moveUpString = "hoch";
 moveDownString = "runter";
 moveTopString = "zum Anfang";
 moveBottomString = "zum Ende";
-toggleSlidersString = "An/Aus-Knopf Transparenz";
+toggleSlidersString = "Travel-Knopf Transparenz";
 mainSlidersString = "Hauptfenster Transparenz";
 minString = "Min: ";
 maxString = "Max: ";
@@ -44,13 +40,13 @@ resetSettingsString = "Rücksetzen auf Standard";
 saveGlobalDefaultsString = "Globale Standardwerte speichern";
 loadGlobalDefaultsString = "Globale Standardwerte laden";
 checkSkillsString = "Nicht erlernte Fertigkeiten prüfen";
-enableRepSkillsString = "Überlappung Aktivieren";
-disableRepSkillsString = "Überlappung Deaktivieren";
+enableRepSkillsString = "Überlappende Aktivieren";
+disableRepSkillsString = "Überlappende Deaktivieren";
 enableAllString = "Alle Aktivieren";
 disableAllString = "Alle Deaktivieren";
-ignoreEscString = "Escape ignorieren, um das Hauptfenster zu schließen";
+ignoreEscString = "Escape schliesst Travel-Fenster nicht";
 minWindowString = "Mini-Fenster verwenden";
-fadeWindowString = "Geschwindigkeit des Fade-Fensters";
+fadeWindowString = "Geschwindigkeit des Fenster-Fadeouts";
 
 -- menu strings
 menuFiltersString = "Filter";

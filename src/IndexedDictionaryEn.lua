@@ -13,18 +13,14 @@ eriadorMapTitleString = "Eriador Destinations";
 rhovanionMapTitleString = "Rhovanion Destinations";
 gondorMapTitleString = "Gondor Destinations"
 
--- strings for maps
-glanMapString = "Glân Vraig Map";
-glanMapItemString = "Map to Glân Vraig";
-
 skillNotTrainedString = "Skills not trained: ";
 
 -- options window strings
 generalTabString = "General";
 selectTabString = "Enable";
 sortTabString = "Sort";
-hideString = "Hide main window at startup";
-toggleString = "Show Toggle Button";
+hideString = "Hide Travel window at startup";
+toggleString = "Show Travel Button";
 pulldownTravelString = "Travel when pulldown skill selected";
 hideOnTravelString = "Hide main window on travel";
 hideOnCombatString = "Hide main window when entering combat";
@@ -48,7 +44,7 @@ enableRepSkillsString = "Enable Overlapping";
 disableRepSkillsString = "Disable Overlapping";
 enableAllString = "Enable All";
 disableAllString = "Disable All";
-ignoreEscString = "Ignore Escape to close main window";
+ignoreEscString = "Escape does not close main window";
 minWindowString = "Use Mini-Window";
 fadeWindowString = "Fade Window Speed";
 
