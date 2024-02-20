@@ -54,12 +54,6 @@ function TravelWindow:Constructor(useMinWindow)
         self:SetVisible(true);
     end
 
-    -- if the player has a PvMP map, then insert it into the list
-    -- if ((.mapGlanVraig ~= nil) and (.mapGlanVraig ~= "nil")) then
-    -- self.reloadGVMap = true;
-    -- genLocations:InsertSkill(2, glanMapString, .mapGlanVraig, "skip");
-    -- end
-
     -- save the player's combat states for managing hiding the window
     -- when the player enters combat
     self.previousCombatState = false;
@@ -380,93 +374,6 @@ function TravelWindow:UpdateMinimum()
     end
 end
 
---[[ SetMapHome() & SaveMapHome() are unused and need to be updated
-function TravelWindow:SetMapHome()
-
-    -- create the window used to add the map
-    self.MapWindow = Turbine.UI.Control();
-    self.MapWindow:SetPosition(10, 35);
-    self.MapWindow:SetSize(Settings.width - 20, Settings.height - 60);
-    self.MapWindow:SetBackColor(Turbine.UI.Color(1, 0.1, 0.1, 0.1));
-    self.MapWindow:SetParent(self);
-    self.MapWindow:SetZOrder(300);
-
-    -- add a label to the window for instructions
-    self.mapLabel = Turbine.UI.Label();
-    self.mapLabel:SetForeColor(Turbine.UI.Color(1, 0.2, 0.2, 0.6));
-    self.mapLabel:SetPosition(0, 15);
-    self.mapLabel:SetSize(Settings.width - 20, self.MapWindow:GetHeight() - 90);
-    self.mapLabel:SetParent(self.MapWindow);
-    self.mapLabel:SetVisible(true);
-    self.mapLabel:SetFont(Turbine.UI.Lotro.Font.Verdana14);
-    self.mapLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.mapLabel:SetMultiline(true);
-    self.mapLabel:SetText("@TODO");
-
-    -- add an empty quickslot to the window
-    self.mapQuickSlot1 = Turbine.UI.Lotro.Quickslot();
-    self.mapQuickSlot1:SetPosition(self.MapWindow:GetWidth() / 2 - 18, self.MapWindow:GetHeight() - 80);
-    self.mapQuickSlot1:SetSize(36, 36);
-    self.mapQuickSlot1:SetParent(self.MapWindow);
-    self.mapQuickSlot1:SetUseOnRightClick(false);
-    self.mapQuickSlot1:SetVisible(true);
-
-    -- add a button to the window
-    self.mapButton = Turbine.UI.Lotro.Button();
-    self.mapButton:SetSize(60, 50);
-    self.mapButton:SetPosition(self.MapWindow:GetWidth() / 2 - self.mapButton:GetWidth() / 2,
-                               self.MapWindow:GetHeight() - 35);
-    self.mapButton:SetText("OK");
-    self.mapButton:SetParent(self.MapWindow);
-    self.mapButton:SetVisible(true);
-
-    -- when the button is pressed, update the settings
-    -- with the new skill, and reset everything
-    self.mapButton.Click = function(sender, args)
-
-        -- check if there is a shortcut in the quickslot
-        if (self.mapQuickSlot1:GetShortcut():GetType() ~= Turbine.UI.Lotro.ShortcutType.Undef) then
-
-            -- save the shortcut data to the settings
-            self:SaveMapHome(self.mapQuickSlot1:GetShortcut());
-        end
-
-        -- update the shortcuts list
-        self:UpdateSettings();
-
-        -- close this window
-        self.MapWindow:SetVisible(false);
-        self.MapWindow = nil;
-    end
-end
-
-function TravelWindow:SaveMapHome(shortcut)
-
-    local mapItem = shortcut:GetItem();
-
-    -- do this if it is the glan vraig map
-    if (string.find(mapItem:GetName(), glanMapItemString)) then
-
-        -- remove the old shortcut if it exists
-        if (TravelInfo.gen:IndexByName(glanMapString) == 2) then
-            TravelInfo.gen:RemoveSkillAtIndex(2);
-        end
-
-        -- set the value
-        Settings.mapGlanVraig = shortcut:GetData();
-
-        -- update the location lists
-        TravelInfo.gen:InsertSkill(2, glanMapString, Settings.mapGlanVraig);
-
-        -- else, do nothing but report the error
-    else
-        Turbine.Shell.WriteLine("@TODO");
-    end
-    -- update and save everything
-    self:UpdateSettings();
-end
-]]--
-
 function TravelWindow:OpenMapWindow(map)
     self:CloseMapWindow();
     self.mapWindow = TravelWindowII.src.MapWindow(map);
@@ -534,14 +441,6 @@ function SyncUIFromSettings()
     _G.travel:SetPosition(Settings.positionX, Settings.positionY);
     _G.travel.dirty = true;
     _G.travel:UpdateSettings();
-end
-
-function TravelWindow:AddGVMap()
-    -- if the player has a PvMP map, then insert it into the list
-    if ((Settings.mapGlanVraig ~= nil) and (Settings.mapGlanVraig ~= "nil")) then
-        self.reloadGVMap = false;
-        TravelInfo.gen:InsertSkill(2, glanMapString, Settings.mapGlanVraig, "Glan Vraig");
-    end
 end
 
 -- for debug purposes

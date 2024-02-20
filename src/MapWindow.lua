@@ -459,15 +459,6 @@ function MapWindow:AddGlanVraigMap()
         -- Moors Map
         {MapType.ERIADOR, 865, 245} -- Ettenmoors
     };
-
-    if self.mapType == moorsMap[1][1] then
-        for i = 1, #TravelShortcuts, 1 do
-            if TravelShortcuts[i]:GetName() == glanMapString then
-                self:AddSingleShortcut(moorsMap[1], TravelShortcuts[i]);
-                break
-            end
-        end
-    end
 end
 
 function MapWindow:AddCreepShortcuts()
