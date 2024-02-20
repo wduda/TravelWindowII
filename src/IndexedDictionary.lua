@@ -2,7 +2,9 @@
      specifically skill name, ID, label, description substring]]
 IndexedDictionary = class()
 
-function IndexedDictionary:Constructor()
+function IndexedDictionary:Constructor(parent)
+    self.parent = parent;
+
     -- set default tables
     self.skillNames = {}; -- must be a list of unique names!
     self.skillIds = {};
@@ -29,6 +31,7 @@ function IndexedDictionary:AddSkill(name, id, label, desc)
 
     -- increase the number of datasets
     self.numberOfItems = self.numberOfItems + 1;
+    self.parent.skillCount = self.parent.skillCount + 1;
 
     -- insert the unique label into the list of skills
     table.insert(self.skillLabels, label);
@@ -54,6 +57,7 @@ function IndexedDictionary:InsertSkill(index, name, id, label, desc)
 
     -- increase the number of datasets
     self.numberOfItems = self.numberOfItems + 1;
+    self.parent.skillCount = self.parent.skillCount + 1;
 
     -- insert the unique label into the list of skills at the specified index
     table.insert(self.skillLabels, index, label);
@@ -82,6 +86,7 @@ function IndexedDictionary:RemoveSkillAtIndex(index)
 
     -- decrease the counters
     self.numberOfItems = self.numberOfItems - 1;
+    self.parent.skillCount = self.parent.skillCount - 1;
 end
 
 -- function to get the skill name at a specified index
@@ -151,4 +156,34 @@ function IndexedDictionary:IndexByName(name)
 
     -- return -1 since we did not find a key
     return -1;
+end
+
+-- function to check if a table contains a specific element
+function TableContains(tableToSearch, elementToSearchFor)
+    for i, value in pairs(tableToSearch) do
+        if (value == elementToSearchFor) then
+            return true;
+        end
+    end
+    return false;
+end
+
+-- function to check if a table contains a specific element index
+function TableIndex(tableToSearch, elementToSearchFor)
+    for i, value in pairs(tableToSearch) do
+        if (value == elementToSearchFor) then
+            return i;
+        end
+    end
+    return 0;
+end
+
+function TableCopy(obj, seen)
+    if type(obj) ~= 'table' then return obj end
+    if seen and seen[obj] then return seen[obj] end
+    local s = seen or {}
+    local res = setmetatable({}, getmetatable(obj))
+    s[obj] = res
+    for k, v in pairs(obj) do res[TableCopy(k, s)] = TableCopy(v, s) end
+    return res
 end

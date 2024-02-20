@@ -8,7 +8,7 @@ import "TravelWindowII.src.utils.BitOps";
 
 OptionsWindow = class(Turbine.UI.Lotro.Window);
 
-function OptionsWindow:Constructor(parent)
+function OptionsWindow:Constructor()
     Turbine.UI.Lotro.Window.Constructor(self);
 
     self.loaded = false;
@@ -27,25 +27,37 @@ function OptionsWindow:Constructor(parent)
     self:SetOpacity(1);
 
     -- add the main options panel to the window
-    self.Panel = TravelWindowII.src.OptionsPanel(parent);
+    self.Panel = TravelWindowII.src.OptionsPanel();
     self.Panel:SetParent(self);
     self.Panel:SetPosition(0, 35);
 
     -- set the window to be visible
     self:SetVisible(false);
 
-    -- have the main window close the options
-    self.VisibleChanged = function(sender, args)
-        if (self:IsVisible() == false) then
-            if (parent ~= nil) then
-                parent:CloseOptions();
-            end
-        end
-    end
-
     self.loaded = true;
 end
 
 function OptionsWindow:GetLoaded()
     return self.loaded;
+end
+
+function CreateOptionsWindow()
+    local PluginManagerOptionsPanel = Turbine.UI.Control()
+    PluginManagerOptionsPanel:SetSize(500, 200)
+
+    plugin.GetOptionsPanel = function()
+        return PluginManagerOptionsPanel;
+    end
+
+    local OptionsButton = Turbine.UI.Lotro.Button()
+    OptionsButton:SetParent(PluginManagerOptionsPanel)
+    OptionsButton:SetPosition(100, 100)
+    OptionsButton:SetSize(200,15)
+    OptionsButton:SetText(menuOptionsString)
+    OptionsButton:SetVisible(true)
+
+    OptionsWindow = TravelWindowII.src.OptionsWindow();
+    OptionsButton.Click = function()
+        OptionsWindow:SetVisible(true);
+    end
 end

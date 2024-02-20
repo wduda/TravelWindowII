@@ -3,6 +3,4 @@ Travel Window II
 
 LOTRO Interface Plugin
 
-Travel Window II started out as Travel Window by D.H1cks also known as Dhor. As he stopped being able to maintain it
-it was updated by other authors in the meantime. This version is an attempt to restart development of Travel Window,
-keeping it up-to-date with LOTRO updates and hopefully adding some new features.
+This is an interface plugin for the video game The Lord of the Rings Online. It creates a single UI window that contains all travel skills available to the character, including race, class, housing, and reputation skills. It is a fork and further development of the "Travel Window" plugin, that has been created by Dhor and worked on by multiple authors before.

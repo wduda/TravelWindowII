@@ -18,17 +18,18 @@ ComboBox.BlackColor = Turbine.UI.Color(1, 0, 0, 0);
 function ComboBox:Constructor(toplevel)
     Turbine.UI.Control.Constructor(self);
 
+    self.itemHeight = 20;
     self:SetBackColor(ComboBox.DisabledColor);
     self.quickslots = {};
     self.labels = {};
-    self.hoverIndex = 0;
 
     self.topLevelWindow = toplevel;
 
     -- state
     self.dropped = false;
     self.selection = -1;
-    self.travelOnSelect = 0;
+    self.hoverIndex = 0;
+    self.hoverScroll = false;
 
     -- text label
     self.label = TravelWindowII.src.extensions.DLabel();
@@ -51,17 +52,19 @@ function ComboBox:Constructor(toplevel)
     self.arrow:SetMouseVisible(false);
 
     -- drop down window
-    self.dropDownWindow = Turbine.UI.Extensions.SimpleWindow();
+    self.dropDownWindow = Turbine.UI.Window();
     self.dropDownWindow:SetBackColor(ComboBox.DisabledColor);
     self.dropDownWindow:SetZOrder(98);
     self.dropDownWindow:SetVisible(false);
-    self.dropDownWindow:SetFadeSpeed(0.01);
 
     -- list scroll bar        
     self.scrollBar = Turbine.UI.Lotro.ScrollBar();
     self.scrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
-    self.scrollBar:SetParent(self.dropDownWindow);
     self.scrollBar:SetBackColor(ComboBox.BlackColor);
+    self.scrollBar:SetParent(self.dropDownWindow);
+    self.scrollBar:SetLargeChange(self.itemHeight);
+    self.scrollBar:SetSmallChange(self.itemHeight);
+    self.scrollBar:SetVisible(false);
 
     -- list to contain the drop down items
     self.listBox = Turbine.UI.Control();
@@ -77,18 +80,25 @@ function ComboBox:Constructor(toplevel)
     end
 
     self.FocusLost = function(sender, args)
-        if self.dropped then
-            if self.hoverIndex > 0 then
-                local msArgs = { Button = Turbine.UI.MouseButton.None };
-                self.labels[self.hoverIndex]:MouseClick(sender, args)
-            else
-                self:CloseDropDown()
-            end
+        if self.dropped and self.hoverIndex == 0 and not self.hoverScroll then
+            self:CloseDropDown()
         end
     end
-end
 
-function ComboBox:SetTravelOnSelect(value) self.travelOnSelect = value; end
+    -- FIXME: The window should remain opaque while grabbing the thumb button.
+    --        However, when the thumb button is grabbed, leaving the scrollbar
+    --        triggers a MouseLeave event on the dropDownWindow, which triggers a FadeOut().
+    --        Further, ScrollBar.MouseDown/Up do not work when grabbing the thumb button.
+    self.scrollBar.MouseEnter = function(sender, args)
+        self.hoverScroll = true;
+    end
+    self.scrollBar.MouseLeave = function(sender, args)
+        self.hoverScroll = false;
+    end
+    self.scrollBar.ValueChanged = function(sender, args)
+        self:UpdateSubWindow();
+    end
+end
 
 function ComboBox:MouseEnter(args)
     if (not self:IsEnabled()) then return; end
@@ -150,92 +160,78 @@ end
 function ComboBox:ClearItems()
     self.labels = {};
     self.quickslots = {};
+    self.listBox:GetControls():Clear();
+    self.label:SetText("");
 end
 
-function ComboBox:AddItem(shortcut, index, value)
+function ComboBox:AddItem(shortcut, value)
     local width, height = self:GetSize();
 
-    self.quickslots[index] = Turbine.UI.Lotro.Quickslot();
-    self.quickslots[index]:SetSize(width, 20);
-    self.quickslots[index]:SetPosition(0, ((index - 1) * (20)));
-    self.quickslots[index]:SetZOrder(90);
-    self.quickslots[index]:SetOpacity(1);
-    self.quickslots[index]:SetUseOnRightClick(false);
-    self.quickslots[index]:SetParent(self.listBox);
-    self.quickslots[index]:SetShortcut(shortcut);
+    local index = #self.labels + 1;
+    local label = TravelWindowII.src.extensions.DLabel();
+    label:SetSize(width, self.itemHeight);
+    label:SetPosition(0, ((index - 1) * (self.itemHeight)));
+    label:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
+    label:SetForeColor(ComboBox.ItemColor);
+    label:SetFont(Turbine.UI.Lotro.Font.TrajanPro14);
+    label:SetOutlineColor(ComboBox.HighlightColor);
+    label:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
+    label:SetText(shortcut:GetSkillLabel());
+    label:SetMouseVisible(Settings.pulldownTravel == 0);
+    label:SetParent(self.listBox);
 
-    -- self.labels[index] = Turbine.UI.Label();
-    self.labels[index] = TravelWindowII.src.extensions.DLabel();
-    self.labels[index]:SetSize(width, 20);
-    self.labels[index]:SetPosition(0, ((index - 1) * (20)));
-    self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
-    self.labels[index]:SetForeColor(ComboBox.ItemColor);
-    self.labels[index]:SetFont(Turbine.UI.Lotro.Font.TrajanPro14);
-    self.labels[index]:SetOutlineColor(ComboBox.HighlightColor);
-    self.labels[index]:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
-    self.labels[index]:SetText(shortcut:GetSkillLabel());
-    self.labels[index]:SetZOrder(100);
-    self.labels[index]:SetMouseVisible(self.travelOnSelect == 0);
-    self.labels[index]:SetParent(self.listBox);
+    label.MouseWheel = function(sender, args)
+        self:DoScroll(sender, args);
+    end
 
-    self.quickslots[index]:SetAllowDrop(false);
-    self.quickslots[index]:SetVisible(true);
-
-    self.labels[index].MouseEnter = function(sender, args)
-        sender:SetFontStyle(Turbine.UI.FontStyle.Outline);
-        sender:SetForeColor(ComboBox.ItemColor);
-        sender:SetText(sender:GetText());
+    label.MouseEnter = function(sender, args)
+        self.labels[index]:SetFontStyle(Turbine.UI.FontStyle.Outline);
+        self.labels[index]:SetForeColor(ComboBox.ItemColor);
         self.hoverIndex = index;
     end
 
-    self.labels[index].MouseLeave = function(sender, args)
-        sender:SetFontStyle(Turbine.UI.FontStyle.None);
+    label.MouseLeave = function(sender, args)
+        self.labels[index]:SetFontStyle(Turbine.UI.FontStyle.None);
         if (index == self.selection) then
-            sender:SetForeColor(ComboBox.SelectionColor);
+            self.labels[index]:SetForeColor(ComboBox.SelectionColor);
+        else
+            self.labels[index]:SetForeColor(ComboBox.ItemColor);
         end
-        sender:SetText(sender:GetText());
         self.hoverIndex = 0;
     end
 
-    self.labels[index].MouseClick = function(sender, args)
+    label.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Left) then
             self:ItemSelected(index);
             self:FireEvent();
-            if (self.travelOnSelect == 1 and Settings.hideOnTravel == 1) then
+            if (Settings.pulldownTravel == 1 and Settings.hideOnTravel == 1) then
                 self.topLevelWindow:SetVisible(false);
             end
         end
     end
 
-    self.labels[index].MouseWheel = function(sender, args)
-        self:DoScroll(sender, args);
-    end
-    self.quickslots[index].MouseWheel = function(sender, args)
-        self:DoScroll(sender, args);
+    if Settings.pulldownTravel == 1 then
+        label:SetZOrder(100);
+        local quickslot = Turbine.UI.Lotro.Quickslot();
+        quickslot:SetZOrder(90);
+        quickslot:SetSize(width, self.itemHeight);
+        quickslot:SetPosition(0, ((index - 1) * (self.itemHeight)));
+        quickslot:SetOpacity(0);
+        quickslot:SetUseOnRightClick(false);
+        quickslot:SetParent(self.listBox);
+        quickslot:SetShortcut(shortcut);
+        quickslot:SetAllowDrop(false);
+        quickslot:SetVisible(true);
+
+        quickslot.MouseWheel = label.MouseWheel;
+        quickslot.MouseEnter = label.MouseEnter;
+        quickslot.MouseLeave = label.MouseLeave;
+        quickslot.MouseClick = label.MouseClick;
+        self.quickslots[index] = quickslot;
     end
 
-    self.quickslots[index].MouseEnter = function(sender, args)
-        self.labels[index]:SetFontStyle(Turbine.UI.FontStyle.Outline);
-        self.labels[index]:SetForeColor(ComboBox.ItemColor);
-        self.labels[index]:SetText(self.labels[index]:GetText());
-    end
-    self.quickslots[index].MouseLeave = function(sender, args)
-        self.labels[index]:SetFontStyle(Turbine.UI.FontStyle.None);
-        if (index == self.selection) then
-            self.labels[index]:SetForeColor(ComboBox.SelectionColor);
-        end
-        self.labels[index]:SetText(self.labels[index]:GetText());
-    end
-
-    self.quickslots[index].MouseClick = function(sender, args)
-        if (args.Button == Turbine.UI.MouseButton.Left) then
-            self:ItemSelected(index);
-            self:FireEvent();
-            self.topLevelWindow:SetVisible(false);
-        end
-    end
-
-    self.labels[index]:SetIndex(value);
+    label:SetIndex(value);
+    self.labels[index] = label;
 end
 
 function ComboBox:RemoveItem(value)
@@ -339,9 +335,11 @@ function ComboBox:Layout()
     self.dropDownWindow:SetSize(width, listHeight + 4);
     self.scrollBar:SetPosition(width - 12, 2);
 
+    for i = 1, #self.labels, 1 do
+        self.labels[i]:SetSize(width, self.itemHeight);
+    end
     for i = 1, #self.quickslots, 1 do
-        self.quickslots[i]:SetSize(width, 20);
-        self.labels[i]:SetSize(width, 20);
+        self.quickslots[i]:SetSize(width, self.itemHeight);
     end
 end
 
@@ -380,8 +378,7 @@ function ComboBox:ShowDropDown()
         -- scrollbar
         self.scrollBar:SetSize(10, listHeight);
         self.scrollBar:SetPosition(width - 12, 2);
-        self.scrollBar:SetMinimum(0);
-        self.scrollBar:SetMaximum(itemCount * 20 - 200);
+        self.scrollBar:SetMaximum(itemCount * self.itemHeight - listHeight);
 
         -- position
         local parent = self:GetParent();
@@ -397,10 +394,6 @@ function ComboBox:ShowDropDown()
         self.dropDownWindow:SetPosition(screenX, screenY + cbHeight + 3);
 
         self.dropDownWindow:SetVisible(true);
-
-        self.scrollBar.ValueChanged = function(sender, args)
-            self:UpdateSubWindow();
-        end
     end
 end
 
@@ -417,7 +410,7 @@ end
 function ComboBox:DoScroll(sender, args)
 
     -- calculate how far to move the scrollbar
-    local newValue = self.scrollBar:GetValue() - args.Direction * 20;
+    local newValue = self.scrollBar:GetValue() - args.Direction * self.itemHeight;
 
     -- make sure the value does not go below zero
     if (newValue < 0) then newValue = 0; end
@@ -433,14 +426,10 @@ function ComboBox:DoScroll(sender, args)
 end
 
 function ComboBox:UpdateSubWindow()
-    -- loop through all the quickslots
+    for i = 1, #self.labels, 1 do
+        self.labels[i]:SetTop((i - 1) * self.itemHeight - self.scrollBar:GetValue());
+    end
     for i = 1, #self.quickslots, 1 do
-        -- get the number of rows
-        local row = math.ceil(i / 1);
-
-        -- set the top position of the quickslots based on row
-        -- number and the value of the scrollbar
-        self.quickslots[i]:SetTop((row - 1) * 20 - self.scrollBar:GetValue());
-        self.labels[i]:SetTop((row - 1) * 20 - self.scrollBar:GetValue());
+        self.quickslots[i]:SetTop((i - 1) * self.itemHeight - self.scrollBar:GetValue());
     end
 end
