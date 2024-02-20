@@ -182,7 +182,7 @@ function TravelDictionary:CreateDictionaries()
     self.warden:AddSkill("Rassemblement à Andrath", "0x70063242", "Andrath (Rassemblement)");
     self.warden:AddSkill("Rassemblement aux Noues des cygnes", "0x700634B6", "Noues des cygnes (Rassemblement)");
     self.warden:AddSkill("Rassemblement au Cardolan", "0x700634AD", "Cardolan (Rassemblement)");
-    self.warden:AddSkill("Rassemblement : Carn Dûm", "0x70064ACB", "Carn Dûm (Rassemblement)");
+    self.warden:AddSkill("Rassemblement : Carn Dûm", "0x70064ACB", "Carn Dûm (Rassemblement)");
     self.warden:AddSkill("Rassemblement à Clegur", "0x70064F4D", "Clegur (Rassemblement)");
     self.warden:AddSkill("Rassemblement à Pelargir", "0x700658E8", "Pelargir (Rassemblement)");
     self.warden:AddSkill("Rassemblement à Jax Phanâl","0x7006870C", "Jax Phanâl (Rassemblement)");
