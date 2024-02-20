@@ -26,23 +26,25 @@ Why does my racial skill show up even though I do not have the racial trait equi
 [*]Because once the trait is acquired, it is classified as a "learned" skill by LOTRO itself, even though it is greyed out. Travel Window II, unfortunately, has no way of knowing if you have the racial trait equipped and the skill is usable. If you are not using the skill permanently, you can use the Enable/Disable options to hide it like any other skill.
 [/LIST]
 
-Why does a reputation or store version of my racial skill show up even though I have not obtained or bought it?
-[LIST]
-[*]This is because the racial and those store-bought skills have identical names ingame (i.e. "Return to Bree") and the plugin obtains a list of learned skills for your character that includes that particular name at least once. Based on that name alone the plugin cannot know which of the two skills you have obtained, while you can get both through the Racial+Store combo. You can use the Enable/Disable options to hide the skill you do not have that is greyed out.
-[/LIST]
-
 How do I use the Carousel mode?
 [LIST]
 Use the mousewheel while hovering over the travel skill icon to change the selected skill.
 [/LIST]
 
 Version history:
-v1.4.0
-- reintroduces a rewritten Map Window feature - thanks to @whiterabbit963
-- toggle button will no longer be out of bounds after reducing client resolution - thanks to @whiterabbit963
-- fixes error message on check untrained skills in options - thanks to @whiterabbit963
-- fixes Muster in Dale skill in DE client properly this time - thanks to @whiterabbit963
+v2.0.0
+- adds a mini window option offering an alternative interface with minimal window size
+- adds skills snapping for cleaner resizing of main and mini windows
+- adds slider to control speed of fadeout to min opacity
+- adds the ability to save a global preset so main options can be transferred to alts
+- adds option to control whether Esc closes main Travel window
+- adds enable/disable all buttons in enable options tab
+- adds enable/disable button for overlapping class/reputation skills in enable options tab
+- sets default sort so racial & class skills come after general skills to get closer to level progression sorting
+- fixes Travel Window opening behind chat and Travel Button
+- fixes missing Return to Dol Amroth (Western Gondor) in DE client
+- significant code cleanup under the hood for more reliable and maintainable code
 
-This introduces an important milestone - Travel Window II is now free of known bugs for the first time since it was forked from Travel Window. Huge kudos to @whiterabbit963 for making this possible.
+Huge kudos to @whiterabbit963 for making this release possible!
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
