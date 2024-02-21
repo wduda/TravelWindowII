@@ -24,14 +24,11 @@ function TravelGridTab:Constructor(toplevel)
     self.maxScroll = 0;
     self.colWidth = 35;
     self.scrollChunk = self.colWidth;
-    self.minCols = 5;
+    self.minCols = 4;
 
     if self.parent == nil then
         -- need top level window in order to close it
         self.parent = toplevel;
-    end
-    if self.parent.isMinWindow then
-        self.minCols = 4;
     end
 
     -- a subwindow (now a control) for containing all the quickslots
@@ -308,6 +305,13 @@ function TravelGridTab:UpdateBounds()
     self.numOfCols = c;
     self.numOfRows = r;
     self.maxScroll = m;
+    if not self.parent.isMinWindow then
+        if c == self.minCols then
+            self.parent:SetText("TW");
+        else
+            self.parent:SetText(mainTitleString);
+        end
+    end
 end
 
 function TravelGridTab:GetMargin(numOfShortcuts)
