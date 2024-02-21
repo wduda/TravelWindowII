@@ -744,7 +744,7 @@ end
 
 function OptionsPanel:SetupOverlapLinks()
     if PlayerClass == Turbine.Gameplay.Class.Hunter then
-        self:AddOverlapLinks("0x70003F42", {"0x700062F6", "0x7001BF90", "0x700364B1"}); -- Bree
+        self:AddOverlapLinks("0x70003F42", {"0x700062F6", "0x7001BF90"}); -- Bree
         self:AddOverlapLinks("0x70003F41", {"0x70006346", "0x70053C0F", "0x7001BF91"}); -- Thorin's Hall
         self:AddOverlapLinks("0x7000A2C3", {"0x700062C8", "0x70023262"}); -- Michel Delving
         self:AddOverlapLinks("0x7000A2C2", {"0x70020441"}); -- Ost Guruth
