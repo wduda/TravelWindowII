@@ -316,6 +316,13 @@ function TravelWindow:Constructor(useMinWindow)
     self.resizeLabel.MouseMove = self.MouseMove;
     self.resizeLabel.MouseUp = self.MouseUp;
     self.resizeLabel.MouseClick = self.MouseClick;
+    self.resizeLabel:SetBackColorBlendMode(Turbine.UI.BlendMode.Overlay)
+    self.resizeLabel.MouseEnter = function(sender, args)
+        self.resizeLabel:SetBackColor(Turbine.UI.Color(0.75, 0.4, 0.4, 0.4));
+    end
+    self.resizeLabel.MouseLeave = function(sender, args)
+        self.resizeLabel:SetBackColor(Turbine.UI.Color(0, 0, 0, 0));
+    end
 
     self.SizeChanged = function(sender, args)
         if Settings.mode == 1 then
