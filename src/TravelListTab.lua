@@ -62,10 +62,13 @@ function TravelListTab:AddItem(shortcut)
 
     -- set the index value based on the row and column
     local index = (self.row - 1) + self.col;
-
+    local x = 10 + ((self.col - 1) * (self.itemWidth + 2));
+    local y = (self.row - 1) * self.itemHeight - self.myScrollBar:GetValue();
     if not(self.parent.dirty) then
         self.quickslots[index]:SetSize(self.itemWidth, self.itemHeight);
         self.labels[index]:SetSize(self.itemWidth, self.itemHeight);
+        self.quickslots[index]:SetPosition(x, y);
+        self.labels[index]:SetPosition(x, y);
     else
         if index == 1 then
             self.labels = {};
@@ -74,8 +77,7 @@ function TravelListTab:AddItem(shortcut)
         -- based on the row and column locations
         self.quickslots[index] = Turbine.UI.Lotro.Quickslot();
         self.quickslots[index]:SetSize(self.itemWidth, self.itemHeight);
-        self.quickslots[index]:SetPosition(10 + ((self.col - 1) * (self.itemWidth + 2)),
-                                           (self.row - 1) * self.itemHeight);
+        self.quickslots[index]:SetPosition(x, y);
         self.quickslots[index]:SetZOrder(90);
         self.quickslots[index]:SetOpacity(1);
         self.quickslots[index]:SetUseOnRightClick(false);
@@ -88,8 +90,7 @@ function TravelListTab:AddItem(shortcut)
         -- create the label that will cover the shortcut
         self.labels[index] = Turbine.UI.Label();
         self.labels[index]:SetSize(self.itemWidth, self.itemHeight);
-        self.labels[index]:SetPosition(10 + ((self.col - 1) * (self.itemWidth + 2)),
-                                       (self.row - 1) * self.itemHeight);
+        self.labels[index]:SetPosition(x, y);
         self.labels[index]:SetZOrder(100);
         self.labels[index]:SetMouseVisible(false);
         self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
@@ -140,8 +141,8 @@ end
 
 function TravelListTab:FitToPixels(width, height)
     local rowHeight = self.itemHeight;
-    local minHeight = self.parent.hPadding + rowHeight * 6;
-    local maxHeight = self.parent.hPadding + rowHeight * #self.selected;
+    local minHeight = rowHeight * 6;
+    local maxHeight = rowHeight * #self.selected;
     height = height - self.parent.hPadding;
     local dy = height % rowHeight;
     if dy < rowHeight / 2 then
@@ -156,20 +157,21 @@ function TravelListTab:FitToPixels(width, height)
     end
     self.pixelWidth = width;
     self.numOfRows = math.floor(height / rowHeight);
-    return width, height;
+    return width, height + self.parent.hPadding;
 end
 
 function TravelListTab:UpdateBounds()
     -- set the maximum value of the scrollbar
     -- based on the number of rows in the subwindow
     local numOfShortcuts = #self.selected;
-    self.maxScroll = numOfShortcuts * self.itemHeight - self.parent:GetHeight();
+    local height = self.parent:GetHeight() - self.parent.hPadding;
+    self.maxScroll = numOfShortcuts * self.itemHeight - height;
     if self.maxScroll < 0 then
         -- the maxScroll cannot be less than one
         self.maxScroll = 0;
         self.numOfRows = #self.selected;
     elseif self.maxScroll > 0 then
-        self.numOfRows = math.floor(self.parent:GetHeight() / self.itemHeight);
+        self.numOfRows = math.floor(height / self.itemHeight);
     end
     self.pixelWidth = self.parent:GetWidth();
 end
