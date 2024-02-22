@@ -260,12 +260,8 @@ function TravelGridTab:GetGridDims(width, height)
     if width < self.minCols * self.colWidth then width = self.minCols * self.colWidth end
     if height < self.colWidth then height = self.colWidth end
 
-    local scrollPadding = 0;
-    if not self.parent.isMinWindow then
-        scrollPadding = 10;
-    end
     local numOfShortcuts =  #self.selected;
-    local numOfCols = math.floor((width - scrollPadding) / self.colWidth);
+    local numOfCols = math.floor(width / self.colWidth);
     local numOfRows = math.ceil(numOfShortcuts / numOfCols);
 
     -- set the maximum scroll of the scrollbar
@@ -274,8 +270,7 @@ function TravelGridTab:GetGridDims(width, height)
         maxScroll = 0;
     elseif self.parent.isMinWindow and maxScroll > 0 then
         -- include scrollbar width
-        scrollPadding = 10;
-        numOfCols = math.floor((width - scrollPadding) / self.colWidth);
+        numOfCols = math.floor((width - 10) / self.colWidth);
         numOfRows = math.ceil(numOfShortcuts / numOfCols);
         maxScroll = numOfRows * self.colWidth - height;
     end
