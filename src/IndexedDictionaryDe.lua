@@ -132,7 +132,7 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill("Führer nach Carn Dûm", "0x70064AC8", "Carn Dûm (Führer)");
     self.hunter:AddSkill("Führer nach Clegur", "0x70064F4C", "Clegur (Führer)");
     self.hunter:AddSkill("Führer nach Pelargir", "0x700658EA", "Pelargir (Führer)");
-    self.hunter:AddSkill("Führer nach Dol Amroth", "0x70068711", "Königreich Dol Amroth (Führer U38)", "Königreich Gondor");
+    self.hunter:AddSkill("Führer nach Dol Amroth", "0x70068711", "Dol Amroth - Königreich Gondor (Führer)", "Königreich Gondor");
     self.hunter:AddSkill("Führer nach Halrax", "0x70068713", "Halrax (Führer)");
     self.hunter:AddSkill("Führer nach Lond Cirion", "0x70068717", "Lond Cirion (Führer)");
     self.hunter:AddSkill("Führer nach Umbar", "0x70068718", "Umbar (Führer)");
@@ -191,7 +191,7 @@ function TravelDictionary:CreateDictionaries()
     self.warden:AddSkill("Appell in Jax Phanâl","0x7006870C", "Jax Phanâl (Appell)");
     self.warden:AddSkill("Appell in Umbar","0x7006870F","Umbar (Appell)");
     self.warden:AddSkill("Appell in Halrax","0x70068710", "Halrax (Appell)");
-    self.warden:AddSkill("Appell in Dol Amroth","0x70068712", "Königreich Dol Amroth (Appell)", "Königreich Gondor");
+    self.warden:AddSkill("Appell in Dol Amroth","0x70068712", "Dol Amroth - Königreich Gondor (Appell)", "Königreich Gondor");
     self.warden:AddSkill("Appell in Lond Cirion","0x70068715", "Lond Cirion (Appell)");
     self.warden:AddSkill("Appell in der Taverne \"Zum Blutigen Adler\"","0x700697F3", "Zum Blutigen Adler (Appell)");
 
@@ -213,7 +213,7 @@ function TravelDictionary:CreateDictionaries()
     self.mariner:AddSkill("Nach Umbar segeln", "0x700687BB", "Umbar (Segeln)")
     self.mariner:AddSkill("Nach Lond Cirion segeln", "0x700687BD", "Lond Cirion (Segeln)")
     self.mariner:AddSkill("Nach Jax Phanâl segeln", "0x700687C0", "Jax Phanâl (Segeln)")
-    self.mariner:AddSkill("Segelt nach Dol Amroth", "0x700687C1", "Königreich Dol Amroth (Segeln)", "Königreich Gondor")
+    self.mariner:AddSkill("Segelt nach Dol Amroth", "0x700687C1", "Dol Amroth - Königreich Gondor (Segeln)", "Königreich Gondor")
     self.mariner:AddSkill("Nach Halrax segeln", "0x700687C3", "Halrax (Segeln)")
 
     -- add the racial travel skills
@@ -300,7 +300,7 @@ function TravelDictionary:CreateDictionaries()
     self.rep:AddSkill("Rückkehr nach Pelargir", "0x700658EB", "Pelargir (Ruf)");
     self.rep:AddSkill("Zum Orden des Adlers reisen", "0x700686FE", "Orden des Adlers (Ruf)");
     self.rep:AddSkill("Nach Umbar zurückkehren", "0x700686FF", "Umbar (Ruf)");
-    self.rep:AddSkill("Rückkehr nach Dol Amroth", "0x70068700", "Königreich Dol Amroth (Ruf U38)", "Königreich Gondor");
+    self.rep:AddSkill("Rückkehr nach Dol Amroth", "0x70068700", "Dol Amroth - Königreich Gondor (Ruf)", "Königreich Gondor");
     self.rep:AddSkill("Nach Jax Phanâl zurückkehren", "0x70068701", "Jax Phanâl (Ruf)");
     self.rep:AddSkill("Kehrt zu Halrax zurück.", "0x70068702", "Halrax (Ruf)");
     self.rep:AddSkill("Nach Lond Cirion zurückkehren", "0x70068703", "Lond Cirion (Ruf)");

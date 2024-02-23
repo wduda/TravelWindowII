@@ -132,7 +132,7 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill("Guide to Carn Dûm", "0x70064AC8", "Carn Dûm (Guide)");
     self.hunter:AddSkill("Guide to Clegur", "0x70064F4C", "Clegur (Guide)");
     self.hunter:AddSkill("Guide to Pelargir", "0x700658EA", "Pelargir (Guide)");
-    self.hunter:AddSkill("Guide to Dol Amroth", "0x70068711", "King's Dol Amroth (Guide U38)", "King's Gondor");
+    self.hunter:AddSkill("Guide to Dol Amroth", "0x70068711", "King's Dol Amroth (Guide)", "King's Gondor");
     self.hunter:AddSkill("Guide to Halrax", "0x70068713", "Halrax (Guide)");
     self.hunter:AddSkill("Guide to Lond Cirion", "0x70068717", "Lond Cirion (Guide)");
     self.hunter:AddSkill("Guide to Umbar", "0x70068718", "Umbar (Guide)");
@@ -300,7 +300,7 @@ function TravelDictionary:CreateDictionaries()
     self.rep:AddSkill("Return to Pelargir", "0x700658EB", "Pelargir (Rep)");
     self.rep:AddSkill("Journey to the Order of the Eagle", "0x700686FE", "Order of the Eagle (Rep)");
     self.rep:AddSkill("Return to Umbar", "0x700686FF", "Umbar (Rep)");
-    self.rep:AddSkill("Return to Dol Amroth", "0x70068700", "King's Dol Amroth (Rep U38)","King's Gondor");
+    self.rep:AddSkill("Return to Dol Amroth", "0x70068700", "King's Dol Amroth (Rep)","King's Gondor");
     self.rep:AddSkill("Return to Jax Phanâl", "0x70068701", "Jax Phanâl (Rep)");
     self.rep:AddSkill("Return to Halrax", "0x70068702", "Halrax (Rep)");
     self.rep:AddSkill("Return to Lond Cirion", "0x70068703", "Lond Cirion (Rep)");
