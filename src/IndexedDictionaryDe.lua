@@ -39,6 +39,8 @@ maxString = "Max: ";
 resetSettingsString = "Rücksetzen auf Standard";
 saveGlobalDefaultsString = "Globale Standardwerte speichern";
 loadGlobalDefaultsString = "Globale Standardwerte laden";
+defaultSortString = "Auf Standard zurücksetzen";
+sortNameString = "Nach Namen sortieren";
 checkSkillsString = "Nicht erlernte Fertigkeiten prüfen";
 enableRepSkillsString = "Überlappende Aktivieren";
 disableRepSkillsString = "Überlappende Deaktivieren";
@@ -47,6 +49,7 @@ disableAllString = "Alle Deaktivieren";
 ignoreEscString = "Escape schliesst Travel-Fenster nicht";
 minWindowString = "Mini-Fenster verwenden";
 fadeWindowString = "Geschwindigkeit des Fenster-Fadeouts";
+fadeDelayString = "Verzögerung des Fenster-Fadeouts";
 
 -- menu strings
 menuFiltersString = "Filter";
