@@ -2,16 +2,16 @@
      specifically skill name, ID, label, description substring]]
 IndexedDictionary = class()
 
+local ValidSkillKeys = {
+    "id", "name", "desc", "label",
+    "nameEN", "descEN", "labelEN",
+    "nameDE", "descDE", "labelDE",
+    "nameFR", "descFR", "labelFR",
+    "map", "overlap"
+}
+
 function IndexedDictionary:Constructor(parent)
     self.parent = parent;
-
-    -- valid skill keys
-    self.skillKeys = {
-        "id", "name", "desc", "label",
-        "nameEN", "descEN", "labelEN",
-        "nameDE", "descDE", "labelDE",
-        "nameFR", "descFR", "labelFR",
-    }
 
     -- init tables
     self.skills = {};
@@ -61,10 +61,14 @@ function IndexedDictionary:verifySkill(skill)
     end
 
     for k, v in pairs(skill) do
-        if not TableContains(self.skillKeys, k) then
+        if not TableContains(ValidSkillKeys, k) then
             Turbine.Shell.WriteLine("Invalid key " .. k);
             return false;
         end
+    end
+
+    if skill.map == nil then
+        Turbine.Shell.WriteLine(skill.name .. "(" .. skill.id .. ") coords not set")
     end
 
     return true
