@@ -39,6 +39,8 @@ maxString = "Max: ";
 resetSettingsString = "Remise a zéro";
 saveGlobalDefaultsString = "Enregistrer par défaut globales";
 loadGlobalDefaultsString = "Charger par défaut globales";
+defaultSortString = "Réinitialiser par défaut";
+sortNameString = "Trier par Nom";
 checkSkillsString = "Vérification des compétences non utilisées";
 enableRepSkillsString = "Activer le chevauchement";
 disableRepSkillsString = "Désactiver le chevauchement";
@@ -47,6 +49,7 @@ disableAllString = "Désactiver tout";
 ignoreEscString = "Escape ne pas fermer la fenêtre principale";
 minWindowString = "Utiliser la mini-fenêtre";
 fadeWindowString = "Fondu de la vitesse de la fenêtre";
+fadeDelayString = "Délai de la fenêtre de fondu";
 
 -- menu strings
 menuFiltersString = "Filtres";

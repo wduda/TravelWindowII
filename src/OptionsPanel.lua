@@ -315,6 +315,25 @@ function OptionsPanel:AddGeneralItems()
     self.mainMaxScrollBar:SetValue(Settings.mainMaxOpacity * 100);
     self.mainMaxScrollBar:SetParent(self.GeneralTab);
 
+    -- fade out delay slider label
+    self.fadeDelaySlidersLabel = Turbine.UI.Label();
+    self.fadeDelaySlidersLabel:SetSize(labelWidth, 20);
+    self.fadeDelaySlidersLabel:SetPosition(20, NextY(25));
+    self.fadeDelaySlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.fadeDelaySlidersLabel:SetParent(self.GeneralTab);
+    self.fadeDelaySlidersLabel:SetText(fadeDelayString);
+    self.fadeDelaySlidersLabel:SetVisible(true);
+
+    -- fade out delay slider
+    self.fadeDelayScrollBar = Turbine.UI.Lotro.ScrollBar();
+    self.fadeDelayScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
+    self.fadeDelayScrollBar:SetSize(450, 10);
+    self.fadeDelayScrollBar:SetPosition(20, NextY(25));
+    self.fadeDelayScrollBar:SetMinimum(0);
+    self.fadeDelayScrollBar:SetMaximum(100);
+    self.fadeDelayScrollBar:SetValue(Settings.fadeOutDelay);
+    self.fadeDelayScrollBar:SetParent(self.GeneralTab);
+
     -- fade out slider label
     self.mainFadeSlidersLabel = Turbine.UI.Label();
     self.mainFadeSlidersLabel:SetSize(labelWidth, 20);
@@ -499,6 +518,10 @@ function OptionsPanel:AddGeneralItems()
         _G.travel:UpdateSettings();
     end
 
+    self.fadeDelayScrollBar.ValueChanged = function(sender, args)
+        Settings.fadeOutDelay = self.fadeDelayScrollBar:GetValue();
+    end
+
     self.mainFadeScrollBar.ValueChanged = function(sender, args)
         Settings.fadeOutSteps = self.mainFadeScrollBar:GetValue();
         _G.travel:UpdateOpacity();
@@ -519,6 +542,7 @@ function OptionsPanel:UpdateSettings()
     self.mainMinScrollBar:SetValue(Settings.mainMinOpacity * 100);
     self.mainMaxScrollBar:SetValue(Settings.mainMaxOpacity * 100);
     self.mainFadeScrollBar:SetValue(Settings.fadeOutSteps);
+    self.fadeDelayScrollBar:SetValue(Settings.fadeOutDelay);
 end
 
 -- function to add all the travel shortcuts that can be toggled
@@ -720,7 +744,7 @@ end
 
 function OptionsPanel:SetupOverlapLinks()
     if PlayerClass == Turbine.Gameplay.Class.Hunter then
-        self:AddOverlapLinks("0x70003F42", {"0x700062F6", "0x7001BF90", "0x700364B1"}); -- Bree
+        self:AddOverlapLinks("0x70003F42", {"0x700062F6", "0x7001BF90"}); -- Bree
         self:AddOverlapLinks("0x70003F41", {"0x70006346", "0x70053C0F", "0x7001BF91"}); -- Thorin's Hall
         self:AddOverlapLinks("0x7000A2C3", {"0x700062C8", "0x70023262"}); -- Michel Delving
         self:AddOverlapLinks("0x7000A2C2", {"0x70020441"}); -- Ost Guruth
@@ -957,6 +981,36 @@ function OptionsPanel:AddSortButtons()
     self.moveBottomButton:SetText(moveBottomString);
     self.moveBottomButton:SetParent(self.SortTab);
     self.moveBottomButton:SetVisible(true);
+
+    self.defaultSortButton = Turbine.UI.Lotro.Button();
+    self.defaultSortButton:SetSize(185, 20);
+    self.defaultSortButton:SetPosition(10, 375);
+    self.defaultSortButton:SetText(defaultSortString);
+    self.defaultSortButton:SetParent(self.SortTab);
+    self.defaultSortButton:SetVisible(true);
+
+    self.nameSortButton = Turbine.UI.Lotro.Button();
+    self.nameSortButton:SetSize(185, 20);
+    self.nameSortButton:SetPosition(10, 405);
+    self.nameSortButton:SetText(sortNameString);
+    self.nameSortButton:SetParent(self.SortTab);
+    self.nameSortButton:SetVisible(true);
+
+    self.defaultSortButton.Click = function(sender, args)
+        Settings.order = {};
+        CheckEnabledSettings(); -- restore default Settings.order
+        SortFromSettings();
+        self:AddSortList();
+        _G.travel.dirty = true;
+        _G.travel:UpdateSettings();
+    end
+
+    self.nameSortButton.Click = function(sender, args)
+        SortByName();
+        self:AddSortList();
+        _G.travel.dirty = true;
+        _G.travel:UpdateSettings();
+    end
 
     -- handle the move to top button click
     self.moveTopButton.Click = function(sender, args)

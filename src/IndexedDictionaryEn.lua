@@ -39,6 +39,8 @@ maxString = "Max: ";
 resetSettingsString = "Reset to Defaults";
 saveGlobalDefaultsString = "Save Global Defaults";
 loadGlobalDefaultsString = "Load Global Defaults";
+defaultSortString = "Reset to Default";
+sortNameString = "Sort by Name";
 checkSkillsString = "Check Untrained Skills";
 enableRepSkillsString = "Enable Overlapping";
 disableRepSkillsString = "Disable Overlapping";
@@ -47,6 +49,7 @@ disableAllString = "Disable All";
 ignoreEscString = "Escape does not close main window";
 minWindowString = "Use Mini-Window";
 fadeWindowString = "Fade Window Speed";
+fadeDelayString = "Fade Window Delay";
 
 -- menu strings
 menuFiltersString = "Filters";

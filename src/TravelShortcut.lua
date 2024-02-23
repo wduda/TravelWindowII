@@ -9,6 +9,7 @@ function TravelShortcut:Constructor(sType, tType, data, name, skillLabel, desc)
     -- the data to keep track of
     self.Name = name;
     self.desc = desc;
+    self.normalizedName = name:lower();
     self.travelType = tType;
     self.Index = TableIndex(Settings.order, data);
     self.Enabled = Settings.enabled[data];
@@ -133,6 +134,23 @@ function AddTravelSkills(skills, filter)
     end
 end
 
+function SortByName()
+    local comp = function(a, b)
+        if a.normalizedName > b.normalizedName then
+            return true;
+        elseif a.normalizedName == b.normalizedName then
+            return a:GetData() > b:GetData();
+        else
+            return false;
+        end
+    end
+    SortShortcuts(comp);
+    Settings.order = {};
+    for i = 1, #TravelShortcuts do
+        table.insert(Settings.order, TravelShortcuts[i]:GetData());
+    end
+end
+
 function SortFromSettings()
     for i = 1, #TravelShortcuts do
         local id = TravelShortcuts[i]:GetData();
@@ -141,14 +159,20 @@ function SortFromSettings()
     SortShortcuts();
 end
 
--- TravelShortcuts are sorted by an internal index value
-function SortShortcuts()
+function SortShortcuts(comp)
+    if comp == nil then
+        -- By default TravelShortcuts are sorted by an internal index value
+        comp = function(a, b)
+            return a:GetIndex() > b:GetIndex();
+        end
+    end
+
     -- perform an optimized bubble sort
     local n = #TravelShortcuts;
     while n > 2 do
         local new_n = 1;
         for i = 2, n do
-            if TravelShortcuts[i - 1]:GetIndex() > TravelShortcuts[i]:GetIndex() then
+            if comp(TravelShortcuts[i - 1], TravelShortcuts[i]) then
                 local temp = TravelShortcuts[i - 1];
                 TravelShortcuts[i - 1] = TravelShortcuts[i];
                 TravelShortcuts[i] = temp;
