@@ -1,3 +1,17 @@
+## v2.1.0
+- add: default and alphabetic ordering buttons in sorting tab (note: sort by name sorts by ingame name, not by TW II label)
+- add: a fade out delay and option slider to control duration of that delay
+- enhance: mini and legacy windows having the same minimum size
+- enhance: resize hitbox now has highlight on hover
+- enhance: increased size for mini-window resize hitbox
+- enhance: overlapping skills button no longer turns off Lalia's market
+- enhance: enable/disable overlapping skills buttons only show up if character has overlapping skills
+- enhance: updated labels for King's Gondor Dol Amroth in EN/DE/FR
+- enhance: download size of plugin reduced from 2MB+ to 200kb
+- fix: last entry in text list being not visible in legacy window
+- fix: made row snapping much smoother
+- fix: multiple small resizing issues
+
 ## v2.0.0
 - adds a mini window option offering an alternative interface with minimal window size
 - adds skills snapping for cleaner resizing of main and mini windows

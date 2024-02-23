@@ -24,14 +24,11 @@ function TravelGridTab:Constructor(toplevel)
     self.maxScroll = 0;
     self.colWidth = 35;
     self.scrollChunk = self.colWidth;
-    self.minCols = 5;
+    self.minCols = 4;
 
     if self.parent == nil then
         -- need top level window in order to close it
         self.parent = toplevel;
-    end
-    if self.parent.isMinWindow then
-        self.minCols = 4;
     end
 
     -- a subwindow (now a control) for containing all the quickslots
@@ -263,12 +260,8 @@ function TravelGridTab:GetGridDims(width, height)
     if width < self.minCols * self.colWidth then width = self.minCols * self.colWidth end
     if height < self.colWidth then height = self.colWidth end
 
-    local scrollPadding = 0;
-    if not self.parent.isMinWindow then
-        scrollPadding = 10;
-    end
     local numOfShortcuts =  #self.selected;
-    local numOfCols = math.floor((width - scrollPadding) / self.colWidth);
+    local numOfCols = math.floor(width / self.colWidth);
     local numOfRows = math.ceil(numOfShortcuts / numOfCols);
 
     -- set the maximum scroll of the scrollbar
@@ -277,8 +270,7 @@ function TravelGridTab:GetGridDims(width, height)
         maxScroll = 0;
     elseif self.parent.isMinWindow and maxScroll > 0 then
         -- include scrollbar width
-        scrollPadding = 10;
-        numOfCols = math.floor((width - scrollPadding) / self.colWidth);
+        numOfCols = math.floor((width - 10) / self.colWidth);
         numOfRows = math.ceil(numOfShortcuts / numOfCols);
         maxScroll = numOfRows * self.colWidth - height;
     end
@@ -308,6 +300,13 @@ function TravelGridTab:UpdateBounds()
     self.numOfCols = c;
     self.numOfRows = r;
     self.maxScroll = m;
+    if not self.parent.isMinWindow then
+        if c == self.minCols then
+            self.parent:SetText("TW");
+        else
+            self.parent:SetText(mainTitleString);
+        end
+    end
 end
 
 function TravelGridTab:GetMargin(numOfShortcuts)

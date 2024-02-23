@@ -39,6 +39,8 @@ maxString = "Max: ";
 resetSettingsString = "Remise a zéro";
 saveGlobalDefaultsString = "Enregistrer par défaut globales";
 loadGlobalDefaultsString = "Charger par défaut globales";
+defaultSortString = "Réinitialiser par défaut";
+sortNameString = "Trier par Nom";
 checkSkillsString = "Vérification des compétences non utilisées";
 enableRepSkillsString = "Activer le chevauchement";
 disableRepSkillsString = "Désactiver le chevauchement";
@@ -47,6 +49,7 @@ disableAllString = "Désactiver tout";
 ignoreEscString = "Escape ne pas fermer la fenêtre principale";
 minWindowString = "Utiliser la mini-fenêtre";
 fadeWindowString = "Fondu de la vitesse de la fenêtre";
+fadeDelayString = "Délai de la fenêtre de fondu";
 
 -- menu strings
 menuFiltersString = "Filtres";
@@ -129,7 +132,7 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill("Guide vers Carn Dûm", "0x70064AC8", "Carn Dûm (Guide)");
     self.hunter:AddSkill("Guide vers Clegur", "0x70064F4C", "Clegur (Guide)");
     self.hunter:AddSkill("Guide vers Pelargir", "0x700658EA", "Pelargir (Guide)");
-    self.hunter:AddSkill("Guide vers Dol Amroth", "0x70068711", "Dol Amroth royal (Guide U38)", "le Gondor royal");
+    self.hunter:AddSkill("Guide vers Dol Amroth", "0x70068711", "Dol Amroth - Gondor royal (Guide)", "le Gondor royal");
     self.hunter:AddSkill("Guide vers Halrax", "0x70068713", "Halrax (Guide)");
     self.hunter:AddSkill("Guide vers Lond Cirion", "0x70068717", "Lond Cirion (Guide)");
     self.hunter:AddSkill("Guide vers Umbar", "0x70068718", "Umbar (Guide)");
@@ -188,7 +191,7 @@ function TravelDictionary:CreateDictionaries()
     self.warden:AddSkill("Rassemblement à Jax Phanâl","0x7006870C", "Jax Phanâl (Rassemblement)");
     self.warden:AddSkill("Rassemblement à Umbar","0x7006870F","Umbar (Rassemblement)");
     self.warden:AddSkill("Rassemblement à Halrax","0x70068710", "Halrax (Rassemblement)");
-    self.warden:AddSkill("Rassemblement à Dol Amroth","0x70068712", "Dol Amroth royal (Rassemblement)", "le Gondor royal");
+    self.warden:AddSkill("Rassemblement à Dol Amroth","0x70068712", "Dol Amroth - Gondor royal (Rassemblement)", "le Gondor royal");
     self.warden:AddSkill("Rassemblement à Lond Cirion","0x70068715", "Lond Cirion (Rassemblement)");
     self.warden:AddSkill("Rassemblement à la taverne de l'Aigle sanglant","0x700697F3", "Taverne de l'Aigle sanglant (Rassemblement)");
 
@@ -210,7 +213,7 @@ function TravelDictionary:CreateDictionaries()
     self.mariner:AddSkill("Naviguer vers Umbar", "0x700687BB", "Umbar (Naviguer)");
     self.mariner:AddSkill("Naviguer vers Lond Cirion", "0x700687BD", "Lond Cirion (Naviguer)");
     self.mariner:AddSkill("Naviguer vers Jax Phanâl", "0x700687C0", "Jax Phanâl (Naviguer)");
-    self.mariner:AddSkill("Naviguer vers Dol Amroth", "0x700687C1", "Dol Amroth royal (Naviguer)", "le Gondor royal");
+    self.mariner:AddSkill("Naviguer vers Dol Amroth", "0x700687C1", "Dol Amroth - Gondor royal (Naviguer)", "le Gondor royal");
     self.mariner:AddSkill("Naviguer vers Halrax", "0x700687C3", "Halrax (Naviguer)");
 
     -- add the racial travel skills
@@ -297,7 +300,7 @@ function TravelDictionary:CreateDictionaries()
     self.rep:AddSkill("Retournez à Pelargir", "0x700658EB", "Pelargir (Rep)");
     self.rep:AddSkill("Voyager vers l'Ordre de l'Aigle", "0x700686FE", "L'Ordre de l'Aigle (Rep)");
     self.rep:AddSkill("Retour à Umbar", "0x700686FF", "Umbar (Rep)");
-    self.rep:AddSkill("Retour à Dol Amroth", "0x70068700", "Dol Amroth royal (Rep U38)", "le Gondor royal");
+    self.rep:AddSkill("Retour à Dol Amroth", "0x70068700", "Dol Amroth - Gondor royal (Rep)", "le Gondor royal");
     self.rep:AddSkill("Retour à Jax Phanâl", "0x70068701", "Jax Phanâl (Rep)");
     self.rep:AddSkill("Retournez voir Halrax", "0x70068702", "Halrax (Rep)");
     self.rep:AddSkill("Retour à Lond Cirion", "0x70068703", "Lond Cirion (Rep)");
