@@ -1,17 +1,18 @@
 A new version is available!
 
-v2.0.0
-- adds a mini window option offering an alternative interface with minimal window size
-- adds skills snapping for cleaner resizing of main and mini windows
-- adds slider to control speed of fadeout to min opacity
-- adds the ability to save a global preset so main options can be transferred to alts
-- adds option to control whether Esc closes main Travel window
-- adds enable/disable all buttons in enable options tab
-- adds enable/disable button for overlapping class/reputation skills in enable options tab
-- sets default sort so racial & class skills come after general skills to get closer to level progression sorting
-- fixes Travel Window opening behind chat and Travel Button
-- fixes missing Return to Dol Amroth (Western Gondor) in DE client
-- significant code cleanup under the hood for more reliable and maintainable code
+v2.1.0
+- add: default and alphabetic ordering buttons in sorting tab (note: sort by name sorts by ingame name, not by TW II label)
+- add: a fade out delay and option slider to control duration of that delay
+- enhance: mini and legacy windows having the same minimum size
+- enhance: resize hitbox now has highlight on hover
+- enhance: increased size for mini-window resize hitbox
+- enhance: overlapping skills button no longer turns off Lalia's market
+- enhance: enable/disable overlapping skills buttons only show up if character has overlapping skills
+- enhance: updated labels for King's Gondor Dol Amroth in EN/DE/FR
+- enhance: download size of plugin reduced from 2MB+ to 200kb
+- fix: last entry in text list being not visible in legacy window
+- fix: made row snapping much smoother
+- fix: multiple small resizing issues
 
 Huge kudos to @whiterabbit963 for making this release possible!
 
