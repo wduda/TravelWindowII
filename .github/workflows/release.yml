@@ -25,7 +25,7 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           filename: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
-          exclusions: '*.git* *.github* *.vscode* *.gitignore* data screenshots'
+          exclusions: '*.git* *.github* *.vscode* *.gitignore* /data /screenshots'
 
       # create the GitHub release
       - name: create github release
