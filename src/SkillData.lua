@@ -15,56 +15,64 @@ function TravelDictionary:CreateDictionaries()
         nameEN="Guide to Thorin's Hall", labelEN="Thorin's Hall (Guide)",
         nameDE="Führer zu Thorins Halle", labelDE="Thorins Halle (Führer)",
         nameFR="Guide vers le Palais de Thorin", labelFR="Palais de Thorin (Guide)",
-        map={{MapType.ERIADOR, 305, 270}}
+        map={{MapType.ERIADOR, 305, 270}},
+        overlap={"0x70006346", "0x70053C0F", "0x7001BF91"}
     })
     self.hunter:AddSkill({
         id="0x7000A2C3",
         nameEN="Guide to Michel Delving", labelEN="Michel Delving (Guide)",
         nameDE="Führer nach Michelbinge", labelDE="Michelbinge (Führer)",
         nameFR="Guide vers Grand'Cave", labelFR="Grand'Cave (Guide)",
-        map={{MapType.ERIADOR, 360, 390}}
+        map={{MapType.ERIADOR, 360, 390}},
+        overlap={"0x700062C8", "0x70023262"}
     })
     self.hunter:AddSkill({
         id="0x70064F4C",
         nameEN="Guide to Clegur", labelEN="Clegur (Guide)",
         nameDE="Führer nach Clegur", labelDE="Clegur (Führer)",
         nameFR="Guide vers Clegur", labelFR="Clegur (Guide)",
-        map={{MapType.ERIADOR, 755, 555}}
+        map={{MapType.ERIADOR, 755, 555}},
+        overlap={"0x70064F47"}
     })
     self.hunter:AddSkill({
         id="0x700634AA",
         nameEN="Guide to Swanfleet", labelEN="Swanfleet (Guide)",
         nameDE="Führer nach Schwanenfleet", labelDE="Schwanenfleet (Führer)",
         nameFR="Guide vers les Noues des cygnes", labelFR="Noues des cygnes (Guide)",
-        map={{MapType.ERIADOR, 825, 490}}
+        map={{MapType.ERIADOR, 825, 490}},
+        overlap={"0x700634A4"}
     })
     self.hunter:AddSkill({
         id="0x700634A7",
         nameEN="Guide to Cardolan", labelEN="Cardolan (Guide)",
         nameDE="Führer nach Cardolan", labelDE="Cardolan (Führer)",
         nameFR="Guide vers le Cardolan", labelFR="Cardolan (Guide)",
-        map={{MapType.ERIADOR, 560, 495}}
+        map={{MapType.ERIADOR, 560, 495}},
+        overlap={"0x700634AE"}
     })
     self.hunter:AddSkill({
         id="0x7006323C",
         nameEN="Guide to Andrath", labelEN="Andrath (Guide)",
         nameDE="Führer nach Andrath", labelDE="Andrath (Führer)",
         nameFR="Guide vers Andrath", labelFR="Andrath (Guide)",
-        map={{MapType.ERIADOR, 580, 465}}
+        map={{MapType.ERIADOR, 580, 465}},
+        overlap={"0x7006323D"}
     })
     self.hunter:AddSkill({
         id="0x70003F42",
         nameEN="Guide to Bree", labelEN="Bree (Guide)",
         nameDE="Führer nach Bree", labelDE="Bree (Führer)",
         nameFR="Guide vers Bree", labelFR="Bree (Guide)",
-        map={{MapType.ERIADOR, 585, 335}}
+        map={{MapType.ERIADOR, 585, 335}},
+        overlap={"0x700062F6", "0x7001BF90"}
     })
     self.hunter:AddSkill({
         id="0x7006133F",
         nameEN="Guide to Nobottle", labelEN="Nobottle (Guide)",
         nameDE="Führer nach Neuhausen", labelDE="Neuhausen (Führer)",
         nameFR="Guide vers Bourdeneuve", labelFR="Bourdeneuve (Guide)",
-        map={{MapType.ERIADOR, 440, 350}}
+        map={{MapType.ERIADOR, 440, 350}},
+        overlap={"0x70061340"}
     })
     self.hunter:AddSkill({
         id="0x70003F43",
@@ -85,21 +93,24 @@ function TravelDictionary:CreateDictionaries()
         nameEN="Guide to Ost Guruth", labelEN="Ost Guruth (Guide)",
         nameDE="Führer zur Feste Guruth", labelDE="Feste Guruth (Führer)",
         nameFR="Guide vers Ost Guruth", labelFR="Ost Guruth (Guide)",
-        map={{MapType.ERIADOR, 755, 400}}
+        map={{MapType.ERIADOR, 755, 400}},
+        overlap={"0x70020441"}
     })
     self.hunter:AddSkill({
         id="0x70003F44",
         nameEN="Guide to Rivendell", labelEN="Rivendell (Guide)",
         nameDE="Führer nach Bruchtal", labelDE="Bruchtal (Führer)",
         nameFR="Guide vers Fondcombe", labelFR="Fondcombe (Guide)",
-        map={{MapType.ERIADOR, 865, 410}}
+        map={{MapType.ERIADOR, 865, 410}},
+        overlap={"0x7000631F", "0x70023263"}
     })
     self.hunter:AddSkill({
         id="0x70060EA6",
         nameEN="Guide to Tornhad", labelEN="Tornhad (Guide)",
         nameDE="Führer nach Tornhad", labelDE="Tornhad (Führer)",
         nameFR="Guide vers Tornhad", labelFR="Tornhad (Guide)",
-        map={{MapType.ERIADOR, 775, 435}}
+        map={{MapType.ERIADOR, 775, 435}},
+        overlap={"0x70060EA8"}
     })
     self.hunter:AddSkill({
         id="0x7002E756",
@@ -113,14 +124,16 @@ function TravelDictionary:CreateDictionaries()
         nameEN="Guide to Trestlebridge", labelEN="Trestlebridge (Guide)",
         nameDE="Führer nach Schragen", labelDE="Schragen (Führer)",
         nameFR="Guide vers Pont-à-Tréteaux", labelFR="Pont-à-Tréteaux (Guide)",
-        map={{MapType.ERIADOR, 590, 285}}
+        map={{MapType.ERIADOR, 590, 285}},
+        overlap={"0x70059D12"}
     })
     self.hunter:AddSkill({
         id="0x70059D0C",
         nameEN="Guide to Trader's Wharf", labelEN="Trader's Wharf (Guide)",
         nameDE="Führer zum Händlerkai", labelDE="Händlerkai (Führer)",
         nameFR="Guide vers le Quai des marchands", labelFR="Quai des marchands (Guide)",
-        map={{MapType.ERIADOR, 515, 305}}
+        map={{MapType.ERIADOR, 515, 305}},
+        overlap={"0x70059D0E"}
     })
     self.hunter:AddSkill({
         id="0x70017C82",
@@ -162,7 +175,8 @@ function TravelDictionary:CreateDictionaries()
         nameEN="Guide to Caras Galadhon", labelEN="Caras Galadhon (Guide)",
         nameDE="Führer nach Caras Galadhon", labelDE="Caras Galadhon (Führer)",
         nameFR="Guide vers Caras Galadhon", labelFR="Caras Galadhon (Guide)",
-        map={{MapType.RHOVANION, 120, 660}}
+        map={{MapType.RHOVANION, 120, 660}},
+        overlap={"0x70048C8C"}
     })
     self.hunter:AddSkill({
         id="0x7001F459",
@@ -183,252 +197,288 @@ function TravelDictionary:CreateDictionaries()
         nameEN="Guide to Galtrev", labelEN="Galtrev (Guide)",
         nameDE="Führer nach Galtrev", labelDE="Galtrev (Führer)",
         nameFR="Guide pour Galtrev", labelFR="Galtrev (Guide)",
-        map={{MapType.ERIADOR, 810, 715}}
+        map={{MapType.ERIADOR, 810, 715}},
+        overlap={"0x7002C647"}
     })
     self.hunter:AddSkill({
         id="0x7002C62C",
         nameEN="Guide to Stangard", labelEN="Stangard (Guide)",
         nameDE="Führer nach Stangard", labelDE="Stangard (Führer)",
         nameFR="Guide vers Stangarde", labelFR="Stangarde (Guide)",
-        map={{MapType.RHOVANION, 200, 720}, {MapType.ROHAN, 545, 90}}
+        map={{MapType.RHOVANION, 200, 720}, {MapType.ROHAN, 545, 90}},
+        overlap={"0x7002C65D"}
     })
     self.hunter:AddSkill({
         id="0x7003198E",
         nameEN="Guide to Snowbourn", labelEN="Snowbourn (Guide)",
         nameDE="Führer nach Schneegrenze", labelDE="Schneegrenze (Führer)",
         nameFR="Guide vers Neigebronne", labelFR="Neigebronne (Guide)",
-        map={{MapType.ROHAN, 515, 500}}
+        map={{MapType.ROHAN, 515, 500}},
+        overlap={"0x70031A46"}
     })
     self.hunter:AddSkill({
         id="0x70036B5D",
         nameEN="Guide to Forlaw", labelEN="Forlaw (Guide)",
         nameDE="Führer nach Forlach", labelDE="Forlach (Führer)",
         nameFR="Guide vers Forloi", labelFR="Forloi (Guide)",
-        map={{MapType.ROHAN, 450, 175}}
+        map={{MapType.ROHAN, 450, 175}},
+        overlap={"0x70036B5E"}
     })
     self.hunter:AddSkill({
         id="0x7003DC71",
         nameEN="Guide to Aldburg", labelEN="Aldburg (Guide)",
         nameDE="Führer nach Aldburg", labelDE="Aldburg (Führer)",
         nameFR="Guide vers Aldburg", labelFR="Aldburg (Guide)",
-        map={{MapType.ROHAN, 570, 640}}
+        map={{MapType.ROHAN, 570, 640}},
+        overlap={"0x7003DC81"}
     })
     self.hunter:AddSkill({
         id="0x7003DC72",
         nameEN="Guide to Helm's Deep", labelEN="Helm's Deep (Guide)",
         nameDE="Führer nach Helms Klamm", labelDE="Helms Klamm (Führer)",
         nameFR="Guide vers le Gouffre de Helm", labelFR="Gouffre de Helm (Guide)",
-        map={{MapType.ROHAN, 275, 565}}
+        map={{MapType.ROHAN, 275, 565}},
+        overlap={"0x7003DC82"}
     })
     self.hunter:AddSkill({
         id="0x70041197",
         nameEN="Guide to Dol Amroth", descEN="Dol Amroth in western Gondor", labelEN="Dol Amroth (Guide)",
         nameDE="Führer nach Dol Amroth", descDE="nach Dol Amroth.", labelDE="Dol Amroth (Führer)",
         nameFR="Guide vers Dol Amroth", descFR="l'Ouest du Gondor", labelFR="Dol Amroth (Guide)",
-        map={{MapType.GONDOR, 225, 550}}
+        map={{MapType.GONDOR, 225, 550}},
+        overlap={"0x700411AC"}
     })
     self.hunter:AddSkill({
         id="0x70043A63",
         nameEN="Guide to Arnach", labelEN="Arnach (Guide)",
         nameDE="Führer nach Arnach", labelDE="Arnach (Führer)",
         nameFR="Guide pour Arnach", labelFR="Arnach (Guide)",
-        map={{MapType.GONDOR, 715, 425}}
+        map={{MapType.GONDOR, 715, 425}},
+        overlap={"0x70043A6A"}
     })
     self.hunter:AddSkill({
         id="0x70044985",
         nameEN="Guide to Minas Tirith", labelEN="Minas Tirith (Guide)",
         nameDE="Führer nach Minas Tirith", labelDE="Minas Tirith  (Führer)",
         nameFR="Guide vers Minas Tirith", labelFR="Minas Tirith (Guide)",
-        map={{MapType.GONDOR, 670, 345}}
+        map={{MapType.GONDOR, 670, 345}},
+        overlap={"0x7004497E"}
     })
     self.hunter:AddSkill({
         id="0x700459AF",
         nameEN="Guide to the War-stead", labelEN="War-stead (Guide)",
         nameDE="Führer zum Kriegslager der Rohirrim", labelDE="Kriegslager der Rohirrim (Führer)",
         nameFR="Guide pour se rendre au camp militaire", labelFR="Camp militaire (Guide)",
-        map={{MapType.GONDOR, 665, 140}}
+        map={{MapType.GONDOR, 665, 140}},
+        overlap={"0x700459A9"}
     })
     self.hunter:AddSkill({
         id="0x70046CBB",
         nameEN="Guide to after-battle Minas Tirith", labelEN="Minas Tirith after battle (Guide)",
         nameDE="Führer zum schlachtgezeichneten Minas Tirith", labelDE="Minas Tirith nach der Schlacht (Führer)",
         nameFR="Guide de Minas Tirith après la bataille", labelFR="Minas Tirith après la bataille (Guide)",
-        map={{MapType.GONDOR, 670, 375}}
+        map={{MapType.GONDOR, 670, 375}},
+        overlap={"0x70046CC0"}
     })
     self.hunter:AddSkill({
         id="0x70047077",
         nameEN="Guide to Henneth Annûn", labelEN="Henneth Annûn (Guide)",
         nameDE="Führer zu Henneth Annûn", labelDE="Henneth Annûn (Führer)",
         nameFR="Guide vers Henneth Annûn", labelFR="Henneth Annûn (Guide)",
-        map={{MapType.GONDOR, 875, 385}}
+        map={{MapType.GONDOR, 875, 385}},
+        overlap={"0x70047080"}
     })
     self.hunter:AddSkill({
         id="0x70047074",
         nameEN="Guide to after-battle Osgiliath", labelEN="Osgiliath after battle (Guide)",
         nameDE="Führer zum schlachtgezeichneten Osgiliath", labelDE="Osgiliath nach der Schlacht (Führer)",
         nameFR="Guide vers Osgiliath après la bataille", labelFR="Osgiliath après la bataille (Guide)",
-        map={{MapType.GONDOR, 855, 335}}
+        map={{MapType.GONDOR, 855, 335}},
+        overlap={"0x7004707D"}
     })
     self.hunter:AddSkill({
         id="0x70047BFA",
         nameEN="Guide to the Camp of the Host", labelEN="Camp of the Host (Guide)",
         nameDE="Führer zum Lager des Heeres", labelDE="Lager des Heeres (Führer)",
         nameFR="Guide vers le Camp de l'armée", labelFR="Camp de l'armée (Guide)",
-        map={{MapType.GONDOR, 805, 170}}
+        map={{MapType.GONDOR, 805, 170}},
+        overlap={"0x70047BF4"}
     })
     self.hunter:AddSkill({
         id="0x70047C1D",
         nameEN="Guide to Haerondir", labelEN="Haerondir (Guide)",
         nameDE="Führer nach Haerondir", labelDE="Haerondir (Führer)",
         nameFR="Guide vers Haerondir", labelFR="Haerondir (Guide)",
-        map={{MapType.GONDOR, 855, 100}}
+        map={{MapType.GONDOR, 855, 100}},
+        overlap={"0x70047C1B"}
     })
     self.hunter:AddSkill({
         id="0x7004AE1E",
         nameEN="Guide to the Udûn Foothold", labelEN="Udûn Foothold (Guide)",
         nameDE="Führer zum Udûn-Brückenkopf", labelDE="Udûn-Brückenkopf (Führer)",
         nameFR="Guide vers le fort d'Udûn", labelFR="Fort d'Udûn (Guide)",
-        map={{MapType.GONDOR, 925, 230}}
+        map={{MapType.GONDOR, 925, 230}},
+        overlap={"0x7004AE1D"}
     })
     self.hunter:AddSkill({
         id="0x7004D73B",
         nameEN="Guide to Dale", labelEN="Dale (Guide)",
         nameDE="Führer nach Thal", labelDE="Thal (Führer)",
         nameFR="Guide vers Dale", labelFR="Dale (Guide)",
-        map={{MapType.RHOVANION, 720, 215}}
+        map={{MapType.RHOVANION, 720, 215}},
+        overlap={"0x7004D738"}
     })
     self.hunter:AddSkill({
         id="0x7004FACC",
         nameEN="Guide to Járnfast", labelEN="Járnfast (Guide)",
         nameDE="Führer nach Járnfast", labelDE="Járnfast (Führer)",
         nameFR="Guide vers Jarnfast", labelFR="Jarnfast (Guide)",
-        map={{MapType.RHOVANION, 890, 110}}
+        map={{MapType.RHOVANION, 890, 110}},
+        overlap={"0x7004FAC3"}
     })
     self.hunter:AddSkill({
         id="0x7004FACB",
         nameEN="Guide to Skarháld", labelEN="Skarháld (Guide)",
         nameDE="Führer nach Skarháld", labelDE="Skarháld (Führer)",
         nameFR="Guide vers Skarhald", labelFR="Skarhald (Guide)",
-        map={{MapType.RHOVANION, 430, 90}}
+        map={{MapType.RHOVANION, 430, 90}},
+        overlap={"0x7004FAC5"}
     })
     self.hunter:AddSkill({
         id="0x70052F07",
         nameEN="Guide to Beorninghús", labelEN="Beorninghús (Guide)",
         nameDE="Führer nach Beorningerhús", labelDE="Beorningerhús (Führer)",
         nameFR="Guide pour Beorninghus", labelFR="Beorninghus (Guide)",
-        map={{MapType.RHOVANION, 390, 300}}
+        map={{MapType.RHOVANION, 390, 300}},
+        overlap={"0x70041A22", "0x70052F12"}
     })
     self.hunter:AddSkill({
         id="0x70052F08",
         nameEN="Guide to Hultvís", labelEN="Hultvís (Guide)",
         nameDE="Leitfaden für Hultvís", labelDE="Hultvís (Führer)",
         nameFR="Guide de Hultvis", labelFR="Hultvis (Guide)",
-        map={{MapType.RHOVANION, 375, 400}}
+        map={{MapType.RHOVANION, 375, 400}},
+        overlap={"0x70052F04"}
     })
     self.hunter:AddSkill({
         id="0x700551F4",
         nameEN="Guide to Estolad Lân", labelEN="Estolad Lân (Guide)",
         nameDE="Führer nach Estolad Lân", labelDE="Estolad Lân (Führer)",
         nameFR="Guide vers Estolad Lân", labelFR="Estolad Lân (Guide)",
-        map={{MapType.GONDOR, 960, 460}}
+        map={{MapType.GONDOR, 960, 460}},
+        overlap={"0x700551F8"}
     })
     self.hunter:AddSkill({
         id="0x7005762D",
         nameEN="Guide to Limlók", labelEN="Limlók (Guide)",
         nameDE="Führer nach Limlók", labelDE="Limlók (Führer)",
         nameFR="Guide de Limlok", labelFR="Limlok (Guide)",
-        map={{MapType.RHOVANION, 345, 230}}
+        map={{MapType.RHOVANION, 345, 230}},
+        overlap={"0x70057629"}
     })
     self.hunter:AddSkill({
         id="0x70058571",
         nameEN="Guide to Annâk-khurfu", labelEN="Annâk-khurfu (Guide)",
         nameDE="Führer nach Annâk-khurfu", labelDE="Annâk-khurfu (Führer)",
         nameFR="Guide vers Annâk-khurfu", labelFR="Annâk-khurfu (Guide)",
-        map={{MapType.RHOVANION, 530, 90}}
+        map={{MapType.RHOVANION, 530, 90}},
+        overlap={"0x7005856F"}
     })
     self.hunter:AddSkill({
         id="0x7005AA91",
         nameEN="Guide to Akrâz-zahar", labelEN="Akrâz-zahar (Guide)",
         nameDE="Führer nach Akrâz-zahar", labelDE="Akrâz-zahar (Führer)",
         nameFR="Guide vers Akrâz-zahar", labelFR="Akrâz-zahar (Guide)",
-        map={{MapType.RHOVANION, 750, 115}}
+        map={{MapType.RHOVANION, 750, 115}},
+        overlap={"0x7005AA90"}
     })
     self.hunter:AddSkill({
         id="0x7005AA95",
         nameEN="Guide to Azanulbizar", labelEN="Azanulbizar (Guide)",
         nameDE="Führer nach Azanulbizar", labelDE="Azanulbizar (Führer)",
         nameFR="Guide vers Azanulbizar", labelFR="Azanulbizar (Guide)",
-        map={{MapType.RHOVANION, 210, 555}}
+        map={{MapType.RHOVANION, 210, 555}},
+        overlap={"0x7005AA92"}
     })
     self.hunter:AddSkill({
         id="0x7005D487",
         nameEN="Guide to the Noble Gate", labelEN="Noble Gate (Guide)",
         nameDE="Führer zum Prachttor", labelDE="Prachttor (Führer)",
         nameFR="Guide vers la Porte Noble", labelFR="Porte Noble (Guide)",
-        map={{MapType.RHOVANION, 190, 130}}
+        map={{MapType.RHOVANION, 190, 130}},
+        overlap={"0x7005D47C"}
     })
     self.hunter:AddSkill({
         id="0x7005D47D",
         nameEN="Guide to Leitstáth", labelEN="Leitstáth (Guide)",
         nameDE="Führer nach Leitstáth", labelDE="Leitstáth (Führer)",
         nameFR="Guide vers Leitstath", labelFR="Leitstath (Guide)",
-        map={{MapType.RHOVANION, 270, 65}}
+        map={{MapType.RHOVANION, 270, 65}},
+        overlap={"0x7005D484"}
     })
     self.hunter:AddSkill({
         id="0x70064AC8",
         nameEN="Guide to Carn Dûm", labelEN="Carn Dûm (Guide)",
         nameDE="Führer nach Carn Dûm", labelDE="Carn Dûm (Führer)",
         nameFR="Guide vers Carn Dûm", labelFR="Carn Dûm (Guide)",
-        map={{MapType.ERIADOR, 735, 100}}
+        map={{MapType.ERIADOR, 735, 100}},
+        overlap={"0x70064ACA"}
     })
     self.hunter:AddSkill({
         id="0x700658EA",
         nameEN="Guide to Pelargir", labelEN="Pelargir (Guide)",
         nameDE="Führer nach Pelargir", labelDE="Pelargir (Führer)",
         nameFR="Guide vers Pelargir", labelFR="Pelargir (Guide)",
-        map={{MapType.GONDOR, 670, 625}}
+        map={{MapType.GONDOR, 670, 625}},
+        overlap={"0x700658EB"}
     })
     self.hunter:AddSkill({
         id="0x70068711",
         nameEN="Guide to Dol Amroth", descEN="King's Gondor", labelEN="King's Dol Amroth (Guide)",
         nameDE="Führer nach Dol Amroth", descDE="Königreich Gondor", labelDE="Dol Amroth - Königreich Gondor (Führer)",
         nameFR="Guide vers Dol Amroth", descFR="le Gondor royal", labelFR="Dol Amroth - Gondor royal (Guide)",
-        map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 210, 485}}
+        map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 210, 485}},
+        overlap={"0x70068700"}
     })
     self.hunter:AddSkill({
         id="0x70068717",
         nameEN="Guide to Lond Cirion", labelEN="Lond Cirion (Guide)",
         nameDE="Führer nach Lond Cirion", labelDE="Lond Cirion (Führer)",
         nameFR="Guide vers Lond Cirion", labelFR="Lond Cirion (Guide)",
-        map={{MapType.GONDOR, 255, 420}, {MapType.HARADWAITH, 230, 20}}
+        map={{MapType.GONDOR, 255, 420}, {MapType.HARADWAITH, 230, 20}},
+        overlap={"0x70068703"}
     })
     self.hunter:AddSkill({
         id="0x70068713",
         nameEN="Guide to Halrax", labelEN="Halrax (Guide)",
         nameDE="Führer nach Halrax", labelDE="Halrax (Führer)",
         nameFR="Guide vers Halrax", labelFR="Halrax (Guide)",
-        map={{MapType.HARADWAITH, 275, 160}}
+        map={{MapType.HARADWAITH, 275, 160}},
+        overlap={"0x70068702"}
     })
     self.hunter:AddSkill({
         id="0x70068719",
         nameEN="Guide to Jax Phanâl", labelEN="Jax Phanâl (Guide)",
         nameDE="Führer nach Jax Phanâl", labelDE="Jax Phanâl (Führer)",
         nameFR="Guide vers Jax Phanâl", labelFR="Jax Phanâl (Guide)",
-        map={{MapType.HARADWAITH, 305, 315}}
+        map={{MapType.HARADWAITH, 305, 315}},
+        overlap={"0x70068701"}
     })
     self.hunter:AddSkill({
         id="0x70068718",
         nameEN="Guide to Umbar", labelEN="Umbar (Guide)",
         nameDE="Führer nach Umbar", labelDE="Umbar (Führer)",
         nameFR="Guide vers Umbar", labelFR="Umbar (Guide)",
-        map={{MapType.HARADWAITH, 505, 370}}
+        map={{MapType.HARADWAITH, 505, 370}},
+        overlap={"0x700686FF"}
     })
     self.hunter:AddSkill({
         id="0x700697EF",
         nameEN="Guide to the Bloody Eagle Tavern", labelEN="Bloody Eagle Tavern (Guide)",
         nameDE="Führer zur Taverne \"Zum Blutigen Adler\"", labelDE="Zum Blutigen Adler (Führer)",
         nameFR="Guide vers la taverne de l'Aigle sanglant", labelFR="Taverne de l'Aigle sanglant (Guide)",
-        map={{MapType.HARADWAITH, 475, 400}}
+        map={{MapType.HARADWAITH, 475, 400}},
+        overlap={"0x700697F2"}
     })
 
     -- add the Warden locations
@@ -437,42 +487,48 @@ function TravelDictionary:CreateDictionaries()
         nameEN="Muster at Clegur", labelEN="Clegur (Muster)",
         nameDE="Appell in Clegur", labelDE="Clegur (Appell)",
         nameFR="Rassemblement à Clegur", labelFR="Clegur (Rassemblement)",
-        map={{MapType.ERIADOR, 755, 555}}
+        map={{MapType.ERIADOR, 755, 555}},
+        overlap={"0x70064F47"}
     })
     self.warden:AddSkill({
         id="0x700634B6",
         nameEN="Muster at Swanfleet", labelEN="Swanfleet (Muster)",
         nameDE="Appell in Schwanenfleet", labelDE="Schwanenfleet (Appell)",
         nameFR="Rassemblement aux Noues des cygnes", labelFR="Noues des cygnes (Rassemblement)",
-        map={{MapType.ERIADOR, 825, 490}}
+        map={{MapType.ERIADOR, 825, 490}},
+        overlap={"0x700634A4"}
     })
     self.warden:AddSkill({
         id="0x700634AD",
         nameEN="Muster at Cardolan", labelEN="Cardolan (Muster)",
         nameDE="Appell in Cardolan", labelDE="Cardolan (Appell)",
         nameFR="Rassemblement au Cardolan", labelFR="Cardolan (Rassemblement)",
-        map={{MapType.ERIADOR, 560, 495}}
+        map={{MapType.ERIADOR, 560, 495}},
+        overlap={"0x700634AE"}
     })
     self.warden:AddSkill({
         id="0x70063242",
         nameEN="Muster at Andrath", labelEN="Andrath (Muster)",
         nameDE="Appell in Andrath", labelDE="Andrath (Appell)",
         nameFR="Rassemblement à Andrath", labelFR="Andrath (Rassemblement)",
-        map={{MapType.ERIADOR, 580, 465}}
+        map={{MapType.ERIADOR, 580, 465}},
+        overlap={"0x7006323D"}
     })
     self.warden:AddSkill({
         id="0x7006133E",
         nameEN="Muster at Nobottle", labelEN="Nobottle (Muster)",
         nameDE="Appell in Neuhausen", labelDE="Neuhausen (Appell)",
         nameFR="Rassemblement à Bourdeneuve", labelFR="Bourdeneuve (Rassemblement)",
-        map={{MapType.ERIADOR, 440, 350}}
+        map={{MapType.ERIADOR, 440, 350}},
+        overlap={"0x70061340"}
     })
     self.warden:AddSkill({
         id="0x70014786",
         nameEN="Muster in Ost Guruth", labelEN="Ost Guruth (Muster)",
         nameDE="Appell in der Feste Guruth", labelDE="Feste Guruth (Appell)",
         nameFR="Rassemblement : Ost Guruth", labelFR="Ost Guruth (Rassemblement)",
-        map={{MapType.ERIADOR, 755, 400}}
+        map={{MapType.ERIADOR, 755, 400}},
+        overlap={"0x70020441"}
     })
     self.warden:AddSkill({
         id="0x70014798",
@@ -493,14 +549,16 @@ function TravelDictionary:CreateDictionaries()
         nameEN="Muster in Rivendell", labelEN="Rivendell (Muster)",
         nameDE="Appell in Bruchtal", labelDE="Bruchtal (Appell)",
         nameFR="Rassemblement : Fondcombe", labelFR="Fondcombe (Rassemblement)",
-        map={{MapType.ERIADOR, 865, 410}}
+        map={{MapType.ERIADOR, 865, 410}},
+        overlap={"0x7000631F", "0x70023263"}
     })
     self.warden:AddSkill({
         id="0x70060EA5",
         nameEN="Muster at Tornhad", labelEN="Tornhad (Muster)",
         nameDE="Appell in Tornhad", labelDE="Tornhad (Appell)",
         nameFR="Retour à Tornhad", labelFR="Tornhad (Rassemblement)",
-        map={{MapType.ERIADOR, 775, 435}}
+        map={{MapType.ERIADOR, 775, 435}},
+        overlap={"0x70060EA8"}
     })
     self.warden:AddSkill({
         id="0x700303DD",
@@ -514,14 +572,16 @@ function TravelDictionary:CreateDictionaries()
         nameEN="Muster in Trestlebridge", labelEN="Trestlebridge (Muster)",
         nameDE="Appell in Schragen", labelDE="Schragen (Appell)",
         nameFR="Rassemblement : Pont-à-Tréteaux", labelFR="Pont-à-Tréteaux (Rassemblement)",
-        map={{MapType.ERIADOR, 590, 285}}
+        map={{MapType.ERIADOR, 590, 285}},
+        overlap={"0x70059D12"}
     })
     self.warden:AddSkill({
         id="0x70059D09",
         nameEN="Muster in Trader's Wharf", labelEN="Trader's Wharf (Muster)",
         nameDE="Appell am Händlerkai", labelDE="Händlerkai (Appell)",
         nameFR="Rassemblement : Quai des marchands", labelFR="Quai des marchands (Rassemblement)",
-        map={{MapType.ERIADOR, 515, 305}}
+        map={{MapType.ERIADOR, 515, 305}},
+        overlap={"0x70059D0E"}
     })
     self.warden:AddSkill({
         id="0x700237D4",
@@ -542,7 +602,8 @@ function TravelDictionary:CreateDictionaries()
         nameEN="Muster in Caras Galadhon", labelEN="Caras Galadhon (Muster)",
         nameDE="Appell in Caras Galadhon", labelDE="Caras Galadhon (Appell)",
         nameFR="Rassemblement : Caras Galadhon", labelFR="Caras Galadhon (Rassemblement)",
-        map={{MapType.RHOVANION, 120, 660}}
+        map={{MapType.RHOVANION, 120, 660}},
+        overlap={"0x70048C8C"}
     })
     self.warden:AddSkill({
         id="0x7001F45C",
@@ -563,252 +624,288 @@ function TravelDictionary:CreateDictionaries()
         nameEN="Muster in Galtrev", labelEN="Galtrev (Muster)",
         nameDE="Appell in Galtrev", labelDE="Galtrev (Appell)",
         nameFR="Rassemblement : Galtrev", labelFR="Galtrev (Rassemblement)",
-        map={{MapType.ERIADOR, 810, 715}}
+        map={{MapType.ERIADOR, 810, 715}},
+        overlap={"0x7002C647"}
     })
     self.warden:AddSkill({
         id="0x7002C646",
         nameEN="Muster in Stangard", labelEN="Stangard (Muster)",
         nameDE="Appell in Stangard", labelDE="Stangard (Appell)",
         nameFR="Rassemblement : Stangarde", labelFR="Stangarde (Rassemblement)",
-        map={{MapType.RHOVANION, 200, 720}, {MapType.ROHAN, 545, 90}}
+        map={{MapType.RHOVANION, 200, 720}, {MapType.ROHAN, 545, 90}},
+        overlap={"0x7002C65D"}
     })
     self.warden:AddSkill({
         id="0x7003198D",
         nameEN="Muster in Snowbourn", labelEN="Snowbourn (Muster)",
         nameDE="Appell in Schneegrenze", labelDE="Schneegrenze (Appell)",
         nameFR="Rassemblement : Neigebronne", labelFR="Neigebronne (Rassemblement)",
-        map={{MapType.ROHAN, 515, 500}}
+        map={{MapType.ROHAN, 515, 500}},
+        overlap={"0x70031A46"}
     })
     self.warden:AddSkill({
         id="0x70036B5B",
         nameEN="Muster in Forlaw", labelEN="Forlaw (Muster)",
         nameDE="Appell in Forlach", labelDE="Forlach (Appell)",
         nameFR="Rassemblement : Forloi", labelFR="Forloi (Rassemblement)",
-        map={{MapType.ROHAN, 450, 175}}
+        map={{MapType.ROHAN, 450, 175}},
+        overlap={"0x70036B5E"}
     })
     self.warden:AddSkill({
         id="0x7003DC7A",
         nameEN="Muster in Aldburg", labelEN="Aldburg (Muster)",
         nameDE="Appell in Aldburg", labelDE="Aldburg (Appell)",
         nameFR="Rassemblement : Aldburg", labelFR="Aldburg (Rassemblement)",
-        map={{MapType.ROHAN, 570, 640}}
+        map={{MapType.ROHAN, 570, 640}},
+        overlap={"0x7003DC81"}
     })
     self.warden:AddSkill({
         id="0x7003DC79",
         nameEN="Muster in Helm's Deep", labelEN="Helm's Deep (Muster)",
         nameDE="Appell in Helms Klamm", labelDE="Helms Klamm (Appell)",
         nameFR="Rassemblement : Gouffre de Helm", labelFR="Gouffre de Helm (Rassemblement)",
-        map={{MapType.ROHAN, 275, 565}}
+        map={{MapType.ROHAN, 275, 565}},
+        overlap={"0x7003DC82"}
     })
     self.warden:AddSkill({
         id="0x70041198",
         nameEN="Muster in Dol Amroth", descEN="Dol Amroth in western Gondor", labelEN="Dol Amroth (Muster)",
         nameDE="Appell in Dol Amroth", descDE="West-Gondor zu reisen", labelDE="Dol Amroth (Appell)",
         nameFR="Rassemblement : Dol Amroth", descFR="l'Ouest du Gondor", labelFR="Dol Amroth (Rassemblement)",
-        map={{MapType.GONDOR, 225, 550}}
+        map={{MapType.GONDOR, 225, 550}},
+        overlap={"0x700411AC"}
     })
     self.warden:AddSkill({
         id="0x70043A66",
         nameEN="Muster in Arnach", labelEN="Arnach (Muster)",
         nameDE="Appell in Arnach", labelDE="Arnach (Appell)",
         nameFR="Rassemblement : Arnach", labelFR="Arnach (Rassemblement)",
-        map={{MapType.GONDOR, 715, 425}}
+        map={{MapType.GONDOR, 715, 425}},
+        overlap={"0x70043A6A"}
     })
     self.warden:AddSkill({
         id="0x70044982",
         nameEN="Muster in Minas Tirith", labelEN="Minas Tirith (Muster)",
         nameDE="Appell in Minas Tirith", labelDE="Minas Tirith (Appell)",
         nameFR="Rassemblement : Minas Tirith", labelFR="Minas Tirith (Rassemblement)",
-        map={{MapType.GONDOR, 670, 345}}
+        map={{MapType.GONDOR, 670, 345}},
+        overlap={"0x7004497E"}
     })
     self.warden:AddSkill({
         id="0x700459AA",
         nameEN="Muster in the War-stead", labelEN="War-stead (Muster)",
         nameDE="Appell im Kriegslager", labelDE="Kriegslager der Rohirrim (Appell)",
         nameFR="Rassemblement : Camp militaire", labelFR="Camp militaire (Rassemblement)",
-        map={{MapType.GONDOR, 665, 140}}
+        map={{MapType.GONDOR, 665, 140}},
+        overlap={"0x700459A9"}
     })
     self.warden:AddSkill({
         id="0x70046CBF",
         nameEN="Muster in after-battle Minas Tirith", labelEN="Minas Tirith after battle (Muster)",
         nameDE="Appell im schlachtgezeichneten Minas Tirith", labelDE="Minas Tirith nach der Schlacht (Appell)",
         nameFR="Rassemblement : Minas Tirith après la bataille", labelFR="Minas Tirith après la bataille (Rassemblement)",
-        map={{MapType.GONDOR, 670, 375}}
+        map={{MapType.GONDOR, 670, 375}},
+        overlap={"0x70046CC0"}
     })
     self.warden:AddSkill({
         id="0x70047075",
         nameEN="Muster in Henneth Annûn", labelEN="Henneth Annûn (Muster)",
         nameDE="Appell in Henneth Annûn", labelDE="Henneth Annûn (Appell)",
         nameFR="Rassemblement : Henneth Annûn", labelFR="Henneth Annûn (Rassemblement)",
-        map={{MapType.GONDOR, 875, 385}}
+        map={{MapType.GONDOR, 875, 385}},
+        overlap={"0x70047080"}
     })
     self.warden:AddSkill({
         id="0x70047076",
         nameEN="Muster in after-battle Osgiliath", labelEN="Osgiliath after battle (Muster)",
         nameDE="Appell im schlachtgezeichneten Osgiliath", labelDE="Osgiliath nach der Schlacht (Appell)",
         nameFR="Rassemblement : Osgiliath après la bataille", labelFR="Osgiliath après la bataille (Rassemblement)",
-        map={{MapType.GONDOR, 855, 335}}
+        map={{MapType.GONDOR, 855, 335}},
+        overlap={"0x7004707D"}
     })
     self.warden:AddSkill({
         id="0x70047BFC",
         nameEN="Muster in the Camp of the Host", labelEN="Camp of the Host (Muster)",
         nameDE="Appell im Lager des Heeres", labelDE="Lager des Heeres (Appell)",
         nameFR="Rassemblement : Camp de l'armée", labelFR="Camp de l'armée (Rassemblement)",
-        map={{MapType.GONDOR, 805, 170}}
+        map={{MapType.GONDOR, 805, 170}},
+        overlap={"0x70047BF4"}
     })
     self.warden:AddSkill({
         id="0x70047C23",
         nameEN="Muster in Haerondir", labelEN="Haerondir (Muster)",
         nameDE="Appell in Haerondir", labelDE="Haerondir (Appell)",
         nameFR="Rassemblement : Haerondir", labelFR="Haerondir (Rassemblement)",
-        map={{MapType.GONDOR, 855, 100}}
+        map={{MapType.GONDOR, 855, 100}},
+        overlap={"0x70047C1B"}
     })
     self.warden:AddSkill({
         id="0x7004AE1F",
         nameEN="Muster in the Udûn Foothold", labelEN="Udûn Foothold (Muster)",
         nameDE="Appell am Udûn-Brückenkopf", labelDE="Udûn-Brückenkopf (Appell)",
         nameFR="Rassemblement : Le fort d'Udûn", labelFR="Fort d'Udûn (Rassemblement)",
-        map={{MapType.GONDOR, 925, 230}}
+        map={{MapType.GONDOR, 925, 230}},
+        overlap={"0x7004AE1D"}
     })
     self.warden:AddSkill({
         id="0x7004D73A",
         nameEN="Muster in Dale", labelEN="Dale (Muster)",
         nameDE="Appell in Thal", labelDE="Thal (Appell)",
         nameFR="Rassemblement : Dale", labelFR="Dale (Rassemblement)",
-        map={{MapType.RHOVANION, 720, 215}}
+        map={{MapType.RHOVANION, 720, 215}},
+        overlap={"0x7004D738"}
     })
     self.warden:AddSkill({
         id="0x7004FACA",
         nameEN="Muster in Járnfast", labelEN="Járnfast (Muster)",
         nameDE="Appell in Járnfast", labelDE="Jarnfast (Appell)",
         nameFR="Rassemblement : Jarnfast", labelFR="Jarnfast (Rassemblement)",
-        map={{MapType.RHOVANION, 890, 110}}
+        map={{MapType.RHOVANION, 890, 110}},
+        overlap={"0x7004FAC3"}
     })
     self.warden:AddSkill({
         id="0x7004FACD",
         nameEN="Muster in Skarháld", labelEN="Skarháld (Muster)",
         nameDE="Appell in Skarháld", labelDE="Skarhald (Appell)",
         nameFR="Rassemblement : Skarhald", labelFR="Skarhald (Rassemblement)",
-        map={{MapType.RHOVANION, 430, 90}}
+        map={{MapType.RHOVANION, 430, 90}},
+        overlap={"0x7004FAC5"}
     })
     self.warden:AddSkill({
         id="0x70052F0A",
         nameEN="Muster in Beorninghús", labelEN="Beorninghús (Muster)",
         nameDE="Appell im Beorningerhús", labelDE="Beorningerhús (Appell)",
         nameFR="Rassemblement : Beorninghus", labelFR="Beorninghus (Rassemblement)",
-        map={{MapType.RHOVANION, 390, 300}}
+        map={{MapType.RHOVANION, 390, 300}},
+        overlap={"0x70041A22", "0x70052F12"}
     })
     self.warden:AddSkill({
         id="0x70052F06",
         nameEN="Muster in Hultvís", labelEN="Hultvís (Muster)",
         nameDE="Appell in Hultvís", labelDE="Hultvís (Appell)",
         nameFR="Rassemblement : Hultvis", labelFR="Hultvis (Rassemblement)",
-        map={{MapType.RHOVANION, 375, 400}}
+        map={{MapType.RHOVANION, 375, 400}},
+        overlap={"0x70052F04"}
     })
     self.warden:AddSkill({
         id="0x700551F2",
         nameEN="Muster in Estolad Lân", labelEN="Estolad Lân (Muster)",
         nameDE="Appell in Estolad Lân", labelDE="Estolad Lân (Appell)",
         nameFR="Rassemblement : Estolad Lân", labelFR="Estolad Lân (Rassemblement)",
-        map={{MapType.GONDOR, 960, 460}}
+        map={{MapType.GONDOR, 960, 460}},
+        overlap={"0x700551F8"}
     })
     self.warden:AddSkill({
         id="0x70057635",
         nameEN="Muster in Limlók", labelEN="Limlók (Muster)",
         nameDE="Appell in Limlók", labelDE="Limlók (Appell)",
         nameFR="Rassemblement : Limlok", labelFR="Limlok (Rassemblement)",
-        map={{MapType.RHOVANION, 345, 230}}
+        map={{MapType.RHOVANION, 345, 230}},
+        overlap={"0x70057629"}
     })
     self.warden:AddSkill({
         id="0x70058572",
         nameEN="Muster in Annâk-khurfu", labelEN="Annâk-khurfu (Muster)",
         nameDE="Appell in Annâk-khurfu", labelDE="Annâk-khurfu (Appell)",
         nameFR="Rassemblement : Annâk-khurfu", labelFR="Annâk-khurfu (Rassemblement)",
-        map={{MapType.RHOVANION, 530, 90}}
+        map={{MapType.RHOVANION, 530, 90}},
+        overlap={"0x7005856F"}
     })
     self.warden:AddSkill({
         id="0x7005AA8F",
         nameEN="Muster in Akrâz-zahar", labelEN="Akrâz-zahar (Muster)",
         nameDE="Appell in Akrâz-zahar", labelDE="Akrâz-zahar (Appell)",
         nameFR="Rassemblement : Akrâz-zahar", labelFR="Akrâz-zahar (Rassemblement)",
-        map={{MapType.RHOVANION, 750, 115}}
+        map={{MapType.RHOVANION, 750, 115}},
+        overlap={"0x7005AA90"}
     })
     self.warden:AddSkill({
         id="0x7005AA8C",
         nameEN="Muster in Azanulbizar", labelEN="Azanulbizar (Muster)",
         nameDE="Appell in Azanulbizar", labelDE="Azanulbizar (Appell)",
         nameFR="Rassemblement : Azanulbizar", labelFR="Azanulbizar (Rassemblement)",
-        map={{MapType.RHOVANION, 210, 555}}
+        map={{MapType.RHOVANION, 210, 555}},
+        overlap={"0x7005AA92"}
     })
     self.warden:AddSkill({
         id="0x7005D48A",
         nameEN="Muster at the Noble Gate", labelEN="Noble Gate (Muster)",
         nameDE="Appell am Prachttor", labelDE="Prachttor (Appell)",
         nameFR="Rassemblement : La Porte Noble", labelFR="Porte Noble (Rassemblement)",
-        map={{MapType.RHOVANION, 190, 130}}
+        map={{MapType.RHOVANION, 190, 130}},
+        overlap={"0x7005D47C"}
     })
     self.warden:AddSkill({
         id="0x7005D488",
         nameEN="Muster at Leitstáth", labelEN="Leitstáth (Muster)",
         nameDE="Appell in Leitstáth", labelDE="Leitstáth (Appell)",
         nameFR="Rassemblement : Leitstath", labelFR="Leitstath (Rassemblement)",
-        map={{MapType.RHOVANION, 270, 65}}
+        map={{MapType.RHOVANION, 270, 65}},
+        overlap={"0x7005D484"}
     })
     self.warden:AddSkill({
         id="0x70064ACB",
         nameEN="Muster at Carn Dûm", labelEN="Carn Dûm (Muster)",
         nameDE="Appell in Carn Dûm", labelDE="Carn Dûm (Appell)",
         nameFR="Rassemblement : Carn Dûm", labelFR="Carn Dûm (Rassemblement)",
-        map={{MapType.ERIADOR, 735, 100}}
+        map={{MapType.ERIADOR, 735, 100}},
+        overlap={"0x70064ACA"}
     })
     self.warden:AddSkill({
         id="0x700658E8",
         nameEN="Muster at Pelargir", labelEN="Pelargir (Muster)",
         nameDE="Heerschau in Pelargir", labelDE="Pelargir (Appell)",
         nameFR="Rassemblement à Pelargir", labelFR="Pelargir (Rassemblement)",
-        map={{MapType.GONDOR, 670, 625}}
+        map={{MapType.GONDOR, 670, 625}},
+        overlap={"0x700658EB"}
     })
     self.warden:AddSkill({
         id="0x70068712",
         nameEN="Muster at Dol Amroth", descEN="King's Gondor", labelEN="King's Dol Amroth (Muster)",
         nameDE="Appell in Dol Amroth", descDE="Königreich Gondor", labelDE="Dol Amroth - Königreich Gondor (Appell)",
         nameFR="Rassemblement à Dol Amroth", descFR="le Gondor royal", labelFR="Dol Amroth - Gondor royal (Rassemblement)",
-        map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 385, 70}}
+        map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 385, 70}},
+        overlap={"0x70068700"}
     })
     self.warden:AddSkill({
         id="0x70068715",
         nameEN="Muster at Lond Cirion", labelEN="Lond Cirion (Muster)",
         nameDE="Appell in Lond Cirion", labelDE="Lond Cirion (Appell)",
         nameFR="Rassemblement à Lond Cirion", labelFR="Lond Cirion (Rassemblement)",
-        map={{MapType.GONDOR, 255, 420}, {MapType.HARADWAITH, 230, 20}}
+        map={{MapType.GONDOR, 255, 420}, {MapType.HARADWAITH, 230, 20}},
+        overlap={"0x70068703"}
     })
     self.warden:AddSkill({
         id="0x70068710",
         nameEN="Muster at Halrax", labelEN="Halrax (Muster)",
         nameDE="Appell in Halrax", labelDE="Halrax (Appell)",
         nameFR="Rassemblement à Halrax", labelFR="Halrax (Rassemblement)",
-        map={{MapType.HARADWAITH, 275, 260}}
+        map={{MapType.HARADWAITH, 275, 260}},
+        overlap={"0x70068702"}
     })
     self.warden:AddSkill({
         id="0x7006870C",
         nameEN="Muster at Jax Phanâl", labelEN="Jax Phanâl (Muster)",
         nameDE="Appell in Jax Phanâl", labelDE="Jax Phanâl (Appell)",
         nameFR="Rassemblement à Jax Phanâl", labelFR="Jax Phanâl (Rassemblement)",
-        map={{MapType.HARADWAITH, 305, 315}}
+        map={{MapType.HARADWAITH, 305, 315}},
+        overlap={"0x70068701"}
     })
     self.warden:AddSkill({
         id="0x7006870F",
         nameEN="Muster at Umbar", labelEN="Umbar (Muster)",
         nameDE="Appell in Umbar", labelDE="Umbar (Appell)",
         nameFR="Rassemblement à Umbar", labelFR="Umbar (Rassemblement)",
-        map={{MapType.HARADWAITH, 505, 370}}
+        map={{MapType.HARADWAITH, 505, 370}},
+        overlap={"0x700686FF"}
     })
     self.warden:AddSkill({
         id="0x700697F3",
         nameEN="Muster at the Bloody Eagle Tavern", labelEN="Bloody Eagle Tavern (Muster)",
         nameDE="Appell in der Taverne \"Zum Blutigen Adler\"", labelDE="Zum Blutigen Adler (Appell)",
         nameFR="Rassemblement à la taverne de l'Aigle sanglant", labelFR="Taverne de l'Aigle sanglant (Rassemblement)",
-        map={{MapType.HARADWAITH, 475, 400}}
+        map={{MapType.HARADWAITH, 475, 400}},
+        overlap={"0x700697F2"}
     })
 
     -- add the Mariner locations
@@ -845,7 +942,8 @@ function TravelDictionary:CreateDictionaries()
         nameEN="Sail to Trader's Wharf", labelEN="Trader's Wharf (Sail)",
         nameDE="Segelt zum Händlerkai", labelDE="Händlerkai (Segel)",
         nameFR="Naviguer vers le Quai des marchands", labelFR="Quai des marchands (Naviguer)",
-        map={{MapType.ERIADOR, 515, 305}}
+        map={{MapType.ERIADOR, 515, 305}},
+        overlap={"0x70059D0E"}
     })
     self.mariner:AddSkill({
         id="0x7006611C",
@@ -866,7 +964,8 @@ function TravelDictionary:CreateDictionaries()
         nameEN="Sail to Lothlórien", labelEN="Lothlórien (Sail)",
         nameDE="Segelt nach Lothlórien", labelDE="Lothlórien (Segeln)",
         nameFR="Naviguer vers la Lothlorien", labelFR="Lothlorien (Naviguer)",
-        map={{MapType.RHOVANION, 245, 670}}
+        map={{MapType.RHOVANION, 245, 670}},
+        overlap={"0x70048C8C"}
     })
     self.mariner:AddSkill({
         id="0x70066101",
@@ -880,70 +979,80 @@ function TravelDictionary:CreateDictionaries()
         nameEN="Sail to Snowbourn", labelEN="Snowbourn (Sail)",
         nameDE="Segelt nach Schneegrenze", labelDE="Schneegrenze (Segeln)",
         nameFR="Naviguer vers Neigebronne", labelFR="Neigebronne (Naviguer)",
-        map={{MapType.ROHAN, 515, 500}}
+        map={{MapType.ROHAN, 515, 500}},
+        overlap={"0x70031A46"}
     })
     self.mariner:AddSkill({
         id="0x70066117",
         nameEN="Sail to Dol Amroth", descEN="Dol Amroth with nearby", labelEN="Dol Amroth (Sail)",
         nameDE="Segelt nach Dol Amroth", descDE="nach Dol Amroth.", labelDE="Dol Amroth (Segeln)",
         nameFR="Naviguer vers Dol Amroth", descFR="Dol Amroth en bonne compagnie.", labelFR="Dol Amroth (Naviguer)",
-        map={{MapType.GONDOR, 225, 550}}
+        map={{MapType.GONDOR, 225, 550}},
+        overlap={"0x700411AC"}
     })
     self.mariner:AddSkill({
         id="0x70066109",
         nameEN="Sail to after-battle Osgiliath", labelEN="After-battle Osgiliath (Sail)",
         nameDE="Segelt ins schlachtgezeichnete Osgiliath", labelDE="Schlachtgezeichnetes Osgiliath (Segeln)",
         nameFR="Naviguer vers Osgiliath après la bataille", labelFR="Osgiliath après la bataille (Naviguer)",
-        map={{MapType.GONDOR, 855, 335}}
+        map={{MapType.GONDOR, 855, 335}},
+        overlap={"0x7004707D"}
     })
     self.mariner:AddSkill({
         id="0x7006610C",
         nameEN="Sail to Lake-town", labelEN="Lake-town (Sail)",
         nameDE="Segelt nach Seestadt.", labelDE="Seestadt (Segeln)",
         nameFR="Cap sur la Ville du Lac", labelFR="Ville du Lac (Naviguer)",
-        map={{MapType.RHOVANION, 740, 275}}
+        map={{MapType.RHOVANION, 740, 275}},
+        overlap={"0x7004D738"}
     })
     self.mariner:AddSkill({
         id="0x7006611B",
         nameEN="Sail to Pelargir", labelEN="Pelargir (Sail)",
         nameDE="Segelt nach Pelargir", labelDE="Pelargir (Segeln)",
         nameFR="Naviguer vers Pelargir", labelFR="Pelargir (Naviguer)",
-        map={{MapType.GONDOR, 670, 625}}
+        map={{MapType.GONDOR, 670, 625}},
+        overlap={"0x700658EB"}
     })
     self.mariner:AddSkill({
         id="0x700687C1",
         nameEN="Sail to Dol Amroth", descEN="King's Gondor", labelEN="King's Dol Amroth (Sail)",
         nameDE="Segelt nach Dol Amroth", descDE="Königreich Gondor", labelDE="Dol Amroth - Königreich Gondor (Segeln)",
         nameFR="Naviguer vers Dol Amroth", descFR="le Gondor royal", labelFR="Dol Amroth - Gondor royal (Naviguer)",
-        map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 385, 70}}
+        map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 385, 70}},
+        overlap={"0x70068700"}
     })
     self.mariner:AddSkill({
         id="0x700687BD",
         nameEN="Sail to Lond Cirion", labelEN="Lond Cirion (Sail)",
         nameDE="Nach Lond Cirion segeln", labelDE="Lond Cirion (Segeln)",
         nameFR="Naviguer vers Lond Cirion", labelFR="Lond Cirion (Naviguer)",
-        map={{MapType.GONDOR, 255, 420}, {MapType.HARADWAITH, 230, 20}}
+        map={{MapType.GONDOR, 255, 420}, {MapType.HARADWAITH, 230, 20}},
+        overlap={"0x70068703"}
     })
     self.mariner:AddSkill({
         id="0x700687C3",
         nameEN="Sail to Halrax", labelEN="Halrax (Sail)",
         nameDE="Nach Halrax segeln", labelDE="Halrax (Segeln)",
         nameFR="Naviguer vers Halrax", labelFR="Halrax (Naviguer)",
-        map={{MapType.HARADWAITH, 275, 160}}
+        map={{MapType.HARADWAITH, 275, 160}},
+        overlap={"0x70068702"}
     })
     self.mariner:AddSkill({
         id="0x700687C0",
         nameEN="Sail to Jax Phanâl", labelEN="Jax Phanâl (Sail)",
         nameDE="Nach Jax Phanâl segeln", labelDE="Jax Phanâl (Segeln)",
         nameFR="Naviguer vers Jax Phanâl", labelFR="Jax Phanâl (Naviguer)",
-        map={{MapType.HARADWAITH, 305, 315}}
+        map={{MapType.HARADWAITH, 305, 315}},
+        overlap={"0x70068701"}
     })
     self.mariner:AddSkill({
         id="0x700687BB",
         nameEN="Sail to Umbar", labelEN="Umbar (Sail)",
         nameDE="Nach Umbar segeln", labelDE="Umbar (Segeln)",
         nameFR="Naviguer vers Umbar", labelFR="Umbar (Naviguer)",
-        map={{MapType.HARADWAITH, 505, 370}}
+        map={{MapType.HARADWAITH, 505, 370}},
+        overlap={"0x700686FF"}
     })
 
     -- add the racial travel skills
