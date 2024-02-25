@@ -10,6 +10,7 @@ function TravelShortcut:Constructor(sType, tType, data, name, skillLabel, desc)
     self.Name = name;
     self.desc = desc;
     self.normalizedName = name:lower();
+    self.normalizedLabel = skillLabel:lower();
     self.travelType = tType;
     self.Index = TableIndex(Settings.order, data);
     self.Enabled = Settings.enabled[data];
@@ -135,6 +136,23 @@ function AddTravelSkills(skills, filter)
 end
 
 function SortByName()
+    local comp = function(a, b)
+        if a.normalizedName > b.normalizedName then
+            return true;
+        elseif a.normalizedName == b.normalizedName then
+            return a:GetData() > b:GetData();
+        else
+            return false;
+        end
+    end
+    SortShortcuts(comp);
+    Settings.order = {};
+    for i = 1, #TravelShortcuts do
+        table.insert(Settings.order, TravelShortcuts[i]:GetData());
+    end
+end
+
+function SortByLabel()
     local comp = function(a, b)
         if a.normalizedName > b.normalizedName then
             return true;
