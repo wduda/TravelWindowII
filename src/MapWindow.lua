@@ -122,20 +122,16 @@ function MapWindow:Constructor(map)
     self:SetVisible(true);
 
     if self.mapType == MapType.ERIADOR then
-        self:SetText(eriadorMapTitleString);
         self.mapLabel:SetBackground(0x41008138);
     elseif self.mapType == MapType.RHOVANION then
-        self:SetText(rhovanionMapTitleString);
         self.mapLabel:SetBackground(0x411C2DE4);
     elseif self.mapType == MapType.ROHAN then
         self.mapLabel:SetBackground(0x411c2de5);
     elseif self.mapType == MapType.GONDOR then
-        self:SetText(gondorMapTitleString);
         self.mapLabel:SetBackground(0x41154336);
     elseif self.mapType == MapType.HARADWAITH then
         self.mapLabel:SetBackground(0x4124bcd0);
     elseif self.mapType == MapType.CREEPS then
-        self:SetText(moorMapTitleString);
         self.mapLabel:SetBackground(0x41008133);
     end
 

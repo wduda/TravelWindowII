@@ -82,7 +82,7 @@ function TravelCommand:Execute(command, arguments)
 end
 
 function TravelCommand:GetHelp()
-    Turbine.Shell.WriteLine(helpString);
+    Turbine.Shell.WriteLine(LC.help);
 end
 
 -- add the command to the shell

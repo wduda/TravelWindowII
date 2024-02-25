@@ -75,9 +75,9 @@ function OptionsPanel:Constructor()
     self.OptionTabs:AddTab(self.SortTab);
 
     -- name the tabs
-    self.OptionTabs:SetTabText(1, generalTabString);
-    self.OptionTabs:SetTabText(2, selectTabString);
-    self.OptionTabs:SetTabText(3, sortTabString);
+    self.OptionTabs:SetTabText(1, LC.generalTab);
+    self.OptionTabs:SetTabText(2, LC.selectTab);
+    self.OptionTabs:SetTabText(3, LC.sortTab);
 
     self:SetVisible(true);
 
@@ -104,7 +104,7 @@ function OptionsPanel:AddGeneralItems()
     self.UseMinWindowLabel:SetPosition(20, NextY(20));
     self.UseMinWindowLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.UseMinWindowLabel:SetParent(self.GeneralTab);
-    self.UseMinWindowLabel:SetText(minWindowString);
+    self.UseMinWindowLabel:SetText(LC.miniWindow);
     self.UseMinWindowLabel:SetVisible(true);
 
     -- checkbox for hide window on start option
@@ -121,7 +121,7 @@ function OptionsPanel:AddGeneralItems()
     self.HideOnStartLabel:SetPosition(20, NextY(30));
     self.HideOnStartLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.HideOnStartLabel:SetParent(self.GeneralTab);
-    self.HideOnStartLabel:SetText(hideString);
+    self.HideOnStartLabel:SetText(LC.hide);
     self.HideOnStartLabel:SetVisible(true);
 
     -- checkbox for hide window on start option
@@ -138,7 +138,7 @@ function OptionsPanel:AddGeneralItems()
     self.HideOnCombatLabel:SetPosition(20, NextY(30));
     self.HideOnCombatLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.HideOnCombatLabel:SetParent(self.GeneralTab);
-    self.HideOnCombatLabel:SetText(hideOnCombatString);
+    self.HideOnCombatLabel:SetText(LC.hideOnCombat);
     self.HideOnCombatLabel:SetVisible(true);
 
     -- checkbox for hide on combat option
@@ -155,7 +155,7 @@ function OptionsPanel:AddGeneralItems()
     self.hideOnTravelLabel:SetPosition(20, NextY(30));
     self.hideOnTravelLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.hideOnTravelLabel:SetParent(self.GeneralTab);
-    self.hideOnTravelLabel:SetText(hideOnTravelString);
+    self.hideOnTravelLabel:SetText(LC.hideOnTravel);
     self.hideOnTravelLabel:SetVisible(true);
 
     -- checkbox for option to close window on travel skill use
@@ -172,7 +172,7 @@ function OptionsPanel:AddGeneralItems()
     self.ignoreEscLabel:SetPosition(20, NextY(30));
     self.ignoreEscLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.ignoreEscLabel:SetParent(self.GeneralTab);
-    self.ignoreEscLabel:SetText(ignoreEscString);
+    self.ignoreEscLabel:SetText(LC.ignoreEsc);
     self.ignoreEscLabel:SetVisible(true);
 
     -- checkbox for ignore escape to close option
@@ -189,7 +189,7 @@ function OptionsPanel:AddGeneralItems()
     self.ShowButtonLabel:SetPosition(20, NextY(30));
     self.ShowButtonLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.ShowButtonLabel:SetParent(self.GeneralTab);
-    self.ShowButtonLabel:SetText(toggleString);
+    self.ShowButtonLabel:SetText(LC.toggle);
     self.ShowButtonLabel:SetVisible(true);
 
     -- checkbox for show toggle button option
@@ -206,7 +206,7 @@ function OptionsPanel:AddGeneralItems()
     self.PulldownTravelLabel:SetPosition(20, NextY(30));
     self.PulldownTravelLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.PulldownTravelLabel:SetParent(self.GeneralTab);
-    self.PulldownTravelLabel:SetText(pulldownTravelString);
+    self.PulldownTravelLabel:SetText(LC.pulldownTravel);
     self.PulldownTravelLabel:SetVisible(true);
 
     -- checkbox for option to fire skill on pulldown selection
@@ -223,7 +223,7 @@ function OptionsPanel:AddGeneralItems()
     self.toggleSlidersLabel:SetPosition(20, NextY(30));
     self.toggleSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.toggleSlidersLabel:SetParent(self.GeneralTab);
-    self.toggleSlidersLabel:SetText(toggleSlidersString);
+    self.toggleSlidersLabel:SetText(LC.toggleSliders);
     self.toggleSlidersLabel:SetVisible(true);
 
     -- toggle button min slider label
@@ -232,7 +232,7 @@ function OptionsPanel:AddGeneralItems()
     self.toggleMinSlidersLabel:SetPosition(20, NextY(20));
     self.toggleMinSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.toggleMinSlidersLabel:SetParent(self.GeneralTab);
-    self.toggleMinSlidersLabel:SetText(minString);
+    self.toggleMinSlidersLabel:SetText(LC.min);
     self.toggleMinSlidersLabel:SetVisible(true);
 
     -- toggle button min slider
@@ -251,7 +251,7 @@ function OptionsPanel:AddGeneralItems()
     self.toggleMaxSlidersLabel:SetPosition(20, NextY(15));
     self.toggleMaxSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.toggleMaxSlidersLabel:SetParent(self.GeneralTab);
-    self.toggleMaxSlidersLabel:SetText(maxString);
+    self.toggleMaxSlidersLabel:SetText(LC.max);
     self.toggleMaxSlidersLabel:SetVisible(true);
 
     -- toggle button max slider
@@ -270,7 +270,7 @@ function OptionsPanel:AddGeneralItems()
     self.SlidersLabel:SetPosition(20, NextY(25));
     self.SlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.SlidersLabel:SetParent(self.GeneralTab);
-    self.SlidersLabel:SetText(mainSlidersString);
+    self.SlidersLabel:SetText(LC.mainSliders);
     self.SlidersLabel:SetVisible(true);
 
     -- main window min slider label
@@ -279,7 +279,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainMinSlidersLabel:SetPosition(20, NextY(20));
     self.mainMinSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.mainMinSlidersLabel:SetParent(self.GeneralTab);
-    self.mainMinSlidersLabel:SetText(minString);
+    self.mainMinSlidersLabel:SetText(LC.min);
     self.mainMinSlidersLabel:SetVisible(true);
 
     -- main window min slider
@@ -298,7 +298,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainMaxSlidersLabel:SetPosition(20, NextY(15));
     self.mainMaxSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.mainMaxSlidersLabel:SetParent(self.GeneralTab);
-    self.mainMaxSlidersLabel:SetText(maxString);
+    self.mainMaxSlidersLabel:SetText(LC.max);
     self.mainMaxSlidersLabel:SetVisible(true);
 
     -- main window max slider
@@ -317,7 +317,7 @@ function OptionsPanel:AddGeneralItems()
     self.fadeDelaySlidersLabel:SetPosition(20, NextY(25));
     self.fadeDelaySlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.fadeDelaySlidersLabel:SetParent(self.GeneralTab);
-    self.fadeDelaySlidersLabel:SetText(fadeDelayString);
+    self.fadeDelaySlidersLabel:SetText(LC.fadeDelay);
     self.fadeDelaySlidersLabel:SetVisible(true);
 
     -- fade out delay slider
@@ -336,7 +336,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainFadeSlidersLabel:SetPosition(20, NextY(25));
     self.mainFadeSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     self.mainFadeSlidersLabel:SetParent(self.GeneralTab);
-    self.mainFadeSlidersLabel:SetText(fadeWindowString);
+    self.mainFadeSlidersLabel:SetText(LC.fadeSpeed);
     self.mainFadeSlidersLabel:SetVisible(true);
 
     -- fade out slider
@@ -353,21 +353,21 @@ function OptionsPanel:AddGeneralItems()
     self.resetButton = Turbine.UI.Lotro.Button();
     self.resetButton:SetSize(220, 20);
     self.resetButton:SetPosition(20, 690);
-    self.resetButton:SetText(resetSettingsString);
+    self.resetButton:SetText(LC.resetSettings);
     self.resetButton:SetParent(self.GeneralTab);
     self.resetButton:SetVisible(true);
 
     self.saveGlobal = Turbine.UI.Lotro.Button();
     self.saveGlobal:SetSize(220, 20);
     self.saveGlobal:SetPosition(250, 690);
-    self.saveGlobal:SetText(saveGlobalDefaultsString);
+    self.saveGlobal:SetText(LC.saveGlobalDefaults);
     self.saveGlobal:SetParent(self.GeneralTab);
     self.saveGlobal:SetVisible(true);
 
     self.loadGlobal = Turbine.UI.Lotro.Button();
     self.loadGlobal:SetSize(220, 20);
     self.loadGlobal:SetPosition(480, 690);
-    self.loadGlobal:SetText(loadGlobalDefaultsString);
+    self.loadGlobal:SetText(LC.loadGlobalDefaults);
     self.loadGlobal:SetParent(self.GeneralTab);
     self.loadGlobal:SetVisible(true);
 
@@ -624,7 +624,7 @@ function OptionsPanel:AddBoxes()
         self.genLabel:SetPosition(0, 0);
         self.genLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
         self.genLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-        self.genLabel:SetText(genericLabelString);
+        self.genLabel:SetText(LC.genericLabel);
         self.genLabel:SetParent(self.EnabledTab);
         self.genLabel:SetVisible(true);
 
@@ -634,7 +634,7 @@ function OptionsPanel:AddBoxes()
         self.repLabel:SetPosition(260, 0);
         self.repLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
         self.repLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-        self.repLabel:SetText(repLabelString);
+        self.repLabel:SetText(LC.repLabel);
         self.repLabel:SetParent(self.EnabledTab);
         self.repLabel:SetVisible(true);
 
@@ -645,7 +645,7 @@ function OptionsPanel:AddBoxes()
             self.classLabel:SetPosition(520, 0);
             self.classLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
             self.classLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-            self.classLabel:SetText(classLabelString);
+            self.classLabel:SetText(LC.classLabel);
             self.classLabel:SetParent(self.EnabledTab);
             self.classLabel:SetVisible(true);
         end
@@ -656,7 +656,7 @@ function OptionsPanel:AddBoxes()
         self.genLabel:SetPosition(0, 0);
         self.genLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
         self.genLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-        self.genLabel:SetText(genericLabelString);
+        self.genLabel:SetText(LC.genericLabel);
         self.genLabel:SetParent(self.EnabledTab);
         self.genLabel:SetVisible(true);
 
@@ -667,7 +667,7 @@ function OptionsPanel:AddBoxes()
     self.checkSkillsButton = Turbine.UI.Lotro.Button();
     self.checkSkillsButton:SetSize(200, 20);
     self.checkSkillsButton:SetPosition(300, self.EnabledTab:GetHeight() - 50);
-    self.checkSkillsButton:SetText(checkSkillsString);
+    self.checkSkillsButton:SetText(LC.checkSkills);
     self.checkSkillsButton:SetParent(self.EnabledTab);
     self.checkSkillsButton:SetVisible(true);
 
@@ -681,7 +681,7 @@ function OptionsPanel:AddBoxes()
         self.enableRepSkillsButton = Turbine.UI.Lotro.Button();
         self.enableRepSkillsButton:SetSize(200, 20);
         self.enableRepSkillsButton:SetPosition(520, 90);
-        self.enableRepSkillsButton:SetText(enableRepSkillsString);
+        self.enableRepSkillsButton:SetText(LC.enableRepSkills);
         self.enableRepSkillsButton:SetParent(self.EnabledTab);
         self.enableRepSkillsButton:SetVisible(true);
 
@@ -693,7 +693,7 @@ function OptionsPanel:AddBoxes()
         self.disableRepSkillsButton = Turbine.UI.Lotro.Button();
         self.disableRepSkillsButton:SetSize(200, 20);
         self.disableRepSkillsButton:SetPosition(520, 120);
-        self.disableRepSkillsButton:SetText(disableRepSkillsString);
+        self.disableRepSkillsButton:SetText(LC.disableRepSkills);
         self.disableRepSkillsButton:SetParent(self.EnabledTab);
         self.disableRepSkillsButton:SetVisible(true);
 
@@ -705,7 +705,7 @@ function OptionsPanel:AddBoxes()
     self.enableAllButton = Turbine.UI.Lotro.Button();
     self.enableAllButton:SetSize(200, 20);
     self.enableAllButton:SetPosition(520, 30);
-    self.enableAllButton:SetText(enableAllString);
+    self.enableAllButton:SetText(LC.enableAll);
     self.enableAllButton:SetParent(self.EnabledTab);
     self.enableAllButton:SetVisible(true);
 
@@ -716,7 +716,7 @@ function OptionsPanel:AddBoxes()
     self.disableAllButton = Turbine.UI.Lotro.Button();
     self.disableAllButton:SetSize(200, 20);
     self.disableAllButton:SetPosition(520, 60);
-    self.disableAllButton:SetText(disableAllString);
+    self.disableAllButton:SetText(LC.disableAll);
     self.disableAllButton:SetParent(self.EnabledTab);
     self.disableAllButton:SetVisible(true);
 
@@ -828,42 +828,42 @@ function OptionsPanel:AddSortButtons()
     self.moveUpButton = Turbine.UI.Lotro.Button();
     self.moveUpButton:SetSize(185, 20);
     self.moveUpButton:SetPosition(10, 205);
-    self.moveUpButton:SetText(moveUpString);
+    self.moveUpButton:SetText(LC.moveUp);
     self.moveUpButton:SetParent(self.SortTab);
     self.moveUpButton:SetVisible(true);
 
     self.moveDownButton = Turbine.UI.Lotro.Button();
     self.moveDownButton:SetSize(185, 20);
     self.moveDownButton:SetPosition(10, 265);
-    self.moveDownButton:SetText(moveDownString);
+    self.moveDownButton:SetText(LC.moveDown);
     self.moveDownButton:SetParent(self.SortTab);
     self.moveDownButton:SetVisible(true);
 
     self.moveTopButton = Turbine.UI.Lotro.Button();
     self.moveTopButton:SetSize(185, 20);
     self.moveTopButton:SetPosition(10, 155);
-    self.moveTopButton:SetText(moveTopString);
+    self.moveTopButton:SetText(LC.moveTop);
     self.moveTopButton:SetParent(self.SortTab);
     self.moveTopButton:SetVisible(true);
 
     self.moveBottomButton = Turbine.UI.Lotro.Button();
     self.moveBottomButton:SetSize(185, 20);
     self.moveBottomButton:SetPosition(10, 315);
-    self.moveBottomButton:SetText(moveBottomString);
+    self.moveBottomButton:SetText(LC.moveBottom);
     self.moveBottomButton:SetParent(self.SortTab);
     self.moveBottomButton:SetVisible(true);
 
     self.defaultSortButton = Turbine.UI.Lotro.Button();
     self.defaultSortButton:SetSize(185, 20);
     self.defaultSortButton:SetPosition(10, 375);
-    self.defaultSortButton:SetText(defaultSortString);
+    self.defaultSortButton:SetText(LC.defaultSort);
     self.defaultSortButton:SetParent(self.SortTab);
     self.defaultSortButton:SetVisible(true);
 
     self.nameSortButton = Turbine.UI.Lotro.Button();
     self.nameSortButton:SetSize(185, 20);
     self.nameSortButton:SetPosition(10, 405);
-    self.nameSortButton:SetText(sortNameString);
+    self.nameSortButton:SetText(LC.sortName);
     self.nameSortButton:SetParent(self.SortTab);
     self.nameSortButton:SetVisible(true);
 

@@ -46,7 +46,7 @@ function TravelWindow:Constructor(useMinWindow)
 
     -- configure the main window
     self:SetPosition(Settings.positionX, Settings.positionY);
-    self:SetText(mainTitleString);
+    self:SetText(LC.mainTitle);
     self:SetBackColor(self.backColor);
     if (Settings.hideOnStart == 1) then
         self:SetVisible(false);
@@ -105,7 +105,7 @@ function TravelWindow:Constructor(useMinWindow)
     self.titleLabel:SetPosition(0, 0);
     self.titleLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
     self.titleLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro15);
-    self.titleLabel:SetText("Travel Window II");
+    self.titleLabel:SetText(LC.miniTitle);
 
     self.resizeLabel = Turbine.UI.Label();
     self.resizeLabel:SetParent(self);

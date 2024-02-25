@@ -302,9 +302,9 @@ function TravelGridTab:UpdateBounds()
     self.maxScroll = m;
     if not self.parent.isMinWindow then
         if c == self.minCols then
-            self.parent:SetText("TW");
+            self.parent:SetText(LC.mainShortTitle);
         else
-            self.parent:SetText(mainTitleString);
+            self.parent:SetText(LC.mainTitle);
         end
     end
 end
