@@ -147,6 +147,10 @@ LC_EN.sortName = "Sort by Name"
 LC_DE.sortName = "Nach Namen sortieren"
 LC_FR.sortName = "Trier par Nom"
 
+LC_EN.sortLabel = "Sort by Label"
+LC_DE.sortLabel = "Nach Etikett sortieren"
+LC_FR.sortLabel = "Trier par étiquette"
+
 LC_EN.checkSkills = "Check Untrained Skills"
 LC_DE.checkSkills = "Nicht erlernte Fertigkeiten prüfen"
 LC_FR.checkSkills = "Vérification des compétences non utilisées"
