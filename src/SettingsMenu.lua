@@ -13,11 +13,11 @@ function SettingsMenu:Constructor(parentWindow)
     self.parent = parentWindow;
 
     -- create the filter sub menu
-    Filters = TravelWindowII.src.extensions.DMenuList(menuFiltersString);
-    self.Filters1 = Turbine.UI.MenuItem(menuGenString);
-    self.Filters2 = Turbine.UI.MenuItem(menuRaceString);
-    self.Filters3 = Turbine.UI.MenuItem(menuRepString);
-    self.Filters4 = Turbine.UI.MenuItem(menuClassString);
+    Filters = TravelWindowII.src.extensions.DMenuList(LC.menuFilters);
+    self.Filters1 = Turbine.UI.MenuItem(LC.menuGen);
+    self.Filters2 = Turbine.UI.MenuItem(LC.menuRace);
+    self.Filters3 = Turbine.UI.MenuItem(LC.menuRep);
+    self.Filters4 = Turbine.UI.MenuItem(LC.menuClass);
     FilterItems = Filters:GetItems();
     FilterItems:Add(self.Filters1);
     FilterItems:Add(self.Filters2);
@@ -25,11 +25,11 @@ function SettingsMenu:Constructor(parentWindow)
     FilterItems:Add(self.Filters4);
 
     -- create the mode sub menu
-    Mode = TravelWindowII.src.extensions.DMenuList(menuModeString);
-    self.Mode1 = Turbine.UI.MenuItem(menuTextString);
-    self.Mode2 = Turbine.UI.MenuItem(menuIconString);
-    self.Mode3 = Turbine.UI.MenuItem(menuCaroString);
-    self.Mode4 = Turbine.UI.MenuItem(menuPullString);
+    Mode = TravelWindowII.src.extensions.DMenuList(LC.menuMode);
+    self.Mode1 = Turbine.UI.MenuItem(LC.menuText);
+    self.Mode2 = Turbine.UI.MenuItem(LC.menuIcon);
+    self.Mode3 = Turbine.UI.MenuItem(LC.menuCaro);
+    self.Mode4 = Turbine.UI.MenuItem(LC.menuPull);
     local ModeItems = Mode:GetItems();
     ModeItems:Add(self.Mode1);
     ModeItems:Add(self.Mode2);
@@ -37,22 +37,22 @@ function SettingsMenu:Constructor(parentWindow)
     ModeItems:Add(self.Mode4);
 
     -- create the items to open the map windows
-    MoorMapMenu = TravelWindowII.src.extensions.DMenuList(moorMapString);
-    MapWindows = TravelWindowII.src.extensions.DMenuList(mapWindowString);
+    MoorMapMenu = TravelWindowII.src.extensions.DMenuList(LC.moorMap);
+    MapWindows = TravelWindowII.src.extensions.DMenuList(LC.mapWindow);
     local MapItems = MapWindows:GetItems();
-    MapItems:Add(Turbine.UI.MenuItem(eriadorMapString));
-    MapItems:Add(Turbine.UI.MenuItem(rhovanionMapString));
-    MapItems:Add(Turbine.UI.MenuItem(rohanMapString));
-    MapItems:Add(Turbine.UI.MenuItem(gondorMapString));
-    MapItems:Add(Turbine.UI.MenuItem(haradwaithMapString));
+    MapItems:Add(Turbine.UI.MenuItem(LC.eriadorMap));
+    MapItems:Add(Turbine.UI.MenuItem(LC.rhovanionMap));
+    MapItems:Add(Turbine.UI.MenuItem(LC.rohanMap));
+    MapItems:Add(Turbine.UI.MenuItem(LC.gondorMap));
+    MapItems:Add(Turbine.UI.MenuItem(LC.haradwaithMap));
 
     -- create the menu item to add map home
     -- @TODO has to be reintroduced
     MapMenu = TravelWindowII.src.extensions.DMenuList("");
 
     -- create the menu item to open the options window
-    OptionsMenu = TravelWindowII.src.extensions.DMenuList(menuOptionsString);
-    SkillsMenu = TravelWindowII.src.extensions.DMenuList(menuSkillsString);
+    OptionsMenu = TravelWindowII.src.extensions.DMenuList(LC.menuOptions);
+    SkillsMenu = TravelWindowII.src.extensions.DMenuList(LC.menuSkills);
 
     -- add everything to the main menu
     MenuItems = self:GetItems();
@@ -128,39 +128,39 @@ end
 function SettingsMenu:Update(string)
 
     -- update the window based on which item was selected
-    if (string == menuGenString) then
+    if (string == LC.menuGen) then
         self.filters = togglebit(self.filters, bit(1));
-    elseif (string == menuRaceString) then
+    elseif (string == LC.menuRace) then
         self.filters = togglebit(self.filters, bit(2));
-    elseif (string == menuRepString) then
+    elseif (string == LC.menuRep) then
         self.filters = togglebit(self.filters, bit(3));
-    elseif (string == menuClassString) then
+    elseif (string == LC.menuClass) then
         self.filters = togglebit(self.filters, bit(4));
-    elseif (string == menuTextString) then
+    elseif (string == LC.menuText) then
         self.mode = 1;
-    elseif (string == menuIconString) then
+    elseif (string == LC.menuIcon) then
         self.mode = 2;
-    elseif (string == menuCaroString) then
+    elseif (string == LC.menuCaro) then
         self.mode = 3;
-    elseif (string == menuPullString) then
+    elseif (string == LC.menuPull) then
         self.mode = 4;
         -- elseif (string == menuMapString) then @TODO has to be reintroduced
         --    self.parent:SetMapHome();
-    elseif (string == menuOptionsString) then
+    elseif (string == LC.menuOptions) then
         OptionsWindow:SetVisible(true);
-    elseif (string == menuSkillsString) then
+    elseif (string == LC.menuSkills) then
         CheckSkills(true);
-    elseif (string == moorMapString) then
+    elseif (string == LC.moorMap) then
         self.parent:OpenMapWindow(MapType.CREEPS);
-    elseif (string == eriadorMapString) then
+    elseif (string == LC.eriadorMap) then
         self.parent:OpenMapWindow(MapType.ERIADOR);
-    elseif (string == rhovanionMapString) then
+    elseif (string == LC.rhovanionMap) then
         self.parent:OpenMapWindow(MapType.RHOVANION);
-    elseif (string == rohanMapString) then
+    elseif (string == LC.rohanMap) then
         self.parent:OpenMapWindow(MapType.ROHAN);
-    elseif (string == gondorMapString) then
+    elseif (string == LC.gondorMap) then
         self.parent:OpenMapWindow(MapType.GONDOR);
-    elseif (string == haradwaithMapString) then
+    elseif (string == LC.haradwaithMap) then
         self.parent:OpenMapWindow(MapType.HARADWAITH);
     end
 

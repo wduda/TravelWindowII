@@ -193,7 +193,7 @@ function CheckSkills(report)
                 newShortcut = true;
             end
         elseif report then
-            Turbine.Shell.WriteLine(skillNotTrainedString .. TravelShortcuts[i]:GetName())
+            Turbine.Shell.WriteLine(LC.skillNotTrained .. TravelShortcuts[i]:GetName())
         end
     end
 
