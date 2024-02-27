@@ -118,6 +118,38 @@ function InitShortcuts()
         AddTravelSkills(classSkills, 4);
     end
 
+    -- TODO: resolve the issue of different characters having different skills
+    --       and loading those skills across characters
+    -- remove Settings.order skills unused by this character
+    for k, v in pairs(Settings.order) do
+        local found = false
+        for i = 1, #TravelShortcuts do
+            if TravelShortcuts[i]:GetData() == v then
+                found = true
+                break
+            end
+        end
+        if found == false then
+            -- skill not used by this character
+            table.remove(Settings.order, k)
+        end
+    end
+
+    -- remove Settings.enabled skills unused by this character
+    for k, v in pairs(Settings.enabled) do
+        local found = false
+        for i = 1, #TravelShortcuts do
+            if TravelShortcuts[i]:GetData() == k then
+                found = true
+                break
+            end
+        end
+        if found == false then
+            -- skill not used by this character
+            Settings.enabled[k] = nil
+        end
+    end
+
     SortShortcuts();
     CheckSkills(false);
 end
