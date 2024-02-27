@@ -350,20 +350,25 @@ function SetSettings(settingsArg, importOldSettings)
     end
 
     Settings.lastLoadedVersion = settingsArg.lastLoadedVersion;
-    Settings.enabled = TableCopy(settingsArg.enabled);
 
-    local convertTableIndex = false;
-    for i, v in pairs(settingsArg.order) do
-        if (type(i) == "string") then
-            convertTableIndex = true;
+    Settings.enabled = {}
+    for k, v in pairs(settingsArg.enabled) do
+        if type(k) == "number" then
+            Settings.enabled[string.format("0x%X", k)] = v
+        else
+            Settings.enabled[k] = v
         end
     end
 
-    if (convertTableIndex) then
-        Settings.order = OrderTableNumberIndex(settingsArg);
-    else
-        Settings.order = TableCopy(settingsArg.order);
+    Settings.order = {}
+    for k, v in pairs(settingsArg.order) do
+        if (type(k) == "string") then
+            Settings.order[tonumber(k)] = v
+        else
+            Settings.order[k] = v;
+        end
     end
+
     return settingsArg;
 end
 
@@ -393,10 +398,9 @@ function SaveSettings(scope)
     settingsStrings.fadeOutDelay = tostring(Settings.fadeOutDelay);
     settingsStrings.toggleMaxOpacity = tostring(Settings.toggleMaxOpacity);
     settingsStrings.toggleMinOpacity = tostring(Settings.toggleMinOpacity);
-    settingsStrings.enabled = TableCopy(Settings.enabled);
     settingsStrings.mapGlanVraig = tostring(Settings.mapGlanVraig);
-
-    settingsStrings.order = OrderTableStringIndex();
+    settingsStrings.enabled = TableCopy(Settings.enabled);
+    settingsStrings.order = TableCopy(Settings.order);
 
     if scope == nil then
         scope = Turbine.DataScope.Character;
@@ -409,23 +413,6 @@ function SaveSettings(scope)
 
     -- save the settings
     PatchDataSave(scope, "TravelWindowIISettings", settingsStrings);
-end
-
-function OrderTableStringIndex()
-    order = {}
-    for i, v in ipairs(Settings.order) do
-        order[tostring(i)] = v;
-    end
-    return order;
-end
-
-function OrderTableNumberIndex(settingsArg)
-    order = {};
-
-    for i, v in pairs(settingsArg.order) do
-        order[tonumber(i)] = v;
-    end
-    return order;
 end
 
 -- this method influences the default sorting order of skills
