@@ -29,7 +29,6 @@ function OptionsPanel:Constructor()
 
     -- keep track of which item is selected on the sort tab
     self.sortSelectedIndex = 1;
-    self.sortMaxItem = 0;
 
     -- set the default window settings
     self:SetSize(self.width, self.height);
@@ -778,29 +777,29 @@ function OptionsPanel:AddSortList()
     self.sortListBox:SetParent(self.SortTab);
     self.sortListBox:SetVisible(true);
 
-    local labelCounter = 1;
-
     -- create a label to add to the listbox for each shortcut
-    for _, v in pairs(TravelShortcuts) do
-        local tempLabel = Turbine.UI.Label();
-        tempLabel:SetText(v:GetLabel());
-        tempLabel:SetSize(280, 20);
-        tempLabel:SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
-        tempLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-        tempLabel:SetZOrder(90);
+    for _, shortcut in pairs(TravelShortcuts) do
+        if shortcut:GetTravelType() ~= 8 then
+            local tempLabel = Turbine.UI.Label();
+            tempLabel:SetText(shortcut:GetLabel());
+            tempLabel:SetSize(280, 20);
+            tempLabel:SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
+            tempLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+            tempLabel:SetZOrder(90);
+            tempLabel.shortcut = shortcut;
 
-        -- highlight the item that is selected by changing the colour of the
-        -- the label when it is clicked
-        tempLabel.MouseClick = function(sender, args)
-            self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
-            sender:SetBackColor(Turbine.UI.Color(0.95, 0.1, 0.1, 0.6));
-            self.sortSelectedIndex = self.sortListBox:IndexOfItem(sender);
+            -- highlight the item that is selected by changing the colour of the
+            -- the label when it is clicked
+            tempLabel.MouseClick = function(sender, args)
+                self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
+                sender:SetBackColor(Turbine.UI.Color(0.95, 0.1, 0.1, 0.6));
+                self.sortSelectedIndex = self.sortListBox:IndexOfItem(sender);
+            end
+
+            -- add the item to the list box
+            self.sortListBox:AddItem(tempLabel);
         end
-
-        -- add the item to the list box
-        self.sortListBox:AddItem(tempLabel);
     end
-    self.sortMaxItem = #TravelShortcuts;
 
     -- set the first item as selected
     self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.6));
@@ -898,14 +897,9 @@ function OptionsPanel:AddSortButtons()
 
     -- handle the move to top button click
     self.moveTopButton.Click = function(sender, args)
-
         -- loop while selected item is not already at the top
         while (self.sortSelectedIndex > 1) do
-            -- swap the selected item with the one before it
-            self:SwapShortcuts(self.sortSelectedIndex, self.sortSelectedIndex - 1);
-
-            -- resort the list
-            self.sortSelectedIndex = self.sortSelectedIndex - 1;
+            self:SwapShortcuts(self.sortSelectedIndex - 1);
         end
 
         -- update the main window shortcuts and settings
@@ -919,42 +913,32 @@ function OptionsPanel:AddSortButtons()
             return;
         end
 
-        -- swap the selected item with the previous in the list
-        self:SwapShortcuts(self.sortSelectedIndex, self.sortSelectedIndex - 1);
+        self:SwapShortcuts(self.sortSelectedIndex - 1);
 
         -- update the main window shortcuts and settings
         _G.travel:UpdateSettings();
-
-        -- decrease the selected index
-        self.sortSelectedIndex = self.sortSelectedIndex - 1;
     end
 
     -- handle the move down button click
     self.moveDownButton.Click = function(sender, args)
         -- exit if the selected item is already at the bottom
-        if (self.sortSelectedIndex == self.sortMaxItem) then
+        local maxItems = self.sortListBox:GetItemCount()
+        if (self.sortSelectedIndex == maxItems) then
             return;
         end
 
-        -- swap the selected item with the next item in the list
-        self:SwapShortcuts(self.sortSelectedIndex, self.sortSelectedIndex + 1);
+        self:SwapShortcuts(self.sortSelectedIndex + 1);
 
         -- update the main window shortcuts and settings
         _G.travel:UpdateSettings();
-
-        -- increase the selected index
-        self.sortSelectedIndex = self.sortSelectedIndex + 1;
     end
 
     -- handle the move to bottom button
     self.moveBottomButton.Click = function(sender, args)
-
         -- loop while the selected item is not at the bottom of the list
-        while (self.sortSelectedIndex < self.sortMaxItem) do
-            -- swap the item with the next item
-            self:SwapShortcuts(self.sortSelectedIndex, self.sortSelectedIndex + 1);
-            -- increment the selected index
-            self.sortSelectedIndex = self.sortSelectedIndex + 1;
+        local maxItems = self.sortListBox:GetItemCount()
+        while (self.sortSelectedIndex < maxItems) do
+            self:SwapShortcuts(self.sortSelectedIndex + 1);
         end
 
         -- update the main window shortcuts and settings
@@ -963,18 +947,21 @@ function OptionsPanel:AddSortButtons()
 end
 
 -- function to perform the actual swap of shortcuts
-function OptionsPanel:SwapShortcuts(first, second)
-    -- only perform swap if the window is fully loaded
-    if (self.loaded == true) then
-        local tempItem = self.sortListBox:GetItem(first);
-        self.sortListBox:RemoveItemAt(first);
-        self.sortListBox:InsertItem(second, tempItem);
+function OptionsPanel:SwapShortcuts(second)
+    local first = self.sortSelectedIndex
+    local item1 = self.sortListBox:GetItem(first)
+    local shortcut1 = item1.shortcut
+    local shortcut2 = self.sortListBox:GetItem(second).shortcut
+    self.sortListBox:RemoveItemAt(first)
+    self.sortListBox:InsertItem(second, item1)
+    self.sortSelectedIndex = second
 
-        TravelShortcuts[first]:SetIndex(second);
-        TravelShortcuts[second]:SetIndex(first);
-        local tempShortcut = TravelShortcuts[first];
-        TravelShortcuts[first] = TravelShortcuts[second];
-        TravelShortcuts[second] = tempShortcut;
-        _G.travel.dirty = true;
-    end
+    first = shortcut1.Index
+    second = shortcut2.Index
+    shortcut1:SetIndex(second)
+    shortcut2:SetIndex(first)
+    TravelShortcuts[first] = shortcut2
+    TravelShortcuts[second] = shortcut1
+
+    _G.travel.dirty = true
 end
