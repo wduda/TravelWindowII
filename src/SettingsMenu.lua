@@ -374,7 +374,7 @@ end
 
 function SaveSettings(scope)
     local settingsStrings = {};
-    settingsStrings.lastLoadedVersion = tostring(Settings.lastLoadedVersion);
+    settingsStrings.lastLoadedVersion = Plugins["Travel Window II"]:GetVersion();
     settingsStrings.gridCols = tostring(Settings.gridCols);
     settingsStrings.gridRows = tostring(Settings.gridRows);
     settingsStrings.listWidth = tostring(Settings.listWidth);
