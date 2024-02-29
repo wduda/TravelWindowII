@@ -1670,7 +1670,7 @@ function TravelDictionary:CreateCreepDictionary()
     -- monster player maps
     self.creep:AddSkill({
         id="0x70028BBC",
-        nameEN="Crude Map to Gramsfoot",
+        nameEN="Return to Gramsfoot",
         nameDE="Kartenskizze zum Gramfuss",
         nameFR="Carte grossière pour aller au Pied de Gram",
         map={MapType.CREEPS, 180, 120}
