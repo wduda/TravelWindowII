@@ -7,7 +7,7 @@ local ValidSkillKeys = {
     "nameEN", "descEN", "labelEN",
     "nameDE", "descDE", "labelDE",
     "nameFR", "descFR", "labelFR",
-    "map", "overlap"
+    "map", "overlap", "hasSameText"
 }
 
 function IndexedDictionary:Constructor(parent)
