@@ -374,30 +374,30 @@ function SetSettings(settingsArg, scope, importOldSettings)
     Settings.lastLoadedVersion = settingsArg.lastLoadedVersion;
 
     LoadEnabled = {}
-    local enabled = {}
     for k, v in pairs(settingsArg.enabled) do
         if type(k) == "number" then
             k = string.format("0x%X", k)
-            LoadEnabled[k] = v
-        else
-            LoadEnabled[k] = v
         end
-        enabled[k] = v
+        LoadEnabled[k] = v
     end
-    settingsArg.enabled = enabled
 
     LoadOrder = {}
     LoadOrderNext = 1;
     for loc, id in pairs(settingsArg.order) do
         LoadOrderNext = LoadOrderNext + 1;
         if (type(loc) == "string") then
-            LoadOrder[id] = tonumber(loc)
-        else
-            LoadOrder[id] = loc
+            loc = tonumber(loc)
         end
+        LoadOrder[id] = loc
     end
 
     if scope == Turbine.DataScope.Account then
+        -- settingsArg.enabled/order should keep the racial id tag
+        settingsArg.enabled = TableCopy(LoadEnabled)
+        local order = {}
+        for k, v in pairs(LoadOrder) do order[v] = k end
+        settingsArg.order = order
+
         -- replace racial id tag with current racial skill
         if LoadEnabled[TravelInfo.racialIDTag] ~= nil then
             LoadEnabled[TravelInfo.racial.id] = LoadEnabled[TravelInfo.racialIDTag]
