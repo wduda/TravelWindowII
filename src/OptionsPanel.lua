@@ -566,7 +566,7 @@ function OptionsPanel:AddItems()
 
     if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
         -- add the creep travel skills
-        self:AddSkillsItemForEnabling(TravelInfo.creep);
+        self:AddSkillsForEnabling(TravelInfo.creep);
     end
 end
 
