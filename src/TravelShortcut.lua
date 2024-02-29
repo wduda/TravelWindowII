@@ -123,7 +123,9 @@ function InitShortcuts()
                             TravelInfo.racial));
 
         -- set the class travel items
-        AddTravelSkills(TravelInfo:GetClassSkills(), 4);
+        AddTravelSkills(TravelInfo.hunter, 4);
+        AddTravelSkills(TravelInfo.warden, 4);
+        AddTravelSkills(TravelInfo.mariner, 4);
 
         -- set the reputation travel items
         AddTravelSkills(TravelInfo.rep, 3);
@@ -138,7 +140,11 @@ function InitShortcuts()
 end
 
 function AddTravelSkills(skills, filter)
-    if skills == nil then return end
+    if filter == 4 then
+        if TravelInfo:GetClassSkills() ~= skills then
+            filter = 8
+        end
+    end
     for i = 1, skills:GetCount() do
         table.insert(TravelShortcuts,
                      TravelShortcut(
@@ -182,7 +188,6 @@ function GetTravelOrder(scope)
             -- replace racial id with the racial id tag
             id = TravelInfo.racialIDTag
         end
-
         table.insert(order, id)
     end
     return order
@@ -197,7 +202,7 @@ function GetTravelEnabled(scope)
             -- replace racial id with the racial id tag
             id = TravelInfo.racialIDTag
         end
-        enabled[id] = shortcut.Enabled;
+        enabled[id] = shortcut.Enabled
     end
 
     return enabled
