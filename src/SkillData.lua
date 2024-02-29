@@ -1680,7 +1680,16 @@ function TravelDictionary:CreateCreepDictionary()
         nameEN="Map to Gramsfoot",
         nameDE="Karte zum Gramfuss",
         nameFR="Carte pour aller au Pied de Gram",
-        map={MapType.CREEPS, 215, 120}
+        map={MapType.CREEPS, 215, 120},
+        hasSameText={"0x7002A7B9"}
+    })
+    self.creep:AddSkill({
+        id="0x7002A7B9",
+        nameEN="Map to Gramsfoot",
+        nameDE="Karte zum Gramfuss",
+        nameFR="Carte pour aller au Pied de Gram",
+        map={MapType.CREEPS, 245, 120},
+        hasSameText={"0x70028BC1"}
     })
     self.creep:AddSkill({
         id="0x70028BB3",
@@ -1757,34 +1766,79 @@ function TravelDictionary:CreateCreepDictionary()
         nameEN="Good Map to Isendeep",
         nameDE="Gute Karte zur Isenbinge",
         nameFR="Bonne carte pour aller au Gouffre d'Isen",
-        map={MapType.CREEPS, 310, 95}
+        map={MapType.CREEPS, 310, 95},
+        hasSameText={"0x7002A7B7"}
+    })
+    self.creep:AddSkill({
+        id="0x7002A7B7",
+        nameEN="Good Map to Isendeep",
+        nameDE="Gute Karte zur Isenbinge",
+        nameFR="Bonne carte pour aller au Gouffre d'Isen",
+        map={MapType.CREEPS, 340, 95},
+        hasSameText={"0x70028BC0"}
     })
     self.creep:AddSkill({
         id="0x70028BC2",
         nameEN="Good Map to Tol Ascarnen",
         nameDE="Gute Karte zur Feste Tol Ascarnen",
         nameFR="Bonne carte pour aller à Tol Ascarnen",
-        map={MapType.CREEPS, 375, 480}
+        map={MapType.CREEPS, 375, 480},
+        hasSameText={"0x7002A7B4"}
+    })
+    self.creep:AddSkill({
+        id="0x7002A7B4",
+        nameEN="Good Map to Tol Ascarnen",
+        nameDE="Gute Karte zur Feste Tol Ascarnen",
+        nameFR="Bonne carte pour aller à Tol Ascarnen",
+        map={MapType.CREEPS, 405, 480},
+        hasSameText={"0x70028BC2"}
     })
     self.creep:AddSkill({
         id="0x70028BB5",
         nameEN="Good Map to Lugazag",
         nameDE="Gute Karte zur Feste Lugazag",
         nameFR="Bonne carte pour aller à Lugazag",
-        map={MapType.CREEPS, 305, 275}
+        map={MapType.CREEPS, 305, 275},
+        hasSameText={"0x7002A7B6"}
+    })
+    self.creep:AddSkill({
+        id="0x7002A7B6",
+        nameEN="Good Map to Lugazag",
+        nameDE="Gute Karte zur Feste Lugazag",
+        nameFR="Bonne carte pour aller à Lugazag",
+        map={MapType.CREEPS, 335, 275},
+        hasSameText={"0x70028BB5"}
     })
     self.creep:AddSkill({
         id="0x70028BB0",
         nameEN="Good Map to Tirith Rhaw",
         nameDE="Gute Karte zur Feste Tirith Rhaw",
         nameFR="Bonne carte pour aller à Tirith Rhaw",
-        map={MapType.CREEPS, 555, 470}
+        map={MapType.CREEPS, 555, 470},
+        hasSameText={"0x7002A7B5"}
+    })
+    self.creep:AddSkill({
+        id="0x7002A7B5",
+        nameEN="Good Map to Tirith Rhaw",
+        nameDE="Gute Karte zur Feste Tirith Rhaw",
+        nameFR="Bonne carte pour aller à Tirith Rhaw",
+        map={MapType.CREEPS, 585, 470},
+        hasSameText={"0x70028BB0"}
     })
     self.creep:AddSkill({
         id="0x70028BBD",
         nameEN="Good Map to Grimwood",
         nameDE="Gute Karte zum Grimmwald",
         nameFR="Bonne carte pour aller au Bois Funeste",
-        map={MapType.CREEPS, 445, 650}
+        map={MapType.CREEPS, 445, 650},
+        hasSameText={"0x7002A7B3"}
+    })
+    self.creep:AddSkill({
+        id="0x7002A7B3",
+        nameEN="Good Map to Grimwood",
+        nameDE="Gute Karte zum Grimmwald",
+        nameFR="Bonne carte pour aller au Bois Funeste",
+        map={MapType.CREEPS, 475, 650},
+        hasSameText={"0x70028BBD"}
     })
 end
