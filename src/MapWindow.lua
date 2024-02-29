@@ -187,7 +187,7 @@ function MapWindow:AddRacialLocation()
     local racial = TravelInfo.racial;
     if self.mapType == racial.map[1] then
         local id = racial.id
-        if self:IsShortcutTrained(id) then
+        if IsShortcutTrained(id) then
             local sType = Turbine.UI.Lotro.ShortcutType.Skill;
             local shortcut = Turbine.UI.Lotro.Shortcut(sType, id);
             self:AddSingleShortcut(racial.map, shortcut);
@@ -221,7 +221,7 @@ function MapWindow:AddSingleShortcut(location, shortcut)
     self.quickslots[index]:SetSize(32, 32);
     self.quickslots[index]:SetPosition(location[2], location[3]);
     self.quickslots[index]:SetZOrder(98);
-    self.quickslots[index]:SetVisible(self:IsShortcutEnabled(shortcut:GetData()));
+    self.quickslots[index]:SetVisible(IsShortcutEnabled(shortcut:GetData()));
 
     self.quickslots[index].MouseClick = function(sender, args)
         self:SetVisible(false);
@@ -244,33 +244,6 @@ function MapWindow:UpdateShortcut(id, enable)
             self.quickslots[i]:SetVisible(enable);
         end
     end
-end
-
-function MapWindow:IsShortcutEnabled(id)
-
-    for i = 1, #TravelShortcuts, 1 do
-        local shortcut = TravelShortcuts[i]
-        if shortcut:GetData() == id then
-            return shortcut:IsEnabled()
-        end
-    end
-
-    return false;
-end
-
-function MapWindow:IsShortcutTrained(id)
-
-    for i = 1, #TravelShortcuts, 1 do
-        local shortcut = TravelShortcuts[i]
-        if shortcut:GetData() == id then
-            if shortcut.found then
-                return true;
-            end
-            return false;
-        end
-    end
-
-    return false;
 end
 
 function MapWindow:DebugNameLookup(id)
