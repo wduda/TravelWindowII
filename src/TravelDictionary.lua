@@ -11,11 +11,15 @@ function TravelDictionary:Constructor()
         self.warden = IndexedDictionary(self);
         self.mariner = IndexedDictionary(self);
 
-        self.allRaces = IndexedDictionary(self);
+        self.racials = IndexedDictionary(self);
         self.racial = {}
 
         self:CreateDictionaries();
-        self.racial = self.allRaces.skills[PlayerRaceKey];
+        self.racialIDTag = "RACIAL_SKILL";
+        self.racial = self.racials.skills[PlayerRaceKey];
+        for i = 1, #self.racials.skills do
+            self.racials.skills[i].isRacial = true;
+        end
     else
         self.creep = IndexedDictionary(self);
         self:CreateCreepDictionary();

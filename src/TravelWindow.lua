@@ -453,6 +453,12 @@ end
 
 function TravelWindow:ResetSettings()
     InitDefaultSettings();
+    for i = 1, #TravelShortcuts do
+        local shortcut = TravelShortcuts[i];
+        shortcut.Enabled = true;
+        shortcut.Index = shortcut.defaultIndex;
+    end
+    SortShortcuts();
     SyncUIFromSettings();
 end
 
@@ -460,10 +466,8 @@ function SyncUIFromSettings()
     local buttonPositionX = Turbine.UI.Display.GetWidth() * Settings.buttonRelativeX;
     local buttonPositionY = Turbine.UI.Display.GetHeight() * Settings.buttonRelativeY;
     ToggleButton:SetPosition(buttonPositionX, buttonPositionY);
-    CheckEnabledSettings();
     OptionsWindow.Panel:UpdateSettings();
     OptionsWindow.Panel:EnableFromSettings();
-    SortFromSettings();
     OptionsWindow.Panel:AddSortList();
     Menu:SetSettings(Settings.mode, Settings.filters);
     _G.travel:SetPosition(Settings.positionX, Settings.positionY);

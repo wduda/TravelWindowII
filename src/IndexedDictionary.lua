@@ -116,6 +116,11 @@ function IndexedDictionary:RemoveSkillAtIndex(index)
     self.parent.skillCount = self.parent.skillCount - 1;
 end
 
+-- function to get the skill at a specified index
+function IndexedDictionary:Skill(index)
+    return self.skills[index];
+end
+
 -- function to get the skill name at a specified index
 function IndexedDictionary:NameAtIndex(index)
     return self.skills[index].name;

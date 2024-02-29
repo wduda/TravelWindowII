@@ -383,7 +383,13 @@ function OptionsPanel:AddGeneralItems()
     end
 
     self.loadGlobal.Click = function(sender, args)
-        SetSettings(AccountSettingsStrings);
+        SetSettings(AccountSettingsStrings, Turbine.DataScope.Account);
+        for i = 1, #TravelShortcuts do
+            TravelShortcuts[i]:InitOrder();
+            TravelShortcuts[i]:InitEnabled();
+        end
+        ClearLoaders();
+        SortShortcuts();
         SyncUIFromSettings();
     end
 
@@ -555,7 +561,7 @@ function OptionsPanel:AddItems()
         self:AddSkillsForEnabling(TravelInfo.rep);
 
         -- add the race specific travel skill for the character
-        self:AddSkillItemForEnabling(TravelInfo.racial.id, TravelInfo.racial.label);
+        self:AddSkillItemForEnabling(TravelInfo.racial);
     end
 
     if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
@@ -567,12 +573,12 @@ end
 function OptionsPanel:AddSkillsForEnabling(skills)
     if skills == nil then return end
     for i = 1, skills:GetCount() do
-        self:AddSkillItemForEnabling(skills:IdAtIndex(i), skills:LabelAtIndex(i));
+        self:AddSkillItemForEnabling(skills:Skill(i));
     end
 end
 
 -- add a single shortcut to the enabled tab at the given location
-function OptionsPanel:AddSkillItemForEnabling(id, label)
+function OptionsPanel:AddSkillItemForEnabling(skill)
     local control = Turbine.UI.Label();
     control:SetSize(self.ListBox:GetWidth() - 20, 20);
 
@@ -582,7 +588,7 @@ function OptionsPanel:AddSkillItemForEnabling(id, label)
     slabel:SetPosition(30, 0)
     slabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     slabel:SetParent(control);
-    slabel:SetText(label);
+    slabel:SetText(skill.label);
     slabel:SetVisible(true);
     table.insert(self.labels, slabel);
 
@@ -590,19 +596,17 @@ function OptionsPanel:AddSkillItemForEnabling(id, label)
     local check = Turbine.UI.Lotro.CheckBox();
     check:SetSize(19, 19);
     check:SetPosition(10, 0);
-    check:SetChecked(Settings.enabled[id]);
+    check:SetChecked(skill.shortcut:IsEnabled());
     check:SetParent(control);
     check:SetVisible(true);
-    check.skillId = id;
+    check.skill = skill;
     table.insert(self.checks, check);
     self.ListBox:AddItem(control)
 
     -- handle the event of the check box value changing
     check.CheckedChanged = function(sender, args)
         -- change the setting on the main window
-        Settings.enabled[id] = sender:IsChecked();
-        shortcutIndex = TableIndex(Settings.order, id);
-        TravelShortcuts[shortcutIndex]:SetEnabled(sender:IsChecked());
+        skill.shortcut:SetEnabled(sender:IsChecked());
 
         _G.travel.dirty = true;
         if not self.disableUpdates then
@@ -733,7 +737,7 @@ function OptionsPanel:EnableOverlapSkills(enable)
         if group ~= nil then
             for k = 1, #group do
                 for j = 1, #self.checks do
-                    if self.checks[j].skillId == group[k] then
+                    if self.checks[j].skill:GetData() == group[k] then
                         self.checks[j]:SetChecked(enable);
                         break
                     end
@@ -757,8 +761,8 @@ end
 function OptionsPanel:EnableFromSettings()
     self.disableUpdates = true;
     for i = 1, #self.checks do
-        local id = self.checks[i].skillId;
-        self.checks[i]:SetChecked(Settings.enabled[id]);
+        local shortcut = self.checks[i].skill.shortcut;
+        self.checks[i]:SetChecked(shortcut:IsEnabled());
     end
     self.disableUpdates = false;
     -- TravelWindow:UpdateSettings() will be called later
@@ -777,9 +781,9 @@ function OptionsPanel:AddSortList()
     local labelCounter = 1;
 
     -- create a label to add to the listbox for each shortcut
-    for i, v in pairs(TravelShortcuts) do
+    for _, v in pairs(TravelShortcuts) do
         local tempLabel = Turbine.UI.Label();
-        tempLabel:SetText(v:GetSkillLabel());
+        tempLabel:SetText(v:GetLabel());
         tempLabel:SetSize(280, 20);
         tempLabel:SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
         tempLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
@@ -795,11 +799,8 @@ function OptionsPanel:AddSortList()
 
         -- add the item to the list box
         self.sortListBox:AddItem(tempLabel);
-
-        -- set the maximum index value in the list
-        self.sortMaxItem = labelCounter;
-        labelCounter = labelCounter + 1;
     end
+    self.sortMaxItem = #TravelShortcuts;
 
     -- set the first item as selected
     self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.6));
@@ -875,9 +876,7 @@ function OptionsPanel:AddSortButtons()
     self.labelSortButton:SetVisible(true);
 
     self.defaultSortButton.Click = function(sender, args)
-        Settings.order = {};
-        CheckEnabledSettings(); -- restore default Settings.order
-        SortFromSettings();
+        SortByDefault();
         self:AddSortList();
         _G.travel.dirty = true;
         _G.travel:UpdateSettings();
@@ -967,16 +966,6 @@ end
 function OptionsPanel:SwapShortcuts(first, second)
     -- only perform swap if the window is fully loaded
     if (self.loaded == true) then
-
-        -- swap the order in the settings list by saving the first value to
-        -- a temp variable, setting the value of the first index to the value of
-        -- the second index, then setting the value of the second index to the
-        -- temp value
-        local tempValue = Settings.order[first];
-        Settings.order[first] = Settings.order[second];
-        Settings.order[second] = tempValue;
-
-        -- swap the items in the listbox using the same method
         local tempItem = self.sortListBox:GetItem(first);
         self.sortListBox:RemoveItemAt(first);
         self.sortListBox:InsertItem(second, tempItem);

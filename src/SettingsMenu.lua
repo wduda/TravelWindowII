@@ -217,8 +217,6 @@ function InitDefaultSettings()
     Settings.showButton = 1;
     Settings.mode = 2;
     Settings.filters = 0x0F;
-    Settings.enabled = {};
-    Settings.order = {};
     Settings.mainMaxOpacity = 1;
     Settings.mainMinOpacity = 0.5;
     Settings.fadeOutSteps = 1;
@@ -270,12 +268,36 @@ function LoadSettings()
         end);
     end
 
-    AccountSettingsStrings = SetSettings(AccountSettingsStrings);
-    SetSettings(settingsStrings, importOldSettings);
-    CheckEnabledSettings();
+    AccountSettingsStrings = SetSettings(AccountSettingsStrings, Turbine.DataScope.Account);
+    SetSettings(settingsStrings, Turbine.DataScope.Character, importOldSettings);
 end
 
-function SetSettings(settingsArg, importOldSettings)
+function GetVersionNumber(version)
+    local major = nil
+    local minor = nil
+    local patch = nil
+    if type(version) ~= "string" then
+        return 0
+    end
+
+    if version:sub(1, 1) == "v" then
+        version = version:sub(2)
+    end
+    for num in version:gmatch("[^.]+") do
+        if major == nil then
+            major = tonumber(num)
+        elseif minor == nil then
+            minor = tonumber(num)
+        elseif patch == nil then
+            patch = tonumber(num)
+        else
+            return 0 -- invalid format
+        end
+    end
+    return (major * (2 ^ 16)) + (minor * (2 ^ 8)) + patch
+end
+
+function SetSettings(settingsArg, scope, importOldSettings)
     -- initialze any uninitialized settings strings
     if (type(settingsArg) ~= "table") then
         settingsArg = {};
@@ -351,21 +373,65 @@ function SetSettings(settingsArg, importOldSettings)
 
     Settings.lastLoadedVersion = settingsArg.lastLoadedVersion;
 
-    Settings.enabled = {}
+    LoadEnabled = {}
+    local enabled = {}
     for k, v in pairs(settingsArg.enabled) do
         if type(k) == "number" then
-            Settings.enabled[string.format("0x%X", k)] = v
+            k = string.format("0x%X", k)
+            LoadEnabled[k] = v
         else
-            Settings.enabled[k] = v
+            LoadEnabled[k] = v
+        end
+        enabled[k] = v
+    end
+    settingsArg.enabled = enabled
+
+    LoadOrder = {}
+    LoadOrderNext = 1;
+    for loc, id in pairs(settingsArg.order) do
+        LoadOrderNext = LoadOrderNext + 1;
+        if (type(loc) == "string") then
+            LoadOrder[id] = tonumber(loc)
+        else
+            LoadOrder[id] = loc
         end
     end
 
-    Settings.order = {}
-    for k, v in pairs(settingsArg.order) do
-        if (type(k) == "string") then
-            Settings.order[tonumber(k)] = v
-        else
-            Settings.order[k] = v;
+    if scope == Turbine.DataScope.Account then
+        -- replace racial id tag with current racial skill
+        if LoadEnabled[TravelInfo.racialIDTag] ~= nil then
+            LoadEnabled[TravelInfo.racial.id] = LoadEnabled[TravelInfo.racialIDTag]
+            LoadEnabled[TravelInfo.racialIDTag] = nil
+        end
+        if LoadOrder[TravelInfo.racialIDTag] ~= nil then
+            LoadOrder[TravelInfo.racial.id] = LoadOrder[TravelInfo.racialIDTag]
+            LoadOrder[TravelInfo.racialIDTag] = nil
+        end
+
+        local ver = GetVersionNumber(settingsArg.lastLoadedVersion)
+        if ver <= 0x20100 then
+            -- fix broken files
+            for k, racial in pairs(TravelInfo.racials.skills) do
+                if k ~= PlayerRaceKey then
+                    -- clear entries that are not the current race
+                    if LoadEnabled[racial.id] ~= nil then
+                        -- found entry to clear
+                        if LoadEnabled[TravelInfo.racial.id] == nil then
+                            -- set to the current race first
+                            LoadEnabled[TravelInfo.racial.id] = LoadEnabled[racial.id]
+                        end
+                        LoadEnabled[racial.id] = nil
+                    end
+                    if LoadOrder[racial.id] ~= nil then
+                        -- found entry to clear
+                        if LoadOrder[TravelInfo.racial.id] == nil then
+                            -- set to the current race first
+                            LoadOrder[TravelInfo.racial.id] = LoadOrder[racial.id]
+                        end
+                        LoadOrder[racial.id] = nil
+                    end
+                end
+            end
         end
     end
 
@@ -373,6 +439,10 @@ function SetSettings(settingsArg, importOldSettings)
 end
 
 function SaveSettings(scope)
+    if scope == nil then
+        scope = Turbine.DataScope.Character;
+    end
+
     local settingsStrings = {};
     settingsStrings.lastLoadedVersion = Plugins["Travel Window II"]:GetVersion();
     settingsStrings.gridCols = tostring(Settings.gridCols);
@@ -399,15 +469,10 @@ function SaveSettings(scope)
     settingsStrings.toggleMaxOpacity = tostring(Settings.toggleMaxOpacity);
     settingsStrings.toggleMinOpacity = tostring(Settings.toggleMinOpacity);
     settingsStrings.mapGlanVraig = tostring(Settings.mapGlanVraig);
-    settingsStrings.enabled = TableCopy(Settings.enabled);
-    settingsStrings.order = TableCopy(Settings.order);
+    settingsStrings.enabled = GetTravelEnabled(scope);
+    settingsStrings.order = GetTravelOrder(scope);
 
-    if scope == nil then
-        scope = Turbine.DataScope.Character;
-    end
-    if scope == Turbine.DataScope.Character then
-        CharacterSettingsStrings = settingsStrings;
-    elseif scope == Turbine.DataScope.Account then
+    if scope == Turbine.DataScope.Account then
         AccountSettingsStrings = settingsStrings;
     end
 
@@ -415,44 +480,8 @@ function SaveSettings(scope)
     PatchDataSave(scope, "TravelWindowIISettings", settingsStrings);
 end
 
--- this method influences the default sorting order of skills
-function CheckEnabledSettings()
-    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        -- update generic travel settings
-        AddNewSettings(TravelInfo.gen);
-
-        -- update racial travel settings
-        local racialId = TravelInfo.racial.id;
-        if (Settings.enabled[racialId] == nil) then
-            Settings.enabled[racialId] = true;
-        end
-        if (TableContains(Settings.order, racialId) == false) then
-            table.insert(Settings.order, racialId);
-        end
-
-        -- update class travel settings
-        AddNewSettings(TravelInfo:GetClassSkills());
-
-        -- update reputation travel settings
-        AddNewSettings(TravelInfo.rep);
-    else
-        -- update creep travel settings
-        AddNewSettings(TravelInfo.creep);
-    end
-end
-
-function AddNewSettings(skills)
-    if skills == nil then return end
-    for i = 1, skills:GetCount() do
-        local id = skills:IdAtIndex(i);
-        -- if the enabled setting for the skill is nil, set it to true as default
-        if (Settings.enabled[id] == nil) then
-            Settings.enabled[id] = true;
-        end
-
-        -- if the skill is not in the order list, add it
-        if (TableContains(Settings.order, id) == false) then
-            table.insert(Settings.order, id);
-        end
-    end
+function ClearLoaders()
+    LoadOrder = nil
+    LoadEnabled = nil
+    LoadOrderNext = nil
 end

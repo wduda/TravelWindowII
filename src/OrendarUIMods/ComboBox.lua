@@ -176,7 +176,7 @@ function ComboBox:AddItem(shortcut, value)
     label:SetFont(Turbine.UI.Lotro.Font.TrajanPro14);
     label:SetOutlineColor(ComboBox.HighlightColor);
     label:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
-    label:SetText(shortcut:GetSkillLabel());
+    label:SetText(shortcut:GetLabel());
     label:SetMouseVisible(Settings.pulldownTravel == 0);
     label:SetParent(self.listBox);
 

@@ -1056,7 +1056,7 @@ function TravelDictionary:CreateDictionaries()
     })
 
     -- add the racial travel skills
-    self.allRaces:AddSkill({
+    self.racials:AddSkill({
         -- man
         id="0x700062F6",
         nameEN="Return to Bree", descEN="This enables you to quickly return", labelEN="Bree (Racial)",
@@ -1064,7 +1064,7 @@ function TravelDictionary:CreateDictionaries()
         nameFR="Retour à Bree", descFR="Permet de retourner", labelFR="Bree (Race)",
         map={MapType.ERIADOR, 525, 335}
     })
-    self.allRaces:AddSkill({
+    self.racials:AddSkill({
         -- hobbit
         id="0x700062C8",
         nameEN="Return to the Shire", labelEN="Shire (Racial)",
@@ -1072,7 +1072,7 @@ function TravelDictionary:CreateDictionaries()
         nameFR="Retournez dans la Comté", labelFR="Comté (Race)",
         map={MapType.ERIADOR, 405, 440}
     })
-    self.allRaces:AddSkill({
+    self.racials:AddSkill({
         -- dwarf
         id="0x70006346",
         nameEN="Return to Thorin's Gate", descEN="This enables you to quickly return", labelEN="Thorin's Gate (Racial)",
@@ -1080,7 +1080,7 @@ function TravelDictionary:CreateDictionaries()
         nameFR="Retour : Porte de Thorin", descFR="Ceci vous permet de retourner", labelFR="Porte de Thorin (Race)",
         map={MapType.ERIADOR, 310, 270}
     })
-    self.allRaces:AddSkill({
+    self.racials:AddSkill({
         -- elf
         id="0x7000631F",
         nameEN="Return to Rivendell", descEN="This enables you to quickly return", labelEN="Rivendell (Racial)",
@@ -1088,7 +1088,7 @@ function TravelDictionary:CreateDictionaries()
         nameFR="Retour à Fondcombe", descFR="Ceci vous permet de retourner", labelFR="Fondcombe (Race)",
         map={MapType.ERIADOR, 900, 375}
     })
-    self.allRaces:AddSkill({
+    self.racials:AddSkill({
         -- beorning
         id="0x70041A22",
         nameEN="Return Home", labelEN="Beorning Home (Racial)",
@@ -1096,7 +1096,7 @@ function TravelDictionary:CreateDictionaries()
         nameFR="Retour à la maison", labelFR="Maison Beorning (Race)",
         map={MapType.RHOVANION, 285, 340}
     })
-    self.allRaces:AddSkill({
+    self.racials:AddSkill({
         -- high elf
         id="0x70048C8C",
         nameEN="Travel to Caras Galadhon in Lothlórien", labelEN="Caras Galadhon (Racial)",
@@ -1104,7 +1104,7 @@ function TravelDictionary:CreateDictionaries()
         nameFR="Voyage vers Caras Galadhon, en Lothlórien", labelFR="Caras Galadhon (Race)",
         map={MapType.RHOVANION, 120, 690}
     })
-    self.allRaces:AddSkill({
+    self.racials:AddSkill({
         -- stoutaxe
         id="0x70053C0F",
         nameEN="Travel to Thorin's Hall", labelEN="Thorin's Hall (Racial)",
@@ -1112,7 +1112,7 @@ function TravelDictionary:CreateDictionaries()
         nameFR="Aller au Palais de Thorin", labelFR="Palais de Thorin (Race)",
         map={MapType.ERIADOR, 345, 310}
     })
-    self.allRaces:AddSkill({
+    self.racials:AddSkill({
         -- river hobbit
         id="0x70066D31",
         nameEN="Return to Lyndelby", labelEN="Lyndelby (Racial)",
