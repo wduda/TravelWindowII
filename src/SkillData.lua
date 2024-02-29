@@ -1671,8 +1671,8 @@ function TravelDictionary:CreateCreepDictionary()
     self.creep:AddSkill({
         id="0x70028BBC",
         nameEN="Return to Gramsfoot",
-        nameDE="Kartenskizze zum Gramfuss",
-        nameFR="Carte grossière pour aller au Pied de Gram",
+        nameDE="Rückkehr nach Gramfuß",
+        nameFR="Retournez au Pied de Gram",
         map={MapType.CREEPS, 180, 120}
     })
     self.creep:AddSkill({
