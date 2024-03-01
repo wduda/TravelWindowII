@@ -1,5 +1,3 @@
-import "Turbine";
-import "Turbine.Debug";
 import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
@@ -473,11 +471,6 @@ function SyncUIFromSettings()
     _G.travel:SetPosition(Settings.positionX, Settings.positionY);
     _G.travel.dirty = true;
     _G.travel:UpdateSettings();
-end
-
--- for debug purposes
-function TravelWindow:DoDump()
-    Turbine.Debug.Table.Dump(TravelWindowII.src);
 end
 
 function AddCallback(object, event, callback)

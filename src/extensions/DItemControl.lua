@@ -1,7 +1,6 @@
 --[[
     This is an extension of the Turbine Item class.  It can store the backpack index.
 ]] --
-import "Turbine";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
 
