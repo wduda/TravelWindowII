@@ -348,6 +348,8 @@ function OptionsPanel:AddGeneralItems()
     self.mainFadeScrollBar:SetValue(Settings.fadeOutSteps);
     self.mainFadeScrollBar:SetParent(self.GeneralTab);
 
+    self:UpdateSettings();
+
     -- reset all setting button
     self.resetButton = Turbine.UI.Lotro.Button();
     self.resetButton:SetSize(220, 20);
@@ -355,41 +357,37 @@ function OptionsPanel:AddGeneralItems()
     self.resetButton:SetText(LC.resetSettings);
     self.resetButton:SetParent(self.GeneralTab);
     self.resetButton:SetVisible(true);
-
-    self.saveGlobal = Turbine.UI.Lotro.Button();
-    self.saveGlobal:SetSize(220, 20);
-    self.saveGlobal:SetPosition(250, 690);
-    self.saveGlobal:SetText(LC.saveGlobalDefaults);
-    self.saveGlobal:SetParent(self.GeneralTab);
-    self.saveGlobal:SetVisible(true);
-
-    self.loadGlobal = Turbine.UI.Lotro.Button();
-    self.loadGlobal:SetSize(220, 20);
-    self.loadGlobal:SetPosition(480, 690);
-    self.loadGlobal:SetText(LC.loadGlobalDefaults);
-    self.loadGlobal:SetParent(self.GeneralTab);
-    self.loadGlobal:SetVisible(true);
-
-    self:UpdateSettings();
-
-    -- do the settings reset
     self.resetButton.Click = function(sender, args)
         _G.travel:ResetSettings();
     end
 
-    self.saveGlobal.Click = function(sender, args)
-        SaveSettings(Turbine.DataScope.Account);
-    end
-
-    self.loadGlobal.Click = function(sender, args)
-        SetSettings(AccountSettingsStrings, Turbine.DataScope.Account);
-        for i = 1, #TravelShortcuts do
-            TravelShortcuts[i]:InitOrder();
-            TravelShortcuts[i]:InitEnabled();
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+        self.saveGlobal = Turbine.UI.Lotro.Button();
+        self.saveGlobal:SetSize(220, 20);
+        self.saveGlobal:SetPosition(250, 690);
+        self.saveGlobal:SetText(LC.saveGlobalDefaults);
+        self.saveGlobal:SetParent(self.GeneralTab);
+        self.saveGlobal:SetVisible(true);
+        self.saveGlobal.Click = function(sender, args)
+            SaveSettings(Turbine.DataScope.Account);
         end
-        ClearLoaders();
-        SortShortcuts();
-        SyncUIFromSettings();
+
+        self.loadGlobal = Turbine.UI.Lotro.Button();
+        self.loadGlobal:SetSize(220, 20);
+        self.loadGlobal:SetPosition(480, 690);
+        self.loadGlobal:SetText(LC.loadGlobalDefaults);
+        self.loadGlobal:SetParent(self.GeneralTab);
+        self.loadGlobal:SetVisible(true);
+        self.loadGlobal.Click = function(sender, args)
+            SetSettings(AccountSettingsStrings, Turbine.DataScope.Account);
+            for i = 1, #TravelShortcuts do
+                TravelShortcuts[i]:InitOrder();
+                TravelShortcuts[i]:InitEnabled();
+            end
+            ClearLoaders();
+            SortShortcuts();
+            SyncUIFromSettings();
+        end
     end
 
     self.UseMinWindowCheck.CheckedChanged = function(sender, args)
