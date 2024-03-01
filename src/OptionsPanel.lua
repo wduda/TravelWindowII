@@ -851,6 +851,20 @@ function OptionsPanel:AddSortButtons()
     self.moveBottomButton:SetParent(self.SortTab);
     self.moveBottomButton:SetVisible(true);
 
+    self.moveUpChunkButton = Turbine.UI.Lotro.Button();
+    self.moveUpChunkButton:SetSize(185, 20);
+    self.moveUpChunkButton:SetPosition(10, 180);
+    self.moveUpChunkButton:SetText(LC.moveUpChunk);
+    self.moveUpChunkButton:SetParent(self.SortTab);
+    self.moveUpChunkButton:SetVisible(true);
+
+    self.moveDownChunkButton = Turbine.UI.Lotro.Button();
+    self.moveDownChunkButton:SetSize(185, 20);
+    self.moveDownChunkButton:SetPosition(10, 290);
+    self.moveDownChunkButton:SetText(LC.moveDownChunk);
+    self.moveDownChunkButton:SetParent(self.SortTab);
+    self.moveDownChunkButton:SetVisible(true);
+
     self.defaultSortButton = Turbine.UI.Lotro.Button();
     self.defaultSortButton:SetSize(185, 20);
     self.defaultSortButton:SetPosition(10, 375);
@@ -904,6 +918,18 @@ function OptionsPanel:AddSortButtons()
         _G.travel:UpdateSettings();
     end
 
+    self.moveUpChunkButton.Click = function(sender, args)
+        -- exit if the selected item is already at the top
+        local chunks = 10
+        while chunks > 0 and self.sortSelectedIndex > 1 do
+            self:SwapShortcuts(self.sortSelectedIndex - 1);
+            chunks = chunks - 1
+        end
+
+        -- update the main window shortcuts and settings
+        _G.travel:UpdateSettings();
+    end
+
     -- handle the move up button click
     self.moveUpButton.Click = function(sender, args)
         -- exit if the selected item is already at the top
@@ -926,6 +952,19 @@ function OptionsPanel:AddSortButtons()
         end
 
         self:SwapShortcuts(self.sortSelectedIndex + 1);
+
+        -- update the main window shortcuts and settings
+        _G.travel:UpdateSettings();
+    end
+
+    self.moveDownChunkButton.Click = function(sender, args)
+        -- exit if the selected item is already at the bottom
+        local chunks = 10
+        local maxItems = self.sortListBox:GetItemCount()
+        while chunks > 0 and self.sortSelectedIndex < maxItems do
+            self:SwapShortcuts(self.sortSelectedIndex + 1);
+            chunks = chunks - 1
+        end
 
         -- update the main window shortcuts and settings
         _G.travel:UpdateSettings();

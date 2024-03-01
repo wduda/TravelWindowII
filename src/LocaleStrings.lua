@@ -103,6 +103,14 @@ LC_EN.moveDown = "Move Down"
 LC_DE.moveDown = "runter"
 LC_FR.moveDown = "Vers le bas"
 
+LC_EN.moveUpChunk = "Move Up 10"
+LC_DE.moveUpChunk = "hoch 10"
+LC_FR.moveUpChunk = "Vers le haut 10"
+
+LC_EN.moveDownChunk = "Move Down 10"
+LC_DE.moveDownChunk = "runter 10"
+LC_FR.moveDownChunk = "Vers le bas 10"
+
 LC_EN.moveTop = "Move To Top"
 LC_DE.moveTop = "zum Anfang"
 LC_FR.moveTop = "Tout en haut"
