@@ -53,7 +53,7 @@ function IndexedDictionary:verifySkill(skill)
         -- copy name, but make sure it is unique
         for i = 1, #self.skills do
             if self.skills[i].name == skill.name then
-                Turbine.Shell.WriteLine("Invalid label: " .. name);
+                Turbine.Shell.WriteLine("Invalid label: " .. skill.name);
                 return false
             end
         end
