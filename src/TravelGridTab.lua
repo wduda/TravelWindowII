@@ -260,6 +260,8 @@ function TravelGridTab:GetGridDims(width, height)
     if width < self.minCols * self.colWidth then width = self.minCols * self.colWidth end
     if height < self.colWidth then height = self.colWidth end
 
+    width = width + self.colWidth / 2
+    height = height + self.colWidth / 2
     local numOfShortcuts =  #self.selected;
     local numOfCols = math.floor(width / self.colWidth);
     local numOfRows = math.ceil(numOfShortcuts / numOfCols);
