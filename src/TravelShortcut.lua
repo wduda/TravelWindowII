@@ -274,13 +274,16 @@ function CheckSkills(report)
     local newShortcut = false;
     -- loop through all the shortcuts and list those those that are not learned
     for i = 1, #TravelShortcuts, 1 do
-        local wasFound = TravelShortcuts[i].found;
-        if (FindSkill(TravelShortcuts[i])) then
-            if not wasFound then
-                newShortcut = true;
+        local shortcut = TravelShortcuts[i]
+        if shortcut:GetTravelType() ~= 8 then
+            local wasFound = shortcut.found
+            if FindSkill(shortcut) then
+                if not wasFound then
+                    newShortcut = true
+                end
+            elseif report then
+                Turbine.Shell.WriteLine(LC.skillNotTrained .. shortcut:GetName())
             end
-        elseif report then
-            Turbine.Shell.WriteLine(LC.skillNotTrained .. TravelShortcuts[i]:GetName())
         end
     end
 
