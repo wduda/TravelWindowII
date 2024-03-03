@@ -159,6 +159,10 @@ LC_EN.sortLabel = "Sort by Label"
 LC_DE.sortLabel = "Nach Etikett sortieren"
 LC_FR.sortLabel = "Trier par étiquette"
 
+LC_EN.sortLevel = "Sort by Level"
+LC_DE.sortLevel = "Nach Level sortieren"
+LC_FR.sortLevel = "Trier par niveau"
+
 LC_EN.checkSkills = "Check Untrained Skills"
 LC_DE.checkSkills = "Nicht erlernte Fertigkeiten prüfen"
 LC_FR.checkSkills = "Vérification des compétences non utilisées"

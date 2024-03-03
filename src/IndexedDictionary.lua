@@ -7,7 +7,7 @@ local ValidSkillKeys = {
     "nameEN", "descEN", "labelEN",
     "nameDE", "descDE", "labelDE",
     "nameFR", "descFR", "labelFR",
-    "map", "overlap", "hasSameText"
+    "map", "overlap", "level", "hasSameText"
 }
 
 function IndexedDictionary:Constructor(parent)
@@ -41,12 +41,16 @@ function IndexedDictionary:verifySkill(skill)
     if skill.nameEN == nil or
             skill.nameDE == nil or
             skill.nameFR == nil then
-        Turbine.Shell.WriteLine("Missing language " .. skill.id);
+        Turbine.Shell.WriteLine("Skill missing language " .. skill.id);
     end
 
     if skill.name == nil then
         Turbine.Shell.WriteLine("Skill missing name " .. skill.id);
         return false
+    end
+
+    if skill.level == nil then
+        Turbine.Shell.WriteLine("Skill missing level " .. skill.id);
     end
 
     if skill.label == nil then

@@ -234,6 +234,19 @@ function SortByLabel()
     SortShortcuts(comp);
 end
 
+function SortByLevel()
+    local comp = function(a, b)
+        if a.skill.level > b.skill.level then
+            return true;
+        elseif a.skill.level == b.skill.level then
+            return a.defaultIndex > b.defaultIndex;
+        else
+            return false;
+        end
+    end
+    SortShortcuts(comp);
+end
+
 function SortByDefault()
     local comp = function(a, b)
         return a.defaultIndex > b.defaultIndex
