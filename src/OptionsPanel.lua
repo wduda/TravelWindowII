@@ -884,6 +884,13 @@ function OptionsPanel:AddSortButtons()
     self.labelSortButton:SetParent(self.SortTab);
     self.labelSortButton:SetVisible(true);
 
+    self.levelSortButton = Turbine.UI.Lotro.Button();
+    self.levelSortButton:SetSize(185, 20);
+    self.levelSortButton:SetPosition(10, 465);
+    self.levelSortButton:SetText(LC.sortLevel);
+    self.levelSortButton:SetParent(self.SortTab);
+    self.levelSortButton:SetVisible(true);
+
     self.defaultSortButton.Click = function(sender, args)
         SortByDefault();
         self:AddSortList();
@@ -900,6 +907,13 @@ function OptionsPanel:AddSortButtons()
 
     self.labelSortButton.Click = function(sender, args)
         SortByLabel();
+        self:AddSortList();
+        _G.travel.dirty = true;
+        _G.travel:UpdateSettings();
+    end
+
+    self.levelSortButton.Click = function(sender, args)
+        SortByLevel();
         self:AddSortList();
         _G.travel.dirty = true;
         _G.travel:UpdateSettings();
