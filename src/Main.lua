@@ -48,11 +48,6 @@ NewShortcutEvent = function()
     _G.travel:SetItems(); -- redraw current window
 end
 
-MapWindow:VerifyMapSkillIds("Hunter");
-MapWindow:VerifyMapSkillIds("Warden");
-MapWindow:VerifyMapSkillIds("Mariner");
-MapWindow:VerifyMapSkillIds("Reputation");
-
 Plugins["Travel Window II"].Load = function(sender, args)
     Turbine.Shell.WriteLine("<u><rgb=#DAA520>Travel Window II " .. Plugins["Travel Window II"]:GetVersion() ..
                             " by Hyoss</rgb></u>");
@@ -77,8 +72,6 @@ function TravelCommand:Execute(command, arguments)
     elseif (arguments == "toggle") then
         _G.travel:SetVisible(not _G.travel:IsVisible());
         _G.travel:Activate();
-    elseif (arguments == "dump") then
-        _G.travel:DoDump();
     elseif (arguments == "scan") then
         _G.travel:ManualSkillScan();
     elseif (arguments ~= nil) then
@@ -87,7 +80,7 @@ function TravelCommand:Execute(command, arguments)
 end
 
 function TravelCommand:GetHelp()
-    Turbine.Shell.WriteLine(helpString);
+    Turbine.Shell.WriteLine(LC.help);
 end
 
 -- add the command to the shell

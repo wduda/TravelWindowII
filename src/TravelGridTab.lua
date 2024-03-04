@@ -1,4 +1,3 @@
-import "Turbine";
 import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
@@ -260,6 +259,8 @@ function TravelGridTab:GetGridDims(width, height)
     if width < self.minCols * self.colWidth then width = self.minCols * self.colWidth end
     if height < self.colWidth then height = self.colWidth end
 
+    width = width + self.colWidth / 2
+    height = height + self.colWidth / 2
     local numOfShortcuts =  #self.selected;
     local numOfCols = math.floor(width / self.colWidth);
     local numOfRows = math.ceil(numOfShortcuts / numOfCols);
@@ -302,9 +303,9 @@ function TravelGridTab:UpdateBounds()
     self.maxScroll = m;
     if not self.parent.isMinWindow then
         if c == self.minCols then
-            self.parent:SetText("TW");
+            self.parent:SetText(LC.mainShortTitle);
         else
-            self.parent:SetText(mainTitleString);
+            self.parent:SetText(LC.mainTitle);
         end
     end
 end

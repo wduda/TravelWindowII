@@ -1,5 +1,3 @@
-import "Turbine";
-import "Turbine.Debug";
 import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
@@ -23,7 +21,7 @@ function OptionsWindow:Constructor()
     self:SetSize(self.width, self.height);
     self:SetBlendMode(Turbine.UI.BlendMode.Undefined);
     self:SetBackColor(Turbine.UI.Color(0.0, 0, 0, 0));
-    self:SetText(optionsTitleString);
+    self:SetText(LC.optionsTitle);
     self:SetOpacity(1);
 
     -- add the main options panel to the window
@@ -53,7 +51,7 @@ function CreateOptionsWindow()
     OptionsButton:SetParent(PluginManagerOptionsPanel)
     OptionsButton:SetPosition(100, 100)
     OptionsButton:SetSize(200,15)
-    OptionsButton:SetText(menuOptionsString)
+    OptionsButton:SetText(LC.menuOptions)
     OptionsButton:SetVisible(true)
 
     OptionsWindow = TravelWindowII.src.OptionsWindow();

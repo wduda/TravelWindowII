@@ -3,21 +3,54 @@
 --[[ and enabled status	]] --
 TravelShortcut = class(Turbine.UI.Lotro.Shortcut);
 
-function TravelShortcut:Constructor(sType, tType, data, name, skillLabel, desc)
+local NextDefaultIndex = 1
+
+function TravelShortcut:Constructor(sType, tType, skill)
     Turbine.UI.Lotro.Shortcut.Constructor(self);
 
     -- the data to keep track of
-    self.Name = name;
-    self.desc = desc;
-    self.normalizedName = name:lower();
-    self.travelType = tType;
-    self.Index = TableIndex(Settings.order, data);
-    self.Enabled = Settings.enabled[data];
-    self.skillLabel = skillLabel;
     self.found = false;
+    self.skill = skill;
+    self.skill.shortcut = self;
+    self.normalizedName = skill.name:lower();
+    self.normalizedLabel = skill.label:lower();
+    self.travelType = tType;
+
+    self.defaultIndex = NextDefaultIndex;
+    NextDefaultIndex = NextDefaultIndex + 1;
+
+    self:InitOrder();
+    self:InitEnabled();
 
     self:SetType(sType);
-    self:SetData(data);
+    self:SetData(skill.id);
+end
+
+function TravelShortcut:InitOrder()
+    if LoadOrder == nil or LoadOrderNext == nil then
+        -- error fallback
+        self.Index = self.defaultIndex
+        return
+    end
+
+    self.Index = LoadOrder[self.skill.id];
+    if self.Index == nil then
+        self.Index = LoadOrderNext;
+        LoadOrderNext = LoadOrderNext + 1;
+    end
+end
+
+function TravelShortcut:InitEnabled()
+    if LoadEnabled == nil then
+        -- error fallback
+        self.Enabled = true
+        return
+    end
+
+    self.Enabled = LoadEnabled[self.skill.id];
+    if self.Enabled == nil then
+        self.Enabled = true;
+    end
 end
 
 -- function to set the enabled status
@@ -38,31 +71,19 @@ function TravelShortcut:IsEnabled()
     return self.Enabled;
 end
 
--- function to set the name of the shortcut
-function TravelShortcut:SetName(text)
-    -- if the value is not a string, set an error
-    if (type(text) ~= "string") then
-        self.Name = "not a string";
-        error(string.format("Invalid input arg for TravelShortcut:SetName"));
-        return;
-    end
-
-    self.Name = text;
-end
-
 -- function to return the ingame skill name of the shortcut
 function TravelShortcut:GetName()
-    return self.Name;
+    return self.skill.name;
 end
 
 -- function to return an optional skill description to disambiguate identical skill names
 function TravelShortcut:GetDescription()
-    return self.desc;
+    return self.skill.desc;
 end
 
 -- function to return the plugin specific skill label of the shortcut
-function TravelShortcut:GetSkillLabel()
-    return self.skillLabel;
+function TravelShortcut:GetLabel()
+    return self.skill.label;
 end
 
 -- function to set the index of the shortcut
@@ -99,10 +120,12 @@ function InitShortcuts()
                      TravelShortcut(
                             Turbine.UI.Lotro.ShortcutType.Skill,
                             2,
-                            TravelInfo.racial.id,
-                            TravelInfo.racial.name,
-                            TravelInfo.racial.label,
-                            TravelInfo.racial.desc));
+                            TravelInfo.racial));
+
+        -- set the class travel items
+        AddTravelSkills(TravelInfo.hunter, 4);
+        AddTravelSkills(TravelInfo.warden, 4);
+        AddTravelSkills(TravelInfo.mariner, 4);
 
         -- set the reputation travel items
         AddTravelSkills(TravelInfo.rep, 3);
@@ -111,27 +134,78 @@ function InitShortcuts()
         AddTravelSkills(TravelInfo.creep, 3);
     end
 
-    -- set the class travel items
-    local classSkills = TravelInfo:GetClassSkills();
-    if classSkills ~= nil then
-        AddTravelSkills(classSkills, 4);
-    end
-
+    ClearLoaders();
     SortShortcuts();
     CheckSkills(false);
 end
 
 function AddTravelSkills(skills, filter)
+    if filter == 4 then
+        if TravelInfo:GetClassSkills() ~= skills then
+            filter = 8
+        end
+    end
     for i = 1, skills:GetCount() do
         table.insert(TravelShortcuts,
                      TravelShortcut(
                         Turbine.UI.Lotro.ShortcutType.Skill,
                         filter,
-                        skills:IdAtIndex(i),
-                        skills:NameAtIndex(i),
-                        skills:LabelAtIndex(i),
-                        skills:DescAtIndex(i)));
+                        skills:Skill(i)));
     end
+end
+
+function IsShortcutEnabled(id)
+    for i = 1, #TravelShortcuts do
+        local shortcut = TravelShortcuts[i]
+        if shortcut:GetData() == id then
+            return shortcut:IsEnabled()
+        end
+    end
+
+    return false;
+end
+
+function IsShortcutTrained(id)
+    for i = 1, #TravelShortcuts do
+        local shortcut = TravelShortcuts[i]
+        if shortcut:GetData() == id then
+            if shortcut.found then
+                return true;
+            end
+            return false;
+        end
+    end
+
+    return false;
+end
+
+function GetTravelOrder(scope)
+    local order = {}
+    for i = 1, #TravelShortcuts do
+        local shortcut = TravelShortcuts[i]
+        local id = shortcut:GetData()
+        if scope == Turbine.DataScope.Account and shortcut.skill.isRacial then
+            -- replace racial id with the racial id tag
+            id = TravelInfo.racialIDTag
+        end
+        table.insert(order, id)
+    end
+    return order
+end
+
+function GetTravelEnabled(scope)
+    local enabled = {}
+    for i = 1, #TravelShortcuts do
+        local shortcut = TravelShortcuts[i]
+        local id = shortcut:GetData()
+        if scope == Turbine.DataScope.Account and shortcut.skill.isRacial then
+            -- replace racial id with the racial id tag
+            id = TravelInfo.racialIDTag
+        end
+        enabled[id] = shortcut.Enabled
+    end
+
+    return enabled
 end
 
 function SortByName()
@@ -145,18 +219,39 @@ function SortByName()
         end
     end
     SortShortcuts(comp);
-    Settings.order = {};
-    for i = 1, #TravelShortcuts do
-        table.insert(Settings.order, TravelShortcuts[i]:GetData());
-    end
 end
 
-function SortFromSettings()
-    for i = 1, #TravelShortcuts do
-        local id = TravelShortcuts[i]:GetData();
-        TravelShortcuts[i].Index = TableIndex(Settings.order, id);
+function SortByLabel()
+    local comp = function(a, b)
+        if a.normalizedLabel > b.normalizedLabel then
+            return true;
+        elseif a.normalizedName == b.normalizedName then
+            return a:GetData() > b:GetData();
+        else
+            return false;
+        end
     end
-    SortShortcuts();
+    SortShortcuts(comp);
+end
+
+function SortByLevel()
+    local comp = function(a, b)
+        if a.skill.level > b.skill.level then
+            return true;
+        elseif a.skill.level == b.skill.level then
+            return a.defaultIndex > b.defaultIndex;
+        else
+            return false;
+        end
+    end
+    SortShortcuts(comp);
+end
+
+function SortByDefault()
+    local comp = function(a, b)
+        return a.defaultIndex > b.defaultIndex
+    end
+    SortShortcuts(comp);
 end
 
 function SortShortcuts(comp)
@@ -181,19 +276,27 @@ function SortShortcuts(comp)
         end
         n = new_n;
     end
+
+    -- cleanup internal Index values to be sequential
+    for i = 1, #TravelShortcuts do
+        TravelShortcuts[i].Index = i;
+    end
 end
 
 function CheckSkills(report)
     local newShortcut = false;
     -- loop through all the shortcuts and list those those that are not learned
     for i = 1, #TravelShortcuts, 1 do
-        local wasFound = TravelShortcuts[i].found;
-        if (FindSkill(TravelShortcuts[i])) then
-            if not wasFound then
-                newShortcut = true;
+        local shortcut = TravelShortcuts[i]
+        if shortcut:GetTravelType() ~= 8 then
+            local wasFound = shortcut.found
+            if FindSkill(shortcut) then
+                if not wasFound then
+                    newShortcut = true
+                end
+            elseif report then
+                Turbine.Shell.WriteLine(LC.skillNotTrained .. shortcut:GetName())
             end
-        elseif report then
-            Turbine.Shell.WriteLine(skillNotTrainedString .. TravelShortcuts[i]:GetName())
         end
     end
 
@@ -236,6 +339,5 @@ function ListTrainedSkills()
         skill = TrainedSkills:GetItem(i);
 
         Turbine.Shell.WriteLine(skill:GetSkillInfo():GetName());
-
     end
 end

@@ -1,0 +1,18 @@
+A new version is available!
+
+v2.2.0
+
+- add: sorting alphabetically by skill label
+- add: sorting by zone level
+- add: move skill in sort list up/down by 10 slots
+- enhance: saving globals properly remembers hunter/mariner/warden skills for those classes
+- enhance: smooth out grid resize snapping around a column midpoint
+- enhance: remove dependency on Turbine utils, these can be removed if you do not need them for other plugins
+- enhance: significantly improved skill data storage in codebase to prevent human mistakes when creating new releases
+- fix: saving and loading globals will save properly every time and not mess up sort order
+- fix: plugin will load again for creep characters
+- fix: updated creep travel skills in EN/DE/FR
+
+Huge kudos to @whiterabbit963 for making this release possible!
+
+Download it at [url=https://www.lotrointerface.com/downloads/fileinfo.php?id=1113]Lotrointerface[/url], [url=https://github.com/wduda/TravelWindowII/releases]GitHub[/url], via [url=https://github.com/JeremyStepp/OneLauncher]OneLauncher[/url] or via [url=https://www.lotrointerface.com/downloads/info663-LOTROPluginCompendium.html]Plugin Compendium[/url].

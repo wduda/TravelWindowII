@@ -13,11 +13,11 @@ function SettingsMenu:Constructor(parentWindow)
     self.parent = parentWindow;
 
     -- create the filter sub menu
-    Filters = TravelWindowII.src.extensions.DMenuList(menuFiltersString);
-    self.Filters1 = Turbine.UI.MenuItem(menuGenString);
-    self.Filters2 = Turbine.UI.MenuItem(menuRaceString);
-    self.Filters3 = Turbine.UI.MenuItem(menuRepString);
-    self.Filters4 = Turbine.UI.MenuItem(menuClassString);
+    Filters = TravelWindowII.src.extensions.DMenuList(LC.menuFilters);
+    self.Filters1 = Turbine.UI.MenuItem(LC.menuGen);
+    self.Filters2 = Turbine.UI.MenuItem(LC.menuRace);
+    self.Filters3 = Turbine.UI.MenuItem(LC.menuRep);
+    self.Filters4 = Turbine.UI.MenuItem(LC.menuClass);
     FilterItems = Filters:GetItems();
     FilterItems:Add(self.Filters1);
     FilterItems:Add(self.Filters2);
@@ -25,11 +25,11 @@ function SettingsMenu:Constructor(parentWindow)
     FilterItems:Add(self.Filters4);
 
     -- create the mode sub menu
-    Mode = TravelWindowII.src.extensions.DMenuList(menuModeString);
-    self.Mode1 = Turbine.UI.MenuItem(menuTextString);
-    self.Mode2 = Turbine.UI.MenuItem(menuIconString);
-    self.Mode3 = Turbine.UI.MenuItem(menuCaroString);
-    self.Mode4 = Turbine.UI.MenuItem(menuPullString);
+    Mode = TravelWindowII.src.extensions.DMenuList(LC.menuMode);
+    self.Mode1 = Turbine.UI.MenuItem(LC.menuText);
+    self.Mode2 = Turbine.UI.MenuItem(LC.menuIcon);
+    self.Mode3 = Turbine.UI.MenuItem(LC.menuCaro);
+    self.Mode4 = Turbine.UI.MenuItem(LC.menuPull);
     local ModeItems = Mode:GetItems();
     ModeItems:Add(self.Mode1);
     ModeItems:Add(self.Mode2);
@@ -37,22 +37,22 @@ function SettingsMenu:Constructor(parentWindow)
     ModeItems:Add(self.Mode4);
 
     -- create the items to open the map windows
-    MoorMapMenu = TravelWindowII.src.extensions.DMenuList(moorMapString);
-    MapWindows = TravelWindowII.src.extensions.DMenuList(mapWindowString);
+    MoorMapMenu = TravelWindowII.src.extensions.DMenuList(LC.moorMap);
+    MapWindows = TravelWindowII.src.extensions.DMenuList(LC.mapWindow);
     local MapItems = MapWindows:GetItems();
-    MapItems:Add(Turbine.UI.MenuItem(eriadorMapString));
-    MapItems:Add(Turbine.UI.MenuItem(rhovanionMapString));
-    MapItems:Add(Turbine.UI.MenuItem(rohanMapString));
-    MapItems:Add(Turbine.UI.MenuItem(gondorMapString));
-    MapItems:Add(Turbine.UI.MenuItem(haradwaithMapString));
+    MapItems:Add(Turbine.UI.MenuItem(LC.eriadorMap));
+    MapItems:Add(Turbine.UI.MenuItem(LC.rhovanionMap));
+    MapItems:Add(Turbine.UI.MenuItem(LC.rohanMap));
+    MapItems:Add(Turbine.UI.MenuItem(LC.gondorMap));
+    MapItems:Add(Turbine.UI.MenuItem(LC.haradwaithMap));
 
     -- create the menu item to add map home
     -- @TODO has to be reintroduced
     MapMenu = TravelWindowII.src.extensions.DMenuList("");
 
     -- create the menu item to open the options window
-    OptionsMenu = TravelWindowII.src.extensions.DMenuList(menuOptionsString);
-    SkillsMenu = TravelWindowII.src.extensions.DMenuList(menuSkillsString);
+    OptionsMenu = TravelWindowII.src.extensions.DMenuList(LC.menuOptions);
+    SkillsMenu = TravelWindowII.src.extensions.DMenuList(LC.menuSkills);
 
     -- add everything to the main menu
     MenuItems = self:GetItems();
@@ -128,39 +128,39 @@ end
 function SettingsMenu:Update(string)
 
     -- update the window based on which item was selected
-    if (string == menuGenString) then
+    if (string == LC.menuGen) then
         self.filters = togglebit(self.filters, bit(1));
-    elseif (string == menuRaceString) then
+    elseif (string == LC.menuRace) then
         self.filters = togglebit(self.filters, bit(2));
-    elseif (string == menuRepString) then
+    elseif (string == LC.menuRep) then
         self.filters = togglebit(self.filters, bit(3));
-    elseif (string == menuClassString) then
+    elseif (string == LC.menuClass) then
         self.filters = togglebit(self.filters, bit(4));
-    elseif (string == menuTextString) then
+    elseif (string == LC.menuText) then
         self.mode = 1;
-    elseif (string == menuIconString) then
+    elseif (string == LC.menuIcon) then
         self.mode = 2;
-    elseif (string == menuCaroString) then
+    elseif (string == LC.menuCaro) then
         self.mode = 3;
-    elseif (string == menuPullString) then
+    elseif (string == LC.menuPull) then
         self.mode = 4;
         -- elseif (string == menuMapString) then @TODO has to be reintroduced
         --    self.parent:SetMapHome();
-    elseif (string == menuOptionsString) then
+    elseif (string == LC.menuOptions) then
         OptionsWindow:SetVisible(true);
-    elseif (string == menuSkillsString) then
+    elseif (string == LC.menuSkills) then
         CheckSkills(true);
-    elseif (string == moorMapString) then
+    elseif (string == LC.moorMap) then
         self.parent:OpenMapWindow(MapType.CREEPS);
-    elseif (string == eriadorMapString) then
+    elseif (string == LC.eriadorMap) then
         self.parent:OpenMapWindow(MapType.ERIADOR);
-    elseif (string == rhovanionMapString) then
+    elseif (string == LC.rhovanionMap) then
         self.parent:OpenMapWindow(MapType.RHOVANION);
-    elseif (string == rohanMapString) then
+    elseif (string == LC.rohanMap) then
         self.parent:OpenMapWindow(MapType.ROHAN);
-    elseif (string == gondorMapString) then
+    elseif (string == LC.gondorMap) then
         self.parent:OpenMapWindow(MapType.GONDOR);
-    elseif (string == haradwaithMapString) then
+    elseif (string == LC.haradwaithMap) then
         self.parent:OpenMapWindow(MapType.HARADWAITH);
     end
 
@@ -217,8 +217,6 @@ function InitDefaultSettings()
     Settings.showButton = 1;
     Settings.mode = 2;
     Settings.filters = 0x0F;
-    Settings.enabled = {};
-    Settings.order = {};
     Settings.mainMaxOpacity = 1;
     Settings.mainMinOpacity = 0.5;
     Settings.fadeOutSteps = 1;
@@ -270,12 +268,40 @@ function LoadSettings()
         end);
     end
 
-    AccountSettingsStrings = SetSettings(AccountSettingsStrings);
-    SetSettings(settingsStrings, importOldSettings);
-    CheckEnabledSettings();
+    AccountSettingsStrings = SetSettings(AccountSettingsStrings, Turbine.DataScope.Account);
+    SetSettings(settingsStrings, Turbine.DataScope.Character, importOldSettings);
 end
 
-function SetSettings(settingsArg, importOldSettings)
+function GetVersionNumber(version)
+    local major = nil
+    local minor = nil
+    local patch = nil
+    if type(version) ~= "string" then
+        return 0
+    end
+
+    if version:sub(1, 1) == "v" then
+        version = version:sub(2)
+    end
+    for num in version:gmatch("[^.]+") do
+        if major == nil then
+            major = tonumber(num)
+        elseif minor == nil then
+            minor = tonumber(num)
+        elseif patch == nil then
+            num = num:match("%d+")
+            patch = tonumber(num)
+        else
+            return 0 -- invalid format
+        end
+    end
+    if major == nil then major = 0 end
+    if minor == nil then minor = 0 end
+    if patch == nil then patch = 0 end
+    return (major * (2 ^ 16)) + (minor * (2 ^ 8)) + patch;
+end
+
+function SetSettings(settingsArg, scope, importOldSettings)
     -- initialze any uninitialized settings strings
     if (type(settingsArg) ~= "table") then
         settingsArg = {};
@@ -350,26 +376,79 @@ function SetSettings(settingsArg, importOldSettings)
     end
 
     Settings.lastLoadedVersion = settingsArg.lastLoadedVersion;
-    Settings.enabled = TableCopy(settingsArg.enabled);
 
-    local convertTableIndex = false;
-    for i, v in pairs(settingsArg.order) do
-        if (type(i) == "string") then
-            convertTableIndex = true;
+    LoadEnabled = {}
+    for k, v in pairs(settingsArg.enabled) do
+        if type(k) == "number" then
+            k = string.format("0x%X", k)
+        end
+        LoadEnabled[k] = v
+    end
+
+    LoadOrder = {}
+    LoadOrderNext = 1;
+    for loc, id in pairs(settingsArg.order) do
+        LoadOrderNext = LoadOrderNext + 1;
+        if (type(loc) == "string") then
+            loc = tonumber(loc)
+        end
+        LoadOrder[id] = loc
+    end
+
+    if scope == Turbine.DataScope.Account then
+        -- settingsArg.enabled/order should keep the racial id tag
+        settingsArg.enabled = TableCopy(LoadEnabled)
+        local order = {}
+        for k, v in pairs(LoadOrder) do order[v] = k end
+        settingsArg.order = order
+
+        -- replace racial id tag with current racial skill
+        if LoadEnabled[TravelInfo.racialIDTag] ~= nil then
+            LoadEnabled[TravelInfo.racial.id] = LoadEnabled[TravelInfo.racialIDTag]
+            LoadEnabled[TravelInfo.racialIDTag] = nil
+        end
+        if LoadOrder[TravelInfo.racialIDTag] ~= nil then
+            LoadOrder[TravelInfo.racial.id] = LoadOrder[TravelInfo.racialIDTag]
+            LoadOrder[TravelInfo.racialIDTag] = nil
+        end
+
+        local ver = GetVersionNumber(settingsArg.lastLoadedVersion)
+        if ver <= 0x20100 then
+            -- fix broken files
+            for k, racial in pairs(TravelInfo.racials.skills) do
+                if k ~= PlayerRaceKey then
+                    -- clear entries that are not the current race
+                    if LoadEnabled[racial.id] ~= nil then
+                        -- found entry to clear
+                        if LoadEnabled[TravelInfo.racial.id] == nil then
+                            -- set to the current race first
+                            LoadEnabled[TravelInfo.racial.id] = LoadEnabled[racial.id]
+                        end
+                        LoadEnabled[racial.id] = nil
+                    end
+                    if LoadOrder[racial.id] ~= nil then
+                        -- found entry to clear
+                        if LoadOrder[TravelInfo.racial.id] == nil then
+                            -- set to the current race first
+                            LoadOrder[TravelInfo.racial.id] = LoadOrder[racial.id]
+                        end
+                        LoadOrder[racial.id] = nil
+                    end
+                end
+            end
         end
     end
 
-    if (convertTableIndex) then
-        Settings.order = OrderTableNumberIndex(settingsArg);
-    else
-        Settings.order = TableCopy(settingsArg.order);
-    end
     return settingsArg;
 end
 
 function SaveSettings(scope)
+    if scope == nil then
+        scope = Turbine.DataScope.Character;
+    end
+
     local settingsStrings = {};
-    settingsStrings.lastLoadedVersion = tostring(Settings.lastLoadedVersion);
+    settingsStrings.lastLoadedVersion = Plugins["Travel Window II"]:GetVersion();
     settingsStrings.gridCols = tostring(Settings.gridCols);
     settingsStrings.gridRows = tostring(Settings.gridRows);
     settingsStrings.listWidth = tostring(Settings.listWidth);
@@ -393,17 +472,11 @@ function SaveSettings(scope)
     settingsStrings.fadeOutDelay = tostring(Settings.fadeOutDelay);
     settingsStrings.toggleMaxOpacity = tostring(Settings.toggleMaxOpacity);
     settingsStrings.toggleMinOpacity = tostring(Settings.toggleMinOpacity);
-    settingsStrings.enabled = TableCopy(Settings.enabled);
     settingsStrings.mapGlanVraig = tostring(Settings.mapGlanVraig);
+    settingsStrings.enabled = GetTravelEnabled(scope);
+    settingsStrings.order = GetTravelOrder(scope);
 
-    settingsStrings.order = OrderTableStringIndex();
-
-    if scope == nil then
-        scope = Turbine.DataScope.Character;
-    end
-    if scope == Turbine.DataScope.Character then
-        CharacterSettingsStrings = settingsStrings;
-    elseif scope == Turbine.DataScope.Account then
+    if scope == Turbine.DataScope.Account then
         AccountSettingsStrings = settingsStrings;
     end
 
@@ -411,61 +484,8 @@ function SaveSettings(scope)
     PatchDataSave(scope, "TravelWindowIISettings", settingsStrings);
 end
 
-function OrderTableStringIndex()
-    order = {}
-    for i, v in ipairs(Settings.order) do
-        order[tostring(i)] = v;
-    end
-    return order;
-end
-
-function OrderTableNumberIndex(settingsArg)
-    order = {};
-
-    for i, v in pairs(settingsArg.order) do
-        order[tonumber(i)] = v;
-    end
-    return order;
-end
-
--- this method influences the default sorting order of skills
-function CheckEnabledSettings()
-    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        -- update generic travel settings
-        AddNewSettings(TravelInfo.gen);
-
-        -- update racial travel settings
-        local racialId = TravelInfo.racial.id;
-        if (Settings.enabled[racialId] == nil) then
-            Settings.enabled[racialId] = true;
-        end
-        if (TableContains(Settings.order, racialId) == false) then
-            table.insert(Settings.order, racialId);
-        end
-
-        -- update class travel settings
-        AddNewSettings(TravelInfo:GetClassSkills());
-
-        -- update reputation travel settings
-        AddNewSettings(TravelInfo.rep);
-    else
-        -- update creep travel settings
-        AddNewSettings(TravelInfo.creep);
-    end
-end
-
-function AddNewSettings(skills)
-    if skills == nil then return end
-    for i = 1, skills:GetCount() do
-        local id = skills:IdAtIndex(i);
-        -- if the enabled setting for the skill is nil, set it to true as default
-        if (Settings.enabled[id] == nil) then
-            Settings.enabled[id] = true;
-        end
-
-        -- if the skill is not in the order list, add it
-        if (TableContains(Settings.order, id) == false) then
-            table.insert(Settings.order, id);
-        end
-    end
+function ClearLoaders()
+    LoadOrder = nil
+    LoadEnabled = nil
+    LoadOrderNext = nil
 end

@@ -1,5 +1,3 @@
-import "Turbine";
-import "Turbine.Debug";
 import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
@@ -46,7 +44,7 @@ function TravelWindow:Constructor(useMinWindow)
 
     -- configure the main window
     self:SetPosition(Settings.positionX, Settings.positionY);
-    self:SetText(mainTitleString);
+    self:SetText(LC.mainTitle);
     self:SetBackColor(self.backColor);
     if (Settings.hideOnStart == 1) then
         self:SetVisible(false);
@@ -105,7 +103,7 @@ function TravelWindow:Constructor(useMinWindow)
     self.titleLabel:SetPosition(0, 0);
     self.titleLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
     self.titleLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro15);
-    self.titleLabel:SetText("Travel Window II");
+    self.titleLabel:SetText(LC.miniTitle);
 
     self.resizeLabel = Turbine.UI.Label();
     self.resizeLabel:SetParent(self);
@@ -453,6 +451,12 @@ end
 
 function TravelWindow:ResetSettings()
     InitDefaultSettings();
+    for i = 1, #TravelShortcuts do
+        local shortcut = TravelShortcuts[i];
+        shortcut.Enabled = true;
+        shortcut.Index = shortcut.defaultIndex;
+    end
+    SortShortcuts();
     SyncUIFromSettings();
 end
 
@@ -460,20 +464,13 @@ function SyncUIFromSettings()
     local buttonPositionX = Turbine.UI.Display.GetWidth() * Settings.buttonRelativeX;
     local buttonPositionY = Turbine.UI.Display.GetHeight() * Settings.buttonRelativeY;
     ToggleButton:SetPosition(buttonPositionX, buttonPositionY);
-    CheckEnabledSettings();
     OptionsWindow.Panel:UpdateSettings();
     OptionsWindow.Panel:EnableFromSettings();
-    SortFromSettings();
     OptionsWindow.Panel:AddSortList();
     Menu:SetSettings(Settings.mode, Settings.filters);
     _G.travel:SetPosition(Settings.positionX, Settings.positionY);
     _G.travel.dirty = true;
     _G.travel:UpdateSettings();
-end
-
--- for debug purposes
-function TravelWindow:DoDump()
-    Turbine.Debug.Table.Dump(TravelWindowII.src);
 end
 
 function AddCallback(object, event, callback)

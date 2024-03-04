@@ -1,26 +1,29 @@
 TravelDictionary = class()
 
 function TravelDictionary:Constructor()
-    -- create the indexed tables that store all the data
-    self.gen = IndexedDictionary(self);
-    self.rep = IndexedDictionary(self);
-    self.hunter = IndexedDictionary(self);
-    self.warden = IndexedDictionary(self);
-    self.mariner = IndexedDictionary(self);
-
-    self.allRaces = IndexedDictionary(self);
-    self.racial = {}
-    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        self.creep = IndexedDictionary(self);
-    end
-
     self.skillCount = 0;
 
-    self:CreateDictionaries();
-    self.racial.id = self.allRaces:IdAtIndex(PlayerRaceKey);
-    self.racial.name = self.allRaces:NameAtIndex(PlayerRaceKey);
-    self.racial.desc = self.allRaces:DescAtIndex(PlayerRaceKey);
-    self.racial.label = self.allRaces:LabelAtIndex(PlayerRaceKey);
+    -- create the indexed tables that store all the data
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+        self.gen = IndexedDictionary(self);
+        self.rep = IndexedDictionary(self);
+        self.hunter = IndexedDictionary(self);
+        self.warden = IndexedDictionary(self);
+        self.mariner = IndexedDictionary(self);
+
+        self.racials = IndexedDictionary(self);
+        self.racial = {}
+
+        self:CreateDictionaries();
+        self.racialIDTag = "RACIAL_SKILL";
+        self.racial = self.racials.skills[PlayerRaceKey];
+        for i = 1, #self.racials.skills do
+            self.racials.skills[i].isRacial = true;
+        end
+    else
+        self.creep = IndexedDictionary(self);
+        self:CreateCreepDictionary();
+    end
 end
 
 -- function to return the count of a specific type of travel

@@ -1,4 +1,3 @@
-import "Turbine";
 import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
@@ -95,7 +94,7 @@ function TravelListTab:AddItem(shortcut)
         self.labels[index]:SetMouseVisible(false);
         self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
         self.labels[index]:SetBackColor(Turbine.UI.Color(self.itemAlpha, 0, 0, 0));
-        self.labels[index]:SetText(shortcut:GetSkillLabel());
+        self.labels[index]:SetText(shortcut:GetLabel());
         self.labels[index]:SetParent(self.SubWindow);
 
         -- set all quickslots to be visible and

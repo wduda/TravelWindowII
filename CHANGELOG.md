@@ -1,4 +1,20 @@
+# CHANGELOG
+
+## v2.2.0
+
+- add: sorting alphabetically by skill label
+- add: sorting by zone level
+- add: move skill in sort list up/down by 10 slots
+- enhance: saving globals properly remembers hunter/mariner/warden skills for those classes
+- enhance: smooth out grid resize snapping around a column midpoint
+- enhance: remove dependency on Turbine utils, these can be removed if you do not need them for other plugins
+- enhance: significantly improved skill data storage in codebase to prevent human mistakes when creating new releases
+- fix: saving and loading globals will save properly every time and not mess up sort order
+- fix: plugin will load again for creep characters
+- fix: updated creep travel skills in EN/DE/FR
+
 ## v2.1.0
+
 - add: default and alphabetic ordering buttons in sorting tab (note: sort by name sorts by ingame name, not by TW II label)
 - add: a fade out delay and option slider to control duration of that delay
 - enhance: mini and legacy windows having the same minimum size
@@ -13,6 +29,7 @@
 - fix: multiple small resizing issues
 
 ## v2.0.0
+
 - adds a mini window option offering an alternative interface with minimal window size
 - adds skills snapping for cleaner resizing of main and mini windows
 - adds slider to control speed of fadeout to min opacity
@@ -26,11 +43,14 @@
 - significant code cleanup under the hood for more reliable and maintainable code
 
 ## v1.4.0
+
 - reintroduces a rewritten Map Window feature - thanks to @whiterabbit963
 - toggle button will no longer be out of bounds after reducing client resolution - thanks to @whiterabbit963
 - fixes error message on check untrained skills in options - thanks to @whiterabbit963
 - fixes Muster in Dale skill in DE client properly this time - thanks to @whiterabbit963
+
 ## v1.3.0
+
 - fixed Warden Muster to Dale in DE client
 - fixed Bloody Eagle Tavern skill in DE client
 - fixed more sorting issues for Hunter, Warden and DE/FR clients caused by duplicate skillnames - thanks to @whiterabbit963
@@ -39,12 +59,16 @@
 - improved layout and resizing for pulldown tab - thanks to @whiterabbit963
 - more consistent and performant setting of window opacity and options window opacity - thanks to @whiterabbit963
 - vast amounts of code quality improvements that should result in stability, faster loading and no stutters when resizing TW II - thanks to @whiterabbit963
+
 ## v1.2.0
+
 - fixed U38 allegiance travel skills in EN/FR/DE client
 - added new U38.1.1 skill in EN/FR/DE client
 - fixed duplicate skillnames causing all kinds of sorting issues - thanks to @whiterabbit963
 - minor performance improvement - thanks to @whiterabbit963
+
 ## v1.1.0
+
 - fixed two U38 reputation travel skills in EN client
 - added U38 Mariner skills in FR client
 - added U38 Mariner skills in DE client
@@ -54,73 +78,113 @@
 - fixed Mariner skills in DE client
 - fixed all Mariner skills not showing up in Enabled and Sort options tabs
 - fixed newly learned Mariner skills not being found when checking trained skills
+
 ## v1.0.29alpha
+
 - fixed Mariner skills showing up twice in DE client
 - adding U38 skills in EN/FR
+
 ## v1.0.28alpha
+
 - added support for Mariner Sail skills in EN/DE/FR
 - added support for River Hobbits racial travel
 - fixed rare bug in hunter skills sorting
+
 ## v1.0.27
+
 - fixed typo in init.lua causing crash on load
+
 ## v1.0.26
+
 - added support for U36 skills (Pelargir in King's Gondor) in EN/DE/FR
+
 ## v1.0.25beta
+
 - fixed typo in Carn Dum skills introduced in v1.0.24beta
 - added Glan Vraig skill in EN/DE/FR
 - fixed some DE/FR skill labels to better reflect the source of the skill
+
 ## v1.0.24beta
+
 - added Clegur skills from U35 in EN/DE/FR
 - added Carn Dum skills from U35 in EN/DE/FR
 - fixed some DE/FR skills that had their names changed
+
 ## v1.0.23beta
+
 - saving options is now reliably done on every logout
+
 ## v1.0.22beta
+
 - fixed bug with duplicate skillID affecting hunters trying to sort their travel skills
 - fixed TWII button not saving position when being moved
 - fixed error message when resetting skills to default
+
 ## v1.0.21beta
+
 - added U34 skills for EN/DE/FR
 - fixed two Muster skills in DE
 - PluginManager button for options no longer opens a second copy of options window
 - Maps open again but are still buggy in terms of showing travel locations
 - error message when using dropdown view should no longer show up
+
 ## v1.0.20beta
+
 - added Yondershire port
 - worked around plugin manager causing client crash; replaced the manager options with a button opening the actual options window
+
 ## v1.0.19beta
+
 - added new option to close Travel Window when using a travel skill regardless of window mode
 - updated behaviour of Travel Window when using function key and escape to hide the UI, should now handle all cases correctly
 - added Tornhad travel skills
 - fixed many French Warden skills that were renamed by SSG
+
 ## v1.0.18beta
+
 - fixed changed Gundabad translations for FR 
+
 ## v1.0.17beta
+
 - added 7 new skills for U31
+
 ## v1.0.16beta
+
 - added 7 new skills for U31
+
 ## v1.0.15beta
+
 - made the icon grid the default view on new characters
 - fixed bug causing window size not being saved on logout
 - cleaned code from references to Map Home item that existed before Milestone skills
+
 ## v1.0.14beta
+
 - added new travel skills for U30 in EN, DE, FR
+
 ## v1.0.13beta
+
 - fixed plugin crash for Wardens with travel to Trestlebridge learned (bugfix)
+
 ## v1.0.12beta
+
 - fixed unloadable settings for 64bit DE and FR clients (bugfix)
 - fixed label of Hultvis hunter guide in FR client (enhancement)
 
 ## v1.0.11hotfix2
+
 - fixing plugincompendium version data
 
 ## v1.0.11hotfix1
+
 - fixed one French U29 skill - thanks homeopatix for the bug report
 
 ## v1.0.11beta
+
 - full U29 travel skills support for DE and FR (enhancement)
 
 ## v1.0.10beta
+
 - U29 travel skills support for EN (enhancement)
 - attempted U29 travel skills support for DE and FR - no translations for skills were available on Bullroarer (enhancement)
 - checking for untrained skills both through options button and menu item will now add newly learned skills immediately (enhancement)
@@ -130,6 +194,7 @@
 - cleaned up a lot of global/local internal variables and names (internal)
 
 ## v1.0.9beta
+
 - fixed bug where pressing Esc did not close the options window (bugfix)
 - fixed bug where changing options was lagging the client, especially on changing opacity sliders (bugfix)
 - automated github builds for faster releases (internal)
@@ -137,10 +202,12 @@
 - cleaned up some code for better readability (internal)
 
 ## v1.0.8beta
+
 - made it so the plugin can attempt to import all settings from v1.06beta or earlier if new settings file is not present, so an import can be forced by deleting TravelWindowII.plugindata - see FAQ
 - fixed German travel to Dale
 
 ## v1.0.7beta
+
 - changed enabled/disabled function to identify skills by ID - fixes problems with skills sharing names, like racial/rep, map home/Beorning racial (bugfix) closes #25 #17
 - changed sorting identify skills by ID - sorting will now work and save its settings properly (bugfix) closes #15
 - fixed wrong order of milestone skills (bugfix) closes #9
@@ -154,12 +221,14 @@
 - reduced code duplication in indexedDictionaries so future development will become easier (internal)
 
 ## v1.0.6beta
+
 - Plugin Compendium will now install Turbine libraries if they are not installed yet when you install Travel Window (enhancement)
 - changed Shire and Rivendell skill labels to be closer to user expectations (they are now Shire (Store), Shire (Racial), Rivendell (Store)) (bugfix)
 - fixed Premium house skill in German client (bugfix)
 - fixed about 30 skills in German client that were not working before (bugfix)
 
 ## v1.0.5beta
+
 - removed references to setting the glan vraig map and the obsolete map home for now (GUI improvement)
 - cleaned up internal naming of variables to better differentiate skill names and skill labels used by plugin (internal)
 - made pulldownlist, enable options and sort options use labels instead of skill names (GUI improvement)
@@ -177,17 +246,21 @@
 - replaced some deprecated methods
 
 ## v1.0.3beta
+
 - fixed Plugin Compendium confusing TravelWindow and TravelWindowII
 
 ## v1.0.2beta
+
 - included French client fixes from Adra
 - some internal code cleanup
 
 ## v1.0.1beta
+
 - added racial skills to sort options while not functioning yet
 - created lotrocompendium capability
 
 ## v1.0beta
+
 - based off of v28.2 last worked on by Thaliruth
 - fixed Eriador/Rhovannion/Eriador maps with overlays
 - fixed High Elf racial travel skill that was broken since U28.2
