@@ -1,4 +1,4 @@
-Contributors:
+# Contributors
 
 Orendar
 Frell
