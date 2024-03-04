@@ -732,7 +732,7 @@ function OptionsPanel:EnableOverlapSkills(enable)
         if group ~= nil then
             for k = 1, #group do
                 for j = 1, #self.checks do
-                    if self.checks[j].skill:GetData() == group[k] then
+                    if self.checks[j].skill.shortcut:GetData() == group[k] then
                         self.checks[j]:SetChecked(enable);
                         break
                     end
