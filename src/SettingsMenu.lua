@@ -289,11 +289,15 @@ function GetVersionNumber(version)
         elseif minor == nil then
             minor = tonumber(num)
         elseif patch == nil then
+            patch = patch:match("%d+")
             patch = tonumber(num)
         else
             return 0 -- invalid format
         end
     end
+    if major == nil then major = 0 end
+    if minor == nil then minor = 0 end
+    if patch == nil then patch = 0 end
     return (major * (2 ^ 16)) + (minor * (2 ^ 8)) + patch
 end
 
