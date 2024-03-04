@@ -294,7 +294,10 @@ function GetVersionNumber(version)
             return 0 -- invalid format
         end
     end
-    return (major * (2 ^ 16)) + (minor * (2 ^ 8)) + patch
+    if major == nil then major = 0 end
+    if minor == nil then minor = 0 end
+    if patch == nil then patch = 0 end
+    return (major * (2 ^ 16)) + (minor * (2 ^ 8)) + patch;
 end
 
 function SetSettings(settingsArg, scope, importOldSettings)
