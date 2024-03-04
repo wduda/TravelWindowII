@@ -273,9 +273,6 @@ function LoadSettings()
 end
 
 function GetVersionNumber(version)
-    local major = nil
-    local minor = nil
-    local patch = nil
     if type(version) ~= "string" then
         return 0
     end
@@ -283,14 +280,14 @@ function GetVersionNumber(version)
     if version:sub(1, 1) == "v" then
         version = version:sub(2)
     end
+    local major, minor, patch
     for num in version:gmatch("[^.]+") do
         if major == nil then
             major = tonumber(num)
         elseif minor == nil then
             minor = tonumber(num)
         elseif patch == nil then
-            num = num:match("%d+")
-            patch = tonumber(num)
+            patch = tonumber(num:match("%d+"))
         else
             return 0 -- invalid format
         end
@@ -298,7 +295,7 @@ function GetVersionNumber(version)
     if major == nil then major = 0 end
     if minor == nil then minor = 0 end
     if patch == nil then patch = 0 end
-    return (major * (2 ^ 16)) + (minor * (2 ^ 8)) + patch;
+    return (major * (2 ^ 16)) + (minor * (2 ^ 8)) + patch
 end
 
 function SetSettings(settingsArg, scope, importOldSettings)
