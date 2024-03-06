@@ -256,8 +256,12 @@ function TravelGridTab:FitToPixels(width, height)
 end
 
 function TravelGridTab:GetGridDims(width, height)
-    if width < self.minCols * self.colWidth then width = self.minCols * self.colWidth end
-    if height < self.colWidth then height = self.colWidth end
+    if width < self.minCols * self.colWidth then
+        width = self.minCols * self.colWidth
+    end
+    if height < self.colWidth then
+        height = self.colWidth
+    end
 
     local scrollHeight = height
     width = width + self.colWidth / 2
@@ -268,7 +272,7 @@ function TravelGridTab:GetGridDims(width, height)
 
     -- set the maximum scroll of the scrollbar
     local maxScroll = numOfRows * self.colWidth - scrollHeight
-    if maxScroll < 0 then
+    if maxScroll < self.colWidth then
         maxScroll = 0;
     elseif self.parent.isMinWindow and maxScroll > 0 then
         -- include scrollbar width
