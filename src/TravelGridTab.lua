@@ -86,6 +86,68 @@ function TravelGridTab:Constructor(toplevel)
             Menu:ShowMenu();
         end
     end
+
+    self.DragDrop = function(sender, args)
+        local shortcut = args.DragDropInfo:GetShortcut()
+        if shortcut == nil then
+            return
+        end
+        local srcSkill = GetTravelSkill(shortcut:GetData())
+        if srcSkill == nil then
+            return
+        end
+        local x, y = self:GetMousePosition()
+        local gridIndex = self:GetGridIndex(x, y)
+        local quickslot = self.quickslots[gridIndex]
+        if quickslot == nil then
+            return
+        end
+        shortcut = quickslot:GetShortcut()
+        if shortcut == nil then
+            return
+        end
+        local dstSkill = GetTravelSkill(shortcut:GetData())
+        if dstSkill == nil then
+            return
+        end
+
+        local srcIndex = srcSkill.shortcut.Index
+        local dstIndex = dstSkill.shortcut.Index
+        if srcIndex == dstIndex then
+            return
+        end
+        if srcIndex > dstIndex then
+            while dstIndex - 1 >= 1 do
+                if TravelShortcuts[dstIndex - 1].found then
+                    break
+                end
+                dstIndex = dstIndex - 1
+            end
+            while srcIndex > dstIndex do
+                SwapTravelSkill(srcIndex, srcIndex - 1)
+                srcIndex = srcIndex - 1
+            end
+        end
+
+        if srcIndex < dstIndex then
+            local maxIndex = #TravelShortcuts
+            while dstIndex + 1 <= maxIndex do
+                if TravelShortcuts[dstIndex + 1].found then
+                    break
+                end
+                dstIndex = dstIndex + 1
+            end
+
+            while srcIndex < dstIndex do
+                SwapTravelSkill(srcIndex, srcIndex + 1)
+                srcIndex = srcIndex + 1
+            end
+        end
+
+        -- update the main window shortcuts and settings
+        OptionsWindow.Panel:AddSortList();
+        self.parent:UpdateSettings();
+    end
 end
 
 -- function to handle mouse scrollwheel events
@@ -326,6 +388,14 @@ function TravelGridTab:GetMargin(numOfShortcuts)
         width = width - 10; -- remove width of scrollbar
     end
     return math.floor((width - cols * self.colWidth) / 2.0);
+end
+
+function TravelGridTab:GetGridIndex(x, y)
+    local col = math.floor(x / self.colWidth) + 1
+    local scrollRow = self.myScrollBar:GetValue() / self.colWidth
+    local row = math.floor(scrollRow + y / self.colWidth)
+    if row < 0 then row = 0 end
+    return row * self.numOfCols + col
 end
 
 -- function to adjust the size of the tab and all items in the tab
