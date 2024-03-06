@@ -208,6 +208,27 @@ function GetTravelEnabled(scope)
     return enabled
 end
 
+function GetTravelSkill(id)
+    for i = 1, #TravelShortcuts do
+        local shortcut = TravelShortcuts[i]
+        if id == shortcut:GetData() then
+            return shortcut.skill
+        end
+    end
+    return nil
+end
+
+function SwapTravelSkill(first, second)
+    local shortcut1 = TravelShortcuts[first]
+    local shortcut2 = TravelShortcuts[second]
+    shortcut1:SetIndex(second)
+    shortcut2:SetIndex(first)
+    TravelShortcuts[first] = shortcut2
+    TravelShortcuts[second] = shortcut1
+
+    _G.travel.dirty = true
+end
+
 function SortByName()
     local comp = function(a, b)
         if a.normalizedName > b.normalizedName then
