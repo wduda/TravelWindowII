@@ -88,6 +88,7 @@ function TravelWindow:Constructor(useMinWindow)
     self.ListTab.numOfRows = Settings.listRows;
 
     self.MainPanel:SetTab(Settings.mode);
+    self.GridTab:SetAllowDrop(true)
     self:SetItems();
     self:UpdateMinimum();
     self:SetOpacity(Settings.mainMinOpacity);
