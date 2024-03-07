@@ -5,13 +5,13 @@ function TravelDictionary:Constructor()
 
     -- create the indexed tables that store all the data
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        self.gen = IndexedDictionary(self);
-        self.rep = IndexedDictionary(self);
-        self.hunter = IndexedDictionary(self);
-        self.warden = IndexedDictionary(self);
-        self.mariner = IndexedDictionary(self);
+        self.gen = IndexedDictionary(self, LC.genericLabel);
+        self.rep = IndexedDictionary(self, LC.repLabel);
+        self.hunter = IndexedDictionary(self, LC.classLabel);
+        self.warden = IndexedDictionary(self, LC.classLabel);
+        self.mariner = IndexedDictionary(self, LC.classLabel);
 
-        self.racials = IndexedDictionary(self);
+        self.racials = IndexedDictionary(self, LC.racialLabel);
         self.racial = {}
 
         self:CreateDictionaries();
@@ -21,7 +21,7 @@ function TravelDictionary:Constructor()
             self.racials.skills[i].isRacial = true;
         end
     else
-        self.creep = IndexedDictionary(self);
+        self.creep = IndexedDictionary(self, LC.genericLabel);
         self:CreateCreepDictionary();
     end
 end

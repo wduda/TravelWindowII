@@ -49,12 +49,12 @@ function OptionsPanel:Constructor()
     self.EnabledTab:SetSize(self.width - 20, self.height - 60)
     self.ListBox = Turbine.UI.ListBox()
     self.ListBox:SetParent(self.EnabledTab)
-    self.ListBox:SetPosition(5, 5)
+    self.ListBox:SetPosition(15, 5)
     self.ListBox:SetSize(self:GetWidth() - 20, self:GetHeight() - 120)
     self.scrollBar = Turbine.UI.Lotro.ScrollBar()
     self.scrollBar:SetOrientation(Turbine.UI.Orientation.Vertical)
     self.scrollBar:SetParent(self.EnabledTab)
-    self.scrollBar:SetPosition(0, 0)
+    self.scrollBar:SetPosition(0, 5)
     self.scrollBar:SetWidth(10)
     self.scrollBar:SetHeight(self.ListBox:GetHeight())
     self.ListBox:SetVerticalScrollBar(self.scrollBar)
@@ -547,28 +547,44 @@ end
 function OptionsPanel:AddItems()
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- add the generic travels skills
-        self:AddSkillsForEnabling(TravelInfo.gen);
-
-        -- add class specific travel skills
-        self:AddSkillsForEnabling(TravelInfo:GetClassSkills());
-
-        -- add the reputation travel skills
-        self:AddSkillsForEnabling(TravelInfo.rep);
+        self:AddEnabledSection(TravelInfo.gen)
 
         -- add the race specific travel skill for the character
-        self:AddSkillItemForEnabling(TravelInfo.racial);
-    end
+        self:AddEnabledSection(TravelInfo.racials)
 
-    if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
+        -- add class specific travel skills
+        self:AddEnabledSection(TravelInfo:GetClassSkills())
+
+        -- add the reputation travel skills
+        self:AddEnabledSection(TravelInfo.rep)
+
+    elseif (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
         -- add the creep travel skills
         self:AddSkillsForEnabling(TravelInfo.creep);
     end
 end
 
-function OptionsPanel:AddSkillsForEnabling(skills)
+function OptionsPanel:AddEnabledSection(skills)
     if skills == nil then return end
-    for i = 1, skills:GetCount() do
-        self:AddSkillItemForEnabling(skills:Skill(i));
+
+    -- add a title label
+    local label = Turbine.UI.Label()
+    label:SetSize(self.ListBox:GetWidth() - 20, 20)
+    label:SetTextAlignment(Turbine.UI.ContentAlignment.LeftCenter)
+    label:SetFont(Turbine.UI.Lotro.Font.VerdanaBold16)
+    label:SetText(skills.title)
+    label:SetVisible(true)
+    self.ListBox:AddItem(label)
+    self:AddSkillsForEnabling(skills)
+end
+
+function OptionsPanel:AddSkillsForEnabling(skills)
+    if skills == TravelInfo.racials then
+        self:AddSkillItemForEnabling(TravelInfo.racial);
+    else
+        for i = 1, skills:GetCount() do
+            self:AddSkillItemForEnabling(skills:Skill(i));
+        end
     end
 end
 
@@ -615,53 +631,6 @@ end
 
 -- this function adds the labels to the enabled tab for cosmetic purpose
 function OptionsPanel:AddBoxes()
-    --[[
-    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        -- add a label and box for the generic travel skills
-        self.genLabel = Turbine.UI.Label();
-        self.genLabel:SetSize(200, 20);
-        self.genLabel:SetPosition(0, 0);
-        self.genLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
-        self.genLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-        self.genLabel:SetText(LC.genericLabel);
-        self.genLabel:SetParent(self.EnabledTab);
-        self.genLabel:SetVisible(true);
-
-        -- add a label and box for the reputation travel skills
-        self.repLabel = Turbine.UI.Label();
-        self.repLabel:SetSize(200, 20);
-        self.repLabel:SetPosition(260, 0);
-        self.repLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
-        self.repLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-        self.repLabel:SetText(LC.repLabel);
-        self.repLabel:SetParent(self.EnabledTab);
-        self.repLabel:SetVisible(true);
-
-        -- if the player is a hunter or warden, add a label
-        if ((PlayerClass == Turbine.Gameplay.Class.Hunter) or (PlayerClass == Turbine.Gameplay.Class.Warden)) then
-            self.classLabel = Turbine.UI.Label();
-            self.classLabel:SetSize(200, 20);
-            self.classLabel:SetPosition(520, 0);
-            self.classLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
-            self.classLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-            self.classLabel:SetText(LC.classLabel);
-            self.classLabel:SetParent(self.EnabledTab);
-            self.classLabel:SetVisible(true);
-        end
-    else
-        -- add a label and box for the Monster Maps settings
-        self.genLabel = Turbine.UI.Label();
-        self.genLabel:SetSize(200, 20);
-        self.genLabel:SetPosition(0, 0);
-        self.genLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
-        self.genLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-        self.genLabel:SetText(LC.genericLabel);
-        self.genLabel:SetParent(self.EnabledTab);
-        self.genLabel:SetVisible(true);
-
-    end
-    --]]
-
     -- add a check skills button
     self.checkSkillsButton = Turbine.UI.Lotro.Button();
     self.checkSkillsButton:SetSize(200, 20);
