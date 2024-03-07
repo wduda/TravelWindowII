@@ -10,8 +10,10 @@ local ValidSkillKeys = {
     "map", "overlap", "level", "hasSameText"
 }
 
-function IndexedDictionary:Constructor(parent)
+function IndexedDictionary:Constructor(parent, title)
     self.parent = parent;
+
+    self.title = title
 
     -- init tables
     self.skills = {};
