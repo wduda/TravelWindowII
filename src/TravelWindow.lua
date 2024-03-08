@@ -258,6 +258,10 @@ function TravelWindow:Constructor(useMinWindow)
     self.PullTab.pulldown.dropDownWindow.MouseLeave = self.MouseLeave;
 
     self.MouseDown = function(sender, args)
+        if BlockUIChange(self) then
+            return
+        end
+
         self.isMouseDown = true;
         if (args.Button == Turbine.UI.MouseButton.Left) then
             self.dragStartX, self.dragStartY = self:GetMousePosition();

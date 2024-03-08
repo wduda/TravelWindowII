@@ -88,6 +88,10 @@ function TravelGridTab:Constructor(toplevel)
     end
 
     self.DragDrop = function(sender, args)
+        if BlockUIChange(self) then
+            return
+        end
+
         local shortcut = args.DragDropInfo:GetShortcut()
         if shortcut == nil then
             return

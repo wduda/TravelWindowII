@@ -183,6 +183,14 @@ LC_EN.disableAll = "Disable All"
 LC_DE.disableAll = "Alle Deaktivieren"
 LC_FR.disableAll = "Désactiver tout"
 
+LC_EN.lockUI = "Lock UI"
+LC_DE.lockUI = "Benutzeroberfläche sperren"
+LC_FR.lockUI = "Verrouiller l’interface utilisateur"
+
+LC_EN.unlockKeyPress = "Hold Shift to unlock"
+LC_DE.unlockKeyPress = "Halten Sie die Umschalttaste gedrückt, um zu entsperren"
+LC_FR.unlockKeyPress = "Maintenez la touche Maj enfoncée pour déverrouiller"
+
 LC_EN.ignoreEsc = "Escape does not close main window"
 LC_DE.ignoreEsc = "Escape schliesst Travel-Fenster nicht"
 LC_FR.ignoreEsc = "Escape ne pas fermer la fenêtre principale"
