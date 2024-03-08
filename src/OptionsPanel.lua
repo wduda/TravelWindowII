@@ -380,7 +380,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainFadeScrollBar:SetValue(Settings.fadeOutSteps);
     self.mainFadeScrollBar:SetParent(self.GeneralTab);
 
-    self:UpdateSettings();
+    self:UpdateOptions();
 
     -- reset all setting button
     self.resetButton = Turbine.UI.Lotro.Button();
@@ -429,7 +429,6 @@ function OptionsPanel:AddGeneralItems()
             Settings.useMinWindow = 0;
         end
         _G.travel:Close();
-        _G.travel = nil;
         _G.travel = TravelWindow(Settings.useMinWindow);
     end
 
@@ -440,7 +439,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnStart = 0;
         end
-        _G.travel:UpdateSettings();
     end
 
     -- set the hide on combat option when changed
@@ -450,7 +448,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnCombat = 0;
         end
-        _G.travel:UpdateSettings();
     end
 
     -- set the close on travel option when changed
@@ -460,7 +457,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnTravel = 0;
         end
-        _G.travel:UpdateSettings();
     end
 
     -- set the ignore escape to close option when changed
@@ -470,7 +466,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.ignoreEsc = 0;
         end
-        _G.travel:UpdateSettings();
     end
 
     -- set the show toggle button option when changed
@@ -480,7 +475,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.showButton = 0;
         end
-        _G.travel:UpdateSettings();
         ToggleButton:SetVisible(sender:IsChecked());
     end
 
@@ -509,7 +503,6 @@ function OptionsPanel:AddGeneralItems()
             Settings.unlockKeyPress = 0
         end
         self:UpdateOptions()
-        _G.travel:UpdateSettings();
     end
 
     -- update settings when sliders change
@@ -523,7 +516,6 @@ function OptionsPanel:AddGeneralItems()
         -- do updates
         Settings.toggleMinOpacity = self.toggleMinScrollBar:GetValue() / 100;
         _G.travel:UpdateOpacity();
-        _G.travel:UpdateSettings();
     end
 
     self.toggleMaxScrollBar.ValueChanged = function(sender, args)
@@ -536,7 +528,6 @@ function OptionsPanel:AddGeneralItems()
         -- do updates
         Settings.toggleMaxOpacity = self.toggleMaxScrollBar:GetValue() / 100;
         _G.travel:UpdateOpacity();
-        _G.travel:UpdateSettings();
 
     end
 
@@ -551,7 +542,6 @@ function OptionsPanel:AddGeneralItems()
         -- do updates
         Settings.mainMinOpacity = self.mainMinScrollBar:GetValue() / 100;
         _G.travel:UpdateOpacity();
-        _G.travel:UpdateSettings();
     end
 
     self.mainMaxScrollBar.ValueChanged = function(sender, args)
@@ -564,7 +554,6 @@ function OptionsPanel:AddGeneralItems()
         -- do updates
         Settings.mainMaxOpacity = self.mainMaxScrollBar:GetValue() / 100;
         _G.travel:UpdateOpacity();
-        _G.travel:UpdateSettings();
     end
 
     self.fadeDelayScrollBar.ValueChanged = function(sender, args)
@@ -574,11 +563,10 @@ function OptionsPanel:AddGeneralItems()
     self.mainFadeScrollBar.ValueChanged = function(sender, args)
         Settings.fadeOutSteps = self.mainFadeScrollBar:GetValue();
         _G.travel:UpdateOpacity();
-        _G.travel:UpdateSettings();
     end
 end
 
-function OptionsPanel:UpdateSettings()
+function OptionsPanel:UpdateOptions()
     self.UseMinWindowCheck:SetChecked(Settings.useMinWindow == 1);
     self.HideOnStartCheck:SetChecked(Settings.hideOnStart == 1);
     self.HideOnCombatCheck:SetChecked(Settings.hideOnCombat == 1);
