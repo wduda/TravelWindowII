@@ -213,6 +213,8 @@ function InitDefaultSettings()
     Settings.hideOnCombat = 0;
     Settings.pulldownTravel = 0;
     Settings.hideOnTravel = 0;
+    Settings.lockUI = 0
+    Settings.unlockKeyPress = 0
     Settings.ignoreEsc = 0;
     Settings.showButton = 1;
     Settings.mode = 2;
@@ -350,6 +352,8 @@ function SetSettings(settingsArg, scope, importOldSettings)
     InitNumberSetting(settingsArg, "pulldownTravel");
     InitNumberSetting(settingsArg, "hideOnTravel");
     InitNumberSetting(settingsArg, "ignoreEsc");
+    InitNumberSetting(settingsArg, "lockUI");
+    InitNumberSetting(settingsArg, "unlockKeyPress");
     InitNumberSetting(settingsArg, "showButton");
     InitNumberSetting(settingsArg, "mode");
     InitNumberSetting(settingsArg, "filters");
@@ -459,6 +463,8 @@ function SaveSettings(scope)
     settingsStrings.hideOnCombat = tostring(Settings.hideOnCombat);
     settingsStrings.pulldownTravel = tostring(Settings.pulldownTravel);
     settingsStrings.hideOnTravel = tostring(Settings.hideOnTravel);
+    settingsStrings.lockUI = tostring(Settings.lockUI)
+    settingsStrings.unlockKeyPress = tostring(Settings.unlockKeyPress)
     settingsStrings.ignoreEsc = tostring(Settings.ignoreEsc);
     settingsStrings.showButton = tostring(Settings.showButton);
     settingsStrings.mode = tostring(Settings.mode);
@@ -485,4 +491,9 @@ function ClearLoaders()
     LoadOrder = nil
     LoadEnabled = nil
     LoadOrderNext = nil
+end
+
+function BlockUIChange(control)
+    return (Settings.lockUI == 1) and
+        (Settings.unlockKeyPress == 0 or not control:IsShiftKeyDown())
 end

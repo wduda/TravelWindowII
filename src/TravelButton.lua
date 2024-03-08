@@ -96,9 +96,12 @@ function TravelButton:Constructor()
 
     -- handle moving the button
     self.MouseMove = function(sender, args)
-        if (isMoving and Turbine.Engine.GetGameTime() - buttonDownTime > 0.4) then
+        if (isMoving and Turbine.Engine.GetGameTime() - buttonDownTime > 0.2) then
             self:SetBackColor(Turbine.UI.Color(1.0, 0.5, 0.5, 0.95));
             hasMoved = true;
+            if BlockUIChange(self) then
+                return
+            end
             local oldX, oldY = self:GetPosition();
             self:SetPosition(oldX + args.X - x, oldY + args.Y - y);
         end
