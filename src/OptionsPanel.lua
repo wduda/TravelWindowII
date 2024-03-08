@@ -214,6 +214,40 @@ function OptionsPanel:AddGeneralItems()
     self.PulldownTravelCheck:SetParent(self.GeneralTab);
     self.PulldownTravelCheck:SetVisible(true);
 
+    -- label for option to lock interface
+    self.lockUILabel = Turbine.UI.Label();
+    self.lockUILabel:SetSize(labelWidth, 20);
+    self.lockUILabel:SetPosition(20, NextY(30));
+    self.lockUILabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.lockUILabel:SetParent(self.GeneralTab);
+    self.lockUILabel:SetText(LC.lockUI);
+    self.lockUILabel:SetVisible(true);
+
+    -- checkbox for option to lock interface
+    self.lockUICheck = Turbine.UI.Lotro.CheckBox();
+    self.lockUICheck:SetSize(19, 19);
+    self.lockUICheck:SetPosition(450, NextY(0));
+    self.lockUICheck:SetChecked(Settings.lockUI == 1);
+    self.lockUICheck:SetParent(self.GeneralTab);
+    self.lockUICheck:SetVisible(true);
+
+    -- label for option to unlock interface with a key press
+    self.unlockKeyPressLabel = Turbine.UI.Label();
+    self.unlockKeyPressLabel:SetSize(labelWidth, 20);
+    self.unlockKeyPressLabel:SetPosition(50, NextY(30));
+    self.unlockKeyPressLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.unlockKeyPressLabel:SetParent(self.GeneralTab);
+    self.unlockKeyPressLabel:SetText(LC.unlockKeyPress);
+    self.unlockKeyPressLabel:SetVisible(true);
+
+    -- checkbox for option to unlock interface with a key press
+    self.unlockKeyPressCheck = Turbine.UI.Lotro.CheckBox();
+    self.unlockKeyPressCheck:SetSize(19, 19);
+    self.unlockKeyPressCheck:SetPosition(450, NextY(0));
+    self.unlockKeyPressCheck:SetChecked(Settings.unlockKeyPress == 1);
+    self.unlockKeyPressCheck:SetParent(self.GeneralTab);
+    self.unlockKeyPressCheck:SetVisible(true);
+
     -- label for toggle button sliders
     self.toggleSlidersLabel = Turbine.UI.Label();
     self.toggleSlidersLabel:SetSize(labelWidth, 20);
@@ -457,6 +491,24 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.pulldownTravel = 0;
         end
+    end
+
+    self.lockUICheck.CheckedChanged = function(sender, args)
+        if sender:IsChecked() then
+            Settings.lockUI = 1
+        else
+            Settings.lockUI = 0
+        end
+        self:UpdateOptions()
+    end
+
+    self.unlockKeyPressCheck.CheckedChanged = function(sender, args)
+        if sender:IsChecked() then
+            Settings.unlockKeyPress = 1
+        else
+            Settings.unlockKeyPress = 0
+        end
+        self:UpdateOptions()
         _G.travel:UpdateSettings();
     end
 
@@ -534,6 +586,9 @@ function OptionsPanel:UpdateSettings()
     self.ignoreEscCheck:SetChecked(Settings.ignoreEsc == 1);
     self.ShowButtonCheck:SetChecked(Settings.showButton == 1);
     self.PulldownTravelCheck:SetChecked(Settings.pulldownTravel == 1);
+    self.lockUICheck:SetChecked(Settings.lockUI == 1);
+    self.unlockKeyPressCheck:SetEnabled(Settings.lockUI == 1);
+    self.unlockKeyPressCheck:SetChecked(Settings.unlockKeyPress == 1);
     self.toggleMinScrollBar:SetValue(Settings.toggleMinOpacity * 100);
     self.toggleMaxScrollBar:SetValue(Settings.toggleMaxOpacity * 100);
     self.mainMinScrollBar:SetValue(Settings.mainMinOpacity * 100);
