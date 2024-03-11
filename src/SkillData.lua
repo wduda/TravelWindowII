@@ -954,8 +954,8 @@ function TravelDictionary:CreateDictionaries()
     })
     self.warden:AddSkill({
         id="0x70064ACB",
-        nameEN="Muster at Carn Dûm",        labelEN="Carn Dûm",   zoneEN="Angmar",
-        nameDE="Appell in Carn Dûm",        labelDE="Carn Dûm",   zoneDE="Angmar",
+        nameEN="Muster at Carn Dûm",       labelEN="Carn Dûm", zoneEN="Angmar",
+        nameDE="Appell in Carn Dûm",       labelDE="Carn Dûm", zoneDE="Angmar",
         nameFR="Rassemblement : Carn Dûm", labelFR="Carn Dûm", zoneFR="Angmar",
         map={{MapType.ERIADOR, 735, 100}},
         overlap={"0x70064ACA"},
@@ -1215,9 +1215,9 @@ function TravelDictionary:CreateDictionaries()
     self.racials:AddSkill({
         -- dwarf
         id="0x70006346",
-        nameEN="Return to Thorin's Gate",   descEN="This enables you to quickly return", labelEN="Thorin's Gate",   zoneEN="Ered Luin",
-        nameDE="Rückkehr zu Thorins Tor",   descDE="Hiermit gelangt Ihr schnell",        labelDE="Thorins Tor",     zoneEN="Ered Luin",
-        nameFR="Retour : Porte de Thorin", descFR="Ceci vous permet de retourner",    labelFR="Porte de Thorin", zoneEN="Ered Luin",
+        nameEN="Return to Thorin's Gate",  descEN="This enables you to quickly return", labelEN="Thorin's Gate",   zoneEN="Ered Luin",
+        nameDE="Rückkehr zu Thorins Tor",  descDE="Hiermit gelangt Ihr schnell",        labelDE="Thorins Tor",     zoneDE="Ered Luin",
+        nameFR="Retour : Porte de Thorin", descFR="Ceci vous permet de retourner",      labelFR="Porte de Thorin", zoneFR="Ered Luin",
         map={MapType.ERIADOR, 310, 270},
         level=1.2
     })
@@ -1252,8 +1252,8 @@ function TravelDictionary:CreateDictionaries()
         -- stoutaxe
         id="0x70053C0F",
         nameEN="Travel to Thorin's Hall",   labelEN="Thorin's Hall",    zoneEN="Ered Luin",
-        nameDE="Reise zu Thorins Halle",    labelDE="Thorins Halle",    zoneEN="Ered Luin",
-        nameFR="Aller au Palais de Thorin", labelFR="Palais de Thorin", zoneEN="Ered Luin",
+        nameDE="Reise zu Thorins Halle",    labelDE="Thorins Halle",    zoneDE="Ered Luin",
+        nameFR="Aller au Palais de Thorin", labelFR="Palais de Thorin", zoneFR="Ered Luin",
         map={MapType.ERIADOR, 345, 310},
         level=1.2
     })
@@ -1402,9 +1402,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.rep:AddSkill({
         id="0x7001BF91",
-        nameEN="Return to Thorin's Gate",     descEN="Thanks to your friendship", labelEN="Thorin's Gate",   zoneEN="Ered Luin",
-        nameDE="Rückkehr zu Thorins Tor",     descDE="Dank Eurer Freundschaft",   labelDE="Thorins Tor",     zoneEN="Ered Luin",
-        nameFR="Retour : Porte de Thorin", descFR="Grâce à l'amitié qui vous", labelFR="Porte de Thorin", zoneEN="Ered Luin",
+        nameEN="Return to Thorin's Gate",  descEN="Thanks to your friendship", labelEN="Thorin's Gate",   zoneEN="Ered Luin",
+        nameDE="Rückkehr zu Thorins Tor",  descDE="Dank Eurer Freundschaft",   labelDE="Thorins Tor",     zoneDE="Ered Luin",
+        nameFR="Retour : Porte de Thorin", descFR="Grâce à l'amitié qui vous", labelFR="Porte de Thorin", zoneFR="Ered Luin",
         map={{MapType.ERIADOR, 345, 310}},
         level=1.1
     })
