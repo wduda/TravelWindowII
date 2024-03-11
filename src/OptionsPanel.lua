@@ -777,10 +777,11 @@ end
 
 -- function to add the list of shortcuts to the sort tab
 function OptionsPanel:AddSortList()
+    local sortListWidth = 370
 
     -- create a listbox for all the shortcuts to be sorted
     self.sortListBox = Turbine.UI.ListBox();
-    self.sortListBox:SetSize(480, self.height - 120);
+    self.sortListBox:SetSize(sortListWidth, self.height - 120);
     self.sortListBox:SetPosition(200, 5);
     self.sortListBox:SetParent(self.SortTab);
     self.sortListBox:SetVisible(true);
@@ -790,7 +791,7 @@ function OptionsPanel:AddSortList()
         if shortcut:GetTravelType() ~= 8 then
             local tempLabel = Turbine.UI.Label();
             tempLabel:SetText(shortcut:GetLabel());
-            tempLabel:SetSize(280, 20);
+            tempLabel:SetSize(sortListWidth, 20);
             tempLabel:SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
             tempLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
             tempLabel:SetZOrder(90);
@@ -822,7 +823,7 @@ function OptionsPanel:AddSortList()
     self.listBoxScrollBar:SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
     self.listBoxScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
     self.listBoxScrollBar:SetSize(10, self.height - 120);
-    self.listBoxScrollBar:SetPosition(270, 0);
+    self.listBoxScrollBar:SetPosition(sortListWidth - 10, 0);
     self.listBoxScrollBar:SetZOrder(100);
     self.listBoxScrollBar:SetVisible(true);
     self.listBoxScrollBar:SetParent(self.sortListBox);
