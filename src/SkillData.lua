@@ -3,1266 +3,1266 @@
 -- add the data to custom dictionaries to maintain the order
 function TravelDictionary:CreateDictionaries()
     -- add the hunter locations
-    self.hunter:AddLabelTag({EN=" (Guide)", DE=" (Führer)", FR=" (Guide)" })
+    self.hunter:AddLabelTag({EN="Guide", DE="Führer", FR="Guide" })
     self.hunter:AddSkill({
         id="0x7000A2C1",
-        nameEN="Return to Camp",
-        nameDE="Zurück zum Lager",
-        nameFR="Retour au campement",
+        EN={ name="Return to Camp", },
+        DE={ name="Zurück zum Lager", },
+        FR={ name="Retour au campement", },
         map={{MapType.NONE, -1, -1}},
         level=1
     })
     self.hunter:AddSkill({
         id="0x7000A2C3",
-        nameEN="Guide to Michel Delving", labelEN="Michel Delving", zoneEN="Shire",
-        nameDE="Führer nach Michelbinge", labelDE="Michelbinge",    zoneDE="Auenland",
-        nameFR="Guide vers Grand'Cave",   labelFR="Grand'Cave",     zoneFR="Comté",
+        EN={ name="Guide to Michel Delving", label="Michel Delving", zone="Shire", },
+        DE={ name="Führer nach Michelbinge", label="Michelbinge",    zone="Auenland", },
+        FR={ name="Guide vers Grand'Cave",   label="Grand'Cave",     zone="Comté", },
         map={{MapType.ERIADOR, 360, 390}},
         overlap={"0x700062C8", "0x70023262"},
         level=1
     })
     self.hunter:AddSkill({
         id="0x70003F41",
-        nameEN="Guide to Thorin's Hall",         labelEN="Thorin's Hall",    zoneEN="Ered Luin",
-        nameDE="Führer zu Thorins Halle",        labelDE="Thorins Halle",    zoneDE="Ered Luin",
-        nameFR="Guide vers le Palais de Thorin", labelFR="Palais de Thorin", zoneFR="Ered Luin",
+        EN={ name="Guide to Thorin's Hall",         label="Thorin's Hall",    zone="Ered Luin", },
+        DE={ name="Führer zu Thorins Halle",        label="Thorins Halle",    zone="Ered Luin", },
+        FR={ name="Guide vers le Palais de Thorin", label="Palais de Thorin", zone="Ered Luin", },
         map={{MapType.ERIADOR, 305, 270}},
         overlap={"0x70006346", "0x70053C0F", "0x7001BF91"},
         level=1.1
     })
     self.hunter:AddSkill({
         id="0x70003F42",
-        nameEN="Guide to Bree",    labelEN="West Gate",   zoneEN="Bree",
-        nameDE="Führer nach Bree", labelDE="Westtor",     zoneDE="Bree",
-        nameFR="Guide vers Bree",  labelFR="Porte Ouest", zoneFR="Bree",
+        EN={ name="Guide to Bree",    label="West Gate",   zone="Bree", },
+        DE={ name="Führer nach Bree", label="Westtor",     zone="Bree", },
+        FR={ name="Guide vers Bree",  label="Porte Ouest", zone="Bree", },
         map={{MapType.ERIADOR, 585, 335}},
         overlap={"0x700062F6", "0x7001BF90"},
         level=5
     })
     self.hunter:AddSkill({
         id="0x70064F4C",
-        nameEN="Guide to Clegur",    labelEN="Clegur", zoneEN="Swanfleet",
-        nameDE="Führer nach Clegur", labelDE="Clegur", zoneDE="Schwanenfleet",
-        nameFR="Guide vers Clegur",  labelFR="Clegur", zoneFR="Noues des cygnes",
+        EN={ name="Guide to Clegur",    label="Clegur", zone="Swanfleet", },
+        DE={ name="Führer nach Clegur", label="Clegur", zone="Schwanenfleet", },
+        FR={ name="Guide vers Clegur",  label="Clegur", zone="Noues des cygnes", },
         map={{MapType.ERIADOR, 755, 555}},
         overlap={"0x70064F47"},
         level=7
     })
     self.hunter:AddSkill({
         id="0x700634AA",
-        nameEN="Guide to Swanfleet",              labelEN="Lhan Garan", zoneEN="Swanfleet",
-        nameDE="Führer nach Schwanenfleet",       labelDE="Lhan Garan", zoneDE="Schwanenfleet",
-        nameFR="Guide vers les Noues des cygnes", labelFR="Lhan Garan", zoneFR="Noues des cygnes",
+        EN={ name="Guide to Swanfleet",              label="Lhan Garan", zone="Swanfleet", },
+        DE={ name="Führer nach Schwanenfleet",       label="Lhan Garan", zone="Schwanenfleet", },
+        FR={ name="Guide vers les Noues des cygnes", label="Lhan Garan", zone="Noues des cygnes", },
         map={{MapType.ERIADOR, 825, 490}},
         overlap={"0x700634A4"},
         level=10
     })
     self.hunter:AddSkill({
         id="0x700634A7",
-        nameEN="Guide to Cardolan",      labelEN="Herne", zoneEN="Cardolan",
-        nameDE="Führer nach Cardolan",   labelDE="Herne", zoneDE="Cardolan",
-        nameFR="Guide vers le Cardolan", labelFR="Herne", zoneFR="Cardolan",
+        EN={ name="Guide to Cardolan",      label="Herne", zone="Cardolan", },
+        DE={ name="Führer nach Cardolan",   label="Herne", zone="Cardolan", },
+        FR={ name="Guide vers le Cardolan", label="Herne", zone="Cardolan", },
         map={{MapType.ERIADOR, 560, 495}},
         overlap={"0x700634AE"},
         level=15
     })
     self.hunter:AddSkill({
         id="0x7006323C",
-        nameEN="Guide to Andrath",    labelEN="Andrath", zoneEN="Cardolan",
-        nameDE="Führer nach Andrath", labelDE="Andrath", zoneDE="Cardolan",
-        nameFR="Guide vers Andrath",  labelFR="Andrath", zoneFR="Cardolan",
+        EN={ name="Guide to Andrath",    label="Andrath", zone="Cardolan", },
+        DE={ name="Führer nach Andrath", label="Andrath", zone="Cardolan", },
+        FR={ name="Guide vers Andrath",  label="Andrath", zone="Cardolan", },
         map={{MapType.ERIADOR, 580, 465}},
         overlap={"0x7006323D"},
         level=17
     })
     self.hunter:AddSkill({
         id="0x7006133F",
-        nameEN="Guide to Nobottle",      labelEN="Nobottle",    zoneEN="Yondershire",
-        nameDE="Führer nach Neuhausen",  labelDE="Neuhausen",   zoneDE="Ferne Auen",
-        nameFR="Guide vers Bourdeneuve", labelFR="Bourdeneuve", zoneFR="Comté lointain",
+        EN={ name="Guide to Nobottle",      label="Nobottle",    zone="Yondershire", },
+        DE={ name="Führer nach Neuhausen",  label="Neuhausen",   zone="Ferne Auen", },
+        FR={ name="Guide vers Bourdeneuve", label="Bourdeneuve", zone="Comté lointain", },
         map={{MapType.ERIADOR, 440, 350}},
         overlap={"0x70061340"},
         level=20
     })
     self.hunter:AddSkill({
         id="0x7000A2C2",
-        nameEN="Guide to Ost Guruth",     labelEN="Ost Guruth",   zoneEN="Lone-lands",
-        nameDE="Führer zur Feste Guruth", labelDE="Feste Guruth", zoneDE="Einsame Lande",
-        nameFR="Guide vers Ost Guruth",   labelFR="Ost Guruth",   zoneFR="Terres Solitaires",
+        EN={ name="Guide to Ost Guruth",     label="Ost Guruth",   zone="Lone-lands", },
+        DE={ name="Führer zur Feste Guruth", label="Feste Guruth", zone="Einsame Lande", },
+        FR={ name="Guide vers Ost Guruth",   label="Ost Guruth",   zone="Terres Solitaires", },
         map={{MapType.ERIADOR, 755, 400}},
         overlap={"0x70020441"},
         level=25
     })
     self.hunter:AddSkill({
         id="0x70003F43",
-        nameEN="Guide to Esteldín",    labelEN="Esteldín", zoneEN="North Downs",
-        nameDE="Führer nach Esteldín", labelDE="Esteldín", zoneDE="Nordhöhen",
-        nameFR="Guide vers Esteldin",  labelFR="Esteldin", zoneFR="Hauts du Nord",
+        EN={ name="Guide to Esteldín",    label="Esteldín", zone="North Downs", },
+        DE={ name="Führer nach Esteldín", label="Esteldín", zone="Nordhöhen", },
+        FR={ name="Guide vers Esteldin",  label="Esteldin", zone="Hauts du Nord", },
         map={{MapType.ERIADOR, 655, 290}},
         level=30
     })
     self.hunter:AddSkill({
         id="0x7000A2C4",
-        nameEN="Guide to Evendim",    labelEN="Tinnudir", zoneEN="Evendim",
-        nameDE="Führer nach Evendim", labelDE="Tinnudir", zoneDE="Evendim",
-        nameFR="Guide vers Evendim",  labelFR="Tinnudir", zoneFR="Evendim",
+        EN={ name="Guide to Evendim",    label="Tinnudir", zone="Evendim", },
+        DE={ name="Führer nach Evendim", label="Tinnudir", zone="Evendim", },
+        FR={ name="Guide vers Evendim",  label="Tinnudir", zone="Evendim", },
         map={{MapType.ERIADOR, 490, 235}},
         level=35
     })
     self.hunter:AddSkill({
         id="0x70060EA6",
-        nameEN="Guide to Tornhad",    labelEN="Tornhad", zoneEN="Angle of Mitheithel",
-        nameDE="Führer nach Tornhad", labelDE="Tornhad", zoneDE="Der Bogen von Mitheithel",
-        nameFR="Guide vers Tornhad",  labelFR="Tornhad", zoneFR="L'Angle de Mitheithel",
+        EN={ name="Guide to Tornhad",    label="Tornhad", zone="Angle of Mitheithel", },
+        DE={ name="Führer nach Tornhad", label="Tornhad", zone="Der Bogen von Mitheithel", },
+        FR={ name="Guide vers Tornhad",  label="Tornhad", zone="L'Angle de Mitheithel", },
         map={{MapType.ERIADOR, 775, 435}},
         overlap={"0x70060EA8"},
         level=40
     })
     self.hunter:AddSkill({
         id="0x70003F44",
-        nameEN="Guide to Rivendell",   labelEN="Rivendell", zoneEN="Trollshaws",
-        nameDE="Führer nach Bruchtal", labelDE="Bruchtal",  zoneDE="Die Trollhöhen",
-        nameFR="Guide vers Fondcombe", labelFR="Fondcombe", zoneFR="Trouée des Trolls",
+        EN={ name="Guide to Rivendell",   label="Rivendell", zone="Trollshaws", },
+        DE={ name="Führer nach Bruchtal", label="Bruchtal",  zone="Die Trollhöhen", },
+        FR={ name="Guide vers Fondcombe", label="Fondcombe", zone="Trouée des Trolls", },
         map={{MapType.ERIADOR, 865, 410}},
         overlap={"0x7000631F", "0x70023263"},
         level=40.1
     })
     self.hunter:AddSkill({
         id="0x7002E756",
-        nameEN="Guide to the Misty Mountains", labelEN="Hrimbarg", zoneEN="Misty Mountains",
-        nameDE="Führer ins Nebelgebirge",      labelDE="Hrimbarg", zoneDE="Nebelgebirge",
-        nameFR="Guide vers les Monts Brumeux", labelFR="Hrimbarg", zoneFR="Monts Brumeux",
+        EN={ name="Guide to the Misty Mountains", label="Hrimbarg", zone="Misty Mountains", },
+        DE={ name="Führer ins Nebelgebirge",      label="Hrimbarg", zone="Nebelgebirge", },
+        FR={ name="Guide vers les Monts Brumeux", label="Hrimbarg", zone="Monts Brumeux", },
         map={{MapType.ERIADOR, 915, 265}},
         level=40.2
     })
     self.hunter:AddSkill({
         id="0x70059D16",
-        nameEN="Guide to Trestlebridge",     labelEN="Trestlebridge",   zoneEN="North Downs",
-        nameDE="Führer nach Schragen",       labelDE="Schragen",        zoneDE="Nordhöhen",
-        nameFR="Guide vers Pont-à-Tréteaux", labelFR="Pont-à-Tréteaux", zoneFR="Hauts du Nord",
+        EN={ name="Guide to Trestlebridge",     label="Trestlebridge",   zone="North Downs", },
+        DE={ name="Führer nach Schragen",       label="Schragen",        zone="Nordhöhen", },
+        FR={ name="Guide vers Pont-à-Tréteaux", label="Pont-à-Tréteaux", zone="Hauts du Nord", },
         map={{MapType.ERIADOR, 590, 285}},
         overlap={"0x70059D12"},
         level=40.3
     })
     self.hunter:AddSkill({
         id="0x70059D0C",
-        nameEN="Guide to Trader's Wharf",          labelEN="Trader's Wharf",     zoneEN="Evendim",
-        nameDE="Führer zum Händlerkai",            labelDE="Händlerkai",         zoneDE="Evendim",
-        nameFR="Guide vers le Quai des marchands", labelFR="Quai des marchands", zoneFR="Evendim",
+        EN={ name="Guide to Trader's Wharf",          label="Trader's Wharf",     zone="Evendim", },
+        DE={ name="Führer zum Händlerkai",            label="Händlerkai",         zone="Evendim", },
+        FR={ name="Guide vers le Quai des marchands", label="Quai des marchands", zone="Evendim", },
         map={{MapType.ERIADOR, 515, 305}},
         overlap={"0x70059D0E"},
         level=40.4
     })
     self.hunter:AddSkill({
         id="0x70017C82",
-        nameEN="Guide to Sûri-kylä",    labelEN="Sûri-kylä", zoneEN="Forochel",
-        nameDE="Führer nach Sûri-kylä", labelDE="Sûri-kylä", zoneDE="Forochel",
-        nameFR="Guide vers Sûri-kylä",  labelFR="Sûri-kylä", zoneFR="Forochel",
+        EN={ name="Guide to Sûri-kylä",    label="Sûri-kylä", zone="Forochel", },
+        DE={ name="Führer nach Sûri-kylä", label="Sûri-kylä", zone="Forochel", },
+        FR={ name="Guide vers Sûri-kylä",  label="Sûri-kylä", zone="Forochel", },
         map={{MapType.ERIADOR, 430, 50}},
         level=42
     })
     self.hunter:AddSkill({
         id="0x7000A2C5",
-        nameEN="Guide to West Angmar",           labelEN="Aughaire", zoneEN="Angmar",
-        nameDE="Führer in das westliche Angmar", labelDE="Aughaire", zoneDE="Angmar",
-        nameFR="Guide vers l'ouest d'Angmar",    labelFR="Aughaire", zoneFR="Angmar",
+        EN={ name="Guide to West Angmar",           label="Aughaire", zone="Angmar", },
+        DE={ name="Führer in das westliche Angmar", label="Aughaire", zone="Angmar", },
+        FR={ name="Guide vers l'ouest d'Angmar",    label="Aughaire", zone="Angmar", },
         map={{MapType.ERIADOR, 825, 185}},
         level=45
     })
     self.hunter:AddSkill({
         id="0x7000A2C6",
-        nameEN="Guide to East Angmar",      labelEN="Gath Forthnír", zoneEN="Angmar",
-        nameDE="Führer nach Ost-Angmar",    labelDE="Gath Forthnír", zoneDE="Angmar",
-        nameFR="Guide vers l'est d'Angmar", labelFR="Gath Forthnír", zoneFR="Angmar",
+        EN={ name="Guide to East Angmar",      label="Gath Forthnír", zone="Angmar", },
+        DE={ name="Führer nach Ost-Angmar",    label="Gath Forthnír", zone="Angmar", },
+        FR={ name="Guide vers l'est d'Angmar", label="Gath Forthnír", zone="Angmar", },
         map={{MapType.ERIADOR, 705, 180}},
         level=49
     })
     self.hunter:AddSkill({
         id="0x70017C81",
-        nameEN="Guide to Echad Dúnann",    labelEN="Echad Dúnann", zoneEN="Eregion",
-        nameDE="Führer nach Echad Dúnann", labelDE="Echad Dúnann", zoneDE="Eregion",
-        nameFR="Guide vers Echad Dunann",  labelFR="Echad Dunann", zoneFR="Eregion",
+        EN={ name="Guide to Echad Dúnann",    label="Echad Dúnann", zone="Eregion", },
+        DE={ name="Führer nach Echad Dúnann", label="Echad Dúnann", zone="Eregion", },
+        FR={ name="Guide vers Echad Dunann",  label="Echad Dunann", zone="Eregion", },
         map={{MapType.ERIADOR, 855, 535}},
         level=50
     })
     self.hunter:AddSkill({
         id="0x70017C7A",
-        nameEN="Guide to the Twenty-first Hall",      labelEN="Twenty-first Hall",      zoneEN="Moria",
-        nameDE="Führer zur Einundzwanzigsten Halle",  labelDE="Einundzwanzigste Halle", zoneDE="Moria",
-        nameFR="Guide vers la vingt et unième salle", labelFR="Vingt et unième salle",  zoneFR="Moria",
+        EN={ name="Guide to the Twenty-first Hall",      label="Twenty-first Hall",      zone="Moria", },
+        DE={ name="Führer zur Einundzwanzigsten Halle",  label="Einundzwanzigste Halle", zone="Moria", },
+        FR={ name="Guide vers la vingt et unième salle", label="Vingt et unième salle",  zone="Moria", },
         map={{MapType.RHOVANION, 95, 585}, {MapType.ERIADOR, 950, 510}},
         level=55
     })
     self.hunter:AddSkill({
         id="0x7002E754",
-        nameEN="Guide to Caras Galadhon",    labelEN="Caras Galadhon", zoneEN="Lothlórien",
-        nameDE="Führer nach Caras Galadhon", labelDE="Caras Galadhon", zoneDE="Lothlórien",
-        nameFR="Guide vers Caras Galadhon",  labelFR="Caras Galadhon", zoneFR="Lothlórien",
+        EN={ name="Guide to Caras Galadhon",    label="Caras Galadhon", zone="Lothlórien", },
+        DE={ name="Führer nach Caras Galadhon", label="Caras Galadhon", zone="Lothlórien", },
+        FR={ name="Guide vers Caras Galadhon",  label="Caras Galadhon", zone="Lothlórien", },
         map={{MapType.RHOVANION, 120, 660}},
         overlap={"0x70048C8C"},
         level=60
     })
     self.hunter:AddSkill({
         id="0x7001F459",
-        nameEN="Guide to Mirk-eaves",     labelEN="Mirk-eaves",  zoneEN="Mirkwood",
-        nameDE="Führer zur Dunkelsenke",  labelDE="Dunkelsenke", zoneDE="Düsterwald",
-        nameFR="Guide vers l'Orée noire", labelFR="Orée noire",  zoneFR="Forêt Noire",
+        EN={ name="Guide to Mirk-eaves",     label="Mirk-eaves",  zone="Mirkwood", },
+        DE={ name="Führer zur Dunkelsenke",  label="Dunkelsenke", zone="Düsterwald", },
+        FR={ name="Guide vers l'Orée noire", label="Orée noire",  zone="Forêt Noire", },
         map={{MapType.RHOVANION, 365, 630}},
         level=61
     })
     self.hunter:AddSkill({
         id="0x700235EF",
-        nameEN="Guide to Harndirion",    labelEN="Harndirion", zoneEN="Enedwaith",
-        nameDE="Führer nach Harndirion", labelDE="Harndirion", zoneDE="Enedwaith",
-        nameFR="Guide vers Harndirion",  labelFR="Harndirion", zoneFR="Enedwaith",
+        EN={ name="Guide to Harndirion",    label="Harndirion", zone="Enedwaith", },
+        DE={ name="Führer nach Harndirion", label="Harndirion", zone="Enedwaith", },
+        FR={ name="Guide vers Harndirion",  label="Harndirion", zone="Enedwaith", },
         map={{MapType.ERIADOR, 815, 635}},
         level=62
     })
     self.hunter:AddSkill({
         id="0x7002A93F",
-        nameEN="Guide to Galtrev",    labelEN="Galtrev", zoneEN="Dunland",
-        nameDE="Führer nach Galtrev", labelDE="Galtrev", zoneDE="Dunland",
-        nameFR="Guide pour Galtrev",  labelFR="Galtrev", zoneFR="Pays de Dun",
+        EN={ name="Guide to Galtrev",    label="Galtrev", zone="Dunland", },
+        DE={ name="Führer nach Galtrev", label="Galtrev", zone="Dunland", },
+        FR={ name="Guide pour Galtrev",  label="Galtrev", zone="Pays de Dun", },
         map={{MapType.ERIADOR, 810, 715}},
         overlap={"0x7002C647"},
         level=65
     })
     self.hunter:AddSkill({
         id="0x7002C62C",
-        nameEN="Guide to Stangard",    labelEN="Stangard",  zoneEN="Great River",
-        nameDE="Führer nach Stangard", labelDE="Stangard",  zoneDE="Großer Fluss",
-        nameFR="Guide vers Stangarde", labelFR="Stangarde", zoneFR="Grand Fleuve",
+        EN={ name="Guide to Stangard",    label="Stangard",  zone="Great River", },
+        DE={ name="Führer nach Stangard", label="Stangard",  zone="Großer Fluss", },
+        FR={ name="Guide vers Stangarde", label="Stangarde", zone="Grand Fleuve", },
         map={{MapType.RHOVANION, 200, 720}, {MapType.ROHAN, 545, 90}},
         overlap={"0x7002C65D"},
         level=75
     })
     self.hunter:AddSkill({
         id="0x7003198E",
-        nameEN="Guide to Snowbourn",       labelEN="Snowbourn",    zoneEN="East Rohan",
-        nameDE="Führer nach Schneegrenze", labelDE="Schneegrenze", zoneDE="Ost-Rohan",
-        nameFR="Guide vers Neigebronne",   labelFR="Neigebronne",  zoneFR="Rohan est",
+        EN={ name="Guide to Snowbourn",       label="Snowbourn",    zone="East Rohan", },
+        DE={ name="Führer nach Schneegrenze", label="Schneegrenze", zone="Ost-Rohan", },
+        FR={ name="Guide vers Neigebronne",   label="Neigebronne",  zone="Rohan est", },
         map={{MapType.ROHAN, 515, 500}},
         overlap={"0x70031A46"},
         level=80
     })
     self.hunter:AddSkill({
         id="0x70036B5D",
-        nameEN="Guide to Forlaw",     labelEN="Forlaw",  zoneEN="Wildermore",
-        nameDE="Führer nach Forlach", labelDE="Forlach", zoneDE="Wildermark",
-        nameFR="Guide vers Forloi",   labelFR="Forloi",  zoneFR="Landes farouches",
+        EN={ name="Guide to Forlaw",     label="Forlaw",  zone="Wildermore", },
+        DE={ name="Führer nach Forlach", label="Forlach", zone="Wildermark", },
+        FR={ name="Guide vers Forloi",   label="Forloi",  zone="Landes farouches", },
         map={{MapType.ROHAN, 450, 175}},
         overlap={"0x70036B5E"},
         level=85
     })
     self.hunter:AddSkill({
         id="0x7003DC71",
-        nameEN="Guide to Aldburg",    labelEN="Aldburg", zoneEN="West Rohan",
-        nameDE="Führer nach Aldburg", labelDE="Aldburg", zoneDE="West-Rohan",
-        nameFR="Guide vers Aldburg",  labelFR="Aldburg", zoneFR="Rohan de l'Ouest",
+        EN={ name="Guide to Aldburg",    label="Aldburg", zone="West Rohan", },
+        DE={ name="Führer nach Aldburg", label="Aldburg", zone="West-Rohan", },
+        FR={ name="Guide vers Aldburg",  label="Aldburg", zone="Rohan de l'Ouest", },
         map={{MapType.ROHAN, 570, 640}},
         overlap={"0x7003DC81"},
         level=88
     })
     self.hunter:AddSkill({
         id="0x7003DC72",
-        nameEN="Guide to Helm's Deep",          labelEN="Helm's Deep",     zoneEN="West Rohan",
-        nameDE="Führer nach Helms Klamm",       labelDE="Helms Klamm",     zoneDE="West-Rohan",
-        nameFR="Guide vers le Gouffre de Helm", labelFR="Gouffre de Helm", zoneFR="Rohan de l'Ouest",
+        EN={ name="Guide to Helm's Deep",          label="Helm's Deep",     zone="West Rohan", },
+        DE={ name="Führer nach Helms Klamm",       label="Helms Klamm",     zone="West-Rohan", },
+        FR={ name="Guide vers le Gouffre de Helm", label="Gouffre de Helm", zone="Rohan de l'Ouest", },
         map={{MapType.ROHAN, 275, 565}},
         overlap={"0x7003DC82"},
         level=90
     })
     self.hunter:AddSkill({
         id="0x70041197",
-        nameEN="Guide to Dol Amroth",    descEN="in western Gondor", labelEN="Dol Amroth", zoneEN="Western Gondor",
-        nameDE="Führer nach Dol Amroth", descDE="nach Dol Amroth.",  labelDE="Dol Amroth", zoneDE="West-Gondor",
-        nameFR="Guide vers Dol Amroth",  descFR="l'Ouest du Gondor", labelFR="Dol Amroth", zoneFR="Gondor de l'Ouest",
+        EN={ name="Guide to Dol Amroth",    desc="in western Gondor", label="Dol Amroth", zone="Western Gondor", },
+        DE={ name="Führer nach Dol Amroth", desc="nach Dol Amroth.",  label="Dol Amroth", zone="West-Gondor", },
+        FR={ name="Guide vers Dol Amroth",  desc="l'Ouest du Gondor", label="Dol Amroth", zone="Gondor de l'Ouest", },
         map={{MapType.GONDOR, 225, 550}},
         overlap={"0x700411AC"},
         level=98
     })
     self.hunter:AddSkill({
         id="0x70043A63",
-        nameEN="Guide to Arnach",    labelEN="Arnach", zoneEN="Eastern Gondor",
-        nameDE="Führer nach Arnach", labelDE="Arnach", zoneDE="Ost-Gondor",
-        nameFR="Guide pour Arnach",  labelFR="Arnach", zoneFR="Gondor de l'Ouest",
+        EN={ name="Guide to Arnach",    label="Arnach", zone="Eastern Gondor", },
+        DE={ name="Führer nach Arnach", label="Arnach", zone="Ost-Gondor", },
+        FR={ name="Guide pour Arnach",  label="Arnach", zone="Gondor de l'Ouest", },
         map={{MapType.GONDOR, 715, 425}},
         overlap={"0x70043A6A"},
         level=100
     })
     self.hunter:AddSkill({
         id="0x70044985",
-        nameEN="Guide to Minas Tirith",    labelEN="Minas Tirith", zoneEN="Old Anórien",
-        nameDE="Führer nach Minas Tirith", labelDE="Minas Tirith", zoneDE="Alt-Anórien",
-        nameFR="Guide vers Minas Tirith",  labelFR="Minas Tirith", zoneFR="Ancien Anórien",
+        EN={ name="Guide to Minas Tirith",    label="Minas Tirith", zone="Old Anórien", },
+        DE={ name="Führer nach Minas Tirith", label="Minas Tirith", zone="Alt-Anórien", },
+        FR={ name="Guide vers Minas Tirith",  label="Minas Tirith", zone="Ancien Anórien", },
         map={{MapType.GONDOR, 670, 345}},
         overlap={"0x7004497E"},
         level=100.1
     })
     self.hunter:AddSkill({
         id="0x700459AF",
-        nameEN="Guide to the War-stead",                 labelEN="War-stead",                zoneEN="Far Anórien",
-        nameDE="Führer zum Kriegslager der Rohirrim",    labelDE="Kriegslager der Rohirrim", zoneDE="Fernes Anórien",
-        nameFR="Guide pour se rendre au camp militaire", labelFR="Camp militaire",           zoneFR="Lointain Anórien",
+        EN={ name="Guide to the War-stead",                 label="War-stead",                zone="Far Anórien", },
+        DE={ name="Führer zum Kriegslager der Rohirrim",    label="Kriegslager der Rohirrim", zone="Fernes Anórien", },
+        FR={ name="Guide pour se rendre au camp militaire", label="Camp militaire",           zone="Lointain Anórien", },
         map={{MapType.GONDOR, 665, 140}},
         overlap={"0x700459A9"},
         level=102
     })
     self.hunter:AddSkill({
         id="0x70046CBB",
-        nameEN="Guide to after-battle Minas Tirith",           labelEN="Minas Tirith after battle",      zoneEN="Anórien",
-        nameDE="Führer zum schlachtgezeichneten Minas Tirith", labelDE="Minas Tirith nach der Schlacht", zoneDE="Anórien",
-        nameFR="Guide de Minas Tirith après la bataille",      labelFR="Minas Tirith après la bataille", zoneFR="Anórien",
+        EN={ name="Guide to after-battle Minas Tirith",           label="Minas Tirith after battle",      zone="Anórien", },
+        DE={ name="Führer zum schlachtgezeichneten Minas Tirith", label="Minas Tirith nach der Schlacht", zone="Anórien", },
+        FR={ name="Guide de Minas Tirith après la bataille",      label="Minas Tirith après la bataille", zone="Anórien", },
         map={{MapType.GONDOR, 670, 375}},
         overlap={"0x70046CC0"},
         level=105
     })
     self.hunter:AddSkill({
         id="0x70047074",
-        nameEN="Guide to after-battle Osgiliath",           labelEN="Osgiliath after-battle",      zoneEN="Anórien",
-        nameDE="Führer zum schlachtgezeichneten Osgiliath", labelDE="Osgiliath nach der Schlacht", zoneDE="Anórien",
-        nameFR="Guide vers Osgiliath après la bataille",    labelFR="Osgiliath après la bataille", zoneFR="Anórien",
+        EN={ name="Guide to after-battle Osgiliath",           label="Osgiliath after-battle",      zone="Anórien", },
+        DE={ name="Führer zum schlachtgezeichneten Osgiliath", label="Osgiliath nach der Schlacht", zone="Anórien", },
+        FR={ name="Guide vers Osgiliath après la bataille",    label="Osgiliath après la bataille", zone="Anórien", },
         map={{MapType.GONDOR, 855, 335}},
         overlap={"0x7004707D"},
         level=105.1
     })
     self.hunter:AddSkill({
         id="0x70047077",
-        nameEN="Guide to Henneth Annûn",   labelEN="Henneth Annûn", zoneEN="Ithilien",
-        nameDE="Führer zu Henneth Annûn",  labelDE="Henneth Annûn", zoneDE="Ithilien",
-        nameFR="Guide vers Henneth Annûn", labelFR="Henneth Annûn", zoneFR="Ithilien",
+        EN={ name="Guide to Henneth Annûn",   label="Henneth Annûn", zone="Ithilien", },
+        DE={ name="Führer zu Henneth Annûn",  label="Henneth Annûn", zone="Ithilien", },
+        FR={ name="Guide vers Henneth Annûn", label="Henneth Annûn", zone="Ithilien", },
         map={{MapType.GONDOR, 875, 385}},
         overlap={"0x70047080"},
         level=105.2
     })
     self.hunter:AddSkill({
         id="0x70047BFA",
-        nameEN="Guide to the Camp of the Host", labelEN="Camp of the Host", zoneEN="The Wastes",
-        nameDE="Führer zum Lager des Heeres",   labelDE="Lager des Heeres", zoneDE="Das Ödland",
-        nameFR="Guide vers le Camp de l'armée", labelFR="Camp de l'armée",  zoneFR="Les Landes désertiques",
+        EN={ name="Guide to the Camp of the Host", label="Camp of the Host", zone="The Wastes", },
+        DE={ name="Führer zum Lager des Heeres",   label="Lager des Heeres", zone="Das Ödland", },
+        FR={ name="Guide vers le Camp de l'armée", label="Camp de l'armée",  zone="Les Landes désertiques", },
         map={{MapType.GONDOR, 805, 170}},
         overlap={"0x70047BF4"},
         level=105.3
     })
     self.hunter:AddSkill({
         id="0x70047C1D",
-        nameEN="Guide to Haerondir",    labelEN="Haerondir", zoneEN="The Wastes",
-        nameDE="Führer nach Haerondir", labelDE="Haerondir", zoneDE="Das Ödland",
-        nameFR="Guide vers Haerondir",  labelFR="Haerondir", zoneFR="Les Landes désertiques",
+        EN={ name="Guide to Haerondir",    label="Haerondir", zone="The Wastes", },
+        DE={ name="Führer nach Haerondir", label="Haerondir", zone="Das Ödland", },
+        FR={ name="Guide vers Haerondir",  label="Haerondir", zone="Les Landes désertiques", },
         map={{MapType.GONDOR, 855, 100}},
         overlap={"0x70047C1B"},
         level=105.4
     })
     self.hunter:AddSkill({
         id="0x7004AE1E",
-        nameEN="Guide to the Udûn Foothold",  labelEN="Udûn Foothold",    zoneEN="Mordor",
-        nameDE="Führer zum Udûn-Brückenkopf", labelDE="Udûn-Brückenkopf", zoneDE="Mordor",
-        nameFR="Guide vers le fort d'Udûn",   labelFR="Fort d'Udûn",      zoneFR="Mordor",
+        EN={ name="Guide to the Udûn Foothold",  label="Udûn Foothold",    zone="Mordor", },
+        DE={ name="Führer zum Udûn-Brückenkopf", label="Udûn-Brückenkopf", zone="Mordor", },
+        FR={ name="Guide vers le fort d'Udûn",   label="Fort d'Udûn",      zone="Mordor", },
         map={{MapType.GONDOR, 925, 230}},
         overlap={"0x7004AE1D"},
         level=106
     })
     self.hunter:AddSkill({
         id="0x7004D73B",
-        nameEN="Guide to Dale",    labelEN="Dale", zoneEN="Eryn Lasgalen",
-        nameDE="Führer nach Thal", labelDE="Thal", zoneDE="Eryn Lasgalen",
-        nameFR="Guide vers Dale",  labelFR="Dale", zoneFR="Eryn Lasgalen",
+        EN={ name="Guide to Dale",    label="Dale", zone="Eryn Lasgalen", },
+        DE={ name="Führer nach Thal", label="Thal", zone="Eryn Lasgalen", },
+        FR={ name="Guide vers Dale",  label="Dale", zone="Eryn Lasgalen", },
         map={{MapType.RHOVANION, 720, 215}},
         overlap={"0x7004D738"},
         level=115
     })
     self.hunter:AddSkill({
         id="0x7004FACC",
-        nameEN="Guide to Járnfast",    labelEN="Járnfast", zoneEN="The Ironfold",
-        nameDE="Führer nach Járnfast", labelDE="Járnfast", zoneDE="Der Eisenbruch",
-        nameFR="Guide vers Jarnfast",  labelFR="Jarnfast", zoneFR="La Crevasse de Fer",
+        EN={ name="Guide to Járnfast",    label="Járnfast", zone="The Ironfold", },
+        DE={ name="Führer nach Járnfast", label="Járnfast", zone="Der Eisenbruch", },
+        FR={ name="Guide vers Jarnfast",  label="Jarnfast", zone="La Crevasse de Fer", },
         map={{MapType.RHOVANION, 890, 110}},
         overlap={"0x7004FAC3"},
         level=116
     })
     self.hunter:AddSkill({
         id="0x7004FACB",
-        nameEN="Guide to Skarháld",    labelEN="Skarháld", zoneEN="Ered Mithrin",
-        nameDE="Führer nach Skarháld", labelDE="Skarháld", zoneDE="Ered Mithrin",
-        nameFR="Guide vers Skarhald",  labelFR="Skarhald", zoneFR="Ered Mithrin",
+        EN={ name="Guide to Skarháld",    label="Skarháld", zone="Ered Mithrin", },
+        DE={ name="Führer nach Skarháld", label="Skarháld", zone="Ered Mithrin", },
+        FR={ name="Guide vers Skarhald",  label="Skarhald", zone="Ered Mithrin", },
         map={{MapType.RHOVANION, 430, 90}},
         overlap={"0x7004FAC5"},
         level=117
     })
     self.hunter:AddSkill({
         id="0x70052F07",
-        nameEN="Guide to Beorninghús",      labelEN="Beorninghús",   zoneEN="Vales of Anduin",
-        nameDE="Führer nach Beorningerhús", labelDE="Beorningerhús", zoneDE="Die Täler des Anduin",
-        nameFR="Guide pour Beorninghus",    labelFR="Beorninghus",   zoneFR="Val d'Anduin",
+        EN={ name="Guide to Beorninghús",      label="Beorninghús",   zone="Vales of Anduin", },
+        DE={ name="Führer nach Beorningerhús", label="Beorningerhús", zone="Die Täler des Anduin", },
+        FR={ name="Guide pour Beorninghus",    label="Beorninghus",   zone="Val d'Anduin", },
         map={{MapType.RHOVANION, 390, 300}},
         overlap={"0x70041A22", "0x70052F12"},
         level=120
     })
     self.hunter:AddSkill({
         id="0x70052F08",
-        nameEN="Guide to Hultvís",      labelEN="Hultvís", zoneEN="Vales of Anduin",
-        nameDE="Leitfaden für Hultvís", labelDE="Hultvís", zoneDE="Die Täler des Anduin",
-        nameFR="Guide de Hultvis",      labelFR="Hultvis", zoneFR="Val d'Anduin",
+        EN={ name="Guide to Hultvís",      label="Hultvís", zone="Vales of Anduin", },
+        DE={ name="Leitfaden für Hultvís", label="Hultvís", zone="Die Täler des Anduin", },
+        FR={ name="Guide de Hultvis",      label="Hultvis", zone="Val d'Anduin", },
         map={{MapType.RHOVANION, 375, 400}},
         overlap={"0x70052F04"},
         level=120.1
     })
     self.hunter:AddSkill({
         id="0x700551F4",
-        nameEN="Guide to Estolad Lân",    labelEN="Estolad Lân", zoneEN="Imlad Morgul",
-        nameDE="Führer nach Estolad Lân", labelDE="Estolad Lân", zoneDE="Imlad Morgul",
-        nameFR="Guide vers Estolad Lân",  labelFR="Estolad Lân", zoneFR="Imlad Morgul",
+        EN={ name="Guide to Estolad Lân",    label="Estolad Lân", zone="Imlad Morgul", },
+        DE={ name="Führer nach Estolad Lân", label="Estolad Lân", zone="Imlad Morgul", },
+        FR={ name="Guide vers Estolad Lân",  label="Estolad Lân", zone="Imlad Morgul", },
         map={{MapType.GONDOR, 960, 460}},
         overlap={"0x700551F8"},
         level=125
     })
     self.hunter:AddSkill({
         id="0x7005762D",
-        nameEN="Guide to Limlók",    labelEN="Limlók", zoneEN="Wells of Langflood",
-        nameDE="Führer nach Limlók", labelDE="Limlók", zoneDE="Quellen des Langflut",
-        nameFR="Guide de Limlok",    labelFR="Limlok", zoneFR="Puits du Long Fleuve",
+        EN={ name="Guide to Limlók",    label="Limlók", zone="Wells of Langflood", },
+        DE={ name="Führer nach Limlók", label="Limlók", zone="Quellen des Langflut", },
+        FR={ name="Guide de Limlok",    label="Limlok", zone="Puits du Long Fleuve", },
         map={{MapType.RHOVANION, 345, 230}},
         overlap={"0x70057629"},
         level=130
     })
     self.hunter:AddSkill({
         id="0x70058571",
-        nameEN="Guide to Annâk-khurfu",    labelEN="Annâk-khurfu", zoneEN="Elderslade",
-        nameDE="Führer nach Annâk-khurfu", labelDE="Annâk-khurfu", zoneDE="Elderslade",
-        nameFR="Guide vers Annâk-khurfu",  labelFR="Annâk-khurfu", zoneFR="Elderslade",
+        EN={ name="Guide to Annâk-khurfu",    label="Annâk-khurfu", zone="Elderslade", },
+        DE={ name="Führer nach Annâk-khurfu", label="Annâk-khurfu", zone="Elderslade", },
+        FR={ name="Guide vers Annâk-khurfu",  label="Annâk-khurfu", zone="Elderslade", },
         map={{MapType.RHOVANION, 530, 90}},
         overlap={"0x7005856F"},
         level=130.1
     })
     self.hunter:AddSkill({
         id="0x7005AA91",
-        nameEN="Guide to Akrâz-zahar",    labelEN="Akrâz-zahar", zoneEN="Eryn Lasgalen",
-        nameDE="Führer nach Akrâz-zahar", labelDE="Akrâz-zahar", zoneDE="Eryn Lasgalen",
-        nameFR="Guide vers Akrâz-zahar",  labelFR="Akrâz-zahar", zoneFR="Eryn Lasgalen",
+        EN={ name="Guide to Akrâz-zahar",    label="Akrâz-zahar", zone="Eryn Lasgalen", },
+        DE={ name="Führer nach Akrâz-zahar", label="Akrâz-zahar", zone="Eryn Lasgalen", },
+        FR={ name="Guide vers Akrâz-zahar",  label="Akrâz-zahar", zone="Eryn Lasgalen", },
         map={{MapType.RHOVANION, 750, 115}},
         overlap={"0x7005AA90"},
         level=130.2
     })
     self.hunter:AddSkill({
         id="0x7005AA95",
-        nameEN="Guide to Azanulbizar",    labelEN="Amdân", zoneEN="Azanulbizar",
-        nameDE="Führer nach Azanulbizar", labelDE="Amdân", zoneDE="Azanulbizar",
-        nameFR="Guide vers Azanulbizar",  labelFR="Amdân", zoneFR="Azanulbizar",
+        EN={ name="Guide to Azanulbizar",    label="Amdân", zone="Azanulbizar", },
+        DE={ name="Führer nach Azanulbizar", label="Amdân", zone="Azanulbizar", },
+        FR={ name="Guide vers Azanulbizar",  label="Amdân", zone="Azanulbizar", },
         map={{MapType.RHOVANION, 210, 555}},
         overlap={"0x7005AA92"},
         level=130.3
     })
     self.hunter:AddSkill({
         id="0x7005D487",
-        nameEN="Guide to the Noble Gate",   labelEN="Noble Gate",  zoneEN="Gundabad",
-        nameDE="Führer zum Prachttor",      labelDE="Prachttor",   zoneDE="Gundabad",
-        nameFR="Guide vers la Porte Noble", labelFR="Porte Noble", zoneFR="Gundabad",
+        EN={ name="Guide to the Noble Gate",   label="Noble Gate",  zone="Gundabad", },
+        DE={ name="Führer zum Prachttor",      label="Prachttor",   zone="Gundabad", },
+        FR={ name="Guide vers la Porte Noble", label="Porte Noble", zone="Gundabad", },
         map={{MapType.RHOVANION, 190, 130}},
         overlap={"0x7005D47C"},
         level=131
     })
     self.hunter:AddSkill({
         id="0x7005D47D",
-        nameEN="Guide to Leitstáth",    labelEN="Leitstáth", zoneEN="Gundabad",
-        nameDE="Führer nach Leitstáth", labelDE="Leitstáth", zoneDE="Gundabad",
-        nameFR="Guide vers Leitstath",  labelFR="Leitstath", zoneFR="Gundabad",
+        EN={ name="Guide to Leitstáth",    label="Leitstáth", zone="Gundabad", },
+        DE={ name="Führer nach Leitstáth", label="Leitstáth", zone="Gundabad", },
+        FR={ name="Guide vers Leitstath",  label="Leitstath", zone="Gundabad", },
         map={{MapType.RHOVANION, 270, 65}},
         overlap={"0x7005D484"},
         level=135
     })
     self.hunter:AddSkill({
         id="0x70064AC8",
-        nameEN="Guide to Carn Dûm",    labelEN="Carn Dûm", zoneEN="Angmar",
-        nameDE="Führer nach Carn Dûm", labelDE="Carn Dûm", zoneDE="Angmar",
-        nameFR="Guide vers Carn Dûm",  labelFR="Carn Dûm", zoneFR="Angmar",
+        EN={ name="Guide to Carn Dûm",    label="Carn Dûm", zone="Angmar", },
+        DE={ name="Führer nach Carn Dûm", label="Carn Dûm", zone="Angmar", },
+        FR={ name="Guide vers Carn Dûm",  label="Carn Dûm", zone="Angmar", },
         map={{MapType.ERIADOR, 735, 100}},
         overlap={"0x70064ACA"},
         level=140.1
     })
     self.hunter:AddSkill({
         id="0x700658EA",
-        nameEN="Guide to Pelargir",    labelEN="Pelargir", zoneEN="King's Gondor",
-        nameDE="Führer nach Pelargir", labelDE="Pelargir", zoneDE="Königreich Gondor",
-        nameFR="Guide vers Pelargir",  labelFR="Pelargir", zoneFR="Gondor royal",
+        EN={ name="Guide to Pelargir",    label="Pelargir", zone="King's Gondor", },
+        DE={ name="Führer nach Pelargir", label="Pelargir", zone="Königreich Gondor", },
+        FR={ name="Guide vers Pelargir",  label="Pelargir", zone="Gondor royal", },
         map={{MapType.GONDOR, 670, 625}},
         overlap={"0x700658EB"},
         level=141
     })
     self.hunter:AddSkill({
         id="0x70068711",
-        nameEN="Guide to Dol Amroth",    descEN="King's Gondor",     labelEN="Dol Amroth", zoneEN="King's Gondor",
-        nameDE="Führer nach Dol Amroth", descDE="Königreich Gondor", labelDE="Dol Amroth", zoneDE="Königreich Gondor",
-        nameFR="Guide vers Dol Amroth",  descFR="le Gondor royal",   labelFR="Dol Amroth", zoneFR="Gondor royal",
+        EN={ name="Guide to Dol Amroth",    desc="King's Gondor",     label="Dol Amroth", zone="King's Gondor", },
+        DE={ name="Führer nach Dol Amroth", desc="Königreich Gondor", label="Dol Amroth", zone="Königreich Gondor", },
+        FR={ name="Guide vers Dol Amroth",  desc="le Gondor royal",   label="Dol Amroth", zone="Gondor royal", },
         map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 210, 485}},
         overlap={"0x70068700"},
         level=142
     })
     self.hunter:AddSkill({
         id="0x70068717",
-        nameEN="Guide to Lond Cirion",    labelEN="Lond Cirion", zoneEN="Anfalas",
-        nameDE="Führer nach Lond Cirion", labelDE="Lond Cirion", zoneDE="Anfalas",
-        nameFR="Guide vers Lond Cirion",  labelFR="Lond Cirion", zoneFR="Anfalas",
+        EN={ name="Guide to Lond Cirion",    label="Lond Cirion", zone="Anfalas", },
+        DE={ name="Führer nach Lond Cirion", label="Lond Cirion", zone="Anfalas", },
+        FR={ name="Guide vers Lond Cirion",  label="Lond Cirion", zone="Anfalas", },
         map={{MapType.GONDOR, 255, 420}, {MapType.HARADWAITH, 230, 20}},
         overlap={"0x70068703"},
         level=143
     })
     self.hunter:AddSkill({
         id="0x70068713",
-        nameEN="Guide to Halrax",    labelEN="Halrax", zoneEN="Shield Isles",
-        nameDE="Führer nach Halrax", labelDE="Halrax", zoneDE="Die Schildinseln",
-        nameFR="Guide vers Halrax",  labelFR="Halrax", zoneFR="Les îles du Bouclier",
+        EN={ name="Guide to Halrax",    label="Halrax", zone="Shield Isles", },
+        DE={ name="Führer nach Halrax", label="Halrax", zone="Die Schildinseln", },
+        FR={ name="Guide vers Halrax",  label="Halrax", zone="Les îles du Bouclier", },
         map={{MapType.HARADWAITH, 275, 160}},
         overlap={"0x70068702"},
         level=145
     })
     self.hunter:AddSkill({
         id="0x70068719",
-        nameEN="Guide to Jax Phanâl",    labelEN="Jax Phanâl", zoneEN="Umbar",
-        nameDE="Führer nach Jax Phanâl", labelDE="Jax Phanâl", zoneDE="Umbar",
-        nameFR="Guide vers Jax Phanâl",  labelFR="Jax Phanâl", zoneFR="Umbar",
+        EN={ name="Guide to Jax Phanâl",    label="Jax Phanâl", zone="Umbar", },
+        DE={ name="Führer nach Jax Phanâl", label="Jax Phanâl", zone="Umbar", },
+        FR={ name="Guide vers Jax Phanâl",  label="Jax Phanâl", zone="Umbar", },
         map={{MapType.HARADWAITH, 305, 315}},
         overlap={"0x70068701"},
         level=146
     })
     self.hunter:AddSkill({
         id="0x70068718",
-        nameEN="Guide to Umbar",    labelEN="Umbar Baharbêl", zoneEN="Umbar",
-        nameDE="Führer nach Umbar", labelDE="Umbar Baharbêl", zoneDE="Umbar",
-        nameFR="Guide vers Umbar",  labelFR="Umbar Baharbêl", zoneFR="Umbar",
+        EN={ name="Guide to Umbar",    label="Umbar Baharbêl", zone="Umbar", },
+        DE={ name="Führer nach Umbar", label="Umbar Baharbêl", zone="Umbar", },
+        FR={ name="Guide vers Umbar",  label="Umbar Baharbêl", zone="Umbar", },
         map={{MapType.HARADWAITH, 505, 370}},
         overlap={"0x700686FF"},
         level=148
     })
     self.hunter:AddSkill({
         id="0x700697EF",
-        nameEN="Guide to the Bloody Eagle Tavern",          labelEN="Bloody Eagle Tavern",         zoneEN="Umbar",
-        nameDE="Führer zur Taverne \"Zum Blutigen Adler\"", labelDE="Zum Blutigen Adler",          zoneDE="Umbar",
-        nameFR="Guide vers la taverne de l'Aigle sanglant", labelFR="Taverne de l'Aigle sanglant", zoneFR="Umbar",
+        EN={ name="Guide to the Bloody Eagle Tavern",          label="Bloody Eagle Tavern",         zone="Umbar", },
+        DE={ name="Führer zur Taverne \"Zum Blutigen Adler\"", label="Zum Blutigen Adler",          zone="Umbar", },
+        FR={ name="Guide vers la taverne de l'Aigle sanglant", label="Taverne de l'Aigle sanglant", zone="Umbar", },
         map={{MapType.HARADWAITH, 475, 400}},
         overlap={"0x700697F2"},
         level=149
     })
 
     -- add the Warden locations
-    self.warden:AddLabelTag({EN=" (Muster)", DE=" (Appell)", FR=" (Rassemblement)" })
+    self.warden:AddLabelTag({EN="Muster", DE="Appell", FR="Rassemblement" })
     self.warden:AddSkill({
         id="0x70064F4D",
-        nameEN="Muster at Clegur",       labelEN="Clegur", zoneEN="Swanfleet",
-        nameDE="Appell in Clegur",       labelDE="Clegur", zoneDE="Schwanenfleet",
-        nameFR="Rassemblement à Clegur", labelFR="Clegur", zoneFR="Noues des cygnes",
+        EN={ name="Muster at Clegur",       label="Clegur", zone="Swanfleet", },
+        DE={ name="Appell in Clegur",       label="Clegur", zone="Schwanenfleet", },
+        FR={ name="Rassemblement à Clegur", label="Clegur", zone="Noues des cygnes", },
         map={{MapType.ERIADOR, 755, 555}},
         overlap={"0x70064F47"},
         level=7
     })
     self.warden:AddSkill({
         id="0x700634B6",
-        nameEN="Muster at Swanfleet",                labelEN="Lhan Garan", zoneEN="Swanfleet",
-        nameDE="Appell in Schwanenfleet",            labelDE="Lhan Garan", zoneDE="Schwanenfleet",
-        nameFR="Rassemblement aux Noues des cygnes", labelFR="Lhan Garan", zoneFR="Noues des cygnes",
+        EN={ name="Muster at Swanfleet",                label="Lhan Garan", zone="Swanfleet", },
+        DE={ name="Appell in Schwanenfleet",            label="Lhan Garan", zone="Schwanenfleet", },
+        FR={ name="Rassemblement aux Noues des cygnes", label="Lhan Garan", zone="Noues des cygnes", },
         map={{MapType.ERIADOR, 825, 490}},
         overlap={"0x700634A4"},
         level=10
     })
     self.warden:AddSkill({
         id="0x700634AD",
-        nameEN="Muster at Cardolan",        labelEN="Herne", zoneEN="Cardolan",
-        nameDE="Appell in Cardolan",        labelDE="Herne", zoneDE="Cardolan",
-        nameFR="Rassemblement au Cardolan", labelFR="Herne", zoneFR="Cardolan",
+        EN={ name="Muster at Cardolan",        label="Herne", zone="Cardolan", },
+        DE={ name="Appell in Cardolan",        label="Herne", zone="Cardolan", },
+        FR={ name="Rassemblement au Cardolan", label="Herne", zone="Cardolan", },
         map={{MapType.ERIADOR, 560, 495}},
         overlap={"0x700634AE"},
         level=15
     })
     self.warden:AddSkill({
         id="0x70063242",
-        nameEN="Muster at Andrath",       labelEN="Andrath", zoneEN="Cardolan",
-        nameDE="Appell in Andrath",       labelDE="Andrath", zoneDE="Cardolan",
-        nameFR="Rassemblement à Andrath", labelFR="Andrath", zoneFR="Cardolan",
+        EN={ name="Muster at Andrath",       label="Andrath", zone="Cardolan", },
+        DE={ name="Appell in Andrath",       label="Andrath", zone="Cardolan", },
+        FR={ name="Rassemblement à Andrath", label="Andrath", zone="Cardolan", },
         map={{MapType.ERIADOR, 580, 465}},
         overlap={"0x7006323D"},
         level=17
     })
     self.warden:AddSkill({
         id="0x7006133E",
-        nameEN="Muster at Nobottle",          labelEN="Nobottle",    zoneEN="Yondershire",
-        nameDE="Appell in Neuhausen",         labelDE="Neuhausen",   zoneDE="Ferne Auen",
-        nameFR="Rassemblement à Bourdeneuve", labelFR="Bourdeneuve", zoneFR="Comté lointain",
+        EN={ name="Muster at Nobottle",          label="Nobottle",    zone="Yondershire", },
+        DE={ name="Appell in Neuhausen",         label="Neuhausen",   zone="Ferne Auen", },
+        FR={ name="Rassemblement à Bourdeneuve", label="Bourdeneuve", zone="Comté lointain", },
         map={{MapType.ERIADOR, 440, 350}},
         overlap={"0x70061340"},
         level=20
     })
     self.warden:AddSkill({
         id="0x70014786",
-        nameEN="Muster in Ost Guruth",       labelEN="Ost Guruth",   zoneEN="Lone-lands",
-        nameDE="Appell in der Feste Guruth", labelDE="Feste Guruth", zoneDE="Einsame Lande",
-        nameFR="Rassemblement : Ost Guruth", labelFR="Ost Guruth",   zoneFR="Terres Solitaires",
+        EN={ name="Muster in Ost Guruth",       label="Ost Guruth",   zone="Lone-lands", },
+        DE={ name="Appell in der Feste Guruth", label="Feste Guruth", zone="Einsame Lande", },
+        FR={ name="Rassemblement : Ost Guruth", label="Ost Guruth",   zone="Terres Solitaires", },
         map={{MapType.ERIADOR, 755, 400}},
         overlap={"0x70020441"},
         level=25
     })
     self.warden:AddSkill({
         id="0x70014798",
-        nameEN="Muster in Esteldín",       labelEN="Esteldín", zoneEN="North Downs",
-        nameDE="Appell in Esteldín",       labelDE="Esteldín", zoneDE="Nordhöhen",
-        nameFR="Rassemblement : Esteldin", labelFR="Esteldin", zoneFR="Hauts du Nord",
+        EN={ name="Muster in Esteldín",       label="Esteldín", zone="North Downs", },
+        DE={ name="Appell in Esteldín",       label="Esteldín", zone="Nordhöhen", },
+        FR={ name="Rassemblement : Esteldin", label="Esteldin", zone="Hauts du Nord", },
         map={{MapType.ERIADOR, 655, 290}},
         level=30
     })
     self.warden:AddSkill({
         id="0x7001478E",
-        nameEN="Muster in Evendim",                   labelEN="Tinnudir", zoneEN="Evendim",
-        nameDE="Appell in Evendim",                   labelDE="Tinnudir", zoneDE="Evendim",
-        nameFR="Rassemblement : La région d'Evendim", labelFR="Tinnudir", zoneFR="Evendim",
+        EN={ name="Muster in Evendim",                   label="Tinnudir", zone="Evendim", },
+        DE={ name="Appell in Evendim",                   label="Tinnudir", zone="Evendim", },
+        FR={ name="Rassemblement : La région d'Evendim", label="Tinnudir", zone="Evendim", },
         map={{MapType.ERIADOR, 490, 235}},
         level=35
     })
     self.warden:AddSkill({
         id="0x70060EA5",
-        nameEN="Muster at Tornhad", labelEN="Tornhad", zoneEN="Angle of Mitheithel",
-        nameDE="Appell in Tornhad", labelDE="Tornhad", zoneDE="Der Bogen von Mitheithel",
-        nameFR="Retour à Tornhad",  labelFR="Tornhad", zoneFR="L'Angle de Mitheithel",
+        EN={ name="Muster at Tornhad", label="Tornhad", zone="Angle of Mitheithel", },
+        DE={ name="Appell in Tornhad", label="Tornhad", zone="Der Bogen von Mitheithel", },
+        FR={ name="Retour à Tornhad",  label="Tornhad", zone="L'Angle de Mitheithel", },
         map={{MapType.ERIADOR, 775, 435}},
         overlap={"0x70060EA8"},
         level=40
     })
     self.warden:AddSkill({
         id="0x70014791",
-        nameEN="Muster in Rivendell",       labelEN="Rivendell", zoneEN="Trollshaws",
-        nameDE="Appell in Bruchtal",        labelDE="Bruchtal",  zoneDE="Die Trollhöhen",
-        nameFR="Rassemblement : Fondcombe", labelFR="Fondcombe", zoneFR="Trouée des Trolls",
+        EN={ name="Muster in Rivendell",       label="Rivendell", zone="Trollshaws", },
+        DE={ name="Appell in Bruchtal",        label="Bruchtal",  zone="Die Trollhöhen", },
+        FR={ name="Rassemblement : Fondcombe", label="Fondcombe", zone="Trouée des Trolls", },
         map={{MapType.ERIADOR, 865, 410}},
         overlap={"0x7000631F", "0x70023263"},
         level=40.1
     })
     self.warden:AddSkill({
         id="0x700303DD",
-        nameEN="Muster in the Misty Mountains",     labelEN="Hrimbarg", zoneEN="Misty Mountains",
-        nameDE="Appell im Nebelgebirge",            labelDE="Hrimbarg", zoneDE="Nebelgebirge",
-        nameFR="Rassemblement : Les Monts Brumeux", labelFR="Hrimbarg", zoneFR="Monts Brumeux",
+        EN={ name="Muster in the Misty Mountains",     label="Hrimbarg", zone="Misty Mountains", },
+        DE={ name="Appell im Nebelgebirge",            label="Hrimbarg", zone="Nebelgebirge", },
+        FR={ name="Rassemblement : Les Monts Brumeux", label="Hrimbarg", zone="Monts Brumeux", },
         map={{MapType.ERIADOR, 915, 265}},
         level=40.2
     })
     self.warden:AddSkill({
         id="0x70059D10",
-        nameEN="Muster in Trestlebridge",         labelEN="Trestlebridge",   zoneEN="North Downs",
-        nameDE="Appell in Schragen",              labelDE="Schragen",        zoneDE="Nordhöhen",
-        nameFR="Rassemblement : Pont-à-Tréteaux", labelFR="Pont-à-Tréteaux", zoneFR="Hauts du Nord",
+        EN={ name="Muster in Trestlebridge",         label="Trestlebridge",   zone="North Downs", },
+        DE={ name="Appell in Schragen",              label="Schragen",        zone="Nordhöhen", },
+        FR={ name="Rassemblement : Pont-à-Tréteaux", label="Pont-à-Tréteaux", zone="Hauts du Nord", },
         map={{MapType.ERIADOR, 590, 285}},
         overlap={"0x70059D12"},
         level=40.3
     })
     self.warden:AddSkill({
         id="0x70059D09",
-        nameEN="Muster in Trader's Wharf",           labelEN="Trader's Wharf",     zoneEN="Evendim",
-        nameDE="Appell am Händlerkai",               labelDE="Händlerkai",         zoneDE="Evendim",
-        nameFR="Rassemblement : Quai des marchands", labelFR="Quai des marchands", zoneFR="Evendim",
+        EN={ name="Muster in Trader's Wharf",           label="Trader's Wharf",     zone="Evendim", },
+        DE={ name="Appell am Händlerkai",               label="Händlerkai",         zone="Evendim", },
+        FR={ name="Rassemblement : Quai des marchands", label="Quai des marchands", zone="Evendim", },
         map={{MapType.ERIADOR, 515, 305}},
         overlap={"0x70059D0E"},
         level=40.4
     })
     self.warden:AddSkill({
         id="0x700237D4",
-        nameEN="Muster in Sûri-kylä",       labelEN="Sûri-kylä", zoneEN="Forochel",
-        nameDE="Appell in Sûri-kylä",       labelDE="Sûri-kylä", zoneDE="Forochel",
-        nameFR="Rassemblement : Sûri-kylä", labelFR="Sûri-kylä", zoneFR="Forochel",
+        EN={ name="Muster in Sûri-kylä",       label="Sûri-kylä", zone="Forochel", },
+        DE={ name="Appell in Sûri-kylä",       label="Sûri-kylä", zone="Forochel", },
+        FR={ name="Rassemblement : Sûri-kylä", label="Sûri-kylä", zone="Forochel", },
         map={{MapType.ERIADOR, 430, 50}},
         level=42
     })
     self.warden:AddSkill({
         id="0x7001819E",
-        nameEN="Muster in the Twenty-first Hall",          labelEN="Twenty-first Hall",     zoneEN="Moria",
-        nameDE="Appell in der Einundzwanzigsten Halle",    labelDE="21. Halle",             zoneDE="Moria",
-        nameFR="Rassemblement : La vingt et unième salle", labelFR="Vingt et unième salle", zoneFR="Moria",
+        EN={ name="Muster in the Twenty-first Hall",          label="Twenty-first Hall",     zone="Moria", },
+        DE={ name="Appell in der Einundzwanzigsten Halle",    label="21. Halle",             zone="Moria", },
+        FR={ name="Rassemblement : La vingt et unième salle", label="Vingt et unième salle", zone="Moria", },
         map={{MapType.RHOVANION, 95, 585}, {MapType.ERIADOR, 950, 510}},
         level=55
     })
     self.warden:AddSkill({
         id="0x700303DF",
-        nameEN="Muster in Caras Galadhon",       labelEN="Caras Galadhon", zoneEN="Lothlórien",
-        nameDE="Appell in Caras Galadhon",       labelDE="Caras Galadhon", zoneDE="Lothlórien",
-        nameFR="Rassemblement : Caras Galadhon", labelFR="Caras Galadhon", zoneFR="Lothlórien",
+        EN={ name="Muster in Caras Galadhon",       label="Caras Galadhon", zone="Lothlórien", },
+        DE={ name="Appell in Caras Galadhon",       label="Caras Galadhon", zone="Lothlórien", },
+        FR={ name="Rassemblement : Caras Galadhon", label="Caras Galadhon", zone="Lothlórien", },
         map={{MapType.RHOVANION, 120, 660}},
         overlap={"0x70048C8C"},
         level=60
     })
     self.warden:AddSkill({
         id="0x7001F45C",
-        nameEN="Muster in Mirk-eaves",         labelEN="Mirk-Eaves",  zoneEN="Mirkwood",
-        nameDE="Appell in der Dunkelsenke",    labelDE="Dunkelsenke", zoneDE="Düsterwald",
-        nameFR="Rassemblement : L'Orée noire", labelFR="Orée noire",  zoneFR="Forêt Noire",
+        EN={ name="Muster in Mirk-eaves",         label="Mirk-Eaves",  zone="Mirkwood", },
+        DE={ name="Appell in der Dunkelsenke",    label="Dunkelsenke", zone="Düsterwald", },
+        FR={ name="Rassemblement : L'Orée noire", label="Orée noire",  zone="Forêt Noire", },
         map={{MapType.RHOVANION, 365, 630}},
         level=61
     })
     self.warden:AddSkill({
         id="0x700235EB",
-        nameEN="Muster in Harndirion",       labelEN="Harndirion", zoneEN="Enedwaith",
-        nameDE="Appell in Harndirion",       labelDE="Harndirion", zoneDE="Enedwaith",
-        nameFR="Rassemblement : Harndirion", labelFR="Harndirion", zoneFR="Enedwaith",
+        EN={ name="Muster in Harndirion",       label="Harndirion", zone="Enedwaith", },
+        DE={ name="Appell in Harndirion",       label="Harndirion", zone="Enedwaith", },
+        FR={ name="Rassemblement : Harndirion", label="Harndirion", zone="Enedwaith", },
         map={{MapType.ERIADOR, 815, 635}},
         level=62
     })
     self.warden:AddSkill({
         id="0x7002A90A",
-        nameEN="Muster in Galtrev",       labelEN="Galtrev", zoneEN="Dunland",
-        nameDE="Appell in Galtrev",       labelDE="Galtrev", zoneDE="Dunland",
-        nameFR="Rassemblement : Galtrev", labelFR="Galtrev", zoneFR="Pays de Dun",
+        EN={ name="Muster in Galtrev",       label="Galtrev", zone="Dunland", },
+        DE={ name="Appell in Galtrev",       label="Galtrev", zone="Dunland", },
+        FR={ name="Rassemblement : Galtrev", label="Galtrev", zone="Pays de Dun", },
         map={{MapType.ERIADOR, 810, 715}},
         overlap={"0x7002C647"},
         level=65
     })
     self.warden:AddSkill({
         id="0x7002C646",
-        nameEN="Muster in Stangard",        labelEN="Stangard",  zoneEN="Great River",
-        nameDE="Appell in Stangard",        labelDE="Stangard",  zoneDE="Großer Fluss",
-        nameFR="Rassemblement : Stangarde", labelFR="Stangarde", zoneFR="Grand Fleuve",
+        EN={ name="Muster in Stangard",        label="Stangard",  zone="Great River", },
+        DE={ name="Appell in Stangard",        label="Stangard",  zone="Großer Fluss", },
+        FR={ name="Rassemblement : Stangarde", label="Stangarde", zone="Grand Fleuve", },
         map={{MapType.RHOVANION, 200, 720}, {MapType.ROHAN, 545, 90}},
         overlap={"0x7002C65D"},
         level=75
     })
     self.warden:AddSkill({
         id="0x7003198D",
-        nameEN="Muster in Snowbourn",         labelEN="Snowbourn",    zoneEN="East Rohan",
-        nameDE="Appell in Schneegrenze",      labelDE="Schneegrenze", zoneDE="Ost-Rohan",
-        nameFR="Rassemblement : Neigebronne", labelFR="Neigebronne",  zoneFR="Rohan est",
+        EN={ name="Muster in Snowbourn",         label="Snowbourn",    zone="East Rohan", },
+        DE={ name="Appell in Schneegrenze",      label="Schneegrenze", zone="Ost-Rohan", },
+        FR={ name="Rassemblement : Neigebronne", label="Neigebronne",  zone="Rohan est", },
         map={{MapType.ROHAN, 515, 500}},
         overlap={"0x70031A46"},
         level=80
     })
     self.warden:AddSkill({
         id="0x70036B5B",
-        nameEN="Muster in Forlaw",       labelEN="Forlaw",  zoneEN="Wildermore",
-        nameDE="Appell in Forlach",      labelDE="Forlach", zoneDE="Wildermark",
-        nameFR="Rassemblement : Forloi", labelFR="Forloi",  zoneFR="Landes farouches",
+        EN={ name="Muster in Forlaw",       label="Forlaw",  zone="Wildermore", },
+        DE={ name="Appell in Forlach",      label="Forlach", zone="Wildermark", },
+        FR={ name="Rassemblement : Forloi", label="Forloi",  zone="Landes farouches", },
         map={{MapType.ROHAN, 450, 175}},
         overlap={"0x70036B5E"},
         level=85
     })
     self.warden:AddSkill({
         id="0x7003DC7A",
-        nameEN="Muster in Aldburg",       labelEN="Aldburg", zoneEN="West Rohan",
-        nameDE="Appell in Aldburg",       labelDE="Aldburg", zoneDE="West-Rohan",
-        nameFR="Rassemblement : Aldburg", labelFR="Aldburg", zoneFR="Rohan de l'Ouest",
+        EN={ name="Muster in Aldburg",       label="Aldburg", zone="West Rohan", },
+        DE={ name="Appell in Aldburg",       label="Aldburg", zone="West-Rohan", },
+        FR={ name="Rassemblement : Aldburg", label="Aldburg", zone="Rohan de l'Ouest", },
         map={{MapType.ROHAN, 570, 640}},
         overlap={"0x7003DC81"},
         level=88
     })
     self.warden:AddSkill({
         id="0x7003DC79",
-        nameEN="Muster in Helm's Deep",           labelEN="Helm's Deep",     zoneEN="West Rohan",
-        nameDE="Appell in Helms Klamm",           labelDE="Helms Klamm",     zoneDE="West-Rohan",
-        nameFR="Rassemblement : Gouffre de Helm", labelFR="Gouffre de Helm", zoneFR="Rohan de l'Ouest",
+        EN={ name="Muster in Helm's Deep",           label="Helm's Deep",     zone="West Rohan", },
+        DE={ name="Appell in Helms Klamm",           label="Helms Klamm",     zone="West-Rohan", },
+        FR={ name="Rassemblement : Gouffre de Helm", label="Gouffre de Helm", zone="Rohan de l'Ouest", },
         map={{MapType.ROHAN, 275, 565}},
         overlap={"0x7003DC82"},
         level=90
     })
     self.warden:AddSkill({
         id="0x70041198",
-        nameEN="Muster in Dol Amroth",       descEN="in western Gondor",     labelEN="Dol Amroth", zoneEN="Western Gondor",
-        nameDE="Appell in Dol Amroth",       descDE="West-Gondor zu reisen", labelDE="Dol Amroth", zoneDE="West-Gondor",
-        nameFR="Rassemblement : Dol Amroth", descFR="l'Ouest du Gondor",     labelFR="Dol Amroth", zoneFR="Gondor de l'Ouest",
+        EN={ name="Muster in Dol Amroth",       desc="in western Gondor",     label="Dol Amroth", zone="Western Gondor", },
+        DE={ name="Appell in Dol Amroth",       desc="West-Gondor zu reisen", label="Dol Amroth", zone="West-Gondor", },
+        FR={ name="Rassemblement : Dol Amroth", desc="l'Ouest du Gondor",     label="Dol Amroth", zone="Gondor de l'Ouest", },
         map={{MapType.GONDOR, 225, 550}},
         overlap={"0x700411AC"},
         level=98
     })
     self.warden:AddSkill({
         id="0x70043A66",
-        nameEN="Muster in Arnach",       labelEN="Arnach", zoneEN="Eastern Gondor",
-        nameDE="Appell in Arnach",       labelDE="Arnach", zoneDE="Ost-Gondor",
-        nameFR="Rassemblement : Arnach", labelFR="Arnach", zoneFR="Gondor de l'Ouest",
+        EN={ name="Muster in Arnach",       label="Arnach", zone="Eastern Gondor", },
+        DE={ name="Appell in Arnach",       label="Arnach", zone="Ost-Gondor", },
+        FR={ name="Rassemblement : Arnach", label="Arnach", zone="Gondor de l'Ouest", },
         map={{MapType.GONDOR, 715, 425}},
         overlap={"0x70043A6A"},
         level=100
     })
     self.warden:AddSkill({
         id="0x70044982",
-        nameEN="Muster in Minas Tirith",       labelEN="Minas Tirith", zoneEN="Old Anórien",
-        nameDE="Appell in Minas Tirith",       labelDE="Minas Tirith", zoneDE="Alt-Anórien",
-        nameFR="Rassemblement : Minas Tirith", labelFR="Minas Tirith", zoneFR="Ancien Anórien",
+        EN={ name="Muster in Minas Tirith",       label="Minas Tirith", zone="Old Anórien", },
+        DE={ name="Appell in Minas Tirith",       label="Minas Tirith", zone="Alt-Anórien", },
+        FR={ name="Rassemblement : Minas Tirith", label="Minas Tirith", zone="Ancien Anórien", },
         map={{MapType.GONDOR, 670, 345}},
         overlap={"0x7004497E"},
         level=100.1
     })
     self.warden:AddSkill({
         id="0x700459AA",
-        nameEN="Muster in the War-stead",        labelEN="War-stead",                zoneEN="Far Anórien",
-        nameDE="Appell im Kriegslager",          labelDE="Kriegslager der Rohirrim", zoneDE="Fernes Anórien",
-        nameFR="Rassemblement : Camp militaire", labelFR="Camp militaire",           zoneFR="Lointain Anórien",
+        EN={ name="Muster in the War-stead",        label="War-stead",                zone="Far Anórien", },
+        DE={ name="Appell im Kriegslager",          label="Kriegslager der Rohirrim", zone="Fernes Anórien", },
+        FR={ name="Rassemblement : Camp militaire", label="Camp militaire",           zone="Lointain Anórien", },
         map={{MapType.GONDOR, 665, 140}},
         overlap={"0x700459A9"},
         level=102
     })
     self.warden:AddSkill({
         id="0x70046CBF",
-        nameEN="Muster in after-battle Minas Tirith",            labelEN="Minas Tirith after battle",      zoneEN="Anórien",
-        nameDE="Appell im schlachtgezeichneten Minas Tirith",    labelDE="Minas Tirith nach der Schlacht", zoneDE="Anórien",
-        nameFR="Rassemblement : Minas Tirith après la bataille", labelFR="Minas Tirith après la bataille", zoneFR="Anórien",
+        EN={ name="Muster in after-battle Minas Tirith",            label="Minas Tirith after battle",      zone="Anórien", },
+        DE={ name="Appell im schlachtgezeichneten Minas Tirith",    label="Minas Tirith nach der Schlacht", zone="Anórien", },
+        FR={ name="Rassemblement : Minas Tirith après la bataille", label="Minas Tirith après la bataille", zone="Anórien", },
         map={{MapType.GONDOR, 670, 375}},
         overlap={"0x70046CC0"},
         level=105
     })
     self.warden:AddSkill({
         id="0x70047076",
-        nameEN="Muster in after-battle Osgiliath",            labelEN="Osgiliath after-battle",      zoneEN="Anórien",
-        nameDE="Appell im schlachtgezeichneten Osgiliath",    labelDE="Osgiliath nach der Schlacht", zoneDE="Anórien",
-        nameFR="Rassemblement : Osgiliath après la bataille", labelFR="Osgiliath après la bataille", zoneFR="Anórien",
+        EN={ name="Muster in after-battle Osgiliath",            label="Osgiliath after-battle",      zone="Anórien", },
+        DE={ name="Appell im schlachtgezeichneten Osgiliath",    label="Osgiliath nach der Schlacht", zone="Anórien", },
+        FR={ name="Rassemblement : Osgiliath après la bataille", label="Osgiliath après la bataille", zone="Anórien", },
         map={{MapType.GONDOR, 855, 335}},
         overlap={"0x7004707D"},
         level=105.1
     })
     self.warden:AddSkill({
         id="0x70047075",
-        nameEN="Muster in Henneth Annûn",       labelEN="Henneth Annûn", zoneEN="Ithilien",
-        nameDE="Appell in Henneth Annûn",       labelDE="Henneth Annûn", zoneDE="Ithilien",
-        nameFR="Rassemblement : Henneth Annûn", labelFR="Henneth Annûn", zoneFR="Ithilien",
+        EN={ name="Muster in Henneth Annûn",       label="Henneth Annûn", zone="Ithilien", },
+        DE={ name="Appell in Henneth Annûn",       label="Henneth Annûn", zone="Ithilien", },
+        FR={ name="Rassemblement : Henneth Annûn", label="Henneth Annûn", zone="Ithilien", },
         map={{MapType.GONDOR, 875, 385}},
         overlap={"0x70047080"},
         level=105.2
     })
     self.warden:AddSkill({
         id="0x70047BFC",
-        nameEN="Muster in the Camp of the Host",  labelEN="Camp of the Host", zoneEN="The Wastes",
-        nameDE="Appell im Lager des Heeres",      labelDE="Lager des Heeres", zoneDE="Das Ödland",
-        nameFR="Rassemblement : Camp de l'armée", labelFR="Camp de l'armée",  zoneFR="Les Landes désertiques",
+        EN={ name="Muster in the Camp of the Host",  label="Camp of the Host", zone="The Wastes", },
+        DE={ name="Appell im Lager des Heeres",      label="Lager des Heeres", zone="Das Ödland", },
+        FR={ name="Rassemblement : Camp de l'armée", label="Camp de l'armée",  zone="Les Landes désertiques", },
         map={{MapType.GONDOR, 805, 170}},
         overlap={"0x70047BF4"},
         level=105.3
     })
     self.warden:AddSkill({
         id="0x70047C23",
-        nameEN="Muster in Haerondir",       labelEN="Haerondir", zoneEN="The Wastes",
-        nameDE="Appell in Haerondir",       labelDE="Haerondir", zoneDE="Das Ödland",
-        nameFR="Rassemblement : Haerondir", labelFR="Haerondir", zoneFR="Les Landes désertiques",
+        EN={ name="Muster in Haerondir",       label="Haerondir", zone="The Wastes", },
+        DE={ name="Appell in Haerondir",       label="Haerondir", zone="Das Ödland", },
+        FR={ name="Rassemblement : Haerondir", label="Haerondir", zone="Les Landes désertiques", },
         map={{MapType.GONDOR, 855, 100}},
         overlap={"0x70047C1B"},
         level=105.4
     })
     self.warden:AddSkill({
         id="0x7004AE1F",
-        nameEN="Muster in the Udûn Foothold",    labelEN="Udûn Foothold",    zoneEN="Mordor",
-        nameDE="Appell am Udûn-Brückenkopf",     labelDE="Udûn-Brückenkopf", zoneDE="Mordor",
-        nameFR="Rassemblement : Le fort d'Udûn", labelFR="Fort d'Udûn",      zoneFR="Mordor",
+        EN={ name="Muster in the Udûn Foothold",    label="Udûn Foothold",    zone="Mordor", },
+        DE={ name="Appell am Udûn-Brückenkopf",     label="Udûn-Brückenkopf", zone="Mordor", },
+        FR={ name="Rassemblement : Le fort d'Udûn", label="Fort d'Udûn",      zone="Mordor", },
         map={{MapType.GONDOR, 925, 230}},
         overlap={"0x7004AE1D"},
         level=106
     })
     self.warden:AddSkill({
         id="0x7004D73A",
-        nameEN="Muster in Dale",       labelEN="Dale", zoneEN="Eryn Lasgalen",
-        nameDE="Appell in Thal",       labelDE="Thal", zoneDE="Eryn Lasgalen",
-        nameFR="Rassemblement : Dale", labelFR="Dale", zoneFR="Eryn Lasgalen",
+        EN={ name="Muster in Dale",       label="Dale", zone="Eryn Lasgalen", },
+        DE={ name="Appell in Thal",       label="Thal", zone="Eryn Lasgalen", },
+        FR={ name="Rassemblement : Dale", label="Dale", zone="Eryn Lasgalen", },
         map={{MapType.RHOVANION, 720, 215}},
         overlap={"0x7004D738"},
         level=115
     })
     self.warden:AddSkill({
         id="0x7004FACA",
-        nameEN="Muster in Járnfast",       labelEN="Járnfast", zoneEN="The Ironfold",
-        nameDE="Appell in Járnfast",       labelDE="Jarnfast", zoneDE="Der Eisenbruch",
-        nameFR="Rassemblement : Jarnfast", labelFR="Jarnfast", zoneFR="La Crevasse de Fer",
+        EN={ name="Muster in Járnfast",       label="Járnfast", zone="The Ironfold", },
+        DE={ name="Appell in Járnfast",       label="Jarnfast", zone="Der Eisenbruch", },
+        FR={ name="Rassemblement : Jarnfast", label="Jarnfast", zone="La Crevasse de Fer", },
         map={{MapType.RHOVANION, 890, 110}},
         overlap={"0x7004FAC3"},
         level=116
     })
     self.warden:AddSkill({
         id="0x7004FACD",
-        nameEN="Muster in Skarháld",       labelEN="Skarháld", zoneEN="Ered Mithrin",
-        nameDE="Appell in Skarháld",       labelDE="Skarhald", zoneDE="Ered Mithrin",
-        nameFR="Rassemblement : Skarhald", labelFR="Skarhald", zoneFR="Ered Mithrin",
+        EN={ name="Muster in Skarháld",       label="Skarháld", zone="Ered Mithrin", },
+        DE={ name="Appell in Skarháld",       label="Skarhald", zone="Ered Mithrin", },
+        FR={ name="Rassemblement : Skarhald", label="Skarhald", zone="Ered Mithrin", },
         map={{MapType.RHOVANION, 430, 90}},
         overlap={"0x7004FAC5"},
         level=117
     })
     self.warden:AddSkill({
         id="0x70052F0A",
-        nameEN="Muster in Beorninghús",       labelEN="Beorninghús",   zoneEN="Vales of Anduin",
-        nameDE="Appell im Beorningerhús",     labelDE="Beorningerhús", zoneDE="Die Täler des Anduin",
-        nameFR="Rassemblement : Beorninghus", labelFR="Beorninghus",   zoneFR="Val d'Anduin",
+        EN={ name="Muster in Beorninghús",       label="Beorninghús",   zone="Vales of Anduin", },
+        DE={ name="Appell im Beorningerhús",     label="Beorningerhús", zone="Die Täler des Anduin", },
+        FR={ name="Rassemblement : Beorninghus", label="Beorninghus",   zone="Val d'Anduin", },
         map={{MapType.RHOVANION, 390, 300}},
         overlap={"0x70041A22", "0x70052F12"},
         level=120
     })
     self.warden:AddSkill({
         id="0x70052F06",
-        nameEN="Muster in Hultvís",       labelEN="Hultvís", zoneEN="Vales of Anduin",
-        nameDE="Appell in Hultvís",       labelDE="Hultvís", zoneDE="Die Täler des Anduin",
-        nameFR="Rassemblement : Hultvis", labelFR="Hultvis", zoneFR="Val d'Anduin",
+        EN={ name="Muster in Hultvís",       label="Hultvís", zone="Vales of Anduin", },
+        DE={ name="Appell in Hultvís",       label="Hultvís", zone="Die Täler des Anduin", },
+        FR={ name="Rassemblement : Hultvis", label="Hultvis", zone="Val d'Anduin", },
         map={{MapType.RHOVANION, 375, 400}},
         overlap={"0x70052F04"},
         level=120.1
     })
     self.warden:AddSkill({
         id="0x700551F2",
-        nameEN="Muster in Estolad Lân",       labelEN="Estolad Lân", zoneEN="Imlad Morgul",
-        nameDE="Appell in Estolad Lân",       labelDE="Estolad Lân", zoneDE="Imlad Morgul",
-        nameFR="Rassemblement : Estolad Lân", labelFR="Estolad Lân", zoneFR="Imlad Morgul",
+        EN={ name="Muster in Estolad Lân",       label="Estolad Lân", zone="Imlad Morgul", },
+        DE={ name="Appell in Estolad Lân",       label="Estolad Lân", zone="Imlad Morgul", },
+        FR={ name="Rassemblement : Estolad Lân", label="Estolad Lân", zone="Imlad Morgul", },
         map={{MapType.GONDOR, 960, 460}},
         overlap={"0x700551F8"},
         level=125
     })
     self.warden:AddSkill({
         id="0x70057635",
-        nameEN="Muster in Limlók",       labelEN="Limlók", zoneEN="Wells of Langflood",
-        nameDE="Appell in Limlók",       labelDE="Limlók", zoneDE="Quellen des Langflut",
-        nameFR="Rassemblement : Limlok", labelFR="Limlok", zoneFR="Puits du Long Fleuve",
+        EN={ name="Muster in Limlók",       label="Limlók", zone="Wells of Langflood", },
+        DE={ name="Appell in Limlók",       label="Limlók", zone="Quellen des Langflut", },
+        FR={ name="Rassemblement : Limlok", label="Limlok", zone="Puits du Long Fleuve", },
         map={{MapType.RHOVANION, 345, 230}},
         overlap={"0x70057629"},
         level=130
     })
     self.warden:AddSkill({
         id="0x70058572",
-        nameEN="Muster in Annâk-khurfu",       labelEN="Annâk-khurfu", zoneEN="Elderslade",
-        nameDE="Appell in Annâk-khurfu",       labelDE="Annâk-khurfu", zoneDE="Elderslade",
-        nameFR="Rassemblement : Annâk-khurfu", labelFR="Annâk-khurfu", zoneFR="Elderslade",
+        EN={ name="Muster in Annâk-khurfu",       label="Annâk-khurfu", zone="Elderslade", },
+        DE={ name="Appell in Annâk-khurfu",       label="Annâk-khurfu", zone="Elderslade", },
+        FR={ name="Rassemblement : Annâk-khurfu", label="Annâk-khurfu", zone="Elderslade", },
         map={{MapType.RHOVANION, 530, 90}},
         overlap={"0x7005856F"},
         level=130.1
     })
     self.warden:AddSkill({
         id="0x7005AA8F",
-        nameEN="Muster in Akrâz-zahar",       labelEN="Akrâz-zahar", zoneEN="Eryn Lasgalen",
-        nameDE="Appell in Akrâz-zahar",       labelDE="Akrâz-zahar", zoneDE="Eryn Lasgalen",
-        nameFR="Rassemblement : Akrâz-zahar", labelFR="Akrâz-zahar", zoneFR="Eryn Lasgalen",
+        EN={ name="Muster in Akrâz-zahar",       label="Akrâz-zahar", zone="Eryn Lasgalen", },
+        DE={ name="Appell in Akrâz-zahar",       label="Akrâz-zahar", zone="Eryn Lasgalen", },
+        FR={ name="Rassemblement : Akrâz-zahar", label="Akrâz-zahar", zone="Eryn Lasgalen", },
         map={{MapType.RHOVANION, 750, 115}},
         overlap={"0x7005AA90"},
         level=130.2
     })
     self.warden:AddSkill({
         id="0x7005AA8C",
-        nameEN="Muster in Azanulbizar",       labelEN="Amdân", zoneEN="Azanulbizar",
-        nameDE="Appell in Azanulbizar",       labelDE="Amdân", zoneDE="Azanulbizar",
-        nameFR="Rassemblement : Azanulbizar", labelFR="Amdân", zoneFR="Azanulbizar",
+        EN={ name="Muster in Azanulbizar",       label="Amdân", zone="Azanulbizar", },
+        DE={ name="Appell in Azanulbizar",       label="Amdân", zone="Azanulbizar", },
+        FR={ name="Rassemblement : Azanulbizar", label="Amdân", zone="Azanulbizar", },
         map={{MapType.RHOVANION, 210, 555}},
         overlap={"0x7005AA92"},
         level=130.3
     })
     self.warden:AddSkill({
         id="0x7005D48A",
-        nameEN="Muster at the Noble Gate",       labelEN="Noble Gate",  zoneEN="Gundabad",
-        nameDE="Appell am Prachttor",            labelDE="Prachttor",   zoneDE="Gundabad",
-        nameFR="Rassemblement : La Porte Noble", labelFR="Porte Noble", zoneFR="Gundabad",
+        EN={ name="Muster at the Noble Gate",       label="Noble Gate",  zone="Gundabad", },
+        DE={ name="Appell am Prachttor",            label="Prachttor",   zone="Gundabad", },
+        FR={ name="Rassemblement : La Porte Noble", label="Porte Noble", zone="Gundabad", },
         map={{MapType.RHOVANION, 190, 130}},
         overlap={"0x7005D47C"},
         level=131
     })
     self.warden:AddSkill({
         id="0x7005D488",
-        nameEN="Muster at Leitstáth",       labelEN="Leitstáth", zoneEN="Gundabad",
-        nameDE="Appell in Leitstáth",       labelDE="Leitstáth", zoneDE="Gundabad",
-        nameFR="Rassemblement : Leitstath", labelFR="Leitstath", zoneFR="Gundabad",
+        EN={ name="Muster at Leitstáth",       label="Leitstáth", zone="Gundabad", },
+        DE={ name="Appell in Leitstáth",       label="Leitstáth", zone="Gundabad", },
+        FR={ name="Rassemblement : Leitstath", label="Leitstath", zone="Gundabad", },
         map={{MapType.RHOVANION, 270, 65}},
         overlap={"0x7005D484"},
         level=135
     })
     self.warden:AddSkill({
         id="0x70064ACB",
-        nameEN="Muster at Carn Dûm",       labelEN="Carn Dûm", zoneEN="Angmar",
-        nameDE="Appell in Carn Dûm",       labelDE="Carn Dûm", zoneDE="Angmar",
-        nameFR="Rassemblement : Carn Dûm", labelFR="Carn Dûm", zoneFR="Angmar",
+        EN={ name="Muster at Carn Dûm",       label="Carn Dûm", zone="Angmar", },
+        DE={ name="Appell in Carn Dûm",       label="Carn Dûm", zone="Angmar", },
+        FR={ name="Rassemblement : Carn Dûm", label="Carn Dûm", zone="Angmar", },
         map={{MapType.ERIADOR, 735, 100}},
         overlap={"0x70064ACA"},
         level=140.1
     })
     self.warden:AddSkill({
         id="0x700658E8",
-        nameEN="Muster at Pelargir",       labelEN="Pelargir", zoneEN="King's Gondor",
-        nameDE="Heerschau in Pelargir",    labelDE="Pelargir", zoneDE="Königreich Gondor",
-        nameFR="Rassemblement à Pelargir", labelFR="Pelargir", zoneFR="Gondor royal",
+        EN={ name="Muster at Pelargir",       label="Pelargir", zone="King's Gondor", },
+        DE={ name="Heerschau in Pelargir",    label="Pelargir", zone="Königreich Gondor", },
+        FR={ name="Rassemblement à Pelargir", label="Pelargir", zone="Gondor royal", },
         map={{MapType.GONDOR, 670, 625}},
         overlap={"0x700658EB"},
         level=141
     })
     self.warden:AddSkill({
         id="0x70068712",
-        nameEN="Muster at Dol Amroth",       descEN="King's Gondor",     labelEN="Dol Amroth", zoneEN="King's Gondor",
-        nameDE="Appell in Dol Amroth",       descDE="Königreich Gondor", labelDE="Dol Amroth", zoneDE="Königreich Gondor",
-        nameFR="Rassemblement à Dol Amroth", descFR="le Gondor royal",   labelFR="Dol Amroth", zoneFR="Gondor royal",
+        EN={ name="Muster at Dol Amroth",       desc="King's Gondor",     label="Dol Amroth", zone="King's Gondor", },
+        DE={ name="Appell in Dol Amroth",       desc="Königreich Gondor", label="Dol Amroth", zone="Königreich Gondor", },
+        FR={ name="Rassemblement à Dol Amroth", desc="le Gondor royal",   label="Dol Amroth", zone="Gondor royal", },
         map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 385, 70}},
         overlap={"0x70068700"},
         level=142
     })
     self.warden:AddSkill({
         id="0x70068715",
-        nameEN="Muster at Lond Cirion",       labelEN="Lond Cirion", zoneEN="Anfalas",
-        nameDE="Appell in Lond Cirion",       labelDE="Lond Cirion", zoneDE="Anfalas",
-        nameFR="Rassemblement à Lond Cirion", labelFR="Lond Cirion", zoneFR="Anfalas",
+        EN={ name="Muster at Lond Cirion",       label="Lond Cirion", zone="Anfalas", },
+        DE={ name="Appell in Lond Cirion",       label="Lond Cirion", zone="Anfalas", },
+        FR={ name="Rassemblement à Lond Cirion", label="Lond Cirion", zone="Anfalas", },
         map={{MapType.GONDOR, 255, 420}, {MapType.HARADWAITH, 230, 20}},
         overlap={"0x70068703"},
         level=143
     })
     self.warden:AddSkill({
         id="0x70068710",
-        nameEN="Muster at Halrax",       labelEN="Halrax", zoneEN="Shield Isles",
-        nameDE="Appell in Halrax",       labelDE="Halrax", zoneDE="Die Schildinseln",
-        nameFR="Rassemblement à Halrax", labelFR="Halrax", zoneFR="Les îles du Bouclier",
+        EN={ name="Muster at Halrax",       label="Halrax", zone="Shield Isles", },
+        DE={ name="Appell in Halrax",       label="Halrax", zone="Die Schildinseln", },
+        FR={ name="Rassemblement à Halrax", label="Halrax", zone="Les îles du Bouclier", },
         map={{MapType.HARADWAITH, 275, 260}},
         overlap={"0x70068702"},
         level=145
     })
     self.warden:AddSkill({
         id="0x7006870C",
-        nameEN="Muster at Jax Phanâl",       labelEN="Jax Phanâl", zoneEN="Umbar",
-        nameDE="Appell in Jax Phanâl",       labelDE="Jax Phanâl", zoneDE="Umbar",
-        nameFR="Rassemblement à Jax Phanâl", labelFR="Jax Phanâl", zoneFR="Umbar",
+        EN={ name="Muster at Jax Phanâl",       label="Jax Phanâl", zone="Umbar", },
+        DE={ name="Appell in Jax Phanâl",       label="Jax Phanâl", zone="Umbar", },
+        FR={ name="Rassemblement à Jax Phanâl", label="Jax Phanâl", zone="Umbar", },
         map={{MapType.HARADWAITH, 305, 315}},
         overlap={"0x70068701"},
         level=146
     })
     self.warden:AddSkill({
         id="0x7006870F",
-        nameEN="Muster at Umbar",       labelEN="Umbar Baharbêl", zoneEN="Umbar",
-        nameDE="Appell in Umbar",       labelDE="Umbar Baharbêl", zoneDE="Umbar",
-        nameFR="Rassemblement à Umbar", labelFR="Umbar Baharbêl", zoneFR="Umbar",
+        EN={ name="Muster at Umbar",       label="Umbar Baharbêl", zone="Umbar", },
+        DE={ name="Appell in Umbar",       label="Umbar Baharbêl", zone="Umbar", },
+        FR={ name="Rassemblement à Umbar", label="Umbar Baharbêl", zone="Umbar", },
         map={{MapType.HARADWAITH, 505, 370}},
         overlap={"0x700686FF"},
         level=148
     })
     self.warden:AddSkill({
         id="0x700697F3",
-        nameEN="Muster at the Bloody Eagle Tavern",              labelEN="Bloody Eagle Tavern",         zoneEN="Umbar",
-        nameDE="Appell in der Taverne \"Zum Blutigen Adler\"",   labelDE="Zum Blutigen Adler",          zoneDE="Umbar",
-        nameFR="Rassemblement à la taverne de l'Aigle sanglant", labelFR="Taverne de l'Aigle sanglant", zoneFR="Umbar",
+        EN={ name="Muster at the Bloody Eagle Tavern",              label="Bloody Eagle Tavern",         zone="Umbar", },
+        DE={ name="Appell in der Taverne \"Zum Blutigen Adler\"",   label="Zum Blutigen Adler",          zone="Umbar", },
+        FR={ name="Rassemblement à la taverne de l'Aigle sanglant", label="Taverne de l'Aigle sanglant", zone="Umbar", },
         map={{MapType.HARADWAITH, 475, 400}},
         overlap={"0x700697F2"},
         level=149
     })
 
     -- add the Mariner locations
-    self.mariner:AddLabelTag({EN=" (Sail)", DE=" (Segeln)", FR=" (Naviguer)" })
+    self.mariner:AddLabelTag({EN="Sail", DE="Segeln", FR="Naviguer" })
     self.mariner:AddSkill({
         id="0x70066100",
-        nameEN="Sail to Celondim",       labelEN="Celondim", zoneEN="Ered Luin",
-        nameDE="Segelt nach Celondim",   labelDE="Celondim", zoneDE="Ered Luin",
-        nameFR="Naviguer vers Celondim", labelFR="Celondim", zoneFR="Ered Luin",
+        EN={ name="Sail to Celondim",       label="Celondim", zone="Ered Luin", },
+        DE={ name="Segelt nach Celondim",   label="Celondim", zone="Ered Luin", },
+        FR={ name="Naviguer vers Celondim", label="Celondim", zone="Ered Luin", },
         map={{MapType.ERIADOR, 310, 380}},
         level=1
     })
     self.mariner:AddSkill({
         id="0x7006611A",
-        nameEN="Sail to Buckland",              labelEN="Buckland",     zoneEN="Bree",
-        nameDE="Segelt nach Bockland",          labelDE="Bockland",     zoneDE="Bree",
-        nameFR="Naviguer vers le Pays de Bouc", labelFR="Pays de Bouc", zoneFR="Bree",
+        EN={ name="Sail to Buckland",              label="Buckland",     zone="Bree", },
+        DE={ name="Segelt nach Bockland",          label="Bockland",     zone="Bree", },
+        FR={ name="Naviguer vers le Pays de Bouc", label="Pays de Bouc", zone="Bree", },
         map={{MapType.ERIADOR, 515, 405}},
         level=4
     })
     self.mariner:AddSkill({
         id="0x70066120",
-        nameEN="Sail to Tharbad",              labelEN="Tharbad",        zoneEN="Swanfleet",
-        nameDE="Nach Tharbad segeln",          labelDE="Tharbad",        zoneDE="Schwanenfleet",
-        nameFR="Naviguer vers le Gué de Sarn", labelFR="le Gué de Sarn", zoneFR="Noues des cygnes",
+        EN={ name="Sail to Tharbad",              label="Tharbad",        zone="Swanfleet", },
+        DE={ name="Nach Tharbad segeln",          label="Tharbad",        zone="Schwanenfleet", },
+        FR={ name="Naviguer vers le Gué de Sarn", label="le Gué de Sarn", zone="Noues des cygnes", },
         map={{MapType.ERIADOR, 650, 525}},
         level=5
     })
     self.mariner:AddSkill({
         id="0x7006610F",
-        nameEN="Sail to Tinnudir",       labelEN="Tinnudir", zoneEN="Evendim",
-        nameDE="Segelt nach Tinnudir",   labelDE="Tinnudir", zoneDE="Evendim",
-        nameFR="Naviguer vers Tinnudir", labelFR="Tinnudir", zoneFR="Evendim",
+        EN={ name="Sail to Tinnudir",       label="Tinnudir", zone="Evendim", },
+        DE={ name="Segelt nach Tinnudir",   label="Tinnudir", zone="Evendim", },
+        FR={ name="Naviguer vers Tinnudir", label="Tinnudir", zone="Evendim", },
         map={{MapType.ERIADOR, 420, 250}},
         level=30
     })
     self.mariner:AddSkill({
         id="0x70066105",
-        nameEN="Sail to Trader's Wharf",              labelEN="Trader's Wharf",     zoneEN="Evendim",
-        nameDE="Segelt zum Händlerkai",               labelDE="Händlerkai",         zoneDE="Evendim",
-        nameFR="Naviguer vers le Quai des marchands", labelFR="Quai des marchands", zoneFR="Evendim",
+        EN={ name="Sail to Trader's Wharf",              label="Trader's Wharf",     zone="Evendim", },
+        DE={ name="Segelt zum Händlerkai",               label="Händlerkai",         zone="Evendim", },
+        FR={ name="Naviguer vers le Quai des marchands", label="Quai des marchands", zone="Evendim", },
         map={{MapType.ERIADOR, 515, 305}},
         overlap={"0x70059D0E"},
         level=40.4
     })
     self.mariner:AddSkill({
         id="0x7006611C",
-        nameEN="Sail to Sûri-kylä",       labelEN="Sûri-kylä", zoneEN="Forochel",
-        nameDE="Segelt nach Sûri-kylä",   labelDE="Sûri-kylä", zoneDE="Forochel",
-        nameFR="Naviguer vers Sûri-kylä", labelFR="Sûri-kylä", zoneFR="Forochel",
+        EN={ name="Sail to Sûri-kylä",       label="Sûri-kylä", zone="Forochel", },
+        DE={ name="Segelt nach Sûri-kylä",   label="Sûri-kylä", zone="Forochel", },
+        FR={ name="Naviguer vers Sûri-kylä", label="Sûri-kylä", zone="Forochel", },
         map={{MapType.ERIADOR, 430, 50}},
         level=42
     })
     self.mariner:AddSkill({
         id="0x7006611E",
-        nameEN="Sail to Lothlórien",          labelEN="Egladil", zoneEN="Lothlórien",
-        nameDE="Segelt nach Lothlórien",      labelDE="Egladil", zoneDE="Lothlórien",
-        nameFR="Naviguer vers la Lothlorien", labelFR="Egladil", zoneFR="Lothlórien",
+        EN={ name="Sail to Lothlórien",          label="Egladil", zone="Lothlórien", },
+        DE={ name="Segelt nach Lothlórien",      label="Egladil", zone="Lothlórien", },
+        FR={ name="Naviguer vers la Lothlorien", label="Egladil", zone="Lothlórien", },
         map={{MapType.RHOVANION, 245, 670}},
         overlap={"0x70048C8C"},
         level=60
     })
     self.mariner:AddSkill({
         id="0x7006610E",
-        nameEN="Sail to the Mirk-eaves",     labelEN="Mirk-eaves",  zoneEN="Mirkwood",
-        nameDE="Segelt zur Dunkelsenke",     labelDE="Dunkelsenke", zoneDE="Düsterwald",
-        nameFR="Naviguer vers l'Orée Noire", labelFR="Orée Noire",  zoneFR="Forêt Noire",
+        EN={ name="Sail to the Mirk-eaves",     label="Mirk-eaves",  zone="Mirkwood", },
+        DE={ name="Segelt zur Dunkelsenke",     label="Dunkelsenke", zone="Düsterwald", },
+        FR={ name="Naviguer vers l'Orée Noire", label="Orée Noire",  zone="Forêt Noire", },
         map={{MapType.RHOVANION, 365, 630}},
         level=61
     })
     self.mariner:AddSkill({
         id="0x70066101",
-        nameEN="Sail to the Brown Lands",         labelEN="Brown Lands",   zoneEN="Great River",
-        nameDE="Segelt in die Braunen Lande",     labelDE="Braune Lande",  zoneDE="Großer Fluss",
-        nameFR="Naviguer vers les Terres brunes", labelFR="Terres brunes", zoneFR="Grand Fleuve",
+        EN={ name="Sail to the Brown Lands",         label="Brown Lands",   zone="Great River", },
+        DE={ name="Segelt in die Braunen Lande",     label="Braune Lande",  zone="Großer Fluss", },
+        FR={ name="Naviguer vers les Terres brunes", label="Terres brunes", zone="Grand Fleuve", },
         map={{MapType.ROHAN, 700, 180}},
         level=75.1
     })
     self.mariner:AddSkill({
         id="0x70066121",
-        nameEN="Sail to Snowbourn",         labelEN="Snowbourn",    zoneEN="East Rohan",
-        nameDE="Segelt nach Schneegrenze",  labelDE="Schneegrenze", zoneDE="Ost-Rohan",
-        nameFR="Naviguer vers Neigebronne", labelFR="Neigebronne",  zoneFR="Rohan est",
+        EN={ name="Sail to Snowbourn",         label="Snowbourn",    zone="East Rohan", },
+        DE={ name="Segelt nach Schneegrenze",  label="Schneegrenze", zone="Ost-Rohan", },
+        FR={ name="Naviguer vers Neigebronne", label="Neigebronne",  zone="Rohan est", },
         map={{MapType.ROHAN, 515, 500}},
         overlap={"0x70031A46"},
         level=80
     })
     self.mariner:AddSkill({
         id="0x70066117",
-        nameEN="Sail to Dol Amroth",       descEN="Dol Amroth with nearby",     labelEN="Dol Amroth", zoneEN="Western Gondor",
-        nameDE="Segelt nach Dol Amroth",   descDE="nach Dol Amroth.",           labelDE="Dol Amroth", zoneDE="West-Gondor",
-        nameFR="Naviguer vers Dol Amroth", descFR="Amroth en bonne compagnie.", labelFR="Dol Amroth", zoneFR="Gondor de l'Ouest",
+        EN={ name="Sail to Dol Amroth",       desc="Dol Amroth with nearby",     label="Dol Amroth", zone="Western Gondor", },
+        DE={ name="Segelt nach Dol Amroth",   desc="nach Dol Amroth.",           label="Dol Amroth", zone="West-Gondor", },
+        FR={ name="Naviguer vers Dol Amroth", desc="Amroth en bonne compagnie.", label="Dol Amroth", zone="Gondor de l'Ouest", },
         map={{MapType.GONDOR, 225, 550}},
         overlap={"0x700411AC"},
         level=98
     })
     self.mariner:AddSkill({
         id="0x70066109",
-        nameEN="Sail to after-battle Osgiliath",            labelEN="Osgiliath after-battle",         zoneEN="Anórien",
-        nameDE="Segelt ins schlachtgezeichnete Osgiliath",  labelDE="Schlachtgezeichnetes Osgiliath", zoneDE="Anórien",
-        nameFR="Naviguer vers Osgiliath après la bataille", labelFR="Osgiliath après la bataille",    zoneFR="Anórien",
+        EN={ name="Sail to after-battle Osgiliath",            label="Osgiliath after-battle",         zone="Anórien", },
+        DE={ name="Segelt ins schlachtgezeichnete Osgiliath",  label="Schlachtgezeichnetes Osgiliath", zone="Anórien", },
+        FR={ name="Naviguer vers Osgiliath après la bataille", label="Osgiliath après la bataille",    zone="Anórien", },
         map={{MapType.GONDOR, 855, 335}},
         overlap={"0x7004707D"},
         level=105.1
     })
     self.mariner:AddSkill({
         id="0x7006610C",
-        nameEN="Sail to Lake-town",       labelEN="Lake-town",    zoneEN="Eryn Lasgalen",
-        nameDE="Segelt nach Seestadt.",   labelDE="Seestadt",     zoneDE="Eryn Lasgalen",
-        nameFR="Cap sur la Ville du Lac", labelFR="Ville du Lac", zoneFR="Eryn Lasgalen",
+        EN={ name="Sail to Lake-town",       label="Lake-town",    zone="Eryn Lasgalen", },
+        DE={ name="Segelt nach Seestadt.",   label="Seestadt",     zone="Eryn Lasgalen", },
+        FR={ name="Cap sur la Ville du Lac", label="Ville du Lac", zone="Eryn Lasgalen", },
         map={{MapType.RHOVANION, 740, 275}},
         overlap={"0x7004D738"},
         level=115
     })
     self.mariner:AddSkill({
         id="0x7006611B",
-        nameEN="Sail to Pelargir",       labelEN="Pelargir", zoneEN="King's Gondor",
-        nameDE="Segelt nach Pelargir",   labelDE="Pelargir", zoneDE="Königreich Gondor",
-        nameFR="Naviguer vers Pelargir", labelFR="Pelargir", zoneFR="Gondor royal",
+        EN={ name="Sail to Pelargir",       label="Pelargir", zone="King's Gondor", },
+        DE={ name="Segelt nach Pelargir",   label="Pelargir", zone="Königreich Gondor", },
+        FR={ name="Naviguer vers Pelargir", label="Pelargir", zone="Gondor royal", },
         map={{MapType.GONDOR, 670, 625}},
         overlap={"0x700658EB"},
         level=141
     })
     self.mariner:AddSkill({
         id="0x700687C1",
-        nameEN="Sail to Dol Amroth",       descEN="King's Gondor",     labelEN="Dol Amroth", zoneEN="King's Gondor",
-        nameDE="Segelt nach Dol Amroth",   descDE="Königreich Gondor", labelDE="Dol Amroth", zoneDE="Königreich Gondor",
-        nameFR="Naviguer vers Dol Amroth", descFR="le Gondor royal",   labelFR="Dol Amroth", zoneFR="Gondor royal",
+        EN={ name="Sail to Dol Amroth",       desc="King's Gondor",     label="Dol Amroth", zone="King's Gondor", },
+        DE={ name="Segelt nach Dol Amroth",   desc="Königreich Gondor", label="Dol Amroth", zone="Königreich Gondor", },
+        FR={ name="Naviguer vers Dol Amroth", desc="le Gondor royal",   label="Dol Amroth", zone="Gondor royal", },
         map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 385, 70}},
         overlap={"0x70068700"},
         level=142
     })
     self.mariner:AddSkill({
         id="0x700687BD",
-        nameEN="Sail to Lond Cirion",       labelEN="Lond Cirion", zoneEN="Anfalas",
-        nameDE="Nach Lond Cirion segeln",   labelDE="Lond Cirion", zoneDE="Anfalas",
-        nameFR="Naviguer vers Lond Cirion", labelFR="Lond Cirion", zoneFR="Anfalas",
+        EN={ name="Sail to Lond Cirion",       label="Lond Cirion", zone="Anfalas", },
+        DE={ name="Nach Lond Cirion segeln",   label="Lond Cirion", zone="Anfalas", },
+        FR={ name="Naviguer vers Lond Cirion", label="Lond Cirion", zone="Anfalas", },
         map={{MapType.GONDOR, 255, 420}, {MapType.HARADWAITH, 230, 20}},
         overlap={"0x70068703"},
         level=143
     })
     self.mariner:AddSkill({
         id="0x700687C3",
-        nameEN="Sail to Halrax",       labelEN="Halrax", zoneEN="Shield Isles",
-        nameDE="Nach Halrax segeln",   labelDE="Halrax", zoneDE="Die Schildinseln",
-        nameFR="Naviguer vers Halrax", labelFR="Halrax", zoneFR="Les îles du Bouclier",
+        EN={ name="Sail to Halrax",       label="Halrax", zone="Shield Isles", },
+        DE={ name="Nach Halrax segeln",   label="Halrax", zone="Die Schildinseln", },
+        FR={ name="Naviguer vers Halrax", label="Halrax", zone="Les îles du Bouclier", },
         map={{MapType.HARADWAITH, 275, 160}},
         overlap={"0x70068702"},
         level=145
     })
     self.mariner:AddSkill({
         id="0x700687C0",
-        nameEN="Sail to Jax Phanâl",       labelEN="Jax Phanâl", zoneEN="Umbar",
-        nameDE="Nach Jax Phanâl segeln",   labelDE="Jax Phanâl", zoneDE="Umbar",
-        nameFR="Naviguer vers Jax Phanâl", labelFR="Jax Phanâl", zoneFR="Umbar",
+        EN={ name="Sail to Jax Phanâl",       label="Jax Phanâl", zone="Umbar", },
+        DE={ name="Nach Jax Phanâl segeln",   label="Jax Phanâl", zone="Umbar", },
+        FR={ name="Naviguer vers Jax Phanâl", label="Jax Phanâl", zone="Umbar", },
         map={{MapType.HARADWAITH, 305, 315}},
         overlap={"0x70068701"},
         level=146
     })
     self.mariner:AddSkill({
         id="0x700687BB",
-        nameEN="Sail to Umbar",       labelEN="Umbar Baharbêl", zoneEN="Umbar",
-        nameDE="Nach Umbar segeln",   labelDE="Umbar Baharbêl", zoneDE="Umbar",
-        nameFR="Naviguer vers Umbar", labelFR="Umbar Baharbêl", zoneFR="Umbar",
+        EN={ name="Sail to Umbar",       label="Umbar Baharbêl", zone="Umbar", },
+        DE={ name="Nach Umbar segeln",   label="Umbar Baharbêl", zone="Umbar", },
+        FR={ name="Naviguer vers Umbar", label="Umbar Baharbêl", zone="Umbar", },
         map={{MapType.HARADWAITH, 505, 370}},
         overlap={"0x700686FF"},
         level=148
     })
 
     -- add the racial travel skills
-    self.racials:AddLabelTag({EN=" (Racial)", DE=" (Rasse)", FR=" (Race)" })
+    self.racials:AddLabelTag({EN="Racial", DE="Rasse", FR="Race" })
     self.racials:AddSkill({
         -- man
         id="0x700062F6",
-        nameEN="Return to Bree",     descEN="enables you to quickly return", labelEN="West Gate",   zoneEN="Bree",
-        nameDE="Rückkehr nach Bree", descDE="Ihr könnt schnell nach Bree",   labelDE="Westtor",     zoneDE="Bree",
-        nameFR="Retour à Bree",      descFR="Permet de retourner",           labelFR="Porte Ouest", zoneFR="Bree",
+        EN={ name="Return to Bree",     desc="enables you to quickly return", label="West Gate",   zone="Bree", },
+        DE={ name="Rückkehr nach Bree", desc="Ihr könnt schnell nach Bree",   label="Westtor",     zone="Bree", },
+        FR={ name="Retour à Bree",      desc="Permet de retourner",           label="Porte Ouest", zone="Bree", },
         map={MapType.ERIADOR, 525, 335},
         level=5
     })
     self.racials:AddSkill({
         -- hobbit
         id="0x700062C8",
-        nameEN="Return to the Shire",     labelEN="Michel Delving", zoneEN="Shire",
-        nameDE="Rückkehr ins Auenland",   labelDE="Michelbinge",    zoneDE="Auenland",
-        nameFR="Retournez dans la Comté", labelFR="Grand'Cave",     zoneFR="Comté",
+        EN={ name="Return to the Shire",     label="Michel Delving", zone="Shire", },
+        DE={ name="Rückkehr ins Auenland",   label="Michelbinge",    zone="Auenland", },
+        FR={ name="Retournez dans la Comté", label="Grand'Cave",     zone="Comté", },
         map={MapType.ERIADOR, 405, 440},
         level=1
     })
     self.racials:AddSkill({
         -- dwarf
         id="0x70006346",
-        nameEN="Return to Thorin's Gate",  descEN="This enables you to quickly return", labelEN="Thorin's Gate",   zoneEN="Ered Luin",
-        nameDE="Rückkehr zu Thorins Tor",  descDE="Hiermit gelangt Ihr schnell",        labelDE="Thorins Tor",     zoneDE="Ered Luin",
-        nameFR="Retour : Porte de Thorin", descFR="Ceci vous permet de retourner",      labelFR="Porte de Thorin", zoneFR="Ered Luin",
+        EN={ name="Return to Thorin's Gate",  desc="This enables you to quickly return", label="Thorin's Gate",   zone="Ered Luin", },
+        DE={ name="Rückkehr zu Thorins Tor",  desc="Hiermit gelangt Ihr schnell",        label="Thorins Tor",     zone="Ered Luin", },
+        FR={ name="Retour : Porte de Thorin", desc="Ceci vous permet de retourner",      label="Porte de Thorin", zone="Ered Luin", },
         map={MapType.ERIADOR, 310, 270},
         level=1.2
     })
     self.racials:AddSkill({
         -- elf
         id="0x7000631F",
-        nameEN="Return to Rivendell",    descEN="This enables you to quickly return", labelEN="Rivendell", zoneEN="Trollshaws",
-        nameDE="Rückkehr nach Bruchtal", descDE="Hiermit gelangt Ihr schnell",        labelDE="Bruchtal",  zoneDE="Die Trollhöhen",
-        nameFR="Retour à Fondcombe",     descFR="Ceci vous permet de retourner",      labelFR="Fondcombe", zoneFR="Trouée des Trolls",
+        EN={ name="Return to Rivendell",    desc="This enables you to quickly return", label="Rivendell", zone="Trollshaws", },
+        DE={ name="Rückkehr nach Bruchtal", desc="Hiermit gelangt Ihr schnell",        label="Bruchtal",  zone="Die Trollhöhen", },
+        FR={ name="Retour à Fondcombe",     desc="Ceci vous permet de retourner",      label="Fondcombe", zone="Trouée des Trolls", },
         map={MapType.ERIADOR, 900, 375},
         level=40.1
     })
     self.racials:AddSkill({
         -- beorning
         id="0x70041A22",
-        nameEN="Return Home",              labelEN="Beorning Home",    zoneEN="Vales of Anduin",
-        nameDE="Zum 1. Heim zurückkehren", labelDE="Grimbeorns Hütte", zoneDE="Die Täler des Anduin",
-        nameFR="Retour à la maison",       labelFR="Maison Beorning",  zoneFR="Val d'Anduin",
+        EN={ name="Return Home",              label="Beorning Home",    zone="Vales of Anduin", },
+        DE={ name="Zum 1. Heim zurückkehren", label="Grimbeorns Hütte", zone="Die Täler des Anduin", },
+        FR={ name="Retour à la maison",       label="Maison Beorning",  zone="Val d'Anduin", },
         map={MapType.RHOVANION, 285, 340},
         level=120
     })
     self.racials:AddSkill({
         -- high elf
         id="0x70048C8C",
-        nameEN="Travel to Caras Galadhon in Lothlórien",    labelEN="Caras Galadhon", zoneEN="Lothlórien",
-        nameDE="Reise nach Caras Galadhon in Lothlórien",   labelDE="Caras Galadhon", zoneDE="Lothlórien",
-        nameFR="Voyage vers Caras Galadhon, en Lothlórien", labelFR="Caras Galadhon", zoneFR="Lothlórien",
+        EN={ name="Travel to Caras Galadhon in Lothlórien",    label="Caras Galadhon", zone="Lothlórien", },
+        DE={ name="Reise nach Caras Galadhon in Lothlórien",   label="Caras Galadhon", zone="Lothlórien", },
+        FR={ name="Voyage vers Caras Galadhon, en Lothlórien", label="Caras Galadhon", zone="Lothlórien", },
         map={MapType.RHOVANION, 120, 690},
         level=60
     })
     self.racials:AddSkill({
         -- stoutaxe
         id="0x70053C0F",
-        nameEN="Travel to Thorin's Hall",   labelEN="Thorin's Hall",    zoneEN="Ered Luin",
-        nameDE="Reise zu Thorins Halle",    labelDE="Thorins Halle",    zoneDE="Ered Luin",
-        nameFR="Aller au Palais de Thorin", labelFR="Palais de Thorin", zoneFR="Ered Luin",
+        EN={ name="Travel to Thorin's Hall",   label="Thorin's Hall",    zone="Ered Luin", },
+        DE={ name="Reise zu Thorins Halle",    label="Thorins Halle",    zone="Ered Luin", },
+        FR={ name="Aller au Palais de Thorin", label="Palais de Thorin", zone="Ered Luin", },
         map={MapType.ERIADOR, 345, 310},
         level=1.2
     })
     self.racials:AddSkill({
         -- river hobbit
         id="0x70066D31",
-        nameEN="Return to Lyndelby",        labelEN="Lyndelby", zoneEN="Wells of Langflood",
-        nameDE="Kehrt zu Lyndelby zurück.", labelDE="Lyndelby", zoneDE="Quellen des Langflut",
-        nameFR="Retour à Lyndelby",         labelFR="Lyndelby", zoneFR="Puits du Long Fleuve",
+        EN={ name="Return to Lyndelby",        label="Lyndelby", zone="Wells of Langflood", },
+        DE={ name="Kehrt zu Lyndelby zurück.", label="Lyndelby", zone="Quellen des Langflut", },
+        FR={ name="Retour à Lyndelby",         label="Lyndelby", zone="Puits du Long Fleuve", },
         map={MapType.RHOVANION, 155, 165},
         level=1.3
     })
@@ -1270,632 +1270,622 @@ function TravelDictionary:CreateDictionaries()
     -- add the Return Home and housing skills
     self.gen:AddSkill({
         id="0x700256BA",
-        nameEN="Return Home",
-        nameDE="Zum 1. Heim zurückkehren", labelDE="1. Markstein",
-        nameFR="Retour à la maison",       labelFR="Point de repère 1",
+        EN={ name="Return Home", },
+        DE={ name="Zum 1. Heim zurückkehren", label="1. Markstein", },
+        FR={ name="Retour à la maison",       label="Point de repère 1", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x70025792",
-        nameEN="Return Home 2",
-        nameDE="Zum 2. Heim zurückkehren", labelDE="2. Markstein",
-        nameFR="Retour à la maison 2",     labelFR="Point de repère 2",
+        EN={ name="Return Home 2", },
+        DE={ name="Zum 2. Heim zurückkehren", label="2. Markstein", },
+        FR={ name="Retour à la maison 2",     label="Point de repère 2", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x70025793",
-        nameEN="Return Home 3",
-        nameDE="Zum 3. Heim zurückkehren", labelDE="3. Markstein",
-        nameFR="Retour à la maison 3",     labelFR="Point de repère 3",
+        EN={ name="Return Home 3", },
+        DE={ name="Zum 3. Heim zurückkehren", label="3. Markstein", },
+        FR={ name="Retour à la maison 3",     label="Point de repère 3", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x70025794",
-        nameEN="Return Home 4",
-        nameDE="Zum 4. Heim zurückkehren", labelDE="4. Markstein",
-        nameFR="Retour à la maison 4",     labelFR="Point de repère 4",
+        EN={ name="Return Home 4", },
+        DE={ name="Zum 4. Heim zurückkehren", label="4. Markstein", },
+        FR={ name="Retour à la maison 4",     label="Point de repère 4", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x70025795",
-        nameEN="Return Home 5",
-        nameDE="Zum 5. Heim zurückkehren", labelDE="5. Markstein",
-        nameFR="Retour à la maison 5",     labelFR="Point de repère 5",
+        EN={ name="Return Home 5", },
+        DE={ name="Zum 5. Heim zurückkehren", label="5. Markstein", },
+        FR={ name="Retour à la maison 5",     label="Point de repère 5", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x70025796",
-        nameEN="Return Home 6",
-        nameDE="Zum 6. Heim zurückkehren", labelDE="6. Markstein",
-        nameFR="Retour à la maison 6",     labelFR="Point de repère 6",
+        EN={ name="Return Home 6", },
+        DE={ name="Zum 6. Heim zurückkehren", label="6. Markstein", },
+        FR={ name="Retour à la maison 6",     label="Point de repère 6", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x7002FF62",
-        nameEN="Return Home 7",
-        nameDE="Zum 7. Heim zurückkehren", labelDE="7. Markstein",
-        nameFR="Retour à la maison 7",     labelFR="Point de repère 7",
+        EN={ name="Return Home 7", },
+        DE={ name="Zum 7. Heim zurückkehren", label="7. Markstein", },
+        FR={ name="Retour à la maison 7",     label="Point de repère 7", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x7002FF61",
-        nameEN="Return Home 8",
-        nameDE="Zum 8. Heim zurückkehren", labelDE="8. Markstein",
-        nameFR="Retour à la maison 8",     labelFR="Point de repère 8",
+        EN={ name="Return Home 8", },
+        DE={ name="Zum 8. Heim zurückkehren", label="8. Markstein", },
+        FR={ name="Retour à la maison 8",     label="Point de repère 8", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x7002FF60",
-        nameEN="Return Home 9",
-        nameDE="Zum 9. Heim zurückkehren", labelDE="9. Markstein",
-        nameFR="Retour à la maison 9",     labelFR="Point de repère 9",
+        EN={ name="Return Home 9", },
+        DE={ name="Zum 9. Heim zurückkehren", label="9. Markstein", },
+        FR={ name="Retour à la maison 9",     label="Point de repère 9", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x7002FF5F",
-        nameEN="Return Home 10",
-        nameDE="Zum 10. Heim zurückkehren", labelDE="10. Markstein",
-        nameFR="Retour à la maison 10",     labelFR="Point de repère 10",
+        EN={ name="Return Home 10", },
+        DE={ name="Zum 10. Heim zurückkehren", label="10. Markstein", },
+        FR={ name="Retour à la maison 10",     label="Point de repère 10", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x7002FF63",
-        nameEN="Return Home 11",
-        nameDE="Zum 11. Heim zurückkehren", labelDE="11. Markstein",
-        nameFR="Retour à la maison 11",     labelFR="Point de repère 11",
+        EN={ name="Return Home 11", },
+        DE={ name="Zum 11. Heim zurückkehren", label="11. Markstein", },
+        FR={ name="Retour à la maison 11",     label="Point de repère 11", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x7000D046",
-        nameEN="Travel to Personal House",       labelEN="Personal House",
-        nameDE="Reist zu Eurem eigenen Heim",    labelDE="Eigenes Heim",
-        nameFR="Retour à la maison personnelle", labelFR="Maison personnelle",
+        EN={ name="Travel to Personal House",       label="Personal House", },
+        DE={ name="Reist zu Eurem eigenen Heim",    label="Eigenes Heim", },
+        FR={ name="Retour à la maison personnelle", label="Maison personnelle", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x70046EE4",
-        nameEN="Travel to Premium House",    labelEN="Premium House",
-        nameDE="Reist zu Eurem Premiumheim", labelDE="Premiumheim",
-        nameFR="Aller à une maison premium", labelFR="Maison premium",
+        EN={ name="Travel to Premium House",    label="Premium House", },
+        DE={ name="Reist zu Eurem Premiumheim", label="Premiumheim", },
+        FR={ name="Aller à une maison premium", label="Maison premium", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x7000D047",
-        nameEN="Travel to Kinship House",         labelEN="Kinship House",
-        nameDE="Reist zum Haus Eurer Sippe",      labelDE="Heim Eurer Sippe",
-        nameFR="Retour à la maison de confrérie", labelFR="Maison de confrérie",
+        EN={ name="Travel to Kinship House",         label="Kinship House", },
+        DE={ name="Reist zum Haus Eurer Sippe",      label="Heim Eurer Sippe", },
+        FR={ name="Retour à la maison de confrérie", label="Maison de confrérie", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x70057C36",
-        nameEN="Travel to Kinship Member's House",            labelEN="Kinship Member's House",
-        nameDE="Zum Haus des Sippenmitglieds reisen",         labelDE="Heim des Sippenmitglieds",
-        nameFR="Retour à la maison d'un membre de confrérie", labelFR="Maison d'un membre de confrérie",
+        EN={ name="Travel to Kinship Member's House",            label="Kinship Member's House", },
+        DE={ name="Zum Haus des Sippenmitglieds reisen",         label="Heim des Sippenmitglieds", },
+        FR={ name="Retour à la maison d'un membre de confrérie", label="Maison d'un membre de confrérie", },
         map={MapType.NONE, -1, -1},
         level=1
     })
 
     -- add the obtainable travel skills
-    self.rep:AddLabelTag({EN=" (Rep)", DE=" (Ruf)", FR=" (Rep)" })
+    self.rep:AddLabelTag({EN="Rep", DE="Ruf", FR="Rep" })
     self.rep:AddSkill({
         id="0x70023262",
-        nameEN="Return to Michel Delving",  labelEN="Michel Delving", zoneEN="Shire",
-        nameDE="Rückkehr nach Michelbinge", labelDE="Michelbinge",    zoneDE="Auenland",
-        nameFR="Retour à Grand'Cave",       labelFR="Grand'Cave",     zoneFR="Comté",
-        labelTagEN=" (Store)", labelTagDE=" (Shop)", labelTagFR=" (Shop)",
+        EN={ name="Return to Michel Delving",  label="Michel Delving", tag="Store", zone="Shire", },
+        DE={ name="Rückkehr nach Michelbinge", label="Michelbinge",    tag="Shop",  zone="Auenland", },
+        FR={ name="Retour à Grand'Cave",       label="Grand'Cave",     tag="Shop",  zone="Comté", },
         map={{MapType.ERIADOR, 375, 440}},
         level=1
     })
     self.rep:AddSkill({
         id="0x7001BF91",
-        nameEN="Return to Thorin's Gate",  descEN="Thanks to your friendship", labelEN="Thorin's Gate",   zoneEN="Ered Luin",
-        nameDE="Rückkehr zu Thorins Tor",  descDE="Dank Eurer Freundschaft",   labelDE="Thorins Tor",     zoneDE="Ered Luin",
-        nameFR="Retour : Porte de Thorin", descFR="Grâce à l'amitié qui vous", labelFR="Porte de Thorin", zoneFR="Ered Luin",
+        EN={ name="Return to Thorin's Gate",  desc="Thanks to your friendship", label="Thorin's Gate",   zone="Ered Luin", },
+        DE={ name="Rückkehr zu Thorins Tor",  desc="Dank Eurer Freundschaft",   label="Thorins Tor",     zone="Ered Luin", },
+        FR={ name="Retour : Porte de Thorin", desc="Grâce à l'amitié qui vous", label="Porte de Thorin", zone="Ered Luin", },
         map={{MapType.ERIADOR, 345, 310}},
         level=1.1
     })
     self.rep:AddSkill({
         id="0x7001BF90",
-        nameEN="Return to Bree",     descEN="Thanks to your friendship", labelEN="West Gate",   zoneEN="Bree",
-        nameDE="Rückkehr nach Bree", descDE="Dank Eurer Freundschaft",   labelDE="Westtor",     zoneDE="Bree",
-        nameFR="Retour à Bree",      descFR="Grâce à votre amitié",      labelFR="Porte Ouest", zoneFR="Bree",
+        EN={ name="Return to Bree",     desc="Thanks to your friendship", label="West Gate",   zone="Bree", },
+        DE={ name="Rückkehr nach Bree", desc="Dank Eurer Freundschaft",   label="Westtor",     zone="Bree", },
+        FR={ name="Retour à Bree",      desc="Grâce à votre amitié",      label="Porte Ouest", zone="Bree", },
         map={{MapType.ERIADOR, 555, 335}},
         level=5
     })
     self.rep:AddSkill({
         id="0x700364B1",
-        nameEN="Return to Lalia's Market",     labelEN="Lalia's Market",  zoneEN="Bree",
-        nameDE="Kehrt zu Lalias Markt zurück", labelDE="Lalias Markt",    zoneDE="Bree",
-        nameFR="Retour au Marché de Lalia",    labelFR="Marché de Lalia", zoneFR="Bree",
-        labelTag=" (Mithril)",
+        EN={ name="Return to Lalia's Market",     label="Lalia's Market",  zone="Bree", },
+        DE={ name="Kehrt zu Lalias Markt zurück", label="Lalias Markt",    zone="Bree", },
+        FR={ name="Retour au Marché de Lalia",    label="Marché de Lalia", zone="Bree", },
+        tag="Mithril",
         map={{MapType.ERIADOR, 630, 360}},
         level=5.1
     })
     self.rep:AddSkill({
         id="0x70064F47",
-        nameEN="Return to Clegur",      labelEN="Clegur", zoneEN="Swanfleet",
-        nameDE="Rückkehr nach Clegur",  labelDE="Clegur", zoneDE="Schwanenfleet",
-        nameFR="Retournez voir Clegur", labelFR="Clegur", zoneFR="Noues des cygnes",
+        EN={ name="Return to Clegur",      label="Clegur", zone="Swanfleet", },
+        DE={ name="Rückkehr nach Clegur",  label="Clegur", zone="Schwanenfleet", },
+        FR={ name="Retournez voir Clegur", label="Clegur", zone="Noues des cygnes", },
         map={{MapType.ERIADOR, 725, 555}},
         level=7
     })
     self.rep:AddSkill({
         id="0x700634A4",
-        nameEN="Return to Swanfleet",         labelEN="Lhan Garan", zoneEN="Swanfleet",
-        nameDE="Rückkehr nach Schwanenfleet", labelDE="Lhan Garan", zoneDE="Schwanenfleet",
-        nameFR="Retour aux Noues des cygnes", labelFR="Lhan Garan", zoneFR="Noues des cygnes",
+        EN={ name="Return to Swanfleet",         label="Lhan Garan", zone="Swanfleet", },
+        DE={ name="Rückkehr nach Schwanenfleet", label="Lhan Garan", zone="Schwanenfleet", },
+        FR={ name="Retour aux Noues des cygnes", label="Lhan Garan", zone="Noues des cygnes", },
         map={{MapType.ERIADOR, 795, 490}},
         level=10
     })
     self.rep:AddSkill({
         id="0x700634AE",
-        nameEN="Return to Cardolan",     labelEN="Herne", zoneEN="Cardolan",
-        nameDE="Rückkehr nach Cardolan", labelDE="Herne", zoneDE="Cardolan",
-        nameFR="Retour au Cardolan",     labelFR="Herne", zoneFR="Cardolan",
+        EN={ name="Return to Cardolan",     label="Herne", zone="Cardolan", },
+        DE={ name="Rückkehr nach Cardolan", label="Herne", zone="Cardolan", },
+        FR={ name="Retour au Cardolan",     label="Herne", zone="Cardolan", },
         map={{MapType.ERIADOR, 590, 495}},
         level=15
     })
     self.rep:AddSkill({
         id="0x7006323D",
-        nameEN="Return to Andrath",     labelEN="Andrath", zoneEN="Cardolan",
-        nameDE="Rückkehr nach Andrath", labelDE="Andrath", zoneDE="Cardolan",
-        nameFR="Retour à Andrath",      labelFR="Andrath", zoneFR="Cardolan",
+        EN={ name="Return to Andrath",     label="Andrath", zone="Cardolan", },
+        DE={ name="Rückkehr nach Andrath", label="Andrath", zone="Cardolan", },
+        FR={ name="Retour à Andrath",      label="Andrath", zone="Cardolan", },
         map={{MapType.ERIADOR, 550, 465}},
         level=17
     })
     self.rep:AddSkill({
         id="0x70061340",
-        nameEN="Return to Nobottle",           labelEN="Nobottle",    zoneEN="Yondershire",
-        nameDE="Kehrt nach Neuhausen zurück.", labelDE="Neuhausen",   zoneDE="Ferne Auen",
-        nameFR="Retour à Bourdeneuve",         labelFR="Bourdeneuve", zoneFR="Comté lointain",
+        EN={ name="Return to Nobottle",           label="Nobottle",    zone="Yondershire", },
+        DE={ name="Kehrt nach Neuhausen zurück.", label="Neuhausen",   zone="Ferne Auen", },
+        FR={ name="Retour à Bourdeneuve",         label="Bourdeneuve", zone="Comté lointain", },
         map={{MapType.ERIADOR, 410, 350}},
         level=20
     })
     self.rep:AddSkill({
         id="0x70020441",
-        nameEN="Return to Ost Guruth",      labelEN="Ost Guruth",   zoneEN="Lone-lands",
-        nameDE="Rückkehr zur Feste Guruth", labelDE="Feste Guruth", zoneDE="Einsame Lande",
-        nameFR="Retournez à Ost Guruth",    labelFR="Ost Guruth",   zoneFR="Terres Solitaires",
+        EN={ name="Return to Ost Guruth",      label="Ost Guruth",   zone="Lone-lands", },
+        DE={ name="Rückkehr zur Feste Guruth", label="Feste Guruth", zone="Einsame Lande", },
+        FR={ name="Retournez à Ost Guruth",    label="Ost Guruth",   zone="Terres Solitaires", },
         map={{MapType.ERIADOR, 725, 400}},
         level=25
     })
     self.rep:AddSkill({
         id="0x70060EA8",
-        nameEN="Return to Tornhad",          labelEN="Tornhad", zoneEN="Angle of Mitheithel",
-        nameDE="Kehrt nach Tornhad zurück.", labelDE="Tornhad", zoneDE="Der Bogen von Mitheithel",
-        nameFR="Retournez voir Tornhad",     labelFR="Tornhad", zoneFR="L'Angle de Mitheithel",
+        EN={ name="Return to Tornhad",          label="Tornhad", zone="Angle of Mitheithel", },
+        DE={ name="Kehrt nach Tornhad zurück.", label="Tornhad", zone="Der Bogen von Mitheithel", },
+        FR={ name="Retournez voir Tornhad",     label="Tornhad", zone="L'Angle de Mitheithel", },
         map={{MapType.ERIADOR, 745, 435}},
         level=40
     })
     self.rep:AddSkill({
         id="0x70023263",
-        nameEN="Return to Rivendell",    descEN="Thanks to your friendship", labelEN="Rivendell", zoneEN="Trollshaws",
-        nameDE="Rückkehr nach Bruchtal", descDE="Dank Eurer Freundschaft",   labelDE="Bruchtal",  zoneDE="Die Trollhöhen",
-        nameFR="Retour à Fondcombe",     descFR="Grâce à votre amitié avec", labelFR="Fondcombe", zoneFR="Trouée des Trolls",
-        labelTagEN=" (Store)", labelTagDE=" (Shop)", labelTagFR=" (Shop)",
+        EN={ name="Return to Rivendell",    desc="Thanks to your friendship", label="Rivendell", tag="Store", zone="Trollshaws", },
+        DE={ name="Rückkehr nach Bruchtal", desc="Dank Eurer Freundschaft",   label="Bruchtal",  tag="Shop",  zone="Die Trollhöhen", },
+        FR={ name="Retour à Fondcombe",     desc="Grâce à votre amitié avec", label="Fondcombe", tag="Shop",  zone="Trouée des Trolls", },
         map={{MapType.ERIADOR, 835, 410}},
         level=40.1
     })
     self.rep:AddSkill({
         id="0x700634A5",
-        nameEN="Return to the Tracery Archives in Rivendell",         labelEN="Tracery Archive",       zoneEN="Trollshaws",
-        nameDE="Rückkehr zu den Filigranmuster-Archiven in Bruchtal", labelDE="Filigranmuster-Archiv", zoneDE="Die Trollhöhen",
-        nameFR="Retour aux Archives de gravures de Fondcombe",        labelFR="Archives de gravures",  zoneFR="Trouée des Trolls",
-        labelTag=" (Delving)",
+        EN={ name="Return to the Tracery Archives in Rivendell",         label="Tracery Archive",       zone="Trollshaws", },
+        DE={ name="Rückkehr zu den Filigranmuster-Archiven in Bruchtal", label="Filigranmuster-Archiv", zone="Die Trollhöhen", },
+        FR={ name="Retour aux Archives de gravures de Fondcombe",        label="Archives de gravures",  zone="Trouée des Trolls", },
+        tag="Delving",
         map={{MapType.ERIADOR, 905, 345}},
         level=40.11
     })
     self.rep:AddSkill({
         id="0x7005B38E",
-        nameEN="Return to Glân Vraig",         labelEN="Glân Vraig", zoneEN="Ettenmoors",
-        nameDE="Nach Glân Vraig zurückkehren", labelDE="Glân Vraig", zoneDE="Die Ettenöden",
-        nameFR="Retour à Glân Vraig",          labelFR="Glân Vraig", zoneFR="Les Landes d'Etten",
-        labelTagEN=" (Quest)", labelTagDE=" (Aufgabe)", labelTagFR=" (Quête)",
+        EN={ name="Return to Glân Vraig",         label="Glân Vraig", tag="Quest",   zone="Ettenmoors", },
+        DE={ name="Nach Glân Vraig zurückkehren", label="Glân Vraig", tag="Aufgabe", zone="Die Ettenöden", },
+        FR={ name="Retour à Glân Vraig",          label="Glân Vraig", tag="Quête",   zone="Les Landes d'Etten", },
         map={{MapType.ERIADOR, 835, 245}},
         level=40.12
     })
     self.rep:AddSkill({
         id="0x70059D12",
-        nameEN="Return to Trestlebridge",     labelEN="Trestlebridge",   zoneEN="North Downs",
-        nameDE="Kehrt nach Schragen zurück.", labelDE="Schragen",        zoneDE="Nordhöhen",
-        nameFR="Retournez à Pont-à-Tréteaux", labelFR="Pont-à-Tréteaux", zoneFR="Hauts du Nord",
+        EN={ name="Return to Trestlebridge",     label="Trestlebridge",   zone="North Downs", },
+        DE={ name="Kehrt nach Schragen zurück.", label="Schragen",        zone="Nordhöhen", },
+        FR={ name="Retournez à Pont-à-Tréteaux", label="Pont-à-Tréteaux", zone="Hauts du Nord", },
         map={{MapType.ERIADOR, 560, 285}},
         level=40.3
     })
     self.rep:AddSkill({
         id="0x70059D0E",
-        nameEN="Return to Trader's Wharf",        labelEN="Trader's Wharf",     zoneEN="Evendim",
-        nameDE="Kehrt zum Händlerkai zurück.",    labelDE="Händlerkai",         zoneDE="Evendim",
-        nameFR="Retournez au Quai des marchands", labelFR="Quai des marchands", zoneFR="Evendim",
+        EN={ name="Return to Trader's Wharf",        label="Trader's Wharf",     zone="Evendim", },
+        DE={ name="Kehrt zum Händlerkai zurück.",    label="Händlerkai",         zone="Evendim", },
+        FR={ name="Retournez au Quai des marchands", label="Quai des marchands", zone="Evendim", },
         map={{MapType.ERIADOR, 515, 275}},
         level=40.4
     })
     self.rep:AddSkill({
         id="0x7001F374",
-        nameEN="Return to Mirkwood",         labelEN="Ost Galadh",   zoneEN="Mirkwood",
-        nameDE="Rückkehr zum Düsterwald",    labelDE="Feste Galadh", zoneDE="Düsterwald",
-        nameFR="Retour dans la Forêt Noire", labelFR="Ost Galadh",   zoneFR="Forêt Noire",
+        EN={ name="Return to Mirkwood",         label="Ost Galadh",   zone="Mirkwood", },
+        DE={ name="Rückkehr zum Düsterwald",    label="Feste Galadh", zone="Düsterwald", },
+        FR={ name="Retour dans la Forêt Noire", label="Ost Galadh",   zone="Forêt Noire", },
         map={{MapType.RHOVANION, 335, 630}},
         level=61
     })
     self.rep:AddSkill({
         id="0x70021FA2",
-        nameEN="Return to Enedwaith",     labelEN="Lhanuch", zoneEN="Enedwaith",
-        nameDE="Rückkehr nach Enedwaith", labelDE="Lhanuch", zoneDE="Enedwaith",
-        nameFR="Retour en Enedwaith",     labelFR="Lhanuch", zoneFR="Enedwaith",
+        EN={ name="Return to Enedwaith",     label="Lhanuch", zone="Enedwaith", },
+        DE={ name="Rückkehr nach Enedwaith", label="Lhanuch", zone="Enedwaith", },
+        FR={ name="Retour en Enedwaith",     label="Lhanuch", zone="Enedwaith", },
         map={{MapType.ERIADOR, 765, 620}},
         level=62
     })
     self.rep:AddSkill({
         id="0x7002C647",
-        nameEN="Return to Galtrev",         labelEN="Galtrev", zoneEN="Dunland",
-        nameDE="Kehrt nach Galtrev zurück", labelDE="Galtrev", zoneDE="Dunland",
-        nameFR="Retour à Galtrev",          labelFR="Galtrev", zoneFR="Pays de Dun",
+        EN={ name="Return to Galtrev",         label="Galtrev", zone="Dunland", },
+        DE={ name="Kehrt nach Galtrev zurück", label="Galtrev", zone="Dunland", },
+        FR={ name="Retour à Galtrev",          label="Galtrev", zone="Pays de Dun", },
         map={{MapType.ERIADOR, 780, 715}},
         level=65
     })
     self.rep:AddSkill({
         id="0x7002C65D",
-        nameEN="Return to Stangard",         labelEN="Stangard",  zoneEN="Great River",
-        nameDE="Kehrt nach Stangard zurück", labelDE="Stangard",  zoneDE="Großer Fluss",
-        nameFR="Retour à Stangarde",         labelFR="Stangarde", zoneFR="Grand Fleuve",
+        EN={ name="Return to Stangard",         label="Stangard",  zone="Great River", },
+        DE={ name="Kehrt nach Stangard zurück", label="Stangard",  zone="Großer Fluss", },
+        FR={ name="Retour à Stangarde",         label="Stangarde", zone="Grand Fleuve", },
         map={{MapType.RHOVANION, 170, 720}, {MapType.ROHAN, 515, 90}},
         level=75
     })
     self.rep:AddSkill({
         id="0x70031A46",
-        nameEN="Return to Snowbourn",            labelEN="Snowbourn",    zoneEN="East Rohan",
-        nameDE="Kehrt nach Schneegrenze zurück", labelDE="Schneegrenze", zoneDE="Ost-Rohan",
-        nameFR="Retourner à Neigebronne",        labelFR="Neigebronne",  zoneFR="Rohan est",
+        EN={ name="Return to Snowbourn",            label="Snowbourn",    zone="East Rohan", },
+        DE={ name="Kehrt nach Schneegrenze zurück", label="Schneegrenze", zone="Ost-Rohan", },
+        FR={ name="Retourner à Neigebronne",        label="Neigebronne",  zone="Rohan est", },
         map={{MapType.ROHAN, 485, 500}},
         level=85
     })
     self.rep:AddSkill({
         id="0x70036B5E",
-        nameEN="Return to Forlaw",      labelEN="Forlaw",  zoneEN="Wildermore",
-        nameDE="Rückkehr nach Forlach", labelDE="Forlach", zoneDE="Wildermark",
-        nameFR="Retour à Forloi",       labelFR="Forloi",  zoneFR="Landes farouches",
+        EN={ name="Return to Forlaw",      label="Forlaw",  zone="Wildermore", },
+        DE={ name="Rückkehr nach Forlach", label="Forlach", zone="Wildermark", },
+        FR={ name="Retour à Forloi",       label="Forloi",  zone="Landes farouches", },
         map={{MapType.ROHAN, 480, 175}},
         level=85
     })
     self.rep:AddSkill({
         id="0x7003DC81",
-        nameEN="Return to Aldburg",         labelEN="Aldburg", zoneEN="West Rohan",
-        nameDE="Kehrt nach Aldburg zurück", labelDE="Aldburg", zoneDE="West-Rohan",
-        nameFR="Retour à Aldburg",          labelFR="Aldburg", zoneFR="Rohan de l'Ouest",
+        EN={ name="Return to Aldburg",         label="Aldburg", zone="West Rohan", },
+        DE={ name="Kehrt nach Aldburg zurück", label="Aldburg", zone="West-Rohan", },
+        FR={ name="Retour à Aldburg",          label="Aldburg", zone="Rohan de l'Ouest", },
         map={{MapType.ROHAN, 540, 640}},
         level=88
     })
     self.rep:AddSkill({
         id="0x7003DC82",
-        nameEN="Return to Helm's Deep",         labelEN="Helm's Deep",     zoneEN="West Rohan",
-        nameDE="Kehrt nach Helms Klamm zurück", labelDE="Helms Klamm",     zoneDE="West-Rohan",
-        nameFR="Retour au Gouffre de Helm",     labelFR="Gouffre de Helm", zoneFR="Rohan de l'Ouest",
+        EN={ name="Return to Helm's Deep",         label="Helm's Deep",     zone="West Rohan", },
+        DE={ name="Kehrt nach Helms Klamm zurück", label="Helms Klamm",     zone="West-Rohan", },
+        FR={ name="Retour au Gouffre de Helm",     label="Gouffre de Helm", zone="Rohan de l'Ouest", },
         map={{MapType.ROHAN, 245, 565}},
         level=90
     })
     self.rep:AddSkill({
         id="0x7004128F",
-        nameEN="Return to Derndingle",      labelEN="Derndingle",   zoneEN="West Rohan",
-        nameDE="Rückkehr ins Geheimnistal", labelDE="Geheimnistal", zoneDE="West-Rohan",
-        nameFR="Retour à Derunant",         labelFR="Derunant",     zoneFR="Rohan de l'Ouest",
+        EN={ name="Return to Derndingle",      label="Derndingle",   zone="West Rohan", },
+        DE={ name="Rückkehr ins Geheimnistal", label="Geheimnistal", zone="West-Rohan", },
+        FR={ name="Retour à Derunant",         label="Derunant",     zone="Rohan de l'Ouest", },
         map={{MapType.RHOVANION, 45, 720}, {MapType.ROHAN, 295, 275}},
         level=90.1
     })
     self.rep:AddSkill({
         id="0x700411AC",
-        nameEN="Return to Dol Amroth",     descEN="in western Gondor",        labelEN="Dol Amroth", zoneEN="Western Gondor",
-        nameDE="Rückkehr nach Dol Amroth", descDE="West-Gondor zurückkehren", labelDE="Dol Amroth", zoneDE="West-Gondor",
-        nameFR="Retour à Dol Amroth",      descFR="l'Ouest du Gondor",        labelFR="Dol Amroth", zoneFR="Gondor de l'Ouest",
+        EN={ name="Return to Dol Amroth",     desc="in western Gondor",        label="Dol Amroth", zone="Western Gondor", },
+        DE={ name="Rückkehr nach Dol Amroth", desc="West-Gondor zurückkehren", label="Dol Amroth", zone="West-Gondor", },
+        FR={ name="Retour à Dol Amroth",      desc="l'Ouest du Gondor",        label="Dol Amroth", zone="Gondor de l'Ouest", },
         map={{MapType.GONDOR, 195, 550}},
         level=98
     })
     self.rep:AddSkill({
         id="0x70043A6A",
-        nameEN="Return to Arnach",     labelEN="Arnach", zoneEN="Eastern Gondor",
-        nameDE="Rückkehr nach Arnach", labelDE="Arnach", zoneDE="Ost-Gondor",
-        nameFR="Retournez à Arnach",   labelFR="Arnach", zoneFR="Gondor de l'Ouest",
+        EN={ name="Return to Arnach",     label="Arnach", zone="Eastern Gondor", },
+        DE={ name="Rückkehr nach Arnach", label="Arnach", zone="Ost-Gondor", },
+        FR={ name="Retournez à Arnach",   label="Arnach", zone="Gondor de l'Ouest", },
         map={{MapType.GONDOR, 685, 425}},
         level=100
     })
     self.rep:AddSkill({
         id="0x7004497E",
-        nameEN="Return to Minas Tirith",          labelEN="Minas Tirith", zoneEN="Old Anórien",
-        nameDE="Kehrt nach Minas Tirith zurück.", labelDE="Minas Tirith", zoneDE="Alt-Anórien",
-        nameFR="Retour à Minas Tirith",           labelFR="Minas Tirith", zoneFR="Ancien Anórien",
+        EN={ name="Return to Minas Tirith",          label="Minas Tirith", zone="Old Anórien", },
+        DE={ name="Kehrt nach Minas Tirith zurück.", label="Minas Tirith", zone="Alt-Anórien", },
+        FR={ name="Retour à Minas Tirith",           label="Minas Tirith", zone="Ancien Anórien", },
         map={{MapType.GONDOR, 700, 345}},
         level=100.1
     })
     self.rep:AddSkill({
         id="0x700459A9",
-        nameEN="Return to the War-stead",             labelEN="War-stead",                zoneEN="Far Anórien",
-        nameDE="Zurück zum Kriegslager der Rohirrim", labelDE="Kriegslager der Rohirrim", zoneDE="Fernes Anórien",
-        nameFR="Retour au camp militaire",            labelFR="Camp militaire",           zoneFR="Lointain Anórien",
+        EN={ name="Return to the War-stead",             label="War-stead",                zone="Far Anórien", },
+        DE={ name="Zurück zum Kriegslager der Rohirrim", label="Kriegslager der Rohirrim", zone="Fernes Anórien", },
+        FR={ name="Retour au camp militaire",            label="Camp militaire",           zone="Lointain Anórien", },
         map={{MapType.GONDOR, 635, 140}},
         level=102
     })
     self.rep:AddSkill({
         id="0x70046CC0",
-        nameEN="Return to after-battle Minas Tirith",           labelEN="Minas Tirith after-battle",      zoneEN="Anórien",
-        nameDE="Rückkehr ins schlachtgezeichnete Minas Tirith", labelDE="Minas Tirith nach der Schlacht", zoneDE="Anórien",
-        nameFR="Retour à Minas Tirith après la bataille",       labelFR="Minas Tirith après la bataille", zoneFR="Anórien",
+        EN={ name="Return to after-battle Minas Tirith",           label="Minas Tirith after-battle",      zone="Anórien", },
+        DE={ name="Rückkehr ins schlachtgezeichnete Minas Tirith", label="Minas Tirith nach der Schlacht", zone="Anórien", },
+        FR={ name="Retour à Minas Tirith après la bataille",       label="Minas Tirith après la bataille", zone="Anórien", },
         map={{MapType.GONDOR, 700, 375}},
         level=105
     })
     self.rep:AddSkill({
         id="0x7004707D",
-        nameEN="Return to after-battle Osgiliath",           labelEN="Osgiliath after-battle",      zoneEN="Anórien",
-        nameDE="Rückkehr ins schlachtgezeichnete Osgiliath", labelDE="Osgiliath nach der Schlacht", zoneDE="Anórien",
-        nameFR="Retour à Osgiliath après la bataille",       labelFR="Osgiliath après la bataille", zoneFR="Anórien",
+        EN={ name="Return to after-battle Osgiliath",           label="Osgiliath after-battle",      zone="Anórien", },
+        DE={ name="Rückkehr ins schlachtgezeichnete Osgiliath", label="Osgiliath nach der Schlacht", zone="Anórien", },
+        FR={ name="Retour à Osgiliath après la bataille",       label="Osgiliath après la bataille", zone="Anórien", },
         map={{MapType.GONDOR, 825, 335}},
         level=105.1
     })
     self.rep:AddSkill({
         id="0x70047080",
-        nameEN="Return to Henneth Annûn",     labelEN="Henneth Annûn", zoneEN="Ithilien",
-        nameDE="Rückkehr nach Henneth Annûn", labelDE="Henneth Annûn", zoneDE="Ithilien",
-        nameFR="Retour à Henneth Annûn",      labelFR="Henneth Annûn", zoneFR="Ithilien",
+        EN={ name="Return to Henneth Annûn",     label="Henneth Annûn", zone="Ithilien", },
+        DE={ name="Rückkehr nach Henneth Annûn", label="Henneth Annûn", zone="Ithilien", },
+        FR={ name="Retour à Henneth Annûn",      label="Henneth Annûn", zone="Ithilien", },
         map={{MapType.GONDOR, 845, 385}},
         level=105.2
     })
     self.rep:AddSkill({
         id="0x70047BF4",
-        nameEN="Return to the Camp of the Host", labelEN="Camp of the Host", zoneEN="The Wastes",
-        nameDE="Rückkehr ins Lager des Heeres",  labelDE="Lager des Heeres", zoneDE="Das Ödland",
-        nameFR="Retour au Camp de l'armée",      labelFR="Camp de l'armée",  zoneFR="Les Landes désertiques",
+        EN={ name="Return to the Camp of the Host", label="Camp of the Host", zone="The Wastes", },
+        DE={ name="Rückkehr ins Lager des Heeres",  label="Lager des Heeres", zone="Das Ödland", },
+        FR={ name="Retour au Camp de l'armée",      label="Camp de l'armée",  zone="Les Landes désertiques", },
         map={{MapType.GONDOR, 775, 170}},
         level=105.3
     })
     self.rep:AddSkill({
         id="0x70047C1B",
-        nameEN="Return to Haerondir",     labelEN="Haerondir", zoneEN="The Wastes",
-        nameDE="Rückkehr nach Haerondir", labelDE="Haerondir", zoneDE="Das Ödland",
-        nameFR="Retour à Haerondir",      labelFR="Haerondir", zoneFR="Les Landes désertiques",
+        EN={ name="Return to Haerondir",     label="Haerondir", zone="The Wastes", },
+        DE={ name="Rückkehr nach Haerondir", label="Haerondir", zone="Das Ödland", },
+        FR={ name="Retour à Haerondir",      label="Haerondir", zone="Les Landes désertiques", },
         map={{MapType.GONDOR, 825, 100}},
         level=105.4
     })
     self.rep:AddSkill({
         id="0x7004AE1D",
-        nameEN="Return to the Udûn Foothold", labelEN="Udûn Foothold",    zoneEN="Mordor",
-        nameDE="Zurück zum Udûn-Brückenkopf", labelDE="Udûn-Brückenkopf", zoneDE="Mordor",
-        nameFR="Retour au fort d'Udûn",       labelFR="Fort d'Udûn",      zoneFR="Mordor",
+        EN={ name="Return to the Udûn Foothold", label="Udûn Foothold",    zone="Mordor", },
+        DE={ name="Zurück zum Udûn-Brückenkopf", label="Udûn-Brückenkopf", zone="Mordor", },
+        FR={ name="Retour au fort d'Udûn",       label="Fort d'Udûn",      zone="Mordor", },
         map={{MapType.GONDOR, 895, 230}},
         level=106
     })
     self.rep:AddSkill({
         id="0x7004B8C2",
-        nameEN="Journey to the Court of Lothlórien",    labelEN="Court of Lothlórien", zoneEN="Lothlórien",
-        nameDE="Reise zum Hof von Lothlórien",          labelDE="Hof von Lothlórien",  zoneDE="Lothlórien",
-        nameFR="Voyager jusqu'à la Cour de Lothlórien", labelFR="Cour de Lothlórien",  zoneFR="Lothlórien",
-        labelTagEN=" (Quest)", labelTagDE=" (Aufgabe)", labelTagFR=" (Quête)",
+        EN={ name="Journey to the Court of Lothlórien",    label="Court of Lothlórien", tag="Quest",   zone="Lothlórien", },
+        DE={ name="Reise zum Hof von Lothlórien",          label="Hof von Lothlórien",  tag="Aufgabe", zone="Lothlórien", },
+        FR={ name="Voyager jusqu'à la Cour de Lothlórien", label="Cour de Lothlórien",  tag="Quête",   zone="Lothlórien", },
         map={{MapType.RHOVANION, 140, 585}},
         level=110
     })
     self.rep:AddSkill({
         id="0x7004B8C3",
-        nameEN="Journey to the Hall of the King", labelEN="Hall of the King", zoneEN="Old Anórien",
-        nameDE="Reise zur Halle des Königs",      labelDE="Halle des Königs", zoneDE="Alt-Anórien",
-        nameFR="Voyager jusqu'au Palais du roi",  labelFR="Palais du roi",    zoneFR="Ancien Anórien",
-        labelTagEN=" (Quest)", labelTagDE=" (Aufgabe)", labelTagFR=" (Quête)",
+        EN={ name="Journey to the Hall of the King", label="Hall of the King", tag="Quest",   zone="Old Anórien", },
+        DE={ name="Reise zur Halle des Königs",      label="Halle des Königs", tag="Aufgabe", zone="Alt-Anórien", },
+        FR={ name="Voyager jusqu'au Palais du roi",  label="Palais du roi",    tag="Quête",   zone="Ancien Anórien", },
         map={{MapType.GONDOR, 740, 310}},
         level=110.1
     })
     self.rep:AddSkill({
         id="0x7004B8C4",
-        nameEN="Journey to the Hall Under the Mountain",   labelEN="Hall Under the Mountain", zoneEN="Ered Mithrin",
-        nameDE="Reise zur Halle unter dem Berg",           labelDE="Halle unter dem Berg",    zoneDE="Ered Mithrin",
-        nameFR="Voyager jusqu'au Palais sous la Montagne", labelFR="Palais sous la Montagne", zoneFR="Ered Mithrin",
-        labelTagEN=" (Quest)", labelTagDE=" (Aufgabe)", labelTagFR=" (Quête)",
+        EN={ name="Journey to the Hall Under the Mountain",   label="Hall Under the Mountain", tag="Quest",   zone="Ered Mithrin", },
+        DE={ name="Reise zur Halle unter dem Berg",           label="Halle unter dem Berg",    tag="Aufgabe", zone="Ered Mithrin", },
+        FR={ name="Voyager jusqu'au Palais sous la Montagne", label="Palais sous la Montagne", tag="Quête",   zone="Ered Mithrin", },
         map={{MapType.RHOVANION, 630, 115}},
         level=110.2
     })
     self.rep:AddSkill({
         id="0x7004B8C5",
-        nameEN="Journey to Bâr Thorenion",      labelEN="Bâr Thorenion", zoneEN="Ithilien",
-        nameDE="Reise nach Bâr Thorenion",      labelDE="Bâr Thorenion", zoneDE="Ithilien",
-        nameFR="Voyager jusqu'à Bâr Thorenion", labelFR="Bâr Thorenion", zoneFR="Ithilien",
-        labelTagEN=" (Quest)", labelTagDE=" (Aufgabe)", labelTagFR=" (Quête)",
+        EN={ name="Journey to Bâr Thorenion",      label="Bâr Thorenion", tag="Quest",   zone="Ithilien", },
+        DE={ name="Reise nach Bâr Thorenion",      label="Bâr Thorenion", tag="Aufgabe", zone="Ithilien", },
+        FR={ name="Voyager jusqu'à Bâr Thorenion", label="Bâr Thorenion", tag="Quête",   zone="Ithilien", },
         map={{MapType.GONDOR, 965, 370}},
         level=110.3
     })
     self.rep:AddSkill({
         id="0x7004D738",
-        nameEN="Return to Dale",     labelEN="Dale", zoneEN="Eryn Lasgalen",
-        nameDE="Rückkehr nach Thal", labelDE="Thal", zoneDE="Eryn Lasgalen",
-        nameFR="Revenir à Dale",     labelFR="Dale", zoneFR="Eryn Lasgalen",
+        EN={ name="Return to Dale",     label="Dale", zone="Eryn Lasgalen", },
+        DE={ name="Rückkehr nach Thal", label="Thal", zone="Eryn Lasgalen", },
+        FR={ name="Revenir à Dale",     label="Dale", zone="Eryn Lasgalen", },
         map={{MapType.RHOVANION, 690, 215}},
         level=115
     })
     self.rep:AddSkill({
         id="0x7004FAC3",
-        nameEN="Return to Járnfast",     labelEN="Járnfast", zoneEN="The Ironfold",
-        nameDE="Rückkehr nach Járnfast", labelDE="Járnfast", zoneDE="Der Eisenbruch",
-        nameFR="Revenir à Jarnfast",     labelFR="Jarnfast", zoneFR="La Crevasse de Fer",
+        EN={ name="Return to Járnfast",     label="Járnfast", zone="The Ironfold", },
+        DE={ name="Rückkehr nach Járnfast", label="Járnfast", zone="Der Eisenbruch", },
+        FR={ name="Revenir à Jarnfast",     label="Jarnfast", zone="La Crevasse de Fer", },
         map={{MapType.RHOVANION, 860, 110}},
         level=116
     })
     self.rep:AddSkill({
         id="0x7004FAC5",
-        nameEN="Return to Skarháld",          labelEN="Skarháld", zoneEN="Ered Mithrin",
-        nameDE="Kehrt nach Skarháld zurück.", labelDE="Skarháld", zoneDE="Ered Mithrin",
-        nameFR="Revenir à Skarhald",          labelFR="Skarhald", zoneFR="Ered Mithrin",
+        EN={ name="Return to Skarháld",          label="Skarháld", zone="Ered Mithrin", },
+        DE={ name="Kehrt nach Skarháld zurück.", label="Skarháld", zone="Ered Mithrin", },
+        FR={ name="Revenir à Skarhald",          label="Skarhald", zone="Ered Mithrin", },
         map={{MapType.RHOVANION, 400, 90}},
         level=117
     })
     self.rep:AddSkill({
         id="0x70052F12",
-        nameEN="Return to Beorninghús",           labelEN="Beorninghús",   zoneEN="Vales of Anduin",
-        nameDE="Kehrt zum Beorningerhús zurück.", labelDE="Beorningerhús", zoneDE="Die Täler des Anduin",
-        nameFR="Retournez auprès de Beorninghus", labelFR="Beorninghus",   zoneFR="Val d'Anduin",
+        EN={ name="Return to Beorninghús",           label="Beorninghús",   zone="Vales of Anduin", },
+        DE={ name="Kehrt zum Beorningerhús zurück.", label="Beorningerhús", zone="Die Täler des Anduin", },
+        FR={ name="Retournez auprès de Beorninghus", label="Beorninghus",   zone="Val d'Anduin", },
         map={{MapType.RHOVANION, 360, 300}},
         level=120
     })
     self.rep:AddSkill({
         id="0x70052F04",
-        nameEN="Return to Hultvís",           labelEN="Hultvís", zoneEN="Vales of Anduin",
-        nameDE="Kehrt zum Hultvís zurück.",   labelDE="Hultvís", zoneDE="Die Täler des Anduin",
-        nameFR="Retournez auprès de Hultvis", labelFR="Hultvis", zoneFR="Val d'Anduin",
+        EN={ name="Return to Hultvís",           label="Hultvís", zone="Vales of Anduin", },
+        DE={ name="Kehrt zum Hultvís zurück.",   label="Hultvís", zone="Die Täler des Anduin", },
+        FR={ name="Retournez auprès de Hultvis", label="Hultvis", zone="Val d'Anduin", },
         map={{MapType.RHOVANION, 345, 400}},
         level=120.1
     })
     self.rep:AddSkill({
         id="0x700551F8",
-        nameEN="Return to Estolad Lân",   labelEN="Estolad Lân", zoneEN="Imlad Morgul",
-        nameDE="Zurück nach Estolad Lân", labelDE="Estolad Lân", zoneDE="Imlad Morgul",
-        nameFR="Retour à Estolad Lân",    labelFR="Estolad Lân", zoneFR="Imlad Morgul",
+        EN={ name="Return to Estolad Lân",   label="Estolad Lân", zone="Imlad Morgul", },
+        DE={ name="Zurück nach Estolad Lân", label="Estolad Lân", zone="Imlad Morgul", },
+        FR={ name="Retour à Estolad Lân",    label="Estolad Lân", zone="Imlad Morgul", },
         map={{MapType.GONDOR, 930, 460}},
         level=125
     })
     self.rep:AddSkill({
         id="0x70057629",
-        nameEN="Return to Limlók",     labelEN="Limlók", zoneEN="Wells of Langflood",
-        nameDE="Rückkehr nach Limlók", labelDE="Limlók", zoneDE="Quellen des Langflut",
-        nameFR="Retour à Limlok",      labelFR="Limlok", zoneFR="Puits du Long Fleuve",
+        EN={ name="Return to Limlók",     label="Limlók", zone="Wells of Langflood", },
+        DE={ name="Rückkehr nach Limlók", label="Limlók", zone="Quellen des Langflut", },
+        FR={ name="Retour à Limlok",      label="Limlok", zone="Puits du Long Fleuve", },
         map={{MapType.RHOVANION, 315, 230}},
         level=130
     })
     self.rep:AddSkill({
         id="0x7005856F",
-        nameEN="Return to Annâk-khurfu",     labelEN="Annâk-khurfu", zoneEN="Elderslade",
-        nameDE="Rückkehr nach Annâk-khurfu", labelDE="Annâk-khurfu", zoneDE="Elderslade",
-        nameFR="Retournez à Annâk-khurfu",   labelFR="Annâk-khurfu", zoneFR="Elderslade",
+        EN={ name="Return to Annâk-khurfu",     label="Annâk-khurfu", zone="Elderslade", },
+        DE={ name="Rückkehr nach Annâk-khurfu", label="Annâk-khurfu", zone="Elderslade", },
+        FR={ name="Retournez à Annâk-khurfu",   label="Annâk-khurfu", zone="Elderslade", },
         map={{MapType.RHOVANION, 500, 90}},
         level=130.1
     })
     self.rep:AddSkill({
         id="0x7005AA90",
-        nameEN="Return to Akrâz-zahar",     labelEN="Akrâz-zahar", zoneEN="Eryn Lasgalen",
-        nameDE="Rückkehr nach Akrâz-zahar", labelDE="Akrâz-zahar", zoneDE="Eryn Lasgalen",
-        nameFR="Retour à Akrâz-zahar",      labelFR="Akrâz-zahar", zoneFR="Eryn Lasgalen",
+        EN={ name="Return to Akrâz-zahar",     label="Akrâz-zahar", zone="Eryn Lasgalen", },
+        DE={ name="Rückkehr nach Akrâz-zahar", label="Akrâz-zahar", zone="Eryn Lasgalen", },
+        FR={ name="Retour à Akrâz-zahar",      label="Akrâz-zahar", zone="Eryn Lasgalen", },
         map={{MapType.RHOVANION, 720, 115}},
         level=130.2
     })
     self.rep:AddSkill({
         id="0x7005AA92",
-        nameEN="Return to Azanulbizar",      labelEN="Amdân", zoneEN="Azanulbizar",
-        nameDE="Rückkehre nach Azanulbizar", labelDE="Amdân", zoneDE="Azanulbizar",
-        nameFR="Retour à Azanulbizar",       labelFR="Amdân", zoneFR="Azanulbizar",
+        EN={ name="Return to Azanulbizar",      label="Amdân", zone="Azanulbizar", },
+        DE={ name="Rückkehre nach Azanulbizar", label="Amdân", zone="Azanulbizar", },
+        FR={ name="Retour à Azanulbizar",       label="Amdân", zone="Azanulbizar", },
         map={{MapType.RHOVANION, 180, 555}},
         level=130.3
     })
     self.rep:AddSkill({
         id="0x7005D47C",
-        nameEN="Return to the Noble Gate",   labelEN="Noble Gate",  zoneEN="Gundabad",
-        nameDE="Rückkehr zum Prachttor",     labelDE="Prachttor",   zoneDE="Gundabad",
-        nameFR="Retourner à la Porte Noble", labelFR="Porte Noble", zoneFR="Gundabad",
+        EN={ name="Return to the Noble Gate",   label="Noble Gate",  zone="Gundabad", },
+        DE={ name="Rückkehr zum Prachttor",     label="Prachttor",   zone="Gundabad", },
+        FR={ name="Retourner à la Porte Noble", label="Porte Noble", zone="Gundabad", },
         map={{MapType.RHOVANION, 160, 130}},
         level=131
     })
     self.rep:AddSkill({
         id="0x7005D484",
-        nameEN="Return to Leitstáth",     labelEN="Leitstáth", zoneEN="Gundabad",
-        nameDE="Rückkehr nach Leitstáth", labelDE="Leitstáth", zoneDE="Gundabad",
-        nameFR="Retourner à Leitstath",   labelFR="Leitstath", zoneFR="Gundabad",
+        EN={ name="Return to Leitstáth",     label="Leitstáth", zone="Gundabad", },
+        DE={ name="Rückkehr nach Leitstáth", label="Leitstáth", zone="Gundabad", },
+        FR={ name="Retourner à Leitstath",   label="Leitstath", zone="Gundabad", },
         map={{MapType.RHOVANION, 240, 65}},
         level=135
     })
     self.rep:AddSkill({
         id="0x7005A596",
-        nameEN="Journey to the Hall of Vérnozal",            labelEN="Vérnozal", zoneEN="Gundabad",
-        nameDE="Reise zur Halle Vérnozal",                   labelDE="Vérnozal", zoneDE="Gundabad",
-        nameFR="Voyage jusqu'à la Grande salle de Vérnozal", labelFR="Vérnozal", zoneFR="Gundabad",
-        labelTagEN=" (Quest)", labelTagDE=" (Aufgabe)", labelTagFR=" (Quête)",
+        EN={ name="Journey to the Hall of Vérnozal",            label="Vérnozal", tag="Quest",   zone="Gundabad", },
+        DE={ name="Reise zur Halle Vérnozal",                   label="Vérnozal", tag="Aufgabe", zone="Gundabad", },
+        FR={ name="Voyage jusqu'à la Grande salle de Vérnozal", label="Vérnozal", tag="Quête",   zone="Gundabad", },
         map={{MapType.RHOVANION, 155, 45}},
         level=140
     })
     self.rep:AddSkill({
         id="0x70064ACA",
-        nameEN="Return to Carn Dûm",     labelEN="Carn Dûm", zoneEN="Angmar",
-        nameDE="Rückkehr nach Carn Dûm", labelDE="Carn Dûm", zoneDE="Angmar",
-        nameFR="Retour à Carn Dûm",      labelFR="Carn Dûm", zoneFR="Angmar",
+        EN={ name="Return to Carn Dûm",     label="Carn Dûm", zone="Angmar", },
+        DE={ name="Rückkehr nach Carn Dûm", label="Carn Dûm", zone="Angmar", },
+        FR={ name="Retour à Carn Dûm",      label="Carn Dûm", zone="Angmar", },
         map={{MapType.ERIADOR, 705, 100}},
         level=140.1
     })
     self.rep:AddSkill({
         id="0x700658EB",
-        nameEN="Return to Pelargir",     labelEN="Pelargir", zoneEN="King's Gondor",
-        nameDE="Rückkehr nach Pelargir", labelDE="Pelargir", zoneDE="Königreich Gondor",
-        nameFR="Retournez à Pelargir",   labelFR="Pelargir", zoneFR="Gondor royal",
+        EN={ name="Return to Pelargir",     label="Pelargir", zone="King's Gondor", },
+        DE={ name="Rückkehr nach Pelargir", label="Pelargir", zone="Königreich Gondor", },
+        FR={ name="Retournez à Pelargir",   label="Pelargir", zone="Gondor royal", },
         map={{MapType.GONDOR, 640, 625}},
         level=141
     })
     self.rep:AddSkill({
         id="0x70068700",
-        nameEN="Return to Dol Amroth",     descEN="King's Gondor",     labelEN="Dol Amroth", zoneEN="King's Gondor",
-        nameDE="Rückkehr nach Dol Amroth", descDE="Königreich Gondor", labelDE="Dol Amroth", zoneDE="Königreich Gondor",
-        nameFR="Retour à Dol Amroth",      descFR="le Gondor royal",   labelFR="Dol Amroth", zoneFR="Gondor royal",
+        EN={ name="Return to Dol Amroth",     desc="King's Gondor",     label="Dol Amroth", zone="King's Gondor", },
+        DE={ name="Rückkehr nach Dol Amroth", desc="Königreich Gondor", label="Dol Amroth", zone="Königreich Gondor", },
+        FR={ name="Retour à Dol Amroth",      desc="le Gondor royal",   label="Dol Amroth", zone="Gondor royal", },
         map={{MapType.GONDOR, 180, 485}, {MapType.HARADWAITH, 355, 70}},
         level=142
     })
     self.rep:AddSkill({
         id="0x70068703",
-        nameEN="Return to Lond Cirion",         labelEN="Lond Cirion", zoneEN="Anfalas",
-        nameDE="Nach Lond Cirion zurückkehren", labelDE="Lond Cirion", zoneDE="Anfalas",
-        nameFR="Retour à Lond Cirion",          labelFR="Lond Cirion", zoneFR="Anfalas",
+        EN={ name="Return to Lond Cirion",         label="Lond Cirion", zone="Anfalas", },
+        DE={ name="Nach Lond Cirion zurückkehren", label="Lond Cirion", zone="Anfalas", },
+        FR={ name="Retour à Lond Cirion",          label="Lond Cirion", zone="Anfalas", },
         map={{MapType.GONDOR, 225, 420}, {MapType.HARADWAITH, 200, 20}},
         level=143
     })
     self.rep:AddSkill({
         id="0x70068702",
-        nameEN="Return to Halrax",        labelEN="Halrax", zoneEN="Shield Isles",
-        nameDE="Kehrt zu Halrax zurück.", labelDE="Halrax", zoneDE="Die Schildinseln",
-        nameFR="Retournez voir Halrax",   labelFR="Halrax", zoneFR="Les îles du Bouclier",
+        EN={ name="Return to Halrax",        label="Halrax", zone="Shield Isles", },
+        DE={ name="Kehrt zu Halrax zurück.", label="Halrax", zone="Die Schildinseln", },
+        FR={ name="Retournez voir Halrax",   label="Halrax", zone="Les îles du Bouclier", },
         map={{MapType.HARADWAITH, 245, 260}},
         level=145
     })
     self.rep:AddSkill({
         id="0x70068701",
-        nameEN="Return to Jax Phanâl",         labelEN="Jax Phanâl", zoneEN="Umbar",
-        nameDE="Nach Jax Phanâl zurückkehren", labelDE="Jax Phanâl", zoneDE="Umbar",
-        nameFR="Retour à Jax Phanâl",          labelFR="Jax Phanâl", zoneFR="Umbar",
+        EN={ name="Return to Jax Phanâl",         label="Jax Phanâl", zone="Umbar", },
+        DE={ name="Nach Jax Phanâl zurückkehren", label="Jax Phanâl", zone="Umbar", },
+        FR={ name="Retour à Jax Phanâl",          label="Jax Phanâl", zone="Umbar", },
         map={{MapType.HARADWAITH, 335, 315}},
         level=146
     })
     self.rep:AddSkill({
         id="0x700686FF",
-        nameEN="Return to Umbar",         labelEN="Umbar Baharbêl", zoneEN="Umbar",
-        nameDE="Nach Umbar zurückkehren", labelDE="Umbar Baharbêl", zoneDE="Umbar",
-        nameFR="Retour à Umbar",          labelFR="Umbar Baharbêl", zoneFR="Umbar",
+        EN={ name="Return to Umbar",         label="Umbar Baharbêl", zone="Umbar", },
+        DE={ name="Nach Umbar zurückkehren", label="Umbar Baharbêl", zone="Umbar", },
+        FR={ name="Retour à Umbar",          label="Umbar Baharbêl", zone="Umbar", },
         map={{MapType.HARADWAITH, 475, 370}},
         level=148
     })
     self.rep:AddSkill({
         id="0x700697F2",
-        nameEN="Return to the Bloody Eagle Tavern",           labelEN="Bloody Eagle Tavern",         zoneEN="Umbar",
-        nameDE="Rückkehr zur Taverne \"Zum Blutigen Adler\"", labelDE="Zum Blutigen Adler",          zoneDE="Umbar",
-        nameFR="Retour à la taverne de l'Aigle Sanglant",     labelFR="Taverne de l'Aigle Sanglant", zoneFR="Umbar",
+        EN={ name="Return to the Bloody Eagle Tavern",           label="Bloody Eagle Tavern",         zone="Umbar", },
+        DE={ name="Rückkehr zur Taverne \"Zum Blutigen Adler\"", label="Zum Blutigen Adler",          zone="Umbar", },
+        FR={ name="Retour à la taverne de l'Aigle Sanglant",     label="Taverne de l'Aigle Sanglant", zone="Umbar", },
         map={{MapType.HARADWAITH, 445, 400}},
         level=149
     })
     self.rep:AddSkill({
         id="0x70068704",
-        nameEN="Journey to the Ledger-keepers",        labelEN="Ledger-Keepers",      zoneEN="Umbar",
-        nameDE="Zu den Buchhütern reisen",             labelDE="Ledger-Keepers",      zoneDE="Umbar",
-        nameFR="Voyager vers les Gardiens des écrits", labelFR="Gardiens des écrits", zoneFR="Umbar",
-        labelTagEN=" (Quest)", labelTagDE=" (Aufgabe)", labelTagFR=" (Quête)",
+        EN={ name="Journey to the Ledger-keepers",        label="Ledger-Keepers",      tag="Quest",   zone="Umbar", },
+        DE={ name="Zu den Buchhütern reisen",             label="Ledger-Keepers",      tag="Aufgabe", zone="Umbar", },
+        FR={ name="Voyager vers les Gardiens des écrits", label="Gardiens des écrits", tag="Quête",   zone="Umbar", },
         map={{MapType.HARADWAITH, 415, 340}},
         level=150
     })
     self.rep:AddSkill({
         id="0x700686FE",
-        nameEN="Journey to the Order of the Eagle", labelEN="Order of the Eagle", zoneEN="Umbar",
-        nameDE="Zum Orden des Adlers reisen",       labelDE="Orden des Adlers",   zoneDE="Umbar",
-        nameFR="Voyager vers l'Ordre de l'Aigle",   labelFR="L'Ordre de l'Aigle", zoneFR="Umbar",
-        labelTagEN=" (Quest)", labelTagDE=" (Aufgabe)", labelTagFR=" (Quête)",
+        EN={ name="Journey to the Order of the Eagle", label="Order of the Eagle", tag="Quest",   zone="Umbar", },
+        DE={ name="Zum Orden des Adlers reisen",       label="Orden des Adlers",   tag="Aufgabe", zone="Umbar", },
+        FR={ name="Voyager vers l'Ordre de l'Aigle",   label="L'Ordre de l'Aigle", tag="Quête",   zone="Umbar", },
         map={{MapType.HARADWAITH, 415, 370}},
         level=150
     })
@@ -1905,196 +1895,196 @@ function TravelDictionary:CreateCreepDictionary()
     -- monster player maps
     self.creep:AddSkill({
         id="0x70028BBC",
-        nameEN="Return to Gramsfoot",
-        nameDE="Rückkehr nach Gramfuß",
-        nameFR="Retournez au Pied de Gram",
+        EN={ name="Return to Gramsfoot", },
+        DE={ name="Rückkehr nach Gramfuß", },
+        FR={ name="Retournez au Pied de Gram", },
         map={MapType.CREEPS, 180, 120},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BC1",
-        nameEN="Map to Gramsfoot",
-        nameDE="Karte zum Gramfuss",
-        nameFR="Carte pour aller au Pied de Gram",
+        EN={ name="Map to Gramsfoot", },
+        DE={ name="Karte zum Gramfuss", },
+        FR={ name="Carte pour aller au Pied de Gram", },
         map={MapType.CREEPS, 215, 120},
         hasSameText={"0x7002A7B9"},
         level=1
     })
     self.creep:AddSkill({
         id="0x7002A7B9",
-        nameEN="Map to Gramsfoot",
-        nameDE="Karte zum Gramfuss",
-        nameFR="Carte pour aller au Pied de Gram",
+        EN={ name="Map to Gramsfoot", },
+        DE={ name="Karte zum Gramfuss", },
+        FR={ name="Carte pour aller au Pied de Gram", },
         map={MapType.CREEPS, 245, 120},
         hasSameText={"0x70028BC1"},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BB3",
-        nameEN="Crude Map to Isendeep",
-        nameDE="Kartenskizze zur Isenbinge",
-        nameFR="Carte grossière pour aller au Gouffre d'Isen",
+        EN={ name="Crude Map to Isendeep", },
+        DE={ name="Kartenskizze zur Isenbinge", },
+        FR={ name="Carte grossière pour aller au Gouffre d'Isen", },
         map={MapType.CREEPS, 700, 200},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BB6",
-        nameEN="Crude Map to Tol Ascarnen",
-        nameDE="Grobe Karte zur Feste Tol Ascarnen",
-        nameFR="Carte grossière pour aller à Tol Ascarnen",
+        EN={ name="Crude Map to Tol Ascarnen", },
+        DE={ name="Grobe Karte zur Feste Tol Ascarnen", },
+        FR={ name="Carte grossière pour aller à Tol Ascarnen", },
         map={MapType.CREEPS, 350, 440},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BB7",
-        nameEN="Crude Map to Lugazag",
-        nameDE="Kartenskizze zur Feste Lugazag",
-        nameFR="Carte grossière pour aller à Lugazag",
+        EN={ name="Crude Map to Lugazag", },
+        DE={ name="Kartenskizze zur Feste Lugazag", },
+        FR={ name="Carte grossière pour aller à Lugazag", },
         map={MapType.CREEPS, 180, 380},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BBE",
-        nameEN="Crude Map to Tirith Rhaw",
-        nameDE="Grobe Karte zur Feste Tirith Rhaw",
-        nameFR="Carte grossière pour aller à Tirith Rhaw",
+        EN={ name="Crude Map to Tirith Rhaw", },
+        DE={ name="Grobe Karte zur Feste Tirith Rhaw", },
+        FR={ name="Carte grossière pour aller à Tirith Rhaw", },
         map={MapType.CREEPS, 500, 295},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BBF",
-        nameEN="Crude Map to Grimwood",
-        nameDE="Kartenskizze zum Grimmwald",
-        nameFR="Carte grossière pour aller au Bois Funeste",
+        EN={ name="Crude Map to Grimwood", },
+        DE={ name="Kartenskizze zum Grimmwald", },
+        FR={ name="Carte grossière pour aller au Bois Funeste", },
         map={MapType.CREEPS, 340, 510},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BAF",
-        nameEN="Poor Map to Isendeep",
-        nameDE="Minderwertige Karte zur Isenbinge",
-        nameFR="Piètre carte pour aller au Gouffre d'Isen",
+        EN={ name="Poor Map to Isendeep", },
+        DE={ name="Minderwertige Karte zur Isenbinge", },
+        FR={ name="Piètre carte pour aller au Gouffre d'Isen", },
         map={MapType.CREEPS, 610, 300},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BB1",
-        nameEN="Poor Map to Tol Ascarnen",
-        nameDE="Minderwertige Karte zur Feste Tol Ascarnen",
-        nameFR="Piètre carte pour aller à Tol Ascarnen",
+        EN={ name="Poor Map to Tol Ascarnen", },
+        DE={ name="Minderwertige Karte zur Feste Tol Ascarnen", },
+        FR={ name="Piètre carte pour aller à Tol Ascarnen", },
         map={MapType.CREEPS, 435, 365},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BB2",
-        nameEN="Poor Map to Lugazag",
-        nameDE="Minderwertige Karte zur Feste Lugazag",
-        nameFR="Piètre carte pour aller à Lugazag",
+        EN={ name="Poor Map to Lugazag", },
+        DE={ name="Minderwertige Karte zur Feste Lugazag", },
+        FR={ name="Piètre carte pour aller à Lugazag", },
         map={MapType.CREEPS, 180, 270},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BB4",
-        nameEN="Poor Map to Tirith Rhaw",
-        nameDE="Minderwertige Karte zur Feste Tirith Rhaw",
-        nameFR="Piètre carte pour aller à Tirith Rhaw",
+        EN={ name="Poor Map to Tirith Rhaw", },
+        DE={ name="Minderwertige Karte zur Feste Tirith Rhaw", },
+        FR={ name="Piètre carte pour aller à Tirith Rhaw", },
         map={MapType.CREEPS, 625, 365},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BB9",
-        nameEN="Poor Map to Grimwood",
-        nameDE="Minderwertige Karte zum Grimmwald",
-        nameFR="Piètre carte pour aller au Bois Funeste",
+        EN={ name="Poor Map to Grimwood", },
+        DE={ name="Minderwertige Karte zum Grimmwald", },
+        FR={ name="Piètre carte pour aller au Bois Funeste", },
         map={MapType.CREEPS, 380, 540},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BC0",
-        nameEN="Good Map to Isendeep",
-        nameDE="Gute Karte zur Isenbinge",
-        nameFR="Bonne carte pour aller au Gouffre d'Isen",
+        EN={ name="Good Map to Isendeep", },
+        DE={ name="Gute Karte zur Isenbinge", },
+        FR={ name="Bonne carte pour aller au Gouffre d'Isen", },
         map={MapType.CREEPS, 310, 95},
         hasSameText={"0x7002A7B7"},
         level=1
     })
     self.creep:AddSkill({
         id="0x7002A7B7",
-        nameEN="Good Map to Isendeep",
-        nameDE="Gute Karte zur Isenbinge",
-        nameFR="Bonne carte pour aller au Gouffre d'Isen",
+        EN={ name="Good Map to Isendeep", },
+        DE={ name="Gute Karte zur Isenbinge", },
+        FR={ name="Bonne carte pour aller au Gouffre d'Isen", },
         map={MapType.CREEPS, 340, 95},
         hasSameText={"0x70028BC0"},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BC2",
-        nameEN="Good Map to Tol Ascarnen",
-        nameDE="Gute Karte zur Feste Tol Ascarnen",
-        nameFR="Bonne carte pour aller à Tol Ascarnen",
+        EN={ name="Good Map to Tol Ascarnen", },
+        DE={ name="Gute Karte zur Feste Tol Ascarnen", },
+        FR={ name="Bonne carte pour aller à Tol Ascarnen", },
         map={MapType.CREEPS, 375, 480},
         hasSameText={"0x7002A7B4"},
         level=1
     })
     self.creep:AddSkill({
         id="0x7002A7B4",
-        nameEN="Good Map to Tol Ascarnen",
-        nameDE="Gute Karte zur Feste Tol Ascarnen",
-        nameFR="Bonne carte pour aller à Tol Ascarnen",
+        EN={ name="Good Map to Tol Ascarnen", },
+        DE={ name="Gute Karte zur Feste Tol Ascarnen", },
+        FR={ name="Bonne carte pour aller à Tol Ascarnen", },
         map={MapType.CREEPS, 405, 480},
         hasSameText={"0x70028BC2"},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BB5",
-        nameEN="Good Map to Lugazag",
-        nameDE="Gute Karte zur Feste Lugazag",
-        nameFR="Bonne carte pour aller à Lugazag",
+        EN={ name="Good Map to Lugazag", },
+        DE={ name="Gute Karte zur Feste Lugazag", },
+        FR={ name="Bonne carte pour aller à Lugazag", },
         map={MapType.CREEPS, 305, 275},
         hasSameText={"0x7002A7B6"},
         level=1
     })
     self.creep:AddSkill({
         id="0x7002A7B6",
-        nameEN="Good Map to Lugazag",
-        nameDE="Gute Karte zur Feste Lugazag",
-        nameFR="Bonne carte pour aller à Lugazag",
+        EN={ name="Good Map to Lugazag", },
+        DE={ name="Gute Karte zur Feste Lugazag", },
+        FR={ name="Bonne carte pour aller à Lugazag", },
         map={MapType.CREEPS, 335, 275},
         hasSameText={"0x70028BB5"},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BB0",
-        nameEN="Good Map to Tirith Rhaw",
-        nameDE="Gute Karte zur Feste Tirith Rhaw",
-        nameFR="Bonne carte pour aller à Tirith Rhaw",
+        EN={ name="Good Map to Tirith Rhaw", },
+        DE={ name="Gute Karte zur Feste Tirith Rhaw", },
+        FR={ name="Bonne carte pour aller à Tirith Rhaw", },
         map={MapType.CREEPS, 555, 470},
         hasSameText={"0x7002A7B5"},
         level=1
     })
     self.creep:AddSkill({
         id="0x7002A7B5",
-        nameEN="Good Map to Tirith Rhaw",
-        nameDE="Gute Karte zur Feste Tirith Rhaw",
-        nameFR="Bonne carte pour aller à Tirith Rhaw",
+        EN={ name="Good Map to Tirith Rhaw", },
+        DE={ name="Gute Karte zur Feste Tirith Rhaw", },
+        FR={ name="Bonne carte pour aller à Tirith Rhaw", },
         map={MapType.CREEPS, 585, 470},
         hasSameText={"0x70028BB0"},
         level=1
     })
     self.creep:AddSkill({
         id="0x70028BBD",
-        nameEN="Good Map to Grimwood",
-        nameDE="Gute Karte zum Grimmwald",
-        nameFR="Bonne carte pour aller au Bois Funeste",
+        EN={ name="Good Map to Grimwood", },
+        DE={ name="Gute Karte zum Grimmwald", },
+        FR={ name="Bonne carte pour aller au Bois Funeste", },
         map={MapType.CREEPS, 445, 650},
         hasSameText={"0x7002A7B3"},
         level=1
     })
     self.creep:AddSkill({
         id="0x7002A7B3",
-        nameEN="Good Map to Grimwood",
-        nameDE="Gute Karte zum Grimmwald",
-        nameFR="Bonne carte pour aller au Bois Funeste",
+        EN={ name="Good Map to Grimwood", },
+        DE={ name="Gute Karte zum Grimmwald", },
+        FR={ name="Bonne carte pour aller au Bois Funeste", },
         map={MapType.CREEPS, 475, 650},
         hasSameText={"0x70028BBD"},
         level=1
