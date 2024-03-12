@@ -1,3 +1,5 @@
+import "TravelWindowII.src.IndexedDictionary"
+
 TravelDictionary = class()
 
 function TravelDictionary:Constructor()

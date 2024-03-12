@@ -3,10 +3,8 @@
 IndexedDictionary = class()
 
 local ValidSkillKeys = {
-    "id", "name", "desc", "label", "zone", "labelTag",
-    "nameEN", "descEN", "labelEN", "zoneEN", "labelTagEN",
-    "nameDE", "descDE", "labelDE", "zoneDE", "labelTagDE",
-    "nameFR", "descFR", "labelFR", "zoneFR", "labelTagFR",
+    "id", "name", "desc", "label", "zone", "tag",
+    "EN", "DE", "FR",
     "map", "overlap", "level", "hasSameText"
 }
 
@@ -40,36 +38,26 @@ function IndexedDictionary:verifySkill(skill)
         end
     end
 
-    if skill.nameEN == nil or
-            skill.nameDE == nil or
-            skill.nameFR == nil then
+    if skill.EN == nil or
+            skill.DE == nil or
+            skill.FR == nil then
         Turbine.Shell.WriteLine("Skill missing language " .. skill.id)
     end
 
+    local lang;
     if GLocale == Turbine.Language.French then
-        skill.name = skill.nameFR
-        skill.desc = skill.descFR
-        skill.label = skill.labelFR
-        skill.zone = skill.zoneFR
-        if skill.labelTag == nil then
-            skill.labelTag = skill.labelTagFR
-        end
+        lang = skill.FR
     elseif GLocale == Turbine.Language.German then
-        skill.name = skill.nameDE
-        skill.desc = skill.descDE
-        skill.label = skill.labelDE
-        skill.zone = skill.zoneDE
-        if skill.labelTag == nil then
-            skill.labelTag = skill.labelTagDE
-        end
+        lang = skill.DE
     else
-        skill.name = skill.nameEN
-        skill.desc = skill.descEN
-        skill.label = skill.labelEN
-        skill.zone = skill.zoneEN
-        if skill.labelTag == nil then
-            skill.labelTag = skill.labelTagEN
-        end
+        lang = skill.EN
+    end
+    skill.name = lang.name
+    skill.desc = lang.desc
+    skill.label = lang.label
+    skill.zone = lang.zone
+    if skill.tag == nil then
+        skill.tag = lang.tag
     end
 
     if skill.name == nil then
@@ -91,13 +79,18 @@ function IndexedDictionary:verifySkill(skill)
         end
         skill.label = skill.name;
     elseif skill.zone ~= nil then
-        local labelTag = ""
-        if skill.labelTag ~= nil then
-            labelTag = skill.labelTag
-        elseif self.labelTag ~= nil then
-            labelTag = self.labelTag
+        local tag = nil
+        if skill.tag ~= nil then
+            tag = skill.tag
+        elseif self.tag ~= nil then
+            tag = self.tag
         end
-        skill.label = skill.zone .. ": " .. skill.label .. labelTag
+
+        if tag == nil then
+            skill.label = skill.zone .. ": " .. skill.label
+        else
+            skill.label = skill.zone .. ": " .. skill.label .. " (" .. tag .. ")"
+        end
     end
 
     for k, v in pairs(skill) do
@@ -120,11 +113,11 @@ function IndexedDictionary:AddLabelTag(tag)
     end
 
     if GLocale == Turbine.Language.French then
-        self.labelTag = tag.FR
+        self.tag = tag.FR
     elseif GLocale == Turbine.Language.German then
-        self.labelTag = tag.DE
+        self.tag = tag.DE
     else
-        self.labelTag = tag.EN
+        self.tag = tag.EN
     end
 end
 
