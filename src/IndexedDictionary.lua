@@ -3,20 +3,20 @@
 IndexedDictionary = class()
 
 local ValidSkillKeys = {
-    "id", "name", "desc", "label",
-    "nameEN", "descEN", "labelEN",
-    "nameDE", "descDE", "labelDE",
-    "nameFR", "descFR", "labelFR",
+    "id", "name", "desc", "label", "zone", "tag",
+    "EN", "DE", "FR",
     "map", "overlap", "level", "hasSameText"
 }
 
-function IndexedDictionary:Constructor(parent)
-    self.parent = parent;
+function IndexedDictionary:Constructor(parent, title)
+    self.parent = parent
+
+    self.title = title
 
     -- init tables
-    self.skills = {};
-    self.skillIdList = {};
-    self.numberOfItems = 0;
+    self.skills = {}
+    self.skillIdList = {}
+    self.numberOfItems = 0
 end
 
 -- function to get the total number of entries in the dictionary
@@ -38,10 +38,26 @@ function IndexedDictionary:verifySkill(skill)
         end
     end
 
-    if skill.nameEN == nil or
-            skill.nameDE == nil or
-            skill.nameFR == nil then
-        Turbine.Shell.WriteLine("Skill missing language " .. skill.id);
+    if skill.EN == nil or
+            skill.DE == nil or
+            skill.FR == nil then
+        Turbine.Shell.WriteLine("Skill missing language " .. skill.id)
+    end
+
+    local lang;
+    if GLocale == Turbine.Language.French then
+        lang = skill.FR
+    elseif GLocale == Turbine.Language.German then
+        lang = skill.DE
+    else
+        lang = skill.EN
+    end
+    skill.name = lang.name
+    skill.desc = lang.desc
+    skill.label = lang.label
+    skill.zone = lang.zone
+    if skill.tag == nil then
+        skill.tag = lang.tag
     end
 
     if skill.name == nil then
@@ -62,6 +78,19 @@ function IndexedDictionary:verifySkill(skill)
             end
         end
         skill.label = skill.name;
+    elseif skill.zone ~= nil then
+        local tag = nil
+        if skill.tag ~= nil then
+            tag = skill.tag
+        elseif self.tag ~= nil then
+            tag = self.tag
+        end
+
+        if tag == nil then
+            skill.label = skill.zone .. ": " .. skill.label
+        else
+            skill.label = skill.zone .. ": " .. skill.label .. " (" .. tag .. ")"
+        end
     end
 
     for k, v in pairs(skill) do
@@ -78,22 +107,22 @@ function IndexedDictionary:verifySkill(skill)
     return true
 end
 
--- function to add a skills data to the end of the dictionary
-function IndexedDictionary:AddSkill(skill)
-    if GLocale == Turbine.Language.French then
-        skill.name = skill.nameFR;
-        skill.desc = skill.descFR;
-        skill.label = skill.labelFR;
-    elseif GLocale == Turbine.Language.German then
-        skill.name = skill.nameDE;
-        skill.desc = skill.descDE;
-        skill.label = skill.labelDE;
-    else
-        skill.name = skill.nameEN;
-        skill.desc = skill.descEN;
-        skill.label = skill.labelEN;
+function IndexedDictionary:AddLabelTag(tag)
+    if tag.EN == nil or tag.DE == nil or tag.FR == nil then
+        return
     end
 
+    if GLocale == Turbine.Language.French then
+        self.tag = tag.FR
+    elseif GLocale == Turbine.Language.German then
+        self.tag = tag.DE
+    else
+        self.tag = tag.EN
+    end
+end
+
+-- function to add a skills data to the end of the dictionary
+function IndexedDictionary:AddSkill(skill)
     if not self:verifySkill(skill) then return end
 
     -- increase the number of datasets

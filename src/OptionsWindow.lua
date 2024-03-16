@@ -40,11 +40,12 @@ function OptionsWindow:GetLoaded()
 end
 
 function CreateOptionsWindow()
+    UnlockedUI = false
     local PluginManagerOptionsPanel = Turbine.UI.Control()
     PluginManagerOptionsPanel:SetSize(500, 200)
 
     plugin.GetOptionsPanel = function()
-        return PluginManagerOptionsPanel;
+        return PluginManagerOptionsPanel
     end
 
     local OptionsButton = Turbine.UI.Lotro.Button()
@@ -54,8 +55,18 @@ function CreateOptionsWindow()
     OptionsButton:SetText(LC.menuOptions)
     OptionsButton:SetVisible(true)
 
-    OptionsWindow = TravelWindowII.src.OptionsWindow();
+    OptionsWindow = TravelWindowII.src.OptionsWindow()
+    OptionsWindow.MouseDown = function(sender, args)
+        OptionsWindow.posLockX, OptionsWindow.posLockY = OptionsWindow:GetPosition()
+    end
+    OptionsWindow.PositionChanged = function(sender, args)
+        if BlockUIChange(OptionsWindow) then
+            if OptionsWindow.posLockX ~= nil then
+                OptionsWindow:SetPosition(OptionsWindow.posLockX, OptionsWindow.posLockY)
+            end
+        end
+    end
     OptionsButton.Click = function()
-        OptionsWindow:SetVisible(true);
+        OptionsWindow:SetVisible(true)
     end
 end

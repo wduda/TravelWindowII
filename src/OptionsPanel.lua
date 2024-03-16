@@ -49,12 +49,12 @@ function OptionsPanel:Constructor()
     self.EnabledTab:SetSize(self.width - 20, self.height - 60)
     self.ListBox = Turbine.UI.ListBox()
     self.ListBox:SetParent(self.EnabledTab)
-    self.ListBox:SetPosition(5, 5)
+    self.ListBox:SetPosition(15, 5)
     self.ListBox:SetSize(self:GetWidth() - 20, self:GetHeight() - 120)
     self.scrollBar = Turbine.UI.Lotro.ScrollBar()
     self.scrollBar:SetOrientation(Turbine.UI.Orientation.Vertical)
     self.scrollBar:SetParent(self.EnabledTab)
-    self.scrollBar:SetPosition(0, 0)
+    self.scrollBar:SetPosition(0, 5)
     self.scrollBar:SetWidth(10)
     self.scrollBar:SetHeight(self.ListBox:GetHeight())
     self.ListBox:SetVerticalScrollBar(self.scrollBar)
@@ -214,6 +214,40 @@ function OptionsPanel:AddGeneralItems()
     self.PulldownTravelCheck:SetParent(self.GeneralTab);
     self.PulldownTravelCheck:SetVisible(true);
 
+    -- label for option to lock interface
+    self.lockUILabel = Turbine.UI.Label();
+    self.lockUILabel:SetSize(labelWidth, 20);
+    self.lockUILabel:SetPosition(20, NextY(30));
+    self.lockUILabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.lockUILabel:SetParent(self.GeneralTab);
+    self.lockUILabel:SetText(LC.lockUI);
+    self.lockUILabel:SetVisible(true);
+
+    -- checkbox for option to lock interface
+    self.lockUICheck = Turbine.UI.Lotro.CheckBox();
+    self.lockUICheck:SetSize(19, 19);
+    self.lockUICheck:SetPosition(450, NextY(0));
+    self.lockUICheck:SetChecked(Settings.lockUI == 1);
+    self.lockUICheck:SetParent(self.GeneralTab);
+    self.lockUICheck:SetVisible(true);
+
+    -- label for option to unlock interface with a key press
+    self.unlockKeyPressLabel = Turbine.UI.Label();
+    self.unlockKeyPressLabel:SetSize(labelWidth, 20);
+    self.unlockKeyPressLabel:SetPosition(50, NextY(30));
+    self.unlockKeyPressLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.unlockKeyPressLabel:SetParent(self.GeneralTab);
+    self.unlockKeyPressLabel:SetText(LC.unlockKeyPress);
+    self.unlockKeyPressLabel:SetVisible(true);
+
+    -- checkbox for option to unlock interface with a key press
+    self.unlockKeyPressCheck = Turbine.UI.Lotro.CheckBox();
+    self.unlockKeyPressCheck:SetSize(19, 19);
+    self.unlockKeyPressCheck:SetPosition(450, NextY(0));
+    self.unlockKeyPressCheck:SetChecked(Settings.unlockKeyPress == 1);
+    self.unlockKeyPressCheck:SetParent(self.GeneralTab);
+    self.unlockKeyPressCheck:SetVisible(true);
+
     -- label for toggle button sliders
     self.toggleSlidersLabel = Turbine.UI.Label();
     self.toggleSlidersLabel:SetSize(labelWidth, 20);
@@ -346,7 +380,7 @@ function OptionsPanel:AddGeneralItems()
     self.mainFadeScrollBar:SetValue(Settings.fadeOutSteps);
     self.mainFadeScrollBar:SetParent(self.GeneralTab);
 
-    self:UpdateSettings();
+    self:UpdateOptions();
 
     -- reset all setting button
     self.resetButton = Turbine.UI.Lotro.Button();
@@ -395,7 +429,6 @@ function OptionsPanel:AddGeneralItems()
             Settings.useMinWindow = 0;
         end
         _G.travel:Close();
-        _G.travel = nil;
         _G.travel = TravelWindow(Settings.useMinWindow);
     end
 
@@ -406,7 +439,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnStart = 0;
         end
-        _G.travel:UpdateSettings();
     end
 
     -- set the hide on combat option when changed
@@ -416,7 +448,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnCombat = 0;
         end
-        _G.travel:UpdateSettings();
     end
 
     -- set the close on travel option when changed
@@ -426,7 +457,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.hideOnTravel = 0;
         end
-        _G.travel:UpdateSettings();
     end
 
     -- set the ignore escape to close option when changed
@@ -436,7 +466,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.ignoreEsc = 0;
         end
-        _G.travel:UpdateSettings();
     end
 
     -- set the show toggle button option when changed
@@ -446,7 +475,6 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.showButton = 0;
         end
-        _G.travel:UpdateSettings();
         ToggleButton:SetVisible(sender:IsChecked());
     end
 
@@ -457,7 +485,24 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.pulldownTravel = 0;
         end
-        _G.travel:UpdateSettings();
+    end
+
+    self.lockUICheck.CheckedChanged = function(sender, args)
+        if sender:IsChecked() then
+            Settings.lockUI = 1
+        else
+            Settings.lockUI = 0
+        end
+        self:UpdateOptions()
+    end
+
+    self.unlockKeyPressCheck.CheckedChanged = function(sender, args)
+        if sender:IsChecked() then
+            Settings.unlockKeyPress = 1
+        else
+            Settings.unlockKeyPress = 0
+        end
+        self:UpdateOptions()
     end
 
     -- update settings when sliders change
@@ -471,7 +516,6 @@ function OptionsPanel:AddGeneralItems()
         -- do updates
         Settings.toggleMinOpacity = self.toggleMinScrollBar:GetValue() / 100;
         _G.travel:UpdateOpacity();
-        _G.travel:UpdateSettings();
     end
 
     self.toggleMaxScrollBar.ValueChanged = function(sender, args)
@@ -484,7 +528,6 @@ function OptionsPanel:AddGeneralItems()
         -- do updates
         Settings.toggleMaxOpacity = self.toggleMaxScrollBar:GetValue() / 100;
         _G.travel:UpdateOpacity();
-        _G.travel:UpdateSettings();
 
     end
 
@@ -499,7 +542,6 @@ function OptionsPanel:AddGeneralItems()
         -- do updates
         Settings.mainMinOpacity = self.mainMinScrollBar:GetValue() / 100;
         _G.travel:UpdateOpacity();
-        _G.travel:UpdateSettings();
     end
 
     self.mainMaxScrollBar.ValueChanged = function(sender, args)
@@ -512,7 +554,6 @@ function OptionsPanel:AddGeneralItems()
         -- do updates
         Settings.mainMaxOpacity = self.mainMaxScrollBar:GetValue() / 100;
         _G.travel:UpdateOpacity();
-        _G.travel:UpdateSettings();
     end
 
     self.fadeDelayScrollBar.ValueChanged = function(sender, args)
@@ -522,11 +563,10 @@ function OptionsPanel:AddGeneralItems()
     self.mainFadeScrollBar.ValueChanged = function(sender, args)
         Settings.fadeOutSteps = self.mainFadeScrollBar:GetValue();
         _G.travel:UpdateOpacity();
-        _G.travel:UpdateSettings();
     end
 end
 
-function OptionsPanel:UpdateSettings()
+function OptionsPanel:UpdateOptions()
     self.UseMinWindowCheck:SetChecked(Settings.useMinWindow == 1);
     self.HideOnStartCheck:SetChecked(Settings.hideOnStart == 1);
     self.HideOnCombatCheck:SetChecked(Settings.hideOnCombat == 1);
@@ -534,6 +574,9 @@ function OptionsPanel:UpdateSettings()
     self.ignoreEscCheck:SetChecked(Settings.ignoreEsc == 1);
     self.ShowButtonCheck:SetChecked(Settings.showButton == 1);
     self.PulldownTravelCheck:SetChecked(Settings.pulldownTravel == 1);
+    self.lockUICheck:SetChecked(Settings.lockUI == 1);
+    self.unlockKeyPressCheck:SetEnabled(Settings.lockUI == 1);
+    self.unlockKeyPressCheck:SetChecked(Settings.unlockKeyPress == 1);
     self.toggleMinScrollBar:SetValue(Settings.toggleMinOpacity * 100);
     self.toggleMaxScrollBar:SetValue(Settings.toggleMaxOpacity * 100);
     self.mainMinScrollBar:SetValue(Settings.mainMinOpacity * 100);
@@ -547,28 +590,44 @@ end
 function OptionsPanel:AddItems()
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- add the generic travels skills
-        self:AddSkillsForEnabling(TravelInfo.gen);
-
-        -- add class specific travel skills
-        self:AddSkillsForEnabling(TravelInfo:GetClassSkills());
-
-        -- add the reputation travel skills
-        self:AddSkillsForEnabling(TravelInfo.rep);
+        self:AddEnabledSection(TravelInfo.gen)
 
         -- add the race specific travel skill for the character
-        self:AddSkillItemForEnabling(TravelInfo.racial);
-    end
+        self:AddEnabledSection(TravelInfo.racials)
 
-    if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
+        -- add class specific travel skills
+        self:AddEnabledSection(TravelInfo:GetClassSkills())
+
+        -- add the reputation travel skills
+        self:AddEnabledSection(TravelInfo.rep)
+
+    elseif (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
         -- add the creep travel skills
         self:AddSkillsForEnabling(TravelInfo.creep);
     end
 end
 
-function OptionsPanel:AddSkillsForEnabling(skills)
+function OptionsPanel:AddEnabledSection(skills)
     if skills == nil then return end
-    for i = 1, skills:GetCount() do
-        self:AddSkillItemForEnabling(skills:Skill(i));
+
+    -- add a title label
+    local label = Turbine.UI.Label()
+    label:SetSize(self.ListBox:GetWidth() - 20, 20)
+    label:SetTextAlignment(Turbine.UI.ContentAlignment.LeftCenter)
+    label:SetFont(Turbine.UI.Lotro.Font.VerdanaBold16)
+    label:SetText(skills.title)
+    label:SetVisible(true)
+    self.ListBox:AddItem(label)
+    self:AddSkillsForEnabling(skills)
+end
+
+function OptionsPanel:AddSkillsForEnabling(skills)
+    if skills == TravelInfo.racials then
+        self:AddSkillItemForEnabling(TravelInfo.racial);
+    else
+        for i = 1, skills:GetCount() do
+            self:AddSkillItemForEnabling(skills:Skill(i));
+        end
     end
 end
 
@@ -615,53 +674,6 @@ end
 
 -- this function adds the labels to the enabled tab for cosmetic purpose
 function OptionsPanel:AddBoxes()
-    --[[
-    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        -- add a label and box for the generic travel skills
-        self.genLabel = Turbine.UI.Label();
-        self.genLabel:SetSize(200, 20);
-        self.genLabel:SetPosition(0, 0);
-        self.genLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
-        self.genLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-        self.genLabel:SetText(LC.genericLabel);
-        self.genLabel:SetParent(self.EnabledTab);
-        self.genLabel:SetVisible(true);
-
-        -- add a label and box for the reputation travel skills
-        self.repLabel = Turbine.UI.Label();
-        self.repLabel:SetSize(200, 20);
-        self.repLabel:SetPosition(260, 0);
-        self.repLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
-        self.repLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-        self.repLabel:SetText(LC.repLabel);
-        self.repLabel:SetParent(self.EnabledTab);
-        self.repLabel:SetVisible(true);
-
-        -- if the player is a hunter or warden, add a label
-        if ((PlayerClass == Turbine.Gameplay.Class.Hunter) or (PlayerClass == Turbine.Gameplay.Class.Warden)) then
-            self.classLabel = Turbine.UI.Label();
-            self.classLabel:SetSize(200, 20);
-            self.classLabel:SetPosition(520, 0);
-            self.classLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
-            self.classLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-            self.classLabel:SetText(LC.classLabel);
-            self.classLabel:SetParent(self.EnabledTab);
-            self.classLabel:SetVisible(true);
-        end
-    else
-        -- add a label and box for the Monster Maps settings
-        self.genLabel = Turbine.UI.Label();
-        self.genLabel:SetSize(200, 20);
-        self.genLabel:SetPosition(0, 0);
-        self.genLabel:SetTextAlignment(Turbine.UI.ContentAlignment.BottomLeft);
-        self.genLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-        self.genLabel:SetText(LC.genericLabel);
-        self.genLabel:SetParent(self.EnabledTab);
-        self.genLabel:SetVisible(true);
-
-    end
-    --]]
-
     -- add a check skills button
     self.checkSkillsButton = Turbine.UI.Lotro.Button();
     self.checkSkillsButton:SetSize(200, 20);
@@ -765,10 +777,11 @@ end
 
 -- function to add the list of shortcuts to the sort tab
 function OptionsPanel:AddSortList()
+    local sortListWidth = 370
 
     -- create a listbox for all the shortcuts to be sorted
     self.sortListBox = Turbine.UI.ListBox();
-    self.sortListBox:SetSize(480, self.height - 120);
+    self.sortListBox:SetSize(sortListWidth, self.height - 120);
     self.sortListBox:SetPosition(200, 5);
     self.sortListBox:SetParent(self.SortTab);
     self.sortListBox:SetVisible(true);
@@ -778,7 +791,7 @@ function OptionsPanel:AddSortList()
         if shortcut:GetTravelType() ~= 8 then
             local tempLabel = Turbine.UI.Label();
             tempLabel:SetText(shortcut:GetLabel());
-            tempLabel:SetSize(280, 20);
+            tempLabel:SetSize(sortListWidth, 20);
             tempLabel:SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
             tempLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
             tempLabel:SetZOrder(90);
@@ -810,7 +823,7 @@ function OptionsPanel:AddSortList()
     self.listBoxScrollBar:SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
     self.listBoxScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
     self.listBoxScrollBar:SetSize(10, self.height - 120);
-    self.listBoxScrollBar:SetPosition(270, 0);
+    self.listBoxScrollBar:SetPosition(sortListWidth - 10, 0);
     self.listBoxScrollBar:SetZOrder(100);
     self.listBoxScrollBar:SetVisible(true);
     self.listBoxScrollBar:SetParent(self.sortListBox);

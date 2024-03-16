@@ -88,6 +88,7 @@ function TravelWindow:Constructor(useMinWindow)
     self.ListTab.numOfRows = Settings.listRows;
 
     self.MainPanel:SetTab(Settings.mode);
+    self.GridTab:SetAllowDrop(true)
     self:SetItems();
     self:UpdateMinimum();
     self:SetOpacity(Settings.mainMinOpacity);
@@ -257,6 +258,10 @@ function TravelWindow:Constructor(useMinWindow)
     self.PullTab.pulldown.dropDownWindow.MouseLeave = self.MouseLeave;
 
     self.MouseDown = function(sender, args)
+        if BlockUIChange(self) then
+            return
+        end
+
         self.isMouseDown = true;
         if (args.Button == Turbine.UI.MouseButton.Left) then
             self.dragStartX, self.dragStartY = self:GetMousePosition();
@@ -464,7 +469,7 @@ function SyncUIFromSettings()
     local buttonPositionX = Turbine.UI.Display.GetWidth() * Settings.buttonRelativeX;
     local buttonPositionY = Turbine.UI.Display.GetHeight() * Settings.buttonRelativeY;
     ToggleButton:SetPosition(buttonPositionX, buttonPositionY);
-    OptionsWindow.Panel:UpdateSettings();
+    OptionsWindow.Panel:UpdateOptions();
     OptionsWindow.Panel:EnableFromSettings();
     OptionsWindow.Panel:AddSortList();
     Menu:SetSettings(Settings.mode, Settings.filters);
