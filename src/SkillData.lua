@@ -542,6 +542,15 @@ function TravelDictionary:CreateDictionaries()
         overlap={"0x700697F2"},
         level=149
     })
+    self.hunter:AddSkill({
+        id="0x7006A9BF",
+        EN={ name="Guide to Bej Mâghda",    label= "Bej Mâghda", zone="Umbar", },
+        DE={ name="Führer nach Bej Mâghda", label= "Bej Mâghda", zone="Umbar", },
+        FR={ name="Guide vers Bej Mâghda",  label= "Bej Mâghda", zone="Umbar", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        overlap={"0x7006A9C1"},
+        level=150
+    })
 
     -- add the Warden locations
     self.warden:AddLabelTag({EN="Muster", DE="Appell", FR="Rassemblement" })
@@ -1024,6 +1033,15 @@ function TravelDictionary:CreateDictionaries()
         overlap={"0x700697F2"},
         level=149
     })
+    self.warden:AddSkill({
+        id="0x7006A9C2",
+        EN={ name="Muster in Bej Mâghda",       label= "Bej Mâghda", zone="Umbar", },
+        DE={ name="Appell in Bej Mâghda",       label= "Bej Mâghda", zone="Umbar", },
+        FR={ name="Rassemblement à Bej Mâghda", label= "Bej Mâghda", zone="Umbar", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        overlap={"0x7006A9C1"},
+        level=150
+    })
 
     -- add the Mariner locations
     self.mariner:AddLabelTag({EN="Sail", DE="Segeln", FR="Naviguer" })
@@ -1190,6 +1208,15 @@ function TravelDictionary:CreateDictionaries()
         map={{MapType.HARADWAITH, 505, 370}},
         overlap={"0x700686FF"},
         level=148
+    })
+    self.mariner:AddSkill({
+        id="0x7006A9C4",
+        EN={ name="Sail to Bej Mâghda",       label="Bej Mâghda", zone="Umbar", },
+        DE={ name="Nach Bej Mâghda segeln",   label="Bej Mâghda", zone="Umbar", },
+        FR={ name="Naviguer vers Bej Mâghda", label="Bej Mâghda", zone="Umbar", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        overlap={"0x7006A9C1"},
+        level=150
     })
 
     -- add the racial travel skills
@@ -1888,6 +1915,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Voyager vers l'Ordre de l'Aigle",   label="L'Ordre de l'Aigle", tag="Quête",   zone="Umbar", },
         map={{MapType.HARADWAITH, 415, 370}},
         level=150
+    })
+    self.rep:AddSkill({
+        id="0x7006A9C1",
+        EN={ name="Return to Bej Mâghda",         label= "Bej Mâghda", zone="Umbar", },
+        DE={ name="Nach Bej Mâghda zurückkehren", label= "Bej Mâghda", zone="Umbar", },
+        FR={ name="Retour à Bej Mâghda",          label= "Bej Mâghda", zone="Umbar", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        level=150.1
     })
 end
 
