@@ -1260,9 +1260,9 @@ function TravelDictionary:CreateDictionaries()
     self.racials:AddSkill({
         -- beorning
         id="0x70041A22",
-        EN={ name="Return Home",              label="Beorning Home",    zone="Vales of Anduin", },
-        DE={ name="Zum 1. Heim zurückkehren", label="Grimbeorns Hütte", zone="Die Täler des Anduin", },
-        FR={ name="Retour à la maison",       label="Maison Beorning",  zone="Val d'Anduin", },
+        EN={ name="Return Home",              desc="Grimbeorn's Lodge.",     label="Beorning Home",    zone="Vales of Anduin", },
+        DE={ name="Zum 1. Heim zurückkehren", desc="Grimbeorns Hütte.",      label="Grimbeorns Hütte", zone="Die Täler des Anduin", },
+        FR={ name="Retour à la maison",       desc="Pavillon de Grimbeorn.", label="Maison Beorning",  zone="Val d'Anduin", },
         map={MapType.RHOVANION, 285, 340},
         level=120
     })
@@ -1297,9 +1297,9 @@ function TravelDictionary:CreateDictionaries()
     -- add the Return Home and housing skills
     self.gen:AddSkill({
         id="0x700256BA",
-        EN={ name="Return Home", },
-        DE={ name="Zum 1. Heim zurückkehren", label="1. Markstein", },
-        FR={ name="Retour à la maison",       label="Point de repère 1", },
+        EN={ name="Return Home",              desc="bound milestone" },
+        DE={ name="Zum 1. Heim zurückkehren", desc="Markstein zurückkehren", label="1. Markstein", },
+        FR={ name="Retour à la maison",       desc="point de repère lié",     label="Point de repère 1", },
         map={MapType.NONE, -1, -1},
         level=1
     })
