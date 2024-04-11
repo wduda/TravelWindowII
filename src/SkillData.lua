@@ -1063,9 +1063,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.mariner:AddSkill({
         id="0x70066120",
-        EN={ name="Sail to Tharbad",              label="Tharbad",        zone="Swanfleet", },
-        DE={ name="Nach Tharbad segeln",          label="Tharbad",        zone="Schwanenfleet", },
-        FR={ name="Naviguer vers le Gué de Sarn", label="le Gué de Sarn", zone="Noues des cygnes", },
+        EN={ name="Sail to Tharbad",       label="Tharbad", zone="Swanfleet", },
+        DE={ name="Nach Tharbad segeln",   label="Tharbad", zone="Schwanenfleet", },
+        FR={ name="Naviguer vers Tharbad", label="Tharbad", zone="Noues des cygnes", },
         map={{MapType.ERIADOR, 650, 525}},
         level=5
     })
