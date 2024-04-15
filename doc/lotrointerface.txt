@@ -28,18 +28,19 @@ Use the mousewheel while hovering over the travel skill icon to change the selec
 [/LIST]
 
 Version history:
-v2.2.0
+v2.3.0
 
-- add: sorting alphabetically by skill label
-- add: sorting by zone level
-- add: move skill in sort list up/down by 10 slots
-- enhance: saving globals properly remembers hunter/mariner/warden skills for those classes
-- enhance: smooth out grid resize snapping around a column midpoint
-- enhance: remove dependency on Turbine utils, these can be removed if you do not need them for other plugins
-- enhance: significantly improved skill data storage in codebase to prevent human mistakes when creating new releases
-- fix: saving and loading globals will save properly every time and not mess up sort order
-- fix: plugin will load again for creep characters
-- fix: updated creep travel skills in EN/DE/FR
+- add: grid tab sorting through drag & drop
+- add: all travel skill labels now also have data for the zone (i.e. "Michel Delving" is in zone "Shire")
+- add: enabled list now has labelled sections
+- add: options window position can be locked now
+- add: toggle button position can be locked now
+- add: Bej Maghda travel skill and map location in EN/DE/FR client
+- enhance: code cleanup in multiple methods under the hood
+- fix: rare case for window width snapping that was adding extra padding
+- fix: scroll height calculation for scroll bar
+- fix: ambiguity in Beorning racial skill in EN/DE/FR client
+- fix: fix Mariner Tharbad skill name & label in FR client
 
 Huge kudos to @whiterabbit963 for making this release possible!
 
