@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v2.3.0
+
+- add: grid tab sorting through drag & drop
+- add: all travel skill labels now also have data for the zone (i.e. "Michel Delving" is in zone "Shire")
+- add: enabled list now has labelled sections
+- add: options window position can be locked now
+- add: toggle button position can be locked now
+- add: Bej Maghda travel skill and map location in EN/DE/FR client
+- enhance: code cleanup in multiple methods under the hood
+- fix: rare case for window width snapping that was adding extra padding
+- fix: scroll height calculation for scroll bar
+- fix: ambiguity in Beorning racial skill in EN/DE/FR client
+- fix: fix Mariner Tharbad skill name & label in FR client
+
 ## v2.2.0
 
 - add: sorting alphabetically by skill label
