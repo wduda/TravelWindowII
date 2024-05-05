@@ -30,6 +30,8 @@ Use the mousewheel while hovering over the travel skill icon to change the selec
 Version history:
 v2.3.0
 
+Sorting through drag and drop and locking the window positions go hand in hand - by locking the interface in place you are preventing accidental drag and drops.
+
 - add: grid tab sorting through drag & drop
 - add: all travel skill labels now also have data for the zone (i.e. "Michel Delving" is in zone "Shire")
 - add: enabled list now has labelled sections
@@ -40,7 +42,7 @@ v2.3.0
 - fix: rare case for window width snapping that was adding extra padding
 - fix: scroll height calculation for scroll bar
 - fix: ambiguity in Beorning racial skill in EN/DE/FR client
-- fix: fix Mariner Tharbad skill name & label in FR client
+- fix: Mariner Tharbad skill name & label in FR client
 
 Huge kudos to @whiterabbit963 for making this release possible!
 
