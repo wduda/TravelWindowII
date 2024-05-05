@@ -12,7 +12,7 @@
 - fix: rare case for window width snapping that was adding extra padding
 - fix: scroll height calculation for scroll bar
 - fix: ambiguity in Beorning racial skill in EN/DE/FR client
-- fix: fix Mariner Tharbad skill name & label in FR client
+- fix: Mariner Tharbad skill name & label in FR client
 
 ## v2.2.0
 
