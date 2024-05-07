@@ -667,7 +667,7 @@ function OptionsPanel:AddSkillItemForEnabling(skill)
             _G.travel:UpdateSettings();
         end
         if _G.travel.mapWindow ~= nil then
-            _G.travel.mapWindow:UpdateShortcut(id, sender:IsChecked());
+            _G.travel.mapWindow:UpdateShortcut(skill.id, sender:IsChecked());
         end
     end
 end
