@@ -96,6 +96,7 @@ function TravelListTab:AddItem(shortcut)
         self.labels[index]:SetBackColor(Turbine.UI.Color(self.itemAlpha, 0, 0, 0));
         self.labels[index]:SetText(shortcut:GetLabel());
         self.labels[index]:SetParent(self.SubWindow);
+        self.labels[index].shortcut = shortcut
 
         -- set all quickslots to be visible and
         -- disable dropping new shortcuts onto them
@@ -131,6 +132,13 @@ function TravelListTab:AddItem(shortcut)
 
     -- increase the row number
     self.row = self.row + 1;
+end
+
+function TravelListTab:ReloadLabels()
+    for i = 1, #self.labels do
+        local label = self.labels[i]
+        label:SetText(label.shortcut:GetLabel())
+    end
 end
 
 function TravelListTab:GetPixelSize()

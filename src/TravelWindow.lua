@@ -405,6 +405,16 @@ function TravelWindow:UpdateMinimum()
     end
 end
 
+function TravelWindow:ReloadLabels()
+    self.ListTab:ReloadLabels()
+    self.PullTab.pulldown:ReloadLabels()
+    OptionsWindow.Panel:ReloadLabels()
+    for i = 1, #TravelShortcuts do
+        local shortcut = TravelShortcuts[i]
+        shortcut.normalizedLabel = shortcut:GetLabel():lower()
+    end
+end
+
 function TravelWindow:OpenMapWindow(map)
     self:CloseMapWindow();
     self.mapWindow = TravelWindowII.src.MapWindow(map);

@@ -187,6 +187,10 @@ LC_EN.lockUI = "Lock UI"
 LC_DE.lockUI = "Benutzeroberfläche sperren"
 LC_FR.lockUI = "Verrouiller l’interface utilisateur"
 
+LC_EN.useZoneNames = "Use Zone names"
+LC_DE.useZoneNames = "Verwenden von Zonennamen"
+LC_FR.useZoneNames = "Utiliser les noms de zone"
+
 LC_EN.unlockKeyPress = "Hold Shift to unlock"
 LC_DE.unlockKeyPress = "Halten Sie die Umschalttaste gedrückt, um zu entsperren"
 LC_FR.unlockKeyPress = "Maintenez la touche Maj enfoncée pour déverrouiller"
