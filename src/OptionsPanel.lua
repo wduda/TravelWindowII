@@ -214,6 +214,23 @@ function OptionsPanel:AddGeneralItems()
     self.PulldownTravelCheck:SetParent(self.GeneralTab);
     self.PulldownTravelCheck:SetVisible(true);
 
+    -- label for option to use zone in skill labels
+    self.useZoneNamesLabel = Turbine.UI.Label();
+    self.useZoneNamesLabel:SetSize(labelWidth, 20);
+    self.useZoneNamesLabel:SetPosition(20, NextY(30));
+    self.useZoneNamesLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.useZoneNamesLabel:SetParent(self.GeneralTab);
+    self.useZoneNamesLabel:SetText(LC.useZoneNames);
+    self.useZoneNamesLabel:SetVisible(true);
+
+    -- checkbox for option to use zone in skill labels
+    self.useZoneNamesCheck = Turbine.UI.Lotro.CheckBox();
+    self.useZoneNamesCheck:SetSize(19, 19);
+    self.useZoneNamesCheck:SetPosition(450, NextY(0));
+    self.useZoneNamesCheck:SetChecked(Settings.useZoneNames == 1);
+    self.useZoneNamesCheck:SetParent(self.GeneralTab);
+    self.useZoneNamesCheck:SetVisible(true);
+
     -- label for option to lock interface
     self.lockUILabel = Turbine.UI.Label();
     self.lockUILabel:SetSize(labelWidth, 20);
@@ -496,6 +513,16 @@ function OptionsPanel:AddGeneralItems()
         self:UpdateOptions()
     end
 
+    self.useZoneNamesCheck.CheckedChanged = function(sender, args)
+        if sender:IsChecked() then
+            Settings.useZoneNames = 1
+        else
+            Settings.useZoneNames = 0
+        end
+        TravelInfo:SetSkillLabels(Settings.useZoneNames)
+        _G.travel:ReloadLabels()
+    end
+
     self.unlockKeyPressCheck.CheckedChanged = function(sender, args)
         if sender:IsChecked() then
             Settings.unlockKeyPress = 1
@@ -574,6 +601,7 @@ function OptionsPanel:UpdateOptions()
     self.ignoreEscCheck:SetChecked(Settings.ignoreEsc == 1);
     self.ShowButtonCheck:SetChecked(Settings.showButton == 1);
     self.PulldownTravelCheck:SetChecked(Settings.pulldownTravel == 1);
+    self.useZoneNamesCheck:SetChecked(Settings.useZoneNames == 1);
     self.lockUICheck:SetChecked(Settings.lockUI == 1);
     self.unlockKeyPressCheck:SetEnabled(Settings.lockUI == 1);
     self.unlockKeyPressCheck:SetChecked(Settings.unlockKeyPress == 1);
@@ -642,7 +670,7 @@ function OptionsPanel:AddSkillItemForEnabling(skill)
     slabel:SetPosition(30, 0)
     slabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
     slabel:SetParent(control);
-    slabel:SetText(skill.label);
+    slabel:SetText(skill.shortcut:GetLabel());
     slabel:SetVisible(true);
     table.insert(self.labels, slabel);
 
@@ -830,6 +858,17 @@ function OptionsPanel:AddSortList()
 
     -- set the listbox scrollbar
     self.sortListBox:SetVerticalScrollBar(self.listBoxScrollBar);
+end
+
+function OptionsPanel:ReloadLabels()
+    for i = 1, self.sortListBox:GetItemCount() do
+        local label = self.sortListBox:GetItem(i)
+        label:SetText(label.shortcut:GetLabel())
+    end
+    for i = 1, #self.labels do
+        local label = self.labels[i]
+        label:SetText(self.checks[i].skill.shortcut:GetLabel())
+    end
 end
 
 -- function to add the buttons to sort the shortcuts

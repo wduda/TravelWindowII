@@ -213,6 +213,7 @@ function InitDefaultSettings()
     Settings.hideOnCombat = 0;
     Settings.pulldownTravel = 0;
     Settings.hideOnTravel = 0;
+    Settings.useZoneNames = 1
     Settings.lockUI = 0
     Settings.unlockKeyPress = 0
     Settings.ignoreEsc = 0;
@@ -353,6 +354,7 @@ function SetSettings(settingsArg, scope, importOldSettings)
     InitNumberSetting(settingsArg, "hideOnTravel");
     InitNumberSetting(settingsArg, "ignoreEsc");
     InitNumberSetting(settingsArg, "lockUI");
+    InitNumberSetting(settingsArg, "useZoneNames");
     InitNumberSetting(settingsArg, "unlockKeyPress");
     InitNumberSetting(settingsArg, "showButton");
     InitNumberSetting(settingsArg, "mode");
@@ -463,6 +465,7 @@ function SaveSettings(scope)
     settingsStrings.hideOnCombat = tostring(Settings.hideOnCombat);
     settingsStrings.pulldownTravel = tostring(Settings.pulldownTravel);
     settingsStrings.hideOnTravel = tostring(Settings.hideOnTravel);
+    settingsStrings.useZoneNames = tostring(Settings.useZoneNames)
     settingsStrings.lockUI = tostring(Settings.lockUI)
     settingsStrings.unlockKeyPress = tostring(Settings.unlockKeyPress)
     settingsStrings.ignoreEsc = tostring(Settings.ignoreEsc);

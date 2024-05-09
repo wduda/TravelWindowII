@@ -13,7 +13,7 @@ function TravelShortcut:Constructor(sType, tType, skill)
     self.skill = skill;
     self.skill.shortcut = self;
     self.normalizedName = skill.name:lower();
-    self.normalizedLabel = skill.label:lower();
+    self.normalizedLabel = self:GetLabel():lower();
     self.travelType = tType;
 
     self.defaultIndex = NextDefaultIndex;
