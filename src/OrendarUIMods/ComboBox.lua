@@ -179,6 +179,7 @@ function ComboBox:AddItem(shortcut, value)
     label:SetText(shortcut:GetLabel());
     label:SetMouseVisible(Settings.pulldownTravel == 0);
     label:SetParent(self.listBox);
+    label.shortcut = shortcut
 
     label.MouseWheel = function(sender, args)
         self:DoScroll(sender, args);
@@ -232,6 +233,13 @@ function ComboBox:AddItem(shortcut, value)
 
     label:SetIndex(value);
     self.labels[index] = label;
+end
+
+function ComboBox:ReloadLabels()
+    for i = 1, #self.labels do
+        local label = self.labels[i]
+        label:SetText(label.shortcut:GetLabel())
+    end
 end
 
 function ComboBox:RemoveItem(value)

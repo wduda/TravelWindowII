@@ -3,7 +3,7 @@
 IndexedDictionary = class()
 
 local ValidSkillKeys = {
-    "id", "name", "desc", "label", "zone", "tag",
+    "id", "name", "desc", "label", "label0", "zone", "tag",
     "EN", "DE", "FR",
     "map", "overlap", "level", "hasSameText"
 }
@@ -24,7 +24,36 @@ function IndexedDictionary:GetCount()
     return self.numberOfItems;
 end
 
-function IndexedDictionary:verifySkill(skill)
+function IndexedDictionary:SetSkillLabel(skill, useZone)
+    skill.label = skill.label0
+    if skill.label == nil then
+        skill.label = skill.name;
+    elseif skill.zone ~= nil then
+        local tag = nil
+        if skill.tag ~= nil then
+            tag = skill.tag
+        elseif self.tag ~= nil then
+            tag = self.tag
+        end
+
+        if useZone == 1 then
+            skill.label = skill.zone .. ": " .. skill.label
+        end
+
+        if tag ~= nil then
+            skill.label = skill.label .. " (" .. tag .. ")"
+        end
+    end
+    return true
+end
+
+function IndexedDictionary:SetSkillLabels(useZone)
+    for k, skill in pairs(self.skills) do
+        self:SetSkillLabel(skill, useZone)
+    end
+end
+
+function IndexedDictionary:VerifySkill(skill)
     if skill.id == nil then
         Turbine.Shell.WriteLine("Skill missing id")
         return false
@@ -54,7 +83,7 @@ function IndexedDictionary:verifySkill(skill)
     end
     skill.name = lang.name
     skill.desc = lang.desc
-    skill.label = lang.label
+    skill.label0 = lang.label
     skill.zone = lang.zone
     if skill.tag == nil then
         skill.tag = lang.tag
@@ -67,30 +96,6 @@ function IndexedDictionary:verifySkill(skill)
 
     if skill.level == nil then
         Turbine.Shell.WriteLine("Skill missing level " .. skill.id);
-    end
-
-    if skill.label == nil then
-        -- copy name, but make sure it is unique
-        for i = 1, #self.skills do
-            if self.skills[i].name == skill.name then
-                Turbine.Shell.WriteLine("Invalid label: " .. skill.name);
-                return false
-            end
-        end
-        skill.label = skill.name;
-    elseif skill.zone ~= nil then
-        local tag = nil
-        if skill.tag ~= nil then
-            tag = skill.tag
-        elseif self.tag ~= nil then
-            tag = self.tag
-        end
-
-        if tag == nil then
-            skill.label = skill.zone .. ": " .. skill.label
-        else
-            skill.label = skill.zone .. ": " .. skill.label .. " (" .. tag .. ")"
-        end
     end
 
     for k, v in pairs(skill) do
@@ -123,7 +128,7 @@ end
 
 -- function to add a skills data to the end of the dictionary
 function IndexedDictionary:AddSkill(skill)
-    if not self:verifySkill(skill) then return end
+    if not self:VerifySkill(skill) then return end
 
     -- increase the number of datasets
     self.numberOfItems = self.numberOfItems + 1;
