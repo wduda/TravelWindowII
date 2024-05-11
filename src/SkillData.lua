@@ -32,9 +32,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x70003F42",
-        EN={ name="Guide to Bree",    label="West Gate",   zone="Bree", },
-        DE={ name="Führer nach Bree", label="Westtor",     zone="Bree", },
-        FR={ name="Guide vers Bree",  label="Porte Ouest", zone="Bree", },
+        EN={ name="Guide to Bree",    label="Bree", zlabel="West Gate",   zone="Bree", },
+        DE={ name="Führer nach Bree", label="Bree", zlabel="Westtor",     zone="Bree", },
+        FR={ name="Guide vers Bree",  label="Bree", zlabel="Porte Ouest", zone="Bree", },
         map={{MapType.ERIADOR, 585, 335}},
         overlap={"0x700062F6", "0x7001BF90"},
         level=5
@@ -50,18 +50,18 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x700634AA",
-        EN={ name="Guide to Swanfleet",              label="Lhan Garan", zone="Swanfleet", },
-        DE={ name="Führer nach Schwanenfleet",       label="Lhan Garan", zone="Schwanenfleet", },
-        FR={ name="Guide vers les Noues des cygnes", label="Lhan Garan", zone="Noues des cygnes", },
+        EN={ name="Guide to Swanfleet",              label="Swanfleet",        detail="Lhan Garan", zone="Swanfleet", },
+        DE={ name="Führer nach Schwanenfleet",       label="Schwanenfleet",    detail="Lhan Garan", zone="Schwanenfleet", },
+        FR={ name="Guide vers les Noues des cygnes", label="Noues des cygnes", detail="Lhan Garan", zone="Noues des cygnes", },
         map={{MapType.ERIADOR, 825, 490}},
         overlap={"0x700634A4"},
         level=10
     })
     self.hunter:AddSkill({
         id="0x700634A7",
-        EN={ name="Guide to Cardolan",      label="Herne", zone="Cardolan", },
-        DE={ name="Führer nach Cardolan",   label="Herne", zone="Cardolan", },
-        FR={ name="Guide vers le Cardolan", label="Herne", zone="Cardolan", },
+        EN={ name="Guide to Cardolan",      label="Cardolan", detail="Herne", zone="Cardolan", },
+        DE={ name="Führer nach Cardolan",   label="Cardolan", detail="Herne", zone="Cardolan", },
+        FR={ name="Guide vers le Cardolan", label="Cardolan", detail="Herne", zone="Cardolan", },
         map={{MapType.ERIADOR, 560, 495}},
         overlap={"0x700634AE"},
         level=15
@@ -103,9 +103,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x7000A2C4",
-        EN={ name="Guide to Evendim",    label="Tinnudir", zone="Evendim", },
-        DE={ name="Führer nach Evendim", label="Tinnudir", zone="Evendim", },
-        FR={ name="Guide vers Evendim",  label="Tinnudir", zone="Evendim", },
+        EN={ name="Guide to Evendim",    label="Evendim", detail="Tinnudir", zone="Evendim", },
+        DE={ name="Führer nach Evendim", label="Evendim", detail="Tinnudir", zone="Evendim", },
+        FR={ name="Guide vers Evendim",  label="Evendim", detail="Tinnudir", zone="Evendim", },
         map={{MapType.ERIADOR, 490, 235}},
         level=35
     })
@@ -129,9 +129,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x7002E756",
-        EN={ name="Guide to the Misty Mountains", label="Hrimbarg", zone="Misty Mountains", },
-        DE={ name="Führer ins Nebelgebirge",      label="Hrimbarg", zone="Nebelgebirge", },
-        FR={ name="Guide vers les Monts Brumeux", label="Hrimbarg", zone="Monts Brumeux", },
+        EN={ name="Guide to the Misty Mountains", label="Misty Mountains", detail="Hrimbarg", zone="Misty Mountains", },
+        DE={ name="Führer ins Nebelgebirge",      label="Nebelgebirge",    detail="Hrimbarg", zone="Nebelgebirge", },
+        FR={ name="Guide vers les Monts Brumeux", label="Monts Brumeux",   detail="Hrimbarg", zone="Monts Brumeux", },
         map={{MapType.ERIADOR, 915, 265}},
         level=40.2
     })
@@ -163,17 +163,17 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x7000A2C5",
-        EN={ name="Guide to West Angmar",           label="Aughaire", zone="Angmar", },
-        DE={ name="Führer in das westliche Angmar", label="Aughaire", zone="Angmar", },
-        FR={ name="Guide vers l'ouest d'Angmar",    label="Aughaire", zone="Angmar", },
+        EN={ name="Guide to West Angmar",           label="West Angmar",  detail="Aughaire", zone="Angmar", },
+        DE={ name="Führer in das westliche Angmar", label="West-Angmar",  detail="Aughaire", zone="Angmar", },
+        FR={ name="Guide vers l'ouest d'Angmar",    label="Angmar ouest", detail="Aughaire", zone="Angmar", },
         map={{MapType.ERIADOR, 825, 185}},
         level=45
     })
     self.hunter:AddSkill({
         id="0x7000A2C6",
-        EN={ name="Guide to East Angmar",      label="Gath Forthnír", zone="Angmar", },
-        DE={ name="Führer nach Ost-Angmar",    label="Gath Forthnír", zone="Angmar", },
-        FR={ name="Guide vers l'est d'Angmar", label="Gath Forthnír", zone="Angmar", },
+        EN={ name="Guide to East Angmar",      label="East Angmar", detail="Gath Forthnír", zone="Angmar", },
+        DE={ name="Führer nach Ost-Angmar",    label="East-Angmar", detail="Gath Forthnír", zone="Angmar", },
+        FR={ name="Guide vers l'est d'Angmar", label="Angmar est",  detail="Gath Forthnír", zone="Angmar", },
         map={{MapType.ERIADOR, 705, 180}},
         level=49
     })
@@ -445,9 +445,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x7005AA95",
-        EN={ name="Guide to Azanulbizar",    label="Amdân", zone="Azanulbizar", },
-        DE={ name="Führer nach Azanulbizar", label="Amdân", zone="Azanulbizar", },
-        FR={ name="Guide vers Azanulbizar",  label="Amdân", zone="Azanulbizar", },
+        EN={ name="Guide to Azanulbizar",    label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
+        DE={ name="Führer nach Azanulbizar", label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
+        FR={ name="Guide vers Azanulbizar",  label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
         map={{MapType.RHOVANION, 210, 555}},
         overlap={"0x7005AA92"},
         level=130.3
@@ -490,9 +490,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x70068711",
-        EN={ name="Guide to Dol Amroth",    desc="King's Gondor",     label="Dol Amroth", zone="King's Gondor", },
-        DE={ name="Führer nach Dol Amroth", desc="Königreich Gondor", label="Dol Amroth", zone="Königreich Gondor", },
-        FR={ name="Guide vers Dol Amroth",  desc="le Gondor royal",   label="Dol Amroth", zone="Gondor royal", },
+        EN={ name="Guide to Dol Amroth",    desc="King's Gondor",     label="King's Dol Amroth",     zlabel="Dol Amroth", zone="King's Gondor", },
+        DE={ name="Führer nach Dol Amroth", desc="Königreich Gondor", label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor", },
+        FR={ name="Guide vers Dol Amroth",  desc="le Gondor royal",   label="Dol Amroth royal",      zlabel="Dol Amroth", zone="Gondor royal", },
         map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 210, 485}},
         overlap={"0x70068700"},
         level=142
@@ -526,18 +526,18 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x7006A9BF",
-        EN={ name="Guide to Bej Mâghda",    label= "Bej Mâghda", zone="Umbar", },
-        DE={ name="Führer nach Bej Mâghda", label= "Bej Mâghda", zone="Umbar", },
-        FR={ name="Guide vers Bej Mâghda",  label= "Bej Mâghda", zone="Umbar", },
+        EN={ name="Guide to Bej Mâghda",    label="Bej Mâghda", zone="Umbar", },
+        DE={ name="Führer nach Bej Mâghda", label="Bej Mâghda", zone="Umbar", },
+        FR={ name="Guide vers Bej Mâghda",  label="Bej Mâghda", zone="Umbar", },
         map={{MapType.HARADWAITH, 350, 380}},
         overlap={"0x7006A9C1"},
         level=147
     })
     self.hunter:AddSkill({
         id="0x70068718",
-        EN={ name="Guide to Umbar",    label="Umbar Baharbêl", zone="Umbar", },
-        DE={ name="Führer nach Umbar", label="Umbar Baharbêl", zone="Umbar", },
-        FR={ name="Guide vers Umbar",  label="Umbar Baharbêl", zone="Umbar", },
+        EN={ name="Guide to Umbar",    label="Umbar", detail="Baharbêl", zone="Umbar", },
+        DE={ name="Führer nach Umbar", label="Umbar", detail="Baharbêl", zone="Umbar", },
+        FR={ name="Guide vers Umbar",  label="Umbar", detail="Baharbêl", zone="Umbar", },
         map={{MapType.HARADWAITH, 505, 370}},
         overlap={"0x700686FF"},
         level=148
@@ -565,18 +565,18 @@ function TravelDictionary:CreateDictionaries()
     })
     self.warden:AddSkill({
         id="0x700634B6",
-        EN={ name="Muster at Swanfleet",                label="Lhan Garan", zone="Swanfleet", },
-        DE={ name="Appell in Schwanenfleet",            label="Lhan Garan", zone="Schwanenfleet", },
-        FR={ name="Rassemblement aux Noues des cygnes", label="Lhan Garan", zone="Noues des cygnes", },
+        EN={ name="Muster at Swanfleet",                label="Swanfleet",        detail="Lhan Garan", zone="Swanfleet", },
+        DE={ name="Appell in Schwanenfleet",            label="Schwanenfleet",    detail="Lhan Garan", zone="Schwanenfleet", },
+        FR={ name="Rassemblement aux Noues des cygnes", label="Noues des cygnes", detail="Lhan Garan", zone="Noues des cygnes", },
         map={{MapType.ERIADOR, 825, 490}},
         overlap={"0x700634A4"},
         level=10
     })
     self.warden:AddSkill({
         id="0x700634AD",
-        EN={ name="Muster at Cardolan",        label="Herne", zone="Cardolan", },
-        DE={ name="Appell in Cardolan",        label="Herne", zone="Cardolan", },
-        FR={ name="Rassemblement au Cardolan", label="Herne", zone="Cardolan", },
+        EN={ name="Muster at Cardolan",        label="Cardolan", detail="Herne", zone="Cardolan", },
+        DE={ name="Appell in Cardolan",        label="Cardolan", detail="Herne", zone="Cardolan", },
+        FR={ name="Rassemblement au Cardolan", label="Cardolan", detail="Herne", zone="Cardolan", },
         map={{MapType.ERIADOR, 560, 495}},
         overlap={"0x700634AE"},
         level=15
@@ -618,9 +618,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.warden:AddSkill({
         id="0x7001478E",
-        EN={ name="Muster in Evendim",                   label="Tinnudir", zone="Evendim", },
-        DE={ name="Appell in Evendim",                   label="Tinnudir", zone="Evendim", },
-        FR={ name="Rassemblement : La région d'Evendim", label="Tinnudir", zone="Evendim", },
+        EN={ name="Muster in Evendim",                   label="Evendim", detail="Tinnudir", zone="Evendim", },
+        DE={ name="Appell in Evendim",                   label="Evendim", detail="Tinnudir", zone="Evendim", },
+        FR={ name="Rassemblement : La région d'Evendim", label="Evendim", detail="Tinnudir", zone="Evendim", },
         map={{MapType.ERIADOR, 490, 235}},
         level=35
     })
@@ -644,9 +644,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.warden:AddSkill({
         id="0x700303DD",
-        EN={ name="Muster in the Misty Mountains",     label="Hrimbarg", zone="Misty Mountains", },
-        DE={ name="Appell im Nebelgebirge",            label="Hrimbarg", zone="Nebelgebirge", },
-        FR={ name="Rassemblement : Les Monts Brumeux", label="Hrimbarg", zone="Monts Brumeux", },
+        EN={ name="Muster in the Misty Mountains",     label="Misty Mountains", detail="Hrimbarg", zone="Misty Mountains", },
+        DE={ name="Appell im Nebelgebirge",            label="Nebelgebirge",    detail="Hrimbarg", zone="Nebelgebirge", },
+        FR={ name="Rassemblement : Les Monts Brumeux", label="Monts Brumeux",   detail="Hrimbarg", zone="Monts Brumeux", },
         map={{MapType.ERIADOR, 915, 265}},
         level=40.2
     })
@@ -936,9 +936,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.warden:AddSkill({
         id="0x7005AA8C",
-        EN={ name="Muster in Azanulbizar",       label="Amdân", zone="Azanulbizar", },
-        DE={ name="Appell in Azanulbizar",       label="Amdân", zone="Azanulbizar", },
-        FR={ name="Rassemblement : Azanulbizar", label="Amdân", zone="Azanulbizar", },
+        EN={ name="Muster in Azanulbizar",       label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
+        DE={ name="Appell in Azanulbizar",       label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
+        FR={ name="Rassemblement : Azanulbizar", label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
         map={{MapType.RHOVANION, 210, 555}},
         overlap={"0x7005AA92"},
         level=130.3
@@ -981,9 +981,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.warden:AddSkill({
         id="0x70068712",
-        EN={ name="Muster at Dol Amroth",       desc="King's Gondor",     label="Dol Amroth", zone="King's Gondor", },
-        DE={ name="Appell in Dol Amroth",       desc="Königreich Gondor", label="Dol Amroth", zone="Königreich Gondor", },
-        FR={ name="Rassemblement à Dol Amroth", desc="le Gondor royal",   label="Dol Amroth", zone="Gondor royal", },
+        EN={ name="Muster at Dol Amroth",       desc="King's Gondor",     label="King's Dol Amroth",     zlabel="Dol Amroth", zone="King's Gondor", },
+        DE={ name="Appell in Dol Amroth",       desc="Königreich Gondor", label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor", },
+        FR={ name="Rassemblement à Dol Amroth", desc="le Gondor royal",   label="Dol Amroth royal",      zlabel="Dol Amroth", zone="Gondor royal", },
         map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 385, 70}},
         overlap={"0x70068700"},
         level=142
@@ -1017,18 +1017,18 @@ function TravelDictionary:CreateDictionaries()
     })
     self.warden:AddSkill({
         id="0x7006A9C2",
-        EN={ name="Muster in Bej Mâghda",       label= "Bej Mâghda", zone="Umbar", },
-        DE={ name="Appell in Bej Mâghda",       label= "Bej Mâghda", zone="Umbar", },
-        FR={ name="Rassemblement à Bej Mâghda", label= "Bej Mâghda", zone="Umbar", },
+        EN={ name="Muster in Bej Mâghda",       label="Bej Mâghda", zone="Umbar", },
+        DE={ name="Appell in Bej Mâghda",       label="Bej Mâghda", zone="Umbar", },
+        FR={ name="Rassemblement à Bej Mâghda", label="Bej Mâghda", zone="Umbar", },
         map={{MapType.HARADWAITH, 350, 380}},
         overlap={"0x7006A9C1"},
         level=147
     })
     self.warden:AddSkill({
         id="0x7006870F",
-        EN={ name="Muster at Umbar",       label="Umbar Baharbêl", zone="Umbar", },
-        DE={ name="Appell in Umbar",       label="Umbar Baharbêl", zone="Umbar", },
-        FR={ name="Rassemblement à Umbar", label="Umbar Baharbêl", zone="Umbar", },
+        EN={ name="Muster at Umbar",       label="Umbar", detail="Baharbêl", zone="Umbar", },
+        DE={ name="Appell in Umbar",       label="Umbar", detail="Baharbêl", zone="Umbar", },
+        FR={ name="Rassemblement à Umbar", label="Umbar", detail="Baharbêl", zone="Umbar", },
         map={{MapType.HARADWAITH, 505, 370}},
         overlap={"0x700686FF"},
         level=148
@@ -1096,9 +1096,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.mariner:AddSkill({
         id="0x7006611E",
-        EN={ name="Sail to Lothlórien",          label="Egladil", zone="Lothlórien", },
-        DE={ name="Segelt nach Lothlórien",      label="Egladil", zone="Lothlórien", },
-        FR={ name="Naviguer vers la Lothlorien", label="Egladil", zone="Lothlórien", },
+        EN={ name="Sail to Lothlórien",          label="Lothlórien", detail="Egladil", zone="Lothlórien", },
+        DE={ name="Segelt nach Lothlórien",      label="Lothlórien", detail="Egladil", zone="Lothlórien", },
+        FR={ name="Naviguer vers la Lothlorien", label="Lothlórien", detail="Egladil", zone="Lothlórien", },
         map={{MapType.RHOVANION, 245, 670}},
         overlap={"0x70048C8C"},
         level=60
@@ -1166,9 +1166,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.mariner:AddSkill({
         id="0x700687C1",
-        EN={ name="Sail to Dol Amroth",       desc="King's Gondor",     label="Dol Amroth", zone="King's Gondor", },
-        DE={ name="Segelt nach Dol Amroth",   desc="Königreich Gondor", label="Dol Amroth", zone="Königreich Gondor", },
-        FR={ name="Naviguer vers Dol Amroth", desc="le Gondor royal",   label="Dol Amroth", zone="Gondor royal", },
+        EN={ name="Sail to Dol Amroth",       desc="King's Gondor",     label="King's Dol Amroth",     zlabel="Dol Amroth", zone="King's Gondor", },
+        DE={ name="Segelt nach Dol Amroth",   desc="Königreich Gondor", label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor", },
+        FR={ name="Naviguer vers Dol Amroth", desc="le Gondor royal",   label="Dol Amroth royal",      zlabel="Dol Amroth", zone="Gondor royal", },
         map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 385, 70}},
         overlap={"0x70068700"},
         level=142
@@ -1211,9 +1211,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.mariner:AddSkill({
         id="0x700687BB",
-        EN={ name="Sail to Umbar",       label="Umbar Baharbêl", zone="Umbar", },
-        DE={ name="Nach Umbar segeln",   label="Umbar Baharbêl", zone="Umbar", },
-        FR={ name="Naviguer vers Umbar", label="Umbar Baharbêl", zone="Umbar", },
+        EN={ name="Sail to Umbar",       label="Umbar", detail="Baharbêl", zone="Umbar", },
+        DE={ name="Nach Umbar segeln",   label="Umbar", detail="Baharbêl", zone="Umbar", },
+        FR={ name="Naviguer vers Umbar", label="Umbar", detail="Baharbêl", zone="Umbar", },
         map={{MapType.HARADWAITH, 505, 370}},
         overlap={"0x700686FF"},
         level=148
@@ -1224,9 +1224,9 @@ function TravelDictionary:CreateDictionaries()
     self.racials:AddSkill({
         -- man
         id="0x700062F6",
-        EN={ name="Return to Bree",     desc="enables you to quickly return", label="West Gate",   zone="Bree", },
-        DE={ name="Rückkehr nach Bree", desc="Ihr könnt schnell nach Bree",   label="Westtor",     zone="Bree", },
-        FR={ name="Retour à Bree",      desc="Permet de retourner",           label="Porte Ouest", zone="Bree", },
+        EN={ name="Return to Bree",     desc="enables you to quickly return", label="Bree", zlabel="West Gate",   zone="Bree", },
+        DE={ name="Rückkehr nach Bree", desc="Ihr könnt schnell nach Bree",   label="Bree", zlabel="Westtor",     zone="Bree", },
+        FR={ name="Retour à Bree",      desc="Permet de retourner",           label="Bree", zlabel="Porte Ouest", zone="Bree", },
         map={MapType.ERIADOR, 525, 335},
         level=5
     })
@@ -1436,9 +1436,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.rep:AddSkill({
         id="0x7001BF90",
-        EN={ name="Return to Bree",     desc="Thanks to your friendship", label="West Gate",   zone="Bree", },
-        DE={ name="Rückkehr nach Bree", desc="Dank Eurer Freundschaft",   label="Westtor",     zone="Bree", },
-        FR={ name="Retour à Bree",      desc="Grâce à votre amitié",      label="Porte Ouest", zone="Bree", },
+        EN={ name="Return to Bree",     desc="Thanks to your friendship", label="Bree", zlabel="West Gate",   zone="Bree", },
+        DE={ name="Rückkehr nach Bree", desc="Dank Eurer Freundschaft",   label="Bree", zlabel="Westtor",     zone="Bree", },
+        FR={ name="Retour à Bree",      desc="Grâce à votre amitié",      label="Bree", zlabel="Porte Ouest", zone="Bree", },
         map={{MapType.ERIADOR, 555, 335}},
         level=5
     })
@@ -1461,17 +1461,17 @@ function TravelDictionary:CreateDictionaries()
     })
     self.rep:AddSkill({
         id="0x700634A4",
-        EN={ name="Return to Swanfleet",         label="Lhan Garan", zone="Swanfleet", },
-        DE={ name="Rückkehr nach Schwanenfleet", label="Lhan Garan", zone="Schwanenfleet", },
-        FR={ name="Retour aux Noues des cygnes", label="Lhan Garan", zone="Noues des cygnes", },
+        EN={ name="Return to Swanfleet",         label="Swanfleet",        detail="Lhan Garan", zone="Swanfleet", },
+        DE={ name="Rückkehr nach Schwanenfleet", label="Schwanenfleet",    detail="Lhan Garan", zone="Schwanenfleet", },
+        FR={ name="Retour aux Noues des cygnes", label="Noues des cygnes", detail="Lhan Garan", zone="Noues des cygnes", },
         map={{MapType.ERIADOR, 795, 490}},
         level=10
     })
     self.rep:AddSkill({
         id="0x700634AE",
-        EN={ name="Return to Cardolan",     label="Herne", zone="Cardolan", },
-        DE={ name="Rückkehr nach Cardolan", label="Herne", zone="Cardolan", },
-        FR={ name="Retour au Cardolan",     label="Herne", zone="Cardolan", },
+        EN={ name="Return to Cardolan",     label="Cardolan", detail="Herne", zone="Cardolan", },
+        DE={ name="Rückkehr nach Cardolan", label="Cardolan", detail="Herne", zone="Cardolan", },
+        FR={ name="Retour au Cardolan",     label="Cardolan", detail="Herne", zone="Cardolan", },
         map={{MapType.ERIADOR, 590, 495}},
         level=15
     })
@@ -1550,17 +1550,17 @@ function TravelDictionary:CreateDictionaries()
     })
     self.rep:AddSkill({
         id="0x7001F374",
-        EN={ name="Return to Mirkwood",         label="Ost Galadh",   zone="Mirkwood", },
-        DE={ name="Rückkehr zum Düsterwald",    label="Feste Galadh", zone="Düsterwald", },
-        FR={ name="Retour dans la Forêt Noire", label="Ost Galadh",   zone="Forêt Noire", },
+        EN={ name="Return to Mirkwood",         label="Mirkwood",    detail="Ost Galadh",   zone="Mirkwood", },
+        DE={ name="Rückkehr zum Düsterwald",    label="Düsterwald",  detail="Feste Galadh", zone="Düsterwald", },
+        FR={ name="Retour dans la Forêt Noire", label="Forêt Noire", detail="Ost Galadh",   zone="Forêt Noire", },
         map={{MapType.RHOVANION, 335, 630}},
         level=61
     })
     self.rep:AddSkill({
         id="0x70021FA2",
-        EN={ name="Return to Enedwaith",     label="Lhanuch", zone="Enedwaith", },
-        DE={ name="Rückkehr nach Enedwaith", label="Lhanuch", zone="Enedwaith", },
-        FR={ name="Retour en Enedwaith",     label="Lhanuch", zone="Enedwaith", },
+        EN={ name="Return to Enedwaith",     label="Enedwaith", detail="Lhanuch", zone="Enedwaith", },
+        DE={ name="Rückkehr nach Enedwaith", label="Enedwaith", detail="Lhanuch", zone="Enedwaith", },
+        FR={ name="Retour en Enedwaith",     label="Enedwaith", detail="Lhanuch", zone="Enedwaith", },
         map={{MapType.ERIADOR, 765, 620}},
         level=62
     })
@@ -1806,9 +1806,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.rep:AddSkill({
         id="0x7005AA92",
-        EN={ name="Return to Azanulbizar",      label="Amdân", zone="Azanulbizar", },
-        DE={ name="Rückkehre nach Azanulbizar", label="Amdân", zone="Azanulbizar", },
-        FR={ name="Retour à Azanulbizar",       label="Amdân", zone="Azanulbizar", },
+        EN={ name="Return to Azanulbizar",      label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
+        DE={ name="Rückkehre nach Azanulbizar", label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
+        FR={ name="Retour à Azanulbizar",       label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
         map={{MapType.RHOVANION, 180, 555}},
         level=130.3
     })
@@ -1854,9 +1854,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.rep:AddSkill({
         id="0x70068700",
-        EN={ name="Return to Dol Amroth",     desc="King's Gondor",     label="Dol Amroth", zone="King's Gondor", },
-        DE={ name="Rückkehr nach Dol Amroth", desc="Königreich Gondor", label="Dol Amroth", zone="Königreich Gondor", },
-        FR={ name="Retour à Dol Amroth",      desc="le Gondor royal",   label="Dol Amroth", zone="Gondor royal", },
+        EN={ name="Return to Dol Amroth",     desc="King's Gondor",     label="King's Dol Amroth",     zlabel="Dol Amroth", zone="King's Gondor", },
+        DE={ name="Rückkehr nach Dol Amroth", desc="Königreich Gondor", label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor", },
+        FR={ name="Retour à Dol Amroth",      desc="le Gondor royal",   label="Dol Amroth royal",      zlabel="Dol Amroth", zone="Gondor royal", },
         map={{MapType.GONDOR, 180, 485}, {MapType.HARADWAITH, 355, 70}},
         level=142
     })
@@ -1886,17 +1886,17 @@ function TravelDictionary:CreateDictionaries()
     })
     self.rep:AddSkill({
         id="0x7006A9C1",
-        EN={ name="Return to Bej Mâghda",         label= "Bej Mâghda", zone="Umbar", },
-        DE={ name="Nach Bej Mâghda zurückkehren", label= "Bej Mâghda", zone="Umbar", },
-        FR={ name="Retour à Bej Mâghda",          label= "Bej Mâghda", zone="Umbar", },
+        EN={ name="Return to Bej Mâghda",         label="Bej Mâghda", zone="Umbar", },
+        DE={ name="Nach Bej Mâghda zurückkehren", label="Bej Mâghda", zone="Umbar", },
+        FR={ name="Retour à Bej Mâghda",          label="Bej Mâghda", zone="Umbar", },
         map={{MapType.HARADWAITH, 380, 380}},
         level=147
     })
     self.rep:AddSkill({
         id="0x700686FF",
-        EN={ name="Return to Umbar",         label="Umbar Baharbêl", zone="Umbar", },
-        DE={ name="Nach Umbar zurückkehren", label="Umbar Baharbêl", zone="Umbar", },
-        FR={ name="Retour à Umbar",          label="Umbar Baharbêl", zone="Umbar", },
+        EN={ name="Return to Umbar",         label="Umbar", detail="Baharbêl", zone="Umbar", },
+        DE={ name="Nach Umbar zurückkehren", label="Umbar", detail="Baharbêl", zone="Umbar", },
+        FR={ name="Retour à Umbar",          label="Umbar", detail="Baharbêl", zone="Umbar", },
         map={{MapType.HARADWAITH, 475, 370}},
         level=148
     })
