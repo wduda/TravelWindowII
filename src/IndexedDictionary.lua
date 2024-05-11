@@ -3,7 +3,7 @@
 IndexedDictionary = class()
 
 local ValidSkillKeys = {
-    "id", "name", "desc", "label", "label0", "zone", "tag",
+    "id", "name", "desc", "label", "label0", "detail", "zlabel", "zone", "tag",
     "EN", "DE", "FR",
     "map", "overlap", "level", "hasSameText"
 }
@@ -37,7 +37,14 @@ function IndexedDictionary:SetSkillLabel(skill, useZone)
         end
 
         if useZone == 1 then
+            if skill.detail ~= nil then
+                skill.label = skill.detail
+            elseif skill.zlabel ~= nil then
+                skill.label = skill.zlabel
+            end
             skill.label = skill.zone .. ": " .. skill.label
+        elseif skill.detail ~= nil then
+            skill.label = skill.detail
         end
 
         if tag ~= nil then
@@ -83,6 +90,8 @@ function IndexedDictionary:VerifySkill(skill)
     end
     skill.name = lang.name
     skill.desc = lang.desc
+    skill.detail = lang.detail
+    skill.zlabel = lang.zlabel
     skill.label0 = lang.label
     skill.zone = lang.zone
     if skill.tag == nil then
