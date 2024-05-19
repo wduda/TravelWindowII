@@ -2,19 +2,11 @@ A new version is available!
 
 Sorting through drag and drop and locking the window positions go hand in hand - by locking the interface in place you are preventing accidental drag and drops.
 
-v2.3.0
+v2.3.1
 
-- add: grid tab sorting through drag & drop
-- add: all travel skill labels now also have data for the zone (i.e. "Michel Delving" is in zone "Shire")
-- add: enabled list now has labelled sections
-- add: options window position can be locked now
-- add: toggle button position can be locked now
-- add: Bej Maghda travel skill and map location in EN/DE/FR client
-- enhance: code cleanup in multiple methods under the hood
-- fix: rare case for window width snapping that was adding extra padding
-- fix: scroll height calculation for scroll bar
-- fix: ambiguity in Beorning racial skill in EN/DE/FR client
-- fix: Mariner Tharbad skill name & label in FR client
+- add: option to turn off zone names in labels
+- fix: icons on maps sometimes not turning on/off properly
+
 
 Huge kudos to @whiterabbit963 for making this release possible!
 

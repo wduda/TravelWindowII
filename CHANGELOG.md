@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v2.3.1
+
+- add: option to turn off zone names in labels
+- fix: icons on maps sometimes not turning on/off properly
+
 ## v2.3.0
 
 - add: grid tab sorting through drag & drop
@@ -156,7 +161,7 @@
 
 ## v1.0.18beta
 
-- fixed changed Gundabad translations for FR 
+- fixed changed Gundabad translations for FR
 
 ## v1.0.17beta
 
