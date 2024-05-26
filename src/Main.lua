@@ -32,7 +32,7 @@ TravelInfo = TravelDictionary();
 -- load the player saved settings
 LoadSettings();
 
-TravelInfo:SetSkillLabels(Settings.useZoneNames)
+TravelInfo:SetSkillLabels()
 
 -- set up all the shortcuts
 InitShortcuts();

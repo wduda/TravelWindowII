@@ -231,6 +231,23 @@ function OptionsPanel:AddGeneralItems()
     self.useZoneNamesCheck:SetParent(self.GeneralTab);
     self.useZoneNamesCheck:SetVisible(true);
 
+    -- label for option to use skill name in skill labels
+    self.useSkillNamesLabel = Turbine.UI.Label();
+    self.useSkillNamesLabel:SetSize(labelWidth, 20);
+    self.useSkillNamesLabel:SetPosition(20, NextY(30));
+    self.useSkillNamesLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+    self.useSkillNamesLabel:SetParent(self.GeneralTab);
+    self.useSkillNamesLabel:SetText(LC.useSkillNames);
+    self.useSkillNamesLabel:SetVisible(true);
+
+    -- checkbox for option to use skill name in skill labels
+    self.useSkillNamesCheck = Turbine.UI.Lotro.CheckBox();
+    self.useSkillNamesCheck:SetSize(19, 19);
+    self.useSkillNamesCheck:SetPosition(450, NextY(0));
+    self.useSkillNamesCheck:SetChecked(Settings.useSkillNames == 1);
+    self.useSkillNamesCheck:SetParent(self.GeneralTab);
+    self.useSkillNamesCheck:SetVisible(true);
+
     -- label for option to lock interface
     self.lockUILabel = Turbine.UI.Label();
     self.lockUILabel:SetSize(labelWidth, 20);
@@ -519,7 +536,17 @@ function OptionsPanel:AddGeneralItems()
         else
             Settings.useZoneNames = 0
         end
-        TravelInfo:SetSkillLabels(Settings.useZoneNames)
+        TravelInfo:SetSkillLabels()
+        _G.travel:ReloadLabels()
+    end
+
+    self.useSkillNamesCheck.CheckedChanged = function(sender, args)
+        if sender:IsChecked() then
+            Settings.useSkillNames = 1
+        else
+            Settings.useSkillNames = 0
+        end
+        TravelInfo:SetSkillLabels()
         _G.travel:ReloadLabels()
     end
 
@@ -602,6 +629,7 @@ function OptionsPanel:UpdateOptions()
     self.ShowButtonCheck:SetChecked(Settings.showButton == 1);
     self.PulldownTravelCheck:SetChecked(Settings.pulldownTravel == 1);
     self.useZoneNamesCheck:SetChecked(Settings.useZoneNames == 1);
+    self.useSkillNamesCheck:SetChecked(Settings.useSkillNames == 1);
     self.lockUICheck:SetChecked(Settings.lockUI == 1);
     self.unlockKeyPressCheck:SetEnabled(Settings.lockUI == 1);
     self.unlockKeyPressCheck:SetChecked(Settings.unlockKeyPress == 1);
