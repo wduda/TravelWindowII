@@ -200,33 +200,12 @@ function InitDefaultSettings()
     -- set all settings to default values
     Settings = {};
     Settings.lastLoadedVersion = Plugins["Travel Window II"]:GetVersion();
-    Settings.gridCols = 0;
-    Settings.gridRows = 0;
-    Settings.listWidth = 0;
-    Settings.listRows = 0;
-    Settings.positionX = Turbine.UI.Display.GetWidth() * 0.75;
-    Settings.positionY = Turbine.UI.Display.GetHeight() * 0.75;
-    Settings.buttonRelativeX = 0.95;
-    Settings.buttonRelativeY = 0.75;
-    Settings.useMinWindow = 0;
-    Settings.hideOnStart = 0;
-    Settings.hideOnCombat = 0;
-    Settings.pulldownTravel = 0;
-    Settings.hideOnTravel = 0;
-    Settings.useZoneNames = 1
-    Settings.useSkillNames = 0
-    Settings.lockUI = 0
-    Settings.unlockKeyPress = 0
-    Settings.ignoreEsc = 0;
-    Settings.showButton = 1;
-    Settings.mode = 2;
-    Settings.filters = 0x0F;
-    Settings.mainMaxOpacity = 1;
-    Settings.mainMinOpacity = 0.5;
-    Settings.fadeOutSteps = 1;
-    Settings.fadeOutDelay = 0;
-    Settings.toggleMaxOpacity = 1;
-    Settings.toggleMinOpacity = 0.5;
+
+    for k, v in pairs(SettingsConfig) do
+        if v.defValue ~= nil then
+            Settings[k] = v.defValue
+        end
+    end
 
     -- clear the maps
     Settings.mapGlanVraig = nil;
@@ -247,9 +226,50 @@ function InitNumberSetting(strTable, name, forceDefault)
     end
 end
 
+function AddSettingConfig(name, defValue)
+    SettingsConfig[name] = {}
+    SettingsConfig[name].defValue = defValue
+    if type(defValue) == "number" then
+        SettingsConfig[name].init = InitNumberSetting
+        SettingsConfig[name].save = tostring
+    end
+end
+
+function CreateSettingsConfig()
+    SettingsConfig = {}
+
+    AddSettingConfig("gridCols", 0)
+    AddSettingConfig("gridRows", 0)
+    AddSettingConfig("listWidth", 0)
+    AddSettingConfig("listRows", 0)
+    AddSettingConfig("positionX", Turbine.UI.Display.GetWidth() * 0.75)
+    AddSettingConfig("positionY", Turbine.UI.Display.GetHeight() * 0.75)
+    AddSettingConfig("buttonRelativeX", 0.95)
+    AddSettingConfig("buttonRelativeY", 0.75)
+    AddSettingConfig("useMinWindow", 0)
+    AddSettingConfig("hideOnStart", 0)
+    AddSettingConfig("hideOnCombat", 0)
+    AddSettingConfig("hideOnTravel", 0)
+    AddSettingConfig("pulldownTravel", 0)
+    AddSettingConfig("useZoneNames", 1)
+    AddSettingConfig("useSkillNames", 0)
+    AddSettingConfig("lockUI", 0)
+    AddSettingConfig("unlockKeyPress", 0)
+    AddSettingConfig("ignoreEsc", 0)
+    AddSettingConfig("showButton", 1)
+    AddSettingConfig("mode", 2)
+    AddSettingConfig("filters", 0x0F)
+    AddSettingConfig("mainMaxOpacity", 1)
+    AddSettingConfig("mainMinOpacity", 0.5)
+    AddSettingConfig("fadeOutSteps", 1)
+    AddSettingConfig("fadeOutDelay", 0)
+    AddSettingConfig("toggleMaxOpacity", 1)
+    AddSettingConfig("toggleMinOpacity", 0.5)
+end
+
 function LoadSettings()
-    -- if a value is not available, use a default value
-    InitDefaultSettings();
+    CreateSettingsConfig()
+    InitDefaultSettings()
 
     -- load TWII settings file
     local settingsStrings = PatchDataLoad(Turbine.DataScope.Character, "TravelWindowIISettings");
@@ -325,6 +345,7 @@ function SetSettings(settingsArg, scope, importOldSettings)
         end
         settingsArg.buttonPositionX = nil;
     end
+    SettingsConfig.buttonRelativeX.forceDefaultInit = buttonRelativeX
 
     -- fixup deprecated buttonPositionY
     local buttonRelativeY = Settings.buttonRelativeY;
@@ -339,34 +360,17 @@ function SetSettings(settingsArg, scope, importOldSettings)
         end
         settingsArg.buttonPositionY = nil;
     end
+    SettingsConfig.buttonRelativeY.forceDefaultInit = buttonRelativeY
 
-    InitNumberSetting(settingsArg, "gridCols");
-    InitNumberSetting(settingsArg, "gridRows");
-    InitNumberSetting(settingsArg, "listWidth");
-    InitNumberSetting(settingsArg, "listRows");
-    InitNumberSetting(settingsArg, "positionX");
-    InitNumberSetting(settingsArg, "positionY");
-    InitNumberSetting(settingsArg, "buttonRelativeX", buttonRelativeX);
-    InitNumberSetting(settingsArg, "buttonRelativeY", buttonRelativeY);
-    InitNumberSetting(settingsArg, "useMinWindow");
-    InitNumberSetting(settingsArg, "hideOnStart");
-    InitNumberSetting(settingsArg, "hideOnCombat");
-    InitNumberSetting(settingsArg, "pulldownTravel");
-    InitNumberSetting(settingsArg, "hideOnTravel");
-    InitNumberSetting(settingsArg, "ignoreEsc");
-    InitNumberSetting(settingsArg, "lockUI");
-    InitNumberSetting(settingsArg, "useZoneNames");
-    InitNumberSetting(settingsArg, "useSkillNames");
-    InitNumberSetting(settingsArg, "unlockKeyPress");
-    InitNumberSetting(settingsArg, "showButton");
-    InitNumberSetting(settingsArg, "mode");
-    InitNumberSetting(settingsArg, "filters");
-    InitNumberSetting(settingsArg, "mainMaxOpacity");
-    InitNumberSetting(settingsArg, "mainMinOpacity");
-    InitNumberSetting(settingsArg, "fadeOutSteps");
-    InitNumberSetting(settingsArg, "fadeOutDelay");
-    InitNumberSetting(settingsArg, "toggleMaxOpacity");
-    InitNumberSetting(settingsArg, "toggleMinOpacity");
+    for k, v in pairs(SettingsConfig) do
+        if v.init ~= nil then
+            if v.init == InitNumberSetting then
+                v.init(settingsArg, k, v.forceDefaultInit)
+            else
+                v.init(settingsArg, k)
+            end
+        end
+    end
 
     if (settingsArg.mapGlanVraig ~= nil) then
         Settings.mapGlanVraig = settingsArg.mapGlanVraig;
@@ -454,33 +458,12 @@ function SaveSettings(scope)
 
     local settingsStrings = {};
     settingsStrings.lastLoadedVersion = Plugins["Travel Window II"]:GetVersion();
-    settingsStrings.gridCols = tostring(Settings.gridCols);
-    settingsStrings.gridRows = tostring(Settings.gridRows);
-    settingsStrings.listWidth = tostring(Settings.listWidth);
-    settingsStrings.listRows = tostring(Settings.listRows);
-    settingsStrings.positionX = tostring(Settings.positionX);
-    settingsStrings.positionY = tostring(Settings.positionY);
-    settingsStrings.buttonRelativeX = tostring(Settings.buttonRelativeX);
-    settingsStrings.buttonRelativeY = tostring(Settings.buttonRelativeY);
-    settingsStrings.useMinWindow = tostring(Settings.useMinWindow);
-    settingsStrings.hideOnStart = tostring(Settings.hideOnStart);
-    settingsStrings.hideOnCombat = tostring(Settings.hideOnCombat);
-    settingsStrings.pulldownTravel = tostring(Settings.pulldownTravel);
-    settingsStrings.hideOnTravel = tostring(Settings.hideOnTravel);
-    settingsStrings.useZoneNames = tostring(Settings.useZoneNames)
-    settingsStrings.useSkillNames = tostring(Settings.useSkillNames)
-    settingsStrings.lockUI = tostring(Settings.lockUI)
-    settingsStrings.unlockKeyPress = tostring(Settings.unlockKeyPress)
-    settingsStrings.ignoreEsc = tostring(Settings.ignoreEsc);
-    settingsStrings.showButton = tostring(Settings.showButton);
-    settingsStrings.mode = tostring(Settings.mode);
-    settingsStrings.filters = tostring(Settings.filters);
-    settingsStrings.mainMaxOpacity = tostring(Settings.mainMaxOpacity);
-    settingsStrings.mainMinOpacity = tostring(Settings.mainMinOpacity);
-    settingsStrings.fadeOutSteps = tostring(Settings.fadeOutSteps);
-    settingsStrings.fadeOutDelay = tostring(Settings.fadeOutDelay);
-    settingsStrings.toggleMaxOpacity = tostring(Settings.toggleMaxOpacity);
-    settingsStrings.toggleMinOpacity = tostring(Settings.toggleMinOpacity);
+    for k, v in pairs(SettingsConfig) do
+        if v.save ~= nil then
+            settingsStrings[k] = v.save(Settings[k])
+        end
+    end
+
     settingsStrings.mapGlanVraig = tostring(Settings.mapGlanVraig);
     settingsStrings.enabled = GetTravelEnabled(scope);
     settingsStrings.order = GetTravelOrder(scope);
