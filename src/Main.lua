@@ -43,7 +43,7 @@ CreateOptionsWindow();
 ToggleButton = TravelWindowII.src.TravelButton();
 
 -- create the travel window
-_G.travel = TravelWindow(Settings.useMinWindow);
+_G.travel = TravelWindow();
 
 NewShortcutEvent = function()
     _G.travel.dirty = true; -- reset list of shortcuts
