@@ -14,8 +14,8 @@ import "TravelWindowII.src.EuroNormalize";
 
 TravelWindow = class(Turbine.UI.Window);
 
-function TravelWindow:Constructor(useMinWindow)
-    if useMinWindow == 1 then
+function TravelWindow:Constructor()
+    if Settings.useMinWindow == 1 then
         Turbine.UI.Window.Constructor(self);
     else
         Turbine.UI.Lotro.Window.Constructor(self);
@@ -26,7 +26,7 @@ function TravelWindow:Constructor(useMinWindow)
     self.isMouseDown = false;
     self.isDragging = false;
     self.isResizing = false;
-    self.isMinWindow = useMinWindow == 1;
+    self.isMinWindow = Settings.useMinWindow == 1;
     if self.isMinWindow then
         self.wPos = -1;
         self.hPos = 20;

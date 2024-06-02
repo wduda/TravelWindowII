@@ -13,6 +13,9 @@ function OptionsPanel:Constructor()
     self.loaded = false;
     self.disableUpdates = false;
 
+    self.labelWidth = 420
+    self.checkOffset = 450
+
     -- set size of window
     self.width = 800;
     self.height = 840;
@@ -85,336 +88,276 @@ function OptionsPanel:GetLoaded()
     return self.loaded;
 end
 
+function OptionsPanel:NextY(offset)
+    self.optionHeight = self.optionHeight + offset;
+    return self.optionHeight;
+end
+
+function OptionsPanel:AddCheckBoxOption(name, x, spacerY, changed, update)
+    local nameLabel = name .. "Label"
+    local y = self:NextY(spacerY)
+
+    self[nameLabel] = Turbine.UI.Label()
+    self[nameLabel]:SetSize(self.labelWidth, 20)
+    self[nameLabel]:SetPosition(x, y)
+    self[nameLabel]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+    self[nameLabel]:SetParent(self.GeneralTab)
+    self[nameLabel]:SetText(LC[name])
+    self[nameLabel]:SetVisible(true)
+
+    self.options[name] = Turbine.UI.Lotro.CheckBox()
+    self.options[name]:SetSize(19, 19)
+    self.options[name]:SetPosition(self.checkOffset, y)
+    self.options[name]:SetParent(self.GeneralTab)
+    self.options[name]:SetVisible(true)
+    if changed ~= nil then
+        self.options[name].CheckedChangedFunc = changed
+    else
+        self.options[name].CheckedChangedFunc = function(sender, args)
+            if sender:IsChecked() then
+                Settings[name] = 1
+            else
+                Settings[name] = 0
+            end
+        end
+    end
+    if update ~= nil then
+        self.options[name].UpdateOption = update
+     else
+         self.options[name].UpdateOption = function()
+             self.options[name]:SetChecked(Settings[name] == 1)
+         end
+     end
+     self.options[name]:UpdateOption()
+end
+
+function OptionsPanel:AddMinMaxSliderOption(name, nameMin, nameMax, x, spacerY, minFunc, maxFunc)
+    local nameLabel = name .. "Label"
+    local nameMinLabel = nameMin .. "Label"
+    local nameMaxLabel = nameMax .. "Label"
+
+    self[nameLabel] = Turbine.UI.Label()
+    self[nameLabel]:SetSize(self.labelWidth, 20)
+    self[nameLabel]:SetPosition(x, self:NextY(spacerY))
+    self[nameLabel]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+    self[nameLabel]:SetParent(self.GeneralTab)
+    self[nameLabel]:SetText(LC[name])
+    self[nameLabel]:SetVisible(true)
+
+    self[nameMinLabel] = Turbine.UI.Label()
+    self[nameMinLabel]:SetSize(50, 20)
+    self[nameMinLabel]:SetPosition(x, self:NextY(20))
+    self[nameMinLabel]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+    self[nameMinLabel]:SetParent(self.GeneralTab)
+    self[nameMinLabel]:SetText(LC.min)
+    self[nameMinLabel]:SetVisible(true)
+
+    self.options[nameMin] = Turbine.UI.Lotro.ScrollBar()
+    self.options[nameMin]:SetOrientation(Turbine.UI.Orientation.Horizontal)
+    self.options[nameMin]:SetSize(400, 10)
+    self.options[nameMin]:SetPosition(x + 50, self:NextY(5))
+    self.options[nameMin]:SetMinimum(0)
+    self.options[nameMin]:SetMaximum(100)
+    self.options[nameMin]:SetParent(self.GeneralTab)
+    self.options[nameMin].ValueChangedFunc = minFunc
+    self.options[nameMin].UpdateOption = function()
+        self.options[nameMin]:SetValue(Settings[nameMin] * 100)
+    end
+    self.options[nameMin]:UpdateOption()
+
+    self[nameMaxLabel] = Turbine.UI.Label()
+    self[nameMaxLabel]:SetSize(50, 20)
+    self[nameMaxLabel]:SetPosition(x, self:NextY(15))
+    self[nameMaxLabel]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+    self[nameMaxLabel]:SetParent(self.GeneralTab)
+    self[nameMaxLabel]:SetText(LC.max)
+    self[nameMaxLabel]:SetVisible(true)
+
+    self.options[nameMax] = Turbine.UI.Lotro.ScrollBar()
+    self.options[nameMax]:SetOrientation(Turbine.UI.Orientation.Horizontal)
+    self.options[nameMax]:SetSize(400, 10)
+    self.options[nameMax]:SetPosition(x + 50, self:NextY(5))
+    self.options[nameMax]:SetMinimum(0)
+    self.options[nameMax]:SetMaximum(100)
+    self.options[nameMax]:SetParent(self.GeneralTab)
+    self.options[nameMax].ValueChangedFunc = maxFunc
+    self.options[nameMax].UpdateOption = function()
+        self.options[nameMax]:SetValue(Settings[nameMax] * 100)
+    end
+    self.options[nameMax]:UpdateOption()
+end
+
+function OptionsPanel:AddSliderOption(name, min, max, x, spacerY, change)
+    local nameLabel = name .. "Label"
+
+    self[nameLabel] = Turbine.UI.Label()
+    self[nameLabel]:SetSize(self.labelWidth, 20)
+    self[nameLabel]:SetPosition(x, self:NextY(spacerY))
+    self[nameLabel]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+    self[nameLabel]:SetParent(self.GeneralTab)
+    self[nameLabel]:SetText(LC[name])
+    self[nameLabel]:SetVisible(true)
+
+    self.options[name] = Turbine.UI.Lotro.ScrollBar()
+    self.options[name]:SetOrientation(Turbine.UI.Orientation.Horizontal)
+    self.options[name]:SetSize(450, 10)
+    self.options[name]:SetPosition(x, self:NextY(25))
+    self.options[name]:SetMinimum(min)
+    self.options[name]:SetMaximum(max)
+    self.options[name]:SetParent(self.GeneralTab)
+    self.options[name].ValueChangedFunc = change
+    self.options[name].UpdateOption = function()
+        self.options[name]:SetValue(Settings[name])
+    end
+    self.options[name]:UpdateOption()
+end
+
 -- function to add items to the general tab
 function OptionsPanel:AddGeneralItems()
-    local optionHeight = 0;
-    local NextY = function(offset)
-        optionHeight = optionHeight + offset;
-        return optionHeight;
+    self.optionHeight = 0
+    self.options = {}
+
+    self:AddCheckBoxOption("useMinWindow", 20, 20,
+        function(sender, args)
+            if sender:IsChecked() then
+                Settings.useMinWindow = 1
+            else
+                Settings.useMinWindow = 0
+            end
+            _G.travel:Close()
+            _G.travel = TravelWindow()
+        end)
+    self:AddCheckBoxOption("hideOnStart", 20, 30)
+    self:AddCheckBoxOption("hideOnCombat", 20, 30)
+    self:AddCheckBoxOption("hideOnTravel", 20, 30)
+    self:AddCheckBoxOption("ignoreEsc", 20, 30)
+    self:AddCheckBoxOption("showButton", 20, 30,
+        function(sender, args)
+            if (sender:IsChecked()) then
+                Settings.showButton = 1;
+            else
+                Settings.showButton = 0;
+            end
+            ToggleButton:SetVisible(sender:IsChecked());
+        end)
+    self:AddCheckBoxOption("pulldownTravel", 20, 30)
+    self:AddCheckBoxOption("useZoneNames", 20, 30,
+        function(sender, args)
+            if sender:IsChecked() then
+                Settings.useZoneNames = 1
+            else
+                Settings.useZoneNames = 0
+            end
+            TravelInfo:SetSkillLabels()
+            _G.travel:ReloadLabels()
+        end)
+    self:AddCheckBoxOption("useSkillNames", 20, 30,
+        function(sender, args)
+            if sender:IsChecked() then
+                Settings.useSkillNames = 1
+            else
+                Settings.useSkillNames = 0
+            end
+            TravelInfo:SetSkillLabels()
+            _G.travel:ReloadLabels()
+        end)
+    self:AddCheckBoxOption("lockUI", 20, 30,
+        function(sender, args)
+            if sender:IsChecked() then
+                Settings.lockUI = 1
+            else
+                Settings.lockUI = 0
+            end
+            self:UpdateOptions()
+        end)
+    self:AddCheckBoxOption("unlockKeyPress", 50, 30,
+        function(sender, args)
+            if sender:IsChecked() then
+                Settings.unlockKeyPress = 1
+            else
+                Settings.unlockKeyPress = 0
+            end
+            self:UpdateOptions()
+        end,
+        function()
+            self.options["unlockKeyPress"]:SetEnabled(Settings.lockUI == 1);
+            self.options["unlockKeyPress"]:SetChecked(Settings.unlockKeyPress == 1);
+        end)
+    self:AddMinMaxSliderOption("toggleSliders", "toggleMinOpacity", "toggleMaxOpacity", 20, 30,
+        function(sender, args)
+            local minSlider = self.options["toggleMinOpacity"]
+            local maxSlider = self.options["toggleMaxOpacity"]
+
+            -- check that the min opacity does not go higher than the max opacity
+            if minSlider:GetValue() > maxSlider:GetValue() then
+                minSlider:SetValue(maxSlider:GetValue())
+            end
+
+            -- do updates
+            Settings.toggleMinOpacity = minSlider:GetValue() / 100
+            _G.travel:UpdateOpacity();
+        end,
+        function(sender, args)
+            local minSlider = self.options["toggleMinOpacity"]
+            local maxSlider = self.options["toggleMaxOpacity"]
+
+            -- check that the max opacity does not go lower than the min opacity
+            if maxSlider:GetValue() < minSlider:GetValue() then
+                maxSlider:SetValue(minSlider:GetValue())
+            end
+
+            -- do updates
+            Settings.toggleMaxOpacity = maxSlider:GetValue() / 100
+            _G.travel:UpdateOpacity()
+
+        end)
+    self:AddMinMaxSliderOption("mainSliders", "mainMinOpacity", "mainMaxOpacity", 20, 25,
+        function(sender, args)
+            local minSlider = self.options["mainMinOpacity"]
+            local maxSlider = self.options["mainMaxOpacity"]
+
+            -- check that the min opacity does not go higher than the max opacity
+            if minSlider:GetValue() > maxSlider:GetValue() then
+                minSlider:SetValue(maxSlider:GetValue())
+            end
+
+            -- do updates
+            Settings.mainMinOpacity = minSlider:GetValue() / 100
+            _G.travel:UpdateOpacity()
+        end,
+        function(sender, args)
+            local minSlider = self.options["mainMinOpacity"]
+            local maxSlider = self.options["mainMaxOpacity"]
+
+            -- check that the max opacity does not go lower than the min opacity
+            if maxSlider:GetValue() < minSlider:GetValue() then
+                maxSlider:SetValue(minSlider:GetValue())
+            end
+
+            -- do updates
+            Settings.mainMaxOpacity = maxSlider:GetValue() / 100
+            _G.travel:UpdateOpacity()
+        end)
+    self:AddSliderOption("fadeOutDelay", 0, 100, 20, 25,
+        function(sender, args)
+            Settings.fadeOutDelay = self.options["fadeOutDelay"]:GetValue()
+        end)
+    self:AddSliderOption("fadeOutSteps", 1, 151, 20, 25,
+        function(sender, args)
+            Settings.fadeOutSteps = self.options["fadeOutSteps"]:GetValue()
+            _G.travel:UpdateOpacity()
+        end)
+
+    -- enable changed methods until after all options are initialized
+    for _, v in pairs(self.options) do
+        if v.CheckedChangedFunc ~= nil then
+            v.CheckedChanged = v.CheckedChangedFunc
+            v.CheckedChangedFunc = nil
+        elseif v.ValueChangedFunc ~= nil then
+            v.ValueChanged = v.ValueChangedFunc
+            v.ValueChangedFunc = nil
+        end
     end
-
-    local labelWidth = 420;
-
-    -- label for hide window on start option
-    self.UseMinWindowLabel = Turbine.UI.Label();
-    self.UseMinWindowLabel:SetSize(labelWidth, 20);
-    self.UseMinWindowLabel:SetPosition(20, NextY(20));
-    self.UseMinWindowLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.UseMinWindowLabel:SetParent(self.GeneralTab);
-    self.UseMinWindowLabel:SetText(LC.miniWindow);
-    self.UseMinWindowLabel:SetVisible(true);
-
-    -- checkbox for hide window on start option
-    self.UseMinWindowCheck = Turbine.UI.Lotro.CheckBox();
-    self.UseMinWindowCheck:SetSize(19, 19);
-    self.UseMinWindowCheck:SetPosition(450, NextY(0));
-    self.UseMinWindowCheck:SetChecked(Settings.useMinWindow == 1);
-    self.UseMinWindowCheck:SetParent(self.GeneralTab);
-    self.UseMinWindowCheck:SetVisible(true);
-
-    -- label for hide window on start option
-    self.HideOnStartLabel = Turbine.UI.Label();
-    self.HideOnStartLabel:SetSize(labelWidth, 20);
-    self.HideOnStartLabel:SetPosition(20, NextY(30));
-    self.HideOnStartLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.HideOnStartLabel:SetParent(self.GeneralTab);
-    self.HideOnStartLabel:SetText(LC.hide);
-    self.HideOnStartLabel:SetVisible(true);
-
-    -- checkbox for hide window on start option
-    self.HideOnStartCheck = Turbine.UI.Lotro.CheckBox();
-    self.HideOnStartCheck:SetSize(19, 19);
-    self.HideOnStartCheck:SetPosition(450, NextY(0));
-    self.HideOnStartCheck:SetChecked(Settings.hideOnStart == 1);
-    self.HideOnStartCheck:SetParent(self.GeneralTab);
-    self.HideOnStartCheck:SetVisible(true);
-
-    -- label for hide on combat option
-    self.HideOnCombatLabel = Turbine.UI.Label();
-    self.HideOnCombatLabel:SetSize(labelWidth, 20);
-    self.HideOnCombatLabel:SetPosition(20, NextY(30));
-    self.HideOnCombatLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.HideOnCombatLabel:SetParent(self.GeneralTab);
-    self.HideOnCombatLabel:SetText(LC.hideOnCombat);
-    self.HideOnCombatLabel:SetVisible(true);
-
-    -- checkbox for hide on combat option
-    self.HideOnCombatCheck = Turbine.UI.Lotro.CheckBox();
-    self.HideOnCombatCheck:SetSize(19, 19);
-    self.HideOnCombatCheck:SetPosition(450, NextY(0));
-    self.HideOnCombatCheck:SetChecked(Settings.hideOnCombat == 1);
-    self.HideOnCombatCheck:SetParent(self.GeneralTab);
-    self.HideOnCombatCheck:SetVisible(true);
-
-    -- label for option to close window on travel skill use
-    self.hideOnTravelLabel = Turbine.UI.Label();
-    self.hideOnTravelLabel:SetSize(labelWidth, 20);
-    self.hideOnTravelLabel:SetPosition(20, NextY(30));
-    self.hideOnTravelLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.hideOnTravelLabel:SetParent(self.GeneralTab);
-    self.hideOnTravelLabel:SetText(LC.hideOnTravel);
-    self.hideOnTravelLabel:SetVisible(true);
-
-    -- checkbox for option to close window on travel skill use
-    self.hideOnTravelCheck = Turbine.UI.Lotro.CheckBox();
-    self.hideOnTravelCheck:SetSize(19, 19);
-    self.hideOnTravelCheck:SetPosition(450, NextY(0));
-    self.hideOnTravelCheck:SetChecked(Settings.hideOnTravel == 1);
-    self.hideOnTravelCheck:SetParent(self.GeneralTab);
-    self.hideOnTravelCheck:SetVisible(true);
-
-    -- label for ignore escape to close option
-    self.ignoreEscLabel = Turbine.UI.Label();
-    self.ignoreEscLabel:SetSize(labelWidth, 20);
-    self.ignoreEscLabel:SetPosition(20, NextY(30));
-    self.ignoreEscLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.ignoreEscLabel:SetParent(self.GeneralTab);
-    self.ignoreEscLabel:SetText(LC.ignoreEsc);
-    self.ignoreEscLabel:SetVisible(true);
-
-    -- checkbox for ignore escape to close option
-    self.ignoreEscCheck = Turbine.UI.Lotro.CheckBox();
-    self.ignoreEscCheck:SetSize(19, 19);
-    self.ignoreEscCheck:SetPosition(450, NextY(0));
-    self.ignoreEscCheck:SetChecked(Settings.ignoreEsc == 1);
-    self.ignoreEscCheck:SetParent(self.GeneralTab);
-    self.ignoreEscCheck:SetVisible(true);
-
-    -- label for show toggle button option
-    self.ShowButtonLabel = Turbine.UI.Label();
-    self.ShowButtonLabel:SetSize(labelWidth, 20);
-    self.ShowButtonLabel:SetPosition(20, NextY(30));
-    self.ShowButtonLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.ShowButtonLabel:SetParent(self.GeneralTab);
-    self.ShowButtonLabel:SetText(LC.toggle);
-    self.ShowButtonLabel:SetVisible(true);
-
-    -- checkbox for show toggle button option
-    self.ShowButtonCheck = Turbine.UI.Lotro.CheckBox();
-    self.ShowButtonCheck:SetSize(19, 19);
-    self.ShowButtonCheck:SetPosition(450, NextY(0));
-    self.ShowButtonCheck:SetChecked(Settings.showButton == 1);
-    self.ShowButtonCheck:SetParent(self.GeneralTab);
-    self.ShowButtonCheck:SetVisible(true);
-
-    -- label for option to fire skill on pulldown selection
-    self.PulldownTravelLabel = Turbine.UI.Label();
-    self.PulldownTravelLabel:SetSize(labelWidth, 20);
-    self.PulldownTravelLabel:SetPosition(20, NextY(30));
-    self.PulldownTravelLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.PulldownTravelLabel:SetParent(self.GeneralTab);
-    self.PulldownTravelLabel:SetText(LC.pulldownTravel);
-    self.PulldownTravelLabel:SetVisible(true);
-
-    -- checkbox for option to fire skill on pulldown selection
-    self.PulldownTravelCheck = Turbine.UI.Lotro.CheckBox();
-    self.PulldownTravelCheck:SetSize(19, 19);
-    self.PulldownTravelCheck:SetPosition(450, NextY(0));
-    self.PulldownTravelCheck:SetChecked(Settings.pulldownTravel == 1);
-    self.PulldownTravelCheck:SetParent(self.GeneralTab);
-    self.PulldownTravelCheck:SetVisible(true);
-
-    -- label for option to use zone in skill labels
-    self.useZoneNamesLabel = Turbine.UI.Label();
-    self.useZoneNamesLabel:SetSize(labelWidth, 20);
-    self.useZoneNamesLabel:SetPosition(20, NextY(30));
-    self.useZoneNamesLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.useZoneNamesLabel:SetParent(self.GeneralTab);
-    self.useZoneNamesLabel:SetText(LC.useZoneNames);
-    self.useZoneNamesLabel:SetVisible(true);
-
-    -- checkbox for option to use zone in skill labels
-    self.useZoneNamesCheck = Turbine.UI.Lotro.CheckBox();
-    self.useZoneNamesCheck:SetSize(19, 19);
-    self.useZoneNamesCheck:SetPosition(450, NextY(0));
-    self.useZoneNamesCheck:SetChecked(Settings.useZoneNames == 1);
-    self.useZoneNamesCheck:SetParent(self.GeneralTab);
-    self.useZoneNamesCheck:SetVisible(true);
-
-    -- label for option to use skill name in skill labels
-    self.useSkillNamesLabel = Turbine.UI.Label();
-    self.useSkillNamesLabel:SetSize(labelWidth, 20);
-    self.useSkillNamesLabel:SetPosition(20, NextY(30));
-    self.useSkillNamesLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.useSkillNamesLabel:SetParent(self.GeneralTab);
-    self.useSkillNamesLabel:SetText(LC.useSkillNames);
-    self.useSkillNamesLabel:SetVisible(true);
-
-    -- checkbox for option to use skill name in skill labels
-    self.useSkillNamesCheck = Turbine.UI.Lotro.CheckBox();
-    self.useSkillNamesCheck:SetSize(19, 19);
-    self.useSkillNamesCheck:SetPosition(450, NextY(0));
-    self.useSkillNamesCheck:SetChecked(Settings.useSkillNames == 1);
-    self.useSkillNamesCheck:SetParent(self.GeneralTab);
-    self.useSkillNamesCheck:SetVisible(true);
-
-    -- label for option to lock interface
-    self.lockUILabel = Turbine.UI.Label();
-    self.lockUILabel:SetSize(labelWidth, 20);
-    self.lockUILabel:SetPosition(20, NextY(30));
-    self.lockUILabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.lockUILabel:SetParent(self.GeneralTab);
-    self.lockUILabel:SetText(LC.lockUI);
-    self.lockUILabel:SetVisible(true);
-
-    -- checkbox for option to lock interface
-    self.lockUICheck = Turbine.UI.Lotro.CheckBox();
-    self.lockUICheck:SetSize(19, 19);
-    self.lockUICheck:SetPosition(450, NextY(0));
-    self.lockUICheck:SetChecked(Settings.lockUI == 1);
-    self.lockUICheck:SetParent(self.GeneralTab);
-    self.lockUICheck:SetVisible(true);
-
-    -- label for option to unlock interface with a key press
-    self.unlockKeyPressLabel = Turbine.UI.Label();
-    self.unlockKeyPressLabel:SetSize(labelWidth, 20);
-    self.unlockKeyPressLabel:SetPosition(50, NextY(30));
-    self.unlockKeyPressLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.unlockKeyPressLabel:SetParent(self.GeneralTab);
-    self.unlockKeyPressLabel:SetText(LC.unlockKeyPress);
-    self.unlockKeyPressLabel:SetVisible(true);
-
-    -- checkbox for option to unlock interface with a key press
-    self.unlockKeyPressCheck = Turbine.UI.Lotro.CheckBox();
-    self.unlockKeyPressCheck:SetSize(19, 19);
-    self.unlockKeyPressCheck:SetPosition(450, NextY(0));
-    self.unlockKeyPressCheck:SetChecked(Settings.unlockKeyPress == 1);
-    self.unlockKeyPressCheck:SetParent(self.GeneralTab);
-    self.unlockKeyPressCheck:SetVisible(true);
-
-    -- label for toggle button sliders
-    self.toggleSlidersLabel = Turbine.UI.Label();
-    self.toggleSlidersLabel:SetSize(labelWidth, 20);
-    self.toggleSlidersLabel:SetPosition(20, NextY(30));
-    self.toggleSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.toggleSlidersLabel:SetParent(self.GeneralTab);
-    self.toggleSlidersLabel:SetText(LC.toggleSliders);
-    self.toggleSlidersLabel:SetVisible(true);
-
-    -- toggle button min slider label
-    self.toggleMinSlidersLabel = Turbine.UI.Label();
-    self.toggleMinSlidersLabel:SetSize(50, 20);
-    self.toggleMinSlidersLabel:SetPosition(20, NextY(20));
-    self.toggleMinSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.toggleMinSlidersLabel:SetParent(self.GeneralTab);
-    self.toggleMinSlidersLabel:SetText(LC.min);
-    self.toggleMinSlidersLabel:SetVisible(true);
-
-    -- toggle button min slider
-    self.toggleMinScrollBar = Turbine.UI.Lotro.ScrollBar();
-    self.toggleMinScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
-    self.toggleMinScrollBar:SetSize(400, 10);
-    self.toggleMinScrollBar:SetPosition(70, NextY(5));
-    self.toggleMinScrollBar:SetMinimum(0);
-    self.toggleMinScrollBar:SetMaximum(100);
-    self.toggleMinScrollBar:SetValue(Settings.toggleMinOpacity * 100);
-    self.toggleMinScrollBar:SetParent(self.GeneralTab);
-
-    -- toggle button max slider
-    self.toggleMaxSlidersLabel = Turbine.UI.Label();
-    self.toggleMaxSlidersLabel:SetSize(50, 20);
-    self.toggleMaxSlidersLabel:SetPosition(20, NextY(15));
-    self.toggleMaxSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.toggleMaxSlidersLabel:SetParent(self.GeneralTab);
-    self.toggleMaxSlidersLabel:SetText(LC.max);
-    self.toggleMaxSlidersLabel:SetVisible(true);
-
-    -- toggle button max slider
-    self.toggleMaxScrollBar = Turbine.UI.Lotro.ScrollBar();
-    self.toggleMaxScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
-    self.toggleMaxScrollBar:SetSize(400, 10);
-    self.toggleMaxScrollBar:SetPosition(70, NextY(5));
-    self.toggleMaxScrollBar:SetMinimum(0);
-    self.toggleMaxScrollBar:SetMaximum(100);
-    self.toggleMaxScrollBar:SetValue(Settings.toggleMaxOpacity * 100);
-    self.toggleMaxScrollBar:SetParent(self.GeneralTab);
-
-    -- label for main window sliders
-    self.SlidersLabel = Turbine.UI.Label();
-    self.SlidersLabel:SetSize(labelWidth, 20);
-    self.SlidersLabel:SetPosition(20, NextY(25));
-    self.SlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.SlidersLabel:SetParent(self.GeneralTab);
-    self.SlidersLabel:SetText(LC.mainSliders);
-    self.SlidersLabel:SetVisible(true);
-
-    -- main window min slider label
-    self.mainMinSlidersLabel = Turbine.UI.Label();
-    self.mainMinSlidersLabel:SetSize(50, 20);
-    self.mainMinSlidersLabel:SetPosition(20, NextY(20));
-    self.mainMinSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.mainMinSlidersLabel:SetParent(self.GeneralTab);
-    self.mainMinSlidersLabel:SetText(LC.min);
-    self.mainMinSlidersLabel:SetVisible(true);
-
-    -- main window min slider
-    self.mainMinScrollBar = Turbine.UI.Lotro.ScrollBar();
-    self.mainMinScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
-    self.mainMinScrollBar:SetSize(400, 10);
-    self.mainMinScrollBar:SetPosition(70, NextY(5));
-    self.mainMinScrollBar:SetMinimum(0);
-    self.mainMinScrollBar:SetMaximum(100);
-    self.mainMinScrollBar:SetValue(Settings.mainMinOpacity * 100);
-    self.mainMinScrollBar:SetParent(self.GeneralTab);
-
-    -- main window max slider label
-    self.mainMaxSlidersLabel = Turbine.UI.Label();
-    self.mainMaxSlidersLabel:SetSize(50, 20);
-    self.mainMaxSlidersLabel:SetPosition(20, NextY(15));
-    self.mainMaxSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.mainMaxSlidersLabel:SetParent(self.GeneralTab);
-    self.mainMaxSlidersLabel:SetText(LC.max);
-    self.mainMaxSlidersLabel:SetVisible(true);
-
-    -- main window max slider
-    self.mainMaxScrollBar = Turbine.UI.Lotro.ScrollBar();
-    self.mainMaxScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
-    self.mainMaxScrollBar:SetSize(400, 10);
-    self.mainMaxScrollBar:SetPosition(70, NextY(5));
-    self.mainMaxScrollBar:SetMinimum(0);
-    self.mainMaxScrollBar:SetMaximum(100);
-    self.mainMaxScrollBar:SetValue(Settings.mainMaxOpacity * 100);
-    self.mainMaxScrollBar:SetParent(self.GeneralTab);
-
-    -- fade out delay slider label
-    self.fadeDelaySlidersLabel = Turbine.UI.Label();
-    self.fadeDelaySlidersLabel:SetSize(labelWidth, 20);
-    self.fadeDelaySlidersLabel:SetPosition(20, NextY(25));
-    self.fadeDelaySlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.fadeDelaySlidersLabel:SetParent(self.GeneralTab);
-    self.fadeDelaySlidersLabel:SetText(LC.fadeDelay);
-    self.fadeDelaySlidersLabel:SetVisible(true);
-
-    -- fade out delay slider
-    self.fadeDelayScrollBar = Turbine.UI.Lotro.ScrollBar();
-    self.fadeDelayScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
-    self.fadeDelayScrollBar:SetSize(450, 10);
-    self.fadeDelayScrollBar:SetPosition(20, NextY(25));
-    self.fadeDelayScrollBar:SetMinimum(0);
-    self.fadeDelayScrollBar:SetMaximum(100);
-    self.fadeDelayScrollBar:SetValue(Settings.fadeOutDelay);
-    self.fadeDelayScrollBar:SetParent(self.GeneralTab);
-
-    -- fade out slider label
-    self.mainFadeSlidersLabel = Turbine.UI.Label();
-    self.mainFadeSlidersLabel:SetSize(labelWidth, 20);
-    self.mainFadeSlidersLabel:SetPosition(20, NextY(25));
-    self.mainFadeSlidersLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-    self.mainFadeSlidersLabel:SetParent(self.GeneralTab);
-    self.mainFadeSlidersLabel:SetText(LC.fadeSpeed);
-    self.mainFadeSlidersLabel:SetVisible(true);
-
-    -- fade out slider
-    self.mainFadeScrollBar = Turbine.UI.Lotro.ScrollBar();
-    self.mainFadeScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal);
-    self.mainFadeScrollBar:SetSize(450, 10);
-    self.mainFadeScrollBar:SetPosition(20, NextY(25));
-    self.mainFadeScrollBar:SetMinimum(1);
-    self.mainFadeScrollBar:SetMaximum(151);
-    self.mainFadeScrollBar:SetValue(Settings.fadeOutSteps);
-    self.mainFadeScrollBar:SetParent(self.GeneralTab);
-
-    self:UpdateOptions();
 
     -- reset all setting button
     self.resetButton = Turbine.UI.Lotro.Button();
@@ -455,190 +398,12 @@ function OptionsPanel:AddGeneralItems()
             SyncUIFromSettings();
         end
     end
-
-    self.UseMinWindowCheck.CheckedChanged = function(sender, args)
-        if (sender:IsChecked()) then
-            Settings.useMinWindow = 1;
-        else
-            Settings.useMinWindow = 0;
-        end
-        _G.travel:Close();
-        _G.travel = TravelWindow(Settings.useMinWindow);
-    end
-
-    -- set the hide on start option when changed
-    self.HideOnStartCheck.CheckedChanged = function(sender, args)
-        if (sender:IsChecked()) then
-            Settings.hideOnStart = 1;
-        else
-            Settings.hideOnStart = 0;
-        end
-    end
-
-    -- set the hide on combat option when changed
-    self.HideOnCombatCheck.CheckedChanged = function(sender, args)
-        if (sender:IsChecked()) then
-            Settings.hideOnCombat = 1;
-        else
-            Settings.hideOnCombat = 0;
-        end
-    end
-
-    -- set the close on travel option when changed
-    self.hideOnTravelCheck.CheckedChanged = function(sender, args)
-        if (sender:IsChecked()) then
-            Settings.hideOnTravel = 1;
-        else
-            Settings.hideOnTravel = 0;
-        end
-    end
-
-    -- set the ignore escape to close option when changed
-    self.ignoreEscCheck.CheckedChanged = function(sender, args)
-        if (sender:IsChecked()) then
-            Settings.ignoreEsc = 1;
-        else
-            Settings.ignoreEsc = 0;
-        end
-    end
-
-    -- set the show toggle button option when changed
-    self.ShowButtonCheck.CheckedChanged = function(sender, args)
-        if (sender:IsChecked()) then
-            Settings.showButton = 1;
-        else
-            Settings.showButton = 0;
-        end
-        ToggleButton:SetVisible(sender:IsChecked());
-    end
-
-    -- set the fire on pulldown selection option when changed
-    self.PulldownTravelCheck.CheckedChanged = function(sender, args)
-        if (sender:IsChecked()) then
-            Settings.pulldownTravel = 1;
-        else
-            Settings.pulldownTravel = 0;
-        end
-    end
-
-    self.lockUICheck.CheckedChanged = function(sender, args)
-        if sender:IsChecked() then
-            Settings.lockUI = 1
-        else
-            Settings.lockUI = 0
-        end
-        self:UpdateOptions()
-    end
-
-    self.useZoneNamesCheck.CheckedChanged = function(sender, args)
-        if sender:IsChecked() then
-            Settings.useZoneNames = 1
-        else
-            Settings.useZoneNames = 0
-        end
-        TravelInfo:SetSkillLabels()
-        _G.travel:ReloadLabels()
-    end
-
-    self.useSkillNamesCheck.CheckedChanged = function(sender, args)
-        if sender:IsChecked() then
-            Settings.useSkillNames = 1
-        else
-            Settings.useSkillNames = 0
-        end
-        TravelInfo:SetSkillLabels()
-        _G.travel:ReloadLabels()
-    end
-
-    self.unlockKeyPressCheck.CheckedChanged = function(sender, args)
-        if sender:IsChecked() then
-            Settings.unlockKeyPress = 1
-        else
-            Settings.unlockKeyPress = 0
-        end
-        self:UpdateOptions()
-    end
-
-    -- update settings when sliders change
-    self.toggleMinScrollBar.ValueChanged = function(sender, args)
-
-        -- check that the min opacity does not go higher than the max opacity
-        if (self.toggleMinScrollBar:GetValue() > self.toggleMaxScrollBar:GetValue()) then
-            self.toggleMinScrollBar:SetValue(self.toggleMaxScrollBar:GetValue());
-        end
-
-        -- do updates
-        Settings.toggleMinOpacity = self.toggleMinScrollBar:GetValue() / 100;
-        _G.travel:UpdateOpacity();
-    end
-
-    self.toggleMaxScrollBar.ValueChanged = function(sender, args)
-
-        -- check that the max opacity does not go lower than the min opacity
-        if (self.toggleMaxScrollBar:GetValue() < self.toggleMinScrollBar:GetValue()) then
-            self.toggleMaxScrollBar:SetValue(self.toggleMinScrollBar:GetValue());
-        end
-
-        -- do updates
-        Settings.toggleMaxOpacity = self.toggleMaxScrollBar:GetValue() / 100;
-        _G.travel:UpdateOpacity();
-
-    end
-
-    -- update settings when sliders change
-    self.mainMinScrollBar.ValueChanged = function(sender, args)
-
-        -- check that the min opacity does not go higher than the max opacity
-        if (self.mainMinScrollBar:GetValue() > self.mainMaxScrollBar:GetValue()) then
-            self.mainMinScrollBar:SetValue(self.mainMaxScrollBar:GetValue());
-        end
-
-        -- do updates
-        Settings.mainMinOpacity = self.mainMinScrollBar:GetValue() / 100;
-        _G.travel:UpdateOpacity();
-    end
-
-    self.mainMaxScrollBar.ValueChanged = function(sender, args)
-
-        -- check that the max opacity does not go lower than the min opacity
-        if (self.mainMaxScrollBar:GetValue() < self.mainMinScrollBar:GetValue()) then
-            self.mainMaxScrollBar:SetValue(self.mainMinScrollBar:GetValue());
-        end
-
-        -- do updates
-        Settings.mainMaxOpacity = self.mainMaxScrollBar:GetValue() / 100;
-        _G.travel:UpdateOpacity();
-    end
-
-    self.fadeDelayScrollBar.ValueChanged = function(sender, args)
-        Settings.fadeOutDelay = self.fadeDelayScrollBar:GetValue();
-    end
-
-    self.mainFadeScrollBar.ValueChanged = function(sender, args)
-        Settings.fadeOutSteps = self.mainFadeScrollBar:GetValue();
-        _G.travel:UpdateOpacity();
-    end
 end
 
 function OptionsPanel:UpdateOptions()
-    self.UseMinWindowCheck:SetChecked(Settings.useMinWindow == 1);
-    self.HideOnStartCheck:SetChecked(Settings.hideOnStart == 1);
-    self.HideOnCombatCheck:SetChecked(Settings.hideOnCombat == 1);
-    self.hideOnTravelCheck:SetChecked(Settings.hideOnTravel == 1);
-    self.ignoreEscCheck:SetChecked(Settings.ignoreEsc == 1);
-    self.ShowButtonCheck:SetChecked(Settings.showButton == 1);
-    self.PulldownTravelCheck:SetChecked(Settings.pulldownTravel == 1);
-    self.useZoneNamesCheck:SetChecked(Settings.useZoneNames == 1);
-    self.useSkillNamesCheck:SetChecked(Settings.useSkillNames == 1);
-    self.lockUICheck:SetChecked(Settings.lockUI == 1);
-    self.unlockKeyPressCheck:SetEnabled(Settings.lockUI == 1);
-    self.unlockKeyPressCheck:SetChecked(Settings.unlockKeyPress == 1);
-    self.toggleMinScrollBar:SetValue(Settings.toggleMinOpacity * 100);
-    self.toggleMaxScrollBar:SetValue(Settings.toggleMaxOpacity * 100);
-    self.mainMinScrollBar:SetValue(Settings.mainMinOpacity * 100);
-    self.mainMaxScrollBar:SetValue(Settings.mainMaxOpacity * 100);
-    self.mainFadeScrollBar:SetValue(Settings.fadeOutSteps);
-    self.fadeDelayScrollBar:SetValue(Settings.fadeOutDelay);
+    for _, v in pairs(self.options) do
+        v:UpdateOption()
+    end
 end
 
 -- function to add all the travel shortcuts that can be toggled
