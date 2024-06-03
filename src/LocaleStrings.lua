@@ -199,9 +199,9 @@ LC_EN.unlockKeyPress = "Hold Shift to unlock"
 LC_DE.unlockKeyPress = "Halten Sie die Umschalttaste gedrückt, um zu entsperren"
 LC_FR.unlockKeyPress = "Maintenez la touche Maj enfoncée pour déverrouiller"
 
-LC_EN.ignoreEsc = "Escape does not close main window"
-LC_DE.ignoreEsc = "Escape schliesst Travel-Fenster nicht"
-LC_FR.ignoreEsc = "Escape ne pas fermer la fenêtre principale"
+LC_EN.escapeToClose = "Escape closes main window"
+LC_DE.escapeToClose = "Escape schliesst Travel-Fenster"
+LC_FR.escapeToClose = "Escape fermer la fenêtre principale"
 
 LC_EN.useMinWindow = "Use Mini-Window"
 LC_DE.useMinWindow = "Mini-Fenster verwenden"
