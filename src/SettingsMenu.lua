@@ -255,7 +255,7 @@ function CreateSettingsConfig()
     AddSettingConfig("useSkillNames", 0)
     AddSettingConfig("lockUI", 0)
     AddSettingConfig("unlockKeyPress", 0)
-    AddSettingConfig("ignoreEsc", 0)
+    AddSettingConfig("escapeToClose", 1)
     AddSettingConfig("showButton", 1)
     AddSettingConfig("mode", 2)
     AddSettingConfig("filters", 0x0F)
@@ -362,13 +362,21 @@ function SetSettings(settingsArg, scope, importOldSettings)
     end
     SettingsConfig.buttonRelativeY.forceDefaultInit = buttonRelativeY
 
+    -- convert ignoreEsc to escapeToClose
+    if settingsArg.ignoreEsc ~= "nil" then
+        if tonumber(settingsArg.ignoreEsc) == 0 then
+            settingsArg.escapeToClose = 1
+        else
+            settingsArg.escapeToClose = 0
+        end
+        settingsArg.ignoreEsc = nil
+    end
+
     for k, v in pairs(SettingsConfig) do
-        if v.init ~= nil then
-            if v.init == InitNumberSetting then
-                v.init(settingsArg, k, v.forceDefaultInit)
-            else
-                v.init(settingsArg, k)
-            end
+        if v.init == InitNumberSetting then
+            v.init(settingsArg, k, v.forceDefaultInit)
+        elseif v.init ~= nil then
+            v.init(settingsArg, k)
         end
     end
 

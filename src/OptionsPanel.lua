@@ -230,7 +230,7 @@ function OptionsPanel:AddGeneralItems()
     self:AddCheckBoxOption("hideOnStart", 20, 30)
     self:AddCheckBoxOption("hideOnCombat", 20, 30)
     self:AddCheckBoxOption("hideOnTravel", 20, 30)
-    self:AddCheckBoxOption("ignoreEsc", 20, 30)
+    self:AddCheckBoxOption("escapeToClose", 20, 30)
     self:AddCheckBoxOption("showButton", 20, 30,
         function(sender, args)
             if (sender:IsChecked()) then
