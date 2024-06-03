@@ -54,7 +54,7 @@ function MapWindow:Constructor(map)
         self.debugCoords:SetVisible(true);
 
         self.debugCoords.MouseClick = function(sender, args)
-            self:DebugSave(self.quickslots);
+            self.DebugSave(self.quickslots);
         end
 
         self.mapLabel.MouseClick = function(sender, args)
