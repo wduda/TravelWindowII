@@ -305,16 +305,13 @@ function SortShortcuts(comp)
 end
 
 function CheckSkills(report)
-    local newShortcut = false;
     -- loop through all the shortcuts and list those those that are not learned
-    for i = 1, #TravelShortcuts, 1 do
+    local newShortcut = false
+    for i = 1, #TravelShortcuts do
         local shortcut = TravelShortcuts[i]
-        if shortcut:GetTravelType() ~= 8 then
-            local wasFound = shortcut.found
+        if not shortcut.found and shortcut:GetTravelType() ~= 8 then
             if FindSkill(shortcut) then
-                if not wasFound then
-                    newShortcut = true
-                end
+                newShortcut = true
             elseif report then
                 Turbine.Shell.WriteLine(LC.skillNotTrained .. shortcut:GetName())
             end
@@ -322,32 +319,62 @@ function CheckSkills(report)
     end
 
     if newShortcut and NewShortcutEvent then
-        NewShortcutEvent();
+        NewShortcutEvent()
     end
 end
 
-function FindSkill(shortcut)
-    if shortcut.found then
-        return true;
-    end
-
-    for i = 1, TrainedSkills:GetCount(), 1 do
-        local skillInfo = TrainedSkills:GetItem(i):GetSkillInfo();
-        if skillInfo:GetName() == shortcut:GetName() then
-            local desc = shortcut:GetDescription();
-            if desc ~= nil then
-                if string.find(skillInfo:GetDescription(), desc, 1, true) ~= nil then
-                    shortcut.found = true;
-                    return true;
-                end
-            else
-                shortcut.found = true;
-                return true;
+function MatchSkillInfo(skillInfo, shortcut)
+    if skillInfo:GetName() == shortcut:GetName() then
+        local desc = shortcut:GetDescription()
+        if desc ~= nil then
+            if string.find(skillInfo:GetDescription(), desc, 1, true) ~= nil then
+                shortcut.found = true
+                return true
             end
+        else
+            shortcut.found = true
+            return true
+        end
+    end
+    return false
+end
+
+function FindSkill(shortcut)
+    for i = 1, TrainedSkills:GetCount() do
+        local skillInfo = TrainedSkills:GetItem(i):GetSkillInfo()
+        if MatchSkillInfo(skillInfo, shortcut) then
+            return true
         end
     end
 
     return false;
+end
+
+function CheckSkill(name)
+    -- collect matching skill names
+    local skills = {}
+    for i = 1, TrainedSkills:GetCount() do
+        local skillInfo = TrainedSkills:GetItem(i):GetSkillInfo()
+        if skillInfo:GetName() == name then
+            table.insert(skills, skillInfo)
+        end
+    end
+
+    -- loop through all the shortcuts and match against skills
+    local newShortcut = false
+    for i = 1, #TravelShortcuts do
+        local shortcut = TravelShortcuts[i]
+        if not shortcut.found and shortcut:GetTravelType() ~= 8 then
+            for j = 1, #skills do
+                if MatchSkillInfo(skills[j], shortcut) then
+                    if NewShortcutEvent then
+                        NewShortcutEvent()
+                    end
+                    return
+                end
+            end
+        end
+    end
 end
 
 function ListTrainedSkills()
