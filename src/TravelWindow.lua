@@ -192,7 +192,7 @@ function TravelWindow:Constructor()
             self.previousCombatState = false;
         end
     end
-    AddCallback(player, "InCombatChanged", IncombatChangedHandler);
+    AddCallback(Player, "InCombatChanged", IncombatChangedHandler);
 
     self.Update = function(sender, args)
         -- handle opacity fade out

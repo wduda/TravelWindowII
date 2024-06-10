@@ -14,15 +14,15 @@ TravelShortcuts = {}; -- put all the shortcuts into one table
 TrainedSkills = Turbine.Gameplay.SkillList;
 
 -- get the player class and race
-player = Turbine.Gameplay.LocalPlayer.GetInstance();
-PlayerClass = player:GetClass();
-PlayerAlignment = player:GetAlignment();
-PlayerRace = player:GetRace();
+Player = Turbine.Gameplay.LocalPlayer.GetInstance();
+PlayerClass = Player:GetClass();
+PlayerAlignment = Player:GetAlignment();
+PlayerRace = Player:GetRace();
 -- set the racial index used later in multiple places
 SetPlayerRaceKey();
 -- get the list of trained skills the player has
 if (Turbine.Gameplay.LocalPlayer.GetTrainedSkills ~= nil) then
-    TrainedSkills = player:GetTrainedSkills();
+    TrainedSkills = Player:GetTrainedSkills();
 end
 
 -- create the lists of travel locations and the shortcuts
