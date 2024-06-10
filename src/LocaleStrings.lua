@@ -291,3 +291,7 @@ LC_FR.haradwaithMap = "Destinations dans le Haradwaith"
 LC_EN.menuSkills = "Check Untrained Skills"
 LC_DE.menuSkills = "Nicht erlernte Fertigkeiten prüfen"
 LC_FR.menuSkills = "Vérification des compétences non utilisées"
+
+LC_EN.acquired = "You have acquired the (.*) skill%."
+LC_DE.acquired = "Ihr habt Euch die Fertigkeit (.*) angeeignet%."
+LC_FR.acquired = "Vous avez acquis la compétence (.*)%."

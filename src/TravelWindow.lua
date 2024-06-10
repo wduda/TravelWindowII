@@ -42,6 +42,14 @@ function TravelWindow:Constructor()
         self.resizeLabelSize = 20;
     end
 
+    ChatLog = Turbine.Chat;
+    ChatLogHandler = function(sender, args)
+        if args.ChatType == Turbine.ChatType.Advancement then
+            FilterTravelSkills(tostring(args.Message));
+        end
+    end
+    AddCallback(ChatLog, "Received", ChatLogHandler);
+
     -- configure the main window
     self:SetPosition(Settings.positionX, Settings.positionY);
     self:SetText(LC.mainTitle);
@@ -486,6 +494,13 @@ function SyncUIFromSettings()
     _G.travel:SetPosition(Settings.positionX, Settings.positionY);
     _G.travel.dirty = true;
     _G.travel:UpdateSettings();
+end
+
+function FilterTravelSkills(message)
+    local skillName = string.match(message, LC.acquired)
+    if skillName ~= nil then
+        CheckSkill(skillName)
+    end
 end
 
 function AddCallback(object, event, callback)
