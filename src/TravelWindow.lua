@@ -370,9 +370,11 @@ function TravelWindow:SetItems()
     if Settings.mode == 1 then
         self:SetSize(self.ListTab:GetPixelSize());
         self.ListTab:SetItems();
+        self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
     elseif Settings.mode == 2 then
         self:SetSize(self.GridTab:GetPixelSize());
         self.GridTab:SetItems();
+        self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
     elseif Settings.mode == 3 then
         self.CaroTab:SetItems();
     elseif Settings.mode == 4 then
@@ -462,11 +464,6 @@ function TravelWindow:UpdateSettings()
     self.MainPanel:SetTab(Settings.mode);
     self:UpdateMinimum();
     self:SetItems();
-    if Settings.mode == 1 then
-        self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
-    elseif Settings.mode == 2 then
-        self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
-    end
 
     self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
     self.MainPanel:UpdateTabs();
