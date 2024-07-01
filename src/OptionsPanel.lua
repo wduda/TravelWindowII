@@ -45,39 +45,24 @@ function OptionsPanel:Constructor()
     self.OptionTabs:SetVisible(true);
 
     -- create the tabs
-    self.GeneralTab = Turbine.UI.Control();
-    self.EnabledTab = Turbine.UI.Control();
-    self.SortTab = Turbine.UI.Control();
-
-    self.EnabledTab:SetSize(self.width - 20, self.height - 60)
-    self.ListBox = Turbine.UI.ListBox()
-    self.ListBox:SetParent(self.EnabledTab)
-    self.ListBox:SetPosition(15, 5)
-    self.ListBox:SetSize(self:GetWidth() - 20, self:GetHeight() - 120)
-    self.scrollBar = Turbine.UI.Lotro.ScrollBar()
-    self.scrollBar:SetOrientation(Turbine.UI.Orientation.Vertical)
-    self.scrollBar:SetParent(self.EnabledTab)
-    self.scrollBar:SetPosition(0, 5)
-    self.scrollBar:SetWidth(10)
-    self.scrollBar:SetHeight(self.ListBox:GetHeight())
-    self.ListBox:SetVerticalScrollBar(self.scrollBar)
+    self.GeneralTab = Turbine.UI.Control()
+    self.EnabledTab = Turbine.UI.Control()
+    self.SortTab = Turbine.UI.Control()
 
     -- populate each tab
-    self:AddGeneralItems();
-    self:AddBoxes();
-    self:AddItems();
-    self:AddSortList();
-    self:AddSortButtons();
+    self:SetupGeneralTab()
+    self:SetupEnabledTab()
+    self:SetupSortTab()
 
     -- add the tabs
-    self.OptionTabs:AddTab(self.GeneralTab);
-    self.OptionTabs:AddTab(self.EnabledTab);
-    self.OptionTabs:AddTab(self.SortTab);
+    self.OptionTabs:AddTab(self.GeneralTab)
+    self.OptionTabs:AddTab(self.EnabledTab)
+    self.OptionTabs:AddTab(self.SortTab)
 
     -- name the tabs
-    self.OptionTabs:SetTabText(1, LC.generalTab);
-    self.OptionTabs:SetTabText(2, LC.selectTab);
-    self.OptionTabs:SetTabText(3, LC.sortTab);
+    self.OptionTabs:SetTabText(1, LC.generalTab)
+    self.OptionTabs:SetTabText(2, LC.selectTab)
+    self.OptionTabs:SetTabText(3, LC.sortTab)
 
     self:SetVisible(true);
 
@@ -212,8 +197,7 @@ function OptionsPanel:AddSliderOption(name, min, max, x, spacerY, change)
     self.options[name]:UpdateOption()
 end
 
--- function to add items to the general tab
-function OptionsPanel:AddGeneralItems()
+function OptionsPanel:SetupGeneralTab()
     self.optionHeight = 0
     self.options = {}
 
@@ -406,28 +390,6 @@ function OptionsPanel:UpdateOptions()
     end
 end
 
--- function to add all the travel shortcuts that can be toggled
--- to the enabled tab
-function OptionsPanel:AddItems()
-    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        -- add the generic travels skills
-        self:AddEnabledSection(TravelInfo.gen)
-
-        -- add the race specific travel skill for the character
-        self:AddEnabledSection(TravelInfo.racials)
-
-        -- add class specific travel skills
-        self:AddEnabledSection(TravelInfo:GetClassSkills())
-
-        -- add the reputation travel skills
-        self:AddEnabledSection(TravelInfo.rep)
-
-    elseif (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
-        -- add the creep travel skills
-        self:AddSkillsForEnabling(TravelInfo.creep);
-    end
-end
-
 function OptionsPanel:AddEnabledSection(skills)
     if skills == nil then return end
 
@@ -493,20 +455,19 @@ function OptionsPanel:AddSkillItemForEnabling(skill)
     end
 end
 
--- this function adds the labels to the enabled tab for cosmetic purpose
-function OptionsPanel:AddBoxes()
-    -- add a check skills button
-    self.checkSkillsButton = Turbine.UI.Lotro.Button();
-    self.checkSkillsButton:SetSize(200, 20);
-    self.checkSkillsButton:SetPosition(300, self.EnabledTab:GetHeight() - 50);
-    self.checkSkillsButton:SetText(LC.checkSkills);
-    self.checkSkillsButton:SetParent(self.EnabledTab);
-    self.checkSkillsButton:SetVisible(true);
-
-    -- do the check skills
-    self.checkSkillsButton.Click = function(sender, args)
-        CheckSkills(true);
-    end
+function OptionsPanel:SetupEnabledTab()
+    self.EnabledTab:SetSize(self.width - 20, self.height - 60)
+    self.ListBox = Turbine.UI.ListBox()
+    self.ListBox:SetParent(self.EnabledTab)
+    self.ListBox:SetPosition(10, 5)
+    self.ListBox:SetSize(500, self:GetHeight() - 120)
+    self.scrollBar = Turbine.UI.Lotro.ScrollBar()
+    self.scrollBar:SetOrientation(Turbine.UI.Orientation.Vertical)
+    self.scrollBar:SetParent(self.EnabledTab)
+    self.scrollBar:SetPosition(self.ListBox:GetWidth() - 10, 5)
+    self.scrollBar:SetWidth(10)
+    self.scrollBar:SetHeight(self.ListBox:GetHeight())
+    self.ListBox:SetVerticalScrollBar(self.scrollBar)
 
     if TravelInfo:GetClassSkills() ~= nil then
         -- add an enable overlapping skills button
@@ -554,6 +515,24 @@ function OptionsPanel:AddBoxes()
 
     self.disableAllButton.Click = function(sender, args)
         self:EnableAll(false);
+    end
+
+    if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
+        -- add the generic travels skills
+        self:AddEnabledSection(TravelInfo.gen)
+
+        -- add the race specific travel skill for the character
+        self:AddEnabledSection(TravelInfo.racials)
+
+        -- add class specific travel skills
+        self:AddEnabledSection(TravelInfo:GetClassSkills())
+
+        -- add the reputation travel skills
+        self:AddEnabledSection(TravelInfo.rep)
+
+    elseif (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
+        -- add the creep travel skills
+        self:AddSkillsForEnabling(TravelInfo.creep);
     end
 end
 
@@ -665,7 +644,8 @@ function OptionsPanel:ReloadLabels()
 end
 
 -- function to add the buttons to sort the shortcuts
-function OptionsPanel:AddSortButtons()
+function OptionsPanel:SetupSortTab()
+    self:AddSortList()
     self.moveUpButton = Turbine.UI.Lotro.Button();
     self.moveUpButton:SetSize(185, 20);
     self.moveUpButton:SetPosition(10, 205);
