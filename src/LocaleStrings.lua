@@ -59,6 +59,10 @@ LC_EN.sortTab = "Sort"
 LC_DE.sortTab = "Sortierung"
 LC_FR.sortTab = "Tri"
 
+LC_EN.findTab = "Find Skills"
+LC_DE.findTab = "Skills finden"
+LC_FR.findTab = "Trouver des compétences"
+
 LC_EN.hideOnStart = "Hide Travel window at startup"
 LC_DE.hideOnStart = "Verstecke Travel-Fenster beim Start"
 LC_FR.hideOnStart = "Cacher la fenêtre au démarrage"

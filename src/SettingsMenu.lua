@@ -149,7 +149,7 @@ function SettingsMenu:Update(string)
     elseif (string == LC.menuOptions) then
         OptionsWindow:SetVisible(true);
     elseif (string == LC.menuSkills) then
-        CheckSkills(true);
+        CheckSkills();
     elseif (string == LC.moorMap) then
         self.parent:OpenMapWindow(MapType.CREEPS);
     elseif (string == LC.eriadorMap) then

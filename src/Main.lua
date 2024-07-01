@@ -48,6 +48,7 @@ _G.travel = TravelWindow();
 NewShortcutEvent = function()
     _G.travel.dirty = true; -- reset list of shortcuts
     _G.travel:SetItems(); -- redraw current window
+    OptionsWindow.Panel:AddFindTreeShortcuts()
 end
 
 Plugins["Travel Window II"].Load = function(sender, args)
@@ -66,7 +67,6 @@ TravelCommand = Turbine.ShellCommand();
 -- handle the travel commands
 function TravelCommand:Execute(command, arguments)
     if (arguments == "show") then
-        CheckSkills(false);
         _G.travel:SetVisible(true);
         _G.travel:Activate();
     elseif (arguments == "hide") then

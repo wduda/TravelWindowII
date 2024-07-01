@@ -136,7 +136,7 @@ function InitShortcuts()
 
     ClearLoaders();
     SortShortcuts();
-    CheckSkills(false);
+    CheckSkills();
 end
 
 function AddTravelSkills(skills, filter)
@@ -304,7 +304,7 @@ function SortShortcuts(comp)
     end
 end
 
-function CheckSkills(report)
+function CheckSkills()
     -- loop through all the shortcuts and list those those that are not learned
     local newShortcut = false
     for i = 1, #TravelShortcuts do
@@ -312,8 +312,6 @@ function CheckSkills(report)
         if not shortcut.found and shortcut:GetTravelType() ~= 8 then
             if FindSkill(shortcut) then
                 newShortcut = true
-            elseif report then
-                Turbine.Shell.WriteLine(LC.skillNotTrained .. shortcut:GetName())
             end
         end
     end

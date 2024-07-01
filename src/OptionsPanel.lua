@@ -1,8 +1,49 @@
-import "Turbine.Gameplay";
-import "Turbine.UI";
-import "Turbine.UI.Lotro";
-import "TravelWindowII.src.extensions";
-import "TravelWindowII.src.utils.BitOps";
+import "Turbine.Gameplay"
+import "Turbine.UI"
+import "Turbine.UI.Lotro"
+import "TravelWindowII.src.extensions"
+import "TravelWindowII.src.utils.BitOps"
+
+FindTreeNode = class(Turbine.UI.TreeNode)
+
+function FindTreeNode:Constructor(width, text, top)
+	Turbine.UI.TreeNode.Constructor(self)
+
+    self:SetSize(width, 20)
+    self.expanded = false
+
+    if top then
+        self.icon = Turbine.UI.Control()
+        self.icon:SetParent(self)
+        self.icon:SetSize(16, 16)
+        self.icon:SetBackground(0x41007E27)
+        self.icon:SetMouseVisible(false)
+    end
+
+    self.label = Turbine.UI.Label()
+    self.label:SetParent(self)
+    self.label:SetLeft(self.icon and 27 or 10)
+    self.label:SetSize(width, 16)
+    self.label:SetMouseVisible(false)
+    self.label:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+    self.label:SetMultiline(false)
+    self.label:SetText(text)
+end
+
+function FindTreeNode:SetExpanded(expand)
+    self.expanded = expand
+    Turbine.UI.TreeNode.SetExpanded(self, expand)
+    self.icon:SetBackground(expand and 0x41007E26 or 0x41007E27)
+end
+
+-- handles node updates when clicked by the user
+function FindTreeNode:VisibleChanged(sender, args)
+    local parent = self:GetParentNode()
+    if parent ~= nil and parent.expanded ~= parent:IsExpanded() then
+        parent.expanded = parent:IsExpanded()
+        parent.icon:SetBackground(parent.expanded and 0x41007E26 or 0x41007E27)
+    end
+end
 
 OptionsPanel = class(Turbine.UI.Control);
 
@@ -48,21 +89,25 @@ function OptionsPanel:Constructor()
     self.GeneralTab = Turbine.UI.Control()
     self.EnabledTab = Turbine.UI.Control()
     self.SortTab = Turbine.UI.Control()
+    self.FindTab = Turbine.UI.Control()
 
     -- populate each tab
     self:SetupGeneralTab()
     self:SetupEnabledTab()
     self:SetupSortTab()
+    self:SetupFindTab()
 
     -- add the tabs
     self.OptionTabs:AddTab(self.GeneralTab)
     self.OptionTabs:AddTab(self.EnabledTab)
     self.OptionTabs:AddTab(self.SortTab)
+    self.OptionTabs:AddTab(self.FindTab)
 
     -- name the tabs
     self.OptionTabs:SetTabText(1, LC.generalTab)
     self.OptionTabs:SetTabText(2, LC.selectTab)
     self.OptionTabs:SetTabText(3, LC.sortTab)
+    self.OptionTabs:SetTabText(4, LC.findTab)
 
     self:SetVisible(true);
 
@@ -817,6 +862,52 @@ function OptionsPanel:SetupSortTab()
 
         -- update the main window shortcuts and settings
         _G.travel:UpdateSettings();
+    end
+end
+
+function OptionsPanel:SetupFindTab()
+    self.FindTab:SetSize(self.width - 20, self.height - 60)
+    self.FindTree = Turbine.UI.TreeView()
+    self.FindTree:SetParent(self.FindTab)
+    self.FindTree:SetPosition(10, 5)
+    self.FindTree:SetSize(500, self:GetHeight() - 120)
+    self.FindScrollBar = Turbine.UI.Lotro.ScrollBar()
+    self.FindScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical)
+    self.FindScrollBar:SetParent(self.FindTab)
+    self.FindScrollBar:SetPosition(self.FindTree:GetWidth() - 10, 5)
+    self.FindScrollBar:SetWidth(10)
+    self.FindScrollBar:SetHeight(self.FindTree:GetHeight())
+    self.FindTree:SetVerticalScrollBar(self.FindScrollBar)
+
+    self:AddFindTreeShortcuts()
+
+    -- add a check skills button
+    self.checkSkillsButton = Turbine.UI.Lotro.Button()
+    self.checkSkillsButton:SetSize(200, 20)
+    self.checkSkillsButton:SetPosition(520, 30)
+    self.checkSkillsButton:SetText(LC.checkSkills)
+    self.checkSkillsButton:SetParent(self.FindTab)
+    self.checkSkillsButton:SetVisible(true)
+
+    -- do the check skills
+    self.checkSkillsButton.Click = function(sender, args)
+        CheckSkills()
+    end
+end
+
+function OptionsPanel:AddFindTreeShortcuts()
+    local root = self.FindTree:GetNodes()
+    root:Clear()
+    for i = 1, #TravelShortcuts do
+        local shortcut = TravelShortcuts[i]
+        if not shortcut.found and shortcut:GetTravelType() ~= 8 then
+            local node = FindTreeNode(self:GetWidth() - 20, shortcut:GetLabel(), true)
+            root:Add(node)
+
+            local child = node:GetChildNodes()
+            local infoNode = FindTreeNode(self:GetWidth() - 20, "", false)
+            child:Add(infoNode)
+        end
     end
 end
 
