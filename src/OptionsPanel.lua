@@ -39,7 +39,7 @@ end
 -- handles node updates when clicked by the user
 function FindTreeNode:VisibleChanged(sender, args)
     local parent = self:GetParentNode()
-    if parent ~= nil and parent.expanded ~= parent:IsExpanded() then
+    if parent ~= nil and parent.icon ~= nil and parent.expanded ~= parent:IsExpanded() then
         parent.expanded = parent:IsExpanded()
         parent.icon:SetBackground(parent.expanded and 0x41007E26 or 0x41007E27)
     end
@@ -896,17 +896,20 @@ function OptionsPanel:SetupFindTab()
 end
 
 function OptionsPanel:AddFindTreeShortcuts()
+    local enableChild = false
     local root = self.FindTree:GetNodes()
     root:Clear()
     for i = 1, #TravelShortcuts do
         local shortcut = TravelShortcuts[i]
         if not shortcut.found and shortcut:GetTravelType() ~= 8 then
-            local node = FindTreeNode(self:GetWidth() - 20, shortcut:GetLabel(), true)
+            local node = FindTreeNode(self:GetWidth() - 20, shortcut:GetLabel(), enableChild)
             root:Add(node)
 
-            local child = node:GetChildNodes()
-            local infoNode = FindTreeNode(self:GetWidth() - 20, "", false)
-            child:Add(infoNode)
+            if enableChild then
+                local child = node:GetChildNodes()
+                local infoNode = FindTreeNode(self:GetWidth() - 20, "", false)
+                child:Add(infoNode)
+            end
         end
     end
 end
