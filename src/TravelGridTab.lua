@@ -226,8 +226,7 @@ function TravelGridTab:SetItems()
         self.myLabel:SetParent(self.SubWindow);
         self.myLabel:SetSize(self:GetWidth() - 10, self:GetHeight());
 
-        -- clear the quickslots table
-        self.quickslots = {};
+        self:ClearItems()
     else
         self.SubWindow:SetSize(self:GetWidth(), self:GetHeight());
         self.myScrollBar:SetSize(10, self:GetHeight() - 10);
@@ -243,6 +242,10 @@ function TravelGridTab:SetItems()
     end
 
     self.parent.dirty = false;
+end
+
+function TravelGridTab:ClearItems()
+    self.quickslots = {}
 end
 
 -- function to add a single shortcut to the tab

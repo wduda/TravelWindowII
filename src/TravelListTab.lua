@@ -20,6 +20,7 @@ function TravelListTab:Constructor(toplevel)
     self.parent = toplevel;
     TravelGridTab.Constructor(self);
 
+    self.labels = {}
     self.itemHeight = 22;
     self.scrollChunk = self.itemHeight;
 
@@ -57,6 +58,11 @@ function TravelListTab:SetItems()
     TravelGridTab.SetItems(self);
 end
 
+function TravelGridTab:ClearItems()
+    self.quickslots = {}
+    self.labels = {}
+end
+
 function TravelListTab:AddItem(shortcut)
 
     -- set the index value based on the row and column
@@ -69,9 +75,6 @@ function TravelListTab:AddItem(shortcut)
         self.quickslots[index]:SetPosition(x, y);
         self.labels[index]:SetPosition(x, y);
     else
-        if index == 1 then
-            self.labels = {};
-        end
         -- create new quickslots setting the position
         -- based on the row and column locations
         self.quickslots[index] = Turbine.UI.Lotro.Quickslot();

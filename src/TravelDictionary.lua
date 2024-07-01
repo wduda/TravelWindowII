@@ -44,15 +44,15 @@ function TravelDictionary:GetClassSkills()
     return nil;
 end
 
-function TravelDictionary:SetSkillLabels(useZone)
+function TravelDictionary:SetSkillLabels()
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
-        self.gen:SetSkillLabels(useZone)
-        self.rep:SetSkillLabels(useZone)
-        self.hunter:SetSkillLabels(useZone)
-        self.warden:SetSkillLabels(useZone)
-        self.mariner:SetSkillLabels(useZone)
-        self.racials:SetSkillLabels(useZone)
+        self.gen:SetSkillLabels()
+        self.rep:SetSkillLabels()
+        self.hunter:SetSkillLabels()
+        self.warden:SetSkillLabels()
+        self.mariner:SetSkillLabels()
+        self.racials:SetSkillLabels()
     else
-        self.creep:SetSkillLabels(useZone)
+        self.creep:SetSkillLabels()
     end
 end

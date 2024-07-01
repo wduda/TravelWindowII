@@ -14,8 +14,8 @@ import "TravelWindowII.src.EuroNormalize";
 
 TravelWindow = class(Turbine.UI.Window);
 
-function TravelWindow:Constructor(useMinWindow)
-    if useMinWindow == 1 then
+function TravelWindow:Constructor()
+    if Settings.useMinWindow == 1 then
         Turbine.UI.Window.Constructor(self);
     else
         Turbine.UI.Lotro.Window.Constructor(self);
@@ -26,7 +26,7 @@ function TravelWindow:Constructor(useMinWindow)
     self.isMouseDown = false;
     self.isDragging = false;
     self.isResizing = false;
-    self.isMinWindow = useMinWindow == 1;
+    self.isMinWindow = Settings.useMinWindow == 1;
     if self.isMinWindow then
         self.wPos = -1;
         self.hPos = 20;
@@ -41,6 +41,14 @@ function TravelWindow:Constructor(useMinWindow)
         self.hPadding = 60;
         self.resizeLabelSize = 20;
     end
+
+    ChatLog = Turbine.Chat;
+    ChatLogHandler = function(sender, args)
+        if args.ChatType == Turbine.ChatType.Advancement then
+            FilterTravelSkills(tostring(args.Message));
+        end
+    end
+    AddCallback(ChatLog, "Received", ChatLogHandler);
 
     -- configure the main window
     self:SetPosition(Settings.positionX, Settings.positionY);
@@ -127,7 +135,7 @@ function TravelWindow:Constructor(useMinWindow)
     -- manage hiding the UI
     self.KeyDown = function(sender, args)
         if (args.Action == Turbine.UI.Lotro.Action.Escape) then
-            if Settings.ignoreEsc == 0 then
+            if Settings.escapeToClose == 1 then
                 self:SetVisible(false);
             end
             OptionsWindow:SetVisible(false);
@@ -192,7 +200,7 @@ function TravelWindow:Constructor(useMinWindow)
             self.previousCombatState = false;
         end
     end
-    AddCallback(player, "InCombatChanged", IncombatChangedHandler);
+    AddCallback(Player, "InCombatChanged", IncombatChangedHandler);
 
     self.Update = function(sender, args)
         -- handle opacity fade out
@@ -362,9 +370,11 @@ function TravelWindow:SetItems()
     if Settings.mode == 1 then
         self:SetSize(self.ListTab:GetPixelSize());
         self.ListTab:SetItems();
+        self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
     elseif Settings.mode == 2 then
         self:SetSize(self.GridTab:GetPixelSize());
         self.GridTab:SetItems();
+        self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
     elseif Settings.mode == 3 then
         self.CaroTab:SetItems();
     elseif Settings.mode == 4 then
@@ -454,11 +464,6 @@ function TravelWindow:UpdateSettings()
     self.MainPanel:SetTab(Settings.mode);
     self:UpdateMinimum();
     self:SetItems();
-    if Settings.mode == 1 then
-        self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
-    elseif Settings.mode == 2 then
-        self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
-    end
 
     self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
     self.MainPanel:UpdateTabs();
@@ -486,6 +491,13 @@ function SyncUIFromSettings()
     _G.travel:SetPosition(Settings.positionX, Settings.positionY);
     _G.travel.dirty = true;
     _G.travel:UpdateSettings();
+end
+
+function FilterTravelSkills(message)
+    local skillName = string.match(message, LC.acquired)
+    if skillName ~= nil then
+        CheckSkill(skillName)
+    end
 end
 
 function AddCallback(object, event, callback)
