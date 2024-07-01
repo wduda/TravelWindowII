@@ -83,7 +83,6 @@ function TravelButton:Constructor()
 
             else
                 if not _G.travel:IsVisible() then
-                    CheckSkills(false);
                     _G.travel:SetMaxOpacity()
                     _G.travel:FadeOut()
                 end
