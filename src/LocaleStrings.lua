@@ -35,8 +35,8 @@ LC_DE.mainShortTitle = "TW"
 LC_FR.mainShortTitle = "TW"
 
 LC_EN.miniTitle = "Travel Window II"
-LC_EN.miniTitle = "Travel Window II"
-LC_EN.MiniTitle = "Travel Window II"
+LC_DE.miniTitle = "Travel Window II"
+LC_FR.miniTitle = "Travel Window II"
 
 LC_EN.optionsTitle = "Travel Options"
 LC_DE.optionsTitle = "Travel Optionen"
