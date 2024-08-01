@@ -25,8 +25,8 @@ function FindTreeNode:Constructor(width, text, top)
     self.label:SetLeft(self.icon and 27 or 10)
     self.label:SetSize(width, 16)
     self.label:SetMouseVisible(false)
-    self.label:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
-    self.label:SetMultiline(false)
+    self.label:SetTextAlignment(Turbine.UI.ContentAlignment.TopLeft)
+    self.label:SetMultiline(true)
     self.label:SetText(text)
 end
 
@@ -896,18 +896,23 @@ function OptionsPanel:SetupFindTab()
 end
 
 function OptionsPanel:AddFindTreeShortcuts()
-    local enableChild = false
     local root = self.FindTree:GetNodes()
+    local width = self.FindTree:GetWidth()
     root:Clear()
     for i = 1, #TravelShortcuts do
         local shortcut = TravelShortcuts[i]
         if not shortcut.found and shortcut:GetTravelType() ~= 8 then
-            local node = FindTreeNode(self:GetWidth() - 20, shortcut:GetLabel(), enableChild)
+            local hasTop = shortcut.skill.acquire ~= nil
+            local node = FindTreeNode(width - 20, shortcut:GetLabel(), hasTop)
             root:Add(node)
 
-            if enableChild then
+            if hasTop then
+                local text, lines = shortcut:GetAcquireText()
                 local child = node:GetChildNodes()
-                local infoNode = FindTreeNode(self:GetWidth() - 20, "", false)
+                local infoNode = FindTreeNode(width - 20, text, false)
+                infoNode:SetHeight(lines * 14 + 4)
+                infoNode.label:SetTop(2)
+                infoNode.label:SetHeight(lines * 14)
                 child:Add(infoNode)
             end
         end
