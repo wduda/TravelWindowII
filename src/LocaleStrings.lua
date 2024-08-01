@@ -299,3 +299,422 @@ LC_FR.menuSkills = "Vérification des compétences non utilisées"
 LC_EN.acquired = "You have acquired the (.*) skill%."
 LC_DE.acquired = "Ihr habt Euch die Fertigkeit (.*) angeeignet%."
 LC_FR.acquired = "Vous avez acquis la compétence (.*)%."
+
+LC_EN.store = "LOTRO Store"
+LC_DE.store = ""
+LC_FR.store = ""
+
+LC_EN.quest = "Quest: "
+LC_DE.quest = ""
+LC_FR.quest = ""
+
+LC_EN.deed = "Deed: "
+LC_DE.deed = ""
+LC_FR.deed = ""
+
+LC_EN.source = "Source: "
+LC_DE.source = ""
+LC_FR.source = ""
+
+LC_EN.cost = "Cost: "
+LC_DE.cost = ""
+LC_FR.cost = ""
+
+LC_EN.requires = "Requires: "
+LC_DE.requires = ""
+LC_FR.requires = ""
+
+LC_EN.allegiance = "Allegiance: "
+LC_DE.allegiance = ""
+LC_FR.allegiance = ""
+
+LC_EN.rank = "Rank: "
+LC_DE.rank = ""
+LC_FR.rank = ""
+
+LC_EN.with = " with "
+LC_DE.with = ""
+LC_FR.with = ""
+
+LC_EN.minLevel = "Minimum Level "
+LC_DE.minLevel = ""
+LC_FR.minLevel = ""
+
+-- Add reputation levels
+LC_EN.repLevel = {}
+LC_DE.repLevel = {}
+LC_FR.repLevel = {}
+
+LC_EN.repLevel.NEUTRAL = "Neutral"
+LC_DE.repLevel.NEUTRAL = ""
+LC_FR.repLevel.NEUTRAL = ""
+
+LC_EN.repLevel.ACQUAINTANCE = "Acquaintance"
+LC_DE.repLevel.ACQUAINTANCE = ""
+LC_FR.repLevel.ACQUAINTANCE = ""
+
+LC_EN.repLevel.DUMUL = "Dumul (Acquaintance)"
+LC_DE.repLevel.DUMUL = ""
+LC_FR.repLevel.DUMUL = ""
+
+LC_EN.repLevel.FRIEND = "Friend"
+LC_DE.repLevel.FRIEND = ""
+LC_FR.repLevel.FRIEND = ""
+
+LC_EN.repLevel.KINDRED = "Kindred"
+LC_DE.repLevel.KINDRED = ""
+LC_FR.repLevel.KINDRED = ""
+
+LC_EN.repLevel.RESPECTED = "Respected"
+LC_DE.repLevel.RESPECTED = ""
+LC_FR.repLevel.RESPECTED = ""
+
+-- Add repuation names
+LC_EN.rep = {}
+LC_DE.rep = {}
+LC_FR.rep = {}
+
+LC_EN.rep.THORINS_HALL = "Thorin's Hall"
+LC_DE.rep.THORINS_HALL = ""
+LC_FR.rep.THORINS_HALL = ""
+
+LC_EN.rep.MEN_OF_BREE = "Men of Bree"
+LC_DE.rep.MEN_OF_BREE = ""
+LC_FR.rep.MEN_OF_BREE = ""
+
+LC_EN.rep.DUNEDAIN_OF_CARDOLAN = "Dúnedain of Cardolan"
+LC_DE.rep.DUNEDAIN_OF_CARDOLAN = ""
+LC_FR.rep.DUNEDAIN_OF_CARDOLAN = ""
+
+LC_EN.rep.YONDER_WATCH = "Yonder-watch"
+LC_DE.rep.YONDER_WATCH = ""
+LC_FR.rep.YONDER_WATCH = ""
+
+LC_EN.rep.EGLAIN = "Eglain"
+LC_DE.rep.EGLAIN = ""
+LC_FR.rep.EGLAIN = ""
+
+LC_EN.rep.DEFENDERS_OF_ANGLE = "Defenders of the Angle"
+LC_DE.rep.DEFENDERS_OF_ANGLE = ""
+LC_FR.rep.DEFENDERS_OF_ANGLE = ""
+
+LC_EN.rep.ELVES_OF_RIVENDELL = "Elves of Rivendell"
+LC_DE.rep.ELVES_OF_RIVENDELL = ""
+LC_FR.rep.ELVES_OF_RIVENDELL = ""
+
+LC_EN.rep.WOODCUTTERS_BROTHERHOOD = "Woodcutter's Brotherhood"
+LC_DE.rep.WOODCUTTERS_BROTHERHOOD = ""
+LC_FR.rep.WOODCUTTERS_BROTHERHOOD = ""
+
+LC_EN.rep.LEAGUE_OF_AXE = "The League of the Axe"
+LC_DE.rep.LEAGUE_OF_AXE = ""
+LC_FR.rep.LEAGUE_OF_AXE = ""
+
+LC_EN.rep.LOSSOTH_OF_FOROCHEL = "Lossoth of Forochel"
+LC_DE.rep.LOSSOTH_OF_FOROCHEL = ""
+LC_FR.rep.LOSSOTH_OF_FOROCHEL = ""
+
+LC_EN.rep.IRON_GARRISON_MINERS = "Iron Garrison Miners"
+LC_DE.rep.IRON_GARRISON_MINERS = ""
+LC_FR.rep.IRON_GARRISON_MINERS = ""
+
+LC_EN.rep.GALADHRIM = "Galadhrim"
+LC_DE.rep.GALADHRIM = ""
+LC_FR.rep.GALADHRIM = ""
+
+LC_EN.rep.MALLEDHRIM = "Malledhrim"
+LC_DE.rep.MALLEDHRIM = ""
+LC_FR.rep.MALLEDHRIM = ""
+
+LC_EN.rep.ALGRAIG = "Algraig, Men of Enedwaith"
+LC_DE.rep.ALGRAIG = ""
+LC_FR.rep.ALGRAIG = ""
+
+LC_EN.rep.GREY_COMPANY = "The Grey Company"
+LC_DE.rep.GREY_COMPANY = ""
+LC_FR.rep.GREY_COMPANY = ""
+
+LC_EN.rep.MEN_OF_DUNLAND = "Men of Dunland"
+LC_DE.rep.MEN_OF_DUNLAND = ""
+LC_FR.rep.MEN_OF_DUNLAND = ""
+
+LC_EN.rep.RIDERS_OF_STANGARD = "The Riders of Stangard"
+LC_DE.rep.RIDERS_OF_STANGARD = ""
+LC_FR.rep.RIDERS_OF_STANGARD = ""
+
+LC_EN.rep.MEN_OF_SUTCROFTS = "Men of the Sutcrofts"
+LC_DE.rep.MEN_OF_SUTCROFTS = ""
+LC_FR.rep.MEN_OF_SUTCROFTS = ""
+
+LC_EN.rep.PEOPLE_OF_WILDERMORE = "People of Wildermore"
+LC_DE.rep.PEOPLE_OF_WILDERMORE = ""
+LC_FR.rep.PEOPLE_OF_WILDERMORE = ""
+
+LC_EN.rep.EORLINGAS = "The Eorlingas"
+LC_DE.rep.EORLINGAS = ""
+LC_FR.rep.EORLINGAS = ""
+
+LC_EN.rep.HELMINGAS = "The Helmingas"
+LC_DE.rep.HELMINGAS = ""
+LC_FR.rep.HELMINGAS = ""
+
+LC_EN.rep.ENTS_OF_FANGORN = "The Ents of Fangorn Forest"
+LC_DE.rep.ENTS_OF_FANGORN = ""
+LC_FR.rep.ENTS_OF_FANGORN = ""
+
+LC_EN.rep.DOL_AMROTH = "Dol Amroth"
+LC_FR.rep.DOL_AMROTH = ""
+LC_DE.rep.DOL_AMROTH = ""
+
+LC_EN.rep.RANGERS_OF_ITHILIEN = "Rangers of Ithilien"
+LC_DE.rep.RANGERS_OF_ITHILIEN = ""
+LC_FR.rep.RANGERS_OF_ITHILIEN = ""
+
+LC_EN.rep.DEFENDERS_OF_MINAS_TIRITH = "Defenders of Minas Tirith"
+LC_DE.rep.DEFENDERS_OF_MINAS_TIRITH = ""
+LC_FR.rep.DEFENDERS_OF_MINAS_TIRITH = ""
+
+LC_EN.rep.RIDERS_OF_ROHAN = "Riders of Rohan"
+LC_DE.rep.RIDERS_OF_ROHAN = ""
+LC_FR.rep.RIDERS_OF_ROHAN = ""
+
+LC_EN.rep.HOST_OF_WEST = "Host of the West"
+LC_DE.rep.HOST_OF_WEST = ""
+LC_FR.rep.HOST_OF_WEST = ""
+
+LC_EN.rep.CONQUEST_OF_GORGOROTH = "Conquest of Gorgoroth"
+LC_DE.rep.CONQUEST_OF_GORGOROTH = ""
+LC_FR.rep.CONQUEST_OF_GORGOROTH = ""
+
+LC_EN.rep.MEN_OF_DALE = "Men of Dale"
+LC_DE.rep.MEN_OF_DALE = ""
+LC_FR.rep.MEN_OF_DALE = ""
+
+LC_EN.rep.GREY_MOUNTAINS_EXPEDITION = "Grey Mountains Expedition"
+LC_DE.rep.GREY_MOUNTAINS_EXPEDITION = ""
+LC_FR.rep.GREY_MOUNTAINS_EXPEDITION = ""
+
+LC_EN.rep.WILDERFOLK = "Wilderfolk"
+LC_DE.rep.WILDERFOLK = ""
+LC_FR.rep.WILDERFOLK = ""
+
+LC_EN.rep.WHITE_COMPANY = "The White Company"
+LC_DE.rep.WHITE_COMPANY = ""
+LC_FR.rep.WHITE_COMPANY = ""
+
+LC_EN.rep.PROTECTORS_OF_WILDERLAND = "Protectors of Wilderland"
+LC_DE.rep.PROTECTORS_OF_WILDERLAND = ""
+LC_FR.rep.PROTECTORS_OF_WILDERLAND = ""
+
+LC_EN.rep.KHARUM_UBNAR = "Kharum-ubnâr"
+LC_DE.rep.KHARUM_UBNAR = ""
+LC_FR.rep.KHARUM_UBNAR = ""
+
+LC_EN.rep.HABANAKKA_OF_THRAIN = "The Haban'akkâ of Thráin"
+LC_DE.rep.HABANAKKA_OF_THRAIN = ""
+LC_FR.rep.HABANAKKA_OF_THRAIN = ""
+
+LC_EN.rep.RECLAIMERS_OF_MOUNTAINHOLD = "Reclaimers of the Mountain-hold"
+LC_DE.rep.RECLAIMERS_OF_MOUNTAINHOLD = ""
+LC_FR.rep.RECLAIMERS_OF_MOUNTAINHOLD = ""
+
+LC_EN.rep.RENEWAL_OF_GONDOR = "The Renewal of Gondor"
+LC_DE.rep.RENEWAL_OF_GONDOR = ""
+LC_FR.rep.RENEWAL_OF_GONDOR = ""
+
+LC_EN.rep.CITIZENS_OF_UMBAR_BAHARBEL = "Citizens of Umbar Baharbêl"
+LC_DE.rep.CITIZENS_OF_UMBAR_BAHARBEL = ""
+LC_FR.rep.CITIZENS_OF_UMBAR_BAHARBEL = ""
+
+-- Add token names
+LC_EN.token = {}
+LC_DE.token = {}
+LC_FR.token = {}
+
+LC_EN.token.COPPER = "Copper"
+LC_DE.token.COPPER = ""
+LC_FR.token.COPPER = ""
+
+LC_EN.token.SILVER = "Silver"
+LC_DE.token.SILVER = ""
+LC_FR.token.SILVER = ""
+
+LC_EN.token.GOLD = "Gold"
+LC_DE.token.GOLD = ""
+LC_FR.token.GOLD = ""
+
+LC_EN.token.LOTRO_POINT = "LOTRO Points"
+LC_DE.token.LOTRO_POINT = ""
+LC_FR.token.LOTRO_POINT = ""
+
+LC_EN.token.MITHRIL_COIN = "Mithril Coins"
+LC_DE.token.MITHRIL_COIN = ""
+LC_FR.token.MITHRIL_COIN = ""
+
+LC_EN.token.DELVING_WRIT = "Delving Writs"
+LC_DE.token.DELVING_WRIT = ""
+LC_FR.token.DELVING_WRIT = ""
+
+LC_EN.token.COMMENDATION = "Commendations"
+LC_DE.token.COMMENDATION = ""
+LC_FR.token.COMMENDATION = ""
+
+LC_EN.token.DOURHAND_CREST = "Dourhand Crests"
+LC_DE.token.DOURHAND_CREST = ""
+LC_FR.token.DOURHAND_CREST = ""
+
+LC_EN.token.BARROW_TREASURE = "Barrow-treasures"
+LC_DE.token.BARROW_TREASURE = ""
+LC_FR.token.BARROW_TREASURE = ""
+
+LC_EN.token.GREYFLOOD_MARK = "Greyflood Marks"
+LC_DE.token.GREYFLOOD_MARK = ""
+LC_FR.token.GREYFLOOD_MARK = ""
+
+LC_EN.token.IRON_COIN_OF_CARDOLAN = "Iron Coins of Cardolan"
+LC_DE.token.IRON_COIN_OF_CARDOLAN = ""
+LC_FR.token.IRON_COIN_OF_CARDOLAN = ""
+
+LC_EN.token.COPPER_BOUNDER_COIN = "Copper Bounder's Coins"
+LC_DE.token.COPPER_BOUNDER_COIN = ""
+LC_FR.token.COPPER_BOUNDER_COIN = ""
+
+LC_EN.token.MARK_OF_ANGLE = "Marks of the Angle"
+LC_DE.token.MARK_OF_ANGLE = ""
+LC_FR.token.MARK_OF_ANGLE = ""
+
+LC_EN.token.MARK_OF_WILDS = "Marks of the Wilds"
+LC_DE.token.MARK_OF_WILDS = ""
+LC_FR.token.MARK_OF_WILDS = ""
+
+LC_EN.token.LOTHLORIEN_SILVER_BRANCH = "Lothlórien Silver Branches"
+LC_DE.token.LOTHLORIEN_SILVER_BRANCH = ""
+LC_FR.token.LOTHLORIEN_SILVER_BRANCH = ""
+
+LC_EN.token.MALLEDHRIM_BRONZE_FEATHER = "Malledhrim Bronze Feather"
+LC_DE.token.MALLEDHRIM_BRONZE_FEATHER = ""
+LC_FR.token.MALLEDHRIM_BRONZE_FEATHER = ""
+--
+LC_EN.token.MALLEDHRIM_GOLD_STAR_EMBLEM = "Malledhrim Gold Star Emblems"
+LC_DE.token.MALLEDHRIM_GOLD_STAR_EMBLEM = ""
+LC_FR.token.MALLEDHRIM_GOLD_STAR_EMBLEM = ""
+
+LC_EN.token.SILVER_TOKEN_OF_WILDS = "Silver Tokens of the Wilds"
+LC_DE.token.SILVER_TOKEN_OF_WILDS = ""
+LC_FR.token.SILVER_TOKEN_OF_WILDS = ""
+
+LC_EN.token.GOLDEN_TOKEN_OF_WILDS = "Golden Tokens of the Wilds"
+LC_DE.token.GOLDEN_TOKEN_OF_WILDS = ""
+LC_FR.token.GOLDEN_TOKEN_OF_WILDS = ""
+
+LC_EN.token.SILVER_TOKEN_OF_ANDUIN = "Silver Tokens of the Anduin"
+LC_DE.token.SILVER_TOKEN_OF_ANDUIN = ""
+LC_FR.token.SILVER_TOKEN_OF_ANDUIN = ""
+
+LC_EN.token.GOLDEN_TOKEN_OF_ANDUIN = "Golden Tokens of the Anduin"
+LC_DE.token.GOLDEN_TOKEN_OF_ANDUIN = ""
+LC_FR.token.GOLDEN_TOKEN_OF_ANDUIN = ""
+
+LC_EN.token.SILVER_TOKEN_OF_RIDDERMARK = "Silver Tokens of the Riddermark"
+LC_DE.token.SILVER_TOKEN_OF_RIDDERMARK = ""
+LC_FR.token.SILVER_TOKEN_OF_RIDDERMARK = ""
+
+LC_EN.token.WILDERMORE_COIN = "Wildermore Coins"
+LC_DE.token.WILDERMORE_COIN = ""
+LC_FR.token.WILDERMORE_COIN = ""
+
+LC_EN.token.WESTEMNET_IRON_COIN = "Westemnet Iron Coins"
+LC_DE.token.WESTEMNET_IRON_COIN = ""
+LC_FR.token.WESTEMNET_IRON_COIN = ""
+
+LC_EN.token.FANGORN_LEAF = "Fangorn Leaves"
+LC_DE.token.FANGORN_LEAF = ""
+LC_FR.token.FANGORN_LEAF = ""
+
+LC_EN.token.AMROTH_SILVER = "Amroth Silver Pieces"
+LC_DE.token.AMROTH_SILVER = ""
+LC_FR.token.AMROTH_SILVER = ""
+
+LC_EN.token.EAST_GONDOR_SILVER = "East Gondor Silver Pieces"
+LC_DE.token.EAST_GONDOR_SILVER = ""
+LC_FR.token.EAST_GONDOR_SILVER = ""
+
+LC_EN.token.MINAS_TIRITH_SILVER = "Minas Tirith Silver Pieces"
+LC_DE.token.MINAS_TIRITH_SILVER = ""
+LC_FR.token.MINAS_TIRITH_SILVER = ""
+
+LC_EN.token.EXQUISITE_WOODCARVING = "Exquisite Wood-carvings"
+LC_DE.token.EXQUISITE_WOODCARVING = ""
+LC_FR.token.EXQUISITE_WOODCARVING = ""
+
+LC_EN.token.POLISHED_MARBLE_TRINKET = "Polished Marble Trinkets"
+LC_DE.token.POLISHED_MARBLE_TRINKET = ""
+LC_FR.token.POLISHED_MARBLE_TRINKET = ""
+
+LC_EN.token.HOST_OF_WEST_SILVER = "Host of the West Silver Pieces"
+LC_DE.token.HOST_OF_WEST_SILVER = ""
+LC_FR.token.HOST_OF_WEST_SILVER = ""
+
+LC_EN.token.SILVER_SIGNET_OF_THANDRIM = "Silver Signets of Thandrim"
+LC_DE.token.SILVER_SIGNET_OF_THANDRIM = ""
+LC_FR.token.SILVER_SIGNET_OF_THANDRIM = ""
+
+LC_EN.token.TOKEN_OF_LAKE_AND_RIVERS = "Tokens of Lake and Rivers"
+LC_DE.token.TOKEN_OF_LAKE_AND_RIVERS = ""
+LC_FR.token.TOKEN_OF_LAKE_AND_RIVERS = ""
+
+LC_EN.token.MARK_OF_LONGBEARDS = "Mark of the Longbeards"
+LC_DE.token.TOKEN_OF_LAKE_AND_RIVERS = ""
+LC_FR.token.TOKEN_OF_LAKE_AND_RIVERS = ""
+
+LC_EN.token.GULMARK = "Gúlmark"
+LC_DE.token.GULMARK = ""
+LC_FR.token.GULMARK = ""
+
+LC_EN.token.VALES_BEORNING_TOKEN = "Vales - Beorning Token"
+LC_DE.token.VALES_BEORNING_TOKEN = ""
+LC_FR.token.VALES_BEORNING_TOKEN = ""
+
+LC_EN.token.SIGIL_IMLAD_ITHIL = "Sigil of Imlad Ithil"
+LC_DE.token.SIGIL_IMLAD_ITHIL = ""
+LC_FR.token.SIGIL_IMLAD_ITHIL = ""
+
+LC_EN.token.NORTHERN_GULMARK = "Northern Gúlmark"
+LC_DE.token.NORTHERN_GULMARK = ""
+LC_FR.token.NORTHERN_GULMARK = ""
+
+LC_EN.token.COPPER_COIN_OF_GUNDABAD = "Copper Coins of Gundabad"
+LC_DE.token.COPPER_COIN_OF_GUNDABAD = ""
+LC_FR.token.COPPER_COIN_OF_GUNDABAD = ""
+
+LC_EN.token.TOKEN_OF_KHARUM_UBNAR = "Tokens of the Kharum-ubnâr"
+LC_DE.token.TOKEN_OF_KHARUM_UBNAR = ""
+LC_FR.token.TOKEN_OF_KHARUM_UBNAR = ""
+
+LC_EN.token.LEDGER_KEEPER_MARK = "Ledger-keeper Marks"
+LC_DE.token.LEDGER_KEEPER_MARK = ""
+LC_FR.token.LEDGER_KEEPER_MARK = ""
+
+LC_EN.token.EAGLE_BIT = "Eagle Bits"
+LC_DE.token.EAGLE_BIT = ""
+LC_FR.token.EAGLE_BIT = ""
+
+LC_EN.token.ZAKAF_BESHEK = "Zakaf-beshêk"
+LC_DE.token.ZAKAF_BESHEK = ""
+LC_FR.token.ZAKAF_BESHEK = ""
+
+LC_EN.token.SILVER_COIN_OF_GUNDABAD = "Silver Coins of Gundabad"
+LC_DE.token.SILVER_COIN_OF_GUNDABAD = ""
+LC_FR.token.SILVER_COIN_OF_GUNDABAD = ""
+
+LC_EN.token.SARSKILLINAN = "Sárskillinan"
+LC_DE.token.SARSKILLINAN = ""
+LC_FR.token.SARSKILLINAN = ""
+
+LC_EN.token.MARK_OF_RENEWAL = "Marks of Renewal"
+LC_DE.token.MARK_OF_RENEWAL = ""
+LC_FR.token.MARK_OF_RENEWAL = ""
+
+LC_EN.token.UMBARI_TAM = "Umbari Tâm"
+LC_DE.token.UMBARI_TAM = ""
+LC_FR.token.UMBARI_TAM = ""
