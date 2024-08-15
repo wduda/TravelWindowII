@@ -125,6 +125,9 @@ function TravelShortcut:GetAcquireText()
         local items = self.skill.acquire
         for i = 1, #items do
             self:SelectLCText(items[i])
+            if items[i].zone == nil then
+                items[i].zone = self.skill.zone
+            end
             local text, skillLines = self:InitAcquireText(items[i])
             if text ~= "" and self.acquireText ~= "" then
                 text = "\n\n" .. text
@@ -162,6 +165,9 @@ end
 function TravelShortcut:GetVendorText(item)
     local text = LC.source .. item.vendor
     local lines = 1
+    if item.zone then
+        text = text .. ", " .. item.zone
+    end
     if item.coords then
         text = text .. " " .. item.coords
     end
@@ -211,6 +217,9 @@ function TravelShortcut:InitAcquireText(item)
         text, lines = self:GetVendorText(item)
     elseif item.vendors then
         for i = 1, #item.vendors do
+            if item.vendors[i].zone == nil then
+                item.vendors[i].zone = item.zone
+            end
             local t, l = self:GetVendorText(item.vendors[i])
             lines = lines + l
             if i == 1 then
