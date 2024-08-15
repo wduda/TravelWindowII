@@ -202,6 +202,9 @@ function TravelWindow:Constructor()
     end
     AddCallback(Player, "InCombatChanged", IncombatChangedHandler);
 
+    LevelChangedHandler = function(sender, args) CheckSkills() end
+    AddCallback(Player, "LevelChanged", LevelChangedHandler)
+
     self.Update = function(sender, args)
         -- handle opacity fade out
         if self.fadeOutDelay == nil then
