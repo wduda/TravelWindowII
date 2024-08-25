@@ -16,6 +16,7 @@ function TravelShortcut:Constructor(sType, tType, skill)
     self.normalizedLabel = self:GetLabel():lower();
     self.travelType = tType;
     self.acquireText = nil
+    self.acquireLines = 0
 
     self.defaultIndex = NextDefaultIndex;
     NextDefaultIndex = NextDefaultIndex + 1;
@@ -108,8 +109,8 @@ function TravelShortcut:GetTravelType()
 end
 
 function TravelShortcut:GetAcquireText()
-    local lines = 0
     if self.acquireText == nil then
+        local lines = 0
         self.acquireText = ""
         if self.skill.minLevel then
             local text = LC.minLevel .. tostring(self.skill.minLevel)
@@ -136,8 +137,9 @@ function TravelShortcut:GetAcquireText()
             self.acquireText = self.acquireText .. text
             lines = lines + skillLines
         end
+        self.acquireLines = lines
     end
-    return self.acquireText, lines
+    return self.acquireText, self.acquireLines
 end
 
 function TravelShortcut:SelectLCText(item)
