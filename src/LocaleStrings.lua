@@ -43,8 +43,8 @@ LC_DE.optionsTitle = "Travel Optionen"
 LC_FR.optionsTitle = "Options de Travel"
 
 LC_EN.skillNotTrained = "Skills not trained: "
-LC_DE.skillNotTrained = "Nicht erlernte Fertigkeit: "
-LC_FR.skillNotTrained = "Compétence non utilisée: "
+LC_DE.skillNotTrained = "Nicht erlernte Fertigkeiten: "
+LC_FR.skillNotTrained = "Compétences non utilisée: "
 
 -- options window strings
 LC_EN.generalTab = "General"
@@ -60,28 +60,28 @@ LC_DE.sortTab = "Sortierung"
 LC_FR.sortTab = "Tri"
 
 LC_EN.findTab = "Find Skills"
-LC_DE.findTab = "Skills finden"
+LC_DE.findTab = "Fertigkeiten finden"
 LC_FR.findTab = "Trouver des compétences"
 
-LC_EN.hideOnStart = "Hide Travel window at startup"
+LC_EN.hideOnStart = "Hide Travel Window at startup"
 LC_DE.hideOnStart = "Verstecke Travel-Fenster beim Start"
-LC_FR.hideOnStart = "Cacher la fenêtre au démarrage"
+LC_FR.hideOnStart = "Masquer Travel Window au début"
 
 LC_EN.showButton = "Show Travel Button"
 LC_DE.showButton = "Zeige Travel-Knopf"
 LC_FR.showButton = "Montrer le bouton Travel"
 
 LC_EN.pulldownTravel = "Travel when pulldown skill selected"
-LC_DE.pulldownTravel = "Reise wenn Pulldown-Fertigkeit selektiert"
+LC_DE.pulldownTravel = "Reise wenn Fertigkeits-Pulldown selektiert"
 LC_FR.pulldownTravel = "Voyager lorsque la compétence déroulante est sélectionnée"
 
 LC_EN.hideOnTravel = "Hide main window on travel"
 LC_DE.hideOnTravel = "Verstecke Fenster bei Reise"
-LC_FR.hideOnTravel = "Cacher la fenêtre quand une compétence de voyage est utilisée"
+LC_FR.hideOnTravel = "Masquer Travel Window quand une compétence de voyage est utilisée"
 
 LC_EN.hideOnCombat = "Hide main window when entering combat"
 LC_DE.hideOnCombat = "Verstecke Fenster bei Kampfbeginn"
-LC_FR.hideOnCombat = "Cacher la fenêtre à l'entrée en combat"
+LC_FR.hideOnCombat = "Masquer Travel Window à l'entrée en combat"
 
 LC_EN.genericLabel = "Generic Skills"
 LC_DE.genericLabel = "Generische Fertigkeiten"
@@ -100,27 +100,27 @@ LC_DE.repLabel = "Ruffertigkeiten"
 LC_FR.repLabel = "Compétences de réputation"
 
 LC_EN.moveUp = "Move Up"
-LC_DE.moveUp = "hoch"
+LC_DE.moveUp = "Hoch"
 LC_FR.moveUp = "Vers le haut"
 
 LC_EN.moveDown = "Move Down"
-LC_DE.moveDown = "runter"
+LC_DE.moveDown = "Runter"
 LC_FR.moveDown = "Vers le bas"
 
 LC_EN.moveUpChunk = "Move Up 10"
-LC_DE.moveUpChunk = "hoch 10"
+LC_DE.moveUpChunk = "10 Hoch"
 LC_FR.moveUpChunk = "Vers le haut 10"
 
 LC_EN.moveDownChunk = "Move Down 10"
-LC_DE.moveDownChunk = "runter 10"
+LC_DE.moveDownChunk = "10 Runter"
 LC_FR.moveDownChunk = "Vers le bas 10"
 
 LC_EN.moveTop = "Move To Top"
-LC_DE.moveTop = "zum Anfang"
+LC_DE.moveTop = "Zum Anfang"
 LC_FR.moveTop = "Tout en haut"
 
 LC_EN.moveBottom = "Move To Bottom"
-LC_DE.moveBottom = "zum Ende"
+LC_DE.moveBottom = "Zum Ende"
 LC_FR.moveBottom = "Tout en bas"
 
 LC_EN.toggleSliders = "Toggle Button Opacity"
@@ -160,7 +160,7 @@ LC_DE.sortName = "Nach Namen sortieren"
 LC_FR.sortName = "Trier par Nom"
 
 LC_EN.sortLabel = "Sort by Label"
-LC_DE.sortLabel = "Nach Etikett sortieren"
+LC_DE.sortLabel = "Nach Label sortieren"
 LC_FR.sortLabel = "Trier par étiquette"
 
 LC_EN.sortLevel = "Sort by Level"
