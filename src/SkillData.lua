@@ -1282,13 +1282,14 @@ function TravelDictionary:CreateDictionaries()
     })
 
     -- add the racial travel skills
-    self.racials:AddLabelTag({EN="Racial", DE="Rasse", FR="Race" })
+    self.racials:AddLabelTag({EN="Racial", DE="Rasse", FR="Race", RU="Расовые" })
     self.racials:AddSkill({
         -- man
         id="0x700062F6",
-        EN={ name="Return to Bree",     desc="enables you to quickly return", label="Bree", zlabel="West Gate",   zone="Bree", },
-        DE={ name="Rückkehr nach Bree", desc="Ihr könnt schnell nach Bree",   label="Bree", zlabel="Westtor",     zone="Bree", },
-        FR={ name="Retour à Bree",      desc="Permet de retourner",           label="Bree", zlabel="Porte Ouest", zone="Bree", },
+        EN={ name="Return to Bree",     desc="enables you to quickly return",      label="Bree", zlabel="West Gate",       zone="Bree", },
+        DE={ name="Rückkehr nach Bree", desc="Ihr könnt schnell nach Bree",        label="Bree", zlabel="Westtor",         zone="Bree", },
+        FR={ name="Retour à Bree",      desc="Permet de retourner",                label="Bree", zlabel="Porte Ouest",     zone="Bree", },
+        RU={ name="Возвращение в Бри",  desc="Вы можете быстро перенестись в Бри", label="Бри",  zlabel="Западные ворота", zone="Бри", },
         map={MapType.ERIADOR, 525, 335},
         level=5
     })
@@ -1298,24 +1299,27 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to the Shire",     label="Michel Delving", zone="Shire", },
         DE={ name="Rückkehr ins Auenland",   label="Michelbinge",    zone="Auenland", },
         FR={ name="Retournez dans la Comté", label="Grand'Cave",     zone="Comté", },
+        RU={ name="Возвращение в Шир",       label="Занорье",        zone="Шир", },
         map={MapType.ERIADOR, 405, 440},
         level=1
     })
     self.racials:AddSkill({
         -- dwarf
         id="0x70006346",
-        EN={ name="Return to Thorin's Gate",  desc="This enables you to quickly return", label="Thorin's Gate",   zone="Ered Luin", },
-        DE={ name="Rückkehr zu Thorins Tor",  desc="Hiermit gelangt Ihr schnell",        label="Thorins Tor",     zone="Ered Luin", },
-        FR={ name="Retour : Porte de Thorin", desc="Ceci vous permet de retourner",      label="Porte de Thorin", zone="Ered Luin", },
+        EN={ name="Return to Thorin's Gate",     desc="This enables you to quickly return",           label="Thorin's Gate",   zone="Ered Luin", },
+        DE={ name="Rückkehr zu Thorins Tor",     desc="Hiermit gelangt Ihr schnell",                  label="Thorins Tor",     zone="Ered Luin", },
+        FR={ name="Retour : Porte de Thorin",    desc="Ceci vous permet de retourner",                label="Porte de Thorin", zone="Ered Luin", },
+        RU={ name="Возвращение к Вратам Торина", desc="Вы можете быстро перенестись к Вратам Торина", label="Врата Торина",    zone="Эред Луин", },
         map={MapType.ERIADOR, 310, 270},
         level=1.2
     })
     self.racials:AddSkill({
         -- elf
         id="0x7000631F",
-        EN={ name="Return to Rivendell",    desc="This enables you to quickly return", label="Rivendell", zone="Trollshaws", },
-        DE={ name="Rückkehr nach Bruchtal", desc="Hiermit gelangt Ihr schnell",        label="Bruchtal",  zone="Die Trollhöhen", },
-        FR={ name="Retour à Fondcombe",     desc="Ceci vous permet de retourner",      label="Fondcombe", zone="Trouée des Trolls", },
+        EN={ name="Return to Rivendell",     desc="This enables you to quickly return",       label="Rivendell", zone="Trollshaws", },
+        DE={ name="Rückkehr nach Bruchtal",  desc="Hiermit gelangt Ihr schnell",              label="Bruchtal",  zone="Die Trollhöhen", },
+        FR={ name="Retour à Fondcombe",      desc="Ceci vous permet de retourner",            label="Fondcombe", zone="Trouée des Trolls", },
+        RU={ name="Возвращение в Ривенделл", desc="Вы можете быстро перенестись в Ривенделл", label="Ривенделл", zone="Троллистая пуща", },
         map={MapType.ERIADOR, 900, 375},
         level=40.1
     })
@@ -1325,33 +1329,37 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return Home",              desc="Grimbeorn's Lodge.",     label="Beorning Home",    zone="Vales of Anduin", },
         DE={ name="Zum 1. Heim zurückkehren", desc="Grimbeorns Hütte.",      label="Grimbeorns Hütte", zone="Die Täler des Anduin", },
         FR={ name="Retour à la maison",       desc="Pavillon de Grimbeorn.", label="Maison Beorning",  zone="Val d'Anduin", },
+        RU={ name="Возвращение домой",        desc="Усадьба Гримбеорна.",    label="Дом беорнинга",    zone="Долина Андуина", },
         map={MapType.RHOVANION, 285, 340},
         level=120
     })
     self.racials:AddSkill({
         -- high elf
         id="0x70048C8C",
-        EN={ name="Travel to Caras Galadhon in Lothlórien",    label="Caras Galadhon", zone="Lothlórien", },
-        DE={ name="Reise nach Caras Galadhon in Lothlórien",   label="Caras Galadhon", zone="Lothlórien", },
-        FR={ name="Voyage vers Caras Galadhon, en Lothlórien", label="Caras Galadhon", zone="Lothlórien", },
+        EN={ name="Travel to Caras Galadhon in Lothlórien",        label="Caras Galadhon", zone="Lothlórien", },
+        DE={ name="Reise nach Caras Galadhon in Lothlórien",       label="Caras Galadhon", zone="Lothlórien", },
+        FR={ name="Voyage vers Caras Galadhon, en Lothlórien",     label="Caras Galadhon", zone="Lothlórien", },
+        RU={ name="Путешествие в Карас Галадон, что в Лотлориэне", label="Карас Галадон",  zone="Лотлориэн", },
         map={MapType.RHOVANION, 120, 690},
         level=60
     })
     self.racials:AddSkill({
         -- stoutaxe
         id="0x70053C0F",
-        EN={ name="Travel to Thorin's Hall",   label="Thorin's Hall",    zone="Ered Luin", },
-        DE={ name="Reise zu Thorins Halle",    label="Thorins Halle",    zone="Ered Luin", },
-        FR={ name="Aller au Palais de Thorin", label="Palais de Thorin", zone="Ered Luin", },
+        EN={ name="Travel to Thorin's Hall",      label="Thorin's Hall",    zone="Ered Luin", },
+        DE={ name="Reise zu Thorins Halle",       label="Thorins Halle",    zone="Ered Luin", },
+        FR={ name="Aller au Palais de Thorin",    label="Palais de Thorin", zone="Ered Luin", },
+        RU={ name="Путешествие в Чертоги Торина", label="Чертоги Торина",   zone="Эред Луин", },
         map={MapType.ERIADOR, 345, 310},
         level=1.2
     })
     self.racials:AddSkill({
         -- river hobbit
         id="0x70066D31",
-        EN={ name="Return to Lyndelby",        label="Lyndelby", zone="Wells of Langflood", },
-        DE={ name="Kehrt zu Lyndelby zurück.", label="Lyndelby", zone="Quellen des Langflut", },
-        FR={ name="Retour à Lyndelby",         label="Lyndelby", zone="Puits du Long Fleuve", },
+        EN={ name="Return to Lyndelby",        label="Lyndelby",  zone="Wells of Langflood", },
+        DE={ name="Kehrt zu Lyndelby zurück.", label="Lyndelby",  zone="Quellen des Langflut", },
+        FR={ name="Retour à Lyndelby",         label="Lyndelby",  zone="Puits du Long Fleuve", },
+        RU={ name="Возвращение в Линдельби",   label="Линдельби", zone="Истоки Долгой реки", },
         map={MapType.RHOVANION, 155, 165},
         level=1.3
     })
