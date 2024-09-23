@@ -615,21 +615,23 @@ function TravelDictionary:CreateDictionaries()
     })
 
     -- add the Warden locations
-    self.warden:AddLabelTag({EN="Muster", DE="Appell", FR="Rassemblement" })
+    self.warden:AddLabelTag({EN="Muster", DE="Appell", FR="Rassemblement", RU="Сбор" })
     self.warden:AddSkill({
         id="0x70064F4D",
         EN={ name="Muster at Clegur",       label="Clegur", zone="Swanfleet", },
         DE={ name="Appell in Clegur",       label="Clegur", zone="Schwanenfleet", },
         FR={ name="Rassemblement à Clegur", label="Clegur", zone="Noues des cygnes", },
+        RU={ name="Сбор в Клегуре",         label="Клегур", zone="Лебедянь", },
         map={{MapType.ERIADOR, 755, 555}},
         overlap={"0x70064F47"},
         level=7
     })
     self.warden:AddSkill({
         id="0x700634B6",
-        EN={ name="Muster at Swanfleet",                label="Swanfleet",        detail="Lhan Garan", zone="Swanfleet", },
-        DE={ name="Appell in Schwanenfleet",            label="Schwanenfleet",    detail="Lhan Garan", zone="Schwanenfleet", },
-        FR={ name="Rassemblement aux Noues des cygnes", label="Noues des cygnes", detail="Lhan Garan", zone="Noues des cygnes", },
+        EN={ name="Muster at Swanfleet",                label="Swanfleet",          detail="Lhan Garan",    zone="Swanfleet", },
+        DE={ name="Appell in Schwanenfleet",            label="Schwanenfleet",      detail="Lhan Garan",    zone="Schwanenfleet", },
+        FR={ name="Rassemblement aux Noues des cygnes", label="Noues des cygnes",   detail="Lhan Garan",    zone="Noues des cygnes", },
+        RU={ name="Сбор в Лебедяни",                    label="Лебедянь",           detail="Лхан-Гаран",    zone="Лебедянь", },
         map={{MapType.ERIADOR, 825, 490}},
         overlap={"0x700634A4"},
         level=10
@@ -639,6 +641,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster at Cardolan",        label="Cardolan", detail="Herne", zone="Cardolan", },
         DE={ name="Appell in Cardolan",        label="Cardolan", detail="Herne", zone="Cardolan", },
         FR={ name="Rassemblement au Cardolan", label="Cardolan", detail="Herne", zone="Cardolan", },
+        RU={ name="Сбор в Кардолане",          label="Кардолан", detail="Хэрне", zone="Кардолан", },
         map={{MapType.ERIADOR, 560, 495}},
         overlap={"0x700634AE"},
         level=15
@@ -648,6 +651,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster at Andrath",       label="Andrath", zone="Cardolan", },
         DE={ name="Appell in Andrath",       label="Andrath", zone="Cardolan", },
         FR={ name="Rassemblement à Andrath", label="Andrath", zone="Cardolan", },
+        RU={ name="Сбор в Андрате",          label="Андрат",  zone="Кардолан", },
         map={{MapType.ERIADOR, 580, 465}},
         overlap={"0x7006323D"},
         level=17
@@ -657,6 +661,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster at Nobottle",          label="Nobottle",    zone="Yondershire", },
         DE={ name="Appell in Neuhausen",         label="Neuhausen",   zone="Ferne Auen", },
         FR={ name="Rassemblement à Bourdeneuve", label="Bourdeneuve", zone="Comté lointain", },
+        RU={ name="Сбор в Новодворье",           label="Новодворье",  zone="Дальний Шир", },
         map={{MapType.ERIADOR, 440, 350}},
         overlap={"0x70061340"},
         level=20
@@ -666,23 +671,26 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Ost Guruth",       label="Ost Guruth",   zone="Lone-lands", },
         DE={ name="Appell in der Feste Guruth", label="Feste Guruth", zone="Einsame Lande", },
         FR={ name="Rassemblement : Ost Guruth", label="Ost Guruth",   zone="Terres Solitaires", },
+        RU={ name="Сбор в Ост Гуруте",          label="Ост Гурут",    zone="Пустоши", },
         map={{MapType.ERIADOR, 755, 400}},
         overlap={"0x70020441"},
         level=25
     })
     self.warden:AddSkill({
         id="0x70014798",
-        EN={ name="Muster in Esteldín",       label="Esteldín", zone="North Downs", },
-        DE={ name="Appell in Esteldín",       label="Esteldín", zone="Nordhöhen", },
-        FR={ name="Rassemblement : Esteldin", label="Esteldin", zone="Hauts du Nord", },
+        EN={ name="Muster in Esteldín",       label="Esteldín",  zone="North Downs", },
+        DE={ name="Appell in Esteldín",       label="Esteldín",  zone="Nordhöhen", },
+        FR={ name="Rassemblement : Esteldin", label="Esteldin",  zone="Hauts du Nord", },
+        RU={ name="Сбор в Эстельдине",        label="Эстельдин", zone="Северное нагорье", },
         map={{MapType.ERIADOR, 655, 290}},
         level=30
     })
     self.warden:AddSkill({
         id="0x7001478E",
-        EN={ name="Muster in Evendim",                   label="Evendim", detail="Tinnudir", zone="Evendim", },
-        DE={ name="Appell in Evendim",                   label="Evendim", detail="Tinnudir", zone="Evendim", },
-        FR={ name="Rassemblement : La région d'Evendim", label="Evendim", detail="Tinnudir", zone="Evendim", },
+        EN={ name="Muster in Evendim",                   label="Evendim", detail="Tinnudir",  zone="Evendim", },
+        DE={ name="Appell in Evendim",                   label="Evendim", detail="Tinnudir",  zone="Evendim", },
+        FR={ name="Rassemblement : La région d'Evendim", label="Evendim", detail="Tinnudir",  zone="Evendim", },
+        RU={ name="Сбор в Эвендиме",                     label="Эвендим", detail="Тиннудир",  zone="Эвендим", },
         map={{MapType.ERIADOR, 490, 235}},
         level=35
     })
@@ -691,6 +699,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster at Tornhad", label="Tornhad", zone="Angle of Mitheithel", },
         DE={ name="Appell in Tornhad", label="Tornhad", zone="Der Bogen von Mitheithel", },
         FR={ name="Retour à Tornhad",  label="Tornhad", zone="L'Angle de Mitheithel", },
+        RU={ name="Сбор в Торнхаде",   label="Торнхад", zone="Митейтельская стрелка", },
         map={{MapType.ERIADOR, 775, 435}},
         overlap={"0x70060EA8"},
         level=40
@@ -700,6 +709,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Rivendell",       label="Rivendell", zone="Trollshaws", },
         DE={ name="Appell in Bruchtal",        label="Bruchtal",  zone="Die Trollhöhen", },
         FR={ name="Rassemblement : Fondcombe", label="Fondcombe", zone="Trouée des Trolls", },
+        RU={ name="Сбор в Ривенделле",         label="Ривенделл", zone="Троллистая пуща", },
         map={{MapType.ERIADOR, 865, 410}},
         overlap={"0x7000631F", "0x70023263"},
         level=40.1
@@ -709,6 +719,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in the Misty Mountains",     label="Misty Mountains", detail="Hrimbarg", zone="Misty Mountains", },
         DE={ name="Appell im Nebelgebirge",            label="Nebelgebirge",    detail="Hrimbarg", zone="Nebelgebirge", },
         FR={ name="Rassemblement : Les Monts Brumeux", label="Monts Brumeux",   detail="Hrimbarg", zone="Monts Brumeux", },
+        RU={ name="Сбор в Мглистых горах",             label="Мглистые горы",   detail="Хримбарг", zone="Мглистые горы", },
         map={{MapType.ERIADOR, 915, 265}},
         level=40.2
     })
@@ -717,6 +728,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Trestlebridge",         label="Trestlebridge",   zone="North Downs", },
         DE={ name="Appell in Schragen",              label="Schragen",        zone="Nordhöhen", },
         FR={ name="Rassemblement : Pont-à-Tréteaux", label="Pont-à-Tréteaux", zone="Hauts du Nord", },
+        RU={ name="Сбор в Примостье",                label="Примостье",       zone="Северное нагорье", },
         map={{MapType.ERIADOR, 590, 285}},
         overlap={"0x70059D12"},
         level=40.3
@@ -726,23 +738,26 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Trader's Wharf",           label="Trader's Wharf",     zone="Evendim", },
         DE={ name="Appell am Händlerkai",               label="Händlerkai",         zone="Evendim", },
         FR={ name="Rassemblement : Quai des marchands", label="Quai des marchands", zone="Evendim", },
+        RU={ name="Сбор на Торговой пристани",          label="Торговая пристань",  zone="Эвендим", },
         map={{MapType.ERIADOR, 515, 305}},
         overlap={"0x70059D0E"},
         level=40.4
     })
     self.warden:AddSkill({
         id="0x700237D4",
-        EN={ name="Muster in Sûri-kylä",       label="Sûri-kylä", zone="Forochel", },
-        DE={ name="Appell in Sûri-kylä",       label="Sûri-kylä", zone="Forochel", },
-        FR={ name="Rassemblement : Sûri-kylä", label="Sûri-kylä", zone="Forochel", },
+        EN={ name="Muster in Sûri-kylä",        label="Sûri-kylä",  zone="Forochel", },
+        DE={ name="Appell in Sûri-kylä",        label="Sûri-kylä",  zone="Forochel", },
+        FR={ name="Rassemblement : Sûri-kylä",  label="Sûri-kylä",  zone="Forochel", },
+        RU={ name="Сбор в Сури-кила",           label="Сури-кила",  zone="Форохель", },
         map={{MapType.ERIADOR, 430, 50}},
         level=42
     })
     self.warden:AddSkill({
         id="0x7001819E",
-        EN={ name="Muster in the Twenty-first Hall",          label="Twenty-first Hall",     zone="Moria", },
-        DE={ name="Appell in der Einundzwanzigsten Halle",    label="21. Halle",             zone="Moria", },
-        FR={ name="Rassemblement : La vingt et unième salle", label="Vingt et unième salle", zone="Moria", },
+        EN={ name="Muster in the Twenty-first Hall",            label="Twenty-first Hall",      zone="Moria", },
+        DE={ name="Appell in der Einundzwanzigsten Halle",      label="21. Halle",              zone="Moria", },
+        FR={ name="Rassemblement : La vingt et unième salle",   label="Vingt et unième salle",  zone="Moria", },
+        RU={ name="Сбор в Двадцать первом чертоге",             label="Двадцать первый чертог", zone="Мория", },
         map={{MapType.RHOVANION, 95, 585}, {MapType.ERIADOR, 950, 510}},
         level=55
     })
@@ -751,15 +766,17 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Caras Galadhon",       label="Caras Galadhon", zone="Lothlórien", },
         DE={ name="Appell in Caras Galadhon",       label="Caras Galadhon", zone="Lothlórien", },
         FR={ name="Rassemblement : Caras Galadhon", label="Caras Galadhon", zone="Lothlórien", },
+        RU={ name="Сбор в Карас Галадоне",          label="Карас Галадон",  zone="Лотлориэн", },
         map={{MapType.RHOVANION, 120, 660}},
         overlap={"0x70048C8C"},
         level=60
     })
     self.warden:AddSkill({
         id="0x7001F45C",
-        EN={ name="Muster in Mirk-eaves",         label="Mirk-Eaves",  zone="Mirkwood", },
-        DE={ name="Appell in der Dunkelsenke",    label="Dunkelsenke", zone="Düsterwald", },
-        FR={ name="Rassemblement : L'Orée noire", label="Orée noire",  zone="Forêt Noire", },
+        EN={ name="Muster in Mirk-eaves",           label="Mirk-Eaves",     zone="Mirkwood", },
+        DE={ name="Appell in der Dunkelsenke",      label="Dunkelsenke",    zone="Düsterwald", },
+        FR={ name="Rassemblement : L'Orée noire",   label="Orée noire",     zone="Forêt Noire", },
+        RU={ name="Сбор в Черной роще",             label="Черная роща",    zone="Лихолесье", },
         map={{MapType.RHOVANION, 365, 630}},
         level=61
     })
@@ -768,6 +785,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Harndirion",       label="Harndirion", zone="Enedwaith", },
         DE={ name="Appell in Harndirion",       label="Harndirion", zone="Enedwaith", },
         FR={ name="Rassemblement : Harndirion", label="Harndirion", zone="Enedwaith", },
+        RU={ name="Сбор в Харндирионе",         label="Харндирион", zone="Энедвайт", },
         map={{MapType.ERIADOR, 815, 635}},
         level=62
     })
@@ -776,42 +794,47 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Galtrev",       label="Galtrev", zone="Dunland", },
         DE={ name="Appell in Galtrev",       label="Galtrev", zone="Dunland", },
         FR={ name="Rassemblement : Galtrev", label="Galtrev", zone="Pays de Dun", },
+        RU={ name="Сбор в Галтреве",         label="Галтрев", zone="Дунланд", },
         map={{MapType.ERIADOR, 810, 715}},
         overlap={"0x7002C647"},
         level=65
     })
     self.warden:AddSkill({
         id="0x7002C646",
-        EN={ name="Muster in Stangard",        label="Stangard",  zone="Great River", },
-        DE={ name="Appell in Stangard",        label="Stangard",  zone="Großer Fluss", },
-        FR={ name="Rassemblement : Stangarde", label="Stangarde", zone="Grand Fleuve", },
+        EN={ name="Muster in Stangard",         label="Stangard",   zone="Great River", },
+        DE={ name="Appell in Stangard",         label="Stangard",   zone="Großer Fluss", },
+        FR={ name="Rassemblement : Stangarde",  label="Stangarde",  zone="Grand Fleuve", },
+        RU={ name="Сбор в Стангарде",           label="Стангард",   zone="Великая река", },
         map={{MapType.RHOVANION, 200, 720}, {MapType.ROHAN, 545, 90}},
         overlap={"0x7002C65D"},
         level=75
     })
     self.warden:AddSkill({
         id="0x7003198D",
-        EN={ name="Muster in Snowbourn",         label="Snowbourn",    zone="East Rohan", },
-        DE={ name="Appell in Schneegrenze",      label="Schneegrenze", zone="Ost-Rohan", },
-        FR={ name="Rassemblement : Neigebronne", label="Neigebronne",  zone="Rohan est", },
+        EN={ name="Muster in Snowbourn",            label="Snowbourn",      zone="East Rohan", },
+        DE={ name="Appell in Schneegrenze",         label="Schneegrenze",   zone="Ost-Rohan", },
+        FR={ name="Rassemblement : Neigebronne",    label="Neigebronne",    zone="Rohan est", },
+        RU={ name="Сбор в Сноуборне",               label="Сноуборн",       zone="Восточный Рохан", },
         map={{MapType.ROHAN, 515, 500}},
         overlap={"0x70031A46"},
         level=80
     })
     self.warden:AddSkill({
         id="0x70036B5B",
-        EN={ name="Muster in Forlaw",       label="Forlaw",  zone="Wildermore", },
-        DE={ name="Appell in Forlach",      label="Forlach", zone="Wildermark", },
-        FR={ name="Rassemblement : Forloi", label="Forloi",  zone="Landes farouches", },
+        EN={ name="Muster in Forlaw",       label="Forlaw",     zone="Wildermore", },
+        DE={ name="Appell in Forlach",      label="Forlach",    zone="Wildermark", },
+        FR={ name="Rassemblement : Forloi", label="Forloi",     zone="Landes farouches", },
+        RU={ name="Сбор в Форлоу",          label="Форлоу",     zone="Вилдермор", },
         map={{MapType.ROHAN, 450, 175}},
         overlap={"0x70036B5E"},
         level=85
     })
     self.warden:AddSkill({
         id="0x7003DC7A",
-        EN={ name="Muster in Aldburg",       label="Aldburg", zone="West Rohan", },
-        DE={ name="Appell in Aldburg",       label="Aldburg", zone="West-Rohan", },
-        FR={ name="Rassemblement : Aldburg", label="Aldburg", zone="Rohan de l'Ouest", },
+        EN={ name="Muster in Aldburg",       label="Aldburg",  zone="West Rohan", },
+        DE={ name="Appell in Aldburg",       label="Aldburg",  zone="West-Rohan", },
+        FR={ name="Rassemblement : Aldburg", label="Aldburg",  zone="Rohan de l'Ouest", },
+        RU={ name="Сбор в Альдбурге",        label="Альдбург", zone="Западный Рохан", },
         map={{MapType.ROHAN, 570, 640}},
         overlap={"0x7003DC81"},
         level=88
@@ -821,6 +844,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Helm's Deep",           label="Helm's Deep",     zone="West Rohan", },
         DE={ name="Appell in Helms Klamm",           label="Helms Klamm",     zone="West-Rohan", },
         FR={ name="Rassemblement : Gouffre de Helm", label="Gouffre de Helm", zone="Rohan de l'Ouest", },
+        RU={ name="Сбор в Хельмовой Пади",           label="Хельмова Падь",   zone="Западный Рохан", },
         map={{MapType.ROHAN, 275, 565}},
         overlap={"0x7003DC82"},
         level=90
@@ -830,6 +854,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Dol Amroth",       desc="in western Gondor",     label="Dol Amroth", zone="Western Gondor", },
         DE={ name="Appell in Dol Amroth",       desc="West-Gondor zu reisen", label="Dol Amroth", zone="West-Gondor", },
         FR={ name="Rassemblement : Dol Amroth", desc="l'Ouest du Gondor",     label="Dol Amroth", zone="Gondor de l'Ouest", },
+        RU={ name="Сбор в Дол Амроте",          desc="в Западном Гондоре",    label="Дол Амрот",  zone="Западный Гондор", },
         map={{MapType.GONDOR, 225, 550}},
         overlap={"0x700411AC"},
         level=98
@@ -839,15 +864,17 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Arnach",       label="Arnach", zone="Eastern Gondor", },
         DE={ name="Appell in Arnach",       label="Arnach", zone="Ost-Gondor", },
         FR={ name="Rassemblement : Arnach", label="Arnach", zone="Gondor de l'Ouest", },
+        RU={ name="Сбор в Арнахе",          label="Арнах",  zone="Восточный Гондор", },
         map={{MapType.GONDOR, 715, 425}},
         overlap={"0x70043A6A"},
         level=100
     })
     self.warden:AddSkill({
         id="0x70044982",
-        EN={ name="Muster in Minas Tirith",       label="Minas Tirith", zone="Old Anórien", },
-        DE={ name="Appell in Minas Tirith",       label="Minas Tirith", zone="Alt-Anórien", },
-        FR={ name="Rassemblement : Minas Tirith", label="Minas Tirith", zone="Ancien Anórien", },
+        EN={ name="Muster in Minas Tirith",       label="Minas Tirith",  zone="Old Anórien", },
+        DE={ name="Appell in Minas Tirith",       label="Minas Tirith",  zone="Alt-Anórien", },
+        FR={ name="Rassemblement : Minas Tirith", label="Minas Tirith",  zone="Ancien Anórien", },
+        RU={ name="Сбор в Минас Тирите",          label="Минас Тирит", zone="Старый Анориен", },
         map={{MapType.GONDOR, 670, 345}},
         overlap={"0x7004497E"},
         level=100.1
@@ -857,6 +884,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in the War-stead",        label="War-stead",                zone="Far Anórien", },
         DE={ name="Appell im Kriegslager",          label="Kriegslager der Rohirrim", zone="Fernes Anórien", },
         FR={ name="Rassemblement : Camp militaire", label="Camp militaire",           zone="Lointain Anórien", },
+        RU={ name="Сбор в военном лагере Рохиррим", label="Лагерь Рохиррим",          zone="Дальний Анориен", },
         map={{MapType.GONDOR, 665, 140}},
         overlap={"0x700459A9"},
         level=102
@@ -866,6 +894,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in after-battle Minas Tirith",            label="Minas Tirith after battle",      zone="Anórien", },
         DE={ name="Appell im schlachtgezeichneten Minas Tirith",    label="Minas Tirith nach der Schlacht", zone="Anórien", },
         FR={ name="Rassemblement : Minas Tirith après la bataille", label="Minas Tirith après la bataille", zone="Anórien", },
+        RU={ name="Сбор в Минас Тирите (после битвы)",              label="Минас Тирит (после битвы)",      zone="Анориен", },
         map={{MapType.GONDOR, 670, 375}},
         overlap={"0x70046CC0"},
         level=105
@@ -875,6 +904,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in after-battle Osgiliath",            label="Osgiliath after-battle",      zone="Anórien", },
         DE={ name="Appell im schlachtgezeichneten Osgiliath",    label="Osgiliath nach der Schlacht", zone="Anórien", },
         FR={ name="Rassemblement : Osgiliath après la bataille", label="Osgiliath après la bataille", zone="Anórien", },
+        RU={ name="Сбор в Осгилиате (после битвы)",              label="Осгилиат (после битвы)",      zone="Анориен", },
         map={{MapType.GONDOR, 855, 335}},
         overlap={"0x7004707D"},
         level=105.1
@@ -884,15 +914,17 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Henneth Annûn",       label="Henneth Annûn", zone="Ithilien", },
         DE={ name="Appell in Henneth Annûn",       label="Henneth Annûn", zone="Ithilien", },
         FR={ name="Rassemblement : Henneth Annûn", label="Henneth Annûn", zone="Ithilien", },
+        RU={ name="Сбор в Хеннет Аннун",           label="Хеннет Аннун",  zone="Итилиен", },
         map={{MapType.GONDOR, 875, 385}},
         overlap={"0x70047080"},
         level=105.2
     })
     self.warden:AddSkill({
         id="0x70047BFC",
-        EN={ name="Muster in the Camp of the Host",  label="Camp of the Host", zone="The Wastes", },
-        DE={ name="Appell im Lager des Heeres",      label="Lager des Heeres", zone="Das Ödland", },
-        FR={ name="Rassemblement : Camp de l'armée", label="Camp de l'armée",  zone="Les Landes désertiques", },
+        EN={ name="Muster in the Camp of the Host",  label="Camp of the Host",       zone="The Wastes", },
+        DE={ name="Appell im Lager des Heeres",      label="Lager des Heeres",       zone="Das Ödland", },
+        FR={ name="Rassemblement : Camp de l'armée", label="Camp de l'armée",        zone="Les Landes désertiques", },
+        RU={ name="Сбор в лагере Воинства Запада",   label="Лагерь Воинства Запада", zone="Гиблые земли", },
         map={{MapType.GONDOR, 805, 170}},
         overlap={"0x70047BF4"},
         level=105.3
@@ -902,6 +934,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Haerondir",       label="Haerondir", zone="The Wastes", },
         DE={ name="Appell in Haerondir",       label="Haerondir", zone="Das Ödland", },
         FR={ name="Rassemblement : Haerondir", label="Haerondir", zone="Les Landes désertiques", },
+        RU={ name="Сбор в Хаэрондире",         label="Хаэрондир", zone="Гиблые земли", },
         map={{MapType.GONDOR, 855, 100}},
         overlap={"0x70047C1B"},
         level=105.4
@@ -911,6 +944,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in the Udûn Foothold",    label="Udûn Foothold",    zone="Mordor", },
         DE={ name="Appell am Udûn-Brückenkopf",     label="Udûn-Brückenkopf", zone="Mordor", },
         FR={ name="Rassemblement : Le fort d'Udûn", label="Fort d'Udûn",      zone="Mordor", },
+        RU={ name="Сбор на заставе Удуна",          label="Застава Удуна",    zone="Мордор", },
         map={{MapType.GONDOR, 925, 230}},
         overlap={"0x7004AE1D"},
         level=106
@@ -920,6 +954,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Dale",       label="Dale", zone="Eryn Lasgalen", },
         DE={ name="Appell in Thal",       label="Thal", zone="Eryn Lasgalen", },
         FR={ name="Rassemblement : Dale", label="Dale", zone="Eryn Lasgalen", },
+        RU={ name="Сбор в Дейле",         label="Дейл", zone="Эрин Ласгален", },
         map={{MapType.RHOVANION, 720, 215}},
         overlap={"0x7004D738"},
         level=115
@@ -929,15 +964,17 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Járnfast",       label="Járnfast", zone="The Ironfold", },
         DE={ name="Appell in Járnfast",       label="Jarnfast", zone="Der Eisenbruch", },
         FR={ name="Rassemblement : Jarnfast", label="Jarnfast", zone="La Crevasse de Fer", },
+        RU={ name="Сбор в Ярнфасте",          label="Ярнфаст",  zone="Железное взгорье", },
         map={{MapType.RHOVANION, 890, 110}},
         overlap={"0x7004FAC3"},
         level=116
     })
     self.warden:AddSkill({
         id="0x7004FACD",
-        EN={ name="Muster in Skarháld",       label="Skarháld", zone="Ered Mithrin", },
-        DE={ name="Appell in Skarháld",       label="Skarhald", zone="Ered Mithrin", },
-        FR={ name="Rassemblement : Skarhald", label="Skarhald", zone="Ered Mithrin", },
+        EN={ name="Muster in Skarháld",       label="Skarháld",  zone="Ered Mithrin", },
+        DE={ name="Appell in Skarháld",       label="Skarhald",  zone="Ered Mithrin", },
+        FR={ name="Rassemblement : Skarhald", label="Skarhald",  zone="Ered Mithrin", },
+        RU={ name="Сбор в Скархальде",        label="Скархальд", zone="Эред Митрин", },
         map={{MapType.RHOVANION, 430, 90}},
         overlap={"0x7004FAC5"},
         level=117
@@ -947,15 +984,17 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Beorninghús",       label="Beorninghús",   zone="Vales of Anduin", },
         DE={ name="Appell im Beorningerhús",     label="Beorningerhús", zone="Die Täler des Anduin", },
         FR={ name="Rassemblement : Beorninghus", label="Beorninghus",   zone="Val d'Anduin", },
+        RU={ name="Сбор в Беорнингусе",          label="Беорнингус",    zone="Долина Андуина", },
         map={{MapType.RHOVANION, 390, 300}},
         overlap={"0x70041A22", "0x70052F12"},
         level=120
     })
     self.warden:AddSkill({
         id="0x70052F06",
-        EN={ name="Muster in Hultvís",       label="Hultvís", zone="Vales of Anduin", },
-        DE={ name="Appell in Hultvís",       label="Hultvís", zone="Die Täler des Anduin", },
-        FR={ name="Rassemblement : Hultvis", label="Hultvis", zone="Val d'Anduin", },
+        EN={ name="Muster in Hultvís",       label="Hultvís",  zone="Vales of Anduin", },
+        DE={ name="Appell in Hultvís",       label="Hultvís",  zone="Die Täler des Anduin", },
+        FR={ name="Rassemblement : Hultvis", label="Hultvis",  zone="Val d'Anduin", },
+        RU={ name="Сбор в Хультвисе",        label="Хультвис", zone="Долина Андуина", },
         map={{MapType.RHOVANION, 375, 400}},
         overlap={"0x70052F04"},
         level=120.1
@@ -965,6 +1004,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Estolad Lân",       label="Estolad Lân", zone="Imlad Morgul", },
         DE={ name="Appell in Estolad Lân",       label="Estolad Lân", zone="Imlad Morgul", },
         FR={ name="Rassemblement : Estolad Lân", label="Estolad Lân", zone="Imlad Morgul", },
+        RU={ name="Сбор в Эстолад Лане",         label="Эстолад Лан", zone="Имлад Моргул", },
         map={{MapType.GONDOR, 960, 460}},
         overlap={"0x700551F8"},
         level=125
@@ -974,6 +1014,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Limlók",       label="Limlók", zone="Wells of Langflood", },
         DE={ name="Appell in Limlók",       label="Limlók", zone="Quellen des Langflut", },
         FR={ name="Rassemblement : Limlok", label="Limlok", zone="Puits du Long Fleuve", },
+        RU={ name="Сбор в Лимлоке",         label="Лимлок", zone="Истоки Долгой реки", },
         map={{MapType.RHOVANION, 345, 230}},
         overlap={"0x70057629"},
         level=130
@@ -983,6 +1024,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Annâk-khurfu",       label="Annâk-khurfu", zone="Elderslade", },
         DE={ name="Appell in Annâk-khurfu",       label="Annâk-khurfu", zone="Elderslade", },
         FR={ name="Rassemblement : Annâk-khurfu", label="Annâk-khurfu", zone="Elderslade", },
+        RU={ name="Сбор в Аннак-Курфу",           label="Аннак-Курфу",  zone="Долина предков", },
         map={{MapType.RHOVANION, 530, 90}},
         overlap={"0x7005856F"},
         level=130.1
@@ -992,6 +1034,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Akrâz-zahar",       label="Akrâz-zahar", zone="Eryn Lasgalen", },
         DE={ name="Appell in Akrâz-zahar",       label="Akrâz-zahar", zone="Eryn Lasgalen", },
         FR={ name="Rassemblement : Akrâz-zahar", label="Akrâz-zahar", zone="Eryn Lasgalen", },
+        RU={ name="Сбор в Акраз-Захаре",         label="Акраз-Захар", zone="Эрин Ласгален", },
         map={{MapType.RHOVANION, 750, 115}},
         overlap={"0x7005AA90"},
         level=130.2
@@ -1001,15 +1044,17 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Azanulbizar",       label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
         DE={ name="Appell in Azanulbizar",       label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
         FR={ name="Rassemblement : Azanulbizar", label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
+        RU={ name="Сбор в Азанулбизаре",         label="Азанулбизар", detail="Амдан", zone="Азанулбизар", },
         map={{MapType.RHOVANION, 210, 555}},
         overlap={"0x7005AA92"},
         level=130.3
     })
     self.warden:AddSkill({
         id="0x7005D48A",
-        EN={ name="Muster at the Noble Gate",       label="Noble Gate",  zone="Gundabad", },
-        DE={ name="Appell am Prachttor",            label="Prachttor",   zone="Gundabad", },
-        FR={ name="Rassemblement : La Porte Noble", label="Porte Noble", zone="Gundabad", },
+        EN={ name="Muster at the Noble Gate",       label="Noble Gate",        zone="Gundabad", },
+        DE={ name="Appell am Prachttor",            label="Prachttor",         zone="Gundabad", },
+        FR={ name="Rassemblement : La Porte Noble", label="Porte Noble",       zone="Gundabad", },
+        RU={ name="Сбор у Благородных врат",        label="Благородные врата", zone="Гундабад", },
         map={{MapType.RHOVANION, 190, 130}},
         overlap={"0x7005D47C"},
         level=131
@@ -1019,6 +1064,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster at Leitstáth",       label="Leitstáth", zone="Gundabad", },
         DE={ name="Appell in Leitstáth",       label="Leitstáth", zone="Gundabad", },
         FR={ name="Rassemblement : Leitstath", label="Leitstath", zone="Gundabad", },
+        RU={ name="Сбор в Лейтстате",          label="Лейтстат",  zone="Гундабад", },
         map={{MapType.RHOVANION, 270, 65}},
         overlap={"0x7005D484"},
         level=135
@@ -1028,6 +1074,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster at Carn Dûm",       label="Carn Dûm", zone="Angmar", },
         DE={ name="Appell in Carn Dûm",       label="Carn Dûm", zone="Angmar", },
         FR={ name="Rassemblement : Carn Dûm", label="Carn Dûm", zone="Angmar", },
+        RU={ name="Сбор в Карн-Думе",         label="Карн-Дум", zone="Ангмар", },
         map={{MapType.ERIADOR, 735, 100}},
         overlap={"0x70064ACA"},
         level=140.1
@@ -1037,15 +1084,17 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster at Pelargir",       label="Pelargir", zone="King's Gondor", },
         DE={ name="Heerschau in Pelargir",    label="Pelargir", zone="Königreich Gondor", },
         FR={ name="Rassemblement à Pelargir", label="Pelargir", zone="Gondor royal", },
+        RU={ name="Сбор в Пеларгире",         label="Пеларгир", zone="Королевский Гондор", },
         map={{MapType.GONDOR, 670, 625}},
         overlap={"0x700658EB"},
         level=141
     })
     self.warden:AddSkill({
         id="0x70068712",
-        EN={ name="Muster at Dol Amroth",       desc="King's Gondor",     label="King's Dol Amroth",     zlabel="Dol Amroth", zone="King's Gondor", },
-        DE={ name="Appell in Dol Amroth",       desc="Königreich Gondor", label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor", },
-        FR={ name="Rassemblement à Dol Amroth", desc="le Gondor royal",   label="Dol Amroth royal",      zlabel="Dol Amroth", zone="Gondor royal", },
+        EN={ name="Muster at Dol Amroth",       desc="King's Gondor",      label="King's Dol Amroth",      zlabel="Dol Amroth",    zone="King's Gondor", },
+        DE={ name="Appell in Dol Amroth",       desc="Königreich Gondor",  label="Königreich Dol Amroth",  zlabel="Dol Amroth",    zone="Königreich Gondor", },
+        FR={ name="Rassemblement à Dol Amroth", desc="le Gondor royal",    label="Dol Amroth royal",       zlabel="Dol Amroth",    zone="Gondor royal", },
+        RU={ name="Сбор в Дол Амроте",          desc="Королевский Гондор", label="Королевский Дол Амрот",  zlabel="Дол Амрот",     zone="Королевский Гондор", },
         map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 385, 70}},
         overlap={"0x70068700"},
         level=142
@@ -1055,24 +1104,27 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster at Lond Cirion",       label="Lond Cirion", zone="Anfalas", },
         DE={ name="Appell in Lond Cirion",       label="Lond Cirion", zone="Anfalas", },
         FR={ name="Rassemblement à Lond Cirion", label="Lond Cirion", zone="Anfalas", },
+        RU={ name="Сбор в Лонд-Кирионе",         label="Лонд-Кирион", zone="Анфалас", },
         map={{MapType.GONDOR, 255, 420}, {MapType.HARADWAITH, 230, 20}},
         overlap={"0x70068703"},
         level=143
     })
     self.warden:AddSkill({
         id="0x70068710",
-        EN={ name="Muster at Halrax",       label="Halrax", zone="Shield Isles", },
-        DE={ name="Appell in Halrax",       label="Halrax", zone="Die Schildinseln", },
-        FR={ name="Rassemblement à Halrax", label="Halrax", zone="Les îles du Bouclier", },
+        EN={ name="Muster at Halrax",       label="Halrax",  zone="Shield Isles", },
+        DE={ name="Appell in Halrax",       label="Halrax",  zone="Die Schildinseln", },
+        FR={ name="Rassemblement à Halrax", label="Halrax",  zone="Les îles du Bouclier", },
+        RU={ name="Сбор в Халраксе",        label="Халракс", zone="Острова Щита", },
         map={{MapType.HARADWAITH, 275, 260}},
         overlap={"0x70068702"},
         level=145
     })
     self.warden:AddSkill({
         id="0x7006870C",
-        EN={ name="Muster at Jax Phanâl",       label="Jax Phanâl", zone="Umbar", },
-        DE={ name="Appell in Jax Phanâl",       label="Jax Phanâl", zone="Umbar", },
-        FR={ name="Rassemblement à Jax Phanâl", label="Jax Phanâl", zone="Umbar", },
+        EN={ name="Muster at Jax Phanâl",       label="Jax Phanâl",  zone="Umbar", },
+        DE={ name="Appell in Jax Phanâl",       label="Jax Phanâl",  zone="Umbar", },
+        FR={ name="Rassemblement à Jax Phanâl", label="Jax Phanâl",  zone="Umbar", },
+        RU={ name="Сбор в Джакс-Фанале",        label="Джакс-Фанал", zone="Умбар", },
         map={{MapType.HARADWAITH, 305, 315}},
         overlap={"0x70068701"},
         level=146
@@ -1082,15 +1134,17 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster in Bej Mâghda",       label="Bej Mâghda", zone="Umbar", },
         DE={ name="Appell in Bej Mâghda",       label="Bej Mâghda", zone="Umbar", },
         FR={ name="Rassemblement à Bej Mâghda", label="Bej Mâghda", zone="Umbar", },
+        RU={ name="Сбор в Бедж-Магде",          label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 350, 380}},
         overlap={"0x7006A9C1"},
         level=147
     })
     self.warden:AddSkill({
         id="0x7006870F",
-        EN={ name="Muster at Umbar",       label="Umbar", detail="Baharbêl", zone="Umbar", },
-        DE={ name="Appell in Umbar",       label="Umbar", detail="Baharbêl", zone="Umbar", },
-        FR={ name="Rassemblement à Umbar", label="Umbar", detail="Baharbêl", zone="Umbar", },
+        EN={ name="Muster at Umbar",       label="Umbar", detail="Baharbêl",  zone="Umbar", },
+        DE={ name="Appell in Umbar",       label="Umbar", detail="Baharbêl",  zone="Umbar", },
+        FR={ name="Rassemblement à Umbar", label="Umbar", detail="Baharbêl",  zone="Umbar", },
+        RU={ name="Сбор в Умбаре",         label="Умбар", detail="Бахарбель", zone="Умбар", },
         map={{MapType.HARADWAITH, 505, 370}},
         overlap={"0x700686FF"},
         level=148
@@ -1100,18 +1154,20 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Muster at the Bloody Eagle Tavern",              label="Bloody Eagle Tavern",         zone="Umbar", },
         DE={ name="Appell in der Taverne \"Zum Blutigen Adler\"",   label="Zum Blutigen Adler",          zone="Umbar", },
         FR={ name="Rassemblement à la taverne de l'Aigle sanglant", label="Taverne de l'Aigle sanglant", zone="Umbar", },
+        RU={ name="Сбор в таверне \'Кровавый орёл\'",               label="Таверна Кровавый Орёл",       zone="Умбар", },
         map={{MapType.HARADWAITH, 475, 400}},
         overlap={"0x700697F2"},
         level=149
     })
 
     -- add the Mariner locations
-    self.mariner:AddLabelTag({EN="Sail", DE="Segeln", FR="Naviguer" })
+    self.mariner:AddLabelTag({EN="Sail", DE="Segeln", FR="Naviguer", RU="Плаванье" })
     self.mariner:AddSkill({
         id="0x70066100",
         EN={ name="Sail to Celondim",       label="Celondim", zone="Ered Luin", },
         DE={ name="Segelt nach Celondim",   label="Celondim", zone="Ered Luin", },
         FR={ name="Naviguer vers Celondim", label="Celondim", zone="Ered Luin", },
+        RU={ name="Отплытие в Келондим",    label="Келондим", zone="Эред Луин", },
         map={{MapType.ERIADOR, 310, 380}},
         level=1
     })
@@ -1120,6 +1176,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Sail to Buckland",              label="Buckland",     zone="Bree", },
         DE={ name="Segelt nach Bockland",          label="Bockland",     zone="Bree", },
         FR={ name="Naviguer vers le Pays de Bouc", label="Pays de Bouc", zone="Bree", },
+        RU={ name="Отплытие в Забрендию",          label="Забрендия",    zone="Бри", },
         map={{MapType.ERIADOR, 515, 405}},
         level=4
     })
@@ -1128,6 +1185,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Sail to Tharbad",       label="Tharbad", zone="Swanfleet", },
         DE={ name="Nach Tharbad segeln",   label="Tharbad", zone="Schwanenfleet", },
         FR={ name="Naviguer vers Tharbad", label="Tharbad", zone="Noues des cygnes", },
+        RU={ name="Отплытие в Тарбад",     label="Тарбад",  zone="Лебедянь", },
         map={{MapType.ERIADOR, 650, 525}},
         level=5
     })
@@ -1136,6 +1194,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Sail to Tinnudir",       label="Tinnudir", zone="Evendim", },
         DE={ name="Segelt nach Tinnudir",   label="Tinnudir", zone="Evendim", },
         FR={ name="Naviguer vers Tinnudir", label="Tinnudir", zone="Evendim", },
+        RU={ name="Отплытие на Тиннудир",   label="Тиннудир", zone="Эвендим", },
         map={{MapType.ERIADOR, 420, 250}},
         level=30
     })
@@ -1144,6 +1203,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Sail to Trader's Wharf",              label="Trader's Wharf",     zone="Evendim", },
         DE={ name="Segelt zum Händlerkai",               label="Händlerkai",         zone="Evendim", },
         FR={ name="Naviguer vers le Quai des marchands", label="Quai des marchands", zone="Evendim", },
+        RU={ name="Отплытие к Торговой пристани",        label="Торговая пристань",  zone="Эвендим", },
         map={{MapType.ERIADOR, 515, 305}},
         overlap={"0x70059D0E"},
         level=40.4
@@ -1153,6 +1213,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Sail to Sûri-kylä",       label="Sûri-kylä", zone="Forochel", },
         DE={ name="Segelt nach Sûri-kylä",   label="Sûri-kylä", zone="Forochel", },
         FR={ name="Naviguer vers Sûri-kylä", label="Sûri-kylä", zone="Forochel", },
+        RU={ name="Отплытие в Сури-кила",    label="Сури-кила", zone="Форохель", },
         map={{MapType.ERIADOR, 430, 50}},
         level=42
     })
@@ -1161,6 +1222,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Sail to Lothlórien",          label="Lothlórien", detail="Egladil", zone="Lothlórien", },
         DE={ name="Segelt nach Lothlórien",      label="Lothlórien", detail="Egladil", zone="Lothlórien", },
         FR={ name="Naviguer vers la Lothlorien", label="Lothlórien", detail="Egladil", zone="Lothlórien", },
+        RU={ name="Отплытие в Лотлориэн",        label="Лотлориэн",  detail="Эгладил", zone="Лотлориэн", },
         map={{MapType.RHOVANION, 245, 670}},
         overlap={"0x70048C8C"},
         level=60
@@ -1170,6 +1232,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Sail to the Mirk-eaves",     label="Mirk-eaves",  zone="Mirkwood", },
         DE={ name="Segelt zur Dunkelsenke",     label="Dunkelsenke", zone="Düsterwald", },
         FR={ name="Naviguer vers l'Orée Noire", label="Orée Noire",  zone="Forêt Noire", },
+        RU={ name="Отплытие к Чёрной роще",     label="Черная роща", zone="Лихолесье", },
         map={{MapType.RHOVANION, 365, 630}},
         level=61
     })
@@ -1178,6 +1241,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Sail to the Brown Lands",         label="Brown Lands",   zone="Great River", },
         DE={ name="Segelt in die Braunen Lande",     label="Braune Lande",  zone="Großer Fluss", },
         FR={ name="Naviguer vers les Terres brunes", label="Terres brunes", zone="Grand Fleuve", },
+        RU={ name="Отплытие к Бурым равнинам",       label="Бурые равнины", zone="Великая река", },
         map={{MapType.ROHAN, 700, 180}},
         level=75.1
     })
@@ -1186,6 +1250,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Sail to Snowbourn",         label="Snowbourn",    zone="East Rohan", },
         DE={ name="Segelt nach Schneegrenze",  label="Schneegrenze", zone="Ost-Rohan", },
         FR={ name="Naviguer vers Neigebronne", label="Neigebronne",  zone="Rohan est", },
+        RU={ name="Отплытие в Сноуборн",       label="Сноуборн",     zone="Восточный Рохан", },
         map={{MapType.ROHAN, 515, 500}},
         overlap={"0x70031A46"},
         level=80
@@ -1195,6 +1260,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Sail to Dol Amroth",       desc="Dol Amroth with nearby",     label="Dol Amroth", zone="Western Gondor", },
         DE={ name="Segelt nach Dol Amroth",   desc="nach Dol Amroth.",           label="Dol Amroth", zone="West-Gondor", },
         FR={ name="Naviguer vers Dol Amroth", desc="Amroth en bonne compagnie.", label="Dol Amroth", zone="Gondor de l'Ouest", },
+        RU={ name="Отплытие в Дол Амрот",       desc="в Дол Амрот",                 label="Дол Амрот",  zone="Западный Гондор", },
         map={{MapType.GONDOR, 225, 550}},
         overlap={"0x700411AC"},
         level=98
@@ -1204,15 +1270,17 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Sail to after-battle Osgiliath",            label="Osgiliath after-battle",         zone="Anórien", },
         DE={ name="Segelt ins schlachtgezeichnete Osgiliath",  label="Schlachtgezeichnetes Osgiliath", zone="Anórien", },
         FR={ name="Naviguer vers Osgiliath après la bataille", label="Osgiliath après la bataille",    zone="Anórien", },
+        RU={ name="Отплытие в Осгилиат (после битвы)",         label="Осгилиат (после битвы)",         zone="Анориен", },
         map={{MapType.GONDOR, 855, 335}},
         overlap={"0x7004707D"},
         level=105.1
     })
     self.mariner:AddSkill({
         id="0x7006610C",
-        EN={ name="Sail to Lake-town",       label="Lake-town",    zone="Eryn Lasgalen", },
-        DE={ name="Segelt nach Seestadt.",   label="Seestadt",     zone="Eryn Lasgalen", },
-        FR={ name="Cap sur la Ville du Lac", label="Ville du Lac", zone="Eryn Lasgalen", },
+        EN={ name="Sail to Lake-town",        label="Lake-town",     zone="Eryn Lasgalen", },
+        DE={ name="Segelt nach Seestadt.",    label="Seestadt",      zone="Eryn Lasgalen", },
+        FR={ name="Cap sur la Ville du Lac",  label="Ville du Lac",  zone="Eryn Lasgalen", },
+        RU={ name="Отплытие в Озёрный город", label="Озёрный город", zone="Эрин Ласгален", },
         map={{MapType.RHOVANION, 740, 275}},
         overlap={"0x7004D738"},
         level=115
@@ -1222,15 +1290,17 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Sail to Pelargir",       label="Pelargir", zone="King's Gondor", },
         DE={ name="Segelt nach Pelargir",   label="Pelargir", zone="Königreich Gondor", },
         FR={ name="Naviguer vers Pelargir", label="Pelargir", zone="Gondor royal", },
+        RU={ name="Отплытие в Пеларгир",    label="Пеларгир", zone="Королевский Гондор", },
         map={{MapType.GONDOR, 670, 625}},
         overlap={"0x700658EB"},
         level=141
     })
     self.mariner:AddSkill({
         id="0x700687C1",
-        EN={ name="Sail to Dol Amroth",       desc="King's Gondor",     label="King's Dol Amroth",     zlabel="Dol Amroth", zone="King's Gondor", },
-        DE={ name="Segelt nach Dol Amroth",   desc="Königreich Gondor", label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor", },
-        FR={ name="Naviguer vers Dol Amroth", desc="le Gondor royal",   label="Dol Amroth royal",      zlabel="Dol Amroth", zone="Gondor royal", },
+        EN={ name="Sail to Dol Amroth",       desc="King's Gondor",      label="King's Dol Amroth",      zlabel="Dol Amroth", zone="King's Gondor", },
+        DE={ name="Segelt nach Dol Amroth",   desc="Königreich Gondor",  label="Königreich Dol Amroth",  zlabel="Dol Amroth", zone="Königreich Gondor", },
+        FR={ name="Naviguer vers Dol Amroth", desc="le Gondor royal",    label="Dol Amroth royal",       zlabel="Dol Amroth", zone="Gondor royal", },
+        RU={ name="Отплытие в Дол Амрот",     desc="Королевский Гондор", label="Королевский Дол Амрот",  zlabel="Дол Амрот",  zone="Королевский Гондор", },
         map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 385, 70}},
         overlap={"0x70068700"},
         level=142
@@ -1240,24 +1310,27 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Sail to Lond Cirion",       label="Lond Cirion", zone="Anfalas", },
         DE={ name="Nach Lond Cirion segeln",   label="Lond Cirion", zone="Anfalas", },
         FR={ name="Naviguer vers Lond Cirion", label="Lond Cirion", zone="Anfalas", },
+        RU={ name="Отплытие в Лонд-Кирион",    label="Лонд-Кирион", zone="Анфалас", },
         map={{MapType.GONDOR, 255, 420}, {MapType.HARADWAITH, 230, 20}},
         overlap={"0x70068703"},
         level=143
     })
     self.mariner:AddSkill({
         id="0x700687C3",
-        EN={ name="Sail to Halrax",       label="Halrax", zone="Shield Isles", },
-        DE={ name="Nach Halrax segeln",   label="Halrax", zone="Die Schildinseln", },
-        FR={ name="Naviguer vers Halrax", label="Halrax", zone="Les îles du Bouclier", },
+        EN={ name="Sail to Halrax",       label="Halrax",  zone="Shield Isles", },
+        DE={ name="Nach Halrax segeln",   label="Halrax",  zone="Die Schildinseln", },
+        FR={ name="Naviguer vers Halrax", label="Halrax",  zone="Les îles du Bouclier", },
+        RU={ name="Отплытие в Халракс",   label="Халракс", zone="Острова Щита", },
         map={{MapType.HARADWAITH, 275, 160}},
         overlap={"0x70068702"},
         level=145
     })
     self.mariner:AddSkill({
         id="0x700687C0",
-        EN={ name="Sail to Jax Phanâl",       label="Jax Phanâl", zone="Umbar", },
-        DE={ name="Nach Jax Phanâl segeln",   label="Jax Phanâl", zone="Umbar", },
-        FR={ name="Naviguer vers Jax Phanâl", label="Jax Phanâl", zone="Umbar", },
+        EN={ name="Sail to Jax Phanâl",       label="Jax Phanâl",  zone="Umbar", },
+        DE={ name="Nach Jax Phanâl segeln",   label="Jax Phanâl",  zone="Umbar", },
+        FR={ name="Naviguer vers Jax Phanâl", label="Jax Phanâl",  zone="Umbar", },
+        RU={ name="Отплытие в Джакс-Фанал",   label="Джакс-Фанал", zone="Умбар", },
         map={{MapType.HARADWAITH, 305, 315}},
         overlap={"0x70068701"},
         level=146
@@ -1267,15 +1340,17 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Sail to Bej Mâghda",       label="Bej Mâghda", zone="Umbar", },
         DE={ name="Nach Bej Mâghda segeln",   label="Bej Mâghda", zone="Umbar", },
         FR={ name="Naviguer vers Bej Mâghda", label="Bej Mâghda", zone="Umbar", },
+        RU={ name="Отплытие в Бедж-Магду",    label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 350, 380}},
         overlap={"0x7006A9C1"},
         level=147
     })
     self.mariner:AddSkill({
         id="0x700687BB",
-        EN={ name="Sail to Umbar",       label="Umbar", detail="Baharbêl", zone="Umbar", },
-        DE={ name="Nach Umbar segeln",   label="Umbar", detail="Baharbêl", zone="Umbar", },
-        FR={ name="Naviguer vers Umbar", label="Umbar", detail="Baharbêl", zone="Umbar", },
+        EN={ name="Sail to Umbar",       label="Umbar", detail="Baharbêl",  zone="Umbar", },
+        DE={ name="Nach Umbar segeln",   label="Umbar", detail="Baharbêl",  zone="Umbar", },
+        FR={ name="Naviguer vers Umbar", label="Umbar", detail="Baharbêl",  zone="Umbar", },
+        RU={ name="Отплытие в Умбар",    label="Умбар", detail="Бахарбель", zone="Умбар", },
         map={{MapType.HARADWAITH, 505, 370}},
         overlap={"0x700686FF"},
         level=148
