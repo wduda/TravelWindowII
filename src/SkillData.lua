@@ -1370,6 +1370,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return Home",              desc="bound milestone" },
         DE={ name="Zum 1. Heim zurückkehren", desc="Markstein zurückkehren", label="1. Markstein", },
         FR={ name="Retour à la maison",       desc="point de repère lié",    label="Point de repère 1", },
+        RU={ name="Дорога домой", },
         map={MapType.NONE, -1, -1},
         level=1
     })
@@ -1378,6 +1379,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return Home 2", },
         DE={ name="Zum 2. Heim zurückkehren", label="2. Markstein", },
         FR={ name="Retour à la maison 2",     label="Point de repère 2", },
+        RU={ name="Дорога домой 2", },
         map={MapType.NONE, -1, -1},
         level=1
     })
@@ -1386,6 +1388,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return Home 3", },
         DE={ name="Zum 3. Heim zurückkehren", label="3. Markstein", },
         FR={ name="Retour à la maison 3",     label="Point de repère 3", },
+        RU={ name="Дорога домой 3", },
         map={MapType.NONE, -1, -1},
         level=1
     })
@@ -1394,6 +1397,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return Home 4", },
         DE={ name="Zum 4. Heim zurückkehren", label="4. Markstein", },
         FR={ name="Retour à la maison 4",     label="Point de repère 4", },
+        RU={ name="Дорога домой 4", },
         map={MapType.NONE, -1, -1},
         level=1
     })
@@ -1402,6 +1406,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return Home 5", },
         DE={ name="Zum 5. Heim zurückkehren", label="5. Markstein", },
         FR={ name="Retour à la maison 5",     label="Point de repère 5", },
+        RU={ name="Дорога домой 5", },
         map={MapType.NONE, -1, -1},
         level=1
     })
@@ -1410,6 +1415,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return Home 6", },
         DE={ name="Zum 6. Heim zurückkehren", label="6. Markstein", },
         FR={ name="Retour à la maison 6",     label="Point de repère 6", },
+        RU={ name="Дорога домой 6", },
         map={MapType.NONE, -1, -1},
         level=1
     })
@@ -1418,6 +1424,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return Home 7", },
         DE={ name="Zum 7. Heim zurückkehren", label="7. Markstein", },
         FR={ name="Retour à la maison 7",     label="Point de repère 7", },
+        RU={ name="Дорога домой 7", },
         map={MapType.NONE, -1, -1},
         level=1
     })
@@ -1426,6 +1433,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return Home 8", },
         DE={ name="Zum 8. Heim zurückkehren", label="8. Markstein", },
         FR={ name="Retour à la maison 8",     label="Point de repère 8", },
+        RU={ name="Дорога домой 8", },
         map={MapType.NONE, -1, -1},
         level=1
     })
@@ -1434,6 +1442,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return Home 9", },
         DE={ name="Zum 9. Heim zurückkehren", label="9. Markstein", },
         FR={ name="Retour à la maison 9",     label="Point de repère 9", },
+        RU={ name="Дорога домой 9", },
         map={MapType.NONE, -1, -1},
         level=1
     })
@@ -1442,6 +1451,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return Home 10", },
         DE={ name="Zum 10. Heim zurückkehren", label="10. Markstein", },
         FR={ name="Retour à la maison 10",     label="Point de repère 10", },
+        RU={ name="Дорога домой 10", },
         map={MapType.NONE, -1, -1},
         level=1
     })
@@ -1450,6 +1460,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return Home 11", },
         DE={ name="Zum 11. Heim zurückkehren", label="11. Markstein", },
         FR={ name="Retour à la maison 11",     label="Point de repère 11", },
+        RU={ name="Дорога домой 11", },
         map={MapType.NONE, -1, -1},
         level=1
     })
@@ -1458,14 +1469,16 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Travel to Personal House",       label="Personal House", },
         DE={ name="Reist zu Eurem eigenen Heim",    label="Eigenes Heim", },
         FR={ name="Retour à la maison personnelle", label="Maison personnelle", },
+        RU={ name="Возвращение домой",              label="Частный дом", },
         map={MapType.NONE, -1, -1},
         level=1
     })
     self.gen:AddSkill({
         id="0x70046EE4",
-        EN={ name="Travel to Premium House",    label="Premium House", },
-        DE={ name="Reist zu Eurem Premiumheim", label="Premiumheim", },
-        FR={ name="Aller à une maison premium", label="Maison premium", },
+        EN={ name="Travel to Premium House",      label="Premium House", },
+        DE={ name="Reist zu Eurem Premiumheim",   label="Premiumheim", },
+        FR={ name="Aller à une maison premium",   label="Maison premium", },
+        RU={ name="Возвращение в престижный дом", label="Престижный дом", },
         map={MapType.NONE, -1, -1},
         level=1
     })
@@ -1474,6 +1487,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Travel to Kinship House",         label="Kinship House", },
         DE={ name="Reist zum Haus Eurer Sippe",      label="Heim Eurer Sippe", },
         FR={ name="Retour à la maison de confrérie", label="Maison de confrérie", },
+        RU={ name="Путешествие в дом содружества",   label="Дом содружества", },
         map={MapType.NONE, -1, -1},
         level=1
     })
@@ -1482,33 +1496,37 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Travel to Kinship Member's House",            label="Kinship Member's House", },
         DE={ name="Zum Haus des Sippenmitglieds reisen",         label="Heim des Sippenmitglieds", },
         FR={ name="Retour à la maison d'un membre de confrérie", label="Maison d'un membre de confrérie", },
+        RU={ name="Путешествие в дом участника содружества",     label="Дом участника содружества", },
         map={MapType.NONE, -1, -1},
         level=1
     })
 
     -- add the obtainable travel skills
-    self.rep:AddLabelTag({EN="Rep", DE="Ruf", FR="Rep" })
+    self.rep:AddLabelTag({EN="Rep", DE="Ruf", FR="Rep", RU="Репутация" })
     self.rep:AddSkill({
         id="0x70023262",
         EN={ name="Return to Michel Delving",  label="Michel Delving", tag="Store", zone="Shire", },
         DE={ name="Rückkehr nach Michelbinge", label="Michelbinge",    tag="Shop",  zone="Auenland", },
         FR={ name="Retour à Grand'Cave",       label="Grand'Cave",     tag="Shop",  zone="Comté", },
+        RU={ name="Возвращение в Занорье",     label="Занорье",        tag="Лавка", zone="Шир", },
         map={{MapType.ERIADOR, 375, 440}},
         level=1
     })
     self.rep:AddSkill({
         id="0x7001BF91",
-        EN={ name="Return to Thorin's Gate",  desc="Thanks to your friendship", label="Thorin's Gate",   zone="Ered Luin", },
-        DE={ name="Rückkehr zu Thorins Tor",  desc="Dank Eurer Freundschaft",   label="Thorins Tor",     zone="Ered Luin", },
-        FR={ name="Retour : Porte de Thorin", desc="Grâce à l'amitié qui vous", label="Porte de Thorin", zone="Ered Luin", },
+        EN={ name="Return to Thorin's Gate",     desc="Thanks to your friendship", label="Thorin's Gate",   zone="Ered Luin", },
+        DE={ name="Rückkehr zu Thorins Tor",     desc="Dank Eurer Freundschaft",   label="Thorins Tor",     zone="Ered Luin", },
+        FR={ name="Retour : Porte de Thorin",    desc="Grâce à l'amitié qui vous", label="Porte de Thorin", zone="Ered Luin", },
+        RU={ name="Возвращение к Вратам Торина", desc="Благодаря дружбе",          label="Врата Торина",    zone="Эред Луин", },
         map={{MapType.ERIADOR, 345, 310}},
         level=1.1
     })
     self.rep:AddSkill({
         id="0x7001BF90",
-        EN={ name="Return to Bree",     desc="Thanks to your friendship", label="Bree", zlabel="West Gate",   zone="Bree", },
-        DE={ name="Rückkehr nach Bree", desc="Dank Eurer Freundschaft",   label="Bree", zlabel="Westtor",     zone="Bree", },
-        FR={ name="Retour à Bree",      desc="Grâce à votre amitié",      label="Bree", zlabel="Porte Ouest", zone="Bree", },
+        EN={ name="Return to Bree",     desc="Thanks to your friendship", label="Bree", zlabel="West Gate",       zone="Bree", },
+        DE={ name="Rückkehr nach Bree", desc="Dank Eurer Freundschaft",   label="Bree", zlabel="Westtor",         zone="Bree", },
+        FR={ name="Retour à Bree",      desc="Grâce à votre amitié",      label="Bree", zlabel="Porte Ouest",     zone="Bree", },
+        RU={ name="Возвращение в Бри",  desc="Благодаря дружбе",          label="Бри",  zlabel="Западные ворота", zone="Бри", },
         map={{MapType.ERIADOR, 555, 335}},
         level=5
     })
@@ -1517,6 +1535,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Lalia's Market",     label="Lalia's Market",  zone="Bree", },
         DE={ name="Kehrt zu Lalias Markt zurück", label="Lalias Markt",    zone="Bree", },
         FR={ name="Retour au Marché de Lalia",    label="Marché de Lalia", zone="Bree", },
+        RU={ name="Возвращение на рынок Лалии",   label="Рынок Лалии",     zone="Бри", },
         tag="Mithril",
         map={{MapType.ERIADOR, 630, 360}},
         level=5.1
@@ -1526,6 +1545,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Clegur",      label="Clegur", zone="Swanfleet", },
         DE={ name="Rückkehr nach Clegur",  label="Clegur", zone="Schwanenfleet", },
         FR={ name="Retournez voir Clegur", label="Clegur", zone="Noues des cygnes", },
+        RU={ name="Возвращение в Клегур",  label="Клегур", zone="Swanfleet", },
         map={{MapType.ERIADOR, 725, 555}},
         level=7
     })
@@ -1534,6 +1554,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Swanfleet",         label="Swanfleet",        detail="Lhan Garan", zone="Swanfleet", },
         DE={ name="Rückkehr nach Schwanenfleet", label="Schwanenfleet",    detail="Lhan Garan", zone="Schwanenfleet", },
         FR={ name="Retour aux Noues des cygnes", label="Noues des cygnes", detail="Lhan Garan", zone="Noues des cygnes", },
+        RU={ name="Возвращение в Лебедянь",      label="Лебедянь",         detail="Лхан-Гаран", zone="Лебедянь", },
         map={{MapType.ERIADOR, 795, 490}},
         level=10
     })
@@ -1542,6 +1563,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Cardolan",     label="Cardolan", detail="Herne", zone="Cardolan", },
         DE={ name="Rückkehr nach Cardolan", label="Cardolan", detail="Herne", zone="Cardolan", },
         FR={ name="Retour au Cardolan",     label="Cardolan", detail="Herne", zone="Cardolan", },
+        RU={ name="Возвращение в Кардолан", label="Кардолан", detail="Хэрне", zone="Кардолан", },
         map={{MapType.ERIADOR, 590, 495}},
         level=15
     })
@@ -1550,6 +1572,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Andrath",     label="Andrath", zone="Cardolan", },
         DE={ name="Rückkehr nach Andrath", label="Andrath", zone="Cardolan", },
         FR={ name="Retour à Andrath",      label="Andrath", zone="Cardolan", },
+        RU={ name="Возвращение в Андрат",  label="Андрат", zone="Кардолан", },
         map={{MapType.ERIADOR, 550, 465}},
         level=17
     })
@@ -1558,6 +1581,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Nobottle",           label="Nobottle",    zone="Yondershire", },
         DE={ name="Kehrt nach Neuhausen zurück.", label="Neuhausen",   zone="Ferne Auen", },
         FR={ name="Retour à Bourdeneuve",         label="Bourdeneuve", zone="Comté lointain", },
+        RU={ name="Возвращение в Новодворье",     label="Новодворье",  zone="Дальний Шир", },
         map={{MapType.ERIADOR, 410, 350}},
         level=20
     })
@@ -1566,6 +1590,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Ost Guruth",      label="Ost Guruth",   zone="Lone-lands", },
         DE={ name="Rückkehr zur Feste Guruth", label="Feste Guruth", zone="Einsame Lande", },
         FR={ name="Retournez à Ost Guruth",    label="Ost Guruth",   zone="Terres Solitaires", },
+        RU={ name="Возвращение в Ост Гурут",   label="Ост Гурут",    zone="Пустоши", },
         map={{MapType.ERIADOR, 725, 400}},
         level=25
     })
@@ -1574,22 +1599,25 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Tornhad",          label="Tornhad", zone="Angle of Mitheithel", },
         DE={ name="Kehrt nach Tornhad zurück.", label="Tornhad", zone="Der Bogen von Mitheithel", },
         FR={ name="Retournez voir Tornhad",     label="Tornhad", zone="L'Angle de Mitheithel", },
+        RU={ name="Возвращение в Торнхад",      label="Торнхад", zone="Митейтельская стрелка", },
         map={{MapType.ERIADOR, 745, 435}},
         level=40
     })
     self.rep:AddSkill({
         id="0x70023263",
-        EN={ name="Return to Rivendell",    desc="Thanks to your friendship", label="Rivendell", tag="Store", zone="Trollshaws", },
-        DE={ name="Rückkehr nach Bruchtal", desc="Dank Eurer Freundschaft",   label="Bruchtal",  tag="Shop",  zone="Die Trollhöhen", },
-        FR={ name="Retour à Fondcombe",     desc="Grâce à votre amitié avec", label="Fondcombe", tag="Shop",  zone="Trouée des Trolls", },
+        EN={ name="Return to Rivendell",     desc="Thanks to your friendship", label="Rivendell", tag="Store", zone="Trollshaws", },
+        DE={ name="Rückkehr nach Bruchtal",  desc="Dank Eurer Freundschaft",   label="Bruchtal",  tag="Shop",  zone="Die Trollhöhen", },
+        FR={ name="Retour à Fondcombe",      desc="Grâce à votre amitié avec", label="Fondcombe", tag="Shop",  zone="Trouée des Trolls", },
+        RU={ name="Возвращение в Ривенделл", desc="Благодаря дружбе",          label="Ривенделл", tag="Лавка", zone="Троллистая пуща", },
         map={{MapType.ERIADOR, 835, 410}},
         level=40.1
     })
     self.rep:AddSkill({
         id="0x700634A5",
-        EN={ name="Return to the Tracery Archives in Rivendell",         label="Tracery Archive",       zone="Trollshaws", },
-        DE={ name="Rückkehr zu den Filigranmuster-Archiven in Bruchtal", label="Filigranmuster-Archiv", zone="Die Trollhöhen", },
-        FR={ name="Retour aux Archives de gravures de Fondcombe",        label="Archives de gravures",  zone="Trouée des Trolls", },
+        EN={ name="Return to the Tracery Archives in Rivendell",         label="Tracery Archive",         zone="Trollshaws", },
+        DE={ name="Rückkehr zu den Filigranmuster-Archiven in Bruchtal", label="Filigranmuster-Archiv",   zone="Die Trollhöhen", },
+        FR={ name="Retour aux Archives de gravures de Fondcombe",        label="Archives de gravures",    zone="Trouée des Trolls", },
+        RU={ name="Возвращение в архив узоров Ривенделла",               label="Архив узоров Ривенделла", zone="Троллистая пуща", },
         tag="Delving",
         map={{MapType.ERIADOR, 905, 345}},
         level=40.11
@@ -1599,6 +1627,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Glân Vraig",         label="Glân Vraig", tag="Quest",   zone="Ettenmoors", },
         DE={ name="Nach Glân Vraig zurückkehren", label="Glân Vraig", tag="Aufgabe", zone="Die Ettenöden", },
         FR={ name="Retour à Glân Vraig",          label="Glân Vraig", tag="Quête",   zone="Les Landes d'Etten", },
+        RU={ name="Возвращение в Глан Врайг",     label="Глан Врайг", tag="Задание", zone="Эттенские высоты", },
         map={{MapType.ERIADOR, 835, 245}},
         level=40.12
     })
@@ -1607,6 +1636,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Trestlebridge",     label="Trestlebridge",   zone="North Downs", },
         DE={ name="Kehrt nach Schragen zurück.", label="Schragen",        zone="Nordhöhen", },
         FR={ name="Retournez à Pont-à-Tréteaux", label="Pont-à-Tréteaux", zone="Hauts du Nord", },
+        RU={ name="Возвращение в Примостье",     label="Примостье",       zone="Северное нагорье", },
         map={{MapType.ERIADOR, 560, 285}},
         level=40.3
     })
@@ -1615,6 +1645,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Trader's Wharf",        label="Trader's Wharf",     zone="Evendim", },
         DE={ name="Kehrt zum Händlerkai zurück.",    label="Händlerkai",         zone="Evendim", },
         FR={ name="Retournez au Quai des marchands", label="Quai des marchands", zone="Evendim", },
+        RU={ name="Возвращение к Торговой пристани", label="Торговая пристань",  zone="Эвендим", },
         map={{MapType.ERIADOR, 515, 275}},
         level=40.4
     })
@@ -1623,6 +1654,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Mirkwood",         label="Mirkwood",    detail="Ost Galadh",   zone="Mirkwood", },
         DE={ name="Rückkehr zum Düsterwald",    label="Düsterwald",  detail="Feste Galadh", zone="Düsterwald", },
         FR={ name="Retour dans la Forêt Noire", label="Forêt Noire", detail="Ost Galadh",   zone="Forêt Noire", },
+        RU={ name="Возвращение в Лихолесье",    label="Лихолесье",   detail="Ост Галад",    zone="Лихолесье", },
         map={{MapType.RHOVANION, 335, 630}},
         level=61
     })
@@ -1631,6 +1663,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Enedwaith",     label="Enedwaith", detail="Lhanuch", zone="Enedwaith", },
         DE={ name="Rückkehr nach Enedwaith", label="Enedwaith", detail="Lhanuch", zone="Enedwaith", },
         FR={ name="Retour en Enedwaith",     label="Enedwaith", detail="Lhanuch", zone="Enedwaith", },
+        RU={ name="Возвращение в Энедвайт",  label="Энедвайт",  detail="Лханух",  zone="Энедвайт", },
         map={{MapType.ERIADOR, 765, 620}},
         level=62
     })
@@ -1639,6 +1672,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Galtrev",         label="Galtrev", zone="Dunland", },
         DE={ name="Kehrt nach Galtrev zurück", label="Galtrev", zone="Dunland", },
         FR={ name="Retour à Galtrev",          label="Galtrev", zone="Pays de Dun", },
+        RU={ name="Возвращение в Галтрев",     label="Галтрев", zone="Дунланд", },
         map={{MapType.ERIADOR, 780, 715}},
         level=65
     })
@@ -1647,6 +1681,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Stangard",         label="Stangard",  zone="Great River", },
         DE={ name="Kehrt nach Stangard zurück", label="Stangard",  zone="Großer Fluss", },
         FR={ name="Retour à Stangarde",         label="Stangarde", zone="Grand Fleuve", },
+        RU={ name="Возвращение в Стангард",     label="Стангард",  zone="Великая река", },
         map={{MapType.RHOVANION, 170, 720}, {MapType.ROHAN, 515, 90}},
         level=75
     })
@@ -1655,6 +1690,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Snowbourn",            label="Snowbourn",    zone="East Rohan", },
         DE={ name="Kehrt nach Schneegrenze zurück", label="Schneegrenze", zone="Ost-Rohan", },
         FR={ name="Retourner à Neigebronne",        label="Neigebronne",  zone="Rohan est", },
+        RU={ name="Возвращение в Сноуборн",         label="Сноуборн",     zone="Восточный Рохан", },
         map={{MapType.ROHAN, 485, 500}},
         level=85
     })
@@ -1663,14 +1699,16 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Forlaw",      label="Forlaw",  zone="Wildermore", },
         DE={ name="Rückkehr nach Forlach", label="Forlach", zone="Wildermark", },
         FR={ name="Retour à Forloi",       label="Forloi",  zone="Landes farouches", },
+        RU={ name="Возвращение в Форлоу",  label="Форлоу",  zone="Вилдермор", },
         map={{MapType.ROHAN, 480, 175}},
         level=85
     })
     self.rep:AddSkill({
         id="0x7003DC81",
-        EN={ name="Return to Aldburg",         label="Aldburg", zone="West Rohan", },
-        DE={ name="Kehrt nach Aldburg zurück", label="Aldburg", zone="West-Rohan", },
-        FR={ name="Retour à Aldburg",          label="Aldburg", zone="Rohan de l'Ouest", },
+        EN={ name="Return to Aldburg",         label="Aldburg",  zone="West Rohan", },
+        DE={ name="Kehrt nach Aldburg zurück", label="Aldburg",  zone="West-Rohan", },
+        FR={ name="Retour à Aldburg",          label="Aldburg",  zone="Rohan de l'Ouest", },
+        RU={ name="Возвращение в Альдбург",    label="Альдбург", zone="Западный Рохан", },
         map={{MapType.ROHAN, 540, 640}},
         level=88
     })
@@ -1679,14 +1717,16 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Helm's Deep",         label="Helm's Deep",     zone="West Rohan", },
         DE={ name="Kehrt nach Helms Klamm zurück", label="Helms Klamm",     zone="West-Rohan", },
         FR={ name="Retour au Gouffre de Helm",     label="Gouffre de Helm", zone="Rohan de l'Ouest", },
+        RU={ name="Возвращение в Хельмову Падь",   label="Хельмова Падь",   zone="Западный Рохан", },
         map={{MapType.ROHAN, 245, 565}},
         level=90
     })
     self.rep:AddSkill({
         id="0x7004128F",
-        EN={ name="Return to Derndingle",      label="Derndingle",   zone="West Rohan", },
-        DE={ name="Rückkehr ins Geheimnistal", label="Geheimnistal", zone="West-Rohan", },
-        FR={ name="Retour à Derunant",         label="Derunant",     zone="Rohan de l'Ouest", },
+        EN={ name="Return to Derndingle",              label="Derndingle",          zone="West Rohan", },
+        DE={ name="Rückkehr ins Geheimnistal",         label="Geheimnistal",        zone="West-Rohan", },
+        FR={ name="Retour à Derunant",                 label="Derunant",            zone="Rohan de l'Ouest", },
+        RU={ name="Возвращение в Заколдованную балку", label="Заколдованная балка", zone="Западный Рохан", },
         map={{MapType.RHOVANION, 45, 720}, {MapType.ROHAN, 295, 275}},
         level=90.1
     })
@@ -1695,6 +1735,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Dol Amroth",     desc="in western Gondor",        label="Dol Amroth", zone="Western Gondor", },
         DE={ name="Rückkehr nach Dol Amroth", desc="West-Gondor zurückkehren", label="Dol Amroth", zone="West-Gondor", },
         FR={ name="Retour à Dol Amroth",      desc="l'Ouest du Gondor",        label="Dol Amroth", zone="Gondor de l'Ouest", },
+        RU={ name="Возвращение в Дол Амрот",  desc="в Западный Гондор",        label="Дол Амрот",  zone="Западный Гондор", },
         map={{MapType.GONDOR, 195, 550}},
         level=98
     })
@@ -1703,6 +1744,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Arnach",     label="Arnach", zone="Eastern Gondor", },
         DE={ name="Rückkehr nach Arnach", label="Arnach", zone="Ost-Gondor", },
         FR={ name="Retournez à Arnach",   label="Arnach", zone="Gondor de l'Ouest", },
+        RU={ name="Возвращение в Арнах",  label="Арнах",  zone="Восточный Гондор", },
         map={{MapType.GONDOR, 685, 425}},
         level=100
     })
@@ -1711,14 +1753,16 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Minas Tirith",          label="Minas Tirith", zone="Old Anórien", },
         DE={ name="Kehrt nach Minas Tirith zurück.", label="Minas Tirith", zone="Alt-Anórien", },
         FR={ name="Retour à Minas Tirith",           label="Minas Tirith", zone="Ancien Anórien", },
+        RU={ name="Возвращение в Минас Тирит",       label="Минас Тирит",  zone="Старый Анориен", },
         map={{MapType.GONDOR, 700, 345}},
         level=100.1
     })
     self.rep:AddSkill({
         id="0x700459A9",
-        EN={ name="Return to the War-stead",             label="War-stead",                zone="Far Anórien", },
-        DE={ name="Zurück zum Kriegslager der Rohirrim", label="Kriegslager der Rohirrim", zone="Fernes Anórien", },
-        FR={ name="Retour au camp militaire",            label="Camp militaire",           zone="Lointain Anórien", },
+        EN={ name="Return to the War-stead",               label="War-stead",                zone="Far Anórien", },
+        DE={ name="Zurück zum Kriegslager der Rohirrim",   label="Kriegslager der Rohirrim", zone="Fernes Anórien", },
+        FR={ name="Retour au camp militaire",              label="Camp militaire",           zone="Lointain Anórien", },
+        RU={ name="Возвращение в военный лагерь Рохиррим", label="Военный лагерь Рохиррим",  zone="Дальний Анориен", },
         map={{MapType.GONDOR, 635, 140}},
         level=102
     })
@@ -1727,6 +1771,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to after-battle Minas Tirith",           label="Minas Tirith after-battle",      zone="Anórien", },
         DE={ name="Rückkehr ins schlachtgezeichnete Minas Tirith", label="Minas Tirith nach der Schlacht", zone="Anórien", },
         FR={ name="Retour à Minas Tirith après la bataille",       label="Minas Tirith après la bataille", zone="Anórien", },
+        RU={ name="Возвращение в Минас Тирит (после битвы)",       label="Минас Тирит (после битвы)",      zone="Анориен", },
         map={{MapType.GONDOR, 700, 375}},
         level=105
     })
@@ -1735,6 +1780,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to after-battle Osgiliath",           label="Osgiliath after-battle",      zone="Anórien", },
         DE={ name="Rückkehr ins schlachtgezeichnete Osgiliath", label="Osgiliath nach der Schlacht", zone="Anórien", },
         FR={ name="Retour à Osgiliath après la bataille",       label="Osgiliath après la bataille", zone="Anórien", },
+        RU={ name="Возвращение в Осгилиат (после битвы)",       label="Осгилиат (после битвы)",      zone="Анориен", },
         map={{MapType.GONDOR, 825, 335}},
         level=105.1
     })
@@ -1743,14 +1789,16 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Henneth Annûn",     label="Henneth Annûn", zone="Ithilien", },
         DE={ name="Rückkehr nach Henneth Annûn", label="Henneth Annûn", zone="Ithilien", },
         FR={ name="Retour à Henneth Annûn",      label="Henneth Annûn", zone="Ithilien", },
+        RU={ name="Возвращение в Хеннет Аннун",  label="Хеннет Аннун",  zone="Итилиен", },
         map={{MapType.GONDOR, 845, 385}},
         level=105.2
     })
     self.rep:AddSkill({
         id="0x70047BF4",
-        EN={ name="Return to the Camp of the Host", label="Camp of the Host", zone="The Wastes", },
-        DE={ name="Rückkehr ins Lager des Heeres",  label="Lager des Heeres", zone="Das Ödland", },
-        FR={ name="Retour au Camp de l'armée",      label="Camp de l'armée",  zone="Les Landes désertiques", },
+        EN={ name="Return to the Camp of the Host",       label="Camp of the Host",       zone="The Wastes", },
+        DE={ name="Rückkehr ins Lager des Heeres",        label="Lager des Heeres",       zone="Das Ödland", },
+        FR={ name="Retour au Camp de l'armée",            label="Camp de l'armée",        zone="Les Landes désertiques", },
+        RU={ name="Возвращение в лагерь Воинства Запада", label="Лагерь Воинства Запада", zone="Гиблые земли", },
         map={{MapType.GONDOR, 775, 170}},
         level=105.3
     })
@@ -1759,14 +1807,16 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Haerondir",     label="Haerondir", zone="The Wastes", },
         DE={ name="Rückkehr nach Haerondir", label="Haerondir", zone="Das Ödland", },
         FR={ name="Retour à Haerondir",      label="Haerondir", zone="Les Landes désertiques", },
+        RU={ name="Возвращение в Хаэрондир", label="Хаэрондир", zone="Гиблые земли", },
         map={{MapType.GONDOR, 825, 100}},
         level=105.4
     })
     self.rep:AddSkill({
         id="0x7004AE1D",
-        EN={ name="Return to the Udûn Foothold", label="Udûn Foothold",    zone="Mordor", },
-        DE={ name="Zurück zum Udûn-Brückenkopf", label="Udûn-Brückenkopf", zone="Mordor", },
-        FR={ name="Retour au fort d'Udûn",       label="Fort d'Udûn",      zone="Mordor", },
+        EN={ name="Return to the Udûn Foothold",  label="Udûn Foothold",    zone="Mordor", },
+        DE={ name="Zurück zum Udûn-Brückenkopf",  label="Udûn-Brückenkopf", zone="Mordor", },
+        FR={ name="Retour au fort d'Udûn",        label="Fort d'Udûn",      zone="Mordor", },
+        RU={ name="Возвращение на заставу Удуна", label="Застава Удуна",    zone="Мордор", },
         map={{MapType.GONDOR, 895, 230}},
         level=106
     })
@@ -1775,6 +1825,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Journey to the Court of Lothlórien",    label="Court of Lothlórien", tag="Quest",   zone="Lothlórien", },
         DE={ name="Reise zum Hof von Lothlórien",          label="Hof von Lothlórien",  tag="Aufgabe", zone="Lothlórien", },
         FR={ name="Voyager jusqu'à la Cour de Lothlórien", label="Cour de Lothlórien",  tag="Quête",   zone="Lothlórien", },
+        RU={ name="Возвращение ко Двору Лотлориэна",       label="Двор Лотлориэна",     tag="Задание", zone="Лотлориэн", },
         map={{MapType.RHOVANION, 140, 585}},
         level=110
     })
@@ -1783,6 +1834,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Journey to the Hall of the King", label="Hall of the King", tag="Quest",   zone="Old Anórien", },
         DE={ name="Reise zur Halle des Königs",      label="Halle des Königs", tag="Aufgabe", zone="Alt-Anórien", },
         FR={ name="Voyager jusqu'au Palais du roi",  label="Palais du roi",    tag="Quête",   zone="Ancien Anórien", },
+        RU={ name="Возвращение в Зал короля",        label="Зал королей",      tag="Задание", zone="Старый Анориен", },
         map={{MapType.GONDOR, 740, 310}},
         level=110.1
     })
@@ -1791,6 +1843,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Journey to the Hall Under the Mountain",   label="Hall Under the Mountain", tag="Quest",   zone="Ered Mithrin", },
         DE={ name="Reise zur Halle unter dem Berg",           label="Halle unter dem Berg",    tag="Aufgabe", zone="Ered Mithrin", },
         FR={ name="Voyager jusqu'au Palais sous la Montagne", label="Palais sous la Montagne", tag="Quête",   zone="Ered Mithrin", },
+        RU={ name="Возвращение в Чертог-под-Горой",           label="Чертог-под-Горой",        tag="Задание", zone="Эред Митрин", },
         map={{MapType.RHOVANION, 630, 115}},
         level=110.2
     })
@@ -1799,6 +1852,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Journey to Bâr Thorenion",      label="Bâr Thorenion", tag="Quest",   zone="Ithilien", },
         DE={ name="Reise nach Bâr Thorenion",      label="Bâr Thorenion", tag="Aufgabe", zone="Ithilien", },
         FR={ name="Voyager jusqu'à Bâr Thorenion", label="Bâr Thorenion", tag="Quête",   zone="Ithilien", },
+        RU={ name="Возвращение в Бар Торенион",    label="Бар Торенион",  tag="Задание", zone="Итилиен", },
         map={{MapType.GONDOR, 965, 370}},
         level=110.3
     })
@@ -1807,6 +1861,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Dale",     label="Dale", zone="Eryn Lasgalen", },
         DE={ name="Rückkehr nach Thal", label="Thal", zone="Eryn Lasgalen", },
         FR={ name="Revenir à Dale",     label="Dale", zone="Eryn Lasgalen", },
+        RU={ name="Возвращение в Дейл", label="Дейл", zone="Эрин Ласгален", },
         map={{MapType.RHOVANION, 690, 215}},
         level=115
     })
@@ -1815,14 +1870,16 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Járnfast",     label="Járnfast", zone="The Ironfold", },
         DE={ name="Rückkehr nach Járnfast", label="Járnfast", zone="Der Eisenbruch", },
         FR={ name="Revenir à Jarnfast",     label="Jarnfast", zone="La Crevasse de Fer", },
+        RU={ name="Возвращение в Ярнфаст",  label="Ярнфаст",  zone="Железное взгорье", },
         map={{MapType.RHOVANION, 860, 110}},
         level=116
     })
     self.rep:AddSkill({
         id="0x7004FAC5",
-        EN={ name="Return to Skarháld",          label="Skarháld", zone="Ered Mithrin", },
-        DE={ name="Kehrt nach Skarháld zurück.", label="Skarháld", zone="Ered Mithrin", },
-        FR={ name="Revenir à Skarhald",          label="Skarhald", zone="Ered Mithrin", },
+        EN={ name="Return to Skarháld",          label="Skarháld",  zone="Ered Mithrin", },
+        DE={ name="Kehrt nach Skarháld zurück.", label="Skarháld",  zone="Ered Mithrin", },
+        FR={ name="Revenir à Skarhald",          label="Skarhald",  zone="Ered Mithrin", },
+        RU={ name="Возвращение в Скархальд",     label="Скархальд", zone="Эред Митрин", },
         map={{MapType.RHOVANION, 400, 90}},
         level=117
     })
@@ -1831,22 +1888,25 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Beorninghús",           label="Beorninghús",   zone="Vales of Anduin", },
         DE={ name="Kehrt zum Beorningerhús zurück.", label="Beorningerhús", zone="Die Täler des Anduin", },
         FR={ name="Retournez auprès de Beorninghus", label="Beorninghus",   zone="Val d'Anduin", },
+        RU={ name="Возвращение в Беорнингус",        label="Беорнингус",    zone="Долина Андуина", },
         map={{MapType.RHOVANION, 360, 300}},
         level=120
     })
     self.rep:AddSkill({
         id="0x70052F04",
-        EN={ name="Return to Hultvís",           label="Hultvís", zone="Vales of Anduin", },
-        DE={ name="Kehrt zum Hultvís zurück.",   label="Hultvís", zone="Die Täler des Anduin", },
-        FR={ name="Retournez auprès de Hultvis", label="Hultvis", zone="Val d'Anduin", },
+        EN={ name="Return to Hultvís",           label="Hultvís",  zone="Vales of Anduin", },
+        DE={ name="Kehrt zum Hultvís zurück.",   label="Hultvís",  zone="Die Täler des Anduin", },
+        FR={ name="Retournez auprès de Hultvis", label="Hultvis",  zone="Val d'Anduin", },
+        RU={ name="Возвращение в Хультвис",      label="Хультвис", zone="Долина Андуина", },
         map={{MapType.RHOVANION, 345, 400}},
         level=120.1
     })
     self.rep:AddSkill({
         id="0x700551F8",
-        EN={ name="Return to Estolad Lân",   label="Estolad Lân", zone="Imlad Morgul", },
-        DE={ name="Zurück nach Estolad Lân", label="Estolad Lân", zone="Imlad Morgul", },
-        FR={ name="Retour à Estolad Lân",    label="Estolad Lân", zone="Imlad Morgul", },
+        EN={ name="Return to Estolad Lân",     label="Estolad Lân", zone="Imlad Morgul", },
+        DE={ name="Zurück nach Estolad Lân",   label="Estolad Lân", zone="Imlad Morgul", },
+        FR={ name="Retour à Estolad Lân",      label="Estolad Lân", zone="Imlad Morgul", },
+        RU={ name="Возвращение в Эстолад Лан", label="Эстолад Лан", zone="Имлад Моргул", },
         map={{MapType.GONDOR, 930, 460}},
         level=125
     })
@@ -1855,6 +1915,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Limlók",     label="Limlók", zone="Wells of Langflood", },
         DE={ name="Rückkehr nach Limlók", label="Limlók", zone="Quellen des Langflut", },
         FR={ name="Retour à Limlok",      label="Limlok", zone="Puits du Long Fleuve", },
+        RU={ name="Возвращение в Лимлок", label="Лимлок", zone="Истоки Долгой реки", },
         map={{MapType.RHOVANION, 315, 230}},
         level=130
     })
@@ -1863,6 +1924,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Annâk-khurfu",     label="Annâk-khurfu", zone="Elderslade", },
         DE={ name="Rückkehr nach Annâk-khurfu", label="Annâk-khurfu", zone="Elderslade", },
         FR={ name="Retournez à Annâk-khurfu",   label="Annâk-khurfu", zone="Elderslade", },
+        RU={ name="Возвращение в Аннак-Курфу",  label="Аннак-Курфу",  zone="Долина предков", },
         map={{MapType.RHOVANION, 500, 90}},
         level=130.1
     })
@@ -1871,6 +1933,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Akrâz-zahar",     label="Akrâz-zahar", zone="Eryn Lasgalen", },
         DE={ name="Rückkehr nach Akrâz-zahar", label="Akrâz-zahar", zone="Eryn Lasgalen", },
         FR={ name="Retour à Akrâz-zahar",      label="Akrâz-zahar", zone="Eryn Lasgalen", },
+        RU={ name="Возвращение в Акраз-Захар", label="Акраз-Захар", zone="Эрин Ласгален", },
         map={{MapType.RHOVANION, 720, 115}},
         level=130.2
     })
@@ -1879,14 +1942,16 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Azanulbizar",      label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
         DE={ name="Rückkehre nach Azanulbizar", label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
         FR={ name="Retour à Azanulbizar",       label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
+        RU={ name="Возвращение в Азанулбизар",  label="Азанулбизар", detail="Амдан", zone="Азанулбизар", },
         map={{MapType.RHOVANION, 180, 555}},
         level=130.3
     })
     self.rep:AddSkill({
         id="0x7005D47C",
-        EN={ name="Return to the Noble Gate",   label="Noble Gate",  zone="Gundabad", },
-        DE={ name="Rückkehr zum Prachttor",     label="Prachttor",   zone="Gundabad", },
-        FR={ name="Retourner à la Porte Noble", label="Porte Noble", zone="Gundabad", },
+        EN={ name="Return to the Noble Gate",         label="Noble Gate",        zone="Gundabad", },
+        DE={ name="Rückkehr zum Prachttor",           label="Prachttor",         zone="Gundabad", },
+        FR={ name="Retourner à la Porte Noble",       label="Porte Noble",       zone="Gundabad", },
+        RU={ name="Возвращение к Благородным вратам", label="Благородные врата", zone="Гундабад", },
         map={{MapType.RHOVANION, 160, 130}},
         level=131
     })
@@ -1895,6 +1960,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Leitstáth",     label="Leitstáth", zone="Gundabad", },
         DE={ name="Rückkehr nach Leitstáth", label="Leitstáth", zone="Gundabad", },
         FR={ name="Retourner à Leitstath",   label="Leitstath", zone="Gundabad", },
+        RU={ name="Возвращение в Лейтстат",  label="Лейтстат",  zone="Гундабад", },
         map={{MapType.RHOVANION, 240, 65}},
         level=135
     })
@@ -1903,6 +1969,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Journey to the Hall of Vérnozal",            label="Vérnozal", tag="Quest",   zone="Gundabad", },
         DE={ name="Reise zur Halle Vérnozal",                   label="Vérnozal", tag="Aufgabe", zone="Gundabad", },
         FR={ name="Voyage jusqu'à la Grande salle de Vérnozal", label="Vérnozal", tag="Quête",   zone="Gundabad", },
+        RU={ name="Возвращение в Вернозал",                     label="Вернозал", tag="Задание", zone="Гундабад", },
         map={{MapType.RHOVANION, 155, 45}},
         level=140
     })
@@ -1911,6 +1978,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Carn Dûm",     label="Carn Dûm", zone="Angmar", },
         DE={ name="Rückkehr nach Carn Dûm", label="Carn Dûm", zone="Angmar", },
         FR={ name="Retour à Carn Dûm",      label="Carn Dûm", zone="Angmar", },
+        RU={ name="Возвращение в Карн-Дум", label="Карн-Дум", zone="Angmar", },
         map={{MapType.ERIADOR, 705, 100}},
         level=140.1
     })
@@ -1919,14 +1987,16 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Pelargir",     label="Pelargir", zone="King's Gondor", },
         DE={ name="Rückkehr nach Pelargir", label="Pelargir", zone="Königreich Gondor", },
         FR={ name="Retournez à Pelargir",   label="Pelargir", zone="Gondor royal", },
+        RU={ name="Возвращение в Пеларгир", label="Пеларгир", zone="Королевский Гондор", },
         map={{MapType.GONDOR, 640, 625}},
         level=141
     })
     self.rep:AddSkill({
         id="0x70068700",
-        EN={ name="Return to Dol Amroth",     desc="King's Gondor",     label="King's Dol Amroth",     zlabel="Dol Amroth", zone="King's Gondor", },
-        DE={ name="Rückkehr nach Dol Amroth", desc="Königreich Gondor", label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor", },
-        FR={ name="Retour à Dol Amroth",      desc="le Gondor royal",   label="Dol Amroth royal",      zlabel="Dol Amroth", zone="Gondor royal", },
+        EN={ name="Return to Dol Amroth",     desc="King's Gondor",      label="King's Dol Amroth",     zlabel="Dol Amroth", zone="King's Gondor", },
+        DE={ name="Rückkehr nach Dol Amroth", desc="Königreich Gondor",  label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor", },
+        FR={ name="Retour à Dol Amroth",      desc="le Gondor royal",    label="Dol Amroth royal",      zlabel="Dol Amroth", zone="Gondor royal", },
+        RU={ name="Возвращение в Дол Амрот",  desc="Королевский Гондор", label="Королевский Дол Амрот", zlabel="Дол Амрот",  zone="Королевский Гондор", },
         map={{MapType.GONDOR, 180, 485}, {MapType.HARADWAITH, 355, 70}},
         level=142
     })
@@ -1935,22 +2005,25 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Lond Cirion",         label="Lond Cirion", zone="Anfalas", },
         DE={ name="Nach Lond Cirion zurückkehren", label="Lond Cirion", zone="Anfalas", },
         FR={ name="Retour à Lond Cirion",          label="Lond Cirion", zone="Anfalas", },
+        RU={ name="Возвращение в Лонд-Кирион",     label="Лонд-Кирион", zone="Анфалас", },
         map={{MapType.GONDOR, 225, 420}, {MapType.HARADWAITH, 200, 20}},
         level=143
     })
     self.rep:AddSkill({
         id="0x70068702",
-        EN={ name="Return to Halrax",        label="Halrax", zone="Shield Isles", },
-        DE={ name="Kehrt zu Halrax zurück.", label="Halrax", zone="Die Schildinseln", },
-        FR={ name="Retournez voir Halrax",   label="Halrax", zone="Les îles du Bouclier", },
+        EN={ name="Return to Halrax",        label="Halrax",  zone="Shield Isles", },
+        DE={ name="Kehrt zu Halrax zurück.", label="Halrax",  zone="Die Schildinseln", },
+        FR={ name="Retournez voir Halrax",   label="Halrax",  zone="Les îles du Bouclier", },
+        RU={ name="Возвращение в Халракс",   label="Халракс", zone="Острова Щита", },
         map={{MapType.HARADWAITH, 245, 260}},
         level=145
     })
     self.rep:AddSkill({
         id="0x70068701",
-        EN={ name="Return to Jax Phanâl",         label="Jax Phanâl", zone="Umbar", },
-        DE={ name="Nach Jax Phanâl zurückkehren", label="Jax Phanâl", zone="Umbar", },
-        FR={ name="Retour à Jax Phanâl",          label="Jax Phanâl", zone="Umbar", },
+        EN={ name="Return to Jax Phanâl",         label="Jax Phanâl",  zone="Umbar", },
+        DE={ name="Nach Jax Phanâl zurückkehren", label="Jax Phanâl",  zone="Umbar", },
+        FR={ name="Retour à Jax Phanâl",          label="Jax Phanâl",  zone="Umbar", },
+        RU={ name="Возвращение в Джакс-Фанал",    label="Джакс-Фанал", zone="Умбар", },
         map={{MapType.HARADWAITH, 335, 315}},
         level=146
     })
@@ -1959,14 +2032,16 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Bej Mâghda",         label="Bej Mâghda", zone="Umbar", },
         DE={ name="Nach Bej Mâghda zurückkehren", label="Bej Mâghda", zone="Umbar", },
         FR={ name="Retour à Bej Mâghda",          label="Bej Mâghda", zone="Umbar", },
+        RU={ name="Возвращение в Бедж-Магду",     label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 380, 380}},
         level=147
     })
     self.rep:AddSkill({
         id="0x700686FF",
-        EN={ name="Return to Umbar",         label="Umbar", detail="Baharbêl", zone="Umbar", },
-        DE={ name="Nach Umbar zurückkehren", label="Umbar", detail="Baharbêl", zone="Umbar", },
-        FR={ name="Retour à Umbar",          label="Umbar", detail="Baharbêl", zone="Umbar", },
+        EN={ name="Return to Umbar",         label="Umbar", detail="Baharbêl",  zone="Umbar", },
+        DE={ name="Nach Umbar zurückkehren", label="Umbar", detail="Baharbêl",  zone="Umbar", },
+        FR={ name="Retour à Umbar",          label="Umbar", detail="Baharbêl",  zone="Umbar", },
+        RU={ name="Возвращение в Умбар",     label="Умбар", detail="Бахарбель", zone="Умбар", },
         map={{MapType.HARADWAITH, 475, 370}},
         level=148
     })
@@ -1975,6 +2050,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to the Bloody Eagle Tavern",           label="Bloody Eagle Tavern",         zone="Umbar", },
         DE={ name="Rückkehr zur Taverne \"Zum Blutigen Adler\"", label="Zum Blutigen Adler",          zone="Umbar", },
         FR={ name="Retour à la taverne de l'Aigle Sanglant",     label="Taverne de l'Aigle Sanglant", zone="Umbar", },
+        RU={ name="Возвращение в таверну \'Кровавый орёл\'",     label="Таверна Кровавый Орёл",       zone="Умбар", },
         map={{MapType.HARADWAITH, 445, 400}},
         level=149
     })
@@ -1983,6 +2059,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Journey to the Ledger-keepers",        label="Ledger-Keepers",      tag="Quest",   zone="Umbar", },
         DE={ name="Zu den Buchhütern reisen",             label="Ledger-Keepers",      tag="Aufgabe", zone="Umbar", },
         FR={ name="Voyager vers les Gardiens des écrits", label="Gardiens des écrits", tag="Quête",   zone="Umbar", },
+        RU={ name="Возвращение к Хранителям книг",        label="Хранители книг",      tag="Задание", zone="Умбар", },
         map={{MapType.HARADWAITH, 415, 340}},
         level=150
     })
@@ -1991,6 +2068,7 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Journey to the Order of the Eagle", label="Order of the Eagle", tag="Quest",   zone="Umbar", },
         DE={ name="Zum Orden des Adlers reisen",       label="Orden des Adlers",   tag="Aufgabe", zone="Umbar", },
         FR={ name="Voyager vers l'Ordre de l'Aigle",   label="L'Ordre de l'Aigle", tag="Quête",   zone="Umbar", },
+        RU={ name="Возвращение в Орден орла",          label="Орден орла",         tag="Задание", zone="Умбар", },
         map={{MapType.HARADWAITH, 415, 370}},
         level=150.1
     })
