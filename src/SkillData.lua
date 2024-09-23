@@ -1995,6 +1995,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Return to Gramsfoot", },
         DE={ name="Rückkehr nach Gramfuß", },
         FR={ name="Retournez au Pied de Gram", },
+        RU={ name="Возвращение к Подножию Грэм", },
         map={MapType.CREEPS, 180, 120},
         level=1
     })
@@ -2003,6 +2004,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Map to Gramsfoot", },
         DE={ name="Karte zum Gramfuss", },
         FR={ name="Carte pour aller au Pied de Gram", },
+        RU={ name="Карта пути к Подножию Грэм", },
         map={MapType.CREEPS, 215, 120},
         hasSameText={"0x7002A7B9"},
         level=1
@@ -2012,6 +2014,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Map to Gramsfoot", },
         DE={ name="Karte zum Gramfuss", },
         FR={ name="Carte pour aller au Pied de Gram", },
+        RU={ name="Карта пути к Подножию Грэм", },
         map={MapType.CREEPS, 245, 120},
         hasSameText={"0x70028BC1"},
         level=1
@@ -2021,6 +2024,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Crude Map to Isendeep", },
         DE={ name="Kartenskizze zur Isenbinge", },
         FR={ name="Carte grossière pour aller au Gouffre d'Isen", },
+        RU={ name="Грубая карта пути в Изендип", },
         map={MapType.CREEPS, 700, 200},
         level=1
     })
@@ -2029,6 +2033,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Crude Map to Tol Ascarnen", },
         DE={ name="Grobe Karte zur Feste Tol Ascarnen", },
         FR={ name="Carte grossière pour aller à Tol Ascarnen", },
+        RU={ name="Грубая карта пути на Тол Аскарнен", },
         map={MapType.CREEPS, 350, 440},
         level=1
     })
@@ -2037,6 +2042,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Crude Map to Lugazag", },
         DE={ name="Kartenskizze zur Feste Lugazag", },
         FR={ name="Carte grossière pour aller à Lugazag", },
+        RU={ name="Грубая карта пути в Лугазаг", },
         map={MapType.CREEPS, 180, 380},
         level=1
     })
@@ -2045,6 +2051,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Crude Map to Tirith Rhaw", },
         DE={ name="Grobe Karte zur Feste Tirith Rhaw", },
         FR={ name="Carte grossière pour aller à Tirith Rhaw", },
+        RU={ name="Грубая карта пути в Тирит Роу", },
         map={MapType.CREEPS, 500, 295},
         level=1
     })
@@ -2053,6 +2060,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Crude Map to Grimwood", },
         DE={ name="Kartenskizze zum Grimmwald", },
         FR={ name="Carte grossière pour aller au Bois Funeste", },
+        RU={ name="Грубая карта пути в Мрачный лес", },
         map={MapType.CREEPS, 340, 510},
         level=1
     })
@@ -2061,6 +2069,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Poor Map to Isendeep", },
         DE={ name="Minderwertige Karte zur Isenbinge", },
         FR={ name="Piètre carte pour aller au Gouffre d'Isen", },
+        RU={ name="Неважная карта пути в Изендип", },
         map={MapType.CREEPS, 610, 300},
         level=1
     })
@@ -2069,6 +2078,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Poor Map to Tol Ascarnen", },
         DE={ name="Minderwertige Karte zur Feste Tol Ascarnen", },
         FR={ name="Piètre carte pour aller à Tol Ascarnen", },
+        RU={ name="Неважная карта пути на Тол Аскарнен", },
         map={MapType.CREEPS, 435, 365},
         level=1
     })
@@ -2077,6 +2087,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Poor Map to Lugazag", },
         DE={ name="Minderwertige Karte zur Feste Lugazag", },
         FR={ name="Piètre carte pour aller à Lugazag", },
+        RU={ name="Неважная карта пути в Лугазаг", },
         map={MapType.CREEPS, 180, 270},
         level=1
     })
@@ -2085,6 +2096,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Poor Map to Tirith Rhaw", },
         DE={ name="Minderwertige Karte zur Feste Tirith Rhaw", },
         FR={ name="Piètre carte pour aller à Tirith Rhaw", },
+        RU={ name="Неважная карта пути в Тирит Роу", },
         map={MapType.CREEPS, 625, 365},
         level=1
     })
@@ -2093,6 +2105,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Poor Map to Grimwood", },
         DE={ name="Minderwertige Karte zum Grimmwald", },
         FR={ name="Piètre carte pour aller au Bois Funeste", },
+        RU={ name="Неважная карта пути в Мрачный лес", },
         map={MapType.CREEPS, 380, 540},
         level=1
     })
@@ -2101,6 +2114,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Good Map to Isendeep", },
         DE={ name="Gute Karte zur Isenbinge", },
         FR={ name="Bonne carte pour aller au Gouffre d'Isen", },
+        RU={ name="Хорошая карта пути в Изендип", },
         map={MapType.CREEPS, 310, 95},
         hasSameText={"0x7002A7B7"},
         level=1
@@ -2110,6 +2124,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Good Map to Isendeep", },
         DE={ name="Gute Karte zur Isenbinge", },
         FR={ name="Bonne carte pour aller au Gouffre d'Isen", },
+        RU={ name="Хорошая карта пути в Изендип", },
         map={MapType.CREEPS, 340, 95},
         hasSameText={"0x70028BC0"},
         level=1
@@ -2119,6 +2134,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Good Map to Tol Ascarnen", },
         DE={ name="Gute Karte zur Feste Tol Ascarnen", },
         FR={ name="Bonne carte pour aller à Tol Ascarnen", },
+        RU={ name="Хорошая карта пути в Тол Аскарнен", },
         map={MapType.CREEPS, 375, 480},
         hasSameText={"0x7002A7B4"},
         level=1
@@ -2128,6 +2144,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Good Map to Tol Ascarnen", },
         DE={ name="Gute Karte zur Feste Tol Ascarnen", },
         FR={ name="Bonne carte pour aller à Tol Ascarnen", },
+        RU={ name="Хорошая карта пути в Тол Аскарнен", },
         map={MapType.CREEPS, 405, 480},
         hasSameText={"0x70028BC2"},
         level=1
@@ -2137,6 +2154,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Good Map to Lugazag", },
         DE={ name="Gute Karte zur Feste Lugazag", },
         FR={ name="Bonne carte pour aller à Lugazag", },
+        RU={ name="Хорошая карта пути в Лугазаг", },
         map={MapType.CREEPS, 305, 275},
         hasSameText={"0x7002A7B6"},
         level=1
@@ -2146,6 +2164,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Good Map to Lugazag", },
         DE={ name="Gute Karte zur Feste Lugazag", },
         FR={ name="Bonne carte pour aller à Lugazag", },
+        RU={ name="Хорошая карта пути в Лугазаг", },
         map={MapType.CREEPS, 335, 275},
         hasSameText={"0x70028BB5"},
         level=1
@@ -2155,6 +2174,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Good Map to Tirith Rhaw", },
         DE={ name="Gute Karte zur Feste Tirith Rhaw", },
         FR={ name="Bonne carte pour aller à Tirith Rhaw", },
+        RU={ name="Хорошая карта пути в Тирит Роу", },
         map={MapType.CREEPS, 555, 470},
         hasSameText={"0x7002A7B5"},
         level=1
@@ -2164,6 +2184,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Good Map to Tirith Rhaw", },
         DE={ name="Gute Karte zur Feste Tirith Rhaw", },
         FR={ name="Bonne carte pour aller à Tirith Rhaw", },
+        RU={ name="Хорошая карта пути в Тирит Роу", },
         map={MapType.CREEPS, 585, 470},
         hasSameText={"0x70028BB0"},
         level=1
@@ -2173,6 +2194,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Good Map to Grimwood", },
         DE={ name="Gute Karte zum Grimmwald", },
         FR={ name="Bonne carte pour aller au Bois Funeste", },
+        RU={ name="Хорошая карта пути в Мрачный лес", },
         map={MapType.CREEPS, 445, 650},
         hasSameText={"0x7002A7B3"},
         level=1
@@ -2182,6 +2204,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={ name="Good Map to Grimwood", },
         DE={ name="Gute Karte zum Grimmwald", },
         FR={ name="Bonne carte pour aller au Bois Funeste", },
+        RU={ name="Хорошая карта пути в Мрачный лес", },
         map={MapType.CREEPS, 475, 650},
         hasSameText={"0x70028BBD"},
         level=1
