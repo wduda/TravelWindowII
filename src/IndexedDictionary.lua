@@ -4,7 +4,7 @@ IndexedDictionary = class()
 
 local ValidSkillKeys = {
     "id", "name", "desc", "label", "label0", "detail", "zlabel", "zone", "tag",
-    "EN", "DE", "FR",
+    "EN", "DE", "FR", "RU",
     "map", "overlap", "level", "hasSameText"
 }
 
@@ -76,15 +76,18 @@ function IndexedDictionary:VerifySkill(skill)
 
     if skill.EN == nil or
             skill.DE == nil or
-            skill.FR == nil then
+            skill.FR == nil or
+            skill.RU == nil then
         Turbine.Shell.WriteLine("Skill missing language " .. skill.id)
     end
 
     local lang;
-    if GLocale == Turbine.Language.French then
-        lang = skill.FR
-    elseif GLocale == Turbine.Language.German then
+    if GLocale == Turbine.Language.German then
         lang = skill.DE
+    elseif GLocale == Turbine.Language.French then
+            lang = skill.FR
+    elseif GLocale == Turbine.Language.Russian then
+        lang = skill.RU
     else
         lang = skill.EN
     end
@@ -122,14 +125,15 @@ function IndexedDictionary:VerifySkill(skill)
 end
 
 function IndexedDictionary:AddLabelTag(tag)
-    if tag.EN == nil or tag.DE == nil or tag.FR == nil then
+    if tag.EN == nil or tag.DE == nil or tag.FR == nil or tag.RU == nil then
         return
     end
-
-    if GLocale == Turbine.Language.French then
-        self.tag = tag.FR
-    elseif GLocale == Turbine.Language.German then
+    if GLocale == Turbine.Language.German then
         self.tag = tag.DE
+    elseif GLocale == Turbine.Language.French then
+        self.tag = tag.FR
+    elseif GLocale == Turbine.Language.Russian then
+        self.tag = tag.RU
     else
         self.tag = tag.EN
     end
