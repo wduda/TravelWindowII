@@ -14,19 +14,21 @@ import "TravelWindowII.src.EuroNormalize";
 
 TravelWindow = class(Turbine.UI.Window);
 
-function TravelWindow:Constructor(useMinWindow)
-    if useMinWindow == 1 then
+function TravelWindow:Constructor()
+    if Settings.useMinWindow == 1 then
         Turbine.UI.Window.Constructor(self);
     else
         Turbine.UI.Lotro.Window.Constructor(self);
     end
 
+    self.fadeOut = false
+    self.levelUpdate = false
     self.reloadGVMap = false;
     self.dirty = true;
     self.isMouseDown = false;
     self.isDragging = false;
     self.isResizing = false;
-    self.isMinWindow = useMinWindow == 1;
+    self.isMinWindow = Settings.useMinWindow == 1;
     if self.isMinWindow then
         self.wPos = -1;
         self.hPos = 20;
@@ -41,6 +43,14 @@ function TravelWindow:Constructor(useMinWindow)
         self.hPadding = 60;
         self.resizeLabelSize = 20;
     end
+
+    ChatLog = Turbine.Chat;
+    ChatLogHandler = function(sender, args)
+        if args.ChatType == Turbine.ChatType.Advancement then
+            FilterTravelSkills(tostring(args.Message));
+        end
+    end
+    AddCallback(ChatLog, "Received", ChatLogHandler);
 
     -- configure the main window
     self:SetPosition(Settings.positionX, Settings.positionY);
@@ -127,7 +137,7 @@ function TravelWindow:Constructor(useMinWindow)
     -- manage hiding the UI
     self.KeyDown = function(sender, args)
         if (args.Action == Turbine.UI.Lotro.Action.Escape) then
-            if Settings.ignoreEsc == 0 then
+            if Settings.escapeToClose == 1 then
                 self:SetVisible(false);
             end
             OptionsWindow:SetVisible(false);
@@ -192,35 +202,63 @@ function TravelWindow:Constructor(useMinWindow)
             self.previousCombatState = false;
         end
     end
-    AddCallback(player, "InCombatChanged", IncombatChangedHandler);
+    AddCallback(Player, "InCombatChanged", IncombatChangedHandler);
+
+    LevelChangedHandler = function(sender, args)
+        self.levelUpdate = true
+        self.levelUpdateTrigger = nil
+        self:SetWantsUpdates(true)
+    end
+    AddCallback(Player, "LevelChanged", LevelChangedHandler)
 
     self.Update = function(sender, args)
-        -- handle opacity fade out
-        if self.fadeOutDelay == nil then
-            self.fadeOutDelay = Settings.fadeOutDelay;
-        end
+        local updated = 0
+        if self.fadeOut == true then
+            updated = updated + 1
 
-        if self.fadeOutDelay > 0 then
-            local now = Turbine.Engine.GetGameTime();
-            if self.fadeDelayStart == nil then
-                self.fadeDelayStart = now + 0.05 * Settings.fadeOutDelay;
-            else
-                if now > self.fadeDelayStart then
-                    self.fadeOutDelay = 0;
-                    self.fadeDelayStart = nil;
+            -- handle opacity fade out
+            if self.fadeOutDelay == nil then
+                self.fadeOutDelay = Settings.fadeOutDelay
+            end
+
+            if self.fadeOutDelay > 0 then
+                local now = Turbine.Engine.GetGameTime()
+                if self.fadeDelayStart == nil then
+                    self.fadeDelayStart = now + 0.05 * Settings.fadeOutDelay
+                elseif now > self.fadeDelayStart then
+                    self.fadeOutDelay = 0
+                    self.fadeDelayStart = nil
                 end
             end
+
+            if self.fadeOutDelay == 0 then
+                local stepSize = (Settings.mainMaxOpacity - Settings.mainMinOpacity) / Settings.fadeOutSteps
+                local opacity = self:GetOpacity() - stepSize
+                if opacity < Settings.mainMinOpacity then
+                    opacity = Settings.mainMinOpacity
+                    self.fadeOut = false
+                    self.fadeOutDelay = nil
+                    updated = updated - 1
+                end
+                self:SetOpacity(opacity)
+            end
         end
 
-        if self.fadeOutDelay == 0 then
-            local stepSize = (Settings.mainMaxOpacity - Settings.mainMinOpacity) / Settings.fadeOutSteps;
-            local opacity = self:GetOpacity() - stepSize;
-            if opacity < Settings.mainMinOpacity then
-                opacity = Settings.mainMinOpacity
-                self:SetWantsUpdates(false);
-                self.fadeOutDelay = nil;
+        if self.levelUpdate == true then
+            updated = updated + 1
+            local now = Turbine.Engine.GetGameTime()
+            if self.levelUpdateTrigger == nil then
+                self.levelUpdateTrigger = now + 2
+            elseif now > self.levelUpdateTrigger then
+                CheckSkills()
+                self.levelUpdateTrigger = nil
+                self.levelUpdate = false
+                updated = updated - 1
             end
-            self:SetOpacity(opacity);
+        end
+
+        if updated == 0 then
+            self:SetWantsUpdates(false)
         end
     end
 
@@ -351,20 +389,26 @@ end
 
 function TravelWindow:SetMaxOpacity()
     self:SetOpacity(Settings.mainMaxOpacity);
-    self:SetWantsUpdates(false);
+    if self.fadeOut then
+        self.fadeOut = false
+        self.fadeOutDelay = nil
+    end
 end
 
 function TravelWindow:FadeOut()
-    self:SetWantsUpdates(true);
+    self.fadeOut = true
+    self:SetWantsUpdates(true)
 end
 
 function TravelWindow:SetItems()
     if Settings.mode == 1 then
         self:SetSize(self.ListTab:GetPixelSize());
         self.ListTab:SetItems();
+        self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
     elseif Settings.mode == 2 then
         self:SetSize(self.GridTab:GetPixelSize());
         self.GridTab:SetItems();
+        self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
     elseif Settings.mode == 3 then
         self.CaroTab:SetItems();
     elseif Settings.mode == 4 then
@@ -454,11 +498,6 @@ function TravelWindow:UpdateSettings()
     self.MainPanel:SetTab(Settings.mode);
     self:UpdateMinimum();
     self:SetItems();
-    if Settings.mode == 1 then
-        self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
-    elseif Settings.mode == 2 then
-        self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
-    end
 
     self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
     self.MainPanel:UpdateTabs();
@@ -486,6 +525,13 @@ function SyncUIFromSettings()
     _G.travel:SetPosition(Settings.positionX, Settings.positionY);
     _G.travel.dirty = true;
     _G.travel:UpdateSettings();
+end
+
+function FilterTravelSkills(message)
+    local skillName = string.match(message, LC.acquired)
+    if skillName ~= nil then
+        CheckSkill(skillName)
+    end
 end
 
 function AddCallback(object, event, callback)

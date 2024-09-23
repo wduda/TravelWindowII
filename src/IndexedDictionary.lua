@@ -5,7 +5,9 @@ IndexedDictionary = class()
 local ValidSkillKeys = {
     "id", "name", "desc", "label", "label0", "detail", "zlabel", "zone", "tag",
     "EN", "DE", "FR", "RU",
-    "map", "overlap", "level", "hasSameText"
+    "map", "overlap", "level", "hasSameText", "minLevel", "store", "autoRep", "autoLevel",
+    "acquire", "cost", "amount", "token", "coords", "rep", "repLevel",
+    "drop", "quest", "deed", "vendor", "vendors", "allegiance", "rank"
 }
 
 function IndexedDictionary:Constructor(parent, title)
@@ -24,7 +26,7 @@ function IndexedDictionary:GetCount()
     return self.numberOfItems;
 end
 
-function IndexedDictionary:SetSkillLabel(skill, useZone)
+function IndexedDictionary:SetSkillLabel(skill)
     skill.label = skill.label0
     if skill.label == nil then
         skill.label = skill.name;
@@ -36,14 +38,20 @@ function IndexedDictionary:SetSkillLabel(skill, useZone)
             tag = self.tag
         end
 
-        if useZone == 1 then
-            if skill.detail ~= nil then
-                skill.label = skill.detail
-            elseif skill.zlabel ~= nil then
-                skill.label = skill.zlabel
+        if Settings.useZoneNames == 1 then
+            if Settings.useSkillNames ~= 1 then
+                if skill.detail ~= nil then
+                    skill.label = skill.detail
+                elseif skill.zlabel ~= nil then
+                    skill.label = skill.zlabel
+                end
+            elseif skill.label ~= skill.zone then
+                if skill.zlabel ~= nil then
+                    skill.label = skill.zlabel
+                end
             end
             skill.label = skill.zone .. ": " .. skill.label
-        elseif skill.detail ~= nil then
+        elseif Settings.useSkillNames ~= 1 and skill.detail ~= nil then
             skill.label = skill.detail
         end
 
@@ -54,9 +62,9 @@ function IndexedDictionary:SetSkillLabel(skill, useZone)
     return true
 end
 
-function IndexedDictionary:SetSkillLabels(useZone)
+function IndexedDictionary:SetSkillLabels()
     for k, skill in pairs(self.skills) do
-        self:SetSkillLabel(skill, useZone)
+        self:SetSkillLabel(skill)
     end
 end
 

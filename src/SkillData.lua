@@ -21,6 +21,8 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Занорье",          label="Занорье",        zone="Шир", },
         map={{MapType.ERIADOR, 360, 390}},
         overlap={"0x700062C8", "0x70023262"},
+        acquire={ { autoLevel=true } },
+        minLevel=22,
         level=1
     })
     self.hunter:AddSkill({
@@ -31,6 +33,8 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Чертоги Торина",          label="Чертоги Торина",   zone="Эред Луин", },
         map={{MapType.ERIADOR, 305, 270}},
         overlap={"0x70006346", "0x70053C0F", "0x7001BF91"},
+        acquire={ { autoLevel=true } },
+        minLevel=24,
         level=1.1
     })
     self.hunter:AddSkill({
@@ -41,6 +45,8 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Бри",       label="Бри",  zlabel="Западные ворота", zone="Бри", },
         map={{MapType.ERIADOR, 585, 335}},
         overlap={"0x700062F6", "0x7001BF90"},
+        acquire={ { autoLevel=true } },
+        minLevel=32,
         level=5
     })
     self.hunter:AddSkill({
@@ -51,6 +57,17 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Клегур",      label="Клегур", zone="Лебедянь", },
         map={{MapType.ERIADOR, 755, 555}},
         overlap={"0x70064F47"},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster", },
+                DE={vendor="Delving Quartermaster", },
+                FR={vendor="Delving Quartermaster", }},
+            {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
+                EN={vendor="Before the Shadow Mission-giver Barterer", },
+                DE={vendor="Before the Shadow Mission-giver Barterer", },
+                FR={vendor="Before the Shadow Mission-giver Barterer", }} },
+        rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=7
     })
     self.hunter:AddSkill({
@@ -61,6 +78,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Лебедянь",                 label="Лебедянь",         detail="Лхан-Гаран", zone="Лебедянь", },
         map={{MapType.ERIADOR, 825, 490}},
         overlap={"0x700634A4"},
+        acquire={
+            {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
+                EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                FR={vendor="Quartermaster (Dúnedain of Cardolan)", }} },
+        rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=10
     })
     self.hunter:AddSkill({
@@ -71,6 +95,17 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Кардолан",        label="Кардолан", detail="Хэрне", zone="Кардолан", },
         map={{MapType.ERIADOR, 560, 495}},
         overlap={"0x700634AE"},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster", },
+                DE={vendor="Delving Quartermaster", },
+                FR={vendor="Delving Quartermaster", }},
+            {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
+                EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                FR={vendor="Quartermaster (Dúnedain of Cardolan)", }} },
+        rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=15
     })
     self.hunter:AddSkill({
@@ -81,6 +116,17 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Андрат",       label="Андрат",  zone="Кардолан", },
         map={{MapType.ERIADOR, 580, 465}},
         overlap={"0x7006323D"},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster", },
+                DE={vendor="Delving Quartermaster", },
+                FR={vendor="Delving Quartermaster", }},
+            {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
+                EN={vendor="Before the Shadow Mission-giver Barterer", },
+                DE={vendor="Before the Shadow Mission-giver Barterer", },
+                FR={vendor="Before the Shadow Mission-giver Barterer", }} },
+        rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=17
     })
     self.hunter:AddSkill({
@@ -91,6 +137,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Новодворье",      label="Новодворье",  zone="Дальний Шир", },
         map={{MapType.ERIADOR, 440, 350}},
         overlap={"0x70061340"},
+        acquire={
+            {cost={{amount=10, token=LC.token.COPPER_BOUNDER_COIN}},
+                EN={vendor="Quartermaster (Yonder-watch)", },
+                DE={vendor="Quartermaster (Yonder-watch)", },
+                FR={vendor="Quartermaster (Yonder-watch)", }} },
+        rep=LC.rep.YONDER_WATCH, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=20
     })
     self.hunter:AddSkill({
@@ -100,6 +153,17 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Ost Guruth",   label="Ost Guruth",   zone="Terres Solitaires", },
         RU={ name="Путь в Ост Гурут",        label="Ост Гурут",    zone="Пустоши", },
         map={{MapType.ERIADOR, 755, 400}},
+        acquire={ { cost={ amount=30, token=LC.rep.MITHRIL_COIN},
+                EN={vendor="Hunter Trainer"},
+                DE={vendor=""},
+                FR={vendor=""}
+            },
+            {
+                EN={quest="Hunter: Wilderness by Ost Guruth"},
+                DE={quest="Hunter: Wilderness by Ost Guruth"},
+                FR={quest="Hunter: Wilderness by Ost Guruth"}
+            }},
+        minLevel=26,
         overlap={"0x70020441"},
         level=25
     })
@@ -110,6 +174,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Esteldin",  label="Esteldin",  zone="Hauts du Nord", },
         RU={ name="Путь в Эстельдин",     label="Эстельдин", zone="Северное нагорье", },
         map={{MapType.ERIADOR, 655, 290}},
+        acquire={ { autoLevel=true } },
+        minLevel=34,
         level=30
     })
     self.hunter:AddSkill({
@@ -119,6 +185,17 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Evendim",  label="Evendim", detail="Tinnudir", zone="Evendim", },
         RU={ name="Путь в Эвендим",      label="Эвендим", detail="Тиннудир", zone="Эвендим", },
         map={{MapType.ERIADOR, 490, 235}},
+        acquire={ { cost={ amount=40, token=LC.rep.MITHRIL_COIN},
+                EN={vendor="Hunter Trainer"},
+                DE={vendor=""},
+                FR={vendor=""}
+            },
+            {
+                EN={quest="Tracks Through Evendim"},
+                DE={quest="Tracks Through Evendim"},
+                FR={quest="Tracks Through Evendim"}
+            }},
+        minLevel=36,
         level=35
     })
     self.hunter:AddSkill({
@@ -129,6 +206,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Торнхад",      label="Торнхад", zone="Митейтельская стрелка", },
         map={{MapType.ERIADOR, 775, 435}},
         overlap={"0x70060EA8"},
+        acquire={
+            {cost={{amount=15, token=LC.token.MARK_OF_ANGLE}},
+                EN={vendor="Quartermaster (Defenders of the Angle)", },
+                DE={vendor="Quartermaster (Defenders of the Angle)", },
+                FR={vendor="Quartermaster (Defenders of the Angle)", }} },
+        rep=LC.rep.DEFENDERS_OF_ANGLE, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=38,
         level=40
     })
     self.hunter:AddSkill({
@@ -139,6 +223,8 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Ривенделл",     label="Ривенделл", zone="Троллистая пуща", },
         map={{MapType.ERIADOR, 865, 410}},
         overlap={"0x7000631F", "0x70023263"},
+        acquire={ { autoLevel=true } },
+        minLevel=46,
         level=40.1
     })
     self.hunter:AddSkill({
@@ -148,6 +234,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers les Monts Brumeux", label="Monts Brumeux",   detail="Hrimbarg", zone="Monts Brumeux", },
         RU={ name="Путь в Мглистые горы",         label="Мглистые горы",   detail="Хримбарг", zone="Мглистые горы", },
         map={{MapType.ERIADOR, 915, 265}},
+        acquire={
+            {cost={{amount=128, token=LC.token.SILVER}}, coords="[24.5S, 7.0E]",
+                EN={vendor="Afwald", },
+                DE={vendor="Afwald", },
+                FR={vendor="Afwald", }},
+            { store=true }},
+        rep=LC.rep.ELVES_OF_RIVENDELL, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=40,
         level=40.2
     })
     self.hunter:AddSkill({
@@ -158,6 +252,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Примостье",           label="Примостье",       zone="Северное нагорье", },
         map={{MapType.ERIADOR, 590, 285}},
         overlap={"0x70059D12"},
+        acquire={
+            {cost={{amount=25, token=LC.token.MARK_OF_WILDS}},
+                EN={vendor="Quartermaster (Woodcutter's Brotherhood)", },
+                DE={vendor="Quartermaster (Woodcutter's Brotherhood)", },
+                FR={vendor="Quartermaster (Woodcutter's Brotherhood)", }} },
+        rep=LC.rep.WOODCUTTERS_BROTHERHOOD, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=40,
         level=40.3
     })
     self.hunter:AddSkill({
@@ -168,6 +269,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь к Торговой пристани",         label="Торговая пристань",  zone="Эвендим", },
         map={{MapType.ERIADOR, 515, 305}},
         overlap={"0x70059D0E"},
+        acquire={
+            {cost={{amount=25, token=LC.token.MARK_OF_WILDS}},
+                EN={vendor="Quartermaster (The League of the Axe)", },
+                DE={vendor="Quartermaster (The League of the Axe)", },
+                FR={vendor="Quartermaster (The League of the Axe)", }} },
+        rep=LC.rep.LEAGUE_OF_AXE, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=40,
         level=40.4
     })
     self.hunter:AddSkill({
@@ -177,6 +285,18 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Sûri-kylä",  label="Sûri-kylä",  zone="Forochel", },
         RU={ name="Путь в Сури-кила",       label="Сури-кила", zone="Форохель", },
         map={{MapType.ERIADOR, 430, 50}},
+        acquire={ { cost={ amount=50, token=LC.rep.MITHRIL_COIN},
+                EN={vendor="Hunter Trainer"},
+                DE={vendor=""},
+                FR={vendor=""}
+            },
+            {cost={{amount=130, token=LC.token.SILVER},
+                   {amount=72, token=LC.token.COPPER}}, coords="[19.5N, 72.0W]",
+                EN={vendor="Rûsu", },
+                DE={vendor="Rûsu", },
+                FR={vendor="Rûsu", }}},
+        rep=LC.rep.LOSSOTH_OF_FOROCHEL, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=48,
         level=42
     })
     self.hunter:AddSkill({
@@ -186,6 +306,17 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers l'ouest d'Angmar",    label="Angmar ouest",    detail="Aughaire", zone="Angmar", },
         RU={ name="Путь в западный Ангмар",         label="Западный Ангмар", detail="Огайр",    zone="Ангмар", },
         map={{MapType.ERIADOR, 825, 185}},
+        acquire={ { cost={ amount=50, token=LC.rep.MITHRIL_COIN},
+                EN={vendor="Hunter Trainer"},
+                DE={vendor=""},
+                FR={vendor=""}
+            },
+            {
+                EN={quest="Desolation by Aughaire"},
+                DE={quest="Desolation by Aughaire"},
+                FR={quest="Desolation by Aughaire"}
+            }},
+        minLevel=44,
         level=45
     })
     self.hunter:AddSkill({
@@ -195,6 +326,17 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Führer nach Ost-Angmar",     label="East-Angmar",        detail="Gath Forthnír", zone="Angmar", },
         FR={ name="Guide vers l'est d'Angmar",  label="Angmar est",         detail="Gath Forthnír", zone="Angmar", },
         map={{MapType.ERIADOR, 705, 180}},
+        acquire={ { cost={ amount=50, token=LC.rep.MITHRIL_COIN},
+                EN={vendor="Hunter Trainer"},
+                DE={vendor=""},
+                FR={vendor=""}
+            },
+            {
+                EN={quest="Hunter: Waste Near Gath Forthnír"},
+                DE={quest=""},
+                FR={quest=""}
+            }},
+        minLevel=48,
         level=49
     })
     self.hunter:AddSkill({
@@ -204,6 +346,17 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Führer nach Echad Dúnann",   label="Echad Dúnann",   zone="Eregion", },
         FR={ name="Guide vers Echad Dunann",    label="Echad Dunann",   zone="Eregion", },
         map={{MapType.ERIADOR, 855, 535}},
+        acquire={ { cost={ amount=60, token=LC.rep.MITHRIL_COIN},
+                EN={vendor="Hunter Trainer"},
+                DE={vendor=""},
+                FR={vendor=""}
+            },
+            {
+                EN={quest="Hunter: Lay of the Land"},
+                DE={quest="Hunter: Lay of the Land"},
+                FR={quest="Hunter: Lay of the Land"}
+            }},
+        minLevel=51,
         level=50
     })
     self.hunter:AddSkill({
@@ -213,6 +366,18 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Führer zur Einundzwanzigsten Halle",     label="Einundzwanzigste Halle", zone="Moria", },
         FR={ name="Guide vers la vingt et unième salle",    label="Vingt et unième salle",  zone="Moria", },
         map={{MapType.RHOVANION, 95, 585}, {MapType.ERIADOR, 950, 510}},
+        acquire={ { cost={ amount=70, token=LC.rep.MITHRIL_COIN},
+                EN={vendor="Hunter Trainer"},
+                DE={vendor=""},
+                FR={vendor=""}
+            },
+            {cost={{amount=153, token=LC.token.SILVER},
+                   {amount=60, token=LC.token.COPPER}}, coords="[5.9S, 105.0W]",
+                EN={vendor="Kettil, Son of Athils", },
+                DE={vendor="Kettil, Son of Athils", },
+                FR={vendor="Kettil, Son of Athils", }}},
+        rep=LC.rep.IRON_GARRISON_MINERS, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=56,
         level=55
     })
     self.hunter:AddSkill({
@@ -223,6 +388,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Caras Galadhon",  label="Caras Galadhon", zone="Lothlórien", },
         map={{MapType.RHOVANION, 120, 660}},
         overlap={"0x70048C8C"},
+        acquire={
+            {cost={{amount=20, token=LC.token.LOTHLORIEN_SILVER_BRANCH}}, coords="[15.7S, 67.7W]",
+                EN={vendor="Malenfileg", },
+                DE={vendor="Malenfileg", },
+                FR={vendor="Malenfileg", }}},
+        rep=LC.rep.GALADHRIM, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=60,
         level=60
     })
     self.hunter:AddSkill({
@@ -232,6 +404,17 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Führer zur Dunkelsenke",     label="Dunkelsenke",    zone="Düsterwald", },
         FR={ name="Guide vers l'Orée noire",    label="Orée noire",     zone="Forêt Noire", },
         map={{MapType.RHOVANION, 365, 630}},
+        acquire={ { cost={ amount=70, token=LC.rep.MITHRIL_COIN},
+                EN={vendor="Hunter Trainer"},
+                DE={vendor=""},
+                FR={vendor=""}
+            },
+            {cost={{amount=1, token=LC.token.MALLEDHRIM_BRONZE_FEATHER}}, coords="[15.1S, 61.5W]",
+                EN={vendor="Estellien", },
+                DE={vendor="Estellien", },
+                FR={vendor="Estellien", }}},
+        rep=LC.rep.MALLEDHRIM, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=62,
         level=61
     })
     self.hunter:AddSkill({
@@ -241,6 +424,13 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Führer nach Harndirion", label="Harndirion", zone="Enedwaith", },
         FR={ name="Guide vers Harndirion",  label="Harndirion", zone="Enedwaith", },
         map={{MapType.ERIADOR, 815, 635}},
+        acquire={
+            {cost={{amount=5, token=LC.token.SILVER_TOKEN_OF_WILDS}}, coords="[18.5S, 68.7W]",
+                EN={vendor="Legrindavor", },
+                DE={vendor="Legrindavor", },
+                FR={vendor="Legrindavor", }}},
+        rep=LC.rep.GREY_COMPANY, repLevel=LC.repLevel.FRIEND,
+        minLevel=62,
         level=62
     })
     self.hunter:AddSkill({
@@ -251,6 +441,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide pour Galtrev",     label="Galtrev",    zone="Pays de Dun", },
         map={{MapType.ERIADOR, 810, 715}},
         overlap={"0x7002C647"},
+        acquire={
+            {cost={{amount=176, token=LC.token.SILVER}}, coords="[80.4S, 16.8W]",
+                EN={vendor="Dunlending Quartermaster", },
+                DE={vendor="Dunlending Quartermaster", },
+                FR={vendor="Dunlending Quartermaster", }}},
+        rep=LC.rep.MEN_OF_DUNLAND, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=70,
         level=65
     })
     self.hunter:AddSkill({
@@ -261,6 +458,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Stangarde",   label="Stangarde",  zone="Grand Fleuve", },
         map={{MapType.RHOVANION, 200, 720}, {MapType.ROHAN, 545, 90}},
         overlap={"0x7002C65D"},
+        acquire={
+            {cost={{amount=5, token=LC.token.SILVER_TOKEN_OF_ANDUIN}}, coords="[25.5S, 63.3W]",
+                EN={vendor="Ordlaf", },
+                DE={vendor="Ordlaf", },
+                FR={vendor="Ordlaf", }}},
+        rep=LC.rep.RIDERS_OF_STANGARD, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=75,
         level=75
     })
     self.hunter:AddSkill({
@@ -271,6 +475,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Neigebronne",     label="Neigebronne",    zone="Rohan est", },
         map={{MapType.ROHAN, 515, 500}},
         overlap={"0x70031A46"},
+        acquire={
+            {cost={{amount=50, token=LC.token.SILVER_TOKEN_OF_RIDDERMARK}},
+                EN={vendor="Eastemnet Miscellany Quartermaster", },
+                DE={vendor="Eastemnet Miscellany Quartermaster", },
+                FR={vendor="Eastemnet Miscellany Quartermaster", }} },
+        rep=LC.rep.MEN_OF_SUTCROFTS, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=80,
         level=80
     })
     self.hunter:AddSkill({
@@ -281,6 +492,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Forloi",      label="Forloi",     zone="Landes farouches", },
         map={{MapType.ROHAN, 450, 175}},
         overlap={"0x70036B5E"},
+        acquire={
+            {cost={{amount=50, token=LC.token.WILDERMORE_COIN}}, coords="[39.4S, 60.8W]",
+                EN={vendor="Ethelmund", },
+                DE={vendor="Ethelmund", },
+                FR={vendor="Ethelmund", }} },
+        rep=LC.rep.PEOPLE_OF_WILDERMORE, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=85,
         level=85
     })
     self.hunter:AddSkill({
@@ -291,6 +509,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Aldburg",     label="Aldburg",    zone="Rohan de l'Ouest", },
         map={{MapType.ROHAN, 570, 640}},
         overlap={"0x7003DC81"},
+        acquire={
+            {cost={{amount=100, token=LC.token.WESTEMNET_IRON_COIN}},
+                EN={vendor="Quartermaster (Eorlingas)", },
+                DE={vendor="Quartermaster (Eorlingas)", },
+                FR={vendor="Quartermaster (Eorlingas)", }} },
+        rep=LC.rep.EORLINGAS, repLevel=LC.repLevel.FRIEND,
+        minLevel=85,
         level=88
     })
     self.hunter:AddSkill({
@@ -301,6 +526,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers le Gouffre de Helm",  label="Gouffre de Helm",    zone="Rohan de l'Ouest", },
         map={{MapType.ROHAN, 275, 565}},
         overlap={"0x7003DC82"},
+        acquire={
+            {cost={{amount=125, token=LC.token.WESTEMNET_IRON_COIN}},
+                EN={vendor="Quartermaster (Helmingas)", },
+                DE={vendor="Quartermaster (Helmingas)", },
+                FR={vendor="Quartermaster (Helmingas)", }} },
+        rep=LC.rep.HELMINGAS, repLevel=LC.repLevel.FRIEND,
+        minLevel=90,
         level=90
     })
     self.hunter:AddSkill({
@@ -311,6 +543,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Dol Amroth",  desc="l'Ouest du Gondor",   label="Dol Amroth", zone="Gondor de l'Ouest", },
         map={{MapType.GONDOR, 225, 550}},
         overlap={"0x700411AC"},
+        acquire={
+            {cost={{amount=25, token=LC.token.AMROTH_SILVER}}, coords="[74.9S, 71.4W]",
+                EN={vendor="Quartermaster (Dol Amroth)", },
+                DE={vendor="Quartermaster (Dol Amroth)", },
+                FR={vendor="Quartermaster (Dol Amroth)", }} },
+        rep=LC.rep.DOL_AMROTH, repLevel=LC.repLevel.FRIEND,
+        minLevel=95,
         level=98
     })
     self.hunter:AddSkill({
@@ -321,6 +560,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide pour Arnach",  label="Arnach", zone="Gondor de l'Ouest", },
         map={{MapType.GONDOR, 715, 425}},
         overlap={"0x70043A6A"},
+        acquire={
+            {cost={{amount=10, token=LC.token.EAST_GONDOR_SILVER}},
+                EN={vendor="Quartermaster (Rangers of Ithilien)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RANGERS_OF_ITHILIEN, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=100
     })
     self.hunter:AddSkill({
@@ -331,6 +577,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Minas Tirith",    label="Minas Tirith", zone="Ancien Anórien", },
         map={{MapType.GONDOR, 670, 345}},
         overlap={"0x7004497E"},
+        acquire={
+            {cost={{amount=30, token=LC.token.MINAS_TIRITH_SILVER}},
+                EN={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.DEFENDERS_OF_MINAS_TIRITH, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=100.1
     })
     self.hunter:AddSkill({
@@ -341,6 +594,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide pour se rendre au camp militaire", label="Camp militaire",             zone="Lointain Anórien", },
         map={{MapType.GONDOR, 665, 140}},
         overlap={"0x700459A9"},
+        acquire={
+            {cost={{amount=5, token=LC.token.EXQUISITE_WOODCARVING},
+                   {amount=3, token=LC.token.POLISHED_MARBLE_TRINKET}}, coords="[45.5S, 27.3W]",
+                EN={vendor="Quartermaster (Riders of Rohan)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RIDERS_OF_ROHAN, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=102
     })
     self.hunter:AddSkill({
@@ -351,6 +612,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide de Minas Tirith après la bataille",        label="Minas Tirith après la bataille", zone="Anórien", },
         map={{MapType.GONDOR, 670, 375}},
         overlap={"0x70046CC0"},
+        acquire={
+            {cost={{amount=10, token=LC.token.MINAS_TIRITH_SILVER}},
+                EN={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.DEFENDERS_OF_MINAS_TIRITH, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=105
     })
     self.hunter:AddSkill({
@@ -361,6 +629,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Osgiliath après la bataille",     label="Osgiliath après la bataille",    zone="Anórien", },
         map={{MapType.GONDOR, 855, 335}},
         overlap={"0x7004707D"},
+        acquire={
+            {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER}},
+                EN={vendor="Quartermaster (Host of the West)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=105.1
     })
     self.hunter:AddSkill({
@@ -371,6 +646,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Хеннет Аннун",      label="Хеннет Аннун",  zone="Итилиен", },
         map={{MapType.GONDOR, 875, 385}},
         overlap={"0x70047080"},
+        acquire={
+            {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER}},
+                EN={vendor="Quartermaster (Host of the West)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=105.2
     })
     self.hunter:AddSkill({
@@ -381,6 +663,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в лагерь Воинства Запада", label="Лагерь Воинства Запада", zone="Гиблые земли", },
         map={{MapType.GONDOR, 805, 170}},
         overlap={"0x70047BF4"},
+        acquire={
+            {cost={{amount=40, token=LC.token.HOST_OF_WEST_SILVER}},
+                EN={vendor="Quartermaster (Host of the West)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.KINDRED,
+        minLevel=100,
         level=105.3
     })
     self.hunter:AddSkill({
@@ -391,6 +680,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Хаэрондир",      label="Хаэрондир", zone="Гиблые земли", },
         map={{MapType.GONDOR, 855, 100}},
         overlap={"0x70047C1B"},
+        acquire={
+            {cost={{amount=40, token=LC.token.HOST_OF_WEST_SILVER}},
+                EN={vendor="Quartermaster (Host of the West)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.RESPECTED,
+        minLevel=100,
         level=105.4
     })
     self.hunter:AddSkill({
@@ -401,6 +697,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь на заставу Удуна",       label="Застава Удуна",    zone="Мордор", },
         map={{MapType.GONDOR, 925, 230}},
         overlap={"0x7004AE1D"},
+        acquire={
+            {cost={{amount=10, token=LC.token.SILVER_SIGNET_OF_THANDRIM}},
+                EN={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CONQUEST_OF_GORGOROTH, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=106
     })
     self.hunter:AddSkill({
@@ -411,6 +714,16 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Дейл",      label="Дейл", zone="Эрин Ласгален", },
         map={{MapType.RHOVANION, 720, 215}},
         overlap={"0x7004D738"},
+        acquire={
+            {cost={{amount=30, token=LC.token.TOKEN_OF_LAKE_AND_RIVERS}},
+                EN={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=115,
         level=115
     })
     self.hunter:AddSkill({
@@ -421,6 +734,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Ярнфаст",       label="Ярнфаст",  zone="Железное взгорье", },
         map={{MapType.RHOVANION, 890, 110}},
         overlap={"0x7004FAC3"},
+        acquire={
+            {cost={{amount=5, token=LC.token.MARK_OF_LONGBEARDS}},
+                EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
+        minLevel=116,
         level=116
     })
     self.hunter:AddSkill({
@@ -431,6 +751,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Скархальд",     label="Скархальд", zone="Эред Митрин", },
         map={{MapType.RHOVANION, 430, 90}},
         overlap={"0x7004FAC5"},
+        acquire={
+            {cost={{amount=5, token=LC.token.MARK_OF_LONGBEARDS}},
+                EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
+        minLevel=116,
         level=117
     })
     self.hunter:AddSkill({
@@ -441,6 +768,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Беорнингус",         label="Беорнингус",    zone="Долина Андуина", },
         map={{MapType.RHOVANION, 390, 300}},
         overlap={"0x70041A22", "0x70052F12"},
+        acquire={
+            {cost={{amount=20, token=LC.token.VALES_BEORNING_TOKEN}},
+                EN={vendor="Quartermaster (Wilderfolk Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=116,
         level=120
     })
     self.hunter:AddSkill({
@@ -451,6 +785,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Хультвис",       label="Хультвис", zone="Долина Андуина", },
         map={{MapType.RHOVANION, 375, 400}},
         overlap={"0x70052F04"},
+        acquire={
+            {cost={{amount=20, token=LC.token.GULMARK}},
+                EN={vendor="Quartermaster (Wilderfolk Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=116,
         level=120.1
     })
     self.hunter:AddSkill({
@@ -461,6 +802,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Эстолад Лан",      label="Эстолад Лан", zone="Имлад Моргул", },
         map={{MapType.GONDOR, 960, 460}},
         overlap={"0x700551F8"},
+        acquire={
+            {cost={{amount=20, token=LC.token.SIGIL_IMLAD_ITHIL}},
+                EN={vendor="Quartermaster (The White Company)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.WHITE_COMPANY, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=121,
         level=125
     })
     self.hunter:AddSkill({
@@ -471,6 +819,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Лимлок",      label="Лимлок", zone="Истоки Долгой реки", },
         map={{MapType.RHOVANION, 345, 230}},
         overlap={"0x70057629"},
+        acquire={
+            {cost={{amount=20, token=LC.token.NORTHERN_GULMARK}},
+                EN={vendor="Quartermaster (Protectors of Wilderland)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.PROTECTORS_OF_WILDERLAND, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=130,
         level=130
     })
     self.hunter:AddSkill({
@@ -481,6 +836,16 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Annâk-khurfu",    label="Annâk-khurfu",   zone="Elderslade", },
         map={{MapType.RHOVANION, 530, 90}},
         overlap={"0x7005856F"},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }},
+            {cost={{amount=25, token=LC.token.COPPER_COIN_OF_GUNDABAD}},
+                EN={vendor="Quartermaster (March on Gundabad)"},
+                DE={vendor="", },
+                FR={vendor="", }}, },
+        minLevel=20,
         level=130.1
     })
     self.hunter:AddSkill({
@@ -491,6 +856,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Akrâz-zahar",     label="Akrâz-zahar",    zone="Eryn Lasgalen", },
         map={{MapType.RHOVANION, 750, 115}},
         overlap={"0x7005AA90"},
+        acquire={
+            {cost={{amount=10, token=LC.token.TOKEN_OF_KHARUM_UBNAR}},
+                EN={vendor="Vorthur Smokebreath"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.KHARUM_UBNAR, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=130,
         level=130.2
     })
     self.hunter:AddSkill({
@@ -501,6 +873,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Azanulbizar",     label="Azanulbizar",    detail="Amdân", zone="Azanulbizar", },
         map={{MapType.RHOVANION, 210, 555}},
         overlap={"0x7005AA92"},
+        acquire={
+            {cost={{amount=7, token=LC.token.ZAKAF_BESHEK}}, coords="[63.5N, 135.0W]",
+                EN={vendor="Quartermaster (Haban'akkâ of Thráin)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HABANAKKA_OF_THRAIN, repLevel=LC.repLevel.DUMUL,
+        minLevel=130,
         level=130.3
     })
     self.hunter:AddSkill({
@@ -511,6 +890,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers la Porte Noble",  label="Porte Noble",        zone="Gundabad", },
         map={{MapType.RHOVANION, 190, 130}},
         overlap={"0x7005D47C"},
+        acquire={
+            {cost={{amount=20, token=LC.token.SILVER_COIN_OF_GUNDABAD}},
+                EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
+        minLevel=131,
         level=131
     })
     self.hunter:AddSkill({
@@ -521,6 +907,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Leitstath",   label="Leitstath",  zone="Gundabad", },
         map={{MapType.RHOVANION, 270, 65}},
         overlap={"0x7005D484"},
+        acquire={
+            {cost={{amount=20, token=LC.token.SILVER_COIN_OF_GUNDABAD}},
+                EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
+        minLevel=135,
         level=135
     })
     self.hunter:AddSkill({
@@ -531,6 +924,12 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Carn Dûm",    label="Carn Dûm",   zone="Angmar", },
         map={{MapType.ERIADOR, 735, 100}},
         overlap={"0x70064ACA"},
+        acquire={
+            {cost={{amount=30, token=LC.token.SARSKILLINAN}},
+                EN={vendor="Muirál"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        minLevel=20,
         level=140.1
     })
     self.hunter:AddSkill({
@@ -541,6 +940,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Pelargir",    label="Pelargir",   zone="Gondor royal", },
         map={{MapType.GONDOR, 670, 625}},
         overlap={"0x700658EB"},
+        acquire={
+            {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
+                EN={vendor="Quartermaster (The Renewal of Gondor)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=135,
         level=141
     })
     self.hunter:AddSkill({
@@ -551,6 +957,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Dol Amroth",  desc="le Gondor royal",     label="Dol Amroth royal",       zlabel="Dol Amroth",    zone="Gondor royal", },
         map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 210, 485}},
         overlap={"0x70068700"},
+        acquire={
+            {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
+                EN={vendor="Quartermaster (The Renewal of Gondor)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=135,
         level=142
     })
     self.hunter:AddSkill({
@@ -561,6 +974,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Lond Cirion",     label="Lond Cirion",    zone="Anfalas", },
         map={{MapType.GONDOR, 255, 420}, {MapType.HARADWAITH, 230, 20}},
         overlap={"0x70068703"},
+        acquire={
+            {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
+                EN={vendor="Quartermaster (The Renewal of Gondor)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=135,
         level=143
     })
     self.hunter:AddSkill({
@@ -571,6 +991,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Halrax",  label="Halrax",     zone="Les îles du Bouclier", },
         map={{MapType.HARADWAITH, 275, 160}},
         overlap={"0x70068702"},
+        acquire={
+            {cost={{amount=10, token=LC.token.UMBARI_TAM}},
+                EN={vendor="Quartermaster (The City of Umbar Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
         level=145
     })
     self.hunter:AddSkill({
@@ -581,6 +1008,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Jax Phanâl",  label="Jax Phanâl",     zone="Umbar", },
         map={{MapType.HARADWAITH, 305, 315}},
         overlap={"0x70068701"},
+        acquire={
+            {cost={{amount=10, token=LC.token.UMBARI_TAM}},
+                EN={vendor="Quartermaster (The City of Umbar Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
         level=146
     })
     self.hunter:AddSkill({
@@ -591,6 +1025,12 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Бедж-Магда",      label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 350, 380}},
         overlap={"0x7006A9C1"},
+        acquire={
+            {cost={{amount=15, token=LC.token.UMBARI_TAM}}, coords="[20.0S, 105.7W]",
+                EN={vendor="Mâkhda Khorbo Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        minLevel=20,
         level=147
     })
     self.hunter:AddSkill({
@@ -601,6 +1041,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Umbar",   label="Umbar",  detail="Baharbêl",  zone="Umbar", },
         map={{MapType.HARADWAITH, 505, 370}},
         overlap={"0x700686FF"},
+        acquire={
+            {cost={{amount=10, token=LC.token.UMBARI_TAM}},
+                EN={vendor="Quartermaster (The City of Umbar Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
         level=148
     })
     self.hunter:AddSkill({
@@ -611,6 +1058,20 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers la taverne de l'Aigle sanglant",  label="Taverne de l'Aigle sanglant",    zone="Umbar", },
         map={{MapType.HARADWAITH, 475, 400}},
         overlap={"0x700697F2"},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }},
+            {cost={{amount=10, token=LC.token.LEDGER_KEEPER_MARK}},
+                EN={vendor="Ledger-keepers Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }},
+            {cost={{amount=10, token=LC.token.EAGLE_BIT}},
+                EN={vendor="Order of the Eagle Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }},},
+        minLevel=20,
         level=149
     })
 
@@ -624,6 +1085,17 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Клегуре",         label="Клегур", zone="Лебедянь", },
         map={{MapType.ERIADOR, 755, 555}},
         overlap={"0x70064F47"},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster", },
+                DE={vendor="Delving Quartermaster", },
+                FR={vendor="Delving Quartermaster", }},
+            {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
+                EN={vendor="Before the Shadow Mission-giver Barterer", },
+                DE={vendor="Before the Shadow Mission-giver Barterer", },
+                FR={vendor="Before the Shadow Mission-giver Barterer", }} },
+        rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=7
     })
     self.warden:AddSkill({
@@ -634,6 +1106,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Лебедяни",                    label="Лебедянь",           detail="Лхан-Гаран",    zone="Лебедянь", },
         map={{MapType.ERIADOR, 825, 490}},
         overlap={"0x700634A4"},
+        acquire={
+            {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
+                EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                FR={vendor="Quartermaster (Dúnedain of Cardolan)", }} },
+        rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=10
     })
     self.warden:AddSkill({
@@ -644,6 +1123,17 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Кардолане",          label="Кардолан", detail="Хэрне", zone="Кардолан", },
         map={{MapType.ERIADOR, 560, 495}},
         overlap={"0x700634AE"},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster", },
+                DE={vendor="Delving Quartermaster", },
+                FR={vendor="Delving Quartermaster", }},
+            {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
+                EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                FR={vendor="Quartermaster (Dúnedain of Cardolan)", }} },
+        rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=15
     })
     self.warden:AddSkill({
@@ -654,6 +1144,17 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Андрате",          label="Андрат",  zone="Кардолан", },
         map={{MapType.ERIADOR, 580, 465}},
         overlap={"0x7006323D"},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster", },
+                DE={vendor="Delving Quartermaster", },
+                FR={vendor="Delving Quartermaster", }},
+            {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
+                EN={vendor="Before the Shadow Mission-giver Barterer", },
+                DE={vendor="Before the Shadow Mission-giver Barterer", },
+                FR={vendor="Before the Shadow Mission-giver Barterer", }} },
+        rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=17
     })
     self.warden:AddSkill({
@@ -664,6 +1165,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Новодворье",           label="Новодворье",  zone="Дальний Шир", },
         map={{MapType.ERIADOR, 440, 350}},
         overlap={"0x70061340"},
+        acquire={
+            {cost={{amount=10, token=LC.token.COPPER_BOUNDER_COIN}},
+                EN={vendor="Quartermaster (Yonder-watch)", },
+                DE={vendor="Quartermaster (Yonder-watch)", },
+                FR={vendor="Quartermaster (Yonder-watch)", }} },
+        rep=LC.rep.YONDER_WATCH, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=20
     })
     self.warden:AddSkill({
@@ -674,6 +1182,8 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Ост Гуруте",          label="Ост Гурут",    zone="Пустоши", },
         map={{MapType.ERIADOR, 755, 400}},
         overlap={"0x70020441"},
+        acquire={ {autoLevel=true } },
+        minLevel=26,
         level=25
     })
     self.warden:AddSkill({
@@ -683,6 +1193,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Rassemblement : Esteldin", label="Esteldin",  zone="Hauts du Nord", },
         RU={ name="Сбор в Эстельдине",        label="Эстельдин", zone="Северное нагорье", },
         map={{MapType.ERIADOR, 655, 290}},
+        acquire={ {autoLevel=true } },
+        minLevel=34,
         level=30
     })
     self.warden:AddSkill({
@@ -692,6 +1204,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Rassemblement : La région d'Evendim", label="Evendim", detail="Tinnudir",  zone="Evendim", },
         RU={ name="Сбор в Эвендиме",                     label="Эвендим", detail="Тиннудир",  zone="Эвендим", },
         map={{MapType.ERIADOR, 490, 235}},
+        acquire={ {autoLevel=true } },
+        minLevel=38,
         level=35
     })
     self.warden:AddSkill({
@@ -702,6 +1216,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Торнхаде",   label="Торнхад", zone="Митейтельская стрелка", },
         map={{MapType.ERIADOR, 775, 435}},
         overlap={"0x70060EA8"},
+        acquire={
+            {cost={{amount=15, token=LC.token.MARK_OF_ANGLE}},
+                EN={vendor="Quartermaster (Defenders of the Angle)", },
+                DE={vendor="Quartermaster (Defenders of the Angle)", },
+                FR={vendor="Quartermaster (Defenders of the Angle)", }} },
+        rep=LC.rep.DEFENDERS_OF_ANGLE, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=38,
         level=40
     })
     self.warden:AddSkill({
@@ -712,6 +1233,8 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Ривенделле",         label="Ривенделл", zone="Троллистая пуща", },
         map={{MapType.ERIADOR, 865, 410}},
         overlap={"0x7000631F", "0x70023263"},
+        acquire={ {autoLevel=true } },
+        minLevel=44,
         level=40.1
     })
     self.warden:AddSkill({
@@ -721,6 +1244,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Rassemblement : Les Monts Brumeux", label="Monts Brumeux",   detail="Hrimbarg", zone="Monts Brumeux", },
         RU={ name="Сбор в Мглистых горах",             label="Мглистые горы",   detail="Хримбарг", zone="Мглистые горы", },
         map={{MapType.ERIADOR, 915, 265}},
+        acquire={
+            {cost={{amount=128, token=LC.token.SILVER}}, coords="[24.5S, 7.0E]",
+                EN={vendor="Afwald", },
+                DE={vendor="Afwald", },
+                FR={vendor="Afwald", }},
+            { store=true }},
+        rep=LC.rep.ELVES_OF_RIVENDELL, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=40,
         level=40.2
     })
     self.warden:AddSkill({
@@ -731,6 +1262,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Примостье",                label="Примостье",       zone="Северное нагорье", },
         map={{MapType.ERIADOR, 590, 285}},
         overlap={"0x70059D12"},
+        acquire={
+            {cost={{amount=25, token=LC.token.MARK_OF_WILDS}},
+                EN={vendor="Quartermaster (Woodcutter's Brotherhood)", },
+                DE={vendor="Quartermaster (Woodcutter's Brotherhood)", },
+                FR={vendor="Quartermaster (Woodcutter's Brotherhood)", }} },
+        rep=LC.rep.WOODCUTTERS_BROTHERHOOD, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=40,
         level=40.3
     })
     self.warden:AddSkill({
@@ -741,6 +1279,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор на Торговой пристани",          label="Торговая пристань",  zone="Эвендим", },
         map={{MapType.ERIADOR, 515, 305}},
         overlap={"0x70059D0E"},
+        acquire={
+            {cost={{amount=25, token=LC.token.MARK_OF_WILDS}},
+                EN={vendor="Quartermaster (The League of the Axe)", },
+                DE={vendor="Quartermaster (The League of the Axe)", },
+                FR={vendor="Quartermaster (The League of the Axe)", }} },
+        rep=LC.rep.LEAGUE_OF_AXE, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=40,
         level=40.4
     })
     self.warden:AddSkill({
@@ -750,6 +1295,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Rassemblement : Sûri-kylä",  label="Sûri-kylä",  zone="Forochel", },
         RU={ name="Сбор в Сури-кила",           label="Сури-кила",  zone="Форохель", },
         map={{MapType.ERIADOR, 430, 50}},
+        acquire={
+            {cost={{amount=130, token=LC.token.SILVER},
+                   {amount=72, token=LC.token.COPPER}}, coords="[19.5N, 72.0W]",
+                EN={vendor="Rûsu", },
+                DE={vendor="Rûsu", },
+                FR={vendor="Rûsu", }}},
+        rep=LC.rep.LOSSOTH_OF_FOROCHEL, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=48,
         level=42
     })
     self.warden:AddSkill({
@@ -759,6 +1312,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Rassemblement : La vingt et unième salle",   label="Vingt et unième salle",  zone="Moria", },
         RU={ name="Сбор в Двадцать первом чертоге",             label="Двадцать первый чертог", zone="Мория", },
         map={{MapType.RHOVANION, 95, 585}, {MapType.ERIADOR, 950, 510}},
+        acquire={
+            {cost={{amount=153, token=LC.token.SILVER},
+                   {amount=60, token=LC.token.COPPER}}, coords="[5.9S, 105.0W]",
+                EN={vendor="Kettil, Son of Athils", },
+                DE={vendor="Kettil, Son of Athils", },
+                FR={vendor="Kettil, Son of Athils", }}},
+        rep=LC.rep.IRON_GARRISON_MINERS, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=56,
         level=55
     })
     self.warden:AddSkill({
@@ -769,6 +1330,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Карас Галадоне",          label="Карас Галадон",  zone="Лотлориэн", },
         map={{MapType.RHOVANION, 120, 660}},
         overlap={"0x70048C8C"},
+        acquire={
+            {cost={{amount=20, token=LC.token.LOTHLORIEN_SILVER_BRANCH}}, coords="[15.8S, 67.9W]",
+                EN={vendor="Beriawen", },
+                DE={vendor="Beriawen", },
+                FR={vendor="Beriawen", }}},
+        rep=LC.rep.GALADHRIM, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=60,
         level=60
     })
     self.warden:AddSkill({
@@ -778,6 +1346,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Rassemblement : L'Orée noire",   label="Orée noire",     zone="Forêt Noire", },
         RU={ name="Сбор в Черной роще",             label="Черная роща",    zone="Лихолесье", },
         map={{MapType.RHOVANION, 365, 630}},
+        acquire={
+            {cost={{amount=1, token=LC.token.MALLEDHRIM_BRONZE_FEATHER}}, coords="[15.1S, 61.5W]",
+                EN={vendor="Estellien", },
+                DE={vendor="Estellien", },
+                FR={vendor="Estellien", }}},
+        rep=LC.rep.MALLEDHRIM, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=62,
         level=61
     })
     self.warden:AddSkill({
@@ -787,6 +1362,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Rassemblement : Harndirion", label="Harndirion", zone="Enedwaith", },
         RU={ name="Сбор в Харндирионе",         label="Харндирион", zone="Энедвайт", },
         map={{MapType.ERIADOR, 815, 635}},
+        acquire={
+            {cost={{amount=5, token=LC.token.SILVER_TOKEN_OF_WILDS}}, coords="[18.5S, 68.7W]",
+                EN={vendor="Legrindavor", },
+                DE={vendor="Legrindavor", },
+                FR={vendor="Legrindavor", }}},
+        rep=LC.rep.GREY_COMPANY, repLevel=LC.repLevel.FRIEND,
+        minLevel=62,
         level=62
     })
     self.warden:AddSkill({
@@ -797,6 +1379,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Галтреве",         label="Галтрев", zone="Дунланд", },
         map={{MapType.ERIADOR, 810, 715}},
         overlap={"0x7002C647"},
+        acquire={
+            {cost={{amount=176, token=LC.token.SILVER}}, coords="[80.4S, 16.8W]",
+                EN={vendor="Dunlending Quartermaster", },
+                DE={vendor="Dunlending Quartermaster", },
+                FR={vendor="Dunlending Quartermaster", }}},
+        rep=LC.rep.MEN_OF_DUNLAND, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=70,
         level=65
     })
     self.warden:AddSkill({
@@ -807,6 +1396,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Стангарде",           label="Стангард",   zone="Великая река", },
         map={{MapType.RHOVANION, 200, 720}, {MapType.ROHAN, 545, 90}},
         overlap={"0x7002C65D"},
+        acquire={
+            {cost={{amount=5, token=LC.token.SILVER_TOKEN_OF_ANDUIN}}, coords="[25.5S, 63.3W]",
+                EN={vendor="Ordlaf", },
+                DE={vendor="Ordlaf", },
+                FR={vendor="Ordlaf", }}},
+        rep=LC.rep.RIDERS_OF_STANGARD, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=75,
         level=75
     })
     self.warden:AddSkill({
@@ -817,6 +1413,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Сноуборне",               label="Сноуборн",       zone="Восточный Рохан", },
         map={{MapType.ROHAN, 515, 500}},
         overlap={"0x70031A46"},
+        acquire={
+            {cost={{amount=50, token=LC.token.SILVER_TOKEN_OF_RIDDERMARK}},
+                EN={vendor="Eastemnet Miscellany Quartermaster", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.MEN_OF_SUTCROFTS, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=80,
         level=80
     })
     self.warden:AddSkill({
@@ -827,6 +1430,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Форлоу",          label="Форлоу",     zone="Вилдермор", },
         map={{MapType.ROHAN, 450, 175}},
         overlap={"0x70036B5E"},
+        acquire={
+            {cost={{amount=50, token=LC.token.WILDERMORE_COIN}}, coords="[39.4S, 60.8W]",
+                EN={vendor="Ethelmund", },
+                DE={vendor="Ethelmund", },
+                FR={vendor="Ethelmund", }} },
+        rep=LC.rep.PEOPLE_OF_WILDERMORE, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=85,
         level=85
     })
     self.warden:AddSkill({
@@ -837,6 +1447,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Альдбурге",        label="Альдбург", zone="Западный Рохан", },
         map={{MapType.ROHAN, 570, 640}},
         overlap={"0x7003DC81"},
+        acquire={
+            {cost={{amount=100, token=LC.token.WESTEMNET_IRON_COIN}},
+                EN={vendor="Quartermaster (Eorlingas)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.EORLINGAS, repLevel=LC.repLevel.FRIEND,
+        minLevel=85,
         level=88
     })
     self.warden:AddSkill({
@@ -847,6 +1464,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Хельмовой Пади",           label="Хельмова Падь",   zone="Западный Рохан", },
         map={{MapType.ROHAN, 275, 565}},
         overlap={"0x7003DC82"},
+        acquire={
+            {cost={{amount=125, token=LC.token.WESTEMNET_IRON_COIN}},
+                EN={vendor="Quartermaster (Helmingas)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HELMINGAS, repLevel=LC.repLevel.FRIEND,
+        minLevel=95,
         level=90
     })
     self.warden:AddSkill({
@@ -857,6 +1481,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Дол Амроте",          desc="в Западном Гондоре",    label="Дол Амрот",  zone="Западный Гондор", },
         map={{MapType.GONDOR, 225, 550}},
         overlap={"0x700411AC"},
+        acquire={
+            {cost={{amount=25, token=LC.token.AMROTH_SILVER}}, coords="[74.9S, 71.4W]",
+                EN={vendor="Quartermaster (Dol Amroth)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.DOL_AMROTH, repLevel=LC.repLevel.FRIEND,
+        minLevel=95,
         level=98
     })
     self.warden:AddSkill({
@@ -867,6 +1498,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Арнахе",          label="Арнах",  zone="Восточный Гондор", },
         map={{MapType.GONDOR, 715, 425}},
         overlap={"0x70043A6A"},
+        acquire={
+            {cost={{amount=10, token=LC.token.EAST_GONDOR_SILVER}},
+                EN={vendor="Quartermaster (Rangers of Ithilien)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RANGERS_OF_ITHILIEN, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=100
     })
     self.warden:AddSkill({
@@ -877,6 +1515,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Минас Тирите",          label="Минас Тирит", zone="Старый Анориен", },
         map={{MapType.GONDOR, 670, 345}},
         overlap={"0x7004497E"},
+        acquire={
+            {cost={{amount=30, token=LC.token.MINAS_TIRITH_SILVER}},
+                EN={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.DEFENDERS_OF_MINAS_TIRITH, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=100.1
     })
     self.warden:AddSkill({
@@ -887,6 +1532,14 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в военном лагере Рохиррим", label="Лагерь Рохиррим",          zone="Дальний Анориен", },
         map={{MapType.GONDOR, 665, 140}},
         overlap={"0x700459A9"},
+        acquire={
+            {cost={{amount=5, token=LC.token.EXQUISITE_WOODCARVING},
+                   {amount=3, token=LC.token.POLISHED_MARBLE_TRINKET}}, coords="[45.5S, 27.3W]",
+                EN={vendor="Quartermaster (Riders of Rohan)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RIDERS_OF_ROHAN, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=102
     })
     self.warden:AddSkill({
@@ -897,6 +1550,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Минас Тирите (после битвы)",              label="Минас Тирит (после битвы)",      zone="Анориен", },
         map={{MapType.GONDOR, 670, 375}},
         overlap={"0x70046CC0"},
+        acquire={
+            {cost={{amount=10, token=LC.token.MINAS_TIRITH_SILVER}},
+                EN={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.DEFENDERS_OF_MINAS_TIRITH, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=105
     })
     self.warden:AddSkill({
@@ -907,6 +1567,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Осгилиате (после битвы)",              label="Осгилиат (после битвы)",      zone="Анориен", },
         map={{MapType.GONDOR, 855, 335}},
         overlap={"0x7004707D"},
+        acquire={
+            {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER}},
+                EN={vendor="Quartermaster (Host of the West)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=105.1
     })
     self.warden:AddSkill({
@@ -917,6 +1584,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Хеннет Аннун",           label="Хеннет Аннун",  zone="Итилиен", },
         map={{MapType.GONDOR, 875, 385}},
         overlap={"0x70047080"},
+        acquire={
+            {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER}},
+                EN={vendor="Quartermaster (Host of the West)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=105.2
     })
     self.warden:AddSkill({
@@ -927,6 +1601,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в лагере Воинства Запада",   label="Лагерь Воинства Запада", zone="Гиблые земли", },
         map={{MapType.GONDOR, 805, 170}},
         overlap={"0x70047BF4"},
+        acquire={
+            {cost={{amount=40, token=LC.token.HOST_OF_WEST_SILVER}},
+                EN={vendor="Quartermaster (Host of the West)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.KINDRED,
+        minLevel=100,
         level=105.3
     })
     self.warden:AddSkill({
@@ -937,6 +1618,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Хаэрондире",         label="Хаэрондир", zone="Гиблые земли", },
         map={{MapType.GONDOR, 855, 100}},
         overlap={"0x70047C1B"},
+        acquire={
+            {cost={{amount=40, token=LC.token.HOST_OF_WEST_SILVER}},
+                EN={vendor="Quartermaster (Host of the West)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.RESPECTED,
+        minLevel=100,
         level=105.4
     })
     self.warden:AddSkill({
@@ -947,6 +1635,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор на заставе Удуна",          label="Застава Удуна",    zone="Мордор", },
         map={{MapType.GONDOR, 925, 230}},
         overlap={"0x7004AE1D"},
+        acquire={
+            {cost={{amount=10, token=LC.token.SILVER_SIGNET_OF_THANDRIM}},
+                EN={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CONQUEST_OF_GORGOROTH, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=106
     })
     self.warden:AddSkill({
@@ -957,6 +1652,16 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Дейле",         label="Дейл", zone="Эрин Ласгален", },
         map={{MapType.RHOVANION, 720, 215}},
         overlap={"0x7004D738"},
+        acquire={
+            {cost={{amount=30, token=LC.token.TOKEN_OF_LAKE_AND_RIVERS}},
+                EN={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=115,
         level=115
     })
     self.warden:AddSkill({
@@ -967,6 +1672,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Ярнфасте",          label="Ярнфаст",  zone="Железное взгорье", },
         map={{MapType.RHOVANION, 890, 110}},
         overlap={"0x7004FAC3"},
+        acquire={
+            {cost={{amount=5, token=LC.token.MARK_OF_LONGBEARDS}},
+                EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
+        minLevel=116,
         level=116
     })
     self.warden:AddSkill({
@@ -977,6 +1689,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Скархальде",        label="Скархальд", zone="Эред Митрин", },
         map={{MapType.RHOVANION, 430, 90}},
         overlap={"0x7004FAC5"},
+        acquire={
+            {cost={{amount=5, token=LC.token.MARK_OF_LONGBEARDS}},
+                EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
+        minLevel=116,
         level=117
     })
     self.warden:AddSkill({
@@ -987,6 +1706,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Беорнингусе",          label="Беорнингус",    zone="Долина Андуина", },
         map={{MapType.RHOVANION, 390, 300}},
         overlap={"0x70041A22", "0x70052F12"},
+        acquire={
+            {cost={{amount=20, token=LC.token.VALES_BEORNING_TOKEN}},
+                EN={vendor="Quartermaster (Wilderfolk Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=116,
         level=120
     })
     self.warden:AddSkill({
@@ -997,6 +1723,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Хультвисе",        label="Хультвис", zone="Долина Андуина", },
         map={{MapType.RHOVANION, 375, 400}},
         overlap={"0x70052F04"},
+        acquire={
+            {cost={{amount=20, token=LC.token.GULMARK}},
+                EN={vendor="Quartermaster (Wilderfolk Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=116,
         level=120.1
     })
     self.warden:AddSkill({
@@ -1007,6 +1740,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Эстолад Лане",         label="Эстолад Лан", zone="Имлад Моргул", },
         map={{MapType.GONDOR, 960, 460}},
         overlap={"0x700551F8"},
+        acquire={
+            {cost={{amount=20, token=LC.token.SIGIL_IMLAD_ITHIL}},
+                EN={vendor="Quartermaster (The White Company)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.WHITE_COMPANY, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=121,
         level=125
     })
     self.warden:AddSkill({
@@ -1017,6 +1757,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Лимлоке",         label="Лимлок", zone="Истоки Долгой реки", },
         map={{MapType.RHOVANION, 345, 230}},
         overlap={"0x70057629"},
+        acquire={
+            {cost={{amount=20, token=LC.token.NORTHERN_GULMARK}},
+                EN={vendor="Quartermaster (Protectors of Wilderland)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.PROTECTORS_OF_WILDERLAND, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=130,
         level=130
     })
     self.warden:AddSkill({
@@ -1027,6 +1774,16 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Аннак-Курфу",           label="Аннак-Курфу",  zone="Долина предков", },
         map={{MapType.RHOVANION, 530, 90}},
         overlap={"0x7005856F"},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }},
+            {cost={{amount=25, token=LC.token.COPPER_COIN_OF_GUNDABAD}},
+                EN={vendor="Quartermaster (March on Gundabad)"},
+                DE={vendor="", },
+                FR={vendor="", }}, },
+        minLevel=20,
         level=130.1
     })
     self.warden:AddSkill({
@@ -1037,6 +1794,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Акраз-Захаре",         label="Акраз-Захар", zone="Эрин Ласгален", },
         map={{MapType.RHOVANION, 750, 115}},
         overlap={"0x7005AA90"},
+        acquire={
+            {cost={{amount=10, token=LC.token.TOKEN_OF_KHARUM_UBNAR}},
+                EN={vendor="Vorthur Smokebreath"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.KHARUM_UBNAR, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=130,
         level=130.2
     })
     self.warden:AddSkill({
@@ -1047,6 +1811,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Азанулбизаре",         label="Азанулбизар", detail="Амдан", zone="Азанулбизар", },
         map={{MapType.RHOVANION, 210, 555}},
         overlap={"0x7005AA92"},
+        acquire={
+            {cost={{amount=7, token=LC.token.ZAKAF_BESHEK}}, coords="[63.5N, 135.0W]",
+                EN={vendor="Quartermaster (Haban'akkâ of Thráin)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HABANAKKA_OF_THRAIN, repLevel=LC.repLevel.DUMUL,
+        minLevel=130,
         level=130.3
     })
     self.warden:AddSkill({
@@ -1057,6 +1828,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор у Благородных врат",        label="Благородные врата", zone="Гундабад", },
         map={{MapType.RHOVANION, 190, 130}},
         overlap={"0x7005D47C"},
+        acquire={
+            {cost={{amount=20, token=LC.token.SILVER_COIN_OF_GUNDABAD}},
+                EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
+        minLevel=131,
         level=131
     })
     self.warden:AddSkill({
@@ -1067,6 +1845,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Лейтстате",          label="Лейтстат",  zone="Гундабад", },
         map={{MapType.RHOVANION, 270, 65}},
         overlap={"0x7005D484"},
+        acquire={
+            {cost={{amount=20, token=LC.token.SILVER_COIN_OF_GUNDABAD}},
+                EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
+        minLevel=135,
         level=135
     })
     self.warden:AddSkill({
@@ -1077,6 +1862,12 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Карн-Думе",         label="Карн-Дум", zone="Ангмар", },
         map={{MapType.ERIADOR, 735, 100}},
         overlap={"0x70064ACA"},
+        acquire={
+            {cost={{amount=30, token=LC.token.SARSKILLINAN}},
+                EN={vendor="Muirál"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        minLevel=20,
         level=140.1
     })
     self.warden:AddSkill({
@@ -1087,6 +1878,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Пеларгире",         label="Пеларгир", zone="Королевский Гондор", },
         map={{MapType.GONDOR, 670, 625}},
         overlap={"0x700658EB"},
+        acquire={
+            {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
+                EN={vendor="Quartermaster (The Renewal of Gondor)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=135,
         level=141
     })
     self.warden:AddSkill({
@@ -1097,6 +1895,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Дол Амроте",          desc="Королевский Гондор", label="Королевский Дол Амрот",  zlabel="Дол Амрот",     zone="Королевский Гондор", },
         map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 385, 70}},
         overlap={"0x70068700"},
+        acquire={
+            {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
+                EN={vendor="Quartermaster (The Renewal of Gondor)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=135,
         level=142
     })
     self.warden:AddSkill({
@@ -1107,6 +1912,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Лонд-Кирионе",         label="Лонд-Кирион", zone="Анфалас", },
         map={{MapType.GONDOR, 255, 420}, {MapType.HARADWAITH, 230, 20}},
         overlap={"0x70068703"},
+        acquire={
+            {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
+                EN={vendor="Quartermaster (The Renewal of Gondor)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=135,
         level=143
     })
     self.warden:AddSkill({
@@ -1117,6 +1929,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Халраксе",        label="Халракс", zone="Острова Щита", },
         map={{MapType.HARADWAITH, 275, 260}},
         overlap={"0x70068702"},
+        acquire={
+            {cost={{amount=10, token=LC.token.UMBARI_TAM}},
+                EN={vendor="Quartermaster (The City of Umbar Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
         level=145
     })
     self.warden:AddSkill({
@@ -1127,6 +1946,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Джакс-Фанале",        label="Джакс-Фанал", zone="Умбар", },
         map={{MapType.HARADWAITH, 305, 315}},
         overlap={"0x70068701"},
+        acquire={
+            {cost={{amount=10, token=LC.token.UMBARI_TAM}},
+                EN={vendor="Quartermaster (The City of Umbar Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
         level=146
     })
     self.warden:AddSkill({
@@ -1137,6 +1963,12 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Бедж-Магде",          label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 350, 380}},
         overlap={"0x7006A9C1"},
+        acquire={
+            {cost={{amount=15, token=LC.token.UMBARI_TAM}}, coords="[20.0S, 105.7W]",
+                EN={vendor="Mâkhda Khorbo Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        minLevel=20,
         level=147
     })
     self.warden:AddSkill({
@@ -1147,6 +1979,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Умбаре",         label="Умбар", detail="Бахарбель", zone="Умбар", },
         map={{MapType.HARADWAITH, 505, 370}},
         overlap={"0x700686FF"},
+        acquire={
+            {cost={{amount=10, token=LC.token.UMBARI_TAM}},
+                EN={vendor="Quartermaster (The City of Umbar Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
         level=148
     })
     self.warden:AddSkill({
@@ -1157,6 +1996,20 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в таверне \'Кровавый орёл\'",               label="Таверна Кровавый Орёл",       zone="Умбар", },
         map={{MapType.HARADWAITH, 475, 400}},
         overlap={"0x700697F2"},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }},
+            {cost={{amount=10, token=LC.token.LEDGER_KEEPER_MARK}},
+                EN={vendor="Ledger-keepers Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }},
+            {cost={{amount=10, token=LC.token.EAGLE_BIT}},
+                EN={vendor="Order of the Eagle Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }},},
+        minLevel=20,
         level=149
     })
 
@@ -1169,6 +2022,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers Celondim", label="Celondim", zone="Ered Luin", },
         RU={ name="Отплытие в Келондим",    label="Келондим", zone="Эред Луин", },
         map={{MapType.ERIADOR, 310, 380}},
+        acquire={ { autoLevel=true } },
+        minLevel=7,
         level=1
     })
     self.mariner:AddSkill({
@@ -1178,6 +2033,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers le Pays de Bouc", label="Pays de Bouc", zone="Bree", },
         RU={ name="Отплытие в Забрендию",          label="Забрендия",    zone="Бри", },
         map={{MapType.ERIADOR, 515, 405}},
+        acquire={ { autoLevel=true } },
+        minLevel=15,
         level=4
     })
     self.mariner:AddSkill({
@@ -1187,6 +2044,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers Tharbad", label="Tharbad", zone="Noues des cygnes", },
         RU={ name="Отплытие в Тарбад",     label="Тарбад",  zone="Лебедянь", },
         map={{MapType.ERIADOR, 650, 525}},
+        acquire={ { autoLevel=true } },
+        minLevel=7,
         level=5
     })
     self.mariner:AddSkill({
@@ -1196,6 +2055,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers Tinnudir", label="Tinnudir", zone="Evendim", },
         RU={ name="Отплытие на Тиннудир",   label="Тиннудир", zone="Эвендим", },
         map={{MapType.ERIADOR, 420, 250}},
+        acquire={ { autoLevel=true } },
+        minLevel=35,
         level=30
     })
     self.mariner:AddSkill({
@@ -1206,6 +2067,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие к Торговой пристани",        label="Торговая пристань",  zone="Эвендим", },
         map={{MapType.ERIADOR, 515, 305}},
         overlap={"0x70059D0E"},
+        acquire={
+            {cost={{amount=25, token=LC.token.MARK_OF_WILDS}},
+                EN={vendor="Quartermaster (The League of the Axe)", },
+                DE={vendor="Quartermaster (The League of the Axe)", },
+                FR={vendor="Quartermaster (The League of the Axe)", }} },
+        rep=LC.rep.LEAGUE_OF_AXE, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=40,
         level=40.4
     })
     self.mariner:AddSkill({
@@ -1215,6 +2083,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers Sûri-kylä", label="Sûri-kylä", zone="Forochel", },
         RU={ name="Отплытие в Сури-кила",    label="Сури-кила", zone="Форохель", },
         map={{MapType.ERIADOR, 430, 50}},
+        acquire={
+            {cost={{amount=273, token=LC.token.SILVER},
+                   {amount=60, token=LC.token.COPPER}}, coords="[19.5N, 72.0W]",
+                EN={vendor="Rûsu", },
+                DE={vendor="Rûsu", },
+                FR={vendor="Rûsu", }}},
+        rep=LC.rep.LOSSOTH_OF_FOROCHEL, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=38,
         level=42
     })
     self.mariner:AddSkill({
@@ -1225,6 +2101,8 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие в Лотлориэн",        label="Лотлориэн",  detail="Эгладил", zone="Лотлориэн", },
         map={{MapType.RHOVANION, 245, 670}},
         overlap={"0x70048C8C"},
+        acquire={ { autoLevel=true } },
+        minLevel=60,
         level=60
     })
     self.mariner:AddSkill({
@@ -1234,6 +2112,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers l'Orée Noire", label="Orée Noire",  zone="Forêt Noire", },
         RU={ name="Отплытие к Чёрной роще",     label="Черная роща", zone="Лихолесье", },
         map={{MapType.RHOVANION, 365, 630}},
+        acquire={
+            {cost={{amount=1, token=LC.token.MALLEDHRIM_BRONZE_FEATHER}}, coords="[15.1S, 61.5W]",
+                EN={vendor="Estellien", },
+                DE={vendor="Estellien", },
+                FR={vendor="Estellien", }}},
+        rep=LC.rep.MALLEDHRIM, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=38,
         level=61
     })
     self.mariner:AddSkill({
@@ -1243,6 +2128,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers les Terres brunes", label="Terres brunes", zone="Grand Fleuve", },
         RU={ name="Отплытие к Бурым равнинам",       label="Бурые равнины", zone="Великая река", },
         map={{MapType.ROHAN, 700, 180}},
+        acquire={
+            {cost={{amount=5, token=LC.token.SILVER_TOKEN_OF_ANDUIN}}, coords="[25.5S, 63.3W]",
+                EN={vendor="Ordlaf", },
+                DE={vendor="Ordlaf", },
+                FR={vendor="Ordlaf", }},
+            { store=true }},
+        rep=LC.rep.RIDERS_OF_STANGARD, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=70,
         level=75.1
     })
     self.mariner:AddSkill({
@@ -1253,6 +2146,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие в Сноуборн",       label="Сноуборн",     zone="Восточный Рохан", },
         map={{MapType.ROHAN, 515, 500}},
         overlap={"0x70031A46"},
+        acquire={
+            {cost={{amount=50, token=LC.token.SILVER_TOKEN_OF_RIDDERMARK}},
+                EN={vendor="Eastemnet Miscellany Quartermaster", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.MEN_OF_SUTCROFTS, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=80,
         level=80
     })
     self.mariner:AddSkill({
@@ -1263,6 +2163,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие в Дол Амрот",       desc="в Дол Амрот",                 label="Дол Амрот",  zone="Западный Гондор", },
         map={{MapType.GONDOR, 225, 550}},
         overlap={"0x700411AC"},
+        acquire={
+            {cost={{amount=25, token=LC.token.AMROTH_SILVER}}, coords="[74.9S, 71.4W]",
+                EN={vendor="Quartermaster (Dol Amroth)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.DOL_AMROTH, repLevel=LC.repLevel.FRIEND,
+        minLevel=95,
         level=98
     })
     self.mariner:AddSkill({
@@ -1273,6 +2180,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие в Осгилиат (после битвы)",         label="Осгилиат (после битвы)",         zone="Анориен", },
         map={{MapType.GONDOR, 855, 335}},
         overlap={"0x7004707D"},
+        acquire={
+            {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER}},
+                EN={vendor="Quartermaster (Host of the West)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=105.1
     })
     self.mariner:AddSkill({
@@ -1283,6 +2197,16 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие в Озёрный город", label="Озёрный город", zone="Эрин Ласгален", },
         map={{MapType.RHOVANION, 740, 275}},
         overlap={"0x7004D738"},
+        acquire={
+            {cost={{amount=30, token=LC.token.TOKEN_OF_LAKE_AND_RIVERS}},
+                EN={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=115,
         level=115
     })
     self.mariner:AddSkill({
@@ -1293,6 +2217,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие в Пеларгир",    label="Пеларгир", zone="Королевский Гондор", },
         map={{MapType.GONDOR, 670, 625}},
         overlap={"0x700658EB"},
+        acquire={
+            {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
+                EN={vendor="Quartermaster (The Renewal of Gondor)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=135,
         level=141
     })
     self.mariner:AddSkill({
@@ -1303,6 +2234,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие в Дол Амрот",     desc="Королевский Гондор", label="Королевский Дол Амрот",  zlabel="Дол Амрот",  zone="Королевский Гондор", },
         map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 385, 70}},
         overlap={"0x70068700"},
+        acquire={
+            {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
+                EN={vendor="Quartermaster (The Renewal of Gondor)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=135,
         level=142
     })
     self.mariner:AddSkill({
@@ -1313,6 +2251,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие в Лонд-Кирион",    label="Лонд-Кирион", zone="Анфалас", },
         map={{MapType.GONDOR, 255, 420}, {MapType.HARADWAITH, 230, 20}},
         overlap={"0x70068703"},
+        acquire={
+            {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
+                EN={vendor="Quartermaster (The Renewal of Gondor)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=135,
         level=143
     })
     self.mariner:AddSkill({
@@ -1323,6 +2268,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие в Халракс",   label="Халракс", zone="Острова Щита", },
         map={{MapType.HARADWAITH, 275, 160}},
         overlap={"0x70068702"},
+        acquire={
+            {cost={{amount=10, token=LC.token.UMBARI_TAM}},
+                EN={vendor="Quartermaster (The City of Umbar Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
         level=145
     })
     self.mariner:AddSkill({
@@ -1333,6 +2285,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие в Джакс-Фанал",   label="Джакс-Фанал", zone="Умбар", },
         map={{MapType.HARADWAITH, 305, 315}},
         overlap={"0x70068701"},
+        acquire={
+            {cost={{amount=10, token=LC.token.UMBARI_TAM}},
+                EN={vendor="Quartermaster (The City of Umbar Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
         level=146
     })
     self.mariner:AddSkill({
@@ -1343,6 +2302,12 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие в Бедж-Магду",    label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 350, 380}},
         overlap={"0x7006A9C1"},
+        acquire={
+            {cost={{amount=15, token=LC.token.UMBARI_TAM}}, coords="[20.0S, 105.7W]",
+                EN={vendor="Mâkhda Khorbo Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        minLevel=20,
         level=147
     })
     self.mariner:AddSkill({
@@ -1353,6 +2318,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие в Умбар",    label="Умбар", detail="Бахарбель", zone="Умбар", },
         map={{MapType.HARADWAITH, 505, 370}},
         overlap={"0x700686FF"},
+        acquire={
+            {cost={{amount=10, token=LC.token.UMBARI_TAM}},
+                EN={vendor="Quartermaster (The City of Umbar Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
         level=148
     })
 
@@ -1366,6 +2338,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Bree",      desc="Permet de retourner",                label="Bree", zlabel="Porte Ouest",     zone="Bree", },
         RU={ name="Возвращение в Бри",  desc="Вы можете быстро перенестись в Бри", label="Бри",  zlabel="Западные ворота", zone="Бри", },
         map={MapType.ERIADOR, 525, 335},
+        acquire={ {
+            EN={deed="Enmity of the Wargs II",},
+            DE={deed="",},
+            FR={deed="",}} },
+        minLevel=29,
         level=5
     })
     self.racials:AddSkill({
@@ -1376,6 +2353,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez dans la Comté", label="Grand'Cave",     zone="Comté", },
         RU={ name="Возвращение в Шир",       label="Занорье",        zone="Шир", },
         map={MapType.ERIADOR, 405, 440},
+        acquire={ {
+            EN={deed="Enmity of the Spiders II",},
+            DE={deed="",},
+            FR={deed="",}} },
+        minLevel=29,
         level=1
     })
     self.racials:AddSkill({
@@ -1386,6 +2368,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour : Porte de Thorin",    desc="Ceci vous permet de retourner",                label="Porte de Thorin", zone="Ered Luin", },
         RU={ name="Возвращение к Вратам Торина", desc="Вы можете быстро перенестись к Вратам Торина", label="Врата Торина",    zone="Эред Луин", },
         map={MapType.ERIADOR, 310, 270},
+        acquire={ {
+            EN={deed="Enmity of the Goblins II",},
+            DE={deed="",},
+            FR={deed="",}} },
+        minLevel=29,
         level=1.2
     })
     self.racials:AddSkill({
@@ -1396,6 +2383,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Fondcombe",      desc="Ceci vous permet de retourner",            label="Fondcombe", zone="Trouée des Trolls", },
         RU={ name="Возвращение в Ривенделл", desc="Вы можете быстро перенестись в Ривенделл", label="Ривенделл", zone="Троллистая пуща", },
         map={MapType.ERIADOR, 900, 375},
+        acquire={ {
+            EN={deed="Enmity of the Orcs II"},
+            DE={deed=""},
+            FR={deed=""}} },
+        minLevel=29,
         level=40.1
     })
     self.racials:AddSkill({
@@ -1406,6 +2398,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison",       desc="Pavillon de Grimbeorn.", label="Maison Beorning",  zone="Val d'Anduin", },
         RU={ name="Возвращение домой",        desc="Усадьба Гримбеорна.",    label="Дом беорнинга",    zone="Долина Андуина", },
         map={MapType.RHOVANION, 285, 340},
+        acquire={ {
+            EN={deed="Enmity of the Goblins II"},
+            DE={deed=""},
+            FR={deed=""}} },
+        minLevel=19,
         level=120
     })
     self.racials:AddSkill({
@@ -1416,6 +2413,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Voyage vers Caras Galadhon, en Lothlórien",     label="Caras Galadhon", zone="Lothlórien", },
         RU={ name="Путешествие в Карас Галадон, что в Лотлориэне", label="Карас Галадон",  zone="Лотлориэн", },
         map={MapType.RHOVANION, 120, 690},
+        acquire={ {
+            EN={deed="Enmity of the Orcs II"},
+            DE={deed=""},
+            FR={deed=""}} },
+        minLevel=32,
         level=60
     })
     self.racials:AddSkill({
@@ -1426,6 +2428,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Aller au Palais de Thorin",    label="Palais de Thorin", zone="Ered Luin", },
         RU={ name="Путешествие в Чертоги Торина", label="Чертоги Торина",   zone="Эред Луин", },
         map={MapType.ERIADOR, 345, 310},
+        acquire={ {
+            EN={deed="Enmity of the Cultists III"},
+            DE={deed=""},
+            FR={deed=""}} },
+        minLevel=35,
         level=1.2
     })
     self.racials:AddSkill({
@@ -1436,6 +2443,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Lyndelby",         label="Lyndelby",  zone="Puits du Long Fleuve", },
         RU={ name="Возвращение в Линдельби",   label="Линдельби", zone="Истоки Долгой реки", },
         map={MapType.RHOVANION, 155, 165},
+        acquire={ {
+            EN={deed="Back And There Again"},
+            DE={deed=""},
+            FR={deed=""}} },
+        minLevel=125,
         level=1.3
     })
 
@@ -1456,6 +2468,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison 2",     label="Point de repère 2", },
         RU={ name="Дорога домой 2", },
         map={MapType.NONE, -1, -1},
+        acquire={ {store=true} },
+        minLevel=10,
         level=1
     })
     self.gen:AddSkill({
@@ -1465,6 +2479,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison 3",     label="Point de repère 3", },
         RU={ name="Дорога домой 3", },
         map={MapType.NONE, -1, -1},
+        acquire={ {store=true} },
+        minLevel=10,
         level=1
     })
     self.gen:AddSkill({
@@ -1474,6 +2490,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison 4",     label="Point de repère 4", },
         RU={ name="Дорога домой 4", },
         map={MapType.NONE, -1, -1},
+        acquire={ {store=true} },
+        minLevel=10,
         level=1
     })
     self.gen:AddSkill({
@@ -1483,6 +2501,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison 5",     label="Point de repère 5", },
         RU={ name="Дорога домой 5", },
         map={MapType.NONE, -1, -1},
+        acquire={ {store=true} },
+        minLevel=10,
         level=1
     })
     self.gen:AddSkill({
@@ -1492,6 +2512,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison 6",     label="Point de repère 6", },
         RU={ name="Дорога домой 6", },
         map={MapType.NONE, -1, -1},
+        acquire={ {store=true} },
+        minLevel=10,
         level=1
     })
     self.gen:AddSkill({
@@ -1501,6 +2523,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison 7",     label="Point de repère 7", },
         RU={ name="Дорога домой 7", },
         map={MapType.NONE, -1, -1},
+        acquire={ {store=true} },
+        minLevel=10,
         level=1
     })
     self.gen:AddSkill({
@@ -1510,6 +2534,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison 8",     label="Point de repère 8", },
         RU={ name="Дорога домой 8", },
         map={MapType.NONE, -1, -1},
+        acquire={ {store=true} },
+        minLevel=10,
         level=1
     })
     self.gen:AddSkill({
@@ -1519,6 +2545,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison 9",     label="Point de repère 9", },
         RU={ name="Дорога домой 9", },
         map={MapType.NONE, -1, -1},
+        acquire={ {store=true} },
+        minLevel=10,
         level=1
     })
     self.gen:AddSkill({
@@ -1528,6 +2556,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison 10",     label="Point de repère 10", },
         RU={ name="Дорога домой 10", },
         map={MapType.NONE, -1, -1},
+        acquire={ {store=true} },
+        minLevel=10,
         level=1
     })
     self.gen:AddSkill({
@@ -1537,6 +2567,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison 11",     label="Point de repère 11", },
         RU={ name="Дорога домой 11", },
         map={MapType.NONE, -1, -1},
+        acquire={ {store=true} },
+        minLevel=10,
         level=1
     })
     self.gen:AddSkill({
@@ -1546,6 +2578,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison personnelle", label="Maison personnelle", },
         RU={ name="Возвращение домой",              label="Частный дом", },
         map={MapType.NONE, -1, -1},
+        acquire={ {
+            EN={desc="Buy a House and earn the Novice trait."},
+            DE={desc=""},
+            FR={desc=""}}},
+        minLevel=1,
         level=1
     })
     self.gen:AddSkill({
@@ -1555,6 +2592,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Aller à une maison premium",   label="Maison premium", },
         RU={ name="Возвращение в престижный дом", label="Престижный дом", },
         map={MapType.NONE, -1, -1},
+        acquire={ {
+            EN={desc="Buy a Premium House and earn the Novice trait."},
+            DE={desc=""},
+            FR={desc=""}}},
+        minLevel=1,
         level=1
     })
     self.gen:AddSkill({
@@ -1564,6 +2606,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison de confrérie", label="Maison de confrérie", },
         RU={ name="Путешествие в дом содружества",   label="Дом содружества", },
         map={MapType.NONE, -1, -1},
+        acquire={ {
+            EN={desc="Become a member of a kinship that has a kinship house."},
+            DE={desc=""},
+            FR={desc=""}}},
+        minLevel=1,
         level=1
     })
     self.gen:AddSkill({
@@ -1573,6 +2620,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison d'un membre de confrérie", label="Maison d'un membre de confrérie", },
         RU={ name="Путешествие в дом участника содружества",     label="Дом участника содружества", },
         map={MapType.NONE, -1, -1},
+        acquire={ {
+            EN={desc="Become a member of a kinship."},
+            DE={desc=""},
+            FR={desc=""}}},
+        minLevel=1,
         level=1
     })
 
@@ -1585,6 +2637,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Grand'Cave",       label="Grand'Cave",     tag="Shop",  zone="Comté", },
         RU={ name="Возвращение в Занорье",     label="Занорье",        tag="Лавка", zone="Шир", },
         map={{MapType.ERIADOR, 375, 440}},
+        acquire={ {store=true} },
+        minLevel=10,
         level=1
     })
     self.rep:AddSkill({
@@ -1594,6 +2648,15 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour : Porte de Thorin",    desc="Grâce à l'amitié qui vous", label="Porte de Thorin", zone="Ered Luin", },
         RU={ name="Возвращение к Вратам Торина", desc="Благодаря дружбе",          label="Врата Торина",    zone="Эред Луин", },
         map={{MapType.ERIADOR, 345, 310}},
+        acquire={
+            {cost={{amount=100, token=LC.token.DOURHAND_CREST}},
+                vendor="Tórth",
+                EN={desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"},
+                DE={desc=""},
+                FR={desc=""}},
+            {store=true}, },
+        rep=LC.rep.THORINS_HALL, repLevel=LC.repLevel.KINDRED,
+        minLevel=10,
         level=1.1
     })
     self.rep:AddSkill({
@@ -1603,6 +2666,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Bree",      desc="Grâce à votre amitié",      label="Bree", zlabel="Porte Ouest",     zone="Bree", },
         RU={ name="Возвращение в Бри",  desc="Благодаря дружбе",          label="Бри",  zlabel="Западные ворота", zone="Бри", },
         map={{MapType.ERIADOR, 555, 335}},
+        acquire={
+            {cost={{amount=100, token=LC.token.BARROW_TREASURE}}, coords="[31.8S, 51.3W]",
+                EN={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"},
+                DE={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"},
+                FR={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"}},
+            {store=true} },
+        rep=LC.rep.MEN_OF_BREE, repLevel=LC.repLevel.KINDRED,
+        minLevel=10,
         level=5
     })
     self.rep:AddSkill({
@@ -1613,6 +2684,11 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Возвращение на рынок Лалии",   label="Рынок Лалии",     zone="Бри", },
         tag="Mithril",
         map={{MapType.ERIADOR, 630, 360}},
+        acquire={
+            {cost={{amount=3, token=LC.token.MITHRIL_COIN}},
+                EN={vendor="Lalia", desc="Inside Lalia's Market"},
+                DE={vendor="Lalia", desc="Inside Lalia's Market"},
+                FR={vendor="Lalia", desc="Inside Lalia's Market"}} },
         level=5.1
     })
     self.rep:AddSkill({
@@ -1620,8 +2696,20 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Clegur",      label="Clegur", zone="Swanfleet", },
         DE={ name="Rückkehr nach Clegur",  label="Clegur", zone="Schwanenfleet", },
         FR={ name="Retournez voir Clegur", label="Clegur", zone="Noues des cygnes", },
+
         RU={ name="Возвращение в Клегур",  label="Клегур", zone="Swanfleet", },
         map={{MapType.ERIADOR, 725, 555}},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster", },
+                DE={vendor="Delving Quartermaster", },
+                FR={vendor="Delving Quartermaster", }},
+            {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
+                EN={vendor="Before the Shadow Mission-giver Barterer", },
+                DE={vendor="Before the Shadow Mission-giver Barterer", },
+                FR={vendor="Before the Shadow Mission-giver Barterer", }} },
+        rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=7
     })
     self.rep:AddSkill({
@@ -1631,6 +2719,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour aux Noues des cygnes", label="Noues des cygnes", detail="Lhan Garan", zone="Noues des cygnes", },
         RU={ name="Возвращение в Лебедянь",      label="Лебедянь",         detail="Лхан-Гаран", zone="Лебедянь", },
         map={{MapType.ERIADOR, 795, 490}},
+        acquire={
+            {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
+                EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                FR={vendor="Quartermaster (Dúnedain of Cardolan)", }} },
+        rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=10
     })
     self.rep:AddSkill({
@@ -1640,6 +2735,17 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour au Cardolan",     label="Cardolan", detail="Herne", zone="Cardolan", },
         RU={ name="Возвращение в Кардолан", label="Кардолан", detail="Хэрне", zone="Кардолан", },
         map={{MapType.ERIADOR, 590, 495}},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster", },
+                DE={vendor="Delving Quartermaster", },
+                FR={vendor="Delving Quartermaster", }},
+            {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
+                EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                FR={vendor="Quartermaster (Dúnedain of Cardolan)", }} },
+        rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=15
     })
     self.rep:AddSkill({
@@ -1649,6 +2755,17 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Andrath",      label="Andrath", zone="Cardolan", },
         RU={ name="Возвращение в Андрат",  label="Андрат", zone="Кардолан", },
         map={{MapType.ERIADOR, 550, 465}},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster", },
+                DE={vendor="Delving Quartermaster", },
+                FR={vendor="Delving Quartermaster", }},
+            {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
+                EN={vendor="Before the Shadow Mission-giver Barterer", },
+                DE={vendor="Before the Shadow Mission-giver Barterer", },
+                FR={vendor="Before the Shadow Mission-giver Barterer", }} },
+        rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=17
     })
     self.rep:AddSkill({
@@ -1658,6 +2775,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Bourdeneuve",         label="Bourdeneuve", zone="Comté lointain", },
         RU={ name="Возвращение в Новодворье",     label="Новодворье",  zone="Дальний Шир", },
         map={{MapType.ERIADOR, 410, 350}},
+        acquire={
+            {cost={{amount=10, token=LC.token.COPPER_BOUNDER_COIN}},
+                EN={vendor="Quartermaster (Yonder-watch)", },
+                DE={vendor="Quartermaster (Yonder-watch)", },
+                FR={vendor="Quartermaster (Yonder-watch)", }} },
+        rep=LC.rep.YONDER_WATCH, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=20,
         level=20
     })
     self.rep:AddSkill({
@@ -1667,6 +2791,9 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez à Ost Guruth",    label="Ost Guruth",   zone="Terres Solitaires", },
         RU={ name="Возвращение в Ост Гурут",   label="Ост Гурут",    zone="Пустоши", },
         map={{MapType.ERIADOR, 725, 400}},
+        acquire={ { store=true }, { autoRep=true } },
+        rep=LC.rep.EGLAIN, repLevel=LC.repLevel.KINDRED,
+        minLevel=10,
         level=25
     })
     self.rep:AddSkill({
@@ -1676,6 +2803,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez voir Tornhad",     label="Tornhad", zone="L'Angle de Mitheithel", },
         RU={ name="Возвращение в Торнхад",      label="Торнхад", zone="Митейтельская стрелка", },
         map={{MapType.ERIADOR, 745, 435}},
+        acquire={
+            {cost={{amount=15, token=LC.token.MARK_OF_ANGLE}},
+                EN={vendor="Quartermaster (Defenders of the Angle)", },
+                DE={vendor="Quartermaster (Defenders of the Angle)", },
+                FR={vendor="Quartermaster (Defenders of the Angle)", }} },
+        rep=LC.rep.DEFENDERS_OF_ANGLE, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=38,
         level=40
     })
     self.rep:AddSkill({
@@ -1685,6 +2819,8 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Fondcombe",      desc="Grâce à votre amitié avec", label="Fondcombe", tag="Shop",  zone="Trouée des Trolls", },
         RU={ name="Возвращение в Ривенделл", desc="Благодаря дружбе",          label="Ривенделл", tag="Лавка", zone="Троллистая пуща", },
         map={{MapType.ERIADOR, 835, 410}},
+        acquire={ { store=true } },
+        minLevel=10,
         level=40.1
     })
     self.rep:AddSkill({
@@ -1695,6 +2831,13 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Возвращение в архив узоров Ривенделла",               label="Архив узоров Ривенделла", zone="Троллистая пуща", },
         tag="Delving",
         map={{MapType.ERIADOR, 905, 345}},
+        acquire={
+            {
+                EN={drop="Delving Reward Box (any tier)"},
+                DE={drop="Delving Reward Box (any tier)"},
+                FR={drop="Delving Reward Box (any tier)"}}
+            },
+        minLevel=20,
         level=40.11
     })
     self.rep:AddSkill({
@@ -1704,6 +2847,19 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Glân Vraig",          label="Glân Vraig", tag="Quête",   zone="Les Landes d'Etten", },
         RU={ name="Возвращение в Глан Врайг",     label="Глан Врайг", tag="Задание", zone="Эттенские высоты", },
         map={{MapType.ERIADOR, 835, 245}},
+        acquire={
+            {
+                EN={quest="Tutorial: Outfitted for Battle"},
+                DE={quest="Tutorial: Outfitted for Battle"},
+                FR={quest="Tutorial: Outfitted for Battle"}
+            },
+            {
+                cost={{amount=500, token=LC.token.COMMENDATION}},
+                EN={vendor="Coldfells Quartermaster"},
+                DE={vendor="Coldfells Quartermaster"},
+                FR={vendor="Coldfells Quartermaster"},
+            }},
+        minLevel=2,
         level=40.12
     })
     self.rep:AddSkill({
@@ -1713,6 +2869,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez à Pont-à-Tréteaux", label="Pont-à-Tréteaux", zone="Hauts du Nord", },
         RU={ name="Возвращение в Примостье",     label="Примостье",       zone="Северное нагорье", },
         map={{MapType.ERIADOR, 560, 285}},
+        acquire={
+            {cost={{amount=25, token=LC.token.MARK_OF_WILDS}},
+                EN={vendor="Quartermaster (Woodcutter's Brotherhood)", },
+                DE={vendor="Quartermaster (Woodcutter's Brotherhood)", },
+                FR={vendor="Quartermaster (Woodcutter's Brotherhood)", }} },
+        rep=LC.rep.WOODCUTTERS_BROTHERHOOD, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=40,
         level=40.3
     })
     self.rep:AddSkill({
@@ -1722,6 +2885,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez au Quai des marchands", label="Quai des marchands", zone="Evendim", },
         RU={ name="Возвращение к Торговой пристани", label="Торговая пристань",  zone="Эвендим", },
         map={{MapType.ERIADOR, 515, 275}},
+        acquire={
+            {cost={{amount=25, token=LC.token.MARK_OF_WILDS}},
+                EN={vendor="Quartermaster (The League of the Axe)", },
+                DE={vendor="Quartermaster (The League of the Axe)", },
+                FR={vendor="Quartermaster (The League of the Axe)", }} },
+        rep=LC.rep.LEAGUE_OF_AXE, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=40,
         level=40.4
     })
     self.rep:AddSkill({
@@ -1731,6 +2901,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour dans la Forêt Noire", label="Forêt Noire", detail="Ost Galadh",   zone="Forêt Noire", },
         RU={ name="Возвращение в Лихолесье",    label="Лихолесье",   detail="Ост Галад",    zone="Лихолесье", },
         map={{MapType.RHOVANION, 335, 630}},
+        acquire={
+            {cost={{amount=10, token=LC.token.MALLEDHRIM_GOLD_STAR_EMBLEM}}, coords="[12.6S, 46.4W]",
+                EN={vendor="Millaesil", },
+                DE={vendor="Millaesil", },
+                FR={vendor="Millaesil", }},
+            { store=true }},
+        rep=LC.rep.MALLEDHRIM, repLevel=LC.repLevel.KINDRED,
+        minLevel=51,
         level=61
     })
     self.rep:AddSkill({
@@ -1740,6 +2918,15 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour en Enedwaith",     label="Enedwaith", detail="Lhanuch", zone="Enedwaith", },
         RU={ name="Возвращение в Энедвайт",  label="Энедвайт",  detail="Лханух",  zone="Энедвайт", },
         map={{MapType.ERIADOR, 765, 620}},
+        acquire={
+            {cost={{amount=20, token=LC.token.SILVER_TOKEN_OF_WILDS},
+                   {amount=20, token=LC.token.GOLDEN_TOKEN_OF_WILDS}}, coords="[66.5S, 17.2W]",
+                EN={vendor="Mabon", },
+                DE={vendor="Mabon", },
+                FR={vendor="Mabon", }},
+            { store=true }},
+        rep=LC.rep.ALGRAIG, repLevel=LC.repLevel.KINDRED,
+        minLevel=51,
         level=62
     })
     self.rep:AddSkill({
@@ -1749,6 +2936,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Galtrev",          label="Galtrev", zone="Pays de Dun", },
         RU={ name="Возвращение в Галтрев",     label="Галтрев", zone="Дунланд", },
         map={{MapType.ERIADOR, 780, 715}},
+        acquire={
+            {cost={{amount=176, token=LC.token.SILVER}}, coords="[80.4S, 16.8W]",
+                EN={vendor="Dunlending Quartermaster", },
+                DE={vendor="Dunlending Quartermaster", },
+                FR={vendor="Dunlending Quartermaster", }},
+            { store=true }},
+        rep=LC.rep.MEN_OF_DUNLAND, repLevel=LC.repLevel.KINDRED,
+        minLevel=70,
         level=65
     })
     self.rep:AddSkill({
@@ -1758,6 +2953,15 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Stangarde",         label="Stangarde", zone="Grand Fleuve", },
         RU={ name="Возвращение в Стангард",     label="Стангард",  zone="Великая река", },
         map={{MapType.RHOVANION, 170, 720}, {MapType.ROHAN, 515, 90}},
+        acquire={
+            {cost={{amount=20, token=LC.token.SILVER_TOKEN_OF_ANDUIN},
+                   {amount=20, token=LC.token.GOLDEN_TOKEN_OF_ANDUIN}}, coords="[25.5S, 63.3W]",
+                EN={vendor="Ordlaf", },
+                DE={vendor="Ordlaf", },
+                FR={vendor="Ordlaf", }},
+            { store=true }},
+        rep=LC.rep.RIDERS_OF_STANGARD, repLevel=LC.repLevel.KINDRED,
+        minLevel=70,
         level=75
     })
     self.rep:AddSkill({
@@ -1767,6 +2971,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retourner à Neigebronne",        label="Neigebronne",  zone="Rohan est", },
         RU={ name="Возвращение в Сноуборн",         label="Сноуборн",     zone="Восточный Рохан", },
         map={{MapType.ROHAN, 485, 500}},
+        acquire={
+            {cost={{amount=250, token=LC.token.SILVER_TOKEN_OF_RIDDERMARK}},
+                EN={vendor="Eastemnet Miscellany Quartermaster", },
+                DE={vendor="Eastemnet Miscellany Quartermaster", },
+                FR={vendor="Eastemnet Miscellany Quartermaster", }} },
+        rep=LC.rep.MEN_OF_SUTCROFTS, repLevel=LC.repLevel.KINDRED,
+        minLevel=80,
         level=85
     })
     self.rep:AddSkill({
@@ -1776,6 +2987,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Forloi",       label="Forloi",  zone="Landes farouches", },
         RU={ name="Возвращение в Форлоу",  label="Форлоу",  zone="Вилдермор", },
         map={{MapType.ROHAN, 480, 175}},
+        acquire={
+            {cost={{amount=100, token=LC.token.WILDERMORE_COIN}}, coords="[39.4S, 60.8W]",
+                EN={vendor="Ethelmund", },
+                DE={vendor="Ethelmund", },
+                FR={vendor="Ethelmund", }} },
+        rep=LC.rep.PEOPLE_OF_WILDERMORE, repLevel=LC.repLevel.KINDRED,
+        minLevel=85,
         level=85
     })
     self.rep:AddSkill({
@@ -1785,6 +3003,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Aldburg",          label="Aldburg",  zone="Rohan de l'Ouest", },
         RU={ name="Возвращение в Альдбург",    label="Альдбург", zone="Западный Рохан", },
         map={{MapType.ROHAN, 540, 640}},
+        acquire={
+            {cost={{amount=150, token=LC.token.WESTEMNET_IRON_COIN}},
+                EN={vendor="Quartermaster (Eorlingas)", },
+                DE={vendor="Quartermaster (Eorlingas)", },
+                FR={vendor="Quartermaster (Eorlingas)", }} },
+        rep=LC.rep.EORLINGAS, repLevel=LC.repLevel.KINDRED,
+        minLevel=85,
         level=88
     })
     self.rep:AddSkill({
@@ -1794,6 +3019,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour au Gouffre de Helm",     label="Gouffre de Helm", zone="Rohan de l'Ouest", },
         RU={ name="Возвращение в Хельмову Падь",   label="Хельмова Падь",   zone="Западный Рохан", },
         map={{MapType.ROHAN, 245, 565}},
+        acquire={
+            {cost={{amount=150, token=LC.token.WESTEMNET_IRON_COIN}},
+                EN={vendor="Quartermaster (Helmingas)", },
+                DE={vendor="Quartermaster (Helmingas)", },
+                FR={vendor="Quartermaster (Helmingas)", }} },
+        rep=LC.rep.HELMINGAS, repLevel=LC.repLevel.KINDRED,
+        minLevel=90,
         level=90
     })
     self.rep:AddSkill({
@@ -1803,6 +3035,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Derunant",                 label="Derunant",            zone="Rohan de l'Ouest", },
         RU={ name="Возвращение в Заколдованную балку", label="Заколдованная балка", zone="Западный Рохан", },
         map={{MapType.RHOVANION, 45, 720}, {MapType.ROHAN, 295, 275}},
+        acquire={
+            {cost={{amount=10, token=LC.token.FANGORN_LEAF}}, coords="[42.1S, 79.1W]",
+                EN={vendor="Quickbeam (Derndingle)", },
+                DE={vendor="Quickbeam (Derndingle)", },
+                FR={vendor="Quickbeam (Derndingle)", }} },
+        rep=LC.rep.ENTS_OF_FANGORN, repLevel=LC.repLevel.KINDRED,
+        minLevel=95,
         level=90.1
     })
     self.rep:AddSkill({
@@ -1812,6 +3051,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Dol Amroth",      desc="l'Ouest du Gondor",        label="Dol Amroth", zone="Gondor de l'Ouest", },
         RU={ name="Возвращение в Дол Амрот",  desc="в Западный Гондор",        label="Дол Амрот",  zone="Западный Гондор", },
         map={{MapType.GONDOR, 195, 550}},
+        acquire={
+            {cost={{amount=50, token=LC.token.AMROTH_SILVER}}, coords="[74.9S, 71.4W]",
+                EN={vendor="Quartermaster (Dol Amroth)", },
+                DE={vendor="Quartermaster (Dol Amroth)", },
+                FR={vendor="Quartermaster (Dol Amroth)", }} },
+        rep=LC.rep.DOL_AMROTH, repLevel=LC.repLevel.KINDRED,
+        minLevel=95,
         level=98
     })
     self.rep:AddSkill({
@@ -1821,6 +3067,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez à Arnach",   label="Arnach", zone="Gondor de l'Ouest", },
         RU={ name="Возвращение в Арнах",  label="Арнах",  zone="Восточный Гондор", },
         map={{MapType.GONDOR, 685, 425}},
+        acquire={
+            {cost={{amount=10, token=LC.token.EAST_GONDOR_SILVER}},
+                EN={vendor="Quartermaster (Rangers of Ithilien)", },
+                DE={vendor="Quartermaster (Rangers of Ithilien)", },
+                FR={vendor="Quartermaster (Rangers of Ithilien)", }} },
+        rep=LC.rep.RANGERS_OF_ITHILIEN, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=100
     })
     self.rep:AddSkill({
@@ -1830,6 +3083,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Minas Tirith",           label="Minas Tirith", zone="Ancien Anórien", },
         RU={ name="Возвращение в Минас Тирит",       label="Минас Тирит",  zone="Старый Анориен", },
         map={{MapType.GONDOR, 700, 345}},
+        acquire={
+            {cost={{amount=30, token=LC.token.MINAS_TIRITH_SILVER}},
+                EN={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                DE={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                FR={vendor="Quartermaster (Defenders of Minas Tirith)", }} },
+        rep=LC.rep.DEFENDERS_OF_MINAS_TIRITH, repLevel=LC.repLevel.KINDRED,
+        minLevel=100,
         level=100.1
     })
     self.rep:AddSkill({
@@ -1839,6 +3099,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour au camp militaire",              label="Camp militaire",           zone="Lointain Anórien", },
         RU={ name="Возвращение в военный лагерь Рохиррим", label="Военный лагерь Рохиррим",  zone="Дальний Анориен", },
         map={{MapType.GONDOR, 635, 140}},
+        acquire={
+            {cost={{amount=5, token=LC.token.EXQUISITE_WOODCARVING},
+                   {amount=3, token=LC.token.POLISHED_MARBLE_TRINKET}}, coords="[45.5S, 27.3W]",
+                EN={vendor="Quartermaster (Riders of Rohan)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RIDERS_OF_ROHAN, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=102
     })
     self.rep:AddSkill({
@@ -1848,6 +3116,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Minas Tirith après la bataille",       label="Minas Tirith après la bataille", zone="Anórien", },
         RU={ name="Возвращение в Минас Тирит (после битвы)",       label="Минас Тирит (после битвы)",      zone="Анориен", },
         map={{MapType.GONDOR, 700, 375}},
+        acquire={
+            {cost={{amount=10, token=LC.token.MINAS_TIRITH_SILVER}},
+                EN={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.DEFENDERS_OF_MINAS_TIRITH, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=105
     })
     self.rep:AddSkill({
@@ -1857,6 +3132,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Osgiliath après la bataille",       label="Osgiliath après la bataille", zone="Anórien", },
         RU={ name="Возвращение в Осгилиат (после битвы)",       label="Осгилиат (после битвы)",      zone="Анориен", },
         map={{MapType.GONDOR, 825, 335}},
+        acquire={
+            {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER}},
+                EN={vendor="Quartermaster (Host of the West)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=105.1
     })
     self.rep:AddSkill({
@@ -1866,6 +3148,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Henneth Annûn",      label="Henneth Annûn", zone="Ithilien", },
         RU={ name="Возвращение в Хеннет Аннун",  label="Хеннет Аннун",  zone="Итилиен", },
         map={{MapType.GONDOR, 845, 385}},
+        acquire={
+            {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER}},
+                EN={vendor="Quartermaster (Host of the West)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=105.2
     })
     self.rep:AddSkill({
@@ -1875,6 +3164,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour au Camp de l'armée",            label="Camp de l'armée",        zone="Les Landes désertiques", },
         RU={ name="Возвращение в лагерь Воинства Запада", label="Лагерь Воинства Запада", zone="Гиблые земли", },
         map={{MapType.GONDOR, 775, 170}},
+        acquire={
+            {cost={{amount=40, token=LC.token.HOST_OF_WEST_SILVER}},
+                EN={vendor="Quartermaster (Host of the West)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.KINDRED,
+        minLevel=100,
         level=105.3
     })
     self.rep:AddSkill({
@@ -1884,6 +3180,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Haerondir",      label="Haerondir", zone="Les Landes désertiques", },
         RU={ name="Возвращение в Хаэрондир", label="Хаэрондир", zone="Гиблые земли", },
         map={{MapType.GONDOR, 825, 100}},
+        acquire={
+            {cost={{amount=40, token=LC.token.HOST_OF_WEST_SILVER}},
+                EN={vendor="Quartermaster (Host of the West)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.RESPECTED,
+        minLevel=100,
         level=105.4
     })
     self.rep:AddSkill({
@@ -1893,6 +3196,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour au fort d'Udûn",        label="Fort d'Udûn",      zone="Mordor", },
         RU={ name="Возвращение на заставу Удуна", label="Застава Удуна",    zone="Мордор", },
         map={{MapType.GONDOR, 895, 230}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SILVER_SIGNET_OF_THANDRIM}},
+                EN={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", },
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CONQUEST_OF_GORGOROTH, repLevel=LC.repLevel.FRIEND,
+        minLevel=100,
         level=106
     })
     self.rep:AddSkill({
@@ -1902,6 +3212,12 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Voyager jusqu'à la Cour de Lothlórien", label="Cour de Lothlórien",  tag="Quête",   zone="Lothlórien", },
         RU={ name="Возвращение ко Двору Лотлориэна",       label="Двор Лотлориэна",     tag="Задание", zone="Лотлориэн", },
         map={{MapType.RHOVANION, 140, 585}},
+        acquire={
+            {
+                EN={allegiance="The Court of Lothlórien", quest="Chapter 1: A Council Waiting" },
+                DE={allegiance="", quest="" },
+                FR={allegiance="", quest="" }} },
+        minLevel=110,
         level=110
     })
     self.rep:AddSkill({
@@ -1911,6 +3227,12 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Voyager jusqu'au Palais du roi",  label="Palais du roi",    tag="Quête",   zone="Ancien Anórien", },
         RU={ name="Возвращение в Зал короля",        label="Зал королей",      tag="Задание", zone="Старый Анориен", },
         map={{MapType.GONDOR, 740, 310}},
+        acquire={
+            {
+                EN={allegiance="The Kingdom of Gondor", quest="Chapter 1: The King and the Steward" },
+                DE={allegiance="", quest="" },
+                FR={allegiance="", quest="" }} },
+        minLevel=110,
         level=110.1
     })
     self.rep:AddSkill({
@@ -1920,6 +3242,12 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Voyager jusqu'au Palais sous la Montagne", label="Palais sous la Montagne", tag="Quête",   zone="Ered Mithrin", },
         RU={ name="Возвращение в Чертог-под-Горой",           label="Чертог-под-Горой",        tag="Задание", zone="Эред Митрин", },
         map={{MapType.RHOVANION, 630, 115}},
+        acquire={
+            {
+                EN={allegiance="Durin's Folk", quest="Chapter 1: Beneath the Lonely Mountain" },
+                DE={allegiance="", quest="" },
+                FR={allegiance="", quest="" }} },
+        minLevel=110,
         level=110.2
     })
     self.rep:AddSkill({
@@ -1929,6 +3257,12 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Voyager jusqu'à Bâr Thorenion", label="Bâr Thorenion", tag="Quête",   zone="Ithilien", },
         RU={ name="Возвращение в Бар Торенион",    label="Бар Торенион",  tag="Задание", zone="Итилиен", },
         map={{MapType.GONDOR, 965, 370}},
+        acquire={
+            {
+                EN={allegiance="Hobbits of the Company", quest="Chapter 1: A Place for Hobbits" },
+                DE={allegiance="", quest="" },
+                FR={allegiance="", quest="" }} },
+        minLevel=110,
         level=110.3
     })
     self.rep:AddSkill({
@@ -1938,6 +3272,16 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Revenir à Dale",     label="Dale", zone="Eryn Lasgalen", },
         RU={ name="Возвращение в Дейл", label="Дейл", zone="Эрин Ласгален", },
         map={{MapType.RHOVANION, 690, 215}},
+        acquire={
+            {cost={{amount=30, token=LC.token.TOKEN_OF_LAKE_AND_RIVERS}},
+                EN={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=115,
         level=115
     })
     self.rep:AddSkill({
@@ -1947,6 +3291,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Revenir à Jarnfast",     label="Jarnfast", zone="La Crevasse de Fer", },
         RU={ name="Возвращение в Ярнфаст",  label="Ярнфаст",  zone="Железное взгорье", },
         map={{MapType.RHOVANION, 860, 110}},
+        acquire={
+            {cost={{amount=5, token=LC.token.MARK_OF_LONGBEARDS}},
+                EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
+        minLevel=116,
         level=116
     })
     self.rep:AddSkill({
@@ -1956,6 +3307,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Revenir à Skarhald",          label="Skarhald",  zone="Ered Mithrin", },
         RU={ name="Возвращение в Скархальд",     label="Скархальд", zone="Эред Митрин", },
         map={{MapType.RHOVANION, 400, 90}},
+        acquire={
+            {cost={{amount=5, token=LC.token.MARK_OF_LONGBEARDS}},
+                EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
+        minLevel=116,
         level=117
     })
     self.rep:AddSkill({
@@ -1965,6 +3323,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez auprès de Beorninghus", label="Beorninghus",   zone="Val d'Anduin", },
         RU={ name="Возвращение в Беорнингус",        label="Беорнингус",    zone="Долина Андуина", },
         map={{MapType.RHOVANION, 360, 300}},
+        acquire={
+            {cost={{amount=20, token=LC.token.VALES_BEORNING_TOKEN}},
+                EN={vendor="Quartermaster (Wilderfolk Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=116,
         level=120
     })
     self.rep:AddSkill({
@@ -1974,6 +3339,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez auprès de Hultvis", label="Hultvis",  zone="Val d'Anduin", },
         RU={ name="Возвращение в Хультвис",      label="Хультвис", zone="Долина Андуина", },
         map={{MapType.RHOVANION, 345, 400}},
+        acquire={
+            {cost={{amount=20, token=LC.token.GULMARK}},
+                EN={vendor="Quartermaster (Wilderfolk Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=116,
         level=120.1
     })
     self.rep:AddSkill({
@@ -1983,6 +3355,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Estolad Lân",      label="Estolad Lân", zone="Imlad Morgul", },
         RU={ name="Возвращение в Эстолад Лан", label="Эстолад Лан", zone="Имлад Моргул", },
         map={{MapType.GONDOR, 930, 460}},
+        acquire={
+            {cost={{amount=20, token=LC.token.SIGIL_IMLAD_ITHIL}},
+                EN={vendor="Quartermaster (The White Company)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.WHITE_COMPANY, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=121,
         level=125
     })
     self.rep:AddSkill({
@@ -1992,6 +3371,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Limlok",      label="Limlok", zone="Puits du Long Fleuve", },
         RU={ name="Возвращение в Лимлок", label="Лимлок", zone="Истоки Долгой реки", },
         map={{MapType.RHOVANION, 315, 230}},
+        acquire={
+            {cost={{amount=20, token=LC.token.NORTHERN_GULMARK}},
+                EN={vendor="Quartermaster (Protectors of Wilderland)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.PROTECTORS_OF_WILDERLAND, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=130,
         level=130
     })
     self.rep:AddSkill({
@@ -2001,6 +3387,16 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez à Annâk-khurfu",   label="Annâk-khurfu", zone="Elderslade", },
         RU={ name="Возвращение в Аннак-Курфу",  label="Аннак-Курфу",  zone="Долина предков", },
         map={{MapType.RHOVANION, 500, 90}},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }},
+            {cost={{amount=25, token=LC.token.COPPER_COIN_OF_GUNDABAD}},
+                EN={vendor="Quartermaster (March on Gundabad)"},
+                DE={vendor="", },
+                FR={vendor="", }}, },
+        minLevel=20,
         level=130.1
     })
     self.rep:AddSkill({
@@ -2010,6 +3406,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Akrâz-zahar",      label="Akrâz-zahar", zone="Eryn Lasgalen", },
         RU={ name="Возвращение в Акраз-Захар", label="Акраз-Захар", zone="Эрин Ласгален", },
         map={{MapType.RHOVANION, 720, 115}},
+        acquire={
+            {cost={{amount=10, token=LC.token.TOKEN_OF_KHARUM_UBNAR}},
+                EN={vendor="Vorthur Smokebreath"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.KHARUM_UBNAR, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=130,
         level=130.2
     })
     self.rep:AddSkill({
@@ -2019,6 +3422,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Azanulbizar",       label="Azanulbizar", detail="Amdân", zone="Azanulbizar", },
         RU={ name="Возвращение в Азанулбизар",  label="Азанулбизар", detail="Амдан", zone="Азанулбизар", },
         map={{MapType.RHOVANION, 180, 555}},
+        acquire={
+            {cost={{amount=7, token=LC.token.ZAKAF_BESHEK}}, coords="[63.5N, 135.0W]",
+                EN={vendor="Quartermaster (Haban'akkâ of Thráin)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.HABANAKKA_OF_THRAIN, repLevel=LC.repLevel.DUMUL,
+        minLevel=130,
         level=130.3
     })
     self.rep:AddSkill({
@@ -2028,6 +3438,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retourner à la Porte Noble",       label="Porte Noble",       zone="Gundabad", },
         RU={ name="Возвращение к Благородным вратам", label="Благородные врата", zone="Гундабад", },
         map={{MapType.RHOVANION, 160, 130}},
+        acquire={
+            {cost={{amount=20, token=LC.token.SILVER_COIN_OF_GUNDABAD}},
+                EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
+        minLevel=131,
         level=131
     })
     self.rep:AddSkill({
@@ -2037,6 +3454,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retourner à Leitstath",   label="Leitstath", zone="Gundabad", },
         RU={ name="Возвращение в Лейтстат",  label="Лейтстат",  zone="Гундабад", },
         map={{MapType.RHOVANION, 240, 65}},
+        acquire={
+            {cost={{amount=20, token=LC.token.SILVER_COIN_OF_GUNDABAD}},
+                EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
+        minLevel=135,
         level=135
     })
     self.rep:AddSkill({
@@ -2046,6 +3470,12 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Voyage jusqu'à la Grande salle de Vérnozal", label="Vérnozal", tag="Quête",   zone="Gundabad", },
         RU={ name="Возвращение в Вернозал",                     label="Вернозал", tag="Задание", zone="Гундабад", },
         map={{MapType.RHOVANION, 155, 45}},
+        acquire={
+            {
+                EN={allegiance="Clan of the Zhélruka", quest="Chapter 1: The Rightful Claim" },
+                DE={allegiance="", quest="" },
+                FR={allegiance="", quest="" }} },
+        minLevel=20,
         level=140
     })
     self.rep:AddSkill({
@@ -2055,6 +3485,12 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Carn Dûm",      label="Carn Dûm", zone="Angmar", },
         RU={ name="Возвращение в Карн-Дум", label="Карн-Дум", zone="Angmar", },
         map={{MapType.ERIADOR, 705, 100}},
+        acquire={
+            {cost={{amount=30, token=LC.token.SARSKILLINAN}},
+                EN={vendor="Muirál"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        minLevel=20,
         level=140.1
     })
     self.rep:AddSkill({
@@ -2064,6 +3500,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez à Pelargir",   label="Pelargir", zone="Gondor royal", },
         RU={ name="Возвращение в Пеларгир", label="Пеларгир", zone="Королевский Гондор", },
         map={{MapType.GONDOR, 640, 625}},
+        acquire={
+            {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
+                EN={vendor="Quartermaster (The Renewal of Gondor)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=135,
         level=141
     })
     self.rep:AddSkill({
@@ -2073,6 +3516,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Dol Amroth",      desc="le Gondor royal",    label="Dol Amroth royal",      zlabel="Dol Amroth", zone="Gondor royal", },
         RU={ name="Возвращение в Дол Амрот",  desc="Королевский Гондор", label="Королевский Дол Амрот", zlabel="Дол Амрот",  zone="Королевский Гондор", },
         map={{MapType.GONDOR, 180, 485}, {MapType.HARADWAITH, 355, 70}},
+        acquire={
+            {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
+                EN={vendor="Quartermaster (The Renewal of Gondor)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=135,
         level=142
     })
     self.rep:AddSkill({
@@ -2082,6 +3532,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Lond Cirion",          label="Lond Cirion", zone="Anfalas", },
         RU={ name="Возвращение в Лонд-Кирион",     label="Лонд-Кирион", zone="Анфалас", },
         map={{MapType.GONDOR, 225, 420}, {MapType.HARADWAITH, 200, 20}},
+        acquire={
+            {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
+                EN={vendor="Quartermaster (The Renewal of Gondor)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=135,
         level=143
     })
     self.rep:AddSkill({
@@ -2091,6 +3548,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez voir Halrax",   label="Halrax",  zone="Les îles du Bouclier", },
         RU={ name="Возвращение в Халракс",   label="Халракс", zone="Острова Щита", },
         map={{MapType.HARADWAITH, 245, 260}},
+        acquire={
+            {cost={{amount=10, token=LC.token.UMBARI_TAM}},
+                EN={vendor="Quartermaster (The City of Umbar Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
         level=145
     })
     self.rep:AddSkill({
@@ -2100,6 +3564,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Jax Phanâl",          label="Jax Phanâl",  zone="Umbar", },
         RU={ name="Возвращение в Джакс-Фанал",    label="Джакс-Фанал", zone="Умбар", },
         map={{MapType.HARADWAITH, 335, 315}},
+        acquire={
+            {cost={{amount=10, token=LC.token.UMBARI_TAM}},
+                EN={vendor="Quartermaster (The City of Umbar Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
         level=146
     })
     self.rep:AddSkill({
@@ -2109,6 +3580,12 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Bej Mâghda",          label="Bej Mâghda", zone="Umbar", },
         RU={ name="Возвращение в Бедж-Магду",     label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 380, 380}},
+        acquire={
+            {cost={{amount=50, token=LC.token.UMBARI_TAM}}, coords="[20.0S, 105.7W]",
+                EN={vendor="Mâkhda Khorbo Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        minLevel=20,
         level=147
     })
     self.rep:AddSkill({
@@ -2118,6 +3595,13 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Umbar",          label="Umbar", detail="Baharbêl",  zone="Umbar", },
         RU={ name="Возвращение в Умбар",     label="Умбар", detail="Бахарбель", zone="Умбар", },
         map={{MapType.HARADWAITH, 475, 370}},
+        acquire={
+            {cost={{amount=10, token=LC.token.UMBARI_TAM}},
+                EN={vendor="Quartermaster (The City of Umbar Rewards)"},
+                DE={vendor="", },
+                FR={vendor="", }} },
+        rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
         level=148
     })
     self.rep:AddSkill({
@@ -2127,6 +3611,20 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la taverne de l'Aigle Sanglant",     label="Taverne de l'Aigle Sanglant", zone="Umbar", },
         RU={ name="Возвращение в таверну \'Кровавый орёл\'",     label="Таверна Кровавый Орёл",       zone="Умбар", },
         map={{MapType.HARADWAITH, 445, 400}},
+        acquire={
+            {cost={{amount=100, token=LC.token.DELVING_WRIT}},
+                EN={vendor="Delving Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }},
+            {cost={{amount=10, token=LC.token.LEDGER_KEEPER_MARK}},
+                EN={vendor="Ledger-keepers Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }},
+            {cost={{amount=10, token=LC.token.EAGLE_BIT}},
+                EN={vendor="Order of the Eagle Quartermaster"},
+                DE={vendor="", },
+                FR={vendor="", }},},
+        minLevel=20,
         level=149
     })
     self.rep:AddSkill({
@@ -2136,6 +3634,12 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Voyager vers les Gardiens des écrits", label="Gardiens des écrits", tag="Quête",   zone="Umbar", },
         RU={ name="Возвращение к Хранителям книг",        label="Хранители книг",      tag="Задание", zone="Умбар", },
         map={{MapType.HARADWAITH, 415, 340}},
+        acquire={
+            { rank=10,
+                EN={allegiance="The Ledger-keepers" },
+                DE={allegiance="" },
+                FR={allegiance="" }} },
+        minLevel=140,
         level=150
     })
     self.rep:AddSkill({
@@ -2145,6 +3649,12 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Voyager vers l'Ordre de l'Aigle",   label="L'Ordre de l'Aigle", tag="Quête",   zone="Umbar", },
         RU={ name="Возвращение в Орден орла",          label="Орден орла",         tag="Задание", zone="Умбар", },
         map={{MapType.HARADWAITH, 415, 370}},
+        acquire={
+            { rank=10,
+                EN={allegiance="The Order of the Eagle" },
+                DE={allegiance="" },
+                FR={allegiance="" }} },
+        minLevel=140,
         level=150.1
     })
 end
