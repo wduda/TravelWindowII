@@ -352,7 +352,7 @@ end
 
 function ListTrainedSkills()
 
-    Turbine.Shell.WriteLine("\n\nTrained Skills\n\n");
+    Turbine.Shell.WriteLine("\n\nTrained Skills (" .. TrainedSkills:GetCount() .. ")\n\n");
 
     for i = 1, TrainedSkills:GetCount(), 1 do
         local skill = Turbine.Gameplay.Skill;
