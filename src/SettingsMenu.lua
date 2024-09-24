@@ -212,7 +212,7 @@ function InitDefaultSettings()
 end
 
 function InitNumberSetting(strTable, name, forceDefault)
-    if not strTable[name] or strTable[name] == "nil" then
+    if strTable[name] == nil or strTable[name] == "nil" then
         if forceDefault == nil then
             strTable[name] = tostring(Settings[name]);
         else
@@ -334,7 +334,7 @@ function SetSettings(settingsArg, scope, importOldSettings)
 
     -- fixup deprecated buttonPositionX
     local buttonRelativeX = Settings.buttonRelativeX;
-    if settingsArg.buttonPositionX and settingsArg.buttonPositionX ~= "nil" then
+    if settingsArg.buttonPositionX ~= nil and settingsArg.buttonPositionX ~= "nil" then
         local screenWidth = Turbine.UI.Display.GetWidth();
         if tonumber(settingsArg.buttonPositionX) < screenWidth then
             -- not perfect, but assuming the same resolution, this will approximately convert to a relative value
@@ -349,7 +349,7 @@ function SetSettings(settingsArg, scope, importOldSettings)
 
     -- fixup deprecated buttonPositionY
     local buttonRelativeY = Settings.buttonRelativeY;
-    if settingsArg.buttonPositionY and settingsArg.buttonPositionY ~= "nil" then
+    if settingsArg.buttonPositionY ~= nil and settingsArg.buttonPositionY ~= "nil" then
         local screenHeight = Turbine.UI.Display.GetHeight();
         if tonumber(settingsArg.buttonPositionY) < screenHeight then
             -- not perfect, but assuming the same resolution, this will approximately convert to a relative value
@@ -363,7 +363,7 @@ function SetSettings(settingsArg, scope, importOldSettings)
     SettingsConfig.buttonRelativeY.forceDefaultInit = buttonRelativeY
 
     -- convert ignoreEsc to escapeToClose
-    if settingsArg.ignoreEsc ~= "nil" then
+    if settingsArg.ignoreEsc ~= nil and settingsArg.ignoreEsc ~= "nil" then
         if tonumber(settingsArg.ignoreEsc) == 0 then
             settingsArg.escapeToClose = 1
         else
