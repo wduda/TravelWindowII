@@ -61,11 +61,13 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
-                FR={vendor="Delving Quartermaster", }},
+                FR={vendor="Delving Quartermaster", },
+                RU={vendor="Delving Quartermaster", }},
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
-                FR={vendor="Before the Shadow Mission-giver Barterer", }} },
+                FR={vendor="Before the Shadow Mission-giver Barterer", },
+                RU={vendor="Before the Shadow Mission-giver Barterer", }} },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=7
@@ -3653,7 +3655,8 @@ function TravelDictionary:CreateDictionaries()
             { rank=10,
                 EN={allegiance="The Order of the Eagle" },
                 DE={allegiance="" },
-                FR={allegiance="" }} },
+                FR={allegiance="" },
+                RU={allegiance="" }} },
         minLevel=140,
         level=150.1
     })
