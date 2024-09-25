@@ -143,34 +143,26 @@ function TravelShortcut:GetAcquireText()
 end
 
 function TravelShortcut:SelectLCText(item)
-    if GLocale == Turbine.Language.German then
-        if item.DE then
-            for k, v in pairs(item.DE) do item[k] = v end
+    local langs = {
+        {name="DE", lc=Turbine.Language.German},
+        {name="FR", lc=Turbine.Language.French},
+        {name="RU", lc=Turbine.Language.Russian},
+        {name="EN", lc=nil}} -- unknown language types default to english
+    for i = 1, #langs do
+        local lang = langs[i]
+        if lang.lc == nil or lang.lc == GLocale then
+            local lcItem = item[lang.name]
+            if lcItem and type(lcItem) == "table" then
+                -- only move localization values into 'item' if it is available
+                for k, v in pairs(lcItem) do item[k] = v end
+            end
+            -- done with localization data, remove it
+            item.EN = nil
+            item.DE = nil
+            item.FR = nil
+            item.RU = nil
+            return
         end
-        item.FR = nil
-        item.EN = nil
-        item.RU = nil
-    elseif GLocale == Turbine.Language.French then
-        if item.FR then
-            for k, v in pairs(item.FR) do item[k] = v end
-        end
-        item.DE = nil
-        item.EN = nil
-        item.RU = nil
-    elseif GLocale == Turbine.Language.Russian then
-        if item.RU then
-            for k, v in pairs(item.RU) do item[k] = v end
-        end
-        item.EN = nil
-        item.DE = nil
-        item.FR = nil
-    else
-        if item.EN then
-            for k, v in pairs(item.EN) do item[k] = v end
-        end
-        item.DE = nil
-        item.FR = nil
-        item.RU = nil
     end
 end
 
