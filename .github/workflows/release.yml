@@ -20,14 +20,9 @@ jobs:
           ref: '${{ github.event.inputs.tag }}'
           path: 'TravelWindowII'
 
-
-      # list build dir contents
-      - name: list current directory
-        run: ls -la
-
         # list detailed build dir contents
       - name: list TW II directory
-        run: ls -la TravelWindowII
+        run: cat TravelWindowII/TravelWindowII.plugin
 
         # create a zip as a release archive
       - name: create release archive
