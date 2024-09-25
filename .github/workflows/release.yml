@@ -15,7 +15,7 @@ jobs:
     steps:
       # checks out main into $GITHUB_WORKSPACE
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: '${{ github.event.inputs.tag }}'
           path: 'TravelWindowII'
