@@ -19,6 +19,10 @@ jobs:
         with:
           ref: '${{ github.event.inputs.tag }}'
           path: 'TravelWindowII'
+          clean: true
+
+      - name: Sleep for 3 seconds
+        run: sleep 3s
 
         # list detailed build dir contents
       - name: list TW II directory
