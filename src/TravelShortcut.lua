@@ -143,24 +143,34 @@ function TravelShortcut:GetAcquireText()
 end
 
 function TravelShortcut:SelectLCText(item)
-    if GLocale == Turbine.Language.French then
-        if item.FR then
-            for k, v in pairs(item.FR) do item[k] = v end
-        end
-        item.DE = nil
-        item.EN = nil
-    elseif GLocale == Turbine.Language.German then
+    if GLocale == Turbine.Language.German then
         if item.DE then
             for k, v in pairs(item.DE) do item[k] = v end
         end
         item.FR = nil
         item.EN = nil
+        item.RU = nil
+    elseif GLocale == Turbine.Language.French then
+        if item.FR then
+            for k, v in pairs(item.FR) do item[k] = v end
+        end
+        item.DE = nil
+        item.EN = nil
+        item.RU = nil
+    elseif GLocale == Turbine.Language.Russian then
+        if item.RU then
+            for k, v in pairs(item.RU) do item[k] = v end
+        end
+        item.EN = nil
+        item.DE = nil
+        item.FR = nil
     else
         if item.EN then
             for k, v in pairs(item.EN) do item[k] = v end
         end
         item.DE = nil
         item.FR = nil
+        item.RU = nil
     end
 end
 
