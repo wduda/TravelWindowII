@@ -29,11 +29,9 @@ jobs:
 
       # create the GitHub release
       - name: create github release
-        id: create_release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           draft: true
           prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
           name: ${{ github.event.inputs.tag }}
           files: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
