@@ -8,7 +8,7 @@
 - add: new options tab with list of still learnable travel skills
 - add: acquisition method for skills on still learnable skills tab (beta, EN only)
 - enhance: checkboxes in options now have better labels so checkbox marked means "turned on"
-- enhance: minor improvements to main window solving, mostly fixing scaling issues
+- enhance: minor improvements to main window, mostly fixing scaling issues
 
 ## v2.3.1
 

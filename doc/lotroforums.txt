@@ -1,7 +1,5 @@
 A new version is available!
 
-Sorting through drag and drop and locking the window positions go hand in hand - by locking the interface in place you are preventing accidental drag and drops.
-
 v2.4.0
 
 - add: newly learned skills will be detected automatically and become visible and usable in TW II
@@ -10,7 +8,7 @@ v2.4.0
 - add: new options tab with list of still learnable travel skills
 - add: acquisition method for skills on still learnable skills tab (beta, EN only)
 - enhance: checkboxes in options now have better labels so checkbox marked means "turned on"
-- enhance: minor improvements to main window solving, mostly fixing scaling issues
+- enhance: minor improvements to main window, mostly fixing scaling issues
 
 Huge kudos to @whiterabbit963 for making this release possible!
 
