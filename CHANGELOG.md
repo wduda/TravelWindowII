@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v2.4.0
+
+- add: newly learned skills will be detected automatically and become visible and usable in TW II
+- add: new option to use skill name as label instead of location name
+- add: incorporated RU translations by Svertalf
+- add: new options tab with list of still learnable travel skills
+- add: acquisition method for skills on still learnable skills tab (beta, EN only)
+- enhance: checkboxes in options now have better labels so checkbox marked means "turned on"
+- enhance: minor improvements to main window solving, mostly fixing scaling issues
+
 ## v2.3.1
 
 - add: option to turn off zone names in labels
