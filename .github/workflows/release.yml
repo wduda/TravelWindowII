@@ -13,14 +13,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # checks out master under $GITHUB_WORKSPACE
+      # checks out main into $GITHUB_WORKSPACE
       - name: checkout
         uses: actions/checkout@v3
         with:
+          clean: true
           ref: '${{ github.event.inputs.tag }}'
           path: 'TravelWindowII'
 
-      # create a zip as a release archive
+
+      # list build dir contents
+      - name: list current directory
+        run: ls -la
+
+        # list detailed build dir contents
+      - name: list TW II directory
+        run: ls -la TravelWindowII
+
+        # create a zip as a release archive
       - name: create release archive
         uses: thedoctor0/zip-release@master
         with:
