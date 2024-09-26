@@ -16,7 +16,6 @@ function TravelShortcut:Constructor(sType, tType, skill)
     self.normalizedLabel = self:GetLabel():lower();
     self.travelType = tType;
     self.acquireText = nil
-    self.acquireLines = 0
 
     self.defaultIndex = NextDefaultIndex;
     NextDefaultIndex = NextDefaultIndex + 1;
@@ -110,18 +109,15 @@ end
 
 function TravelShortcut:GetAcquireText()
     if self.acquireText == nil then
-        local lines = 0
         self.acquireText = ""
         if self.skill.minLevel then
             local text = LC.minLevel .. tostring(self.skill.minLevel)
             self.acquireText = self.acquireText .. text
-            lines = lines + 1
         end
         if self.skill.rep and self.skill.repLevel then
             local text = LC.requires .. self.skill.repLevel .. LC.with .. self.skill.rep
             if self.acquireText ~= "" then text = "\n" .. text end
             self.acquireText = self.acquireText .. text
-            lines = lines + 1
         end
         local items = self.skill.acquire
         for i = 1, #items do
@@ -129,17 +125,14 @@ function TravelShortcut:GetAcquireText()
             if items[i].zone == nil then
                 items[i].zone = self.skill.zone
             end
-            local text, skillLines = self:InitAcquireText(items[i])
+            local text = self:InitAcquireText(items[i])
             if text ~= "" and self.acquireText ~= "" then
                 text = "\n\n" .. text
-                skillLines = skillLines + 1
             end
             self.acquireText = self.acquireText .. text
-            lines = lines + skillLines
         end
-        self.acquireLines = lines
     end
-    return self.acquireText, self.acquireLines
+    return self.acquireText
 end
 
 function TravelShortcut:SelectLCText(item)
@@ -168,7 +161,6 @@ end
 
 function TravelShortcut:GetVendorText(item)
     local text = LC.source .. item.vendor
-    local lines = 1
     if item.zone then
         text = text .. ", " .. item.zone
     end
@@ -177,9 +169,8 @@ function TravelShortcut:GetVendorText(item)
     end
     if item.desc ~= nil and item.desc ~= "" then
         text = text .. "\n" .. item.desc
-        lines = lines + 1
     end
-    return text, lines
+    return text
 end
 
 function TravelShortcut:InitAcquireText(item)
@@ -194,38 +185,30 @@ function TravelShortcut:InitAcquireText(item)
     end
 
     if item.autoLevel then
-        return text, 0
+        return text
     end
 
-    local lines = 0
     if item.deed then
         text = LC.deed .. item.deed
-        lines = lines + 1
     elseif item.allegiance then
         text = LC.allegiance .. item.allegiance
         if item.quest ~= nil and item.quest ~= "" then
             text = text .. "\n" .. LC.quest .. item.quest
-            lines = lines + 1
         elseif item.rank ~= nil then
             text = text .. "\n" .. LC.rank .. item.rank
-            lines = lines + 1
         end
-        lines = lines + 1
     elseif item.quest then
         text = LC.quest .. item.quest
-        lines = lines + 1
     elseif item.drop then
         text = LC.source .. item.drop
-        lines = lines + 1
     elseif item.vendor then
-        text, lines = self:GetVendorText(item)
+        text = self:GetVendorText(item)
     elseif item.vendors then
         for i = 1, #item.vendors do
             if item.vendors[i].zone == nil then
                 item.vendors[i].zone = item.zone
             end
-            local t, l = self:GetVendorText(item.vendors[i])
-            lines = lines + l
+            local t = self:GetVendorText(item.vendors[i])
             if i == 1 then
                 text = text .. t
             else
@@ -234,13 +217,6 @@ function TravelShortcut:InitAcquireText(item)
         end
     elseif item.desc then
         text = LC.source .. item.desc
-        lines = lines + 1
-    else
-        if item.vendors then
-            lines = lines + 1
-        elseif item.vendor then
-            lines = lines + 1
-        end
     end
 
     if item.cost then
@@ -258,9 +234,8 @@ function TravelShortcut:InitAcquireText(item)
                 text = text .. ", "
             end
         end
-        lines = lines + 1
     end
-    return text, lines
+    return text
 end
 
 function InitShortcuts()
