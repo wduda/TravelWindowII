@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.4.1
+
+- fix: plugin will no longer fail to load in DE and FR client
+
 ## v2.4.0
 
 - add: newly learned skills will be detected automatically and become visible and usable in TW II
