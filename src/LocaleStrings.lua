@@ -778,8 +778,8 @@ LC_DE.token.TOKEN_OF_LAKE_AND_RIVERS = ""
 LC_FR.token.TOKEN_OF_LAKE_AND_RIVERS = ""
 
 LC_EN.token.MARK_OF_LONGBEARDS = "Mark of the Longbeards"
-LC_DE.token.TOKEN_OF_LAKE_AND_RIVERS = ""
-LC_FR.token.TOKEN_OF_LAKE_AND_RIVERS = ""
+LC_DE.token.MARK_OF_LONGBEARDS = ""
+LC_FR.token.MARK_OF_LONGBEARDS = ""
 
 LC_EN.token.GULMARK = "Gúlmark"
 LC_DE.token.GULMARK = ""

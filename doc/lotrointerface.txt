@@ -9,14 +9,6 @@ This is a full plugin and can be installed standalone. Follow the general plugin
 I recommend you install and manage your plugins with the LOTRO Plugin Compendium found at this URL, since it will install plugins cleanly: [URL="http://www.lotrointerface.com/downloads/info663-LOTROPluginCompendium.html"]LOTRO Plugin Compendium App[/URL]
 
 [SIZE="3"]FAQ:[/SIZE]
-How can I make a newly learned skill show up in Travel Window II?
-These three options work:
-[LIST]
-[*] right-click anywhere on TW II, select "Check untrained skills" from the menu, the skill will show up
-[*] open options window, go to Enable tab, click "Check untrained skills" button, the skill will show up
-[*] relog the character
-[/LIST]
-
 Why does my racial skill show up even though I do not have the racial trait equipped?
 [LIST]
 [*]Because once the trait is acquired, it is classified as a "learned" skill by LOTRO itself, even though it is greyed out. Travel Window II, unfortunately, has no way of knowing if you have the racial trait equipped and the skill is usable. If you are not using the skill permanently, you can use the Enable/Disable options to hide it like any other skill.
@@ -29,16 +21,8 @@ Use the mousewheel while hovering over the travel skill icon to change the selec
 
 Version history:
 
-v2.4.0
+v2.4.1
 
-- add: newly learned skills will be detected automatically and become visible and usable in TW II
-- add: new option to use skill name as label instead of location name
-- add: incorporated RU translations by Svertalf
-- add: new options tab with list of still learnable travel skills
-- add: acquisition method for skills on still learnable skills tab (beta, EN only)
-- enhance: checkboxes in options now have better labels so checkbox marked means "turned on"
-- enhance: minor improvements to main window, mostly fixing scaling issues
-
-Huge kudos to @whiterabbit963 for making this release possible!
+- fix: plugin will no longer fail to load in DE and FR client
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].

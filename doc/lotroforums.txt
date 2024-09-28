@@ -1,15 +1,7 @@
 A new version is available!
 
-v2.4.0
+v2.4.1
 
-- add: newly learned skills will be detected automatically and become visible and usable in TW II
-- add: new option to use skill name as label instead of location name
-- add: incorporated RU translations by Svertalf
-- add: new options tab with list of still learnable travel skills
-- add: acquisition method for skills on still learnable skills tab (beta, EN only)
-- enhance: checkboxes in options now have better labels so checkbox marked means "turned on"
-- enhance: minor improvements to main window, mostly fixing scaling issues
-
-Huge kudos to @whiterabbit963 for making this release possible!
+- fix: plugin will no longer fail to load in DE and FR client
 
 Download it at [url=https://www.lotrointerface.com/downloads/fileinfo.php?id=1113]Lotrointerface[/url], [url=https://github.com/wduda/TravelWindowII/releases]GitHub[/url], via [url=https://github.com/JeremyStepp/OneLauncher]OneLauncher[/url] or via [url=https://www.lotrointerface.com/downloads/info663-LOTROPluginCompendium.html]Plugin Compendium[/url].
