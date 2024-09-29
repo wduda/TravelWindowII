@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v2.4.2
+
+- enhance: plugin will be resilient against mistakes by authors when adding new text
+- enhance: skill info labels on learnable skills tab will be more readable (beta, fully supported in EN only)
+- fix: Ledger-Keepers in DE client now have a German label
+- fix: multiple smaller fixes of missing text and typos
+
+
 ## v2.4.1
 
 - fix: plugin will no longer fail to load in DE and FR client
