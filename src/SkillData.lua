@@ -324,9 +324,9 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill({
         id="0x7000A2C6",
         EN={ name="Guide to East Angmar",       label="East Angmar",        detail="Gath Forthnír", zone="Angmar", },
-        RU={ name="Путь в восточный Ангмар",    label="Восточный Ангмар",   detail="Гат Фортнир",   zone="Ангмар", },
         DE={ name="Führer nach Ost-Angmar",     label="East-Angmar",        detail="Gath Forthnír", zone="Angmar", },
         FR={ name="Guide vers l'est d'Angmar",  label="Angmar est",         detail="Gath Forthnír", zone="Angmar", },
+        RU={ name="Путь в восточный Ангмар",    label="Восточный Ангмар",   detail="Гат Фортнир",   zone="Ангмар", },
         map={{MapType.ERIADOR, 705, 180}},
         acquire={ { cost={ amount=50, token=LC.rep.MITHRIL_COIN},
                 EN={vendor="Hunter Trainer"},
@@ -344,9 +344,9 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill({
         id="0x70017C81",
         EN={ name="Guide to Echad Dúnann",      label="Echad Dúnann",   zone="Eregion", },
-        RU={ name="Путь в Эхад Дунанн",         label="Эхад Дунанн",    zone="Эрегион", },
         DE={ name="Führer nach Echad Dúnann",   label="Echad Dúnann",   zone="Eregion", },
         FR={ name="Guide vers Echad Dunann",    label="Echad Dunann",   zone="Eregion", },
+        RU={ name="Путь в Эхад Дунанн",         label="Эхад Дунанн",    zone="Эрегион", },
         map={{MapType.ERIADOR, 855, 535}},
         acquire={ { cost={ amount=60, token=LC.rep.MITHRIL_COIN},
                 EN={vendor="Hunter Trainer"},
@@ -364,9 +364,9 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill({
         id="0x70017C7A",
         EN={ name="Guide to the Twenty-first Hall",         label="Twenty-first Hall",      zone="Moria", },
-        RU={ name="Путь в Двадцать первый чертог",          label="Двадцать первый чертог", zone="Мория", },
         DE={ name="Führer zur Einundzwanzigsten Halle",     label="Einundzwanzigste Halle", zone="Moria", },
         FR={ name="Guide vers la vingt et unième salle",    label="Vingt et unième salle",  zone="Moria", },
+        RU={ name="Путь в Двадцать первый чертог",          label="Двадцать первый чертог", zone="Мория", },
         map={{MapType.RHOVANION, 95, 585}, {MapType.ERIADOR, 950, 510}},
         acquire={ { cost={ amount=70, token=LC.rep.MITHRIL_COIN},
                 EN={vendor="Hunter Trainer"},
@@ -385,9 +385,9 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill({
         id="0x7002E754",
         EN={ name="Guide to Caras Galadhon",    label="Caras Galadhon", zone="Lothlórien", },
-        RU={ name="Путь в Карас Галадон",       label="Карас Галадон",  zone="Лотлориэн", },
         DE={ name="Führer nach Caras Galadhon", label="Caras Galadhon", zone="Lothlórien", },
         FR={ name="Guide vers Caras Galadhon",  label="Caras Galadhon", zone="Lothlórien", },
+        RU={ name="Путь в Карас Галадон",       label="Карас Галадон",  zone="Лотлориэн", },
         map={{MapType.RHOVANION, 120, 660}},
         overlap={"0x70048C8C"},
         acquire={
@@ -402,9 +402,9 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill({
         id="0x7001F459",
         EN={ name="Guide to Mirk-eaves",        label="Mirk-eaves",     zone="Mirkwood", },
-        RU={ name="Путь в Черную рощу",         label="Черная роща",    zone="Лихолесье", },
         DE={ name="Führer zur Dunkelsenke",     label="Dunkelsenke",    zone="Düsterwald", },
         FR={ name="Guide vers l'Orée noire",    label="Orée noire",     zone="Forêt Noire", },
+        RU={ name="Путь в Черную рощу",         label="Черная роща",    zone="Лихолесье", },
         map={{MapType.RHOVANION, 365, 630}},
         acquire={ { cost={ amount=70, token=LC.rep.MITHRIL_COIN},
                 EN={vendor="Hunter Trainer"},
@@ -422,9 +422,9 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill({
         id="0x700235EF",
         EN={ name="Guide to Harndirion",    label="Harndirion", zone="Enedwaith", },
-        RU={ name="Путь в Харндирион",      label="Харндирион", zone="Энедвайт", },
         DE={ name="Führer nach Harndirion", label="Harndirion", zone="Enedwaith", },
         FR={ name="Guide vers Harndirion",  label="Harndirion", zone="Enedwaith", },
+        RU={ name="Путь в Харндирион",      label="Харндирион", zone="Энедвайт", },
         map={{MapType.ERIADOR, 815, 635}},
         acquire={
             {cost={{amount=5, token=LC.token.SILVER_TOKEN_OF_WILDS}}, coords="[18.5S, 68.7W]",
@@ -438,9 +438,9 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill({
         id="0x7002A93F",
         EN={ name="Guide to Galtrev",       label="Galtrev",    zone="Dunland", },
-        RU={ name="Путь в Галтрев",         label="Галтрев",    zone="Дунланд", },
         DE={ name="Führer nach Galtrev",    label="Galtrev",    zone="Dunland", },
         FR={ name="Guide pour Galtrev",     label="Galtrev",    zone="Pays de Dun", },
+        RU={ name="Путь в Галтрев",         label="Галтрев",    zone="Дунланд", },
         map={{MapType.ERIADOR, 810, 715}},
         overlap={"0x7002C647"},
         acquire={
@@ -455,9 +455,9 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill({
         id="0x7002C62C",
         EN={ name="Guide to Stangard",      label="Stangard",   zone="Great River", },
-        RU={ name="Путь в Стангард",        label="Стангард",   zone="Великая река", },
         DE={ name="Führer nach Stangard",   label="Stangard",   zone="Großer Fluss", },
         FR={ name="Guide vers Stangarde",   label="Stangarde",  zone="Grand Fleuve", },
+        RU={ name="Путь в Стангард",        label="Стангард",   zone="Великая река", },
         map={{MapType.RHOVANION, 200, 720}, {MapType.ROHAN, 545, 90}},
         overlap={"0x7002C65D"},
         acquire={
@@ -472,9 +472,9 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill({
         id="0x7003198E",
         EN={ name="Guide to Snowbourn",         label="Snowbourn",      zone="East Rohan", },
-        RU={ name="Путь в Сноуборн",            label="Сноуборн",       zone="Восточный Рохан", },
         DE={ name="Führer nach Schneegrenze",   label="Schneegrenze",   zone="Ost-Rohan", },
         FR={ name="Guide vers Neigebronne",     label="Neigebronne",    zone="Rohan est", },
+        RU={ name="Путь в Сноуборн",            label="Сноуборн",       zone="Восточный Рохан", },
         map={{MapType.ROHAN, 515, 500}},
         overlap={"0x70031A46"},
         acquire={
@@ -488,10 +488,10 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x70036B5D",
-        EN={ name="Guide to Forlaw",        label="Forlaw",     zone="Wildermore", },
-        RU={ name="Путь в Форлоу",          label="Форлоу",     zone="Вилдермор", },
-        DE={ name="Führer nach Forlach",    label="Forlach",    zone="Wildermark", },
-        FR={ name="Guide vers Forloi",      label="Forloi",     zone="Landes farouches", },
+        EN={ name="Guide to Forlaw",     label="Forlaw",  zone="Wildermore", },
+        DE={ name="Führer nach Forlach", label="Forlach", zone="Wildermark", },
+        FR={ name="Guide vers Forloi",   label="Forloi",  zone="Landes farouches", },
+        RU={ name="Путь в Форлоу",       label="Форлоу",  zone="Вилдермор", },
         map={{MapType.ROHAN, 450, 175}},
         overlap={"0x70036B5E"},
         acquire={
@@ -506,9 +506,9 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill({
         id="0x7003DC71",
         EN={ name="Guide to Aldburg",       label="Aldburg",    zone="West Rohan", },
-        RU={ name="Путь в Альдбург",        label="Альдбург",   zone="Западный Рохан", },
         DE={ name="Führer nach Aldburg",    label="Aldburg",    zone="West-Rohan", },
         FR={ name="Guide vers Aldburg",     label="Aldburg",    zone="Rohan de l'Ouest", },
+        RU={ name="Путь в Альдбург",        label="Альдбург",   zone="Западный Рохан", },
         map={{MapType.ROHAN, 570, 640}},
         overlap={"0x7003DC81"},
         acquire={
@@ -523,9 +523,9 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill({
         id="0x7003DC72",
         EN={ name="Guide to Helm's Deep",           label="Helm's Deep",        zone="West Rohan", },
-        RU={ name="Путь в Хельмову Падь",           label="Хельмова Падь",      zone="Западный Рохан", },
         DE={ name="Führer nach Helms Klamm",        label="Helms Klamm",        zone="West-Rohan", },
         FR={ name="Guide vers le Gouffre de Helm",  label="Gouffre de Helm",    zone="Rohan de l'Ouest", },
+        RU={ name="Путь в Хельмову Падь",           label="Хельмова Падь",      zone="Западный Рохан", },
         map={{MapType.ROHAN, 275, 565}},
         overlap={"0x7003DC82"},
         acquire={
@@ -540,9 +540,9 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill({
         id="0x70041197",
         EN={ name="Guide to Dol Amroth",    desc="in western Gondor",   label="Dol Amroth", zone="Western Gondor", },
-        RU={ name="Путь в Дол Амрот",       desc="в Западном Гондоре",  label="Дол Амрот",  zone="Западный Гондор", },
         DE={ name="Führer nach Dol Amroth", desc="nach Dol Amroth.",    label="Dol Amroth", zone="West-Gondor", },
         FR={ name="Guide vers Dol Amroth",  desc="l'Ouest du Gondor",   label="Dol Amroth", zone="Gondor de l'Ouest", },
+        RU={ name="Путь в Дол Амрот",       desc="в Западном Гондоре",  label="Дол Амрот",  zone="Западный Гондор", },
         map={{MapType.GONDOR, 225, 550}},
         overlap={"0x700411AC"},
         acquire={
@@ -557,9 +557,9 @@ function TravelDictionary:CreateDictionaries()
     self.hunter:AddSkill({
         id="0x70043A63",
         EN={ name="Guide to Arnach",    label="Arnach", zone="Eastern Gondor", },
-        RU={ name="Путь в Арнах",       label="Арнах",  zone="Восточный Гондор", },
         DE={ name="Führer nach Arnach", label="Arnach", zone="Ost-Gondor", },
         FR={ name="Guide pour Arnach",  label="Arnach", zone="Gondor de l'Ouest", },
+        RU={ name="Путь в Арнах",       label="Арнах",  zone="Восточный Гондор", },
         map={{MapType.GONDOR, 715, 425}},
         overlap={"0x70043A6A"},
         acquire={
