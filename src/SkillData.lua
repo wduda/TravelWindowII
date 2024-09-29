@@ -3632,7 +3632,7 @@ function TravelDictionary:CreateDictionaries()
     self.rep:AddSkill({
         id="0x70068704",
         EN={ name="Journey to the Ledger-keepers",        label="Ledger-Keepers",      tag="Quest",   zone="Umbar", },
-        DE={ name="Zu den Buchhütern reisen",             label="Ledger-Keepers",      tag="Aufgabe", zone="Umbar", },
+        DE={ name="Zu den Buchhütern reisen",             label="Buchhüter",           tag="Aufgabe", zone="Umbar", },
         FR={ name="Voyager vers les Gardiens des écrits", label="Gardiens des écrits", tag="Quête",   zone="Umbar", },
         RU={ name="Возвращение к Хранителям книг",        label="Хранители книг",      tag="Задание", zone="Умбар", },
         map={{MapType.HARADWAITH, 415, 340}},
