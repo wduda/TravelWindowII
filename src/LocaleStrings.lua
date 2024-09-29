@@ -498,7 +498,7 @@ LC_FR.rep = {}
 LC_RU.rep = {}
 
 LC_EN.rep.THORINS_HALL = "Thorin's Hall"
-LC_DE.rep.THORINS_HALL = ""
+LC_DE.rep.THORINS_HALL = "Thorins Halle"
 LC_FR.rep.THORINS_HALL = ""
 LC_RU.rep.THORINS_HALL = ""
 
@@ -694,17 +694,17 @@ LC_FR.token = {}
 LC_RU.token = {}
 
 LC_EN.token.COPPER = "Copper"
-LC_DE.token.COPPER = ""
+LC_DE.token.COPPER = "Kupfer"
 LC_FR.token.COPPER = ""
 LC_RU.token.COPPER = ""
 
 LC_EN.token.SILVER = "Silver"
-LC_DE.token.SILVER = ""
+LC_DE.token.SILVER = "Silber"
 LC_FR.token.SILVER = ""
 LC_RU.token.SILVER = ""
 
 LC_EN.token.GOLD = "Gold"
-LC_DE.token.GOLD = ""
+LC_DE.token.GOLD = "Gold"
 LC_FR.token.GOLD = ""
 LC_RU.token.GOLD = ""
 
