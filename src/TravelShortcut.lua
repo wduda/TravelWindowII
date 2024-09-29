@@ -223,15 +223,13 @@ function TravelShortcut:InitAcquireText(item)
         text = text .. "\n" .. LC.cost
         local cost = item.cost
         for i = 1, #cost do
-            if cost[i].token == nil then
-                Turbine.Shell.WriteLine(self.skill.name)
-            end
-
-            text = text .. cost[i].amount .. " " .. cost[i].token
-            if i == #cost - 1 then
-                text = text .. " and "
-            elseif i ~= #cost then
-                text = text .. ", "
+            if cost[i].token ~= nil and cost[i].amount ~= nil then
+                text = text .. cost[i].amount .. " " .. cost[i].token
+                if i == #cost - 1 then
+                    text = text .. " and "
+                elseif i ~= #cost then
+                    text = text .. ", "
+                end
             end
         end
     end
