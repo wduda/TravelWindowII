@@ -926,8 +926,7 @@ LC_RU.token.MARK_OF_RENEWAL = ""
 LC_EN.token.UMBARI_TAM = "Umbari Tâm"
 LC_DE.token.UMBARI_TAM = ""
 LC_FR.token.UMBARI_TAM = ""
-LC_RU.token.UMBARI_TAM = ""
-
+LC_RU.token.UMBARI_TAM = "Умбарский там"
 
 -- Verify matched locale keys
 for lang, _ in pairs(Locale) do
