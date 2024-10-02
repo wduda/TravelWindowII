@@ -62,12 +62,15 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Delving Quartermaster", }},
+                RU={vendor="Интендант погружений",  }
+            },
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
                 FR={vendor="Before the Shadow Mission-giver Barterer", },
-                RU={vendor="Before the Shadow Mission-giver Barterer", }} },
+                RU={vendor="Before the Shadow Mission-giver Barterer", }
+            }
+        },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=7
@@ -84,7 +87,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
                 EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
-                FR={vendor="Quartermaster (Dúnedain of Cardolan)", }} },
+                FR={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                RU={vendor="Quartermaster (Dúnedain of Cardolan)", }
+            }
+        },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=10
@@ -101,11 +107,16 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
-                FR={vendor="Delving Quartermaster", }},
+                FR={vendor="Delving Quartermaster", },
+                RU={vendor="Delving Quartermaster", }
+            },
             {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
                 EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
-                FR={vendor="Quartermaster (Dúnedain of Cardolan)", }} },
+                FR={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                RU={vendor="Quartermaster (Dúnedain of Cardolan)", }
+            }
+        },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=15
@@ -122,11 +133,16 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
-                FR={vendor="Delving Quartermaster", }},
+                FR={vendor="Delving Quartermaster", },
+                RU={vendor="Delving Quartermaster", }
+            },
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
-                FR={vendor="Before the Shadow Mission-giver Barterer", }} },
+                FR={vendor="Before the Shadow Mission-giver Barterer", },
+                RU={vendor="Before the Shadow Mission-giver Barterer", }
+            }
+        },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=17
@@ -143,7 +159,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=10, token=LC.token.COPPER_BOUNDER_COIN}},
                 EN={vendor="Quartermaster (Yonder-watch)", },
                 DE={vendor="Quartermaster (Yonder-watch)", },
-                FR={vendor="Quartermaster (Yonder-watch)", }} },
+                FR={vendor="Quartermaster (Yonder-watch)", },
+                RU={vendor="Quartermaster (Yonder-watch)", }
+            }
+        },
         rep=LC.rep.YONDER_WATCH, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=20
@@ -155,16 +174,20 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Ost Guruth",   label="Ost Guruth",   zone="Terres Solitaires", },
         RU={ name="Путь в Ост Гурут",        label="Ост Гурут",    zone="Пустоши", },
         map={{MapType.ERIADOR, 755, 400}},
-        acquire={ { cost={ amount=30, token=LC.rep.MITHRIL_COIN},
+        acquire={
+            {cost={ amount=30, token=LC.rep.MITHRIL_COIN},
                 EN={vendor="Hunter Trainer"},
-                DE={vendor=""},
-                FR={vendor=""}
+                DE={vendor="Hunter Trainer"},
+                FR={vendor="Hunter Trainer"},
+                RU={vendor="Hunter Trainer"}
             },
             {
                 EN={quest="Hunter: Wilderness by Ost Guruth"},
                 DE={quest="Hunter: Wilderness by Ost Guruth"},
-                FR={quest="Hunter: Wilderness by Ost Guruth"}
-            }},
+                FR={quest="Hunter: Wilderness by Ost Guruth"},
+                RU={quest="Hunter: Wilderness by Ost Guruth"}
+            }
+        },
         minLevel=26,
         overlap={"0x70020441"},
         level=25
@@ -187,16 +210,20 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Evendim",  label="Evendim", detail="Tinnudir", zone="Evendim", },
         RU={ name="Путь в Эвендим",      label="Эвендим", detail="Тиннудир", zone="Эвендим", },
         map={{MapType.ERIADOR, 490, 235}},
-        acquire={ { cost={ amount=40, token=LC.rep.MITHRIL_COIN},
+        acquire={
+            {cost={ amount=40, token=LC.rep.MITHRIL_COIN},
                 EN={vendor="Hunter Trainer"},
-                DE={vendor=""},
-                FR={vendor=""}
+                DE={vendor="Hunter Trainer"},
+                FR={vendor="Hunter Trainer"},
+                RU={vendor="Hunter Trainer"}
             },
             {
                 EN={quest="Tracks Through Evendim"},
                 DE={quest="Tracks Through Evendim"},
-                FR={quest="Tracks Through Evendim"}
-            }},
+                FR={quest="Tracks Through Evendim"},
+                RU={quest="Tracks Through Evendim"}
+            }
+        },
         minLevel=36,
         level=35
     })
@@ -212,7 +239,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=15, token=LC.token.MARK_OF_ANGLE}},
                 EN={vendor="Quartermaster (Defenders of the Angle)", },
                 DE={vendor="Quartermaster (Defenders of the Angle)", },
-                FR={vendor="Quartermaster (Defenders of the Angle)", }} },
+                FR={vendor="Quartermaster (Defenders of the Angle)", },
+                RU={vendor="Quartermaster (Defenders of the Angle)", }
+             }
+        },
         rep=LC.rep.DEFENDERS_OF_ANGLE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=38,
         level=40
@@ -240,8 +270,11 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=128, token=LC.token.SILVER}}, coords="[24.5S, 7.0E]",
                 EN={vendor="Afwald", },
                 DE={vendor="Afwald", },
-                FR={vendor="Afwald", }},
-            { store=true }},
+                FR={vendor="Afwald", },
+                RU={vendor="Afwald", }
+            },
+            { store=true }
+        },
         rep=LC.rep.ELVES_OF_RIVENDELL, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=40,
         level=40.2
@@ -258,7 +291,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=25, token=LC.token.MARK_OF_WILDS}},
                 EN={vendor="Quartermaster (Woodcutter's Brotherhood)", },
                 DE={vendor="Quartermaster (Woodcutter's Brotherhood)", },
-                FR={vendor="Quartermaster (Woodcutter's Brotherhood)", }} },
+                FR={vendor="Quartermaster (Woodcutter's Brotherhood)", },
+                RU={vendor="Quartermaster (Woodcutter's Brotherhood)", }
+            }
+        },
         rep=LC.rep.WOODCUTTERS_BROTHERHOOD, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=40,
         level=40.3
@@ -275,7 +311,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=25, token=LC.token.MARK_OF_WILDS}},
                 EN={vendor="Quartermaster (The League of the Axe)", },
                 DE={vendor="Quartermaster (The League of the Axe)", },
-                FR={vendor="Quartermaster (The League of the Axe)", }} },
+                FR={vendor="Quartermaster (The League of the Axe)", },
+                RU={vendor="Quartermaster (The League of the Axe)", }
+            }
+        },
         rep=LC.rep.LEAGUE_OF_AXE, repLevel=LC.repLevel.NEUTRAL,
         minLevel=40,
         level=40.4
@@ -287,16 +326,21 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Sûri-kylä",  label="Sûri-kylä",  zone="Forochel", },
         RU={ name="Путь в Сури-кила",       label="Сури-кила", zone="Форохель", },
         map={{MapType.ERIADOR, 430, 50}},
-        acquire={ { cost={ amount=50, token=LC.rep.MITHRIL_COIN},
+        acquire={
+            {cost={ amount=50, token=LC.rep.MITHRIL_COIN},
                 EN={vendor="Hunter Trainer"},
-                DE={vendor=""},
-                FR={vendor=""}
+                DE={vendor="Hunter Trainer"},
+                FR={vendor="Hunter Trainer"},
+                RU={vendor="Hunter Trainer"}
             },
             {cost={{amount=130, token=LC.token.SILVER},
                    {amount=72, token=LC.token.COPPER}}, coords="[19.5N, 72.0W]",
                 EN={vendor="Rûsu", },
                 DE={vendor="Rûsu", },
-                FR={vendor="Rûsu", }}},
+                FR={vendor="Rûsu", },
+                RU={vendor="Rûsu", }
+            }
+        },
         rep=LC.rep.LOSSOTH_OF_FOROCHEL, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=48,
         level=42
@@ -308,56 +352,68 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers l'ouest d'Angmar",    label="Angmar ouest",    detail="Aughaire", zone="Angmar", },
         RU={ name="Путь в западный Ангмар",         label="Западный Ангмар", detail="Огайр",    zone="Ангмар", },
         map={{MapType.ERIADOR, 825, 185}},
-        acquire={ { cost={ amount=50, token=LC.rep.MITHRIL_COIN},
+        acquire={
+            {cost={ amount=50, token=LC.rep.MITHRIL_COIN},
                 EN={vendor="Hunter Trainer"},
-                DE={vendor=""},
-                FR={vendor=""}
+                DE={vendor="Hunter Trainer"},
+                FR={vendor="Hunter Trainer"},
+                RU={vendor="Hunter Trainer"}
             },
             {
                 EN={quest="Desolation by Aughaire"},
                 DE={quest="Desolation by Aughaire"},
-                FR={quest="Desolation by Aughaire"}
-            }},
+                FR={quest="Desolation by Aughaire"},
+                RU={quest="Desolation by Aughaire"}
+            }
+        },
         minLevel=44,
         level=45
     })
     self.hunter:AddSkill({
         id="0x7000A2C6",
         EN={ name="Guide to East Angmar",       label="East Angmar",        detail="Gath Forthnír", zone="Angmar", },
-        RU={ name="Путь в восточный Ангмар",    label="Восточный Ангмар",   detail="Гат Фортнир",   zone="Ангмар", },
         DE={ name="Führer nach Ost-Angmar",     label="East-Angmar",        detail="Gath Forthnír", zone="Angmar", },
         FR={ name="Guide vers l'est d'Angmar",  label="Angmar est",         detail="Gath Forthnír", zone="Angmar", },
+        RU={ name="Путь в восточный Ангмар",    label="Восточный Ангмар",   detail="Гат Фортнир",   zone="Ангмар", },
         map={{MapType.ERIADOR, 705, 180}},
-        acquire={ { cost={ amount=50, token=LC.rep.MITHRIL_COIN},
+        acquire={
+            {cost={ amount=50, token=LC.rep.MITHRIL_COIN},
                 EN={vendor="Hunter Trainer"},
-                DE={vendor=""},
-                FR={vendor=""}
+                DE={vendor="Hunter Trainer"},
+                FR={vendor="Hunter Trainer"},
+                RU={vendor="Hunter Trainer"}
             },
             {
                 EN={quest="Hunter: Waste Near Gath Forthnír"},
-                DE={quest=""},
-                FR={quest=""}
-            }},
+                DE={quest="Hunter: Waste Near Gath Forthnír"},
+                FR={quest="Hunter: Waste Near Gath Forthnír"},
+                RU={quest="Hunter: Waste Near Gath Forthnír"}
+            }
+        },
         minLevel=48,
         level=49
     })
     self.hunter:AddSkill({
         id="0x70017C81",
         EN={ name="Guide to Echad Dúnann",      label="Echad Dúnann",   zone="Eregion", },
-        RU={ name="Путь в Эхад Дунанн",         label="Эхад Дунанн",    zone="Эрегион", },
         DE={ name="Führer nach Echad Dúnann",   label="Echad Dúnann",   zone="Eregion", },
         FR={ name="Guide vers Echad Dunann",    label="Echad Dunann",   zone="Eregion", },
+        RU={ name="Путь в Эхад Дунанн",         label="Эхад Дунанн",    zone="Эрегион", },
         map={{MapType.ERIADOR, 855, 535}},
-        acquire={ { cost={ amount=60, token=LC.rep.MITHRIL_COIN},
+        acquire={
+            {cost={ amount=60, token=LC.rep.MITHRIL_COIN},
                 EN={vendor="Hunter Trainer"},
-                DE={vendor=""},
-                FR={vendor=""}
+                DE={vendor="Hunter Trainer"},
+                FR={vendor="Hunter Trainer"},
+                RU={vendor="Hunter Trainer"}
             },
             {
                 EN={quest="Hunter: Lay of the Land"},
                 DE={quest="Hunter: Lay of the Land"},
-                FR={quest="Hunter: Lay of the Land"}
-            }},
+                FR={quest="Hunter: Lay of the Land"},
+                RU={quest="Hunter: Lay of the Land"}
+            }
+        },
         minLevel=51,
         level=50
     })
@@ -368,16 +424,21 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Führer zur Einundzwanzigsten Halle",     label="Einundzwanzigste Halle", zone="Moria", },
         FR={ name="Guide vers la vingt et unième salle",    label="Vingt et unième salle",  zone="Moria", },
         map={{MapType.RHOVANION, 95, 585}, {MapType.ERIADOR, 950, 510}},
-        acquire={ { cost={ amount=70, token=LC.rep.MITHRIL_COIN},
+        acquire={
+            {cost={ amount=70, token=LC.rep.MITHRIL_COIN},
                 EN={vendor="Hunter Trainer"},
-                DE={vendor=""},
-                FR={vendor=""}
+                DE={vendor="Hunter Trainer"},
+                FR={vendor="Hunter Trainer"},
+                RU={vendor="Hunter Trainer"}
             },
             {cost={{amount=153, token=LC.token.SILVER},
                    {amount=60, token=LC.token.COPPER}}, coords="[5.9S, 105.0W]",
                 EN={vendor="Kettil, Son of Athils", },
                 DE={vendor="Kettil, Son of Athils", },
-                FR={vendor="Kettil, Son of Athils", }}},
+                FR={vendor="Kettil, Son of Athils", },
+                RU={vendor="Kettil, Son of Athils", }
+            }
+        },
         rep=LC.rep.IRON_GARRISON_MINERS, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=56,
         level=55
@@ -394,7 +455,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=20, token=LC.token.LOTHLORIEN_SILVER_BRANCH}}, coords="[15.7S, 67.7W]",
                 EN={vendor="Malenfileg", },
                 DE={vendor="Malenfileg", },
-                FR={vendor="Malenfileg", }}},
+                FR={vendor="Malenfileg", },
+                RU={vendor="Malenfileg", }
+            }
+        },
         rep=LC.rep.GALADHRIM, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=60,
         level=60
@@ -406,15 +470,20 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Führer zur Dunkelsenke",     label="Dunkelsenke",    zone="Düsterwald", },
         FR={ name="Guide vers l'Orée noire",    label="Orée noire",     zone="Forêt Noire", },
         map={{MapType.RHOVANION, 365, 630}},
-        acquire={ { cost={ amount=70, token=LC.rep.MITHRIL_COIN},
+        acquire={
+            {cost={ amount=70, token=LC.rep.MITHRIL_COIN},
                 EN={vendor="Hunter Trainer"},
-                DE={vendor=""},
-                FR={vendor=""}
+                DE={vendor="Hunter Trainer"},
+                FR={vendor="Hunter Trainer"},
+                RU={vendor="Hunter Trainer"}
             },
             {cost={{amount=1, token=LC.token.MALLEDHRIM_BRONZE_FEATHER}}, coords="[15.1S, 61.5W]",
                 EN={vendor="Estellien", },
                 DE={vendor="Estellien", },
-                FR={vendor="Estellien", }}},
+                FR={vendor="Estellien", },
+                RU={vendor="Estellien", }
+            }
+        },
         rep=LC.rep.MALLEDHRIM, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=62,
         level=61
@@ -430,7 +499,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=5, token=LC.token.SILVER_TOKEN_OF_WILDS}}, coords="[18.5S, 68.7W]",
                 EN={vendor="Legrindavor", },
                 DE={vendor="Legrindavor", },
-                FR={vendor="Legrindavor", }}},
+                FR={vendor="Legrindavor", },
+                RU={vendor="Legrindavor", }
+            }
+        },
         rep=LC.rep.GREY_COMPANY, repLevel=LC.repLevel.FRIEND,
         minLevel=62,
         level=62
@@ -447,7 +519,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=176, token=LC.token.SILVER}}, coords="[80.4S, 16.8W]",
                 EN={vendor="Dunlending Quartermaster", },
                 DE={vendor="Dunlending Quartermaster", },
-                FR={vendor="Dunlending Quartermaster", }}},
+                FR={vendor="Dunlending Quartermaster", },
+                RU={vendor="Dunlending Quartermaster", }
+            }
+        },
         rep=LC.rep.MEN_OF_DUNLAND, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=70,
         level=65
@@ -464,7 +539,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=5, token=LC.token.SILVER_TOKEN_OF_ANDUIN}}, coords="[25.5S, 63.3W]",
                 EN={vendor="Ordlaf", },
                 DE={vendor="Ordlaf", },
-                FR={vendor="Ordlaf", }}},
+                FR={vendor="Ordlaf", },
+                RU={vendor="Ordlaf", }
+            }
+        },
         rep=LC.rep.RIDERS_OF_STANGARD, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=75,
         level=75
@@ -481,7 +559,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=50, token=LC.token.SILVER_TOKEN_OF_RIDDERMARK}},
                 EN={vendor="Eastemnet Miscellany Quartermaster", },
                 DE={vendor="Eastemnet Miscellany Quartermaster", },
-                FR={vendor="Eastemnet Miscellany Quartermaster", }} },
+                FR={vendor="Eastemnet Miscellany Quartermaster", },
+                RU={vendor="Eastemnet Miscellany Quartermaster", }
+            }
+        },
         rep=LC.rep.MEN_OF_SUTCROFTS, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=80,
         level=80
@@ -498,7 +579,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=50, token=LC.token.WILDERMORE_COIN}}, coords="[39.4S, 60.8W]",
                 EN={vendor="Ethelmund", },
                 DE={vendor="Ethelmund", },
-                FR={vendor="Ethelmund", }} },
+                FR={vendor="Ethelmund", },
+                RU={vendor="Ethelmund", }
+            }
+        },
         rep=LC.rep.PEOPLE_OF_WILDERMORE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=85,
         level=85
@@ -515,7 +599,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=100, token=LC.token.WESTEMNET_IRON_COIN}},
                 EN={vendor="Quartermaster (Eorlingas)", },
                 DE={vendor="Quartermaster (Eorlingas)", },
-                FR={vendor="Quartermaster (Eorlingas)", }} },
+                FR={vendor="Quartermaster (Eorlingas)", },
+                RU={vendor="Quartermaster (Eorlingas)", }
+            }
+        },
         rep=LC.rep.EORLINGAS, repLevel=LC.repLevel.FRIEND,
         minLevel=85,
         level=88
@@ -532,7 +619,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=125, token=LC.token.WESTEMNET_IRON_COIN}},
                 EN={vendor="Quartermaster (Helmingas)", },
                 DE={vendor="Quartermaster (Helmingas)", },
-                FR={vendor="Quartermaster (Helmingas)", }} },
+                FR={vendor="Quartermaster (Helmingas)", },
+                RU={vendor="Quartermaster (Helmingas)", }
+            }
+        },
         rep=LC.rep.HELMINGAS, repLevel=LC.repLevel.FRIEND,
         minLevel=90,
         level=90
@@ -549,7 +639,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=25, token=LC.token.AMROTH_SILVER}}, coords="[74.9S, 71.4W]",
                 EN={vendor="Quartermaster (Dol Amroth)", },
                 DE={vendor="Quartermaster (Dol Amroth)", },
-                FR={vendor="Quartermaster (Dol Amroth)", }} },
+                FR={vendor="Quartermaster (Dol Amroth)", },
+                RU={vendor="Quartermaster (Dol Amroth)", }
+            }
+        },
         rep=LC.rep.DOL_AMROTH, repLevel=LC.repLevel.FRIEND,
         minLevel=95,
         level=98
@@ -565,8 +658,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.EAST_GONDOR_SILVER}},
                 EN={vendor="Quartermaster (Rangers of Ithilien)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Rangers of Ithilien)", },
+                FR={vendor="Quartermaster (Rangers of Ithilien)", },
+                RU={vendor="Quartermaster (Rangers of Ithilien)", }
+            }
+        },
         rep=LC.rep.RANGERS_OF_ITHILIEN, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=100
@@ -582,8 +678,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=30, token=LC.token.MINAS_TIRITH_SILVER}},
                 EN={vendor="Quartermaster (Defenders of Minas Tirith)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                FR={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                RU={vendor="Quartermaster (Defenders of Minas Tirith)", }
+            }
+        },
         rep=LC.rep.DEFENDERS_OF_MINAS_TIRITH, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=100.1
@@ -600,8 +699,11 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=5, token=LC.token.EXQUISITE_WOODCARVING},
                    {amount=3, token=LC.token.POLISHED_MARBLE_TRINKET}}, coords="[45.5S, 27.3W]",
                 EN={vendor="Quartermaster (Riders of Rohan)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Riders of Rohan)", },
+                FR={vendor="Quartermaster (Riders of Rohan)", },
+                RU={vendor="Quartermaster (Riders of Rohan)", }
+            }
+        },
         rep=LC.rep.RIDERS_OF_ROHAN, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=102
@@ -617,8 +719,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MINAS_TIRITH_SILVER}},
                 EN={vendor="Quartermaster (Defenders of Minas Tirith)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                FR={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                RU={vendor="Quartermaster (Defenders of Minas Tirith)", }
+            }
+        },
         rep=LC.rep.DEFENDERS_OF_MINAS_TIRITH, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=105
@@ -634,8 +739,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER}},
                 EN={vendor="Quartermaster (Host of the West)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Host of the West)", },
+                FR={vendor="Quartermaster (Host of the West)", },
+                RU={vendor="Quartermaster (Host of the West)", }
+            }
+        },
         rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=105.1
@@ -651,8 +759,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER}},
                 EN={vendor="Quartermaster (Host of the West)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Host of the West)", },
+                FR={vendor="Quartermaster (Host of the West)", },
+                RU={vendor="Quartermaster (Host of the West)", }
+            }
+        },
         rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=105.2
@@ -668,8 +779,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=40, token=LC.token.HOST_OF_WEST_SILVER}},
                 EN={vendor="Quartermaster (Host of the West)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Host of the West)", },
+                FR={vendor="Quartermaster (Host of the West)", },
+                RU={vendor="Quartermaster (Host of the West)", }
+            }
+        },
         rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.KINDRED,
         minLevel=100,
         level=105.3
@@ -685,8 +799,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=40, token=LC.token.HOST_OF_WEST_SILVER}},
                 EN={vendor="Quartermaster (Host of the West)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Host of the West)", },
+                FR={vendor="Quartermaster (Host of the West)", },
+                RU={vendor="Quartermaster (Host of the West)", }
+            }
+        },
         rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.RESPECTED,
         minLevel=100,
         level=105.4
@@ -702,8 +819,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.SILVER_SIGNET_OF_THANDRIM}},
                 EN={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", },
+                FR={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", },
+                RU={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", }
+            }
+        },
         rep=LC.rep.CONQUEST_OF_GORGOROTH, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=106
@@ -721,9 +841,29 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                },
+                DE={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                },
+                FR={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                },
+                RU={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                }
+            }
+        },
         rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=115,
         level=115
@@ -739,8 +879,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=5, token=LC.token.MARK_OF_LONGBEARDS}},
                 EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                FR={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                RU={vendor="Quartermaster (Dwarf-holds Rewards)"}
+            }
+        },
         rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
         minLevel=116,
         level=116
@@ -756,8 +899,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=5, token=LC.token.MARK_OF_LONGBEARDS}},
                 EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                FR={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                RU={vendor="Quartermaster (Dwarf-holds Rewards)"}
+            }
+        },
         rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
         minLevel=116,
         level=117
@@ -773,8 +919,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.VALES_BEORNING_TOKEN}},
                 EN={vendor="Quartermaster (Wilderfolk Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Wilderfolk Rewards)"},
+                FR={vendor="Quartermaster (Wilderfolk Rewards)"},
+                RU={vendor="Quartermaster (Wilderfolk Rewards)"}
+            }
+        },
         rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=116,
         level=120
@@ -790,8 +939,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.GULMARK}},
                 EN={vendor="Quartermaster (Wilderfolk Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Wilderfolk Rewards)"},
+                FR={vendor="Quartermaster (Wilderfolk Rewards)"},
+                RU={vendor="Quartermaster (Wilderfolk Rewards)"}
+            }
+        },
         rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=116,
         level=120.1
@@ -807,8 +959,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.SIGIL_IMLAD_ITHIL}},
                 EN={vendor="Quartermaster (The White Company)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The White Company)"},
+                FR={vendor="Quartermaster (The White Company)"},
+                RU={vendor="Quartermaster (The White Company)"}
+            }
+        },
         rep=LC.rep.WHITE_COMPANY, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=121,
         level=125
@@ -824,8 +979,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.NORTHERN_GULMARK}},
                 EN={vendor="Quartermaster (Protectors of Wilderland)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Protectors of Wilderland)"},
+                FR={vendor="Quartermaster (Protectors of Wilderland)"},
+                RU={vendor="Quartermaster (Protectors of Wilderland)"}
+            }
+        },
         rep=LC.rep.PROTECTORS_OF_WILDERLAND, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=130,
         level=130
@@ -841,12 +999,17 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }},
+                DE={vendor="Delving Quartermaster"},
+                FR={vendor="Delving Quartermaster"},
+                RU={vendor="Delving Quartermaster"}
+            },
             {cost={{amount=25, token=LC.token.COPPER_COIN_OF_GUNDABAD}},
                 EN={vendor="Quartermaster (March on Gundabad)"},
-                DE={vendor="", },
-                FR={vendor="", }}, },
+                DE={vendor="Quartermaster (March on Gundabad)"},
+                FR={vendor="Quartermaster (March on Gundabad)"},
+                RU={vendor="Quartermaster (March on Gundabad)"}
+            }
+        },
         minLevel=20,
         level=130.1
     })
@@ -861,8 +1024,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.TOKEN_OF_KHARUM_UBNAR}},
                 EN={vendor="Vorthur Smokebreath"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Vorthur Smokebreath"},
+                FR={vendor="Vorthur Smokebreath"},
+                RU={vendor="Vorthur Smokebreath"}
+            }
+        },
         rep=LC.rep.KHARUM_UBNAR, repLevel=LC.repLevel.NEUTRAL,
         minLevel=130,
         level=130.2
@@ -878,8 +1044,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=7, token=LC.token.ZAKAF_BESHEK}}, coords="[63.5N, 135.0W]",
                 EN={vendor="Quartermaster (Haban'akkâ of Thráin)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Haban'akkâ of Thráin)"},
+                FR={vendor="Quartermaster (Haban'akkâ of Thráin)"},
+                RU={vendor="Quartermaster (Haban'akkâ of Thráin)"}
+            }
+        },
         rep=LC.rep.HABANAKKA_OF_THRAIN, repLevel=LC.repLevel.DUMUL,
         minLevel=130,
         level=130.3
@@ -895,8 +1064,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.SILVER_COIN_OF_GUNDABAD}},
                 EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                FR={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                RU={vendor="Quartermaster (Reclaimers of the Mountain-hold)"}
+            }
+        },
         rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
         minLevel=131,
         level=131
@@ -912,8 +1084,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.SILVER_COIN_OF_GUNDABAD}},
                 EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                FR={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                RU={vendor="Quartermaster (Reclaimers of the Mountain-hold)"}
+            }
+        },
         rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
         minLevel=135,
         level=135
@@ -929,8 +1104,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=30, token=LC.token.SARSKILLINAN}},
                 EN={vendor="Muirál"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Muirál"},
+                FR={vendor="Muirál"},
+                RU={vendor="Muirál"}
+            }
+        },
         minLevel=20,
         level=140.1
     })
@@ -945,8 +1123,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The Renewal of Gondor)"},
+                FR={vendor="Quartermaster (The Renewal of Gondor)"},
+                RU={vendor="Quartermaster (The Renewal of Gondor)"}
+            }
+        },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=141
@@ -962,8 +1143,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The Renewal of Gondor)"},
+                FR={vendor="Quartermaster (The Renewal of Gondor)"},
+                RU={vendor="Quartermaster (The Renewal of Gondor)"}
+            }
+        },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=142
@@ -979,8 +1163,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The Renewal of Gondor)"},
+                FR={vendor="Quartermaster (The Renewal of Gondor)"},
+                RU={vendor="Quartermaster (The Renewal of Gondor)"}
+            }
+        },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=143
@@ -996,8 +1183,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The City of Umbar Rewards)"},
+                FR={vendor="Quartermaster (The City of Umbar Rewards)"},
+                RU={vendor="Quartermaster (The City of Umbar Rewards)"}
+            }
+        },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=145
@@ -1013,8 +1203,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The City of Umbar Rewards)"},
+                FR={vendor="Quartermaster (The City of Umbar Rewards)"},
+                RU={vendor="Quartermaster (The City of Umbar Rewards)"}
+            }
+        },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=146
@@ -1030,8 +1223,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=15, token=LC.token.UMBARI_TAM}}, coords="[20.0S, 105.7W]",
                 EN={vendor="Mâkhda Khorbo Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Mâkhda Khorbo Quartermaster"},
+                FR={vendor="Mâkhda Khorbo Quartermaster"},
+                RU={vendor="Mâkhda Khorbo Quartermaster"}
+            }
+        },
         minLevel=20,
         level=147
     })
@@ -1046,8 +1242,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The City of Umbar Rewards)"},
+                FR={vendor="Quartermaster (The City of Umbar Rewards)"},
+                RU={vendor="Quartermaster (The City of Umbar Rewards)"}
+            }
+        },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=148
@@ -1063,16 +1262,23 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }},
+                DE={vendor="Delving Quartermaster"},
+                FR={vendor="Delving Quartermaster"},
+                RU={vendor="Delving Quartermaster"}
+            },
             {cost={{amount=10, token=LC.token.LEDGER_KEEPER_MARK}},
                 EN={vendor="Ledger-keepers Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }},
+                DE={vendor="Ledger-keepers Quartermaster"},
+                FR={vendor="Ledger-keepers Quartermaster"},
+                RU={vendor="Ledger-keepers Quartermaster"}
+            },
             {cost={{amount=10, token=LC.token.EAGLE_BIT}},
                 EN={vendor="Order of the Eagle Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }},},
+                DE={vendor="Order of the Eagle Quartermaster"},
+                FR={vendor="Order of the Eagle Quartermaster"},
+                RU={vendor="Order of the Eagle Quartermaster"}
+            }
+        },
         minLevel=20,
         level=149
     })
@@ -1091,11 +1297,16 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
-                FR={vendor="Delving Quartermaster", }},
+                FR={vendor="Delving Quartermaster", },
+                RU={vendor="Delving Quartermaster", }
+            },
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
-                FR={vendor="Before the Shadow Mission-giver Barterer", }} },
+                FR={vendor="Before the Shadow Mission-giver Barterer", },
+                RU={vendor="Before the Shadow Mission-giver Barterer", }
+            }
+        },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=7
@@ -1112,7 +1323,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
                 EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
-                FR={vendor="Quartermaster (Dúnedain of Cardolan)", }} },
+                FR={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                RU={vendor="Quartermaster (Dúnedain of Cardolan)", }
+            }
+        },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=10
@@ -1129,11 +1343,16 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
-                FR={vendor="Delving Quartermaster", }},
+                FR={vendor="Delving Quartermaster", },
+                RU={vendor="Delving Quartermaster", }
+            },
             {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
                 EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
-                FR={vendor="Quartermaster (Dúnedain of Cardolan)", }} },
+                FR={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                RU={vendor="Quartermaster (Dúnedain of Cardolan)", }
+            }
+        },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=15
@@ -1150,11 +1369,16 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
-                FR={vendor="Delving Quartermaster", }},
+                FR={vendor="Delving Quartermaster", },
+                RU={vendor="Delving Quartermaster", }
+            },
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
-                FR={vendor="Before the Shadow Mission-giver Barterer", }} },
+                FR={vendor="Before the Shadow Mission-giver Barterer", },
+                RU={vendor="Before the Shadow Mission-giver Barterer", }
+            }
+        },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=17
@@ -1171,7 +1395,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=10, token=LC.token.COPPER_BOUNDER_COIN}},
                 EN={vendor="Quartermaster (Yonder-watch)", },
                 DE={vendor="Quartermaster (Yonder-watch)", },
-                FR={vendor="Quartermaster (Yonder-watch)", }} },
+                FR={vendor="Quartermaster (Yonder-watch)", },
+                RU={vendor="Quartermaster (Yonder-watch)", }
+            }
+        },
         rep=LC.rep.YONDER_WATCH, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=20
@@ -1222,7 +1449,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=15, token=LC.token.MARK_OF_ANGLE}},
                 EN={vendor="Quartermaster (Defenders of the Angle)", },
                 DE={vendor="Quartermaster (Defenders of the Angle)", },
-                FR={vendor="Quartermaster (Defenders of the Angle)", }} },
+                FR={vendor="Quartermaster (Defenders of the Angle)", },
+                RU={vendor="Quartermaster (Defenders of the Angle)", }
+            }
+        },
         rep=LC.rep.DEFENDERS_OF_ANGLE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=38,
         level=40
@@ -1250,8 +1480,11 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=128, token=LC.token.SILVER}}, coords="[24.5S, 7.0E]",
                 EN={vendor="Afwald", },
                 DE={vendor="Afwald", },
-                FR={vendor="Afwald", }},
-            { store=true }},
+                FR={vendor="Afwald", },
+                RU={vendor="Afwald", }
+            },
+            { store=true }
+        },
         rep=LC.rep.ELVES_OF_RIVENDELL, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=40,
         level=40.2
@@ -1268,7 +1501,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=25, token=LC.token.MARK_OF_WILDS}},
                 EN={vendor="Quartermaster (Woodcutter's Brotherhood)", },
                 DE={vendor="Quartermaster (Woodcutter's Brotherhood)", },
-                FR={vendor="Quartermaster (Woodcutter's Brotherhood)", }} },
+                FR={vendor="Quartermaster (Woodcutter's Brotherhood)", },
+                RU={vendor="Quartermaster (Woodcutter's Brotherhood)", }
+            }
+        },
         rep=LC.rep.WOODCUTTERS_BROTHERHOOD, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=40,
         level=40.3
@@ -1285,7 +1521,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=25, token=LC.token.MARK_OF_WILDS}},
                 EN={vendor="Quartermaster (The League of the Axe)", },
                 DE={vendor="Quartermaster (The League of the Axe)", },
-                FR={vendor="Quartermaster (The League of the Axe)", }} },
+                FR={vendor="Quartermaster (The League of the Axe)", },
+                RU={vendor="Quartermaster (The League of the Axe)", }
+            }
+        },
         rep=LC.rep.LEAGUE_OF_AXE, repLevel=LC.repLevel.NEUTRAL,
         minLevel=40,
         level=40.4
@@ -1302,7 +1541,10 @@ function TravelDictionary:CreateDictionaries()
                    {amount=72, token=LC.token.COPPER}}, coords="[19.5N, 72.0W]",
                 EN={vendor="Rûsu", },
                 DE={vendor="Rûsu", },
-                FR={vendor="Rûsu", }}},
+                FR={vendor="Rûsu", },
+                RU={vendor="Rûsu", }
+            }
+        },
         rep=LC.rep.LOSSOTH_OF_FOROCHEL, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=48,
         level=42
@@ -1319,7 +1561,10 @@ function TravelDictionary:CreateDictionaries()
                    {amount=60, token=LC.token.COPPER}}, coords="[5.9S, 105.0W]",
                 EN={vendor="Kettil, Son of Athils", },
                 DE={vendor="Kettil, Son of Athils", },
-                FR={vendor="Kettil, Son of Athils", }}},
+                FR={vendor="Kettil, Son of Athils", },
+                RU={vendor="Kettil, Son of Athils", }
+            }
+        },
         rep=LC.rep.IRON_GARRISON_MINERS, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=56,
         level=55
@@ -1336,7 +1581,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=20, token=LC.token.LOTHLORIEN_SILVER_BRANCH}}, coords="[15.8S, 67.9W]",
                 EN={vendor="Beriawen", },
                 DE={vendor="Beriawen", },
-                FR={vendor="Beriawen", }}},
+                FR={vendor="Beriawen", },
+                RU={vendor="Beriawen", }
+            }
+        },
         rep=LC.rep.GALADHRIM, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=60,
         level=60
@@ -1352,7 +1600,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=1, token=LC.token.MALLEDHRIM_BRONZE_FEATHER}}, coords="[15.1S, 61.5W]",
                 EN={vendor="Estellien", },
                 DE={vendor="Estellien", },
-                FR={vendor="Estellien", }}},
+                FR={vendor="Estellien", },
+                RU={vendor="Estellien", }
+            }
+        },
         rep=LC.rep.MALLEDHRIM, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=62,
         level=61
@@ -1368,7 +1619,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=5, token=LC.token.SILVER_TOKEN_OF_WILDS}}, coords="[18.5S, 68.7W]",
                 EN={vendor="Legrindavor", },
                 DE={vendor="Legrindavor", },
-                FR={vendor="Legrindavor", }}},
+                FR={vendor="Legrindavor", },
+                RU={vendor="Legrindavor", }
+            }
+        },
         rep=LC.rep.GREY_COMPANY, repLevel=LC.repLevel.FRIEND,
         minLevel=62,
         level=62
@@ -1385,7 +1639,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=176, token=LC.token.SILVER}}, coords="[80.4S, 16.8W]",
                 EN={vendor="Dunlending Quartermaster", },
                 DE={vendor="Dunlending Quartermaster", },
-                FR={vendor="Dunlending Quartermaster", }}},
+                FR={vendor="Dunlending Quartermaster", },
+                RU={vendor="Dunlending Quartermaster", }
+            }
+        },
         rep=LC.rep.MEN_OF_DUNLAND, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=70,
         level=65
@@ -1402,7 +1659,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=5, token=LC.token.SILVER_TOKEN_OF_ANDUIN}}, coords="[25.5S, 63.3W]",
                 EN={vendor="Ordlaf", },
                 DE={vendor="Ordlaf", },
-                FR={vendor="Ordlaf", }}},
+                FR={vendor="Ordlaf", },
+                RU={vendor="Ordlaf", }
+            }
+        },
         rep=LC.rep.RIDERS_OF_STANGARD, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=75,
         level=75
@@ -1418,8 +1678,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=50, token=LC.token.SILVER_TOKEN_OF_RIDDERMARK}},
                 EN={vendor="Eastemnet Miscellany Quartermaster", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Eastemnet Miscellany Quartermaster", },
+                FR={vendor="Eastemnet Miscellany Quartermaster", },
+                RU={vendor="Eastemnet Miscellany Quartermaster", }
+            }
+        },
         rep=LC.rep.MEN_OF_SUTCROFTS, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=80,
         level=80
@@ -1436,7 +1699,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=50, token=LC.token.WILDERMORE_COIN}}, coords="[39.4S, 60.8W]",
                 EN={vendor="Ethelmund", },
                 DE={vendor="Ethelmund", },
-                FR={vendor="Ethelmund", }} },
+                FR={vendor="Ethelmund", },
+                RU={vendor="Ethelmund", }
+            }
+        },
         rep=LC.rep.PEOPLE_OF_WILDERMORE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=85,
         level=85
@@ -1452,8 +1718,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=100, token=LC.token.WESTEMNET_IRON_COIN}},
                 EN={vendor="Quartermaster (Eorlingas)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Eorlingas)", },
+                FR={vendor="Quartermaster (Eorlingas)", },
+                RU={vendor="Quartermaster (Eorlingas)", }
+            }
+        },
         rep=LC.rep.EORLINGAS, repLevel=LC.repLevel.FRIEND,
         minLevel=85,
         level=88
@@ -1469,8 +1738,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=125, token=LC.token.WESTEMNET_IRON_COIN}},
                 EN={vendor="Quartermaster (Helmingas)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Helmingas)", },
+                FR={vendor="Quartermaster (Helmingas)", },
+                RU={vendor="Quartermaster (Helmingas)", }
+            }
+        },
         rep=LC.rep.HELMINGAS, repLevel=LC.repLevel.FRIEND,
         minLevel=95,
         level=90
@@ -1486,8 +1758,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=25, token=LC.token.AMROTH_SILVER}}, coords="[74.9S, 71.4W]",
                 EN={vendor="Quartermaster (Dol Amroth)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Dol Amroth)", },
+                FR={vendor="Quartermaster (Dol Amroth)", },
+                RU={vendor="Quartermaster (Dol Amroth)", }
+            }
+        },
         rep=LC.rep.DOL_AMROTH, repLevel=LC.repLevel.FRIEND,
         minLevel=95,
         level=98
@@ -1503,8 +1778,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.EAST_GONDOR_SILVER}},
                 EN={vendor="Quartermaster (Rangers of Ithilien)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Rangers of Ithilien)", },
+                FR={vendor="Quartermaster (Rangers of Ithilien)", },
+                RU={vendor="Quartermaster (Rangers of Ithilien)", }
+            }
+        },
         rep=LC.rep.RANGERS_OF_ITHILIEN, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=100
@@ -1520,8 +1798,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=30, token=LC.token.MINAS_TIRITH_SILVER}},
                 EN={vendor="Quartermaster (Defenders of Minas Tirith)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                FR={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                RU={vendor="Quartermaster (Defenders of Minas Tirith)", }
+            }
+        },
         rep=LC.rep.DEFENDERS_OF_MINAS_TIRITH, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=100.1
@@ -1538,8 +1819,11 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=5, token=LC.token.EXQUISITE_WOODCARVING},
                    {amount=3, token=LC.token.POLISHED_MARBLE_TRINKET}}, coords="[45.5S, 27.3W]",
                 EN={vendor="Quartermaster (Riders of Rohan)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Riders of Rohan)", },
+                FR={vendor="Quartermaster (Riders of Rohan)", },
+                RU={vendor="Quartermaster (Riders of Rohan)", }
+            }
+        },
         rep=LC.rep.RIDERS_OF_ROHAN, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=102
@@ -1555,8 +1839,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MINAS_TIRITH_SILVER}},
                 EN={vendor="Quartermaster (Defenders of Minas Tirith)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                FR={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                RU={vendor="Quartermaster (Defenders of Minas Tirith)", }
+            }
+        },
         rep=LC.rep.DEFENDERS_OF_MINAS_TIRITH, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=105
@@ -1572,8 +1859,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER}},
                 EN={vendor="Quartermaster (Host of the West)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Host of the West)", },
+                FR={vendor="Quartermaster (Host of the West)", },
+                RU={vendor="Quartermaster (Host of the West)", }
+            }
+        },
         rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=105.1
@@ -1589,8 +1879,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER}},
                 EN={vendor="Quartermaster (Host of the West)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Host of the West)", },
+                FR={vendor="Quartermaster (Host of the West)", },
+                RU={vendor="Quartermaster (Host of the West)", }
+            }
+        },
         rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=105.2
@@ -1606,8 +1899,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=40, token=LC.token.HOST_OF_WEST_SILVER}},
                 EN={vendor="Quartermaster (Host of the West)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Host of the West)", },
+                FR={vendor="Quartermaster (Host of the West)", },
+                RU={vendor="Quartermaster (Host of the West)", }
+            }
+        },
         rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.KINDRED,
         minLevel=100,
         level=105.3
@@ -1623,8 +1919,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=40, token=LC.token.HOST_OF_WEST_SILVER}},
                 EN={vendor="Quartermaster (Host of the West)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Host of the West)", },
+                FR={vendor="Quartermaster (Host of the West)", },
+                RU={vendor="Quartermaster (Host of the West)", }
+            }
+        },
         rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.RESPECTED,
         minLevel=100,
         level=105.4
@@ -1640,8 +1939,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.SILVER_SIGNET_OF_THANDRIM}},
                 EN={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", },
+                FR={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", },
+                RU={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", }
+            }
+        },
         rep=LC.rep.CONQUEST_OF_GORGOROTH, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=106
@@ -1659,9 +1961,29 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                },
+                DE={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                },
+                FR={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                },
+                RU={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                }
+            }
+        },
         rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=115,
         level=115
@@ -1677,8 +1999,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=5, token=LC.token.MARK_OF_LONGBEARDS}},
                 EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                FR={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                RU={vendor="Quartermaster (Dwarf-holds Rewards)"}
+            }
+        },
         rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
         minLevel=116,
         level=116
@@ -1694,8 +2019,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=5, token=LC.token.MARK_OF_LONGBEARDS}},
                 EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                FR={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                RU={vendor="Quartermaster (Dwarf-holds Rewards)"}
+            }
+        },
         rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
         minLevel=116,
         level=117
@@ -1711,8 +2039,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.VALES_BEORNING_TOKEN}},
                 EN={vendor="Quartermaster (Wilderfolk Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Wilderfolk Rewards)"},
+                FR={vendor="Quartermaster (Wilderfolk Rewards)"},
+                RU={vendor="Quartermaster (Wilderfolk Rewards)"}
+            }
+        },
         rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=116,
         level=120
@@ -1728,8 +2059,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.GULMARK}},
                 EN={vendor="Quartermaster (Wilderfolk Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Wilderfolk Rewards)"},
+                FR={vendor="Quartermaster (Wilderfolk Rewards)"},
+                RU={vendor="Quartermaster (Wilderfolk Rewards)"}
+            }
+        },
         rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=116,
         level=120.1
@@ -1745,8 +2079,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.SIGIL_IMLAD_ITHIL}},
                 EN={vendor="Quartermaster (The White Company)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The White Company)"},
+                FR={vendor="Quartermaster (The White Company)"},
+                RU={vendor="Quartermaster (The White Company)"}
+            }
+        },
         rep=LC.rep.WHITE_COMPANY, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=121,
         level=125
@@ -1762,8 +2099,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.NORTHERN_GULMARK}},
                 EN={vendor="Quartermaster (Protectors of Wilderland)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Protectors of Wilderland)"},
+                FR={vendor="Quartermaster (Protectors of Wilderland)"},
+                RU={vendor="Quartermaster (Protectors of Wilderland)"}
+            }
+        },
         rep=LC.rep.PROTECTORS_OF_WILDERLAND, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=130,
         level=130
@@ -1779,12 +2119,17 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }},
+                DE={vendor="Delving Quartermaster"},
+                FR={vendor="Delving Quartermaster"},
+                RU={vendor="Delving Quartermaster"}
+            },
             {cost={{amount=25, token=LC.token.COPPER_COIN_OF_GUNDABAD}},
                 EN={vendor="Quartermaster (March on Gundabad)"},
-                DE={vendor="", },
-                FR={vendor="", }}, },
+                DE={vendor="Quartermaster (March on Gundabad)"},
+                FR={vendor="Quartermaster (March on Gundabad)"},
+                RU={vendor="Quartermaster (March on Gundabad)"}
+            }
+        },
         minLevel=20,
         level=130.1
     })
@@ -1799,8 +2144,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.TOKEN_OF_KHARUM_UBNAR}},
                 EN={vendor="Vorthur Smokebreath"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Vorthur Smokebreath"},
+                FR={vendor="Vorthur Smokebreath"},
+                RU={vendor="Vorthur Smokebreath"}
+            }
+        },
         rep=LC.rep.KHARUM_UBNAR, repLevel=LC.repLevel.NEUTRAL,
         minLevel=130,
         level=130.2
@@ -1816,8 +2164,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=7, token=LC.token.ZAKAF_BESHEK}}, coords="[63.5N, 135.0W]",
                 EN={vendor="Quartermaster (Haban'akkâ of Thráin)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Haban'akkâ of Thráin)"},
+                FR={vendor="Quartermaster (Haban'akkâ of Thráin)"},
+                RU={vendor="Quartermaster (Haban'akkâ of Thráin)"}
+            }
+        },
         rep=LC.rep.HABANAKKA_OF_THRAIN, repLevel=LC.repLevel.DUMUL,
         minLevel=130,
         level=130.3
@@ -1833,8 +2184,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.SILVER_COIN_OF_GUNDABAD}},
                 EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                FR={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                RU={vendor="Quartermaster (Reclaimers of the Mountain-hold)"}
+            }
+        },
         rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
         minLevel=131,
         level=131
@@ -1850,8 +2204,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.SILVER_COIN_OF_GUNDABAD}},
                 EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                FR={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                RU={vendor="Quartermaster (Reclaimers of the Mountain-hold)"}
+            }
+        },
         rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
         minLevel=135,
         level=135
@@ -1867,8 +2224,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=30, token=LC.token.SARSKILLINAN}},
                 EN={vendor="Muirál"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Muirál"},
+                FR={vendor="Muirál"},
+                RU={vendor="Muirál"}
+            }
+        },
         minLevel=20,
         level=140.1
     })
@@ -1883,8 +2243,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The Renewal of Gondor)"},
+                FR={vendor="Quartermaster (The Renewal of Gondor)"},
+                RU={vendor="Quartermaster (The Renewal of Gondor)"}
+            }
+        },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=141
@@ -1900,8 +2263,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The Renewal of Gondor)"},
+                FR={vendor="Quartermaster (The Renewal of Gondor)"},
+                RU={vendor="Quartermaster (The Renewal of Gondor)"}
+            }
+        },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=142
@@ -1917,8 +2283,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The Renewal of Gondor)"},
+                FR={vendor="Quartermaster (The Renewal of Gondor)"},
+                RU={vendor="Quartermaster (The Renewal of Gondor)"}
+            }
+        },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=143
@@ -1934,8 +2303,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The City of Umbar Rewards)"},
+                FR={vendor="Quartermaster (The City of Umbar Rewards)"},
+                RU={vendor="Quartermaster (The City of Umbar Rewards)"}
+            }
+        },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=145
@@ -1951,8 +2323,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The City of Umbar Rewards)"},
+                FR={vendor="Quartermaster (The City of Umbar Rewards)"},
+                RU={vendor="Quartermaster (The City of Umbar Rewards)"}
+            }
+        },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=146
@@ -1968,8 +2343,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=15, token=LC.token.UMBARI_TAM}}, coords="[20.0S, 105.7W]",
                 EN={vendor="Mâkhda Khorbo Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Mâkhda Khorbo Quartermaster"},
+                FR={vendor="Mâkhda Khorbo Quartermaster"},
+                RU={vendor="Mâkhda Khorbo Quartermaster"}
+            }
+        },
         minLevel=20,
         level=147
     })
@@ -1984,8 +2362,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The City of Umbar Rewards)"},
+                FR={vendor="Quartermaster (The City of Umbar Rewards)"},
+                RU={vendor="Quartermaster (The City of Umbar Rewards)"}
+            }
+        },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=148
@@ -2001,16 +2382,23 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }},
+                DE={vendor="Delving Quartermaster"},
+                FR={vendor="Delving Quartermaster"},
+                RU={vendor="Delving Quartermaster"}
+            },
             {cost={{amount=10, token=LC.token.LEDGER_KEEPER_MARK}},
                 EN={vendor="Ledger-keepers Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }},
+                DE={vendor="Ledger-keepers Quartermaster"},
+                FR={vendor="Ledger-keepers Quartermaster"},
+                RU={vendor="Ledger-keepers Quartermaster"}
+            },
             {cost={{amount=10, token=LC.token.EAGLE_BIT}},
                 EN={vendor="Order of the Eagle Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }},},
+                DE={vendor="Order of the Eagle Quartermaster"},
+                FR={vendor="Order of the Eagle Quartermaster"},
+                RU={vendor="Order of the Eagle Quartermaster"}
+            }
+        },
         minLevel=20,
         level=149
     })
@@ -2073,7 +2461,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=25, token=LC.token.MARK_OF_WILDS}},
                 EN={vendor="Quartermaster (The League of the Axe)", },
                 DE={vendor="Quartermaster (The League of the Axe)", },
-                FR={vendor="Quartermaster (The League of the Axe)", }} },
+                FR={vendor="Quartermaster (The League of the Axe)", },
+                RU={vendor="Quartermaster (The League of the Axe)", }
+            }
+        },
         rep=LC.rep.LEAGUE_OF_AXE, repLevel=LC.repLevel.NEUTRAL,
         minLevel=40,
         level=40.4
@@ -2090,7 +2481,10 @@ function TravelDictionary:CreateDictionaries()
                    {amount=60, token=LC.token.COPPER}}, coords="[19.5N, 72.0W]",
                 EN={vendor="Rûsu", },
                 DE={vendor="Rûsu", },
-                FR={vendor="Rûsu", }}},
+                FR={vendor="Rûsu", },
+                RU={vendor="Rûsu", }
+            }
+        },
         rep=LC.rep.LOSSOTH_OF_FOROCHEL, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=38,
         level=42
@@ -2118,7 +2512,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=1, token=LC.token.MALLEDHRIM_BRONZE_FEATHER}}, coords="[15.1S, 61.5W]",
                 EN={vendor="Estellien", },
                 DE={vendor="Estellien", },
-                FR={vendor="Estellien", }}},
+                FR={vendor="Estellien", },
+                RU={vendor="Estellien", }
+            }
+        },
         rep=LC.rep.MALLEDHRIM, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=38,
         level=61
@@ -2134,8 +2531,11 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=5, token=LC.token.SILVER_TOKEN_OF_ANDUIN}}, coords="[25.5S, 63.3W]",
                 EN={vendor="Ordlaf", },
                 DE={vendor="Ordlaf", },
-                FR={vendor="Ordlaf", }},
-            { store=true }},
+                FR={vendor="Ordlaf", },
+                RU={vendor="Ordlaf", }
+            },
+            { store=true }
+        },
         rep=LC.rep.RIDERS_OF_STANGARD, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=70,
         level=75.1
@@ -2151,8 +2551,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=50, token=LC.token.SILVER_TOKEN_OF_RIDDERMARK}},
                 EN={vendor="Eastemnet Miscellany Quartermaster", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Eastemnet Miscellany Quartermaster", },
+                FR={vendor="Eastemnet Miscellany Quartermaster", },
+                RU={vendor="Eastemnet Miscellany Quartermaster", }
+            }
+        },
         rep=LC.rep.MEN_OF_SUTCROFTS, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=80,
         level=80
@@ -2168,8 +2571,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=25, token=LC.token.AMROTH_SILVER}}, coords="[74.9S, 71.4W]",
                 EN={vendor="Quartermaster (Dol Amroth)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Dol Amroth)", },
+                FR={vendor="Quartermaster (Dol Amroth)", },
+                RU={vendor="Quartermaster (Dol Amroth)", }
+            }
+        },
         rep=LC.rep.DOL_AMROTH, repLevel=LC.repLevel.FRIEND,
         minLevel=95,
         level=98
@@ -2185,8 +2591,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER}},
                 EN={vendor="Quartermaster (Host of the West)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Host of the West)", },
+                FR={vendor="Quartermaster (Host of the West)", },
+                RU={vendor="Quartermaster (Host of the West)", }
+            }
+        },
         rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=105.1
@@ -2204,9 +2613,29 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                },
+                DE={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                },
+                FR={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                },
+                RU={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                }
+            }
+        },
         rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=115,
         level=115
@@ -2222,8 +2651,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The Renewal of Gondor)"},
+                FR={vendor="Quartermaster (The Renewal of Gondor)"},
+                RU={vendor="Quartermaster (The Renewal of Gondor)"}
+            }
+        },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=141
@@ -2239,8 +2671,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The Renewal of Gondor)"},
+                FR={vendor="Quartermaster (The Renewal of Gondor)"},
+                RU={vendor="Quartermaster (The Renewal of Gondor)"}
+            }
+        },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=142
@@ -2256,8 +2691,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The Renewal of Gondor)"},
+                FR={vendor="Quartermaster (The Renewal of Gondor)"},
+                RU={vendor="Quartermaster (The Renewal of Gondor)"}
+            }
+        },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=143
@@ -2273,8 +2711,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The City of Umbar Rewards)"},
+                FR={vendor="Quartermaster (The City of Umbar Rewards)"},
+                RU={vendor="Quartermaster (The City of Umbar Rewards)"}
+            }
+        },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=145
@@ -2290,8 +2731,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The City of Umbar Rewards)"},
+                FR={vendor="Quartermaster (The City of Umbar Rewards)"},
+                RU={vendor="Quartermaster (The City of Umbar Rewards)"}
+            }
+        },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=146
@@ -2307,8 +2751,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=15, token=LC.token.UMBARI_TAM}}, coords="[20.0S, 105.7W]",
                 EN={vendor="Mâkhda Khorbo Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Mâkhda Khorbo Quartermaster"},
+                FR={vendor="Mâkhda Khorbo Quartermaster"},
+                RU={vendor="Mâkhda Khorbo Quartermaster"}
+            }
+        },
         minLevel=20,
         level=147
     })
@@ -2323,8 +2770,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The City of Umbar Rewards)"},
+                FR={vendor="Quartermaster (The City of Umbar Rewards)"},
+                RU={vendor="Quartermaster (The City of Umbar Rewards)"}
+            }
+        },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=148
@@ -2340,10 +2790,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Bree",      desc="Permet de retourner",                label="Bree", zlabel="Porte Ouest",     zone="Bree", },
         RU={ name="Возвращение в Бри",  desc="Вы можете быстро перенестись в Бри", label="Бри",  zlabel="Западные ворота", zone="Бри", },
         map={MapType.ERIADOR, 525, 335},
-        acquire={ {
-            EN={deed="Enmity of the Wargs II",},
-            DE={deed="",},
-            FR={deed="",}} },
+        acquire={
+            {
+                EN={deed="Enmity of the Wargs II",},
+                DE={deed="Enmity of the Wargs II",},
+                FR={deed="Enmity of the Wargs II",},
+                RU={deed="Enmity of the Wargs II",}
+            } 
+        },
         minLevel=29,
         level=5
     })
@@ -2355,10 +2809,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez dans la Comté", label="Grand'Cave",     zone="Comté", },
         RU={ name="Возвращение в Шир",       label="Занорье",        zone="Шир", },
         map={MapType.ERIADOR, 405, 440},
-        acquire={ {
-            EN={deed="Enmity of the Spiders II",},
-            DE={deed="",},
-            FR={deed="",}} },
+        acquire={
+            {
+                EN={deed="Enmity of the Spiders II",},
+                DE={deed="Enmity of the Spiders II",},
+                FR={deed="Enmity of the Spiders II",},
+                RU={deed="Enmity of the Spiders II",}
+            } 
+        },
         minLevel=29,
         level=1
     })
@@ -2370,10 +2828,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour : Porte de Thorin",    desc="Ceci vous permet de retourner",                label="Porte de Thorin", zone="Ered Luin", },
         RU={ name="Возвращение к Вратам Торина", desc="Вы можете быстро перенестись к Вратам Торина", label="Врата Торина",    zone="Эред Луин", },
         map={MapType.ERIADOR, 310, 270},
-        acquire={ {
-            EN={deed="Enmity of the Goblins II",},
-            DE={deed="",},
-            FR={deed="",}} },
+        acquire={
+            {
+                EN={deed="Enmity of the Goblins II",},
+                DE={deed="Enmity of the Goblins II",},
+                FR={deed="Enmity of the Goblins II",},
+                RU={deed="Enmity of the Goblins II",}
+            } 
+        },
         minLevel=29,
         level=1.2
     })
@@ -2385,10 +2847,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Fondcombe",      desc="Ceci vous permet de retourner",            label="Fondcombe", zone="Trouée des Trolls", },
         RU={ name="Возвращение в Ривенделл", desc="Вы можете быстро перенестись в Ривенделл", label="Ривенделл", zone="Троллистая пуща", },
         map={MapType.ERIADOR, 900, 375},
-        acquire={ {
-            EN={deed="Enmity of the Orcs II"},
-            DE={deed=""},
-            FR={deed=""}} },
+        acquire={
+            {
+                EN={deed="Enmity of the Orcs II"},
+                DE={deed="Enmity of the Orcs II"},
+                FR={deed="Enmity of the Orcs II"},
+                RU={deed="Enmity of the Orcs II"}
+            } 
+        },
         minLevel=29,
         level=40.1
     })
@@ -2400,10 +2866,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison",       desc="Pavillon de Grimbeorn.", label="Maison Beorning",  zone="Val d'Anduin", },
         RU={ name="Возвращение домой",        desc="Усадьба Гримбеорна.",    label="Дом беорнинга",    zone="Долина Андуина", },
         map={MapType.RHOVANION, 285, 340},
-        acquire={ {
-            EN={deed="Enmity of the Goblins II"},
-            DE={deed=""},
-            FR={deed=""}} },
+        acquire={
+            {
+                EN={deed="Enmity of the Goblins II"},
+                DE={deed="Enmity of the Goblins II"},
+                FR={deed="Enmity of the Goblins II"},
+                RU={deed="Enmity of the Goblins II"}
+            } 
+        },
         minLevel=19,
         level=120
     })
@@ -2415,10 +2885,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Voyage vers Caras Galadhon, en Lothlórien",     label="Caras Galadhon", zone="Lothlórien", },
         RU={ name="Путешествие в Карас Галадон, что в Лотлориэне", label="Карас Галадон",  zone="Лотлориэн", },
         map={MapType.RHOVANION, 120, 690},
-        acquire={ {
-            EN={deed="Enmity of the Orcs II"},
-            DE={deed=""},
-            FR={deed=""}} },
+        acquire={
+            {
+                EN={deed="Enmity of the Orcs II"},
+                DE={deed="Enmity of the Orcs II"},
+                FR={deed="Enmity of the Orcs II"},
+                RU={deed="Enmity of the Orcs II"}
+            } 
+        },
         minLevel=32,
         level=60
     })
@@ -2430,10 +2904,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Aller au Palais de Thorin",    label="Palais de Thorin", zone="Ered Luin", },
         RU={ name="Путешествие в Чертоги Торина", label="Чертоги Торина",   zone="Эред Луин", },
         map={MapType.ERIADOR, 345, 310},
-        acquire={ {
-            EN={deed="Enmity of the Cultists III"},
-            DE={deed=""},
-            FR={deed=""}} },
+        acquire={
+            {
+                EN={deed="Enmity of the Cultists III"},
+                DE={deed="Enmity of the Cultists III"},
+                FR={deed="Enmity of the Cultists III"},
+                RU={deed="Enmity of the Cultists III"}
+            } 
+        },
         minLevel=35,
         level=1.2
     })
@@ -2445,10 +2923,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Lyndelby",         label="Lyndelby",  zone="Puits du Long Fleuve", },
         RU={ name="Возвращение в Линдельби",   label="Линдельби", zone="Истоки Долгой реки", },
         map={MapType.RHOVANION, 155, 165},
-        acquire={ {
-            EN={deed="Back And There Again"},
-            DE={deed=""},
-            FR={deed=""}} },
+        acquire={
+            {
+                EN={deed="Back And There Again"},
+                DE={deed="Back And There Again"},
+                FR={deed="Back And There Again"},
+                RU={deed="Back And There Again"}
+            } 
+        },
         minLevel=125,
         level=1.3
     })
@@ -2580,10 +3062,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison personnelle", label="Maison personnelle", },
         RU={ name="Возвращение домой",              label="Частный дом", },
         map={MapType.NONE, -1, -1},
-        acquire={ {
-            EN={desc="Buy a House and earn the Novice trait."},
-            DE={desc=""},
-            FR={desc=""}}},
+        acquire={
+            {
+                EN={desc="Buy a House and earn the Novice trait."},
+                DE={desc="Buy a House and earn the Novice trait."},
+                FR={desc="Buy a House and earn the Novice trait."},
+                RU={desc="Buy a House and earn the Novice trait."}
+            } 
+        },
         minLevel=1,
         level=1
     })
@@ -2594,10 +3080,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Aller à une maison premium",   label="Maison premium", },
         RU={ name="Возвращение в престижный дом", label="Престижный дом", },
         map={MapType.NONE, -1, -1},
-        acquire={ {
-            EN={desc="Buy a Premium House and earn the Novice trait."},
-            DE={desc=""},
-            FR={desc=""}}},
+        acquire={
+            {
+                EN={desc="Buy a Premium House and earn the Novice trait."},
+                DE={desc="Buy a Premium House and earn the Novice trait."},
+                FR={desc="Buy a Premium House and earn the Novice trait."},
+                RU={desc="Buy a Premium House and earn the Novice trait."}
+            } 
+        },
         minLevel=1,
         level=1
     })
@@ -2608,10 +3098,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison de confrérie", label="Maison de confrérie", },
         RU={ name="Путешествие в дом содружества",   label="Дом содружества", },
         map={MapType.NONE, -1, -1},
-        acquire={ {
-            EN={desc="Become a member of a kinship that has a kinship house."},
-            DE={desc=""},
-            FR={desc=""}}},
+        acquire={
+            {
+                EN={desc="Become a member of a kinship that has a kinship house."},
+                DE={desc="Become a member of a kinship that has a kinship house."},
+                FR={desc="Become a member of a kinship that has a kinship house."},
+                RU={desc="Become a member of a kinship that has a kinship house."}
+            } 
+        },
         minLevel=1,
         level=1
     })
@@ -2622,10 +3116,14 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison d'un membre de confrérie", label="Maison d'un membre de confrérie", },
         RU={ name="Путешествие в дом участника содружества",     label="Дом участника содружества", },
         map={MapType.NONE, -1, -1},
-        acquire={ {
-            EN={desc="Become a member of a kinship."},
-            DE={desc=""},
-            FR={desc=""}}},
+        acquire={
+            {
+                EN={desc="Become a member of a kinship."},
+                DE={desc="Become a member of a kinship."},
+                FR={desc="Become a member of a kinship."},
+                RU={desc="Become a member of a kinship."}
+            } 
+        },
         minLevel=1,
         level=1
     })
@@ -2652,11 +3150,13 @@ function TravelDictionary:CreateDictionaries()
         map={{MapType.ERIADOR, 345, 310}},
         acquire={
             {cost={{amount=100, token=LC.token.DOURHAND_CREST}},
-                vendor="Tórth",
-                EN={desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"},
-                DE={desc=""},
-                FR={desc=""}},
-            {store=true}, },
+                EN={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"},
+                DE={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"},
+                FR={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"},
+                RU={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"}
+            },
+            {store=true},
+        },
         rep=LC.rep.THORINS_HALL, repLevel=LC.repLevel.KINDRED,
         minLevel=10,
         level=1.1
@@ -2672,8 +3172,11 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=100, token=LC.token.BARROW_TREASURE}}, coords="[31.8S, 51.3W]",
                 EN={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"},
                 DE={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"},
-                FR={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"}},
-            {store=true} },
+                FR={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"},
+                RU={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"}
+            },
+            {store=true}
+        },
         rep=LC.rep.MEN_OF_BREE, repLevel=LC.repLevel.KINDRED,
         minLevel=10,
         level=5
@@ -2690,7 +3193,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=3, token=LC.token.MITHRIL_COIN}},
                 EN={vendor="Lalia", desc="Inside Lalia's Market"},
                 DE={vendor="Lalia", desc="Inside Lalia's Market"},
-                FR={vendor="Lalia", desc="Inside Lalia's Market"}} },
+                FR={vendor="Lalia", desc="Inside Lalia's Market"},
+                RU={vendor="Lalia", desc="Inside Lalia's Market"}
+            }
+        },
         level=5.1
     })
     self.rep:AddSkill({
@@ -2698,18 +3204,22 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Return to Clegur",      label="Clegur", zone="Swanfleet", },
         DE={ name="Rückkehr nach Clegur",  label="Clegur", zone="Schwanenfleet", },
         FR={ name="Retournez voir Clegur", label="Clegur", zone="Noues des cygnes", },
-
         RU={ name="Возвращение в Клегур",  label="Клегур", zone="Swanfleet", },
         map={{MapType.ERIADOR, 725, 555}},
         acquire={
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
-                FR={vendor="Delving Quartermaster", }},
+                FR={vendor="Delving Quartermaster", },
+                RU={vendor="Delving Quartermaster", }
+            },
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
-                FR={vendor="Before the Shadow Mission-giver Barterer", }} },
+                FR={vendor="Before the Shadow Mission-giver Barterer", },
+                RU={vendor="Before the Shadow Mission-giver Barterer", }
+            }
+        },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=7
@@ -2725,7 +3235,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
                 EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
-                FR={vendor="Quartermaster (Dúnedain of Cardolan)", }} },
+                FR={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                RU={vendor="Quartermaster (Dúnedain of Cardolan)", }
+            }
+        },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=10
@@ -2741,11 +3254,16 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
-                FR={vendor="Delving Quartermaster", }},
+                FR={vendor="Delving Quartermaster", },
+                RU={vendor="Delving Quartermaster", }
+            },
             {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
                 EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
-                FR={vendor="Quartermaster (Dúnedain of Cardolan)", }} },
+                FR={vendor="Quartermaster (Dúnedain of Cardolan)", },
+                RU={vendor="Quartermaster (Dúnedain of Cardolan)", }
+            }
+        },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=15
@@ -2761,11 +3279,16 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
-                FR={vendor="Delving Quartermaster", }},
+                FR={vendor="Delving Quartermaster", },
+                RU={vendor="Delving Quartermaster", }
+            },
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
-                FR={vendor="Before the Shadow Mission-giver Barterer", }} },
+                FR={vendor="Before the Shadow Mission-giver Barterer", },
+                RU={vendor="Before the Shadow Mission-giver Barterer", }
+            }
+        },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=17
@@ -2781,7 +3304,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=10, token=LC.token.COPPER_BOUNDER_COIN}},
                 EN={vendor="Quartermaster (Yonder-watch)", },
                 DE={vendor="Quartermaster (Yonder-watch)", },
-                FR={vendor="Quartermaster (Yonder-watch)", }} },
+                FR={vendor="Quartermaster (Yonder-watch)", },
+                RU={vendor="Quartermaster (Yonder-watch)", }
+            }
+        },
         rep=LC.rep.YONDER_WATCH, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=20
@@ -2809,7 +3335,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=15, token=LC.token.MARK_OF_ANGLE}},
                 EN={vendor="Quartermaster (Defenders of the Angle)", },
                 DE={vendor="Quartermaster (Defenders of the Angle)", },
-                FR={vendor="Quartermaster (Defenders of the Angle)", }} },
+                FR={vendor="Quartermaster (Defenders of the Angle)", },
+                RU={vendor="Quartermaster (Defenders of the Angle)", }
+            }
+        },
         rep=LC.rep.DEFENDERS_OF_ANGLE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=38,
         level=40
@@ -2837,8 +3366,10 @@ function TravelDictionary:CreateDictionaries()
             {
                 EN={drop="Delving Reward Box (any tier)"},
                 DE={drop="Delving Reward Box (any tier)"},
-                FR={drop="Delving Reward Box (any tier)"}}
-            },
+                FR={drop="Delving Reward Box (any tier)"},
+                RU={drop="Delving Reward Box (any tier)"}
+            }
+        },
         minLevel=20,
         level=40.11
     })
@@ -2853,14 +3384,17 @@ function TravelDictionary:CreateDictionaries()
             {
                 EN={quest="Tutorial: Outfitted for Battle"},
                 DE={quest="Tutorial: Outfitted for Battle"},
-                FR={quest="Tutorial: Outfitted for Battle"}
+                FR={quest="Tutorial: Outfitted for Battle"},
+                RU={quest="Tutorial: Outfitted for Battle"}
             },
             {
                 cost={{amount=500, token=LC.token.COMMENDATION}},
                 EN={vendor="Coldfells Quartermaster"},
                 DE={vendor="Coldfells Quartermaster"},
                 FR={vendor="Coldfells Quartermaster"},
-            }},
+                RU={vendor="Coldfells Quartermaster"}
+            }
+        },
         minLevel=2,
         level=40.12
     })
@@ -2875,7 +3409,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=25, token=LC.token.MARK_OF_WILDS}},
                 EN={vendor="Quartermaster (Woodcutter's Brotherhood)", },
                 DE={vendor="Quartermaster (Woodcutter's Brotherhood)", },
-                FR={vendor="Quartermaster (Woodcutter's Brotherhood)", }} },
+                FR={vendor="Quartermaster (Woodcutter's Brotherhood)", },
+                RU={vendor="Quartermaster (Woodcutter's Brotherhood)", }
+            }
+        },
         rep=LC.rep.WOODCUTTERS_BROTHERHOOD, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=40,
         level=40.3
@@ -2891,7 +3428,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=25, token=LC.token.MARK_OF_WILDS}},
                 EN={vendor="Quartermaster (The League of the Axe)", },
                 DE={vendor="Quartermaster (The League of the Axe)", },
-                FR={vendor="Quartermaster (The League of the Axe)", }} },
+                FR={vendor="Quartermaster (The League of the Axe)", },
+                RU={vendor="Quartermaster (The League of the Axe)", }
+            }
+        },
         rep=LC.rep.LEAGUE_OF_AXE, repLevel=LC.repLevel.NEUTRAL,
         minLevel=40,
         level=40.4
@@ -2907,8 +3447,11 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=10, token=LC.token.MALLEDHRIM_GOLD_STAR_EMBLEM}}, coords="[12.6S, 46.4W]",
                 EN={vendor="Millaesil", },
                 DE={vendor="Millaesil", },
-                FR={vendor="Millaesil", }},
-            { store=true }},
+                FR={vendor="Millaesil", },
+                RU={vendor="Millaesil", }
+            },
+            { store=true }
+        },
         rep=LC.rep.MALLEDHRIM, repLevel=LC.repLevel.KINDRED,
         minLevel=51,
         level=61
@@ -2925,8 +3468,11 @@ function TravelDictionary:CreateDictionaries()
                    {amount=20, token=LC.token.GOLDEN_TOKEN_OF_WILDS}}, coords="[66.5S, 17.2W]",
                 EN={vendor="Mabon", },
                 DE={vendor="Mabon", },
-                FR={vendor="Mabon", }},
-            { store=true }},
+                FR={vendor="Mabon", },
+                RU={vendor="Mabon", }
+            },
+            { store=true }
+        },
         rep=LC.rep.ALGRAIG, repLevel=LC.repLevel.KINDRED,
         minLevel=51,
         level=62
@@ -2942,8 +3488,11 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=176, token=LC.token.SILVER}}, coords="[80.4S, 16.8W]",
                 EN={vendor="Dunlending Quartermaster", },
                 DE={vendor="Dunlending Quartermaster", },
-                FR={vendor="Dunlending Quartermaster", }},
-            { store=true }},
+                FR={vendor="Dunlending Quartermaster", },
+                RU={vendor="Dunlending Quartermaster", }
+            },
+            { store=true }
+        },
         rep=LC.rep.MEN_OF_DUNLAND, repLevel=LC.repLevel.KINDRED,
         minLevel=70,
         level=65
@@ -2960,8 +3509,11 @@ function TravelDictionary:CreateDictionaries()
                    {amount=20, token=LC.token.GOLDEN_TOKEN_OF_ANDUIN}}, coords="[25.5S, 63.3W]",
                 EN={vendor="Ordlaf", },
                 DE={vendor="Ordlaf", },
-                FR={vendor="Ordlaf", }},
-            { store=true }},
+                FR={vendor="Ordlaf", },
+                RU={vendor="Ordlaf", }
+            },
+            { store=true }
+        },
         rep=LC.rep.RIDERS_OF_STANGARD, repLevel=LC.repLevel.KINDRED,
         minLevel=70,
         level=75
@@ -2977,7 +3529,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=250, token=LC.token.SILVER_TOKEN_OF_RIDDERMARK}},
                 EN={vendor="Eastemnet Miscellany Quartermaster", },
                 DE={vendor="Eastemnet Miscellany Quartermaster", },
-                FR={vendor="Eastemnet Miscellany Quartermaster", }} },
+                FR={vendor="Eastemnet Miscellany Quartermaster", },
+                RU={vendor="Eastemnet Miscellany Quartermaster", }
+            }
+        },
         rep=LC.rep.MEN_OF_SUTCROFTS, repLevel=LC.repLevel.KINDRED,
         minLevel=80,
         level=85
@@ -2993,7 +3548,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=100, token=LC.token.WILDERMORE_COIN}}, coords="[39.4S, 60.8W]",
                 EN={vendor="Ethelmund", },
                 DE={vendor="Ethelmund", },
-                FR={vendor="Ethelmund", }} },
+                FR={vendor="Ethelmund", },
+                RU={vendor="Ethelmund", }
+            }
+        },
         rep=LC.rep.PEOPLE_OF_WILDERMORE, repLevel=LC.repLevel.KINDRED,
         minLevel=85,
         level=85
@@ -3009,7 +3567,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=150, token=LC.token.WESTEMNET_IRON_COIN}},
                 EN={vendor="Quartermaster (Eorlingas)", },
                 DE={vendor="Quartermaster (Eorlingas)", },
-                FR={vendor="Quartermaster (Eorlingas)", }} },
+                FR={vendor="Quartermaster (Eorlingas)", },
+                RU={vendor="Quartermaster (Eorlingas)", }
+            }
+        },
         rep=LC.rep.EORLINGAS, repLevel=LC.repLevel.KINDRED,
         minLevel=85,
         level=88
@@ -3025,7 +3586,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=150, token=LC.token.WESTEMNET_IRON_COIN}},
                 EN={vendor="Quartermaster (Helmingas)", },
                 DE={vendor="Quartermaster (Helmingas)", },
-                FR={vendor="Quartermaster (Helmingas)", }} },
+                FR={vendor="Quartermaster (Helmingas)", },
+                RU={vendor="Quartermaster (Helmingas)", }
+            }
+        },
         rep=LC.rep.HELMINGAS, repLevel=LC.repLevel.KINDRED,
         minLevel=90,
         level=90
@@ -3041,7 +3605,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=10, token=LC.token.FANGORN_LEAF}}, coords="[42.1S, 79.1W]",
                 EN={vendor="Quickbeam (Derndingle)", },
                 DE={vendor="Quickbeam (Derndingle)", },
-                FR={vendor="Quickbeam (Derndingle)", }} },
+                FR={vendor="Quickbeam (Derndingle)", },
+                RU={vendor="Quickbeam (Derndingle)", }
+            }
+        },
         rep=LC.rep.ENTS_OF_FANGORN, repLevel=LC.repLevel.KINDRED,
         minLevel=95,
         level=90.1
@@ -3057,7 +3624,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=50, token=LC.token.AMROTH_SILVER}}, coords="[74.9S, 71.4W]",
                 EN={vendor="Quartermaster (Dol Amroth)", },
                 DE={vendor="Quartermaster (Dol Amroth)", },
-                FR={vendor="Quartermaster (Dol Amroth)", }} },
+                FR={vendor="Quartermaster (Dol Amroth)", },
+                RU={vendor="Quartermaster (Dol Amroth)", }
+            }
+        },
         rep=LC.rep.DOL_AMROTH, repLevel=LC.repLevel.KINDRED,
         minLevel=95,
         level=98
@@ -3073,7 +3643,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=10, token=LC.token.EAST_GONDOR_SILVER}},
                 EN={vendor="Quartermaster (Rangers of Ithilien)", },
                 DE={vendor="Quartermaster (Rangers of Ithilien)", },
-                FR={vendor="Quartermaster (Rangers of Ithilien)", }} },
+                FR={vendor="Quartermaster (Rangers of Ithilien)", },
+                RU={vendor="Quartermaster (Rangers of Ithilien)", }
+            }
+        },
         rep=LC.rep.RANGERS_OF_ITHILIEN, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=100
@@ -3089,7 +3662,10 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=30, token=LC.token.MINAS_TIRITH_SILVER}},
                 EN={vendor="Quartermaster (Defenders of Minas Tirith)", },
                 DE={vendor="Quartermaster (Defenders of Minas Tirith)", },
-                FR={vendor="Quartermaster (Defenders of Minas Tirith)", }} },
+                FR={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                RU={vendor="Quartermaster (Defenders of Minas Tirith)", }
+            }
+        },
         rep=LC.rep.DEFENDERS_OF_MINAS_TIRITH, repLevel=LC.repLevel.KINDRED,
         minLevel=100,
         level=100.1
@@ -3105,8 +3681,11 @@ function TravelDictionary:CreateDictionaries()
             {cost={{amount=5, token=LC.token.EXQUISITE_WOODCARVING},
                    {amount=3, token=LC.token.POLISHED_MARBLE_TRINKET}}, coords="[45.5S, 27.3W]",
                 EN={vendor="Quartermaster (Riders of Rohan)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Riders of Rohan)", },
+                FR={vendor="Quartermaster (Riders of Rohan)", },
+                RU={vendor="Quartermaster (Riders of Rohan)", }
+            }
+        },
         rep=LC.rep.RIDERS_OF_ROHAN, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=102
@@ -3121,8 +3700,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MINAS_TIRITH_SILVER}},
                 EN={vendor="Quartermaster (Defenders of Minas Tirith)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                FR={vendor="Quartermaster (Defenders of Minas Tirith)", },
+                RU={vendor="Quartermaster (Defenders of Minas Tirith)", }
+            }
+        },
         rep=LC.rep.DEFENDERS_OF_MINAS_TIRITH, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=105
@@ -3137,8 +3719,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER}},
                 EN={vendor="Quartermaster (Host of the West)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Host of the West)", },
+                FR={vendor="Quartermaster (Host of the West)", },
+                RU={vendor="Quartermaster (Host of the West)", }
+            }
+        },
         rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=105.1
@@ -3153,8 +3738,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER}},
                 EN={vendor="Quartermaster (Host of the West)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Host of the West)", },
+                FR={vendor="Quartermaster (Host of the West)", },
+                RU={vendor="Quartermaster (Host of the West)", }
+            }
+        },
         rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=105.2
@@ -3169,8 +3757,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=40, token=LC.token.HOST_OF_WEST_SILVER}},
                 EN={vendor="Quartermaster (Host of the West)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Host of the West)", },
+                FR={vendor="Quartermaster (Host of the West)", },
+                RU={vendor="Quartermaster (Host of the West)", }
+            }
+        },
         rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.KINDRED,
         minLevel=100,
         level=105.3
@@ -3185,8 +3776,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=40, token=LC.token.HOST_OF_WEST_SILVER}},
                 EN={vendor="Quartermaster (Host of the West)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Host of the West)", },
+                FR={vendor="Quartermaster (Host of the West)", },
+                RU={vendor="Quartermaster (Host of the West)", }
+            }
+        },
         rep=LC.rep.HOST_OF_WEST, repLevel=LC.repLevel.RESPECTED,
         minLevel=100,
         level=105.4
@@ -3201,8 +3795,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.SILVER_SIGNET_OF_THANDRIM}},
                 EN={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", },
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", },
+                FR={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", },
+                RU={vendor="Quartermaster (Conquest of Gorgoroth Rewards)", }
+            }
+        },
         rep=LC.rep.CONQUEST_OF_GORGOROTH, repLevel=LC.repLevel.FRIEND,
         minLevel=100,
         level=106
@@ -3217,8 +3814,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {
                 EN={allegiance="The Court of Lothlórien", quest="Chapter 1: A Council Waiting" },
-                DE={allegiance="", quest="" },
-                FR={allegiance="", quest="" }} },
+                DE={allegiance="The Court of Lothlórien", quest="Chapter 1: A Council Waiting" },
+                FR={allegiance="The Court of Lothlórien", quest="Chapter 1: A Council Waiting" },
+                RU={allegiance="The Court of Lothlórien", quest="Chapter 1: A Council Waiting" }
+            }
+        },
         minLevel=110,
         level=110
     })
@@ -3232,8 +3832,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {
                 EN={allegiance="The Kingdom of Gondor", quest="Chapter 1: The King and the Steward" },
-                DE={allegiance="", quest="" },
-                FR={allegiance="", quest="" }} },
+                DE={allegiance="The Kingdom of Gondor", quest="Chapter 1: The King and the Steward" },
+                FR={allegiance="The Kingdom of Gondor", quest="Chapter 1: The King and the Steward" },
+                RU={allegiance="The Kingdom of Gondor", quest="Chapter 1: The King and the Steward" }
+            }
+        },
         minLevel=110,
         level=110.1
     })
@@ -3247,8 +3850,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {
                 EN={allegiance="Durin's Folk", quest="Chapter 1: Beneath the Lonely Mountain" },
-                DE={allegiance="", quest="" },
-                FR={allegiance="", quest="" }} },
+                DE={allegiance="Durin's Folk", quest="Chapter 1: Beneath the Lonely Mountain" },
+                FR={allegiance="Durin's Folk", quest="Chapter 1: Beneath the Lonely Mountain" },
+                RU={allegiance="Durin's Folk", quest="Chapter 1: Beneath the Lonely Mountain" }
+            }
+        },
         minLevel=110,
         level=110.2
     })
@@ -3262,8 +3868,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {
                 EN={allegiance="Hobbits of the Company", quest="Chapter 1: A Place for Hobbits" },
-                DE={allegiance="", quest="" },
-                FR={allegiance="", quest="" }} },
+                DE={allegiance="Hobbits of the Company", quest="Chapter 1: A Place for Hobbits" },
+                FR={allegiance="Hobbits of the Company", quest="Chapter 1: A Place for Hobbits" },
+                RU={allegiance="Hobbits of the Company", quest="Chapter 1: A Place for Hobbits" }
+            }
+        },
         minLevel=110,
         level=110.3
     })
@@ -3279,9 +3888,29 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                },
+                DE={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                },
+                FR={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                },
+                RU={vendors={
+                    { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
+                    { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
+                   }
+                }
+            }
+        },
         rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=115,
         level=115
@@ -3296,8 +3925,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=5, token=LC.token.MARK_OF_LONGBEARDS}},
                 EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                FR={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                RU={vendor="Quartermaster (Dwarf-holds Rewards)"}
+            }
+        },
         rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
         minLevel=116,
         level=116
@@ -3312,8 +3944,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=5, token=LC.token.MARK_OF_LONGBEARDS}},
                 EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                FR={vendor="Quartermaster (Dwarf-holds Rewards)"},
+                RU={vendor="Quartermaster (Dwarf-holds Rewards)"}
+            }
+        },
         rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
         minLevel=116,
         level=117
@@ -3328,8 +3963,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.VALES_BEORNING_TOKEN}},
                 EN={vendor="Quartermaster (Wilderfolk Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Wilderfolk Rewards)"},
+                FR={vendor="Quartermaster (Wilderfolk Rewards)"},
+                RU={vendor="Quartermaster (Wilderfolk Rewards)"}
+            }
+        },
         rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=116,
         level=120
@@ -3344,8 +3982,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.GULMARK}},
                 EN={vendor="Quartermaster (Wilderfolk Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Wilderfolk Rewards)"},
+                FR={vendor="Quartermaster (Wilderfolk Rewards)"},
+                RU={vendor="Quartermaster (Wilderfolk Rewards)"}
+            }
+        },
         rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=116,
         level=120.1
@@ -3360,8 +4001,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.SIGIL_IMLAD_ITHIL}},
                 EN={vendor="Quartermaster (The White Company)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The White Company)"},
+                FR={vendor="Quartermaster (The White Company)"},
+                RU={vendor="Quartermaster (The White Company)"}
+            }
+        },
         rep=LC.rep.WHITE_COMPANY, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=121,
         level=125
@@ -3376,8 +4020,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.NORTHERN_GULMARK}},
                 EN={vendor="Quartermaster (Protectors of Wilderland)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Protectors of Wilderland)"},
+                FR={vendor="Quartermaster (Protectors of Wilderland)"},
+                RU={vendor="Quartermaster (Protectors of Wilderland)"}
+            }
+        },
         rep=LC.rep.PROTECTORS_OF_WILDERLAND, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=130,
         level=130
@@ -3392,12 +4039,17 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }},
+                DE={vendor="Delving Quartermaster"},
+                FR={vendor="Delving Quartermaster"},
+                RU={vendor="Delving Quartermaster"}
+            },
             {cost={{amount=25, token=LC.token.COPPER_COIN_OF_GUNDABAD}},
                 EN={vendor="Quartermaster (March on Gundabad)"},
-                DE={vendor="", },
-                FR={vendor="", }}, },
+                DE={vendor="Quartermaster (March on Gundabad)"},
+                FR={vendor="Quartermaster (March on Gundabad)"},
+                RU={vendor="Quartermaster (March on Gundabad)"}
+            }
+        },
         minLevel=20,
         level=130.1
     })
@@ -3411,8 +4063,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.TOKEN_OF_KHARUM_UBNAR}},
                 EN={vendor="Vorthur Smokebreath"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Vorthur Smokebreath"},
+                FR={vendor="Vorthur Smokebreath"},
+                RU={vendor="Vorthur Smokebreath"}
+            }
+        },
         rep=LC.rep.KHARUM_UBNAR, repLevel=LC.repLevel.NEUTRAL,
         minLevel=130,
         level=130.2
@@ -3427,8 +4082,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=7, token=LC.token.ZAKAF_BESHEK}}, coords="[63.5N, 135.0W]",
                 EN={vendor="Quartermaster (Haban'akkâ of Thráin)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Haban'akkâ of Thráin)"},
+                FR={vendor="Quartermaster (Haban'akkâ of Thráin)"},
+                RU={vendor="Quartermaster (Haban'akkâ of Thráin)"}
+            }
+        },
         rep=LC.rep.HABANAKKA_OF_THRAIN, repLevel=LC.repLevel.DUMUL,
         minLevel=130,
         level=130.3
@@ -3443,8 +4101,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.SILVER_COIN_OF_GUNDABAD}},
                 EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                FR={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                RU={vendor="Quartermaster (Reclaimers of the Mountain-hold)"}
+            }
+        },
         rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
         minLevel=131,
         level=131
@@ -3459,8 +4120,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=20, token=LC.token.SILVER_COIN_OF_GUNDABAD}},
                 EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                FR={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
+                RU={vendor="Quartermaster (Reclaimers of the Mountain-hold)"}
+            }
+        },
         rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
         minLevel=135,
         level=135
@@ -3475,8 +4139,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {
                 EN={allegiance="Clan of the Zhélruka", quest="Chapter 1: The Rightful Claim" },
-                DE={allegiance="", quest="" },
-                FR={allegiance="", quest="" }} },
+                DE={allegiance="Clan of the Zhélruka", quest="Chapter 1: The Rightful Claim" },
+                FR={allegiance="Clan of the Zhélruka", quest="Chapter 1: The Rightful Claim" },
+                RU={allegiance="Clan of the Zhélruka", quest="Chapter 1: The Rightful Claim" }
+            }
+        },
         minLevel=20,
         level=140
     })
@@ -3490,8 +4157,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=30, token=LC.token.SARSKILLINAN}},
                 EN={vendor="Muirál"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Muirál"},
+                FR={vendor="Muirál"},
+                RU={vendor="Muirál"}
+            }
+        },
         minLevel=20,
         level=140.1
     })
@@ -3505,8 +4175,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The Renewal of Gondor)"},
+                FR={vendor="Quartermaster (The Renewal of Gondor)"},
+                RU={vendor="Quartermaster (The Renewal of Gondor)"}
+            }
+        },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=141
@@ -3521,8 +4194,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The Renewal of Gondor)"},
+                FR={vendor="Quartermaster (The Renewal of Gondor)"},
+                RU={vendor="Quartermaster (The Renewal of Gondor)"}
+            }
+        },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=142
@@ -3537,8 +4213,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The Renewal of Gondor)"},
+                FR={vendor="Quartermaster (The Renewal of Gondor)"},
+                RU={vendor="Quartermaster (The Renewal of Gondor)"}
+            }
+        },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=143
@@ -3553,8 +4232,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The City of Umbar Rewards)"},
+                FR={vendor="Quartermaster (The City of Umbar Rewards)"},
+                RU={vendor="Quartermaster (The City of Umbar Rewards)"}
+            }
+        },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=145
@@ -3569,8 +4251,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The City of Umbar Rewards)"},
+                FR={vendor="Quartermaster (The City of Umbar Rewards)"},
+                RU={vendor="Quartermaster (The City of Umbar Rewards)"}
+            }
+        },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=146
@@ -3585,8 +4270,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=50, token=LC.token.UMBARI_TAM}}, coords="[20.0S, 105.7W]",
                 EN={vendor="Mâkhda Khorbo Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Mâkhda Khorbo Quartermaster"},
+                FR={vendor="Mâkhda Khorbo Quartermaster"},
+                RU={vendor="Mâkhda Khorbo Quartermaster"}
+            }
+        },
         minLevel=20,
         level=147
     })
@@ -3600,8 +4288,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
-                DE={vendor="", },
-                FR={vendor="", }} },
+                DE={vendor="Quartermaster (The City of Umbar Rewards)"},
+                FR={vendor="Quartermaster (The City of Umbar Rewards)"},
+                RU={vendor="Quartermaster (The City of Umbar Rewards)"}
+            }
+        },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=148
@@ -3616,16 +4307,23 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=100, token=LC.token.DELVING_WRIT}},
                 EN={vendor="Delving Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }},
+                DE={vendor="Delving Quartermaster"},
+                FR={vendor="Delving Quartermaster"},
+                RU={vendor="Delving Quartermaster"}
+            },
             {cost={{amount=10, token=LC.token.LEDGER_KEEPER_MARK}},
                 EN={vendor="Ledger-keepers Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }},
+                DE={vendor="Ledger-keepers Quartermaster"},
+                FR={vendor="Ledger-keepers Quartermaster"},
+                RU={vendor="Ledger-keepers Quartermaster"}
+            },
             {cost={{amount=10, token=LC.token.EAGLE_BIT}},
                 EN={vendor="Order of the Eagle Quartermaster"},
-                DE={vendor="", },
-                FR={vendor="", }},},
+                DE={vendor="Order of the Eagle Quartermaster"},
+                FR={vendor="Order of the Eagle Quartermaster"},
+                RU={vendor="Order of the Eagle Quartermaster"}
+            }
+        },
         minLevel=20,
         level=149
     })
@@ -3639,8 +4337,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             { rank=10,
                 EN={allegiance="The Ledger-keepers" },
-                DE={allegiance="" },
-                FR={allegiance="" }} },
+                DE={allegiance="The Ledger-keepers" },
+                FR={allegiance="The Ledger-keepers" },
+                RU={allegiance="The Ledger-keepers" }
+            }
+        },
         minLevel=140,
         level=150
     })
@@ -3654,9 +4355,11 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             { rank=10,
                 EN={allegiance="The Order of the Eagle" },
-                DE={allegiance="" },
-                FR={allegiance="" },
-                RU={allegiance="" }} },
+                DE={allegiance="The Order of the Eagle" },
+                FR={allegiance="The Order of the Eagle" },
+                RU={allegiance="The Order of the Eagle" }
+            }
+        },
         minLevel=140,
         level=150.1
     })
