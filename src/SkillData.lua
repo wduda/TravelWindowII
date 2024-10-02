@@ -67,7 +67,9 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
                 FR={vendor="Before the Shadow Mission-giver Barterer", },
-                RU={vendor="Before the Shadow Mission-giver Barterer", }} },
+                RU={vendor="Before the Shadow Mission-giver Barterer", }
+            }
+        },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=7
