@@ -2816,14 +2816,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison de confrérie", label="Maison de confrérie", },
         RU={ name="Путешествие в дом содружества",   label="Дом содружества", },
         map={MapType.NONE, -1, -1},
-        acquire={
-            {
+        acquire={ {
                 EN={desc="Become a member of a kinship that has a kinship house."},
                 DE={desc="Become a member of a kinship that has a kinship house."},
                 FR={desc="Become a member of a kinship that has a kinship house."},
-                RU={desc="Become a member of a kinship that has a kinship house."}
-            } 
-        },
+                RU={desc="Become a member of a kinship that has a kinship house."}}},
         minLevel=1,
         level=1
     })
@@ -2834,14 +2831,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison d'un membre de confrérie", label="Maison d'un membre de confrérie", },
         RU={ name="Путешествие в дом участника содружества",     label="Дом участника содружества", },
         map={MapType.NONE, -1, -1},
-        acquire={
-            {
+        acquire={ {
                 EN={desc="Become a member of a kinship."},
                 DE={desc="Become a member of a kinship."},
                 FR={desc="Become a member of a kinship."},
-                RU={desc="Become a member of a kinship."}
-            } 
-        },
+                RU={desc="Become a member of a kinship."}}},
         minLevel=1,
         level=1
     })
@@ -2872,8 +2866,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"},
                 FR={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"},
                 RU={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"}},
-            {store=true},
-        },
+            {store=true}, },
         rep=LC.rep.THORINS_HALL, repLevel=LC.repLevel.KINDRED,
         minLevel=10,
         level=1.1
@@ -3531,21 +3524,19 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}},
                 DE={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}},
                 FR={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}},
                 RU={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
-                   }
-                }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}} }},
         rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=115,
         level=115
