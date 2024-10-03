@@ -713,10 +713,10 @@ LC_DE.token.LOTRO_POINT = ""
 LC_FR.token.LOTRO_POINT = ""
 LC_RU.token.LOTRO_POINT = ""
 
-LC_RU.token.MITHRIL_COIN = "Mithril Coins"
+LC_EN.token.MITHRIL_COIN = "Mithril Coins"
 LC_DE.token.MITHRIL_COIN = ""
 LC_FR.token.MITHRIL_COIN = ""
-LC_RU.token.MITHRIL_COIN = ""
+LC_RU.token.MITHRIL_COIN = "Мифриловые монеты"
 
 LC_EN.token.DELVING_WRIT = "Delving Writs"
 LC_DE.token.DELVING_WRIT = ""
