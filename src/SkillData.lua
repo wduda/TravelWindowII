@@ -62,8 +62,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Интендант погружений",  }
-            },
+                RU={vendor="Интендант погружений",  }},
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
@@ -104,8 +103,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Delving Quartermaster", }
-            },
+                RU={vendor="Delving Quartermaster", }},
             {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
                 EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
@@ -128,8 +126,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Delving Quartermaster", }
-            },
+                RU={vendor="Delving Quartermaster", }},
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
@@ -169,8 +166,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Hunter Trainer"},
                 DE={vendor="Hunter Trainer"},
                 FR={vendor="Hunter Trainer"},
-                RU={vendor="Hunter Trainer"}
-            },
+                RU={vendor="Hunter Trainer"}},
             {
                 EN={quest="Hunter: Wilderness by Ost Guruth"},
                 DE={quest="Hunter: Wilderness by Ost Guruth"},
@@ -203,8 +199,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Hunter Trainer"},
                 DE={vendor="Hunter Trainer"},
                 FR={vendor="Hunter Trainer"},
-                RU={vendor="Hunter Trainer"}
-            },
+                RU={vendor="Hunter Trainer"}},
             {
                 EN={quest="Tracks Through Evendim"},
                 DE={quest="Tracks Through Evendim"},
@@ -255,10 +250,8 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Afwald", },
                 DE={vendor="Afwald", },
                 FR={vendor="Afwald", },
-                RU={vendor="Afwald", }
-            },
-            { store=true }
-        },
+                RU={vendor="Afwald", }},
+            { store=true }},
         rep=LC.rep.ELVES_OF_RIVENDELL, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=40,
         level=40.2
@@ -311,8 +304,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Hunter Trainer"},
                 DE={vendor="Hunter Trainer"},
                 FR={vendor="Hunter Trainer"},
-                RU={vendor="Hunter Trainer"}
-            },
+                RU={vendor="Hunter Trainer"}},
             {cost={{amount=130, token=LC.token.SILVER},
                    {amount=72, token=LC.token.COPPER}}, coords="[19.5N, 72.0W]",
                 EN={vendor="Rûsu", },
@@ -335,8 +327,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Hunter Trainer"},
                 DE={vendor="Hunter Trainer"},
                 FR={vendor="Hunter Trainer"},
-                RU={vendor="Hunter Trainer"}
-            },
+                RU={vendor="Hunter Trainer"}},
             {
                 EN={quest="Desolation by Aughaire"},
                 DE={quest="Desolation by Aughaire"},
@@ -357,8 +348,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Hunter Trainer"},
                 DE={vendor="Hunter Trainer"},
                 FR={vendor="Hunter Trainer"},
-                RU={vendor="Hunter Trainer"}
-            },
+                RU={vendor="Hunter Trainer"}},
             {
                 EN={quest="Hunter: Waste Near Gath Forthnír"},
                 DE={quest="Hunter: Waste Near Gath Forthnír"},
@@ -379,8 +369,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Hunter Trainer"},
                 DE={vendor="Hunter Trainer"},
                 FR={vendor="Hunter Trainer"},
-                RU={vendor="Hunter Trainer"}
-            },
+                RU={vendor="Hunter Trainer"}},
             {
                 EN={quest="Hunter: Lay of the Land"},
                 DE={quest="Hunter: Lay of the Land"},
@@ -401,8 +390,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Hunter Trainer"},
                 DE={vendor="Hunter Trainer"},
                 FR={vendor="Hunter Trainer"},
-                RU={vendor="Hunter Trainer"}
-            },
+                RU={vendor="Hunter Trainer"}},
             {cost={{amount=153, token=LC.token.SILVER},
                    {amount=60, token=LC.token.COPPER}}, coords="[5.9S, 105.0W]",
                 EN={vendor="Kettil, Son of Athils", },
@@ -443,8 +431,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Hunter Trainer"},
                 DE={vendor="Hunter Trainer"},
                 FR={vendor="Hunter Trainer"},
-                RU={vendor="Hunter Trainer"}
-            },
+                RU={vendor="Hunter Trainer"}},
             {cost={{amount=1, token=LC.token.MALLEDHRIM_BRONZE_FEATHER}}, coords="[15.1S, 61.5W]",
                 EN={vendor="Estellien", },
                 DE={vendor="Estellien", },
@@ -913,8 +900,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster"},
                 DE={vendor="Delving Quartermaster"},
                 FR={vendor="Delving Quartermaster"},
-                RU={vendor="Delving Quartermaster"}
-            },
+                RU={vendor="Delving Quartermaster"}},
             {cost={{amount=25, token=LC.token.COPPER_COIN_OF_GUNDABAD}},
                 EN={vendor="Quartermaster (March on Gundabad)"},
                 DE={vendor="Quartermaster (March on Gundabad)"},
@@ -1150,14 +1136,12 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster"},
                 DE={vendor="Delving Quartermaster"},
                 FR={vendor="Delving Quartermaster"},
-                RU={vendor="Delving Quartermaster"}
-            },
+                RU={vendor="Delving Quartermaster"}},
             {cost={{amount=10, token=LC.token.LEDGER_KEEPER_MARK}},
                 EN={vendor="Ledger-keepers Quartermaster"},
                 DE={vendor="Ledger-keepers Quartermaster"},
                 FR={vendor="Ledger-keepers Quartermaster"},
-                RU={vendor="Ledger-keepers Quartermaster"}
-            },
+                RU={vendor="Ledger-keepers Quartermaster"}},
             {cost={{amount=10, token=LC.token.EAGLE_BIT}},
                 EN={vendor="Order of the Eagle Quartermaster"},
                 DE={vendor="Order of the Eagle Quartermaster"},
@@ -1182,8 +1166,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Delving Quartermaster", }
-            },
+                RU={vendor="Delving Quartermaster", }},
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
@@ -1224,8 +1207,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Delving Quartermaster", }
-            },
+                RU={vendor="Delving Quartermaster", }},
             {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
                 EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
@@ -1248,8 +1230,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Delving Quartermaster", }
-            },
+                RU={vendor="Delving Quartermaster", }},
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
@@ -1353,10 +1334,8 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Afwald", },
                 DE={vendor="Afwald", },
                 FR={vendor="Afwald", },
-                RU={vendor="Afwald", }
-            },
-            { store=true }
-        },
+                RU={vendor="Afwald", }},
+            { store=true }},
         rep=LC.rep.ELVES_OF_RIVENDELL, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=40,
         level=40.2
@@ -1927,8 +1906,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster"},
                 DE={vendor="Delving Quartermaster"},
                 FR={vendor="Delving Quartermaster"},
-                RU={vendor="Delving Quartermaster"}
-            },
+                RU={vendor="Delving Quartermaster"}},
             {cost={{amount=25, token=LC.token.COPPER_COIN_OF_GUNDABAD}},
                 EN={vendor="Quartermaster (March on Gundabad)"},
                 DE={vendor="Quartermaster (March on Gundabad)"},
@@ -2164,14 +2142,12 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster"},
                 DE={vendor="Delving Quartermaster"},
                 FR={vendor="Delving Quartermaster"},
-                RU={vendor="Delving Quartermaster"}
-            },
+                RU={vendor="Delving Quartermaster"}},
             {cost={{amount=10, token=LC.token.LEDGER_KEEPER_MARK}},
                 EN={vendor="Ledger-keepers Quartermaster"},
                 DE={vendor="Ledger-keepers Quartermaster"},
                 FR={vendor="Ledger-keepers Quartermaster"},
-                RU={vendor="Ledger-keepers Quartermaster"}
-            },
+                RU={vendor="Ledger-keepers Quartermaster"}},
             {cost={{amount=10, token=LC.token.EAGLE_BIT}},
                 EN={vendor="Order of the Eagle Quartermaster"},
                 DE={vendor="Order of the Eagle Quartermaster"},
@@ -2304,10 +2280,8 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Ordlaf", },
                 DE={vendor="Ordlaf", },
                 FR={vendor="Ordlaf", },
-                RU={vendor="Ordlaf", }
-            },
-            { store=true }
-        },
+                RU={vendor="Ordlaf", }},
+            { store=true }},
         rep=LC.rep.RIDERS_OF_STANGARD, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=70,
         level=75.1
@@ -2897,8 +2871,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"},
                 DE={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"},
                 FR={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"},
-                RU={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"}
-            },
+                RU={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"}},
             {store=true},
         },
         rep=LC.rep.THORINS_HALL, repLevel=LC.repLevel.KINDRED,
@@ -2917,10 +2890,8 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"},
                 DE={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"},
                 FR={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"},
-                RU={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"}
-            },
-            {store=true}
-        },
+                RU={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"}},
+            {store=true}},
         rep=LC.rep.MEN_OF_BREE, repLevel=LC.repLevel.KINDRED,
         minLevel=10,
         level=5
@@ -2953,8 +2924,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Delving Quartermaster", }
-            },
+                RU={vendor="Delving Quartermaster", }},
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
@@ -2993,8 +2963,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Delving Quartermaster", }
-            },
+                RU={vendor="Delving Quartermaster", }},
             {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
                 EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
@@ -3016,8 +2985,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Delving Quartermaster", }
-            },
+                RU={vendor="Delving Quartermaster", }},
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
@@ -3113,8 +3081,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={quest="Tutorial: Outfitted for Battle"},
                 DE={quest="Tutorial: Outfitted for Battle"},
                 FR={quest="Tutorial: Outfitted for Battle"},
-                RU={quest="Tutorial: Outfitted for Battle"}
-            },
+                RU={quest="Tutorial: Outfitted for Battle"}},
             {
                 cost={{amount=500, token=LC.token.COMMENDATION}},
                 EN={vendor="Coldfells Quartermaster"},
@@ -3170,10 +3137,8 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Millaesil", },
                 DE={vendor="Millaesil", },
                 FR={vendor="Millaesil", },
-                RU={vendor="Millaesil", }
-            },
-            { store=true }
-        },
+                RU={vendor="Millaesil", }},
+            { store=true }},
         rep=LC.rep.MALLEDHRIM, repLevel=LC.repLevel.KINDRED,
         minLevel=51,
         level=61
@@ -3191,10 +3156,8 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Mabon", },
                 DE={vendor="Mabon", },
                 FR={vendor="Mabon", },
-                RU={vendor="Mabon", }
-            },
-            { store=true }
-        },
+                RU={vendor="Mabon", }},
+            { store=true }},
         rep=LC.rep.ALGRAIG, repLevel=LC.repLevel.KINDRED,
         minLevel=51,
         level=62
@@ -3211,10 +3174,8 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Dunlending Quartermaster", },
                 DE={vendor="Dunlending Quartermaster", },
                 FR={vendor="Dunlending Quartermaster", },
-                RU={vendor="Dunlending Quartermaster", }
-            },
-            { store=true }
-        },
+                RU={vendor="Dunlending Quartermaster", }},
+            { store=true }},
         rep=LC.rep.MEN_OF_DUNLAND, repLevel=LC.repLevel.KINDRED,
         minLevel=70,
         level=65
@@ -3232,10 +3193,8 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Ordlaf", },
                 DE={vendor="Ordlaf", },
                 FR={vendor="Ordlaf", },
-                RU={vendor="Ordlaf", }
-            },
-            { store=true }
-        },
+                RU={vendor="Ordlaf", }},
+            { store=true }},
         rep=LC.rep.RIDERS_OF_STANGARD, repLevel=LC.repLevel.KINDRED,
         minLevel=70,
         level=75
@@ -3705,8 +3664,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster"},
                 DE={vendor="Delving Quartermaster"},
                 FR={vendor="Delving Quartermaster"},
-                RU={vendor="Delving Quartermaster"}
-            },
+                RU={vendor="Delving Quartermaster"}},
             {cost={{amount=25, token=LC.token.COPPER_COIN_OF_GUNDABAD}},
                 EN={vendor="Quartermaster (March on Gundabad)"},
                 DE={vendor="Quartermaster (March on Gundabad)"},
@@ -3945,14 +3903,12 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster"},
                 DE={vendor="Delving Quartermaster"},
                 FR={vendor="Delving Quartermaster"},
-                RU={vendor="Delving Quartermaster"}
-            },
+                RU={vendor="Delving Quartermaster"}},
             {cost={{amount=10, token=LC.token.LEDGER_KEEPER_MARK}},
                 EN={vendor="Ledger-keepers Quartermaster"},
                 DE={vendor="Ledger-keepers Quartermaster"},
                 FR={vendor="Ledger-keepers Quartermaster"},
-                RU={vendor="Ledger-keepers Quartermaster"}
-            },
+                RU={vendor="Ledger-keepers Quartermaster"}},
             {cost={{amount=10, token=LC.token.EAGLE_BIT}},
                 EN={vendor="Order of the Eagle Quartermaster"},
                 DE={vendor="Order of the Eagle Quartermaster"},
