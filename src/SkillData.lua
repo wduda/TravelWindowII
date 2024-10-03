@@ -2856,7 +2856,8 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"},
                 FR={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"},
                 RU={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"}},
-            {store=true}, },
+            {store=true},
+        },
         rep=LC.rep.THORINS_HALL, repLevel=LC.repLevel.KINDRED,
         minLevel=10,
         level=1.1
