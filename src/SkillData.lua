@@ -772,9 +772,7 @@ function TravelDictionary:CreateDictionaries()
                 RU={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
-                   }
-                }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}} }},
         rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=115,
         level=115
@@ -1778,9 +1776,7 @@ function TravelDictionary:CreateDictionaries()
                 RU={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }
-                   }
-                }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}} }},
         rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=115,
         level=115
