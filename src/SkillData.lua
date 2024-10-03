@@ -67,9 +67,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
                 FR={vendor="Before the Shadow Mission-giver Barterer", },
-                RU={vendor="Before the Shadow Mission-giver Barterer", }
-            }
-        },
+                RU={vendor="Before the Shadow Mission-giver Barterer", }} },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=7
@@ -3909,10 +3907,10 @@ function TravelDictionary:CreateDictionaries()
         map={{MapType.HARADWAITH, 415, 340}},
         acquire={
             { rank=10,
-                EN={allegiance="The Ledger-keepers" },
-                DE={allegiance="The Ledger-keepers" },
-                FR={allegiance="The Ledger-keepers" },
-                RU={allegiance="The Ledger-keepers" }} },
+            EN={allegiance="The Ledger-keepers" },
+            DE={allegiance="The Ledger-keepers" },
+            FR={allegiance="The Ledger-keepers" },
+            RU={allegiance="The Ledger-keepers" }} },
         minLevel=140,
         level=150
     })
@@ -3926,8 +3924,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             { rank=10,
                 EN={allegiance="The Order of the Eagle" },
-                DE={allegiance="The Order of the Eagle" },
-                FR={allegiance="The Order of the Eagle" },
+                DE={allegiance="" },
+                FR={allegiance="" },
                 RU={allegiance="The Order of the Eagle" }} },
         minLevel=140,
         level=150.1
