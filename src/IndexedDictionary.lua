@@ -93,7 +93,7 @@ function IndexedDictionary:VerifySkill(skill)
     if GLocale == Turbine.Language.German then
         lang = skill.DE
     elseif GLocale == Turbine.Language.French then
-            lang = skill.FR
+        lang = skill.FR
     elseif GLocale == Turbine.Language.Russian then
         lang = skill.RU
     else
