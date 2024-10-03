@@ -2504,14 +2504,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Bree",      desc="Permet de retourner",                label="Bree", zlabel="Porte Ouest",     zone="Bree", },
         RU={ name="Возвращение в Бри",  desc="Вы можете быстро перенестись в Бри", label="Бри",  zlabel="Западные ворота", zone="Бри", },
         map={MapType.ERIADOR, 525, 335},
-        acquire={
-            {
+        acquire={ {
                 EN={deed="Enmity of the Wargs II",},
                 DE={deed="Enmity of the Wargs II",},
                 FR={deed="Enmity of the Wargs II",},
-                RU={deed="Enmity of the Wargs II",}
-            } 
-        },
+                RU={deed="Enmity of the Wargs II",}} },
         minLevel=29,
         level=5
     })
