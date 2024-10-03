@@ -2622,14 +2622,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Aller au Palais de Thorin",    label="Palais de Thorin", zone="Ered Luin", },
         RU={ name="Путешествие в Чертоги Торина", label="Чертоги Торина",   zone="Эред Луин", },
         map={MapType.ERIADOR, 345, 310},
-        acquire={
-            {
+        acquire={{
                 EN={deed="Enmity of the Cultists III"},
                 DE={deed="Enmity of the Cultists III"},
                 FR={deed="Enmity of the Cultists III"},
-                RU={deed="Enmity of the Cultists III"}
-            } 
-        },
+                RU={deed="Enmity of the Cultists III"}} },
         minLevel=35,
         level=1.2
     })
@@ -2641,14 +2638,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Lyndelby",         label="Lyndelby",  zone="Puits du Long Fleuve", },
         RU={ name="Возвращение в Линдельби",   label="Линдельби", zone="Истоки Долгой реки", },
         map={MapType.RHOVANION, 155, 165},
-        acquire={
-            {
+        acquire={ {
                 EN={deed="Back And There Again"},
                 DE={deed="Back And There Again"},
                 FR={deed="Back And There Again"},
-                RU={deed="Back And There Again"}
-            } 
-        },
+                RU={deed="Back And There Again"}} },
         minLevel=125,
         level=1.3
     })
