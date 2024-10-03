@@ -2520,14 +2520,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez dans la Comté", label="Grand'Cave",     zone="Comté", },
         RU={ name="Возвращение в Шир",       label="Занорье",        zone="Шир", },
         map={MapType.ERIADOR, 405, 440},
-        acquire={
-            {
+        acquire={ {
                 EN={deed="Enmity of the Spiders II",},
                 DE={deed="Enmity of the Spiders II",},
                 FR={deed="Enmity of the Spiders II",},
-                RU={deed="Enmity of the Spiders II",}
-            } 
-        },
+                RU={deed="Enmity of the Spiders II",}} },
         minLevel=29,
         level=1
     })
@@ -2539,14 +2536,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour : Porte de Thorin",    desc="Ceci vous permet de retourner",                label="Porte de Thorin", zone="Ered Luin", },
         RU={ name="Возвращение к Вратам Торина", desc="Вы можете быстро перенестись к Вратам Торина", label="Врата Торина",    zone="Эред Луин", },
         map={MapType.ERIADOR, 310, 270},
-        acquire={
-            {
+        acquire={ {
                 EN={deed="Enmity of the Goblins II",},
                 DE={deed="Enmity of the Goblins II",},
                 FR={deed="Enmity of the Goblins II",},
-                RU={deed="Enmity of the Goblins II",}
-            } 
-        },
+                RU={deed="Enmity of the Goblins II",}} },
         minLevel=29,
         level=1.2
     })
@@ -2558,14 +2552,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Fondcombe",      desc="Ceci vous permet de retourner",            label="Fondcombe", zone="Trouée des Trolls", },
         RU={ name="Возвращение в Ривенделл", desc="Вы можете быстро перенестись в Ривенделл", label="Ривенделл", zone="Троллистая пуща", },
         map={MapType.ERIADOR, 900, 375},
-        acquire={
-            {
+        acquire={ {
                 EN={deed="Enmity of the Orcs II"},
                 DE={deed="Enmity of the Orcs II"},
                 FR={deed="Enmity of the Orcs II"},
-                RU={deed="Enmity of the Orcs II"}
-            } 
-        },
+                RU={deed="Enmity of the Orcs II"}} },
         minLevel=29,
         level=40.1
     })
@@ -2577,14 +2568,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à la maison",       desc="Pavillon de Grimbeorn.", label="Maison Beorning",  zone="Val d'Anduin", },
         RU={ name="Возвращение домой",        desc="Усадьба Гримбеорна.",    label="Дом беорнинга",    zone="Долина Андуина", },
         map={MapType.RHOVANION, 285, 340},
-        acquire={
-            {
+        acquire={ {
                 EN={deed="Enmity of the Goblins II"},
                 DE={deed="Enmity of the Goblins II"},
                 FR={deed="Enmity of the Goblins II"},
-                RU={deed="Enmity of the Goblins II"}
-            } 
-        },
+                RU={deed="Enmity of the Goblins II"}} },
         minLevel=19,
         level=120
     })
@@ -2596,14 +2584,11 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Voyage vers Caras Galadhon, en Lothlórien",     label="Caras Galadhon", zone="Lothlórien", },
         RU={ name="Путешествие в Карас Галадон, что в Лотлориэне", label="Карас Галадон",  zone="Лотлориэн", },
         map={MapType.RHOVANION, 120, 690},
-        acquire={
-            {
+        acquire={ {
                 EN={deed="Enmity of the Orcs II"},
                 DE={deed="Enmity of the Orcs II"},
                 FR={deed="Enmity of the Orcs II"},
-                RU={deed="Enmity of the Orcs II"}
-            } 
-        },
+                RU={deed="Enmity of the Orcs II"}} },
         minLevel=32,
         level=60
     })
@@ -2615,7 +2600,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Aller au Palais de Thorin",    label="Palais de Thorin", zone="Ered Luin", },
         RU={ name="Путешествие в Чертоги Торина", label="Чертоги Торина",   zone="Эред Луин", },
         map={MapType.ERIADOR, 345, 310},
-        acquire={{
+        acquire={ {
                 EN={deed="Enmity of the Cultists III"},
                 DE={deed="Enmity of the Cultists III"},
                 FR={deed="Enmity of the Cultists III"},
