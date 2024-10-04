@@ -2,9 +2,13 @@ A new version is available!
 
 v2.4.2
 
-- enhance: plugin will be resilient against mistakes by authors when adding new text
-- enhance: skill info labels on learnable skills tab will be more readable (beta, fully supported in EN only)
+- enhance: plugin will be more resilient against mistakes by authors when adding new text for labels
+- enhance: added many new text labels for RU client support (RU support is still unfinished and in beta status)
+- enhance: skill info labels on learnable skills tab will be more readable (tab is fully functional in EN only, beta in DE/FR/RU)
+- fix: new skill acquisition detection will now work in RU client
 - fix: Ledger-Keepers in DE client now have a German label
-- fix: multiple smaller fixes of missing text and typos
+- fix: multiple fixes to currency names and minor typos
+
+Help with further translations for DE, FR and RU clients is welcome. Ideally submitted as pull requests on GitHub, but any way can be accomodated really.
 
 Download it at [url=https://www.lotrointerface.com/downloads/fileinfo.php?id=1113]Lotrointerface[/url], [url=https://github.com/wduda/TravelWindowII/releases]GitHub[/url], via [url=https://github.com/JeremyStepp/OneLauncher]OneLauncher[/url] or via [url=https://www.lotrointerface.com/downloads/info663-LOTROPluginCompendium.html]Plugin Compendium[/url].
