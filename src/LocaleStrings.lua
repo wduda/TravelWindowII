@@ -403,7 +403,7 @@ LC_RU.menuSkills = "Проверить доступность навыков"
 LC_EN.acquired = "You have acquired the (.*) skill%."
 LC_DE.acquired = "Ihr habt Euch die Fertigkeit (.*) angeeignet%."
 LC_FR.acquired = "Vous avez acquis la compétence (.*)%."
-LC_RU.acquired = "Вы приобрели навык (.*)%."
+LC_RU.acquired = "Вы приобрели умение <(.*)%>."
 
 LC_EN.store = "LOTRO Store"
 LC_DE.store = ""
