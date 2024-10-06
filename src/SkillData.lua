@@ -201,9 +201,9 @@ function TravelDictionary:CreateDictionaries()
                 FR={vendor="Hunter Trainer"},
                 RU={vendor="Наставник охотников" } },
             {
-                EN={quest="Hunter: Tracks Through Evendim" },
-                DE={quest="Hunter: Tracks Through Evendim" },
-                FR={quest="Hunter: Tracks Through Evendim" },
+                EN={quest="Tracks Through Evendim" },
+                DE={quest="Tracks Through Evendim" },
+                FR={quest="Tracks Through Evendim" },
                 RU={quest="Охотник: Дороги Эвендима" } } },
         minLevel=36,
         level=35
@@ -1785,9 +1785,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.warden:AddSkill({
         id="0x7004FACA",
-        EN={ name="Muster in Járnfast",       label="Járnfast", zone="The Ironfold" },
-        DE={ name="Appell in Járnfast",       label="Jarnfast", zone="Der Eisenbruch" },
-        FR={ name="Rassemblement : Jarnfast", label="Jarnfast", zone="La Crevasse de Fer" },
+        EN={ name="Muster in Járnfast",       label="Járnfast", zone="The Ironfold", },
+        DE={ name="Appell in Járnfast",       label="Jarnfast", zone="Der Eisenbruch", },
+        FR={ name="Rassemblement : Jarnfast", label="Jarnfast", zone="La Crevasse de Fer", },
         RU={ name="Сбор в Ярнфасте",          label="Ярнфаст",  zone="Железное взгорье" },
         map={{MapType.RHOVANION, 890, 110}},
         overlap={"0x7004FAC3"},
@@ -3897,9 +3897,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.rep:AddSkill({
         id="0x700686FE",
-        EN={ name="Journey to the Order of the Eagle", label="Order of the Eagle", tag="Quest",   zone="Umbar" },
-        DE={ name="Zum Orden des Adlers reisen",       label="Orden des Adlers",   tag="Aufgabe", zone="Umbar" },
-        FR={ name="Voyager vers l'Ordre de l'Aigle",   label="L'Ordre de l'Aigle", tag="Quête",   zone="Umbar" },
+        EN={ name="Journey to the Order of the Eagle", label="Order of the Eagle", tag="Quest",   zone="Umbar", },
+        DE={ name="Zum Orden des Adlers reisen",       label="Orden des Adlers",   tag="Aufgabe", zone="Umbar", },
+        FR={ name="Voyager vers l'Ordre de l'Aigle",   label="L'Ordre de l'Aigle", tag="Quête",   zone="Umbar", },
         RU={ name="Возвращение в Орден орла",          label="Орден орла",         tag="Задание", zone="Умбар" },
         map={{MapType.HARADWAITH, 415, 370}},
         acquire={
