@@ -201,9 +201,9 @@ function TravelDictionary:CreateDictionaries()
                 FR={vendor="Hunter Trainer"},
                 RU={vendor="Наставник охотников" } },
             {
-                EN={quest="Tracks Through Evendim" },
-                DE={quest="Tracks Through Evendim" },
-                FR={quest="Tracks Through Evendim" },
+                EN={quest="Tracks Through Evendim"},
+                DE={quest="Tracks Through Evendim"},
+                FR={quest="Tracks Through Evendim"},
                 RU={quest="Охотник: Дороги Эвендима" } } },
         minLevel=36,
         level=35
