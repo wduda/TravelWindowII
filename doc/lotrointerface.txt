@@ -21,14 +21,11 @@ Use the mousewheel while hovering over the travel skill icon to change the selec
 
 Version history:
 
-v2.4.2
+v2.4.3
 
-- enhance: plugin will be more resilient against mistakes by authors when adding new text for labels
-- enhance: added many new text labels for RU client support (RU support is still unfinished and in beta status)
-- enhance: skill info labels on learnable skills tab will be more readable (tab is fully functional in EN only, beta in DE/FR/RU)
-- fix: new skill acquisition detection will now work in RU client
-- fix: Ledger-Keepers in DE client now have a German label
-- fix: multiple fixes to currency names and minor typos
+- enhance: minor enhancements to skill acquisition data for Find Skills tab in EN (skill acquisition data data should now be complete)
+- enhance: updated most UI texts in DE (skill acquisition data data still not fully supported)
+- enhance: updated most UI texts in RU (skill acquisition data data should now be complete)
 
 Help with further translations for DE, FR and RU clients is welcome. Ideally submitted as pull requests on GitHub, but any way can be accomodated really.
 
