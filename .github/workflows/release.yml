@@ -27,6 +27,38 @@ jobs:
           filename: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
           exclusions: '*.git* *.github* *.vscode* *.gitignore* /*doc/* /*screenshots/*'
 
+      # parse changelog to set release description
+      - name: extract latest changelog entry
+        id: changelog
+        run: |
+            # Use ${{ github.workspace }} to get the full path to CHANGELOG.md
+            CHANGELOG_PATH="${{ github.workspace }}/TravelWindowII/CHANGELOG.md"
+
+            # Find the line number of the latest version header
+            LATEST_VERSION_LINE=$(grep -n "^## v" "$CHANGELOG_PATH" | head -n1 | cut -d: -f1)
+
+            # Find the line number of the next version header or EOF
+            NEXT_VERSION_LINE=$(tail -n +$((LATEST_VERSION_LINE + 1)) "$CHANGELOG_PATH" | grep -n "^## v" | head -n1 | cut -d: -f1)
+            if [ -z "$NEXT_VERSION_LINE" ]; then
+              NEXT_VERSION_LINE=$(wc -l < "$CHANGELOG_PATH")
+            else
+              NEXT_VERSION_LINE=$((LATEST_VERSION_LINE + NEXT_VERSION_LINE - 1))
+            fi
+
+            # Escape newlines and quote special characters for GitHub Actions
+            CHANGELOG_CONTENT="${CHANGELOG_CONTENT//'%'/'%25'}"
+            CHANGELOG_CONTENT="${CHANGELOG_CONTENT//$'\n'/'%0A'}"
+            CHANGELOG_CONTENT="${CHANGELOG_CONTENT//$'\r'/'%0D'}"
+
+            # Extract the content between these line numbers
+            CHANGELOG_CONTENT=$(sed -n "$((LATEST_VERSION_LINE+1)),$((NEXT_VERSION_LINE-1))p" "$CHANGELOG_PATH" | sed '/^\s*$/d')
+
+            # Set output for use in subsequent steps using heredoc to handle multiline output
+            EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+            echo "content<<$EOF" >> $GITHUB_OUTPUT
+            echo "$CHANGELOG_CONTENT" >> $GITHUB_OUTPUT
+            echo "$EOF" >> $GITHUB_OUTPUT
+
       # create the GitHub release
       - name: create github release
         uses: softprops/action-gh-release@v2
@@ -34,4 +66,6 @@ jobs:
           draft: true
           prerelease: false
           name: ${{ github.event.inputs.tag }}
+          tag_name: ${{ github.event.inputs.tag }}
+          body: ${{ steps.changelog.outputs.CONTENT }}
           files: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
