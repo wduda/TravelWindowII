@@ -21,7 +21,7 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Занорье",          label="Занорье",        zone="Шир", },
         map={{MapType.ERIADOR, 360, 390}},
         overlap={"0x700062C8", "0x70023262"},
-        acquire={ { autoLevel=true } },
+        acquire={ { autoLevel=true }},
         minLevel=22,
         level=1
     })
@@ -33,7 +33,7 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Чертоги Торина",          label="Чертоги Торина",   zone="Эред Луин", },
         map={{MapType.ERIADOR, 305, 270}},
         overlap={"0x70006346", "0x70053C0F", "0x7001BF91"},
-        acquire={ { autoLevel=true } },
+        acquire={ { autoLevel=true }},
         minLevel=24,
         level=1.1
     })
@@ -45,7 +45,7 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Бри",       label="Бри",  zlabel="Западные ворота", zone="Бри", },
         map={{MapType.ERIADOR, 585, 335}},
         overlap={"0x700062F6", "0x7001BF90"},
-        acquire={ { autoLevel=true } },
+        acquire={ { autoLevel=true }},
         minLevel=32,
         level=5
     })
@@ -183,7 +183,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Esteldin",  label="Esteldin",  zone="Hauts du Nord", },
         RU={ name="Путь в Эстельдин",     label="Эстельдин", zone="Северное нагорье", },
         map={{MapType.ERIADOR, 655, 290}},
-        acquire={ { autoLevel=true } },
+        acquire={ { autoLevel=true }},
         minLevel=34,
         level=30
     })
@@ -234,7 +234,7 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Ривенделл",     label="Ривенделл", zone="Троллистая пуща", },
         map={{MapType.ERIADOR, 865, 410}},
         overlap={"0x7000631F", "0x70023263"},
-        acquire={ { autoLevel=true } },
+        acquire={ { autoLevel=true }},
         minLevel=46,
         level=40.1
     })
@@ -251,7 +251,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Afwald", },
                 FR={vendor="Afwald", },
                 RU={vendor="Афвальд"}},
-            { store=true } },
+            { store=true }},
         rep=LC.rep.ELVES_OF_RIVENDELL, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=40,
         level=40.2
@@ -1265,7 +1265,7 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Ост Гуруте",          label="Ост Гурут",    zone="Пустоши", },
         map={{MapType.ERIADOR, 755, 400}},
         overlap={"0x70020441"},
-        acquire={ {autoLevel=true } },
+        acquire={ {autoLevel=true }},
         minLevel=26,
         level=25
     })
@@ -1276,7 +1276,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Rassemblement : Esteldin", label="Esteldin",  zone="Hauts du Nord", },
         RU={ name="Сбор в Эстельдине",        label="Эстельдин", zone="Северное нагорье", },
         map={{MapType.ERIADOR, 655, 290}},
-        acquire={ {autoLevel=true } },
+        acquire={ {autoLevel=true }},
         minLevel=34,
         level=30
     })
@@ -1287,7 +1287,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Rassemblement : La région d'Evendim", label="Evendim", detail="Tinnudir",  zone="Evendim", },
         RU={ name="Сбор в Эвендиме",                     label="Эвендим", detail="Тиннудир",  zone="Эвендим", },
         map={{MapType.ERIADOR, 490, 235}},
-        acquire={ {autoLevel=true } },
+        acquire={ {autoLevel=true }},
         minLevel=38,
         level=35
     })
@@ -1317,7 +1317,7 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Ривенделле",         label="Ривенделл", zone="Троллистая пуща", },
         map={{MapType.ERIADOR, 865, 410}},
         overlap={"0x7000631F", "0x70023263"},
-        acquire={ {autoLevel=true } },
+        acquire={ {autoLevel=true }},
         minLevel=44,
         level=40.1
     })
@@ -1334,7 +1334,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Afwald", },
                 FR={vendor="Afwald", },
                 RU={vendor="Афвальд"}},
-            { store=true } },
+            { store=true }},
         rep=LC.rep.ELVES_OF_RIVENDELL, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=40,
         level=40.2
@@ -2164,7 +2164,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers Celondim", label="Celondim", zone="Ered Luin", },
         RU={ name="Отплытие в Келондим",    label="Келондим", zone="Эред Луин", },
         map={{MapType.ERIADOR, 310, 380}},
-        acquire={ { autoLevel=true } },
+        acquire={ { autoLevel=true }},
         minLevel=7,
         level=1
     })
@@ -2175,7 +2175,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers le Pays de Bouc", label="Pays de Bouc", zone="Bree", },
         RU={ name="Отплытие в Забрендию",          label="Забрендия",    zone="Бри", },
         map={{MapType.ERIADOR, 515, 405}},
-        acquire={ { autoLevel=true } },
+        acquire={ { autoLevel=true }},
         minLevel=15,
         level=4
     })
@@ -2186,7 +2186,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers Tharbad", label="Tharbad", zone="Noues des cygnes", },
         RU={ name="Отплытие в Тарбад",     label="Тарбад",  zone="Лебедянь", },
         map={{MapType.ERIADOR, 650, 525}},
-        acquire={ { autoLevel=true } },
+        acquire={ { autoLevel=true }},
         minLevel=7,
         level=5
     })
@@ -2197,7 +2197,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers Tinnudir", label="Tinnudir", zone="Evendim", },
         RU={ name="Отплытие на Тиннудир",   label="Тиннудир", zone="Эвендим", },
         map={{MapType.ERIADOR, 420, 250}},
-        acquire={ { autoLevel=true } },
+        acquire={ { autoLevel=true }},
         minLevel=35,
         level=30
     })
@@ -2245,7 +2245,7 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие в Лотлориэн",        label="Лотлориэн",  detail="Эгладил", zone="Лотлориэн", },
         map={{MapType.RHOVANION, 245, 670}},
         overlap={"0x70048C8C"},
-        acquire={ { autoLevel=true } },
+        acquire={ { autoLevel=true }},
         minLevel=60,
         level=60
     })
@@ -2279,7 +2279,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ordlaf", },
                 FR={vendor="Ordlaf", },
                 RU={vendor="Ордлаф"}},
-            { store=true } },
+            { store=true }},
         rep=LC.rep.RIDERS_OF_STANGARD, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=70,
         level=75.1
@@ -2985,7 +2985,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez à Ost Guruth",    label="Ost Guruth",   zone="Terres Solitaires", },
         RU={ name="Возвращение в Ост Гурут",   label="Ост Гурут",    zone="Пустоши", },
         map={{MapType.ERIADOR, 725, 400}},
-        acquire={ { store=true }, { autoRep=true } },
+        acquire={ { store=true }, { autoRep=true }},
         rep=LC.rep.EGLAIN, repLevel=LC.repLevel.KINDRED,
         minLevel=10,
         level=25
@@ -3014,7 +3014,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Fondcombe",      desc="Grâce à votre amitié avec", label="Fondcombe", tag="Shop",  zone="Trouée des Trolls", },
         RU={ name="Возвращение в Ривенделл", desc="Благодаря дружбе",          label="Ривенделл", tag="Лавка", zone="Троллистая пуща", },
         map={{MapType.ERIADOR, 835, 410}},
-        acquire={ { store=true } },
+        acquire={ { store=true }},
         minLevel=10,
         level=40.1
     })
@@ -3101,7 +3101,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Millaesil", },
                 FR={vendor="Millaesil", },
                 RU={vendor="Миллаэсиль"}},
-            { store=true } },
+            { store=true }},
         rep=LC.rep.MALLEDHRIM, repLevel=LC.repLevel.KINDRED,
         minLevel=51,
         level=61
@@ -3120,7 +3120,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Mabon", },
                 FR={vendor="Mabon", },
                 RU={vendor="Мабон"}},
-            { store=true } },
+            { store=true }},
         rep=LC.rep.ALGRAIG, repLevel=LC.repLevel.KINDRED,
         minLevel=51,
         level=62
@@ -3138,7 +3138,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Dunlending Quartermaster", },
                 FR={vendor="Dunlending Quartermaster", },
                 RU={vendor="Интендант дунландцев"}},
-            { store=true } },
+            { store=true }},
         rep=LC.rep.MEN_OF_DUNLAND, repLevel=LC.repLevel.KINDRED,
         minLevel=70,
         level=65
@@ -3157,7 +3157,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ordlaf", },
                 FR={vendor="Ordlaf", },
                 RU={vendor="Ордлаф"}},
-            { store=true } },
+            { store=true }},
         rep=LC.rep.RIDERS_OF_STANGARD, repLevel=LC.repLevel.KINDRED,
         minLevel=70,
         level=75
