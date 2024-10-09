@@ -68,7 +68,7 @@ LC_FR.miniTitle = "Travel Window II"
 LC_RU.miniTitle = "Travel Window II"
 
 LC_EN.optionsTitle = "Travel Options"
-LC_DE.optionsTitle = "Travel Optionen"
+LC_DE.optionsTitle = "Travel Einstellungen"
 LC_FR.optionsTitle = "Options de Travel"
 LC_RU.optionsTitle = "Настройки Travel"
 
@@ -119,7 +119,7 @@ LC_FR.showButton = "Montrer le bouton Travel"
 LC_RU.showButton = "Показать кнопку Travel"
 
 LC_EN.pulldownTravel = "Travel when pulldown skill selected"
-LC_DE.pulldownTravel = "Reise wenn Fertigkeits-Pulldown selektiert"
+LC_DE.pulldownTravel = "Reisen wenn Fertigkeits-Pulldown selektiert"
 LC_FR.pulldownTravel = "Voyager lorsque la compétence déroulante est sélectionnée"
 LC_RU.pulldownTravel = "Travel when pulldown skill selected"
 
@@ -189,7 +189,7 @@ LC_FR.toggleSliders = "Modifier l'opacité du bouton"
 LC_RU.toggleSliders = "Прозрачность кнопки"
 
 LC_EN.mainSliders = "Main Window Opacity"
-LC_DE.mainSliders = "Hauptfenster Transparenz"
+LC_DE.mainSliders = "Travel-Fenster Transparenz"
 LC_FR.mainSliders = "Modifier l'opacité de la fenêtre"
 LC_RU.mainSliders = "Прозрачность основного окна"
 
@@ -239,17 +239,17 @@ LC_FR.sortLevel = "Trier par niveau"
 LC_RU.sortLevel = "По уровню"
 
 LC_EN.checkSkills = "Check Untrained Skills"
-LC_DE.checkSkills = "Nicht erlernte Fertigkeiten prüfen"
+LC_DE.checkSkills = "Fertigkeiten prüfen"
 LC_FR.checkSkills = "Vérification des compétences non utilisées"
 LC_RU.checkSkills = "Проверка доступности навыков"
 
 LC_EN.enableRepSkills = "Enable Overlapping"
-LC_DE.enableRepSkills = "Überlappende Aktivieren"
+LC_DE.enableRepSkills = "Alle Überlappenden Aktivieren"
 LC_FR.enableRepSkills = "Activer le chevauchement"
 LC_RU.enableRepSkills = "Разрешить дубликаты"
 
 LC_EN.disableRepSkills = "Disable Overlapping"
-LC_DE.disableRepSkills = "Überlappende Deaktivieren"
+LC_DE.disableRepSkills = "Alle Überlappenden Deaktivieren"
 LC_FR.disableRepSkills = "Désactiver le chevauchement"
 LC_RU.disableRepSkills = "Убрать дубликаты"
 
@@ -269,7 +269,7 @@ LC_FR.lockUI = "Verrouiller l’interface utilisateur"
 LC_RU.lockUI = "Зафиксировать интерфейс"
 
 LC_EN.useZoneNames = "Use Zone names"
-LC_DE.useZoneNames = "Verwenden von Zonennamen"
+LC_DE.useZoneNames = "Verwenden von Zonen-Namen"
 LC_FR.useZoneNames = "Utiliser les noms de zone"
 LC_RU.useZoneNames = "Использовать название зон"
 
@@ -279,7 +279,7 @@ LC_FR.useSkillNames = "Utiliser les noms de compétence"
 LC_RU.useSkillNames = ""
 
 LC_EN.unlockKeyPress = "Hold Shift to unlock"
-LC_DE.unlockKeyPress = "Halten Sie die Umschalttaste gedrückt, um zu entsperren"
+LC_DE.unlockKeyPress = "Umschalttaste um zu entsperren gedrückt halten"
 LC_FR.unlockKeyPress = "Maintenez la touche Maj enfoncée pour déverrouiller"
 LC_RU.unlockKeyPress = "Передвигать с нажатым Shift"
 
@@ -310,7 +310,7 @@ LC_FR.menuFilters = "Filtres"
 LC_RU.menuFilters = "Фильтры"
 
 LC_EN.menuGen = "Show Generic Travels"
-LC_DE.menuGen = "Zeige generische Fertigkeiten"
+LC_DE.menuGen = "Zeige Generische Fertigkeiten"
 LC_FR.menuGen = "Voir les voyages génériques"
 LC_RU.menuGen = "Показать общие путешествия"
 
@@ -395,7 +395,7 @@ LC_FR.haradwaithMap = "Destinations dans le Haradwaith"
 LC_RU.haradwaithMap = "Открыть карту Харадвайта"
 
 LC_EN.menuSkills = "Check Untrained Skills"
-LC_DE.menuSkills = "Nicht erlernte Fertigkeiten prüfen"
+LC_DE.menuSkills = "Fertigkeiten prüfen"
 LC_FR.menuSkills = "Vérification des compétences non utilisées"
 LC_RU.menuSkills = "Проверить доступность навыков"
 
@@ -406,52 +406,52 @@ LC_FR.acquired = "Vous avez acquis la compétence (.*)%."
 LC_RU.acquired = "Вы приобрели умение <(.*)%>."
 
 LC_EN.store = "LOTRO Store"
-LC_DE.store = ""
+LC_DE.store = "LOTRO Shop"
 LC_FR.store = ""
 LC_RU.store = "LOTRO Store"
 
 LC_EN.quest = "Quest: "
-LC_DE.quest = ""
+LC_DE.quest = "Aufgabe: "
 LC_FR.quest = ""
 LC_RU.quest = "Задание: "
 
 LC_EN.deed = "Deed: "
-LC_DE.deed = ""
+LC_DE.deed = "Tat: "
 LC_FR.deed = ""
 LC_RU.deed = "Деяние: "
 
 LC_EN.source = "Source: "
-LC_DE.source = ""
+LC_DE.source = "Quelle: "
 LC_FR.source = ""
 LC_RU.source = "Источник: "
 
 LC_EN.cost = "Cost: "
-LC_DE.cost = ""
+LC_DE.cost = "Kosten: "
 LC_FR.cost = ""
 LC_RU.cost = "Стоимость: "
 
 LC_EN.requires = "Requires: "
-LC_DE.requires = ""
+LC_DE.requires = "Benötigt: "
 LC_FR.requires = ""
 LC_RU.requires = "Требуется: "
 
 LC_EN.allegiance = "Allegiance: "
-LC_DE.allegiance = ""
+LC_DE.allegiance = "Bündnis: "
 LC_FR.allegiance = ""
 LC_RU.allegiance = "Альянс: "
 
 LC_EN.rank = "Rank: "
-LC_DE.rank = ""
+LC_DE.rank = "Rang: "
 LC_FR.rank = ""
 LC_RU.rank = "Ранг: "
 
 LC_EN.with = " with "
-LC_DE.with = ""
+LC_DE.with = " bei "
 LC_FR.with = ""
 LC_RU.with = " с "
 
 LC_EN.minLevel = "Minimum Level "
-LC_DE.minLevel = ""
+LC_DE.minLevel = "Mindeststufe "
 LC_FR.minLevel = ""
 LC_RU.minLevel = "Минимальный уровень "
 
@@ -462,32 +462,32 @@ LC_FR.repLevel = {}
 LC_RU.repLevel = {}
 
 LC_EN.repLevel.NEUTRAL = "Neutral"
-LC_DE.repLevel.NEUTRAL = ""
+LC_DE.repLevel.NEUTRAL = "Neutral"
 LC_FR.repLevel.NEUTRAL = ""
 LC_RU.repLevel.NEUTRAL = ""
 
 LC_EN.repLevel.ACQUAINTANCE = "Acquaintance"
-LC_DE.repLevel.ACQUAINTANCE = ""
+LC_DE.repLevel.ACQUAINTANCE = "Verbündeter"
 LC_FR.repLevel.ACQUAINTANCE = ""
 LC_RU.repLevel.ACQUAINTANCE = ""
 
 LC_EN.repLevel.DUMUL = "Dumul (Acquaintance)"
-LC_DE.repLevel.DUMUL = ""
+LC_DE.repLevel.DUMUL = "Dumul (Verbündeter)"
 LC_FR.repLevel.DUMUL = ""
 LC_RU.repLevel.DUMUL = ""
 
 LC_EN.repLevel.FRIEND = "Friend"
-LC_DE.repLevel.FRIEND = ""
+LC_DE.repLevel.FRIEND = "Freund"
 LC_FR.repLevel.FRIEND = ""
 LC_RU.repLevel.FRIEND = ""
 
 LC_EN.repLevel.KINDRED = "Kindred"
-LC_DE.repLevel.KINDRED = ""
+LC_DE.repLevel.KINDRED = "Verwandter"
 LC_FR.repLevel.KINDRED = ""
 LC_RU.repLevel.KINDRED = ""
 
 LC_EN.repLevel.RESPECTED = "Respected"
-LC_DE.repLevel.RESPECTED = ""
+LC_DE.repLevel.RESPECTED = "Respektiert"
 LC_FR.repLevel.RESPECTED = ""
 LC_RU.repLevel.RESPECTED = ""
 
@@ -503,7 +503,7 @@ LC_FR.rep.THORINS_HALL = ""
 LC_RU.rep.THORINS_HALL = ""
 
 LC_EN.rep.MEN_OF_BREE = "Men of Bree"
-LC_DE.rep.MEN_OF_BREE = ""
+LC_DE.rep.MEN_OF_BREE = "Menschen von Bree"
 LC_FR.rep.MEN_OF_BREE = ""
 LC_RU.rep.MEN_OF_BREE = ""
 
