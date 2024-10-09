@@ -221,7 +221,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Defenders of the Angle)", },
                 DE={vendor="Quartermaster (Defenders of the Angle)", },
                 FR={vendor="Quartermaster (Defenders of the Angle)", },
-                RU={vendor="Интендант (Защитники Стрелки)" }} },
+                RU={vendor="Интендант (Защитники Стрелки)", }} },
         rep=LC.rep.DEFENDERS_OF_ANGLE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=38,
         level=40
@@ -332,7 +332,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={quest="Desolation by Aughaire"},
                 DE={quest="Desolation by Aughaire"},
                 FR={quest="Desolation by Aughaire"},
-                RU={quest="Охотник: Запустение вокруг Огайра", }} },
+                RU={quest="Охотник: Запустение вокруг Огайра"}} },
         minLevel=44,
         level=45
     })
@@ -353,7 +353,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={quest="Hunter: Waste Near Gath Forthnír"},
                 DE={quest="Hunter: Waste Near Gath Forthnír"},
                 FR={quest="Hunter: Waste Near Gath Forthnír"},
-                RU={quest="Охотник: Пустоши возле Гат Фортнира", }} },
+                RU={quest="Охотник: Пустоши возле Гат Фортнира"}} },
         minLevel=48,
         level=49
     })
@@ -374,7 +374,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={quest="Hunter: Lay of the Land"},
                 DE={quest="Hunter: Lay of the Land"},
                 FR={quest="Hunter: Lay of the Land"},
-                RU={quest="Охотник: Пути-дороги", }} },
+                RU={quest="Охотник: Пути-дороги"}} },
         minLevel=51,
         level=50
     })
@@ -790,7 +790,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
                 DE={vendor="Quartermaster (Dwarf-holds Rewards)"},
                 FR={vendor="Quartermaster (Dwarf-holds Rewards)"},
-                RU={vendor="Интендант (Владения гномов)", }} },
+                RU={vendor="Интендант (Владения гномов)"}} },
         rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
         minLevel=116,
         level=116
@@ -808,7 +808,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
                 DE={vendor="Quartermaster (Dwarf-holds Rewards)"},
                 FR={vendor="Quartermaster (Dwarf-holds Rewards)"},
-                RU={vendor="Интендант (Владения гномов)", }} },
+                RU={vendor="Интендант (Владения гномов)"}} },
         rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
         minLevel=116,
         level=117
@@ -826,7 +826,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Wilderfolk Rewards)"},
                 DE={vendor="Quartermaster (Wilderfolk Rewards)"},
                 FR={vendor="Quartermaster (Wilderfolk Rewards)"},
-                RU={vendor="Интендант (Жители Глухоманья)", }} },
+                RU={vendor="Интендант (Жители Глухоманья)"}} },
         rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=116,
         level=120
@@ -1164,12 +1164,12 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Интендант погружений"}},
+                RU={vendor="Интендант погружений", }},
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
                 FR={vendor="Before the Shadow Mission-giver Barterer", },
-                RU={vendor="Обмен наград за миссии До прихода Тени"}} },
+                RU={vendor="Обмен наград за миссии До прихода Тени", }} },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=7
@@ -1187,7 +1187,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 FR={vendor="Quartermaster (Dúnedain of Cardolan)", },
-                RU={vendor="Интендант (Дунаданы Кардолана)"}} },
+                RU={vendor="Интендант (Дунаданы Кардолана)", }} },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=10
@@ -1205,12 +1205,12 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Интендант погружений"}},
+                RU={vendor="Интендант погружений", }},
             {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
                 EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 FR={vendor="Quartermaster (Dúnedain of Cardolan)", },
-                RU={vendor="Интендант (Дунаданы Кардолана)"}} },
+                RU={vendor="Интендант (Дунаданы Кардолана)", }} },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=15
@@ -1228,12 +1228,12 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Интендант погружений"}},
+                RU={vendor="Интендант погружений", }},
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
                 FR={vendor="Before the Shadow Mission-giver Barterer", },
-                RU={vendor="Обмен наград за миссии До прихода Тени"}} },
+                RU={vendor="Обмен наград за миссии До прихода Тени", }} },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=17
@@ -1251,7 +1251,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Yonder-watch)", },
                 DE={vendor="Quartermaster (Yonder-watch)", },
                 FR={vendor="Quartermaster (Yonder-watch)", },
-                RU={vendor="Интендант (Дозор Дальнего Шира)"}} },
+                RU={vendor="Интендант (Дозор Дальнего Шира)", }} },
         rep=LC.rep.YONDER_WATCH, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=20
@@ -1303,7 +1303,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Defenders of the Angle)", },
                 DE={vendor="Quartermaster (Defenders of the Angle)", },
                 FR={vendor="Quartermaster (Defenders of the Angle)", },
-                RU={vendor="Интендант (Защитники Стрелки)"}} },
+                RU={vendor="Интендант (Защитники Стрелки)", }} },
         rep=LC.rep.DEFENDERS_OF_ANGLE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=38,
         level=40
