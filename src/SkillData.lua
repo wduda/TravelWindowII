@@ -21,7 +21,7 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Занорье",          label="Занорье",        zone="Шир", },
         map={{MapType.ERIADOR, 360, 390}},
         overlap={"0x700062C8", "0x70023262"},
-        acquire={ { autoLevel=true }},
+        acquire={ { autoLevel=true } },
         minLevel=22,
         level=1
     })
@@ -33,7 +33,7 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Чертоги Торина",          label="Чертоги Торина",   zone="Эред Луин", },
         map={{MapType.ERIADOR, 305, 270}},
         overlap={"0x70006346", "0x70053C0F", "0x7001BF91"},
-        acquire={ { autoLevel=true }},
+        acquire={ { autoLevel=true } },
         minLevel=24,
         level=1.1
     })
@@ -45,7 +45,7 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Бри",       label="Бри",  zlabel="Западные ворота", zone="Бри", },
         map={{MapType.ERIADOR, 585, 335}},
         overlap={"0x700062F6", "0x7001BF90"},
-        acquire={ { autoLevel=true }},
+        acquire={ { autoLevel=true } },
         minLevel=32,
         level=5
     })
@@ -183,7 +183,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Guide vers Esteldin",  label="Esteldin",  zone="Hauts du Nord", },
         RU={ name="Путь в Эстельдин",     label="Эстельдин", zone="Северное нагорье", },
         map={{MapType.ERIADOR, 655, 290}},
-        acquire={ { autoLevel=true }},
+        acquire={ { autoLevel=true } },
         minLevel=34,
         level=30
     })
@@ -234,7 +234,7 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Путь в Ривенделл",     label="Ривенделл", zone="Троллистая пуща", },
         map={{MapType.ERIADOR, 865, 410}},
         overlap={"0x7000631F", "0x70023263"},
-        acquire={ { autoLevel=true }},
+        acquire={ { autoLevel=true } },
         minLevel=46,
         level=40.1
     })
@@ -760,20 +760,19 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]", }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }} },
                 DE={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]", }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }} },
                 FR={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]", }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }} },
                 RU={vendors={
                     { vendor="Интендант (Люди Дейла)", coords="[25.0N, 25.1W]" },
                     { vendor="Интендант (Гномы Эребора)", coords="[29.1N, 25.6W]" },
-                    { vendor="Интендант (Эльфы Фелегота)", coords="[20.3N, 36.9W]" } } }
-        }},
+                    { vendor="Интендант (Эльфы Фелегота)", coords="[20.3N, 36.9W]" }}} }},
         rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=115,
         level=115
@@ -845,7 +844,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Wilderfolk Rewards)"},
                 DE={vendor="Quartermaster (Wilderfolk Rewards)"},
                 FR={vendor="Quartermaster (Wilderfolk Rewards)"},
-                RU={vendor="Интендант (Жители Глухоманья)", }} },
+                RU={vendor="Интендант (Жители Глухоманья)"}} },
         rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=116,
         level=120.1
@@ -863,7 +862,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The White Company)"},
                 DE={vendor="Quartermaster (The White Company)"},
                 FR={vendor="Quartermaster (The White Company)"},
-                RU={vendor="Интендант (Белая дружина)", }} },
+                RU={vendor="Интендант (Белая дружина)"}} },
         rep=LC.rep.WHITE_COMPANY, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=121,
         level=125
@@ -881,7 +880,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Protectors of Wilderland)"},
                 DE={vendor="Quartermaster (Protectors of Wilderland)"},
                 FR={vendor="Quartermaster (Protectors of Wilderland)"},
-                RU={vendor="Интендант (Защитники Глухоманья)", }} },
+                RU={vendor="Интендант (Защитники Глухоманья)"}} },
         rep=LC.rep.PROTECTORS_OF_WILDERLAND, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=130,
         level=130
@@ -904,7 +903,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (March on Gundabad)"},
                 DE={vendor="Quartermaster (March on Gundabad)"},
                 FR={vendor="Quartermaster (March on Gundabad)"},
-                RU={vendor="Интендант (Поход на Гундабад)", }} },
+                RU={vendor="Интендант (Поход на Гундабад)"}} },
         minLevel=20,
         level=130.1
     })
@@ -921,7 +920,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Vorthur Smokebreath"},
                 DE={vendor="Vorthur Smokebreath"},
                 FR={vendor="Vorthur Smokebreath"},
-                RU={vendor="Вортур Дымокур", }} },
+                RU={vendor="Вортур Дымокур"}} },
         rep=LC.rep.KHARUM_UBNAR, repLevel=LC.repLevel.NEUTRAL,
         minLevel=130,
         level=130.2
@@ -939,7 +938,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Haban'akkâ of Thráin)"},
                 DE={vendor="Quartermaster (Haban'akkâ of Thráin)"},
                 FR={vendor="Quartermaster (Haban'akkâ of Thráin)"},
-                RU={vendor="Интендант (Хабан'акка Траина)", }} },
+                RU={vendor="Интендант (Хабан'акка Траина)"}} },
         rep=LC.rep.HABANAKKA_OF_THRAIN, repLevel=LC.repLevel.DUMUL,
         minLevel=130,
         level=130.3
@@ -957,7 +956,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
                 DE={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
                 FR={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
-                RU={vendor="Интендант (Освободители Подгорной крепости)", }} },
+                RU={vendor="Интендант (Освободители Подгорной крепости)"}} },
         rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
         minLevel=131,
         level=131
@@ -975,7 +974,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
                 DE={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
                 FR={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
-                RU={vendor="Интендант (Освободители Подгорной крепости)", }} },
+                RU={vendor="Интендант (Освободители Подгорной крепости)"}} },
         rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
         minLevel=135,
         level=135
@@ -993,7 +992,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Muirál"},
                 DE={vendor="Muirál"},
                 FR={vendor="Muirál"},
-                RU={vendor="Муйрал", }} },
+                RU={vendor="Муйрал"}} },
         minLevel=20,
         level=140.1
     })
@@ -1010,7 +1009,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
                 DE={vendor="Quartermaster (The Renewal of Gondor)"},
                 FR={vendor="Quartermaster (The Renewal of Gondor)"},
-                RU={vendor="Интендант (Восстановленный Гондор)", }} },
+                RU={vendor="Интендант (Восстановленный Гондор)"}} },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=141
@@ -1028,7 +1027,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
                 DE={vendor="Quartermaster (The Renewal of Gondor)"},
                 FR={vendor="Quartermaster (The Renewal of Gondor)"},
-                RU={vendor="Интендант (Восстановленный Гондор)", }} },
+                RU={vendor="Интендант (Восстановленный Гондор)"}} },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=142
@@ -1046,7 +1045,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
                 DE={vendor="Quartermaster (The Renewal of Gondor)"},
                 FR={vendor="Quartermaster (The Renewal of Gondor)"},
-                RU={vendor="Интендант (Восстановленный Гондор)", }} },
+                RU={vendor="Интендант (Восстановленный Гондор)"}} },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=143
@@ -1064,7 +1063,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
                 DE={vendor="Quartermaster (The City of Umbar Rewards)"},
                 FR={vendor="Quartermaster (The City of Umbar Rewards)"},
-                RU={vendor="Интендант Умбара", }} },
+                RU={vendor="Интендант Умбара"}} },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=145
@@ -1082,7 +1081,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
                 DE={vendor="Quartermaster (The City of Umbar Rewards)"},
                 FR={vendor="Quartermaster (The City of Umbar Rewards)"},
-                RU={vendor="Интендант Умбара", }} },
+                RU={vendor="Интендант Умбара"}} },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=146
@@ -1100,7 +1099,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Mâkhda Khorbo Quartermaster"},
                 DE={vendor="Mâkhda Khorbo Quartermaster"},
                 FR={vendor="Mâkhda Khorbo Quartermaster"},
-                RU={vendor="Интендант Макда-Корбо", }} },
+                RU={vendor="Интендант Макда-Корбо"}} },
         minLevel=20,
         level=147
     })
@@ -1117,7 +1116,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
                 DE={vendor="Quartermaster (The City of Umbar Rewards)"},
                 FR={vendor="Quartermaster (The City of Umbar Rewards)"},
-                RU={vendor="Интендант Умбара", }} },
+                RU={vendor="Интендант Умбара"}} },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=148
@@ -1145,7 +1144,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Order of the Eagle Quartermaster"},
                 DE={vendor="Order of the Eagle Quartermaster"},
                 FR={vendor="Order of the Eagle Quartermaster"},
-                RU={vendor="Интендант Ордена орла", }} },
+                RU={vendor="Интендант Ордена орла"}} },
         minLevel=20,
         level=149
     })
@@ -1170,7 +1169,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
                 FR={vendor="Before the Shadow Mission-giver Barterer", },
-                RU={vendor="Обмен наград за миссии До прихода Тени", }} },
+                RU={vendor="Обмен наград за миссии До прихода Тени"}} },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=7
@@ -1188,7 +1187,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 FR={vendor="Quartermaster (Dúnedain of Cardolan)", },
-                RU={vendor="Интендант (Дунаданы Кардолана)", }} },
+                RU={vendor="Интендант (Дунаданы Кардолана)"}} },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=10
@@ -1211,7 +1210,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 FR={vendor="Quartermaster (Dúnedain of Cardolan)", },
-                RU={vendor="Интендант (Дунаданы Кардолана)", }} },
+                RU={vendor="Интендант (Дунаданы Кардолана)"}} },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=15
@@ -1234,7 +1233,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
                 FR={vendor="Before the Shadow Mission-giver Barterer", },
-                RU={vendor="Обмен наград за миссии До прихода Тени", }} },
+                RU={vendor="Обмен наград за миссии До прихода Тени"}} },
         rep=LC.rep.DUNEDAIN_OF_CARDOLAN, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=17
@@ -1252,7 +1251,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Yonder-watch)", },
                 DE={vendor="Quartermaster (Yonder-watch)", },
                 FR={vendor="Quartermaster (Yonder-watch)", },
-                RU={vendor="Интендант (Дозор Дальнего Шира)", }} },
+                RU={vendor="Интендант (Дозор Дальнего Шира)"}} },
         rep=LC.rep.YONDER_WATCH, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=20
@@ -1265,7 +1264,7 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Ост Гуруте",          label="Ост Гурут",    zone="Пустоши", },
         map={{MapType.ERIADOR, 755, 400}},
         overlap={"0x70020441"},
-        acquire={ {autoLevel=true }},
+        acquire={ {autoLevel=true } },
         minLevel=26,
         level=25
     })
@@ -1276,7 +1275,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Rassemblement : Esteldin", label="Esteldin",  zone="Hauts du Nord", },
         RU={ name="Сбор в Эстельдине",        label="Эстельдин", zone="Северное нагорье", },
         map={{MapType.ERIADOR, 655, 290}},
-        acquire={ {autoLevel=true }},
+        acquire={ {autoLevel=true } },
         minLevel=34,
         level=30
     })
@@ -1287,7 +1286,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Rassemblement : La région d'Evendim", label="Evendim", detail="Tinnudir",  zone="Evendim", },
         RU={ name="Сбор в Эвендиме",                     label="Эвендим", detail="Тиннудир",  zone="Эвендим", },
         map={{MapType.ERIADOR, 490, 235}},
-        acquire={ {autoLevel=true }},
+        acquire={ {autoLevel=true } },
         minLevel=38,
         level=35
     })
@@ -1304,7 +1303,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Defenders of the Angle)", },
                 DE={vendor="Quartermaster (Defenders of the Angle)", },
                 FR={vendor="Quartermaster (Defenders of the Angle)", },
-                RU={vendor="Интендант (Защитники Стрелки)", }} },
+                RU={vendor="Интендант (Защитники Стрелки)"}} },
         rep=LC.rep.DEFENDERS_OF_ANGLE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=38,
         level=40
@@ -1317,7 +1316,7 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Сбор в Ривенделле",         label="Ривенделл", zone="Троллистая пуща", },
         map={{MapType.ERIADOR, 865, 410}},
         overlap={"0x7000631F", "0x70023263"},
-        acquire={ {autoLevel=true }},
+        acquire={ {autoLevel=true } },
         minLevel=44,
         level=40.1
     })
@@ -1333,7 +1332,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Afwald", },
                 DE={vendor="Afwald", },
                 FR={vendor="Afwald", },
-                RU={vendor="Афвальд"}},
+                RU={vendor="Афвальд", }},
             { store=true }},
         rep=LC.rep.ELVES_OF_RIVENDELL, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=40,
@@ -1765,20 +1764,19 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]", }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }} },
                 DE={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]", }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }} },
                 FR={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]", }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }} },
                 RU={vendors={
                     { vendor="Интендант (Люди Дейла)", coords="[25.0N, 25.1W]" },
                     { vendor="Интендант (Гномы Эребора)", coords="[29.1N, 25.6W]" },
-                    { vendor="Интендант (Эльфы Фелегота)", coords="[20.3N, 36.9W]" } } }
-        }},
+                    { vendor="Интендант (Эльфы Фелегота)", coords="[20.3N, 36.9W]" }}} }},
         rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=115,
         level=115
@@ -1796,7 +1794,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
                 DE={vendor="Quartermaster (Dwarf-holds Rewards)"},
                 FR={vendor="Quartermaster (Dwarf-holds Rewards)"},
-                RU={vendor="Интендант (Владения гномов)", }} },
+                RU={vendor="Интендант (Владения гномов)"}} },
         rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
         minLevel=116,
         level=116
@@ -1814,7 +1812,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
                 DE={vendor="Quartermaster (Dwarf-holds Rewards)"},
                 FR={vendor="Quartermaster (Dwarf-holds Rewards)"},
-                RU={vendor="Интендант (Владения гномов)", }} },
+                RU={vendor="Интендант (Владения гномов)"}} },
         rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
         minLevel=116,
         level=117
@@ -1832,7 +1830,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Wilderfolk Rewards)"},
                 DE={vendor="Quartermaster (Wilderfolk Rewards)"},
                 FR={vendor="Quartermaster (Wilderfolk Rewards)"},
-                RU={vendor="Интендант (Жители Глухоманья)", }} },
+                RU={vendor="Интендант (Жители Глухоманья)"}} },
         rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=116,
         level=120
@@ -1850,7 +1848,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Wilderfolk Rewards)"},
                 DE={vendor="Quartermaster (Wilderfolk Rewards)"},
                 FR={vendor="Quartermaster (Wilderfolk Rewards)"},
-                RU={vendor="Интендант (Жители Глухоманья)", }} },
+                RU={vendor="Интендант (Жители Глухоманья)"}} },
         rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=116,
         level=120.1
@@ -1868,7 +1866,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The White Company)"},
                 DE={vendor="Quartermaster (The White Company)"},
                 FR={vendor="Quartermaster (The White Company)"},
-                RU={vendor="Интендант (Белая дружина)", }} },
+                RU={vendor="Интендант (Белая дружина)"}} },
         rep=LC.rep.WHITE_COMPANY, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=121,
         level=125
@@ -1886,7 +1884,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Protectors of Wilderland)"},
                 DE={vendor="Quartermaster (Protectors of Wilderland)"},
                 FR={vendor="Quartermaster (Protectors of Wilderland)"},
-                RU={vendor="Интендант (Защитники Глухоманья)", }} },
+                RU={vendor="Интендант (Защитники Глухоманья)"}} },
         rep=LC.rep.PROTECTORS_OF_WILDERLAND, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=130,
         level=130
@@ -1909,7 +1907,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (March on Gundabad)"},
                 DE={vendor="Quartermaster (March on Gundabad)"},
                 FR={vendor="Quartermaster (March on Gundabad)"},
-                RU={vendor="Интендант (Поход на Гундабад)", }} },
+                RU={vendor="Интендант (Поход на Гундабад)"}} },
         minLevel=20,
         level=130.1
     })
@@ -1926,7 +1924,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Vorthur Smokebreath"},
                 DE={vendor="Vorthur Smokebreath"},
                 FR={vendor="Vorthur Smokebreath"},
-                RU={vendor="Вортур Дымокур", }} },
+                RU={vendor="Вортур Дымокур"}} },
         rep=LC.rep.KHARUM_UBNAR, repLevel=LC.repLevel.NEUTRAL,
         minLevel=130,
         level=130.2
@@ -1944,7 +1942,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Haban'akkâ of Thráin)"},
                 DE={vendor="Quartermaster (Haban'akkâ of Thráin)"},
                 FR={vendor="Quartermaster (Haban'akkâ of Thráin)"},
-                RU={vendor="Интендант (Хабан'акка Траина)", }} },
+                RU={vendor="Интендант (Хабан'акка Траина)"}} },
         rep=LC.rep.HABANAKKA_OF_THRAIN, repLevel=LC.repLevel.DUMUL,
         minLevel=130,
         level=130.3
@@ -1962,7 +1960,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
                 DE={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
                 FR={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
-                RU={vendor="Интендант (Освободители Подгорной крепости)", }} },
+                RU={vendor="Интендант (Освободители Подгорной крепости)"}} },
         rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
         minLevel=131,
         level=131
@@ -1980,7 +1978,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
                 DE={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
                 FR={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
-                RU={vendor="Интендант (Освободители Подгорной крепости)", }} },
+                RU={vendor="Интендант (Освободители Подгорной крепости)"}} },
         rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
         minLevel=135,
         level=135
@@ -1998,7 +1996,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Muirál"},
                 DE={vendor="Muirál"},
                 FR={vendor="Muirál"},
-                RU={vendor="Муйрал", }} },
+                RU={vendor="Муйрал"}} },
         minLevel=20,
         level=140.1
     })
@@ -2015,7 +2013,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
                 DE={vendor="Quartermaster (The Renewal of Gondor)"},
                 FR={vendor="Quartermaster (The Renewal of Gondor)"},
-                RU={vendor="Интендант (Восстановленный Гондор)", }} },
+                RU={vendor="Интендант (Восстановленный Гондор)"}} },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=141
@@ -2033,7 +2031,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
                 DE={vendor="Quartermaster (The Renewal of Gondor)"},
                 FR={vendor="Quartermaster (The Renewal of Gondor)"},
-                RU={vendor="Интендант (Восстановленный Гондор)", }} },
+                RU={vendor="Интендант (Восстановленный Гондор)"}} },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=142
@@ -2051,7 +2049,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
                 DE={vendor="Quartermaster (The Renewal of Gondor)"},
                 FR={vendor="Quartermaster (The Renewal of Gondor)"},
-                RU={vendor="Интендант (Восстановленный Гондор)", }} },
+                RU={vendor="Интендант (Восстановленный Гондор)"}} },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=143
@@ -2069,7 +2067,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
                 DE={vendor="Quartermaster (The City of Umbar Rewards)"},
                 FR={vendor="Quartermaster (The City of Umbar Rewards)"},
-                RU={vendor="Интендант Умбара", }} },
+                RU={vendor="Интендант Умбара"}} },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=145
@@ -2087,7 +2085,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
                 DE={vendor="Quartermaster (The City of Umbar Rewards)"},
                 FR={vendor="Quartermaster (The City of Umbar Rewards)"},
-                RU={vendor="Интендант Умбара", }} },
+                RU={vendor="Интендант Умбара"}} },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=146
@@ -2105,7 +2103,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Mâkhda Khorbo Quartermaster"},
                 DE={vendor="Mâkhda Khorbo Quartermaster"},
                 FR={vendor="Mâkhda Khorbo Quartermaster"},
-                RU={vendor="Интендант Макда-Корбо", }} },
+                RU={vendor="Интендант Макда-Корбо"}} },
         minLevel=20,
         level=147
     })
@@ -2122,7 +2120,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
                 DE={vendor="Quartermaster (The City of Umbar Rewards)"},
                 FR={vendor="Quartermaster (The City of Umbar Rewards)"},
-                RU={vendor="Интендант Умбара", }} },
+                RU={vendor="Интендант Умбара"}} },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=148
@@ -2150,7 +2148,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Order of the Eagle Quartermaster"},
                 DE={vendor="Order of the Eagle Quartermaster"},
                 FR={vendor="Order of the Eagle Quartermaster"},
-                RU={vendor="Интендант Ордена орла", }} },
+                RU={vendor="Интендант Ордена орла"}} },
         minLevel=20,
         level=149
     })
@@ -2164,7 +2162,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers Celondim", label="Celondim", zone="Ered Luin", },
         RU={ name="Отплытие в Келондим",    label="Келондим", zone="Эред Луин", },
         map={{MapType.ERIADOR, 310, 380}},
-        acquire={ { autoLevel=true }},
+        acquire={ { autoLevel=true } },
         minLevel=7,
         level=1
     })
@@ -2175,7 +2173,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers le Pays de Bouc", label="Pays de Bouc", zone="Bree", },
         RU={ name="Отплытие в Забрендию",          label="Забрендия",    zone="Бри", },
         map={{MapType.ERIADOR, 515, 405}},
-        acquire={ { autoLevel=true }},
+        acquire={ { autoLevel=true } },
         minLevel=15,
         level=4
     })
@@ -2186,7 +2184,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers Tharbad", label="Tharbad", zone="Noues des cygnes", },
         RU={ name="Отплытие в Тарбад",     label="Тарбад",  zone="Лебедянь", },
         map={{MapType.ERIADOR, 650, 525}},
-        acquire={ { autoLevel=true }},
+        acquire={ { autoLevel=true } },
         minLevel=7,
         level=5
     })
@@ -2197,7 +2195,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Naviguer vers Tinnudir", label="Tinnudir", zone="Evendim", },
         RU={ name="Отплытие на Тиннудир",   label="Тиннудир", zone="Эвендим", },
         map={{MapType.ERIADOR, 420, 250}},
-        acquire={ { autoLevel=true }},
+        acquire={ { autoLevel=true } },
         minLevel=35,
         level=30
     })
@@ -2245,7 +2243,7 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Отплытие в Лотлориэн",        label="Лотлориэн",  detail="Эгладил", zone="Лотлориэн", },
         map={{MapType.RHOVANION, 245, 670}},
         overlap={"0x70048C8C"},
-        acquire={ { autoLevel=true }},
+        acquire={ { autoLevel=true } },
         minLevel=60,
         level=60
     })
@@ -2278,7 +2276,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Ordlaf", },
                 DE={vendor="Ordlaf", },
                 FR={vendor="Ordlaf", },
-                RU={vendor="Ордлаф"}},
+                RU={vendor="Ордлаф", }},
             { store=true }},
         rep=LC.rep.RIDERS_OF_STANGARD, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=70,
@@ -2363,8 +2361,7 @@ function TravelDictionary:CreateDictionaries()
                 RU={vendors={
                     { vendor="Интендант (Люди Дейла)", coords="[25.0N, 25.1W]" },
                     { vendor="Интендант (Гномы Эребора)", coords="[29.1N, 25.6W]" },
-                    { vendor="Интендант (Эльфы Фелегота)", coords="[20.3N, 36.9W]" } } }
-        }},
+                    { vendor="Интендант (Эльфы Фелегота)", coords="[20.3N, 36.9W]" }}} }},
         rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=115,
         level=115
@@ -2382,7 +2379,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
                 DE={vendor="Quartermaster (The Renewal of Gondor)"},
                 FR={vendor="Quartermaster (The Renewal of Gondor)"},
-                RU={vendor="Интендант (Восстановленный Гондор)", }} },
+                RU={vendor="Интендант (Восстановленный Гондор)"}} },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=141
@@ -2400,7 +2397,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
                 DE={vendor="Quartermaster (The Renewal of Gondor)"},
                 FR={vendor="Quartermaster (The Renewal of Gondor)"},
-                RU={vendor="Интендант (Восстановленный Гондор)", }} },
+                RU={vendor="Интендант (Восстановленный Гондор)"}} },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=142
@@ -2418,7 +2415,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
                 DE={vendor="Quartermaster (The Renewal of Gondor)"},
                 FR={vendor="Quartermaster (The Renewal of Gondor)"},
-                RU={vendor="Интендант (Восстановленный Гондор)", }} },
+                RU={vendor="Интендант (Восстановленный Гондор)"}} },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=143
@@ -2436,7 +2433,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
                 DE={vendor="Quartermaster (The City of Umbar Rewards)"},
                 FR={vendor="Quartermaster (The City of Umbar Rewards)"},
-                RU={vendor="Интендант Умбара", }} },
+                RU={vendor="Интендант Умбара"}} },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=145
@@ -2454,7 +2451,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
                 DE={vendor="Quartermaster (The City of Umbar Rewards)"},
                 FR={vendor="Quartermaster (The City of Umbar Rewards)"},
-                RU={vendor="Интендант Умбара", }} },
+                RU={vendor="Интендант Умбара"}} },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=146
@@ -2472,7 +2469,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Mâkhda Khorbo Quartermaster"},
                 DE={vendor="Mâkhda Khorbo Quartermaster"},
                 FR={vendor="Mâkhda Khorbo Quartermaster"},
-                RU={vendor="Интендант Макда-Корбо", }} },
+                RU={vendor="Интендант Макда-Корбо"}} },
         minLevel=20,
         level=147
     })
@@ -2489,7 +2486,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
                 DE={vendor="Quartermaster (The City of Umbar Rewards)"},
                 FR={vendor="Quartermaster (The City of Umbar Rewards)"},
-                RU={vendor="Интендант Умбара", }} },
+                RU={vendor="Интендант Умбара"}} },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=148
@@ -2509,7 +2506,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={deed="Enmity of the Wargs II",},
                 DE={deed="Enmity of the Wargs II",},
                 FR={deed="Enmity of the Wargs II",},
-                RU={deed="Истребление варгов II", }} },
+                RU={deed="Истребление варгов II",}} },
         minLevel=29,
         level=5
     })
@@ -2525,7 +2522,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={deed="Enmity of the Spiders II",},
                 DE={deed="Enmity of the Spiders II",},
                 FR={deed="Enmity of the Spiders II",},
-                RU={deed="Истребление пауков II", }} },
+                RU={deed="Истребление пауков II",}} },
         minLevel=29,
         level=1
     })
@@ -2541,7 +2538,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={deed="Enmity of the Goblins II",},
                 DE={deed="Enmity of the Goblins II",},
                 FR={deed="Enmity of the Goblins II",},
-                RU={deed="Укрощение гоблинов II", }} },
+                RU={deed="Укрощение гоблинов II",}} },
         minLevel=29,
         level=1.2
     })
@@ -2557,7 +2554,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={deed="Enmity of the Orcs II"},
                 DE={deed="Enmity of the Orcs II"},
                 FR={deed="Enmity of the Orcs II"},
-                RU={deed="Укрощение орков II", }} },
+                RU={deed="Укрощение орков II"}} },
         minLevel=29,
         level=40.1
     })
@@ -2573,7 +2570,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={deed="Enmity of the Goblins II"},
                 DE={deed="Enmity of the Goblins II"},
                 FR={deed="Enmity of the Goblins II"},
-                RU={deed="Укрощение гоблинов II", }} },
+                RU={deed="Укрощение гоблинов II"}} },
         minLevel=19,
         level=120
     })
@@ -2589,7 +2586,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={deed="Enmity of the Orcs II"},
                 DE={deed="Enmity of the Orcs II"},
                 FR={deed="Enmity of the Orcs II"},
-                RU={deed="Укрощение орков II", }} },
+                RU={deed="Укрощение орков II"}} },
         minLevel=32,
         level=60
     })
@@ -2605,7 +2602,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={deed="Enmity of the Cultists III"},
                 DE={deed="Enmity of the Cultists III"},
                 FR={deed="Enmity of the Cultists III"},
-                RU={deed="Усмирение последователей культа III", }} },
+                RU={deed="Усмирение последователей культа III"}} },
         minLevel=35,
         level=1.2
     })
@@ -2621,7 +2618,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={deed="Back And There Again"},
                 DE={deed="Back And There Again"},
                 FR={deed="Back And There Again"},
-                RU={deed="Обратно и снова туда", }} },
+                RU={deed="Обратно и снова туда"}} },
         minLevel=125,
         level=1.3
     })
@@ -2758,7 +2755,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={desc="Buy a House and earn the Novice trait."},
                 DE={desc="Buy a House and earn the Novice trait."},
                 FR={desc="Buy a House and earn the Novice trait."},
-                RU={desc="Купите дом и получите талант новичка." }
+                RU={desc="Купите дом и получите талант новичка."}
             } 
         },
         minLevel=1,
@@ -2776,7 +2773,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={desc="Buy a Premium House and earn the Novice trait."},
                 DE={desc="Buy a Premium House and earn the Novice trait."},
                 FR={desc="Buy a Premium House and earn the Novice trait."},
-                RU={desc="Купите престижный дом и получите талант новичка." }
+                RU={desc="Купите престижный дом и получите талант новичка."}
             } 
         },
         minLevel=1,
@@ -2793,7 +2790,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={desc="Become a member of a kinship that has a kinship house."},
                 DE={desc="Become a member of a kinship that has a kinship house."},
                 FR={desc="Become a member of a kinship that has a kinship house."},
-                RU={desc="Станьте членом содружества, у которого есть дом.", }} },
+                RU={desc="Станьте членом содружества, у которого есть дом."}}},
         minLevel=1,
         level=1
     })
@@ -2808,7 +2805,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={desc="Become a member of a kinship."},
                 DE={desc="Become a member of a kinship."},
                 FR={desc="Become a member of a kinship."},
-                RU={desc="Станьте членом содружества.", }} },
+                RU={desc="Станьте членом содружества."}}},
         minLevel=1,
         level=1
     })
@@ -2839,7 +2836,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"},
                 FR={vendor="Tórth", desc="Near the entrance of Blue Stone Garrison in the western part of Thorin's Hall"},
                 RU={vendor="Тортх", desc="Рядом со входом в Гарнизон Синий Камень в западной части Чертогов Торина"}},
-            {store=true} },
+            {store=true}, },
         rep=LC.rep.THORINS_HALL, repLevel=LC.repLevel.KINDRED,
         minLevel=10,
         level=1.1
@@ -2857,7 +2854,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"},
                 FR={vendor="Tad Leafcutter", desc="Outside the Bree-town Hunting Lodge"},
                 RU={vendor="Тад Листорез", desc="Рядом с Охотничьим домиком Бри"}},
-            {store=true} },
+            {store=true}},
         rep=LC.rep.MEN_OF_BREE, repLevel=LC.repLevel.KINDRED,
         minLevel=10,
         level=5
@@ -2875,7 +2872,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Lalia", desc="Inside Lalia's Market"},
                 DE={vendor="Lalia", desc="Inside Lalia's Market"},
                 FR={vendor="Lalia", desc="Inside Lalia's Market"},
-                RU={vendor="Лалия", desc="Внутри Рынка Лалии", }} },
+                RU={vendor="Лалия", desc="Внутри Рынка Лалии"}} },
         level=5.1
     })
     self.rep:AddSkill({
@@ -2929,7 +2926,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Интендант погружений"}},
+                RU={vendor="Интендант погружений", }},
             {cost={{amount=10, token=LC.token.IRON_COIN_OF_CARDOLAN}},
                 EN={vendor="Quartermaster (Dúnedain of Cardolan)", },
                 DE={vendor="Quartermaster (Dúnedain of Cardolan)", },
@@ -2951,7 +2948,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Delving Quartermaster", },
                 DE={vendor="Delving Quartermaster", },
                 FR={vendor="Delving Quartermaster", },
-                RU={vendor="Интендант погружений"}},
+                RU={vendor="Интендант погружений", }},
             {cost={{amount=25, token=LC.token.GREYFLOOD_MARK}},
                 EN={vendor="Before the Shadow Mission-giver Barterer", },
                 DE={vendor="Before the Shadow Mission-giver Barterer", },
@@ -2985,7 +2982,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retournez à Ost Guruth",    label="Ost Guruth",   zone="Terres Solitaires", },
         RU={ name="Возвращение в Ост Гурут",   label="Ост Гурут",    zone="Пустоши", },
         map={{MapType.ERIADOR, 725, 400}},
-        acquire={ { store=true }, { autoRep=true }},
+        acquire={ { store=true }, { autoRep=true } },
         rep=LC.rep.EGLAIN, repLevel=LC.repLevel.KINDRED,
         minLevel=10,
         level=25
@@ -3014,7 +3011,7 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Fondcombe",      desc="Grâce à votre amitié avec", label="Fondcombe", tag="Shop",  zone="Trouée des Trolls", },
         RU={ name="Возвращение в Ривенделл", desc="Благодаря дружбе",          label="Ривенделл", tag="Лавка", zone="Троллистая пуща", },
         map={{MapType.ERIADOR, 835, 410}},
-        acquire={ { store=true }},
+        acquire={ { store=true } },
         minLevel=10,
         level=40.1
     })
@@ -3026,11 +3023,12 @@ function TravelDictionary:CreateDictionaries()
         RU={ name="Возвращение в архив узоров Ривенделла",               label="Архив узоров Ривенделла", zone="Троллистая пуща", },
         tag="Delving",
         map={{MapType.ERIADOR, 905, 345}},
-        acquire={ {
-                EN={drop="Delving Reward Box (any tier)" },
-                DE={drop="Delving Reward Box (any tier)" },
-                FR={drop="Delving Reward Box (any tier)" },
-                RU={drop="Delving Reward Box (any tier)", }} },
+        acquire={
+            {
+                EN={drop="Delving Reward Box (any tier)"},
+                DE={drop="Delving Reward Box (any tier)"},
+                FR={drop="Delving Reward Box (any tier)"},
+                RU={drop="Delving Reward Box (any tier)"}} },
         minLevel=20,
         level=40.11
     })
@@ -3041,16 +3039,18 @@ function TravelDictionary:CreateDictionaries()
         FR={ name="Retour à Glân Vraig",          label="Glân Vraig", tag="Quête",   zone="Les Landes d'Etten", },
         RU={ name="Возвращение в Глан Врайг",     label="Глан Врайг", tag="Задание", zone="Эттенские высоты", },
         map={{MapType.ERIADOR, 835, 245}},
-        acquire={ {
+        acquire={
+            {
                 EN={quest="Tutorial: Outfitted for Battle"},
                 DE={quest="Tutorial: Outfitted for Battle"},
                 FR={quest="Tutorial: Outfitted for Battle"},
                 RU={quest="Обучение: снаряжение для битвы"}},
-            {cost={{amount=500, token=LC.token.COMMENDATION}},
+            {
+                cost={{amount=500, token=LC.token.COMMENDATION}},
                 EN={vendor="Coldfells Quartermaster"},
                 DE={vendor="Coldfells Quartermaster"},
                 FR={vendor="Coldfells Quartermaster"},
-                RU={vendor="Интендант армии Холодных гор", }} },
+                RU={vendor="Интендант армии Холодных гор"}} },
         minLevel=2,
         level=40.12
     })
@@ -3100,7 +3100,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Millaesil", },
                 DE={vendor="Millaesil", },
                 FR={vendor="Millaesil", },
-                RU={vendor="Миллаэсиль"}},
+                RU={vendor="Миллаэсиль", }},
             { store=true }},
         rep=LC.rep.MALLEDHRIM, repLevel=LC.repLevel.KINDRED,
         minLevel=51,
@@ -3119,7 +3119,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Mabon", },
                 DE={vendor="Mabon", },
                 FR={vendor="Mabon", },
-                RU={vendor="Мабон"}},
+                RU={vendor="Мабон", }},
             { store=true }},
         rep=LC.rep.ALGRAIG, repLevel=LC.repLevel.KINDRED,
         minLevel=51,
@@ -3137,7 +3137,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Dunlending Quartermaster", },
                 DE={vendor="Dunlending Quartermaster", },
                 FR={vendor="Dunlending Quartermaster", },
-                RU={vendor="Интендант дунландцев"}},
+                RU={vendor="Интендант дунландцев", }},
             { store=true }},
         rep=LC.rep.MEN_OF_DUNLAND, repLevel=LC.repLevel.KINDRED,
         minLevel=70,
@@ -3156,7 +3156,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Ordlaf", },
                 DE={vendor="Ordlaf", },
                 FR={vendor="Ordlaf", },
-                RU={vendor="Ордлаф"}},
+                RU={vendor="Ордлаф", }},
             { store=true }},
         rep=LC.rep.RIDERS_OF_STANGARD, repLevel=LC.repLevel.KINDRED,
         minLevel=70,
@@ -3430,7 +3430,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={allegiance="The Court of Lothlórien", quest="Chapter 1: A Council Waiting" },
                 DE={allegiance="The Court of Lothlórien", quest="Chapter 1: A Council Waiting" },
                 FR={allegiance="The Court of Lothlórien", quest="Chapter 1: A Council Waiting" },
-                RU={allegiance="Двор Лотлориэна", quest="Глава 1: Ожидание Совета", }} },
+                RU={allegiance="Двор Лотлориэна", quest="Глава 1: Ожидание Совета" }} },
         minLevel=110,
         level=110
     })
@@ -3446,7 +3446,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={allegiance="The Kingdom of Gondor", quest="Chapter 1: The King and the Steward" },
                 DE={allegiance="The Kingdom of Gondor", quest="Chapter 1: The King and the Steward" },
                 FR={allegiance="The Kingdom of Gondor", quest="Chapter 1: The King and the Steward" },
-                RU={allegiance="Королевство Гондор", quest="Глава 1: Король и Наместник", }} },
+                RU={allegiance="Королевство Гондор", quest="Глава 1: Король и Наместник" }} },
         minLevel=110,
         level=110.1
     })
@@ -3462,7 +3462,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={allegiance="Durin's Folk", quest="Chapter 1: Beneath the Lonely Mountain" },
                 DE={allegiance="Durin's Folk", quest="Chapter 1: Beneath the Lonely Mountain" },
                 FR={allegiance="Durin's Folk", quest="Chapter 1: Beneath the Lonely Mountain" },
-                RU={allegiance="Народ Дарина", quest="Глава 1: Под Одинокой горой", }} },
+                RU={allegiance="Народ Дарина", quest="Глава 1: Под Одинокой горой" }} },
         minLevel=110,
         level=110.2
     })
@@ -3478,7 +3478,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={allegiance="Hobbits of the Company", quest="Chapter 1: A Place for Hobbits" },
                 DE={allegiance="Hobbits of the Company", quest="Chapter 1: A Place for Hobbits" },
                 FR={allegiance="Hobbits of the Company", quest="Chapter 1: A Place for Hobbits" },
-                RU={allegiance="Хоббиты братства", quest="Глава 1: Место для хоббитов", }} },
+                RU={allegiance="Хоббиты братства", quest="Глава 1: Место для хоббитов" }} },
         minLevel=110,
         level=110.3
     })
@@ -3494,20 +3494,19 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]", }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}},
                 DE={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]", }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}},
                 FR={vendors={
                     { vendor="Quartermaster (Men of Dale Rewards)", coords="[25.0N, 25.1W]" },
                     { vendor="Quartermaster (Dwarves of Erebor Rewards)", coords="[29.1N, 25.6W]" },
-                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]", }} },
+                    { vendor="Quartermaster (Elves of Felegoth Rewards)", coords="[20.3N, 36.9W]" }}},
                 RU={vendors={
                     { vendor="Интендант (Люди Дейла)", coords="[25.0N, 25.1W]" },
                     { vendor="Интендант (Гномы Эребора)", coords="[29.1N, 25.6W]" },
-                    { vendor="Интендант (Эльфы Фелегота)", coords="[20.3N, 36.9W]" } } }
-        }},
+                    { vendor="Интендант (Эльфы Фелегота)", coords="[20.3N, 36.9W]" }}} }},
         rep=LC.rep.MEN_OF_DALE, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=115,
         level=115
@@ -3524,7 +3523,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
                 DE={vendor="Quartermaster (Dwarf-holds Rewards)"},
                 FR={vendor="Quartermaster (Dwarf-holds Rewards)"},
-                RU={vendor="Интендант (Владения гномов)", }} },
+                RU={vendor="Интендант (Владения гномов)"}} },
         rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
         minLevel=116,
         level=116
@@ -3541,7 +3540,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Dwarf-holds Rewards)"},
                 DE={vendor="Quartermaster (Dwarf-holds Rewards)"},
                 FR={vendor="Quartermaster (Dwarf-holds Rewards)"},
-                RU={vendor="Интендант (Владения гномов)", }} },
+                RU={vendor="Интендант (Владения гномов)"}} },
         rep=LC.rep.GREY_MOUNTAINS_EXPEDITION, repLevel=LC.repLevel.FRIEND,
         minLevel=116,
         level=117
@@ -3558,7 +3557,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Wilderfolk Rewards)"},
                 DE={vendor="Quartermaster (Wilderfolk Rewards)"},
                 FR={vendor="Quartermaster (Wilderfolk Rewards)"},
-                RU={vendor="Интендант (Жители Глухоманья)", }} },
+                RU={vendor="Интендант (Жители Глухоманья)"}} },
         rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=116,
         level=120
@@ -3575,7 +3574,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Wilderfolk Rewards)"},
                 DE={vendor="Quartermaster (Wilderfolk Rewards)"},
                 FR={vendor="Quartermaster (Wilderfolk Rewards)"},
-                RU={vendor="Интендант (Жители Глухоманья)", }} },
+                RU={vendor="Интендант (Жители Глухоманья)"}} },
         rep=LC.rep.WILDERFOLK, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=116,
         level=120.1
@@ -3592,7 +3591,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The White Company)"},
                 DE={vendor="Quartermaster (The White Company)"},
                 FR={vendor="Quartermaster (The White Company)"},
-                RU={vendor="Интендант (Белая дружина)", }} },
+                RU={vendor="Интендант (Белая дружина)"}} },
         rep=LC.rep.WHITE_COMPANY, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=121,
         level=125
@@ -3609,7 +3608,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Protectors of Wilderland)"},
                 DE={vendor="Quartermaster (Protectors of Wilderland)"},
                 FR={vendor="Quartermaster (Protectors of Wilderland)"},
-                RU={vendor="Интендант (Защитники Глухоманья)", }} },
+                RU={vendor="Интендант (Защитники Глухоманья)"}} },
         rep=LC.rep.PROTECTORS_OF_WILDERLAND, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=130,
         level=130
@@ -3631,7 +3630,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (March on Gundabad)"},
                 DE={vendor="Quartermaster (March on Gundabad)"},
                 FR={vendor="Quartermaster (March on Gundabad)"},
-                RU={vendor="Интендант (Поход на Гундабад)", }} },
+                RU={vendor="Интендант (Поход на Гундабад)"}} },
         minLevel=20,
         level=130.1
     })
@@ -3647,7 +3646,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Vorthur Smokebreath"},
                 DE={vendor="Vorthur Smokebreath"},
                 FR={vendor="Vorthur Smokebreath"},
-                RU={vendor="Вортур Дымокур", }} },
+                RU={vendor="Вортур Дымокур"}} },
         rep=LC.rep.KHARUM_UBNAR, repLevel=LC.repLevel.NEUTRAL,
         minLevel=130,
         level=130.2
@@ -3664,7 +3663,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Haban'akkâ of Thráin)"},
                 DE={vendor="Quartermaster (Haban'akkâ of Thráin)"},
                 FR={vendor="Quartermaster (Haban'akkâ of Thráin)"},
-                RU={vendor="Интендант (Хабан'акка Траина)", }} },
+                RU={vendor="Интендант (Хабан'акка Траина)"}} },
         rep=LC.rep.HABANAKKA_OF_THRAIN, repLevel=LC.repLevel.DUMUL,
         minLevel=130,
         level=130.3
@@ -3681,7 +3680,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
                 DE={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
                 FR={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
-                RU={vendor="Интендант (Освободители Подгорной крепости)", }} },
+                RU={vendor="Интендант (Освободители Подгорной крепости)"}} },
         rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
         minLevel=131,
         level=131
@@ -3698,7 +3697,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
                 DE={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
                 FR={vendor="Quartermaster (Reclaimers of the Mountain-hold)"},
-                RU={vendor="Интендант (Освободители Подгорной крепости)", }} },
+                RU={vendor="Интендант (Освободители Подгорной крепости)"}} },
         rep=LC.rep.RECLAIMERS_OF_MOUNTAINHOLD, repLevel=LC.repLevel.FRIEND,
         minLevel=135,
         level=135
@@ -3715,7 +3714,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={allegiance="Clan of the Zhélruka", quest="Chapter 1: The Rightful Claim" },
                 DE={allegiance="Clan of the Zhélruka", quest="Chapter 1: The Rightful Claim" },
                 FR={allegiance="Clan of the Zhélruka", quest="Chapter 1: The Rightful Claim" },
-                RU={allegiance="Клан Желруков", quest="Глава 1: Законное требование", }} },
+                RU={allegiance="Клан Желруков", quest="Глава 1: Законное требование" }} },
         minLevel=20,
         level=140
     })
@@ -3731,7 +3730,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Muirál"},
                 DE={vendor="Muirál"},
                 FR={vendor="Muirál"},
-                RU={vendor="Муйрал", }} },
+                RU={vendor="Муйрал"}} },
         minLevel=20,
         level=140.1
     })
@@ -3747,7 +3746,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
                 DE={vendor="Quartermaster (The Renewal of Gondor)"},
                 FR={vendor="Quartermaster (The Renewal of Gondor)"},
-                RU={vendor="Интендант (Восстановленный Гондор)", }} },
+                RU={vendor="Интендант (Восстановленный Гондор)"}} },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=141
@@ -3764,7 +3763,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
                 DE={vendor="Quartermaster (The Renewal of Gondor)"},
                 FR={vendor="Quartermaster (The Renewal of Gondor)"},
-                RU={vendor="Интендант (Восстановленный Гондор)", }} },
+                RU={vendor="Интендант (Восстановленный Гондор)"}} },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=142
@@ -3781,7 +3780,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The Renewal of Gondor)"},
                 DE={vendor="Quartermaster (The Renewal of Gondor)"},
                 FR={vendor="Quartermaster (The Renewal of Gondor)"},
-                RU={vendor="Интендант (Восстановленный Гондор)", }} },
+                RU={vendor="Интендант (Восстановленный Гондор)"}} },
         rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=143
@@ -3798,7 +3797,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
                 DE={vendor="Quartermaster (The City of Umbar Rewards)"},
                 FR={vendor="Quartermaster (The City of Umbar Rewards)"},
-                RU={vendor="Интендант Умбара", }} },
+                RU={vendor="Интендант Умбара"}} },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=145
@@ -3815,7 +3814,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
                 DE={vendor="Quartermaster (The City of Umbar Rewards)"},
                 FR={vendor="Quartermaster (The City of Umbar Rewards)"},
-                RU={vendor="Интендант Умбара", }} },
+                RU={vendor="Интендант Умбара"}} },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=146
@@ -3832,7 +3831,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Mâkhda Khorbo Quartermaster"},
                 DE={vendor="Mâkhda Khorbo Quartermaster"},
                 FR={vendor="Mâkhda Khorbo Quartermaster"},
-                RU={vendor="Интендант Макда-Корбо", }} },
+                RU={vendor="Интендант Макда-Корбо"}} },
         minLevel=20,
         level=147
     })
@@ -3848,7 +3847,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Quartermaster (The City of Umbar Rewards)"},
                 DE={vendor="Quartermaster (The City of Umbar Rewards)"},
                 FR={vendor="Quartermaster (The City of Umbar Rewards)"},
-                RU={vendor="Интендант Умбара", }} },
+                RU={vendor="Интендант Умбара"}} },
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=148
@@ -3875,7 +3874,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Order of the Eagle Quartermaster"},
                 DE={vendor="Order of the Eagle Quartermaster"},
                 FR={vendor="Order of the Eagle Quartermaster"},
-                RU={vendor="Интендант Ордена орла", }} },
+                RU={vendor="Интендант Ордена орла"}} },
         minLevel=20,
         level=149
     })
@@ -3891,7 +3890,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={allegiance="The Ledger-keepers" },
                 DE={allegiance="The Ledger-keepers" },
                 FR={allegiance="The Ledger-keepers" },
-                RU={allegiance="Хранители книг", }} },
+                RU={allegiance="Хранители книг" }} },
         minLevel=140,
         level=150
     })
@@ -3900,14 +3899,14 @@ function TravelDictionary:CreateDictionaries()
         EN={ name="Journey to the Order of the Eagle", label="Order of the Eagle", tag="Quest",   zone="Umbar", },
         DE={ name="Zum Orden des Adlers reisen",       label="Orden des Adlers",   tag="Aufgabe", zone="Umbar", },
         FR={ name="Voyager vers l'Ordre de l'Aigle",   label="L'Ordre de l'Aigle", tag="Quête",   zone="Umbar", },
-        RU={ name="Возвращение в Орден орла",          label="Орден орла",         tag="Задание", zone="Умбар" },
+        RU={ name="Возвращение в Орден орла",          label="Орден орла",         tag="Задание", zone="Умбар", },
         map={{MapType.HARADWAITH, 415, 370}},
         acquire={
             { rank=10,
                 EN={allegiance="The Order of the Eagle" },
                 DE={allegiance="The Order of the Eagle" },
                 FR={allegiance="The Order of the Eagle" },
-                RU={allegiance="Орден орла", }} },
+                RU={allegiance="Орден орла" }} },
         minLevel=140,
         level=150.1
     })
