@@ -946,19 +946,6 @@ function OptionsPanel:SetupFindTab()
     self.FindTree:SetVerticalScrollBar(self.FindScrollBar)
 
     self:AddFindTreeShortcuts()
-
-    -- add a check skills button
-    self.checkSkillsButton = Turbine.UI.Lotro.Button()
-    self.checkSkillsButton:SetSize(200, 20)
-    self.checkSkillsButton:SetPosition(520, 30)
-    self.checkSkillsButton:SetText(LC.checkSkills)
-    self.checkSkillsButton:SetParent(self.FindTab)
-    self.checkSkillsButton:SetVisible(true)
-
-    -- do the check skills
-    self.checkSkillsButton.Click = function(sender, args)
-        CheckSkills()
-    end
 end
 
 function OptionsPanel:AddFindTreeShortcuts()
