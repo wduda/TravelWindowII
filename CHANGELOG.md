@@ -1,10 +1,14 @@
 # CHANGELOG
 
+## v2.4.4
+
+- enhance: UI texts in RU - skill acquisition data tab should now be complete
+
 ## v2.4.3
 
 - enhance: minor enhancements to skill acquisition data for Find Skills tab in EN (skill acquisition data data should now be complete)
-- enhance: updated most UI texts in DE (skill acquisition data data still not fully supported)
-- enhance: updated most UI texts in RU (skill acquisition data data should now be complete)
+- enhance: updated most UI texts in DE (skill acquisition data still not fully supported)
+- enhance: updated most UI texts in RU (skill acquisition data should now be complete)
 
 ## v2.4.2
 

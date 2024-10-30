@@ -1,10 +1,8 @@
 A new version is available!
 
-v2.4.3
+v2.4.4
 
-- enhance: minor enhancements to skill acquisition data for Find Skills tab in EN (skill acquisition data data should now be complete)
-- enhance: updated most UI texts in DE (skill acquisition data data still not fully supported)
-- enhance: updated most UI texts in RU (skill acquisition data data should now be complete)
+- enhance: UI texts in RU - skill acquisition data tab should now be complete
 
 Help with further translations for DE, FR and RU clients is welcome. Ideally submitted as pull requests on GitHub, but any way can be accomodated really.
 
