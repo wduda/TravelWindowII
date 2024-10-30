@@ -238,11 +238,6 @@ LC_DE.sortLevel = "Nach Level sortieren"
 LC_FR.sortLevel = "Trier par niveau"
 LC_RU.sortLevel = "По уровню"
 
-LC_EN.checkSkills = "Check Untrained Skills"
-LC_DE.checkSkills = "Fertigkeiten prüfen"
-LC_FR.checkSkills = "Vérification des compétences non utilisées"
-LC_RU.checkSkills = "Проверка доступности навыков"
-
 LC_EN.enableRepSkills = "Enable Overlapping"
 LC_DE.enableRepSkills = "Alle Überlappenden Aktivieren"
 LC_FR.enableRepSkills = "Activer le chevauchement"
@@ -393,12 +388,6 @@ LC_EN.haradwaithMap = "Open Haradwaith Map"
 LC_DE.haradwaithMap = "Öffne Haradwaith-Karte"
 LC_FR.haradwaithMap = "Destinations dans le Haradwaith"
 LC_RU.haradwaithMap = "Открыть карту Харадвайта"
-
-LC_EN.menuSkills = "Check Untrained Skills"
-LC_DE.menuSkills = "Fertigkeiten prüfen"
-LC_FR.menuSkills = "Vérification des compétences non utilisées"
-LC_RU.menuSkills = "Проверить доступность навыков"
-
 
 LC_EN.acquired = "You have acquired the (.*) skill%."
 LC_DE.acquired = "Ihr habt Euch die Fertigkeit (.*) angeeignet%."

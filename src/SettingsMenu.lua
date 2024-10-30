@@ -52,7 +52,6 @@ function SettingsMenu:Constructor(parentWindow)
 
     -- create the menu item to open the options window
     OptionsMenu = TravelWindowII.src.extensions.DMenuList(LC.menuOptions);
-    SkillsMenu = TravelWindowII.src.extensions.DMenuList(LC.menuSkills);
 
     -- add everything to the main menu
     MenuItems = self:GetItems();
@@ -66,7 +65,6 @@ function SettingsMenu:Constructor(parentWindow)
         MenuItems:Add(MapWindows);
         MenuItems:Add(MapMenu); -- @TODO needs to be reintroduced
         MenuItems:Add(OptionsMenu);
-        MenuItems:Add(SkillsMenu);
     end
 
     -- set up the event handler
@@ -148,8 +146,6 @@ function SettingsMenu:Update(string)
         --    self.parent:SetMapHome();
     elseif (string == LC.menuOptions) then
         OptionsWindow:SetVisible(true);
-    elseif (string == LC.menuSkills) then
-        CheckSkills();
     elseif (string == LC.moorMap) then
         self.parent:OpenMapWindow(MapType.CREEPS);
     elseif (string == LC.eriadorMap) then
