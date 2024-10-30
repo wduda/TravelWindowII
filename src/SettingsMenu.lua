@@ -46,10 +46,6 @@ function SettingsMenu:Constructor(parentWindow)
     MapItems:Add(Turbine.UI.MenuItem(LC.gondorMap));
     MapItems:Add(Turbine.UI.MenuItem(LC.haradwaithMap));
 
-    -- create the menu item to add map home
-    -- @TODO has to be reintroduced
-    MapMenu = TravelWindowII.src.extensions.DMenuList("");
-
     -- create the menu item to open the options window
     OptionsMenu = TravelWindowII.src.extensions.DMenuList(LC.menuOptions);
 
@@ -63,7 +59,6 @@ function SettingsMenu:Constructor(parentWindow)
         MenuItems:Add(Filters);
         MenuItems:Add(Mode);
         MenuItems:Add(MapWindows);
-        MenuItems:Add(MapMenu); -- @TODO needs to be reintroduced
         MenuItems:Add(OptionsMenu);
     end
 
@@ -142,8 +137,6 @@ function SettingsMenu:Update(string)
         self.mode = 3;
     elseif (string == LC.menuPull) then
         self.mode = 4;
-        -- elseif (string == menuMapString) then @TODO has to be reintroduced
-        --    self.parent:SetMapHome();
     elseif (string == LC.menuOptions) then
         OptionsWindow:SetVisible(true);
     elseif (string == LC.moorMap) then
