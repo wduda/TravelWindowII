@@ -191,7 +191,6 @@ function TravelGridTab:SetItems()
     end
 
     if not(self.parent.dirty) then
-        local prevNumOfCols = self.numOfCols;
         self:UpdateBounds();
     end
 
