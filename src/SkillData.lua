@@ -1105,10 +1105,10 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x70068718",
-        EN={ name="Guide to Umbar",     label="Umbar",  detail="Baharbêl",  zone="Umbar", },
-        DE={ name="Führer nach Umbar",  label="Umbar",  detail="Baharbêl",  zone="Umbar", },
-        FR={ name="Guide vers Umbar",   label="Umbar",  detail="Baharbêl",  zone="Umbar", },
-        RU={ name="Путь в Умбар",       label="Умбар",  detail="Бахарбель", zone="Умбар", },
+        EN={ name="Guide to Umbar",    label="Umbar",  detail="Baharbêl",  zone="Umbar", },
+        DE={ name="Führer nach Umbar", label="Umbar",  detail="Baharbêl",  zone="Umbar", },
+        FR={ name="Guide vers Umbar",  label="Umbar",  detail="Baharbêl",  zone="Umbar", },
+        RU={ name="Путь в Умбар",      label="Умбар",  detail="Бахарбель", zone="Умбар", },
         map={{MapType.HARADWAITH, 505, 370}},
         overlap={"0x700686FF"},
         acquire={
@@ -1123,10 +1123,10 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x700697EF",
-        EN={ name="Guide to the Bloody Eagle Tavern",           label="Bloody Eagle Tavern",            zone="Umbar", },
-        DE={ name="Führer zur Taverne \"Zum Blutigen Adler\"",  label="Zum Blutigen Adler",             zone="Umbar", },
-        FR={ name="Guide vers la taverne de l'Aigle sanglant",  label="Taverne de l'Aigle sanglant",    zone="Umbar", },
-        RU={ name="Путь в таверну \'Кровавый орёл\'",           label="Таверна Кровавый Орёл",          zone="Умбар", },
+        EN={ name="Guide to the Bloody Eagle Tavern",          label="Bloody Eagle Tavern",         zone="Umbar", },
+        DE={ name="Führer zur Taverne \"Zum Blutigen Adler\"", label="Zum Blutigen Adler",          zone="Umbar", },
+        FR={ name="Guide vers la taverne de l'Aigle sanglant", label="Taverne de l'Aigle sanglant", zone="Umbar", },
+        RU={ name="Путь в таверну \'Кровавый орёл\'",          label="Таверна Кровавый Орёл",       zone="Умбар", },
         map={{MapType.HARADWAITH, 475, 400}},
         overlap={"0x700697F2"},
         acquire={
@@ -1147,6 +1147,70 @@ function TravelDictionary:CreateDictionaries()
                 RU={vendor="Интендант Ордена орла"}} },
         minLevel=20,
         level=149
+    })
+    self.hunter:AddSkill({
+        id="0x7006C39E",
+        EN={ name="Guide to Jirush",    label="Jirush", zone="Ikorbân", },
+        DE={ name="Führer nach Jirush", label="Jirush", zone="Ikorbân", },
+        FR={ name="Guide vers Jirush",  label="Jirush", zone="Ikorbân", },
+        RU={ name="Guide to Jirush",    label="Jirush", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.1
+    })
+    self.hunter:AddSkill({
+        id="0x7006C3AB",
+        EN={ name="Guide to Urmâkh",    label="Jirush", zone="Ikorbân", },
+        DE={ name="Führer nach Urmâkh", label="Jirush", zone="Ikorbân", },
+        FR={ name="Guide vers Urmâkh",  label="Jirush", zone="Ikorbân", },
+        RU={ name="Guide to Urmâkh",    label="Jirush", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.1
+    })
+    self.hunter:AddSkill({
+        id="0x7006C3BA",
+        EN={ name="Guide to Maurûsh",    label="Maurûsh", zone="Ikorbân", },
+        DE={ name="Führer nach Maurûsh", label="Maurûsh", zone="Ikorbân", },
+        FR={ name="Guide vers Maurûsh",  label="Maurûsh", zone="Ikorbân", },
+        RU={ name="Guide to Maurûsh",    label="Maurûsh", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.1
+    })
+    self.hunter:AddSkill({
+        id="0x7006C3BE",
+        EN={ name="Guide to Iridír",    label="Iridír", zone="Ikorbân", },
+        DE={ name="Führer nach Iridír", label="Iridír", zone="Ikorbân", },
+        FR={ name="Guide vers Iridir",  label="Iridír", zone="Ikorbân", },
+        RU={ name="Guide to Iridír",    label="Iridír", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.1
     })
 
     -- add the Warden locations
