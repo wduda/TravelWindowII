@@ -1149,6 +1149,22 @@ function TravelDictionary:CreateDictionaries()
         level=149
     })
     self.hunter:AddSkill({
+        id="0x7006C3BE",
+        EN={ name="Guide to Iridír",    label="Iridír", zone="Ikorbân", },
+        DE={ name="Führer nach Iridír", label="Iridír", zone="Ikorbân", },
+        FR={ name="Guide vers Iridir",  label="Iridír", zone="Ikorbân", },
+        RU={ name="Guide to Iridír",    label="Iridír", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.1
+    })
+    self.hunter:AddSkill({
         id="0x7006C39E",
         EN={ name="Guide to Jirush",    label="Jirush", zone="Ikorbân", },
         DE={ name="Führer nach Jirush", label="Jirush", zone="Ikorbân", },
@@ -1162,7 +1178,7 @@ function TravelDictionary:CreateDictionaries()
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
         minLevel=150,
-        level=150.1
+        level=150.2
     })
     self.hunter:AddSkill({
         id="0x7006C3AB",
@@ -1178,7 +1194,7 @@ function TravelDictionary:CreateDictionaries()
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
         minLevel=150,
-        level=150.1
+        level=150.3
     })
     self.hunter:AddSkill({
         id="0x7006C3BA",
@@ -1194,23 +1210,7 @@ function TravelDictionary:CreateDictionaries()
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
         minLevel=150,
-        level=150.1
-    })
-    self.hunter:AddSkill({
-        id="0x7006C3BE",
-        EN={ name="Guide to Iridír",    label="Iridír", zone="Ikorbân", },
-        DE={ name="Führer nach Iridír", label="Iridír", zone="Ikorbân", },
-        FR={ name="Guide vers Iridir",  label="Iridír", zone="Ikorbân", },
-        RU={ name="Guide to Iridír",    label="Iridír", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
-        acquire={
-            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
-                EN={vendor="Ikorbâni Quartermaster"},
-                DE={vendor="Ikorbâni Quartermaster"},
-                FR={vendor="Ikorbâni Quartermaster"},
-                RU={vendor="Ikorbâni Quartermaster"}} },
-        minLevel=150,
-        level=150.1
+        level=150.4
     })
 
     -- add the Warden locations
