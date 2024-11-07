@@ -2216,6 +2216,70 @@ function TravelDictionary:CreateDictionaries()
         minLevel=20,
         level=149
     })
+    self.warden:AddSkill({
+        id="0x7006C3A5",
+        EN={ name="Muster at Iridír",       label="Iridír", zone="Ikorbân", },
+        DE={ name="Appell in Iridír",       label="Iridír", zone="Ikorbân", },
+        FR={ name="Rassemblement à Iridir", label="Iridír", zone="Ikorbân", },
+        RU={ name="Muster at Iridír",       label="Iridír", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.1
+    })
+    self.warden:AddSkill({
+        id="0x7006C3B5",
+        EN={ name="Muster at Jirush",       label="Jirush", zone="Ikorbân", },
+        DE={ name="Appell in Jirush",       label="Jirush", zone="Ikorbân", },
+        FR={ name="Rassemblement à Jirush", label="Jirush", zone="Ikorbân", },
+        RU={ name="Muster at Jirush",       label="Jirush", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.2
+    })
+    self.warden:AddSkill({
+        id="0x7006C3B4",
+        EN={ name="Muster at Urmâkh",       label="Urmâkh", zone="Ikorbân", },
+        DE={ name="Appell in Urmâkh",       label="Urmâkh", zone="Ikorbân", },
+        FR={ name="Rassemblement à Urmâkh", label="Urmâkh", zone="Ikorbân", },
+        RU={ name="Muster at Urmâkh",       label="Urmâkh", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.3
+    })
+    self.warden:AddSkill({
+        id="0x7006C3C7",
+        EN={ name="Muster at Maurûsh",       label="Maurûsh", zone="Ikorbân", },
+        DE={ name="Appell in Maurûsh",       label="Maurûsh", zone="Ikorbân", },
+        FR={ name="Rassemblement à Maurûsh", label="Maurûsh", zone="Ikorbân", },
+        RU={ name="Muster at Maurûsh",       label="Maurûsh", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.4
+    })
 
     -- add the Mariner locations
     self.mariner:AddLabelTag({EN="Sail", DE="Segeln", FR="Naviguer", RU="Плаванье" })
