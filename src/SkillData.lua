@@ -3972,7 +3972,71 @@ function TravelDictionary:CreateDictionaries()
                 FR={allegiance="The Order of the Eagle" },
                 RU={allegiance="Орден орла" }} },
         minLevel=140,
+        level=150
+    })
+    self.rep:AddSkill({
+        id="0x7006C3A1",
+        EN={ name="Return to Iridír",     label="Iridír", zone="Ikorbân", },
+        DE={ name="Rückkehr nach Iridír", label="Iridír", zone="Ikorbân", },
+        FR={ name="Retour à Iridir",      label="Iridír", zone="Ikorbân", },
+        RU={ name="Return to Iridír",     label="Iridír", zone="", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
         level=150.1
+    })
+    self.rep:AddSkill({
+        id="0x7006C3C3",
+        EN={ name="Return to Jirush",        label="Jirush", zone="Ikorbân", },
+        DE={ name="Kehrt zu Jirush zurück.", label="Jirush", zone="Ikorbân", },
+        FR={ name="Retournez voir Jirush",   label="Jirush", zone="Ikorbân", },
+        RU={ name="Return to Jirush",        label="Jirush", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.2
+    })
+    self.rep:AddSkill({
+        id="0x7006C3B0",
+        EN={ name="Return to Urmâkh",     label="Urmâkh", zone="Ikorbân", },
+        DE={ name="Rückkehr nach Urmâkh", label="Urmâkh", zone="Ikorbân", },
+        FR={ name="Retour à Urmâkh",      label="Urmâkh", zone="Ikorbân", },
+        RU={ name="Return to Urmâkh",     label="Urmâkh", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.3
+    })
+    self.rep:AddSkill({
+        id="0x7006C3BC",
+        EN={ name="Return to Maurûsh",     label="Maurûsh", zone="Ikorbân", },
+        DE={ name="Rückkehr nach Maurûsh", label="Maurûsh", zone="Ikorbân", },
+        FR={ name="Retour à Maurûsh",      label="Maurûsh", zone="Ikorbân", },
+        RU={ name="Return to Maurûsh",     label="Maurûsh", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.4
     })
 end
 
