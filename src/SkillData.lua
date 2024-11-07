@@ -2619,6 +2619,54 @@ function TravelDictionary:CreateDictionaries()
         minLevel=140,
         level=148
     })
+    self.mariner:AddSkill({
+        id="0x7006C3B1",
+        EN={ name="Sail to Iridír",       label="Iridír", zone="Ikorbân", },
+        DE={ name="Nach Iridír segeln",   label="Iridír", zone="Ikorbân", },
+        FR={ name="Naviguer vers Iridir", label="Iridír", zone="Ikorbân", },
+        RU={ name="Sail to Iridír",       label="Iridír", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.1
+    })
+    self.mariner:AddSkill({
+        id="0x7006C3A2",
+        EN={ name="Sail to Urmâkh",       label="Urmâkh", zone="Ikorbân", },
+        DE={ name="Nach Urmâkh segeln",   label="Urmâkh", zone="Ikorbân", },
+        FR={ name="Naviguer vers Urmâkh", label="Urmâkh", zone="Ikorbân", },
+        RU={ name="Sail to Urmâkh",       label="Urmâkh", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.2
+    })
+    self.mariner:AddSkill({
+        id="0x7006C3A8",
+        EN={ name="Sail to Maurûsh",       label="Maurûsh", zone="Ikorbân", },
+        DE={ name="Nach Maurûsh segeln",   label="Maurûsh", zone="Ikorbân", },
+        FR={ name="Naviguer vers Maurûsh", label="Maurûsh", zone="Ikorbân", },
+        RU={ name="Sail to Maurûsh",       label="Maurûsh", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.3
+    })
 
     -- add the racial travel skills
     self.racials:AddLabelTag({EN="Racial", DE="Rasse", FR="Race", RU="Расовые" })
