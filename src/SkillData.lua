@@ -1088,10 +1088,10 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x7006A9BF",
-        EN={ name="Guide to Bej Mâghda",    label="Bej Mâghda", zone="Umbar", },
-        DE={ name="Führer nach Bej Mâghda", label="Bej Mâghda", zone="Umbar", },
-        FR={ name="Guide vers Bej Mâghda",  label="Bej Mâghda", zone="Umbar", },
-        RU={ name="Путь в Бедж-Магда",      label="Бедж-Магда", zone="Умбар", },
+        EN={ name="Guide to Bej Mâgha",    label="Bej Mâgha",  zone="Umbar", },
+        DE={ name="Führer nach Bej Mâgha", label="Bej Mâgha",  zone="Umbar", },
+        FR={ name="Guide vers Bej Mâghda", label="Bej Mâgha",  zone="Umbar", },
+        RU={ name="Путь в Бедж-Магда",     label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 350, 380}},
         overlap={"0x7006A9C1"},
         acquire={
@@ -2092,9 +2092,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.warden:AddSkill({
         id="0x7006A9C2",
-        EN={ name="Muster in Bej Mâghda",       label="Bej Mâghda", zone="Umbar", },
-        DE={ name="Appell in Bej Mâghda",       label="Bej Mâghda", zone="Umbar", },
-        FR={ name="Rassemblement à Bej Mâghda", label="Bej Mâghda", zone="Umbar", },
+        EN={ name="Muster in Bej Mâgha",        label="Bej Mâgha",  zone="Umbar", },
+        DE={ name="Appell in Bej Mâgha",        label="Bej Mâgha",  zone="Umbar", },
+        FR={ name="Rassemblement à Bej Mâghda", label="Bej Mâgha",  zone="Umbar", },
         RU={ name="Сбор в Бедж-Магде",          label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 350, 380}},
         overlap={"0x7006A9C1"},
@@ -2458,10 +2458,10 @@ function TravelDictionary:CreateDictionaries()
     })
     self.mariner:AddSkill({
         id="0x7006A9C4",
-        EN={ name="Sail to Bej Mâghda",       label="Bej Mâghda", zone="Umbar", },
-        DE={ name="Nach Bej Mâghda segeln",   label="Bej Mâghda", zone="Umbar", },
-        FR={ name="Naviguer vers Bej Mâghda", label="Bej Mâghda", zone="Umbar", },
-        RU={ name="Отплытие в Бедж-Магду",    label="Бедж-Магда", zone="Умбар", },
+        EN={ name="Sail to Bej Mâgha",       label="Bej Mâgha",  zone="Umbar", },
+        DE={ name="Nach Bej Mâgha segeln",   label="Bej Mâgha",  zone="Umbar", },
+        FR={ name="Naviguer vers Bej Mâgha", label="Bej Mâgha",  zone="Umbar", },
+        RU={ name="Отплытие в Бедж-Магду",   label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 350, 380}},
         overlap={"0x7006A9C1"},
         acquire={
@@ -3821,10 +3821,10 @@ function TravelDictionary:CreateDictionaries()
     })
     self.rep:AddSkill({
         id="0x7006A9C1",
-        EN={ name="Return to Bej Mâghda",         label="Bej Mâghda", zone="Umbar", },
-        DE={ name="Nach Bej Mâghda zurückkehren", label="Bej Mâghda", zone="Umbar", },
-        FR={ name="Retour à Bej Mâghda",          label="Bej Mâghda", zone="Umbar", },
-        RU={ name="Возвращение в Бедж-Магду",     label="Бедж-Магда", zone="Умбар", },
+        EN={ name="Return to Bej Mâgha",         label="Bej Mâgha",  zone="Umbar", },
+        DE={ name="Nach Bej Mâgha zurückkehren", label="Bej Mâgha",  zone="Umbar", },
+        FR={ name="Retour à Bej Mâghda",         label="Bej Mâgha",  zone="Umbar", },
+        RU={ name="Возвращение в Бедж-Магду",    label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 380, 380}},
         acquire={
             {cost={{amount=50, token=LC.token.UMBARI_TAM}}, coords="[20.0S, 105.7W]",
