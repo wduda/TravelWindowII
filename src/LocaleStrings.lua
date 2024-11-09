@@ -917,6 +917,11 @@ LC_DE.token.UMBARI_TAM = ""
 LC_FR.token.UMBARI_TAM = ""
 LC_RU.token.UMBARI_TAM = "Умбарский там"
 
+LC_EN.token.SHAGANI_GHIN = "Shagâni Ghín"
+LC_DE.token.SHAGANI_GHIN = "Shagâni Ghín"
+LC_FR.token.SHAGANI_GHIN = "Shagâni Ghín"
+LC_RU.token.SHAGANI_GHIN = "Shagâni Ghín"
+
 -- Verify matched locale keys
 for lang, _ in pairs(Locale) do
     for k, _ in pairs(Locale[lang]) do
