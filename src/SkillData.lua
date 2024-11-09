@@ -1088,10 +1088,10 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x7006A9BF",
-        EN={ name="Guide to Bej Mâghda",    label="Bej Mâghda", zone="Umbar", },
-        DE={ name="Führer nach Bej Mâghda", label="Bej Mâghda", zone="Umbar", },
-        FR={ name="Guide vers Bej Mâghda",  label="Bej Mâghda", zone="Umbar", },
-        RU={ name="Путь в Бедж-Магда",      label="Бедж-Магда", zone="Умбар", },
+        EN={ name="Guide to Bej Mâgha",    label="Bej Mâgha",  zone="Umbar", },
+        DE={ name="Führer nach Bej Mâgha", label="Bej Mâgha",  zone="Umbar", },
+        FR={ name="Guide vers Bej Mâghda", label="Bej Mâgha",  zone="Umbar", },
+        RU={ name="Путь в Бедж-Магда",     label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 350, 380}},
         overlap={"0x7006A9C1"},
         acquire={
@@ -1105,10 +1105,10 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x70068718",
-        EN={ name="Guide to Umbar",     label="Umbar",  detail="Baharbêl",  zone="Umbar", },
-        DE={ name="Führer nach Umbar",  label="Umbar",  detail="Baharbêl",  zone="Umbar", },
-        FR={ name="Guide vers Umbar",   label="Umbar",  detail="Baharbêl",  zone="Umbar", },
-        RU={ name="Путь в Умбар",       label="Умбар",  detail="Бахарбель", zone="Умбар", },
+        EN={ name="Guide to Umbar",    label="Umbar",  detail="Baharbêl",  zone="Umbar", },
+        DE={ name="Führer nach Umbar", label="Umbar",  detail="Baharbêl",  zone="Umbar", },
+        FR={ name="Guide vers Umbar",  label="Umbar",  detail="Baharbêl",  zone="Umbar", },
+        RU={ name="Путь в Умбар",      label="Умбар",  detail="Бахарбель", zone="Умбар", },
         map={{MapType.HARADWAITH, 505, 370}},
         overlap={"0x700686FF"},
         acquire={
@@ -1123,10 +1123,10 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x700697EF",
-        EN={ name="Guide to the Bloody Eagle Tavern",           label="Bloody Eagle Tavern",            zone="Umbar", },
-        DE={ name="Führer zur Taverne \"Zum Blutigen Adler\"",  label="Zum Blutigen Adler",             zone="Umbar", },
-        FR={ name="Guide vers la taverne de l'Aigle sanglant",  label="Taverne de l'Aigle sanglant",    zone="Umbar", },
-        RU={ name="Путь в таверну \'Кровавый орёл\'",           label="Таверна Кровавый Орёл",          zone="Умбар", },
+        EN={ name="Guide to the Bloody Eagle Tavern",          label="Bloody Eagle Tavern",         zone="Umbar", },
+        DE={ name="Führer zur Taverne \"Zum Blutigen Adler\"", label="Zum Blutigen Adler",          zone="Umbar", },
+        FR={ name="Guide vers la taverne de l'Aigle sanglant", label="Taverne de l'Aigle sanglant", zone="Umbar", },
+        RU={ name="Путь в таверну \'Кровавый орёл\'",          label="Таверна Кровавый Орёл",       zone="Умбар", },
         map={{MapType.HARADWAITH, 475, 400}},
         overlap={"0x700697F2"},
         acquire={
@@ -1147,6 +1147,70 @@ function TravelDictionary:CreateDictionaries()
                 RU={vendor="Интендант Ордена орла"}} },
         minLevel=20,
         level=149
+    })
+    self.hunter:AddSkill({
+        id="0x7006C3BE",
+        EN={ name="Guide to Iridír",    label="Iridír", zone="Ikorbân", },
+        DE={ name="Führer nach Iridír", label="Iridír", zone="Ikorbân", },
+        FR={ name="Guide vers Iridir",  label="Iridír", zone="Ikorbân", },
+        RU={ name="Guide to Iridír",    label="Iridír", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.1
+    })
+    self.hunter:AddSkill({
+        id="0x7006C39E",
+        EN={ name="Guide to Jirush",    label="Jirush", zone="Ikorbân", },
+        DE={ name="Führer nach Jirush", label="Jirush", zone="Ikorbân", },
+        FR={ name="Guide vers Jirush",  label="Jirush", zone="Ikorbân", },
+        RU={ name="Guide to Jirush",    label="Jirush", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.2
+    })
+    self.hunter:AddSkill({
+        id="0x7006C3AB",
+        EN={ name="Guide to Urmâkh",    label="Jirush", zone="Ikorbân", },
+        DE={ name="Führer nach Urmâkh", label="Jirush", zone="Ikorbân", },
+        FR={ name="Guide vers Urmâkh",  label="Jirush", zone="Ikorbân", },
+        RU={ name="Guide to Urmâkh",    label="Jirush", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.3
+    })
+    self.hunter:AddSkill({
+        id="0x7006C3BA",
+        EN={ name="Guide to Maurûsh",    label="Maurûsh", zone="Ikorbân", },
+        DE={ name="Führer nach Maurûsh", label="Maurûsh", zone="Ikorbân", },
+        FR={ name="Guide vers Maurûsh",  label="Maurûsh", zone="Ikorbân", },
+        RU={ name="Guide to Maurûsh",    label="Maurûsh", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.4
     })
 
     -- add the Warden locations
@@ -2092,9 +2156,9 @@ function TravelDictionary:CreateDictionaries()
     })
     self.warden:AddSkill({
         id="0x7006A9C2",
-        EN={ name="Muster in Bej Mâghda",       label="Bej Mâghda", zone="Umbar", },
-        DE={ name="Appell in Bej Mâghda",       label="Bej Mâghda", zone="Umbar", },
-        FR={ name="Rassemblement à Bej Mâghda", label="Bej Mâghda", zone="Umbar", },
+        EN={ name="Muster in Bej Mâgha",        label="Bej Mâgha",  zone="Umbar", },
+        DE={ name="Appell in Bej Mâgha",        label="Bej Mâgha",  zone="Umbar", },
+        FR={ name="Rassemblement à Bej Mâghda", label="Bej Mâgha",  zone="Umbar", },
         RU={ name="Сбор в Бедж-Магде",          label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 350, 380}},
         overlap={"0x7006A9C1"},
@@ -2151,6 +2215,70 @@ function TravelDictionary:CreateDictionaries()
                 RU={vendor="Интендант Ордена орла"}} },
         minLevel=20,
         level=149
+    })
+    self.warden:AddSkill({
+        id="0x7006C3A5",
+        EN={ name="Muster at Iridír",       label="Iridír", zone="Ikorbân", },
+        DE={ name="Appell in Iridír",       label="Iridír", zone="Ikorbân", },
+        FR={ name="Rassemblement à Iridir", label="Iridír", zone="Ikorbân", },
+        RU={ name="Muster at Iridír",       label="Iridír", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.1
+    })
+    self.warden:AddSkill({
+        id="0x7006C3B5",
+        EN={ name="Muster at Jirush",       label="Jirush", zone="Ikorbân", },
+        DE={ name="Appell in Jirush",       label="Jirush", zone="Ikorbân", },
+        FR={ name="Rassemblement à Jirush", label="Jirush", zone="Ikorbân", },
+        RU={ name="Muster at Jirush",       label="Jirush", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.2
+    })
+    self.warden:AddSkill({
+        id="0x7006C3B4",
+        EN={ name="Muster at Urmâkh",       label="Urmâkh", zone="Ikorbân", },
+        DE={ name="Appell in Urmâkh",       label="Urmâkh", zone="Ikorbân", },
+        FR={ name="Rassemblement à Urmâkh", label="Urmâkh", zone="Ikorbân", },
+        RU={ name="Muster at Urmâkh",       label="Urmâkh", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.3
+    })
+    self.warden:AddSkill({
+        id="0x7006C3C7",
+        EN={ name="Muster at Maurûsh",       label="Maurûsh", zone="Ikorbân", },
+        DE={ name="Appell in Maurûsh",       label="Maurûsh", zone="Ikorbân", },
+        FR={ name="Rassemblement à Maurûsh", label="Maurûsh", zone="Ikorbân", },
+        RU={ name="Muster at Maurûsh",       label="Maurûsh", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.4
     })
 
     -- add the Mariner locations
@@ -2458,10 +2586,10 @@ function TravelDictionary:CreateDictionaries()
     })
     self.mariner:AddSkill({
         id="0x7006A9C4",
-        EN={ name="Sail to Bej Mâghda",       label="Bej Mâghda", zone="Umbar", },
-        DE={ name="Nach Bej Mâghda segeln",   label="Bej Mâghda", zone="Umbar", },
-        FR={ name="Naviguer vers Bej Mâghda", label="Bej Mâghda", zone="Umbar", },
-        RU={ name="Отплытие в Бедж-Магду",    label="Бедж-Магда", zone="Умбар", },
+        EN={ name="Sail to Bej Mâgha",       label="Bej Mâgha",  zone="Umbar", },
+        DE={ name="Nach Bej Mâgha segeln",   label="Bej Mâgha",  zone="Umbar", },
+        FR={ name="Naviguer vers Bej Mâgha", label="Bej Mâgha",  zone="Umbar", },
+        RU={ name="Отплытие в Бедж-Магду",   label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 350, 380}},
         overlap={"0x7006A9C1"},
         acquire={
@@ -2490,6 +2618,54 @@ function TravelDictionary:CreateDictionaries()
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=148
+    })
+    self.mariner:AddSkill({
+        id="0x7006C3B1",
+        EN={ name="Sail to Iridír",       label="Iridír", zone="Ikorbân", },
+        DE={ name="Nach Iridír segeln",   label="Iridír", zone="Ikorbân", },
+        FR={ name="Naviguer vers Iridir", label="Iridír", zone="Ikorbân", },
+        RU={ name="Sail to Iridír",       label="Iridír", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.1
+    })
+    self.mariner:AddSkill({
+        id="0x7006C3A2",
+        EN={ name="Sail to Urmâkh",       label="Urmâkh", zone="Ikorbân", },
+        DE={ name="Nach Urmâkh segeln",   label="Urmâkh", zone="Ikorbân", },
+        FR={ name="Naviguer vers Urmâkh", label="Urmâkh", zone="Ikorbân", },
+        RU={ name="Sail to Urmâkh",       label="Urmâkh", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.2
+    })
+    self.mariner:AddSkill({
+        id="0x7006C3A8",
+        EN={ name="Sail to Maurûsh",       label="Maurûsh", zone="Ikorbân", },
+        DE={ name="Nach Maurûsh segeln",   label="Maurûsh", zone="Ikorbân", },
+        FR={ name="Naviguer vers Maurûsh", label="Maurûsh", zone="Ikorbân", },
+        RU={ name="Sail to Maurûsh",       label="Maurûsh", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.3
     })
 
     -- add the racial travel skills
@@ -3821,10 +3997,10 @@ function TravelDictionary:CreateDictionaries()
     })
     self.rep:AddSkill({
         id="0x7006A9C1",
-        EN={ name="Return to Bej Mâghda",         label="Bej Mâghda", zone="Umbar", },
-        DE={ name="Nach Bej Mâghda zurückkehren", label="Bej Mâghda", zone="Umbar", },
-        FR={ name="Retour à Bej Mâghda",          label="Bej Mâghda", zone="Umbar", },
-        RU={ name="Возвращение в Бедж-Магду",     label="Бедж-Магда", zone="Умбар", },
+        EN={ name="Return to Bej Mâgha",         label="Bej Mâgha",  zone="Umbar", },
+        DE={ name="Nach Bej Mâgha zurückkehren", label="Bej Mâgha",  zone="Umbar", },
+        FR={ name="Retour à Bej Mâghda",         label="Bej Mâgha",  zone="Umbar", },
+        RU={ name="Возвращение в Бедж-Магду",    label="Бедж-Магда", zone="Умбар", },
         map={{MapType.HARADWAITH, 380, 380}},
         acquire={
             {cost={{amount=50, token=LC.token.UMBARI_TAM}}, coords="[20.0S, 105.7W]",
@@ -3908,7 +4084,71 @@ function TravelDictionary:CreateDictionaries()
                 FR={allegiance="The Order of the Eagle" },
                 RU={allegiance="Орден орла" }} },
         minLevel=140,
+        level=150
+    })
+    self.rep:AddSkill({
+        id="0x7006C3A1",
+        EN={ name="Return to Iridír",     label="Iridír", zone="Ikorbân", },
+        DE={ name="Rückkehr nach Iridír", label="Iridír", zone="Ikorbân", },
+        FR={ name="Retour à Iridir",      label="Iridír", zone="Ikorbân", },
+        RU={ name="Return to Iridír",     label="Iridír", zone="", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
         level=150.1
+    })
+    self.rep:AddSkill({
+        id="0x7006C3C3",
+        EN={ name="Return to Jirush",        label="Jirush", zone="Ikorbân", },
+        DE={ name="Kehrt zu Jirush zurück.", label="Jirush", zone="Ikorbân", },
+        FR={ name="Retournez voir Jirush",   label="Jirush", zone="Ikorbân", },
+        RU={ name="Return to Jirush",        label="Jirush", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.2
+    })
+    self.rep:AddSkill({
+        id="0x7006C3B0",
+        EN={ name="Return to Urmâkh",     label="Urmâkh", zone="Ikorbân", },
+        DE={ name="Rückkehr nach Urmâkh", label="Urmâkh", zone="Ikorbân", },
+        FR={ name="Retour à Urmâkh",      label="Urmâkh", zone="Ikorbân", },
+        RU={ name="Return to Urmâkh",     label="Urmâkh", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.3
+    })
+    self.rep:AddSkill({
+        id="0x7006C3BC",
+        EN={ name="Return to Maurûsh",     label="Maurûsh", zone="Ikorbân", },
+        DE={ name="Rückkehr nach Maurûsh", label="Maurûsh", zone="Ikorbân", },
+        FR={ name="Retour à Maurûsh",      label="Maurûsh", zone="Ikorbân", },
+        RU={ name="Return to Maurûsh",     label="Maurûsh", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
+                EN={vendor="Ikorbâni Quartermaster"},
+                DE={vendor="Ikorbâni Quartermaster"},
+                FR={vendor="Ikorbâni Quartermaster"},
+                RU={vendor="Ikorbâni Quartermaster"}} },
+        minLevel=150,
+        level=150.4
     })
 end
 
