@@ -1,0 +1,1 @@
+TravelWindowSettings.plugindata - settings file from TW I
