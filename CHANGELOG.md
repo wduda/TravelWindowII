@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v2.5.0
+
+- enhance: U42 travel skills added for EN/FR/DE for all classes, with map coords, overlap settings and aquisition source
+- enhance: removed no longer needed buttons and options menu for "Check Trained Skills" as TW II now reliably autodetects skill acquisition
+- fix: Dol Amroth and Halrax now have correct coordinates on Haradwaith map for guide/muster/sail skills
+- fix: Bej Magha skills will now be detected again after being renamed by SSG in U42
+
 ## v2.4.4
 
 - enhance: UI texts in RU - skill acquisition data tab should now be complete
