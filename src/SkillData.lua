@@ -1020,7 +1020,7 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Führer nach Dol Amroth", desc="Königreich Gondor",   label="Königreich Dol Amroth",  zlabel="Dol Amroth",    zone="Königreich Gondor", },
         FR={ name="Guide vers Dol Amroth",  desc="le Gondor royal",     label="Dol Amroth royal",       zlabel="Dol Amroth",    zone="Gondor royal", },
         RU={ name="Путь в Дол Амрот",       desc="Королевский Гондор",  label="Королевский Дол Амрот",  zlabel="Дол Амрот",     zone="Королевский Гондор", },
-        map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 210, 485}},
+        map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 325, 70}},
         overlap={"0x70068700"},
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
@@ -1056,7 +1056,7 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Führer nach Halrax", label="Halrax",     zone="Die Schildinseln", },
         FR={ name="Guide vers Halrax",  label="Halrax",     zone="Les îles du Bouclier", },
         RU={ name="Путь в Халракс",     label="Халракс",    zone="Острова Щита", },
-        map={{MapType.HARADWAITH, 275, 160}},
+        map={{MapType.HARADWAITH, 215, 260, }},
         overlap={"0x70068702"},
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
@@ -1154,7 +1154,8 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Führer nach Iridír", label="Iridír", zone="Ikorbân", },
         FR={ name="Guide vers Iridir",  label="Iridír", zone="Ikorbân", },
         RU={ name="Guide to Iridír",    label="Iridír", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 555, 325}},
+        overlap={"0x7006C3A1"},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
@@ -1170,7 +1171,8 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Führer nach Jirush", label="Jirush", zone="Ikorbân", },
         FR={ name="Guide vers Jirush",  label="Jirush", zone="Ikorbân", },
         RU={ name="Guide to Jirush",    label="Jirush", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 560, 415}},
+        overlap={"0x7006C3C3"},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
@@ -1186,7 +1188,8 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Führer nach Urmâkh", label="Jirush", zone="Ikorbân", },
         FR={ name="Guide vers Urmâkh",  label="Jirush", zone="Ikorbân", },
         RU={ name="Guide to Urmâkh",    label="Jirush", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 640, 410}},
+        overlap={"0x7006C3B0"},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
@@ -1202,7 +1205,8 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Führer nach Maurûsh", label="Maurûsh", zone="Ikorbân", },
         FR={ name="Guide vers Maurûsh",  label="Maurûsh", zone="Ikorbân", },
         RU={ name="Guide to Maurûsh",    label="Maurûsh", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 640, 350}},
+        overlap={"0x7006C3BC"},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
@@ -2222,7 +2226,8 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Appell in Iridír",       label="Iridír", zone="Ikorbân", },
         FR={ name="Rassemblement à Iridir", label="Iridír", zone="Ikorbân", },
         RU={ name="Muster at Iridír",       label="Iridír", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 555, 325}},
+        overlap={"0x7006C3A1"},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
@@ -2238,7 +2243,8 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Appell in Jirush",       label="Jirush", zone="Ikorbân", },
         FR={ name="Rassemblement à Jirush", label="Jirush", zone="Ikorbân", },
         RU={ name="Muster at Jirush",       label="Jirush", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 560, 415}},
+        overlap={"0x7006C3C3"},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
@@ -2254,7 +2260,8 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Appell in Urmâkh",       label="Urmâkh", zone="Ikorbân", },
         FR={ name="Rassemblement à Urmâkh", label="Urmâkh", zone="Ikorbân", },
         RU={ name="Muster at Urmâkh",       label="Urmâkh", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 640, 410}},
+        overlap={"0x7006C3B0"},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
@@ -2270,7 +2277,8 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Appell in Maurûsh",       label="Maurûsh", zone="Ikorbân", },
         FR={ name="Rassemblement à Maurûsh", label="Maurûsh", zone="Ikorbân", },
         RU={ name="Muster at Maurûsh",       label="Maurûsh", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 640, 350}},
+        overlap={"0x7006C3BC"},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
@@ -2625,7 +2633,8 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Nach Iridír segeln",   label="Iridír", zone="Ikorbân", },
         FR={ name="Naviguer vers Iridir", label="Iridír", zone="Ikorbân", },
         RU={ name="Sail to Iridír",       label="Iridír", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 555, 325}},
+        overlap={"0x7006C3A1"},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
@@ -2641,7 +2650,8 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Nach Urmâkh segeln",   label="Urmâkh", zone="Ikorbân", },
         FR={ name="Naviguer vers Urmâkh", label="Urmâkh", zone="Ikorbân", },
         RU={ name="Sail to Urmâkh",       label="Urmâkh", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 640, 410}},
+        overlap={"0x7006C3B0"},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
@@ -2657,7 +2667,8 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Nach Maurûsh segeln",   label="Maurûsh", zone="Ikorbân", },
         FR={ name="Naviguer vers Maurûsh", label="Maurûsh", zone="Ikorbân", },
         RU={ name="Sail to Maurûsh",       label="Maurûsh", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 640, 350}},
+        overlap={"0x7006C3BC"},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
@@ -4092,7 +4103,7 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Rückkehr nach Iridír", label="Iridír", zone="Ikorbân", },
         FR={ name="Retour à Iridir",      label="Iridír", zone="Ikorbân", },
         RU={ name="Return to Iridír",     label="Iridír", zone="", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 585, 325}},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
@@ -4108,7 +4119,7 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Kehrt zu Jirush zurück.", label="Jirush", zone="Ikorbân", },
         FR={ name="Retournez voir Jirush",   label="Jirush", zone="Ikorbân", },
         RU={ name="Return to Jirush",        label="Jirush", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 590, 415}},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
@@ -4124,7 +4135,7 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Rückkehr nach Urmâkh", label="Urmâkh", zone="Ikorbân", },
         FR={ name="Retour à Urmâkh",      label="Urmâkh", zone="Ikorbân", },
         RU={ name="Return to Urmâkh",     label="Urmâkh", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 670, 410}},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
@@ -4140,7 +4151,7 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Rückkehr nach Maurûsh", label="Maurûsh", zone="Ikorbân", },
         FR={ name="Retour à Maurûsh",      label="Maurûsh", zone="Ikorbân", },
         RU={ name="Return to Maurûsh",     label="Maurûsh", zone="Ikorbân", },
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 670, 350}},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
