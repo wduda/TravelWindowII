@@ -95,7 +95,7 @@ function MapWindow:Constructor(map)
             for i = 1, #self.quickslots, 1 do
                 local shortcut = self.quickslots[i]:GetShortcut();
                 local name = self:DebugNameLookup(shortcut:GetData());
-                coordinates[i] = {name, self.quickslots[i]:GetPosition()}
+                coordinates[name] = {self.quickslots[i]:GetPosition()}
             end
             PatchDataSave(Turbine.DataScope.Character, "TravelWindowIIDebugCoords", coordinates);
         end
@@ -248,7 +248,7 @@ function MapWindow:DebugNameLookup(id)
     for i = 1, #TravelShortcuts, 1 do
         local shortcut = TravelShortcuts[i]
         if shortcut:GetData() == id then
-            return shortcut.Name;
+            return shortcut:GetName();
         end
     end
 
