@@ -1056,7 +1056,7 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Führer nach Halrax", label="Halrax",     zone="Die Schildinseln", },
         FR={ name="Guide vers Halrax",  label="Halrax",     zone="Les îles du Bouclier", },
         RU={ name="Путь в Халракс",     label="Халракс",    zone="Острова Щита", },
-        map={{MapType.HARADWAITH, 215, 260, }},
+        map={{MapType.HARADWAITH, 215, 260}},
         overlap={"0x70068702"},
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
@@ -2092,7 +2092,7 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Appell in Dol Amroth",       desc="Königreich Gondor",  label="Königreich Dol Amroth",  zlabel="Dol Amroth",    zone="Königreich Gondor", },
         FR={ name="Rassemblement à Dol Amroth", desc="le Gondor royal",    label="Dol Amroth royal",       zlabel="Dol Amroth",    zone="Gondor royal", },
         RU={ name="Сбор в Дол Амроте",          desc="Королевский Гондор", label="Королевский Дол Амрот",  zlabel="Дол Амрот",     zone="Королевский Гондор", },
-        map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 385, 70}},
+        map={{MapType.GONDOR, 210, 485}, {MapType.HARADWAITH, 325, 70}},
         overlap={"0x70068700"},
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
@@ -2128,7 +2128,7 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Appell in Halrax",       label="Halrax",  zone="Die Schildinseln", },
         FR={ name="Rassemblement à Halrax", label="Halrax",  zone="Les îles du Bouclier", },
         RU={ name="Сбор в Халраксе",        label="Халракс", zone="Острова Щита", },
-        map={{MapType.HARADWAITH, 275, 260}},
+        map={{MapType.HARADWAITH, 215, 260}},
         overlap={"0x70068702"},
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
@@ -2562,7 +2562,7 @@ function TravelDictionary:CreateDictionaries()
         DE={ name="Nach Halrax segeln",   label="Halrax",  zone="Die Schildinseln", },
         FR={ name="Naviguer vers Halrax", label="Halrax",  zone="Les îles du Bouclier", },
         RU={ name="Отплытие в Халракс",   label="Халракс", zone="Острова Щита", },
-        map={{MapType.HARADWAITH, 275, 160}},
+        map={{MapType.HARADWAITH, 215, 260}},
         overlap={"0x70068702"},
         acquire={
             {cost={{amount=10, token=LC.token.UMBARI_TAM}},
