@@ -1162,6 +1162,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.1
     })
@@ -1179,6 +1180,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.2
     })
@@ -1196,6 +1198,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.3
     })
@@ -1213,6 +1216,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.4
     })
@@ -2234,6 +2238,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.1
     })
@@ -2251,6 +2256,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.2
     })
@@ -2268,6 +2274,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.3
     })
@@ -2285,6 +2292,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.4
     })
@@ -2641,6 +2649,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.1
     })
@@ -2658,6 +2667,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.2
     })
@@ -2675,6 +2685,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.3
     })
@@ -4110,6 +4121,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.1
     })
@@ -4126,6 +4138,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.2
     })
@@ -4142,6 +4155,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.3
     })
@@ -4158,6 +4172,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Ikorbâni Quartermaster"},
                 FR={vendor="Ikorbâni Quartermaster"},
                 RU={vendor="Ikorbâni Quartermaster"}} },
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.4
     })
