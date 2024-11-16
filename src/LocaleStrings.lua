@@ -853,8 +853,8 @@ LC_FR.token.MARK_OF_LONGBEARDS = ""
 LC_RU.token.MARK_OF_LONGBEARDS = "Печать Длиннобородов"
 
 LC_EN.token.GULMARK = "Gúlmark"
-LC_DE.token.GULMARK = ""
-LC_FR.token.GULMARK = ""
+LC_DE.token.GULMARK = "Gúlmark"
+LC_FR.token.GULMARK = "Gúlmark"
 LC_RU.token.GULMARK = "Гулмарка"
 
 LC_EN.token.VALES_BEORNING_TOKEN = "Vales - Beorning Token"
@@ -893,8 +893,8 @@ LC_FR.token.EAGLE_BIT = ""
 LC_RU.token.EAGLE_BIT = "Орлиные монеты"
 
 LC_EN.token.ZAKAF_BESHEK = "Zakaf-beshêk"
-LC_DE.token.ZAKAF_BESHEK = ""
-LC_FR.token.ZAKAF_BESHEK = ""
+LC_DE.token.ZAKAF_BESHEK = "Zakaf-beshêk"
+LC_FR.token.ZAKAF_BESHEK = "Zakaf-beshêk"
 LC_RU.token.ZAKAF_BESHEK = "Закаф-Бешек"
 
 LC_EN.token.SILVER_COIN_OF_GUNDABAD = "Silver Coins of Gundabad"
@@ -903,8 +903,8 @@ LC_FR.token.SILVER_COIN_OF_GUNDABAD = ""
 LC_RU.token.SILVER_COIN_OF_GUNDABAD = "Серебряные монеты Гундабада"
 
 LC_EN.token.SARSKILLINAN = "Sárskilinnan"
-LC_DE.token.SARSKILLINAN = ""
-LC_FR.token.SARSKILLINAN = ""
+LC_DE.token.SARSKILLINAN = "Sárskilinnan"
+LC_FR.token.SARSKILLINAN = "Sárskilinnan"
 LC_RU.token.SARSKILLINAN = "Сарскиллины"
 
 LC_EN.token.MARK_OF_RENEWAL = "Marks of Renewal"
@@ -913,8 +913,8 @@ LC_FR.token.MARK_OF_RENEWAL = ""
 LC_RU.token.MARK_OF_RENEWAL = "Марки восстановления"
 
 LC_EN.token.UMBARI_TAM = "Umbari Tâm"
-LC_DE.token.UMBARI_TAM = ""
-LC_FR.token.UMBARI_TAM = ""
+LC_DE.token.UMBARI_TAM = "Umbari Tâm"
+LC_FR.token.UMBARI_TAM = "Umbari Tâm"
 LC_RU.token.UMBARI_TAM = "Умбарский там"
 
 LC_EN.token.SHAGANI_GHIN = "Shagâni Ghín"
