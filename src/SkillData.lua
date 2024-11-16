@@ -1184,10 +1184,10 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x7006C3AB",
-        EN={ name="Guide to Urmâkh",    label="Jirush", zone="Ikorbân", },
-        DE={ name="Führer nach Urmâkh", label="Jirush", zone="Ikorbân", },
-        FR={ name="Guide vers Urmâkh",  label="Jirush", zone="Ikorbân", },
-        RU={ name="Guide to Urmâkh",    label="Jirush", zone="Ikorbân", },
+        EN={ name="Guide to Urmâkh",    label="Urmâkh", zone="Ikorbân", },
+        DE={ name="Führer nach Urmâkh", label="Urmâkh", zone="Ikorbân", },
+        FR={ name="Guide vers Urmâkh",  label="Urmâkh", zone="Ikorbân", },
+        RU={ name="Guide to Urmâkh",    label="Urmâkh", zone="Ikorbân", },
         map={{MapType.HARADWAITH, 640, 410}},
         overlap={"0x7006C3B0"},
         acquire={
