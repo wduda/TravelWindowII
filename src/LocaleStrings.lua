@@ -676,6 +676,11 @@ LC_DE.rep.CITIZENS_OF_UMBAR_BAHARBEL = ""
 LC_FR.rep.CITIZENS_OF_UMBAR_BAHARBEL = ""
 LC_RU.rep.CITIZENS_OF_UMBAR_BAHARBEL = "Жители Умбар-Бахарбеля"
 
+LC_EN.rep.IKORBANI = "The Ikorbâni"
+LC_DE.rep.IKORBANI = "The Ikorbâni"
+LC_FR.rep.IKORBANI = "The Ikorbâni"
+LC_RU.rep.IKORBANI = "The Ikorbâni"
+
 -- Add token names
 LC_EN.token = {}
 LC_DE.token = {}
