@@ -4,6 +4,7 @@ import "Turbine.UI.Lotro";
 import "TravelWindowII.src.extensions";
 import "TravelWindowII.src.TravelGridTab"
 import "TravelWindowII.src.SettingsMenu";
+import "TravelWindowII.src.utils.FontMetric";
 import "TravelWindowII.src.utils.BitOps";
 
 --[[ This is the window for the text list tab of the 	]] --
@@ -24,9 +25,15 @@ function TravelListTab:Constructor(toplevel)
     self.itemHeight = 22;
     self.scrollChunk = self.itemHeight;
 
+    self.minWidth = 275
+    self.minHeight = 75
+
     self.itemAlpha = DefAlpha;
     if self.parent.isMinWindow then
         self.itemAlpha = 1;
+        self.itemWidthPadding = 20
+    else
+        self.itemWidthPadding = 30
     end
 
     -- set up the scrollbar for the list
@@ -54,7 +61,7 @@ function TravelListTab:SetItems()
         return
     end
 
-    self.itemWidth = self:GetWidth() - 30;
+    self.itemWidth = self:GetWidth() - self.itemWidthPadding;
     TravelGridTab.SetItems(self);
 end
 
@@ -149,7 +156,26 @@ function TravelListTab:GetPixelSize()
     return self.pixelWidth, height;
 end
 
+function GetMinimumHeight(labels, width)
+    local minHeight = 14
+    local fm = TravelWindowII.src.utils.FontMetric()
+    for i = 1, #labels, 1 do
+        local text = labels[i]:GetText()
+        local fontHeight = fm:GetTextHeight(text, width)
+        if fontHeight > minHeight then
+            minHeight = fontHeight
+        end
+    end
+    return minHeight + 8
+end
+
 function TravelListTab:FitToPixels(width, height)
+    if width < self.minWidth then
+        width = self.minWidth
+    end
+    local minWidth = width - self.itemWidthPadding - self.parent.wPadding
+    self.itemHeight = GetMinimumHeight(self.labels, minWidth)
+    self.scrollChunk = self.itemHeight
     local rowHeight = self.itemHeight;
     local minHeight = rowHeight * 6;
     local maxHeight = rowHeight * #self.selected;

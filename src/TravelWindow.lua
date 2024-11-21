@@ -432,8 +432,8 @@ end
 function TravelWindow:UpdateMinimum()
     -- update the page that is showing
     if Settings.mode == 1 then
-        self.minWidth = 200;
-        self.minHeight = 75;
+        self.minWidth = self.ListTab.minWidth;
+        self.minHeight = self.ListTab.minHeight;
     elseif Settings.mode == 3 then
         if self.isMinWindow then
             self.minWidth = 150;
