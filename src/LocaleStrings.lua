@@ -349,6 +349,11 @@ LC_DE.menuPull = "Pulldown-Liste"
 LC_FR.menuPull = "Menu déroulant"
 LC_RU.menuPull = "Выпадающий список"
 
+LC_EN.menuMaps = "Map View"
+LC_DE.menuMaps = "Kartenansicht"
+LC_FR.menuMaps = "Vue carte"
+LC_RU.menuMaps = "вид карты"
+
 LC_EN.mapWindow = "Maps"
 LC_DE.mapWindow = "Karten"
 LC_FR.mapWindow = "Destinations"

@@ -82,16 +82,19 @@ function TravelWindow:Constructor()
     self.GridTab = TravelGridTab(self);
     self.CaroTab = TravelCaroTab(self);
     self.PullTab = TravelPulldownTab(self);
+    self.MapsTab = TravelMapsTab(self);
 
     -- add the tabs to the panel
     self.MainPanel:AddTab(self.ListTab);
     self.MainPanel:AddTab(self.GridTab);
     self.MainPanel:AddTab(self.CaroTab);
     self.MainPanel:AddTab(self.PullTab);
+    self.MainPanel:AddTab(self.MapsTab);
     self.ListTab.tabId = 1;
     self.GridTab.tabId = 2;
     self.CaroTab.tabId = 3;
     self.PullTab.tabId = 4;
+    self.MapsTab.tabId = 5;
     self.GridTab.numOfCols = Settings.gridCols;
     self.GridTab.numOfRows = Settings.gridRows;
     self.ListTab.pixelWidth = Settings.listWidth;
@@ -413,6 +416,8 @@ function TravelWindow:SetItems()
         self.CaroTab:SetItems();
     elseif Settings.mode == 4 then
         self.PullTab:SetItems();
+    elseif Settings.mode == 5 then
+        self.MapsTab:SetItems();
     end
 end
 
