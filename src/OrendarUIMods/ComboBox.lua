@@ -399,8 +399,12 @@ function ComboBox:ShowDropDown()
             parent = parent:GetParent();
         end
         local cbWidth, cbHeight = self:GetSize();
-        self.dropDownWindow:SetPosition(screenX, screenY + cbHeight + 3);
-
+        local screenW, screenH = Turbine.UI.Display:GetSize()
+        local screenOffsetY = screenY + cbHeight + 3
+        if screenOffsetY + self.dropDownWindow:GetHeight() + 3 > screenH then
+            screenOffsetY = screenY - self.dropDownWindow:GetHeight() - 3
+        end
+        self.dropDownWindow:SetPosition(screenX, screenOffsetY)
         self.dropDownWindow:SetVisible(true);
     end
 end
