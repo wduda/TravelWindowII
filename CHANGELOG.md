@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v2.5.1
+
+- enhance: added Ikorbani faction, adding rep level required for U42 skills
+- enhance: adding some tokennames to DE and FR to start filling the acquisition tab
+- enhance: open pull-down list upwards/downwards based on screen check so it does not go off screen
+- fix: wrong label for Guide to Jirush
+
 ## v2.5.0
 
 - enhance: U42 travel skills added for EN/FR/DE for all classes, with map coords, overlap settings and aquisition source
