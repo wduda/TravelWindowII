@@ -1220,6 +1220,23 @@ function TravelDictionary:CreateDictionaries()
         minLevel=150,
         level=150.4
     })
+    self.hunter:AddSkill({
+        id="0x7006EA25",
+        EN={ name="Guide to Utug-bûr",               label="Utug-bûr", zone="Ikorbân", },
+        DE={ name="Utug-bûr: Ein kleiner Leitfaden", label="Utug-bûr", zone="Ikorbân", },
+        FR={ name="Guide vers Utug-bûr",             label="Utug-bûr", zone="Ikorbân", },
+        RU={ name="Guide to Utug-bûr",               label="Utug-bûr", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, 670, 310}},
+        minLevel=150,
+        level=150.5,
+        acquire={
+            {cost={{amount=1, token=LC.token.COLD_IRON}},
+                EN={vendor="Temple of Utug-bûr Quartermaster"},
+                DE={vendor="Temple of Utug-bûr Quartermaster"},
+                FR={vendor="Temple of Utug-bûr Quartermaster"},
+                RU={vendor="Temple of Utug-bûr Quartermaster"}} },
+    })
+
 
     -- add the Warden locations
     self.warden:AddLabelTag({EN="Muster", DE="Appell", FR="Rassemblement", RU="Сбор" })
@@ -2296,6 +2313,22 @@ function TravelDictionary:CreateDictionaries()
         minLevel=150,
         level=150.4
     })
+    self.warden:AddSkill({
+        id="0x7006EA25",
+        EN={ name="Muster at Utug-bûr",       label="Utug-bûr", zone="Ikorbân", },
+        DE={ name="Appell in Utug-bûr",       label="Utug-bûr", zone="Ikorbân", },
+        FR={ name="Rassemblement à Utug-bûr", label="Utug-bûr", zone="Ikorbân", },
+        RU={ name="Muster at Utug-bûr",       label="Utug-bûr", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, 670, 310}},
+        minLevel=150,
+        level=150.5,
+        acquire={
+            {cost={{amount=1, token=LC.token.COLD_IRON}},
+                EN={vendor="Temple of Utug-bûr Quartermaster"},
+                DE={vendor="Temple of Utug-bûr Quartermaster"},
+                FR={vendor="Temple of Utug-bûr Quartermaster"},
+                RU={vendor="Temple of Utug-bûr Quartermaster"}} },
+    })
 
     -- add the Mariner locations
     self.mariner:AddLabelTag({EN="Sail", DE="Segeln", FR="Naviguer", RU="Плаванье" })
@@ -2688,6 +2721,22 @@ function TravelDictionary:CreateDictionaries()
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.3
+    })
+    self.mariner:AddSkill({
+        id="0x7006EA1E",
+        EN={ name="Sail to Utug-bûr",         label="Utug-bûr", zone="Ikorbân", },
+        DE={ name="Nach Utug-bûr segeln",     label="Utug-bûr", zone="Ikorbân", },
+        FR={ name="Voyager jusqu'à Utug-bûr", label="Utug-bûr", zone="Ikorbân", },
+        RU={ name="Sail to Utug-bûr",         label="Utug-bûr", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, 670, 310}},
+        minLevel=150,
+        level=150.4,
+        acquire={
+            {cost={{amount=1, token=LC.token.COLD_IRON}},
+                EN={vendor="Temple of Utug-bûr Quartermaster"},
+                DE={vendor="Temple of Utug-bûr Quartermaster"},
+                FR={vendor="Temple of Utug-bûr Quartermaster"},
+                RU={vendor="Temple of Utug-bûr Quartermaster"}} },
     })
 
     -- add the racial travel skills
@@ -4175,6 +4224,22 @@ function TravelDictionary:CreateDictionaries()
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=150,
         level=150.4
+    })
+    self.rep:AddSkill({
+        id="0x7006EA1C",
+        EN={ name="Return to Utug-bûr",     label="Utug-bûr", zone="Ikorbân", },
+        DE={ name="Rückkehr nach Utug-bûr", label="Utug-bûr", zone="Ikorbân", },
+        FR={ name="Retourner à Utug-bûr",   label="Utug-bûr", zone="Ikorbân", },
+        RU={ name="Return to Utug-bûr",     label="Utug-bûr", zone="Ikorbân", },
+        map={{MapType.HARADWAITH, 700, 310}},
+        minLevel=150,
+        level=150.5,
+        acquire={
+            {cost={{amount=3, token=LC.token.COLD_IRON}},
+                EN={vendor="Temple of Utug-bûr Quartermaster"},
+                DE={vendor="Temple of Utug-bûr Quartermaster"},
+                FR={vendor="Temple of Utug-bûr Quartermaster"},
+                RU={vendor="Temple of Utug-bûr Quartermaster"}} },
     })
 end
 
