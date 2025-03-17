@@ -878,23 +878,23 @@ LC_FR.token.NORTHERN_GULMARK = ""
 LC_RU.token.NORTHERN_GULMARK = "Северная гулмарка"
 
 LC_EN.token.COPPER_COIN_OF_GUNDABAD = "Copper Coins of Gundabad"
-LC_DE.token.COPPER_COIN_OF_GUNDABAD = ""
-LC_FR.token.COPPER_COIN_OF_GUNDABAD = ""
+LC_DE.token.COPPER_COIN_OF_GUNDABAD = "Copper Coins of Gundabad"
+LC_FR.token.COPPER_COIN_OF_GUNDABAD = "Copper Coins of Gundabad"
 LC_RU.token.COPPER_COIN_OF_GUNDABAD = "Медные монеты Гундабада"
 
 LC_EN.token.TOKEN_OF_KHARUM_UBNAR = "Tokens of the Kharum-ubnâr"
-LC_DE.token.TOKEN_OF_KHARUM_UBNAR = ""
-LC_FR.token.TOKEN_OF_KHARUM_UBNAR = ""
+LC_DE.token.TOKEN_OF_KHARUM_UBNAR = "Tokens of the Kharum-ubnâr"
+LC_FR.token.TOKEN_OF_KHARUM_UBNAR = "Tokens of the Kharum-ubnâr"
 LC_RU.token.TOKEN_OF_KHARUM_UBNAR = "Жетоны Кхарум-Убнар"
 
 LC_EN.token.LEDGER_KEEPER_MARK = "Ledger-keeper Marks"
-LC_DE.token.LEDGER_KEEPER_MARK = ""
-LC_FR.token.LEDGER_KEEPER_MARK = ""
+LC_DE.token.LEDGER_KEEPER_MARK = "Ledger-keeper Marks"
+LC_FR.token.LEDGER_KEEPER_MARK = "Ledger-keeper Marks"
 LC_RU.token.LEDGER_KEEPER_MARK = "Марки Хранителей книг"
 
 LC_EN.token.EAGLE_BIT = "Eagle Bits"
-LC_DE.token.EAGLE_BIT = ""
-LC_FR.token.EAGLE_BIT = ""
+LC_DE.token.EAGLE_BIT = "Eagle Bits"
+LC_FR.token.EAGLE_BIT = "Eagle Bits"
 LC_RU.token.EAGLE_BIT = "Орлиные монеты"
 
 LC_EN.token.ZAKAF_BESHEK = "Zakaf-beshêk"
@@ -903,8 +903,8 @@ LC_FR.token.ZAKAF_BESHEK = "Zakaf-beshêk"
 LC_RU.token.ZAKAF_BESHEK = "Закаф-Бешек"
 
 LC_EN.token.SILVER_COIN_OF_GUNDABAD = "Silver Coins of Gundabad"
-LC_DE.token.SILVER_COIN_OF_GUNDABAD = ""
-LC_FR.token.SILVER_COIN_OF_GUNDABAD = ""
+LC_DE.token.SILVER_COIN_OF_GUNDABAD = "Silver Coins of Gundabad"
+LC_FR.token.SILVER_COIN_OF_GUNDABAD = "Silver Coins of Gundabad"
 LC_RU.token.SILVER_COIN_OF_GUNDABAD = "Серебряные монеты Гундабада"
 
 LC_EN.token.SARSKILLINAN = "Sárskilinnan"
@@ -913,8 +913,8 @@ LC_FR.token.SARSKILLINAN = "Sárskilinnan"
 LC_RU.token.SARSKILLINAN = "Сарскиллины"
 
 LC_EN.token.MARK_OF_RENEWAL = "Marks of Renewal"
-LC_DE.token.MARK_OF_RENEWAL = ""
-LC_FR.token.MARK_OF_RENEWAL = ""
+LC_DE.token.MARK_OF_RENEWAL = "Marks of Renewal"
+LC_FR.token.MARK_OF_RENEWAL = "Marks of Renewal"
 LC_RU.token.MARK_OF_RENEWAL = "Марки восстановления"
 
 LC_EN.token.UMBARI_TAM = "Umbari Tâm"
@@ -926,6 +926,11 @@ LC_EN.token.SHAGANI_GHIN = "Shagâni Ghín"
 LC_DE.token.SHAGANI_GHIN = "Shagâni Ghín"
 LC_FR.token.SHAGANI_GHIN = "Shagâni Ghín"
 LC_RU.token.SHAGANI_GHIN = "Shagâni Ghín"
+
+LC_EN.token.COLD_IRON = "Cold-iron Token"
+LC_DE.token.COLD_IRON = "Cold-iron Token"
+LC_FR.token.COLD_IRON = "Cold-iron Token"
+LC_RU.token.COLD_IRON = "Cold-iron Token"
 
 -- Verify matched locale keys
 for lang, _ in pairs(Locale) do
