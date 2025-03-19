@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v2.6.0
+
+- enhance: added new travel skills from U43 in EN/DE/FR
+- enhance: adding labels for eight more barter currencies for skill source tab
+
 ## v2.5.1
 
 - enhance: added Ikorbani faction, adding rep level required for U42 skills

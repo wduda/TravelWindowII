@@ -1,8 +1,9 @@
-This plugin creates a single window that contains available travel skills, including race, class, housing, and reputation skills. It is a further development of the "Travel Window" plugin, that has been worked on by multiple authors before.
+This plugin creates a single window that contains available travel skills, including race, class, housing, and reputation skills.
+The plugin has four modes of operation - icon grid, text list, pulldown list and carousel. These can be switched from the menu that opens when you right-click the plugin.
+This menu also gives you access to the options window. 
 
+It is a further development of the "Travel Window" plugin, that has been worked on by multiple authors before.
 [B]Since this plugin is a 100% replacement for "Travel Window" you should not have both enabled at the same time. You can keep them both installed though.[/B]
-
-The plugin has four modes of operation - icon grid, text list, pulldown list and carousel. These can be switched from the menu that opens when you right-click the plugin. This menu also gives you access to the options window. 
 
 [SIZE="3"]Installation:[/SIZE]
 This is a full plugin and can be installed standalone. Follow the general plugin installation instructions to install Travel Window II or update the install (depends on your OS).
@@ -21,13 +22,17 @@ Use the mousewheel while hovering over the travel skill icon to change the selec
 
 Version history:
 
-v2.5.1
+v2.6.0
 
-- enhance: added Ikorbani faction, adding rep level required for U42 skills
-- enhance: adding some tokennames to DE and FR to start filling the acquisition tab
-- enhance: open pull-down list upwards/downwards based on screen check so it does not go off screen
-- fix: wrong label for Guide to Jirush
+- enhance: added new travel skills from U43 in EN/DE/FR
+- enhance: adding labels for eight more barter currencies for skill source tab
+
+Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
 
 Help with further translations for DE, FR and RU clients is welcome. Ideally submitted as pull requests on GitHub, but any way can be accomodated really.
 
-Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
+Other than contacting here on lotrointerface, you can also do that on the [url=https://forums.lotro.com/index.php?threads/plugin-travel-window-ii.1400/]official forums thread[/url], on [url=https://github.com/wduda/TravelWindowII/discussions]GitHub[/url] where you will also find the source code, and I also monitor a post on the official [url=https://discord.com/channels/1253092003218985092/1339975894902505523]LOTRO Discord[/url].
+
+
+
+
