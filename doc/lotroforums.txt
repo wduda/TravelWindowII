@@ -1,12 +1,12 @@
 A new version is available!
 
-v2.5.1
+v2.6.0
 
-- enhance: added Ikorbani faction, adding rep level required for U42 skills
-- enhance: adding some tokennames to DE and FR to start filling the acquisition tab
-- enhance: open pull-down list upwards/downwards based on screen check so it does not go off screen
-- fix: wrong label for Guide to Jirush
+- enhance: added new travel skills from U43 in EN/DE/FR
+- enhance: adding labels for eight more barter currencies for skill source tab
 
 Help with further translations for DE, FR and RU clients is welcome. Ideally submitted as pull requests on GitHub, but any way can be accomodated really.
 
 Download it at [url=https://www.lotrointerface.com/downloads/fileinfo.php?id=1113]Lotrointerface[/url], [url=https://github.com/wduda/TravelWindowII/releases]GitHub[/url], via [url=https://github.com/JeremyStepp/OneLauncher]OneLauncher[/url] or via [url=https://www.lotrointerface.com/downloads/info663-LOTROPluginCompendium.html]Plugin Compendium[/url].
+
+Other than contacting here on the forums, you can also do that on [url=https://www.lotrointerface.com/downloads/fileinfo.php?id=1113]Lotrointerface[/url], on [url=https://github.com/wduda/TravelWindowII/discussions]GitHub Discussions[/url] where you will also find the source code, and I also monitor a post on the official [url=https://discord.com/channels/1253092003218985092/1339975894902505523]LOTRO Discord[/url].
