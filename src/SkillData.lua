@@ -2314,7 +2314,7 @@ function TravelDictionary:CreateDictionaries()
         level=150.4
     })
     self.warden:AddSkill({
-        id="0x7006EA25",
+        id="0x7006EA20",
         EN={ name="Muster at Utug-bûr",       label="Utug-bûr", zone="Ikorbân", },
         DE={ name="Appell in Utug-bûr",       label="Utug-bûr", zone="Ikorbân", },
         FR={ name="Rassemblement à Utug-bûr", label="Utug-bûr", zone="Ikorbân", },
