@@ -378,6 +378,19 @@ function TravelWindow:Constructor()
         self.titleLabel:SetSize(self:GetWidth(), 20);
         self.resizeLabel:SetPosition(self:GetWidth() - self.resizeLabel:GetWidth(),
                                      self:GetHeight() - self.resizeLabel:GetHeight());
+        if self.isMinWindow then
+            if self:GetWidth() <= 120 then
+                self.titleLabel:SetText(LC.mainShortTitle);
+            else
+                self.titleLabel:SetText(LC.miniTitle);
+            end
+        else
+            if self:GetWidth() <= 200 then
+                self:SetText(LC.mainShortTitle);
+            else
+                self:SetText(LC.mainTitle);
+            end
+        end
     end
     self:SizeChanged(); -- explicitly call to ensure correct positioning
     if Settings.mode == 1 then
@@ -438,7 +451,7 @@ function TravelWindow:UpdateMinimum()
             self.minHeight = 105;
         end
     else
-        self.minWidth = 100;
+        self.minWidth = 40;
         self.minHeight = 40;
     end
 
