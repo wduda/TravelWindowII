@@ -396,52 +396,52 @@ LC_RU.acquired = "Вы приобрели умение <(.*)%>."
 
 LC_EN.store = "LOTRO Store"
 LC_DE.store = "LOTRO Shop"
-LC_FR.store = ""
+LC_FR.store = "LOTRO Boutique"
 LC_RU.store = "LOTRO Store"
 
 LC_EN.quest = "Quest: "
 LC_DE.quest = "Aufgabe: "
-LC_FR.quest = ""
+LC_FR.quest = "Quête: "
 LC_RU.quest = "Задание: "
 
 LC_EN.deed = "Deed: "
 LC_DE.deed = "Tat: "
-LC_FR.deed = ""
+LC_FR.deed = "Acte: "
 LC_RU.deed = "Деяние: "
 
 LC_EN.source = "Source: "
 LC_DE.source = "Quelle: "
-LC_FR.source = ""
+LC_FR.source = "Source: "
 LC_RU.source = "Источник: "
 
 LC_EN.cost = "Cost: "
 LC_DE.cost = "Kosten: "
-LC_FR.cost = ""
+LC_FR.cost = "Coût: "
 LC_RU.cost = "Стоимость: "
 
 LC_EN.requires = "Requires: "
 LC_DE.requires = "Benötigt: "
-LC_FR.requires = ""
+LC_FR.requires = "Exige: "
 LC_RU.requires = "Требуется: "
 
 LC_EN.allegiance = "Allegiance: "
 LC_DE.allegiance = "Bündnis: "
-LC_FR.allegiance = ""
+LC_FR.allegiance = "Allégeance: "
 LC_RU.allegiance = "Альянс: "
 
 LC_EN.rank = "Rank: "
 LC_DE.rank = "Rang: "
-LC_FR.rank = ""
+LC_FR.rank = "Rang: "
 LC_RU.rank = "Ранг: "
 
 LC_EN.with = " with "
 LC_DE.with = " bei "
-LC_FR.with = ""
+LC_FR.with = " avec "
 LC_RU.with = " с "
 
 LC_EN.minLevel = "Minimum Level "
 LC_DE.minLevel = "Mindeststufe "
-LC_FR.minLevel = ""
+LC_FR.minLevel = "Niveau minimum "
 LC_RU.minLevel = "Минимальный уровень "
 
 -- Add reputation levels
