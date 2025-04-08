@@ -199,22 +199,8 @@ function TravelShortcut:InitAcquireText(item)
         end
     elseif item.quest then
         text = LC.quest .. item.quest
-    elseif item.drop then
-        text = LC.source .. item.drop
     elseif item.vendor then
         text = self:GetVendorText(item)
-    elseif item.vendors then
-        for i = 1, #item.vendors do
-            if item.vendors[i].zone == nil then
-                item.vendors[i].zone = item.zone
-            end
-            local t = self:GetVendorText(item.vendors[i])
-            if i == 1 then
-                text = text .. t
-            else
-                text = text .. "\n" .. t
-            end
-        end
     elseif item.desc then
         text = LC.source .. item.desc
     end
