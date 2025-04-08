@@ -2861,6 +2861,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={deed="Die Verfeindung der Warge II"},
                 FR={deed="Ennemi / Ennemie des ouargues II"},
                 RU={deed="Истребление варгов II"}}},
+        minLevel=29,
         level=5
     })
     self.racials:AddSkill({
@@ -2877,6 +2878,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={deed="Die Verfeindung der Spinnen II"},
                 FR={deed="Ennemi / Ennemie des araignées II"},
                 RU={deed="Истребление пауков II"}}},
+        minLevel=29,
         level=1
     })
     self.racials:AddSkill({
@@ -2893,6 +2895,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={deed="Die Verfeindung der Bilwisse II"},
                 FR={deed="Ennemi / Ennemie des gobelins II"},
                 RU={deed="Укрощение гоблинов II"}}},
+        minLevel=29,
         level=1.2
     })
     self.racials:AddSkill({
@@ -2909,6 +2912,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={deed="Die Verfeindung der Orks II"},
                 FR={deed="Ennemi / Ennemie des Orques II"},
                 RU={deed="Укрощение орков II"}}},
+        minLevel=29,
         level=40.1
     })
     self.racials:AddSkill({
@@ -2925,6 +2929,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={deed="Die Verfeindung der Bilwisse II"},
                 FR={deed="Ennemi / Ennemie des gobelins II"},
                 RU={deed="Укрощение гоблинов II"}}},
+        minLevel=19,
         level=120
     })
     self.racials:AddSkill({
@@ -2941,6 +2946,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={deed="Die Verfeindung der Orks II"},
                 FR={deed="Ennemi / Ennemie des Orques II"},
                 RU={deed="Укрощение орков II"}}},
+        minLevel=32,
         level=60
     })
     self.racials:AddSkill({
@@ -2957,6 +2963,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={deed="Die Feindschaft der Kultisten III"},
                 FR={deed="Ennemi / Ennemie des sectateurs III"},
                 RU={deed="Усмирение последователей культа III"}}},
+        minLevel=35,
         level=1.2
     })
     self.racials:AddSkill({
@@ -2973,6 +2980,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={deed="Zurück und wieder hin"},
                 FR={deed="Retour en terre connue"},
                 RU={deed="Обратно и снова туда"}}},
+        minLevel=125,
         level=1.3
     })
     -- add the gen skills
@@ -3335,8 +3343,8 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={deed="Verwandter / Verwandte der Eglain"},
                 FR={deed="Frère / Sœur des Eglain"},
                 RU={deed="Родич Эгланов"}},
-            {store=true}
-},
+            {store=true}},
+        minLevel=1,
         level=25
     })
     self.rep:AddSkill({
