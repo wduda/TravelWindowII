@@ -2522,6 +2522,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         FR={name="Naviguer vers la Lothlorien", label="Lothlórien", detail="Egladil", zone="Lothlórien"},
         RU={name="Отплытие в Лотлориэн", label="Лотлориэн", detail="Эгладил", zone="Лотлориэн"},
         map={{MapType.RHOVANION, 245, 670}},
+        overlap={"0x70048C8C"},
         acquire={{autoLevel=true}},
         minLevel=60,
         level=60
