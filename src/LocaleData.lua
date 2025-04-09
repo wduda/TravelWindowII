@@ -142,6 +142,11 @@ LC_DE.rep.PROTECTORS_OF_WILDERLAND = "Beschützer des Wilderlands"
 LC_FR.rep.PROTECTORS_OF_WILDERLAND = "Protecteurs des Terres sauvages"
 LC_RU.rep.PROTECTORS_OF_WILDERLAND = "Защитники Глухоманья"
 
+LC_EN.rep.MARCH_ON_GUNDABAD = "March on Gundabad"
+LC_DE.rep.MARCH_ON_GUNDABAD = "Marsch auf Gundabad"
+LC_FR.rep.MARCH_ON_GUNDABAD = "Les Reconquérants de Gundabad"
+LC_RU.rep.MARCH_ON_GUNDABAD = "Поход на Гундабад"
+
 LC_EN.rep.HABANAKKA_OF_THRAIN = "The Haban'akkâ of Thráin"
 LC_DE.rep.HABANAKKA_OF_THRAIN = "Die Haban’akkâ von Thráin"
 LC_FR.rep.HABANAKKA_OF_THRAIN = "Haban'akkâ de Thraïn"

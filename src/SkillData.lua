@@ -928,6 +928,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth", zone
                 DE={vendor="Erkunder-Quartiermeister"},
                 FR={vendor="Intendant des excavations"},
                 RU={vendor="Интендант погружений"}}},
+        rep=LC.rep.MARCH_ON_GUNDABAD, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=130.1
     })
@@ -1039,6 +1040,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth", zone
                 DE={vendor="Quartiermeister des Königreichs Gondor"},
                 FR={vendor="Intendant du roi du Gondor"},
                 RU={vendor="Интендант Королевского Гондора"}}},
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=141
     })
@@ -2077,6 +2079,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={vendor="Erkunder-Quartiermeister"},
                 FR={vendor="Intendant des excavations"},
                 RU={vendor="Интендант погружений"}}},
+        rep=LC.rep.MARCH_ON_GUNDABAD, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=130.1
     })
@@ -2188,6 +2191,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={vendor="Quartiermeister des Königreichs Gondor"},
                 FR={vendor="Intendant du roi du Gondor"},
                 RU={vendor="Интендант Королевского Гондора"}}},
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=141
     })
@@ -2658,6 +2662,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={vendor="Quartiermeister des Königreichs Gondor"},
                 FR={vendor="Intendant du roi du Gondor"},
                 RU={vendor="Интендант Королевского Гондора"}}},
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=141
     })
@@ -4014,6 +4019,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={vendor="Erkunder-Quartiermeister"},
                 FR={vendor="Intendant des excavations"},
                 RU={vendor="Интендант погружений"}}},
+        rep=LC.rep.MARCH_ON_GUNDABAD, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=20,
         level=130.1
     })
@@ -4135,6 +4141,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={vendor="Quartiermeister des Königreichs Gondor"},
                 FR={vendor="Intendant du roi du Gondor"},
                 RU={vendor="Интендант Королевского Гондора"}}},
+        rep=LC.rep.RENEWAL_OF_GONDOR, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=135,
         level=141
     })
