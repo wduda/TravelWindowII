@@ -5,9 +5,9 @@ IndexedDictionary = class()
 local ValidSkillKeys = {
     "id", "name", "desc", "label", "label0", "detail", "zlabel", "zone", "tag",
     "EN", "DE", "FR", "RU",
-    "map", "overlap", "level", "hasSameText", "minLevel", "store", "autoRep", "autoLevel",
+    "map", "overlap", "level", "minLevel", "store", "autoLevel",
     "acquire", "cost", "amount", "token", "coords", "rep", "repLevel",
-    "drop", "quest", "deed", "vendor", "vendors", "allegiance", "rank"
+    "quest", "deed", "vendor", "allegiance", "rank"
 }
 
 function IndexedDictionary:Constructor(parent, title)
