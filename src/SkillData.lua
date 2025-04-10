@@ -3120,7 +3120,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         acquire={
             {
                 EN={desc="Buy a House and earn the Novice trait"},
-                DE={desc="Kaufe ein Haus und verdiene dir die Eigenschaft \"Anfänger\""},
+                DE={desc="Kaufe ein Haus und erlange die Eigenschaft \"Novize\""},
                 FR={desc="Achetez une maison et gagnez le trait Novice"},
                 RU={desc="Купите дом и получите талант новичка"}}},
         level=1
@@ -3135,7 +3135,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         acquire={
             {
                 EN={desc="Buy a Premium House and earn the Novice trait"},
-                DE={desc="Kaufe ein Premiumheim und verdiene dir die Eigenschaft \"Anfänger\""},
+                DE={desc="Kaufe ein Premiumhaus und erlange die Eigenschaft \"Novize\""},
                 FR={desc="Achetez une maison premium et gagnez le trait Novice"},
                 RU={desc="Купите престижный дом и получите талант новичка"}}},
         level=1
@@ -3150,7 +3150,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         acquire={
             {
                 EN={desc="Become a member of a kinship that has a kinship house"},
-                DE={desc="Werden Sie Mitglied einer Sippe, die ein Sippenhaus hat"},
+                DE={desc="Werde Mitglied einer Sippe, die ein Sippenhaus hat"},
                 FR={desc="Devenez membre d’une confrérie qui a une maison de confrérie"},
                 RU={desc="Станьте членом содружества, у которого есть дом"}}},
         level=1
@@ -3165,7 +3165,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         acquire={
             {
                 EN={desc="Become a member of a kinship"},
-                DE={desc="Werden Sie Mitglied einer Sippe"},
+                DE={desc="Werde Mitglied einer Sippe"},
                 FR={desc="Devenir membre d’une confrérie"},
                 RU={desc="Станьте членом содружества"}}},
         level=1
@@ -3391,7 +3391,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         acquire={
             {
                 EN={desc="Delving Reward Box (any tier)"},
-                DE={desc="Belohnungskiste \"Vertiefen\" (jede Stufe)"},
+                DE={desc="Erkunderbelohnungskiste (jede Stufe)"},
                 FR={desc="Boîte de récompenses de fouille (n'importe quel niveau)"},
                 RU={desc="Ящик с наградами погружений (любой уровень)"}}},
         minLevel=20,
