@@ -1295,6 +1295,23 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         minLevel=140,
         level=150.5
     })
+    self.hunter:AddSkill({
+        id="0x7006FD4F",
+        EN={name="Guide to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        DE={name="Guide to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        FR={name="Guide to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        RU={name="Guide to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.HAMATI_URGUL}},
+                EN={vendor="Hamâti Quartermaster"},
+                DE={vendor="Hamâti-Quartiermeisterin"},
+                FR={vendor="Intendante des Hamâti"},
+                RU={vendor="Hamâti Quartermaster"}}},
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
+        level=150.6
+    })
     -- add the warden skills
     self.warden:AddLabelTag({EN="Muster", DE="Appell", FR="Rassemblement", RU="Сбор"})
     self.warden:AddSkill({
@@ -2437,6 +2454,23 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.5
+    })
+    self.warden:AddSkill({
+        id="0x7006FD50",
+        EN={name="Muster at Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        DE={name="Muster at Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        FR={name="Muster at Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        RU={name="Muster at Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.HAMATI_URGUL}},
+                EN={vendor="Hamâti Quartermaster"},
+                DE={vendor="Hamâti-Quartiermeisterin"},
+                FR={vendor="Intendante des Hamâti"},
+                RU={vendor="Hamâti Quartermaster"}}},
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
+        level=150.6
     })
     -- add the mariner skills
     self.mariner:AddLabelTag({EN="Sail", DE="Segeln", FR="Naviguer", RU="Плаванье"})
@@ -4408,6 +4442,23 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.5
+    })
+    self.rep:AddSkill({
+        id="0x7006FD4B",
+        EN={name="Return to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        DE={name="Return to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        FR={name="Return to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        RU={name="Return to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        map={{MapType.HARADWAITH, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.HAMATI_URGUL}},
+                EN={vendor="Hamâti Quartermaster"},
+                DE={vendor="Hamâti-Quartiermeisterin"},
+                FR={vendor="Intendante des Hamâti"},
+                RU={vendor="Hamâti Quartermaster"}}},
+        rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=140,
+        level=150.6
     })
 end
 

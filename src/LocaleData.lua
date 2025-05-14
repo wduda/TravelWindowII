@@ -511,3 +511,8 @@ LC_EN.token.COLD_IRON_TOKEN = "Cold-iron Token"
 LC_DE.token.COLD_IRON_TOKEN = "Kalte Eisenmarke"
 LC_FR.token.COLD_IRON_TOKEN = "Jeton en fer froid"
 LC_RU.token.COLD_IRON_TOKEN = "Cold-iron Token"
+
+LC_EN.token.HAMATI_URGUL = "Hamâti Urgûl"
+LC_DE.token.HAMATI_URGUL = "Hamâti-Urgûl"
+LC_FR.token.HAMATI_URGUL = "Urgûl hamâti"
+LC_RU.token.HAMATI_URGUL = "Hamâti Urgûl"
