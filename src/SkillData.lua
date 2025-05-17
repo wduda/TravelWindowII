@@ -1301,7 +1301,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         DE={name="Guide to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         FR={name="Guide to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         RU={name="Guide to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 620, 445}},
         acquire={
             {cost={{amount=10, token=LC.token.HAMATI_URGUL}},
                 EN={vendor="Hamâti Quartermaster"},
@@ -2461,7 +2461,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         DE={name="Muster at Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         FR={name="Muster at Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         RU={name="Muster at Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 620, 445}},
         acquire={
             {cost={{amount=10, token=LC.token.HAMATI_URGUL}},
                 EN={vendor="Hamâti Quartermaster"},
@@ -4449,7 +4449,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         DE={name="Return to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         FR={name="Return to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         RU={name="Return to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
-        map={{MapType.HARADWAITH, -1, -1}},
+        map={{MapType.HARADWAITH, 590, 445}},
         acquire={
             {cost={{amount=10, token=LC.token.HAMATI_URGUL}},
                 EN={vendor="Hamâti Quartermaster"},
