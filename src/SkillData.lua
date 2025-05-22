@@ -1298,8 +1298,8 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
     self.hunter:AddSkill({
         id="0x7006FD4F",
         EN={name="Guide to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
-        DE={name="Guide to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
-        FR={name="Guide to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        DE={name="Führer nach Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        FR={name="Guide vers Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         RU={name="Guide to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 620, 445}},
         acquire={
@@ -2458,8 +2458,8 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
     self.warden:AddSkill({
         id="0x7006FD50",
         EN={name="Muster at Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
-        DE={name="Muster at Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
-        FR={name="Muster at Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        DE={name="Appell in Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        FR={name="Rassemblement à Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         RU={name="Muster at Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 620, 445}},
         acquire={
@@ -4446,8 +4446,8 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
     self.rep:AddSkill({
         id="0x7006FD4B",
         EN={name="Return to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
-        DE={name="Return to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
-        FR={name="Return to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        DE={name="Rückkehr nach Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        FR={name="Retour à Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         RU={name="Return to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 590, 445}},
         acquire={
