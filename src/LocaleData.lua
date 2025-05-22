@@ -282,6 +282,11 @@ LC_DE.token.LOTRO_POINT = "HdRO-Punkte"
 LC_FR.token.LOTRO_POINT = "Points SdAO"
 LC_RU.token.LOTRO_POINT = "ВКО марки"
 
+LC_EN.token.MITHRIL_COIN = "Mithril Coin"
+LC_DE.token.MITHRIL_COIN = "Mithril-Münze"
+LC_FR.token.MITHRIL_COIN = "Pièce de mithril"
+LC_RU.token.MITHRIL_COIN = "Мифриловая монета"
+
 LC_EN.token.DOURHAND_CREST = "Dourhand Crest"
 LC_DE.token.DOURHAND_CREST = "Grimmhand-Wappen"
 LC_FR.token.DOURHAND_CREST = "Emblème des Poings bourrus"
@@ -341,11 +346,6 @@ LC_EN.token.SILVER_TOKEN_OF_RIDDERMARK = "Silver Token of the Riddermark"
 LC_DE.token.SILVER_TOKEN_OF_RIDDERMARK = "Silbermünze aus der Riddermark"
 LC_FR.token.SILVER_TOKEN_OF_RIDDERMARK = "Jeton argenté du Riddermark"
 LC_RU.token.SILVER_TOKEN_OF_RIDDERMARK = "Серебряная эмблема Риддермарка"
-
-LC_EN.token.MITHRIL_COIN = "Mithril Coin"
-LC_DE.token.MITHRIL_COIN = "Mithril-Münze"
-LC_FR.token.MITHRIL_COIN = "Pièce de mithril"
-LC_RU.token.MITHRIL_COIN = "Мифриловая монета"
 
 LC_EN.token.WILDERMORE_COIN = "Wildermore Coin"
 LC_DE.token.WILDERMORE_COIN = "Wildermark-Münze"
