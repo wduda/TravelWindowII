@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## v3.0.0
+
+- enhance: the Find tab in options now has information on all obtainable skills and their sources
+- enhance: the Find tab in options now has full support for all four supported langauges
+- enhance: the Find tab in options now has better formatting of source entries
+- enhance: added new travel skills from U44 in EN/DE/FR
+- enhance: mini window can now be scaled down to width of one skill
+- fix: Mariner skill for Lothlorien now has proper duplicate detection
+
 ## v2.6.0
 
 - enhance: added new travel skills from U43 in EN/DE/FR
