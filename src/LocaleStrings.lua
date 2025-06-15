@@ -273,6 +273,11 @@ LC_DE.useSkillNames = "Verwenden von Skill-Namen"
 LC_FR.useSkillNames = "Utiliser les noms de compétence"
 LC_RU.useSkillNames = "Использовать названия навыков"
 
+LC_EN.useTagInListTab = "Use Skill tag in Text layout"
+LC_DE.useTagInListTab = "Verwenden von Skill-Tag im Textlayout"
+LC_FR.useTagInListTab = "Utiliser la balise Skill dans la mise en page de texte"
+LC_RU.useTagInListTab = "Использование тега навыка в макете текста"
+
 LC_EN.unlockKeyPress = "Hold Shift to unlock"
 LC_DE.unlockKeyPress = "Umschalttaste um zu entsperren gedrückt halten"
 LC_FR.unlockKeyPress = "Maintenez la touche Maj enfoncée pour déverrouiller"

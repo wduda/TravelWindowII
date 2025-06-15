@@ -105,7 +105,7 @@ function TravelListTab:AddItem(shortcut)
         self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
         self.labels[index]:SetBackColor(Turbine.UI.Color(self.itemAlpha, 0, 0, 0));
         self.labels[index]:SetMultiline(false)
-        self.labels[index]:SetText(shortcut:GetLabel());
+        self.labels[index]:SetText(shortcut:GetListLabel());
         self.labels[index]:SetParent(self.SubWindow);
         self.labels[index].shortcut = shortcut
 
@@ -148,7 +148,7 @@ end
 function TravelListTab:ReloadLabels()
     for i = 1, #self.labels do
         local label = self.labels[i]
-        label:SetText(label.shortcut:GetLabel())
+        label:SetText(label.shortcut:GetListLabel())
     end
 end
 

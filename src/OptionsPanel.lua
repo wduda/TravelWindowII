@@ -298,6 +298,16 @@ function OptionsPanel:SetupGeneralTab()
             TravelInfo:SetSkillLabels()
             _G.travel:ReloadLabels()
         end)
+    self:AddCheckBoxOption("useTagInListTab", 20, 30,
+        function(sender, args)
+            if sender:IsChecked() then
+                Settings.useTagInListTab = 1
+            else
+                Settings.useTagInListTab = 0
+            end
+            TravelInfo:SetSkillLabels()
+            _G.travel.ListTab:ReloadLabels()
+        end)
     self:AddCheckBoxOption("lockUI", 20, 30,
         function(sender, args)
             if sender:IsChecked() then

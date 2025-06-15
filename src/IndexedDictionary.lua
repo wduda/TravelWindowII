@@ -3,7 +3,7 @@
 IndexedDictionary = class()
 
 local ValidSkillKeys = {
-    "id", "name", "desc", "label", "label0", "detail", "zlabel", "zone", "tag",
+    "id", "name", "desc", "label", "label0", "listLabel", "detail", "zlabel", "zone", "tag",
     "EN", "DE", "FR", "RU",
     "map", "overlap", "level", "minLevel", "store", "autoLevel",
     "acquire", "cost", "amount", "token", "coords", "rep", "repLevel",
@@ -54,9 +54,16 @@ function IndexedDictionary:SetSkillLabel(skill)
             skill.label = skill.detail
         end
 
+        skill.listLabel = skill.label
         if tag ~= nil then
             skill.label = skill.label .. " (" .. tag .. ")"
+            if Settings.useTagInListTab == 1 then
+                skill.listLabel = skill.label
+            end
         end
+    end
+    if skill.listLabel == nil then
+        skill.listLabel = skill.label
     end
     return true
 end

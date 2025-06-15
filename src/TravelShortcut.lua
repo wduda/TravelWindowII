@@ -78,6 +78,10 @@ function TravelShortcut:GetLabel()
     return self.skill.label;
 end
 
+function TravelShortcut:GetListLabel()
+    return self.skill.listLabel;
+end
+
 function TravelShortcut:SetIndex(value)
     self.Index = value;
 end
