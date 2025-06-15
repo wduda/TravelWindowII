@@ -307,6 +307,7 @@ function OptionsPanel:SetupGeneralTab()
             end
             TravelInfo:SetSkillLabels()
             _G.travel.ListTab:ReloadLabels()
+            _G.travel.PullTab.pulldown:ReloadLabels()
         end)
     self:AddCheckBoxOption("lockUI", 20, 30,
         function(sender, args)
