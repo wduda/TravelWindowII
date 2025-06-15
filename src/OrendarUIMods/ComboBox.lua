@@ -40,6 +40,7 @@ function ComboBox:Constructor(toplevel)
     self.label:SetOutlineColor(ComboBox.HighlightColor);
     self.label:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
     self.label:SetMouseVisible(false);
+    self.label:SetMultiline(false)
 
     -- arrow
     self.arrow = Turbine.UI.Control();
@@ -176,7 +177,8 @@ function ComboBox:AddItem(shortcut, value)
     label:SetFont(Turbine.UI.Lotro.Font.TrajanPro14);
     label:SetOutlineColor(ComboBox.HighlightColor);
     label:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
-    label:SetText(shortcut:GetLabel());
+    label:SetMultiline(false)
+    label:SetText(shortcut:GetListLabel());
     label:SetMouseVisible(Settings.pulldownTravel == 0);
     label:SetParent(self.listBox);
     label.shortcut = shortcut
@@ -238,7 +240,7 @@ end
 function ComboBox:ReloadLabels()
     for i = 1, #self.labels do
         local label = self.labels[i]
-        label:SetText(label.shortcut:GetLabel())
+        label:SetText(label.shortcut:GetListLabel())
     end
 end
 
