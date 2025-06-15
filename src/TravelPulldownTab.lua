@@ -18,6 +18,7 @@ function TravelPulldownTab:Constructor(toplevel)
 
     -- need top level window in order to close it
     self.parent = toplevel;
+    self.pixelWidth = 0
 
     if self.parent.isMinWindow then
         self.wPadding = 3;

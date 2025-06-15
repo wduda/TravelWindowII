@@ -96,6 +96,7 @@ function TravelWindow:Constructor()
     self.GridTab.numOfRows = Settings.gridRows;
     self.ListTab.pixelWidth = Settings.listWidth;
     self.ListTab.numOfRows = Settings.listRows;
+    self.PullTab.pixelWidth = Settings.pullWidth
 
     self.MainPanel:SetTab(Settings.mode);
     self.GridTab:SetAllowDrop(true)
@@ -303,7 +304,7 @@ function TravelWindow:Constructor()
         self.isMouseDown = true;
         if (args.Button == Turbine.UI.MouseButton.Left) then
             self.dragStartX, self.dragStartY = self:GetMousePosition();
-            if Settings.mode == 1 or Settings.mode == 2 then
+            if Settings.mode == 1 or Settings.mode == 2 or Settings.mode == 4 then
                 local mX, mY = self:GetMousePosition();
                 self.resizeStartX, self.resizeStartY = self:GetSize();
                 if self.resizeStartX - mX < self.resizeLabelSize + 1 and
@@ -333,6 +334,9 @@ function TravelWindow:Constructor()
                 sX, sY = self.ListTab:FitToPixels(sX, sY);
             elseif Settings.mode == 2 then
                 sX, sY = self.GridTab:FitToPixels(sX, sY);
+            elseif Settings.mode == 4 then
+                sY = self:GetHeight();
+                self.PullTab.pixelWidth = sX
             end
             self:SetSize(sX, sY);
         end
@@ -372,6 +376,8 @@ function TravelWindow:Constructor()
         elseif Settings.mode == 2 then
             Settings.gridCols = self.GridTab.numOfCols;
             Settings.gridRows = self.GridTab.numOfRows;
+        elseif Settings.mode == 4 then
+            Settings.pullWidth = self.PullTab.pixelWidth
         end
         self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
         self.MainPanel:UpdateTabs();
@@ -397,6 +403,8 @@ function TravelWindow:Constructor()
         self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
     elseif Settings.mode == 2 then
         self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
+    elseif Settings.mode == 4 then
+        self.PullTab.pixelWidth = self:GetWidth()
     end
 end
 
@@ -426,6 +434,7 @@ function TravelWindow:SetItems()
         self.CaroTab:SetItems();
     elseif Settings.mode == 4 then
         self.PullTab:SetItems();
+        self.PullTab.pixelWidth = self:GetWidth()
     end
 end
 
@@ -457,8 +466,11 @@ function TravelWindow:UpdateMinimum()
 
     self:SetMinimumSize(self.minWidth, self.minHeight);
 
-    if Settings.mode == 3 or Settings.mode == 4 then
+    if Settings.mode == 3 then
         self:SetSize(self.minWidth, self.minHeight);
+    end
+    if Settings.mode == 4 then
+        self:SetSize(self.PullTab.pixelWidth, self.minHeight)
     end
 end
 
