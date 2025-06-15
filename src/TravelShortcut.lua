@@ -8,7 +8,6 @@ local NextDefaultIndex = 1
 function TravelShortcut:Constructor(sType, tType, skill)
     Turbine.UI.Lotro.Shortcut.Constructor(self);
 
-    -- the data to keep track of
     self.found = false;
     self.skill = skill;
     self.skill.shortcut = self;
@@ -43,7 +42,6 @@ end
 
 function TravelShortcut:InitEnabled()
     if LoadEnabled == nil then
-        -- error fallback
         self.Enabled = true
         return
     end
@@ -54,55 +52,44 @@ function TravelShortcut:InitEnabled()
     end
 end
 
--- function to set the enabled status
 function TravelShortcut:SetEnabled(value)
-    -- if the value type is not boolean, set an error
     if (type(value) ~= "boolean") then
         self.Enabled = nil;
         error(string.format("Invalid input arg for TravelShortcut:SetEnabled: %q", value));
         return;
     end
 
-    -- else, set the value
     self.Enabled = value;
 end
 
--- function to check the enabled status of the shortcut
 function TravelShortcut:IsEnabled()
     return self.Enabled;
 end
 
--- function to return the ingame skill name of the shortcut
 function TravelShortcut:GetName()
     return self.skill.name;
 end
 
--- function to return an optional skill description to disambiguate identical skill names
 function TravelShortcut:GetDescription()
     return self.skill.desc;
 end
 
--- function to return the plugin specific skill label of the shortcut
 function TravelShortcut:GetLabel()
     return self.skill.label;
 end
 
--- function to set the index of the shortcut
 function TravelShortcut:SetIndex(value)
     self.Index = value;
 end
 
--- function to return the index of the shortcut
 function TravelShortcut:GetIndex()
     return self.Index;
 end
 
--- function to set the type of the shortcut
 function TravelShortcut:SetTravelType(type)
     -- for future use
 end
 
--- function to get the type of shortcut
 function TravelShortcut:GetTravelType()
     return self.travelType;
 end
