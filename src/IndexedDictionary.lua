@@ -21,7 +21,6 @@ function IndexedDictionary:Constructor(parent, title)
     self.numberOfItems = 0
 end
 
--- function to get the total number of entries in the dictionary
 function IndexedDictionary:GetCount()
     return self.numberOfItems;
 end
@@ -147,7 +146,6 @@ function IndexedDictionary:AddLabelTag(tag)
     end
 end
 
--- function to add a skills data to the end of the dictionary
 function IndexedDictionary:AddSkill(skill)
     if not self:VerifySkill(skill) then return end
 
@@ -162,7 +160,6 @@ function IndexedDictionary:AddSkill(skill)
     self.skillIdList[skill.id] = true;
 end
 
--- function to remove a skills data from the dictionary at a specific index
 function IndexedDictionary:RemoveSkillAtIndex(index)
     local id = self.skills[index].id;
 
@@ -175,22 +172,18 @@ function IndexedDictionary:RemoveSkillAtIndex(index)
     self.parent.skillCount = self.parent.skillCount - 1;
 end
 
--- function to get the skill at a specified index
 function IndexedDictionary:Skill(index)
     return self.skills[index];
 end
 
--- function to get the skill name at a specified index
 function IndexedDictionary:NameAtIndex(index)
     return self.skills[index].name;
 end
 
--- function to return the ID at a specified index
 function IndexedDictionary:IdAtIndex(index)
     return self.skills[index].id;
 end
 
--- function to return the label at a specified index
 function IndexedDictionary:LabelAtIndex(index)
     return self.skills[index].label;
 end
@@ -199,12 +192,10 @@ function IndexedDictionary:DescAtIndex(index)
     return self.skills[index].desc;
 end
 
--- function to return the skill name and ID at a specified index
 function IndexedDictionary:PairAtIndex(index)
     return self.skills[index].name, self.skills[index].id;
 end
 
--- function to check if ID exists
 function IndexedDictionary:VerifyId(id)
     if (self.skillIdList[id] == true) then
         return true;
@@ -213,7 +204,6 @@ function IndexedDictionary:VerifyId(id)
     end
 end
 
--- function to check if a table contains a specific element
 function TableContains(tableToSearch, elementToSearchFor)
     for i, value in pairs(tableToSearch) do
         if (value == elementToSearchFor) then
@@ -223,7 +213,6 @@ function TableContains(tableToSearch, elementToSearchFor)
     return false;
 end
 
--- function to check if a table contains a specific element index
 function TableIndex(tableToSearch, elementToSearchFor)
     for i, value in pairs(tableToSearch) do
         if (value == elementToSearchFor) then
