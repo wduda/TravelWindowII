@@ -25,7 +25,7 @@ function TravelListTab:Constructor(toplevel)
     self.itemHeight = 22;
     self.scrollChunk = self.itemHeight;
 
-    self.minWidth = 275
+    self.minWidth = 225
     self.minHeight = 75
 
     self.itemAlpha = DefAlpha;
@@ -104,6 +104,7 @@ function TravelListTab:AddItem(shortcut)
         self.labels[index]:SetMouseVisible(false);
         self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
         self.labels[index]:SetBackColor(Turbine.UI.Color(self.itemAlpha, 0, 0, 0));
+        self.labels[index]:SetMultiline(false)
         self.labels[index]:SetText(shortcut:GetLabel());
         self.labels[index]:SetParent(self.SubWindow);
         self.labels[index].shortcut = shortcut
@@ -174,7 +175,6 @@ function TravelListTab:FitToPixels(width, height)
         width = self.minWidth
     end
     local minWidth = width - self.itemWidthPadding - self.parent.wPadding
-    self.itemHeight = GetMinimumHeight(self.labels, minWidth)
     self.scrollChunk = self.itemHeight
     local rowHeight = self.itemHeight;
     local minHeight = rowHeight * 6;
