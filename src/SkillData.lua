@@ -2632,7 +2632,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 DE={vendor="Quartiermeister (Dol Amroth)"},
                 FR={vendor="Intendant (Dol Amroth)"},
                 RU={vendor="Интендант (Дол Амрот)"}}},
-        rep=LC.rep.DOL_AMROTH, repLevel=LC.repLevel.ACQUAINTANCE,
+        rep=LC.rep.DOL_AMROTH, repLevel=LC.repLevel.FRIEND,
         minLevel=90,
         level=98
     })
