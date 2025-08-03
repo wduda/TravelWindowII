@@ -3,7 +3,7 @@
     <Information>
         <Name>Travel Window II</Name>
         <Author>Hyos</Author>
-        <Version>v3.0.0</Version>
+        <Version>v3.1.0</Version>
         <Description>
         This plugin creates a single window that contains all the available travel skills, including the race, class and reputation skills.
 It is a further development of Travel Window, that has been worked on by multiple authors before.
