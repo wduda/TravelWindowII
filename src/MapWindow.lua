@@ -200,7 +200,7 @@ function MapWindow:AddCreepShortcuts()
     for i = 1, #creep.skills do
         local map = creep.skills[i].map
         local id = creep.skills[i].id;
-        self.AddSingleShortcut(map, Turbine.UI.Lotro.Shortcut(sType, id));
+        self:AddSingleShortcut(map, Turbine.UI.Lotro.Shortcut(sType, id));
     end
 end
 
