@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v3.1.0
+
+- enhance: the skill type is now an optional part of the skill label and can be turned off  - affects text list and tab pulldown view only
+- enhance: the text list view now does not force line breaks forcing inconsistent line height
+- enhance: the pulldown tab view can now be resized horizontally
+- fix: map window is again loading for creep characters
+- fix: the reputation requirement for King's Gondor version of Dol Amroth is correctly shown as friend
+- fix: the Find tab now shows updated lower levels for Hunter skills learned earlier after rework
+- fix: all skills for travel to King's Gondor version of Dol Amroth will be recognized again in all languages official languagaes
+
 ## v3.0.0
 
 - enhance: the Find tab in options now has information on all obtainable skills and their sources
