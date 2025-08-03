@@ -194,13 +194,12 @@ function MapWindow:AddRacialLocation()
 end
 
 function MapWindow:AddCreepShortcuts()
-
     local sType = Turbine.UI.Lotro.ShortcutType.Skill;
     local creep = TravelInfo.creep;
     for i = 1, #creep.skills do
         local map = creep.skills[i].map
         local id = creep.skills[i].id;
-        self:AddSingleShortcut(map, Turbine.UI.Lotro.Shortcut(sType, id));
+        self:AddSingleShortcut(map[1], Turbine.UI.Lotro.Shortcut(sType, id));
     end
 end
 
