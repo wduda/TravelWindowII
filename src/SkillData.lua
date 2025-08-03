@@ -24,7 +24,7 @@ function TravelDictionary:CreateDictionaries()
         map={{MapType.ERIADOR, 360, 390}},
         overlap={"0x700062C8", "0x70023262"},
         acquire={{autoLevel=true}},
-        minLevel=22,
+        minLevel=11,
         level=1
     })
     self.hunter:AddSkill({
@@ -36,7 +36,7 @@ function TravelDictionary:CreateDictionaries()
         map={{MapType.ERIADOR, 305, 270}},
         overlap={"0x70006346", "0x70053C0F", "0x7001BF91"},
         acquire={{autoLevel=true}},
-        minLevel=24,
+        minLevel=13,
         level=1.1
     })
     self.hunter:AddSkill({
@@ -48,7 +48,7 @@ function TravelDictionary:CreateDictionaries()
         map={{MapType.ERIADOR, 585, 335}},
         overlap={"0x700062F6", "0x7001BF90"},
         acquire={{autoLevel=true}},
-        minLevel=32,
+        minLevel=15,
         level=5
     })
     self.hunter:AddSkill({
@@ -186,7 +186,7 @@ function TravelDictionary:CreateDictionaries()
         RU={name="Путь в Эстельдин", label="Эстельдин", zone="Северное нагорье"},
         map={{MapType.ERIADOR, 655, 290}},
         acquire={{autoLevel=true}},
-        minLevel=34,
+        minLevel=32,
         level=30
     })
     self.hunter:AddSkill({
@@ -237,7 +237,7 @@ function TravelDictionary:CreateDictionaries()
         map={{MapType.ERIADOR, 865, 410}},
         overlap={"0x7000631F", "0x70023263"},
         acquire={{autoLevel=true}},
-        minLevel=46,
+        minLevel=44,
         level=40.1
     })
     self.hunter:AddSkill({
@@ -1046,13 +1046,13 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth", zone
     })
     self.hunter:AddSkill({
         id="0x70068711",
-        EN={name="Guide to Dol Amroth", desc=[[Returns you and your Fellowship to Dol Amroth in King's Gondor.
+        EN={name="Guide to Dol Amroth, King's Gondor", desc=[[Returns you and your Fellowship to Dol Amroth in King's Gondor.
 
 This skill is easily interrupted.]], label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
-        DE={name="Führer nach Dol Amroth", desc=[[Bringt Euch und Eure Gefährten zurück nach Dol Amroth im Königreich Gondor.
+        DE={name="Führer nach Dol Amroth (Königreich Gondor)", desc=[[Bringt Euch und Eure Gefährten zurück nach Dol Amroth im Königreich Gondor.
 
 Diese Fertigkeit kann leicht unterbrochen werden.]], label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
-        FR={name="Guide vers Dol Amroth", desc=[[Vous renvoie jusqu'à Dol Amroth, dans le Gondor royal, avec votre communauté.
+        FR={name="Guide vers Dol Amroth (Gondor royal)", desc=[[Vous renvoie jusqu'à Dol Amroth, dans le Gondor royal, avec votre communauté.
 
 Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
         RU={name="Путь в Дол Амрот", desc=[[Возвращает вас и ваше братство в Дол Амрот, что в Королевском Гондоре.
@@ -2214,9 +2214,9 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
     })
     self.warden:AddSkill({
         id="0x70068712",
-        EN={name="Muster at Dol Amroth", desc=[[Allows the Warden to travel to Dol Amroth in King's Gondor.]], label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
-        DE={name="Appell in Dol Amroth", desc=[[Erlaubt es dem Hüter, nach Dol Amroth im Königreich Gondor zu reisen.]], label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
-        FR={name="Rassemblement à Dol Amroth", desc=[[Permet à la sentinelle de voyager jusqu'à Dol Amroth, dans le Gondor royal.]], label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
+        EN={name="Muster at Dol Amroth, King's Gondor", desc=[[Allows the Warden to travel to Dol Amroth in King's Gondor.]], label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
+        DE={name="Appell in Dol Amroth (Königreich Gondor)", desc=[[Erlaubt es dem Hüter, nach Dol Amroth im Königreich Gondor zu reisen.]], label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
+        FR={name="Rassemblement à Dol Amroth, Gondor royal", desc=[[Permet à la sentinelle de voyager jusqu'à Dol Amroth, dans le Gondor royal.]], label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
         RU={name="Сбор в Дол Амроте", desc=[[Позволяет защитнику добраться до Дол Амрота, что в Королевском Гондоре.]], label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"},
         map={{MapType.GONDOR, 210, 485},{MapType.HARADWAITH, 325, 70}},
         overlap={"0x70068700"},
@@ -2702,9 +2702,9 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
     })
     self.mariner:AddSkill({
         id="0x700687C1",
-        EN={name="Sail to Dol Amroth", desc=[[Navigate to Dol Amroth in King's Gondor with nearby fellows.]], label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
-        DE={name="Segelt nach Dol Amroth", desc=[[Reist mit in der Nähe befindlichen Gefährten nach Dol Amroth im Königreich Gondor.]], label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
-        FR={name="Naviguer vers Dol Amroth", desc=[[Voguez jusqu'à Dol Amroth, dans le Gondor royal, en bonne compagnie.]], label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
+        EN={name="Sail to Dol Amroth, King's Gondor", desc=[[Navigate to Dol Amroth in King's Gondor with nearby fellows.]], label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
+        DE={name="Segelt nach Dol Amroth (Königreich Gondor)", desc=[[Reist mit in der Nähe befindlichen Gefährten nach Dol Amroth im Königreich Gondor.]], label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
+        FR={name="Naviguer vers Dol Amroth (Gondor royal)", desc=[[Voguez jusqu'à Dol Amroth, dans le Gondor royal, en bonne compagnie.]], label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
         RU={name="Отплытие в Дол Амрот", desc=[[Отплыть в Дол Амрот Королевского Гондора с находящимися поблизости соратниками.]], label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"},
         map={{MapType.GONDOR, 210, 485},{MapType.HARADWAITH, 385, 70}},
         overlap={"0x70068700"},
@@ -4181,9 +4181,9 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
     })
     self.rep:AddSkill({
         id="0x70068700",
-        EN={name="Return to Dol Amroth", desc=[[You're able to quickly return to Dol Amroth in King's Gondor. This skill is easily interrupted.]], label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
-        DE={name="Rückkehr nach Dol Amroth", desc=[[Ihr könnt schnell nach Dol Amroth im Königreich Gondor zurückkehren. Bei der Ausübung dieser Fertigkeit könnt Ihr leicht unterbrochen werden.]], label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
-        FR={name="Retour à Dol Amroth", desc=[[Vous pouvez revenir rapidement à Dol Amroth, dans le Gondor royal. Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
+        EN={name="Return to Dol Amroth, King's Gondor", desc=[[You're able to quickly return to Dol Amroth in King's Gondor. This skill is easily interrupted.]], label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
+        DE={name="Rückkehr nach Dol Amroth (Königreich Gondor)", desc=[[Ihr könnt schnell nach Dol Amroth im Königreich Gondor zurückkehren. Bei der Ausübung dieser Fertigkeit könnt Ihr leicht unterbrochen werden.]], label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
+        FR={name="Retour à Dol Amroth (Gondor royal)", desc=[[Vous pouvez revenir rapidement à Dol Amroth, dans le Gondor royal. Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
         RU={name="Возвращение в Дол Амрот", desc=[[Это умение позволяет вам быстро перенестись в Дол Амрот, что в Королевском Гондоре. Применение умения легко прервать.]], label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"},
         map={{MapType.GONDOR, 180, 485},{MapType.HARADWAITH, 355, 70}},
         acquire={
