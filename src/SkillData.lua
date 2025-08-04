@@ -915,7 +915,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth", zone
         DE={name="Führer nach Annâk-khurfu", label="Annâk-khurfu", zone="Elderslade"},
         FR={name="Guide vers Annâk-khurfu", label="Annâk-khurfu", zone="Elderslade"},
         RU={name="Путь в Аннак-Курфу", label="Аннак-Курфу", zone="Долина предков"},
-        map={{MapType.RHOVANION, 530, 90}},
+        map={{MapType.RHOVANION, 330, 90}},
         overlap={"0x7005856F"},
         acquire={
             {cost={{amount=25, token=LC.token.COPPER_COIN_OF_GUNDABAD}},
@@ -2083,7 +2083,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         DE={name="Appell in Annâk-khurfu", label="Annâk-khurfu", zone="Elderslade"},
         FR={name="Rassemblement : Annâk-khurfu", label="Annâk-khurfu", zone="Elderslade"},
         RU={name="Сбор в Аннак-Курфу", label="Аннак-Курфу", zone="Долина предков"},
-        map={{MapType.RHOVANION, 530, 90}},
+        map={{MapType.RHOVANION, 330, 90}},
         overlap={"0x7005856F"},
         acquire={
             {cost={{amount=25, token=LC.token.COPPER_COIN_OF_GUNDABAD}},
@@ -4041,7 +4041,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         DE={name="Rückkehr nach Annâk-khurfu", label="Annâk-khurfu", zone="Elderslade"},
         FR={name="Retournez à Annâk-khurfu", label="Annâk-khurfu", zone="Elderslade"},
         RU={name="Возвращение в Аннак-Курфу", label="Аннак-Курфу", zone="Долина предков"},
-        map={{MapType.RHOVANION, 500, 90}},
+        map={{MapType.RHOVANION, 300, 90}},
         acquire={
             {cost={{amount=25, token=LC.token.COPPER_COIN_OF_GUNDABAD}},
                 EN={vendor="Quartermaster (March on Gundabad)"},
