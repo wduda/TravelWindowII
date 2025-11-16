@@ -232,8 +232,8 @@ function CreateSettingsConfig()
     AddSettingConfig("listWidth", 0)
     AddSettingConfig("listRows", 0)
     AddSettingConfig("pullWidth", 0)
-    AddSettingConfig("positionX", Turbine.UI.Display.GetWidth() * 0.75)
-    AddSettingConfig("positionY", Turbine.UI.Display.GetHeight() * 0.75)
+    AddSettingConfig("positionRelativeX", 0.75)
+    AddSettingConfig("positionRelativeY", 0.75)
     AddSettingConfig("buttonRelativeX", 0.95)
     AddSettingConfig("buttonRelativeY", 0.75)
     AddSettingConfig("useMinWindow", 0)
@@ -313,6 +313,20 @@ function GetVersionNumber(version)
     return (major * (2 ^ 16)) + (minor * (2 ^ 8)) + patch
 end
 
+function ToRelativePosSetting(settingsArg, absMax, absName, relName)
+    local relative = Settings[relName]
+    if settingsArg[absName] ~= nil and settingsArg[absName] ~= "nil" then
+        if tonumber(settingsArg[absName]) < absMax then
+            relative = tonumber(settingsArg[absName]) / absMax
+            if relative > 1.0 then
+                relative = Settings[relName]
+            end
+        end
+        settingsArg[absName] = nil
+    end
+    SettingsConfig[relName].forceDefaultInit = relative
+end
+
 function SetSettings(settingsArg, scope, importOldSettings)
     -- initialze any uninitialized settings strings
     if (type(settingsArg) ~= "table") then
@@ -323,35 +337,14 @@ function SetSettings(settingsArg, scope, importOldSettings)
         settingsArg.lastLoadedVersion = tostring(Plugins["Travel Window II"]:GetVersion());
     end
 
-    -- fixup deprecated buttonPositionX
-    local buttonRelativeX = Settings.buttonRelativeX;
-    if settingsArg.buttonPositionX ~= nil and settingsArg.buttonPositionX ~= "nil" then
-        local screenWidth = Turbine.UI.Display.GetWidth();
-        if tonumber(settingsArg.buttonPositionX) < screenWidth then
-            -- not perfect, but assuming the same resolution, this will approximately convert to a relative value
-            buttonRelativeX = tonumber(settingsArg.buttonPositionX) / screenWidth;
-            if buttonRelativeX > 1.0 then
-                buttonRelativeX = Settings.buttonRelativeX;
-            end
-        end
-        settingsArg.buttonPositionX = nil;
-    end
-    SettingsConfig.buttonRelativeX.forceDefaultInit = buttonRelativeX
+    local screenW = Turbine.UI.Display.GetWidth()
+    local screenH = Turbine.UI.Display.GetHeight();
 
-    -- fixup deprecated buttonPositionY
-    local buttonRelativeY = Settings.buttonRelativeY;
-    if settingsArg.buttonPositionY ~= nil and settingsArg.buttonPositionY ~= "nil" then
-        local screenHeight = Turbine.UI.Display.GetHeight();
-        if tonumber(settingsArg.buttonPositionY) < screenHeight then
-            -- not perfect, but assuming the same resolution, this will approximately convert to a relative value
-            buttonRelativeY = tonumber(settingsArg.buttonPositionY) / screenHeight;
-            if buttonRelativeY > 1.0 then
-                buttonRelativeY = Settings.buttonRelativeY;
-            end
-        end
-        settingsArg.buttonPositionY = nil;
-    end
-    SettingsConfig.buttonRelativeY.forceDefaultInit = buttonRelativeY
+    -- fixup deprecated positionX/Y and buttonPositionX/Y
+    ToRelativePosSetting(settingsArg, screenW, "positionX", "positionRelativeX")
+    ToRelativePosSetting(settingsArg, screenH, "positionY", "positionRelativeY")
+    ToRelativePosSetting(settingsArg, screenW, "buttonPositionX", "buttonRelativeX")
+    ToRelativePosSetting(settingsArg, screenH, "buttonPositionY", "buttonRelativeY")
 
     -- convert ignoreEsc to escapeToClose
     if settingsArg.ignoreEsc ~= nil and settingsArg.ignoreEsc ~= "nil" then
