@@ -255,7 +255,7 @@ LC_RU.rep.CITIZENS_OF_UMBAR_BAHARBEL = "Жители Умбар-Бахарбел
 LC_EN.rep.IKORBANI = "The Ikorbâni"
 LC_DE.rep.IKORBANI = "Die Ikorbâni"
 LC_FR.rep.IKORBANI = "Les Ikorbâni"
-LC_RU.rep.IKORBANI = "Икорбани"
+LC_RU.rep.IKORBANI = "Жители Икорбана"
 
 LC_EN.token = {}
 LC_DE.token = {}
@@ -505,14 +505,14 @@ LC_RU.token.LEDGER_KEEPER_MARK = "Марка Хранителей книг"
 LC_EN.token.SHAGANI_GHIN = "Shagâni Ghín"
 LC_DE.token.SHAGANI_GHIN = "Shagâni Ghín"
 LC_FR.token.SHAGANI_GHIN = "Shagâni Ghín"
-LC_RU.token.SHAGANI_GHIN = "Shagâni Ghín"
+LC_RU.token.SHAGANI_GHIN = "Шаганский гин"
 
 LC_EN.token.COLD_IRON_TOKEN = "Cold-iron Token"
 LC_DE.token.COLD_IRON_TOKEN = "Kalte Eisenmarke"
 LC_FR.token.COLD_IRON_TOKEN = "Jeton en fer froid"
-LC_RU.token.COLD_IRON_TOKEN = "Cold-iron Token"
+LC_RU.token.COLD_IRON_TOKEN = "Холодный железный жетон"
 
 LC_EN.token.HAMATI_URGUL = "Hamâti Urgûl"
 LC_DE.token.HAMATI_URGUL = "Hamâti-Urgûl"
 LC_FR.token.HAMATI_URGUL = "Urgûl hamâti"
-LC_RU.token.HAMATI_URGUL = "Hamâti Urgûl"
+LC_RU.token.HAMATI_URGUL = "Хаматский ургул"
