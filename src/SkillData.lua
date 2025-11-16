@@ -572,18 +572,10 @@ function TravelDictionary:CreateDictionaries()
     })
     self.hunter:AddSkill({
         id="0x70041197",
-        EN={name="Guide to Dol Amroth", desc=[[Returns you and your Fellowship to Dol Amroth in western Gondor.
-
-This skill is easily interrupted.]], label="Dol Amroth", zone="Western Gondor"},
-        DE={name="Führer nach Dol Amroth", desc=[[Bringt Euch und Eure Gefährten zurück nach Dol Amroth.
-
-Diese Fertigkeit kann leicht unterbrochen werden.]], label="Dol Amroth", zone="West-Gondor"},
-        FR={name="Guide vers Dol Amroth", desc=[[Vous renvoie jusqu'à Dol Amroth, dans l'Ouest du Gondor, avec votre communauté.
-
-Cette compétence peut être facilement interrompue.]], label="Dol Amroth", zone="Gondor de l'Ouest"},
-        RU={name="Путь в Дол Амрот", desc=[[Возвращает вас и ваше братство в Дол Амрот, что в западном Гондоре.
-
-Применение умения легко прервать.]], label="Дол Амрот", zone="Западный Гондор"},
+        EN={name="Guide to Dol Amroth", label="Dol Amroth", zone="Western Gondor"},
+        DE={name="Führer nach Dol Amroth", label="Dol Amroth", zone="West-Gondor"},
+        FR={name="Guide vers Dol Amroth", label="Dol Amroth", zone="Gondor de l'Ouest"},
+        RU={name="Путь в Дол Амрот", label="Дол Амрот", zone="Западный Гондор"},
         map={{MapType.GONDOR, 225, 550}},
         overlap={"0x700411AC"},
         acquire={
@@ -637,7 +629,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth", zone
         EN={name="Guide to the War-stead", label="War-stead", zone="Far Anórien"},
         DE={name="Führer zum Kriegslager der Rohirrim", label="Kriegslager der Rohirrim", zone="Fernes Anórien"},
         FR={name="Guide pour se rendre au camp militaire", label="Camp militaire", zone="Lointain Anórien"},
-        RU={name="Путь в военный лагерь рохиррим", label="Лагерь Рохиррим", zone="Дальний Анориен"},
+        RU={name="Путь в военный лагерь Рохиррим", label="Лагерь Рохиррим", zone="Дальний Анориен"},
         map={{MapType.GONDOR, 665, 140}},
         overlap={"0x700459A9"},
         acquire={
@@ -1046,18 +1038,10 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth", zone
     })
     self.hunter:AddSkill({
         id="0x70068711",
-        EN={name="Guide to Dol Amroth, King's Gondor", desc=[[Returns you and your Fellowship to Dol Amroth in King's Gondor.
-
-This skill is easily interrupted.]], label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
-        DE={name="Führer nach Dol Amroth (Königreich Gondor)", desc=[[Bringt Euch und Eure Gefährten zurück nach Dol Amroth im Königreich Gondor.
-
-Diese Fertigkeit kann leicht unterbrochen werden.]], label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
-        FR={name="Guide vers Dol Amroth (Gondor royal)", desc=[[Vous renvoie jusqu'à Dol Amroth, dans le Gondor royal, avec votre communauté.
-
-Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
-        RU={name="Путь в Дол Амрот", desc=[[Возвращает вас и ваше братство в Дол Амрот, что в Королевском Гондоре.
-
-Применение умения легко прервать.]], label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"},
+        EN={name="Guide to Dol Amroth, King's Gondor", label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
+        DE={name="Führer nach Dol Amroth (Königreich Gondor)", label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
+        FR={name="Guide vers Dol Amroth (Gondor royal)", label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
+        RU={name="Путь в Дол Амрот, Королевский Гондор", label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"},
         map={{MapType.GONDOR, 210, 485},{MapType.HARADWAITH, 325, 70}},
         overlap={"0x70068700"},
         acquire={
@@ -1142,7 +1126,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Temple of Utug-bûr Quartermaster"},
                 DE={vendor="\"Der Tempel von Utug-bûr\"-Quartiermeister"},
                 FR={vendor="Intendant du Temple d'Utug-bûr"},
-                RU={vendor="Temple of Utug-bûr Quartermaster"}}},
+                RU={vendor="Интендант храма Утуг-Бур"}}},
         minLevel=20,
         level=147
     })
@@ -1211,7 +1195,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Guide to Iridír", label="Iridír", zone="Ikorbân"},
         DE={name="Führer nach Iridír", label="Iridír", zone="Ikorbân"},
         FR={name="Guide vers Iridir", label="Iridír", zone="Ikorbân"},
-        RU={name="Guide to Iridír", label="Iridír", zone="Ikorbân"},
+        RU={name="Путь в Иридир", label="Iridír", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 555, 325}},
         overlap={"0x7006C3A1"},
         acquire={
@@ -1219,7 +1203,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.1
@@ -1229,7 +1213,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Guide to Jirush", label="Jirush", zone="Ikorbân"},
         DE={name="Führer nach Jirush", label="Jirush", zone="Ikorbân"},
         FR={name="Guide vers Jirush", label="Jirush", zone="Ikorbân"},
-        RU={name="Guide to Jirush", label="Jirush", zone="Ikorbân"},
+        RU={name="Путь в Джируш", label="Jirush", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 560, 415}},
         overlap={"0x7006C3C3"},
         acquire={
@@ -1237,7 +1221,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.2
@@ -1247,7 +1231,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Guide to Urmâkh", label="Urmâkh", zone="Ikorbân"},
         DE={name="Führer nach Urmâkh", label="Urmâkh", zone="Ikorbân"},
         FR={name="Guide vers Urmâkh", label="Urmâkh", zone="Ikorbân"},
-        RU={name="Guide to Urmâkh", label="Urmâkh", zone="Ikorbân"},
+        RU={name="Путь в Урмах", label="Urmâkh", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 640, 410}},
         overlap={"0x7006C3B0"},
         acquire={
@@ -1255,7 +1239,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.3
@@ -1265,7 +1249,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Guide to Maurûsh", label="Maurûsh", zone="Ikorbân"},
         DE={name="Führer nach Maurûsh", label="Maurûsh", zone="Ikorbân"},
         FR={name="Guide vers Maurûsh", label="Maurûsh", zone="Ikorbân"},
-        RU={name="Guide to Maurûsh", label="Maurûsh", zone="Ikorbân"},
+        RU={name="Путь в Мауруш", label="Maurûsh", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 640, 350}},
         overlap={"0x7006C3BC"},
         acquire={
@@ -1273,7 +1257,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.4
@@ -1283,14 +1267,14 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Guide to Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
         DE={name="Utug-bûr: Ein kleiner Leitfaden", label="Utug-bûr", zone="Ikorbân"},
         FR={name="Guide vers Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
-        RU={name="Guide to Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
+        RU={name="Путь в Утуг-Бур", label="Utug-bûr", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 670, 310}},
         acquire={
             {cost={{amount=1, token=LC.token.COLD_IRON_TOKEN}},
                 EN={vendor="Temple of Utug-bûr Quartermaster"},
                 DE={vendor="\"Der Tempel von Utug-bûr\"-Quartiermeister"},
                 FR={vendor="Intendant du Temple d'Utug-bûr"},
-                RU={vendor="Temple of Utug-bûr Quartermaster"}}},
+                RU={vendor="Интендант храма Утуг-Бур"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.5
@@ -1300,14 +1284,14 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Guide to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         DE={name="Führer nach Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         FR={name="Guide vers Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
-        RU={name="Guide to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        RU={name="Путь в Дун-Шуму", label="Dun Shûma", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 620, 445}},
         acquire={
             {cost={{amount=10, token=LC.token.HAMATI_URGUL}},
                 EN={vendor="Hamâti Quartermaster"},
                 DE={vendor="Hamâti-Quartiermeisterin"},
                 FR={vendor="Intendante des Hamâti"},
-                RU={vendor="Hamâti Quartermaster"}}},
+                RU={vendor="Хаматский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.6
@@ -1748,10 +1732,10 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
     })
     self.warden:AddSkill({
         id="0x70041198",
-        EN={name="Muster in Dol Amroth", desc=[[Allows the Warden to travel to Dol Amroth in western Gondor.]], label="Dol Amroth", zone="Western Gondor"},
-        DE={name="Appell in Dol Amroth", desc=[[Erlaubt es dem Hüter, nach Dol Amroth in West-Gondor zu reisen.]], label="Dol Amroth", zone="West-Gondor"},
-        FR={name="Rassemblement : Dol Amroth", desc=[[Permet à la sentinelle de se rendre à Dol Amroth, dans l'Ouest du Gondor.]], label="Dol Amroth", zone="Gondor de l'Ouest"},
-        RU={name="Сбор в Дол Амроте", desc=[[Позволяет защитнику совершить путешествие в Дол Амрот, что в западном Гондоре.]], label="Дол Амрот", zone="Западный Гондор"},
+        EN={name="Muster in Dol Amroth", label="Dol Amroth", zone="Western Gondor"},
+        DE={name="Appell in Dol Amroth", label="Dol Amroth", zone="West-Gondor"},
+        FR={name="Rassemblement : Dol Amroth", label="Dol Amroth", zone="Gondor de l'Ouest"},
+        RU={name="Сбор в Дол Амроте", label="Дол Амрот", zone="Западный Гондор"},
         map={{MapType.GONDOR, 225, 550}},
         overlap={"0x700411AC"},
         acquire={
@@ -2214,10 +2198,10 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
     })
     self.warden:AddSkill({
         id="0x70068712",
-        EN={name="Muster at Dol Amroth, King's Gondor", desc=[[Allows the Warden to travel to Dol Amroth in King's Gondor.]], label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
-        DE={name="Appell in Dol Amroth (Königreich Gondor)", desc=[[Erlaubt es dem Hüter, nach Dol Amroth im Königreich Gondor zu reisen.]], label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
-        FR={name="Rassemblement à Dol Amroth, Gondor royal", desc=[[Permet à la sentinelle de voyager jusqu'à Dol Amroth, dans le Gondor royal.]], label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
-        RU={name="Сбор в Дол Амроте", desc=[[Позволяет защитнику добраться до Дол Амрота, что в Королевском Гондоре.]], label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"},
+        EN={name="Muster at Dol Amroth, King's Gondor", label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
+        DE={name="Appell in Dol Amroth (Königreich Gondor)", label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
+        FR={name="Rassemblement à Dol Amroth, Gondor royal", label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
+        RU={name="Сбор в Дол Амроте, Королевский Гондор", label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"},
         map={{MapType.GONDOR, 210, 485},{MapType.HARADWAITH, 325, 70}},
         overlap={"0x70068700"},
         acquire={
@@ -2302,7 +2286,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Temple of Utug-bûr Quartermaster"},
                 DE={vendor="\"Der Tempel von Utug-bûr\"-Quartiermeister"},
                 FR={vendor="Intendant du Temple d'Utug-bûr"},
-                RU={vendor="Temple of Utug-bûr Quartermaster"}}},
+                RU={vendor="Интендант храма Утуг-Бур"}}},
         minLevel=20,
         level=147
     })
@@ -2371,7 +2355,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Muster at Iridír", label="Iridír", zone="Ikorbân"},
         DE={name="Appell in Iridír", label="Iridír", zone="Ikorbân"},
         FR={name="Rassemblement à Iridir", label="Iridír", zone="Ikorbân"},
-        RU={name="Muster at Iridír", label="Iridír", zone="Ikorbân"},
+        RU={name="Сбор в Иридире", label="Iridír", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 555, 325}},
         overlap={"0x7006C3A1"},
         acquire={
@@ -2379,7 +2363,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.1
@@ -2389,7 +2373,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Muster at Jirush", label="Jirush", zone="Ikorbân"},
         DE={name="Appell in Jirush", label="Jirush", zone="Ikorbân"},
         FR={name="Rassemblement à Jirush", label="Jirush", zone="Ikorbân"},
-        RU={name="Muster at Jirush", label="Jirush", zone="Ikorbân"},
+        RU={name="Сбор в Джируше", label="Jirush", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 560, 415}},
         overlap={"0x7006C3C3"},
         acquire={
@@ -2397,7 +2381,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.2
@@ -2407,7 +2391,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Muster at Urmâkh", label="Urmâkh", zone="Ikorbân"},
         DE={name="Appell in Urmâkh", label="Urmâkh", zone="Ikorbân"},
         FR={name="Rassemblement à Urmâkh", label="Urmâkh", zone="Ikorbân"},
-        RU={name="Muster at Urmâkh", label="Urmâkh", zone="Ikorbân"},
+        RU={name="Сбор в Урмахе", label="Urmâkh", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 640, 410}},
         overlap={"0x7006C3B0"},
         acquire={
@@ -2415,7 +2399,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.3
@@ -2425,7 +2409,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Muster at Maurûsh", label="Maurûsh", zone="Ikorbân"},
         DE={name="Appell in Maurûsh", label="Maurûsh", zone="Ikorbân"},
         FR={name="Rassemblement à Maurûsh", label="Maurûsh", zone="Ikorbân"},
-        RU={name="Muster at Maurûsh", label="Maurûsh", zone="Ikorbân"},
+        RU={name="Сбор в Мауруше", label="Maurûsh", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 640, 350}},
         overlap={"0x7006C3BC"},
         acquire={
@@ -2433,7 +2417,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.4
@@ -2443,14 +2427,14 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Muster at Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
         DE={name="Appell in Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
         FR={name="Rassemblement à Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
-        RU={name="Muster at Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
+        RU={name="Сбор в Утуг-Бур", label="Utug-bûr", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 670, 310}},
         acquire={
             {cost={{amount=1, token=LC.token.COLD_IRON_TOKEN}},
                 EN={vendor="Temple of Utug-bûr Quartermaster"},
                 DE={vendor="\"Der Tempel von Utug-bûr\"-Quartiermeister"},
                 FR={vendor="Intendant du Temple d'Utug-bûr"},
-                RU={vendor="Temple of Utug-bûr Quartermaster"}}},
+                RU={vendor="Интендант храма Утуг-Бур"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.5
@@ -2460,14 +2444,14 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Muster at Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         DE={name="Appell in Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         FR={name="Rassemblement à Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
-        RU={name="Muster at Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        RU={name="Сбор в Дун-Шуме", label="Dun Shûma", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 620, 445}},
         acquire={
             {cost={{amount=10, token=LC.token.HAMATI_URGUL}},
                 EN={vendor="Hamâti Quartermaster"},
                 DE={vendor="Hamâti-Quartiermeisterin"},
                 FR={vendor="Intendante des Hamâti"},
-                RU={vendor="Hamâti Quartermaster"}}},
+                RU={vendor="Хаматский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.6
@@ -2620,10 +2604,10 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
     })
     self.mariner:AddSkill({
         id="0x70066117",
-        EN={name="Sail to Dol Amroth", desc=[[Navigate to Dol Amroth with nearby fellows.]], label="Dol Amroth", zone="Western Gondor"},
-        DE={name="Segelt nach Dol Amroth", desc=[[Reist mit in der Nähe befindlichen Gefährten nach Dol Amroth.]], label="Dol Amroth", zone="West-Gondor"},
-        FR={name="Naviguer vers Dol Amroth", desc=[[Voguez jusqu'à Dol Amroth en bonne compagnie.]], label="Dol Amroth", zone="Gondor de l'Ouest"},
-        RU={name="Отплытие в Дол Амрот", desc=[[Отплыть в Дол Амрот с находящимися поблизости соратниками.]], label="Дол Амрот", zone="Западный Гондор"},
+        EN={name="Sail to Dol Amroth", label="Dol Amroth", zone="Western Gondor"},
+        DE={name="Segelt nach Dol Amroth", label="Dol Amroth", zone="West-Gondor"},
+        FR={name="Naviguer vers Dol Amroth", label="Dol Amroth", zone="Gondor de l'Ouest"},
+        RU={name="Отплытие в Дол Амрот", label="Дол Амрот", zone="Западный Гондор"},
         map={{MapType.GONDOR, 225, 550}},
         overlap={"0x700411AC"},
         acquire={
@@ -2702,10 +2686,10 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
     })
     self.mariner:AddSkill({
         id="0x700687C1",
-        EN={name="Sail to Dol Amroth, King's Gondor", desc=[[Navigate to Dol Amroth in King's Gondor with nearby fellows.]], label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
-        DE={name="Segelt nach Dol Amroth (Königreich Gondor)", desc=[[Reist mit in der Nähe befindlichen Gefährten nach Dol Amroth im Königreich Gondor.]], label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
-        FR={name="Naviguer vers Dol Amroth (Gondor royal)", desc=[[Voguez jusqu'à Dol Amroth, dans le Gondor royal, en bonne compagnie.]], label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
-        RU={name="Отплытие в Дол Амрот", desc=[[Отплыть в Дол Амрот Королевского Гондора с находящимися поблизости соратниками.]], label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"},
+        EN={name="Sail to Dol Amroth, King's Gondor", label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
+        DE={name="Segelt nach Dol Amroth (Königreich Gondor)", label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
+        FR={name="Naviguer vers Dol Amroth (Gondor royal)", label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
+        RU={name="Отплытие в Дол Амрот, Королевский Гондор", label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"},
         map={{MapType.GONDOR, 210, 485},{MapType.HARADWAITH, 385, 70}},
         overlap={"0x70068700"},
         acquire={
@@ -2790,7 +2774,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Temple of Utug-bûr Quartermaster"},
                 DE={vendor="\"Der Tempel von Utug-bûr\"-Quartiermeister"},
                 FR={vendor="Intendant du Temple d'Utug-bûr"},
-                RU={vendor="Temple of Utug-bûr Quartermaster"}}},
+                RU={vendor="Интендант храма Утуг-Бур"}}},
         rep=LC.rep.CITIZENS_OF_UMBAR_BAHARBEL, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=147
@@ -2818,7 +2802,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Sail to Iridír", label="Iridír", zone="Ikorbân"},
         DE={name="Nach Iridír segeln", label="Iridír", zone="Ikorbân"},
         FR={name="Naviguer vers Iridir", label="Iridír", zone="Ikorbân"},
-        RU={name="Sail to Iridír", label="Iridír", zone="Ikorbân"},
+        RU={name="Отплытие в Иридир", label="Iridír", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 555, 325}},
         overlap={"0x7006C3A1"},
         acquire={
@@ -2826,7 +2810,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.1
@@ -2836,7 +2820,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Sail to Urmâkh", label="Urmâkh", zone="Ikorbân"},
         DE={name="Nach Urmâkh segeln", label="Urmâkh", zone="Ikorbân"},
         FR={name="Naviguer vers Urmâkh", label="Urmâkh", zone="Ikorbân"},
-        RU={name="Sail to Urmâkh", label="Urmâkh", zone="Ikorbân"},
+        RU={name="Отплытие в Урмах", label="Urmâkh", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 640, 410}},
         overlap={"0x7006C3B0"},
         acquire={
@@ -2844,7 +2828,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.2
@@ -2854,7 +2838,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Sail to Maurûsh", label="Maurûsh", zone="Ikorbân"},
         DE={name="Nach Maurûsh segeln", label="Maurûsh", zone="Ikorbân"},
         FR={name="Naviguer vers Maurûsh", label="Maurûsh", zone="Ikorbân"},
-        RU={name="Sail to Maurûsh", label="Maurûsh", zone="Ikorbân"},
+        RU={name="Отплытие в Мауруш", label="Maurûsh", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 640, 350}},
         overlap={"0x7006C3BC"},
         acquire={
@@ -2862,7 +2846,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.3
@@ -2872,14 +2856,14 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Sail to Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
         DE={name="Nach Utug-bûr segeln", label="Utug-bûr", zone="Ikorbân"},
         FR={name="Voyager jusqu'à Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
-        RU={name="Sail to Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
+        RU={name="Отплытие в Утуг-Бур", label="Utug-bûr", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 670, 310}},
         acquire={
             {cost={{amount=1, token=LC.token.COLD_IRON_TOKEN}},
                 EN={vendor="Temple of Utug-bûr Quartermaster"},
                 DE={vendor="\"Der Tempel von Utug-bûr\"-Quartiermeister"},
                 FR={vendor="Intendant du Temple d'Utug-bûr"},
-                RU={vendor="Temple of Utug-bûr Quartermaster"}}},
+                RU={vendor="Интендант храма Утуг-Бур"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.4
@@ -2892,7 +2876,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Return to Bree", desc=[[This enables you to quickly return to Bree. This skill is easily interrupted.]], label="Bree", zlabel="West Gate", zone="Bree"},
         DE={name="Rückkehr nach Bree", desc=[[Ihr könnt schnell nach Bree zurückkehren. Bei der Ausübung dieser Fähigkeit könnt Ihr leicht unterbrochen werden.]], label="Bree", zlabel="Westtor", zone="Bree"},
         FR={name="Retour à Bree", desc=[[Permet de retourner rapidement à Bree. Cette compétence peut être facilement interrompue.]], label="Bree", zlabel="Porte Ouest", zone="Bree"},
-        RU={name="Дорога в Бри", desc=[[Быстрое возвращение в Бри. Применение легко прервать.]], label="Бри", zlabel="Западные ворота", zone="Бри"},
+        RU={name="Возвращение в Бри", desc=[[Быстрое возвращение в Бри. Применение легко прервать.]], label="Бри", zlabel="Западные ворота", zone="Бри"},
         map={{MapType.ERIADOR, 525, 335}},
         acquire={
             {
@@ -2909,7 +2893,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Return to the Shire", label="Michel Delving", zone="Shire"},
         DE={name="Rückkehr ins Auenland", label="Michelbinge", zone="Auenland"},
         FR={name="Retournez dans la Comté", label="Grand'Cave", zone="Comté"},
-        RU={name="Дорога в Шир", label="Занорье", zone="Шир"},
+        RU={name="Возвращение в Шир", label="Занорье", zone="Шир"},
         map={{MapType.ERIADOR, 405, 440}},
         acquire={
             {
@@ -2926,7 +2910,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Return to Thorin's Gate", desc=[[This enables you to quickly return to Thorin's Gate. This skill is easily interrupted.]], label="Thorin's Gate", zone="Ered Luin"},
         DE={name="Rückkehr zu Thorins Tor", desc=[[Hiermit gelangt Ihr schnell zurück zu Thorins Tor. Bei der Ausübung dieser Fertigkeit könnt Ihr leicht unterbrochen werden.]], label="Thorins Tor", zone="Ered Luin"},
         FR={name="Retour : Porte de Thorin", desc=[[Ceci vous permet de retourner rapidement à la Porte de Thorin. Cette compétence peut être facilement interrompue.]], label="Porte de Thorin", zone="Ered Luin"},
-        RU={name="Дорога к Вратам Торина", desc=[[Это умение позволяет вам быстро перенестись к Вратам Торина. Применение умения легко прервать.]], label="Врата Торина", zone="Эред Луин"},
+        RU={name="Возвращение к Вратам Торина", desc=[[Это умение позволяет вам быстро перенестись к Вратам Торина. Применение умения легко прервать.]], label="Врата Торина", zone="Эред Луин"},
         map={{MapType.ERIADOR, 310, 270}},
         acquire={
             {
@@ -2943,7 +2927,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Return to Rivendell", desc=[[This enables you to quickly return to Rivendell. This skill is easily interrupted.]], label="Rivendell", zone="Trollshaws"},
         DE={name="Rückkehr nach Bruchtal", desc=[[Hiermit gelangt Ihr schnell zurück nach Bruchtal. Bei der Ausübung dieser Fertigkeit könnt Ihr leicht unterbrochen werden.]], label="Bruchtal", zone="Die Trollhöhen"},
         FR={name="Retour à Fondcombe", desc=[[Ceci vous permet de retourner rapidement à Fondcombe. Cette compétence peut être facilement interrompue.]], label="Fondcombe", zone="Trouée des Trolls"},
-        RU={name="Дорога в Ривенделл", desc=[[Это умение позволяет вам быстро перенестись в Ривенделл. Применение умения легко прервать.]], label="Ривенделл", zone="Троллистая пуща"},
+        RU={name="Возвращение в Ривенделл", desc=[[Это умение позволяет вам быстро перенестись в Ривенделл. Применение умения легко прервать.]], label="Ривенделл", zone="Троллистая пуща"},
         map={{MapType.ERIADOR, 900, 375}},
         acquire={
             {
@@ -2960,7 +2944,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Return Home", desc=[[Return home to Grimbeorn's Lodge.]], label="Beorning Home", zone="Vales of Anduin"},
         DE={name="Zum 1. Heim zurückkehren", desc=[[Kehrt heim zu Grimbeorns Hütte.]], label="Grimbeorns Hütte", zone="Die Täler des Anduin"},
         FR={name="Retour à la maison", desc=[[Rentrez au bercail, au Pavillon de Grimbeorn.]], label="Maison Beorning", zone="Val d'Anduin"},
-        RU={name="Дорога домой", desc=[[Возвращение в усадьбу Гримбеорна.]], label="Дом беорнинга", zone="Долина Андуина"},
+        RU={name="Возвращение домой", desc=[[Возвращение в усадьбу Гримбеорна.]], label="Дом беорнинга", zone="Долина Андуина"},
         map={{MapType.RHOVANION, 285, 340}},
         acquire={
             {
@@ -3146,10 +3130,10 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
     })
     self.gen:AddSkill({
         id="0x7000D046",
-        EN={name="Travel to Personal House", label="Personal House"},
-        DE={name="Reist zu Eurem eigenen Heim", label="Eigenes Heim"},
-        FR={name="Retour à la maison personnelle", label="Maison personnelle"},
-        RU={name="Возвращение домой", label="Частный дом"},
+        EN={name="Travel to Personal House", desc=[[Return quickly to your personal home. This skill is easily interrupted.]], label="Personal House"},
+        DE={name="Reist zu Eurem eigenen Heim", desc=[[Kehrt schnell zu Eurem eigenen Heim zurück. Diese Fertigkeit kann leicht unterbrochen werden.]], label="Eigenes Heim"},
+        FR={name="Retour à la maison personnelle", desc=[[Retournez rapidement dans votre maison personnelle. Cette compétence peut être facilement interrompue.]], label="Maison personnelle"},
+        RU={name="Возвращение домой", desc=[[Это умение позволяет вам быстро перенестись к себе домой. Применение умения легко прервать.]], label="Частный дом"},
         map={{MapType.NONE, -1, -1}},
         acquire={
             {
@@ -3222,7 +3206,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Return to Thorin's Gate", desc=[[Thanks to your friendship with the Dwarves of Thorin's Hall, you're able to quickly return to Thorin's Gate. This skill is easily interrupted.]], label="Thorin's Gate", zone="Ered Luin"},
         DE={name="Rückkehr zu Thorins Tor", desc=[[Dank Eurer Freundschaft mit den Zwergen von Thorins Halle könnt Ihr schnell zu Thorins Tor zurückkehren. Diese Fertigkeit kann leicht unterbrochen werden.]], label="Thorins Tor", zone="Ered Luin"},
         FR={name="Retour : Porte de Thorin", desc=[[Grâce à l'amitié qui vous lie aux nains du Palais de Thorin, vous êtes en mesure de revenir rapidement à la Porte de Thorin. Cette compétence est facilement interrompue.]], label="Porte de Thorin", zone="Ered Luin"},
-        RU={name="Возвращение к Вратам Торина", desc=[[Благодаря вашей дружбе с гномами Чертогов вы научились быстро перемещаться к Вратам Торина. Применение этого умения легко прервать.]], label="Врата Торина", zone="Эред Луин"},
+        RU={name="Возвращение к Вратам Торина", desc=[[Благодаря дружбе с гномами Чертогов вы научились быстро перемещаться к Вратам Торина. Использование этого умения легко прервать.]], label="Врата Торина", zone="Эред Луин"},
         map={{MapType.ERIADOR, 345, 310}},
         acquire={
             {cost={{amount=100, token=LC.token.DOURHAND_CREST}},
@@ -3240,7 +3224,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Return to Bree", desc=[[Thanks to your friendship with the Men of Bree, you're able to quickly return to Bree. This skill is easily interrupted.]], label="Bree", zlabel="West Gate", zone="Bree"},
         DE={name="Rückkehr nach Bree", desc=[[Dank Eurer Freundschaft mit den Menschen aus Bree könnt Ihr schnell nach Bree zurückkehren. Diese Fertigkeit kann leicht unterbrochen werden.]], label="Bree", zlabel="Westtor", zone="Bree"},
         FR={name="Retour à Bree", desc=[[Grâce à votre amitié avec les Hommes de Bree, vous pouvez revenir à Bree rapidement. Cette compétence peut être facilement interrompue.]], label="Bree", zlabel="Porte Ouest", zone="Bree"},
-        RU={name="Возвращение в Бри", desc=[[Благодаря дружбе с людьми Бри, вы способны быстро находить дорогу в Бри откуда угодно. Применение этого навыка легко прервать.]], label="Бри", zlabel="Западные ворота", zone="Бри"},
+        RU={name="Возвращение в Бри", desc=[[Благодаря дружбе с людьми Бри, вы способны быстро находить дорогу в Бри откуда угодно. Использование этого умения легко прервать.]], label="Бри", zlabel="Западные ворота", zone="Бри"},
         map={{MapType.ERIADOR, 555, 335}},
         acquire={
             {cost={{amount=100, token=LC.token.BARROW_TREASURE}},
@@ -3659,10 +3643,10 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
     })
     self.rep:AddSkill({
         id="0x700411AC",
-        EN={name="Return to Dol Amroth", desc=[[Thanks to your friendship with the Men of Dol Amroth, you're able to quickly return to Dol Amroth in western Gondor. This skill is easily interrupted.]], label="Dol Amroth", zone="Western Gondor"},
-        DE={name="Rückkehr nach Dol Amroth", desc=[[Dank Eurer Freundschaft mit den Menschen von Dol Amroth könnt Ihr schnell nach Dol Amroth in West-Gondor zurückkehren. Diese Fertigkeit kann leicht unterbrochen werden.]], label="Dol Amroth", zone="West-Gondor"},
-        FR={name="Retour à Dol Amroth", desc=[[Grâce à vos relations avec les habitants de Dol Amroth, vous pouvez retourner rapidement à Dol Amroth, dans l'Ouest du Gondor. Cette compétence peut être facilement interrompue.]], label="Dol Amroth", zone="Gondor de l'Ouest"},
-        RU={name="Возвращение в Дол Амрот", desc=[[Благодаря вашей дружбе с людьми Дол Амрота вы научились быстро перемещаться в Дол Амрот, что в западном Гондоре. Применение этого умения легко прервать.]], label="Дол Амрот", zone="Западный Гондор"},
+        EN={name="Return to Dol Amroth", label="Dol Amroth", zone="Western Gondor"},
+        DE={name="Rückkehr nach Dol Amroth", label="Dol Amroth", zone="West-Gondor"},
+        FR={name="Retour à Dol Amroth", label="Dol Amroth", zone="Gondor de l'Ouest"},
+        RU={name="Возвращение в Дол Амрот", label="Дол Амрот", zone="Западный Гондор"},
         map={{MapType.GONDOR, 195, 550}},
         acquire={
             {cost={{amount=50, token=LC.token.AMROTH_SILVER_PIECE}},
@@ -4181,10 +4165,10 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
     })
     self.rep:AddSkill({
         id="0x70068700",
-        EN={name="Return to Dol Amroth, King's Gondor", desc=[[You're able to quickly return to Dol Amroth in King's Gondor. This skill is easily interrupted.]], label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
-        DE={name="Rückkehr nach Dol Amroth (Königreich Gondor)", desc=[[Ihr könnt schnell nach Dol Amroth im Königreich Gondor zurückkehren. Bei der Ausübung dieser Fertigkeit könnt Ihr leicht unterbrochen werden.]], label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
-        FR={name="Retour à Dol Amroth (Gondor royal)", desc=[[Vous pouvez revenir rapidement à Dol Amroth, dans le Gondor royal. Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
-        RU={name="Возвращение в Дол Амрот", desc=[[Это умение позволяет вам быстро перенестись в Дол Амрот, что в Королевском Гондоре. Применение умения легко прервать.]], label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"},
+        EN={name="Return to Dol Amroth, King's Gondor", label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"},
+        DE={name="Rückkehr nach Dol Amroth (Königreich Gondor)", label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"},
+        FR={name="Retour à Dol Amroth (Gondor royal)", label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"},
+        RU={name="Возвращение в Дол Амрот, Королевский Гондор", label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"},
         map={{MapType.GONDOR, 180, 485},{MapType.HARADWAITH, 355, 70}},
         acquire={
             {cost={{amount=10, token=LC.token.MARK_OF_RENEWAL}},
@@ -4264,7 +4248,7 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
                 EN={vendor="Temple of Utug-bûr Quartermaster"},
                 DE={vendor="\"Der Tempel von Utug-bûr\"-Quartiermeister"},
                 FR={vendor="Intendant du Temple d'Utug-bûr"},
-                RU={vendor="Temple of Utug-bûr Quartermaster"}}},
+                RU={vendor="Интендант храма Утуг-Бур"}}},
         minLevel=20,
         level=147
     })
@@ -4363,14 +4347,14 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Return to Iridír", label="Iridír", zone="Ikorbân"},
         DE={name="Rückkehr nach Iridír", label="Iridír", zone="Ikorbân"},
         FR={name="Retour à Iridir", label="Iridír", zone="Ikorbân"},
-        RU={name="Return to Iridír", label="Iridír", zone=""},
+        RU={name="Возвращение в Иридир", label="Iridír", zone=""},
         map={{MapType.HARADWAITH, 585, 325}},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.1
@@ -4380,14 +4364,14 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Return to Jirush", label="Jirush", zone="Ikorbân"},
         DE={name="Kehrt zu Jirush zurück.", label="Jirush", zone="Ikorbân"},
         FR={name="Retournez voir Jirush", label="Jirush", zone="Ikorbân"},
-        RU={name="Return to Jirush", label="Jirush", zone="Ikorbân"},
+        RU={name="Возвращение в Джируш", label="Jirush", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 590, 415}},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.2
@@ -4397,14 +4381,14 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Return to Urmâkh", label="Urmâkh", zone="Ikorbân"},
         DE={name="Rückkehr nach Urmâkh", label="Urmâkh", zone="Ikorbân"},
         FR={name="Retour à Urmâkh", label="Urmâkh", zone="Ikorbân"},
-        RU={name="Return to Urmâkh", label="Urmâkh", zone="Ikorbân"},
+        RU={name="Возвращение в Урмах", label="Urmâkh", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 670, 410}},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.3
@@ -4414,14 +4398,14 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Return to Maurûsh", label="Maurûsh", zone="Ikorbân"},
         DE={name="Rückkehr nach Maurûsh", label="Maurûsh", zone="Ikorbân"},
         FR={name="Retour à Maurûsh", label="Maurûsh", zone="Ikorbân"},
-        RU={name="Return to Maurûsh", label="Maurûsh", zone="Ikorbân"},
+        RU={name="Возвращение в Мауруш", label="Maurûsh", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 670, 350}},
         acquire={
             {cost={{amount=10, token=LC.token.SHAGANI_GHIN}},
                 EN={vendor="Ikorbâni Quartermaster"},
                 DE={vendor="Ikorbâni-Quartiermeister"},
                 FR={vendor="Intendant d'Ikorbân"},
-                RU={vendor="Ikorbâni Quartermaster"}}},
+                RU={vendor="Икорбанский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.4
@@ -4431,14 +4415,14 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Return to Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
         DE={name="Rückkehr nach Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
         FR={name="Retourner à Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
-        RU={name="Return to Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
+        RU={name="Возвращение в Утуг-Бур", label="Utug-bûr", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 700, 310}},
         acquire={
             {cost={{amount=3, token=LC.token.COLD_IRON_TOKEN}},
                 EN={vendor="Temple of Utug-bûr Quartermaster"},
                 DE={vendor="\"Der Tempel von Utug-bûr\"-Quartiermeister"},
                 FR={vendor="Intendant du Temple d'Utug-bûr"},
-                RU={vendor="Temple of Utug-bûr Quartermaster"}}},
+                RU={vendor="Интендант храма Утуг-Бур"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.5
@@ -4448,14 +4432,14 @@ Cette compétence peut être facilement interrompue.]], label="Dol Amroth royal"
         EN={name="Return to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         DE={name="Rückkehr nach Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         FR={name="Retour à Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
-        RU={name="Return to Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
+        RU={name="Возвращение в Дун-Шуму", label="Dun Shûma", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 590, 445}},
         acquire={
             {cost={{amount=10, token=LC.token.HAMATI_URGUL}},
                 EN={vendor="Hamâti Quartermaster"},
                 DE={vendor="Hamâti-Quartiermeisterin"},
                 FR={vendor="Intendante des Hamâti"},
-                RU={vendor="Hamâti Quartermaster"}}},
+                RU={vendor="Хаматский интендант"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.6
