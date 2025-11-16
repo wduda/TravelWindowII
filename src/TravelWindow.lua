@@ -53,7 +53,10 @@ function TravelWindow:Constructor()
     AddCallback(ChatLog, "Received", ChatLogHandler);
 
     -- configure the main window
-    self:SetPosition(Settings.positionX, Settings.positionY);
+    local screenW, screenH = Turbine.UI.Display.GetSize()
+    local positionX = screenW * Settings.positionRelativeX
+    local positionY = screenH * Settings.positionRelativeY
+    self:SetPosition(positionX, positionY)
     self:SetText(LC.mainTitle);
     self:SetBackColor(self.backColor);
     if (Settings.hideOnStart == 1) then
@@ -129,10 +132,11 @@ function TravelWindow:Constructor()
 
     -- check if our position has changed, and save the settings if so
     self.PositionChanged = function(sender, args)
-        local one, two = self:GetPosition();
-        Settings.positionX = one;
-        Settings.positionY = two;
-        self.PullTab:ClosePulldown();
+        local w, h = self:GetPosition()
+        local sw, sh = Turbine.UI.Display.GetSize()
+        Settings.positionRelativeX = w / sw
+        Settings.positionRelativeY = h / sh
+        self.PullTab:ClosePulldown()
     end
 
     -- manage hiding the UI
@@ -540,16 +544,19 @@ function TravelWindow:ResetSettings()
 end
 
 function SyncUIFromSettings()
-    local buttonPositionX = Turbine.UI.Display.GetWidth() * Settings.buttonRelativeX;
-    local buttonPositionY = Turbine.UI.Display.GetHeight() * Settings.buttonRelativeY;
-    ToggleButton:SetPosition(buttonPositionX, buttonPositionY);
-    OptionsWindow.Panel:UpdateOptions();
-    OptionsWindow.Panel:EnableFromSettings();
-    OptionsWindow.Panel:AddSortList();
-    Menu:SetSettings(Settings.mode, Settings.filters);
-    _G.travel:SetPosition(Settings.positionX, Settings.positionY);
-    _G.travel.dirty = true;
-    _G.travel:UpdateSettings();
+    local screenW, screenH = Turbine.UI.Display.GetSize()
+    local buttonPositionX = screenW * Settings.buttonRelativeX
+    local buttonPositionY = screenH * Settings.buttonRelativeY
+    ToggleButton:SetPosition(buttonPositionX, buttonPositionY)
+    OptionsWindow.Panel:UpdateOptions()
+    OptionsWindow.Panel:EnableFromSettings()
+    OptionsWindow.Panel:AddSortList()
+    Menu:SetSettings(Settings.mode, Settings.filters)
+    local positionX = screenW * Settings.positionRelativeX
+    local positionY = screenH * Settings.positionRelativeY
+    _G.travel:SetPosition(positionX, positionY)
+    _G.travel.dirty = true
+    _G.travel:UpdateSettings()
 end
 
 function FilterTravelSkills(message)
