@@ -257,6 +257,26 @@ LC_DE.rep.IKORBANI = "Die Ikorbâni"
 LC_FR.rep.IKORBANI = "Les Ikorbâni"
 LC_RU.rep.IKORBANI = "Жители Икорбана"
 
+LC_EN.rep.KINTAI_OF_SUL_MADASH = "Kintai of Sul Madásh"
+LC_DE.rep.KINTAI_OF_SUL_MADASH = "Kintai von Sul Madásh"
+LC_FR.rep.KINTAI_OF_SUL_MADASH = "Kintai de Sul Madash"
+LC_RU.rep.KINTAI_OF_SUL_MADASH = "Кинтайцы из Сул-Мадаша"
+
+LC_EN.rep.CITY_OF_ZAJANA = "City of Zajâna"
+LC_DE.rep.CITY_OF_ZAJANA = "Stadt Zajâna"
+LC_FR.rep.CITY_OF_ZAJANA = "Cité de Zajâna"
+LC_RU.rep.CITY_OF_ZAJANA = "Город Заджана"
+
+LC_EN.rep.TEMAMIR_OF_JIRET_MENESH = "Temámir of Jiret-menêsh"
+LC_DE.rep.TEMAMIR_OF_JIRET_MENESH = "Temámir von Jiret-menêsh"
+LC_FR.rep.TEMAMIR_OF_JIRET_MENESH = "Temamir de Jiret-menêsh"
+LC_RU.rep.TEMAMIR_OF_JIRET_MENESH = "Темамиры Джирет-Менеша"
+
+LC_EN.rep.HAMAT_RENEWED = "Hamât Renewed"
+LC_DE.rep.HAMAT_RENEWED = "Das Erneuerte Hamât"
+LC_FR.rep.HAMAT_RENEWED = "Le Nouveau Hamât"
+LC_RU.rep.HAMAT_RENEWED = "Hamât Renewed"
+
 LC_EN.token = {}
 LC_DE.token = {}
 LC_FR.token = {}
@@ -516,3 +536,8 @@ LC_EN.token.HAMATI_URGUL = "Hamâti Urgûl"
 LC_DE.token.HAMATI_URGUL = "Hamâti-Urgûl"
 LC_FR.token.HAMATI_URGUL = "Urgûl hamâti"
 LC_RU.token.HAMATI_URGUL = "Хаматский ургул"
+
+LC_EN.token.MUR_GHALA_SARZ = "Mûr Ghala Sârz"
+LC_DE.token.MUR_GHALA_SARZ = "Sârz von Mûr Ghala"
+LC_FR.token.MUR_GHALA_SARZ = "Sârz de Mûr Ghala"
+LC_RU.token.MUR_GHALA_SARZ = "Mûr Ghala Sârz"
