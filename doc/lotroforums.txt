@@ -1,14 +1,12 @@
 A new version is available!
 
-v3.1.0
+v3.2.0
 
-- enhance: the skill type is now an optional part of the skill label and can be turned off  - affects text list and tab pulldown view only
-- enhance: the text list view now does not force line breaks forcing inconsistent line height
-- enhance: the pulldown tab view can now be resized horizontally
-- fix: map window is again loading for creep characters
-- fix: the reputation requirement for King's Gondor version of Dol Amroth is correctly shown as friend
-- fix: the Find tab now shows updated lower levels for Hunter skills learned earlier after rework
-- fix: all skills for travel to King's Gondor version of Dol Amroth will be recognized again in all languages official languagaes
+- enhance: window positioning is happening now relative to screen rather than absolute - positioning will work now much better if screen resolutions changes
+- enhance: add new skills from U46 in EN/DE/FR
+- enhance: add skills from U45.X in RU
+- enhance: adjust Annak-Khurfu map location
+- fix: updated to support skills renamed in U45.X in EN/DE/FR/RU
 
 Help with further translations for DE, FR and RU clients is welcome. Ideally submitted as pull requests on GitHub, but any way can be accomodated really.
 

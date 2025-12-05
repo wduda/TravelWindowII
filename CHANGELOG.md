@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v3.2.0
+
+- enhance: window positioning is happening now relative to screen rather than absolute - positioning will work now much better if screen resolutions changes
+- enhance: add new skills from U46 in EN/DE/FR
+- enhance: add skills from U45.X in RU
+- enhance: adjust Annak-Khurfu map location
+- fix: updated to support skills renamed in U45.X in EN/DE/FR/RU
+
 ## v3.1.0
 
 - enhance: the skill type is now an optional part of the skill label and can be turned off  - affects text list and tab pulldown view only
