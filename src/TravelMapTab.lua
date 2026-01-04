@@ -141,10 +141,7 @@ function TravelMapTab:CycleRegion(direction)
     self.currentRegion = self.regions[newIndex]
     Settings.mapViewRegion = self.currentRegion
 
-    -- Clear existing shortcuts first to avoid flicker
-    self:ClearItems()
-
-    -- Reload map and shortcuts
+    -- Reload map and shortcuts (SetItems will clear old ones)
     self:LoadMap()
     self:SetItems()
 end
@@ -271,7 +268,10 @@ function TravelMapTab:AddLocations(skills)
                 local item = skill.map[r]
                 if item ~= nil and #item == 3 and self.currentRegion == item[1] then
                     local id = skill.id
-                    self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id))
+                    -- Only add shortcut if it's enabled
+                    if IsShortcutEnabled(id) then
+                        self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id))
+                    end
                 end
             end
         end
@@ -283,9 +283,9 @@ function TravelMapTab:AddSingleShortcut(location, shortcut)
     local index = #self.quickslots + 1
     self.quickslots[index] = Turbine.UI.Lotro.Quickslot()
 
-    -- Set all properties BEFORE setting parent to avoid flicker
     self.quickslots[index]:SetShortcut(shortcut)
     self.quickslots[index]:SetOpacity(1)
+    self.quickslots[index]:SetParent(self.mapLabel)
     self.quickslots[index]:SetMouseVisible(true)
     self.quickslots[index]:SetUseOnRightClick(false)
     self.quickslots[index]:SetAllowDrop(false)
@@ -293,10 +293,7 @@ function TravelMapTab:AddSingleShortcut(location, shortcut)
     self.quickslots[index]:SetSize(32, 32)
     self.quickslots[index]:SetPosition(location[2], location[3])
     self.quickslots[index]:SetZOrder(98)
-    self.quickslots[index]:SetVisible(IsShortcutEnabled(shortcut:GetData()))
-
-    -- Set parent last after all properties are configured
-    self.quickslots[index]:SetParent(self.mapLabel)
+    self.quickslots[index]:SetVisible(true)
 
     self.quickslots[index].MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
