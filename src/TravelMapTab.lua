@@ -141,6 +141,9 @@ function TravelMapTab:CycleRegion(direction)
     self.currentRegion = self.regions[newIndex]
     Settings.mapViewRegion = self.currentRegion
 
+    -- Clear existing shortcuts first to avoid flicker
+    self:ClearItems()
+
     -- Reload map and shortcuts
     self:LoadMap()
     self:SetItems()
