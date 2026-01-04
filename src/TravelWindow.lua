@@ -470,9 +470,9 @@ function TravelWindow:UpdateMinimum()
             self.minHeight = 105;
         end
     elseif Settings.mode == 5 then
-        -- Map view fixed at 1024x768 + padding
-        self.minWidth = 1024 + self.wPadding + 20;
-        self.minHeight = 768 + self.hPadding + 30;
+        -- Map view fixed at 1024x768 + padding (nav panel overlaid on map)
+        self.minWidth = 1024 + self.wPadding;
+        self.minHeight = 768 + self.hPadding;
     else
         self.minWidth = 40;
         self.minHeight = 40;

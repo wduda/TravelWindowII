@@ -67,11 +67,12 @@ function TravelMapTab:Constructor(toplevel)
     self.mapLabel:SetMouseVisible(true)
     self.mapLabel:SetPosition(0, 0)
 
-    -- Create navigation panel at bottom
+    -- Create navigation panel at bottom (overlaid on map)
     self.navPanel = Turbine.UI.Control()
-    self.navPanel:SetParent(self)
+    self.navPanel:SetParent(self.mapLabel)
     self.navPanel:SetSize(self.mapWidth, 30)
     self.navPanel:SetBackColor(Turbine.UI.Color(0.8, 0, 0, 0))
+    self.navPanel:SetZOrder(99)
 
     -- Create left arrow button
     self.leftArrow = Turbine.UI.Lotro.Button()
@@ -170,17 +171,16 @@ function TravelMapTab:LoadMap()
     self.rightArrow:SetVisible(showArrows)
 end
 
--- Update navigation panel layout based on window size
+-- Update navigation panel layout
 function TravelMapTab:UpdateNavPanel()
-    local width = self:GetWidth()
-    local navPanelY = self:GetHeight() - 30
-
+    -- Position navigation panel at bottom of map
+    local navPanelY = self.mapHeight - 30
     self.navPanel:SetPosition(0, navPanelY)
-    self.navPanel:SetWidth(width)
+    self.navPanel:SetWidth(self.mapWidth)
 
     -- Center the navigation elements
     local totalWidth = 100 + 300 + 100  -- left button + label + right button
-    local startX = (width - totalWidth) / 2
+    local startX = (self.mapWidth - totalWidth) / 2
 
     self.leftArrow:SetPosition(startX, 2)
     self.regionLabel:SetPosition(startX + 105, 2)
@@ -314,6 +314,6 @@ end
 -- Get pixel size for this tab
 function TravelMapTab:GetPixelSize()
     local width = self.mapWidth + self.parent.wPadding
-    local height = self.mapHeight + 30 + self.parent.hPadding  -- +30 for nav panel
+    local height = self.mapHeight + self.parent.hPadding  -- nav panel is overlaid on map
     return width, height
 end
