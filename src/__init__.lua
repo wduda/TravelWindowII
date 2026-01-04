@@ -4,6 +4,7 @@ import "TravelWindowII.src.TravelListTab";
 import "TravelWindowII.src.TravelGridTab";
 import "TravelWindowII.src.TravelCaroTab";
 import "TravelWindowII.src.TravelPulldownTab"
+import "TravelWindowII.src.TravelMapTab"
 import "TravelWindowII.src.IndexedDictionary"
 import "TravelWindowII.src.TravelDictionary"
 import "TravelWindowII.src.SkillData"

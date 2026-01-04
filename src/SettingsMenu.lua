@@ -30,11 +30,13 @@ function SettingsMenu:Constructor(parentWindow)
     self.Mode2 = Turbine.UI.MenuItem(LC.menuIcon);
     self.Mode3 = Turbine.UI.MenuItem(LC.menuCaro);
     self.Mode4 = Turbine.UI.MenuItem(LC.menuPull);
+    self.Mode5 = Turbine.UI.MenuItem(LC.menuMap);
     local ModeItems = Mode:GetItems();
     ModeItems:Add(self.Mode1);
     ModeItems:Add(self.Mode2);
     ModeItems:Add(self.Mode3);
     ModeItems:Add(self.Mode4);
+    ModeItems:Add(self.Mode5);
 
     -- create the items to open the map windows
     MoorMapMenu = TravelWindowII.src.extensions.DMenuList(LC.moorMap);
@@ -103,6 +105,7 @@ function SettingsMenu:SetSelections()
     self.Mode2:SetChecked(self.mode == 2);
     self.Mode3:SetChecked(self.mode == 3);
     self.Mode4:SetChecked(self.mode == 4);
+    self.Mode5:SetChecked(self.mode == 5);
 end
 
 -- get the setting from the main window
@@ -137,6 +140,8 @@ function SettingsMenu:Update(string)
         self.mode = 3;
     elseif (string == LC.menuPull) then
         self.mode = 4;
+    elseif (string == LC.menuMap) then
+        self.mode = 5;
     elseif (string == LC.menuOptions) then
         OptionsWindow:SetVisible(true);
     elseif (string == LC.moorMap) then

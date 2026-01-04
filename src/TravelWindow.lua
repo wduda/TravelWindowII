@@ -85,16 +85,19 @@ function TravelWindow:Constructor()
     self.GridTab = TravelGridTab(self);
     self.CaroTab = TravelCaroTab(self);
     self.PullTab = TravelPulldownTab(self);
+    self.MapTab  = TravelMapTab(self);
 
     -- add the tabs to the panel
     self.MainPanel:AddTab(self.ListTab);
     self.MainPanel:AddTab(self.GridTab);
     self.MainPanel:AddTab(self.CaroTab);
     self.MainPanel:AddTab(self.PullTab);
+    self.MainPanel:AddTab(self.MapTab);
     self.ListTab.tabId = 1;
     self.GridTab.tabId = 2;
     self.CaroTab.tabId = 3;
     self.PullTab.tabId = 4;
+    self.MapTab.tabId  = 5;
     self.GridTab.numOfCols = Settings.gridCols;
     self.GridTab.numOfRows = Settings.gridRows;
     self.ListTab.pixelWidth = Settings.listWidth;
@@ -439,6 +442,9 @@ function TravelWindow:SetItems()
     elseif Settings.mode == 4 then
         self.PullTab:SetItems();
         self.PullTab.pixelWidth = self:GetWidth()
+    elseif Settings.mode == 5 then
+        self:SetSize(self.MapTab:GetPixelSize());
+        self.MapTab:SetItems();
     end
 end
 
@@ -463,6 +469,10 @@ function TravelWindow:UpdateMinimum()
             self.minWidth = 360;
             self.minHeight = 105;
         end
+    elseif Settings.mode == 5 then
+        -- Map view fixed at 1024x768 + padding
+        self.minWidth = 1024 + self.wPadding + 20;
+        self.minHeight = 768 + self.hPadding + 30;
     else
         self.minWidth = 40;
         self.minHeight = 40;
@@ -475,6 +485,9 @@ function TravelWindow:UpdateMinimum()
     end
     if Settings.mode == 4 then
         self:SetSize(self.PullTab.pixelWidth, self.minHeight)
+    end
+    if Settings.mode == 5 then
+        self:SetSize(self.minWidth, self.minHeight);
     end
 end
 

@@ -7,7 +7,7 @@ import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
 
-Turbine.Language.Russian = 0x10000007 -- removed in Update 22 and again in Update 34
+Turbine.Language.Russian = 0x10000007 -- officially removed in Update 22 and again in Update 34
 
 -- Add detection for the Russian language client
 Turbine.Engine._GetLanguage = Turbine.Engine.GetLanguage
@@ -93,7 +93,7 @@ LC_DE.sortTab = "Sortierung"
 LC_FR.sortTab = "Tri"
 LC_RU.sortTab = "Сортировка"
 
-LC_EN.hide = "Hide Travel window at startup"
+LC_EN.hide = "Hide Travel Window at startup"
 LC_DE.hide = "Verstecke Travel-Fenster beim Start"
 LC_FR.hide = "Cacher la fenêtre au démarrage"
 LC_RU.hide = "Убрать окно Travel при старте"
@@ -354,6 +354,11 @@ LC_DE.menuPull = "Pulldown-Liste"
 LC_FR.menuPull = "Menu déroulant"
 LC_RU.menuPull = "Выпадающий список"
 
+LC_EN.menuMap = "Map View"
+LC_DE.menuMap = "Kartenansicht"
+LC_FR.menuMap = "Vue de carte"
+LC_RU.menuMap = "Вид карты"
+
 LC_EN.mapWindow = "Maps"
 LC_DE.mapWindow = "Karten"
 LC_FR.mapWindow = "Destinations"
@@ -363,6 +368,16 @@ LC_EN.menuOptions = "Options"
 LC_DE.menuOptions = "Optionen"
 LC_FR.menuOptions = "Options"
 LC_RU.menuOptions = "Настройки"
+
+LC_EN.menuPrevious = "Previous"
+LC_DE.menuPrevious = "Zurück"
+LC_FR.menuPrevious = "Précédent"
+LC_RU.menuPrevious = "Назад"
+
+LC_EN.menuNext = "Next"
+LC_DE.menuNext = "Weiter"
+LC_FR.menuNext = "Suivant"
+LC_RU.menuNext = "Вперёд"
 
 LC_EN.moorMap = "Open Moor Map"
 LC_DE.moorMap = "Öffne Etten-Karte"
