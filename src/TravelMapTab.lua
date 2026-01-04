@@ -1,41 +1,51 @@
-import "Turbine.Gameplay";
-import "Turbine.UI";
-import "Turbine.UI.Lotro";
-import "TravelWindowII.src.extensions";
-import "TravelWindowII.src.SettingsMenu";
-import "TravelWindowII.src.utils.BitOps";
+import "Turbine.Gameplay"
+import "Turbine.UI"
+import "Turbine.UI.Lotro"
+import "TravelWindowII.src.extensions"
+import "TravelWindowII.src.SettingsMenu"
+import "TravelWindowII.src.utils.BitOps"
 
 --[[ This is the window for the map tab of the Travel UI.  ]] --
 --[[ It displays a regional map with travel skill shortcuts ]] --
 --[[ positioned on the map. Users can cycle through regions ]] --
 --[[ using left/right arrow buttons.                        ]] --
 
-TravelMapTab = class(Turbine.UI.Control);
+TravelMapTab = class(Turbine.UI.Control)
 
 function TravelMapTab:Constructor(toplevel)
-    Turbine.UI.Control.Constructor(self);
+    Turbine.UI.Control.Constructor(self)
 
     -- need top level window in order to close it
-    self.parent = toplevel;
+    self.parent = toplevel
 
     -- Map configuration
-    self.mapWidth = 1024;
-    self.mapHeight = 768;
-    self.quickslots = {};
+    self.mapWidth = 1024
+    self.mapHeight = 768
+    self.quickslots = {}
+
+    MapType = {
+        NONE = 1,
+        CREEPS = 2,
+        ERIADOR = 3,
+        RHOVANION = 4,
+        ROHAN = 5,
+        GONDOR = 6,
+        HARADWAITH = 7,
+    }
 
     -- Set initial region (will be loaded from settings)
     if PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer then
-        self.currentRegion = MapType.CREEPS;
-        self.regions = {MapType.CREEPS};
+        self.currentRegion = MapType.CREEPS
+        self.regions = {MapType.CREEPS}
     else
-        self.currentRegion = Settings.mapViewRegion or MapType.ERIADOR;
+        self.currentRegion = Settings.mapViewRegion
         self.regions = {
             MapType.ERIADOR,
             MapType.RHOVANION,
             MapType.ROHAN,
             MapType.GONDOR,
             MapType.HARADWAITH
-        };
+        }
     end
 
     -- Region names for display
