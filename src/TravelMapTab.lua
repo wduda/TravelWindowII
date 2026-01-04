@@ -59,55 +59,13 @@ function TravelMapTab:Constructor(toplevel)
         [MapType.HARADWAITH] = "Haradwaith"
     }
 
-    -- Create a subwindow (now a control) for containing the map
-    self.SubWindow = Turbine.UI.Control()
-    self.SubWindow:SetPosition(0, 0)
-    self.SubWindow:SetParent(self)
-    self.SubWindow:SetMouseVisible(true)
-
-    -- Create the map display label
+    -- Create the map display label (full size, no scrolling)
     self.mapLabel = Turbine.UI.Label()
     self.mapLabel:SetSize(self.mapWidth, self.mapHeight)
-    self.mapLabel:SetParent(self.SubWindow)
+    self.mapLabel:SetParent(self)
     self.mapLabel:SetVisible(true)
     self.mapLabel:SetMouseVisible(true)
     self.mapLabel:SetPosition(0, 0)
-
-    -- Set up horizontal scrollbar
-    self.hScrollBar = Turbine.UI.Lotro.ScrollBar()
-    self.hScrollBar:SetOrientation(Turbine.UI.Orientation.Horizontal)
-    self.hScrollBar:SetParent(self)
-    self.hScrollBar:SetMinimum(0)
-    self.hScrollBar:SetMaximum(0)
-    self.hScrollBar:SetVisible(false)
-
-    self.hScrollBar.ValueChanged = function(sender, args)
-        self:UpdateSubWindow()
-    end
-
-    self.hScrollBar.MouseClick = function(sender, args)
-        if (args.Button == Turbine.UI.MouseButton.Right) then
-            Menu:ShowMenu()
-        end
-    end
-
-    -- Set up vertical scrollbar
-    self.vScrollBar = Turbine.UI.Lotro.ScrollBar()
-    self.vScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical)
-    self.vScrollBar:SetParent(self)
-    self.vScrollBar:SetMinimum(0)
-    self.vScrollBar:SetMaximum(0)
-    self.vScrollBar:SetVisible(false)
-
-    self.vScrollBar.ValueChanged = function(sender, args)
-        self:UpdateSubWindow()
-    end
-
-    self.vScrollBar.MouseClick = function(sender, args)
-        if (args.Button == Turbine.UI.MouseButton.Right) then
-            Menu:ShowMenu()
-        end
-    end
 
     -- Create navigation panel at bottom
     self.navPanel = Turbine.UI.Control()
@@ -119,7 +77,7 @@ function TravelMapTab:Constructor(toplevel)
     self.leftArrow = Turbine.UI.Lotro.Button()
     self.leftArrow:SetParent(self.navPanel)
     self.leftArrow:SetSize(100, 25)
-    self.leftArrow:SetText("◄ " .. (LC.menuPrevious or "Previous"))
+    self.leftArrow:SetText(LC.menuPrevious)
     self.leftArrow.Click = function()
         self:CycleRegion(-1)
     end
@@ -136,14 +94,9 @@ function TravelMapTab:Constructor(toplevel)
     self.rightArrow = Turbine.UI.Lotro.Button()
     self.rightArrow:SetParent(self.navPanel)
     self.rightArrow:SetSize(100, 25)
-    self.rightArrow:SetText((LC.menuNext or "Next") .. " ►")
+    self.rightArrow:SetText(LC.menuNext)
     self.rightArrow.Click = function()
         self:CycleRegion(1)
-    end
-
-    -- Add mouse wheel support
-    self.SubWindow.MouseWheel = function(sender, args)
-        self:DoScroll(sender, args)
     end
 
     -- Show the menu when right clicked
@@ -159,76 +112,9 @@ function TravelMapTab:Constructor(toplevel)
         end
     end
 
-    -- Load the initial map
+    -- Load the initial map and update navigation panel
     self:LoadMap()
-end
-
--- Handle mouse wheel scrolling
-function TravelMapTab:DoScroll(sender, args)
-    if args.Direction == -1 then
-        -- Scroll down
-        local newValue = self.vScrollBar:GetValue() + 50
-        if newValue > self.vScrollBar:GetMaximum() then
-            newValue = self.vScrollBar:GetMaximum()
-        end
-        self.vScrollBar:SetValue(newValue)
-    else
-        -- Scroll up
-        local newValue = self.vScrollBar:GetValue() - 50
-        if newValue < 0 then
-            newValue = 0
-        end
-        self.vScrollBar:SetValue(newValue)
-    end
-end
-
--- Update the subwindow position based on scrollbar values
-function TravelMapTab:UpdateSubWindow()
-    local x = -self.hScrollBar:GetValue()
-    local y = -self.vScrollBar:GetValue()
-    self.mapLabel:SetPosition(x, y)
-end
-
--- Update scrollbar visibility and ranges
-function TravelMapTab:UpdateScrollBars()
-    local width = self:GetWidth()
-    local height = self:GetHeight() - 30  -- Leave room for nav panel
-
-    -- Calculate scrollbar visibility and ranges
-    local hMax = self.mapWidth - width
-    local vMax = self.mapHeight - height
-
-    if hMax > 0 then
-        self.hScrollBar:SetVisible(true)
-        self.hScrollBar:SetMaximum(hMax)
-        height = height - 10  -- Reduce height for horizontal scrollbar
-    else
-        self.hScrollBar:SetVisible(false)
-        self.hScrollBar:SetMaximum(0)
-        self.hScrollBar:SetValue(0)
-    end
-
-    if vMax > 0 then
-        self.vScrollBar:SetVisible(true)
-        self.vScrollBar:SetMaximum(vMax)
-        if self.hScrollBar:IsVisible() then
-            width = width - 10  -- Reduce width for vertical scrollbar
-        end
-    else
-        self.vScrollBar:SetVisible(false)
-        self.vScrollBar:SetMaximum(0)
-        self.vScrollBar:SetValue(0)
-    end
-
-    -- Position scrollbars
-    self.hScrollBar:SetPosition(0, height)
-    self.hScrollBar:SetSize(width, 10)
-
-    self.vScrollBar:SetPosition(width, 0)
-    self.vScrollBar:SetSize(10, height)
-
-    -- Size the subwindow
-    self.SubWindow:SetSize(width, height)
+    self:UpdateNavPanel()
 end
 
 -- Cycle to next/previous region
@@ -421,16 +307,13 @@ end
 function TravelMapTab:SetSize(width, height)
     Turbine.UI.Control.SetSize(self, width, height)
 
-    -- Update scrollbars
-    self:UpdateScrollBars()
-
-    -- Update navigation panel
+    -- Update navigation panel position
     self:UpdateNavPanel()
 end
 
 -- Get pixel size for this tab
 function TravelMapTab:GetPixelSize()
-    local width = self.mapWidth + self.parent.wPadding + 20  -- +20 for scrollbar
+    local width = self.mapWidth + self.parent.wPadding
     local height = self.mapHeight + 30 + self.parent.hPadding  -- +30 for nav panel
     return width, height
 end
