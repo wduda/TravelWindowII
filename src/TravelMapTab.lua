@@ -283,9 +283,9 @@ function TravelMapTab:AddSingleShortcut(location, shortcut)
     local index = #self.quickslots + 1
     self.quickslots[index] = Turbine.UI.Lotro.Quickslot()
 
+    -- Set all properties BEFORE setting parent to avoid flicker
     self.quickslots[index]:SetShortcut(shortcut)
     self.quickslots[index]:SetOpacity(1)
-    self.quickslots[index]:SetParent(self.mapLabel)
     self.quickslots[index]:SetMouseVisible(true)
     self.quickslots[index]:SetUseOnRightClick(false)
     self.quickslots[index]:SetAllowDrop(false)
@@ -294,6 +294,9 @@ function TravelMapTab:AddSingleShortcut(location, shortcut)
     self.quickslots[index]:SetPosition(location[2], location[3])
     self.quickslots[index]:SetZOrder(98)
     self.quickslots[index]:SetVisible(IsShortcutEnabled(shortcut:GetData()))
+
+    -- Set parent last after all properties are configured
+    self.quickslots[index]:SetParent(self.mapLabel)
 
     self.quickslots[index].MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
