@@ -409,6 +409,36 @@ LC_DE.haradwaithMap = "Öffne Haradwaith-Karte"
 LC_FR.haradwaithMap = "Destinations dans le Haradwaith"
 LC_RU.haradwaithMap = "Открыть карту Харадвайта"
 
+LC_EN.moorMapName = "Ettenmoors"
+LC_DE.moorMapName = "Die Ettenöden"
+LC_FR.moorMapName = "Les Landes d'Etten"
+LC_RU.moorMapName = "Эттенские высоты"
+
+LC_EN.eriadorMapName = "Eriador"
+LC_DE.eriadorMapName = "Eriador"
+LC_FR.eriadorMapName = "Eriador"
+LC_RU.eriadorMapName = "Эриадора"
+
+LC_EN.rhovanionMapName = "Rhovanion"
+LC_DE.rhovanionMapName = "Rhovanion"
+LC_FR.rhovanionMapName = "Rhovanion"
+LC_RU.rhovanionMapName = "Рованиона"
+
+LC_EN.rohanMapName = "Rohan"
+LC_DE.rohanMapName = "Rohan"
+LC_FR.rohanMapName = "Rohan"
+LC_RU.rohanMapName = "Рохана"
+
+LC_EN.gondorMapName = "Gondor"
+LC_DE.gondorMapName = "Gondor"
+LC_FR.gondorMapName = "Gondor"
+LC_RU.gondorMapName = "Гондора"
+
+LC_EN.haradwaithMapName = "Haradwaith"
+LC_DE.haradwaithMapName = "Haradwaith"
+LC_FR.haradwaithMapName = "Haradwaith"
+LC_RU.haradwaithMapName = "Харадвайта"
+
 LC_EN.acquired = "You have acquired the (.*) skill%."
 LC_DE.acquired = "Ihr habt Euch die Fertigkeit (.*) angeeignet%."
 LC_FR.acquired = "Vous avez acquis la compétence (.*)%."

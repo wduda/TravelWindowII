@@ -50,13 +50,12 @@ function TravelMapTab:Constructor(toplevel)
 
     -- Region names for display (just use simple names)
     self.regionNames = {
-        [MapType.NONE] = "None",
-        [MapType.CREEPS] = "Ettenmoors",
-        [MapType.ERIADOR] = "Eriador",
-        [MapType.RHOVANION] = "Rhovanion",
-        [MapType.ROHAN] = "Rohan",
-        [MapType.GONDOR] = "Gondor",
-        [MapType.HARADWAITH] = "Haradwaith"
+        [MapType.CREEPS] = LC.moorMapName,
+        [MapType.ERIADOR] = LC.eriadorMapName,
+        [MapType.RHOVANION] = LC.rhovanionMapName,
+        [MapType.ROHAN] = LC.rohanMapName,
+        [MapType.GONDOR] = LC.gondorMapName,
+        [MapType.HARADWAITH] = LC.haradwaithMapName
     }
 
     -- Create the map display label (full size, no scrolling)
