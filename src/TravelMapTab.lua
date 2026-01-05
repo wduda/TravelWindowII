@@ -211,6 +211,7 @@ end
 -- Clear all quickslots
 function TravelMapTab:ClearItems()
     for i = 1, #self.quickslots do
+        self.quickslots[i]:SetVisible(false)
         self.quickslots[i]:SetParent(nil)
     end
     self.quickslots = {}
