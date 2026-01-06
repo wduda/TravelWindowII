@@ -69,7 +69,7 @@ function TravelMapTab:Constructor(toplevel)
 
     -- Create navigation panel at bottom (overlaid on map)
     self.navPanel = Turbine.UI.Control()
-    self.navPanel:SetParent(self.mapLabel)
+    self.navPanel:SetParent(self)
     self.navPanel:SetSize(self.mapWidth, self.navPanelHeight)
     self.navPanel:SetBackColor(Turbine.UI.Color(0.8, 0, 0, 0))
     self.navPanel:SetZOrder(99)
@@ -174,7 +174,7 @@ end
 -- Update navigation panel layout
 function TravelMapTab:UpdateNavPanel()
     -- Position navigation panel at bottom of map
-    local navPanelY = self.mapHeight - self.navPanelHeight
+    local navPanelY = self.mapHeight
     self.navPanel:SetPosition(0, navPanelY)
     self.navPanel:SetWidth(self.mapWidth)
 
@@ -318,6 +318,6 @@ end
 -- Get pixel size for this tab
 function TravelMapTab:GetPixelSize()
     local width = self.mapWidth + self.parent.wPadding
-    local height = self.mapHeight + self.parent.hPadding  -- nav panel is overlaid on map
+    local height = self.mapHeight + self.parent.hPadding + self.navPanelHeight
     return width, height
 end
