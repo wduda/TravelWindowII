@@ -328,3 +328,11 @@ function TravelMapTab:GetPixelSize()
     local height = self.mapHeight + self.parent.hPadding + self.navPanelHeight
     return width, height
 end
+
+function TravelMapTab:SetOpacityItems(value)
+    -- quickslots in stretch mode do not get updated opacity from
+    -- the parent; update them here
+    for i = 1, #self.quickslots do
+        self.quickslots[i]:SetOpacity(value);
+    end
+end

@@ -521,9 +521,10 @@ function TravelWindow:UpdateOpacity()
 end
 
 function TravelWindow:SetOpacity(value)
-    Turbine.UI.Window.SetOpacity(self, value);
-    self.CaroTab:SetOpacityItems(value);
-    self.PullTab:SetOpacity(value);
+    Turbine.UI.Window.SetOpacity(self, value)
+    self.CaroTab:SetOpacityItems(value)
+    self.PullTab:SetOpacity(value)
+    self.MapTab:SetOpacityItems(value)
 end
 
 function TravelWindow:UpdateSettings()
