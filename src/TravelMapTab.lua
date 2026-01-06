@@ -38,6 +38,7 @@ function TravelMapTab:Constructor(toplevel)
     if PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer then
         self.currentRegion = MapType.CREEPS
         self.regions = {MapType.CREEPS}
+        self.navPanelHeight = 0
     else
         self.currentRegion = Settings.mapViewRegion or MapType.ERIADOR
         self.regions = {
@@ -67,37 +68,39 @@ function TravelMapTab:Constructor(toplevel)
     self.mapLabel:SetMouseVisible(true)
     self.mapLabel:SetPosition(0, 0)
 
-    -- Create navigation panel at bottom (overlaid on map)
-    self.navPanel = Turbine.UI.Control()
-    self.navPanel:SetParent(self)
-    self.navPanel:SetSize(self.mapWidth, self.navPanelHeight)
-    self.navPanel:SetBackColor(Turbine.UI.Color(0.8, 0, 0, 0))
-    self.navPanel:SetZOrder(99)
+    if self.navPanelHeight ~= 0 then
+        -- Create navigation panel below the map
+        self.navPanel = Turbine.UI.Control()
+        self.navPanel:SetParent(self)
+        self.navPanel:SetSize(self.mapWidth, self.navPanelHeight)
+        self.navPanel:SetBackColor(Turbine.UI.Color(0.8, 0, 0, 0))
+        self.navPanel:SetZOrder(99)
 
-    -- Create left arrow button
-    self.leftArrow = Turbine.UI.Lotro.Button()
-    self.leftArrow:SetParent(self.navPanel)
-    self.leftArrow:SetSize(100, 25)
-    self.leftArrow:SetText(LC.menuPrevious)
-    self.leftArrow.Click = function()
-        self:CycleRegion(-1)
-    end
+        -- Create left arrow button
+        self.leftArrow = Turbine.UI.Lotro.Button()
+        self.leftArrow:SetParent(self.navPanel)
+        self.leftArrow:SetSize(100, 25)
+        self.leftArrow:SetText(LC.menuPrevious)
+        self.leftArrow.Click = function()
+            self:CycleRegion(-1)
+        end
 
-    -- Create region name label
-    self.regionLabel = Turbine.UI.Label()
-    self.regionLabel:SetParent(self.navPanel)
-    self.regionLabel:SetSize(300, 25)
-    self.regionLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro15)
-    self.regionLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter)
-    self.regionLabel:SetForeColor(Turbine.UI.Color.White)
+        -- Create region name label
+        self.regionLabel = Turbine.UI.Label()
+        self.regionLabel:SetParent(self.navPanel)
+        self.regionLabel:SetSize(300, 25)
+        self.regionLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro15)
+        self.regionLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter)
+        self.regionLabel:SetForeColor(Turbine.UI.Color.White)
 
-    -- Create right arrow button
-    self.rightArrow = Turbine.UI.Lotro.Button()
-    self.rightArrow:SetParent(self.navPanel)
-    self.rightArrow:SetSize(100, 25)
-    self.rightArrow:SetText(LC.menuNext)
-    self.rightArrow.Click = function()
-        self:CycleRegion(1)
+        -- Create right arrow button
+        self.rightArrow = Turbine.UI.Lotro.Button()
+        self.rightArrow:SetParent(self.navPanel)
+        self.rightArrow:SetSize(100, 25)
+        self.rightArrow:SetText(LC.menuNext)
+        self.rightArrow.Click = function()
+            self:CycleRegion(1)
+        end
     end
 
     -- Show the menu when right clicked
@@ -173,6 +176,10 @@ end
 
 -- Update navigation panel layout
 function TravelMapTab:UpdateNavPanel()
+    if self.navPanelHeight == 0 then
+        return
+    end
+
     -- Position navigation panel at bottom of map
     local navPanelY = self.mapHeight
     self.navPanel:SetPosition(0, navPanelY)
