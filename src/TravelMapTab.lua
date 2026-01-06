@@ -188,10 +188,10 @@ function TravelMapTab:UpdateNavPanel()
     -- Center the navigation elements
     local totalWidth = 100 + 300 + 100  -- left button + label + right button
     local startX = (self.mapWidth - totalWidth) / 2
-
-    self.leftArrow:SetPosition(startX, 2)
-    self.regionLabel:SetPosition(startX + 105, 2)
-    self.rightArrow:SetPosition(startX + 410, 2)
+    local startY = 5
+    self.leftArrow:SetPosition(startX, startY)
+    self.regionLabel:SetPosition(startX + 105, startY - 3)
+    self.rightArrow:SetPosition(startX + 410, startY)
 end
 
 -- Add shortcuts to the map
