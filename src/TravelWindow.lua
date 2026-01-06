@@ -21,6 +21,13 @@ function TravelWindow:Constructor()
         Turbine.UI.Lotro.Window.Constructor(self);
     end
 
+    TabId = {
+        LIST = 1,
+        GRID = 2,
+        CARO = 3,
+        PULL = 4,
+        MAP  = 5,
+    }
     self.fadeOut = false
     self.levelUpdate = false
     self.reloadGVMap = false;
@@ -93,11 +100,11 @@ function TravelWindow:Constructor()
     self.MainPanel:AddTab(self.CaroTab);
     self.MainPanel:AddTab(self.PullTab);
     self.MainPanel:AddTab(self.MapTab);
-    self.ListTab.tabId = 1;
-    self.GridTab.tabId = 2;
-    self.CaroTab.tabId = 3;
-    self.PullTab.tabId = 4;
-    self.MapTab.tabId  = 5;
+    self.ListTab.tabId = TabId.LIST;
+    self.GridTab.tabId = TabId.GRID;
+    self.CaroTab.tabId = TabId.CARO;
+    self.PullTab.tabId = TabId.PULL;
+    self.MapTab.tabId  = TabId.MAP;
     self.GridTab.numOfCols = Settings.gridCols;
     self.GridTab.numOfRows = Settings.gridRows;
     self.ListTab.pixelWidth = Settings.listWidth;
@@ -282,7 +289,7 @@ function TravelWindow:Constructor()
             Menu:ShowMenu();
         end
 
-        if Settings.mode == 4 then
+        if Settings.mode == TabId.PULL then
             self.PullTab:ClosePulldown();
         end
     end
@@ -311,7 +318,9 @@ function TravelWindow:Constructor()
         self.isMouseDown = true;
         if (args.Button == Turbine.UI.MouseButton.Left) then
             self.dragStartX, self.dragStartY = self:GetMousePosition();
-            if Settings.mode == 1 or Settings.mode == 2 or Settings.mode == 4 then
+            if Settings.mode == TabId.LIST or
+                    Settings.mode == TabId.GRID or
+                    Settings.mode == TabId.PULL then
                 local mX, mY = self:GetMousePosition();
                 self.resizeStartX, self.resizeStartY = self:GetSize();
                 if self.resizeStartX - mX < self.resizeLabelSize + 1 and
@@ -337,11 +346,11 @@ function TravelWindow:Constructor()
             local mX, mY = self:GetMousePosition();
             sX = self.resizeStartX + (mX - self.dragStartX);
             sY = self.resizeStartY + (mY - self.dragStartY);
-            if Settings.mode == 1 then
+            if Settings.mode == TabId.LIST then
                 sX, sY = self.ListTab:FitToPixels(sX, sY);
-            elseif Settings.mode == 2 then
+            elseif Settings.mode == TabId.GRID then
                 sX, sY = self.GridTab:FitToPixels(sX, sY);
-            elseif Settings.mode == 4 then
+            elseif Settings.mode == TabId.PULL then
                 sY = self:GetHeight();
                 self.PullTab.pixelWidth = sX
             end
@@ -377,13 +386,13 @@ function TravelWindow:Constructor()
     end
 
     self.SizeChanged = function(sender, args)
-        if Settings.mode == 1 then
+        if Settings.mode == TabId.LIST then
             Settings.listWidth = self.ListTab.pixelWidth;
             Settings.listRows = self.ListTab.numOfRows;
-        elseif Settings.mode == 2 then
+        elseif Settings.mode == TabId.GRID then
             Settings.gridCols = self.GridTab.numOfCols;
             Settings.gridRows = self.GridTab.numOfRows;
-        elseif Settings.mode == 4 then
+        elseif Settings.mode == TabId.PULL then
             Settings.pullWidth = self.PullTab.pixelWidth
         end
         self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
@@ -406,11 +415,11 @@ function TravelWindow:Constructor()
         end
     end
     self:SizeChanged(); -- explicitly call to ensure correct positioning
-    if Settings.mode == 1 then
+    if Settings.mode == TabId.LIST then
         self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
-    elseif Settings.mode == 2 then
+    elseif Settings.mode == TabId.GRID then
         self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
-    elseif Settings.mode == 4 then
+    elseif Settings.mode == TabId.PULL then
         self.PullTab.pixelWidth = self:GetWidth()
     end
 end
@@ -429,20 +438,20 @@ function TravelWindow:FadeOut()
 end
 
 function TravelWindow:SetItems()
-    if Settings.mode == 1 then
+    if Settings.mode == TabId.LIST then
         self:SetSize(self.ListTab:GetPixelSize());
         self.ListTab:SetItems();
         self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
-    elseif Settings.mode == 2 then
+    elseif Settings.mode == TabId.GRID then
         self:SetSize(self.GridTab:GetPixelSize());
         self.GridTab:SetItems();
         self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
-    elseif Settings.mode == 3 then
+    elseif Settings.mode == TabId.CARO then
         self.CaroTab:SetItems();
-    elseif Settings.mode == 4 then
+    elseif Settings.mode == TabId.PULL then
         self.PullTab:SetItems();
         self.PullTab.pixelWidth = self:GetWidth()
-    elseif Settings.mode == 5 then
+    elseif Settings.mode == TabId.MAP then
         self:SetSize(self.MapTab:GetPixelSize());
         self.MapTab:SetItems();
     end
@@ -450,10 +459,10 @@ end
 
 function TravelWindow:UpdateMinimum()
     -- update the page that is showing
-    if Settings.mode == 1 then
+    if Settings.mode == TabId.LIST then
         self.minWidth = self.ListTab.minWidth;
         self.minHeight = self.ListTab.minHeight;
-    elseif Settings.mode == 3 then
+    elseif Settings.mode == TabId.CARO then
         if self.isMinWindow then
             self.minWidth = 150;
             self.minHeight = 75;
@@ -461,7 +470,7 @@ function TravelWindow:UpdateMinimum()
             self.minWidth = 200;
             self.minHeight = 110;
         end
-    elseif Settings.mode == 4 then
+    elseif Settings.mode == TabId.PULL then
         if self.isMinWindow then
             self.minWidth = 360;
             self.minHeight = 65;
@@ -469,7 +478,7 @@ function TravelWindow:UpdateMinimum()
             self.minWidth = 360;
             self.minHeight = 105;
         end
-    elseif Settings.mode == 5 then
+    elseif Settings.mode == TabId.MAP then
         -- Map view fixed at 1024x768 + padding (nav panel overlaid on map)
         self.minWidth, self.minHeight = self.MapTab:GetPixelSize()
     else
@@ -479,13 +488,13 @@ function TravelWindow:UpdateMinimum()
 
     self:SetMinimumSize(self.minWidth, self.minHeight);
 
-    if Settings.mode == 3 then
+    if Settings.mode == TabId.CARO then
         self:SetSize(self.minWidth, self.minHeight);
     end
-    if Settings.mode == 4 then
+    if Settings.mode == TabId.PULL then
         self:SetSize(self.PullTab.pixelWidth, self.minHeight)
     end
-    if Settings.mode == 5 then
+    if Settings.mode == TabId.MAP then
         self:SetSize(self.minWidth, self.minHeight);
     end
 end
