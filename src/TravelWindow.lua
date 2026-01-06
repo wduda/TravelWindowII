@@ -60,10 +60,6 @@ function TravelWindow:Constructor()
     AddCallback(ChatLog, "Received", ChatLogHandler);
 
     -- configure the main window
-    local screenW, screenH = Turbine.UI.Display.GetSize()
-    local positionX = screenW * Settings.positionRelativeX
-    local positionY = screenH * Settings.positionRelativeY
-    self:SetPosition(positionX, positionY)
     self:SetText(LC.mainTitle);
     self:SetBackColor(self.backColor);
     if (Settings.hideOnStart == 1) then
@@ -112,6 +108,7 @@ function TravelWindow:Constructor()
     self.PullTab.pixelWidth = Settings.pullWidth
 
     self.MainPanel:SetTab(Settings.mode);
+    self:SetInitialPosition()
     self.GridTab:SetAllowDrop(true)
     self:SetItems();
     self:UpdateMinimum();
@@ -142,10 +139,12 @@ function TravelWindow:Constructor()
 
     -- check if our position has changed, and save the settings if so
     self.PositionChanged = function(sender, args)
-        local w, h = self:GetPosition()
-        local sw, sh = Turbine.UI.Display.GetSize()
-        Settings.positionRelativeX = w / sw
-        Settings.positionRelativeY = h / sh
+        if Settings.mode ~= TabId.MAP then
+            local w, h = self:GetPosition()
+            local sw, sh = Turbine.UI.Display.GetSize()
+            Settings.positionRelativeX = w / sw
+            Settings.positionRelativeY = h / sh
+        end
         self.PullTab:ClosePulldown()
     end
 
@@ -499,6 +498,18 @@ function TravelWindow:UpdateMinimum()
     end
 end
 
+function TravelWindow:SetInitialPosition()
+    local screenW, screenH = Turbine.UI.Display.GetSize()
+    local positionX = screenW * Settings.positionRelativeX
+    local positionY = screenH * Settings.positionRelativeY
+    if Settings.mode == TabId.MAP then
+        local w, h = self.MapTab:GetPixelSize()
+        positionX = (screenW - w) / 2
+        positionY = (screenH - h) / 2
+    end
+    self:SetPosition(positionX, positionY)
+end
+
 function TravelWindow:ReloadLabels()
     self.ListTab:ReloadLabels()
     self.PullTab.pulldown:ReloadLabels()
@@ -548,6 +559,7 @@ function TravelWindow:UpdateSettings()
     -- set which page of the tab panel to show
     self.MainPanel:SetTab(Settings.mode);
     self:UpdateMinimum();
+    self:SetInitialPosition()
     self:SetItems();
 
     self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
@@ -574,9 +586,7 @@ function SyncUIFromSettings()
     OptionsWindow.Panel:EnableFromSettings()
     OptionsWindow.Panel:AddSortList()
     Menu:SetSettings(Settings.mode, Settings.filters)
-    local positionX = screenW * Settings.positionRelativeX
-    local positionY = screenH * Settings.positionRelativeY
-    _G.travel:SetPosition(positionX, positionY)
+    _G.travel:SetInitialPosition()
     _G.travel.dirty = true
     _G.travel:UpdateSettings()
 end
