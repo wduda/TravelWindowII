@@ -21,6 +21,7 @@ function TravelMapTab:Constructor(toplevel)
     -- Map configuration
     self.mapWidth = 1024
     self.mapHeight = 768
+    self.navPanelHeight = 30
     self.quickslots = {}
 
     MapType = {
@@ -69,7 +70,7 @@ function TravelMapTab:Constructor(toplevel)
     -- Create navigation panel at bottom (overlaid on map)
     self.navPanel = Turbine.UI.Control()
     self.navPanel:SetParent(self.mapLabel)
-    self.navPanel:SetSize(self.mapWidth, 30)
+    self.navPanel:SetSize(self.mapWidth, self.navPanelHeight)
     self.navPanel:SetBackColor(Turbine.UI.Color(0.8, 0, 0, 0))
     self.navPanel:SetZOrder(99)
 
@@ -173,7 +174,7 @@ end
 -- Update navigation panel layout
 function TravelMapTab:UpdateNavPanel()
     -- Position navigation panel at bottom of map
-    local navPanelY = self.mapHeight - 30
+    local navPanelY = self.mapHeight - self.navPanelHeight
     self.navPanel:SetPosition(0, navPanelY)
     self.navPanel:SetWidth(self.mapWidth)
 
