@@ -1,7 +1,6 @@
 import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
-import "TravelWindowII.src.MapWindow"
 import "TravelWindowII.src.extensions";
 import "TravelWindowII.src.utils.BitOps";
 import "TravelWindowII.src.VindarPatch";
@@ -155,7 +154,6 @@ function TravelWindow:Constructor()
                 self:SetVisible(false);
             end
             OptionsWindow:SetVisible(false);
-            self:CloseMapWindow();
             if (self.hidden == true) then
                 self.hidden = false;
                 self:SetVisible(self.currentVisState);
@@ -168,16 +166,10 @@ function TravelWindow:Constructor()
                 self:SetVisible(false);
                 OptionsWindow:SetVisible(false);
                 ToggleButton:SetVisible(false);
-                if self.mapWindow ~= nil then
-                    self.mapWindow:SetVisible(false);
-                end
             else
                 self.hidden = false;
                 self:SetVisible(self.currentVisState);
                 ToggleButton:SetVisible(Settings.showButton == 1);
-                if self.mapWindow ~= nil then
-                    self.mapWindow:SetVisible(true);
-                end
             end
         end
     end
@@ -518,21 +510,6 @@ function TravelWindow:ReloadLabels()
         local shortcut = TravelShortcuts[i]
         shortcut.normalizedLabel = shortcut:GetLabel():lower()
     end
-end
-
-function TravelWindow:OpenMapWindow(map)
-    self:CloseMapWindow();
-    self.mapWindow = TravelWindowII.src.MapWindow(map);
-    self.mapWindow:SetVisible(true);
-end
-
--- function to close the current map window
-function TravelWindow:CloseMapWindow()
-    if (self.mapWindow ~= nil) then
-        self.mapWindow:SetVisible(false);
-        self.mapWindow:Close();
-    end
-    self.mapWindow = nil;
 end
 
 function TravelWindow:UpdateOpacity()

@@ -359,55 +359,10 @@ LC_DE.menuMap = "Kartenansicht"
 LC_FR.menuMap = "Vue de carte"
 LC_RU.menuMap = "Вид карты"
 
-LC_EN.mapWindow = "Maps"
-LC_DE.mapWindow = "Karten"
-LC_FR.mapWindow = "Destinations"
-LC_RU.mapWindow = "Карты"
-
 LC_EN.menuOptions = "Options"
 LC_DE.menuOptions = "Optionen"
 LC_FR.menuOptions = "Options"
 LC_RU.menuOptions = "Настройки"
-
-LC_EN.menuPrevious = "Previous"
-LC_DE.menuPrevious = "Zurück"
-LC_FR.menuPrevious = "Précédent"
-LC_RU.menuPrevious = "Назад"
-
-LC_EN.menuNext = "Next"
-LC_DE.menuNext = "Weiter"
-LC_FR.menuNext = "Suivant"
-LC_RU.menuNext = "Вперёд"
-
-LC_EN.moorMap = "Open Moor Map"
-LC_DE.moorMap = "Öffne Etten-Karte"
-LC_FR.moorMap = "Destinations aux Landes d'Etten"
-LC_RU.moorMap = "Открыть Moor Map"
-
-LC_EN.eriadorMap = "Open Eriador Map"
-LC_DE.eriadorMap = "Öffne Eriador-Karte"
-LC_FR.eriadorMap = "Destinations en Eriador"
-LC_RU.eriadorMap = "Открыть карту Эриадора"
-
-LC_EN.rhovanionMap = "Open Rhovanion Map"
-LC_DE.rhovanionMap = "Öffne Rhovanion-Karte"
-LC_FR.rhovanionMap = "Destination dans le Rhovanion"
-LC_RU.rhovanionMap = "Открыть карту Рованиона"
-
-LC_EN.rohanMap = "Open Rohan Map"
-LC_DE.rohanMap = "Öffne Rohan-Karte"
-LC_FR.rohanMap = "Destinations dans le Rohan"
-LC_RU.rohanMap = "Открыть карту Рохана"
-
-LC_EN.gondorMap = "Open Gondor Map"
-LC_DE.gondorMap = "Öffne Gondor-Karte"
-LC_FR.gondorMap = "Destinations dans le Gondor"
-LC_RU.gondorMap = "Открыть карту Гондора"
-
-LC_EN.haradwaithMap = "Open Haradwaith Map"
-LC_DE.haradwaithMap = "Öffne Haradwaith-Karte"
-LC_FR.haradwaithMap = "Destinations dans le Haradwaith"
-LC_RU.haradwaithMap = "Открыть карту Харадвайта"
 
 LC_EN.moorMapName = "Ettenmoors"
 LC_DE.moorMapName = "Die Ettenöden"

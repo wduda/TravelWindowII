@@ -38,16 +38,6 @@ function SettingsMenu:Constructor(parentWindow)
     ModeItems:Add(self.Mode4);
     ModeItems:Add(self.Mode5);
 
-    -- create the items to open the map windows
-    MoorMapMenu = TravelWindowII.src.extensions.DMenuList(LC.moorMap);
-    MapWindows = TravelWindowII.src.extensions.DMenuList(LC.mapWindow);
-    local MapItems = MapWindows:GetItems();
-    MapItems:Add(Turbine.UI.MenuItem(LC.eriadorMap));
-    MapItems:Add(Turbine.UI.MenuItem(LC.rhovanionMap));
-    MapItems:Add(Turbine.UI.MenuItem(LC.rohanMap));
-    MapItems:Add(Turbine.UI.MenuItem(LC.gondorMap));
-    MapItems:Add(Turbine.UI.MenuItem(LC.haradwaithMap));
-
     -- create the menu item to open the options window
     OptionsMenu = TravelWindowII.src.extensions.DMenuList(LC.menuOptions);
 
@@ -56,11 +46,9 @@ function SettingsMenu:Constructor(parentWindow)
     if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
         MenuItems:Add(Mode);
         MenuItems:Add(OptionsMenu);
-        MenuItems:Add(MoorMapMenu);
     else
         MenuItems:Add(Filters);
         MenuItems:Add(Mode);
-        MenuItems:Add(MapWindows);
         MenuItems:Add(OptionsMenu);
     end
 
@@ -144,18 +132,6 @@ function SettingsMenu:Update(string)
         self.mode = 5;
     elseif (string == LC.menuOptions) then
         OptionsWindow:SetVisible(true);
-    elseif (string == LC.moorMap) then
-        self.parent:OpenMapWindow(MapType.CREEPS);
-    elseif (string == LC.eriadorMap) then
-        self.parent:OpenMapWindow(MapType.ERIADOR);
-    elseif (string == LC.rhovanionMap) then
-        self.parent:OpenMapWindow(MapType.RHOVANION);
-    elseif (string == LC.rohanMap) then
-        self.parent:OpenMapWindow(MapType.ROHAN);
-    elseif (string == LC.gondorMap) then
-        self.parent:OpenMapWindow(MapType.GONDOR);
-    elseif (string == LC.haradwaithMap) then
-        self.parent:OpenMapWindow(MapType.HARADWAITH);
     end
 
     -- set the selections
