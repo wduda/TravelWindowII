@@ -156,11 +156,11 @@ function TravelMapTab:LoadMap()
     elseif self.currentRegion == MapType.RHOVANION then
         self.mapLabel:SetBackground(0x411C2DE4)
     elseif self.currentRegion == MapType.ROHAN then
-        self.mapLabel:SetBackground(0x411c2de5)
+        self.mapLabel:SetBackground(0x411c2DE5)
     elseif self.currentRegion == MapType.GONDOR then
         self.mapLabel:SetBackground(0x41154336)
     elseif self.currentRegion == MapType.HARADWAITH then
-        self.mapLabel:SetBackground(0x4124bcd0)
+        self.mapLabel:SetBackground(0x4124BCD0)
     elseif self.currentRegion == MapType.CREEPS then
         self.mapLabel:SetBackground(0x41008133)
     end
