@@ -76,6 +76,7 @@ function TravelMapTab:Constructor(toplevel)
         self.navPanel:SetSize(self.mapWidth, self.navPanelHeight)
         self.navPanel:SetBackColor(Turbine.UI.Color(0.8, 0, 0, 0))
         self.navPanel:SetZOrder(99)
+        self.navPanel:SetPosition(0, self.mapHeight)  -- Position below the map
 
         -- Create 5 region buttons for direct access
         self.regionButtons = {}
