@@ -165,13 +165,15 @@ function TravelMapTab:LoadMap()
         self.mapLabel:SetBackground(0x41008133)
     end
 
-    -- Update region label
-    self.regionLabel:SetText(self.regionNames[self.currentRegion] or "Unknown")
+    if self.navPanelHeight ~= 0 then
+        -- Update region label
+        self.regionLabel:SetText(self.regionNames[self.currentRegion] or "Unknown")
 
-    -- Update arrow button visibility (hide if only one region)
-    local showArrows = #self.regions > 1
-    self.leftArrow:SetVisible(showArrows)
-    self.rightArrow:SetVisible(showArrows)
+        -- Update arrow button visibility (hide if only one region)
+        local showArrows = #self.regions > 1
+        self.leftArrow:SetVisible(showArrows)
+        self.rightArrow:SetVisible(showArrows)
+    end
 end
 
 -- Update navigation panel layout
