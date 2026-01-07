@@ -27,6 +27,17 @@ function TravelWindow:Constructor()
         PULL = 4,
         MAP  = 5,
     }
+
+        MapType = {
+        NONE = 1,
+        CREEPS = 2,
+        ERIADOR = 3,
+        RHOVANION = 4,
+        ROHAN = 5,
+        GONDOR = 6,
+        HARADWAITH = 7,
+    }
+
     self.fadeOut = false
     self.levelUpdate = false
     self.reloadGVMap = false;

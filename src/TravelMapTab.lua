@@ -25,16 +25,6 @@ function TravelMapTab:Constructor(toplevel)
     self.quickslots = {}
     self.panelQuickslots = {}  -- For milestone/housing skills in nav panel
 
-    MapType = {
-        NONE = 1,
-        CREEPS = 2,
-        ERIADOR = 3,
-        RHOVANION = 4,
-        ROHAN = 5,
-        GONDOR = 6,
-        HARADWAITH = 7,
-    }
-
     -- Set initial region (will be loaded from settings)
     if PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer then
         self.currentRegion = MapType.CREEPS
