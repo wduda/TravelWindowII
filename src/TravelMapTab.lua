@@ -165,6 +165,7 @@ function TravelMapTab:LoadMap()
         self.mapLabel:SetBackground(0x41008133)
     end
 
+    -- handle navigation panel defensively for creep players
     if self.navPanelHeight ~= 0 then
         -- Update region label
         self.regionLabel:SetText(self.regionNames[self.currentRegion] or "Unknown")
