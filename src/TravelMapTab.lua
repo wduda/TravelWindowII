@@ -368,7 +368,7 @@ function TravelMapTab:AddPanelQuickslots()
     local spacing = 5
     local totalWidth = (#skills * quickslotSize) + ((#skills - 1) * spacing)
     local startX = (self.mapWidth - totalWidth) / 2
-    local startY = 35  -- Below region selector (25px tall) + 10px padding
+    local startY = 31  -- Below region buttons (25px tall) + 1px gap, ends at y=63 with 2px bottom padding
 
     -- Create quickslots
     local sType = Turbine.UI.Lotro.ShortcutType.Skill
