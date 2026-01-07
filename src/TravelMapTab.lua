@@ -21,8 +21,9 @@ function TravelMapTab:Constructor(toplevel)
     -- Map configuration
     self.mapWidth = 1024
     self.mapHeight = 768
-    self.navPanelHeight = 30
+    self.navPanelHeight = 65
     self.quickslots = {}
+    self.panelQuickslots = {}  -- For milestone/housing skills in nav panel
 
     MapType = {
         NONE = 1,
@@ -215,6 +216,12 @@ function TravelMapTab:SetItems()
         self:AddRacialLocation()
     end
 
+    -- Add milestone/housing skills to navigation panel
+    -- Only recreate when skills/settings change, not on region switch
+    if self.parent.dirty then
+        self:AddPanelQuickslots()
+    end
+
     self.parent.dirty = false
 end
 
@@ -225,6 +232,7 @@ function TravelMapTab:ClearItems()
         self.quickslots[i]:SetParent(nil)
     end
     self.quickslots = {}
+    -- Note: panelQuickslots are NOT cleared here, only in AddPanelQuickslots when dirty
 end
 
 -- Add class-specific locations
@@ -317,6 +325,84 @@ function TravelMapTab:AddSingleShortcut(location, shortcut)
     end
 end
 
+-- Add milestone/housing skills with no map location to navigation panel
+function TravelMapTab:AddPanelQuickslots()
+    if self.navPanelHeight == 0 then
+        return  -- No panel for monster players
+    end
+
+    -- Clear existing panel quickslots
+    for i = 1, #self.panelQuickslots do
+        self.panelQuickslots[i]:SetParent(nil)
+    end
+    self.panelQuickslots = {}
+
+    -- Collect skills with MapType.NONE
+    local skills = {}
+    for i = 1, #TravelInfo.gen.skills do
+        local skill = TravelInfo.gen.skills[i]
+        if skill.map and #skill.map > 0 then
+            local mapEntry = skill.map[1]
+            if mapEntry[1] == MapType.NONE then
+                local id = skill.id
+                -- Check if skill is trained and enabled
+                for j = 1, #TravelShortcuts do
+                    local shortcut = TravelShortcuts[j]
+                    if shortcut:GetData() == id then
+                        if shortcut.found and shortcut:IsEnabled() then
+                            table.insert(skills, {id = id})
+                        end
+                        break
+                    end
+                end
+            end
+        end
+    end
+
+    if #skills == 0 then
+        return  -- No skills to display
+    end
+
+    -- Calculate centered layout
+    local quickslotSize = 32
+    local spacing = 5
+    local totalWidth = (#skills * quickslotSize) + ((#skills - 1) * spacing)
+    local startX = (self.mapWidth - totalWidth) / 2
+    local startY = 35  -- Below region selector (25px tall) + 10px padding
+
+    -- Create quickslots
+    local sType = Turbine.UI.Lotro.ShortcutType.Skill
+    for i = 1, #skills do
+        local index = #self.panelQuickslots + 1
+        self.panelQuickslots[index] = Turbine.UI.Lotro.Quickslot()
+
+        local shortcut = Turbine.UI.Lotro.Shortcut(sType, skills[i].id)
+        self.panelQuickslots[index]:SetShortcut(shortcut)
+        self.panelQuickslots[index]:SetOpacity(1)
+        self.panelQuickslots[index]:SetParent(self.navPanel)
+        self.panelQuickslots[index]:SetMouseVisible(true)
+        self.panelQuickslots[index]:SetUseOnRightClick(false)
+        self.panelQuickslots[index]:SetAllowDrop(false)
+        self.panelQuickslots[index]:SetStretchMode(1)
+        self.panelQuickslots[index]:SetSize(quickslotSize, quickslotSize)
+
+        local posX = startX + ((i - 1) * (quickslotSize + spacing))
+        self.panelQuickslots[index]:SetPosition(posX, startY)
+        self.panelQuickslots[index]:SetZOrder(98)
+        self.panelQuickslots[index]:SetVisible(true)
+
+        self.panelQuickslots[index].MouseClick = function(sender, args)
+            if (args.Button == Turbine.UI.MouseButton.Right) then
+                Menu:ShowMenu()
+            else
+                if (Settings.hideOnTravel == 1) then
+                    self.parent:SetVisible(false)
+                end
+            end
+        end
+    end
+end
+
 -- Handle tab size changes
 function TravelMapTab:SetSize(width, height)
     Turbine.UI.Control.SetSize(self, width, height)
@@ -336,6 +422,10 @@ function TravelMapTab:SetOpacityItems(value)
     -- quickslots in stretch mode do not get updated opacity from
     -- the parent; update them here
     for i = 1, #self.quickslots do
-        self.quickslots[i]:SetOpacity(value);
+        self.quickslots[i]:SetOpacity(value)
+    end
+    -- Also update panel quickslots
+    for i = 1, #self.panelQuickslots do
+        self.panelQuickslots[i]:SetOpacity(value)
     end
 end
