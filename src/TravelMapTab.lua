@@ -77,30 +77,36 @@ function TravelMapTab:Constructor(toplevel)
         self.navPanel:SetBackColor(Turbine.UI.Color(0.8, 0, 0, 0))
         self.navPanel:SetZOrder(99)
 
-        -- Create left arrow button
-        self.leftArrow = Turbine.UI.Lotro.Button()
-        self.leftArrow:SetParent(self.navPanel)
-        self.leftArrow:SetSize(100, 25)
-        self.leftArrow:SetText(LC.menuPrevious)
-        self.leftArrow.Click = function()
-            self:CycleRegion(-1)
-        end
+        -- Create 5 region buttons for direct access
+        self.regionButtons = {}
+        local buttonWidth = 195
+        local buttonHeight = 25
+        local spacing = 5
+        local totalWidth = (buttonWidth * 5) + (spacing * 4)
+        local startX = (self.mapWidth - totalWidth) / 2
+        local startY = 5
 
-        -- Create region name label
-        self.regionLabel = Turbine.UI.Label()
-        self.regionLabel:SetParent(self.navPanel)
-        self.regionLabel:SetSize(300, 25)
-        self.regionLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro15)
-        self.regionLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter)
-        self.regionLabel:SetForeColor(Turbine.UI.Color.White)
+        -- Button configurations: {region, labelKey}
+        local buttonConfigs = {
+            {MapType.ERIADOR, "eriadorMapName"},
+            {MapType.RHOVANION, "rhovanionMapName"},
+            {MapType.ROHAN, "rohanMapName"},
+            {MapType.GONDOR, "gondorMapName"},
+            {MapType.HARADWAITH, "haradwaithMapName"}
+        }
 
-        -- Create right arrow button
-        self.rightArrow = Turbine.UI.Lotro.Button()
-        self.rightArrow:SetParent(self.navPanel)
-        self.rightArrow:SetSize(100, 25)
-        self.rightArrow:SetText(LC.menuNext)
-        self.rightArrow.Click = function()
-            self:CycleRegion(1)
+        for i = 1, 5 do
+            local config = buttonConfigs[i]
+            local button = Turbine.UI.Lotro.Button()
+            button:SetParent(self.navPanel)
+            button:SetSize(buttonWidth, buttonHeight)
+            button:SetText(LC[config[2]])
+            button:SetPosition(startX + ((i - 1) * (buttonWidth + spacing)), startY)
+            button.region = config[1]
+            button.Click = function()
+                self:SwitchRegion(config[1])
+            end
+            self.regionButtons[config[1]] = button
         end
     end
 
@@ -117,32 +123,17 @@ function TravelMapTab:Constructor(toplevel)
         end
     end
 
-    -- Load the initial map and update navigation panel
+    -- Load the initial map
     self:LoadMap()
-    self:UpdateNavPanel()
 end
 
--- Cycle to next/previous region
-function TravelMapTab:CycleRegion(direction)
-    -- Find current region index
-    local currentIndex = 1
-    for i = 1, #self.regions do
-        if self.regions[i] == self.currentRegion then
-            currentIndex = i
-            break
-        end
+-- Switch to a specific region
+function TravelMapTab:SwitchRegion(newRegion)
+    if self.currentRegion == newRegion then
+        return  -- Already on this region
     end
 
-    -- Calculate new index with wrapping
-    local newIndex = currentIndex + direction
-    if newIndex < 1 then
-        newIndex = #self.regions
-    elseif newIndex > #self.regions then
-        newIndex = 1
-    end
-
-    -- Update current region
-    self.currentRegion = self.regions[newIndex]
+    self.currentRegion = newRegion
     Settings.mapViewRegion = self.currentRegion
 
     -- Reload map and shortcuts (SetItems will clear old ones)
@@ -166,36 +157,16 @@ function TravelMapTab:LoadMap()
         self.mapLabel:SetBackground(0x41008133)
     end
 
-    -- handle navigation panel defensively for creep players
+    -- Highlight current region button
     if self.navPanelHeight ~= 0 then
-        -- Update region label
-        self.regionLabel:SetText(self.regionNames[self.currentRegion] or "Unknown")
-
-        -- Update arrow button visibility (hide if only one region)
-        local showArrows = #self.regions > 1
-        self.leftArrow:SetVisible(showArrows)
-        self.rightArrow:SetVisible(showArrows)
+        for region, button in pairs(self.regionButtons) do
+            if region == self.currentRegion then
+                button:SetEnabled(false)  -- Disabled state shows as pressed/selected
+            else
+                button:SetEnabled(true)
+            end
+        end
     end
-end
-
--- Update navigation panel layout
-function TravelMapTab:UpdateNavPanel()
-    if self.navPanelHeight == 0 then
-        return
-    end
-
-    -- Position navigation panel at bottom of map
-    local navPanelY = self.mapHeight
-    self.navPanel:SetPosition(0, navPanelY)
-    self.navPanel:SetWidth(self.mapWidth)
-
-    -- Center the navigation elements
-    local totalWidth = 100 + 300 + 100  -- left button + label + right button
-    local startX = (self.mapWidth - totalWidth) / 2
-    local startY = 5
-    self.leftArrow:SetPosition(startX, startY)
-    self.regionLabel:SetPosition(startX + 105, startY - 3)
-    self.rightArrow:SetPosition(startX + 410, startY)
 end
 
 -- Add shortcuts to the map
@@ -406,9 +377,6 @@ end
 -- Handle tab size changes
 function TravelMapTab:SetSize(width, height)
     Turbine.UI.Control.SetSize(self, width, height)
-
-    -- Update navigation panel position
-    self:UpdateNavPanel()
 end
 
 -- Get pixel size for this tab
