@@ -478,7 +478,7 @@ function TravelWindow:UpdateMinimum()
             self.minHeight = 105;
         end
     elseif Settings.mode == TabId.MAP then
-        -- Map view fixed at 1024x768 + padding (nav panel overlaid on map)
+        -- Map view fixed at 1024x768 + padding (nav panel below map)
         self.minWidth, self.minHeight = self.MapTab:GetPixelSize()
     else
         self.minWidth = 40;
