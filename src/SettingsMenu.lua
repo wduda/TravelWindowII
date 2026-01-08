@@ -321,8 +321,8 @@ function SetSettings(settingsArg, scope, importOldSettings)
         -- First time loading - no notification
         settingsArg.lastLoadedVersion = currentVersion
     else
-        -- Check if version changed (only show notification for Character scope to avoid duplicates)
-        if scope == Turbine.DataScope.Character then
+        -- Check if version changed (only show notification for Account scope - account-wide behavior)
+        if scope == Turbine.DataScope.Account then
             local lastVersionNum = GetVersionNumber(settingsArg.lastLoadedVersion)
             local currentVersionNum = GetVersionNumber(currentVersion)
 
@@ -332,7 +332,7 @@ function SetSettings(settingsArg, scope, importOldSettings)
                     currentVersion,
                     settingsArg.lastLoadedVersion,  -- Pass lastVersion for filtering
                     function()
-                        -- "Close" button clicked - save new version
+                        -- "Close" button clicked - save new version (account-wide)
                         settingsArg.lastLoadedVersion = currentVersion
                         Settings.lastLoadedVersion = currentVersion
                         -- Settings will be saved automatically on plugin unload
@@ -347,7 +347,7 @@ function SetSettings(settingsArg, scope, importOldSettings)
                 settingsArg.lastLoadedVersion = currentVersion
             end
         else
-            -- For Account scope, just update the version without showing notification
+            -- For Character scope, just update the version without showing notification
             settingsArg.lastLoadedVersion = currentVersion
         end
     end
@@ -391,7 +391,10 @@ function SetSettings(settingsArg, scope, importOldSettings)
         settingsArg.order = {};
     end
 
-    Settings.lastLoadedVersion = settingsArg.lastLoadedVersion;
+    -- Only set Settings.lastLoadedVersion from Account scope (account-wide behavior)
+    if scope == Turbine.DataScope.Account then
+        Settings.lastLoadedVersion = settingsArg.lastLoadedVersion;
+    end
 
     LoadEnabled = {}
     for k, v in pairs(settingsArg.enabled) do
@@ -464,8 +467,13 @@ function SaveSettings(scope)
     end
 
     local settingsStrings = {};
-    -- Use the version from Settings (may be old if user clicked "Show Again Later")
-    settingsStrings.lastLoadedVersion = Settings.lastLoadedVersion or Plugins["Travel Window II"]:GetVersion();
+
+    -- Only save lastLoadedVersion for Account scope (account-wide behavior)
+    if scope == Turbine.DataScope.Account then
+        -- Use the version from Settings (may be old if user clicked "Show Again Later")
+        settingsStrings.lastLoadedVersion = Settings.lastLoadedVersion or Plugins["Travel Window II"]:GetVersion();
+    end
+
     for k, v in pairs(SettingsConfig) do
         if v.save ~= nil then
             settingsStrings[k] = v.save(Settings[k])

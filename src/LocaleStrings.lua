@@ -40,16 +40,20 @@ local LC_RU = Locale[Turbine.Language.Russian]
 
 LC_EN.help = "Travel\n\ntrav show: Display the Travel Window\n" ..
 "trav hide: Hides the Travel Window\n" ..
-"trav toggle: Toggle the Travel Window\n"
+"trav toggle: Toggle the Travel Window\n" ..
+"trav update: Show the update notification window\n"
 LC_DE.help = "Travel\n\ntrav show: Zeigt das Travel-Fenster an\n" ..
 "trav hide: Versteckt das Travel-Fenster\n" ..
-"trav toggle: Schaltet das Travel-Fenster um\n"
+"trav toggle: Schaltet das Travel-Fenster um\n" ..
+"trav update: Update-Fenster anzeigen\n"
 LC_FR.help = "Travel\n\ntrav show: Afficher Travel Window\n" ..
 "trav hide: Masquer Travel Window\n" ..
-"trav toggle: Toggle the Travel Window\n"
+"trav toggle: Toggle the Travel Window\n" ..
+"trav update: Afficher la fenêtre de actualisation\n"
 LC_RU.help = "Travel\n\ntrav show: Показать Travel Window\n" ..
 "trav hide: Спрятать Travel Window\n" ..
-"trav toggle: Переключить показ Travel Window\n"
+"trav toggle: Переключить показ Travel Window\n" ..
+"trav update: Показать окно Обновление\n"
 
 -- window title strings
 LC_EN.mainTitle = "Travel"
