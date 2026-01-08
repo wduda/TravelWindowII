@@ -7,7 +7,7 @@ function SettingsMenu:Constructor(parentWindow)
     Turbine.UI.ContextMenu.Constructor(self);
 
     -- set the default values
-    self.mode = 1;
+    self.mode = 2;
     self.filters = 0x0F;
 
     self.parent = parentWindow;
@@ -176,9 +176,6 @@ function InitDefaultSettings()
             Settings[k] = v.defValue
         end
     end
-
-    -- clear the maps
-    Settings.mapGlanVraig = nil;
 end
 
 function InitNumberSetting(strTable, name, forceDefault)
@@ -379,10 +376,6 @@ function SetSettings(settingsArg, scope, importOldSettings)
         end
     end
 
-    if (settingsArg.mapGlanVraig ~= nil) then
-        Settings.mapGlanVraig = settingsArg.mapGlanVraig;
-    end
-
     if (not settingsArg.enabled or importOldSettings) then
         settingsArg.enabled = {};
     end
@@ -480,7 +473,6 @@ function SaveSettings(scope)
         end
     end
 
-    settingsStrings.mapGlanVraig = tostring(Settings.mapGlanVraig);
     settingsStrings.enabled = GetTravelEnabled(scope);
     settingsStrings.order = GetTravelOrder(scope);
 
