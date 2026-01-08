@@ -7,36 +7,43 @@ function SettingsMenu:Constructor(parentWindow)
     Turbine.UI.ContextMenu.Constructor(self);
 
     -- set the default values
-    self.mode = 2;
+    self.mode = TabId.GRID;
     self.filters = 0x0F;
 
     self.parent = parentWindow;
 
+    FilterId = {
+        GEN = 1,
+        RACE = 2,
+        REP = 3,
+        CLASS = 4,
+    }
+
     -- create the filter sub menu
-    Filters = TravelWindowII.src.extensions.DMenuList(LC.menuFilters);
-    self.Filters1 = Turbine.UI.MenuItem(LC.menuGen);
-    self.Filters2 = Turbine.UI.MenuItem(LC.menuRace);
-    self.Filters3 = Turbine.UI.MenuItem(LC.menuRep);
-    self.Filters4 = Turbine.UI.MenuItem(LC.menuClass);
-    FilterItems = Filters:GetItems();
-    FilterItems:Add(self.Filters1);
-    FilterItems:Add(self.Filters2);
-    FilterItems:Add(self.Filters3);
-    FilterItems:Add(self.Filters4);
+    Filters = TravelWindowII.src.extensions.DMenuList(LC.menuFilters)
+    self.filterGen = Turbine.UI.MenuItem(LC.menuGen)
+    self.filterRace = Turbine.UI.MenuItem(LC.menuRace)
+    self.filterRep = Turbine.UI.MenuItem(LC.menuRep)
+    self.filterClass = Turbine.UI.MenuItem(LC.menuClass)
+    FilterItems = Filters:GetItems()
+    FilterItems:Add(self.filterGen)
+    FilterItems:Add(self.filterRace)
+    FilterItems:Add(self.filterRep)
+    FilterItems:Add(self.filterClass)
 
     -- create the mode sub menu
-    Mode = TravelWindowII.src.extensions.DMenuList(LC.menuMode);
-    self.Mode1 = Turbine.UI.MenuItem(LC.menuText);
-    self.Mode2 = Turbine.UI.MenuItem(LC.menuIcon);
-    self.Mode3 = Turbine.UI.MenuItem(LC.menuCaro);
-    self.Mode4 = Turbine.UI.MenuItem(LC.menuPull);
-    self.Mode5 = Turbine.UI.MenuItem(LC.menuMap);
-    local ModeItems = Mode:GetItems();
-    ModeItems:Add(self.Mode1);
-    ModeItems:Add(self.Mode2);
-    ModeItems:Add(self.Mode3);
-    ModeItems:Add(self.Mode4);
-    ModeItems:Add(self.Mode5);
+    Mode = TravelWindowII.src.extensions.DMenuList(LC.menuMode)
+    self.menuList = Turbine.UI.MenuItem(LC.menuText)
+    self.menuGrid = Turbine.UI.MenuItem(LC.menuIcon)
+    self.menuCaro = Turbine.UI.MenuItem(LC.menuCaro)
+    self.menuPull = Turbine.UI.MenuItem(LC.menuPull)
+    self.menuMap = Turbine.UI.MenuItem(LC.menuMap)
+    local ModeItems = Mode:GetItems()
+    ModeItems:Add(self.menuList)
+    ModeItems:Add(self.menuGrid)
+    ModeItems:Add(self.menuCaro)
+    ModeItems:Add(self.menuPull)
+    ModeItems:Add(self.menuMap)
 
     -- create the menu item to open the options window
     OptionsMenu = TravelWindowII.src.extensions.DMenuList(LC.menuOptions);
@@ -83,17 +90,17 @@ end
 function SettingsMenu:SetSelections()
 
     -- set the filters using the BitOps functions
-    self.Filters1:SetChecked(hasbit(self.filters, bit(1)));
-    self.Filters2:SetChecked(hasbit(self.filters, bit(2)));
-    self.Filters3:SetChecked(hasbit(self.filters, bit(3)));
-    self.Filters4:SetChecked(hasbit(self.filters, bit(4)));
+    self.filterGen:SetChecked(hasbit(self.filters, bit(FilterId.GEN)))
+    self.filterRace:SetChecked(hasbit(self.filters, bit(FilterId.RACE)))
+    self.filterRep:SetChecked(hasbit(self.filters, bit(FilterId.REP)))
+    self.filterClass:SetChecked(hasbit(self.filters, bit(FilterId.CLASS)))
 
     -- set the mode
-    self.Mode1:SetChecked(self.mode == 1);
-    self.Mode2:SetChecked(self.mode == 2);
-    self.Mode3:SetChecked(self.mode == 3);
-    self.Mode4:SetChecked(self.mode == 4);
-    self.Mode5:SetChecked(self.mode == 5);
+    self.menuList:SetChecked(self.mode == TabId.LIST)
+    self.menuGrid:SetChecked(self.mode == TabId.GRID)
+    self.menuCaro:SetChecked(self.mode == TabId.CARO)
+    self.menuPull:SetChecked(self.mode == TabId.PULL)
+    self.menuMap:SetChecked(self.mode == TabId.MAP)
 end
 
 -- get the setting from the main window
@@ -113,23 +120,23 @@ function SettingsMenu:Update(string)
 
     -- update the window based on which item was selected
     if (string == LC.menuGen) then
-        self.filters = togglebit(self.filters, bit(1));
+        self.filters = togglebit(self.filters, bit(FilterId.GEN))
     elseif (string == LC.menuRace) then
-        self.filters = togglebit(self.filters, bit(2));
+        self.filters = togglebit(self.filters, bit(FilterId.RACE))
     elseif (string == LC.menuRep) then
-        self.filters = togglebit(self.filters, bit(3));
+        self.filters = togglebit(self.filters, bit(FilterId.REP))
     elseif (string == LC.menuClass) then
-        self.filters = togglebit(self.filters, bit(4));
+        self.filters = togglebit(self.filters, bit(FilterId.CLASS))
     elseif (string == LC.menuText) then
-        self.mode = 1;
+        self.mode = TabId.LIST
     elseif (string == LC.menuIcon) then
-        self.mode = 2;
+        self.mode = TabId.GRID
     elseif (string == LC.menuCaro) then
-        self.mode = 3;
+        self.mode = TabId.CARO
     elseif (string == LC.menuPull) then
-        self.mode = 4;
+        self.mode = TabId.PULL
     elseif (string == LC.menuMap) then
-        self.mode = 5;
+        self.mode = TabId.MAP
     elseif (string == LC.menuOptions) then
         OptionsWindow:SetVisible(true);
     end
