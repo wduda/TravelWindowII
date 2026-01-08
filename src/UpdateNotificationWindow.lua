@@ -59,11 +59,19 @@ function UpdateNotificationWindow:Constructor(currentVersion, lastVersion, onClo
     self.textBox = Turbine.UI.Lotro.TextBox()
     self.textBox:SetParent(self)
     self.textBox:SetPosition(10, 45)
-    self.textBox:SetSize(self.width - 20, self.height - 100)
+    self.textBox:SetSize(self.width - 30, self.height - 100)
     self.textBox:SetMultiline(true)
     self.textBox:SetReadOnly(true)
     self.textBox:SetText(changelogText)
     self.textBox:SetFont(Turbine.UI.Lotro.Font.TrajanPro14)
+
+    -- Create vertical scrollbar for the text area
+    self.scrollBar = Turbine.UI.Lotro.ScrollBar()
+    self.scrollBar:SetOrientation(Turbine.UI.Orientation.Vertical)
+    self.scrollBar:SetParent(self)
+    self.scrollBar:SetPosition(self.width - 20, 45)
+    self.scrollBar:SetSize(10, self.height - 100)
+    self.textBox:SetVerticalScrollBar(self.scrollBar)
 
     -- Create "Show Again Later" button (doesn't save version) - far left
     self.remindButton = Turbine.UI.Lotro.Button()

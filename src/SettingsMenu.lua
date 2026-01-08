@@ -321,28 +321,33 @@ function SetSettings(settingsArg, scope, importOldSettings)
         -- First time loading - no notification
         settingsArg.lastLoadedVersion = currentVersion
     else
-        -- Check if version changed
-        local lastVersionNum = GetVersionNumber(settingsArg.lastLoadedVersion)
-        local currentVersionNum = GetVersionNumber(currentVersion)
+        -- Check if version changed (only show notification for Character scope to avoid duplicates)
+        if scope == Turbine.DataScope.Character then
+            local lastVersionNum = GetVersionNumber(settingsArg.lastLoadedVersion)
+            local currentVersionNum = GetVersionNumber(currentVersion)
 
-        if lastVersionNum < currentVersionNum then
-            -- Version updated - show notification window
-            local updateWindow = TravelWindowII.src.UpdateNotificationWindow(
-                currentVersion,
-                settingsArg.lastLoadedVersion,  -- Pass lastVersion for filtering
-                function()
-                    -- "Close" button clicked - save new version
-                    settingsArg.lastLoadedVersion = currentVersion
-                    Settings.lastLoadedVersion = currentVersion
-                    -- Settings will be saved automatically on plugin unload
-                end,
-                function()
-                    -- "Show Again Later" clicked - don't save version
-                    -- Do nothing, version stays as old value
-                end
-            )
+            if lastVersionNum < currentVersionNum then
+                -- Version updated - show notification window
+                TravelWindowII.src.UpdateNotificationWindow(
+                    currentVersion,
+                    settingsArg.lastLoadedVersion,  -- Pass lastVersion for filtering
+                    function()
+                        -- "Close" button clicked - save new version
+                        settingsArg.lastLoadedVersion = currentVersion
+                        Settings.lastLoadedVersion = currentVersion
+                        -- Settings will be saved automatically on plugin unload
+                    end,
+                    function()
+                        -- "Show Again Later" clicked - don't save version
+                        -- Do nothing, version stays as old value
+                    end
+                )
+            else
+                -- Version same or downgraded (shouldn't happen) - no notification
+                settingsArg.lastLoadedVersion = currentVersion
+            end
         else
-            -- Version same or downgraded (shouldn't happen) - no notification
+            -- For Account scope, just update the version without showing notification
             settingsArg.lastLoadedVersion = currentVersion
         end
     end
