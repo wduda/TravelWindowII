@@ -7,7 +7,7 @@ import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
 
-Turbine.Language.Russian = 0x10000007 -- removed in Update 22 and again in Update 34
+Turbine.Language.Russian = 0x10000007 -- officially removed in Update 22 and again in Update 34
 
 -- Add detection for the Russian language client
 Turbine.Engine._GetLanguage = Turbine.Engine.GetLanguage
@@ -40,16 +40,20 @@ local LC_RU = Locale[Turbine.Language.Russian]
 
 LC_EN.help = "Travel\n\ntrav show: Display the Travel Window\n" ..
 "trav hide: Hides the Travel Window\n" ..
-"trav toggle: Toggle the Travel Window\n"
+"trav toggle: Toggle the Travel Window\n" ..
+"trav update: Show the update notification window\n"
 LC_DE.help = "Travel\n\ntrav show: Zeigt das Travel-Fenster an\n" ..
 "trav hide: Versteckt das Travel-Fenster\n" ..
-"trav toggle: Schaltet das Travel-Fenster um\n"
+"trav toggle: Schaltet das Travel-Fenster um\n" ..
+"trav update: Update-Fenster anzeigen\n"
 LC_FR.help = "Travel\n\ntrav show: Afficher Travel Window\n" ..
 "trav hide: Masquer Travel Window\n" ..
-"trav toggle: Toggle the Travel Window\n"
+"trav toggle: Toggle the Travel Window\n" ..
+"trav update: Afficher la fenêtre de actualisation\n"
 LC_RU.help = "Travel\n\ntrav show: Показать Travel Window\n" ..
 "trav hide: Спрятать Travel Window\n" ..
-"trav toggle: Переключить показ Travel Window\n"
+"trav toggle: Переключить показ Travel Window\n" ..
+"trav update: Показать окно Обновление\n"
 
 -- window title strings
 LC_EN.mainTitle = "Travel"
@@ -93,7 +97,7 @@ LC_DE.sortTab = "Sortierung"
 LC_FR.sortTab = "Tri"
 LC_RU.sortTab = "Сортировка"
 
-LC_EN.hide = "Hide Travel window at startup"
+LC_EN.hide = "Hide Travel Window at startup"
 LC_DE.hide = "Verstecke Travel-Fenster beim Start"
 LC_FR.hide = "Cacher la fenêtre au démarrage"
 LC_RU.hide = "Убрать окно Travel при старте"
@@ -354,45 +358,45 @@ LC_DE.menuPull = "Pulldown-Liste"
 LC_FR.menuPull = "Menu déroulant"
 LC_RU.menuPull = "Выпадающий список"
 
-LC_EN.mapWindow = "Maps"
-LC_DE.mapWindow = "Karten"
-LC_FR.mapWindow = "Destinations"
-LC_RU.mapWindow = "Карты"
+LC_EN.menuMap = "Map View"
+LC_DE.menuMap = "Kartenansicht"
+LC_FR.menuMap = "Vue de carte"
+LC_RU.menuMap = "Вид карты"
 
 LC_EN.menuOptions = "Options"
 LC_DE.menuOptions = "Optionen"
 LC_FR.menuOptions = "Options"
 LC_RU.menuOptions = "Настройки"
 
-LC_EN.moorMap = "Open Moor Map"
-LC_DE.moorMap = "Öffne Etten-Karte"
-LC_FR.moorMap = "Destinations aux Landes d'Etten"
-LC_RU.moorMap = "Открыть Moor Map"
+LC_EN.moorMapName = "Ettenmoors"
+LC_DE.moorMapName = "Die Ettenöden"
+LC_FR.moorMapName = "Les Landes d'Etten"
+LC_RU.moorMapName = "Эттенские высоты"
 
-LC_EN.eriadorMap = "Open Eriador Map"
-LC_DE.eriadorMap = "Öffne Eriador-Karte"
-LC_FR.eriadorMap = "Destinations en Eriador"
-LC_RU.eriadorMap = "Открыть карту Эриадора"
+LC_EN.eriadorMapName = "Eriador"
+LC_DE.eriadorMapName = "Eriador"
+LC_FR.eriadorMapName = "Eriador"
+LC_RU.eriadorMapName = "Эриадора"
 
-LC_EN.rhovanionMap = "Open Rhovanion Map"
-LC_DE.rhovanionMap = "Öffne Rhovanion-Karte"
-LC_FR.rhovanionMap = "Destination dans le Rhovanion"
-LC_RU.rhovanionMap = "Открыть карту Рованиона"
+LC_EN.rhovanionMapName = "Rhovanion"
+LC_DE.rhovanionMapName = "Rhovanion"
+LC_FR.rhovanionMapName = "Rhovanion"
+LC_RU.rhovanionMapName = "Рованиона"
 
-LC_EN.rohanMap = "Open Rohan Map"
-LC_DE.rohanMap = "Öffne Rohan-Karte"
-LC_FR.rohanMap = "Destinations dans le Rohan"
-LC_RU.rohanMap = "Открыть карту Рохана"
+LC_EN.rohanMapName = "Rohan"
+LC_DE.rohanMapName = "Rohan"
+LC_FR.rohanMapName = "Rohan"
+LC_RU.rohanMapName = "Рохана"
 
-LC_EN.gondorMap = "Open Gondor Map"
-LC_DE.gondorMap = "Öffne Gondor-Karte"
-LC_FR.gondorMap = "Destinations dans le Gondor"
-LC_RU.gondorMap = "Открыть карту Гондора"
+LC_EN.gondorMapName = "Gondor"
+LC_DE.gondorMapName = "Gondor"
+LC_FR.gondorMapName = "Gondor"
+LC_RU.gondorMapName = "Гондора"
 
-LC_EN.haradwaithMap = "Open Haradwaith Map"
-LC_DE.haradwaithMap = "Öffne Haradwaith-Karte"
-LC_FR.haradwaithMap = "Destinations dans le Haradwaith"
-LC_RU.haradwaithMap = "Открыть карту Харадвайта"
+LC_EN.haradwaithMapName = "Haradwaith"
+LC_DE.haradwaithMapName = "Haradwaith"
+LC_FR.haradwaithMapName = "Haradwaith"
+LC_RU.haradwaithMapName = "Харадвайта"
 
 LC_EN.acquired = "You have acquired the (.*) skill%."
 LC_DE.acquired = "Ihr habt Euch die Fertigkeit (.*) angeeignet%."
@@ -448,6 +452,26 @@ LC_EN.minLevel = "Minimum Level "
 LC_DE.minLevel = "Mindeststufe "
 LC_FR.minLevel = "Niveau minimum "
 LC_RU.minLevel = "Минимальный уровень "
+
+LC_EN.updateTitle = "Travel Window II Update"
+LC_DE.updateTitle = "Travel Window II Update"
+LC_FR.updateTitle = "Travel Window II Actualisation"
+LC_RU.updateTitle = "Travel Window II Обновление"
+
+LC_EN.updateClose = "Close"
+LC_DE.updateClose = "Schließen"
+LC_FR.updateClose = "Fermer"
+LC_RU.updateClose = "Закрыть"
+
+LC_EN.updateRemindLater = "Show Again Later"
+LC_DE.updateRemindLater = "Später wieder anzeigen"
+LC_FR.updateRemindLater = "Rappeler plus tard"
+LC_RU.updateRemindLater = "Показать позже"
+
+LC_EN.updateDefaultMessage = "Travel Window II has been updated to"
+LC_DE.updateDefaultMessage = "Travel Window II wurde aktualisiert auf"
+LC_FR.updateDefaultMessage = "Travel Window II a été mis à jour vers"
+LC_RU.updateDefaultMessage = "Travel Window II обновлён до"
 
 -- Verify matched locale keys
 for lang, _ in pairs(Locale) do

@@ -199,7 +199,12 @@ function OptionsPanel:AddMinMaxSliderOption(name, nameMin, nameMax, x, spacerY, 
     self.options[nameMin]:SetParent(self.GeneralTab)
     self.options[nameMin].ValueChangedFunc = minFunc
     self.options[nameMin].UpdateOption = function()
-        self.options[nameMin]:SetValue(Settings[nameMin] * 100)
+        local value = Settings[nameMin]
+        if value ~= nil then
+            self.options[nameMin]:SetValue(value * 100)
+        else
+            self.options[nameMin]:SetValue(50)  -- Default to 50% if not set
+        end
     end
     self.options[nameMin]:UpdateOption()
 
@@ -220,7 +225,12 @@ function OptionsPanel:AddMinMaxSliderOption(name, nameMin, nameMax, x, spacerY, 
     self.options[nameMax]:SetParent(self.GeneralTab)
     self.options[nameMax].ValueChangedFunc = maxFunc
     self.options[nameMax].UpdateOption = function()
-        self.options[nameMax]:SetValue(Settings[nameMax] * 100)
+        local value = Settings[nameMax]
+        if value ~= nil then
+            self.options[nameMax]:SetValue(value * 100)
+        else
+            self.options[nameMax]:SetValue(100)  -- Default to 100% if not set
+        end
     end
     self.options[nameMax]:UpdateOption()
 end
