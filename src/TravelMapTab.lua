@@ -36,6 +36,9 @@ function TravelMapTab:Constructor(toplevel)
     self.quickslots = {}
     self.panelQuickslots = {}  -- For milestone/housing skills in nav panel
 
+    -- Add border padding around map content when using Lotro window
+    self.mapBorder = (not self.parent.isMinWindow) and 5 or 0
+
     -- Set initial region (will be loaded from settings)
     if PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer then
         self.currentRegion = MapType.CREEPS
@@ -68,7 +71,7 @@ function TravelMapTab:Constructor(toplevel)
     self.mapLabel:SetParent(self)
     self.mapLabel:SetVisible(true)
     self.mapLabel:SetMouseVisible(true)
-    self.mapLabel:SetPosition(0, 0)
+    self.mapLabel:SetPosition(self.mapBorder, self.mapBorder)
 
     if self.navPanelHeight ~= 0 then
         -- Create navigation panel below the map
@@ -77,7 +80,7 @@ function TravelMapTab:Constructor(toplevel)
         self.navPanel:SetSize(self.mapWidth, self.navPanelHeight)
         self.navPanel:SetBackColor(Turbine.UI.Color(0.8, 0, 0, 0))
         self.navPanel:SetZOrder(99)
-        self.navPanel:SetPosition(0, self.mapHeight)  -- Position below the map
+        self.navPanel:SetPosition(self.mapBorder, self.mapHeight + self.mapBorder)  -- Position below the map with border
 
         -- Create 5 region buttons for direct access
         self.regionButtons = {}
@@ -383,8 +386,8 @@ end
 
 -- Get pixel size for this tab
 function TravelMapTab:GetPixelSize()
-    local width = self.mapWidth + self.parent.wPadding
-    local height = self.mapHeight + self.parent.hPadding + self.navPanelHeight
+    local width = self.mapWidth + self.parent.wPadding + (self.mapBorder * 2)
+    local height = self.mapHeight + self.parent.hPadding + self.navPanelHeight + (self.mapBorder * 2)
     return width, height
 end
 
