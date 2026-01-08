@@ -67,7 +67,7 @@ function TravelMapTab:Constructor(toplevel)
 
     -- Create the map display label (full size, no scrolling)
     self.mapLabel = Turbine.UI.Label()
-    self.mapLabel:SetSize(self.mapWidth, self.mapHeight)
+    self.mapLabel:SetSize(self.mapWidth - (self.mapBorder * 2), self.mapHeight - (self.mapBorder * 2))
     self.mapLabel:SetParent(self)
     self.mapLabel:SetVisible(true)
     self.mapLabel:SetMouseVisible(true)
@@ -77,7 +77,7 @@ function TravelMapTab:Constructor(toplevel)
         -- Create navigation panel below the map
         self.navPanel = Turbine.UI.Control()
         self.navPanel:SetParent(self)
-        self.navPanel:SetSize(self.mapWidth, self.navPanelHeight)
+        self.navPanel:SetSize(self.mapWidth - (self.mapBorder * 2), self.navPanelHeight)
         self.navPanel:SetBackColor(Turbine.UI.Color(0.8, 0, 0, 0))
         self.navPanel:SetZOrder(99)
         self.navPanel:SetPosition(self.mapBorder, self.mapHeight + self.mapBorder)  -- Position below the map with border
@@ -88,7 +88,7 @@ function TravelMapTab:Constructor(toplevel)
         local buttonHeight = 25
         local spacing = 5
         local totalWidth = (buttonWidth * 5) + (spacing * 4)
-        local startX = (self.mapWidth - totalWidth) / 2
+        local startX = ((self.mapWidth - (self.mapBorder * 2)) - totalWidth) / 2
         local startY = 5
 
         -- Button configurations: {region, labelKey}
@@ -343,7 +343,7 @@ function TravelMapTab:AddPanelQuickslots()
     local quickslotSize = 32
     local spacing = 5
     local totalWidth = (#skills * quickslotSize) + ((#skills - 1) * spacing)
-    local startX = (self.mapWidth - totalWidth) / 2
+    local startX = ((self.mapWidth - (self.mapBorder * 2)) - totalWidth) / 2
     local startY = 31  -- Below region buttons (25px tall) + 1px gap, ends at y=63 with 2px bottom padding
 
     -- Create quickslots
