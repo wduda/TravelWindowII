@@ -3,7 +3,6 @@ import "Turbine.UI";
 import "Turbine.UI.Lotro";
 import "TravelWindowII.src.extensions";
 import "TravelWindowII.src.TravelGridTab"
-import "TravelWindowII.src.SettingsMenu";
 import "TravelWindowII.src.utils.FontMetric";
 import "TravelWindowII.src.utils.BitOps";
 

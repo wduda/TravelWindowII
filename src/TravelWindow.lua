@@ -1,7 +1,6 @@
 import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
-import "TravelWindowII.src.MapWindow"
 import "TravelWindowII.src.extensions";
 import "TravelWindowII.src.utils.BitOps";
 import "TravelWindowII.src.VindarPatch";
@@ -20,6 +19,14 @@ function TravelWindow:Constructor()
     else
         Turbine.UI.Lotro.Window.Constructor(self);
     end
+
+    TabId = {
+        LIST = 1,
+        GRID = 2,
+        CARO = 3,
+        PULL = 4,
+        MAP  = 5,
+    }
 
     self.fadeOut = false
     self.levelUpdate = false
@@ -53,10 +60,6 @@ function TravelWindow:Constructor()
     AddCallback(ChatLog, "Received", ChatLogHandler);
 
     -- configure the main window
-    local screenW, screenH = Turbine.UI.Display.GetSize()
-    local positionX = screenW * Settings.positionRelativeX
-    local positionY = screenH * Settings.positionRelativeY
-    self:SetPosition(positionX, positionY)
     self:SetText(LC.mainTitle);
     self:SetBackColor(self.backColor);
     if (Settings.hideOnStart == 1) then
@@ -85,16 +88,19 @@ function TravelWindow:Constructor()
     self.GridTab = TravelGridTab(self);
     self.CaroTab = TravelCaroTab(self);
     self.PullTab = TravelPulldownTab(self);
+    self.MapTab  = TravelMapTab(self);
 
     -- add the tabs to the panel
     self.MainPanel:AddTab(self.ListTab);
     self.MainPanel:AddTab(self.GridTab);
     self.MainPanel:AddTab(self.CaroTab);
     self.MainPanel:AddTab(self.PullTab);
-    self.ListTab.tabId = 1;
-    self.GridTab.tabId = 2;
-    self.CaroTab.tabId = 3;
-    self.PullTab.tabId = 4;
+    self.MainPanel:AddTab(self.MapTab);
+    self.ListTab.tabId = TabId.LIST;
+    self.GridTab.tabId = TabId.GRID;
+    self.CaroTab.tabId = TabId.CARO;
+    self.PullTab.tabId = TabId.PULL;
+    self.MapTab.tabId  = TabId.MAP;
     self.GridTab.numOfCols = Settings.gridCols;
     self.GridTab.numOfRows = Settings.gridRows;
     self.ListTab.pixelWidth = Settings.listWidth;
@@ -102,6 +108,7 @@ function TravelWindow:Constructor()
     self.PullTab.pixelWidth = Settings.pullWidth
 
     self.MainPanel:SetTab(Settings.mode);
+    self:SetInitialPosition()
     self.GridTab:SetAllowDrop(true)
     self:SetItems();
     self:UpdateMinimum();
@@ -132,10 +139,12 @@ function TravelWindow:Constructor()
 
     -- check if our position has changed, and save the settings if so
     self.PositionChanged = function(sender, args)
-        local w, h = self:GetPosition()
-        local sw, sh = Turbine.UI.Display.GetSize()
-        Settings.positionRelativeX = w / sw
-        Settings.positionRelativeY = h / sh
+        if Settings.mode ~= TabId.MAP then
+            local w, h = self:GetPosition()
+            local sw, sh = Turbine.UI.Display.GetSize()
+            Settings.positionRelativeX = w / sw
+            Settings.positionRelativeY = h / sh
+        end
         self.PullTab:ClosePulldown()
     end
 
@@ -146,7 +155,6 @@ function TravelWindow:Constructor()
                 self:SetVisible(false);
             end
             OptionsWindow:SetVisible(false);
-            self:CloseMapWindow();
             if (self.hidden == true) then
                 self.hidden = false;
                 self:SetVisible(self.currentVisState);
@@ -159,16 +167,10 @@ function TravelWindow:Constructor()
                 self:SetVisible(false);
                 OptionsWindow:SetVisible(false);
                 ToggleButton:SetVisible(false);
-                if self.mapWindow ~= nil then
-                    self.mapWindow:SetVisible(false);
-                end
             else
                 self.hidden = false;
                 self:SetVisible(self.currentVisState);
                 ToggleButton:SetVisible(Settings.showButton == 1);
-                if self.mapWindow ~= nil then
-                    self.mapWindow:SetVisible(true);
-                end
             end
         end
     end
@@ -279,7 +281,7 @@ function TravelWindow:Constructor()
             Menu:ShowMenu();
         end
 
-        if Settings.mode == 4 then
+        if Settings.mode == TabId.PULL then
             self.PullTab:ClosePulldown();
         end
     end
@@ -308,7 +310,9 @@ function TravelWindow:Constructor()
         self.isMouseDown = true;
         if (args.Button == Turbine.UI.MouseButton.Left) then
             self.dragStartX, self.dragStartY = self:GetMousePosition();
-            if Settings.mode == 1 or Settings.mode == 2 or Settings.mode == 4 then
+            if Settings.mode == TabId.LIST or
+                    Settings.mode == TabId.GRID or
+                    Settings.mode == TabId.PULL then
                 local mX, mY = self:GetMousePosition();
                 self.resizeStartX, self.resizeStartY = self:GetSize();
                 if self.resizeStartX - mX < self.resizeLabelSize + 1 and
@@ -334,11 +338,11 @@ function TravelWindow:Constructor()
             local mX, mY = self:GetMousePosition();
             sX = self.resizeStartX + (mX - self.dragStartX);
             sY = self.resizeStartY + (mY - self.dragStartY);
-            if Settings.mode == 1 then
+            if Settings.mode == TabId.LIST then
                 sX, sY = self.ListTab:FitToPixels(sX, sY);
-            elseif Settings.mode == 2 then
+            elseif Settings.mode == TabId.GRID then
                 sX, sY = self.GridTab:FitToPixels(sX, sY);
-            elseif Settings.mode == 4 then
+            elseif Settings.mode == TabId.PULL then
                 sY = self:GetHeight();
                 self.PullTab.pixelWidth = sX
             end
@@ -374,13 +378,13 @@ function TravelWindow:Constructor()
     end
 
     self.SizeChanged = function(sender, args)
-        if Settings.mode == 1 then
+        if Settings.mode == TabId.LIST then
             Settings.listWidth = self.ListTab.pixelWidth;
             Settings.listRows = self.ListTab.numOfRows;
-        elseif Settings.mode == 2 then
+        elseif Settings.mode == TabId.GRID then
             Settings.gridCols = self.GridTab.numOfCols;
             Settings.gridRows = self.GridTab.numOfRows;
-        elseif Settings.mode == 4 then
+        elseif Settings.mode == TabId.PULL then
             Settings.pullWidth = self.PullTab.pixelWidth
         end
         self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
@@ -403,11 +407,11 @@ function TravelWindow:Constructor()
         end
     end
     self:SizeChanged(); -- explicitly call to ensure correct positioning
-    if Settings.mode == 1 then
+    if Settings.mode == TabId.LIST then
         self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
-    elseif Settings.mode == 2 then
+    elseif Settings.mode == TabId.GRID then
         self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
-    elseif Settings.mode == 4 then
+    elseif Settings.mode == TabId.PULL then
         self.PullTab.pixelWidth = self:GetWidth()
     end
 end
@@ -426,28 +430,31 @@ function TravelWindow:FadeOut()
 end
 
 function TravelWindow:SetItems()
-    if Settings.mode == 1 then
+    if Settings.mode == TabId.LIST then
         self:SetSize(self.ListTab:GetPixelSize());
         self.ListTab:SetItems();
         self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
-    elseif Settings.mode == 2 then
+    elseif Settings.mode == TabId.GRID then
         self:SetSize(self.GridTab:GetPixelSize());
         self.GridTab:SetItems();
         self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
-    elseif Settings.mode == 3 then
+    elseif Settings.mode == TabId.CARO then
         self.CaroTab:SetItems();
-    elseif Settings.mode == 4 then
+    elseif Settings.mode == TabId.PULL then
         self.PullTab:SetItems();
         self.PullTab.pixelWidth = self:GetWidth()
+    elseif Settings.mode == TabId.MAP then
+        self:SetSize(self.MapTab:GetPixelSize());
+        self.MapTab:SetItems();
     end
 end
 
 function TravelWindow:UpdateMinimum()
     -- update the page that is showing
-    if Settings.mode == 1 then
+    if Settings.mode == TabId.LIST then
         self.minWidth = self.ListTab.minWidth;
         self.minHeight = self.ListTab.minHeight;
-    elseif Settings.mode == 3 then
+    elseif Settings.mode == TabId.CARO then
         if self.isMinWindow then
             self.minWidth = 150;
             self.minHeight = 75;
@@ -455,7 +462,7 @@ function TravelWindow:UpdateMinimum()
             self.minWidth = 200;
             self.minHeight = 110;
         end
-    elseif Settings.mode == 4 then
+    elseif Settings.mode == TabId.PULL then
         if self.isMinWindow then
             self.minWidth = 360;
             self.minHeight = 65;
@@ -463,6 +470,9 @@ function TravelWindow:UpdateMinimum()
             self.minWidth = 360;
             self.minHeight = 105;
         end
+    elseif Settings.mode == TabId.MAP then
+        -- Map view fixed at 1024x768 + padding (nav panel below map)
+        self.minWidth, self.minHeight = self.MapTab:GetPixelSize()
     else
         self.minWidth = 40;
         self.minHeight = 40;
@@ -470,12 +480,27 @@ function TravelWindow:UpdateMinimum()
 
     self:SetMinimumSize(self.minWidth, self.minHeight);
 
-    if Settings.mode == 3 then
+    if Settings.mode == TabId.CARO then
         self:SetSize(self.minWidth, self.minHeight);
     end
-    if Settings.mode == 4 then
+    if Settings.mode == TabId.PULL then
         self:SetSize(self.PullTab.pixelWidth, self.minHeight)
     end
+    if Settings.mode == TabId.MAP then
+        self:SetSize(self.minWidth, self.minHeight);
+    end
+end
+
+function TravelWindow:SetInitialPosition()
+    local screenW, screenH = Turbine.UI.Display.GetSize()
+    local positionX = screenW * Settings.positionRelativeX
+    local positionY = screenH * Settings.positionRelativeY
+    if Settings.mode == TabId.MAP then
+        local w, h = self.MapTab:GetPixelSize()
+        positionX = (screenW - w) / 2
+        positionY = (screenH - h) / 2
+    end
+    self:SetPosition(positionX, positionY)
 end
 
 function TravelWindow:ReloadLabels()
@@ -488,30 +513,16 @@ function TravelWindow:ReloadLabels()
     end
 end
 
-function TravelWindow:OpenMapWindow(map)
-    self:CloseMapWindow();
-    self.mapWindow = TravelWindowII.src.MapWindow(map);
-    self.mapWindow:SetVisible(true);
-end
-
--- function to close the current map window
-function TravelWindow:CloseMapWindow()
-    if (self.mapWindow ~= nil) then
-        self.mapWindow:SetVisible(false);
-        self.mapWindow:Close();
-    end
-    self.mapWindow = nil;
-end
-
 function TravelWindow:UpdateOpacity()
     self:SetOpacity(Settings.mainMinOpacity);
     ToggleButton:UpdateOpacity();
 end
 
 function TravelWindow:SetOpacity(value)
-    Turbine.UI.Window.SetOpacity(self, value);
-    self.CaroTab:SetOpacityItems(value);
-    self.PullTab:SetOpacity(value);
+    Turbine.UI.Window.SetOpacity(self, value)
+    self.CaroTab:SetOpacityItems(value)
+    self.PullTab:SetOpacity(value)
+    self.MapTab:SetOpacityItems(value)
 end
 
 function TravelWindow:UpdateSettings()
@@ -526,6 +537,7 @@ function TravelWindow:UpdateSettings()
     -- set which page of the tab panel to show
     self.MainPanel:SetTab(Settings.mode);
     self:UpdateMinimum();
+    self:SetInitialPosition()
     self:SetItems();
 
     self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
@@ -552,9 +564,7 @@ function SyncUIFromSettings()
     OptionsWindow.Panel:EnableFromSettings()
     OptionsWindow.Panel:AddSortList()
     Menu:SetSettings(Settings.mode, Settings.filters)
-    local positionX = screenW * Settings.positionRelativeX
-    local positionY = screenH * Settings.positionRelativeY
-    _G.travel:SetPosition(positionX, positionY)
+    _G.travel:SetInitialPosition()
     _G.travel.dirty = true
     _G.travel:UpdateSettings()
 end

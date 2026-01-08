@@ -7,7 +7,7 @@ function SettingsMenu:Constructor(parentWindow)
     Turbine.UI.ContextMenu.Constructor(self);
 
     -- set the default values
-    self.mode = 1;
+    self.mode = 2;
     self.filters = 0x0F;
 
     self.parent = parentWindow;
@@ -30,21 +30,13 @@ function SettingsMenu:Constructor(parentWindow)
     self.Mode2 = Turbine.UI.MenuItem(LC.menuIcon);
     self.Mode3 = Turbine.UI.MenuItem(LC.menuCaro);
     self.Mode4 = Turbine.UI.MenuItem(LC.menuPull);
+    self.Mode5 = Turbine.UI.MenuItem(LC.menuMap);
     local ModeItems = Mode:GetItems();
     ModeItems:Add(self.Mode1);
     ModeItems:Add(self.Mode2);
     ModeItems:Add(self.Mode3);
     ModeItems:Add(self.Mode4);
-
-    -- create the items to open the map windows
-    MoorMapMenu = TravelWindowII.src.extensions.DMenuList(LC.moorMap);
-    MapWindows = TravelWindowII.src.extensions.DMenuList(LC.mapWindow);
-    local MapItems = MapWindows:GetItems();
-    MapItems:Add(Turbine.UI.MenuItem(LC.eriadorMap));
-    MapItems:Add(Turbine.UI.MenuItem(LC.rhovanionMap));
-    MapItems:Add(Turbine.UI.MenuItem(LC.rohanMap));
-    MapItems:Add(Turbine.UI.MenuItem(LC.gondorMap));
-    MapItems:Add(Turbine.UI.MenuItem(LC.haradwaithMap));
+    ModeItems:Add(self.Mode5);
 
     -- create the menu item to open the options window
     OptionsMenu = TravelWindowII.src.extensions.DMenuList(LC.menuOptions);
@@ -54,11 +46,9 @@ function SettingsMenu:Constructor(parentWindow)
     if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
         MenuItems:Add(Mode);
         MenuItems:Add(OptionsMenu);
-        MenuItems:Add(MoorMapMenu);
     else
         MenuItems:Add(Filters);
         MenuItems:Add(Mode);
-        MenuItems:Add(MapWindows);
         MenuItems:Add(OptionsMenu);
     end
 
@@ -103,6 +93,7 @@ function SettingsMenu:SetSelections()
     self.Mode2:SetChecked(self.mode == 2);
     self.Mode3:SetChecked(self.mode == 3);
     self.Mode4:SetChecked(self.mode == 4);
+    self.Mode5:SetChecked(self.mode == 5);
 end
 
 -- get the setting from the main window
@@ -137,20 +128,10 @@ function SettingsMenu:Update(string)
         self.mode = 3;
     elseif (string == LC.menuPull) then
         self.mode = 4;
+    elseif (string == LC.menuMap) then
+        self.mode = 5;
     elseif (string == LC.menuOptions) then
         OptionsWindow:SetVisible(true);
-    elseif (string == LC.moorMap) then
-        self.parent:OpenMapWindow(MapType.CREEPS);
-    elseif (string == LC.eriadorMap) then
-        self.parent:OpenMapWindow(MapType.ERIADOR);
-    elseif (string == LC.rhovanionMap) then
-        self.parent:OpenMapWindow(MapType.RHOVANION);
-    elseif (string == LC.rohanMap) then
-        self.parent:OpenMapWindow(MapType.ROHAN);
-    elseif (string == LC.gondorMap) then
-        self.parent:OpenMapWindow(MapType.GONDOR);
-    elseif (string == LC.haradwaithMap) then
-        self.parent:OpenMapWindow(MapType.HARADWAITH);
     end
 
     -- set the selections
@@ -195,9 +176,6 @@ function InitDefaultSettings()
             Settings[k] = v.defValue
         end
     end
-
-    -- clear the maps
-    Settings.mapGlanVraig = nil;
 end
 
 function InitNumberSetting(strTable, name, forceDefault)
@@ -249,6 +227,7 @@ function CreateSettingsConfig()
     AddSettingConfig("escapeToClose", 1)
     AddSettingConfig("showButton", 1)
     AddSettingConfig("mode", 2)
+    AddSettingConfig("mapViewRegion", 3)
     AddSettingConfig("filters", 0x0F)
     AddSettingConfig("mainMaxOpacity", 1)
     AddSettingConfig("mainMinOpacity", 0.5)
@@ -333,8 +312,41 @@ function SetSettings(settingsArg, scope, importOldSettings)
         settingsArg = {};
     end
 
+    local currentVersion = tostring(Plugins["Travel Window II"]:GetVersion())
+
     if (not settingsArg.lastLoadedVersion or settingsArg.lastLoadedVersion == "nil") then
-        settingsArg.lastLoadedVersion = tostring(Plugins["Travel Window II"]:GetVersion());
+        -- First time loading - no notification
+        settingsArg.lastLoadedVersion = currentVersion
+    else
+        -- Check if version changed (only show notification for Account scope - account-wide behavior)
+        if scope == Turbine.DataScope.Account then
+            local lastVersionNum = GetVersionNumber(settingsArg.lastLoadedVersion)
+            local currentVersionNum = GetVersionNumber(currentVersion)
+
+            if lastVersionNum < currentVersionNum then
+                -- Version updated - show notification window
+                TravelWindowII.src.UpdateNotificationWindow(
+                    currentVersion,
+                    settingsArg.lastLoadedVersion,  -- Pass lastVersion for filtering
+                    function()
+                        -- "Close" button clicked - save new version (account-wide)
+                        settingsArg.lastLoadedVersion = currentVersion
+                        Settings.lastLoadedVersion = currentVersion
+                        -- Settings will be saved automatically on plugin unload
+                    end,
+                    function()
+                        -- "Show Again Later" clicked - don't save version
+                        -- Do nothing, version stays as old value
+                    end
+                )
+            else
+                -- Version same or downgraded (shouldn't happen) - no notification
+                settingsArg.lastLoadedVersion = currentVersion
+            end
+        else
+            -- For Character scope, just update the version without showing notification
+            settingsArg.lastLoadedVersion = currentVersion
+        end
     end
 
     local screenW = Turbine.UI.Display.GetWidth()
@@ -364,10 +376,6 @@ function SetSettings(settingsArg, scope, importOldSettings)
         end
     end
 
-    if (settingsArg.mapGlanVraig ~= nil) then
-        Settings.mapGlanVraig = settingsArg.mapGlanVraig;
-    end
-
     if (not settingsArg.enabled or importOldSettings) then
         settingsArg.enabled = {};
     end
@@ -376,7 +384,10 @@ function SetSettings(settingsArg, scope, importOldSettings)
         settingsArg.order = {};
     end
 
-    Settings.lastLoadedVersion = settingsArg.lastLoadedVersion;
+    -- Only set Settings.lastLoadedVersion from Account scope (account-wide behavior)
+    if scope == Turbine.DataScope.Account then
+        Settings.lastLoadedVersion = settingsArg.lastLoadedVersion;
+    end
 
     LoadEnabled = {}
     for k, v in pairs(settingsArg.enabled) do
@@ -449,14 +460,19 @@ function SaveSettings(scope)
     end
 
     local settingsStrings = {};
-    settingsStrings.lastLoadedVersion = Plugins["Travel Window II"]:GetVersion();
+
+    -- Only save lastLoadedVersion for Account scope (account-wide behavior)
+    if scope == Turbine.DataScope.Account then
+        -- Use the version from Settings (may be old if user clicked "Show Again Later")
+        settingsStrings.lastLoadedVersion = Settings.lastLoadedVersion or Plugins["Travel Window II"]:GetVersion();
+    end
+
     for k, v in pairs(SettingsConfig) do
         if v.save ~= nil then
             settingsStrings[k] = v.save(Settings[k])
         end
     end
 
-    settingsStrings.mapGlanVraig = tostring(Settings.mapGlanVraig);
     settingsStrings.enabled = GetTravelEnabled(scope);
     settingsStrings.order = GetTravelOrder(scope);
 
