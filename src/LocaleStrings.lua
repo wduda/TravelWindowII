@@ -449,6 +449,26 @@ LC_DE.minLevel = "Mindeststufe "
 LC_FR.minLevel = "Niveau minimum "
 LC_RU.minLevel = "Минимальный уровень "
 
+LC_EN.updateTitle = "Travel Window II Update"
+LC_DE.updateTitle = "Travel Window II Update"
+LC_FR.updateTitle = "Travel Window II Actualisation"
+LC_RU.updateTitle = "Travel Window II Обновление"
+
+LC_EN.updateClose = "Close"
+LC_DE.updateClose = "Schließen"
+LC_FR.updateClose = "Fermer"
+LC_RU.updateClose = "Закрыть"
+
+LC_EN.updateRemindLater = "Show Again Later"
+LC_DE.updateRemindLater = "Später wieder anzeigen"
+LC_FR.updateRemindLater = "Rappeler plus tard"
+LC_RU.updateRemindLater = "Показать позже"
+
+LC_EN.updateDefaultMessage = "Travel Window II has been updated to"
+LC_DE.updateDefaultMessage = "Travel Window II wurde aktualisiert auf"
+LC_FR.updateDefaultMessage = "Travel Window II a été mis à jour vers"
+LC_RU.updateDefaultMessage = "Travel Window II обновлён до"
+
 -- Verify matched locale keys
 for lang, _ in pairs(Locale) do
     for k, _ in pairs(Locale[lang]) do

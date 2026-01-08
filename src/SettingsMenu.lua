@@ -315,8 +315,36 @@ function SetSettings(settingsArg, scope, importOldSettings)
         settingsArg = {};
     end
 
+    local currentVersion = tostring(Plugins["Travel Window II"]:GetVersion())
+
     if (not settingsArg.lastLoadedVersion or settingsArg.lastLoadedVersion == "nil") then
-        settingsArg.lastLoadedVersion = tostring(Plugins["Travel Window II"]:GetVersion());
+        -- First time loading - no notification
+        settingsArg.lastLoadedVersion = currentVersion
+    else
+        -- Check if version changed
+        local lastVersionNum = GetVersionNumber(settingsArg.lastLoadedVersion)
+        local currentVersionNum = GetVersionNumber(currentVersion)
+
+        if lastVersionNum < currentVersionNum then
+            -- Version updated - show notification window
+            local updateWindow = TravelWindowII.src.UpdateNotificationWindow(
+                currentVersion,
+                settingsArg.lastLoadedVersion,  -- Pass lastVersion for filtering
+                function()
+                    -- "Close" button clicked - save new version
+                    settingsArg.lastLoadedVersion = currentVersion
+                    Settings.lastLoadedVersion = currentVersion
+                    -- Settings will be saved automatically on plugin unload
+                end,
+                function()
+                    -- "Show Again Later" clicked - don't save version
+                    -- Do nothing, version stays as old value
+                end
+            )
+        else
+            -- Version same or downgraded (shouldn't happen) - no notification
+            settingsArg.lastLoadedVersion = currentVersion
+        end
     end
 
     local screenW = Turbine.UI.Display.GetWidth()
@@ -431,7 +459,8 @@ function SaveSettings(scope)
     end
 
     local settingsStrings = {};
-    settingsStrings.lastLoadedVersion = Plugins["Travel Window II"]:GetVersion();
+    -- Use the version from Settings (may be old if user clicked "Show Again Later")
+    settingsStrings.lastLoadedVersion = Settings.lastLoadedVersion or Plugins["Travel Window II"]:GetVersion();
     for k, v in pairs(SettingsConfig) do
         if v.save ~= nil then
             settingsStrings[k] = v.save(Settings[k])
