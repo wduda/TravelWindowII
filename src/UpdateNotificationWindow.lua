@@ -1,6 +1,5 @@
 import "Turbine.UI"
 import "Turbine.UI.Lotro"
-import "TravelWindowII.src.SettingsMenu"  -- For GetVersionNumber() function
 import "TravelWindowII.src.ChangelogData"  -- For changelog data
 
 UpdateNotificationWindow = class(Turbine.UI.Lotro.Window)

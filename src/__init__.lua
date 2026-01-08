@@ -14,6 +14,7 @@ import "TravelWindowII.src.TravelShortcut";
 import "TravelWindowII.src.OptionsWindow";
 import "TravelWindowII.src.TravelButton";
 -- import "TravelWindowII.src.TravelTests";
+import "TravelWindowII.src.SettingsMenu";
 import "TravelWindowII.src.OptionsPanel";
 import "TravelWindowII.src.ChangelogData";
 import "TravelWindowII.src.UpdateNotificationWindow";

@@ -2,7 +2,6 @@ import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
 import "TravelWindowII.src.extensions";
-import "TravelWindowII.src.SettingsMenu";
 import "TravelWindowII.src.utils.BitOps";
 
 --[[ This is the window for the carousel tab of the 	]] --
