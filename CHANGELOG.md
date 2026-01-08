@@ -4,6 +4,7 @@
 
 - "MAJOR: introducing a brand new view mode called Map Mode",
 - "MAJOR: check it out by right-clicking the TW II window, select MODE and then MAP VIEW",
+- "enhance: adding new notification window notifying of changes in installed update"
 - "enhance: adding some region labels to U46 skill data for EN/DE/FR/RU",
 - "enhance: vendor and skillname updates from U46.0.1 for FR"
 
