@@ -74,8 +74,7 @@ function TravelWindow:Constructor()
     self.wasOpenBeforeCombat = false;
 
     -- create a single context menu to use on all panels
-    Menu = SettingsMenu(self);
-    Menu:SetSettings(Settings.mode, Settings.filters);
+    Menu = SettingsMenu(self)
 
     -- create the tabbed panel to hold all the other panels
     self.MainPanel = TravelWindowII.src.extensions.DPanel();
@@ -527,15 +526,8 @@ end
 
 function TravelWindow:UpdateSettings()
 
-    -- get some settings from the menu
-    local prevMode = Settings.mode;
-    Settings.mode, Settings.filters = Menu:GetSettings();
-    if prevMode ~= Settings.mode then
-        self.dirty = true;
-    end
-
     -- set which page of the tab panel to show
-    self.MainPanel:SetTab(Settings.mode);
+    self.MainPanel:SetTab(Settings.mode)
     self:UpdateMinimum();
     self:SetInitialPosition()
     self:SetItems();
@@ -563,7 +555,7 @@ function SyncUIFromSettings()
     OptionsWindow.Panel:UpdateOptions()
     OptionsWindow.Panel:EnableFromSettings()
     OptionsWindow.Panel:AddSortList()
-    Menu:SetSettings(Settings.mode, Settings.filters)
+    Menu:SetSelections()
     _G.travel:SetInitialPosition()
     _G.travel.dirty = true
     _G.travel:UpdateSettings()

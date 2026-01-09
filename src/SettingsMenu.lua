@@ -5,13 +5,9 @@ import "TravelWindowII.src.extensions"
 SettingsMenu = class(Turbine.UI.ContextMenu)
 
 function SettingsMenu:Constructor(parentWindow)
-    Turbine.UI.ContextMenu.Constructor(self);
+    Turbine.UI.ContextMenu.Constructor(self)
 
-    -- set the default values
-    self.mode = TabId.GRID;
-    self.filters = 0x0F;
-
-    self.parent = parentWindow;
+    self.parent = parentWindow
 
     FilterId = {
         GEN = 1,
@@ -91,62 +87,49 @@ end
 function SettingsMenu:SetSelections()
 
     -- set the filters using the BitOps functions
-    self.filterGen:SetChecked(hasbit(self.filters, bit(FilterId.GEN)))
-    self.filterRace:SetChecked(hasbit(self.filters, bit(FilterId.RACE)))
-    self.filterRep:SetChecked(hasbit(self.filters, bit(FilterId.REP)))
-    self.filterClass:SetChecked(hasbit(self.filters, bit(FilterId.CLASS)))
+    self.filterGen:SetChecked(hasbit(Settings.filters, bit(FilterId.GEN)))
+    self.filterRace:SetChecked(hasbit(Settings.filters, bit(FilterId.RACE)))
+    self.filterRep:SetChecked(hasbit(Settings.filters, bit(FilterId.REP)))
+    self.filterClass:SetChecked(hasbit(Settings.filters, bit(FilterId.CLASS)))
 
     -- set the mode
-    self.menuList:SetChecked(self.mode == TabId.LIST)
-    self.menuGrid:SetChecked(self.mode == TabId.GRID)
-    self.menuCaro:SetChecked(self.mode == TabId.CARO)
-    self.menuPull:SetChecked(self.mode == TabId.PULL)
-    self.menuMap:SetChecked(self.mode == TabId.MAP)
-end
-
--- get the setting from the main window
-function SettingsMenu:GetSettings()
-    return self.mode, self.filters;
-end
-
--- function to change the settings of the menu programmatically
-function SettingsMenu:SetSettings(s1, s2)
-    self.mode = s1;
-    self.filters = s2;
-
-    self:SetSelections();
+    self.menuList:SetChecked(Settings.mode == TabId.LIST)
+    self.menuGrid:SetChecked(Settings.mode == TabId.GRID)
+    self.menuCaro:SetChecked(Settings.mode == TabId.CARO)
+    self.menuPull:SetChecked(Settings.mode == TabId.PULL)
+    self.menuMap:SetChecked(Settings.mode == TabId.MAP)
 end
 
 function SettingsMenu:Update(string)
 
     -- update the window based on which item was selected
     if (string == LC.menuGen) then
-        self.filters = togglebit(self.filters, bit(FilterId.GEN))
+        Settings.filters = togglebit(Settings.filters, bit(FilterId.GEN))
     elseif (string == LC.menuRace) then
-        self.filters = togglebit(self.filters, bit(FilterId.RACE))
+        Settings.filters = togglebit(Settings.filters, bit(FilterId.RACE))
     elseif (string == LC.menuRep) then
-        self.filters = togglebit(self.filters, bit(FilterId.REP))
+        Settings.filters = togglebit(Settings.filters, bit(FilterId.REP))
     elseif (string == LC.menuClass) then
-        self.filters = togglebit(self.filters, bit(FilterId.CLASS))
+        Settings.filters = togglebit(Settings.filters, bit(FilterId.CLASS))
     elseif (string == LC.menuText) then
-        self.mode = TabId.LIST
+        Settings.mode = TabId.LIST
     elseif (string == LC.menuIcon) then
-        self.mode = TabId.GRID
+        Settings.mode = TabId.GRID
     elseif (string == LC.menuCaro) then
-        self.mode = TabId.CARO
+        Settings.mode = TabId.CARO
     elseif (string == LC.menuPull) then
-        self.mode = TabId.PULL
+        Settings.mode = TabId.PULL
     elseif (string == LC.menuMap) then
-        self.mode = TabId.MAP
+        Settings.mode = TabId.MAP
     elseif (string == LC.menuOptions) then
-        OptionsWindow:SetVisible(true);
+        OptionsWindow:SetVisible(true)
     end
 
     -- set the selections
-    self:SetSelections();
+    self:SetSelections()
 
     -- update the main window settings
-    self.parent.dirty = true;
-    self.parent:UpdateSettings();
+    self.parent.dirty = true
+    self.parent:UpdateSettings()
     self.parent:SetOpacity(Settings.mainMinOpacity)
 end
