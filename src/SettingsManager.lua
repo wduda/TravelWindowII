@@ -12,6 +12,15 @@ MapType = {
     HARADWAITH = 7,
 }
 
+-- Tab/Mode type enumeration (global, used by TravelWindow, OptionsPanel, SettingsMenu)
+TabId = {
+    LIST = 1,
+    GRID = 2,
+    CARO = 3,
+    PULL = 4,
+    MAP = 5,
+}
+
 function SetPlayerRaceKey()
     -- map player race to racial travel skill index for insertion into available travel skills
     if (PlayerRace == Turbine.Gameplay.Race.Dwarf) then

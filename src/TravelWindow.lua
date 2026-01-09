@@ -20,14 +20,6 @@ function TravelWindow:Constructor()
         Turbine.UI.Lotro.Window.Constructor(self);
     end
 
-    TabId = {
-        LIST = 1,
-        GRID = 2,
-        CARO = 3,
-        PULL = 4,
-        MAP  = 5,
-    }
-
     self.fadeOut = false
     self.levelUpdate = false
     self.reloadGVMap = false;
