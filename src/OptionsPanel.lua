@@ -267,23 +267,24 @@ function OptionsPanel:SetupGeneralTab()
     -- Mode selection radio button group
     local modeLabel = Turbine.UI.Label()
     modeLabel:SetParent(self.GeneralTab)
-    modeLabel:SetPosition(5, self:NextY(30))
-    modeLabel:SetSize(self.labelWidth, self.optionHeight)
+    local labelY = self:NextY(30)
+    modeLabel:SetPosition(20, labelY)
+    modeLabel:SetSize(self.labelWidth, 20)
     modeLabel:SetText(LC.menuMode)
     self.modeLabel = modeLabel
 
     -- Array of mode configurations: {TabId, LocalizedLabel, XPosition}
     local modeConfigs = {
-        {TabId.LIST, LC.menuText, 5},
-        {TabId.GRID, LC.menuIcon, 115},
-        {TabId.CARO, LC.menuCaro, 225},
-        {TabId.PULL, LC.menuPull, 335},
-        {TabId.MAP, LC.menuMap, 445}
+        {TabId.LIST, LC.menuText, 100},
+        {TabId.GRID, LC.menuIcon, 190},
+        {TabId.CARO, LC.menuCaro, 280},
+        {TabId.PULL, LC.menuPull, 370},
+        {TabId.MAP, LC.menuMap, 460}
     }
 
     -- Store radio buttons for later access
     self.modeRadioButtons = {}
-    local radioY = self.optionHeight
+    local radioY = labelY
 
     for i, config in ipairs(modeConfigs) do
         local tabId, label, xPos = config[1], config[2], config[3]
@@ -291,7 +292,7 @@ function OptionsPanel:SetupGeneralTab()
         local radio = Turbine.UI.Lotro.CheckBox()
         radio:SetParent(self.GeneralTab)
         radio:SetPosition(xPos, radioY)
-        radio:SetSize(100, 20)
+        radio:SetSize(85, 20)
         radio:SetText(label)
         radio:SetCheckAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
 
