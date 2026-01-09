@@ -264,6 +264,74 @@ function OptionsPanel:SetupGeneralTab()
     self.optionHeight = 0
     self.options = {}
 
+    -- Mode selection radio button group
+    local modeLabel = Turbine.UI.Label()
+    modeLabel:SetParent(self.GeneralTab)
+    modeLabel:SetPosition(5, self:NextY(30))
+    modeLabel:SetSize(self.labelWidth, self.optionHeight)
+    modeLabel:SetText(LC.menuMode)
+    self.modeLabel = modeLabel
+
+    -- Array of mode configurations: {TabId, LocalizedLabel, XPosition}
+    local modeConfigs = {
+        {TabId.LIST, LC.menuText, 5},
+        {TabId.GRID, LC.menuIcon, 115},
+        {TabId.CARO, LC.menuCaro, 225},
+        {TabId.PULL, LC.menuPull, 335},
+        {TabId.MAP, LC.menuMap, 445}
+    }
+
+    -- Store radio buttons for later access
+    self.modeRadioButtons = {}
+    local radioY = self.optionHeight
+
+    for i, config in ipairs(modeConfigs) do
+        local tabId, label, xPos = config[1], config[2], config[3]
+
+        local radio = Turbine.UI.Lotro.CheckBox()
+        radio:SetParent(self.GeneralTab)
+        radio:SetPosition(xPos, radioY)
+        radio:SetSize(100, 20)
+        radio:SetText(label)
+        radio:SetCheckAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+
+        -- Store the TabId value on the radio button for later retrieval
+        radio.modeValue = tabId
+
+        -- Set change handler (will be enabled after initialization)
+        radio.CheckedChangedFunc = function(sender, args)
+            if sender:IsChecked() then
+                -- Update Settings.mode
+                Settings.mode = sender.modeValue
+
+                -- Uncheck other radio buttons in the group
+                for _, otherRadio in ipairs(self.modeRadioButtons) do
+                    if otherRadio ~= sender then
+                        otherRadio:SetChecked(false)
+                    end
+                end
+
+                -- Update context menu checkmarks
+                Menu:SetSelections()
+
+                -- Update the travel window
+                _G.travel.dirty = true
+                _G.travel:UpdateSettings()
+            end
+        end
+
+        -- Set update function to read from Settings
+        radio.UpdateOption = function()
+            radio:SetChecked(Settings.mode == radio.modeValue)
+        end
+
+        self.modeRadioButtons[i] = radio
+        self.options["mode" .. tabId] = radio
+    end
+
+    -- Increment Y position for next control
+    self:NextY(20)
+
     self:AddCheckBoxOption("useMinWindow", 20, 20,
         function(sender, args)
             if sender:IsChecked() then
