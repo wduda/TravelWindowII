@@ -1,6 +1,17 @@
 -- SettingsManager.lua
 -- Manages all plugin settings including persistence, migration, and configuration
 
+-- Map type enumeration (global, used by SkillData, TravelMapTab, and other files)
+MapType = {
+    NONE = 1,
+    CREEPS = 2,
+    ERIADOR = 3,
+    RHOVANION = 4,
+    ROHAN = 5,
+    GONDOR = 6,
+    HARADWAITH = 7,
+}
+
 function SetPlayerRaceKey()
     -- map player race to racial travel skill index for insertion into available travel skills
     if (PlayerRace == Turbine.Gameplay.Race.Dwarf) then
