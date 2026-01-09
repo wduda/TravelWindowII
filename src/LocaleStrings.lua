@@ -112,9 +112,9 @@ LC_DE.findTab = "Fertigkeiten finden"
 LC_FR.findTab = "Trouver des compétences"
 LC_RU.findTab = "Поиск навыков"
 
-LC_EN.hideOnStart = "Hide Travel Window at startup"
-LC_DE.hideOnStart = "Verstecke Travel-Fenster beim Start"
-LC_FR.hideOnStart = "Masquer Travel Window au début"
+LC_EN.hideOnStart = "Hide main window at startup"
+LC_DE.hideOnStart = "Verstecke Fenster beim Start"
+LC_FR.hideOnStart = "Masquer la fenêtre au début"
 LC_RU.hideOnStart = "Убрать окно Travel при старте"
 
 LC_EN.showButton = "Show Travel Button"
@@ -129,12 +129,12 @@ LC_RU.pulldownTravel = "Travel when pulldown skill selected"
 
 LC_EN.hideOnTravel = "Hide main window on travel"
 LC_DE.hideOnTravel = "Verstecke Fenster bei Reise"
-LC_FR.hideOnTravel = "Masquer Travel Window quand une compétence de voyage est utilisée"
+LC_FR.hideOnTravel = "Masquer la fenêtre quand une compétence est utilisée"
 LC_RU.hideOnTravel = "Убрать основное окно во время путешествия"
 
 LC_EN.hideOnCombat = "Hide main window when entering combat"
 LC_DE.hideOnCombat = "Verstecke Fenster bei Kampfbeginn"
-LC_FR.hideOnCombat = "Cacher la fenêtre à l'entrée en combat"
+LC_FR.hideOnCombat = "Masquer la fenêtre à l'entrée en combat"
 LC_RU.hideOnCombat = "Убрать основное окно во время боя"
 
 LC_EN.genericLabel = "Generic Skills"
