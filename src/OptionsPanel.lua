@@ -271,6 +271,7 @@ function OptionsPanel:SetupGeneralTab()
     modeLabel:SetPosition(20, labelY)
     modeLabel:SetSize(self.labelWidth, 20)
     modeLabel:SetText(LC.menuMode)
+    modeLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
     self.modeLabel = modeLabel
 
     -- Array of mode configurations: {TabId, LocalizedLabel, XPosition}
