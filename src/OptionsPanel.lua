@@ -326,6 +326,7 @@ function OptionsPanel:SetupGeneralTab()
         radio.UpdateOption = function()
             radio:SetChecked(Settings.mode == radio.modeValue)
         end
+        radio:UpdateOption()
 
         self.modeRadioButtons[i] = radio
         self.options["mode" .. tabId] = radio
