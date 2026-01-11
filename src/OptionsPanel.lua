@@ -319,6 +319,9 @@ function OptionsPanel:SetupGeneralTab()
                 -- Update the travel window
                 _G.travel.dirty = true
                 _G.travel:UpdateSettings()
+            else
+                -- Prevent deselection - a radio button must always be selected
+                sender:SetChecked(true)
             end
         end
 
