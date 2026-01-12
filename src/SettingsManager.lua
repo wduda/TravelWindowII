@@ -90,6 +90,8 @@ function CreateSettingsConfig()
     AddSettingConfig("pullWidth", 0)
     AddSettingConfig("positionRelativeX", 0.75)
     AddSettingConfig("positionRelativeY", 0.75)
+    AddSettingConfig("mapPositionRelativeX", 0.5)  -- Default to center for MAP mode
+    AddSettingConfig("mapPositionRelativeY", 0.5)  -- Default to center for MAP mode
     AddSettingConfig("buttonRelativeX", 0.95)
     AddSettingConfig("buttonRelativeY", 0.75)
     AddSettingConfig("useMinWindow", 0)
