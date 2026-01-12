@@ -4,6 +4,15 @@
 
 ChangelogData = {
     {
+        version = "v4.1.0",
+        changes = {
+            "enhance: to make the new map mode easier to find, mode selection has been added to the options window",
+            "enhance: Map View will now store its last position and size separately from other window modes",
+            "enhance: adding default for Mûr Ghala Sârz in RU client",
+            "refactor: updated settings handling under the hood to be easier to work with between right-click menu and options",
+        }
+    },
+    {
         version = "v4.0.0",
         changes = {
             "MAJOR: introducing a brand new view mode called Map Mode",

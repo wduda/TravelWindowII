@@ -9,17 +9,6 @@ import "TravelWindowII.src.utils.BitOps"
 --[[ positioned on the map. Users can cycle through regions ]] --
 --[[ using left/right arrow buttons.                        ]] --
 
--- Map type enumeration (global, used by SkillData and other files)
-MapType = {
-    NONE = 1,
-    CREEPS = 2,
-    ERIADOR = 3,
-    RHOVANION = 4,
-    ROHAN = 5,
-    GONDOR = 6,
-    HARADWAITH = 7,
-}
-
 TravelMapTab = class(Turbine.UI.Control)
 
 function TravelMapTab:Constructor(toplevel)
