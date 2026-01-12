@@ -21,6 +21,14 @@ TabId = {
     MAP = 5,
 }
 
+-- Behavioral constants (global, used by TravelWindow, TravelButton)
+BehaviorConstants = {
+    BOUNDARY_MIN_VISIBLE = 50,      -- Pixels to keep visible on screen
+    FADE_DELAY_MULTIPLIER = 0.05,   -- Fade timing multiplier
+    LEVEL_UPDATE_INTERVAL = 2,      -- Seconds between level checks
+    BUTTON_DRAG_DELAY = 0.2,        -- Seconds before drag starts
+}
+
 function SetPlayerRaceKey()
     -- map player race to racial travel skill index for insertion into available travel skills
     if (PlayerRace == Turbine.Gameplay.Race.Dwarf) then

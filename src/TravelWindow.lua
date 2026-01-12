@@ -226,7 +226,7 @@ function TravelWindow:Constructor()
             if self.fadeOutDelay > 0 then
                 local now = Turbine.Engine.GetGameTime()
                 if self.fadeDelayStart == nil then
-                    self.fadeDelayStart = now + 0.05 * Settings.fadeOutDelay
+                    self.fadeDelayStart = now + BehaviorConstants.FADE_DELAY_MULTIPLIER * Settings.fadeOutDelay
                 elseif now > self.fadeDelayStart then
                     self.fadeOutDelay = 0
                     self.fadeDelayStart = nil
@@ -250,7 +250,7 @@ function TravelWindow:Constructor()
             updated = updated + 1
             local now = Turbine.Engine.GetGameTime()
             if self.levelUpdateTrigger == nil then
-                self.levelUpdateTrigger = now + 2
+                self.levelUpdateTrigger = now + BehaviorConstants.LEVEL_UPDATE_INTERVAL
             elseif now > self.levelUpdateTrigger then
                 CheckSkills()
                 self.levelUpdateTrigger = nil
@@ -487,8 +487,8 @@ function TravelWindow:UpdateMinimum()
 end
 
 function TravelWindow:ValidateBoundaries(posX, posY, winWidth, winHeight, screenWidth, screenHeight)
-    -- Ensure at least 50 pixels of window is visible on screen
-    local minVisible = 50
+    -- Ensure at least N pixels of window is visible on screen (defined in BehaviorConstants)
+    local minVisible = BehaviorConstants.BOUNDARY_MIN_VISIBLE
 
     -- Validate X position
     if posX + winWidth < minVisible then
