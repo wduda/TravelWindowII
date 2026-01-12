@@ -15,6 +15,11 @@ Why does my racial skill show up even though I do not have the racial trait equi
 [*]Because once the trait is acquired, it is classified as a "learned" skill by LOTRO itself, even though it is greyed out. Travel Window II, unfortunately, has no way of knowing if you have the racial trait equipped and the skill is usable. If you are not using the skill permanently, you can use the Enable/Disable options to hide it like any other skill.
 [/LIST]
 
+Why are unlearned skills shown in Map View?
+[LIST]
+[*]The map view makes it easy to visually find known skills. The unlearned skills offer a chance to see what other travekl skills are not available. They can still be hidden using the enable feature.
+[/LIST]
+
 Why does the plugin crash on brand new Creep characters?
 [LIST]
 Those have zero travel skills. After completing the tutorial you obtain the first travel skill and the plugin will load.
@@ -27,12 +32,14 @@ Use the mousewheel while hovering over the travel skill icon to change the selec
 
 Version history:
 
-v4.0.0
+v4.1.0
 
-- MAJOR UPDATE: introducing a brand new view mode called Map Mode, check it out by right-clicking the TW II window, select MODE and then MAP VIEW
-- enhance: adding new notification window notifying of changes in installed update
-- enhance: adding some region labels to U46 skill data for EN/DE/FR/RU
-- enhance: vendor and skillname updates from U46.0.1 for FR
+- enhance: to make the new map mode easier to find, mode selection has been added to the options window
+- enhance: Map View will now store its last position and size separately from other window modes
+- enhance: navigation panel at the bottom of Map View now has the right-click menu
+- fix: some racial travel skills were missing from Map View, they are now back in this view
+- enhance: adding default for Mûr Ghala Sârz in RU client
+- enhance: updated settings handling under the hood to be more robust
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
 

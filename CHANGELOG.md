@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## v4.1.0
+
+- enhance: to make the new map mode easier to find, mode selection has been added to the options window
+- enhance: Map View will now store its last position and size separately from other window modes
+- enhance: navigation panel at the bottom of Map View now has the right-click menu
+- fix: some racial travel skills were missing from Map View, they are now back in this view
+- enhance: adding default for Mûr Ghala Sârz in RU client
+- enhance: updated settings handling under the hood to be more robust
+
 ## v4.0.0
 
 - MAJOR: introducing a brand new view mode called Map Mode, check it out by right-clicking the TW II window, select MODE and then MAP VIEW

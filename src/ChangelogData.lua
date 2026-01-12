@@ -8,8 +8,10 @@ ChangelogData = {
         changes = {
             "enhance: to make the new map mode easier to find, mode selection has been added to the options window",
             "enhance: Map View will now store its last position and size separately from other window modes",
+            "enhance: navigation panel at the bottom of Map View now has the right-click menu",
             "enhance: adding default for Mûr Ghala Sârz in RU client",
-            "refactor: updated settings handling under the hood to be easier to work with between right-click menu and options",
+            "fix: some racial travel skills were missing from Map View, they are now back in this view",
+            "enhance: updated settings handling under the hood to be more robust",
         }
     },
     {
