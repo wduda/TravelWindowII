@@ -264,6 +264,9 @@ function OptionsPanel:SetupGeneralTab()
     self.optionHeight = 0
     self.options = {}
 
+    -- Flag to prevent recursive CheckedChanged events when programmatically updating mode radios
+    self.updatingModeRadios = false
+
     -- Mode selection radio button group
     local modeLabel = Turbine.UI.Label()
     modeLabel:SetParent(self.GeneralTab)
@@ -302,16 +305,23 @@ function OptionsPanel:SetupGeneralTab()
 
         -- Set change handler (will be enabled after initialization)
         radio.CheckedChangedFunc = function(sender, args)
+            -- Ignore programmatic changes to prevent infinite loops
+            if self.updatingModeRadios then
+                return
+            end
+
             if sender:IsChecked() then
                 -- Update Settings.mode
                 Settings.mode = sender.modeValue
 
-                -- Uncheck other radio buttons in the group
+                -- Uncheck other radio buttons in the group (with flag to prevent recursion)
+                self.updatingModeRadios = true
                 for _, otherRadio in ipairs(self.modeRadioButtons) do
                     if otherRadio ~= sender then
                         otherRadio:SetChecked(false)
                     end
                 end
+                self.updatingModeRadios = false
 
                 -- Update context menu checkmarks
                 Menu:SetSelections()
@@ -321,7 +331,9 @@ function OptionsPanel:SetupGeneralTab()
                 _G.travel:UpdateSettings()
             else
                 -- Prevent deselection - a radio button must always be selected
+                self.updatingModeRadios = true
                 sender:SetChecked(true)
+                self.updatingModeRadios = false
             end
         end
 
