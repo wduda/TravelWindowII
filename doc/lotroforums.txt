@@ -9,6 +9,6 @@ v4.0.0
 
 Help with further translations for DE, FR and RU clients is always welcome. Ideally submitted as pull requests on GitHub, but any way can be accomodated really.
 
-Download it at [url=https://www.lotrointerface.com/downloads/fileinfo.php?id=1113]Lotrointerface[/url], [url=https://github.com/wduda/TravelWindowII/releases]GitHub[/url], via [url=https://github.com/JeremyStepp/OneLauncher]OneLauncher[/url] or via [url=https://www.lotrointerface.com/downloads/info663-LOTROPluginCompendium.html]Plugin Compendium[/url].
+Download it at [url=https://www.lotrointerface.com/downloads/fileinfo.php?id=1113]Lotrointerface[/url], [url=https://github.com/wduda/TravelWindowII/releases]GitHub[/url], via [url= https://github.com/JuneStepp/OneLauncher]OneLauncher[/url] or via [url=https://www.lotrointerface.com/downloads/info663-LOTROPluginCompendium.html]Plugin Compendium[/url].
 
 Other than contacting here on the forums, you can also do that on [url=https://www.lotrointerface.com/downloads/fileinfo.php?id=1113]Lotrointerface[/url], on [url=https://github.com/wduda/TravelWindowII/discussions]GitHub Discussions[/url] where you will also find the source code, and I also monitor a post on the official [url=https://discord.com/channels/1253092003218985092/1339975894902505523]LOTRO Discord[/url].

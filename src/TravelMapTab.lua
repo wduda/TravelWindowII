@@ -53,6 +53,13 @@ function TravelMapTab:Constructor(toplevel)
         [MapType.HARADWAITH] = LC.haradwaithMapName
     }
 
+    -- Show the menu when right clicked
+    self.MouseClick = function(sender, args)
+        if (args.Button == Turbine.UI.MouseButton.Right) then
+            Menu:ShowMenu()
+        end
+    end
+
     -- Create the map display label (full size, no scrolling)
     self.mapLabel = Turbine.UI.Label()
     self.mapLabel:SetSize(self.mapWidth - (self.mapBorder * 2), self.mapHeight - (self.mapBorder * 2))
@@ -60,6 +67,7 @@ function TravelMapTab:Constructor(toplevel)
     self.mapLabel:SetVisible(true)
     self.mapLabel:SetMouseVisible(true)
     self.mapLabel:SetPosition(self.mapBorder, self.mapBorder)
+    self.mapLabel.MouseClick = self.MouseClick
 
     if self.navPanelHeight ~= 0 then
         -- Create navigation panel below the map
@@ -69,6 +77,7 @@ function TravelMapTab:Constructor(toplevel)
         self.navPanel:SetBackColor(Turbine.UI.Color(0.8, 0, 0, 0))
         self.navPanel:SetZOrder(99)
         self.navPanel:SetPosition(self.mapBorder, self.mapHeight + self.mapBorder)  -- Position below the map with border
+        self.navPanel.MouseClick = self.MouseClick
 
         -- Create 5 region buttons for direct access
         self.regionButtons = {}
@@ -100,19 +109,6 @@ function TravelMapTab:Constructor(toplevel)
                 self:SwitchRegion(config[1])
             end
             self.regionButtons[config[1]] = button
-        end
-    end
-
-    -- Show the menu when right clicked
-    self.MouseClick = function(sender, args)
-        if (args.Button == Turbine.UI.MouseButton.Right) then
-            Menu:ShowMenu()
-        end
-    end
-
-    self.mapLabel.MouseClick = function(sender, args)
-        if (args.Button == Turbine.UI.MouseButton.Right) then
-            Menu:ShowMenu()
         end
     end
 
@@ -218,12 +214,16 @@ end
 -- Add racial location
 function TravelMapTab:AddRacialLocation()
     local racial = TravelInfo.racial
-    if racial.map and #racial.map > 0 and racial.map[1] == self.currentRegion then
+    if racial.map == nil or #racial.map == 0 or #racial.map[1] == 0 then
+        Turbine.Shell.WriteLine("Warning: ill-defined map location")
+        return
+    end
+    if racial.map[1][1] == self.currentRegion then
         local id = racial.id
         if IsShortcutTrained(id) then
             local sType = Turbine.UI.Lotro.ShortcutType.Skill
             local shortcut = Turbine.UI.Lotro.Shortcut(sType, id)
-            self:AddSingleShortcut(racial.map, shortcut)
+            self:AddSingleShortcut(racial.map[1], shortcut)
         end
     end
 end
