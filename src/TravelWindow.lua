@@ -20,14 +20,6 @@ function TravelWindow:Constructor()
         Turbine.UI.Lotro.Window.Constructor(self);
     end
 
-    TabId = {
-        LIST = 1,
-        GRID = 2,
-        CARO = 3,
-        PULL = 4,
-        MAP  = 5,
-    }
-
     self.fadeOut = false
     self.levelUpdate = false
     self.reloadGVMap = false;
@@ -74,8 +66,7 @@ function TravelWindow:Constructor()
     self.wasOpenBeforeCombat = false;
 
     -- create a single context menu to use on all panels
-    Menu = SettingsMenu(self);
-    Menu:SetSettings(Settings.mode, Settings.filters);
+    Menu = SettingsMenu(self)
 
     -- create the tabbed panel to hold all the other panels
     self.MainPanel = TravelWindowII.src.extensions.DPanel();
@@ -139,9 +130,13 @@ function TravelWindow:Constructor()
 
     -- check if our position has changed, and save the settings if so
     self.PositionChanged = function(sender, args)
-        if Settings.mode ~= TabId.MAP then
-            local w, h = self:GetPosition()
-            local sw, sh = Turbine.UI.Display.GetSize()
+        local w, h = self:GetPosition()
+        local sw, sh = Turbine.UI.Display.GetSize()
+
+        if Settings.mode == TabId.MAP then
+            Settings.mapPositionRelativeX = w / sw
+            Settings.mapPositionRelativeY = h / sh
+        else
             Settings.positionRelativeX = w / sw
             Settings.positionRelativeY = h / sh
         end
@@ -231,7 +226,7 @@ function TravelWindow:Constructor()
             if self.fadeOutDelay > 0 then
                 local now = Turbine.Engine.GetGameTime()
                 if self.fadeDelayStart == nil then
-                    self.fadeDelayStart = now + 0.05 * Settings.fadeOutDelay
+                    self.fadeDelayStart = now + BehaviorConstants.FADE_DELAY_MULTIPLIER * Settings.fadeOutDelay
                 elseif now > self.fadeDelayStart then
                     self.fadeOutDelay = 0
                     self.fadeDelayStart = nil
@@ -255,7 +250,7 @@ function TravelWindow:Constructor()
             updated = updated + 1
             local now = Turbine.Engine.GetGameTime()
             if self.levelUpdateTrigger == nil then
-                self.levelUpdateTrigger = now + 2
+                self.levelUpdateTrigger = now + BehaviorConstants.LEVEL_UPDATE_INTERVAL
             elseif now > self.levelUpdateTrigger then
                 CheckSkills()
                 self.levelUpdateTrigger = nil
@@ -491,15 +486,43 @@ function TravelWindow:UpdateMinimum()
     end
 end
 
+function TravelWindow:ValidateBoundaries(posX, posY, winWidth, winHeight, screenWidth, screenHeight)
+    -- Ensure at least N pixels of window is visible on screen (defined in BehaviorConstants)
+    local minVisible = BehaviorConstants.BOUNDARY_MIN_VISIBLE
+
+    -- Validate X position
+    if posX + winWidth < minVisible then
+        posX = minVisible - winWidth
+    elseif posX > screenWidth - minVisible then
+        posX = screenWidth - minVisible
+    end
+
+    -- Validate Y position
+    if posY + winHeight < minVisible then
+        posY = minVisible - winHeight
+    elseif posY > screenHeight - minVisible then
+        posY = screenHeight - minVisible
+    end
+
+    return posX, posY
+end
+
 function TravelWindow:SetInitialPosition()
     local screenW, screenH = Turbine.UI.Display.GetSize()
-    local positionX = screenW * Settings.positionRelativeX
-    local positionY = screenH * Settings.positionRelativeY
+    local positionX, positionY
+
     if Settings.mode == TabId.MAP then
-        local w, h = self.MapTab:GetPixelSize()
-        positionX = (screenW - w) / 2
-        positionY = (screenH - h) / 2
+        positionX = screenW * Settings.mapPositionRelativeX
+        positionY = screenH * Settings.mapPositionRelativeY
+    else
+        positionX = screenW * Settings.positionRelativeX
+        positionY = screenH * Settings.positionRelativeY
     end
+
+    -- Apply boundary validation
+    local winWidth, winHeight = self:GetSize()
+    positionX, positionY = self:ValidateBoundaries(positionX, positionY, winWidth, winHeight, screenW, screenH)
+
     self:SetPosition(positionX, positionY)
 end
 
@@ -527,15 +550,8 @@ end
 
 function TravelWindow:UpdateSettings()
 
-    -- get some settings from the menu
-    local prevMode = Settings.mode;
-    Settings.mode, Settings.filters = Menu:GetSettings();
-    if prevMode ~= Settings.mode then
-        self.dirty = true;
-    end
-
     -- set which page of the tab panel to show
-    self.MainPanel:SetTab(Settings.mode);
+    self.MainPanel:SetTab(Settings.mode)
     self:UpdateMinimum();
     self:SetInitialPosition()
     self:SetItems();
@@ -563,7 +579,7 @@ function SyncUIFromSettings()
     OptionsWindow.Panel:UpdateOptions()
     OptionsWindow.Panel:EnableFromSettings()
     OptionsWindow.Panel:AddSortList()
-    Menu:SetSettings(Settings.mode, Settings.filters)
+    Menu:SetSelections()
     _G.travel:SetInitialPosition()
     _G.travel.dirty = true
     _G.travel:UpdateSettings()

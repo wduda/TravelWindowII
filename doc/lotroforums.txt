@@ -1,14 +1,16 @@
 A new MAJOR version is available!
 
-v4.0.0
+v4.1.0
 
-- MAJOR: introducing a brand new view mode called Map Mode, check it out by right-clicking the TW II window, select MODE and then MAP VIEW
-- enhance: adding new notification window notifying of changes in installed update
-- enhance: adding some region labels to U46 skill data for EN/DE/FR/RU
-- enhance: vendor and skillname updates from U46.0.1 for FR
+- enhance: to make the new map mode easier to find, mode selection has been added to the options window
+- enhance: Map View will now store its last position and size separately from other window modes
+- enhance: navigation panel at the bottom of Map View now has the right-click menu
+- fix: some racial travel skills were missing from Map View, they are now back in this view
+- enhance: adding default for Mûr Ghala Sârz in RU client
+- enhance: updated settings handling under the hood to be more robust
 
 Help with further translations for DE, FR and RU clients is always welcome. Ideally submitted as pull requests on GitHub, but any way can be accomodated really.
 
-Download it at [url=https://www.lotrointerface.com/downloads/fileinfo.php?id=1113]Lotrointerface[/url], [url=https://github.com/wduda/TravelWindowII/releases]GitHub[/url], via [url=https://github.com/JeremyStepp/OneLauncher]OneLauncher[/url] or via [url=https://www.lotrointerface.com/downloads/info663-LOTROPluginCompendium.html]Plugin Compendium[/url].
+Download it at [url=https://www.lotrointerface.com/downloads/fileinfo.php?id=1113]Lotrointerface[/url], [url=https://github.com/wduda/TravelWindowII/releases]GitHub[/url], via [url= https://github.com/JuneStepp/OneLauncher]OneLauncher[/url] or via [url=https://www.lotrointerface.com/downloads/info663-LOTROPluginCompendium.html]Plugin Compendium[/url].
 
 Other than contacting here on the forums, you can also do that on [url=https://www.lotrointerface.com/downloads/fileinfo.php?id=1113]Lotrointerface[/url], on [url=https://github.com/wduda/TravelWindowII/discussions]GitHub Discussions[/url] where you will also find the source code, and I also monitor a post on the official [url=https://discord.com/channels/1253092003218985092/1339975894902505523]LOTRO Discord[/url].

@@ -264,6 +264,92 @@ function OptionsPanel:SetupGeneralTab()
     self.optionHeight = 0
     self.options = {}
 
+    -- Flag to prevent recursive CheckedChanged events when programmatically updating mode radios
+    self.updatingModeRadios = false
+
+    -- Mode selection radio button group
+    local modeLabel = Turbine.UI.Label()
+    modeLabel:SetParent(self.GeneralTab)
+    local labelY = self:NextY(30)
+    modeLabel:SetPosition(20, labelY)
+    modeLabel:SetSize(self.labelWidth, 20)
+    modeLabel:SetText(LC.menuMode)
+    modeLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+    self.modeLabel = modeLabel
+
+    -- Array of mode configurations: {TabId, LocalizedLabel, XPosition}
+    local modeConfigs = {
+        {TabId.LIST, LC.menuText, 100},
+        {TabId.GRID, LC.menuIcon, 190},
+        {TabId.CARO, LC.menuCaro, 280},
+        {TabId.PULL, LC.menuPull, 370},
+        {TabId.MAP, LC.menuMap, 460}
+    }
+
+    -- Store radio buttons for later access
+    self.modeRadioButtons = {}
+    local radioY = labelY
+
+    for i, config in ipairs(modeConfigs) do
+        local tabId, label, xPos = config[1], config[2], config[3]
+
+        local radio = Turbine.UI.Lotro.CheckBox()
+        radio:SetParent(self.GeneralTab)
+        radio:SetPosition(xPos, radioY)
+        radio:SetSize(85, 20)
+        radio:SetText(label)
+        radio:SetCheckAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+
+        -- Store the TabId value on the radio button for later retrieval
+        radio.modeValue = tabId
+
+        -- Set change handler (will be enabled after initialization)
+        radio.CheckedChangedFunc = function(sender, args)
+            -- Ignore programmatic changes to prevent infinite loops
+            if self.updatingModeRadios then
+                return
+            end
+
+            if sender:IsChecked() then
+                -- Update Settings.mode
+                Settings.mode = sender.modeValue
+
+                -- Uncheck other radio buttons in the group (with flag to prevent recursion)
+                self.updatingModeRadios = true
+                for _, otherRadio in ipairs(self.modeRadioButtons) do
+                    if otherRadio ~= sender then
+                        otherRadio:SetChecked(false)
+                    end
+                end
+                self.updatingModeRadios = false
+
+                -- Update context menu checkmarks
+                Menu:SetSelections()
+
+                -- Update the travel window
+                _G.travel.dirty = true
+                _G.travel:UpdateSettings()
+            else
+                -- Prevent deselection - a radio button must always be selected
+                self.updatingModeRadios = true
+                sender:SetChecked(true)
+                self.updatingModeRadios = false
+            end
+        end
+
+        -- Set update function to read from Settings
+        radio.UpdateOption = function()
+            radio:SetChecked(Settings.mode == radio.modeValue)
+        end
+        radio:UpdateOption()
+
+        self.modeRadioButtons[i] = radio
+        self.options["mode" .. tabId] = radio
+    end
+
+    -- Increment Y position for next control
+    self:NextY(20)
+
     self:AddCheckBoxOption("useMinWindow", 20, 20,
         function(sender, args)
             if sender:IsChecked() then
