@@ -348,7 +348,7 @@ function OptionsPanel:SetupGeneralTab()
     end
 
     -- Increment Y position for next control
-    self:NextY(20)
+    self:NextY(10)
 
     self:AddCheckBoxOption("useMinWindow", 20, 20,
         function(sender, args)
