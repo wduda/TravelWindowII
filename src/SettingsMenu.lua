@@ -128,6 +128,8 @@ function SettingsMenu:Update(string)
     -- set the selections
     self:SetSelections()
 
+    OptionsWindow.Panel.options["mode" .. Settings.mode]:UpdateOption()
+
     -- update the main window settings
     self.parent.dirty = true
     self.parent:UpdateSettings()
