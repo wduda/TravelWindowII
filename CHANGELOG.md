@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v4.1.1
+
+- fix: update mode radio in settings windows when changed from settings menu
+- fix: make spacing between mode options and other options consistent
+
 ## v4.1.0
 
 - enhance: to make the new map mode easier to find, mode selection has been added to the options window

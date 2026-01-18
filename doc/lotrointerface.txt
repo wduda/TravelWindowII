@@ -32,14 +32,11 @@ Use the mousewheel while hovering over the travel skill icon to change the selec
 
 Version history:
 
-v4.1.0
+v4.1.1
 
-- enhance: to make the new map mode easier to find, mode selection has been added to the options window
-- enhance: Map View will now store its last position and size separately from other window modes
-- enhance: navigation panel at the bottom of Map View now has the right-click menu
-- fix: some racial travel skills were missing from Map View, they are now back in this view
-- enhance: adding default for Mûr Ghala Sârz in RU client
-- enhance: updated settings handling under the hood to be more robust
+- v4.0.0 introduced map view, check it out in options
+- fix: update mode radio in settings windows when changed from settings menu
+- fix: make spacing between mode options and other options consistent
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
 

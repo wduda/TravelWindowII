@@ -4,6 +4,13 @@
 
 ChangelogData = {
     {
+        version = "v4.1.1",
+        changes = {
+            "fix: update mode radio in settings windows when changed from settings menu",
+            "fix: make spacing between mode options and other options consistent",
+        }
+    },
+    {
         version = "v4.1.0",
         changes = {
             "enhance: to make the new map mode easier to find, mode selection has been added to the options window",
