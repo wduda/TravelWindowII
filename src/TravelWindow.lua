@@ -290,8 +290,8 @@ function TravelWindow:Constructor()
 
     -- go to low opacity when mouse is not over
     self.MouseLeave = function(sender, args)
-        if not self.isMouseDown then
-            self:FadeOut();
+        if not self.isMouseDown and Settings.mode ~= TabId.MAP then
+            self:FadeOut()
         end
     end
     self.PullTab.pulldown.dropDownWindow.MouseEnter = self.MouseEnter;
