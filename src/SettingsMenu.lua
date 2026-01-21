@@ -133,5 +133,4 @@ function SettingsMenu:Update(string)
     -- update the main window settings
     self.parent.dirty = true
     self.parent:UpdateSettings()
-    self.parent:SetOpacity(Settings.mainMinOpacity)
 end

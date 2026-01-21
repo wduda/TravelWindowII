@@ -103,7 +103,12 @@ function TravelWindow:Constructor()
     self.GridTab:SetAllowDrop(true)
     self:SetItems();
     self:UpdateMinimum();
-    self:SetOpacity(Settings.mainMinOpacity);
+    -- Map view always uses max opacity
+    if Settings.mode == TabId.MAP then
+        self:SetOpacity(Settings.mainMaxOpacity)
+    else
+        self:SetOpacity(Settings.mainMinOpacity)
+    end
 
     -- track the hidden state of the UI, manage previous states for window and
     -- the button
@@ -537,8 +542,13 @@ function TravelWindow:ReloadLabels()
 end
 
 function TravelWindow:UpdateOpacity()
-    self:SetOpacity(Settings.mainMinOpacity);
-    ToggleButton:UpdateOpacity();
+    -- Map view always uses max opacity
+    if Settings.mode == TabId.MAP then
+        self:SetOpacity(Settings.mainMaxOpacity)
+    else
+        self:SetOpacity(Settings.mainMinOpacity)
+    end
+    ToggleButton:UpdateOpacity()
 end
 
 function TravelWindow:SetOpacity(value)
@@ -555,6 +565,13 @@ function TravelWindow:UpdateSettings()
     self:UpdateMinimum();
     self:SetInitialPosition()
     self:SetItems();
+
+    -- Update opacity based on mode
+    if Settings.mode == TabId.MAP then
+        self:SetOpacity(Settings.mainMaxOpacity)
+    else
+        self:SetOpacity(Settings.mainMinOpacity)
+    end
 
     self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
     self.MainPanel:UpdateTabs();
