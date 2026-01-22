@@ -328,10 +328,16 @@ function TravelWindow:Constructor()
     end
     self.MouseMove = function(sender, args)
         if self.isDragging then
+            local maxX, maxY = Turbine.UI.Display.GetSize()
+            maxX, maxY = maxX - self:GetWidth(), maxY - self:GetHeight()
             local left, top = self:GetPosition();
             local mX, mY = self:GetMousePosition();
             local x = left + (mX - self.dragStartX);
             local y = top + (mY - self.dragStartY);
+            if x < 0 then x = 0 end
+            if x > maxX then x = maxX end
+            if y < 0 then y = 0 end
+            if y > maxY then y = maxY end
             self:SetPosition(x, y);
         elseif self.isResizing then
             local sX, sY = self:GetSize();
