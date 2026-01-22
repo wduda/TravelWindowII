@@ -135,9 +135,16 @@ function TravelWindow:Constructor()
 
     -- check if our position has changed, and save the settings if so
     self.PositionChanged = function(sender, args)
+        if BlockUIChange(self) then
+            if self.posLockX ~= nil then
+                self:SetPosition(self.posLockX, self.posLockY)
+            end
+        else
+            self.posLockX = nil
+        end
+
         local w, h = self:GetPosition()
         local sw, sh = Turbine.UI.Display.GetSize()
-
         if Settings.mode == TabId.MAP then
             Settings.mapPositionRelativeX = w / sw
             Settings.mapPositionRelativeY = h / sh
@@ -303,18 +310,19 @@ function TravelWindow:Constructor()
     self.PullTab.pulldown.dropDownWindow.MouseLeave = self.MouseLeave;
 
     self.MouseDown = function(sender, args)
+        self.posLockX, self.posLockY = self:GetPosition()
         if BlockUIChange(self) then
             return
         end
 
         self.isMouseDown = true;
         if (args.Button == Turbine.UI.MouseButton.Left) then
-            self.dragStartX, self.dragStartY = self:GetMousePosition();
+            local mX, mY = self:GetMousePosition()
+            self.dragStartX, self.dragStartY = mX, mY
             if Settings.mode == TabId.LIST or
                     Settings.mode == TabId.GRID or
                     Settings.mode == TabId.PULL then
-                local mX, mY = self:GetMousePosition();
-                self.resizeStartX, self.resizeStartY = self:GetSize();
+                self.resizeStartX, self.resizeStartY = self:GetSize()
                 if self.resizeStartX - mX < self.resizeLabelSize + 1 and
                         self.resizeStartY - mY < self.resizeLabelSize + 1 then
                     self.isResizing = true;
@@ -322,7 +330,7 @@ function TravelWindow:Constructor()
             end
 
             if not self.isResizing then
-                self.isDragging = true;
+                self.isDragging = true
             end
         end
     end
