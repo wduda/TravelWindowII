@@ -64,6 +64,8 @@ function CreateOptionsWindow()
             if OptionsWindow.posLockX ~= nil then
                 OptionsWindow:SetPosition(OptionsWindow.posLockX, OptionsWindow.posLockY)
             end
+        else
+            OptionsWindow.posLockX = nil
         end
     end
     OptionsButton.Click = function()
