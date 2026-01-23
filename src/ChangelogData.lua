@@ -14,6 +14,7 @@ ChangelogData = {
     {
         version = "v4.1.1",
         changes = {
+            "major: V4 introduced a map mode view, turn it on through right-click menu or in options",
             "fix: update mode radio in settings windows when changed from settings menu",
             "fix: make spacing between mode options and other options consistent",
         }
