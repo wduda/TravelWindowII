@@ -1310,7 +1310,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Kintai-Quartiermeister"},
                 FR={vendor="Intendant des Kintai"},
                 RU={vendor="Kintai Quartermaster"}}},
-        rep=LC.rep.KINTAI_OF_SUL_MADASH, repLevel=LC.repLevel.NEUTRAL,
+        rep=LC.rep.KINTAI_OF_SUL_MADASH, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=150,
         level=150.7
     })
@@ -1328,7 +1328,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Hamâti-Quartiermeisterin"},
                 FR={vendor="Intendante des Hamâti"},
                 RU={vendor="Hamâti Quartermaster"}}},
-        rep=LC.rep.HAMAT_RENEWED, repLevel=LC.repLevel.NEUTRAL,
+        rep=LC.rep.HAMAT_RENEWED, repLevel=LC.repLevel.FRIEND,
         minLevel=150,
         level=150.71
     })
@@ -2560,7 +2560,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Hamâti-Quartiermeisterin"},
                 FR={vendor="Intendante des Hamâti"},
                 RU={vendor="Hamâti Quartermaster"}}},
-        rep=LC.rep.HAMAT_RENEWED, repLevel=LC.repLevel.NEUTRAL,
+        rep=LC.rep.HAMAT_RENEWED, repLevel=LC.repLevel.FRIEND,
         minLevel=150,
         level=150.71
     })
@@ -2578,7 +2578,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Kintai-Quartiermeister"},
                 FR={vendor="Intendant des Kintai"},
                 RU={vendor="Kintai Quartermaster"}}},
-        rep=LC.rep.KINTAI_OF_SUL_MADASH, repLevel=LC.repLevel.NEUTRAL,
+        rep=LC.rep.KINTAI_OF_SUL_MADASH, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=150,
         level=150.72
     })
@@ -3062,7 +3062,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Kintai-Quartiermeister"},
                 FR={vendor="Intendant des Kintai"},
                 RU={vendor="Kintai Quartermaster"}}},
-        rep=LC.rep.KINTAI_OF_SUL_MADASH, repLevel=LC.repLevel.NEUTRAL,
+        rep=LC.rep.KINTAI_OF_SUL_MADASH, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=150,
         level=150.52
     })
@@ -4655,7 +4655,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Hamâti-Quartiermeisterin"},
                 FR={vendor="Intendante des Hamâti"},
                 RU={vendor="Hamâti Quartermaster"}}},
-        rep=LC.rep.HAMAT_RENEWED, repLevel=LC.repLevel.NEUTRAL,
+        rep=LC.rep.HAMAT_RENEWED, repLevel=LC.repLevel.ALLY,
         minLevel=150,
         level=150.7
     })
@@ -4672,7 +4672,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Quartiermeister von Zajâna"},
                 FR={vendor="Intendant de Zajâna"},
                 RU={vendor="Zajâna Quartermaster"}}},
-        rep=LC.rep.CITY_OF_ZAJANA, repLevel=LC.repLevel.NEUTRAL,
+        rep=LC.rep.CITY_OF_ZAJANA, repLevel=LC.repLevel.ALLY,
         minLevel=150,
         level=150.71
     })
@@ -4689,7 +4689,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Temámir-Quartiermeister"},
                 FR={vendor="Intendant des Temamir"},
                 RU={vendor="Temámir Quartermaster"}}},
-        rep=LC.rep.TEMAMIR_OF_JIRET_MENESH, repLevel=LC.repLevel.NEUTRAL,
+        rep=LC.rep.TEMAMIR_OF_JIRET_MENESH, repLevel=LC.repLevel.ALLY,
         minLevel=150,
         level=150.72
     })
@@ -4706,7 +4706,7 @@ function TravelDictionary:CreateDictionaries()
                 DE={vendor="Kintai-Quartiermeister"},
                 FR={vendor="Intendant des Kintai"},
                 RU={vendor="Kintai Quartermaster"}}},
-        rep=LC.rep.KINTAI_OF_SUL_MADASH, repLevel=LC.repLevel.NEUTRAL,
+        rep=LC.rep.KINTAI_OF_SUL_MADASH, repLevel=LC.repLevel.KINDRED,
         minLevel=150,
         level=150.73
     })
