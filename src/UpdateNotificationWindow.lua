@@ -39,7 +39,24 @@ function UpdateNotificationWindow:FormatChangelog(lastVersion, currentVersion)
 end
 
 function UpdateNotificationWindow:Constructor(currentVersion, lastVersion, onClose, onRemindLater)
-    Turbine.UI.Lotro.Window.Constructor(self)
+    if Settings.useMinWindow == 1 then
+        Turbine.UI.Window.Constructor(self)
+    else
+        Turbine.UI.Lotro.Window.Constructor(self)
+    end
+
+    -- Track minimal mode and set styling properties
+    self.isMinWindow = Settings.useMinWindow == 1
+
+    if self.isMinWindow then
+        self.titleBarHeight = 20
+        self.contentTopOffset = 25
+        self.backColor = Turbine.UI.Color(1, 0, 0, 0)  -- Transparent
+    else
+        self.titleBarHeight = 0
+        self.contentTopOffset = 45
+        self.backColor = nil
+    end
 
     -- Window properties
     self.width = 500
@@ -51,14 +68,50 @@ function UpdateNotificationWindow:Constructor(currentVersion, lastVersion, onClo
     self:SetText(LC.updateTitle .. " " .. currentVersion)
     self:SetZOrder(1000)  -- High z-order to appear on top
 
+    -- Apply background color for minimal mode
+    if self.backColor then
+        self:SetBackColor(self.backColor)
+    end
+
     -- Format changelog from data table
     local changelogText = self:FormatChangelog(lastVersion, currentVersion)
+
+    -- Custom title label for minimal window mode
+    self.titleLabel = Turbine.UI.Label()
+    self.titleLabel:SetParent(self)
+    self.titleLabel:SetVisible(self.isMinWindow)
+    self.titleLabel:SetPosition(0, 0)
+    self.titleLabel:SetSize(self.width, self.titleBarHeight)
+    self.titleLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter)
+    self.titleLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro15)
+    self.titleLabel:SetText(LC.updateTitle .. " " .. currentVersion)
+
+    -- Enable dragging on title label in minimal mode
+    if self.isMinWindow then
+        self.titleLabel.MouseDown = function(_, args)
+            if args.Button == Turbine.UI.MouseButton.Left then
+                self.titleLabel.isDragging = true
+                self.titleLabel.dragStartX, self.titleLabel.dragStartY = args.X, args.Y
+            end
+        end
+
+        self.titleLabel.MouseMove = function(_, _)
+            if self.titleLabel.isDragging then
+                local mouseX, mouseY = Turbine.UI.Display.GetMousePosition()
+                self:SetPosition(mouseX - self.titleLabel.dragStartX, mouseY - self.titleLabel.dragStartY)
+            end
+        end
+
+        self.titleLabel.MouseUp = function(_, _)
+            self.titleLabel.isDragging = false
+        end
+    end
 
     -- Create scrollable text area for changelog
     self.textBox = Turbine.UI.Lotro.TextBox()
     self.textBox:SetParent(self)
-    self.textBox:SetPosition(10, 45)
-    self.textBox:SetSize(self.width - 30, self.height - 100)
+    self.textBox:SetPosition(10, self.contentTopOffset)
+    self.textBox:SetSize(self.width - 30, self.height - self.contentTopOffset - 55)
     self.textBox:SetMultiline(true)
     self.textBox:SetReadOnly(true)
     self.textBox:SetText(changelogText)
@@ -68,8 +121,8 @@ function UpdateNotificationWindow:Constructor(currentVersion, lastVersion, onClo
     self.scrollBar = Turbine.UI.Lotro.ScrollBar()
     self.scrollBar:SetOrientation(Turbine.UI.Orientation.Vertical)
     self.scrollBar:SetParent(self)
-    self.scrollBar:SetPosition(self.width - 20, 45)
-    self.scrollBar:SetSize(10, self.height - 100)
+    self.scrollBar:SetPosition(self.width - 20, self.contentTopOffset)
+    self.scrollBar:SetSize(10, self.height - self.contentTopOffset - 55)
     self.textBox:SetVerticalScrollBar(self.scrollBar)
 
     -- Create "Show Again Later" button (doesn't save version) - far left

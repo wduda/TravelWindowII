@@ -3,7 +3,13 @@
 ## v4.1.2
 
 - enhance: min window opacity no longer affects map view
+- enhance: disallow the main window from moving off the screen
+- enhance: update notifications window now follows mini UI mode setting
+- enhance: update notifications window will follow mini ui preference
+- fix: reputation levels in Find Tab are now correct for Mur Ghala regions
 - fix: hovering on skills in map view no longer changes the map opacity
+- fix: stop options window from snapping back when releasing shift-move
+- fix: dragging the main window in LotRO-skinned mode is now more stable
 
 ## v4.1.1
 
