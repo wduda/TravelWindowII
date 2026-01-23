@@ -4,8 +4,17 @@
 
 ChangelogData = {
     {
+        version = "v4.1.2",
+        changes = {
+            "major: V4 introduced a map mode view, turn it on through right-click menu or in options",
+            "enhance: min window opacity no longer affects map view",
+            "fix: hovering on skills in map view no longer changes the map opacity",
+        }
+    },
+    {
         version = "v4.1.1",
         changes = {
+            "major: V4 introduced a map mode view, turn it on through right-click menu or in options",
             "fix: update mode radio in settings windows when changed from settings menu",
             "fix: make spacing between mode options and other options consistent",
         }
@@ -13,6 +22,7 @@ ChangelogData = {
     {
         version = "v4.1.0",
         changes = {
+            "major: V4 introduced a map mode view, turn it on through right-click menu or in options",
             "enhance: to make the new map mode easier to find, mode selection has been added to the options window",
             "enhance: Map View will now store its last position and size separately from other window modes",
             "enhance: navigation panel at the bottom of Map View now has the right-click menu",
@@ -24,8 +34,8 @@ ChangelogData = {
     {
         version = "v4.0.0",
         changes = {
-            "MAJOR: introducing a brand new view mode called Map Mode",
-            "MAJOR: check it out by right-clicking the TW II window, select MODE and then MAP VIEW",
+            "major: introducing a brand new view mode called Map Mode",
+            "major: check it out by right-clicking the TW II window, select MODE and then MAP VIEW",
             "enhance: adding new notification window notifying of changes in installed update",
             "enhance: adding some region labels to U46 skill data for EN/DE/FR/RU",
             "enhance: vendor and skillname updates from U46.0.1 for FR"

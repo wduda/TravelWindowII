@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v4.1.2
+
+- enhance: min window opacity no longer affects map view
+- fix: hovering on skills in map view no longer changes the map opacity
+
 ## v4.1.1
 
 - fix: update mode radio in settings windows when changed from settings menu
