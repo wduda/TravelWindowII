@@ -301,8 +301,72 @@ function TravelMapTab:AddPanelQuickslots()
     end
     self.panelQuickslots = {}
 
-    -- Collect skills with MapType.NONE
-    local skills = {}
+    -- Collect class-specific skills with MapType.NONE
+    local classSkills = {}
+    if PlayerClass == Turbine.Gameplay.Class.Hunter then
+        for i = 1, #TravelInfo.hunter.skills do
+            local skill = TravelInfo.hunter.skills[i]
+            if skill.map and #skill.map > 0 then
+                local mapEntry = skill.map[1]
+                if mapEntry[1] == MapType.NONE then
+                    local id = skill.id
+                    -- Check if skill is trained and enabled
+                    for j = 1, #TravelShortcuts do
+                        local shortcut = TravelShortcuts[j]
+                        if shortcut:GetData() == id then
+                            if shortcut.found and shortcut:IsEnabled() then
+                                table.insert(classSkills, {id = id})
+                            end
+                            break
+                        end
+                    end
+                end
+            end
+        end
+    elseif PlayerClass == Turbine.Gameplay.Class.Warden then
+        -- Future: Add warden MapType.NONE skills if any exist
+        for i = 1, #TravelInfo.warden.skills do
+            local skill = TravelInfo.warden.skills[i]
+            if skill.map and #skill.map > 0 then
+                local mapEntry = skill.map[1]
+                if mapEntry[1] == MapType.NONE then
+                    local id = skill.id
+                    for j = 1, #TravelShortcuts do
+                        local shortcut = TravelShortcuts[j]
+                        if shortcut:GetData() == id then
+                            if shortcut.found and shortcut:IsEnabled() then
+                                table.insert(classSkills, {id = id})
+                            end
+                            break
+                        end
+                    end
+                end
+            end
+        end
+    elseif PlayerClass == Turbine.Gameplay.Class.Mariner then
+        -- Future: Add mariner MapType.NONE skills if any exist
+        for i = 1, #TravelInfo.mariner.skills do
+            local skill = TravelInfo.mariner.skills[i]
+            if skill.map and #skill.map > 0 then
+                local mapEntry = skill.map[1]
+                if mapEntry[1] == MapType.NONE then
+                    local id = skill.id
+                    for j = 1, #TravelShortcuts do
+                        local shortcut = TravelShortcuts[j]
+                        if shortcut:GetData() == id then
+                            if shortcut.found and shortcut:IsEnabled() then
+                                table.insert(classSkills, {id = id})
+                            end
+                            break
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    -- Collect generic skills with MapType.NONE (milestone/housing)
+    local genericSkills = {}
     for i = 1, #TravelInfo.gen.skills do
         local skill = TravelInfo.gen.skills[i]
         if skill.map and #skill.map > 0 then
@@ -314,13 +378,22 @@ function TravelMapTab:AddPanelQuickslots()
                     local shortcut = TravelShortcuts[j]
                     if shortcut:GetData() == id then
                         if shortcut.found and shortcut:IsEnabled() then
-                            table.insert(skills, {id = id})
+                            table.insert(genericSkills, {id = id})
                         end
                         break
                     end
                 end
             end
         end
+    end
+
+    -- Combine skills: class skills first (left), then generic skills (right)
+    local skills = {}
+    for i = 1, #classSkills do
+        table.insert(skills, classSkills[i])
+    end
+    for i = 1, #genericSkills do
+        table.insert(skills, genericSkills[i])
     end
 
     if #skills == 0 then
