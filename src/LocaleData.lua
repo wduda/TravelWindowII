@@ -57,6 +57,11 @@ LC_DE.repLevel.RESPECTED = "Respektiert"
 LC_FR.repLevel.RESPECTED = "Respecté"
 LC_RU.repLevel.RESPECTED = "Уважаемый"
 
+LC_EN.repLevel.ALLY = "Ally"
+LC_DE.repLevel.ALLY = "Verbündeter"
+LC_FR.repLevel.ALLY = "Allié"
+LC_RU.repLevel.ALLY = "Союзник"
+
 LC_EN.rep = {}
 LC_DE.rep = {}
 LC_FR.rep = {}
