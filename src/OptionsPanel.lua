@@ -350,6 +350,10 @@ function OptionsPanel:SetupGeneralTab()
             else
                 Settings.useMinWindow = 0
             end
+            if _G.update ~= nil and _G.update:IsVisible() then
+                _G.update:Close()
+                _G.update = nil
+            end
             _G.travel:Close()
             _G.travel = TravelWindow()
             _G.options:Close()
