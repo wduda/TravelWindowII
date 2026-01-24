@@ -1,9 +1,15 @@
-A new MAJOR version is available, including the map view - check it out in the options!
+A new version is available once the lotrointerface admins approve the upload. You can get it immediately at GitHub (see link below).
 
-v4.1.1
+v4.2.0
 
-- fix: update mode radio in settings windows when changed from settings menu
-- fix: make spacing between mode options and other options consistent
+- enhance: the main window will now be protected from moving off the screen
+- enhance: option and notifications windows will follow mini ui preference and behave consistently
+- enhance: Return To Camp will now be shown for Hunters in the Map View
+- fix: reputation levels in Find Tab are now correct for Mur Ghala regions
+- fix: hovering on skills in map view no longer forcibly changes the map opacity
+- fix: stop options window from snapping back when releasing shift-move
+- fix: dragging windows when shift-moving should now behave more consistently
+- fix: dragging the main window in LotRO-skinned mode is now more stable
 
 Help with further translations for DE, FR and RU clients is always welcome. Ideally submitted as pull requests on GitHub, but any way can be accomodated really.
 

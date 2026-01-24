@@ -4,11 +4,17 @@
 
 ChangelogData = {
     {
-        version = "v4.1.2",
+        version = "v4.2.0",
         changes = {
             "major: V4 introduced a map mode view, turn it on through right-click menu or in options",
-            "enhance: min window opacity no longer affects map view",
-            "fix: hovering on skills in map view no longer changes the map opacity",
+            "enhance: the main window will now be protected from moving off the screen",
+            "enhance: option and notifications windows will follow mini ui preference and behave consistently",
+            "enhance: Return To Camp will now be shown for Hunters in the Map View",
+            "fix: reputation levels in Find Tab are now correct for Mur Ghala regions",
+            "fix: hovering on skills in map view no longer forcibly changes the map opacity",
+            "fix: stop options window from snapping back when releasing shift-move",
+            "fix: dragging windows when shift-moving should now behave more consistently",
+            "fix: dragging the main window in LotRO-skinned mode is now more stable",
         }
     },
     {

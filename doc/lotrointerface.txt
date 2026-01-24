@@ -20,6 +20,11 @@ Why are unlearned skills shown in Map View?
 [*]The map view makes it easy to visually find known skills. The unlearned skills offer a chance to see what other travekl skills are not available. They can still be hidden using the enable feature.
 [/LIST]
 
+Why do I see both class skills and Return skills in Map View as Hunter/Mariner/Warden?
+[LIST]
+[*]Because they are all learned/unlearned skills. If you want to hide those with overlap (i.e. Guide to Bree and Return To Bree) use the Enable tab of the options. Disable overlapping will immediately hide all duplicates and prefer class skills.
+[/LIST]
+
 Why does the plugin crash on brand new Creep characters?
 [LIST]
 Those have zero travel skills. After completing the tutorial you obtain the first travel skill and the plugin will load.
@@ -32,18 +37,19 @@ Use the mousewheel while hovering over the travel skill icon to change the selec
 
 Version history:
 
-v4.1.1
+v4.2.0
 
-- v4.0.0 introduced map view, check it out in options
-- fix: update mode radio in settings windows when changed from settings menu
-- fix: make spacing between mode options and other options consistent
+- enhance: the main window will now be protected from moving off the screen
+- enhance: option and notifications windows will follow mini ui preference and behave consistently
+- enhance: Return To Camp will now be shown for Hunters in the Map View
+- fix: reputation levels in Find Tab are now correct for Mur Ghala regions
+- fix: hovering on skills in map view no longer forcibly changes the map opacity
+- fix: stop options window from snapping back when releasing shift-move
+- fix: dragging windows when shift-moving should now behave more consistently
+- fix: dragging the main window in LotRO-skinned mode is now more stable
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
 
 Help with further translations for DE, FR and RU clients is always welcome. Ideally submitted as pull requests on GitHub, but any way can be accomodated really.
 
 Other than contacting here on lotrointerface, you can also do that on the [url=https://forums.lotro.com/index.php?threads/plugin-travel-window-ii.1400/]official forums thread[/url], on [url=https://github.com/wduda/TravelWindowII/discussions]GitHub[/url] where you will also find the source code, and I also monitor a post on the official [url=https://discord.com/channels/1253092003218985092/1339975894902505523]LOTRO Discord[/url].
-
-
-
-
