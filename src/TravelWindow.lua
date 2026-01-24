@@ -129,6 +129,25 @@ function TravelWindow:Constructor()
     self.resizeLabel:SetOpacity(0);
     self.resizeLabel:SetZOrder(100); -- put above the shortcuts; which are set to 90
 
+    -- close button for minimal window mode
+    self.closeButton = Turbine.UI.Label()
+    self.closeButton:SetParent(self.titleLabel)
+    self.closeButton:SetVisible(self.isMinWindow)
+    self.closeButton:SetBackColor(Turbine.UI.Color(0.34,0,0))
+    self.closeButton:SetSize(13, 13)
+
+    self.closeButton.MouseClick = function(_, _)
+        self:SetVisible(false)
+    end
+
+    self.closeButton.MouseEnter = function(_, _)
+        self.closeButton:SetBackColor(Turbine.UI.Color(0.68,0,0))
+    end
+
+    self.closeButton.MouseLeave = function(_, _)
+        self.closeButton:SetBackColor(Turbine.UI.Color(0.34,0,0))
+    end
+
     --[[ Event Handlers ]] --
 
     self:SetWantsKeyEvents(true);
@@ -404,6 +423,7 @@ function TravelWindow:Constructor()
         self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
         self.MainPanel:UpdateTabs();
         self.titleLabel:SetSize(self:GetWidth(), 20);
+        self.closeButton:SetPosition(self:GetWidth() - 15, 2)
         self.resizeLabel:SetPosition(self:GetWidth() - self.resizeLabel:GetWidth(),
                                      self:GetHeight() - self.resizeLabel:GetHeight());
         if self.isMinWindow then
