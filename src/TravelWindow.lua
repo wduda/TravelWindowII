@@ -134,7 +134,7 @@ function TravelWindow:Constructor()
     self:SetWantsKeyEvents(true);
 
     -- check if our position has changed, and save the settings if so
-    self.PositionChanged = function(sender, args)
+    self.PositionChanged = function(_, _)
         if BlockUIChange(self) then
             if self.posLockX ~= nil then
                 self:SetPosition(self.posLockX, self.posLockY)
@@ -156,28 +156,28 @@ function TravelWindow:Constructor()
     end
 
     -- manage hiding the UI
-    self.KeyDown = function(sender, args)
+    self.KeyDown = function(_, args)
         if (args.Action == Turbine.UI.Lotro.Action.Escape) then
             if Settings.escapeToClose == 1 then
-                self:SetVisible(false);
+                self:SetVisible(false)
             end
-            OptionsWindow:SetVisible(false);
+            _G.options:SetVisible(false)
             if (self.hidden == true) then
                 self.hidden = false;
                 self:SetVisible(self.currentVisState);
-                ToggleButton:SetVisible(Settings.showButton == 1);
+                ToggleButton:SetVisible(Settings.showButton == 1)
             end
         elseif (args.Action == Turbine.UI.Lotro.Action.UI_Toggle) then
             if (self.hidden == false) then
-                self.currentVisState = self:IsVisible();
-                self.hidden = true;
-                self:SetVisible(false);
                 OptionsWindow:SetVisible(false);
-                ToggleButton:SetVisible(false);
+                self.currentVisState = self:IsVisible()
+                self.hidden = true
+                self:SetVisible(false)
+                ToggleButton:SetVisible(false)
             else
-                self.hidden = false;
-                self:SetVisible(self.currentVisState);
-                ToggleButton:SetVisible(Settings.showButton == 1);
+                self.hidden = false
+                self:SetVisible(self.currentVisState)
+                ToggleButton:SetVisible(Settings.showButton == 1)
             end
         end
     end
@@ -309,7 +309,7 @@ function TravelWindow:Constructor()
     self.PullTab.pulldown.dropDownWindow.MouseEnter = self.MouseEnter;
     self.PullTab.pulldown.dropDownWindow.MouseLeave = self.MouseLeave;
 
-    self.MouseDown = function(sender, args)
+    self.MouseDown = function(_, args)
         self.posLockX, self.posLockY = self:GetPosition()
         if BlockUIChange(self) then
             return
