@@ -54,6 +54,26 @@ function OptionsWindow:Constructor()
     self.titleLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro15)
     self.titleLabel:SetText(LC.optionsTitle)
 
+    -- close button for minimal window mode
+    self.closeButton = Turbine.UI.Label()
+    self.closeButton:SetParent(self.titleLabel)
+    self.closeButton:SetVisible(self.isMinWindow)
+    self.closeButton:SetBackColor(Turbine.UI.Color(0.34,0,0))
+    self.closeButton:SetPosition(self.width - self.titleBarHeight, 2)
+    self.closeButton:SetSize(self.titleBarHeight - 2, self.titleBarHeight - 2)
+
+    self.closeButton.MouseClick = function(_, _)
+        self:SetVisible(false)
+    end
+
+    self.closeButton.MouseEnter = function(_, _)
+        self.closeButton:SetBackColor(Turbine.UI.Color(0.68,0,0))
+    end
+
+    self.closeButton.MouseLeave = function(_, _)
+        self.closeButton:SetBackColor(Turbine.UI.Color(0.34,0,0))
+    end
+
     self.PositionChanged = function(_, _)
         if BlockUIChange(self) then
             if self.posLockX ~= nil then
