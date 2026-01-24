@@ -59,7 +59,6 @@ function OptionsPanel:Constructor()
     Turbine.UI.Control.Constructor(self);
 
     --  add a check to see if we load completely
-    self.loaded = false;
     self.disableUpdates = false;
 
     self.labelWidth = 420
@@ -118,12 +117,6 @@ function OptionsPanel:Constructor()
     self.OptionTabs:SetTabText(4, LC.findTab)
 
     self:SetVisible(true);
-
-    self.loaded = true;
-end
-
-function OptionsPanel:GetLoaded()
-    return self.loaded;
 end
 
 function OptionsPanel:NextY(offset)
@@ -367,11 +360,11 @@ function OptionsPanel:SetupGeneralTab()
     self:AddCheckBoxOption("showButton", 20, 30,
         function(sender, args)
             if (sender:IsChecked()) then
-                Settings.showButton = 1;
+                Settings.showButton = 1
             else
-                Settings.showButton = 0;
+                Settings.showButton = 0
             end
-            ToggleButton:SetVisible(sender:IsChecked());
+            ToggleButton:SetVisible(sender:IsChecked())
         end)
     self:AddCheckBoxOption("pulldownTravel", 20, 30)
     self:AddCheckBoxOption("useZoneNames", 20, 30,

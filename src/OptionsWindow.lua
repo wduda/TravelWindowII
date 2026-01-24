@@ -1,8 +1,8 @@
-import "Turbine.Gameplay";
-import "Turbine.UI";
-import "Turbine.UI.Lotro";
-import "TravelWindowII.src.extensions";
-import "TravelWindowII.src.utils.BitOps";
+import "Turbine.Gameplay"
+import "Turbine.UI"
+import "Turbine.UI.Lotro"
+import "TravelWindowII.src.extensions"
+import "TravelWindowII.src.utils.BitOps"
 
 OptionsWindow = class(Turbine.UI.Lotro.Window);
 
@@ -26,7 +26,6 @@ function OptionsWindow:Constructor()
         self.backColor = nil
     end
 
-    self.loaded = false;
     self.width = 800;
     self.height = 840;
     self.windowWidth, self.windowHeight = Turbine.UI.Display:GetSize();
@@ -83,12 +82,6 @@ function OptionsWindow:Constructor()
 
     -- set the window to be visible
     self:SetVisible(false);
-
-    self.loaded = true;
-end
-
-function OptionsWindow:GetLoaded()
-    return self.loaded;
 end
 
 function CreateOptionsWindow()
