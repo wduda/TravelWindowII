@@ -213,18 +213,20 @@ function SetSettings(settingsArg, scope, importOldSettings)
 
             if lastVersionNum < currentVersionNum then
                 -- Version updated - show notification window
-                TravelWindowII.src.UpdateNotificationWindow(
+                _G.update = TravelWindowII.src.UpdateNotificationWindow(
                     currentVersion,
                     settingsArg.lastLoadedVersion,  -- Pass lastVersion for filtering
                     function()
                         -- "Close" button clicked - save new version (account-wide)
                         settingsArg.lastLoadedVersion = currentVersion
                         Settings.lastLoadedVersion = currentVersion
+                        _G.update = nil
                         -- Settings will be saved automatically on plugin unload
                     end,
                     function()
                         -- "Show Again Later" clicked - don't save version
                         -- Do nothing, version stays as old value
+                        _G.update = nil
                     end
                 )
             else

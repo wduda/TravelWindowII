@@ -83,16 +83,18 @@ function TravelCommand:Execute(command, arguments)
         local currentVersion = tostring(Plugins["Travel Window II"]:GetVersion())
         local lastVersion = Settings.lastLoadedVersion or currentVersion
 
-        TravelWindowII.src.UpdateNotificationWindow(
+        _G.update = TravelWindowII.src.UpdateNotificationWindow(
             currentVersion,
             lastVersion,
             function()
                 -- "Close" button clicked - save new version (account-wide)
                 Settings.lastLoadedVersion = currentVersion
                 SaveSettings(Turbine.DataScope.Account)
+                _G.update = nil
             end,
             function()
                 -- "Show Again Later" clicked - do nothing
+                _G.update = nil
             end
         )
     elseif (arguments ~= nil) then
