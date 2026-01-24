@@ -169,10 +169,10 @@ function TravelWindow:Constructor()
             end
         elseif (args.Action == Turbine.UI.Lotro.Action.UI_Toggle) then
             if (self.hidden == false) then
-                OptionsWindow:SetVisible(false);
                 self.currentVisState = self:IsVisible()
                 self.hidden = true
                 self:SetVisible(false)
+                _G.options:SetVisible(false)
                 ToggleButton:SetVisible(false)
             else
                 self.hidden = false
@@ -548,7 +548,7 @@ end
 function TravelWindow:ReloadLabels()
     self.ListTab:ReloadLabels()
     self.PullTab.pulldown:ReloadLabels()
-    OptionsWindow.Panel:ReloadLabels()
+    _G.options.Panel:ReloadLabels()
     for i = 1, #TravelShortcuts do
         local shortcut = TravelShortcuts[i]
         shortcut.normalizedLabel = shortcut:GetLabel():lower()
@@ -607,9 +607,9 @@ function SyncUIFromSettings()
     local buttonPositionX = screenW * Settings.buttonRelativeX
     local buttonPositionY = screenH * Settings.buttonRelativeY
     ToggleButton:SetPosition(buttonPositionX, buttonPositionY)
-    OptionsWindow.Panel:UpdateOptions()
-    OptionsWindow.Panel:EnableFromSettings()
-    OptionsWindow.Panel:AddSortList()
+    _G.options.Panel:UpdateOptions()
+    _G.options.Panel:EnableFromSettings()
+    _G.options.Panel:AddSortList()
     Menu:SetSelections()
     _G.travel:SetInitialPosition()
     _G.travel.dirty = true
