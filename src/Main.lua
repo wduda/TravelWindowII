@@ -37,7 +37,8 @@ TravelInfo:SetSkillLabels()
 -- set up all the shortcuts
 InitShortcuts()
 
-CreateOptionsWindow();
+_G.options = TravelWindowII.src.OptionsWindow()
+CreatePluginOptionsPanel()
 
 -- create the external toggle button
 ToggleButton = TravelWindowII.src.TravelButton()
@@ -48,7 +49,7 @@ _G.travel = TravelWindow()
 NewShortcutEvent = function()
     _G.travel.dirty = true -- reset list of shortcuts
     _G.travel:SetItems() -- redraw current window
-    OptionsWindow.Panel:AddFindTreeShortcuts()
+    _G.options.Panel:AddFindTreeShortcuts()
 end
 
 Plugins["Travel Window II"].Load = function(sender, args)

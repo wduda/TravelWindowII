@@ -122,13 +122,13 @@ function SettingsMenu:Update(string)
     elseif (string == LC.menuMap) then
         Settings.mode = TabId.MAP
     elseif (string == LC.menuOptions) then
-        OptionsWindow:SetVisible(true)
+        _G.options:SetVisible(true)
     end
 
     -- set the selections
     self:SetSelections()
 
-    OptionsWindow.Panel.options["mode" .. Settings.mode]:UpdateOption()
+    _G.options.Panel.options["mode" .. Settings.mode]:UpdateOption()
 
     -- update the main window settings
     self.parent.dirty = true

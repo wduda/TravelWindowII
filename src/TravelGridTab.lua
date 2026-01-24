@@ -153,7 +153,7 @@ function TravelGridTab:Constructor(toplevel)
         end
 
         -- update the main window shortcuts and settings
-        OptionsWindow.Panel:AddSortList();
+        _G.options.Panel:AddSortList();
         self.parent:UpdateSettings();
     end
 end

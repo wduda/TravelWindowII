@@ -54,26 +54,51 @@ function OptionsWindow:Constructor()
     self.titleLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro15)
     self.titleLabel:SetText(LC.optionsTitle)
 
-    -- Enable dragging on title label in minimal mode
-    if self.isMinWindow then
-        self.titleLabel.MouseDown = function(_, args)
-            if args.Button == Turbine.UI.MouseButton.Left then
-                self.titleLabel.isDragging = true
-                self.titleLabel.dragStartX, self.titleLabel.dragStartY = args.X, args.Y
+    self.PositionChanged = function(_, _)
+        if BlockUIChange(self) then
+            if self.posLockX ~= nil then
+                self:SetPosition(self.posLockX, self.posLockY)
             end
-        end
-
-        self.titleLabel.MouseMove = function(_, _)
-            if self.titleLabel.isDragging then
-                local mouseX, mouseY = Turbine.UI.Display.GetMousePosition()
-                self:SetPosition(mouseX - self.titleLabel.dragStartX, mouseY - self.titleLabel.dragStartY)
-            end
-        end
-
-        self.titleLabel.MouseUp = function(_, _)
-            self.titleLabel.isDragging = false
+        else
+            self.posLockX = nil
         end
     end
+
+    -- Enable dragging on title label in minimal mode
+    self.MouseDown = function(_, args)
+        self.posLockX, self.posLockY = self:GetPosition()
+        if BlockUIChange(self) then
+            return
+        end
+
+        if (args.Button == Turbine.UI.MouseButton.Left) then
+            local mX, mY = self:GetMousePosition()
+            self.dragStartX, self.dragStartY = mX, mY
+            self.isDragging = true
+        end
+    end
+    self.MouseMove = function(_, _)
+        if self.isDragging then
+            local maxX, maxY = Turbine.UI.Display.GetSize()
+            maxX, maxY = maxX - self:GetWidth(), maxY - self:GetHeight()
+            local left, top = self:GetPosition();
+            local mX, mY = self:GetMousePosition();
+            local x = left + (mX - self.dragStartX);
+            local y = top + (mY - self.dragStartY);
+            if x < 0 then x = 0 end
+            if x > maxX then x = maxX end
+            if y < 0 then y = 0 end
+            if y > maxY then y = maxY end
+            self:SetPosition(x, y);
+        end
+    end
+    self.MouseUp = function(_, _)
+        self.isDragging = false;
+    end
+
+    self.titleLabel.MouseDown = self.MouseDown
+    self.titleLabel.MouseMove = self.MouseMove
+    self.titleLabel.MouseUp = self.MouseUp
 
     -- add the main options panel to the window
     self.Panel = TravelWindowII.src.OptionsPanel();
@@ -84,36 +109,21 @@ function OptionsWindow:Constructor()
     self:SetVisible(false);
 end
 
-function CreateOptionsWindow()
-    UnlockedUI = false
-    local PluginManagerOptionsPanel = Turbine.UI.Control()
-    PluginManagerOptionsPanel:SetSize(500, 200)
+function CreatePluginOptionsPanel()
+    local optionsPanel = Turbine.UI.Control()
+    optionsPanel:SetSize(500, 200)
 
     plugin.GetOptionsPanel = function()
-        return PluginManagerOptionsPanel
+        return optionsPanel
     end
 
-    local OptionsButton = Turbine.UI.Lotro.Button()
-    OptionsButton:SetParent(PluginManagerOptionsPanel)
-    OptionsButton:SetPosition(100, 100)
-    OptionsButton:SetSize(200,15)
-    OptionsButton:SetText(LC.menuOptions)
-    OptionsButton:SetVisible(true)
-
-    OptionsWindow = TravelWindowII.src.OptionsWindow()
-    OptionsWindow.MouseDown = function(sender, args)
-        OptionsWindow.posLockX, OptionsWindow.posLockY = OptionsWindow:GetPosition()
-    end
-    OptionsWindow.PositionChanged = function(sender, args)
-        if BlockUIChange(OptionsWindow) then
-            if OptionsWindow.posLockX ~= nil then
-                OptionsWindow:SetPosition(OptionsWindow.posLockX, OptionsWindow.posLockY)
-            end
-        else
-            OptionsWindow.posLockX = nil
-        end
-    end
-    OptionsButton.Click = function()
-        OptionsWindow:SetVisible(true)
+    local optionsButton = Turbine.UI.Lotro.Button()
+    optionsButton:SetParent(optionsPanel)
+    optionsButton:SetPosition(100, 100)
+    optionsButton:SetSize(200,15)
+    optionsButton:SetText(LC.menuOptions)
+    optionsButton:SetVisible(true)
+    optionsButton.Click = function()
+        _G.options:SetVisible(true)
     end
 end
