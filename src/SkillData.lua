@@ -470,6 +470,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Guide pour Galtrev", label="Galtrev", zone="Pays de Dun"},
         RU={name="Путь в Галтрев", label="Галтрев", zone="Дунланд"},
         map={{MapType.ERIADOR, 810, 715}},
+        overlap={"0x7002C647"},
         acquire={
             {cost={{amount=176, token=LC.token.SILVER}},
                 EN={vendor="Dunlending Quartermaster"},
@@ -1269,6 +1270,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Guide vers Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
         RU={name="Путь в Утуг-Бур", label="Utug-bûr", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 670, 310}},
+        overlap={"0x7006EA1C"},
         acquire={
             {cost={{amount=1, token=LC.token.COLD_IRON_TOKEN}},
                 EN={vendor="Temple of Utug-bûr Quartermaster"},
@@ -1286,6 +1288,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Guide vers Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         RU={name="Путь в Дун-Шуму", label="Dun Shûma", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 620, 445}},
+        overlap={"0x7006FD4B"},
         acquire={
             {cost={{amount=10, token=LC.token.HAMATI_URGUL}},
                 EN={vendor="Hamâti Quartermaster"},
@@ -2501,6 +2504,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Rassemblement à Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
         RU={name="Сбор в Утуг-Бур", label="Utug-bûr", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 670, 310}},
+        overlap={"0x7006EA1C"},
         acquire={
             {cost={{amount=1, token=LC.token.COLD_IRON_TOKEN}},
                 EN={vendor="Temple of Utug-bûr Quartermaster"},
@@ -2518,6 +2522,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Rassemblement à Dun Shûma", label="Dun Shûma", zone="Ikorbân"},
         RU={name="Сбор в Дун-Шуме", label="Dun Shûma", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 620, 445}},
+        overlap={"0x7006FD4B"},
         acquire={
             {cost={{amount=10, token=LC.token.HAMATI_URGUL}},
                 EN={vendor="Hamâti Quartermaster"},
@@ -3002,6 +3007,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Voyager jusqu'à Utug-bûr", label="Utug-bûr", zone="Ikorbân"},
         RU={name="Отплытие в Утуг-Бур", label="Utug-bûr", zone="Ikorbân"},
         map={{MapType.HARADWAITH, 670, 310}},
+        overlap={"0x7006EA1C"},
         acquire={
             {cost={{amount=1, token=LC.token.COLD_IRON_TOKEN}},
                 EN={vendor="Temple of Utug-bûr Quartermaster"},
