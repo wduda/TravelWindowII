@@ -21,6 +21,13 @@ TabId = {
     MAP = 5,
 }
 
+FilterId = {
+    GEN = 1,
+    RACE = 2,
+    REP = 3,
+    CLASS = 4,
+}
+
 -- Behavioral constants (global, used by TravelWindow, TravelButton)
 BehaviorConstants = {
     BOUNDARY_MIN_VISIBLE = 50,      -- Pixels to keep visible on screen
