@@ -215,30 +215,28 @@ end
 
 function InitShortcuts()
     -- set default values
-    TravelShortcuts = {};
+    TravelShortcuts = {}
 
     -- set the either the travel skills for free people or monsters
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- set the generic travel items
-        AddTravelSkills(TravelInfo.gen, 1);
+        AddTravelSkills(TravelInfo.gen, FilterId.GEN);
 
         -- add the race travel to the list
         table.insert(TravelShortcuts,
                      TravelShortcut(
                             Turbine.UI.Lotro.ShortcutType.Skill,
                             2,
-                            TravelInfo.racial));
+                            TravelInfo.racial))
 
         -- set the class travel items
-        AddTravelSkills(TravelInfo.hunter, 4);
-        AddTravelSkills(TravelInfo.warden, 4);
-        AddTravelSkills(TravelInfo.mariner, 4);
+        AddTravelSkills(TravelInfo:GetClassSkills(), FilterId.CLASS)
 
         -- set the reputation travel items
-        AddTravelSkills(TravelInfo.rep, 3);
+        AddTravelSkills(TravelInfo.rep, FilterId.REP)
     else
         -- set the creep travel items
-        AddTravelSkills(TravelInfo.creep, 3);
+        AddTravelSkills(TravelInfo.creep, FilterId.REP)
     end
 
     ClearLoaders();
@@ -247,17 +245,13 @@ function InitShortcuts()
 end
 
 function AddTravelSkills(skills, filter)
-    if filter == 4 then
-        if TravelInfo:GetClassSkills() ~= skills then
-            filter = 8
-        end
-    end
+    if skills == nil then return end
     for i = 1, skills:GetCount() do
         table.insert(TravelShortcuts,
-                     TravelShortcut(
-                        Turbine.UI.Lotro.ShortcutType.Skill,
-                        filter,
-                        skills:Skill(i)));
+            TravelShortcut(
+                Turbine.UI.Lotro.ShortcutType.Skill,
+                filter,
+                skills:Skill(i)));
     end
 end
 
@@ -269,7 +263,7 @@ function IsShortcutEnabled(id)
         end
     end
 
-    return false;
+    return false
 end
 
 function IsShortcutTrained(id)
@@ -277,13 +271,13 @@ function IsShortcutTrained(id)
         local shortcut = TravelShortcuts[i]
         if shortcut:GetData() == id then
             if shortcut.found then
-                return true;
+                return true
             end
-            return false;
+            return false
         end
     end
 
-    return false;
+    return false
 end
 
 function GetTravelOrder(scope)
@@ -416,7 +410,7 @@ function CheckSkills()
     local newShortcut = false
     for i = 1, #TravelShortcuts do
         local shortcut = TravelShortcuts[i]
-        if not shortcut.found and shortcut:GetTravelType() ~= 8 then
+        if not shortcut.found then
             if FindSkill(shortcut) then
                 newShortcut = true
             end
@@ -466,10 +460,9 @@ function CheckSkill(name)
     end
 
     -- loop through all the shortcuts and match against skills
-    local newShortcut = false
     for i = 1, #TravelShortcuts do
         local shortcut = TravelShortcuts[i]
-        if not shortcut.found and shortcut:GetTravelType() ~= 8 then
+        if not shortcut.found then
             for j = 1, #skills do
                 if MatchSkillInfo(skills[j], shortcut) then
                     if NewShortcutEvent then
