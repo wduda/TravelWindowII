@@ -20,7 +20,8 @@ function TravelMapTab:Constructor(toplevel)
     -- Map configuration
     self.mapWidth = 1024
     self.mapHeight = 768
-    self.navPanelHeight = 65
+    self.navPanelHeight = 68
+    self.colWidth = 32
     self.quickslots = {}
     self.panelQuickslots = {}  -- For milestone/housing skills in nav panel
 
@@ -78,6 +79,59 @@ function TravelMapTab:Constructor(toplevel)
         self.navPanel:SetZOrder(99)
         self.navPanel:SetPosition(self.mapBorder, self.mapHeight + self.mapBorder)  -- Position below the map with border
         self.navPanel.MouseClick = self.MouseClick
+
+        -- logic for reordering shortcuts in the navigation panel
+        self.DragDrop = function(_, args)
+            if BlockUIChange(self) then return end
+
+            local shortcut = args.DragDropInfo:GetShortcut()
+            if shortcut == nil then return end
+            local srcSkill = GetTravelSkill(shortcut:GetData())
+            if srcSkill == nil then return end
+            local x, y = self.navPanel:GetMousePosition()
+            if x < 0 or x > self.navPanel:GetWidth() then return end
+            if y < self.startY or y > self.navPanel:GetHeight() then return end
+            local gridIndex = self:GetGridIndex(x, y)
+            local quickslot = self.panelQuickslots[gridIndex]
+            if quickslot == nil then return end
+            shortcut = quickslot:GetShortcut()
+            if shortcut == nil then return end
+            local dstSkill = GetTravelSkill(shortcut:GetData())
+            if dstSkill == nil then return end
+
+            local srcIndex = srcSkill.shortcut.MapIndex
+            local dstIndex = dstSkill.shortcut.MapIndex
+            if srcIndex == nil or dstIndex == nil then return end
+            if srcIndex == dstIndex then return end
+            if srcIndex > dstIndex then
+                while dstIndex - 1 >= 1 do
+                    if NavPanelShortcuts[dstIndex - 1].found then
+                        break
+                    end
+                    dstIndex = dstIndex - 1
+                end
+                while srcIndex > dstIndex do
+                    SwapNavPanelSkill(srcIndex, srcIndex - 1)
+                    srcIndex = srcIndex - 1
+                end
+            end
+
+            if srcIndex < dstIndex then
+                local maxIndex = #NavPanelShortcuts
+                while dstIndex + 1 <= maxIndex do
+                    if NavPanelShortcuts[dstIndex + 1].found then
+                        break
+                    end
+                    dstIndex = dstIndex + 1
+                end
+
+                while srcIndex < dstIndex do
+                    SwapNavPanelSkill(srcIndex, srcIndex + 1)
+                    srcIndex = srcIndex + 1
+                end
+            end
+            self.parent:UpdateSettings();
+        end
 
         -- Create 5 region buttons for direct access
         self.regionButtons = {}
@@ -156,6 +210,18 @@ function TravelMapTab:LoadMap()
             end
         end
     end
+end
+
+function TravelMapTab:GetGridIndex(x, y)
+    local col = math.floor((x - self.startX) / self.colWidth) + 1
+    local row = math.floor((y - self.startY) / self.colWidth)
+    local numOfCols = math.floor(self.totalWidth / self.colWidth);
+    if row < 0 then row = 0 end
+    local index = row * numOfCols + col
+    if index > #self.panelQuickslots then
+        index = #self.panelQuickslots
+    end
+    return index
 end
 
 -- Add shortcuts to the map
@@ -273,7 +339,7 @@ function TravelMapTab:AddSingleShortcut(location, shortcut)
     self.quickslots[index]:SetUseOnRightClick(false)
     self.quickslots[index]:SetAllowDrop(false)
     self.quickslots[index]:SetStretchMode(1)
-    self.quickslots[index]:SetSize(32, 32)
+    self.quickslots[index]:SetSize(self.colWidth, self.colWidth)
     self.quickslots[index]:SetPosition(location[2], location[3])
     self.quickslots[index]:SetZOrder(98)
     self.quickslots[index]:SetVisible(true)
@@ -289,7 +355,18 @@ function TravelMapTab:AddSingleShortcut(location, shortcut)
     end
 end
 
--- Add milestone/housing skills with no map location to navigation panel
+function GetNavPanelSkills()
+    local skills = {}
+    for i = 1, #NavPanelShortcuts do
+        local shortcut = NavPanelShortcuts[i]
+        if shortcut.found and shortcut:IsEnabled() then
+            table.insert(skills, shortcut.skill)
+        end
+    end
+    return skills
+end
+
+-- Add milestone/housing skills with no map location to the map tray
 function TravelMapTab:AddPanelQuickslots()
     if self.navPanelHeight == 0 then
         return  -- No panel for monster players
@@ -297,134 +374,34 @@ function TravelMapTab:AddPanelQuickslots()
 
     -- Clear existing panel quickslots
     for i = 1, #self.panelQuickslots do
+        self.panelQuickslots[i]:SetVisible(false)
         self.panelQuickslots[i]:SetParent(nil)
     end
     self.panelQuickslots = {}
 
-    -- Collect class-specific skills with MapType.NONE
-    local classSkills = {}
-    if PlayerClass == Turbine.Gameplay.Class.Hunter then
-        for i = 1, #TravelInfo.hunter.skills do
-            local skill = TravelInfo.hunter.skills[i]
-            if skill.map and #skill.map > 0 then
-                local mapEntry = skill.map[1]
-                if mapEntry[1] == MapType.NONE then
-                    local id = skill.id
-                    -- Check if skill is trained and enabled
-                    for j = 1, #TravelShortcuts do
-                        local shortcut = TravelShortcuts[j]
-                        if shortcut:GetData() == id then
-                            if shortcut.found and shortcut:IsEnabled() then
-                                table.insert(classSkills, {id = id})
-                            end
-                            break
-                        end
-                    end
-                end
-            end
-        end
-    elseif PlayerClass == Turbine.Gameplay.Class.Warden then
-        -- Future: Add warden MapType.NONE skills if any exist
-        for i = 1, #TravelInfo.warden.skills do
-            local skill = TravelInfo.warden.skills[i]
-            if skill.map and #skill.map > 0 then
-                local mapEntry = skill.map[1]
-                if mapEntry[1] == MapType.NONE then
-                    local id = skill.id
-                    for j = 1, #TravelShortcuts do
-                        local shortcut = TravelShortcuts[j]
-                        if shortcut:GetData() == id then
-                            if shortcut.found and shortcut:IsEnabled() then
-                                table.insert(classSkills, {id = id})
-                            end
-                            break
-                        end
-                    end
-                end
-            end
-        end
-    elseif PlayerClass == Turbine.Gameplay.Class.Mariner then
-        -- Future: Add mariner MapType.NONE skills if any exist
-        for i = 1, #TravelInfo.mariner.skills do
-            local skill = TravelInfo.mariner.skills[i]
-            if skill.map and #skill.map > 0 then
-                local mapEntry = skill.map[1]
-                if mapEntry[1] == MapType.NONE then
-                    local id = skill.id
-                    for j = 1, #TravelShortcuts do
-                        local shortcut = TravelShortcuts[j]
-                        if shortcut:GetData() == id then
-                            if shortcut.found and shortcut:IsEnabled() then
-                                table.insert(classSkills, {id = id})
-                            end
-                            break
-                        end
-                    end
-                end
-            end
-        end
-    end
-
-    -- Collect generic skills with MapType.NONE (milestone/housing)
-    local genericSkills = {}
-    for i = 1, #TravelInfo.gen.skills do
-        local skill = TravelInfo.gen.skills[i]
-        if skill.map and #skill.map > 0 then
-            local mapEntry = skill.map[1]
-            if mapEntry[1] == MapType.NONE then
-                local id = skill.id
-                -- Check if skill is trained and enabled
-                for j = 1, #TravelShortcuts do
-                    local shortcut = TravelShortcuts[j]
-                    if shortcut:GetData() == id then
-                        if shortcut.found and shortcut:IsEnabled() then
-                            table.insert(genericSkills, {id = id})
-                        end
-                        break
-                    end
-                end
-            end
-        end
-    end
-
-    -- Combine skills: class skills first (left), then generic skills (right)
-    local skills = {}
-    for i = 1, #classSkills do
-        table.insert(skills, classSkills[i])
-    end
-    for i = 1, #genericSkills do
-        table.insert(skills, genericSkills[i])
-    end
-
-    if #skills == 0 then
-        return  -- No skills to display
-    end
+    local skills = GetNavPanelSkills()
 
     -- Calculate centered layout
-    local quickslotSize = 32
-    local spacing = 5
-    local totalWidth = (#skills * quickslotSize) + ((#skills - 1) * spacing)
-    local startX = ((self.mapWidth - (self.mapBorder * 2)) - totalWidth) / 2
-    local startY = 31  -- Below region buttons (25px tall) + 1px gap, ends at y=63 with 2px bottom padding
+    self.totalWidth = (#skills * self.colWidth) + #skills - 1
+    self.startX = ((self.mapWidth - (self.mapBorder * 2)) - self.totalWidth) / 2
+    self.startY = 31
 
     -- Create quickslots
-    local sType = Turbine.UI.Lotro.ShortcutType.Skill
     for i = 1, #skills do
         local index = #self.panelQuickslots + 1
         self.panelQuickslots[index] = Turbine.UI.Lotro.Quickslot()
 
-        local shortcut = Turbine.UI.Lotro.Shortcut(sType, skills[i].id)
-        self.panelQuickslots[index]:SetShortcut(shortcut)
+        self.panelQuickslots[index]:SetShortcut(skills[i].shortcut)
         self.panelQuickslots[index]:SetOpacity(1)
         self.panelQuickslots[index]:SetParent(self.navPanel)
         self.panelQuickslots[index]:SetMouseVisible(true)
         self.panelQuickslots[index]:SetUseOnRightClick(false)
         self.panelQuickslots[index]:SetAllowDrop(false)
         self.panelQuickslots[index]:SetStretchMode(1)
-        self.panelQuickslots[index]:SetSize(quickslotSize, quickslotSize)
+        self.panelQuickslots[index]:SetSize(self.colWidth, self.colWidth)
 
-        local posX = startX + ((i - 1) * (quickslotSize + spacing))
-        self.panelQuickslots[index]:SetPosition(posX, startY)
+        local posX = self.startX + ((i - 1) * self.colWidth)
+        self.panelQuickslots[index]:SetPosition(posX, self.startY)
         self.panelQuickslots[index]:SetZOrder(98)
         self.panelQuickslots[index]:SetVisible(true)
 

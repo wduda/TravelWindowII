@@ -281,6 +281,10 @@ function SetSettings(settingsArg, scope, importOldSettings)
         settingsArg.order = {}
     end
 
+    if not settingsArg.mapTrayOrder then
+        settingsArg.mapTrayOrder = {}
+    end
+
     -- Only set Settings.lastLoadedVersion from Account scope (account-wide behavior)
     if scope == Turbine.DataScope.Account then
         Settings.lastLoadedVersion = settingsArg.lastLoadedVersion
@@ -304,12 +308,22 @@ function SetSettings(settingsArg, scope, importOldSettings)
         LoadOrder[id] = loc
     end
 
+    LoadMapTrayOrder = {}
+    for loc, id in pairs(settingsArg.mapTrayOrder) do
+        LoadMapTrayOrder[id] = loc
+    end
+
     if scope == Turbine.DataScope.Account then
         -- settingsArg.enabled/order should keep the racial id tag
         settingsArg.enabled = TableCopy(LoadEnabled)
+
         local order = {}
         for k, v in pairs(LoadOrder) do order[v] = k end
         settingsArg.order = order
+
+        order = {}
+        for k, v in pairs(LoadMapTrayOrder) do order[v] = k end
+        settingsArg.mapTrayOrder = order
 
         -- replace racial id tag with current racial skill
         if LoadEnabled[TravelInfo.racialIDTag] ~= nil then
@@ -372,6 +386,7 @@ function SaveSettings(scope)
 
     settingsStrings.enabled = GetTravelEnabled(scope)
     settingsStrings.order = GetTravelOrder(scope)
+    settingsStrings.mapTrayOrder = GetNavPanelOrder()
 
     if scope == Turbine.DataScope.Account then
         AccountSettingsStrings = settingsStrings
@@ -384,7 +399,7 @@ end
 function ClearLoaders()
     LoadOrder = nil
     LoadEnabled = nil
-    LoadOrderNext = nil
+    LoadMapTrayOrder = nil
 end
 
 function BlockUIChange(control)
