@@ -613,11 +613,11 @@ function TravelWindow:UpdateSettings()
 end
 
 function TravelWindow:ResetSettings()
-    InitDefaultSettings();
+    InitDefaultSettings()
     for i = 1, #TravelShortcuts do
-        local shortcut = TravelShortcuts[i];
-        shortcut.Enabled = true;
-        shortcut.Index = shortcut.defaultIndex;
+        local shortcut = TravelShortcuts[i]
+        shortcut.Enabled = true
+        shortcut.Index = shortcut.defaultIndex
         shortcut.MapIndex = shortcut.defaultMapIndex
     end
     SortShortcuts(TravelShortcuts)

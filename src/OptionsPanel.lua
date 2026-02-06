@@ -523,7 +523,7 @@ function OptionsPanel:SetupGeneralTab()
         self.saveGlobal:SetText(LC.saveGlobalDefaults);
         self.saveGlobal:SetParent(self.GeneralTab);
         self.saveGlobal:SetVisible(true);
-        self.saveGlobal.Click = function(sender, args)
+        self.saveGlobal.Click = function(_, _)
             SaveSettings(Turbine.DataScope.Account);
         end
 
@@ -533,7 +533,7 @@ function OptionsPanel:SetupGeneralTab()
         self.loadGlobal:SetText(LC.loadGlobalDefaults);
         self.loadGlobal:SetParent(self.GeneralTab);
         self.loadGlobal:SetVisible(true);
-        self.loadGlobal.Click = function(sender, args)
+        self.loadGlobal.Click = function(_, _)
             SetSettings(AccountSettingsStrings, Turbine.DataScope.Account);
             for i = 1, #TravelShortcuts do
                 TravelShortcuts[i]:InitOrder();

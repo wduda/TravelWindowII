@@ -55,7 +55,7 @@ function TravelMapTab:Constructor(toplevel)
     }
 
     -- Show the menu when right clicked
-    self.MouseClick = function(sender, args)
+    self.MouseClick = function(_, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
             Menu:ShowMenu()
         end
@@ -344,7 +344,7 @@ function TravelMapTab:AddSingleShortcut(location, shortcut)
     self.quickslots[index]:SetZOrder(98)
     self.quickslots[index]:SetVisible(true)
 
-    self.quickslots[index].MouseClick = function(sender, args)
+    self.quickslots[index].MouseClick = function(_, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
             Menu:ShowMenu()
         else
@@ -405,7 +405,7 @@ function TravelMapTab:AddPanelQuickslots()
         self.panelQuickslots[index]:SetZOrder(98)
         self.panelQuickslots[index]:SetVisible(true)
 
-        self.panelQuickslots[index].MouseClick = function(sender, args)
+        self.panelQuickslots[index].MouseClick = function(_, args)
             if (args.Button == Turbine.UI.MouseButton.Right) then
                 Menu:ShowMenu()
             else
