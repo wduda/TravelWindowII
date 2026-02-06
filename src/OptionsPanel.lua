@@ -539,9 +539,10 @@ function OptionsPanel:SetupGeneralTab()
                 TravelShortcuts[i]:InitOrder();
                 TravelShortcuts[i]:InitEnabled();
             end
-            ClearLoaders();
-            SortShortcuts();
-            SyncUIFromSettings();
+            ClearLoaders()
+            SortShortcuts(TravelShortcuts)
+            SortNavPanelShortcuts()
+            SyncUIFromSettings()
         end
     end
 end
