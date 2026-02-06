@@ -317,8 +317,7 @@ function TravelMapTab:AddLocations(skills)
                 local item = skill.map[r]
                 if item ~= nil and #item == 3 and self.currentRegion == item[1] then
                     local id = skill.id
-                    -- Only add shortcut if it's enabled
-                    if IsShortcutEnabled(id) then
+                    if skill.shortcut:IsEnabled() then
                         self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id))
                     end
                 end
