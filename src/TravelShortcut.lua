@@ -7,25 +7,25 @@ local NextDefaultIndex = 1
 local NextDefaultMapIndex = 1
 
 function TravelShortcut:Constructor(sType, tType, skill)
-    Turbine.UI.Lotro.Shortcut.Constructor(self);
+    Turbine.UI.Lotro.Shortcut.Constructor(self)
 
-    self.found = false;
-    self.skill = skill;
-    self.skill.shortcut = self;
-    self.normalizedName = skill.name:lower();
-    self.normalizedLabel = self:GetLabel():lower();
+    self.found = false
+    self.skill = skill
+    self.skill.shortcut = self
+    self.normalizedName = skill.name:lower()
+    self.normalizedLabel = self:GetLabel():lower()
     self.travelType = tType;
     self.acquireText = nil
 
-    self.defaultIndex = NextDefaultIndex;
-    NextDefaultIndex = NextDefaultIndex + 1;
+    self.defaultIndex = NextDefaultIndex
+    NextDefaultIndex = NextDefaultIndex + 1
 
     self:InitOrder()
     self:InitMapTray()
     self:InitEnabled()
 
-    self:SetType(sType);
-    self:SetData(skill.id);
+    self:SetType(sType)
+    self:SetData(skill.id)
 end
 
 function TravelShortcut:InitOrder()
@@ -35,10 +35,10 @@ function TravelShortcut:InitOrder()
         return
     end
 
-    self.Index = LoadOrder[self.skill.id];
+    self.Index = LoadOrder[self.skill.id]
     if self.Index == nil then
-        self.Index = LoadOrderNext;
-        LoadOrderNext = LoadOrderNext + 1;
+        self.Index = LoadOrderNext
+        LoadOrderNext = LoadOrderNext + 1
     end
 end
 

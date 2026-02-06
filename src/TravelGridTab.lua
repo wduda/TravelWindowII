@@ -91,39 +91,25 @@ function TravelGridTab:Constructor(toplevel)
         end
     end
 
-    self.DragDrop = function(sender, args)
-        if BlockUIChange(self) then
-            return
-        end
+    self.DragDrop = function(_, args)
+        if BlockUIChange(self) then return end
 
         local shortcut = args.DragDropInfo:GetShortcut()
-        if shortcut == nil then
-            return
-        end
+        if shortcut == nil then return end
         local srcSkill = GetTravelSkill(shortcut:GetData())
-        if srcSkill == nil then
-            return
-        end
+        if srcSkill == nil then return end
         local x, y = self:GetMousePosition()
         local gridIndex = self:GetGridIndex(x, y)
         local quickslot = self.quickslots[gridIndex]
-        if quickslot == nil then
-            return
-        end
+        if quickslot == nil then return end
         shortcut = quickslot:GetShortcut()
-        if shortcut == nil then
-            return
-        end
+        if shortcut == nil then return end
         local dstSkill = GetTravelSkill(shortcut:GetData())
-        if dstSkill == nil then
-            return
-        end
+        if dstSkill == nil then return end
 
         local srcIndex = srcSkill.shortcut.Index
         local dstIndex = dstSkill.shortcut.Index
-        if srcIndex == dstIndex then
-            return
-        end
+        if srcIndex == dstIndex then return end
         if srcIndex > dstIndex then
             while dstIndex - 1 >= 1 do
                 if TravelShortcuts[dstIndex - 1].found then
@@ -261,22 +247,13 @@ function TravelGridTab:AddItem(shortcut, margin)
     if not(self.parent.dirty) then
         self.quickslots[index]:SetPosition(x, y);
     else
-        --	create new quickslots setting the position
-        --  based on the row and column locations
         self.quickslots[index] = Turbine.UI.Lotro.Quickslot();
         self.quickslots[index]:SetSize(36, 36);
         self.quickslots[index]:SetPosition(x, y);
         self.quickslots[index]:SetZOrder(90);
         self.quickslots[index]:SetUseOnRightClick(false);
         self.quickslots[index]:SetParent(self.SubWindow);
-
-        -- attempt to create the shortcut
-        pcall(function()
-            self.quickslots[index]:SetShortcut(shortcut);
-        end)
-
-        -- set all quickslots to be visible and
-        -- disable dropping new shortcuts onto them
+        self.quickslots[index]:SetShortcut(shortcut);
         self.quickslots[index]:SetAllowDrop(false);
         self.quickslots[index]:SetVisible(true);
 
