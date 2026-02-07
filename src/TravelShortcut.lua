@@ -4,39 +4,53 @@
 TravelShortcut = class(Turbine.UI.Lotro.Shortcut);
 
 local NextDefaultIndex = 1
+local NextDefaultMapIndex = 1
 
 function TravelShortcut:Constructor(sType, tType, skill)
-    Turbine.UI.Lotro.Shortcut.Constructor(self);
+    Turbine.UI.Lotro.Shortcut.Constructor(self)
 
-    self.found = false;
-    self.skill = skill;
-    self.skill.shortcut = self;
-    self.normalizedName = skill.name:lower();
-    self.normalizedLabel = self:GetLabel():lower();
+    self.found = false
+    self.skill = skill
+    self.skill.shortcut = self
+    self.normalizedName = skill.name:lower()
+    self.normalizedLabel = self:GetLabel():lower()
     self.travelType = tType;
     self.acquireText = nil
 
-    self.defaultIndex = NextDefaultIndex;
-    NextDefaultIndex = NextDefaultIndex + 1;
+    self.defaultIndex = NextDefaultIndex
+    NextDefaultIndex = NextDefaultIndex + 1
 
-    self:InitOrder();
-    self:InitEnabled();
+    self:InitOrder()
+    self:InitMapTray()
+    self:InitEnabled()
 
-    self:SetType(sType);
-    self:SetData(skill.id);
+    self:SetType(sType)
+    self:SetData(skill.id)
 end
 
 function TravelShortcut:InitOrder()
-    if LoadOrder == nil or LoadOrderNext == nil then
+    if LoadOrder == nil then
         -- error fallback
         self.Index = self.defaultIndex
         return
     end
 
-    self.Index = LoadOrder[self.skill.id];
+    self.Index = LoadOrder[self.skill.id]
     if self.Index == nil then
-        self.Index = LoadOrderNext;
-        LoadOrderNext = LoadOrderNext + 1;
+        self.Index = LoadOrderNext
+        LoadOrderNext = LoadOrderNext + 1
+    end
+end
+
+function TravelShortcut:InitMapTray()
+    self.IsMapNone = false
+    if self.skill.map and #self.skill.map > 0 then
+        local mapEntry = self.skill.map[1]
+        self.IsMapNone = mapEntry[1] == MapType.NONE
+    end
+    if self.IsMapNone then
+        self.defaultMapIndex = NextDefaultMapIndex
+        NextDefaultMapIndex = NextDefaultMapIndex + 1
     end
 end
 
@@ -215,49 +229,62 @@ end
 
 function InitShortcuts()
     -- set default values
-    TravelShortcuts = {};
+    TravelShortcuts = {}
+    NavPanelShortcuts = {}
 
     -- set the either the travel skills for free people or monsters
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         -- set the generic travel items
-        AddTravelSkills(TravelInfo.gen, 1);
+        AddTravelSkills(TravelInfo.gen, FilterId.GEN);
 
         -- add the race travel to the list
         table.insert(TravelShortcuts,
                      TravelShortcut(
                             Turbine.UI.Lotro.ShortcutType.Skill,
                             2,
-                            TravelInfo.racial));
+                            TravelInfo.racial))
 
         -- set the class travel items
-        AddTravelSkills(TravelInfo.hunter, 4);
-        AddTravelSkills(TravelInfo.warden, 4);
-        AddTravelSkills(TravelInfo.mariner, 4);
+        AddTravelSkills(TravelInfo:GetClassSkills(), FilterId.CLASS)
 
         -- set the reputation travel items
-        AddTravelSkills(TravelInfo.rep, 3);
+        AddTravelSkills(TravelInfo.rep, FilterId.REP)
+
+        AddNavPanelSkills()
     else
         -- set the creep travel items
-        AddTravelSkills(TravelInfo.creep, 3);
+        AddTravelSkills(TravelInfo.creep, FilterId.REP)
     end
 
-    ClearLoaders();
-    SortShortcuts();
-    CheckSkills();
+    ClearLoaders()
+    SortShortcuts(TravelShortcuts)
+    SortNavPanelShortcuts()
+    CheckSkills()
 end
 
 function AddTravelSkills(skills, filter)
-    if filter == 4 then
-        if TravelInfo:GetClassSkills() ~= skills then
-            filter = 8
-        end
-    end
+    if skills == nil then return end
     for i = 1, skills:GetCount() do
         table.insert(TravelShortcuts,
-                     TravelShortcut(
-                        Turbine.UI.Lotro.ShortcutType.Skill,
-                        filter,
-                        skills:Skill(i)));
+            TravelShortcut(
+                Turbine.UI.Lotro.ShortcutType.Skill,
+                filter,
+                skills:Skill(i)));
+    end
+end
+
+function AddNavPanelSkills()
+    for i = 1, #TravelShortcuts do
+        local shortcut = TravelShortcuts[i]
+        if shortcut.IsMapNone then
+            if LoadMapTrayOrder then
+                shortcut.MapIndex = LoadMapTrayOrder[shortcut.skill.id]
+            end
+            if shortcut.MapIndex == nil then
+                shortcut.MapIndex = shortcut.defaultMapIndex
+            end
+            table.insert(NavPanelShortcuts, shortcut)
+        end
     end
 end
 
@@ -269,7 +296,7 @@ function IsShortcutEnabled(id)
         end
     end
 
-    return false;
+    return false
 end
 
 function IsShortcutTrained(id)
@@ -277,13 +304,13 @@ function IsShortcutTrained(id)
         local shortcut = TravelShortcuts[i]
         if shortcut:GetData() == id then
             if shortcut.found then
-                return true;
+                return true
             end
-            return false;
+            return false
         end
     end
 
-    return false;
+    return false
 end
 
 function GetTravelOrder(scope)
@@ -295,6 +322,16 @@ function GetTravelOrder(scope)
             -- replace racial id with the racial id tag
             id = TravelInfo.racialIDTag
         end
+        table.insert(order, id)
+    end
+    return order
+end
+
+function GetNavPanelOrder()
+    local order = {}
+    for i = 1, #NavPanelShortcuts do
+        local shortcut = NavPanelShortcuts[i]
+        local id = shortcut:GetData()
         table.insert(order, id)
     end
     return order
@@ -328,10 +365,21 @@ end
 function SwapTravelSkill(first, second)
     local shortcut1 = TravelShortcuts[first]
     local shortcut2 = TravelShortcuts[second]
-    shortcut1:SetIndex(second)
-    shortcut2:SetIndex(first)
+    shortcut1.Index = second
+    shortcut2.Index = first
     TravelShortcuts[first] = shortcut2
     TravelShortcuts[second] = shortcut1
+
+    _G.travel.dirty = true
+end
+
+function SwapNavPanelSkill(first, second)
+    local shortcut1 = NavPanelShortcuts[first]
+    local shortcut2 = NavPanelShortcuts[second]
+    shortcut1.MapIndex = second
+    shortcut2.MapIndex = first
+    NavPanelShortcuts[first] = shortcut2
+    NavPanelShortcuts[second] = shortcut1
 
     _G.travel.dirty = true
 end
@@ -346,7 +394,7 @@ function SortByName()
             return false;
         end
     end
-    SortShortcuts(comp);
+    SortShortcuts(TravelShortcuts, comp)
 end
 
 function SortByLabel()
@@ -359,7 +407,7 @@ function SortByLabel()
             return false;
         end
     end
-    SortShortcuts(comp);
+    SortShortcuts(TravelShortcuts, comp)
 end
 
 function SortByLevel()
@@ -372,33 +420,33 @@ function SortByLevel()
             return false;
         end
     end
-    SortShortcuts(comp);
+    SortShortcuts(TravelShortcuts, comp)
 end
 
 function SortByDefault()
     local comp = function(a, b)
         return a.defaultIndex > b.defaultIndex
     end
-    SortShortcuts(comp);
+    SortShortcuts(TravelShortcuts, comp)
 end
 
-function SortShortcuts(comp)
+function SortShortcuts(sc, comp)
     if comp == nil then
-        -- By default TravelShortcuts are sorted by an internal index value
+        -- By default shortcuts are sorted by an internal index value
         comp = function(a, b)
             return a:GetIndex() > b:GetIndex();
         end
     end
 
     -- perform an optimized bubble sort
-    local n = #TravelShortcuts;
+    local n = #sc;
     while n > 2 do
         local new_n = 1;
         for i = 2, n do
-            if comp(TravelShortcuts[i - 1], TravelShortcuts[i]) then
-                local temp = TravelShortcuts[i - 1];
-                TravelShortcuts[i - 1] = TravelShortcuts[i];
-                TravelShortcuts[i] = temp;
+            if comp(sc[i - 1], sc[i]) then
+                local temp = sc[i - 1];
+                sc[i - 1] = sc[i];
+                sc[i] = temp;
                 new_n = i;
             end
         end
@@ -406,9 +454,16 @@ function SortShortcuts(comp)
     end
 
     -- cleanup internal Index values to be sequential
-    for i = 1, #TravelShortcuts do
-        TravelShortcuts[i].Index = i;
+    for i = 1, #sc do
+        sc[i].Index = i;
     end
+end
+
+function SortNavPanelShortcuts()
+    local comp = function(a, b)
+        return a.MapIndex > b.MapIndex
+    end
+    SortShortcuts(NavPanelShortcuts, comp)
 end
 
 function CheckSkills()
@@ -416,7 +471,7 @@ function CheckSkills()
     local newShortcut = false
     for i = 1, #TravelShortcuts do
         local shortcut = TravelShortcuts[i]
-        if not shortcut.found and shortcut:GetTravelType() ~= 8 then
+        if not shortcut.found then
             if FindSkill(shortcut) then
                 newShortcut = true
             end
@@ -466,10 +521,9 @@ function CheckSkill(name)
     end
 
     -- loop through all the shortcuts and match against skills
-    local newShortcut = false
     for i = 1, #TravelShortcuts do
         local shortcut = TravelShortcuts[i]
-        if not shortcut.found and shortcut:GetTravelType() ~= 8 then
+        if not shortcut.found then
             for j = 1, #skills do
                 if MatchSkillInfo(skills[j], shortcut) then
                     if NewShortcutEvent then

@@ -101,6 +101,7 @@ function TravelWindow:Constructor()
     self.MainPanel:SetTab(Settings.mode);
     self:SetInitialPosition()
     self.GridTab:SetAllowDrop(true)
+    self.MapTab:SetAllowDrop(true)
     self:SetItems();
     self:UpdateMinimum();
     -- Map view always uses max opacity
@@ -612,14 +613,16 @@ function TravelWindow:UpdateSettings()
 end
 
 function TravelWindow:ResetSettings()
-    InitDefaultSettings();
+    InitDefaultSettings()
     for i = 1, #TravelShortcuts do
-        local shortcut = TravelShortcuts[i];
-        shortcut.Enabled = true;
-        shortcut.Index = shortcut.defaultIndex;
+        local shortcut = TravelShortcuts[i]
+        shortcut.Enabled = true
+        shortcut.Index = shortcut.defaultIndex
+        shortcut.MapIndex = shortcut.defaultMapIndex
     end
-    SortShortcuts();
-    SyncUIFromSettings();
+    SortShortcuts(TravelShortcuts)
+    SortNavPanelShortcuts()
+    SyncUIFromSettings()
 end
 
 function SyncUIFromSettings()

@@ -523,7 +523,7 @@ function OptionsPanel:SetupGeneralTab()
         self.saveGlobal:SetText(LC.saveGlobalDefaults);
         self.saveGlobal:SetParent(self.GeneralTab);
         self.saveGlobal:SetVisible(true);
-        self.saveGlobal.Click = function(sender, args)
+        self.saveGlobal.Click = function(_, _)
             SaveSettings(Turbine.DataScope.Account);
         end
 
@@ -533,15 +533,16 @@ function OptionsPanel:SetupGeneralTab()
         self.loadGlobal:SetText(LC.loadGlobalDefaults);
         self.loadGlobal:SetParent(self.GeneralTab);
         self.loadGlobal:SetVisible(true);
-        self.loadGlobal.Click = function(sender, args)
+        self.loadGlobal.Click = function(_, _)
             SetSettings(AccountSettingsStrings, Turbine.DataScope.Account);
             for i = 1, #TravelShortcuts do
                 TravelShortcuts[i]:InitOrder();
                 TravelShortcuts[i]:InitEnabled();
             end
-            ClearLoaders();
-            SortShortcuts();
-            SyncUIFromSettings();
+            ClearLoaders()
+            SortShortcuts(TravelShortcuts)
+            SortNavPanelShortcuts()
+            SyncUIFromSettings()
         end
     end
 end
@@ -750,26 +751,24 @@ function OptionsPanel:AddSortList()
 
     -- create a label to add to the listbox for each shortcut
     for _, shortcut in pairs(TravelShortcuts) do
-        if shortcut:GetTravelType() ~= 8 then
-            local tempLabel = Turbine.UI.Label();
-            tempLabel:SetText(shortcut:GetLabel());
-            tempLabel:SetSize(sortListWidth, 20);
-            tempLabel:SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
-            tempLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
-            tempLabel:SetZOrder(90);
-            tempLabel.shortcut = shortcut;
+        local tempLabel = Turbine.UI.Label();
+        tempLabel:SetText(shortcut:GetLabel());
+        tempLabel:SetSize(sortListWidth, 20);
+        tempLabel:SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
+        tempLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
+        tempLabel:SetZOrder(90);
+        tempLabel.shortcut = shortcut;
 
-            -- highlight the item that is selected by changing the colour of the
-            -- the label when it is clicked
-            tempLabel.MouseClick = function(sender, args)
-                self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
-                sender:SetBackColor(Turbine.UI.Color(0.95, 0.1, 0.1, 0.6));
-                self.sortSelectedIndex = self.sortListBox:IndexOfItem(sender);
-            end
-
-            -- add the item to the list box
-            self.sortListBox:AddItem(tempLabel);
+        -- highlight the item that is selected by changing the colour of the
+        -- the label when it is clicked
+        tempLabel.MouseClick = function(sender, args)
+            self.sortListBox:GetItem(self.sortSelectedIndex):SetBackColor(Turbine.UI.Color(DefAlpha, 0.1, 0.1, 0.1));
+            sender:SetBackColor(Turbine.UI.Color(0.95, 0.1, 0.1, 0.6));
+            self.sortSelectedIndex = self.sortListBox:IndexOfItem(sender);
         end
+
+        -- add the item to the list box
+        self.sortListBox:AddItem(tempLabel);
     end
 
     -- set the first item as selected
@@ -1005,7 +1004,7 @@ function OptionsPanel:AddFindTreeShortcuts()
     root:Clear()
     for i = 1, #TravelShortcuts do
         local shortcut = TravelShortcuts[i]
-        if not shortcut.found and shortcut:GetTravelType() ~= 8 then
+        if not shortcut.found then
             local hasTop = shortcut.skill.acquire ~= nil
             local node = FindTreeNode(width - 20, shortcut:GetLabel(), hasTop)
             root:Add(node)

@@ -9,13 +9,6 @@ function SettingsMenu:Constructor(parentWindow)
 
     self.parent = parentWindow
 
-    FilterId = {
-        GEN = 1,
-        RACE = 2,
-        REP = 3,
-        CLASS = 4,
-    }
-
     -- create the filter sub menu
     Filters = TravelWindowII.src.extensions.DMenuList(LC.menuFilters)
     self.filterGen = Turbine.UI.MenuItem(LC.menuGen)
