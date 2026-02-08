@@ -321,9 +321,7 @@ function SetSettings(settingsArg, scope, importOldSettings)
         for k, v in pairs(LoadOrder) do order[v] = k end
         settingsArg.order = order
 
-        order = {}
-        for k, v in pairs(LoadMapTrayOrder) do order[v] = k end
-        settingsArg.mapTrayOrder = order
+        settingsArg.mapTrayOrder = nil
 
         -- replace racial id tag with current racial skill
         if LoadEnabled[TravelInfo.racialIDTag] ~= nil then
@@ -386,7 +384,11 @@ function SaveSettings(scope)
 
     settingsStrings.enabled = GetTravelEnabled(scope)
     settingsStrings.order = GetTravelOrder(scope)
-    settingsStrings.mapTrayOrder = GetNavPanelOrder()
+    if scope == Turbine.DataScope.Character then
+        settingsStrings.mapTrayOrder = GetNavPanelOrder()
+    else
+        settingsStrings.mapTrayOrder = nil
+    end
 
     if scope == Turbine.DataScope.Account then
         AccountSettingsStrings = settingsStrings

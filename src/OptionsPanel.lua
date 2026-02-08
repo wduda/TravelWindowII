@@ -541,7 +541,6 @@ function OptionsPanel:SetupGeneralTab()
             end
             ClearLoaders()
             SortShortcuts(TravelShortcuts)
-            SortNavPanelShortcuts()
             SyncUIFromSettings()
         end
     end
