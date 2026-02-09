@@ -44,11 +44,21 @@ end
 
 function TravelShortcut:InitMapTray()
     self.IsMapNone = false
+    self.IsAllegiance = false
     if self.skill.map and #self.skill.map > 0 then
         local mapEntry = self.skill.map[1]
         self.IsMapNone = mapEntry[1] == MapType.NONE
     end
-    if self.IsMapNone then
+
+    local acquireList = self.skill.acquire
+    for i = 1, #acquireList do
+        local item = acquireList[i]
+        if item.allegiance ~= nil then
+            self.IsAllegiance = true
+        end
+    end
+
+    if self.IsMapNone or self.IsAllegiance then
         self.defaultMapIndex = NextDefaultMapIndex
         NextDefaultMapIndex = NextDefaultMapIndex + 1
     end
@@ -276,7 +286,7 @@ end
 function AddNavPanelSkills()
     for i = 1, #TravelShortcuts do
         local shortcut = TravelShortcuts[i]
-        if shortcut.IsMapNone then
+        if shortcut.IsMapNone or shortcut.IsAllegiance then
             if LoadMapTrayOrder then
                 shortcut.MapIndex = LoadMapTrayOrder[shortcut.skill.id]
             end
