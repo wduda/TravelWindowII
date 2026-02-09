@@ -74,6 +74,32 @@ function IndexedDictionary:SetSkillLabels()
     end
 end
 
+function IndexedDictionary:SelectLCText(item)
+    if item == nil then return end
+    local langs = {
+        {name="DE", lc=Turbine.Language.German},
+        {name="FR", lc=Turbine.Language.French},
+        {name="RU", lc=Turbine.Language.Russian},
+        {name="EN", lc=nil}} -- unknown language types default to english
+    for i = 1, #langs do
+        local lang = langs[i]
+        if lang.lc == nil or lang.lc == GLocale then
+            local lcItem = item[lang.name]
+            if type(lcItem) == "table" then
+                -- only move localization values into 'item'
+                for k, v in pairs(lcItem) do item[k] = v end
+                -- done with localization data, remove it
+                item.EN = nil
+                item.DE = nil
+                item.FR = nil
+                item.RU = nil
+                return item
+            end
+            return lcItem
+        end
+    end
+end
+
 function IndexedDictionary:VerifySkill(skill)
     if skill.id == nil then
         Turbine.Shell.WriteLine("Skill missing id")
@@ -88,31 +114,13 @@ function IndexedDictionary:VerifySkill(skill)
         end
     end
 
-    if skill.EN == nil or
-            skill.DE == nil or
-            skill.FR == nil or
-            skill.RU == nil then
-        Turbine.Shell.WriteLine("Skill missing language " .. skill.id)
-    end
+    local prevSkillTag = skill.tag
+    self:SelectLCText(skill)
 
-    local lang;
-    if GLocale == Turbine.Language.German then
-        lang = skill.DE
-    elseif GLocale == Turbine.Language.French then
-        lang = skill.FR
-    elseif GLocale == Turbine.Language.Russian then
-        lang = skill.RU
-    else
-        lang = skill.EN
-    end
-    skill.name = lang.name
-    skill.desc = lang.desc
-    skill.detail = lang.detail
-    skill.zlabel = lang.zlabel
-    skill.label0 = lang.label
-    skill.zone = lang.zone
-    if skill.tag == nil then
-        skill.tag = lang.tag
+    skill.label0 = skill.label
+    skill.label = nil
+    if prevSkillTag ~= nil then
+        skill.tag = prevSkillTag
     end
 
     if skill.name == nil then
@@ -135,6 +143,13 @@ function IndexedDictionary:VerifySkill(skill)
         Turbine.Shell.WriteLine(skill.name .. "(" .. skill.id .. ") coords not set")
     end
 
+    if skill.acquire ~= nil then
+        local items = skill.acquire
+        for i = 1, #items do
+            self:SelectLCText(items[i])
+        end
+    end
+
     return true
 end
 
@@ -142,15 +157,7 @@ function IndexedDictionary:AddLabelTag(tag)
     if tag.EN == nil or tag.DE == nil or tag.FR == nil or tag.RU == nil then
         return
     end
-    if GLocale == Turbine.Language.German then
-        self.tag = tag.DE
-    elseif GLocale == Turbine.Language.French then
-        self.tag = tag.FR
-    elseif GLocale == Turbine.Language.Russian then
-        self.tag = tag.RU
-    else
-        self.tag = tag.EN
-    end
+    self.tag = self:SelectLCText(tag)
 end
 
 function IndexedDictionary:AddSkill(skill)
