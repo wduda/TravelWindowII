@@ -97,6 +97,25 @@ function TravelCommand:Execute(command, arguments)
                 _G.update = nil
             end
         )
+    elseif (arguments == "testmode on") then
+        Settings.testMode = 1
+        SaveSettings()
+        Turbine.Shell.WriteLine("<rgb=#99FF99>Test mode ENABLED.</rgb>")
+        Turbine.Shell.WriteLine("Use <rgb=#FFFF99>/plugins refresh</rgb> to reload the plugin with tests.")
+    elseif (arguments == "testmode off") then
+        Settings.testMode = 0
+        SaveSettings()
+        Turbine.Shell.WriteLine("<rgb=#FF9999>Test mode DISABLED.</rgb>")
+        Turbine.Shell.WriteLine("Tests will not load on next plugin reload.")
+    elseif (arguments == "testmode") then
+        local status = Settings.testMode == 1 and "<rgb=#99FF99>enabled</rgb>" or "<rgb=#FF9999>disabled</rgb>"
+        Turbine.Shell.WriteLine("Test mode is currently " .. status)
+    elseif (arguments == "runalltests") then
+        if Settings.testMode == 1 then
+            TravelWindowII.src.TestRunner.RunAllTests()
+        else
+            Turbine.Shell.WriteLine("<rgb=#FFFF99>Test mode is not enabled. Use '/travel testmode on' first.</rgb>")
+        end
     elseif (arguments ~= nil) then
         TravelCommand:GetHelp()
     end
@@ -104,6 +123,13 @@ end
 
 function TravelCommand:GetHelp()
     Turbine.Shell.WriteLine(LC.help)
+    if Settings and Settings.testMode == 1 then
+        Turbine.Shell.WriteLine("")
+        Turbine.Shell.WriteLine("<rgb=#AAAAFF>Testing Commands (test mode enabled):</rgb>")
+        Turbine.Shell.WriteLine("  /travel testmode [on|off] - Enable/disable test mode")
+        Turbine.Shell.WriteLine("  /travel runalltests - Run all unit tests")
+        Turbine.Shell.WriteLine("  /unittest <testname> - Run specific test (e.g., TravelTests, extTest)")
+    end
 end
 
 -- add the command to the shell

@@ -18,4 +18,9 @@ import "TravelWindowII.src.SettingsMenu"
 import "TravelWindowII.src.OptionsPanel"
 import "TravelWindowII.src.ChangelogData"
 import "TravelWindowII.src.UpdateNotificationWindow"
--- import "TravelWindowII.src.TravelTests";
+
+-- Load tests if test mode is enabled
+if Settings and Settings.testMode == 1 then
+    import "TravelWindowII.src.TravelTests"
+    import "TravelWindowII.src.TestRunner"
+end

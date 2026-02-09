@@ -130,6 +130,7 @@ function CreateSettingsConfig()
     AddSettingConfig("fadeOutDelay", 0)
     AddSettingConfig("toggleMaxOpacity", 1)
     AddSettingConfig("toggleMinOpacity", 0.5)
+    AddSettingConfig("testMode", 0)  -- 0 = disabled, 1 = enabled
 end
 
 function LoadSettings()
