@@ -136,7 +136,6 @@ function TravelShortcut:GetAcquireText()
         end
         local items = self.skill.acquire
         for i = 1, #items do
-            self:SelectLCText(items[i])
             if items[i].zone == nil then
                 items[i].zone = self.skill.zone
             end
@@ -148,30 +147,6 @@ function TravelShortcut:GetAcquireText()
         end
     end
     return self.acquireText
-end
-
-function TravelShortcut:SelectLCText(item)
-    local langs = {
-        {name="DE", lc=Turbine.Language.German},
-        {name="FR", lc=Turbine.Language.French},
-        {name="RU", lc=Turbine.Language.Russian},
-        {name="EN", lc=nil}} -- unknown language types default to english
-    for i = 1, #langs do
-        local lang = langs[i]
-        if lang.lc == nil or lang.lc == GLocale then
-            local lcItem = item[lang.name]
-            if lcItem and type(lcItem) == "table" then
-                -- only move localization values into 'item' if it is available
-                for k, v in pairs(lcItem) do item[k] = v end
-            end
-            -- done with localization data, remove it
-            item.EN = nil
-            item.DE = nil
-            item.FR = nil
-            item.RU = nil
-            return
-        end
-    end
 end
 
 function TravelShortcut:GetVendorText(item)
