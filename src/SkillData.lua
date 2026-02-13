@@ -322,7 +322,7 @@ function TravelDictionary:CreateDictionaries()
         DE={name="Führer in das westliche Angmar", label="West-Angmar", detail="Aughaire", zone="Angmar"},
         FR={name="Guide vers l'ouest d'Angmar", label="Angmar ouest", detail="Aughaire", zone="Angmar"},
         RU={name="Путь в западный Ангмар", label="Западный Ангмар", detail="Огайр", zone="Ангмар"},
-        map={{MapType.ERIADOR, 825, 185}},
+        map={{MapType.ERIADOR, 705, 180}},
         acquire={
             {
                 EN={quest="Hunter: Desolation by Aughaire"},
@@ -343,7 +343,7 @@ function TravelDictionary:CreateDictionaries()
         DE={name="Führer nach Ost-Angmar", label="East-Angmar", detail="Gath Forthnír", zone="Angmar"},
         FR={name="Guide vers l'est d'Angmar", label="Angmar est", detail="Gath Forthnír", zone="Angmar"},
         RU={name="Путь в восточный Ангмар", label="Восточный Ангмар", detail="Гат Фортнир", zone="Ангмар"},
-        map={{MapType.ERIADOR, 705, 180}},
+        map={{MapType.ERIADOR, 825, 185}},
         acquire={
             {
                 EN={quest="Hunter: Waste Near Gath Forthnir"},
