@@ -2,7 +2,7 @@
 
 ## workflow
 
-for every new task I provide, go into plan mode, and once planned start a new branch, commit the plan into an .md file in the `plans` folder, named with the date in ISO 8601 format and an abbreviated description of the feature
+for every new task I provide, go into plan mode, prepare a plan without executing, start a new branch based on main, checkout that branch, commit the plan into an .md file in the `plans` folder, named with the date in ISO 8601 format and an abbreviated description of the feature
 
 ## skills
 
