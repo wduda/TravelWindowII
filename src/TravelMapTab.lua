@@ -75,7 +75,7 @@ function TravelMapTab:Constructor(toplevel)
         self.navPanel = Turbine.UI.Control()
         self.navPanel:SetParent(self)
         self.navPanel:SetSize(self.mapWidth - (self.mapBorder * 2), self.navPanelHeight)
-        self.navPanel:SetBackColor(Turbine.UI.Color(0.8, 0, 0, 0))
+        self.navPanel:SetBackColor(Turbine.UI.Color(1, 0, 0, 0))
         self.navPanel:SetZOrder(99)
         self.navPanel:SetPosition(self.mapBorder, self.mapHeight + self.mapBorder)  -- Position below the map with border
         self.navPanel.MouseClick = self.MouseClick
