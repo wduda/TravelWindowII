@@ -1,8 +1,12 @@
 # Instructions
 
+## workflow
+
+for every new task I provide, go into plan mode, and once planned start a new branch, commit the plan into an .md file in the `plans` folder, named with the date in ISO 8601 format and an abbreviated description of the feature
+
 ## skills
 
-I want to use the skills found in the `.skills` directory.
+use the skills found in the `.skills` directory
 
 use the lotro-plugins-development-skill skill for work on the main project
 use the git-commit skill for preparing git commit
