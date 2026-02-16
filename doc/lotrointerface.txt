@@ -37,17 +37,10 @@ Use the mousewheel while hovering over the travel skill icon to change the selec
 
 Version history:
 
-v4.3.0
+v4.3.1
 
-- feat: Shortcuts at the bottom of the Map View can be now sorted through drag and drop, the sort order is saved per character
-- feat: The "Gondor" region name in Map View updated to "Gondor/Mordor" for clarity
-- feat: Several travel destination vendors (Aralath, Lumgâna, Alahamâr, Semanísi) added as alternative purchase sources for relevant skills
-- feat: Corrected reputation requirements for some teleports to match actual in-game unlock requirements (U46.1 changes)
-- feat: Navigation panel in Map View height increased from 65px to 68px for better spacing and icon visibility
-- feat: Removed the filter in the enable tab, allowing all trained shortcuts to appear in the sort list regardless of type
-- feat: Allegiance skills will now show in the navigation panel of the map view
-- feat: several changes to underlying code making it more extensible and robust
-- fix:  fixed map location coordinates for West Angmar and East Angmar travel points
+- fix: hiding overlapping skills fixed for Dun Shuma, Galterv and Utug-Bur
+- fix: navigation panel in map view now has the same transparency as the rest of the window in all scenarios
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
 

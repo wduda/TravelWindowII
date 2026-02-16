@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v4.3.1
+
+- fix: hiding overlapping skills fixed for Dun Shuma, Galterv and Utug-Bur
+- fix: navigation panel in map view now has the same transparency as the rest of the window in all scenarios
+
 ## v4.3.0
 
 - feat: Shortcuts at the bottom of the Map View can be now sorted through drag and drop, the sort order is saved per character
