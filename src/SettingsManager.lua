@@ -98,17 +98,21 @@ end
 function CreateSettingsConfig()
     SettingsConfig = {}
 
+    -- Default main window position to the bottom right
+    AddSettingConfig("positionRelativeX", 0.75)
+    AddSettingConfig("positionRelativeY", 0.75)
+    -- Default MAP mode window position to the center
+    AddSettingConfig("mapPositionRelativeX", 0.25)
+    AddSettingConfig("mapPositionRelativeY", 0.05)
+    -- Default travel button position to the bottom left
+    AddSettingConfig("buttonRelativeX", 0.95)
+    AddSettingConfig("buttonRelativeY", 0.75)
+
     AddSettingConfig("gridCols", 0)
     AddSettingConfig("gridRows", 0)
     AddSettingConfig("listWidth", 0)
     AddSettingConfig("listRows", 0)
     AddSettingConfig("pullWidth", 0)
-    AddSettingConfig("positionRelativeX", 0.75)
-    AddSettingConfig("positionRelativeY", 0.75)
-    AddSettingConfig("mapPositionRelativeX", 0.5)  -- Default to center for MAP mode
-    AddSettingConfig("mapPositionRelativeY", 0.5)  -- Default to center for MAP mode
-    AddSettingConfig("buttonRelativeX", 0.95)
-    AddSettingConfig("buttonRelativeY", 0.75)
     AddSettingConfig("useMinWindow", 0)
     AddSettingConfig("hideOnStart", 0)
     AddSettingConfig("hideOnCombat", 0)
