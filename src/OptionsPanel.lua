@@ -66,7 +66,7 @@ function OptionsPanel:Constructor()
 
     -- set size of window
     self.width = 800;
-    self.height = 840;
+    self.height = 920;
     self.windowWidth, self.windowHeight = Turbine.UI.Display:GetSize();
     if self.height + 40 > self.windowHeight then
         self.height = self.windowHeight - 20;
@@ -253,6 +253,142 @@ function OptionsPanel:AddSliderOption(name, min, max, x, spacerY, change)
     self.options[name]:UpdateOption()
 end
 
+function OptionsPanel:AddTravelButtonAppearanceOptions()
+    local sectionY = self:NextY(30)
+
+    self.buttonIconLabel = Turbine.UI.Label()
+    self.buttonIconLabel:SetParent(self.GeneralTab)
+    self.buttonIconLabel:SetPosition(20, sectionY)
+    self.buttonIconLabel:SetSize(self.labelWidth, 20)
+    self.buttonIconLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+    self.buttonIconLabel:SetText(LC.buttonIcon)
+
+    self.updatingButtonIconRadios = false
+    self.buttonIconRadioButtons = {}
+
+    local radioX = 180
+    local radioSpacing = 80
+
+    for index, config in ipairs(TravelButtonIconOptions) do
+        local radio = Turbine.UI.Lotro.CheckBox()
+        radio:SetParent(self.GeneralTab)
+        radio:SetPosition(radioX + ((index - 1) * radioSpacing), sectionY)
+        radio:SetSize(110, 20)
+        radio:SetText(LC[config.labelKey])
+        radio:SetCheckAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+        radio.iconValue = config.id
+
+        radio.CheckedChangedFunc = function(sender, args)
+            if self.updatingButtonIconRadios then
+                return
+            end
+
+            if sender:IsChecked() then
+                Settings.buttonIconStyle = sender.iconValue
+
+                self.updatingButtonIconRadios = true
+                for _, otherRadio in ipairs(self.buttonIconRadioButtons) do
+                    if otherRadio ~= sender then
+                        otherRadio:SetChecked(false)
+                    end
+                end
+                self.updatingButtonIconRadios = false
+
+                if ToggleButton ~= nil then
+                    ToggleButton:ApplyAppearance()
+                end
+                if Menu ~= nil then
+                    Menu:SetSelections()
+                end
+            else
+                self.updatingButtonIconRadios = true
+                sender:SetChecked(true)
+                self.updatingButtonIconRadios = false
+            end
+        end
+
+        radio.UpdateOption = function()
+            local selectedIconId = GetTravelButtonIconOption(Settings.buttonIconStyle).id
+            self.updatingButtonIconRadios = true
+            radio:SetChecked(selectedIconId == radio.iconValue)
+            self.updatingButtonIconRadios = false
+        end
+        radio:UpdateOption()
+
+        self.buttonIconRadioButtons[index] = radio
+        self.options["buttonIcon" .. config.id] = radio
+    end
+
+    local sizeLabelY = self:NextY(35)
+    self.buttonSizeLabel = Turbine.UI.Label()
+    self.buttonSizeLabel:SetParent(self.GeneralTab)
+    self.buttonSizeLabel:SetPosition(20, sizeLabelY)
+    self.buttonSizeLabel:SetSize(self.labelWidth, 20)
+    self.buttonSizeLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+    self.buttonSizeLabel:SetText(LC.buttonSize)
+
+    self.updatingButtonSizeRadios = false
+    self.buttonSizeRadioButtons = {}
+
+    local sizeRadioX = 180
+    local sizeRadioSpacing = 80
+
+    for index, config in ipairs(TravelButtonSizeOptions) do
+        local radio = Turbine.UI.Lotro.CheckBox()
+        radio:SetParent(self.GeneralTab)
+        radio:SetPosition(sizeRadioX + ((index - 1) * sizeRadioSpacing), sizeLabelY)
+        radio:SetSize(80, 20)
+        radio:SetText(LC[config.labelKey])
+        radio:SetCheckAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+        radio.sizeValue = config.value
+
+        radio.CheckedChangedFunc = function(sender, args)
+            if self.updatingButtonSizeRadios then
+                return
+            end
+
+            if sender:IsChecked() then
+                Settings.buttonSize = sender.sizeValue
+
+                self.updatingButtonSizeRadios = true
+                for _, otherRadio in ipairs(self.buttonSizeRadioButtons) do
+                    if otherRadio ~= sender then
+                        otherRadio:SetChecked(false)
+                    end
+                end
+                self.updatingButtonSizeRadios = false
+
+                if ToggleButton ~= nil then
+                    ToggleButton:ApplyAppearance()
+                end
+                if Menu ~= nil then
+                    Menu:SetSelections()
+                end
+            else
+                self.updatingButtonSizeRadios = true
+                sender:SetChecked(true)
+                self.updatingButtonSizeRadios = false
+            end
+        end
+
+        radio.UpdateOption = function()
+            local selectedSizeValue = GetTravelButtonSizeOption(Settings.buttonSize).value
+            self.updatingButtonSizeRadios = true
+            radio:SetChecked(selectedSizeValue == radio.sizeValue)
+            self.updatingButtonSizeRadios = false
+        end
+        radio:UpdateOption()
+
+        self.buttonSizeRadioButtons[index] = radio
+        self.options["buttonSize" .. config.value] = radio
+    end
+
+end
+
+function OptionsPanel:UpdateButtonAppearancePreview()
+    return
+end
+
 function OptionsPanel:SetupGeneralTab()
     self.optionHeight = 0
     self.options = {}
@@ -375,6 +511,7 @@ function OptionsPanel:SetupGeneralTab()
             end
             ToggleButton:SetVisible(sender:IsChecked())
         end)
+    self:AddTravelButtonAppearanceOptions()
     self:AddCheckBoxOption("pulldownTravel", 20, 30)
     self:AddCheckBoxOption("useZoneNames", 20, 30,
         function(sender, args)
@@ -505,10 +642,12 @@ function OptionsPanel:SetupGeneralTab()
         end
     end
 
+    local bottomButtonY = self:NextY(50)
+
     -- reset all setting button
     self.resetButton = Turbine.UI.Lotro.Button();
     self.resetButton:SetSize(220, 20);
-    self.resetButton:SetPosition(20, 690);
+    self.resetButton:SetPosition(20, bottomButtonY);
     self.resetButton:SetText(LC.resetSettings);
     self.resetButton:SetParent(self.GeneralTab);
     self.resetButton:SetVisible(true);
@@ -519,7 +658,7 @@ function OptionsPanel:SetupGeneralTab()
     if (PlayerAlignment == Turbine.Gameplay.Alignment.FreePeople) then
         self.saveGlobal = Turbine.UI.Lotro.Button();
         self.saveGlobal:SetSize(220, 20);
-        self.saveGlobal:SetPosition(250, 690);
+        self.saveGlobal:SetPosition(250, bottomButtonY);
         self.saveGlobal:SetText(LC.saveGlobalDefaults);
         self.saveGlobal:SetParent(self.GeneralTab);
         self.saveGlobal:SetVisible(true);
@@ -529,7 +668,7 @@ function OptionsPanel:SetupGeneralTab()
 
         self.loadGlobal = Turbine.UI.Lotro.Button();
         self.loadGlobal:SetSize(220, 20);
-        self.loadGlobal:SetPosition(480, 690);
+        self.loadGlobal:SetPosition(480, bottomButtonY);
         self.loadGlobal:SetText(LC.loadGlobalDefaults);
         self.loadGlobal:SetParent(self.GeneralTab);
         self.loadGlobal:SetVisible(true);
@@ -550,6 +689,7 @@ function OptionsPanel:UpdateOptions()
     for _, v in pairs(self.options) do
         v:UpdateOption()
     end
+    self:UpdateButtonAppearancePreview()
 end
 
 function OptionsPanel:AddEnabledSection(skills)

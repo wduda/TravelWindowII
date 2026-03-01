@@ -9,121 +9,191 @@ function SettingsMenu:Constructor(parentWindow)
 
     self.parent = parentWindow
 
-    -- create the filter sub menu
     Filters = TravelWindowII.src.extensions.DMenuList(LC.menuFilters)
     self.filterGen = Turbine.UI.MenuItem(LC.menuGen)
     self.filterRace = Turbine.UI.MenuItem(LC.menuRace)
     self.filterRep = Turbine.UI.MenuItem(LC.menuRep)
     self.filterClass = Turbine.UI.MenuItem(LC.menuClass)
-    FilterItems = Filters:GetItems()
-    FilterItems:Add(self.filterGen)
-    FilterItems:Add(self.filterRace)
-    FilterItems:Add(self.filterRep)
-    FilterItems:Add(self.filterClass)
+    local filterItems = Filters:GetItems()
+    filterItems:Add(self.filterGen)
+    filterItems:Add(self.filterRace)
+    filterItems:Add(self.filterRep)
+    filterItems:Add(self.filterClass)
 
-    -- create the mode sub menu
     Mode = TravelWindowII.src.extensions.DMenuList(LC.menuMode)
     self.menuList = Turbine.UI.MenuItem(LC.menuText)
     self.menuGrid = Turbine.UI.MenuItem(LC.menuIcon)
     self.menuCaro = Turbine.UI.MenuItem(LC.menuCaro)
     self.menuPull = Turbine.UI.MenuItem(LC.menuPull)
-    self.menuMap = Turbine.UI.MenuItem(LC.menuMap)
-    local ModeItems = Mode:GetItems()
-    ModeItems:Add(self.menuList)
-    ModeItems:Add(self.menuGrid)
-    ModeItems:Add(self.menuCaro)
-    ModeItems:Add(self.menuPull)
-    ModeItems:Add(self.menuMap)
+    self.menuMap  = Turbine.UI.MenuItem(LC.menuMap)
+    local modeItems = Mode:GetItems()
+    modeItems:Add(self.menuList)
+    modeItems:Add(self.menuGrid)
+    modeItems:Add(self.menuCaro)
+    modeItems:Add(self.menuPull)
+    modeItems:Add(self.menuMap)
 
-    -- create the menu item to open the options window
-    OptionsMenu = TravelWindowII.src.extensions.DMenuList(LC.menuOptions);
+    ButtonMenu = TravelWindowII.src.extensions.DMenuList(LC.menuButton)
+    self.menuButtonIcon = TravelWindowII.src.extensions.DMenuList(LC.menuButtonIcon)
+    self.menuButtonSize = TravelWindowII.src.extensions.DMenuList(LC.menuButtonSize)
+    self.menuOptions = Turbine.UI.MenuItem(LC.menuOptions)
 
-    -- add everything to the main menu
-    MenuItems = self:GetItems();
+    self.buttonIconDefault = Turbine.UI.MenuItem(LC.buttonIconDefault)
+    self.buttonIconBoots = Turbine.UI.MenuItem(LC.buttonIconBoots)
+    self.buttonIconBackpack = Turbine.UI.MenuItem(LC.buttonIconBackpack)
+    self.buttonIconHorse = Turbine.UI.MenuItem(LC.buttonIconHorse)
+    self.buttonSize100 = Turbine.UI.MenuItem(LC.buttonSize100)
+    self.buttonSize150 = Turbine.UI.MenuItem(LC.buttonSize150)
+    self.buttonSize200 = Turbine.UI.MenuItem(LC.buttonSize200)
+
+    local buttonMenuItems = ButtonMenu:GetItems()
+    buttonMenuItems:Add(self.menuButtonIcon)
+    buttonMenuItems:Add(self.menuButtonSize)
+
+    local buttonIconItems = self.menuButtonIcon:GetItems()
+    buttonIconItems:Add(self.buttonIconDefault)
+    buttonIconItems:Add(self.buttonIconBoots)
+    buttonIconItems:Add(self.buttonIconBackpack)
+    buttonIconItems:Add(self.buttonIconHorse)
+
+    local buttonSizeItems = self.menuButtonSize:GetItems()
+    buttonSizeItems:Add(self.buttonSize100)
+    buttonSizeItems:Add(self.buttonSize150)
+    buttonSizeItems:Add(self.buttonSize200)
+
+    MenuItems = self:GetItems()
     if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
-        MenuItems:Add(Mode);
-        MenuItems:Add(OptionsMenu);
+        MenuItems:Add(Mode)
+        MenuItems:Add(ButtonMenu)
+        MenuItems:Add(self.menuOptions)
     else
-        MenuItems:Add(Filters);
-        MenuItems:Add(Mode);
-        MenuItems:Add(OptionsMenu);
+        MenuItems:Add(Filters)
+        MenuItems:Add(Mode)
+        MenuItems:Add(ButtonMenu)
+        MenuItems:Add(self.menuOptions)
     end
 
-    -- set up the event handler
-    local startConnect = 2;
-    if PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer then
-        startConnect = 1;
-    end
-    -- loop through top level of menu
-    for i = 1, MenuItems:GetCount(), 1 do
-        local topItem = MenuItems:Get(i);
-        if topItem:GetCount() > 0 then
-            -- loop through the sub menu
-            for j = 1, topItem:GetCount(), 1 do
-                local menuItem = topItem:Get(j);
+    self.filterGen.action = "toggleFilter"
+    self.filterGen.value = FilterId.GEN
+    self.filterRace.action = "toggleFilter"
+    self.filterRace.value = FilterId.RACE
+    self.filterRep.action = "toggleFilter"
+    self.filterRep.value = FilterId.REP
+    self.filterClass.action = "toggleFilter"
+    self.filterClass.value = FilterId.CLASS
 
-                -- set the function to handle the event
-                menuItem.Click = function(sender, args)
-                    self:Update(sender:GetText());
-                end
-            end
-        elseif i > startConnect then
-            topItem.Click = function(sender, args)
-                self:Update(sender:GetText());
-            end
+    self.menuList.action = "setMode"
+    self.menuList.value = TabId.LIST
+    self.menuGrid.action = "setMode"
+    self.menuGrid.value = TabId.GRID
+    self.menuCaro.action = "setMode"
+    self.menuCaro.value = TabId.CARO
+    self.menuPull.action = "setMode"
+    self.menuPull.value = TabId.PULL
+    self.menuMap.action = "setMode"
+    self.menuMap.value = TabId.MAP
+
+    self.menuOptions.action = "openOptions"
+
+    self.buttonIconDefault.action = "setButtonIcon"
+    self.buttonIconDefault.value = TravelButtonIconId.DEFAULT
+    self.buttonIconBoots.action = "setButtonIcon"
+    self.buttonIconBoots.value = TravelButtonIconId.BOOTS
+    self.buttonIconBackpack.action = "setButtonIcon"
+    self.buttonIconBackpack.value = TravelButtonIconId.BACKPACK
+    self.buttonIconHorse.action = "setButtonIcon"
+    self.buttonIconHorse.value = TravelButtonIconId.HORSE
+    self.buttonSize100.action = "setButtonSize"
+    self.buttonSize100.value = TravelButtonSize.SMALL
+    self.buttonSize150.action = "setButtonSize"
+    self.buttonSize150.value = TravelButtonSize.MEDIUM
+    self.buttonSize200.action = "setButtonSize"
+    self.buttonSize200.value = TravelButtonSize.LARGE
+
+    local function bindMenuItem(menuItem)
+        menuItem.Click = function(sender, args)
+            self:Update(sender.action, sender.value)
         end
     end
 
-    self:SetSelections();
+    bindMenuItem(self.filterGen)
+    bindMenuItem(self.filterRace)
+    bindMenuItem(self.filterRep)
+    bindMenuItem(self.filterClass)
+    bindMenuItem(self.menuList)
+    bindMenuItem(self.menuGrid)
+    bindMenuItem(self.menuCaro)
+    bindMenuItem(self.menuPull)
+    bindMenuItem(self.menuMap)
+    bindMenuItem(self.menuOptions)
+    bindMenuItem(self.buttonIconDefault)
+    bindMenuItem(self.buttonIconBoots)
+    bindMenuItem(self.buttonIconBackpack)
+    bindMenuItem(self.buttonIconHorse)
+    bindMenuItem(self.buttonSize100)
+    bindMenuItem(self.buttonSize150)
+    bindMenuItem(self.buttonSize200)
+
+    self:SetSelections()
 end
 
 function SettingsMenu:SetSelections()
+    local selectedIconId = GetTravelButtonIconOption(Settings.buttonIconStyle).id
+    local selectedSizeValue = GetTravelButtonSizeOption(Settings.buttonSize).value
 
-    -- set the filters using the BitOps functions
     self.filterGen:SetChecked(hasbit(Settings.filters, bit(FilterId.GEN)))
     self.filterRace:SetChecked(hasbit(Settings.filters, bit(FilterId.RACE)))
     self.filterRep:SetChecked(hasbit(Settings.filters, bit(FilterId.REP)))
     self.filterClass:SetChecked(hasbit(Settings.filters, bit(FilterId.CLASS)))
 
-    -- set the mode
     self.menuList:SetChecked(Settings.mode == TabId.LIST)
     self.menuGrid:SetChecked(Settings.mode == TabId.GRID)
     self.menuCaro:SetChecked(Settings.mode == TabId.CARO)
     self.menuPull:SetChecked(Settings.mode == TabId.PULL)
     self.menuMap:SetChecked(Settings.mode == TabId.MAP)
+
+    self.buttonIconDefault:SetChecked(selectedIconId == TravelButtonIconId.DEFAULT)
+    self.buttonIconBoots:SetChecked(selectedIconId == TravelButtonIconId.BOOTS)
+    self.buttonIconBackpack:SetChecked(selectedIconId == TravelButtonIconId.BACKPACK)
+    self.buttonIconHorse:SetChecked(selectedIconId == TravelButtonIconId.HORSE)
+    self.buttonSize100:SetChecked(selectedSizeValue == TravelButtonSize.SMALL)
+    self.buttonSize150:SetChecked(selectedSizeValue == TravelButtonSize.MEDIUM)
+    self.buttonSize200:SetChecked(selectedSizeValue == TravelButtonSize.LARGE)
 end
 
-function SettingsMenu:Update(string)
+function SettingsMenu:Update(action, value)
+    local shouldUpdateMainWindow = false
 
-    -- update the window based on which item was selected
-    if (string == LC.menuGen) then
-        Settings.filters = togglebit(Settings.filters, bit(FilterId.GEN))
-    elseif (string == LC.menuRace) then
-        Settings.filters = togglebit(Settings.filters, bit(FilterId.RACE))
-    elseif (string == LC.menuRep) then
-        Settings.filters = togglebit(Settings.filters, bit(FilterId.REP))
-    elseif (string == LC.menuClass) then
-        Settings.filters = togglebit(Settings.filters, bit(FilterId.CLASS))
-    elseif (string == LC.menuText) then
-        Settings.mode = TabId.LIST
-    elseif (string == LC.menuIcon) then
-        Settings.mode = TabId.GRID
-    elseif (string == LC.menuCaro) then
-        Settings.mode = TabId.CARO
-    elseif (string == LC.menuPull) then
-        Settings.mode = TabId.PULL
-    elseif (string == LC.menuMap) then
-        Settings.mode = TabId.MAP
-    elseif (string == LC.menuOptions) then
+    if action == "toggleFilter" then
+        Settings.filters = togglebit(Settings.filters, bit(value))
+        shouldUpdateMainWindow = true
+    elseif action == "setMode" then
+        Settings.mode = value
+        shouldUpdateMainWindow = true
+    elseif action == "openOptions" then
         _G.options:SetVisible(true)
+    elseif action == "setButtonIcon" then
+        Settings.buttonIconStyle = value
+        if ToggleButton ~= nil then
+            ToggleButton:ApplyAppearance()
+        end
+    elseif action == "setButtonSize" then
+        Settings.buttonSize = value
+        if ToggleButton ~= nil then
+            ToggleButton:ApplyAppearance()
+        end
+    else
+        return
     end
 
-    -- set the selections
     self:SetSelections()
 
-    _G.options.Panel.options["mode" .. Settings.mode]:UpdateOption()
+    if _G.options ~= nil and _G.options.Panel ~= nil then
+        _G.options.Panel:UpdateOptions()
+    end
 
-    -- update the main window settings
-    self.parent.dirty = true
-    self.parent:UpdateSettings()
+    if shouldUpdateMainWindow then
+        self.parent.dirty = true
+        self.parent:UpdateSettings()
+    end
 end

@@ -36,6 +36,90 @@ BehaviorConstants = {
     BUTTON_DRAG_DELAY = 0.2,        -- Seconds before drag starts
 }
 
+TravelButtonIconId = {
+    DEFAULT = 1,
+    BOOTS = 2,
+    BACKPACK = 3,
+    HORSE = 4,
+}
+
+TravelButtonIconOptions = {
+    {
+        id = TravelButtonIconId.DEFAULT,
+        labelKey = "buttonIconDefault",
+        baseFileName = "travel",
+    },
+    {
+        id = TravelButtonIconId.BOOTS,
+        labelKey = "buttonIconBoots",
+        baseFileName = "travel_boots",
+    },
+    {
+        id = TravelButtonIconId.BACKPACK,
+        labelKey = "buttonIconBackpack",
+        baseFileName = "travel_backpack",
+    },
+    {
+        id = TravelButtonIconId.HORSE,
+        labelKey = "buttonIconHorse",
+        baseFileName = "travel_horse",
+    },
+}
+
+TravelButtonSize = {
+    SMALL = 100,
+    MEDIUM = 150,
+    LARGE = 200,
+}
+
+TravelButtonSizeOptions = {
+    {
+        value = TravelButtonSize.SMALL,
+        labelKey = "buttonSize100",
+        suffix = "_32x32",
+        pixelSize = 32,
+    },
+    {
+        value = TravelButtonSize.MEDIUM,
+        labelKey = "buttonSize150",
+        suffix = "_48x48",
+        pixelSize = 48,
+    },
+    {
+        value = TravelButtonSize.LARGE,
+        labelKey = "buttonSize200",
+        suffix = "_64x64",
+        pixelSize = 64,
+    },
+}
+
+function GetTravelButtonIconOption(iconId)
+    for _, option in ipairs(TravelButtonIconOptions) do
+        if option.id == iconId then
+            return option
+        end
+    end
+
+    return TravelButtonIconOptions[1]
+end
+
+function GetTravelButtonSizeOption(sizeValue)
+    for _, option in ipairs(TravelButtonSizeOptions) do
+        if option.value == sizeValue then
+            return option
+        end
+    end
+
+    return TravelButtonSizeOptions[1]
+end
+
+function GetTravelButtonImagePath(iconId, sizeValue)
+    local iconOption = GetTravelButtonIconOption(iconId)
+    local sizeOption = GetTravelButtonSizeOption(sizeValue)
+
+    return "TravelWindowII/src/resources/" .. iconOption.baseFileName .. sizeOption.suffix .. ".tga"
+end
+
 function SetPlayerRaceKey()
     -- map player race to racial travel skill index for insertion into available travel skills
     if (PlayerRace == Turbine.Gameplay.Race.Dwarf) then
@@ -125,6 +209,8 @@ function CreateSettingsConfig()
     AddSettingConfig("unlockKeyPress", 0)
     AddSettingConfig("escapeToClose", 1)
     AddSettingConfig("showButton", 1)
+    AddSettingConfig("buttonIconStyle", TravelButtonIconId.DEFAULT)
+    AddSettingConfig("buttonSize", TravelButtonSize.SMALL)
     AddSettingConfig("mode", 2)
     AddSettingConfig("mapViewRegion", 3)
     AddSettingConfig("filters", 0x0F)
@@ -268,6 +354,16 @@ function SetSettings(settingsArg, scope, importOldSettings)
         end
         settingsArg.ignoreEsc = nil
     end
+
+    if (settingsArg.buttonSize == nil or settingsArg.buttonSize == "nil") and
+        settingsArg.buttonDoubleSize ~= nil and settingsArg.buttonDoubleSize ~= "nil" then
+        if tonumber(settingsArg.buttonDoubleSize) == 1 then
+            settingsArg.buttonSize = tostring(TravelButtonSize.LARGE)
+        else
+            settingsArg.buttonSize = tostring(TravelButtonSize.SMALL)
+        end
+    end
+    settingsArg.buttonDoubleSize = nil
 
     for k, v in pairs(SettingsConfig) do
         if v.init == InitNumberSetting then
