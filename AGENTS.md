@@ -3,6 +3,7 @@
 ## workflow
 
 for every new task I provide, go into plan mode, prepare a plan without executing, start a new branch based on main, checkout that branch, commit the plan into an .md file in the `plans` folder, named with the date in ISO 8601 format and an abbreviated description of the feature
+if the plan is updated based on my fedback make sure to patch the .md file for the plan as well
 
 ## skills
 

@@ -73,66 +73,93 @@ function SettingsMenu:Constructor(parentWindow)
         MenuItems:Add(self.menuOptions)
     end
 
-    self.filterGen.action = "toggleFilter"
-    self.filterGen.value = FilterId.GEN
-    self.filterRace.action = "toggleFilter"
-    self.filterRace.value = FilterId.RACE
-    self.filterRep.action = "toggleFilter"
-    self.filterRep.value = FilterId.REP
-    self.filterClass.action = "toggleFilter"
-    self.filterClass.value = FilterId.CLASS
-
-    self.menuList.action = "setMode"
-    self.menuList.value = TabId.LIST
-    self.menuGrid.action = "setMode"
-    self.menuGrid.value = TabId.GRID
-    self.menuCaro.action = "setMode"
-    self.menuCaro.value = TabId.CARO
-    self.menuPull.action = "setMode"
-    self.menuPull.value = TabId.PULL
-    self.menuMap.action = "setMode"
-    self.menuMap.value = TabId.MAP
-
-    self.menuOptions.action = "openOptions"
-
-    self.buttonIconDefault.action = "setButtonIcon"
-    self.buttonIconDefault.value = TravelButtonIconId.DEFAULT
-    self.buttonIconBoots.action = "setButtonIcon"
-    self.buttonIconBoots.value = TravelButtonIconId.BOOTS
-    self.buttonIconBackpack.action = "setButtonIcon"
-    self.buttonIconBackpack.value = TravelButtonIconId.BACKPACK
-    self.buttonIconHorse.action = "setButtonIcon"
-    self.buttonIconHorse.value = TravelButtonIconId.HORSE
-    self.buttonSize100.action = "setButtonSize"
-    self.buttonSize100.value = TravelButtonSize.SMALL
-    self.buttonSize150.action = "setButtonSize"
-    self.buttonSize150.value = TravelButtonSize.MEDIUM
-    self.buttonSize200.action = "setButtonSize"
-    self.buttonSize200.value = TravelButtonSize.LARGE
-
-    local function bindMenuItem(menuItem)
-        menuItem.Click = function(sender, args)
-            self:Update(sender.action, sender.value)
+    local function bindMenuItem(menuItem, callback)
+        menuItem.Click = function()
+            callback()
         end
     end
 
-    bindMenuItem(self.filterGen)
-    bindMenuItem(self.filterRace)
-    bindMenuItem(self.filterRep)
-    bindMenuItem(self.filterClass)
-    bindMenuItem(self.menuList)
-    bindMenuItem(self.menuGrid)
-    bindMenuItem(self.menuCaro)
-    bindMenuItem(self.menuPull)
-    bindMenuItem(self.menuMap)
-    bindMenuItem(self.menuOptions)
-    bindMenuItem(self.buttonIconDefault)
-    bindMenuItem(self.buttonIconBoots)
-    bindMenuItem(self.buttonIconBackpack)
-    bindMenuItem(self.buttonIconHorse)
-    bindMenuItem(self.buttonSize100)
-    bindMenuItem(self.buttonSize150)
-    bindMenuItem(self.buttonSize200)
+    bindMenuItem(self.filterGen, function()
+        Settings.filters = togglebit(Settings.filters, bit(FilterId.GEN))
+        self:RefreshAfterChange(true)
+    end)
+    bindMenuItem(self.filterRace, function()
+        Settings.filters = togglebit(Settings.filters, bit(FilterId.RACE))
+        self:RefreshAfterChange(true)
+    end)
+    bindMenuItem(self.filterRep, function()
+        Settings.filters = togglebit(Settings.filters, bit(FilterId.REP))
+        self:RefreshAfterChange(true)
+    end)
+    bindMenuItem(self.filterClass, function()
+        Settings.filters = togglebit(Settings.filters, bit(FilterId.CLASS))
+        self:RefreshAfterChange(true)
+    end)
+
+    bindMenuItem(self.menuList, function()
+        Settings.mode = TabId.LIST
+        self:RefreshAfterChange(true)
+    end)
+    bindMenuItem(self.menuGrid, function()
+        Settings.mode = TabId.GRID
+        self:RefreshAfterChange(true)
+    end)
+    bindMenuItem(self.menuCaro, function()
+        Settings.mode = TabId.CARO
+        self:RefreshAfterChange(true)
+    end)
+    bindMenuItem(self.menuPull, function()
+        Settings.mode = TabId.PULL
+        self:RefreshAfterChange(true)
+    end)
+    bindMenuItem(self.menuMap, function()
+        Settings.mode = TabId.MAP
+        self:RefreshAfterChange(true)
+    end)
+
+    bindMenuItem(self.menuOptions, function()
+        if _G.options ~= nil then
+            _G.options:SetVisible(true)
+        end
+        self:RefreshAfterChange(false)
+    end)
+
+    bindMenuItem(self.buttonIconDefault, function()
+        Settings.buttonIconStyle = TravelButtonIconId.DEFAULT
+        self:ApplyToggleButtonAppearance()
+        self:RefreshAfterChange(false)
+    end)
+    bindMenuItem(self.buttonIconBoots, function()
+        Settings.buttonIconStyle = TravelButtonIconId.BOOTS
+        self:ApplyToggleButtonAppearance()
+        self:RefreshAfterChange(false)
+    end)
+    bindMenuItem(self.buttonIconBackpack, function()
+        Settings.buttonIconStyle = TravelButtonIconId.BACKPACK
+        self:ApplyToggleButtonAppearance()
+        self:RefreshAfterChange(false)
+    end)
+    bindMenuItem(self.buttonIconHorse, function()
+        Settings.buttonIconStyle = TravelButtonIconId.HORSE
+        self:ApplyToggleButtonAppearance()
+        self:RefreshAfterChange(false)
+    end)
+
+    bindMenuItem(self.buttonSize100, function()
+        Settings.buttonSize = TravelButtonSize.SMALL
+        self:ApplyToggleButtonAppearance()
+        self:RefreshAfterChange(false)
+    end)
+    bindMenuItem(self.buttonSize150, function()
+        Settings.buttonSize = TravelButtonSize.MEDIUM
+        self:ApplyToggleButtonAppearance()
+        self:RefreshAfterChange(false)
+    end)
+    bindMenuItem(self.buttonSize200, function()
+        Settings.buttonSize = TravelButtonSize.LARGE
+        self:ApplyToggleButtonAppearance()
+        self:RefreshAfterChange(false)
+    end)
 
     self:SetSelections()
 end
@@ -161,31 +188,13 @@ function SettingsMenu:SetSelections()
     self.buttonSize200:SetChecked(selectedSizeValue == TravelButtonSize.LARGE)
 end
 
-function SettingsMenu:Update(action, value)
-    local shouldUpdateMainWindow = false
-
-    if action == "toggleFilter" then
-        Settings.filters = togglebit(Settings.filters, bit(value))
-        shouldUpdateMainWindow = true
-    elseif action == "setMode" then
-        Settings.mode = value
-        shouldUpdateMainWindow = true
-    elseif action == "openOptions" then
-        _G.options:SetVisible(true)
-    elseif action == "setButtonIcon" then
-        Settings.buttonIconStyle = value
-        if ToggleButton ~= nil then
-            ToggleButton:ApplyAppearance()
-        end
-    elseif action == "setButtonSize" then
-        Settings.buttonSize = value
-        if ToggleButton ~= nil then
-            ToggleButton:ApplyAppearance()
-        end
-    else
-        return
+function SettingsMenu:ApplyToggleButtonAppearance()
+    if ToggleButton ~= nil then
+        ToggleButton:ApplyAppearance()
     end
+end
 
+function SettingsMenu:RefreshAfterChange(shouldUpdateMainWindow)
     self:SetSelections()
 
     if _G.options ~= nil and _G.options.Panel ~= nil then
