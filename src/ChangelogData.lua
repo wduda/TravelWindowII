@@ -4,6 +4,14 @@
 
 ChangelogData = {
     {
+        version = "v4.4.0",
+        changes = {
+            "feat: Travel Button icon can now be selected from four variants in options and settings menu",
+            "feat: Travel Button size can now be set to 100%, 150% or 200%",
+            "fix: Main Window, Travel  Button and Map Mode have smarter defaults for on screen position",
+        }
+    },
+    {
         version = "v4.3.1",
         changes = {
             "fix: hiding overlapping skills fixed for Dun Shuma, Galterv and Utug-Bur",
