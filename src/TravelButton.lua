@@ -13,23 +13,10 @@ function TravelButton:Constructor()
     Turbine.UI.Window.Constructor(self);
 
     -- set defaults
-    self:SetSize(32, 32);
-    self:SetBackground("TravelWindowII/src/resources/travel.tga");
     self:SetBackColorBlendMode(Turbine.UI.BlendMode.Multiply);
     self:SetBackColor(Turbine.UI.Color(0, 0.5, 0.5, 0.5));
     self:SetZOrder(1);
-
-    local screenWidth = Turbine.UI.Display.GetWidth();
-    local screenHeight = Turbine.UI.Display.GetHeight();
-    local buttonPositionX = Settings.buttonRelativeX * screenWidth;
-    local buttonPositionY = Settings.buttonRelativeY * screenHeight;
-    if buttonPositionX + self:GetWidth() > screenWidth then
-        buttonPositionX = screenWidth - self:GetWidth();
-    end
-    if buttonPositionY + self:GetHeight() > screenHeight then
-        buttonPositionY = screenHeight - self:GetHeight();
-    end
-    self:SetPosition(buttonPositionX, buttonPositionY);
+    self:ApplyAppearance()
     self:SetVisible(Settings.showButton == 1);
     self:SetOpacity(Settings.toggleMinOpacity);
 
@@ -105,6 +92,43 @@ function TravelButton:Constructor()
             local oldX, oldY = self:GetPosition();
             self:SetPosition(oldX + args.X - x, oldY + args.Y - y);
         end
+    end
+end
+
+function TravelButton:ApplyAppearance()
+    local sizeOption = GetTravelButtonSizeOption(Settings.buttonSize)
+    local iconOption = GetTravelButtonIconOption(Settings.buttonIconStyle)
+
+    Settings.buttonSize = sizeOption.value
+    Settings.buttonIconStyle = iconOption.id
+    self:SetSize(sizeOption.pixelSize, sizeOption.pixelSize)
+    self:SetBackground(GetTravelButtonImagePath(iconOption.id, sizeOption.value))
+
+    local screenWidth = Turbine.UI.Display.GetWidth()
+    local screenHeight = Turbine.UI.Display.GetHeight()
+    local buttonPositionX = Settings.buttonRelativeX * screenWidth
+    local buttonPositionY = Settings.buttonRelativeY * screenHeight
+
+    if buttonPositionX < 0 then
+        buttonPositionX = 0
+    end
+    if buttonPositionY < 0 then
+        buttonPositionY = 0
+    end
+    if buttonPositionX + self:GetWidth() > screenWidth then
+        buttonPositionX = math.max(0, screenWidth - self:GetWidth())
+    end
+    if buttonPositionY + self:GetHeight() > screenHeight then
+        buttonPositionY = math.max(0, screenHeight - self:GetHeight())
+    end
+
+    self:SetPosition(buttonPositionX, buttonPositionY)
+
+    if screenWidth > 0 then
+        Settings.buttonRelativeX = buttonPositionX / screenWidth
+    end
+    if screenHeight > 0 then
+        Settings.buttonRelativeY = buttonPositionY / screenHeight
     end
 end
 
