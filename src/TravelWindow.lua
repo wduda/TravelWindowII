@@ -54,11 +54,7 @@ function TravelWindow:Constructor()
     -- configure the main window
     self:SetText(LC.mainTitle)
     self:SetBackColor(self.backColor)
-    if (Settings.hideOnStart == 1) then
-        self:SetVisible(false)
-    else
-        self:SetVisible(true)
-    end
+    self:SetVisible((Settings.hideOnStart == 0) and (Settings.mode ~= TabId.MAP))
 
     -- save the player's combat states for managing hiding the window
     -- when the player enters combat
