@@ -1,9 +1,10 @@
 A new version is available once the lotrointerface admins approve the upload. You can get it immediately at GitHub (see link below).
 
-v4.3.1
+v4.4.0
 
-- fix: hiding overlapping skills fixed for Dun Shuma, Galterv and Utug-Bur
-- fix: navigation panel in map view now has the same transparency as the rest of the window in all scenarios
+- feat: Travel Button icon can now be selected from four variants in options and settings menu
+- feat: Travel Button size can now be set to 100%, 150% or 200%
+- fix: Main Window, Travel  Button and Map Mode have smarter defaults for on screen position
 
 Help with further translations for DE, FR and RU clients is always welcome. Ideally submitted as pull requests on GitHub, but any way can be accomodated really.
 
