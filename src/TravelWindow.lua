@@ -626,10 +626,7 @@ function TravelWindow:ResetSettings()
 end
 
 function SyncUIFromSettings()
-    local screenW, screenH = Turbine.UI.Display.GetSize()
-    local buttonPositionX = screenW * Settings.buttonRelativeX
-    local buttonPositionY = screenH * Settings.buttonRelativeY
-    ToggleButton:SetPosition(buttonPositionX, buttonPositionY)
+    ToggleButton:ApplyAppearance()
     _G.options.Panel:UpdateOptions()
     _G.options.Panel:EnableFromSettings()
     _G.options.Panel:AddSortList()

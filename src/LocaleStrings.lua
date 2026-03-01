@@ -122,6 +122,51 @@ LC_DE.showButton = "Zeige Travel-Knopf"
 LC_FR.showButton = "Montrer le bouton Travel"
 LC_RU.showButton = "Показать кнопку Travel"
 
+LC_EN.buttonIcon = "Travel Button Icon"
+LC_DE.buttonIcon = "Symbol des Travel-Knopfs"
+LC_FR.buttonIcon = "Icone du bouton Travel"
+LC_RU.buttonIcon = "Travel Button icon"
+
+LC_EN.buttonSize = "Travel Button Size"
+LC_DE.buttonSize = "Groesse des Travel-Knopfs"
+LC_FR.buttonSize = "Taille du bouton Travel"
+LC_RU.buttonSize = "Travel Button size"
+
+LC_EN.buttonSize100 = "100%"
+LC_DE.buttonSize100 = "100%"
+LC_FR.buttonSize100 = "100%"
+LC_RU.buttonSize100 = "100%"
+
+LC_EN.buttonSize150 = "150%"
+LC_DE.buttonSize150 = "150%"
+LC_FR.buttonSize150 = "150%"
+LC_RU.buttonSize150 = "150%"
+
+LC_EN.buttonSize200 = "200%"
+LC_DE.buttonSize200 = "200%"
+LC_FR.buttonSize200 = "200%"
+LC_RU.buttonSize200 = "200%"
+
+LC_EN.buttonIconDefault = "Default"
+LC_DE.buttonIconDefault = "Standard"
+LC_FR.buttonIconDefault = "Defaut"
+LC_RU.buttonIconDefault = "Default"
+
+LC_EN.buttonIconBoots = "Boots"
+LC_DE.buttonIconBoots = "Stiefel"
+LC_FR.buttonIconBoots = "Bottes"
+LC_RU.buttonIconBoots = "Boots"
+
+LC_EN.buttonIconBackpack = "Backpack"
+LC_DE.buttonIconBackpack = "Rucksack"
+LC_FR.buttonIconBackpack = "Sac"
+LC_RU.buttonIconBackpack = "Backpack"
+
+LC_EN.buttonIconHorse = "Horse"
+LC_DE.buttonIconHorse = "Pferd"
+LC_FR.buttonIconHorse = "Cheval"
+LC_RU.buttonIconHorse = "Horse"
+
 LC_EN.pulldownTravel = "Travel when pulldown skill selected"
 LC_DE.pulldownTravel = "Reisen wenn Fertigkeits-Pulldown selektiert"
 LC_FR.pulldownTravel = "Voyager lorsque la compétence déroulante est sélectionnée"
@@ -367,6 +412,21 @@ LC_EN.menuOptions = "Options"
 LC_DE.menuOptions = "Optionen"
 LC_FR.menuOptions = "Options"
 LC_RU.menuOptions = "Настройки"
+
+LC_EN.menuButton = "Button"
+LC_DE.menuButton = "Knopf"
+LC_FR.menuButton = "Bouton"
+LC_RU.menuButton = "Button"
+
+LC_EN.menuButtonIcon = "Icon"
+LC_DE.menuButtonIcon = "Symbol"
+LC_FR.menuButtonIcon = "Icone"
+LC_RU.menuButtonIcon = "Icon"
+
+LC_EN.menuButtonSize = "Button Size"
+LC_DE.menuButtonSize = "Knopfgroesse"
+LC_FR.menuButtonSize = "Taille du bouton"
+LC_RU.menuButtonSize = "Button size"
 
 LC_EN.moorMapName = "Ettenmoors"
 LC_DE.moorMapName = "Die Ettenöden"
