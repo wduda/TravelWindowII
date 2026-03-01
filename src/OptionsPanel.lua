@@ -385,10 +385,6 @@ function OptionsPanel:AddTravelButtonAppearanceOptions()
 
 end
 
-function OptionsPanel:UpdateButtonAppearancePreview()
-    return
-end
-
 function OptionsPanel:SetupGeneralTab()
     self.optionHeight = 0
     self.options = {}
@@ -689,7 +685,6 @@ function OptionsPanel:UpdateOptions()
     for _, v in pairs(self.options) do
         v:UpdateOption()
     end
-    self:UpdateButtonAppearancePreview()
 end
 
 function OptionsPanel:AddEnabledSection(skills)
