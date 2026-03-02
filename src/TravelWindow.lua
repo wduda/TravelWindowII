@@ -337,7 +337,8 @@ function TravelWindow:Constructor()
             self.dragStartX, self.dragStartY = mX, mY
             if Settings.mode == TabId.LIST or
                     Settings.mode == TabId.GRID or
-                    Settings.mode == TabId.PULL then
+                    Settings.mode == TabId.PULL or
+                    Settings.mode == TabId.MAP then
                 self.resizeStartX, self.resizeStartY = self:GetSize()
                 if self.resizeStartX - mX < self.resizeLabelSize + 1 and
                         self.resizeStartY - mY < self.resizeLabelSize + 1 then
@@ -478,7 +479,7 @@ function TravelWindow:SetItems()
         self.PullTab:SetItems()
         self.PullTab.pixelWidth = self:GetWidth()
     elseif Settings.mode == TabId.MAP then
-        self:SetSize(self.MapTab:GetPixelSize())
+        self:SetSize(self.MapTab:GetMinPixelSize()) -- FIXME: get this from current settings?
         self.MapTab:SetItems()
     end
 end
@@ -505,8 +506,7 @@ function TravelWindow:UpdateMinimum()
             self.minHeight = 105
         end
     elseif Settings.mode == TabId.MAP then
-        -- Map view fixed at 1024x768 + padding (nav panel below map)
-        self.minWidth, self.minHeight = self.MapTab:GetPixelSize()
+        self.minWidth, self.minHeight = self.MapTab:GetMinPixelSize()
     else
         self.minWidth = 40
         self.minHeight = 40
