@@ -22,6 +22,7 @@ function TravelMapTab:Constructor(toplevel)
     self.mapHeight = 768
     self.navPanelHeight = 68
     self.colWidth = 32
+    self.totalWidth = 0
     self.quickslots = {}
     self.panelQuickslots = {}  -- For milestone/housing skills in nav panel
 
@@ -77,7 +78,9 @@ function TravelMapTab:Constructor(toplevel)
         self.navPanel:SetSize(self.mapWidth - (self.mapBorder * 2), self.navPanelHeight)
         self.navPanel:SetBackColor(Turbine.UI.Color(1, 0, 0, 0))
         self.navPanel:SetZOrder(99)
-        self.navPanel:SetPosition(self.mapBorder, self.mapHeight + self.mapBorder)  -- Position below the map with border
+        -- Position below the map with border
+        local navPanelH = self:GetHeight() - (self.navPanelHeight + self.parent.hPadding + (self.mapBorder * 2))
+        self.navPanel:SetPosition(self.mapBorder, navPanelH)
         self.navPanel.MouseClick = self.MouseClick
 
         -- logic for reordering shortcuts in the navigation panel
@@ -199,6 +202,8 @@ function TravelMapTab:LoadMap()
     elseif self.currentRegion == MapType.CREEPS then
         self.mapLabel:SetBackground(0x41008133)
     end
+
+    self.mapLabel:SetStretchMode(1)
 
     -- Highlight current region button
     if self.navPanelHeight ~= 0 then
@@ -382,7 +387,7 @@ function TravelMapTab:AddPanelQuickslots()
 
     -- Calculate centered layout
     self.totalWidth = (#skills * self.colWidth) + #skills - 1
-    self.startX = ((self.mapWidth - (self.mapBorder * 2)) - self.totalWidth) / 2
+    self.startX = (self.parent:GetWidth() - (self.mapBorder * 2) - self.totalWidth) / 2
     self.startY = 31
 
     -- Create quickslots
@@ -416,13 +421,34 @@ function TravelMapTab:AddPanelQuickslots()
     end
 end
 
--- Handle tab size changes
 function TravelMapTab:SetSize(width, height)
     Turbine.UI.Control.SetSize(self, width, height)
+    -- TODO: only resize maptab proportionately
+    local mapY = height - (self.parent.hPadding + self.navPanelHeight + (self.mapBorder * 2))
+    self.mapLabel:SetSize(width, mapY)
+    local navPanelH = self:GetHeight() - (self.navPanelHeight + self.parent.hPadding + (self.mapBorder * 2))
+    self.navPanel:SetPosition(self.mapBorder, navPanelH)
+    self.navPanel:SetSize(width, self.navPanel:GetHeight())
+
+    local startX = (self.parent:GetWidth() - (self.mapBorder * 2) - self.totalWidth) / 2
+    for i = 1, #self.panelQuickslots do
+        local qs = self.panelQuickslots[i]
+        local posX = startX + ((i - 1) * self.colWidth)
+        qs:SetPosition(posX, qs:GetTop())
+    end
+
+    local i = 0
+    local spacing = 5
+    local totalWidth = (self.regionButtons[MapType.ERIADOR]:GetWidth() * 5) + (spacing * 4)
+    startX = (self.parent:GetWidth() - (self.mapBorder * 2) - totalWidth) / 2
+    for _, btn in pairs(self.regionButtons) do
+        i = i + 1
+        local posX = startX + ((i - 1) * (btn:GetWidth() + spacing))
+        btn:SetPosition(posX, btn:GetTop())
+    end
 end
 
--- Get pixel size for this tab
-function TravelMapTab:GetPixelSize()
+function TravelMapTab:GetMinPixelSize()
     local width = self.mapWidth + self.parent.wPadding + (self.mapBorder * 2)
     local height = self.mapHeight + self.parent.hPadding + self.navPanelHeight + (self.mapBorder * 2)
     return width, height
