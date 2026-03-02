@@ -61,6 +61,8 @@ function OptionsPanel:Constructor()
     --  add a check to see if we load completely
     self.disableUpdates = false;
 
+    self.DEFAULT_X = 20
+    self.DEFAULT_NEXTY = 30
     self.labelWidth = 420
     self.checkOffset = 450
 
@@ -177,7 +179,7 @@ function OptionsPanel:AddMinMaxSliderOption(name, nameMin, nameMax, x, spacerY, 
 
     self[nameMinLabel] = Turbine.UI.Label()
     self[nameMinLabel]:SetSize(50, 20)
-    self[nameMinLabel]:SetPosition(x, self:NextY(20))
+    self[nameMinLabel]:SetPosition(x + 10, self:NextY(20))
     self[nameMinLabel]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
     self[nameMinLabel]:SetParent(self.GeneralTab)
     self[nameMinLabel]:SetText(LC.min)
@@ -203,7 +205,7 @@ function OptionsPanel:AddMinMaxSliderOption(name, nameMin, nameMax, x, spacerY, 
 
     self[nameMaxLabel] = Turbine.UI.Label()
     self[nameMaxLabel]:SetSize(50, 20)
-    self[nameMaxLabel]:SetPosition(x, self:NextY(15))
+    self[nameMaxLabel]:SetPosition(x + 10, self:NextY(15))
     self[nameMaxLabel]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
     self[nameMaxLabel]:SetParent(self.GeneralTab)
     self[nameMaxLabel]:SetText(LC.max)
@@ -254,7 +256,7 @@ function OptionsPanel:AddSliderOption(name, min, max, x, spacerY, change)
 end
 
 function OptionsPanel:AddTravelButtonAppearanceOptions()
-    local sectionY = self:NextY(30)
+    local sectionY = self:NextY(self.DEFAULT_NEXTY)
 
     self.buttonIconLabel = Turbine.UI.Label()
     self.buttonIconLabel:SetParent(self.GeneralTab)
@@ -319,7 +321,7 @@ function OptionsPanel:AddTravelButtonAppearanceOptions()
         self.options["buttonIcon" .. config.id] = radio
     end
 
-    local sizeLabelY = self:NextY(35)
+    local sizeLabelY = self:NextY(self.DEFAULT_NEXTY)
     self.buttonSizeLabel = Turbine.UI.Label()
     self.buttonSizeLabel:SetParent(self.GeneralTab)
     self.buttonSizeLabel:SetPosition(20, sizeLabelY)
@@ -395,7 +397,7 @@ function OptionsPanel:SetupGeneralTab()
     -- Mode selection radio button group
     local modeLabel = Turbine.UI.Label()
     modeLabel:SetParent(self.GeneralTab)
-    local labelY = self:NextY(30)
+    local labelY = self:NextY(self.DEFAULT_NEXTY)
     modeLabel:SetPosition(20, labelY)
     modeLabel:SetSize(self.labelWidth, 20)
     modeLabel:SetText(LC.menuMode)
@@ -475,7 +477,7 @@ function OptionsPanel:SetupGeneralTab()
     -- Increment Y position for next control
     self:NextY(10)
 
-    self:AddCheckBoxOption("useMinWindow", 20, 20,
+    self:AddCheckBoxOption("useMinWindow", self.DEFAULT_X, 20,
         function(sender, args)
             if sender:IsChecked() then
                 Settings.useMinWindow = 1
@@ -494,53 +496,12 @@ function OptionsPanel:SetupGeneralTab()
             _G.options = TravelWindowII.src.OptionsWindow()
             _G.options:SetVisible(true)
         end)
-    self:AddCheckBoxOption("hideOnStart", 20, 30)
-    self:AddCheckBoxOption("hideOnCombat", 20, 30)
-    self:AddCheckBoxOption("hideOnTravel", 20, 30)
-    self:AddCheckBoxOption("escapeToClose", 20, 30)
-    self:AddCheckBoxOption("showButton", 20, 30,
-        function(sender, args)
-            if (sender:IsChecked()) then
-                Settings.showButton = 1
-            else
-                Settings.showButton = 0
-            end
-            ToggleButton:SetVisible(sender:IsChecked())
-        end)
-    self:AddTravelButtonAppearanceOptions()
-    self:AddCheckBoxOption("pulldownTravel", 20, 30)
-    self:AddCheckBoxOption("useZoneNames", 20, 30,
-        function(sender, args)
-            if sender:IsChecked() then
-                Settings.useZoneNames = 1
-            else
-                Settings.useZoneNames = 0
-            end
-            TravelInfo:SetSkillLabels()
-            _G.travel:ReloadLabels()
-        end)
-    self:AddCheckBoxOption("useSkillNames", 20, 30,
-        function(sender, args)
-            if sender:IsChecked() then
-                Settings.useSkillNames = 1
-            else
-                Settings.useSkillNames = 0
-            end
-            TravelInfo:SetSkillLabels()
-            _G.travel:ReloadLabels()
-        end)
-    self:AddCheckBoxOption("useTagInListTab", 20, 30,
-        function(sender, args)
-            if sender:IsChecked() then
-                Settings.useTagInListTab = 1
-            else
-                Settings.useTagInListTab = 0
-            end
-            TravelInfo:SetSkillLabels()
-            _G.travel.ListTab:ReloadLabels()
-            _G.travel.PullTab.pulldown:ReloadLabels()
-        end)
-    self:AddCheckBoxOption("lockUI", 20, 30,
+    self:AddCheckBoxOption("hideOnStart", self.DEFAULT_X, self.DEFAULT_NEXTY)
+    self:AddCheckBoxOption("hideOnCombat", self.DEFAULT_X, self.DEFAULT_NEXTY)
+    self:AddCheckBoxOption("hideOnTravel", self.DEFAULT_X, self.DEFAULT_NEXTY)
+    self:AddCheckBoxOption("escapeToClose", self.DEFAULT_X, self.DEFAULT_NEXTY)
+    self:AddCheckBoxOption("pulldownTravel", self.DEFAULT_X, self.DEFAULT_NEXTY)
+    self:AddCheckBoxOption("lockUI", self.DEFAULT_X, self.DEFAULT_NEXTY,
         function(sender, args)
             if sender:IsChecked() then
                 Settings.lockUI = 1
@@ -549,7 +510,7 @@ function OptionsPanel:SetupGeneralTab()
             end
             self:UpdateOptions()
         end)
-    self:AddCheckBoxOption("unlockKeyPress", 50, 30,
+    self:AddCheckBoxOption("unlockKeyPress", 30, 25,
         function(sender, args)
             if sender:IsChecked() then
                 Settings.unlockKeyPress = 1
@@ -562,7 +523,55 @@ function OptionsPanel:SetupGeneralTab()
             self.options["unlockKeyPress"]:SetEnabled(Settings.lockUI == 1);
             self.options["unlockKeyPress"]:SetChecked(Settings.unlockKeyPress == 1);
         end)
-    self:AddMinMaxSliderOption("toggleSliders", "toggleMinOpacity", "toggleMaxOpacity", 20, 30,
+    self:AddMinMaxSliderOption("mainSliders", "mainMinOpacity", "mainMaxOpacity",
+        self.DEFAULT_X, self.DEFAULT_NEXTY,
+        function(sender, args)
+            local minSlider = self.options["mainMinOpacity"]
+            local maxSlider = self.options["mainMaxOpacity"]
+
+            -- check that the min opacity does not go higher than the max opacity
+            if minSlider:GetValue() > maxSlider:GetValue() then
+                minSlider:SetValue(maxSlider:GetValue())
+            end
+
+            -- do updates
+            Settings.mainMinOpacity = minSlider:GetValue() / 100
+            _G.travel:UpdateOpacity()
+        end,
+        function(sender, args)
+            local minSlider = self.options["mainMinOpacity"]
+            local maxSlider = self.options["mainMaxOpacity"]
+
+            -- check that the max opacity does not go lower than the min opacity
+            if maxSlider:GetValue() < minSlider:GetValue() then
+                maxSlider:SetValue(minSlider:GetValue())
+            end
+
+            -- do updates
+            Settings.mainMaxOpacity = maxSlider:GetValue() / 100
+            _G.travel:UpdateOpacity()
+        end)
+    self:AddSliderOption("fadeOutDelay", 0, 100, self.DEFAULT_X, 25,
+        function(sender, args)
+            Settings.fadeOutDelay = self.options["fadeOutDelay"]:GetValue()
+        end)
+    self:AddSliderOption("fadeOutSteps", 1, 151, self.DEFAULT_X, 25,
+        function(sender, args)
+            Settings.fadeOutSteps = self.options["fadeOutSteps"]:GetValue()
+            _G.travel:UpdateOpacity()
+        end)
+    self:AddCheckBoxOption("showButton", self.DEFAULT_X, 25,
+        function(sender, args)
+            if (sender:IsChecked()) then
+                Settings.showButton = 1
+            else
+                Settings.showButton = 0
+            end
+            ToggleButton:SetVisible(sender:IsChecked())
+        end)
+    self:AddTravelButtonAppearanceOptions()
+    self:AddMinMaxSliderOption("toggleSliders", "toggleMinOpacity", "toggleMaxOpacity",
+        self.DEFAULT_X, self.DEFAULT_NEXTY,
         function(sender, args)
             local minSlider = self.options["toggleMinOpacity"]
             local maxSlider = self.options["toggleMaxOpacity"]
@@ -590,41 +599,36 @@ function OptionsPanel:SetupGeneralTab()
             _G.travel:UpdateOpacity()
 
         end)
-    self:AddMinMaxSliderOption("mainSliders", "mainMinOpacity", "mainMaxOpacity", 20, 25,
+    self:AddCheckBoxOption("useZoneNames", self.DEFAULT_X, 25,
         function(sender, args)
-            local minSlider = self.options["mainMinOpacity"]
-            local maxSlider = self.options["mainMaxOpacity"]
-
-            -- check that the min opacity does not go higher than the max opacity
-            if minSlider:GetValue() > maxSlider:GetValue() then
-                minSlider:SetValue(maxSlider:GetValue())
+            if sender:IsChecked() then
+                Settings.useZoneNames = 1
+            else
+                Settings.useZoneNames = 0
             end
-
-            -- do updates
-            Settings.mainMinOpacity = minSlider:GetValue() / 100
-            _G.travel:UpdateOpacity()
-        end,
+            TravelInfo:SetSkillLabels()
+            _G.travel:ReloadLabels()
+        end)
+    self:AddCheckBoxOption("useSkillNames", self.DEFAULT_X, self.DEFAULT_NEXTY,
         function(sender, args)
-            local minSlider = self.options["mainMinOpacity"]
-            local maxSlider = self.options["mainMaxOpacity"]
-
-            -- check that the max opacity does not go lower than the min opacity
-            if maxSlider:GetValue() < minSlider:GetValue() then
-                maxSlider:SetValue(minSlider:GetValue())
+            if sender:IsChecked() then
+                Settings.useSkillNames = 1
+            else
+                Settings.useSkillNames = 0
             end
-
-            -- do updates
-            Settings.mainMaxOpacity = maxSlider:GetValue() / 100
-            _G.travel:UpdateOpacity()
+            TravelInfo:SetSkillLabels()
+            _G.travel:ReloadLabels()
         end)
-    self:AddSliderOption("fadeOutDelay", 0, 100, 20, 25,
+    self:AddCheckBoxOption("useTagInListTab", self.DEFAULT_X, self.DEFAULT_NEXTY,
         function(sender, args)
-            Settings.fadeOutDelay = self.options["fadeOutDelay"]:GetValue()
-        end)
-    self:AddSliderOption("fadeOutSteps", 1, 151, 20, 25,
-        function(sender, args)
-            Settings.fadeOutSteps = self.options["fadeOutSteps"]:GetValue()
-            _G.travel:UpdateOpacity()
+            if sender:IsChecked() then
+                Settings.useTagInListTab = 1
+            else
+                Settings.useTagInListTab = 0
+            end
+            TravelInfo:SetSkillLabels()
+            _G.travel.ListTab:ReloadLabels()
+            _G.travel.PullTab.pulldown:ReloadLabels()
         end)
 
     -- enable changed methods until after all options are initialized
