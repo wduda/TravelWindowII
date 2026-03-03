@@ -318,7 +318,7 @@ function TravelWindow:Constructor()
 
     -- go to low opacity when mouse is not over
     self.MouseLeave = function(sender, args)
-        if not self.isMouseDown and Settings.mode ~= TabId.MAP then
+        if not self.isMouseDown then
             self:FadeOut()
         end
     end
@@ -456,6 +456,9 @@ function TravelWindow:SetMaxOpacity()
 end
 
 function TravelWindow:FadeOut()
+    if Settings.mode == TabId.MAP then
+        return
+    end
     self.fadeOut = true
     self:SetWantsUpdates(true)
 end
