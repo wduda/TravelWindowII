@@ -178,7 +178,7 @@ function TravelShortcut:InitAcquireText(item)
         return text
     end
 
-    if item.deed then
+    if item.deed and item.vendor == nil then
         text = LC.deed .. item.deed
     elseif item.allegiance then
         text = LC.allegiance .. item.allegiance
@@ -191,6 +191,9 @@ function TravelShortcut:InitAcquireText(item)
         text = LC.quest .. item.quest
     elseif item.vendor then
         text = self:GetVendorText(item)
+        if item.deed then
+            text = text .. "\n" .. LC.deed .. item.deed
+        end
     elseif item.desc then
         text = LC.source .. item.desc
     end
