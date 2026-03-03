@@ -144,8 +144,7 @@ function TravelMapTab:Constructor(toplevel)
             {MapType.HARADWAITH, "haradwaithMapName"}
         }
 
-        for i = 1, 5 do
-            local config = buttonConfigs[i]
+        for i, config in ipairs(buttonConfigs) do
             local button = Turbine.UI.Lotro.Button()
             button:SetParent(self.navPanel)
             button:SetSize(buttonWidth, buttonHeight)
@@ -155,7 +154,7 @@ function TravelMapTab:Constructor(toplevel)
             button.Click = function()
                 self:SwitchRegion(config[1])
             end
-            self.regionButtons[config[1]] = button
+            self.regionButtons[i] = button
         end
     end
 
@@ -195,14 +194,10 @@ function TravelMapTab:LoadMap()
 
     self.mapLabel:SetStretchMode(1)
 
-    -- Highlight current region button
+    -- disable current region button
     if self.navPanelHeight ~= 0 then
-        for region, button in pairs(self.regionButtons) do
-            if region == self.currentRegion then
-                button:SetEnabled(false)  -- Disabled state shows as pressed/selected
-            else
-                button:SetEnabled(true)
-            end
+        for i, btn in ipairs(self.regionButtons) do
+            btn:SetEnabled(btn.region ~= self.currentRegion)
         end
     end
 end
@@ -427,12 +422,10 @@ function TravelMapTab:SetSize(width, height)
         qs:SetPosition(posX, qs:GetTop())
     end
 
-    local i = 0
     local spacing = 5
-    local totalWidth = (self.regionButtons[MapType.ERIADOR]:GetWidth() * 5) + (spacing * 4)
+    local totalWidth = (self.regionButtons[1]:GetWidth() * 5) + (spacing * 4)
     startX = (self.parent:GetWidth() - (self.mapBorder * 2) - totalWidth) / 2
-    for _, btn in pairs(self.regionButtons) do
-        i = i + 1
+    for i, btn in ipairs(self.regionButtons) do
         local posX = startX + ((i - 1) * (btn:GetWidth() + spacing))
         btn:SetPosition(posX, btn:GetTop())
     end
