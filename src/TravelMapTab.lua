@@ -45,16 +45,6 @@ function TravelMapTab:Constructor(toplevel)
         }
     end
 
-    -- Region names for display (just use simple names)
-    self.regionNames = {
-        [MapType.CREEPS] = LC.moorMapName,
-        [MapType.ERIADOR] = LC.eriadorMapName,
-        [MapType.RHOVANION] = LC.rhovanionMapName,
-        [MapType.ROHAN] = LC.rohanMapName,
-        [MapType.GONDOR] = LC.gondorMapName,
-        [MapType.HARADWAITH] = LC.haradwaithMapName
-    }
-
     -- Show the menu when right clicked
     self.MouseClick = function(_, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
