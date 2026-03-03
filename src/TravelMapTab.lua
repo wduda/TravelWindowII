@@ -230,6 +230,7 @@ function TravelMapTab:UpdateNavPanelLayout(width, height)
         btn:SetPosition(posX, 2)
     end
 
+    self.startQsX = (self.parent:GetWidth() - (self.mapBorder * 2) - self.totalWidth) / 2
     for i = 1, #self.panelQuickslots do
         local qs = self.panelQuickslots[i]
         local posX = self.startQsX + ((i - 1) * self.colWidth)
@@ -397,7 +398,6 @@ function TravelMapTab:AddPanelQuickslots()
 
     -- Calculate centered layout
     self.totalWidth = (#skills * self.colWidth) + #skills - 1
-    self.startQsX = (self.parent:GetWidth() - (self.mapBorder * 2) - self.totalWidth) / 2
     self.startQsY = self.regionButtons[1]:GetHeight() + 2
 
     -- Create quickslots
@@ -431,7 +431,6 @@ end
 
 function TravelMapTab:SetSize(width, height)
     Turbine.UI.Control.SetSize(self, width, height)
-    -- TODO: only resize maptab proportionately
     self:UpdateMapSize(width, height)
     self:UpdateNavPanelLayout(width, height)
 end
