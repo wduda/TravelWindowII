@@ -20,7 +20,7 @@ function TravelMapTab:Constructor(toplevel)
     -- Map configuration
     self.mapWidth = 1024
     self.mapHeight = 768
-    self.navPanelHeight = 68
+    self.navPanelHeight = 38
     self.colWidth = 32
     self.totalWidth = 0
     self.quickslots = {}
@@ -54,23 +54,19 @@ function TravelMapTab:Constructor(toplevel)
 
     -- Create the map display label (full size, no scrolling)
     self.mapLabel = Turbine.UI.Label()
-    self.mapLabel:SetSize(self.mapWidth - (self.mapBorder * 2), self.mapHeight - (self.mapBorder * 2))
     self.mapLabel:SetParent(self)
     self.mapLabel:SetVisible(true)
     self.mapLabel:SetMouseVisible(true)
     self.mapLabel:SetPosition(self.mapBorder, self.mapBorder)
     self.mapLabel.MouseClick = self.MouseClick
+    self:UpdateMapSize(self:GetMinPixelSize())
 
-    if self.navPanelHeight ~= 0 then
+    if self.navPanelHeight > 0 then
         -- Create navigation panel below the map
         self.navPanel = Turbine.UI.Control()
         self.navPanel:SetParent(self)
-        self.navPanel:SetSize(self.mapWidth - (self.mapBorder * 2), self.navPanelHeight)
         self.navPanel:SetBackColor(Turbine.UI.Color(1, 0, 0, 0))
         self.navPanel:SetZOrder(99)
-        -- Position below the map with border
-        local navPanelH = self:GetHeight() - (self.navPanelHeight + self.parent.hPadding + (self.mapBorder * 2))
-        self.navPanel:SetPosition(self.mapBorder, navPanelH)
         self.navPanel.MouseClick = self.MouseClick
 
         -- logic for reordering shortcuts in the navigation panel
@@ -83,7 +79,7 @@ function TravelMapTab:Constructor(toplevel)
             if srcSkill == nil then return end
             local x, y = self.navPanel:GetMousePosition()
             if x < 0 or x > self.navPanel:GetWidth() then return end
-            if y < self.startY or y > self.navPanel:GetHeight() then return end
+            if y < self.startQsY or y > self.navPanel:GetHeight() then return end
             local gridIndex = self:GetGridIndex(x, y)
             local quickslot = self.panelQuickslots[gridIndex]
             if quickslot == nil then return end
@@ -130,10 +126,6 @@ function TravelMapTab:Constructor(toplevel)
         self.regionButtons = {}
         local buttonWidth = 195
         local buttonHeight = 25
-        local spacing = 5
-        local totalWidth = (buttonWidth * 5) + (spacing * 4)
-        local startX = ((self.mapWidth - (self.mapBorder * 2)) - totalWidth) / 2
-        local startY = 5
 
         -- Button configurations: {region, labelKey}
         local buttonConfigs = {
@@ -149,13 +141,13 @@ function TravelMapTab:Constructor(toplevel)
             button:SetParent(self.navPanel)
             button:SetSize(buttonWidth, buttonHeight)
             button:SetText(LC[config[2]])
-            button:SetPosition(startX + ((i - 1) * (buttonWidth + spacing)), startY)
             button.region = config[1]
             button.Click = function()
                 self:SwitchRegion(config[1])
             end
             self.regionButtons[i] = button
         end
+        self:UpdateNavPanelLayout(self:GetMinPixelSize())
     end
 
     -- Load the initial map
@@ -196,15 +188,15 @@ function TravelMapTab:LoadMap()
 
     -- disable current region button
     if self.navPanelHeight ~= 0 then
-        for i, btn in ipairs(self.regionButtons) do
+        for _, btn in ipairs(self.regionButtons) do
             btn:SetEnabled(btn.region ~= self.currentRegion)
         end
     end
 end
 
 function TravelMapTab:GetGridIndex(x, y)
-    local col = math.floor((x - self.startX) / self.colWidth) + 1
-    local row = math.floor((y - self.startY) / self.colWidth)
+    local col = math.floor((x - self.startQsX) / self.colWidth) + 1
+    local row = math.floor((y - self.startQsY) / self.colWidth)
     local numOfCols = math.floor(self.totalWidth / self.colWidth);
     if row < 0 then row = 0 end
     local index = row * numOfCols + col
@@ -212,6 +204,39 @@ function TravelMapTab:GetGridIndex(x, y)
         index = #self.panelQuickslots
     end
     return index
+end
+
+function TravelMapTab:UpdateMapSize(width, height)
+    local mapX = width - (self.parent.wPadding + (self.mapBorder * 2))
+    local mapY = height - (self.parent.hPadding + self.navPanelHeight + (self.mapBorder * 2))
+    self.mapLabel:SetSize(mapX, mapY)
+end
+
+function TravelMapTab:UpdateNavPanelLayout(width, height)
+    if self.navPanelHeight == 0 then
+        return
+    end
+
+    local navPanelH = height - (self.parent.hPadding + self.navPanelHeight + (self.mapBorder * 2))
+    self.navPanel:SetPosition(self.mapBorder, navPanelH)
+    self.navPanel:SetSize(width, self.navPanelHeight)
+
+    local navBtnW = self.regionButtons[1]:GetWidth()
+    local spacing = 5
+    local totalWidth = (navBtnW * 5) + (spacing * 4)
+    local startX = (width - (self.mapBorder * 2) - totalWidth) / 2
+    for i, btn in ipairs(self.regionButtons) do
+        local posX = startX + ((i - 1) * (navBtnW + spacing))
+        btn:SetPosition(posX, 2)
+    end
+
+    for i = 1, #self.panelQuickslots do
+        local qs = self.panelQuickslots[i]
+        local posX = self.startQsX + ((i - 1) * self.colWidth)
+        qs:SetStretchMode(1)
+        qs:SetSize(self.colWidth, self.colWidth)
+        qs:SetPosition(posX, self.startQsY)
+    end
 end
 
 -- Add shortcuts to the map
@@ -372,63 +397,43 @@ function TravelMapTab:AddPanelQuickslots()
 
     -- Calculate centered layout
     self.totalWidth = (#skills * self.colWidth) + #skills - 1
-    self.startX = (self.parent:GetWidth() - (self.mapBorder * 2) - self.totalWidth) / 2
-    self.startY = 31
+    self.startQsX = (self.parent:GetWidth() - (self.mapBorder * 2) - self.totalWidth) / 2
+    self.startQsY = self.regionButtons[1]:GetHeight() + 2
 
     -- Create quickslots
     for i = 1, #skills do
-        local index = #self.panelQuickslots + 1
-        self.panelQuickslots[index] = Turbine.UI.Lotro.Quickslot()
+        local qs = Turbine.UI.Lotro.Quickslot()
 
-        self.panelQuickslots[index]:SetShortcut(skills[i].shortcut)
-        self.panelQuickslots[index]:SetOpacity(1)
-        self.panelQuickslots[index]:SetParent(self.navPanel)
-        self.panelQuickslots[index]:SetMouseVisible(true)
-        self.panelQuickslots[index]:SetUseOnRightClick(false)
-        self.panelQuickslots[index]:SetAllowDrop(false)
-        self.panelQuickslots[index]:SetStretchMode(1)
-        self.panelQuickslots[index]:SetSize(self.colWidth, self.colWidth)
+        qs:SetShortcut(skills[i].shortcut)
+        qs:SetOpacity(1)
+        qs:SetParent(self.navPanel)
+        qs:SetMouseVisible(true)
+        qs:SetUseOnRightClick(false)
+        qs:SetAllowDrop(false)
+        qs:SetStretchMode(1)
+        qs:SetSize(self.colWidth, self.colWidth)
+        qs:SetZOrder(98)
+        qs:SetVisible(true)
 
-        local posX = self.startX + ((i - 1) * self.colWidth)
-        self.panelQuickslots[index]:SetPosition(posX, self.startY)
-        self.panelQuickslots[index]:SetZOrder(98)
-        self.panelQuickslots[index]:SetVisible(true)
-
-        self.panelQuickslots[index].MouseClick = function(_, args)
-            if (args.Button == Turbine.UI.MouseButton.Right) then
+        qs.MouseClick = function(_, args)
+            if args.Button == Turbine.UI.MouseButton.Right then
                 Menu:ShowMenu()
             else
-                if (Settings.hideOnTravel == 1) then
+                if Settings.hideOnTravel == 1 then
                     self.parent:SetVisible(false)
                 end
             end
         end
+        self.panelQuickslots[i] = qs
     end
+    self:UpdateNavPanelLayout(self:GetSize())
 end
 
 function TravelMapTab:SetSize(width, height)
     Turbine.UI.Control.SetSize(self, width, height)
     -- TODO: only resize maptab proportionately
-    local mapY = height - (self.parent.hPadding + self.navPanelHeight + (self.mapBorder * 2))
-    self.mapLabel:SetSize(width, mapY)
-    local navPanelH = self:GetHeight() - (self.navPanelHeight + self.parent.hPadding + (self.mapBorder * 2))
-    self.navPanel:SetPosition(self.mapBorder, navPanelH)
-    self.navPanel:SetSize(width, self.navPanel:GetHeight())
-
-    local startX = (self.parent:GetWidth() - (self.mapBorder * 2) - self.totalWidth) / 2
-    for i = 1, #self.panelQuickslots do
-        local qs = self.panelQuickslots[i]
-        local posX = startX + ((i - 1) * self.colWidth)
-        qs:SetPosition(posX, qs:GetTop())
-    end
-
-    local spacing = 5
-    local totalWidth = (self.regionButtons[1]:GetWidth() * 5) + (spacing * 4)
-    startX = (self.parent:GetWidth() - (self.mapBorder * 2) - totalWidth) / 2
-    for i, btn in ipairs(self.regionButtons) do
-        local posX = startX + ((i - 1) * (btn:GetWidth() + spacing))
-        btn:SetPosition(posX, btn:GetTop())
-    end
+    self:UpdateMapSize(width, height)
+    self:UpdateNavPanelLayout(width, height)
 end
 
 function TravelMapTab:GetMinPixelSize()
