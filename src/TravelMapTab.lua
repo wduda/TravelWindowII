@@ -47,7 +47,7 @@ function TravelMapTab:Constructor(toplevel)
 
     -- Show the menu when right clicked
     self.MouseClick = function(_, args)
-        if (args.Button == Turbine.UI.MouseButton.Right) then
+        if args.Button == Turbine.UI.MouseButton.Right then
             Menu:ShowMenu()
         end
     end
@@ -344,29 +344,29 @@ end
 -- Add a single shortcut to the map
 function TravelMapTab:AddSingleShortcut(location, shortcut)
     local index = #self.quickslots + 1
-    self.quickslots[index] = Turbine.UI.Lotro.Quickslot()
+    local qs = Turbine.UI.Lotro.Quickslot()
+    qs:SetShortcut(shortcut)
+    qs:SetOpacity(1)
+    qs:SetParent(self.mapLabel)
+    qs:SetMouseVisible(true)
+    qs:SetUseOnRightClick(false)
+    qs:SetAllowDrop(false)
+    qs:SetStretchMode(1)
+    qs:SetSize(self.colWidth, self.colWidth)
+    qs:SetPosition(location[2], location[3])
+    qs:SetZOrder(98)
+    qs:SetVisible(true)
 
-    self.quickslots[index]:SetShortcut(shortcut)
-    self.quickslots[index]:SetOpacity(1)
-    self.quickslots[index]:SetParent(self.mapLabel)
-    self.quickslots[index]:SetMouseVisible(true)
-    self.quickslots[index]:SetUseOnRightClick(false)
-    self.quickslots[index]:SetAllowDrop(false)
-    self.quickslots[index]:SetStretchMode(1)
-    self.quickslots[index]:SetSize(self.colWidth, self.colWidth)
-    self.quickslots[index]:SetPosition(location[2], location[3])
-    self.quickslots[index]:SetZOrder(98)
-    self.quickslots[index]:SetVisible(true)
-
-    self.quickslots[index].MouseClick = function(_, args)
-        if (args.Button == Turbine.UI.MouseButton.Right) then
+    qs.MouseClick = function(_, args)
+        if args.Button == Turbine.UI.MouseButton.Right then
             Menu:ShowMenu()
         else
-            if (Settings.hideOnTravel == 1) then
+            if Settings.hideOnTravel == 1 then
                 self.parent:SetVisible(false)
             end
         end
     end
+    self.quickslots[index] = qs
 end
 
 function GetNavPanelSkills()
