@@ -376,6 +376,20 @@ function TravelWindow:Constructor()
             elseif Settings.mode == TabId.PULL then
                 sY = self:GetHeight()
                 self.PullTab.pixelWidth = sX
+            elseif Settings.mode == TabId.MAP then
+                -- resize map mode proportionately
+                local offX, offY = self:GetPosition()
+                local maxX, maxY = Turbine.UI.Display.GetSize()
+                maxX = maxX - offX
+                maxY = maxY - offY
+                if sX > maxX then sX = maxX end
+                local widthDelta = sX - self.resizeStartX
+                sY = self.resizeStartY + widthDelta * (768 / 1024)
+                if sY > maxY then
+                    sY = maxY
+                    local heightDelta = sY - self.resizeStartY
+                    sX = self.resizeStartX + heightDelta / (768 / 1024)
+                end
             end
             self:SetSize(sX, sY)
         end
