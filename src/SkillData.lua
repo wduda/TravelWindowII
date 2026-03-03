@@ -1291,10 +1291,10 @@ function TravelDictionary:CreateDictionaries()
         overlap={"0x7006FD4B"},
         acquire={
             {cost={{amount=10, token=LC.token.HAMATI_URGUL}},
-                EN={vendor="Hamâti Quartermaster"},
-                DE={vendor="Hamâti-Quartiermeisterin"},
-                FR={vendor="Intendante des Hamâti"},
-                RU={vendor="Хаматский интендант"}}},
+                EN={vendor="Hamâti Quartermaster", deed="Tales of the Crown of Hamât"},
+                DE={vendor="Hamâti-Quartiermeisterin", deed="Geschichten der Krone von Hamât"},
+                FR={vendor="Intendante des Hamâti", deed="Contes de la Couronne du Hamât"},
+                RU={vendor="Хаматский интендант", deed="Истории Короны Хамата"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.6
@@ -2545,10 +2545,10 @@ function TravelDictionary:CreateDictionaries()
         overlap={"0x7006FD4B"},
         acquire={
             {cost={{amount=10, token=LC.token.HAMATI_URGUL}},
-                EN={vendor="Hamâti Quartermaster"},
-                DE={vendor="Hamâti-Quartiermeisterin"},
-                FR={vendor="Intendante des Hamâti"},
-                RU={vendor="Хаматский интендант"}}},
+                EN={vendor="Hamâti Quartermaster", deed="Tales of the Crown of Hamât"},
+                DE={vendor="Hamâti-Quartiermeisterin", deed="Geschichten der Krone von Hamât"},
+                FR={vendor="Intendante des Hamâti", deed="Contes de la Couronne du Hamât"},
+                RU={vendor="Хаматский интендант", deed="Истории Короны Хамата"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.6
@@ -4695,10 +4695,10 @@ function TravelDictionary:CreateDictionaries()
         map={{MapType.HARADWAITH, 590, 445}},
         acquire={
             {cost={{amount=10, token=LC.token.HAMATI_URGUL}},
-                EN={vendor="Hamâti Quartermaster"},
-                DE={vendor="Hamâti-Quartiermeisterin"},
-                FR={vendor="Intendante des Hamâti"},
-                RU={vendor="Хаматский интендант"}}},
+                EN={vendor="Hamâti Quartermaster", deed="Tales of the Crown of Hamât"},
+                DE={vendor="Hamâti-Quartiermeisterin", deed="Geschichten der Krone von Hamât"},
+                FR={vendor="Intendante des Hamâti", deed="Contes de la Couronne du Hamât"},
+                RU={vendor="Хаматский интендант", deed="Истории Короны Хамата"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
         level=150.6
