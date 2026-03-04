@@ -16,7 +16,7 @@ import "TravelWindowII.src.utils.BitOps";
 ListFontConfig = {
     [1] = {font = Turbine.UI.Lotro.Font.TrajanPro14, height = 20},
     [2] = {font = Turbine.UI.Lotro.Font.TrajanPro15, height = 22},
-    [3] = {font = Turbine.UI.Lotro.Font.Verdana16,   height = 26},
+    [3] = {font = Turbine.UI.Lotro.Font.TrajanPro20, height = 28},
 }
 
 function GetListFontConfig()
