@@ -389,6 +389,75 @@ function OptionsPanel:UpdateButtonAppearancePreview()
     return
 end
 
+ListFontSizeOptions = {
+    {value = 1, labelKey = "fontSizeSmall"},
+    {value = 2, labelKey = "fontSizeMedium"},
+    {value = 3, labelKey = "fontSizeLarge"},
+}
+
+function OptionsPanel:AddListFontSizeOption()
+    local labelY = self:NextY(30)
+
+    local sizeLabel = Turbine.UI.Label()
+    sizeLabel:SetParent(self.GeneralTab)
+    sizeLabel:SetPosition(20, labelY)
+    sizeLabel:SetSize(self.labelWidth, 20)
+    sizeLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+    sizeLabel:SetText(LC.listFontSize)
+    self.listFontSizeLabel = sizeLabel
+
+    self.updatingListFontSizeRadios = false
+    self.listFontSizeRadioButtons = {}
+
+    local radioX = 180
+    local radioSpacing = 80
+
+    for index, config in ipairs(ListFontSizeOptions) do
+        local radio = Turbine.UI.Lotro.CheckBox()
+        radio:SetParent(self.GeneralTab)
+        radio:SetPosition(radioX + ((index - 1) * radioSpacing), labelY)
+        radio:SetSize(80, 20)
+        radio:SetText(LC[config.labelKey])
+        radio:SetCheckAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+        radio.fontSizeValue = config.value
+
+        radio.CheckedChangedFunc = function(sender, args)
+            if self.updatingListFontSizeRadios then
+                return
+            end
+
+            if sender:IsChecked() then
+                Settings.listFontSize = sender.fontSizeValue
+
+                self.updatingListFontSizeRadios = true
+                for _, otherRadio in ipairs(self.listFontSizeRadioButtons) do
+                    if otherRadio ~= sender then
+                        otherRadio:SetChecked(false)
+                    end
+                end
+                self.updatingListFontSizeRadios = false
+
+                _G.travel.dirty = true
+                _G.travel:UpdateSettings()
+            else
+                self.updatingListFontSizeRadios = true
+                sender:SetChecked(true)
+                self.updatingListFontSizeRadios = false
+            end
+        end
+
+        radio.UpdateOption = function()
+            self.updatingListFontSizeRadios = true
+            radio:SetChecked(Settings.listFontSize == radio.fontSizeValue)
+            self.updatingListFontSizeRadios = false
+        end
+        radio:UpdateOption()
+
+        self.listFontSizeRadioButtons[index] = radio
+        self.options["listFontSize" .. config.value] = radio
+    end
+end
+
 function OptionsPanel:SetupGeneralTab()
     self.optionHeight = 0
     self.options = {}
@@ -544,6 +613,7 @@ function OptionsPanel:SetupGeneralTab()
             _G.travel.ListTab:ReloadLabels()
             _G.travel.PullTab.pulldown:ReloadLabels()
         end)
+    self:AddListFontSizeOption()
     self:AddCheckBoxOption("lockUI", 20, 30,
         function(sender, args)
             if sender:IsChecked() then
