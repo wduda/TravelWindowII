@@ -18,16 +18,17 @@ function TravelMapTab:Constructor(toplevel)
     self.parent = toplevel
 
     -- Map configuration
+    local buttonWidth = 195
+    local buttonHeight = 25
     self.mapWidth = 1024
     self.mapHeight = 768
-    self.navPanelHeight = 38
     self.colWidth = 32
+    self.navPanelHeight = buttonHeight + self.colWidth + 10
+    self.navOffsetX = (not self.parent.isMinWindow) and 5 or 0
+    self.navOffsetW = (not self.parent.isMinWindow) and 20 or 0
     self.totalWidth = 0
     self.quickslots = {}
     self.panelQuickslots = {}  -- For milestone/housing skills in nav panel
-
-    -- Add border padding around map content when using Lotro window
-    self.mapBorder = (not self.parent.isMinWindow) and 5 or 0
 
     -- Set initial region (will be loaded from settings)
     if PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer then
@@ -57,7 +58,6 @@ function TravelMapTab:Constructor(toplevel)
     self.mapLabel:SetParent(self)
     self.mapLabel:SetVisible(true)
     self.mapLabel:SetMouseVisible(true)
-    self.mapLabel:SetPosition(self.mapBorder, self.mapBorder)
     self.mapLabel.MouseClick = self.MouseClick
     self:UpdateMapSize(self:GetMinPixelSize())
 
@@ -124,8 +124,6 @@ function TravelMapTab:Constructor(toplevel)
 
         -- Create 5 region buttons for direct access
         self.regionButtons = {}
-        local buttonWidth = 195
-        local buttonHeight = 25
 
         -- Button configurations: {region, labelKey}
         local buttonConfigs = {
@@ -207,8 +205,9 @@ function TravelMapTab:GetGridIndex(x, y)
 end
 
 function TravelMapTab:UpdateMapSize(width, height)
-    local mapX = width - (self.parent.wPadding + (self.mapBorder * 2))
-    local mapY = height - (self.parent.hPadding + self.navPanelHeight + (self.mapBorder * 2))
+    local mapX = width - self.navOffsetW
+    local mapY = height - self.navPanelHeight
+    self.mapLabel:SetPosition(self.navOffsetX, 0)
     self.mapLabel:SetSize(mapX, mapY)
 end
 
@@ -217,20 +216,20 @@ function TravelMapTab:UpdateNavPanelLayout(width, height)
         return
     end
 
-    local navPanelH = height - (self.parent.hPadding + self.navPanelHeight + (self.mapBorder * 2))
-    self.navPanel:SetPosition(self.mapBorder, navPanelH)
-    self.navPanel:SetSize(width, self.navPanelHeight)
+    local navPanelH = height - self.navPanelHeight
+    self.navPanel:SetPosition(self.navOffsetX, navPanelH)
+    self.navPanel:SetSize(width - self.navOffsetW, self.navPanelHeight)
 
     local navBtnW = self.regionButtons[1]:GetWidth()
     local spacing = 5
     local totalWidth = (navBtnW * 5) + (spacing * 4)
-    local startX = (width - (self.mapBorder * 2) - totalWidth) / 2
+    local startX = (width - self.navOffsetW - totalWidth) / 2
     for i, btn in ipairs(self.regionButtons) do
         local posX = startX + ((i - 1) * (navBtnW + spacing))
-        btn:SetPosition(posX, 2)
+        btn:SetPosition(posX, 7)
     end
 
-    self.startQsX = (self.parent:GetWidth() - (self.mapBorder * 2) - self.totalWidth) / 2
+    self.startQsX = (self.parent:GetWidth() - self.totalWidth) / 2
     for i = 1, #self.panelQuickslots do
         local qs = self.panelQuickslots[i]
         local posX = self.startQsX + ((i - 1) * self.colWidth)
@@ -398,7 +397,7 @@ function TravelMapTab:AddPanelQuickslots()
 
     -- Calculate centered layout
     self.totalWidth = (#skills * self.colWidth) + #skills - 1
-    self.startQsY = self.regionButtons[1]:GetHeight() + 2
+    self.startQsY = self.regionButtons[1]:GetHeight() + 11
 
     -- Create quickslots
     for i = 1, #skills do
@@ -426,7 +425,7 @@ function TravelMapTab:AddPanelQuickslots()
         end
         self.panelQuickslots[i] = qs
     end
-    self:UpdateNavPanelLayout(self:GetSize())
+    self:UpdateNavPanelLayout(self.parent:GetSize())
 end
 
 function TravelMapTab:SetSize(width, height)
@@ -436,8 +435,8 @@ function TravelMapTab:SetSize(width, height)
 end
 
 function TravelMapTab:GetMinPixelSize()
-    local width = self.mapWidth + self.parent.wPadding + (self.mapBorder * 2)
-    local height = self.mapHeight + self.parent.hPadding + self.navPanelHeight + (self.mapBorder * 2)
+    local width = self.mapWidth + self.navOffsetW
+    local height = self.mapHeight + self.navPanelHeight
     return width, height
 end
 
