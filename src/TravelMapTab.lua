@@ -440,6 +440,13 @@ function TravelMapTab:GetMinPixelSize()
     return width, height
 end
 
+function TravelMapTab:GetScaledPixelSize()
+    local scale = Settings.mapViewScale or 1
+    local width = math.floor(self.mapWidth * scale + 0.5) + self.navOffsetW
+    local height = math.floor(self.mapHeight * scale + 0.5) + self.navPanelHeight
+    return width, height
+end
+
 function TravelMapTab:SetOpacityItems(value)
     -- quickslots in stretch mode do not get updated opacity from
     -- the parent; update them here

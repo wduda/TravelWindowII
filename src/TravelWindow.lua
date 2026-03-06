@@ -431,6 +431,13 @@ function TravelWindow:Constructor()
             Settings.gridRows = self.GridTab.numOfRows
         elseif Settings.mode == TabId.PULL then
             Settings.pullWidth = self.PullTab.pixelWidth
+        elseif Settings.mode == TabId.MAP then
+            local mapWidth = self:GetWidth() - self.MapTab.navOffsetW
+            if self.MapTab.mapWidth > 0 then
+                Settings.mapViewScale = mapWidth / self.MapTab.mapWidth
+            else
+                Settings.mapViewScale = 1
+            end
         end
         self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding)
         self.MainPanel:UpdateTabs()
@@ -493,7 +500,7 @@ function TravelWindow:SetItems()
         self.PullTab:SetItems()
         self.PullTab.pixelWidth = self:GetWidth()
     elseif Settings.mode == TabId.MAP then
-        self:SetSize(self.MapTab:GetMinPixelSize()) -- FIXME: get this from current settings?
+        self:SetSize(self.MapTab:GetScaledPixelSize())
         self.MapTab:SetItems()
     end
 end
@@ -535,7 +542,7 @@ function TravelWindow:UpdateMinimum()
         self:SetSize(self.PullTab.pixelWidth, self.minHeight)
     end
     if Settings.mode == TabId.MAP then
-        self:SetSize(self.minWidth, self.minHeight)
+        self:SetSize(self.MapTab:GetScaledPixelSize())
     end
 end
 
