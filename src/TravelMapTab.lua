@@ -440,7 +440,7 @@ function TravelMapTab:GetMinPixelSize()
     return width, height
 end
 
-function TravelMapTab:GetScaledPixelSize()
+function TravelMapTab:GetPixelSize()
     local scale = Settings.mapViewScale or 1
     local width = math.floor(self.mapWidth * scale + 0.5) + self.navOffsetW
     local height = math.floor(self.mapHeight * scale + 0.5) + self.navPanelHeight
