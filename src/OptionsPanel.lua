@@ -390,11 +390,11 @@ end
 function OptionsPanel:AddShortcutLabelFontOption()
     local fontSizeOptions = GetShortcutLabelFontOptions()
 
-    local labelY = self:NextY(30)
+    local sizeLabelY = self:NextY(self.DEFAULT_NEXTY)
 
     local sizeLabel = Turbine.UI.Label()
     sizeLabel:SetParent(self.GeneralTab)
-    sizeLabel:SetPosition(self.DEFAULT_X, labelY)
+    sizeLabel:SetPosition(self.DEFAULT_X, sizeLabelY)
     sizeLabel:SetSize(self.labelWidth, 20)
     sizeLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
     sizeLabel:SetText(LC.shortcutLabelFontSize)
