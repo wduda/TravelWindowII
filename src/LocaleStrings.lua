@@ -327,10 +327,10 @@ LC_DE.useTagInListTab = "Verwenden von Skill-Tag im Textlayout"
 LC_FR.useTagInListTab = "Utiliser la balise Skill dans la mise en page de texte"
 LC_RU.useTagInListTab = "Использование тега навыка в макете текста"
 
-LC_EN.listFontSize = "List View Font Size"
-LC_DE.listFontSize = "Schriftgröße der Listenansicht"
-LC_FR.listFontSize = "Taille de police de la liste"
-LC_RU.listFontSize = "Размер шрифта списка"
+LC_EN.shortcutLabelFontSize = "Shortcut Label Font Size"
+LC_DE.shortcutLabelFontSize = "Schriftgröße der Kurzbefehlsbeschriftungen"
+LC_FR.shortcutLabelFontSize = "Taille de police des étiquettes de raccourci"
+LC_RU.shortcutLabelFontSize = "Размер шрифта меток быстрого доступа"
 
 LC_EN.fontSizeSmall = "Small"
 LC_DE.fontSizeSmall = "Klein"
@@ -549,6 +549,7 @@ LC_FR.updateRemindLater = "Rappeler plus tard"
 LC_RU.updateRemindLater = "Показать позже"
 
 LC_EN.updateDefaultMessage = "Travel Window II has been updated to"
+
 LC_DE.updateDefaultMessage = "Travel Window II wurde aktualisiert auf"
 LC_FR.updateDefaultMessage = "Travel Window II a été mis à jour vers"
 LC_RU.updateDefaultMessage = "Travel Window II обновлён до"

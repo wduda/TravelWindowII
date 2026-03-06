@@ -387,12 +387,8 @@ function OptionsPanel:AddTravelButtonAppearanceOptions()
 
 end
 
-function OptionsPanel:AddListFontSizeOption()
-    local listFontSizeOptions = {
-        {value = "TrajanPro14", labelKey = "fontSizeSmall"},
-        {value = "TrajanPro15", labelKey = "fontSizeMedium"},
-        {value = "TrajanPro20", labelKey = "fontSizeLarge"},
-    }
+function OptionsPanel:AddShortcutLabelFontOption()
+    local fontSizeOptions = GetShortcutLabelFontOptions()
 
     local labelY = self:NextY(30)
 
@@ -401,59 +397,60 @@ function OptionsPanel:AddListFontSizeOption()
     sizeLabel:SetPosition(self.DEFAULT_X, labelY)
     sizeLabel:SetSize(self.labelWidth, 20)
     sizeLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
-    sizeLabel:SetText(LC.listFontSize)
-    self.listFontSizeLabel = sizeLabel
+    sizeLabel:SetText(LC.shortcutLabelFontSize)
+    self.shortcutLabelFontSizeLabel = sizeLabel
 
-    self.updatingListFontSizeRadios = false
-    self.listFontSizeRadioButtons = {}
+    self.updatingShortcutLabelFontRadios = false
+    self.shortcutLabelFontRadioButtons = {}
 
     local radioX = 180
     local radioSpacing = 80
 
-    for index, config in ipairs(listFontSizeOptions) do
+    for index, config in ipairs(fontSizeOptions) do
         local radio = Turbine.UI.Lotro.CheckBox()
         radio:SetParent(self.GeneralTab)
         radio:SetPosition(radioX + ((index - 1) * radioSpacing), labelY)
         radio:SetSize(80, 20)
         radio:SetText(LC[config.labelKey])
         radio:SetCheckAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
-        radio.fontSizeValue = config.value
+        radio.fontValue = config.value
 
         radio.CheckedChangedFunc = function(sender, args)
-            if self.updatingListFontSizeRadios then
+            if self.updatingShortcutLabelFontRadios then
                 return
             end
 
             if sender:IsChecked() then
-                Settings.listFontSize = sender.fontSizeValue
+                Settings.shortcutLabelFont = sender.fontValue
 
-                self.updatingListFontSizeRadios = true
-                for _, otherRadio in ipairs(self.listFontSizeRadioButtons) do
+                self.updatingShortcutLabelFontRadios = true
+                for _, otherRadio in ipairs(self.shortcutLabelFontRadioButtons) do
                     if otherRadio ~= sender then
                         otherRadio:SetChecked(false)
                     end
                 end
-                self.updatingListFontSizeRadios = false
+                self.updatingShortcutLabelFontRadios = false
 
                 _G.travel.dirty = true
                 _G.travel:UpdateSettings()
+                _G.travel.PullTab.pulldown:ReloadLabels()
             else
-                self.updatingListFontSizeRadios = true
+                self.updatingShortcutLabelFontRadios = true
                 sender:SetChecked(true)
-                self.updatingListFontSizeRadios = false
+                self.updatingShortcutLabelFontRadios = false
             end
         end
 
         radio.UpdateOption = function()
-            local selectedFontSize = Settings.listFontSize or "TrajanPro15"
-            self.updatingListFontSizeRadios = true
-            radio:SetChecked(selectedFontSize == radio.fontSizeValue)
-            self.updatingListFontSizeRadios = false
+            local selectedFont = Settings.shortcutLabelFont or "TrajanPro15"
+            self.updatingShortcutLabelFontRadios = true
+            radio:SetChecked(selectedFont == radio.fontValue)
+            self.updatingShortcutLabelFontRadios = false
         end
         radio:UpdateOption()
 
-        self.listFontSizeRadioButtons[index] = radio
-        self.options["listFontSize" .. config.value] = radio
+        self.shortcutLabelFontRadioButtons[index] = radio
+        self.options["shortcutLabelFont" .. config.value] = radio
     end
 end
 
@@ -700,7 +697,7 @@ function OptionsPanel:SetupGeneralTab()
             _G.travel.ListTab:ReloadLabels()
             _G.travel.PullTab.pulldown:ReloadLabels()
         end)
-    self:AddListFontSizeOption()
+    self:AddShortcutLabelFontOption()
 
     -- enable changed methods until after all options are initialized
     for _, v in pairs(self.options) do
