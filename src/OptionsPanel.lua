@@ -578,7 +578,6 @@ function OptionsPanel:SetupGeneralTab()
             end
             ToggleButton:SetVisible(sender:IsChecked())
         end)
-    self:AddTravelButtonAppearanceOptions()
     self:AddCheckBoxOption("pulldownTravel", self.DEFAULT_X, self.DEFAULT_NEXTY)
     self:AddCheckBoxOption("useZoneNames", self.DEFAULT_X, 25,
         function(sender, args)
