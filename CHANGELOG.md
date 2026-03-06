@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v4.5.0
+
+- feat: Font size in the Text List view can now be set to Small, Medium or Large in options
+
 ## v4.4.0
 
 - feat: Travel Button icon can now be selected from four variants in options and settings menu

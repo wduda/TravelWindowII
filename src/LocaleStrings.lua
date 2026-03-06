@@ -327,6 +327,26 @@ LC_DE.useTagInListTab = "Verwenden von Skill-Tag im Textlayout"
 LC_FR.useTagInListTab = "Utiliser la balise Skill dans la mise en page de texte"
 LC_RU.useTagInListTab = "Использование тега навыка в макете текста"
 
+LC_EN.listFontSize = "List View Font Size"
+LC_DE.listFontSize = "Schriftgröße der Listenansicht"
+LC_FR.listFontSize = "Taille de police de la liste"
+LC_RU.listFontSize = "Размер шрифта списка"
+
+LC_EN.fontSizeSmall = "Small"
+LC_DE.fontSizeSmall = "Klein"
+LC_FR.fontSizeSmall = "Petit"
+LC_RU.fontSizeSmall = "Малый"
+
+LC_EN.fontSizeMedium = "Medium"
+LC_DE.fontSizeMedium = "Mittel"
+LC_FR.fontSizeMedium = "Moyen"
+LC_RU.fontSizeMedium = "Средний"
+
+LC_EN.fontSizeLarge = "Large"
+LC_DE.fontSizeLarge = "Groß"
+LC_FR.fontSizeLarge = "Grand"
+LC_RU.fontSizeLarge = "Большой"
+
 LC_EN.unlockKeyPress = "Hold Shift to unlock"
 LC_DE.unlockKeyPress = "Umschalttaste um zu entsperren gedrückt halten"
 LC_FR.unlockKeyPress = "Maintenez la touche Maj enfoncée pour déverrouiller"
