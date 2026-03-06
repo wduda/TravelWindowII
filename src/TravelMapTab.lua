@@ -59,7 +59,7 @@ function TravelMapTab:Constructor(toplevel)
     self.mapLabel:SetVisible(true)
     self.mapLabel:SetMouseVisible(true)
     self.mapLabel.MouseClick = self.MouseClick
-    self:UpdateMapSize(self:GetMinPixelSize())
+    self:UpdateMapSize(self:GetPixelSize())
 
     if self.navPanelHeight > 0 then
         -- Create navigation panel below the map
@@ -145,7 +145,7 @@ function TravelMapTab:Constructor(toplevel)
             end
             self.regionButtons[i] = button
         end
-        self:UpdateNavPanelLayout(self:GetMinPixelSize())
+        self:UpdateNavPanelLayout(self:GetPixelSize())
     end
 
     -- Load the initial map
