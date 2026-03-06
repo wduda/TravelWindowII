@@ -1,109 +1,105 @@
-import "Turbine.Gameplay";
-import "Turbine.UI";
-import "Turbine.UI.Lotro";
-import "TravelWindowII.src.extensions";
-import "TravelWindowII.src.utils.BitOps";
-import "TravelWindowII.src.VindarPatch";
-import "TravelWindowII.src.EuroNormalize";
+import "Turbine.Gameplay"
+import "Turbine.UI"
+import "Turbine.UI.Lotro"
+import "TravelWindowII.src.extensions"
+import "TravelWindowII.src.utils.BitOps"
+import "TravelWindowII.src.VindarPatch"
+import "TravelWindowII.src.EuroNormalize"
 
 --[[ This is the main window for the Travel Window UI      ]] --
 --[[ It handles the loading and saving the settings,       ]] --
 --[[ creating the lists of travel shortcuts, creates       ]] --
 --[[ and handles the context menu.                         ]] --
 
-TravelWindow = class(Turbine.UI.Window);
+TravelWindow = class(Turbine.UI.Window)
 
 function TravelWindow:Constructor()
     if Settings.useMinWindow == 1 then
-        Turbine.UI.Window.Constructor(self);
+        Turbine.UI.Window.Constructor(self)
     else
-        Turbine.UI.Lotro.Window.Constructor(self);
+        Turbine.UI.Lotro.Window.Constructor(self)
     end
 
     self.fadeOut = false
     self.levelUpdate = false
-    self.reloadGVMap = false;
-    self.dirty = true;
-    self.isMouseDown = false;
-    self.isDragging = false;
-    self.isResizing = false;
-    self.isMinWindow = Settings.useMinWindow == 1;
+    self.reloadGVMap = false
+    self.dirty = true
+    self.isMouseDown = false
+    self.isDragging = false
+    self.isResizing = false
+    self.isMinWindow = Settings.useMinWindow == 1
     if self.isMinWindow then
-        self.wPos = -1;
-        self.hPos = 20;
-        self.wPadding = -1;
-        self.hPadding = 20;
-        self.resizeLabelSize = 15;
-        self.backColor = Turbine.UI.Color(1, 0, 0, 0);
+        self.wPos = -1
+        self.hPos = 20
+        self.wPadding = -1
+        self.hPadding = 20
+        self.resizeLabelSize = 15
+        self.backColor = Turbine.UI.Color(1, 0, 0, 0)
     else
-        self.wPos = 15;
-        self.hPos = 40;
-        self.wPadding = 20;
-        self.hPadding = 60;
-        self.resizeLabelSize = 20;
+        self.wPos = 15
+        self.hPos = 40
+        self.wPadding = 20
+        self.hPadding = 60
+        self.resizeLabelSize = 20
     end
 
-    ChatLog = Turbine.Chat;
+    ChatLog = Turbine.Chat
     ChatLogHandler = function(sender, args)
         if args.ChatType == Turbine.ChatType.Advancement then
-            FilterTravelSkills(tostring(args.Message));
+            FilterTravelSkills(tostring(args.Message))
         end
     end
-    AddCallback(ChatLog, "Received", ChatLogHandler);
+    AddCallback(ChatLog, "Received", ChatLogHandler)
 
     -- configure the main window
-    self:SetText(LC.mainTitle);
-    self:SetBackColor(self.backColor);
-    if (Settings.hideOnStart == 1) then
-        self:SetVisible(false);
-    else
-        self:SetVisible(true);
-    end
+    self:SetText(LC.mainTitle)
+    self:SetBackColor(self.backColor)
+    self:SetVisible((Settings.hideOnStart == 0) and (Settings.mode ~= TabId.MAP))
 
     -- save the player's combat states for managing hiding the window
     -- when the player enters combat
-    self.previousCombatState = false;
-    self.wasOpenBeforeCombat = false;
+    self.previousCombatState = false
+    self.wasOpenBeforeCombat = false
 
     -- create a single context menu to use on all panels
     Menu = SettingsMenu(self)
 
     -- create the tabbed panel to hold all the other panels
-    self.MainPanel = TravelWindowII.src.extensions.DPanel();
-    self.MainPanel:SetPosition(self.wPos, self.hPos);
+    self.MainPanel = TravelWindowII.src.extensions.DPanel()
+    self.MainPanel:SetPosition(self.wPos, self.hPos)
     self.MainPanel:SetButtonsVisible(false) -- make sure to hide the tab buttons
-    self.MainPanel:SetParent(self);
+    self.MainPanel:SetParent(self)
 
     -- create the tabs for each mode of display
-    self.ListTab = TravelListTab(self);
-    self.GridTab = TravelGridTab(self);
-    self.CaroTab = TravelCaroTab(self);
-    self.PullTab = TravelPulldownTab(self);
-    self.MapTab  = TravelMapTab(self);
+    self.ListTab = TravelListTab(self)
+    self.GridTab = TravelGridTab(self)
+    self.CaroTab = TravelCaroTab(self)
+    self.PullTab = TravelPulldownTab(self)
+    self.MapTab  = TravelMapTab(self)
 
     -- add the tabs to the panel
-    self.MainPanel:AddTab(self.ListTab);
-    self.MainPanel:AddTab(self.GridTab);
-    self.MainPanel:AddTab(self.CaroTab);
-    self.MainPanel:AddTab(self.PullTab);
-    self.MainPanel:AddTab(self.MapTab);
-    self.ListTab.tabId = TabId.LIST;
-    self.GridTab.tabId = TabId.GRID;
-    self.CaroTab.tabId = TabId.CARO;
-    self.PullTab.tabId = TabId.PULL;
-    self.MapTab.tabId  = TabId.MAP;
-    self.GridTab.numOfCols = Settings.gridCols;
-    self.GridTab.numOfRows = Settings.gridRows;
-    self.ListTab.pixelWidth = Settings.listWidth;
-    self.ListTab.numOfRows = Settings.listRows;
+    self.MainPanel:AddTab(self.ListTab)
+    self.MainPanel:AddTab(self.GridTab)
+    self.MainPanel:AddTab(self.CaroTab)
+    self.MainPanel:AddTab(self.PullTab)
+    self.MainPanel:AddTab(self.MapTab)
+    self.ListTab.tabId = TabId.LIST
+    self.GridTab.tabId = TabId.GRID
+    self.CaroTab.tabId = TabId.CARO
+    self.PullTab.tabId = TabId.PULL
+    self.MapTab.tabId  = TabId.MAP
+    self.GridTab.numOfCols = Settings.gridCols
+    self.GridTab.numOfRows = Settings.gridRows
+    self.ListTab.pixelWidth = Settings.listWidth
+    self.ListTab.numOfRows = Settings.listRows
     self.PullTab.pixelWidth = Settings.pullWidth
 
-    self.MainPanel:SetTab(Settings.mode);
+    self.MainPanel:SetTab(Settings.mode)
     self:SetInitialPosition()
     self.GridTab:SetAllowDrop(true)
     self.MapTab:SetAllowDrop(true)
-    self:SetItems();
-    self:UpdateMinimum();
+    self:SetItems()
+    self:UpdateMinimum()
     -- Map view always uses max opacity
     if Settings.mode == TabId.MAP then
         self:SetOpacity(Settings.mainMaxOpacity)
@@ -113,22 +109,22 @@ function TravelWindow:Constructor()
 
     -- track the hidden state of the UI, manage previous states for window and
     -- the button
-    self.hidden = false;
-    self.currentVisState = self:IsVisible();
+    self.hidden = false
+    self.currentVisState = self:IsVisible()
 
-    self.titleLabel = Turbine.UI.Label();
-    self.titleLabel:SetParent(self);
-    self.titleLabel:SetVisible(self.isMinWindow);
-    self.titleLabel:SetPosition(0, 0);
-    self.titleLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
-    self.titleLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro15);
-    self.titleLabel:SetText(LC.miniTitle);
+    self.titleLabel = Turbine.UI.Label()
+    self.titleLabel:SetParent(self)
+    self.titleLabel:SetVisible(self.isMinWindow)
+    self.titleLabel:SetPosition(0, 0)
+    self.titleLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter)
+    self.titleLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro15)
+    self.titleLabel:SetText(LC.miniTitle)
 
-    self.resizeLabel = Turbine.UI.Label();
-    self.resizeLabel:SetParent(self);
-    self.resizeLabel:SetSize(self.resizeLabelSize, self.resizeLabelSize);
-    self.resizeLabel:SetOpacity(0);
-    self.resizeLabel:SetZOrder(100); -- put above the shortcuts; which are set to 90
+    self.resizeLabel = Turbine.UI.Label()
+    self.resizeLabel:SetParent(self)
+    self.resizeLabel:SetSize(self.resizeLabelSize, self.resizeLabelSize)
+    self.resizeLabel:SetOpacity(0)
+    self.resizeLabel:SetZOrder(100) -- put above the shortcuts; which are set to 90
 
     -- close button for minimal window mode
     self.closeButton = Turbine.UI.Label()
@@ -151,7 +147,7 @@ function TravelWindow:Constructor()
 
     --[[ Event Handlers ]] --
 
-    self:SetWantsKeyEvents(true);
+    self:SetWantsKeyEvents(true)
 
     -- check if our position has changed, and save the settings if so
     self.PositionChanged = function(_, _)
@@ -183,8 +179,8 @@ function TravelWindow:Constructor()
             end
             _G.options:SetVisible(false)
             if (self.hidden == true) then
-                self.hidden = false;
-                self:SetVisible(self.currentVisState);
+                self.hidden = false
+                self:SetVisible(self.currentVisState)
                 ToggleButton:SetVisible(Settings.showButton == 1)
             end
         elseif (args.Action == Turbine.UI.Lotro.Action.UI_Toggle) then
@@ -213,12 +209,12 @@ function TravelWindow:Constructor()
             if (Settings.hideOnCombat == 1 and self:IsVisible()) then
 
                 -- make sure we know we were open previously, then hide the window
-                self.wasOpenBeforeCombat = true;
-                self:SetVisible(false);
+                self.wasOpenBeforeCombat = true
+                self:SetVisible(false)
             end
 
             -- set the previous state for the next check
-            self.previousCombatState = true;
+            self.previousCombatState = true
 
             -- handle going out of combat
         else
@@ -228,15 +224,15 @@ function TravelWindow:Constructor()
             if (Settings.hideOnCombat == 1 and self.wasOpenBeforeCombat == true) then
 
                 -- clear the open status, and show the window
-                self.wasOpenBeforeCombat = false;
-                self:SetVisible(true);
+                self.wasOpenBeforeCombat = false
+                self:SetVisible(true)
             end
 
             -- set the previous state for the next check
-            self.previousCombatState = false;
+            self.previousCombatState = false
         end
     end
-    AddCallback(Player, "InCombatChanged", IncombatChangedHandler);
+    AddCallback(Player, "InCombatChanged", IncombatChangedHandler)
 
     LevelChangedHandler = function(sender, args)
         self.levelUpdate = true
@@ -299,25 +295,25 @@ function TravelWindow:Constructor()
     -- if the visible status of the window changes, close the pulldown tab
     self.VisibleChanged = function(sender, args)
         if (self:IsVisible() == false) then
-            self.PullTab:ClosePulldown();
+            self.PullTab:ClosePulldown()
         end
     end
 
     self.MouseClick = function(sender, args)
         if args.Button == Turbine.UI.MouseButton.Right then
-            Menu:ShowMenu();
+            Menu:ShowMenu()
         end
 
         if Settings.mode == TabId.PULL then
-            self.PullTab:ClosePulldown();
+            self.PullTab:ClosePulldown()
         end
     end
 
     -- go to full opacity if mouse is over
     self.MouseEnter = function(sender, args)
-        self:SetMaxOpacity();
-        self.fadeDelayStart = nil;
-        self.fadeOutDelay = nil;
+        self:SetMaxOpacity()
+        self.fadeDelayStart = nil
+        self.fadeOutDelay = nil
     end
 
     -- go to low opacity when mouse is not over
@@ -326,8 +322,8 @@ function TravelWindow:Constructor()
             self:FadeOut()
         end
     end
-    self.PullTab.pulldown.dropDownWindow.MouseEnter = self.MouseEnter;
-    self.PullTab.pulldown.dropDownWindow.MouseLeave = self.MouseLeave;
+    self.PullTab.pulldown.dropDownWindow.MouseEnter = self.MouseEnter
+    self.PullTab.pulldown.dropDownWindow.MouseLeave = self.MouseLeave
 
     self.MouseDown = function(_, args)
         self.posLockX, self.posLockY = self:GetPosition()
@@ -335,7 +331,7 @@ function TravelWindow:Constructor()
             return
         end
 
-        self.isMouseDown = true;
+        self.isMouseDown = true
         if (args.Button == Turbine.UI.MouseButton.Left) then
             local mX, mY = self:GetMousePosition()
             self.dragStartX, self.dragStartY = mX, mY
@@ -345,7 +341,7 @@ function TravelWindow:Constructor()
                 self.resizeStartX, self.resizeStartY = self:GetSize()
                 if self.resizeStartX - mX < self.resizeLabelSize + 1 and
                         self.resizeStartY - mY < self.resizeLabelSize + 1 then
-                    self.isResizing = true;
+                    self.isResizing = true
                 end
             end
 
@@ -358,101 +354,101 @@ function TravelWindow:Constructor()
         if self.isDragging then
             local maxX, maxY = Turbine.UI.Display.GetSize()
             maxX, maxY = maxX - self:GetWidth(), maxY - self:GetHeight()
-            local left, top = self:GetPosition();
-            local mX, mY = self:GetMousePosition();
-            local x = left + (mX - self.dragStartX);
-            local y = top + (mY - self.dragStartY);
+            local left, top = self:GetPosition()
+            local mX, mY = self:GetMousePosition()
+            local x = left + (mX - self.dragStartX)
+            local y = top + (mY - self.dragStartY)
             if x < 0 then x = 0 end
             if x > maxX then x = maxX end
             if y < 0 then y = 0 end
             if y > maxY then y = maxY end
-            self:SetPosition(x, y);
+            self:SetPosition(x, y)
         elseif self.isResizing then
-            local sX, sY = self:GetSize();
-            local mX, mY = self:GetMousePosition();
-            sX = self.resizeStartX + (mX - self.dragStartX);
-            sY = self.resizeStartY + (mY - self.dragStartY);
+            local sX, sY = self:GetSize()
+            local mX, mY = self:GetMousePosition()
+            sX = self.resizeStartX + (mX - self.dragStartX)
+            sY = self.resizeStartY + (mY - self.dragStartY)
             if Settings.mode == TabId.LIST then
-                sX, sY = self.ListTab:FitToPixels(sX, sY);
+                sX, sY = self.ListTab:FitToPixels(sX, sY)
             elseif Settings.mode == TabId.GRID then
-                sX, sY = self.GridTab:FitToPixels(sX, sY);
+                sX, sY = self.GridTab:FitToPixels(sX, sY)
             elseif Settings.mode == TabId.PULL then
-                sY = self:GetHeight();
+                sY = self:GetHeight()
                 self.PullTab.pixelWidth = sX
             end
-            self:SetSize(sX, sY);
+            self:SetSize(sX, sY)
         end
     end
     self.MouseUp = function(sender, args)
-        local mX, mY = self:GetMousePosition();
-        local winX, winY = self:GetSize();
-        local outsideWindow = mX < 1 or mY < 1 or mX > winX - 1 or mY > winY - 1;
+        local mX, mY = self:GetMousePosition()
+        local winX, winY = self:GetSize()
+        local outsideWindow = mX < 1 or mY < 1 or mX > winX - 1 or mY > winY - 1
         if outsideWindow then
-            self:FadeOut();
+            self:FadeOut()
         end
 
-        self.isMouseDown = false;
-        self.isDragging = false;
-        self.isResizing = false;
+        self.isMouseDown = false
+        self.isDragging = false
+        self.isResizing = false
     end
-    self.titleLabel.MouseDown = self.MouseDown;
-    self.titleLabel.MouseMove = self.MouseMove;
-    self.titleLabel.MouseUp = self.MouseUp;
-    self.titleLabel.MouseClick = self.MouseClick;
-    self.resizeLabel.MouseDown = self.MouseDown;
-    self.resizeLabel.MouseMove = self.MouseMove;
-    self.resizeLabel.MouseUp = self.MouseUp;
-    self.resizeLabel.MouseClick = self.MouseClick;
+    self.titleLabel.MouseDown = self.MouseDown
+    self.titleLabel.MouseMove = self.MouseMove
+    self.titleLabel.MouseUp = self.MouseUp
+    self.titleLabel.MouseClick = self.MouseClick
+    self.resizeLabel.MouseDown = self.MouseDown
+    self.resizeLabel.MouseMove = self.MouseMove
+    self.resizeLabel.MouseUp = self.MouseUp
+    self.resizeLabel.MouseClick = self.MouseClick
     self.resizeLabel:SetBackColorBlendMode(Turbine.UI.BlendMode.Overlay)
     self.resizeLabel.MouseEnter = function(sender, args)
-        self.resizeLabel:SetBackColor(Turbine.UI.Color(0.75, 0.4, 0.4, 0.4));
+        self.resizeLabel:SetBackColor(Turbine.UI.Color(0.75, 0.4, 0.4, 0.4))
     end
     self.resizeLabel.MouseLeave = function(sender, args)
-        self.resizeLabel:SetBackColor(Turbine.UI.Color(0, 0, 0, 0));
+        self.resizeLabel:SetBackColor(Turbine.UI.Color(0, 0, 0, 0))
     end
 
     self.SizeChanged = function(sender, args)
         if Settings.mode == TabId.LIST then
-            Settings.listWidth = self.ListTab.pixelWidth;
-            Settings.listRows = self.ListTab.numOfRows;
+            Settings.listWidth = self.ListTab.pixelWidth
+            Settings.listRows = self.ListTab.numOfRows
         elseif Settings.mode == TabId.GRID then
-            Settings.gridCols = self.GridTab.numOfCols;
-            Settings.gridRows = self.GridTab.numOfRows;
+            Settings.gridCols = self.GridTab.numOfCols
+            Settings.gridRows = self.GridTab.numOfRows
         elseif Settings.mode == TabId.PULL then
             Settings.pullWidth = self.PullTab.pixelWidth
         end
-        self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
-        self.MainPanel:UpdateTabs();
-        self.titleLabel:SetSize(self:GetWidth(), 20);
+        self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding)
+        self.MainPanel:UpdateTabs()
+        self.titleLabel:SetSize(self:GetWidth(), 20)
         self.closeButton:SetPosition(self:GetWidth() - 15, 2)
         self.resizeLabel:SetPosition(self:GetWidth() - self.resizeLabel:GetWidth(),
-                                     self:GetHeight() - self.resizeLabel:GetHeight());
+                                     self:GetHeight() - self.resizeLabel:GetHeight())
         if self.isMinWindow then
             if self:GetWidth() <= 120 then
-                self.titleLabel:SetText(LC.mainShortTitle);
+                self.titleLabel:SetText(LC.mainShortTitle)
             else
-                self.titleLabel:SetText(LC.miniTitle);
+                self.titleLabel:SetText(LC.miniTitle)
             end
         else
             if self:GetWidth() <= 200 then
-                self:SetText(LC.mainShortTitle);
+                self:SetText(LC.mainShortTitle)
             else
-                self:SetText(LC.mainTitle);
+                self:SetText(LC.mainTitle)
             end
         end
     end
-    self:SizeChanged(); -- explicitly call to ensure correct positioning
+    self:SizeChanged() -- explicitly call to ensure correct positioning
     if Settings.mode == TabId.LIST then
-        self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
+        self:SetSize(self.ListTab:FitToPixels(self:GetSize()))
     elseif Settings.mode == TabId.GRID then
-        self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
+        self:SetSize(self.GridTab:FitToPixels(self:GetSize()))
     elseif Settings.mode == TabId.PULL then
         self.PullTab.pixelWidth = self:GetWidth()
     end
 end
 
 function TravelWindow:SetMaxOpacity()
-    self:SetOpacity(Settings.mainMaxOpacity);
+    self:SetOpacity(Settings.mainMaxOpacity)
     if self.fadeOut then
         self.fadeOut = false
         self.fadeOutDelay = nil
@@ -466,63 +462,63 @@ end
 
 function TravelWindow:SetItems()
     if Settings.mode == TabId.LIST then
-        self:SetSize(self.ListTab:GetPixelSize());
-        self.ListTab:SetItems();
-        self:SetSize(self.ListTab:FitToPixels(self:GetSize()));
+        self:SetSize(self.ListTab:GetPixelSize())
+        self.ListTab:SetItems()
+        self:SetSize(self.ListTab:FitToPixels(self:GetSize()))
     elseif Settings.mode == TabId.GRID then
-        self:SetSize(self.GridTab:GetPixelSize());
-        self.GridTab:SetItems();
-        self:SetSize(self.GridTab:FitToPixels(self:GetSize()));
+        self:SetSize(self.GridTab:GetPixelSize())
+        self.GridTab:SetItems()
+        self:SetSize(self.GridTab:FitToPixels(self:GetSize()))
     elseif Settings.mode == TabId.CARO then
-        self.CaroTab:SetItems();
+        self.CaroTab:SetItems()
     elseif Settings.mode == TabId.PULL then
-        self.PullTab:SetItems();
+        self.PullTab:SetItems()
         self.PullTab.pixelWidth = self:GetWidth()
     elseif Settings.mode == TabId.MAP then
-        self:SetSize(self.MapTab:GetPixelSize());
-        self.MapTab:SetItems();
+        self:SetSize(self.MapTab:GetPixelSize())
+        self.MapTab:SetItems()
     end
 end
 
 function TravelWindow:UpdateMinimum()
     -- update the page that is showing
     if Settings.mode == TabId.LIST then
-        self.minWidth = self.ListTab.minWidth;
-        self.minHeight = self.ListTab.minHeight;
+        self.minWidth = self.ListTab.minWidth
+        self.minHeight = self.ListTab.minHeight
     elseif Settings.mode == TabId.CARO then
         if self.isMinWindow then
-            self.minWidth = 150;
-            self.minHeight = 75;
+            self.minWidth = 150
+            self.minHeight = 75
         else
-            self.minWidth = 200;
-            self.minHeight = 110;
+            self.minWidth = 200
+            self.minHeight = 110
         end
     elseif Settings.mode == TabId.PULL then
         if self.isMinWindow then
-            self.minWidth = 360;
-            self.minHeight = 65;
+            self.minWidth = 360
+            self.minHeight = 65
         else
-            self.minWidth = 360;
-            self.minHeight = 105;
+            self.minWidth = 360
+            self.minHeight = 105
         end
     elseif Settings.mode == TabId.MAP then
         -- Map view fixed at 1024x768 + padding (nav panel below map)
         self.minWidth, self.minHeight = self.MapTab:GetPixelSize()
     else
-        self.minWidth = 40;
-        self.minHeight = 40;
+        self.minWidth = 40
+        self.minHeight = 40
     end
 
-    self:SetMinimumSize(self.minWidth, self.minHeight);
+    self:SetMinimumSize(self.minWidth, self.minHeight)
 
     if Settings.mode == TabId.CARO then
-        self:SetSize(self.minWidth, self.minHeight);
+        self:SetSize(self.minWidth, self.minHeight)
     end
     if Settings.mode == TabId.PULL then
         self:SetSize(self.PullTab.pixelWidth, self.minHeight)
     end
     if Settings.mode == TabId.MAP then
-        self:SetSize(self.minWidth, self.minHeight);
+        self:SetSize(self.minWidth, self.minHeight)
     end
 end
 
@@ -597,9 +593,9 @@ function TravelWindow:UpdateSettings()
 
     -- set which page of the tab panel to show
     self.MainPanel:SetTab(Settings.mode)
-    self:UpdateMinimum();
+    self:UpdateMinimum()
     self:SetInitialPosition()
-    self:SetItems();
+    self:SetItems()
 
     -- Update opacity based on mode
     if Settings.mode == TabId.MAP then
@@ -608,8 +604,8 @@ function TravelWindow:UpdateSettings()
         self:SetOpacity(Settings.mainMinOpacity)
     end
 
-    self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding);
-    self.MainPanel:UpdateTabs();
+    self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding)
+    self.MainPanel:UpdateTabs()
 end
 
 function TravelWindow:ResetSettings()
@@ -626,7 +622,10 @@ function TravelWindow:ResetSettings()
 end
 
 function SyncUIFromSettings()
-    ToggleButton:ApplyAppearance()
+    local screenW, screenH = Turbine.UI.Display.GetSize()
+    local buttonPositionX = screenW * Settings.buttonRelativeX
+    local buttonPositionY = screenH * Settings.buttonRelativeY
+    ToggleButton:SetPosition(buttonPositionX, buttonPositionY)
     _G.options.Panel:UpdateOptions()
     _G.options.Panel:EnableFromSettings()
     _G.options.Panel:AddSortList()
@@ -645,20 +644,20 @@ end
 
 function AddCallback(object, event, callback)
     if (object[event] == nil) then
-        object[event] = callback;
+        object[event] = callback
     else
         if (type(object[event]) == "table") then
-            table.insert(object[event], callback);
+            table.insert(object[event], callback)
         else
-            object[event] = {object[event], callback};
+            object[event] = {object[event], callback}
         end
     end
-    return callback;
+    return callback
 end
 
 -- for debug purposes
 function TravelWindow:ManualSkillScan()
-    local last = 0;
+    local last = 0
     skillWindow=Turbine.UI.Lotro.Window()
     skillWindow.cols=math.floor((Turbine.UI.Display:GetWidth()-10)/100)
     skillWindow.rows=math.floor((Turbine.UI.Display:GetHeight()-105)/62)
@@ -732,14 +731,14 @@ function TravelWindow:ManualSkillScan()
         if start==nil then start=0 end
 
         for row=1,skillWindow.rows do
-            local err = 0;
+            local err = 0
             for col=1,skillWindow.cols do
                 repeat
                     local qs=skillWindow.QS[row][col]
-                    local sc=Turbine.UI.Lotro.Shortcut();
+                    local sc=Turbine.UI.Lotro.Shortcut()
                     sc:SetType(Turbine.UI.Lotro.ShortcutType.Skill)
-                    local val=string.format("0x%x",start);
-                    start = start + 1;
+                    local val=string.format("0x%x",start)
+                    start = start + 1
                     sc:SetData(val)
                     local success, result=pcall(Turbine.UI.Lotro.Quickslot.SetShortcut,qs,sc)
                     qs:SetVisible(success)
@@ -748,7 +747,7 @@ function TravelWindow:ManualSkillScan()
                 until success or err > 10000
             end
         end
-        last = start;
+        last = start
     end
     skillWindow.Start:SetText("0x700697F2")
 end
