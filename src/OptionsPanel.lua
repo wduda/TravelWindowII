@@ -403,7 +403,7 @@ function OptionsPanel:AddShortcutLabelFontOption()
     self.updatingShortcutLabelFontRadios = false
     self.shortcutLabelFontRadioButtons = {}
 
-    local radioX = 180
+    local radioX = 200
     local radioSpacing = 80
 
     for index, config in ipairs(fontSizeOptions) do
