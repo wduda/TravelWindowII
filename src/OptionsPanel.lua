@@ -387,6 +387,75 @@ function OptionsPanel:AddTravelButtonAppearanceOptions()
 
 end
 
+function OptionsPanel:AddListFontSizeOption()
+    local listFontSizeOptions = {
+        {value = "TrajanPro14", labelKey = "fontSizeSmall"},
+        {value = "TrajanPro15", labelKey = "fontSizeMedium"},
+        {value = "TrajanPro20", labelKey = "fontSizeLarge"},
+    }
+
+    local labelY = self:NextY(30)
+
+    local sizeLabel = Turbine.UI.Label()
+    sizeLabel:SetParent(self.GeneralTab)
+    sizeLabel:SetPosition(self.DEFAULT_X, labelY)
+    sizeLabel:SetSize(self.labelWidth, 20)
+    sizeLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+    sizeLabel:SetText(LC.listFontSize)
+    self.listFontSizeLabel = sizeLabel
+
+    self.updatingListFontSizeRadios = false
+    self.listFontSizeRadioButtons = {}
+
+    local radioX = 180
+    local radioSpacing = 80
+
+    for index, config in ipairs(listFontSizeOptions) do
+        local radio = Turbine.UI.Lotro.CheckBox()
+        radio:SetParent(self.GeneralTab)
+        radio:SetPosition(radioX + ((index - 1) * radioSpacing), labelY)
+        radio:SetSize(80, 20)
+        radio:SetText(LC[config.labelKey])
+        radio:SetCheckAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+        radio.fontSizeValue = config.value
+
+        radio.CheckedChangedFunc = function(sender, args)
+            if self.updatingListFontSizeRadios then
+                return
+            end
+
+            if sender:IsChecked() then
+                Settings.listFontSize = sender.fontSizeValue
+
+                self.updatingListFontSizeRadios = true
+                for _, otherRadio in ipairs(self.listFontSizeRadioButtons) do
+                    if otherRadio ~= sender then
+                        otherRadio:SetChecked(false)
+                    end
+                end
+                self.updatingListFontSizeRadios = false
+
+                _G.travel.dirty = true
+                _G.travel:UpdateSettings()
+            else
+                self.updatingListFontSizeRadios = true
+                sender:SetChecked(true)
+                self.updatingListFontSizeRadios = false
+            end
+        end
+
+        radio.UpdateOption = function()
+            local selectedFontSize = Settings.listFontSize or "TrajanPro15"
+            self.updatingListFontSizeRadios = true
+            radio:SetChecked(selectedFontSize == radio.fontSizeValue)
+            self.updatingListFontSizeRadios = false
+        end
+        radio:UpdateOption()
+
+        self.listFontSizeRadioButtons[index] = radio
+        self.options["listFontSize" .. config.value] = radio
+    end
+end
 function OptionsPanel:SetupGeneralTab()
     self.optionHeight = 0
     self.options = {}
@@ -500,7 +569,49 @@ function OptionsPanel:SetupGeneralTab()
     self:AddCheckBoxOption("hideOnCombat", self.DEFAULT_X, self.DEFAULT_NEXTY)
     self:AddCheckBoxOption("hideOnTravel", self.DEFAULT_X, self.DEFAULT_NEXTY)
     self:AddCheckBoxOption("escapeToClose", self.DEFAULT_X, self.DEFAULT_NEXTY)
+    self:AddCheckBoxOption("showButton", self.DEFAULT_X, self.DEFAULT_NEXTY,
+        function(sender, args)
+            if (sender:IsChecked()) then
+                Settings.showButton = 1
+            else
+                Settings.showButton = 0
+            end
+            ToggleButton:SetVisible(sender:IsChecked())
+        end)
+    self:AddTravelButtonAppearanceOptions()
     self:AddCheckBoxOption("pulldownTravel", self.DEFAULT_X, self.DEFAULT_NEXTY)
+    self:AddCheckBoxOption("useZoneNames", self.DEFAULT_X, 25,
+        function(sender, args)
+            if sender:IsChecked() then
+                Settings.useZoneNames = 1
+            else
+                Settings.useZoneNames = 0
+            end
+            TravelInfo:SetSkillLabels()
+            _G.travel:ReloadLabels()
+        end)
+    self:AddCheckBoxOption("useSkillNames", self.DEFAULT_X, self.DEFAULT_NEXTY,
+        function(sender, args)
+            if sender:IsChecked() then
+                Settings.useSkillNames = 1
+            else
+                Settings.useSkillNames = 0
+            end
+            TravelInfo:SetSkillLabels()
+            _G.travel:ReloadLabels()
+        end)
+    self:AddCheckBoxOption("useTagInListTab", self.DEFAULT_X, self.DEFAULT_NEXTY,
+        function(sender, args)
+            if sender:IsChecked() then
+                Settings.useTagInListTab = 1
+            else
+                Settings.useTagInListTab = 0
+            end
+            TravelInfo:SetSkillLabels()
+            _G.travel.ListTab:ReloadLabels()
+            _G.travel.PullTab.pulldown:ReloadLabels()
+        end)
+    self:AddListFontSizeOption()
     self:AddCheckBoxOption("lockUI", self.DEFAULT_X, self.DEFAULT_NEXTY,
         function(sender, args)
             if sender:IsChecked() then

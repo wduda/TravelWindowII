@@ -170,11 +170,25 @@ function InitNumberSetting(strTable, name, forceDefault)
     end
 end
 
+function InitStringSetting(strTable, name, forceDefault)
+    if strTable[name] == nil or strTable[name] == "nil" then
+        if forceDefault == nil then
+            strTable[name] = tostring(Settings[name])
+        else
+            strTable[name] = tostring(forceDefault)
+        end
+    end
+    Settings[name] = tostring(strTable[name])
+end
+
 function AddSettingConfig(name, defValue)
     SettingsConfig[name] = {}
     SettingsConfig[name].defValue = defValue
     if type(defValue) == "number" then
         SettingsConfig[name].init = InitNumberSetting
+        SettingsConfig[name].save = tostring
+    elseif type(defValue) == "string" then
+        SettingsConfig[name].init = InitStringSetting
         SettingsConfig[name].save = tostring
     end
 end
@@ -205,6 +219,7 @@ function CreateSettingsConfig()
     AddSettingConfig("useZoneNames", 1)
     AddSettingConfig("useSkillNames", 0)
     AddSettingConfig("useTagInListTab", 1)
+    AddSettingConfig("listFontSize", "TrajanPro15")
     AddSettingConfig("lockUI", 0)
     AddSettingConfig("unlockKeyPress", 0)
     AddSettingConfig("escapeToClose", 1)
@@ -364,6 +379,14 @@ function SetSettings(settingsArg, scope, importOldSettings)
         end
     end
     settingsArg.buttonDoubleSize = nil
+
+    if settingsArg.listFontSize ~= nil and settingsArg.listFontSize ~= "nil" then
+        local legacyListFontSize = tonumber(settingsArg.listFontSize)
+        if legacyListFontSize ~= nil then
+            local legacyListFontSizes = {"TrajanPro14", "TrajanPro15", "TrajanPro20"}
+            settingsArg.listFontSize = legacyListFontSizes[legacyListFontSize] or "TrajanPro15"
+        end
+    end
 
     for k, v in pairs(SettingsConfig) do
         if v.init == InitNumberSetting then

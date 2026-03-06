@@ -4,6 +4,12 @@
 
 ChangelogData = {
     {
+        version = "v4.5.0",
+        changes = {
+            "feat: Font size in the Text List view can now be set to Small, Medium or Large in options",
+        }
+    },
+    {
         version = "v4.4.0",
         changes = {
             "feat: Travel Button icon can now be selected from four variants in options and settings menu",
