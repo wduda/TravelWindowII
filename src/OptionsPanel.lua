@@ -456,6 +456,7 @@ function OptionsPanel:AddListFontSizeOption()
         self.options["listFontSize" .. config.value] = radio
     end
 end
+
 function OptionsPanel:SetupGeneralTab()
     self.optionHeight = 0
     self.options = {}
@@ -569,48 +570,7 @@ function OptionsPanel:SetupGeneralTab()
     self:AddCheckBoxOption("hideOnCombat", self.DEFAULT_X, self.DEFAULT_NEXTY)
     self:AddCheckBoxOption("hideOnTravel", self.DEFAULT_X, self.DEFAULT_NEXTY)
     self:AddCheckBoxOption("escapeToClose", self.DEFAULT_X, self.DEFAULT_NEXTY)
-    self:AddCheckBoxOption("showButton", self.DEFAULT_X, self.DEFAULT_NEXTY,
-        function(sender, args)
-            if (sender:IsChecked()) then
-                Settings.showButton = 1
-            else
-                Settings.showButton = 0
-            end
-            ToggleButton:SetVisible(sender:IsChecked())
-        end)
     self:AddCheckBoxOption("pulldownTravel", self.DEFAULT_X, self.DEFAULT_NEXTY)
-    self:AddCheckBoxOption("useZoneNames", self.DEFAULT_X, 25,
-        function(sender, args)
-            if sender:IsChecked() then
-                Settings.useZoneNames = 1
-            else
-                Settings.useZoneNames = 0
-            end
-            TravelInfo:SetSkillLabels()
-            _G.travel:ReloadLabels()
-        end)
-    self:AddCheckBoxOption("useSkillNames", self.DEFAULT_X, self.DEFAULT_NEXTY,
-        function(sender, args)
-            if sender:IsChecked() then
-                Settings.useSkillNames = 1
-            else
-                Settings.useSkillNames = 0
-            end
-            TravelInfo:SetSkillLabels()
-            _G.travel:ReloadLabels()
-        end)
-    self:AddCheckBoxOption("useTagInListTab", self.DEFAULT_X, self.DEFAULT_NEXTY,
-        function(sender, args)
-            if sender:IsChecked() then
-                Settings.useTagInListTab = 1
-            else
-                Settings.useTagInListTab = 0
-            end
-            TravelInfo:SetSkillLabels()
-            _G.travel.ListTab:ReloadLabels()
-            _G.travel.PullTab.pulldown:ReloadLabels()
-        end)
-    self:AddListFontSizeOption()
     self:AddCheckBoxOption("lockUI", self.DEFAULT_X, self.DEFAULT_NEXTY,
         function(sender, args)
             if sender:IsChecked() then
@@ -740,6 +700,7 @@ function OptionsPanel:SetupGeneralTab()
             _G.travel.ListTab:ReloadLabels()
             _G.travel.PullTab.pulldown:ReloadLabels()
         end)
+    self:AddListFontSizeOption()
 
     -- enable changed methods until after all options are initialized
     for _, v in pairs(self.options) do
