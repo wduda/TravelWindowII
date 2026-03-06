@@ -14,25 +14,10 @@ import "TravelWindowII.src.utils.BitOps";
 --[[ of the TravelGridTab	]] --
 
 function GetListFontConfig()
-    local listFontConfigs = {
-        {fontName = "TrajanPro14", height = 20},
-        {fontName = "TrajanPro15", height = 22},
-        {fontName = "TrajanPro20", height = 28},
-    }
-
-    for _, cfg in ipairs(listFontConfigs) do
-        if Settings.listFontSize == cfg.fontName then
-            return {
-                font = Turbine.UI.Lotro.Font[cfg.fontName],
-                height = cfg.height,
-            }
-        end
-    end
-
-    local defaultCfg = listFontConfigs[2]
+    local shortcutFontCfg = GetShortcutLabelFontConfig()
     return {
-        font = Turbine.UI.Lotro.Font[defaultCfg.fontName],
-        height = defaultCfg.height,
+        font = shortcutFontCfg.font,
+        height = shortcutFontCfg.listItemHeight,
     }
 end
 

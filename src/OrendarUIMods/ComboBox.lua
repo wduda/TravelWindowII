@@ -15,6 +15,18 @@ ComboBox.ItemColor = Turbine.UI.Color(245 / 255, 222 / 255, 147 / 255);
 ComboBox.DisabledColor = Turbine.UI.Color(162 / 255, 162 / 255, 162 / 255);
 ComboBox.BlackColor = Turbine.UI.Color(1, 0, 0, 0);
 
+function ComboBox:GetLabelFont()
+    return GetShortcutLabelFontConfig().font
+end
+
+function ComboBox:ApplyLabelFont()
+    local labelFont = self:GetLabelFont()
+    self.label:SetFont(labelFont)
+    for i = 1, #self.labels do
+        self.labels[i]:SetFont(labelFont)
+    end
+end
+
 function ComboBox:Constructor(toplevel)
     Turbine.UI.Control.Constructor(self);
 
@@ -34,7 +46,7 @@ function ComboBox:Constructor(toplevel)
     -- text label
     self.label = TravelWindowII.src.extensions.DLabel();
     self.label:SetParent(self);
-    self.label:SetFont(Turbine.UI.Lotro.Font.TrajanPro14);
+    self.label:SetFont(self:GetLabelFont());
     self.label:SetForeColor(ComboBox.ItemColor);
     self.label:SetBackColor(ComboBox.BlackColor);
     self.label:SetOutlineColor(ComboBox.HighlightColor);
@@ -174,7 +186,7 @@ function ComboBox:AddItem(shortcut, value)
     label:SetPosition(0, ((index - 1) * (self.itemHeight)));
     label:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
     label:SetForeColor(ComboBox.ItemColor);
-    label:SetFont(Turbine.UI.Lotro.Font.TrajanPro14);
+    label:SetFont(self:GetLabelFont());
     label:SetOutlineColor(ComboBox.HighlightColor);
     label:SetBackColor(Turbine.UI.Color(0.87, 0, 0, 0));
     label:SetMultiline(false)
@@ -238,6 +250,7 @@ function ComboBox:AddItem(shortcut, value)
 end
 
 function ComboBox:ReloadLabels()
+    self:ApplyLabelFont()
     for i = 1, #self.labels do
         local label = self.labels[i]
         label:SetText(label.shortcut:GetListLabel())

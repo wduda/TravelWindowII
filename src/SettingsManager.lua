@@ -219,7 +219,7 @@ function CreateSettingsConfig()
     AddSettingConfig("useZoneNames", 1)
     AddSettingConfig("useSkillNames", 0)
     AddSettingConfig("useTagInListTab", 1)
-    AddSettingConfig("listFontSize", "TrajanPro15")
+    AddSettingConfig("shortcutLabelFont", "TrajanPro15")
     AddSettingConfig("lockUI", 0)
     AddSettingConfig("unlockKeyPress", 0)
     AddSettingConfig("escapeToClose", 1)
@@ -235,6 +235,33 @@ function CreateSettingsConfig()
     AddSettingConfig("fadeOutDelay", 0)
     AddSettingConfig("toggleMaxOpacity", 1)
     AddSettingConfig("toggleMinOpacity", 0.5)
+end
+
+local ShortcutLabelFontOptions = {
+    {value = "TrajanPro14", labelKey = "fontSizeSmall", listItemHeight = 20},
+    {value = "TrajanPro15", labelKey = "fontSizeMedium", listItemHeight = 22},
+    {value = "TrajanPro20", labelKey = "fontSizeLarge", listItemHeight = 28},
+}
+
+function GetShortcutLabelFontOptions()
+    return ShortcutLabelFontOptions
+end
+
+function GetShortcutLabelFontConfig()
+    for _, option in ipairs(ShortcutLabelFontOptions) do
+        if Settings.shortcutLabelFont == option.value then
+            return {
+                font = Turbine.UI.Lotro.Font[option.value],
+                listItemHeight = option.listItemHeight,
+            }
+        end
+    end
+
+    local defaultOption = ShortcutLabelFontOptions[2]
+    return {
+        font = Turbine.UI.Lotro.Font[defaultOption.value],
+        listItemHeight = defaultOption.listItemHeight,
+    }
 end
 
 function LoadSettings()
@@ -380,13 +407,19 @@ function SetSettings(settingsArg, scope, importOldSettings)
     end
     settingsArg.buttonDoubleSize = nil
 
-    if settingsArg.listFontSize ~= nil and settingsArg.listFontSize ~= "nil" then
-        local legacyListFontSize = tonumber(settingsArg.listFontSize)
-        if legacyListFontSize ~= nil then
-            local legacyListFontSizes = {"TrajanPro14", "TrajanPro15", "TrajanPro20"}
-            settingsArg.listFontSize = legacyListFontSizes[legacyListFontSize] or "TrajanPro15"
+    if settingsArg.shortcutLabelFont == nil or settingsArg.shortcutLabelFont == "nil" then
+        local legacyFontSetting = settingsArg.listFontSize
+        if legacyFontSetting ~= nil and legacyFontSetting ~= "nil" then
+            local legacyFontIndex = tonumber(legacyFontSetting)
+            if legacyFontIndex ~= nil then
+                local legacyFontMap = {"TrajanPro14", "TrajanPro15", "TrajanPro20"}
+                settingsArg.shortcutLabelFont = legacyFontMap[legacyFontIndex] or "TrajanPro15"
+            else
+                settingsArg.shortcutLabelFont = tostring(legacyFontSetting)
+            end
         end
     end
+    settingsArg.listFontSize = nil
 
     for k, v in pairs(SettingsConfig) do
         if v.init == InitNumberSetting then
