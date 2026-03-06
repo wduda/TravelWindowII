@@ -250,6 +250,7 @@ function CreateSettingsConfig()
     AddSettingConfig("buttonSize", TravelButtonSize.SMALL)
     AddSettingConfig("mode", 2)
     AddSettingConfig("mapViewRegion", 3)
+    AddSettingConfig("mapViewScale", 1)
     AddSettingConfig("filters", 0x0F)
     AddSettingConfig("mainMaxOpacity", 1)
     AddSettingConfig("mainMinOpacity", 0.5)
@@ -439,6 +440,14 @@ function SetSettings(settingsArg, scope, importOldSettings)
         elseif v.init ~= nil then
             v.init(settingsArg, k)
         end
+    end
+
+    if Settings.mapViewScale == nil then
+        Settings.mapViewScale = 1
+    elseif Settings.mapViewScale < 1 then
+        Settings.mapViewScale = 1
+    elseif Settings.mapViewScale > 3 then
+        Settings.mapViewScale = 3
     end
 
     if (not settingsArg.enabled or importOldSettings) then
