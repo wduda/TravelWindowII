@@ -500,7 +500,7 @@ function TravelWindow:SetItems()
         self.PullTab:SetItems()
         self.PullTab.pixelWidth = self:GetWidth()
     elseif Settings.mode == TabId.MAP then
-        self:SetSize(self.MapTab:GetScaledPixelSize())
+        self:SetSize(self.MapTab:GetPixelSize())
         self.MapTab:SetItems()
     end
 end
@@ -542,7 +542,7 @@ function TravelWindow:UpdateMinimum()
         self:SetSize(self.PullTab.pixelWidth, self.minHeight)
     end
     if Settings.mode == TabId.MAP then
-        self:SetSize(self.MapTab:GetScaledPixelSize())
+        self:SetSize(self.MapTab:GetPixelSize())
     end
 end
 
