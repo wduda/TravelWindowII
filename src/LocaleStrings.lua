@@ -322,8 +322,8 @@ LC_DE.useTagInListTab = "Verwenden von Skill-Tag im Textlayout"
 LC_FR.useTagInListTab = "Utiliser la balise Skill dans la mise en page de texte"
 LC_RU.useTagInListTab = "Использование тега навыка в макете текста"
 
-LC_EN.shortcutLabelFontSize = "Shortcut Label Font Size"
-LC_DE.shortcutLabelFontSize = "Schriftgröße der Fertigkeitsknopfbezeichnungen"
+LC_EN.shortcutLabelFontSize = "Skill Label Font Size"
+LC_DE.shortcutLabelFontSize = "Schriftgröße der Fertigkeitsbezeichnungen"
 LC_FR.shortcutLabelFontSize = "Taille de police pour boutons de compétence"
 LC_RU.shortcutLabelFontSize = "Размер шрифта меток быстрого доступа"
 
