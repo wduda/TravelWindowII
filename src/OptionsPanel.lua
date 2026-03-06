@@ -433,7 +433,7 @@ function OptionsPanel:AddShortcutLabelFontOption()
 
                 _G.travel.dirty = true
                 _G.travel:UpdateSettings()
-                _G.travel.PullTab.pulldown:ReloadLabels()
+                _G.travel:ReloadLabels()
             else
                 self.updatingShortcutLabelFontRadios = true
                 sender:SetChecked(true)

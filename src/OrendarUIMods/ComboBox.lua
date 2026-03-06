@@ -22,8 +22,10 @@ end
 function ComboBox:ApplyLabelFont()
     local labelFont = self:GetLabelFont()
     self.label:SetFont(labelFont)
+    self.label:SetText(self.label:GetText())
     for i = 1, #self.labels do
         self.labels[i]:SetFont(labelFont)
+        self.labels[i]:SetText(self.labels[i]:GetText())
     end
 end
 
@@ -254,6 +256,9 @@ function ComboBox:ReloadLabels()
     for i = 1, #self.labels do
         local label = self.labels[i]
         label:SetText(label.shortcut:GetListLabel())
+    end
+    if self.selection ~= -1 and self.labels[self.selection] ~= nil then
+        self.label:SetText(self.labels[self.selection]:GetText())
     end
 end
 
