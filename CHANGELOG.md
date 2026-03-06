@@ -2,7 +2,13 @@
 
 ## v4.5.0
 
-- feat: Font size in the Text List view can now be set to Small, Medium or Large in options
+- feat: map view can now be scaled/resized proportionally by dragging the bottom right corner
+- feat: options are reorganized into clearer groups in the general settings panel
+- feat: font size for Text List and Pulldown views can now be set to Small, Medium or Large in options
+- fix: map view will always be hidden on startup as it takes up a lot of space
+- fix: map mode fade-out no longer triggers unexpectedly when releasing the mouse
+- fix: map navigation panel alignment improved
+- fix: deed requirements were corrected for selected Umbar travel skills
 
 ## v4.4.0
 
