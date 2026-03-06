@@ -13,6 +13,29 @@ import "TravelWindowII.src.utils.BitOps";
 --[[ This class is actually an extension  	]] --
 --[[ of the TravelGridTab	]] --
 
+function GetListFontConfig()
+    local listFontConfigs = {
+        {fontName = "TrajanPro14", height = 20},
+        {fontName = "TrajanPro15", height = 22},
+        {fontName = "TrajanPro20", height = 28},
+    }
+
+    for _, cfg in ipairs(listFontConfigs) do
+        if Settings.listFontSize == cfg.fontName then
+            return {
+                font = Turbine.UI.Lotro.Font[cfg.fontName],
+                height = cfg.height,
+            }
+        end
+    end
+
+    local defaultCfg = listFontConfigs[2]
+    return {
+        font = Turbine.UI.Lotro.Font[defaultCfg.fontName],
+        height = defaultCfg.height,
+    }
+end
+
 TravelListTab = class(TravelGridTab);
 
 function TravelListTab:Constructor(toplevel)
@@ -21,7 +44,8 @@ function TravelListTab:Constructor(toplevel)
     TravelGridTab.Constructor(self);
 
     self.labels = {}
-    self.itemHeight = 22;
+    local fontCfg = GetListFontConfig()
+    self.itemHeight = fontCfg.height
     self.scrollChunk = self.itemHeight;
 
     self.minWidth = 225
@@ -60,6 +84,9 @@ function TravelListTab:SetItems()
         return
     end
 
+    local fontCfg = GetListFontConfig()
+    self.itemHeight = fontCfg.height
+    self.scrollChunk = self.itemHeight
     self.itemWidth = self:GetWidth() - self.itemWidthPadding;
     TravelGridTab.SetItems(self);
 end
@@ -101,6 +128,7 @@ function TravelListTab:AddItem(shortcut)
         self.labels[index]:SetPosition(x, y);
         self.labels[index]:SetZOrder(100);
         self.labels[index]:SetMouseVisible(false);
+        self.labels[index]:SetFont(GetListFontConfig().font);
         self.labels[index]:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft);
         self.labels[index]:SetBackColor(Turbine.UI.Color(self.itemAlpha, 0, 0, 0));
         self.labels[index]:SetMultiline(false)
