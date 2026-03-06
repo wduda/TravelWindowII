@@ -93,6 +93,24 @@ TravelButtonSizeOptions = {
     },
 }
 
+ShortcutLabelFontOptions = {
+    {
+        value = "TrajanPro14",
+        labelKey = "fontSizeSmall",
+        listItemHeight = 20
+    },
+    {
+        value = "TrajanPro15",
+        labelKey = "fontSizeMedium",
+        listItemHeight = 22
+    },
+    {
+        value = "TrajanPro20",
+        labelKey = "fontSizeLarge",
+        listItemHeight = 28
+    }
+}
+
 function GetTravelButtonIconOption(iconId)
     for _, option in ipairs(TravelButtonIconOptions) do
         if option.id == iconId then
@@ -118,6 +136,10 @@ function GetTravelButtonImagePath(iconId, sizeValue)
     local sizeOption = GetTravelButtonSizeOption(sizeValue)
 
     return "TravelWindowII/src/resources/" .. iconOption.baseFileName .. sizeOption.suffix .. ".tga"
+end
+
+function GetShortcutLabelFontOptions()
+    return ShortcutLabelFontOptions
 end
 
 function SetPlayerRaceKey()
@@ -235,16 +257,6 @@ function CreateSettingsConfig()
     AddSettingConfig("fadeOutDelay", 0)
     AddSettingConfig("toggleMaxOpacity", 1)
     AddSettingConfig("toggleMinOpacity", 0.5)
-end
-
-local ShortcutLabelFontOptions = {
-    {value = "TrajanPro14", labelKey = "fontSizeSmall", listItemHeight = 20},
-    {value = "TrajanPro15", labelKey = "fontSizeMedium", listItemHeight = 22},
-    {value = "TrajanPro20", labelKey = "fontSizeLarge", listItemHeight = 28},
-}
-
-function GetShortcutLabelFontOptions()
-    return ShortcutLabelFontOptions
 end
 
 function GetShortcutLabelFontConfig()
