@@ -51,6 +51,7 @@ jobs:
         run: |
             # Use ${{ github.workspace }} to get the full path to CHANGELOG.md
             CHANGELOG_PATH="${{ github.workspace }}/TravelWindowII/CHANGELOG.md"
+            RELEASE_NOTES_PATH="${{ github.workspace }}/release-notes.md"
 
             # Find the line number of the latest version header
             LATEST_VERSION_LINE=$(grep -n "^## v" "$CHANGELOG_PATH" | head -n1 | cut -d: -f1)
@@ -69,12 +70,14 @@ jobs:
 
             # Extract the content between these line numbers
             CHANGELOG_CONTENT=$(sed -n "$((LATEST_VERSION_LINE+1)),$((NEXT_VERSION_LINE-1))p" "$CHANGELOG_PATH" | sed '/^\s*$/d')
+            if [ -z "$CHANGELOG_CONTENT" ]; then
+              echo "::error::Latest changelog section is empty"
+              exit 1
+            fi
 
-            # Set output for use in subsequent steps using heredoc to handle multiline output
-            EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-            echo "content<<$EOF" >> $GITHUB_OUTPUT
-            echo "$CHANGELOG_CONTENT" >> $GITHUB_OUTPUT
-            echo "$EOF" >> $GITHUB_OUTPUT
+            # Write release notes to a file and pass the file path to release step
+            printf '%s\n' "$CHANGELOG_CONTENT" > "$RELEASE_NOTES_PATH"
+            echo "release_notes_path=$RELEASE_NOTES_PATH" >> $GITHUB_OUTPUT
 
       - name: verify release archive exists
         run: |
@@ -92,6 +95,6 @@ jobs:
           prerelease: false
           name: ${{ github.event.inputs.tag }}
           tag_name: ${{ github.event.inputs.tag }}
-          body: ${{ steps.changelog.outputs.CONTENT }}
+          body_path: ${{ steps.changelog.outputs.release_notes_path }}
           files: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
           fail_on_unmatched_files: true
