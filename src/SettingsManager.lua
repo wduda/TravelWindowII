@@ -95,6 +95,11 @@ TravelButtonSizeOptions = {
 
 ShortcutLabelFontOptions = {
     {
+        value = "LucidaConsole12",
+        labelKey = "fontSizeSmall",
+        listItemHeight = 22
+    },
+    {
         value = "TrajanPro14",
         labelKey = "fontSizeSmall",
         listItemHeight = 20

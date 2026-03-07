@@ -404,14 +404,14 @@ function OptionsPanel:AddShortcutLabelFontOption()
     self.shortcutLabelFontRadioButtons = {}
 
     local radioX = 200
-    local radioSpacing = 80
+    local radioSpacing = 130
 
     for index, config in ipairs(fontSizeOptions) do
         local radio = Turbine.UI.Lotro.CheckBox()
         radio:SetParent(self.GeneralTab)
         radio:SetPosition(radioX + ((index - 1) * radioSpacing), sizeLabelY)
         radio:SetSize(radioSpacing, 20)
-        radio:SetText(LC[config.labelKey])
+        radio:SetText(config.value)
         radio:SetCheckAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
         radio.fontValue = config.value
 
