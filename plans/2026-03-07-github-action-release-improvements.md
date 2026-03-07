@@ -10,28 +10,23 @@ The workflow manually dispatches a tag input, checks out that ref, zips files, e
 
 ## Findings From Parsing
 
-1. Changelog output name mismatch
-- Step writes output key `content`
-- Release step reads `${{ steps.changelog.outputs.CONTENT }}`
-- This likely results in an empty release body
-
-2. Changelog escaping order is incorrect
+1. Changelog escaping order is incorrect
 - Escaping runs before `CHANGELOG_CONTENT` is actually populated
 - Escaping currently has no effect on extracted content
 
-3. Unpinned floating ref for zip action
+2. Unpinned floating ref for zip action
 - `thedoctor0/zip-release@master` is used
 - Floating refs are fragile and supply-chain risky
 
-4. Missing explicit job permissions
+3. Missing explicit job permissions
 - Release creation needs `contents: write`
 - No explicit permissions block is defined
 
-5. Weak input validation for `workflow_dispatch.inputs.tag`
+4. Weak input validation for `workflow_dispatch.inputs.tag`
 - No `required: true` on tag input
 - No early validation for expected tag format (for example `vX.Y.Z`)
 
-6. Hard-coded shell parsing with several failure modes
+5. Hard-coded shell parsing with several failure modes
 - Changelog parsing assumes at least one `## v` heading
 - No explicit failure message if heading is missing
 - Could fail silently with unexpected changelog structure
@@ -51,7 +46,6 @@ The workflow manually dispatches a tag input, checks out that ref, zips files, e
 
 2. Fix changelog extraction reliability
 - Extract content before escape operations
-- Use one output name consistently (`content`)
 - Add explicit error handling if no changelog heading is found
 
 3. Stabilize and secure action references
