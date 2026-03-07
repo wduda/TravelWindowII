@@ -372,6 +372,34 @@ function UpgradeDeprecatedSettings(settingsArg)
     end
 end
 
+function RepairPre201BrokenRacialSettings(settingsArg)
+    local ver = GetVersionNumber(settingsArg.lastLoadedVersion)
+    if ver <= 0x20100 then
+        -- fix broken files
+        for k, racial in pairs(TravelInfo.racials.skills) do
+            if k ~= PlayerRaceKey then
+                -- clear entries that are not the current race
+                if LoadEnabled[racial.id] ~= nil then
+                    -- found entry to clear
+                    if LoadEnabled[TravelInfo.racial.id] == nil then
+                        -- set to the current race first
+                        LoadEnabled[TravelInfo.racial.id] = LoadEnabled[racial.id]
+                    end
+                    LoadEnabled[racial.id] = nil
+                end
+                if LoadOrder[racial.id] ~= nil then
+                    -- found entry to clear
+                    if LoadOrder[TravelInfo.racial.id] == nil then
+                        -- set to the current race first
+                        LoadOrder[TravelInfo.racial.id] = LoadOrder[racial.id]
+                    end
+                    LoadOrder[racial.id] = nil
+                end
+            end
+        end
+    end
+end
+
 function SetSettings(settingsArg, scope, importOldSettings)
     -- initialze any uninitialized settings strings
     if (type(settingsArg) ~= "table") then
@@ -495,31 +523,7 @@ function SetSettings(settingsArg, scope, importOldSettings)
             LoadOrder[TravelInfo.racialIDTag] = nil
         end
 
-        local ver = GetVersionNumber(settingsArg.lastLoadedVersion)
-        if ver <= 0x20100 then
-            -- fix broken files
-            for k, racial in pairs(TravelInfo.racials.skills) do
-                if k ~= PlayerRaceKey then
-                    -- clear entries that are not the current race
-                    if LoadEnabled[racial.id] ~= nil then
-                        -- found entry to clear
-                        if LoadEnabled[TravelInfo.racial.id] == nil then
-                            -- set to the current race first
-                            LoadEnabled[TravelInfo.racial.id] = LoadEnabled[racial.id]
-                        end
-                        LoadEnabled[racial.id] = nil
-                    end
-                    if LoadOrder[racial.id] ~= nil then
-                        -- found entry to clear
-                        if LoadOrder[TravelInfo.racial.id] == nil then
-                            -- set to the current race first
-                            LoadOrder[TravelInfo.racial.id] = LoadOrder[racial.id]
-                        end
-                        LoadOrder[racial.id] = nil
-                    end
-                end
-            end
-        end
+        RepairPre201BrokenRacialSettings(settingsArg)
     end
 
     return settingsArg
