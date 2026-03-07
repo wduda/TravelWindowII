@@ -70,11 +70,6 @@ jobs:
             # Extract the content between these line numbers
             CHANGELOG_CONTENT=$(sed -n "$((LATEST_VERSION_LINE+1)),$((NEXT_VERSION_LINE-1))p" "$CHANGELOG_PATH" | sed '/^\s*$/d')
 
-            # Escape newlines and quote special characters for GitHub Actions
-            CHANGELOG_CONTENT="${CHANGELOG_CONTENT//'%'/'%25'}"
-            CHANGELOG_CONTENT="${CHANGELOG_CONTENT//$'\n'/'%0A'}"
-            CHANGELOG_CONTENT="${CHANGELOG_CONTENT//$'\r'/'%0D'}"
-
             # Set output for use in subsequent steps using heredoc to handle multiline output
             EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
             echo "content<<$EOF" >> $GITHUB_OUTPUT
