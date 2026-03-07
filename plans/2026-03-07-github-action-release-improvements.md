@@ -69,4 +69,4 @@ The workflow manually dispatches a tag input, checks out that ref, zips files, e
 
 ## Notes
 
-- Per `AGENTS.md`, use the `lotro-plugins-development-skill` from `.skills` during implementation work on this repository.
+- Per `AGENTS.md`, the `lotro-plugins-development-skill` is only for Lua/XML plugin implementation and is out of scope for this GitHub Actions workflow task.
