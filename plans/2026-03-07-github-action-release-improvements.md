@@ -34,8 +34,8 @@ The workflow manually dispatches a tag input, checks out that ref, zips files, e
 ## Version Update Targets (verified 2026-03-07)
 
 1. `actions/checkout` from `v4` to `v6`
-2. `softprops/action-gh-release` from `v2` to `v2.5.0` (or pin SHA)
-3. `thedoctor0/zip-release` from `master` to `0.7.6` (or pin SHA)
+2. `softprops/action-gh-release` from `v2` to `v2.5.0`
+3. `thedoctor0/zip-release` from `master` to `0.7.6`
 
 ## Proposed Improvement Plan
 
@@ -50,8 +50,7 @@ The workflow manually dispatches a tag input, checks out that ref, zips files, e
 - Add explicit error handling if no changelog heading is found
 
 3. Stabilize and secure action references
-- Replace floating `@master` with fixed version
-- Optionally pin actions to commit SHAs after version selection
+- Replace floating `@master` with explicit fixed versions
 
 4. Improve archive reproducibility
 - Ensure archive root/path are explicit so output is predictable
