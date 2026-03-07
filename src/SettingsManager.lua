@@ -351,6 +351,27 @@ function ToRelativePosSetting(settingsArg, absMax, absName, relName)
     SettingsConfig[relName].forceDefaultInit = relative
 end
 
+function UpgradeDeprecatedSettings(settingsArg)
+    local screenW = Turbine.UI.Display.GetWidth()
+    local screenH = Turbine.UI.Display.GetHeight()
+
+    -- fixup deprecated positionX/Y and buttonPositionX/Y
+    ToRelativePosSetting(settingsArg, screenW, "positionX", "positionRelativeX")
+    ToRelativePosSetting(settingsArg, screenH, "positionY", "positionRelativeY")
+    ToRelativePosSetting(settingsArg, screenW, "buttonPositionX", "buttonRelativeX")
+    ToRelativePosSetting(settingsArg, screenH, "buttonPositionY", "buttonRelativeY")
+
+    -- convert ignoreEsc to escapeToClose
+    if settingsArg.ignoreEsc ~= nil and settingsArg.ignoreEsc ~= "nil" then
+        if tonumber(settingsArg.ignoreEsc) == 0 then
+            settingsArg.escapeToClose = 1
+        else
+            settingsArg.escapeToClose = 0
+        end
+        settingsArg.ignoreEsc = nil
+    end
+end
+
 function SetSettings(settingsArg, scope, importOldSettings)
     -- initialze any uninitialized settings strings
     if (type(settingsArg) ~= "table") then
@@ -396,25 +417,7 @@ function SetSettings(settingsArg, scope, importOldSettings)
         end
     end
 
-    local screenW = Turbine.UI.Display.GetWidth()
-    local screenH = Turbine.UI.Display.GetHeight()
-
-    -- fixup deprecated positionX/Y and buttonPositionX/Y
-    ToRelativePosSetting(settingsArg, screenW, "positionX", "positionRelativeX")
-    ToRelativePosSetting(settingsArg, screenH, "positionY", "positionRelativeY")
-    ToRelativePosSetting(settingsArg, screenW, "buttonPositionX", "buttonRelativeX")
-    ToRelativePosSetting(settingsArg, screenH, "buttonPositionY", "buttonRelativeY")
-
-    -- convert ignoreEsc to escapeToClose
-    if settingsArg.ignoreEsc ~= nil and settingsArg.ignoreEsc ~= "nil" then
-        if tonumber(settingsArg.ignoreEsc) == 0 then
-            settingsArg.escapeToClose = 1
-        else
-            settingsArg.escapeToClose = 0
-        end
-        settingsArg.ignoreEsc = nil
-    end
-
+    UpgradeDeprecatedSettings(settingsArg)
 
     for k, v in pairs(SettingsConfig) do
         if v.init == InitNumberSetting then
