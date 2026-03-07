@@ -10,7 +10,6 @@ if the plan is updated based on my fedback make sure to patch the .md file for t
 use the skills found in the `.skills` directory
 
 use the lotro-plugins-development-skill skill for work on the main project
-use the git-commit skill for preparing git commit
 
 ## code style
 
