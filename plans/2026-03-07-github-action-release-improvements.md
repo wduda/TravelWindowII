@@ -69,4 +69,4 @@ The workflow manually dispatches a tag input, checks out that ref, zips files, e
 
 ## Notes
 
-- The `lotro-plugins-development-skill` and `git-commit` skills referenced in AGENTS instructions are not available in the active skill list for this session, so this plan uses direct repository workflow and standard git commands.
+- Per `AGENTS.md`, use the `lotro-plugins-development-skill` from `.skills` during implementation work on this repository.
