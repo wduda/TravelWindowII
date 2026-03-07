@@ -46,6 +46,7 @@ The workflow manually dispatches a tag input, checks out that ref, zips files, e
 
 2. Fix changelog extraction reliability
 - Extract content before escape operations
+- Move newline/percent escaping to run immediately after content extraction
 - Add explicit error handling if no changelog heading is found
 
 3. Stabilize and secure action references
