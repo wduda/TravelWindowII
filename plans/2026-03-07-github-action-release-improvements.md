@@ -41,7 +41,8 @@ The workflow manually dispatches a tag input, checks out that ref, zips files, e
 - Add an early validation step for tag format
 
 2. Fix changelog extraction reliability
-- Keep changelog output as raw multiline text via `$GITHUB_OUTPUT` heredoc (no `%0A` escaping)
+- Keep the original working release-body flow: write `content` via `$GITHUB_OUTPUT` heredoc and use `body: ${{ steps.changelog.outputs.CONTENT }}`
+- Keep the original escape-before-extract ordering for release body generation, since this behavior was verified to produce correct line breaks in prior releases
 - Add explicit error handling if no changelog heading is found
 
 3. Stabilize and secure action references
