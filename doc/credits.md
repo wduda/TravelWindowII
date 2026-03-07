@@ -1,5 +1,6 @@
 # Contributors
 
+Dhor
 Orendar
 Frell
 Paulino
@@ -27,3 +28,4 @@ Lumbago
 daks-ua
 whiterabbit963
 Svertalf
+peterbenoit

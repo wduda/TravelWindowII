@@ -35,6 +35,11 @@ How do I use the Carousel mode?
 Use the mousewheel while hovering over the travel skill icon to change the selected skill.
 [/LIST]
 
+Why can patches to TW II no longer be uploaded to lotrointerface?
+[LIST]
+Travel Window II has two authors who develop it actively. If you can provide improvements we will work with you to incorporate them into the plugin as soon as possible. I ask to submit those improvements as pull requests on GitHub rather than lotrointerface patches - the latter are finicky for others to install for users and incorporate into the plugin for the devs.
+[/LIST]
+
 Version history:
 
 v4.5.0
