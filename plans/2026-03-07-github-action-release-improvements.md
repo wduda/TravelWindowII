@@ -10,23 +10,19 @@ The workflow manually dispatches a tag input, checks out that ref, zips files, e
 
 ## Findings From Parsing
 
-1. Changelog escaping order is incorrect
-- Escaping runs before `CHANGELOG_CONTENT` is actually populated
-- Escaping currently has no effect on extracted content
-
-2. Unpinned floating ref for zip action
+1. Unpinned floating ref for zip action
 - `thedoctor0/zip-release@master` is used
 - Floating refs are fragile and supply-chain risky
 
-3. Missing explicit job permissions
+2. Missing explicit job permissions
 - Release creation needs `contents: write`
 - No explicit permissions block is defined
 
-4. Weak input validation for `workflow_dispatch.inputs.tag`
+3. Weak input validation for `workflow_dispatch.inputs.tag`
 - No `required: true` on tag input
 - No early validation for expected tag format (for example `vX.Y.Z`)
 
-5. Hard-coded shell parsing with several failure modes
+4. Hard-coded shell parsing with several failure modes
 - Changelog parsing assumes at least one `## v` heading
 - No explicit failure message if heading is missing
 - Could fail silently with unexpected changelog structure
@@ -45,8 +41,7 @@ The workflow manually dispatches a tag input, checks out that ref, zips files, e
 - Add an early validation step for tag format
 
 2. Fix changelog extraction reliability
-- Extract content before escape operations
-- Move newline/percent escaping to run immediately after content extraction
+- Keep changelog output as raw multiline text via `$GITHUB_OUTPUT` heredoc (no `%0A` escaping)
 - Add explicit error handling if no changelog heading is found
 
 3. Stabilize and secure action references
