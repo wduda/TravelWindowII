@@ -415,29 +415,6 @@ function SetSettings(settingsArg, scope, importOldSettings)
         settingsArg.ignoreEsc = nil
     end
 
-    if (settingsArg.buttonSize == nil or settingsArg.buttonSize == "nil") and
-        settingsArg.buttonDoubleSize ~= nil and settingsArg.buttonDoubleSize ~= "nil" then
-        if tonumber(settingsArg.buttonDoubleSize) == 1 then
-            settingsArg.buttonSize = tostring(TravelButtonSize.LARGE)
-        else
-            settingsArg.buttonSize = tostring(TravelButtonSize.SMALL)
-        end
-    end
-    settingsArg.buttonDoubleSize = nil
-
-    if settingsArg.shortcutLabelFont == nil or settingsArg.shortcutLabelFont == "nil" then
-        local legacyFontSetting = settingsArg.listFontSize
-        if legacyFontSetting ~= nil and legacyFontSetting ~= "nil" then
-            local legacyFontIndex = tonumber(legacyFontSetting)
-            if legacyFontIndex ~= nil then
-                local legacyFontMap = {"TrajanPro14", "TrajanPro15", "TrajanPro20"}
-                settingsArg.shortcutLabelFont = legacyFontMap[legacyFontIndex] or "TrajanPro15"
-            else
-                settingsArg.shortcutLabelFont = tostring(legacyFontSetting)
-            end
-        end
-    end
-    settingsArg.listFontSize = nil
 
     for k, v in pairs(SettingsConfig) do
         if v.init == InitNumberSetting then
