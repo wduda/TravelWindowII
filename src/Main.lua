@@ -56,7 +56,6 @@ end
 Plugins["Travel Window II"].Load = function(sender, args)
     Turbine.Shell.WriteLine("<u><rgb=#DAA520>Travel Window II " .. Plugins["Travel Window II"]:GetVersion() ..
                             " by Hyoss and Whiterabbit963</rgb></u>")
-    Turbine.Shell.WriteLine("[DEBUG] Latest change: connector now mirrors MoorMap (blank at rest, in-game asset on hover), plus 3 new region hotspots.")
 end
 
 -- handle unload event and save settings
