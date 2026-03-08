@@ -6,6 +6,7 @@ Base: origin/patch-og-font
 Scope: Planning only for this task, no plugin behavior changes yet
 
 ## Goals
+
 - Add clickable transition areas on the map image for each of the five normal map regions
 - Make each transition area behave exactly like clicking the matching region button below the map
 - Show a small hover overlay for transition targets using the same in-game assets MoorMap uses
@@ -13,12 +14,14 @@ Scope: Planning only for this task, no plugin behavior changes yet
 - Exclude creep map from this feature (no in-map region hotspots for creeps)
 
 ## Current State Summary
+
 - Region switching is currently handled by `TravelMapTab:SwitchRegion(newRegion)` and the five bottom navigation buttons
 - Map content is rendered in `self.mapLabel` with `SetStretchMode(1)`
 - Existing quickslot map markers are parented to `self.mapLabel`, which already scales with map resize
 - No in-map interactive transition controls currently exist
 
 ## Reference Findings (MoorMap)
+
 - MoorMap attaches interactive controls to the map control parent in stretch mode
 - Click handlers switch map via a central map-change function
 - Hover UI is shown through dedicated controls and hidden on leave/update
@@ -64,7 +67,18 @@ Scope: Planning only for this task, no plugin behavior changes yet
 - Make this debug label visible only when debug mode is on
 - Use this to capture exact overlay center points for source definitions
 
-7. Validation checklist (manual in-game)
+7. Coordinate and hotspot delivery workflow during development
+- Hotspot decisions are developer-driven during implementation
+- Developer identifies:
+  - which region-to-region hotspots are needed per map
+  - exact hotspot rectangles and overlay center coordinates
+- Developer can provide this data incrementally:
+  - single hotspot at a time
+  - small or large batches
+- Agent applies each provided increment to source data without waiting for full final dataset
+- Keep data definitions organized so incremental additions do not require refactoring existing entries
+
+8. Validation checklist (manual in-game)
 - For each of the five regions, verify every configured hotspot:
   - hover shows intended in-game overlay asset at the expected location
   - left-click switches to correct target region map
