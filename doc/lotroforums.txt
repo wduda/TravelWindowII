@@ -1,16 +1,12 @@
 A new version is available once the lotrointerface admins approve the upload. You can get it immediately at GitHub (see link below).
 
-This version focuses on adding some help with scaling the interface without overly depending on plugin scaling changes by SSG.
+v4.6.0
 
-v4.5.0
-
-- feat: map view can now be scaled/resized proportionally by dragging the bottom right corner
-- feat: options are reorganized into clearer groups in the general settings panel
-- feat: font size for Text List and Pulldown views can now be set to Small, Medium or Large in options - initital version by @peterbenoit
-- fix: map view will always be hidden on startup as it takes up a lot of space
-- fix: map mode fade-out no longer triggers unexpectedly when releasing the mouse
-- fix: map navigation panel alignment improved
-- fix: deed requirements were corrected for selected Umbar travel skills
+- feat: added choice of previous font (Lucida) to font size options, this font only has one size
+- feat: map view now supports in-map region navigation hotspots between major regions
+- feat: this hotspot behavior mimics the ingame map behavior and has refined clickable areas
+- fix: import of very old plugin settings is now more robust for several settings
+- fix: adjusted spacing of radio buttons for font option
 
 Help with further translations for DE, FR and RU clients is always welcome. Ideally submitted as pull requests on GitHub, but almost any way can be accomodated really.
 

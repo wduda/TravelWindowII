@@ -11,6 +11,141 @@ import "TravelWindowII.src.utils.BitOps"
 
 TravelMapTab = class(Turbine.UI.Control)
 
+local MAP_CONNECTOR_HOVER_ASSET = 0x410081a2 -- MoorMap map-connector hover art
+local MAP_CONNECTOR_BLANK_ASSET = "TravelWindowII/src/resources/MapConnector_blank.tga"
+local MAP_CONNECTOR_SIZE = 63
+
+-- Hotspot data is intentionally incremental. Add entries as coordinates are
+-- provided by the developer during in-game calibration.
+local REGION_HOTSPOTS = {
+    [MapType.ERIADOR] = {
+        {
+            toRegion = MapType.RHOVANION,
+            x = 945,
+            y = 300,
+            w = 50,
+            h = 195,
+            cx = 965,
+            cy = 420,
+        },
+        {
+            toRegion = MapType.ROHAN,
+            x = 860,
+            y = 650,
+            w = 164,
+            h = 118,
+            cx = 960,
+            cy = 710,
+        },
+    },
+    [MapType.RHOVANION] = {
+        {
+            toRegion = MapType.ERIADOR,
+            x = 30,
+            y = 30,
+            w = 75,
+            h = 445,
+            cx = 65,
+            cy = 340,
+        },
+        {
+            toRegion = MapType.ROHAN,
+            x = 275,
+            y = 688,
+            w = 425,
+            h = 70,
+            cx = 310,
+            cy = 720,
+        },
+    },
+    [MapType.ROHAN] = {
+        {
+            toRegion = MapType.ERIADOR,
+            x = 30,
+            y = 30,
+            w = 75,
+            h = 470,
+            cx = 70,
+            cy = 240,
+        },
+        {
+            toRegion = MapType.RHOVANION,
+            x = 425,
+            y = 15,
+            w = 565,
+            h = 64,
+            cx = 565,
+            cy = 45,
+        },
+        {
+            toRegion = MapType.GONDOR,
+            x = 510,
+            y = 680,
+            w = 180,
+            h = 70,
+            cx = 630,
+            cy = 705,
+        },
+        {
+            toRegion = MapType.GONDOR,
+            x = 830,
+            y = 510,
+            w = 194,
+            h = 120,
+            cx = 950,
+            cy = 590,
+        },
+    },
+    [MapType.GONDOR] = {
+        {
+            toRegion = MapType.ROHAN,
+            x = 300,
+            y = 15,
+            w = 270,
+            h = 110,
+            cx = 460,
+            cy = 80,
+        },
+        {
+            toRegion = MapType.HARADWAITH,
+            x = 540,
+            y = 680,
+            w = 450,
+            h = 70,
+            cx = 790,
+            cy = 710,
+        },
+    },
+    [MapType.HARADWAITH] = {
+        {
+            toRegion = MapType.GONDOR,
+            x = 400,
+            y = 15,
+            w = 380,
+            h = 75,
+            cx = 595,
+            cy = 55,
+        },
+        {
+            toRegion = MapType.GONDOR,
+            x = 815,
+            y = 15,
+            w = 175,
+            h = 75,
+            cx = 880,
+            cy = 55,
+        },
+    },
+}
+
+local REGION_LABEL_KEY_BY_TYPE = {
+    [MapType.ERIADOR] = "eriadorMapName",
+    [MapType.RHOVANION] = "rhovanionMapName",
+    [MapType.ROHAN] = "rohanMapName",
+    [MapType.GONDOR] = "gondorMapName",
+    [MapType.HARADWAITH] = "haradwaithMapName",
+}
+
 function TravelMapTab:Constructor(toplevel)
     Turbine.UI.Control.Constructor(self)
 
@@ -29,6 +164,9 @@ function TravelMapTab:Constructor(toplevel)
     self.totalWidth = 0
     self.quickslots = {}
     self.panelQuickslots = {}  -- For milestone/housing skills in nav panel
+    self.regionHotspots = {}
+    self.regionHotspotOverlays = {}
+    self.debugCoordLabel = nil
 
     -- Set initial region (will be loaded from settings)
     if PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer then
@@ -59,6 +197,12 @@ function TravelMapTab:Constructor(toplevel)
     self.mapLabel:SetVisible(true)
     self.mapLabel:SetMouseVisible(true)
     self.mapLabel.MouseClick = self.MouseClick
+    self.mapLabel.MouseMove = function(_, args)
+        self:UpdateDebugMouseCoordinates(args)
+    end
+    self.mapLabel.MouseLeave = function()
+        self:HideDebugMouseCoordinates()
+    end
     self:UpdateMapSize(self:GetMinPixelSize())
 
     if self.navPanelHeight > 0 then
@@ -183,6 +327,8 @@ function TravelMapTab:LoadMap()
     end
 
     self.mapLabel:SetStretchMode(1)
+    self:RebuildRegionHotspots()
+    self:UpdateDebugLabelVisibility()
 
     -- disable current region button
     if self.navPanelHeight ~= 0 then
@@ -190,6 +336,167 @@ function TravelMapTab:LoadMap()
             btn:SetEnabled(btn.region ~= self.currentRegion)
         end
     end
+end
+
+function TravelMapTab:GetRegionDisplayName(region)
+    local key = REGION_LABEL_KEY_BY_TYPE[region]
+    if key ~= nil and LC[key] ~= nil then
+        return LC[key]
+    end
+    return tostring(region)
+end
+
+function TravelMapTab:EnsureDebugCoordLabel()
+    if self.debugCoordLabel ~= nil then
+        return
+    end
+
+    local label = Turbine.UI.Label()
+    label:SetParent(self.mapLabel)
+    label:SetMouseVisible(false)
+    label:SetPosition(8, 8)
+    label:SetSize(360, 24)
+    label:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+    label:SetFont(Turbine.UI.Lotro.Font.Verdana14)
+    label:SetOutlineColor(Turbine.UI.Color(0, 0, 0))
+    label:SetFontStyle(Turbine.UI.FontStyle.Outline)
+    label:SetForeColor(Turbine.UI.Color(1, 1, 0.85, 0.25))
+    label:SetBackColor(Turbine.UI.Color(0.55, 0, 0, 0))
+    label:SetVisible(false)
+    label:SetZOrder(210)
+    self.debugCoordLabel = label
+end
+
+function TravelMapTab:UpdateDebugLabelVisibility()
+    self:EnsureDebugCoordLabel()
+    self.debugCoordLabel:SetVisible(TravelDebugEnabled == true)
+    if TravelDebugEnabled ~= true then
+        self.debugCoordLabel:SetText("")
+    end
+end
+
+function TravelMapTab:UpdateDebugMouseCoordinates(args)
+    if TravelDebugEnabled ~= true then
+        return
+    end
+
+    self:EnsureDebugCoordLabel()
+    local mapW = self.mapLabel:GetWidth()
+    local mapH = self.mapLabel:GetHeight()
+    if mapW <= 0 or mapH <= 0 then
+        return
+    end
+
+    local mapX = math.floor((args.X * self.mapWidth / mapW) + 0.5)
+    local mapY = math.floor((args.Y * self.mapHeight / mapH) + 0.5)
+    if mapX < 0 then mapX = 0 end
+    if mapY < 0 then mapY = 0 end
+    if mapX > self.mapWidth then mapX = self.mapWidth end
+    if mapY > self.mapHeight then mapY = self.mapHeight end
+    local regionName = self:GetRegionDisplayName(self.currentRegion)
+    self.debugCoordLabel:SetText(string.format("[%s] x=%d y=%d", regionName, mapX, mapY))
+    self.debugCoordLabel:SetVisible(true)
+end
+
+function TravelMapTab:HideDebugMouseCoordinates()
+    if self.debugCoordLabel ~= nil and TravelDebugEnabled == true then
+        local regionName = self:GetRegionDisplayName(self.currentRegion)
+        self.debugCoordLabel:SetText(string.format("[%s]", regionName))
+    end
+end
+
+function TravelMapTab:ClearRegionHotspots()
+    for i = 1, #self.regionHotspotOverlays do
+        local overlay = self.regionHotspotOverlays[i]
+        overlay:SetVisible(false)
+        overlay:SetParent(nil)
+    end
+
+    for i = 1, #self.regionHotspots do
+        local hotspot = self.regionHotspots[i]
+        hotspot:SetVisible(false)
+        hotspot:SetParent(nil)
+    end
+
+    self.regionHotspotOverlays = {}
+    self.regionHotspots = {}
+end
+
+function TravelMapTab:ToggleHotspotOverlay(index, visible)
+    local overlay = self.regionHotspotOverlays[index]
+    if overlay ~= nil then
+        if visible then
+            overlay:SetBackground(MAP_CONNECTOR_HOVER_ASSET)
+        else
+            overlay:SetBackground(MAP_CONNECTOR_BLANK_ASSET)
+        end
+    end
+end
+
+function TravelMapTab:CreateRegionHotspotsForCurrentMap()
+    if self.currentRegion == MapType.CREEPS then
+        return
+    end
+
+    local definitions = REGION_HOTSPOTS[self.currentRegion]
+    if definitions == nil then
+        return
+    end
+
+    for _, definition in ipairs(definitions) do
+        if definition.toRegion ~= nil and definition.x ~= nil and definition.y ~= nil and
+            definition.w ~= nil and definition.h ~= nil and
+            definition.cx ~= nil and definition.cy ~= nil then
+            local overlay = Turbine.UI.Control()
+            overlay:SetParent(self.mapLabel)
+            overlay:SetSize(MAP_CONNECTOR_SIZE, MAP_CONNECTOR_SIZE)
+            overlay:SetPosition(
+                math.floor(definition.cx - (MAP_CONNECTOR_SIZE / 2)),
+                math.floor(definition.cy - (MAP_CONNECTOR_SIZE / 2))
+            )
+            overlay:SetOpacity(1)
+            overlay:SetBackground(MAP_CONNECTOR_BLANK_ASSET)
+            overlay:SetBackColor(Turbine.UI.Color(0, 0, 0, 0))
+            overlay:SetBackColorBlendMode(8)
+            overlay:SetBlendMode(Turbine.UI.BlendMode.Overlay)
+            overlay:SetMouseVisible(false)
+            overlay:SetZOrder(97)
+            overlay:SetVisible(true)
+            table.insert(self.regionHotspotOverlays, overlay)
+
+            local index = #self.regionHotspotOverlays
+            local hotspot = Turbine.UI.Label()
+            hotspot:SetParent(self.mapLabel)
+            hotspot:SetPosition(definition.x, definition.y)
+            hotspot:SetSize(definition.w, definition.h)
+            hotspot:SetText("")
+            hotspot:SetMouseVisible(true)
+            hotspot:SetZOrder(90)
+            hotspot:SetVisible(true)
+            hotspot.MouseEnter = function()
+                self:ToggleHotspotOverlay(index, true)
+            end
+            hotspot.MouseLeave = function()
+                self:ToggleHotspotOverlay(index, false)
+            end
+            hotspot.MouseClick = function(_, args)
+                if args.Button == Turbine.UI.MouseButton.Right then
+                    Menu:ShowMenu()
+                    return
+                end
+
+                if args.Button == Turbine.UI.MouseButton.Left then
+                    self:SwitchRegion(definition.toRegion)
+                end
+            end
+            table.insert(self.regionHotspots, hotspot)
+        end
+    end
+end
+
+function TravelMapTab:RebuildRegionHotspots()
+    self:ClearRegionHotspots()
+    self:CreateRegionHotspotsForCurrentMap()
 end
 
 function TravelMapTab:GetGridIndex(x, y)
@@ -432,6 +739,7 @@ function TravelMapTab:SetSize(width, height)
     Turbine.UI.Control.SetSize(self, width, height)
     self:UpdateMapSize(width, height)
     self:UpdateNavPanelLayout(width, height)
+    self:UpdateDebugLabelVisibility()
 end
 
 function TravelMapTab:GetMinPixelSize()

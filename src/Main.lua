@@ -12,6 +12,7 @@ Settings = {}
 AccountSettingsStrings = {}
 TravelShortcuts = {} -- put all the shortcuts into one table
 TrainedSkills = Turbine.Gameplay.SkillList
+TravelDebugEnabled = false
 
 -- get the player class and race
 Player = Turbine.Gameplay.LocalPlayer.GetInstance()
@@ -97,6 +98,18 @@ function TravelCommand:Execute(command, arguments)
                 _G.update = nil
             end
         )
+    elseif (arguments == "debug") then
+        TravelDebugEnabled = not TravelDebugEnabled
+        _G.travel.MapTab:UpdateDebugLabelVisibility()
+        Turbine.Shell.WriteLine("Travel debug mode: " .. (TravelDebugEnabled and "on" or "off"))
+    elseif (arguments == "debug on") then
+        TravelDebugEnabled = true
+        _G.travel.MapTab:UpdateDebugLabelVisibility()
+        Turbine.Shell.WriteLine("Travel debug mode: on")
+    elseif (arguments == "debug off") then
+        TravelDebugEnabled = false
+        _G.travel.MapTab:UpdateDebugLabelVisibility()
+        Turbine.Shell.WriteLine("Travel debug mode: off")
     elseif (arguments ~= nil) then
         TravelCommand:GetHelp()
     end

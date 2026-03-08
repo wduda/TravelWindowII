@@ -42,15 +42,13 @@ Travel Window II has two authors who develop it actively. If you can provide imp
 
 Version history:
 
-v4.5.0
+v4.6.0
 
-- feat: map view can now be scaled/resized proportionally by dragging the bottom right corner
-- feat: options are reorganized into clearer groups in the general settings panel
-- feat: font size for Text List and Pulldown views can now be set to Small, Medium or Large in options
-- fix: map view will always be hidden on startup as it takes up a lot of space
-- fix: map mode fade-out no longer triggers unexpectedly when releasing the mouse
-- fix: map navigation panel alignment improved
-- fix: deed requirements were corrected for selected Umbar travel skills
+- feat: added choice of previous font (Lucida) to font size options, this font only has one size
+- feat: map view now supports in-map region navigation hotspots between major regions
+- feat: this hotspot behavior mimics the ingame map behavior and has refined clickable areas
+- fix: import of very old plugin settings is now more robust for several settings
+- fix: adjusted spacing of radio buttons for font option
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
 
