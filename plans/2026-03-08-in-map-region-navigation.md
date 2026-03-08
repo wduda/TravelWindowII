@@ -8,8 +8,9 @@ Scope: Planning only for this task, no plugin behavior changes yet
 ## Goals
 - Add clickable transition areas on the map image for each of the five normal map regions
 - Make each transition area behave exactly like clicking the matching region button below the map
-- Show a small hover overlay for transition targets, similar to the in-game map behavior
+- Show a small hover overlay for transition targets using the same in-game assets MoorMap uses
 - Ensure hitboxes and overlays remain correct at any map view scale
+- Exclude creep map from this feature (no in-map region hotspots for creeps)
 
 ## Current State Summary
 - Region switching is currently handled by `TravelMapTab:SwitchRegion(newRegion)` and the five bottom navigation buttons
@@ -29,8 +30,8 @@ Scope: Planning only for this task, no plugin behavior changes yet
 - Each entry is a list of transition items with:
   - `toRegion`
   - base-map rectangle (`x`, `y`, `w`, `h`) in 1024x768 coordinates
-  - optional hover label key/resource key for localized text
-  - optional overlay background resource id/path if available
+  - overlay center point (`cx`, `cy`) in 1024x768 coordinates
+  - in-game overlay asset resource id/path (same family used by MoorMap)
 
 2. Create in-map transition controls
 - Add `self.regionHotspots` and `self.regionHotspotOverlays` collections to manage lifecycle
@@ -39,8 +40,9 @@ Scope: Planning only for this task, no plugin behavior changes yet
 - Bind `MouseClick` to call `self:SwitchRegion(item.toRegion)` for left-click and menu for right-click parity
 
 3. Add hover overlay behavior
-- Add a compact overlay control (or label) per hotspot, initially hidden
-- On `MouseEnter`, show overlay near hotspot and display localized target region text
+- Add a compact overlay control per hotspot, initially hidden
+- Use in-game overlay art assets (matching MoorMap approach), not custom label-only fallback
+- Position overlay from configured center point (`cx`, `cy`) so assets align consistently
 - On `MouseLeave`, hide overlay
 - Keep overlay behavior lightweight and deterministic, with no timers unless needed
 
@@ -51,19 +53,28 @@ Scope: Planning only for this task, no plugin behavior changes yet
 
 5. Integrate with existing lifecycle
 - Add clear/reset methods similar to `ClearItems()` so hotspot controls are cleaned up on rebuild
-- Ensure non-player map mode (creeps) does not create normal-region transition hotspots
+- Ensure creep mode (`MapType.CREEPS`) never creates transition hotspots or overlays
 - Keep existing region button behavior untouched and functionally equivalent
 
-6. Validation checklist (manual in-game)
+6. Add developer coordinate-debug workflow
+- Reuse `/travel debug` mode to show current mouse map coordinates while hovering map
+- Add a small debug label anchored to the map showing:
+  - current mouse `x,y` in base map pixel space (1024x768 reference)
+  - optional current region id/name
+- Make this debug label visible only when debug mode is on
+- Use this to capture exact overlay center points for source definitions
+
+7. Validation checklist (manual in-game)
 - For each of the five regions, verify every configured hotspot:
-  - hover shows intended overlay text
+  - hover shows intended in-game overlay asset at the expected location
   - left-click switches to correct target region map
   - right-click still opens plugin menu
 - Verify behavior at multiple `Settings.mapViewScale` values, including smaller and larger than `1.0`
 - Verify hotspot clicks do not interfere with existing map quickslots
 - Verify no stale hotspot controls remain after repeated region switches
+- Verify debug coordinate label appears only with `/travel debug` and reports stable, usable values
 
 ## Open Data Decisions For Implementation
-- Exact hotspot rectangles and hover text per region pair
-- Whether hover overlays use existing game resource ids or simple styled labels first
+- Exact hotspot rectangles and overlay center points per region pair
+- Exact in-game overlay resource ids/paths to standardize on (from MoorMap references)
 - Whether all possible region-to-region transitions are configured now or staged incrementally
