@@ -28,6 +28,15 @@ local REGION_HOTSPOTS = {
             cx = 965,
             cy = 420,
         },
+        {
+            toRegion = MapType.ROHAN,
+            x = 928,
+            y = 678,
+            w = 64,
+            h = 64,
+            cx = 960,
+            cy = 710,
+        },
     },
     [MapType.RHOVANION] = {
         {
@@ -58,6 +67,15 @@ local REGION_HOTSPOTS = {
             h = 64,
             cx = 70,
             cy = 240,
+        },
+        {
+            toRegion = MapType.ERIADOR,
+            x = 33,
+            y = 383,
+            w = 64,
+            h = 64,
+            cx = 65,
+            cy = 415,
         },
         {
             toRegion = MapType.RHOVANION,
