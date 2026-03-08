@@ -4,6 +4,16 @@
 
 ChangelogData = {
     {
+        version = "v4.6.0",
+        changes = {
+            "feat: added choice of previous font (Lucida) to font size options, this font only has one size",
+            "feat: map view now supports in-map region navigation hotspots between major regions",
+            "feat: this hotspot behavior mimics the ingame map behavior and has refined clickable areas",
+            "fix: import of very old plugin settings is now more robust for several settings",
+            "fix: adjusted spacing of radio buttons for font option",
+        }
+    },
+    {
         version = "v4.5.0",
         changes = {
             "feat: map view can now be scaled/resized proportionally by dragging the bottom right corner",

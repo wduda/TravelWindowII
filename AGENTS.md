@@ -23,6 +23,20 @@ when writing code, do not use ; to end lines as a convention
 ## changelog data style
 
 when adding lines to changelog and changelogdata, the strings should have a prefix of either major: for major features, feat: for enhancements and minor features, fix: for changes which address behavior that was not as intended
+they need to be sorted with major coming first, feat second, fix last
+
+## release metadata workflow
+
+for release metadata tasks, always update and stage (without committing unless explicitly requested) these files:
+
+- `CHANGELOG.md`
+- `src/ChangelogData.lua`
+- `TravelWindowII.plugin`
+- `TravelWindowII.plugincompendium`
+- `doc/lotroforums.txt`
+- `doc/lotrointerface.txt`
+
+build release notes from commits since the last release tag and keep changelog prefixes to `major:`, `feat:`, `fix:`
 
 ## LOTRO Lua limits
 
