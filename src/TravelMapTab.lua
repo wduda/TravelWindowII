@@ -12,6 +12,7 @@ import "TravelWindowII.src.utils.BitOps"
 TravelMapTab = class(Turbine.UI.Control)
 
 local MAP_CONNECTOR_HOVER_ASSET = 0x410081a2 -- MoorMap map-connector hover art
+local MAP_CONNECTOR_BLANK_ASSET = "TravelWindowII/src/resources/MapConnector_blank.tga"
 local MAP_CONNECTOR_SIZE = 63
 
 -- Hotspot data is intentionally incremental. Add entries as coordinates are
@@ -19,7 +20,7 @@ local MAP_CONNECTOR_SIZE = 63
 local REGION_HOTSPOTS = {
     [MapType.ERIADOR] = {
         {
-            toRegion = MapType.ROHAN,
+            toRegion = MapType.RHOVANION,
             x = 933,
             y = 388,
             w = 64,
@@ -28,10 +29,95 @@ local REGION_HOTSPOTS = {
             cy = 420,
         },
     },
-    [MapType.RHOVANION] = {},
-    [MapType.ROHAN] = {},
-    [MapType.GONDOR] = {},
-    [MapType.HARADWAITH] = {},
+    [MapType.RHOVANION] = {
+        {
+            toRegion = MapType.ERIADOR,
+            x = 33,
+            y = 308,
+            w = 64,
+            h = 64,
+            cx = 65,
+            cy = 340,
+        },
+        {
+            toRegion = MapType.ROHAN,
+            x = 278,
+            y = 688,
+            w = 64,
+            h = 64,
+            cx = 310,
+            cy = 720,
+        },
+    },
+    [MapType.ROHAN] = {
+        {
+            toRegion = MapType.ERIADOR,
+            x = 38,
+            y = 208,
+            w = 64,
+            h = 64,
+            cx = 70,
+            cy = 240,
+        },
+        {
+            toRegion = MapType.RHOVANION,
+            x = 533,
+            y = 13,
+            w = 64,
+            h = 64,
+            cx = 565,
+            cy = 45,
+        },
+        {
+            toRegion = MapType.GONDOR,
+            x = 598,
+            y = 673,
+            w = 64,
+            h = 64,
+            cx = 630,
+            cy = 705,
+        },
+        {
+            toRegion = MapType.GONDOR,
+            x = 918,
+            y = 558,
+            w = 64,
+            h = 64,
+            cx = 950,
+            cy = 590,
+        },
+    },
+    [MapType.GONDOR] = {
+        {
+            toRegion = MapType.ROHAN,
+            x = 428,
+            y = 48,
+            w = 64,
+            h = 64,
+            cx = 460,
+            cy = 80,
+        },
+    },
+    [MapType.HARADWAITH] = {
+        {
+            toRegion = MapType.GONDOR,
+            x = 563,
+            y = 13,
+            w = 64,
+            h = 64,
+            cx = 595,
+            cy = 45,
+        },
+        {
+            toRegion = MapType.GONDOR,
+            x = 848,
+            y = 23,
+            w = 64,
+            h = 64,
+            cx = 880,
+            cy = 55,
+        },
+    },
 }
 
 local REGION_LABEL_KEY_BY_TYPE = {
@@ -321,7 +407,13 @@ end
 function TravelMapTab:ToggleHotspotOverlay(index, visible)
     local overlay = self.regionHotspotOverlays[index]
     if overlay ~= nil then
-        overlay:SetVisible(visible)
+        if visible then
+            overlay:SetBackground(MAP_CONNECTOR_HOVER_ASSET)
+            overlay:SetVisible(true)
+        else
+            overlay:SetBackground(MAP_CONNECTOR_BLANK_ASSET)
+            overlay:SetVisible(false)
+        end
     end
 end
 
@@ -346,18 +438,21 @@ function TravelMapTab:CreateRegionHotspotsForCurrentMap()
                 math.floor(definition.cx - (MAP_CONNECTOR_SIZE / 2)),
                 math.floor(definition.cy - (MAP_CONNECTOR_SIZE / 2))
             )
-            overlay:SetBackground(MAP_CONNECTOR_HOVER_ASSET)
+            overlay:SetOpacity(1)
+            overlay:SetBackground(MAP_CONNECTOR_BLANK_ASSET)
+            overlay:SetBackColor(Turbine.UI.Color(0, 0, 0, 0))
+            overlay:SetBackColorBlendMode(8)
             overlay:SetMouseVisible(false)
             overlay:SetZOrder(97)
             overlay:SetVisible(false)
             table.insert(self.regionHotspotOverlays, overlay)
 
             local index = #self.regionHotspotOverlays
-            local hotspot = Turbine.UI.Control()
+            local hotspot = Turbine.UI.Label()
             hotspot:SetParent(self.mapLabel)
             hotspot:SetPosition(definition.x, definition.y)
             hotspot:SetSize(definition.w, definition.h)
-            hotspot:SetBackColor(Turbine.UI.Color(0, 0, 0, 0))
+            hotspot:SetText("")
             hotspot:SetMouseVisible(true)
             hotspot:SetZOrder(90)
             hotspot:SetVisible(true)

@@ -46,6 +46,9 @@ Scope: Planning only for this task, no plugin behavior changes yet
 - Add a compact overlay control per hotspot, initially hidden
 - Use in-game overlay art assets (matching MoorMap approach), not custom label-only fallback
 - Position overlay from configured center point (`cx`, `cy`) so assets align consistently
+- Keep hotspot rectangle fully invisible at rest
+- On hover, render the in-game overlay with partial transparency so map detail remains readable
+- Ensure transparent regions inside the asset stay transparent (no black fill/background)
 - On `MouseLeave`, hide overlay
 - Keep overlay behavior lightweight and deterministic, with no timers unless needed
 
