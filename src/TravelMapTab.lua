@@ -17,7 +17,17 @@ local MAP_CONNECTOR_SIZE = 63
 -- Hotspot data is intentionally incremental. Add entries as coordinates are
 -- provided by the developer during in-game calibration.
 local REGION_HOTSPOTS = {
-    [MapType.ERIADOR] = {},
+    [MapType.ERIADOR] = {
+        {
+            toRegion = MapType.ROHAN,
+            x = 933,
+            y = 388,
+            w = 64,
+            h = 64,
+            cx = 965,
+            cy = 420,
+        },
+    },
     [MapType.RHOVANION] = {},
     [MapType.ROHAN] = {},
     [MapType.GONDOR] = {},
