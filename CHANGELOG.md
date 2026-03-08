@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v4.6.0
+
+- feat: added choice of previous font (Lucida) to font size options, this font only has one size
+- fix: import of very old plugin settings is now more robust for several settings
+- fix: adjusted spacing of radio buttons for font option
+
 ## v4.5.0
 
 - feat: map view can now be scaled/resized proportionally by dragging the bottom right corner
