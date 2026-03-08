@@ -427,10 +427,8 @@ function TravelMapTab:ToggleHotspotOverlay(index, visible)
     if overlay ~= nil then
         if visible then
             overlay:SetBackground(MAP_CONNECTOR_HOVER_ASSET)
-            overlay:SetVisible(true)
         else
             overlay:SetBackground(MAP_CONNECTOR_BLANK_ASSET)
-            overlay:SetVisible(false)
         end
     end
 end
@@ -460,9 +458,10 @@ function TravelMapTab:CreateRegionHotspotsForCurrentMap()
             overlay:SetBackground(MAP_CONNECTOR_BLANK_ASSET)
             overlay:SetBackColor(Turbine.UI.Color(0, 0, 0, 0))
             overlay:SetBackColorBlendMode(8)
+            overlay:SetBlendMode(Turbine.UI.BlendMode.Overlay)
             overlay:SetMouseVisible(false)
             overlay:SetZOrder(97)
-            overlay:SetVisible(false)
+            overlay:SetVisible(true)
             table.insert(self.regionHotspotOverlays, overlay)
 
             local index = #self.regionHotspotOverlays
