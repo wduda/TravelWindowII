@@ -224,7 +224,7 @@ LC_RU.rep.DEFENDERS_OF_MINAS_TIRITH = "Защитники Минас Тирит�
 
 LC_EN.rep.RIDERS_OF_ROHAN = "Riders of Rohan"
 LC_DE.rep.RIDERS_OF_ROHAN = "Reiter von Rohan"
-LC_FR.rep.RIDERS_OF_ROHAN = "Cavaliers du Rohan[mp]"
+LC_FR.rep.RIDERS_OF_ROHAN = "Cavaliers du Rohan"
 LC_RU.rep.RIDERS_OF_ROHAN = "Всадники Рохана"
 
 LC_EN.rep.RENEWAL_OF_GONDOR = "The Renewal of Gondor"
