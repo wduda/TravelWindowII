@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v4.7.0
+
+- enhance: updated many NPC names barter on Find Tab
+= enhance: updated translations of skills and Find Tab data for RU up to U47.1
+- fix: fixed travel to kinship member's house in FR after unannounced renaming of skill by SSG
+
 ## v4.6.0
 
 - feat: added choice of previous font (Lucida) to font size options, this font only has one size
