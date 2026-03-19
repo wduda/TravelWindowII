@@ -136,6 +136,7 @@ function TravelShortcut:GetAcquireText()
         end
         local items = self.skill.acquire
         for i = 1, #items do
+            SelectLCText(items[i])
             if items[i].zone == nil then
                 items[i].zone = self.skill.zone
             end

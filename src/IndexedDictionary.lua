@@ -74,7 +74,7 @@ function IndexedDictionary:SetSkillLabels()
     end
 end
 
-function IndexedDictionary:SelectLCText(item)
+function SelectLCText(item, parent, label)
     if item == nil then return end
     local langs = {
         {name="DE", lc=Turbine.Language.German},
@@ -93,9 +93,10 @@ function IndexedDictionary:SelectLCText(item)
                 item.DE = nil
                 item.FR = nil
                 item.RU = nil
-                return item
+            elseif parent ~= nil and type(label) == "string" then
+                parent[label] = lcItem
             end
-            return lcItem
+            return
         end
     end
 end
@@ -115,7 +116,7 @@ function IndexedDictionary:VerifySkill(skill)
     end
 
     local prevSkillTag = skill.tag
-    self:SelectLCText(skill)
+    SelectLCText(skill)
 
     skill.label0 = skill.label
     skill.label = nil
@@ -143,13 +144,6 @@ function IndexedDictionary:VerifySkill(skill)
         Turbine.Shell.WriteLine(skill.name .. "(" .. skill.id .. ") coords not set")
     end
 
-    if skill.acquire ~= nil then
-        local items = skill.acquire
-        for i = 1, #items do
-            self:SelectLCText(items[i])
-        end
-    end
-
     return true
 end
 
@@ -157,7 +151,7 @@ function IndexedDictionary:AddLabelTag(tag)
     if tag.EN == nil or tag.DE == nil or tag.FR == nil or tag.RU == nil then
         return
     end
-    self.tag = self:SelectLCText(tag)
+    SelectLCText(tag, self, "tag")
 end
 
 function IndexedDictionary:AddSkill(skill)
