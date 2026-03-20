@@ -3436,7 +3436,7 @@ function TravelDictionary:CreateDictionaries()
         id="0x70057C36",
         EN={name="Travel to Kinship Member's House", label="Kinship Member's House"},
         DE={name="Zum Haus des Sippenmitglieds reisen", label="Heim des Sippenmitglieds"},
-        FR={name="Retour à la maison d'un membre de confrérie", label="Maison d'un membre de confrérie"},
+        FR={name="Retour à la maison des membres de confrérie", label="Maison d'un membre de confrérie"},
         RU={name="Путешествие в дом участника содружества", label="Дом участника содружества"},
         map={{MapType.NONE, -1, -1}},
         acquire={
