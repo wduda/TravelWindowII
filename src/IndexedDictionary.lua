@@ -74,8 +74,8 @@ function IndexedDictionary:SetSkillLabels()
     end
 end
 
-function SelectLCText(item, parent, label)
-    if item == nil then return end
+function SelectLCText(item)
+    if item == nil then return item end
     local langs = {
         {name="DE", lc=Turbine.Language.German},
         {name="FR", lc=Turbine.Language.French},
@@ -85,6 +85,7 @@ function SelectLCText(item, parent, label)
         local lang = langs[i]
         if lang.lc == nil or lang.lc == GLocale then
             local lcItem = item[lang.name]
+            if lcItem == nil then return item end
             if type(lcItem) == "table" then
                 -- only move localization values into 'item'
                 for k, v in pairs(lcItem) do item[k] = v end
@@ -93,10 +94,9 @@ function SelectLCText(item, parent, label)
                 item.DE = nil
                 item.FR = nil
                 item.RU = nil
-            elseif parent ~= nil and type(label) == "string" then
-                parent[label] = lcItem
+                return item
             end
-            return
+            return lcItem
         end
     end
 end
@@ -158,7 +158,7 @@ function IndexedDictionary:AddLabelTag(tag)
     if tag.EN == nil or tag.DE == nil or tag.FR == nil or tag.RU == nil then
         return
     end
-    SelectLCText(tag, self, "tag")
+    self.tag = SelectLCText(tag)
 end
 
 function IndexedDictionary:AddSkill(skill)
