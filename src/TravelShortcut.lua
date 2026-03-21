@@ -442,7 +442,7 @@ function SortShortcuts(sc, comp)
     end
 
     -- cleanup internal Index or MapIndex values to be sequential
-    if sc == TravelShortcut then
+    if sc == TravelShortcuts then
         for i = 1, #sc do
             sc[i].Index = i;
         end
