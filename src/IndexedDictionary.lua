@@ -144,6 +144,13 @@ function IndexedDictionary:VerifySkill(skill)
         Turbine.Shell.WriteLine(skill.name .. "(" .. skill.id .. ") coords not set")
     end
 
+    if skill.acquire ~= nil then
+        local items = skill.acquire
+        for i = 1, #items do
+            SelectLCText(items[i])
+        end
+    end
+
     return true
 end
 

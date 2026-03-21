@@ -136,7 +136,6 @@ function TravelShortcut:GetAcquireText()
         end
         local items = self.skill.acquire
         for i = 1, #items do
-            SelectLCText(items[i])
             if items[i].zone == nil then
                 items[i].zone = self.skill.zone
             end
@@ -442,9 +441,15 @@ function SortShortcuts(sc, comp)
         n = new_n;
     end
 
-    -- cleanup internal Index values to be sequential
-    for i = 1, #sc do
-        sc[i].Index = i;
+    -- cleanup internal Index or MapIndex values to be sequential
+    if sc == TravelShortcut then
+        for i = 1, #sc do
+            sc[i].Index = i;
+        end
+    elseif sc == NavPanelShortcuts then
+        for i = 1, #sc do
+            sc[i].MapIndex = i;
+        end
     end
 end
 
