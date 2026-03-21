@@ -51,10 +51,12 @@ function TravelShortcut:InitMapTray()
     end
 
     local acquireList = self.skill.acquire
-    for i = 1, #acquireList do
-        local item = acquireList[i]
-        if item.allegiance ~= nil then
-            self.IsAllegiance = true
+    if acquireList ~= nil then
+        for i = 1, #acquireList do
+            local item = acquireList[i]
+            if item.allegiance ~= nil then
+                self.IsAllegiance = true
+            end
         end
     end
 
@@ -441,9 +443,15 @@ function SortShortcuts(sc, comp)
         n = new_n;
     end
 
-    -- cleanup internal Index values to be sequential
-    for i = 1, #sc do
-        sc[i].Index = i;
+    -- cleanup internal Index or MapIndex values to be sequential
+    if sc == TravelShortcuts then
+        for i = 1, #sc do
+            sc[i].Index = i;
+        end
+    elseif sc == NavPanelShortcuts then
+        for i = 1, #sc do
+            sc[i].MapIndex = i;
+        end
     end
 end
 
