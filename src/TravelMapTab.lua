@@ -210,6 +210,7 @@ function TravelMapTab:Constructor(toplevel)
     self.mapLabel.MouseLeave = function()
         self:HideDebugMouseCoordinates()
     end
+
     self:UpdateMapSize(self:GetMinPixelSize())
 
     if self.navPanelHeight > 0 then
@@ -706,7 +707,6 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, isLearned, skill)
     if isLearned ~= nil then
         learned = isLearned
     end
-
     local qs = Turbine.UI.Lotro.Quickslot()
     qs:SetShortcut(shortcut)
     qs:SetOpacity(1)
