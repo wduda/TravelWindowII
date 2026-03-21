@@ -15,6 +15,8 @@ local MAP_CONNECTOR_HOVER_ASSET = 0x410081a2 -- MoorMap map-connector hover art
 local MAP_CONNECTOR_BLANK_ASSET = "TravelWindowII/src/resources/MapConnector_blank.tga"
 local MAP_CONNECTOR_SIZE = 63
 local MAP_SHORTCUT_BORDER_BASE_WIDTH = 1
+local MAP_SHORTCUT_BORDER_X_OFFSET = 3
+local MAP_SHORTCUT_BORDER_Y_OFFSET = 2
 local MAP_SHORTCUT_LEARNED_BORDER_COLOR = Turbine.UI.Color(1, 0x60 / 255, 0xC4 / 255, 0x76 / 255)
 local MAP_SHORTCUT_UNLEARNED_BORDER_COLOR = Turbine.UI.Color(1, 0xD9 / 255, 0, 0)
 
@@ -618,8 +620,13 @@ function TravelMapTab:ClearItems()
     self.quickslots = {}
 
     for i = 1, #self.quickslotBorders do
-        self.quickslotBorders[i]:SetVisible(false)
-        self.quickslotBorders[i]:SetParent(nil)
+        local borderControls = self.quickslotBorders[i]
+        if borderControls ~= nil then
+            for j = 1, #borderControls do
+                borderControls[j]:SetVisible(false)
+                borderControls[j]:SetParent(nil)
+            end
+        end
     end
     self.quickslotBorders = {}
 
@@ -700,27 +707,67 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, isLearned, skill)
         learned = isLearned
     end
 
-    local border = Turbine.UI.Control()
-    border:SetParent(self.mapLabel)
-    border:SetMouseVisible(false)
-    border:SetBackColor(self:GetMapShortcutBorderColor(learned))
-    border:SetSize(self.colWidth + (borderWidth * 2), self.colWidth + (borderWidth * 2))
-    border:SetPosition(location[2] - borderWidth, location[3] - borderWidth)
-    border:SetZOrder(97)
-    border:SetVisible(true)
-
     local qs = Turbine.UI.Lotro.Quickslot()
     qs:SetShortcut(shortcut)
     qs:SetOpacity(1)
-    qs:SetParent(border)
+    qs:SetParent(self.mapLabel)
     qs:SetMouseVisible(true)
     qs:SetUseOnRightClick(false)
     qs:SetAllowDrop(false)
     qs:SetStretchMode(1)
     qs:SetSize(self.colWidth, self.colWidth)
-    qs:SetPosition(borderWidth, borderWidth)
+    qs:SetPosition(location[2], location[3])
     qs:SetZOrder(98)
     qs:SetVisible(true)
+
+    local borderColor = self:GetMapShortcutBorderColor(learned)
+    local borderLeft = Turbine.UI.Control()
+    borderLeft:SetParent(self.mapLabel)
+    borderLeft:SetMouseVisible(false)
+    borderLeft:SetBackColor(borderColor)
+    borderLeft:SetPosition(
+        location[2] - borderWidth + MAP_SHORTCUT_BORDER_X_OFFSET,
+        location[3] - borderWidth + MAP_SHORTCUT_BORDER_Y_OFFSET
+    )
+    borderLeft:SetSize(borderWidth, self.colWidth + (borderWidth * 2))
+    borderLeft:SetZOrder(99)
+    borderLeft:SetVisible(true)
+
+    local borderRight = Turbine.UI.Control()
+    borderRight:SetParent(self.mapLabel)
+    borderRight:SetMouseVisible(false)
+    borderRight:SetBackColor(borderColor)
+    borderRight:SetPosition(
+        location[2] + self.colWidth + MAP_SHORTCUT_BORDER_X_OFFSET - 1,
+        location[3] - borderWidth + MAP_SHORTCUT_BORDER_Y_OFFSET
+    )
+    borderRight:SetSize(borderWidth, self.colWidth + (borderWidth * 2))
+    borderRight:SetZOrder(97)
+    borderRight:SetVisible(true)
+
+    local borderTop = Turbine.UI.Control()
+    borderTop:SetParent(self.mapLabel)
+    borderTop:SetMouseVisible(false)
+    borderTop:SetBackColor(borderColor)
+    borderTop:SetPosition(
+        location[2] + MAP_SHORTCUT_BORDER_X_OFFSET,
+        location[3] - borderWidth + MAP_SHORTCUT_BORDER_Y_OFFSET
+    )
+    borderTop:SetSize(self.colWidth, borderWidth)
+    borderTop:SetZOrder(99)
+    borderTop:SetVisible(true)
+
+    local borderBottom = Turbine.UI.Control()
+    borderBottom:SetParent(self.mapLabel)
+    borderBottom:SetMouseVisible(false)
+    borderBottom:SetBackColor(borderColor)
+    borderBottom:SetPosition(
+        location[2] + MAP_SHORTCUT_BORDER_X_OFFSET,
+        location[3] + self.colWidth + MAP_SHORTCUT_BORDER_Y_OFFSET
+    )
+    borderBottom:SetSize(self.colWidth, borderWidth)
+    borderBottom:SetZOrder(99)
+    borderBottom:SetVisible(true)
 
     qs.MouseClick = function(_, args)
         if args.Button == Turbine.UI.MouseButton.Right then
@@ -731,7 +778,7 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, isLearned, skill)
             end
         end
     end
-    self.quickslotBorders[index] = border
+    self.quickslotBorders[index] = {borderLeft, borderRight, borderTop, borderBottom}
     self.quickslots[index] = qs
 end
 
