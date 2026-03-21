@@ -51,10 +51,12 @@ function TravelShortcut:InitMapTray()
     end
 
     local acquireList = self.skill.acquire
-    for i = 1, #acquireList do
-        local item = acquireList[i]
-        if item.allegiance ~= nil then
-            self.IsAllegiance = true
+    if acquireList ~= nil then
+        for i = 1, #acquireList do
+            local item = acquireList[i]
+            if item.allegiance ~= nil then
+                self.IsAllegiance = true
+            end
         end
     end
 
