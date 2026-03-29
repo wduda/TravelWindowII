@@ -4,6 +4,16 @@
 
 ChangelogData = {
     {
+        version = "v4.7.0",
+        changes = {
+            "feat: updated vendor names in the Find Tab and refreshed RU skill and source translations up to U47.1",
+            "fix: fixed travel to kinship member's house in FR after unannounced renaming of skill by SSG",
+            "fix: sorting of travel skills should now always behave correctly again",
+            "fix: plugin now loads again for creep characters when travel skills have no acquisition data",
+            "fix: more stable handling of localized skill data under the hood",
+        }
+    },
+    {
         version = "v4.6.0",
         changes = {
             "feat: added choice of previous font (Lucida) to font size options, this font only has one size",
