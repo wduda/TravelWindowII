@@ -4,7 +4,7 @@ IndexedDictionary = class()
 
 local ValidSkillKeys = {
     "id", "name", "desc", "label", "label0", "listLabel", "detail", "zlabel", "zone", "tag",
-    "EN", "DE", "FR", "RU",
+    "EN", "DE", "FR", "ES", "RU",
     "map", "overlap", "level", "minLevel", "store", "autoLevel",
     "acquire", "cost", "amount", "token", "coords", "rep", "repLevel",
     "quest", "deed", "vendor", "allegiance", "rank"
@@ -79,6 +79,7 @@ function SelectLCText(item)
     local langs = {
         {name="DE", lc=Turbine.Language.German},
         {name="FR", lc=Turbine.Language.French},
+        {name="ES", lc=Turbine.Language.Spanish},
         {name="RU", lc=Turbine.Language.Russian},
         {name="EN", lc=nil}} -- unknown language types default to english
     for i = 1, #langs do
@@ -93,6 +94,7 @@ function SelectLCText(item)
                 item.EN = nil
                 item.DE = nil
                 item.FR = nil
+                item.ES = nil
                 item.RU = nil
                 return item
             end
@@ -155,7 +157,8 @@ function IndexedDictionary:VerifySkill(skill)
 end
 
 function IndexedDictionary:AddLabelTag(tag)
-    if tag.EN == nil or tag.DE == nil or tag.FR == nil or tag.RU == nil then
+    if tag.EN == nil or tag.DE == nil or
+            tag.FR == nil or tag.ES == nil or tag.RU == nil then
         return
     end
     self.tag = SelectLCText(tag)
