@@ -1,0 +1,3240 @@
+[labels]
+    hunter={EN="Guide", DE="Führer", FR="Guide", ES="Guiar", RU="Путь" }
+    warden={EN="Muster", DE="Appell", FR="Rassemblement", ES="Reunión", RU="Сбор" }
+    mariner={EN="Sail", DE="Segeln", FR="Naviguer", ES="Navegar", RU="Плаванье" }
+    racials={EN="Racial", DE="Rasse", FR="Race", ES="Raza", RU="Расовые" }
+    rep={EN="Rep", DE="Ruf", FR="Rep", ES="Rep", RU="Репутация" }
+
+[[ignore]]
+    id="0x7002FF64"
+    name="Return Home 12"
+
+[[ignore]]
+    id="0x7002FF66"
+    name="Return Home 13"
+
+[[ignore]]
+    id="0x7002FF67"
+    name="Return Home 14"
+
+[[ignore]]
+    id="0x7002FF68"
+    name="Return Home 15"
+
+[[ignore]]
+    id="0x7002FF5E"
+    name="Return Home 16"
+
+[[ignore]]
+    id="0x70037B69"
+    name="Smell the Roses"
+
+[[ignore]]
+    id="0x70003F3D"
+    name="Find the Path"
+
+[[ignore]]
+    id="0x70003F40"
+    name="Desperate Flight"
+
+[[ignore]]
+    id="0x70017A8D"
+    name="Desperate Flight"
+
+[[ignore]]
+    id="0x7002A7B8"
+    name="Precise Map to Glân Vraig"
+
+[[hunter]]
+    id="0x7000A2C1"
+    name="Return to Camp"
+    map=[{type="NONE", x=-1, y=-1}]
+    level=1
+
+[[hunter]]
+    id="0x7000A2C3"
+    name="Guide to Michel Delving"
+    EN={label="Michel Delving", zone="Shire"}
+    DE={label="Michelbinge", zone="Auenland"}
+    FR={label="Grand'Cave", zone="Comté"}
+    ES={label="Michel Delving", zone="Shire"}
+    RU={label="Занорье", zone="Шир"}
+    map=[{type="ERIADOR", x=360, y=390}]
+    overlap=["0x700062C8", "0x70023262"]
+    level=1
+
+[[hunter]]
+    id="0x70003F41"
+    name="Guide to Thorin's Hall"
+    EN={label="Thorin's Hall", zone="Ered Luin"}
+    DE={label="Thorins Halle", zone="Ered Luin"}
+    FR={label="Palais de Thorin", zone="Ered Luin"}
+    ES={label="Thorin's Hall", zone="Ered Luin"}
+    RU={label="Чертоги Торина", zone="Эред Луин"}
+    map=[{type="ERIADOR", x=305, y=270}]
+    overlap=["0x70006346", "0x70053C0F", "0x7001BF91"]
+    level=1.1
+
+[[hunter]]
+    id="0x70003F42"
+    name="Guide to Bree"
+    EN={label="Bree", zlabel="West Gate", zone="Bree"}
+    DE={label="Bree", zlabel="Westtor", zone="Bree"}
+    FR={label="Bree", zlabel="Porte Ouest", zone="Bree"}
+    ES={label="Bree", zlabel="West Gate", zone="Bree"}
+    RU={label="Бри", zlabel="Западные ворота", zone="Бри"}
+    map=[{type="ERIADOR", x=585, y=335}]
+    overlap=["0x700062F6", "0x7001BF90"]
+    level=5
+
+[[hunter]]
+    id="0x70064F4C"
+    name="Guide to Clegur"
+    EN={label="Clegur", zone="Swanfleet"}
+    DE={label="Clegur", zone="Schwanenfleet"}
+    FR={label="Clegur", zone="Noues des cygnes"}
+    ES={label="Clegur", zone="Swanfleet"}
+    RU={label="Клегур", zone="Лебедянь"}
+    map=[{type="ERIADOR", x=755, y=555}]
+    overlap=["0x70064F47"]
+    level=7
+
+[[hunter]]
+    id="0x700634AA"
+    name="Guide to Swanfleet"
+    EN={label="Swanfleet", detail="Lhan Garan", zone="Swanfleet"}
+    DE={label="Schwanenfleet", detail="Lhan Garan", zone="Schwanenfleet"}
+    FR={label="Noues des cygnes", detail="Lhan Garan", zone="Noues des cygnes"}
+    ES={label="Swanfleet", detail="Lhan Garan", zone="Swanfleet"}
+    RU={label="Лебедянь", detail="Лхан-Гаран", zone="Лебедянь"}
+    map=[{type="ERIADOR", x=825, y=490}]
+    overlap=["0x700634A4"]
+    level=10
+
+[[hunter]]
+    id="0x700634A7"
+    name="Guide to Cardolan"
+    EN={label="Cardolan", detail="Herne", zone="Cardolan"}
+    DE={label="Cardolan", detail="Herne", zone="Cardolan"}
+    FR={label="Cardolan", detail="Herne", zone="Cardolan"}
+    ES={label="Cardolan", detail="Herne", zone="Cardolan"}
+    RU={label="Кардолан", detail="Хэрне", zone="Кардолан"}
+    map=[{type="ERIADOR", x=560, y=495}]
+    overlap=["0x700634AE"]
+    level=15
+
+[[hunter]]
+    id="0x7006323C"
+    name="Guide to Andrath"
+    EN={label="Andrath", zone="Cardolan"}
+    DE={label="Andrath", zone="Cardolan"}
+    FR={label="Andrath", zone="Cardolan"}
+    ES={label="Andrath", zone="Cardolan"}
+    RU={label="Андрат", zone="Кардолан"}
+    map=[{type="ERIADOR", x=580, y=465}]
+    overlap=["0x7006323D"]
+    level=17
+
+[[hunter]]
+    id="0x7006133F"
+    name="Guide to Nobottle"
+    EN={label="Nobottle", zone="Yondershire"}
+    DE={label="Neuhausen", zone="Ferne Auen"}
+    FR={label="Bourdeneuve", zone="Comté lointain"}
+    ES={label="Nobottle", zone="Yondershire"}
+    RU={label="Новодворье", zone="Дальний Шир"}
+    map=[{type="ERIADOR", x=440, y=350}]
+    overlap=["0x70061340"]
+    level=20
+
+[[hunter]]
+    id="0x7000A2C2"
+    name="Guide to Ost Guruth"
+    EN={label="Ost Guruth", zone="Lone-lands"}
+    DE={label="Feste Guruth", zone="Einsame Lande"}
+    FR={label="Ost Guruth", zone="Terres Solitaires"}
+    ES={label="Ost Guruth", zone="Lone-lands"}
+    RU={label="Ост Гурут", zone="Пустоши"}
+    map=[{type="ERIADOR", x=755, y=400}]
+    overlap=["0x70020441"]
+    level=25
+
+[[hunter]]
+    id="0x70003F43"
+    name="Guide to Esteldín"
+    EN={label="Esteldín", zone="North Downs"}
+    DE={label="Esteldín", zone="Nordhöhen"}
+    FR={label="Esteldin", zone="Hauts du Nord"}
+    ES={label="Esteldín", zone="North Downs"}
+    RU={label="Эстельдин", zone="Северное нагорье"}
+    map=[{type="ERIADOR", x=655, y=290}]
+    level=30
+
+[[hunter]]
+    id="0x7000A2C4"
+    name="Guide to Evendim"
+    EN={label="Evendim", detail="Tinnudir", zone="Evendim"}
+    DE={label="Evendim", detail="Tinnudir", zone="Evendim"}
+    FR={label="Evendim", detail="Tinnudir", zone="Evendim"}
+    ES={label="Evendim", detail="Tinnudir", zone="Evendim"}
+    RU={label="Эвендим", detail="Тиннудир", zone="Эвендим"}
+    map=[{type="ERIADOR", x=490, y=235}]
+    level=35
+
+[[hunter]]
+    id="0x70060EA6"
+    name="Guide to Tornhad"
+    EN={label="Tornhad", zone="Angle of Mitheithel"}
+    DE={label="Tornhad", zone="Der Bogen von Mitheithel"}
+    FR={label="Tornhad", zone="L'Angle de Mitheithel"}
+    ES={label="Tornhad", zone="Angle of Mitheithel"}
+    RU={label="Торнхад", zone="Митейтельская стрелка"}
+    map=[{type="ERIADOR", x=775, y=435}]
+    overlap=["0x70060EA8"]
+    level=40
+
+[[hunter]]
+    id="0x70003F44"
+    name="Guide to Rivendell"
+    EN={label="Rivendell", zone="Trollshaws"}
+    DE={label="Bruchtal", zone="Die Trollhöhen"}
+    FR={label="Fondcombe", zone="Trouée des Trolls"}
+    ES={label="Rivendell", zone="Trollshaws"}
+    RU={label="Ривенделл", zone="Троллистая пуща"}
+    map=[{type="ERIADOR", x=865, y=410}]
+    overlap=["0x7000631F", "0x70023263"]
+    level=40.1
+
+[[hunter]]
+    id="0x7002E756"
+    name="Guide to the Misty Mountains"
+    EN={label="Misty Mountains", detail="Hrimbarg", zone="Misty Mountains"}
+    DE={label="Nebelgebirge", detail="Hrimbarg", zone="Nebelgebirge"}
+    FR={label="Monts Brumeux", detail="Hrimbarg", zone="Monts Brumeux"}
+    ES={label="Misty Mountains", detail="Hrimbarg", zone="Misty Mountains"}
+    RU={label="Мглистые горы", detail="Хримбарг", zone="Мглистые горы"}
+    map=[{type="ERIADOR", x=915, y=265}]
+    store=true
+    level=40.2
+
+[[hunter]]
+    id="0x70059D16"
+    name="Guide to Trestlebridge"
+    EN={label="Trestlebridge", zone="North Downs"}
+    DE={label="Schragen", zone="Nordhöhen"}
+    FR={label="Pont-à-Tréteaux", zone="Hauts du Nord"}
+    ES={label="Trestlebridge", zone="North Downs"}
+    RU={label="Примостье", zone="Северное нагорье"}
+    map=[{type="ERIADOR", x=590, y=285}]
+    overlap=["0x70059D12"]
+    level=40.3
+
+[[hunter]]
+    id="0x70059D0C"
+    name="Guide to Trader's Wharf"
+    EN={label="Trader's Wharf", zone="Evendim"}
+    DE={label="Händlerkai", zone="Evendim"}
+    FR={label="Quai des marchands", zone="Evendim"}
+    ES={label="Trader's Wharf", zone="Evendim"}
+    RU={label="Торговая пристань", zone="Эвендим"}
+    map=[{type="ERIADOR", x=515, y=305}]
+    overlap=["0x70059D0E"]
+    level=40.4
+
+[[hunter]]
+    id="0x70017C82"
+    name="Guide to Sûri-kylä"
+    EN={label="Sûri-kylä", zone="Forochel"}
+    DE={label="Sûri-kylä", zone="Forochel"}
+    FR={label="Sûri-kylä", zone="Forochel"}
+    ES={label="Sûri-kylä", zone="Forochel"}
+    RU={label="Сури-кила", zone="Форохель"}
+    map=[{type="ERIADOR", x=430, y=50}]
+    level=42
+
+[[hunter]]
+    id="0x7000A2C5"
+    name="Guide to West Angmar"
+    EN={label="West Angmar", detail="Aughaire", zone="Angmar"}
+    DE={label="West-Angmar", detail="Aughaire", zone="Angmar"}
+    FR={label="Angmar ouest", detail="Aughaire", zone="Angmar"}
+    ES={label="West Angmar", detail="Aughaire", zone="Angmar"}
+    RU={label="Западный Ангмар", detail="Огайр", zone="Ангмар"}
+    map=[{type="ERIADOR", x=705, y=180}]
+    level=45
+
+[[hunter]]
+    id="0x7000A2C6"
+    name="Guide to East Angmar"
+    EN={label="East Angmar", detail="Gath Forthnír", zone="Angmar"}
+    DE={label="East-Angmar", detail="Gath Forthnír", zone="Angmar"}
+    FR={label="Angmar est", detail="Gath Forthnír", zone="Angmar"}
+    ES={label="East Angmar", detail="Gath Forthnír", zone="Angmar"}
+    RU={label="Восточный Ангмар", detail="Гат Фортнир", zone="Ангмар"}
+    map=[{type="ERIADOR", x=825, y=185}]
+    level=49
+
+[[hunter]]
+    id="0x70017C81"
+    name="Guide to Echad Dúnann"
+    EN={label="Echad Dúnann", zone="Eregion"}
+    DE={label="Echad Dúnann", zone="Eregion"}
+    FR={label="Echad Dunann", zone="Eregion"}
+    ES={label="Echad Dúnann", zone="Eregion"}
+    RU={label="Эхад Дунанн", zone="Эрегион"}
+    map=[{type="ERIADOR", x=855, y=535}]
+    level=50
+
+[[hunter]]
+    id="0x70017C7A"
+    name="Guide to the Twenty-first Hall"
+    EN={label="Twenty-first Hall", zone="Moria"}
+    DE={label="Einundzwanzigste Halle", zone="Moria"}
+    FR={label="Vingt et unième salle", zone="Moria"}
+    ES={label="Twenty-first Hall", zone="Moria"}
+    RU={label="Двадцать первый чертог", zone="Мория"}
+    map=[{type="RHOVANION", x=95, y=585},{type="ERIADOR", x=950, y=510}]
+    level=55
+
+[[hunter]]
+    id="0x7002E754"
+    name="Guide to Caras Galadhon"
+    EN={label="Caras Galadhon", zone="Lothlórien"}
+    DE={label="Caras Galadhon", zone="Lothlórien"}
+    FR={label="Caras Galadhon", zone="Lothlórien"}
+    ES={label="Caras Galadhon", zone="Lothlórien"}
+    RU={label="Карас Галадон", zone="Лотлориэн"}
+    map=[{type="RHOVANION", x=120, y=660}]
+    overlap=["0x70048C8C"]
+    level=60
+
+[[hunter]]
+    id="0x7001F459"
+    name="Guide to Mirk-eaves"
+    EN={label="Mirk-eaves", zone="Mirkwood"}
+    DE={label="Dunkelsenke", zone="Düsterwald"}
+    FR={label="Orée noire", zone="Forêt Noire"}
+    ES={label="Mirk-eaves", zone="Mirkwood"}
+    RU={label="Черная роща", zone="Лихолесье"}
+    map=[{type="RHOVANION", x=365, y=630}]
+    level=61
+
+[[hunter]]
+    id="0x700235EF"
+    name="Guide to Harndirion"
+    EN={label="Harndirion", zone="Enedwaith"}
+    DE={label="Harndirion", zone="Enedwaith"}
+    FR={label="Harndirion", zone="Enedwaith"}
+    ES={label="Harndirion", zone="Enedwaith"}
+    RU={label="Харндирион", zone="Энедвайт"}
+    map=[{type="ERIADOR", x=815, y=635}]
+    level=62
+
+[[hunter]]
+    id="0x7002A93F"
+    name="Guide to Galtrev"
+    EN={label="Galtrev", zone="Dunland"}
+    DE={label="Galtrev", zone="Dunland"}
+    FR={label="Galtrev", zone="Pays de Dun"}
+    ES={label="Galtrev", zone="Dunland"}
+    RU={label="Галтрев", zone="Дунланд"}
+    map=[{type="ERIADOR", x=810, y=715}]
+    overlap=["0x7002C647"]
+    level=65
+
+[[hunter]]
+    id="0x7002C62C"
+    name="Guide to Stangard"
+    EN={label="Stangard", zone="Great River"}
+    DE={label="Stangard", zone="Großer Fluss"}
+    FR={label="Stangarde", zone="Grand Fleuve"}
+    ES={label="Stangard", zone="Great River"}
+    RU={label="Стангард", zone="Великая река"}
+    map=[{type="RHOVANION", x=200, y=720},{type="ROHAN", x=545, y=90}]
+    overlap=["0x7002C65D"]
+    level=75
+
+[[hunter]]
+    id="0x7003198E"
+    name="Guide to Snowbourn"
+    EN={label="Snowbourn", zone="East Rohan"}
+    DE={label="Schneegrenze", zone="Ost-Rohan"}
+    FR={label="Neigebronne", zone="Rohan est"}
+    ES={label="Snowbourn", zone="East Rohan"}
+    RU={label="Сноуборн", zone="Восточный Рохан"}
+    map=[{type="ROHAN", x=515, y=500}]
+    overlap=["0x70031A46"]
+    level=80
+
+[[hunter]]
+    id="0x70036B5D"
+    name="Guide to Forlaw"
+    EN={label="Forlaw", zone="Wildermore"}
+    DE={label="Forlach", zone="Wildermark"}
+    FR={label="Forloi", zone="Landes farouches"}
+    ES={label="Forlaw", zone="Wildermore"}
+    RU={label="Форлоу", zone="Вилдермор"}
+    map=[{type="ROHAN", x=450, y=175}]
+    overlap=["0x70036B5E"]
+    level=85
+
+[[hunter]]
+    id="0x7003DC71"
+    name="Guide to Aldburg"
+    EN={label="Aldburg", zone="West Rohan"}
+    DE={label="Aldburg", zone="West-Rohan"}
+    FR={label="Aldburg", zone="Rohan de l'Ouest"}
+    ES={label="Aldburg", zone="West Rohan"}
+    RU={label="Альдбург", zone="Западный Рохан"}
+    map=[{type="ROHAN", x=570, y=640}]
+    overlap=["0x7003DC81"]
+    level=88
+
+[[hunter]]
+    id="0x7003DC72"
+    name="Guide to Helm's Deep"
+    EN={label="Helm's Deep", zone="West Rohan"}
+    DE={label="Helms Klamm", zone="West-Rohan"}
+    FR={label="Gouffre de Helm", zone="Rohan de l'Ouest"}
+    ES={label="Helm's Deep", zone="West Rohan"}
+    RU={label="Хельмова Падь", zone="Западный Рохан"}
+    map=[{type="ROHAN", x=275, y=565}]
+    overlap=["0x7003DC82"]
+    level=90
+
+[[hunter]]
+    id="0x70041197"
+    name="Guide to Dol Amroth"
+    EN={label="Dol Amroth", zone="Western Gondor"}
+    DE={label="Dol Amroth", zone="West-Gondor"}
+    FR={label="Dol Amroth", zone="Gondor de l'Ouest"}
+    ES={label="Dol Amroth", zone="Western Gondor"}
+    RU={label="Дол Амрот", zone="Западный Гондор"}
+    map=[{type="GONDOR", x=225, y=550}]
+    overlap=["0x700411AC"]
+    level=98
+
+[[hunter]]
+    id="0x70043A63"
+    name="Guide to Arnach"
+    EN={label="Arnach", zone="Eastern Gondor"}
+    DE={label="Arnach", zone="Ost-Gondor"}
+    FR={label="Arnach", zone="Gondor de l'Ouest"}
+    ES={label="Arnach", zone="Eastern Gondor"}
+    RU={label="Арнах", zone="Восточный Гондор"}
+    map=[{type="GONDOR", x=715, y=425}]
+    overlap=["0x70043A6A"]
+    level=100
+
+[[hunter]]
+    id="0x70044985"
+    name="Guide to Minas Tirith"
+    EN={label="Minas Tirith", zone="Old Anórien"}
+    DE={label="Minas Tirith", zone="Alt-Anórien"}
+    FR={label="Minas Tirith", zone="Ancien Anórien"}
+    ES={label="Minas Tirith", zone="Old Anórien"}
+    RU={label="Минас Тирит", zone="Старый Анориен"}
+    map=[{type="GONDOR", x=670, y=345}]
+    overlap=["0x7004497E"]
+    level=100.1
+
+[[hunter]]
+    id="0x700459AF"
+    name="Guide to the War-stead"
+    EN={label="War-stead", zone="Far Anórien"}
+    DE={label="Kriegslager der Rohirrim", zone="Fernes Anórien"}
+    FR={label="Camp militaire", zone="Lointain Anórien"}
+    ES={label="War-stead", zone="Far Anórien"}
+    RU={label="Лагерь Рохиррим", zone="Дальний Анориен"}
+    map=[{type="GONDOR", x=665, y=140}]
+    overlap=["0x700459A9"]
+    level=102
+
+[[hunter]]
+    id="0x70046CBB"
+    name="Guide to after-battle Minas Tirith"
+    EN={label="Minas Tirith after battle", zone="Anórien"}
+    DE={label="Minas Tirith nach der Schlacht", zone="Anórien"}
+    FR={label="Minas Tirith après la bataille", zone="Anórien"}
+    ES={label="Minas Tirith after battle", zone="Anórien"}
+    RU={label="Минас Тирит (после битвы)", zone="Анориен"}
+    map=[{type="GONDOR", x=670, y=375}]
+    overlap=["0x70046CC0"]
+    level=105
+
+[[hunter]]
+    id="0x70047074"
+    name="Guide to after-battle Osgiliath"
+    EN={label="Osgiliath after-battle", zone="Anórien"}
+    DE={label="Osgiliath nach der Schlacht", zone="Anórien"}
+    FR={label="Osgiliath après la bataille", zone="Anórien"}
+    ES={label="Osgiliath after-battle", zone="Anórien"}
+    RU={label="Осгилиат (после битвы)", zone="Анориен"}
+    map=[{type="GONDOR", x=855, y=335}]
+    overlap=["0x7004707D"]
+    level=105.1
+
+[[hunter]]
+    id="0x70047077"
+    name="Guide to Henneth Annûn"
+    EN={label="Henneth Annûn", zone="Ithilien"}
+    DE={label="Henneth Annûn", zone="Ithilien"}
+    FR={label="Henneth Annûn", zone="Ithilien"}
+    ES={label="Henneth Annûn", zone="Ithilien"}
+    RU={label="Хеннет Аннун", zone="Итилиен"}
+    map=[{type="GONDOR", x=875, y=385}]
+    overlap=["0x70047080"]
+    level=105.2
+
+[[hunter]]
+    id="0x70047BFA"
+    name="Guide to the Camp of the Host"
+    EN={label="Camp of the Host", zone="The Wastes"}
+    DE={label="Lager des Heeres", zone="Das Ödland"}
+    FR={label="Camp de l'armée", zone="Les Landes désertiques"}
+    ES={label="Camp of the Host", zone="The Wastes"}
+    RU={label="Лагерь Воинства Запада", zone="Гиблые земли"}
+    map=[{type="GONDOR", x=805, y=170}]
+    overlap=["0x70047BF4"]
+    level=105.3
+
+[[hunter]]
+    id="0x70047C1D"
+    name="Guide to Haerondir"
+    EN={label="Haerondir", zone="The Wastes"}
+    DE={label="Haerondir", zone="Das Ödland"}
+    FR={label="Haerondir", zone="Les Landes désertiques"}
+    ES={label="Haerondir", zone="The Wastes"}
+    RU={label="Хаэрондир", zone="Гиблые земли"}
+    map=[{type="GONDOR", x=855, y=100}]
+    overlap=["0x70047C1B"]
+    level=105.4
+
+[[hunter]]
+    id="0x7004AE1E"
+    name="Guide to the Udûn Foothold"
+    EN={label="Udûn Foothold", zone="Mordor"}
+    DE={label="Udûn-Brückenkopf", zone="Mordor"}
+    FR={label="Fort d'Udûn", zone="Mordor"}
+    ES={label="Udûn Foothold", zone="Mordor"}
+    RU={label="Застава Удуна", zone="Мордор"}
+    map=[{type="GONDOR", x=925, y=230}]
+    overlap=["0x7004AE1D"]
+    level=106
+
+[[hunter]]
+    id="0x7004D73B"
+    name="Guide to Dale"
+    EN={label="Dale", zone="Eryn Lasgalen"}
+    DE={label="Thal", zone="Eryn Lasgalen"}
+    FR={label="Dale", zone="Eryn Lasgalen"}
+    ES={label="Dale", zone="Eryn Lasgalen"}
+    RU={label="Дейл", zone="Эрин Ласгален"}
+    map=[{type="RHOVANION", x=720, y=215}]
+    overlap=["0x7004D738"]
+    level=115
+
+[[hunter]]
+    id="0x7004FACC"
+    name="Guide to Járnfast"
+    EN={label="Járnfast", zone="The Ironfold"}
+    DE={label="Járnfast", zone="Der Eisenbruch"}
+    FR={label="Jarnfast", zone="La Crevasse de Fer"}
+    ES={label="Járnfast", zone="The Ironfold"}
+    RU={label="Ярнфаст", zone="Железное взгорье"}
+    map=[{type="RHOVANION", x=890, y=110}]
+    overlap=["0x7004FAC3"]
+    level=116
+
+[[hunter]]
+    id="0x7004FACB"
+    name="Guide to Skarháld"
+    EN={label="Skarháld", zone="Ered Mithrin"}
+    DE={label="Skarháld", zone="Ered Mithrin"}
+    FR={label="Skarhald", zone="Ered Mithrin"}
+    ES={label="Skarháld", zone="Ered Mithrin"}
+    RU={label="Скархальд", zone="Эред Митрин"}
+    map=[{type="RHOVANION", x=430, y=90}]
+    overlap=["0x7004FAC5"]
+    level=117
+
+[[hunter]]
+    id="0x70052F07"
+    name="Guide to Beorninghús"
+    EN={label="Beorninghús", zone="Vales of Anduin"}
+    DE={label="Beorningerhús", zone="Die Täler des Anduin"}
+    FR={label="Beorninghus", zone="Val d'Anduin"}
+    ES={label="Beorninghús", zone="Vales of Anduin"}
+    RU={label="Беорнингус", zone="Долина Андуина"}
+    map=[{type="RHOVANION", x=390, y=300}]
+    overlap=["0x70041A22", "0x70052F12"]
+    level=120
+
+[[hunter]]
+    id="0x70052F08"
+    name="Guide to Hultvís"
+    EN={label="Hultvís", zone="Vales of Anduin"}
+    DE={label="Hultvís", zone="Die Täler des Anduin"}
+    FR={label="Hultvis", zone="Val d'Anduin"}
+    ES={label="Hultvís", zone="Vales of Anduin"}
+    RU={label="Хультвис", zone="Долина Андуина"}
+    map=[{type="RHOVANION", x=375, y=400}]
+    overlap=["0x70052F04"]
+    level=120.1
+
+[[hunter]]
+    id="0x700551F4"
+    name="Guide to Estolad Lân"
+    EN={label="Estolad Lân", zone="Imlad Morgul"}
+    DE={label="Estolad Lân", zone="Imlad Morgul"}
+    FR={label="Estolad Lân", zone="Imlad Morgul"}
+    ES={label="Estolad Lân", zone="Imlad Morgul"}
+    RU={label="Эстолад Лан", zone="Имлад Моргул"}
+    map=[{type="GONDOR", x=960, y=460}]
+    overlap=["0x700551F8"]
+    level=125
+
+[[hunter]]
+    id="0x7005762D"
+    name="Guide to Limlók"
+    EN={label="Limlók", zone="Wells of Langflood"}
+    DE={label="Limlók", zone="Quellen des Langflut"}
+    FR={label="Limlok", zone="Puits du Long Fleuve"}
+    ES={label="Limlók", zone="Wells of Langflood"}
+    RU={label="Лимлок", zone="Истоки Долгой реки"}
+    map=[{type="RHOVANION", x=345, y=230}]
+    overlap=["0x70057629"]
+    level=130
+
+[[hunter]]
+    id="0x70058571"
+    name="Guide to Annâk-khurfu"
+    EN={label="Annâk-khurfu", zone="Elderslade"}
+    DE={label="Annâk-khurfu", zone="Elderslade"}
+    FR={label="Annâk-khurfu", zone="Elderslade"}
+    ES={label="Annâk-khurfu", zone="Elderslade"}
+    RU={label="Аннак-Курфу", zone="Долина предков"}
+    map=[{type="RHOVANION", x=330, y=90}]
+    overlap=["0x7005856F"]
+    level=130.1
+
+[[hunter]]
+    id="0x7005AA91"
+    name="Guide to Akrâz-zahar"
+    EN={label="Akrâz-zahar", zone="Eryn Lasgalen"}
+    DE={label="Akrâz-zahar", zone="Eryn Lasgalen"}
+    FR={label="Akrâz-zahar", zone="Eryn Lasgalen"}
+    ES={label="Akrâz-zahar", zone="Eryn Lasgalen"}
+    RU={label="Акраз-Захар", zone="Эрин Ласгален"}
+    map=[{type="RHOVANION", x=750, y=115}]
+    overlap=["0x7005AA90"]
+    level=130.2
+
+[[hunter]]
+    id="0x7005AA95"
+    name="Guide to Azanulbizar"
+    EN={label="Azanulbizar", detail="Amdân", zone="Azanulbizar"}
+    DE={label="Azanulbizar", detail="Amdân", zone="Azanulbizar"}
+    FR={label="Azanulbizar", detail="Amdân", zone="Azanulbizar"}
+    ES={label="Azanulbizar", detail="Amdân", zone="Azanulbizar"}
+    RU={label="Азанулбизар", detail="Амдан", zone="Азанулбизар"}
+    map=[{type="RHOVANION", x=210, y=555}]
+    overlap=["0x7005AA92"]
+    level=130.3
+
+[[hunter]]
+    id="0x7005D487"
+    name="Guide to the Noble Gate"
+    EN={label="Noble Gate", zone="Gundabad"}
+    DE={label="Prachttor", zone="Gundabad"}
+    FR={label="Porte Noble", zone="Gundabad"}
+    ES={label="Noble Gate", zone="Gundabad"}
+    RU={label="Благородные врата", zone="Гундабад"}
+    map=[{type="RHOVANION", x=190, y=130}]
+    overlap=["0x7005D47C"]
+    level=131
+
+[[hunter]]
+    id="0x7005D47D"
+    name="Guide to Leitstáth"
+    EN={label="Leitstáth", zone="Gundabad"}
+    DE={label="Leitstáth", zone="Gundabad"}
+    FR={label="Leitstath", zone="Gundabad"}
+    ES={label="Leitstáth", zone="Gundabad"}
+    RU={label="Лейтстат", zone="Гундабад"}
+    map=[{type="RHOVANION", x=270, y=65}]
+    overlap=["0x7005D484"]
+    level=135
+
+[[hunter]]
+    id="0x70064AC8"
+    name="Guide to Carn Dûm"
+    EN={label="Carn Dûm", zone="Angmar"}
+    DE={label="Carn Dûm", zone="Angmar"}
+    FR={label="Carn Dûm", zone="Angmar"}
+    ES={label="Carn Dûm", zone="Angmar"}
+    RU={label="Карн-Дум", zone="Ангмар"}
+    map=[{type="ERIADOR", x=735, y=100}]
+    overlap=["0x70064ACA"]
+    level=140.1
+
+[[hunter]]
+    id="0x700658EA"
+    name="Guide to Pelargir"
+    EN={label="Pelargir", zone="King's Gondor"}
+    DE={label="Pelargir", zone="Königreich Gondor"}
+    FR={label="Pelargir", zone="Gondor royal"}
+    ES={label="Pelargir", zone="King's Gondor"}
+    RU={label="Пеларгир", zone="Королевский Гондор"}
+    map=[{type="GONDOR", x=670, y=625}]
+    overlap=["0x700658EB"]
+    level=141
+
+[[hunter]]
+    id="0x70068711"
+    name="Guide to Dol Amroth, King's Gondor"
+    EN={label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"}
+    DE={label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"}
+    FR={label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"}
+    ES={label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"}
+    RU={label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"}
+    map=[{type="GONDOR", x=210, y=485},{type="HARADWAITH", x=325, y=70}]
+    overlap=["0x70068700"]
+    level=142
+
+[[hunter]]
+    id="0x70068717"
+    name="Guide to Lond Cirion"
+    EN={label="Lond Cirion", zone="Anfalas"}
+    DE={label="Lond Cirion", zone="Anfalas"}
+    FR={label="Lond Cirion", zone="Anfalas"}
+    ES={label="Lond Cirion", zone="Anfalas"}
+    RU={label="Лонд-Кирион", zone="Анфалас"}
+    map=[{type="GONDOR", x=255, y=420},{type="HARADWAITH", x=230, y=20}]
+    overlap=["0x70068703"]
+    level=143
+
+[[hunter]]
+    id="0x70068713"
+    name="Guide to Halrax"
+    EN={label="Halrax", zone="Shield Isles"}
+    DE={label="Halrax", zone="Die Schildinseln"}
+    FR={label="Halrax", zone="Les îles du Bouclier"}
+    ES={label="Halrax", zone="Shield Isles"}
+    RU={label="Халракс", zone="Острова Щита"}
+    map=[{type="HARADWAITH", x=215, y=260}]
+    overlap=["0x70068702"]
+    level=145
+
+[[hunter]]
+    id="0x70068719"
+    name="Guide to Jax Phanâl"
+    EN={label="Jax Phanâl", zone="Umbar"}
+    DE={label="Jax Phanâl", zone="Umbar"}
+    FR={label="Jax Phanâl", zone="Umbar"}
+    ES={label="Jax Phanâl", zone="Umbar"}
+    RU={label="Джакс-Фанал", zone="Умбар"}
+    map=[{type="HARADWAITH", x=305, y=315}]
+    overlap=["0x70068701"]
+    level=146
+
+[[hunter]]
+    id="0x7006A9BF"
+    name="Guide to Bej Mâgha"
+    EN={label="Bej Mâgha", zone="Umbar"}
+    DE={label="Bej Mâgha", zone="Umbar"}
+    FR={label="Bej Mâgha", zone="Umbar"}
+    ES={label="Bej Mâgha", zone="Umbar"}
+    RU={label="Бедж-Магда", zone="Умбар"}
+    map=[{type="HARADWAITH", x=350, y=380}]
+    overlap=["0x7006A9C1"]
+    level=147
+
+[[hunter]]
+    id="0x70068718"
+    name="Guide to Umbar"
+    EN={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    DE={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    FR={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    ES={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    RU={label="Умбар", detail="Бахарбель", zone="Умбар"}
+    map=[{type="HARADWAITH", x=505, y=370}]
+    overlap=["0x700686FF"]
+    level=148
+
+[[hunter]]
+    id="0x700697EF"
+    name="Guide to the Bloody Eagle Tavern"
+    EN={label="Bloody Eagle Tavern", zone="Umbar"}
+    DE={label="Zum Blutigen Adler", zone="Umbar"}
+    FR={label="Taverne de l'Aigle sanglant", zone="Umbar"}
+    ES={label="Bloody Eagle Tavern", zone="Umbar"}
+    RU={label="Таверна Кровавый Орёл", zone="Умбар"}
+    map=[{type="HARADWAITH", x=475, y=400}]
+    overlap=["0x700697F2"]
+    level=149
+
+[[hunter]]
+    id="0x7006C3BE"
+    name="Guide to Iridír"
+    EN={label="Iridír", zone="Ikorbân"}
+    DE={label="Iridír", zone="Ikorbân"}
+    FR={label="Iridír", zone="Ikorbân"}
+    ES={label="Iridír", zone="Ikorbân"}
+    RU={label="Iridír", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=555, y=325}]
+    overlap=["0x7006C3A1"]
+    level=150.1
+
+[[hunter]]
+    id="0x7006C39E"
+    name="Guide to Jirush"
+    EN={label="Jirush", zone="Ikorbân"}
+    DE={label="Jirush", zone="Ikorbân"}
+    FR={label="Jirush", zone="Ikorbân"}
+    ES={label="Jirush", zone="Ikorbân"}
+    RU={label="Jirush", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=560, y=415}]
+    overlap=["0x7006C3C3"]
+    level=150.2
+
+[[hunter]]
+    id="0x7006C3AB"
+    name="Guide to Urmâkh"
+    EN={label="Urmâkh", zone="Ikorbân"}
+    DE={label="Urmâkh", zone="Ikorbân"}
+    FR={label="Urmâkh", zone="Ikorbân"}
+    ES={label="Urmâkh", zone="Ikorbân"}
+    RU={label="Urmâkh", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=640, y=410}]
+    overlap=["0x7006C3B0"]
+    level=150.3
+
+[[hunter]]
+    id="0x7006C3BA"
+    name="Guide to Maurûsh"
+    EN={label="Maurûsh", zone="Ikorbân"}
+    DE={label="Maurûsh", zone="Ikorbân"}
+    FR={label="Maurûsh", zone="Ikorbân"}
+    ES={label="Maurûsh", zone="Ikorbân"}
+    RU={label="Maurûsh", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=640, y=350}]
+    overlap=["0x7006C3BC"]
+    level=150.4
+
+[[hunter]]
+    id="0x7006EA25"
+    name="Guide to Utug-bûr"
+    EN={label="Utug-bûr", zone="Ikorbân"}
+    DE={label="Utug-bûr", zone="Ikorbân"}
+    FR={label="Utug-bûr", zone="Ikorbân"}
+    ES={label="Utug-bûr", zone="Ikorbân"}
+    RU={label="Utug-bûr", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=670, y=310}]
+    overlap=["0x7006EA1C"]
+    level=150.5
+
+[[hunter]]
+    id="0x7006FD4F"
+    name="Guide to Dun Shûma"
+    EN={label="Dun Shûma", zone="Ikorbân"}
+    DE={label="Dun Shûma", zone="Ikorbân"}
+    FR={label="Dun Shûma", zone="Ikorbân"}
+    ES={label="Dun Shûma", zone="Ikorbân"}
+    RU={label="Dun Shûma", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=620, y=445}]
+    overlap=["0x7006FD4B"]
+    level=150.6
+
+[[hunter]]
+    id="0x700706FA"
+    name="Guide to Sul Madásh"
+    EN={label="Sul Madásh", zone="Harad"}
+    DE={label="Sul Madásh", zone="Harad"}
+    FR={label="Sul Madásh", zone="Harad"}
+    ES={label="Sul Madásh", zone="Harad"}
+    RU={label="Sul Madásh", zone="Harad"}
+    map=[{type="HARADWAITH", x=810, y=470}]
+    overlap=["0x70070715"]
+    level=150.7
+
+[[hunter]]
+    id="0x700706FF"
+    name="Guide to Ahâba"
+    EN={label="Ahâba", zone="Harad"}
+    DE={label="Ahâba", zone="Harad"}
+    FR={label="Ahâba", zone="Harad"}
+    ES={label="Ahâba", zone="Harad"}
+    RU={label="Ahâba", zone="Harad"}
+    map=[{type="HARADWAITH", x=560, y=570}]
+    overlap=["0x70070710"]
+    level=150.71
+
+[[hunter]]
+    id="0x70070717"
+    name="Guide to Zajâna"
+    EN={label="Zajâna", zone="Harad"}
+    DE={label="Zajâna", zone="Harad"}
+    FR={label="Zajâna", zone="Harad"}
+    ES={label="Zajâna", zone="Harad"}
+    RU={label="Zajâna", zone="Harad"}
+    map=[{type="HARADWAITH", x=680, y=580}]
+    overlap=["0x70070702"]
+    level=150.72
+
+[[hunter]]
+    id="0x70070724"
+    name="Guide to Jiret-menêsh"
+    EN={label="Jiret-menêsh", zone="Harad"}
+    DE={label="Jiret-menêsh", zone="Harad"}
+    FR={label="Jiret-menêsh", zone="Harad"}
+    ES={label="Jiret-menêsh", zone="Harad"}
+    RU={label="Jiret-menêsh", zone="Harad"}
+    map=[{type="HARADWAITH", x=630, y=530}]
+    overlap=["0x700706F7"]
+    level=150.73
+
+[[warden]]
+    id="0x70064F4D"
+    name="Muster at Clegur"
+    EN={label="Clegur", zone="Swanfleet"}
+    DE={label="Clegur", zone="Schwanenfleet"}
+    FR={label="Clegur", zone="Noues des cygnes"}
+    ES={label="Clegur", zone="Swanfleet"}
+    RU={label="Клегур", zone="Лебедянь"}
+    map=[{type="ERIADOR", x=755, y=555}]
+    overlap=["0x70064F47"]
+    level=7
+
+[[warden]]
+    id="0x700634B6"
+    name="Muster at Swanfleet"
+    EN={label="Swanfleet", detail="Lhan Garan", zone="Swanfleet"}
+    DE={label="Schwanenfleet", detail="Lhan Garan", zone="Schwanenfleet"}
+    FR={label="Noues des cygnes", detail="Lhan Garan", zone="Noues des cygnes"}
+    ES={label="Swanfleet", detail="Lhan Garan", zone="Swanfleet"}
+    RU={label="Лебедянь", detail="Лхан-Гаран", zone="Лебедянь"}
+    map=[{type="ERIADOR", x=825, y=490}]
+    overlap=["0x700634A4"]
+    level=10
+
+[[warden]]
+    id="0x700634AD"
+    name="Muster at Cardolan"
+    EN={label="Cardolan", detail="Herne", zone="Cardolan"}
+    DE={label="Cardolan", detail="Herne", zone="Cardolan"}
+    FR={label="Cardolan", detail="Herne", zone="Cardolan"}
+    ES={label="Cardolan", detail="Herne", zone="Cardolan"}
+    RU={label="Кардолан", detail="Хэрне", zone="Кардолан"}
+    map=[{type="ERIADOR", x=560, y=495}]
+    overlap=["0x700634AE"]
+    level=15
+
+[[warden]]
+    id="0x70063242"
+    name="Muster at Andrath"
+    EN={label="Andrath", zone="Cardolan"}
+    DE={label="Andrath", zone="Cardolan"}
+    FR={label="Andrath", zone="Cardolan"}
+    ES={label="Andrath", zone="Cardolan"}
+    RU={label="Андрат", zone="Кардолан"}
+    map=[{type="ERIADOR", x=580, y=465}]
+    overlap=["0x7006323D"]
+    level=17
+
+[[warden]]
+    id="0x7006133E"
+    name="Muster at Nobottle"
+    EN={label="Nobottle", zone="Yondershire"}
+    DE={label="Neuhausen", zone="Ferne Auen"}
+    FR={label="Bourdeneuve", zone="Comté lointain"}
+    ES={label="Nobottle", zone="Yondershire"}
+    RU={label="Новодворье", zone="Дальний Шир"}
+    map=[{type="ERIADOR", x=440, y=350}]
+    overlap=["0x70061340"]
+    level=20
+
+[[warden]]
+    id="0x70014786"
+    name="Muster in Ost Guruth"
+    EN={label="Ost Guruth", zone="Lone-lands"}
+    DE={label="Feste Guruth", zone="Einsame Lande"}
+    FR={label="Ost Guruth", zone="Terres Solitaires"}
+    ES={label="Ost Guruth", zone="Lone-lands"}
+    RU={label="Ост Гурут", zone="Пустоши"}
+    map=[{type="ERIADOR", x=755, y=400}]
+    overlap=["0x70020441"]
+    level=25
+
+[[warden]]
+    id="0x70014798"
+    name="Muster in Esteldín"
+    EN={label="Esteldín", zone="North Downs"}
+    DE={label="Esteldín", zone="Nordhöhen"}
+    FR={label="Esteldin", zone="Hauts du Nord"}
+    ES={label="Esteldín", zone="North Downs"}
+    RU={label="Эстельдин", zone="Северное нагорье"}
+    map=[{type="ERIADOR", x=655, y=290}]
+    level=30
+
+[[warden]]
+    id="0x7001478E"
+    name="Muster in Evendim"
+    EN={label="Evendim", detail="Tinnudir", zone="Evendim"}
+    DE={label="Evendim", detail="Tinnudir", zone="Evendim"}
+    FR={label="Evendim", detail="Tinnudir", zone="Evendim"}
+    ES={label="Evendim", detail="Tinnudir", zone="Evendim"}
+    RU={label="Эвендим", detail="Тиннудир", zone="Эвендим"}
+    map=[{type="ERIADOR", x=490, y=235}]
+    level=35
+
+[[warden]]
+    id="0x70060EA5"
+    name="Muster at Tornhad"
+    EN={label="Tornhad", zone="Angle of Mitheithel"}
+    DE={label="Tornhad", zone="Der Bogen von Mitheithel"}
+    FR={label="Tornhad", zone="L'Angle de Mitheithel"}
+    ES={label="Tornhad", zone="Angle of Mitheithel"}
+    RU={label="Торнхад", zone="Митейтельская стрелка"}
+    map=[{type="ERIADOR", x=775, y=435}]
+    overlap=["0x70060EA8"]
+    level=40
+
+[[warden]]
+    id="0x70014791"
+    name="Muster in Rivendell"
+    EN={label="Rivendell", zone="Trollshaws"}
+    DE={label="Bruchtal", zone="Die Trollhöhen"}
+    FR={label="Fondcombe", zone="Trouée des Trolls"}
+    ES={label="Rivendell", zone="Trollshaws"}
+    RU={label="Ривенделл", zone="Троллистая пуща"}
+    map=[{type="ERIADOR", x=865, y=410}]
+    overlap=["0x7000631F", "0x70023263"]
+    level=40.1
+
+[[warden]]
+    id="0x700303DD"
+    name="Muster in the Misty Mountains"
+    EN={label="Misty Mountains", detail="Hrimbarg", zone="Misty Mountains"}
+    DE={label="Nebelgebirge", detail="Hrimbarg", zone="Nebelgebirge"}
+    FR={label="Monts Brumeux", detail="Hrimbarg", zone="Monts Brumeux"}
+    ES={label="Misty Mountains", detail="Hrimbarg", zone="Misty Mountains"}
+    RU={label="Мглистые горы", detail="Хримбарг", zone="Мглистые горы"}
+    map=[{type="ERIADOR", x=915, y=265}]
+    store=true
+    level=40.2
+
+[[warden]]
+    id="0x70059D10"
+    name="Muster in Trestlebridge"
+    EN={label="Trestlebridge", zone="North Downs"}
+    DE={label="Schragen", zone="Nordhöhen"}
+    FR={label="Pont-à-Tréteaux", zone="Hauts du Nord"}
+    ES={label="Trestlebridge", zone="North Downs"}
+    RU={label="Примостье", zone="Северное нагорье"}
+    map=[{type="ERIADOR", x=590, y=285}]
+    overlap=["0x70059D12"]
+    level=40.3
+
+[[warden]]
+    id="0x70059D09"
+    name="Muster in Trader's Wharf"
+    EN={label="Trader's Wharf", zone="Evendim"}
+    DE={label="Händlerkai", zone="Evendim"}
+    FR={label="Quai des marchands", zone="Evendim"}
+    ES={label="Trader's Wharf", zone="Evendim"}
+    RU={label="Торговая пристань", zone="Эвендим"}
+    map=[{type="ERIADOR", x=515, y=305}]
+    overlap=["0x70059D0E"]
+    level=40.4
+
+[[warden]]
+    id="0x700237D4"
+    name="Muster in Sûri-kylä"
+    EN={label="Sûri-kylä", zone="Forochel"}
+    DE={label="Sûri-kylä", zone="Forochel"}
+    FR={label="Sûri-kylä", zone="Forochel"}
+    ES={label="Sûri-kylä", zone="Forochel"}
+    RU={label="Сури-кила", zone="Форохель"}
+    map=[{type="ERIADOR", x=430, y=50}]
+    level=42
+
+[[warden]]
+    id="0x7001819E"
+    name="Muster in the Twenty-first Hall"
+    EN={label="Twenty-first Hall", zone="Moria"}
+    DE={label="21. Halle", zone="Moria"}
+    FR={label="Vingt et unième salle", zone="Moria"}
+    ES={label="Twenty-first Hall", zone="Moria"}
+    RU={label="Двадцать первый чертог", zone="Мория"}
+    map=[{type="RHOVANION", x=95, y=585},{type="ERIADOR", x=950, y=510}]
+    level=55
+
+[[warden]]
+    id="0x700303DF"
+    name="Muster in Caras Galadhon"
+    EN={label="Caras Galadhon", zone="Lothlórien"}
+    DE={label="Caras Galadhon", zone="Lothlórien"}
+    FR={label="Caras Galadhon", zone="Lothlórien"}
+    ES={label="Caras Galadhon", zone="Lothlórien"}
+    RU={label="Карас Галадон", zone="Лотлориэн"}
+    map=[{type="RHOVANION", x=120, y=660}]
+    overlap=["0x70048C8C"]
+    level=60
+
+[[warden]]
+    id="0x7001F45C"
+    name="Muster in Mirk-eaves"
+    EN={label="Mirk-Eaves", zone="Mirkwood"}
+    DE={label="Dunkelsenke", zone="Düsterwald"}
+    FR={label="Orée noire", zone="Forêt Noire"}
+    ES={label="Mirk-Eaves", zone="Mirkwood"}
+    RU={label="Черная роща", zone="Лихолесье"}
+    map=[{type="RHOVANION", x=365, y=630}]
+    level=61
+
+[[warden]]
+    id="0x700235EB"
+    name="Muster in Harndirion"
+    EN={label="Harndirion", zone="Enedwaith"}
+    DE={label="Harndirion", zone="Enedwaith"}
+    FR={label="Harndirion", zone="Enedwaith"}
+    ES={label="Harndirion", zone="Enedwaith"}
+    RU={label="Харндирион", zone="Энедвайт"}
+    map=[{type="ERIADOR", x=815, y=635}]
+    level=62
+
+[[warden]]
+    id="0x7002A90A"
+    name="Muster in Galtrev"
+    EN={label="Galtrev", zone="Dunland"}
+    DE={label="Galtrev", zone="Dunland"}
+    FR={label="Galtrev", zone="Pays de Dun"}
+    ES={label="Galtrev", zone="Dunland"}
+    RU={label="Галтрев", zone="Дунланд"}
+    map=[{type="ERIADOR", x=810, y=715}]
+    overlap=["0x7002C647"]
+    level=65
+
+[[warden]]
+    id="0x7002C646"
+    name="Muster in Stangard"
+    EN={label="Stangard", zone="Great River"}
+    DE={label="Stangard", zone="Großer Fluss"}
+    FR={label="Stangarde", zone="Grand Fleuve"}
+    ES={label="Stangard", zone="Great River"}
+    RU={label="Стангард", zone="Великая река"}
+    map=[{type="RHOVANION", x=200, y=720},{type="ROHAN", x=545, y=90}]
+    overlap=["0x7002C65D"]
+    level=75
+
+[[warden]]
+    id="0x7003198D"
+    name="Muster in Snowbourn"
+    EN={label="Snowbourn", zone="East Rohan"}
+    DE={label="Schneegrenze", zone="Ost-Rohan"}
+    FR={label="Neigebronne", zone="Rohan est"}
+    ES={label="Snowbourn", zone="East Rohan"}
+    RU={label="Сноуборн", zone="Восточный Рохан"}
+    map=[{type="ROHAN", x=515, y=500}]
+    overlap=["0x70031A46"]
+    level=80
+
+[[warden]]
+    id="0x70036B5B"
+    name="Muster in Forlaw"
+    EN={label="Forlaw", zone="Wildermore"}
+    DE={label="Forlach", zone="Wildermark"}
+    FR={label="Forloi", zone="Landes farouches"}
+    ES={label="Forlaw", zone="Wildermore"}
+    RU={label="Форлоу", zone="Вилдермор"}
+    map=[{type="ROHAN", x=450, y=175}]
+    overlap=["0x70036B5E"]
+    level=85
+
+[[warden]]
+    id="0x7003DC7A"
+    name="Muster in Aldburg"
+    EN={label="Aldburg", zone="West Rohan"}
+    DE={label="Aldburg", zone="West-Rohan"}
+    FR={label="Aldburg", zone="Rohan de l'Ouest"}
+    ES={label="Aldburg", zone="West Rohan"}
+    RU={label="Альдбург", zone="Западный Рохан"}
+    map=[{type="ROHAN", x=570, y=640}]
+    overlap=["0x7003DC81"]
+    level=88
+
+[[warden]]
+    id="0x7003DC79"
+    name="Muster in Helm's Deep"
+    EN={label="Helm's Deep", zone="West Rohan"}
+    DE={label="Helms Klamm", zone="West-Rohan"}
+    FR={label="Gouffre de Helm", zone="Rohan de l'Ouest"}
+    ES={label="Helm's Deep", zone="West Rohan"}
+    RU={label="Хельмова Падь", zone="Западный Рохан"}
+    map=[{type="ROHAN", x=275, y=565}]
+    overlap=["0x7003DC82"]
+    level=90
+
+[[warden]]
+    id="0x70041198"
+    name="Muster in Dol Amroth"
+    EN={label="Dol Amroth", zone="Western Gondor"}
+    DE={label="Dol Amroth", zone="West-Gondor"}
+    FR={label="Dol Amroth", zone="Gondor de l'Ouest"}
+    ES={label="Dol Amroth", zone="Western Gondor"}
+    RU={label="Дол Амрот", zone="Западный Гондор"}
+    map=[{type="GONDOR", x=225, y=550}]
+    overlap=["0x700411AC"]
+    level=98
+
+[[warden]]
+    id="0x70043A66"
+    name="Muster in Arnach"
+    EN={label="Arnach", zone="Eastern Gondor"}
+    DE={label="Arnach", zone="Ost-Gondor"}
+    FR={label="Arnach", zone="Gondor de l'Ouest"}
+    ES={label="Arnach", zone="Eastern Gondor"}
+    RU={label="Арнах", zone="Восточный Гондор"}
+    map=[{type="GONDOR", x=715, y=425}]
+    overlap=["0x70043A6A"]
+    level=100
+
+[[warden]]
+    id="0x70044982"
+    name="Muster in Minas Tirith"
+    EN={label="Minas Tirith", zone="Old Anórien"}
+    DE={label="Minas Tirith", zone="Alt-Anórien"}
+    FR={label="Minas Tirith", zone="Ancien Anórien"}
+    ES={label="Minas Tirith", zone="Old Anórien"}
+    RU={label="Минас Тирит", zone="Старый Анориен"}
+    map=[{type="GONDOR", x=670, y=345}]
+    overlap=["0x7004497E"]
+    level=100.1
+
+[[warden]]
+    id="0x700459AA"
+    name="Muster in the War-stead"
+    EN={label="War-stead", zone="Far Anórien"}
+    DE={label="Kriegslager der Rohirrim", zone="Fernes Anórien"}
+    FR={label="Camp militaire", zone="Lointain Anórien"}
+    ES={label="War-stead", zone="Far Anórien"}
+    RU={label="Лагерь Рохиррим", zone="Дальний Анориен"}
+    map=[{type="GONDOR", x=665, y=140}]
+    overlap=["0x700459A9"]
+    level=102
+
+[[warden]]
+    id="0x70046CBF"
+    name="Muster in after-battle Minas Tirith"
+    EN={label="Minas Tirith after battle", zone="Anórien"}
+    DE={label="Minas Tirith nach der Schlacht", zone="Anórien"}
+    FR={label="Minas Tirith après la bataille", zone="Anórien"}
+    ES={label="Minas Tirith after battle", zone="Anórien"}
+    RU={label="Минас Тирит (после битвы)", zone="Анориен"}
+    map=[{type="GONDOR", x=670, y=375}]
+    overlap=["0x70046CC0"]
+    level=105
+
+[[warden]]
+    id="0x70047076"
+    name="Muster in after-battle Osgiliath"
+    EN={label="Osgiliath after-battle", zone="Anórien"}
+    DE={label="Osgiliath nach der Schlacht", zone="Anórien"}
+    FR={label="Osgiliath après la bataille", zone="Anórien"}
+    ES={label="Osgiliath after-battle", zone="Anórien"}
+    RU={label="Осгилиат (после битвы)", zone="Анориен"}
+    map=[{type="GONDOR", x=855, y=335}]
+    overlap=["0x7004707D"]
+    level=105.1
+
+[[warden]]
+    id="0x70047075"
+    name="Muster in Henneth Annûn"
+    EN={label="Henneth Annûn", zone="Ithilien"}
+    DE={label="Henneth Annûn", zone="Ithilien"}
+    FR={label="Henneth Annûn", zone="Ithilien"}
+    ES={label="Henneth Annûn", zone="Ithilien"}
+    RU={label="Хеннет Аннун", zone="Итилиен"}
+    map=[{type="GONDOR", x=875, y=385}]
+    overlap=["0x70047080"]
+    level=105.2
+
+[[warden]]
+    id="0x70047BFC"
+    name="Muster in the Camp of the Host"
+    EN={label="Camp of the Host", zone="The Wastes"}
+    DE={label="Lager des Heeres", zone="Das Ödland"}
+    FR={label="Camp de l'armée", zone="Les Landes désertiques"}
+    ES={label="Camp of the Host", zone="The Wastes"}
+    RU={label="Лагерь Воинства Запада", zone="Гиблые земли"}
+    map=[{type="GONDOR", x=805, y=170}]
+    overlap=["0x70047BF4"]
+    level=105.3
+
+[[warden]]
+    id="0x70047C23"
+    name="Muster in Haerondir"
+    EN={label="Haerondir", zone="The Wastes"}
+    DE={label="Haerondir", zone="Das Ödland"}
+    FR={label="Haerondir", zone="Les Landes désertiques"}
+    ES={label="Haerondir", zone="The Wastes"}
+    RU={label="Хаэрондир", zone="Гиблые земли"}
+    map=[{type="GONDOR", x=855, y=100}]
+    overlap=["0x70047C1B"]
+    level=105.4
+
+[[warden]]
+    id="0x7004AE1F"
+    name="Muster in the Udûn Foothold"
+    EN={label="Udûn Foothold", zone="Mordor"}
+    DE={label="Udûn-Brückenkopf", zone="Mordor"}
+    FR={label="Fort d'Udûn", zone="Mordor"}
+    ES={label="Udûn Foothold", zone="Mordor"}
+    RU={label="Застава Удуна", zone="Мордор"}
+    map=[{type="GONDOR", x=925, y=230}]
+    overlap=["0x7004AE1D"]
+    level=106
+
+[[warden]]
+    id="0x7004D73A"
+    name="Muster in Dale"
+    EN={label="Dale", zone="Eryn Lasgalen"}
+    DE={label="Thal", zone="Eryn Lasgalen"}
+    FR={label="Dale", zone="Eryn Lasgalen"}
+    ES={label="Dale", zone="Eryn Lasgalen"}
+    RU={label="Дейл", zone="Эрин Ласгален"}
+    map=[{type="RHOVANION", x=720, y=215}]
+    overlap=["0x7004D738"]
+    level=115
+
+[[warden]]
+    id="0x7004FACA"
+    name="Muster in Járnfast"
+    EN={label="Járnfast", zone="The Ironfold"}
+    DE={label="Jarnfast", zone="Der Eisenbruch"}
+    FR={label="Jarnfast", zone="La Crevasse de Fer"}
+    ES={label="Járnfast", zone="The Ironfold"}
+    RU={label="Ярнфаст", zone="Железное взгорье"}
+    map=[{type="RHOVANION", x=890, y=110}]
+    overlap=["0x7004FAC3"]
+    level=116
+
+[[warden]]
+    id="0x7004FACD"
+    name="Muster in Skarháld"
+    EN={label="Skarháld", zone="Ered Mithrin"}
+    DE={label="Skarhald", zone="Ered Mithrin"}
+    FR={label="Skarhald", zone="Ered Mithrin"}
+    ES={label="Skarháld", zone="Ered Mithrin"}
+    RU={label="Скархальд", zone="Эред Митрин"}
+    map=[{type="RHOVANION", x=430, y=90}]
+    overlap=["0x7004FAC5"]
+    level=117
+
+[[warden]]
+    id="0x70052F0A"
+    name="Muster in Beorninghús"
+    EN={label="Beorninghús", zone="Vales of Anduin"}
+    DE={label="Beorningerhús", zone="Die Täler des Anduin"}
+    FR={label="Beorninghus", zone="Val d'Anduin"}
+    ES={label="Beorninghús", zone="Vales of Anduin"}
+    RU={label="Беорнингус", zone="Долина Андуина"}
+    map=[{type="RHOVANION", x=390, y=300}]
+    overlap=["0x70041A22", "0x70052F12"]
+    level=120
+
+[[warden]]
+    id="0x70052F06"
+    name="Muster in Hultvís"
+    EN={label="Hultvís", zone="Vales of Anduin"}
+    DE={label="Hultvís", zone="Die Täler des Anduin"}
+    FR={label="Hultvis", zone="Val d'Anduin"}
+    ES={label="Hultvís", zone="Vales of Anduin"}
+    RU={label="Хультвис", zone="Долина Андуина"}
+    map=[{type="RHOVANION", x=375, y=400}]
+    overlap=["0x70052F04"]
+    level=120.1
+
+[[warden]]
+    id="0x700551F2"
+    name="Muster in Estolad Lân"
+    EN={label="Estolad Lân", zone="Imlad Morgul"}
+    DE={label="Estolad Lân", zone="Imlad Morgul"}
+    FR={label="Estolad Lân", zone="Imlad Morgul"}
+    ES={label="Estolad Lân", zone="Imlad Morgul"}
+    RU={label="Эстолад Лан", zone="Имлад Моргул"}
+    map=[{type="GONDOR", x=960, y=460}]
+    overlap=["0x700551F8"]
+    level=125
+
+[[warden]]
+    id="0x70057635"
+    name="Muster in Limlók"
+    EN={label="Limlók", zone="Wells of Langflood"}
+    DE={label="Limlók", zone="Quellen des Langflut"}
+    FR={label="Limlok", zone="Puits du Long Fleuve"}
+    ES={label="Limlók", zone="Wells of Langflood"}
+    RU={label="Лимлок", zone="Истоки Долгой реки"}
+    map=[{type="RHOVANION", x=345, y=230}]
+    overlap=["0x70057629"]
+    level=130
+
+[[warden]]
+    id="0x70058572"
+    name="Muster in Annâk-khurfu"
+    EN={label="Annâk-khurfu", zone="Elderslade"}
+    DE={label="Annâk-khurfu", zone="Elderslade"}
+    FR={label="Annâk-khurfu", zone="Elderslade"}
+    ES={label="Annâk-khurfu", zone="Elderslade"}
+    RU={label="Аннак-Курфу", zone="Долина предков"}
+    map=[{type="RHOVANION", x=330, y=90}]
+    overlap=["0x7005856F"]
+    level=130.1
+
+[[warden]]
+    id="0x7005AA8F"
+    name="Muster in Akrâz-zahar"
+    EN={label="Akrâz-zahar", zone="Eryn Lasgalen"}
+    DE={label="Akrâz-zahar", zone="Eryn Lasgalen"}
+    FR={label="Akrâz-zahar", zone="Eryn Lasgalen"}
+    ES={label="Akrâz-zahar", zone="Eryn Lasgalen"}
+    RU={label="Акраз-Захар", zone="Эрин Ласгален"}
+    map=[{type="RHOVANION", x=750, y=115}]
+    overlap=["0x7005AA90"]
+    level=130.2
+
+[[warden]]
+    id="0x7005AA8C"
+    name="Muster in Azanulbizar"
+    EN={label="Azanulbizar", detail="Amdân", zone="Azanulbizar"}
+    DE={label="Azanulbizar", detail="Amdân", zone="Azanulbizar"}
+    FR={label="Azanulbizar", detail="Amdân", zone="Azanulbizar"}
+    ES={label="Azanulbizar", detail="Amdân", zone="Azanulbizar"}
+    RU={label="Азанулбизар", detail="Амдан", zone="Азанулбизар"}
+    map=[{type="RHOVANION", x=210, y=555}]
+    overlap=["0x7005AA92"]
+    level=130.3
+
+[[warden]]
+    id="0x7005D48A"
+    name="Muster at the Noble Gate"
+    EN={label="Noble Gate", zone="Gundabad"}
+    DE={label="Prachttor", zone="Gundabad"}
+    FR={label="Porte Noble", zone="Gundabad"}
+    ES={label="Noble Gate", zone="Gundabad"}
+    RU={label="Благородные врата", zone="Гундабад"}
+    map=[{type="RHOVANION", x=190, y=130}]
+    overlap=["0x7005D47C"]
+    level=131
+
+[[warden]]
+    id="0x7005D488"
+    name="Muster at Leitstáth"
+    EN={label="Leitstáth", zone="Gundabad"}
+    DE={label="Leitstáth", zone="Gundabad"}
+    FR={label="Leitstath", zone="Gundabad"}
+    ES={label="Leitstáth", zone="Gundabad"}
+    RU={label="Лейтстат", zone="Гундабад"}
+    map=[{type="RHOVANION", x=270, y=65}]
+    overlap=["0x7005D484"]
+    level=135
+
+[[warden]]
+    id="0x70064ACB"
+    name="Muster at Carn Dûm"
+    EN={label="Carn Dûm", zone="Angmar"}
+    DE={label="Carn Dûm", zone="Angmar"}
+    FR={label="Carn Dûm", zone="Angmar"}
+    ES={label="Carn Dûm", zone="Angmar"}
+    RU={label="Карн-Дум", zone="Ангмар"}
+    map=[{type="ERIADOR", x=735, y=100}]
+    overlap=["0x70064ACA"]
+    level=140.1
+
+[[warden]]
+    id="0x700658E8"
+    name="Muster at Pelargir"
+    EN={label="Pelargir", zone="King's Gondor"}
+    DE={label="Pelargir", zone="Königreich Gondor"}
+    FR={label="Pelargir", zone="Gondor royal"}
+    ES={label="Pelargir", zone="King's Gondor"}
+    RU={label="Пеларгир", zone="Королевский Гондор"}
+    map=[{type="GONDOR", x=670, y=625}]
+    overlap=["0x700658EB"]
+    level=141
+
+[[warden]]
+    id="0x70068712"
+    name="Muster at Dol Amroth, King's Gondor"
+    EN={label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"}
+    DE={label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"}
+    FR={label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"}
+    ES={label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"}
+    RU={label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"}
+    map=[{type="GONDOR", x=210, y=485},{type="HARADWAITH", x=325, y=70}]
+    overlap=["0x70068700"]
+    level=142
+
+[[warden]]
+    id="0x70068715"
+    name="Muster at Lond Cirion"
+    EN={label="Lond Cirion", zone="Anfalas"}
+    DE={label="Lond Cirion", zone="Anfalas"}
+    FR={label="Lond Cirion", zone="Anfalas"}
+    ES={label="Lond Cirion", zone="Anfalas"}
+    RU={label="Лонд-Кирион", zone="Анфалас"}
+    map=[{type="GONDOR", x=255, y=420},{type="HARADWAITH", x=230, y=20}]
+    overlap=["0x70068703"]
+    level=143
+
+[[warden]]
+    id="0x70068710"
+    name="Muster at Halrax"
+    EN={label="Halrax", zone="Shield Isles"}
+    DE={label="Halrax", zone="Die Schildinseln"}
+    FR={label="Halrax", zone="Les îles du Bouclier"}
+    ES={label="Halrax", zone="Shield Isles"}
+    RU={label="Халракс", zone="Острова Щита"}
+    map=[{type="HARADWAITH", x=215, y=260}]
+    overlap=["0x70068702"]
+    level=145
+
+[[warden]]
+    id="0x7006870C"
+    name="Muster at Jax Phanâl"
+    EN={label="Jax Phanâl", zone="Umbar"}
+    DE={label="Jax Phanâl", zone="Umbar"}
+    FR={label="Jax Phanâl", zone="Umbar"}
+    ES={label="Jax Phanâl", zone="Umbar"}
+    RU={label="Джакс-Фанал", zone="Умбар"}
+    map=[{type="HARADWAITH", x=305, y=315}]
+    overlap=["0x70068701"]
+    level=146
+
+[[warden]]
+    id="0x7006A9C2"
+    name="Muster in Bej Mâgha"
+    EN={label="Bej Mâgha", zone="Umbar"}
+    DE={label="Bej Mâgha", zone="Umbar"}
+    FR={label="Bej Mâgha", zone="Umbar"}
+    ES={label="Bej Mâgha", zone="Umbar"}
+    RU={label="Бедж-Магда", zone="Умбар"}
+    map=[{type="HARADWAITH", x=350, y=380}]
+    overlap=["0x7006A9C1"]
+    level=147
+
+[[warden]]
+    id="0x7006870F"
+    name="Muster at Umbar"
+    EN={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    DE={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    FR={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    ES={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    RU={label="Умбар", detail="Бахарбель", zone="Умбар"}
+    map=[{type="HARADWAITH", x=505, y=370}]
+    overlap=["0x700686FF"]
+    level=148
+
+[[warden]]
+    id="0x700697F3"
+    name="Muster at the Bloody Eagle Tavern"
+    EN={label="Bloody Eagle Tavern", zone="Umbar"}
+    DE={label="Zum Blutigen Adler", zone="Umbar"}
+    FR={label="Taverne de l'Aigle sanglant", zone="Umbar"}
+    ES={label="Bloody Eagle Tavern", zone="Umbar"}
+    RU={label="Таверна Кровавый Орёл", zone="Умбар"}
+    map=[{type="HARADWAITH", x=475, y=400}]
+    overlap=["0x700697F2"]
+    level=149
+
+[[warden]]
+    id="0x7006C3A5"
+    name="Muster at Iridír"
+    EN={label="Iridír", zone="Ikorbân"}
+    DE={label="Iridír", zone="Ikorbân"}
+    FR={label="Iridír", zone="Ikorbân"}
+    ES={label="Iridír", zone="Ikorbân"}
+    RU={label="Iridír", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=555, y=325}]
+    overlap=["0x7006C3A1"]
+    level=150.1
+
+[[warden]]
+    id="0x7006C3B5"
+    name="Muster at Jirush"
+    EN={label="Jirush", zone="Ikorbân"}
+    DE={label="Jirush", zone="Ikorbân"}
+    FR={label="Jirush", zone="Ikorbân"}
+    ES={label="Jirush", zone="Ikorbân"}
+    RU={label="Jirush", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=560, y=415}]
+    overlap=["0x7006C3C3"]
+    level=150.2
+
+[[warden]]
+    id="0x7006C3B4"
+    name="Muster at Urmâkh"
+    EN={label="Urmâkh", zone="Ikorbân"}
+    DE={label="Urmâkh", zone="Ikorbân"}
+    FR={label="Urmâkh", zone="Ikorbân"}
+    ES={label="Urmâkh", zone="Ikorbân"}
+    RU={label="Urmâkh", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=640, y=410}]
+    overlap=["0x7006C3B0"]
+    level=150.3
+
+[[warden]]
+    id="0x7006C3C7"
+    name="Muster at Maurûsh"
+    EN={label="Maurûsh", zone="Ikorbân"}
+    DE={label="Maurûsh", zone="Ikorbân"}
+    FR={label="Maurûsh", zone="Ikorbân"}
+    ES={label="Maurûsh", zone="Ikorbân"}
+    RU={label="Maurûsh", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=640, y=350}]
+    overlap=["0x7006C3BC"]
+    level=150.4
+
+[[warden]]
+    id="0x7006EA20"
+    name="Muster at Utug-bûr"
+    EN={label="Utug-bûr", zone="Ikorbân"}
+    DE={label="Utug-bûr", zone="Ikorbân"}
+    FR={label="Utug-bûr", zone="Ikorbân"}
+    ES={label="Utug-bûr", zone="Ikorbân"}
+    RU={label="Utug-bûr", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=670, y=310}]
+    overlap=["0x7006EA1C"]
+    level=150.5
+
+[[warden]]
+    id="0x7006FD50"
+    name="Muster at Dun Shûma"
+    EN={label="Dun Shûma", zone="Ikorbân"}
+    DE={label="Dun Shûma", zone="Ikorbân"}
+    FR={label="Dun Shûma", zone="Ikorbân"}
+    ES={label="Dun Shûma", zone="Ikorbân"}
+    RU={label="Dun Shûma", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=620, y=445}]
+    overlap=["0x7006FD4B"]
+    level=150.6
+
+[[warden]]
+    id="0x700706FC"
+    name="Muster at Jiret-menêsh"
+    EN={label="Jiret-menêsh", zone="Harad"}
+    DE={label="Jiret-menêsh", zone="Harad"}
+    FR={label="Jiret-menêsh", zone="Harad"}
+    ES={label="Jiret-menêsh", zone="Harad"}
+    RU={label="Jiret-menêsh", zone="Harad"}
+    map=[{type="HARADWAITH", x=630, y=530}]
+    overlap=["0x700706F7"]
+    level=150.7
+
+[[warden]]
+    id="0x70070714"
+    name="Muster at Ahâba"
+    EN={label="Ahâba", zone="Harad"}
+    DE={label="Ahâba", zone="Harad"}
+    FR={label="Ahâba", zone="Harad"}
+    ES={label="Ahâba", zone="Harad"}
+    RU={label="Ahâba", zone="Harad"}
+    map=[{type="HARADWAITH", x=560, y=570}]
+    overlap=["0x70070710"]
+    level=150.71
+
+[[warden]]
+    id="0x70070719"
+    name="Muster at Sul Madásh"
+    EN={label="Sul Madásh", zone="Harad"}
+    DE={label="Sul Madásh", zone="Harad"}
+    FR={label="Sul Madásh", zone="Harad"}
+    ES={label="Sul Madásh", zone="Harad"}
+    RU={label="Sul Madásh", zone="Harad"}
+    map=[{type="HARADWAITH", x=810, y=470}]
+    overlap=["0x70070715"]
+    level=150.72
+
+[[warden]]
+    id="0x7007071F"
+    name="Muster at Zajâna"
+    EN={label="Zajâna", zone="Harad"}
+    DE={label="Zajâna", zone="Harad"}
+    FR={label="Zajâna", zone="Harad"}
+    ES={label="Zajâna", zone="Harad"}
+    RU={label="Zajâna", zone="Harad"}
+    map=[{type="HARADWAITH", x=680, y=580}]
+    overlap=["0x70070702"]
+    level=150.73
+
+[[mariner]]
+    id="0x70066100"
+    name="Sail to Celondim"
+    EN={label="Celondim", zone="Ered Luin"}
+    DE={label="Celondim", zone="Ered Luin"}
+    FR={label="Celondim", zone="Ered Luin"}
+    ES={label="Celondim", zone="Ered Luin"}
+    RU={label="Келондим", zone="Эред Луин"}
+    map=[{type="ERIADOR", x=310, y=380}]
+    level=1
+
+[[mariner]]
+    id="0x7006611A"
+    name="Sail to Buckland"
+    EN={label="Buckland", zone="Bree"}
+    DE={label="Bockland", zone="Bree"}
+    FR={label="Pays de Bouc", zone="Bree"}
+    ES={label="Buckland", zone="Bree"}
+    RU={label="Забрендия", zone="Бри"}
+    map=[{type="ERIADOR", x=515, y=405}]
+    level=4
+
+[[mariner]]
+    id="0x70066120"
+    name="Sail to Tharbad"
+    EN={label="Tharbad", zone="Swanfleet"}
+    DE={label="Tharbad", zone="Schwanenfleet"}
+    FR={label="Tharbad", zone="Noues des cygnes"}
+    ES={label="Tharbad", zone="Swanfleet"}
+    RU={label="Тарбад", zone="Лебедянь"}
+    map=[{type="ERIADOR", x=650, y=525}]
+    level=5
+
+[[mariner]]
+    id="0x7006610F"
+    name="Sail to Tinnudir"
+    EN={label="Tinnudir", zone="Evendim"}
+    DE={label="Tinnudir", zone="Evendim"}
+    FR={label="Tinnudir", zone="Evendim"}
+    ES={label="Tinnudir", zone="Evendim"}
+    RU={label="Тиннудир", zone="Эвендим"}
+    map=[{type="ERIADOR", x=420, y=250}]
+    level=30
+
+[[mariner]]
+    id="0x70066105"
+    name="Sail to Trader's Wharf"
+    EN={label="Trader's Wharf", zone="Evendim"}
+    DE={label="Händlerkai", zone="Evendim"}
+    FR={label="Quai des marchands", zone="Evendim"}
+    ES={label="Trader's Wharf", zone="Evendim"}
+    RU={label="Торговая пристань", zone="Эвендим"}
+    map=[{type="ERIADOR", x=515, y=305}]
+    overlap=["0x70059D0E"]
+    level=40.4
+
+[[mariner]]
+    id="0x7006611C"
+    name="Sail to Sûri-kylä"
+    EN={label="Sûri-kylä", zone="Forochel"}
+    DE={label="Sûri-kylä", zone="Forochel"}
+    FR={label="Sûri-kylä", zone="Forochel"}
+    ES={label="Sûri-kylä", zone="Forochel"}
+    RU={label="Сури-кила", zone="Форохель"}
+    map=[{type="ERIADOR", x=430, y=50}]
+    level=42
+
+[[mariner]]
+    id="0x7006611E"
+    name="Sail to Lothlórien"
+    EN={label="Lothlórien", detail="Egladil", zone="Lothlórien"}
+    DE={label="Lothlórien", detail="Egladil", zone="Lothlórien"}
+    FR={label="Lothlórien", detail="Egladil", zone="Lothlórien"}
+    ES={label="Lothlórien", detail="Egladil", zone="Lothlórien"}
+    RU={label="Лотлориэн", detail="Эгладил", zone="Лотлориэн"}
+    map=[{type="RHOVANION", x=245, y=670}]
+    overlap=["0x70048C8C"]
+    level=60
+
+[[mariner]]
+    id="0x7006610E"
+    name="Sail to the Mirk-eaves"
+    EN={label="Mirk-eaves", zone="Mirkwood"}
+    DE={label="Dunkelsenke", zone="Düsterwald"}
+    FR={label="Orée Noire", zone="Forêt Noire"}
+    ES={label="Mirk-eaves", zone="Mirkwood"}
+    RU={label="Черная роща", zone="Лихолесье"}
+    map=[{type="RHOVANION", x=365, y=630}]
+    level=61
+
+[[mariner]]
+    id="0x70066101"
+    name="Sail to the Brown Lands"
+    EN={label="Brown Lands", zone="Great River"}
+    DE={label="Braune Lande", zone="Großer Fluss"}
+    FR={label="Terres brunes", zone="Grand Fleuve"}
+    ES={label="Brown Lands", zone="Great River"}
+    RU={label="Бурые равнины", zone="Великая река"}
+    map=[{type="ROHAN", x=700, y=180}]
+    store=true
+    level=75.1
+
+[[mariner]]
+    id="0x70066121"
+    name="Sail to Snowbourn"
+    EN={label="Snowbourn", zone="East Rohan"}
+    DE={label="Schneegrenze", zone="Ost-Rohan"}
+    FR={label="Neigebronne", zone="Rohan est"}
+    ES={label="Snowbourn", zone="East Rohan"}
+    RU={label="Сноуборн", zone="Восточный Рохан"}
+    map=[{type="ROHAN", x=515, y=500}]
+    overlap=["0x70031A46"]
+    level=80
+
+[[mariner]]
+    id="0x70066117"
+    name="Sail to Dol Amroth"
+    EN={label="Dol Amroth", zone="Western Gondor"}
+    DE={label="Dol Amroth", zone="West-Gondor"}
+    FR={label="Dol Amroth", zone="Gondor de l'Ouest"}
+    ES={label="Dol Amroth", zone="Western Gondor"}
+    RU={label="Дол Амрот", zone="Западный Гондор"}
+    map=[{type="GONDOR", x=225, y=550}]
+    overlap=["0x700411AC"]
+    level=98
+
+[[mariner]]
+    id="0x70066109"
+    name="Sail to after-battle Osgiliath"
+    EN={label="Osgiliath after-battle", zone="Anórien"}
+    DE={label="Schlachtgezeichnetes Osgiliath", zone="Anórien"}
+    FR={label="Osgiliath après la bataille", zone="Anórien"}
+    ES={label="Osgiliath after-battle", zone="Anórien"}
+    RU={label="Осгилиат (после битвы)", zone="Анориен"}
+    map=[{type="GONDOR", x=855, y=335}]
+    overlap=["0x7004707D"]
+    level=105.1
+
+[[mariner]]
+    id="0x7006610C"
+    name="Sail to Lake-town"
+    EN={label="Lake-town", zone="Eryn Lasgalen"}
+    DE={label="Seestadt", zone="Eryn Lasgalen"}
+    FR={label="Ville du Lac", zone="Eryn Lasgalen"}
+    ES={label="Lake-town", zone="Eryn Lasgalen"}
+    RU={label="Озёрный город", zone="Эрин Ласгален"}
+    map=[{type="RHOVANION", x=740, y=275}]
+    overlap=["0x7004D738"]
+    level=115
+
+[[mariner]]
+    id="0x7006611B"
+    name="Sail to Pelargir"
+    EN={label="Pelargir", zone="King's Gondor"}
+    DE={label="Pelargir", zone="Königreich Gondor"}
+    FR={label="Pelargir", zone="Gondor royal"}
+    ES={label="Pelargir", zone="King's Gondor"}
+    RU={label="Пеларгир", zone="Королевский Гондор"}
+    map=[{type="GONDOR", x=670, y=625}]
+    overlap=["0x700658EB"]
+    level=141
+
+[[mariner]]
+    id="0x700687C1"
+    name="Sail to Dol Amroth, King's Gondor"
+    EN={label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"}
+    DE={label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"}
+    FR={label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"}
+    ES={label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"}
+    RU={label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"}
+    map=[{type="GONDOR", x=210, y=485},{type="HARADWAITH", x=385, y=70}]
+    overlap=["0x70068700"]
+    level=142
+
+[[mariner]]
+    id="0x700687BD"
+    name="Sail to Lond Cirion"
+    EN={label="Lond Cirion", zone="Anfalas"}
+    DE={label="Lond Cirion", zone="Anfalas"}
+    FR={label="Lond Cirion", zone="Anfalas"}
+    ES={label="Lond Cirion", zone="Anfalas"}
+    RU={label="Лонд-Кирион", zone="Анфалас"}
+    map=[{type="GONDOR", x=255, y=420},{type="HARADWAITH", x=230, y=20}]
+    overlap=["0x70068703"]
+    level=143
+
+[[mariner]]
+    id="0x700687C3"
+    name="Sail to Halrax"
+    EN={label="Halrax", zone="Shield Isles"}
+    DE={label="Halrax", zone="Die Schildinseln"}
+    FR={label="Halrax", zone="Les îles du Bouclier"}
+    ES={label="Halrax", zone="Shield Isles"}
+    RU={label="Халракс", zone="Острова Щита"}
+    map=[{type="HARADWAITH", x=215, y=260}]
+    overlap=["0x70068702"]
+    level=145
+
+[[mariner]]
+    id="0x700687C0"
+    name="Sail to Jax Phanâl"
+    EN={label="Jax Phanâl", zone="Umbar"}
+    DE={label="Jax Phanâl", zone="Umbar"}
+    FR={label="Jax Phanâl", zone="Umbar"}
+    ES={label="Jax Phanâl", zone="Umbar"}
+    RU={label="Джакс-Фанал", zone="Умбар"}
+    map=[{type="HARADWAITH", x=305, y=315}]
+    overlap=["0x70068701"]
+    level=146
+
+[[mariner]]
+    id="0x7006A9C4"
+    name="Sail to Bej Mâgha"
+    EN={label="Bej Mâgha", zone="Umbar"}
+    DE={label="Bej Mâgha", zone="Umbar"}
+    FR={label="Bej Mâgha", zone="Umbar"}
+    ES={label="Bej Mâgha", zone="Umbar"}
+    RU={label="Бедж-Магда", zone="Умбар"}
+    map=[{type="HARADWAITH", x=350, y=380}]
+    overlap=["0x7006A9C1"]
+    level=147
+
+[[mariner]]
+    id="0x700687BB"
+    name="Sail to Umbar"
+    EN={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    DE={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    FR={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    ES={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    RU={label="Умбар", detail="Бахарбель", zone="Умбар"}
+    map=[{type="HARADWAITH", x=505, y=370}]
+    overlap=["0x700686FF"]
+    level=148
+
+[[mariner]]
+    id="0x7006C3B1"
+    name="Sail to Iridír"
+    EN={label="Iridír", zone="Ikorbân"}
+    DE={label="Iridír", zone="Ikorbân"}
+    FR={label="Iridír", zone="Ikorbân"}
+    ES={label="Iridír", zone="Ikorbân"}
+    RU={label="Iridír", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=555, y=325}]
+    overlap=["0x7006C3A1"]
+    level=150.1
+
+[[mariner]]
+    id="0x7006C3A2"
+    name="Sail to Urmâkh"
+    EN={label="Urmâkh", zone="Ikorbân"}
+    DE={label="Urmâkh", zone="Ikorbân"}
+    FR={label="Urmâkh", zone="Ikorbân"}
+    ES={label="Urmâkh", zone="Ikorbân"}
+    RU={label="Urmâkh", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=640, y=410}]
+    overlap=["0x7006C3B0"]
+    level=150.2
+
+[[mariner]]
+    id="0x7006C3A8"
+    name="Sail to Maurûsh"
+    EN={label="Maurûsh", zone="Ikorbân"}
+    DE={label="Maurûsh", zone="Ikorbân"}
+    FR={label="Maurûsh", zone="Ikorbân"}
+    ES={label="Maurûsh", zone="Ikorbân"}
+    RU={label="Maurûsh", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=640, y=350}]
+    overlap=["0x7006C3BC"]
+    level=150.3
+
+[[mariner]]
+    id="0x7006EA1E"
+    name="Sail to Utug-bûr"
+    EN={label="Utug-bûr", zone="Ikorbân"}
+    DE={label="Utug-bûr", zone="Ikorbân"}
+    FR={label="Utug-bûr", zone="Ikorbân"}
+    ES={label="Utug-bûr", zone="Ikorbân"}
+    RU={label="Utug-bûr", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=670, y=310}]
+    overlap=["0x7006EA1C"]
+    level=150.4
+
+[[mariner]]
+    id="0x70070705"
+    name="Sail to Zajâna"
+    EN={label="Zajâna", zone="Harad"}
+    DE={label="Zajâna", zone="Harad"}
+    FR={label="Zajâna", zone="Harad"}
+    ES={label="Zajâna", zone="Harad"}
+    RU={label="Zajâna", zone="Harad"}
+    map=[{type="HARADWAITH", x=680, y=580}]
+    overlap=["0x70070702"]
+    level=150.5
+
+[[mariner]]
+    id="0x70070707"
+    name="Sail to Jiret-menêsh"
+    EN={label="Jiret-menêsh", zone="Harad"}
+    DE={label="Jiret-menêsh", zone="Harad"}
+    FR={label="Jiret-menêsh", zone="Harad"}
+    ES={label="Jiret-menêsh", zone="Harad"}
+    RU={label="Jiret-menêsh", zone="Harad"}
+    map=[{type="HARADWAITH", x=630, y=530}]
+    overlap=["0x700706F7"]
+    level=150.51
+
+[[mariner]]
+    id="0x70070713"
+    name="Sail to Sul Madásh"
+    EN={label="Sul Madásh", zone="Harad"}
+    DE={label="Sul Madásh", zone="Harad"}
+    FR={label="Sul Madásh", zone="Harad"}
+    ES={label="Sul Madásh", zone="Harad"}
+    RU={label="Sul Madásh", zone="Harad"}
+    map=[{type="HARADWAITH", x=810, y=470}]
+    overlap=["0x70070715"]
+    level=150.52
+
+[[racials]]
+    race="man"
+    id="0x700062F6"
+    name="Return to Bree"
+    EN={label="Bree", zlabel="West Gate", zone="Bree"}
+    DE={label="Bree", zlabel="Westtor", zone="Bree"}
+    FR={label="Bree", zlabel="Porte Ouest", zone="Bree"}
+    ES={label="Bree", zlabel="West Gate", zone="Bree"}
+    RU={label="Бри", zlabel="Западные ворота", zone="Бри"}
+    map=[{type="ERIADOR", x=525, y=335}]
+    level=5
+
+[[racials]]
+    race="hobbit"
+    id="0x700062C8"
+    name="Return to the Shire"
+    EN={label="Michel Delving", zone="Shire"}
+    DE={label="Michelbinge", zone="Auenland"}
+    FR={label="Grand'Cave", zone="Comté"}
+    ES={label="Michel Delving", zone="Shire"}
+    RU={label="Занорье", zone="Шир"}
+    map=[{type="ERIADOR", x=405, y=440}]
+    level=1
+
+[[racials]]
+    race="dwarf"
+    id="0x70006346"
+    name="Return to Thorin's Gate"
+    EN={label="Thorin's Gate", zone="Ered Luin"}
+    DE={label="Thorins Tor", zone="Ered Luin"}
+    FR={label="Porte de Thorin", zone="Ered Luin"}
+    ES={label="Thorin's Gate", zone="Ered Luin"}
+    RU={label="Врата Торина", zone="Эред Луин"}
+    map=[{type="ERIADOR", x=310, y=270}]
+    level=1.2
+
+[[racials]]
+    race="elf"
+    id="0x7000631F"
+    name="Return to Rivendell"
+    EN={label="Rivendell", zone="Trollshaws"}
+    DE={label="Bruchtal", zone="Die Trollhöhen"}
+    FR={label="Fondcombe", zone="Trouée des Trolls"}
+    ES={label="Rivendell", zone="Trollshaws"}
+    RU={label="Ривенделл", zone="Троллистая пуща"}
+    map=[{type="ERIADOR", x=900, y=375}]
+    level=40.1
+
+[[racials]]
+    race="beorning"
+    id="0x70041A22"
+    name="Return Home"
+    EN={label="Beorning Home", zone="Vales of Anduin"}
+    DE={label="Grimbeorns Hütte", zone="Die Täler des Anduin"}
+    FR={label="Maison Beorning", zone="Val d'Anduin"}
+    ES={label="Beorning Home", zone="Vales of Anduin"}
+    RU={label="Дом беорнинга", zone="Долина Андуина"}
+    map=[{type="RHOVANION", x=285, y=340}]
+    level=120
+
+[[racials]]
+    race="high elf"
+    id="0x70048C8C"
+    name="Travel to Caras Galadhon in Lothlórien"
+    EN={label="Caras Galadhon", zone="Lothlórien"}
+    DE={label="Caras Galadhon", zone="Lothlórien"}
+    FR={label="Caras Galadhon", zone="Lothlórien"}
+    ES={label="Caras Galadhon", zone="Lothlórien"}
+    RU={label="Карас Галадон", zone="Лотлориэн"}
+    map=[{type="RHOVANION", x=120, y=690}]
+    level=60
+
+[[racials]]
+    race="stoutaxe"
+    id="0x70053C0F"
+    name="Travel to Thorin's Hall"
+    EN={label="Thorin's Hall", zone="Ered Luin"}
+    DE={label="Thorins Halle", zone="Ered Luin"}
+    FR={label="Palais de Thorin", zone="Ered Luin"}
+    ES={label="Thorin's Hall", zone="Ered Luin"}
+    RU={label="Чертоги Торина", zone="Эред Луин"}
+    map=[{type="ERIADOR", x=345, y=310}]
+    level=1.2
+
+[[racials]]
+    race="river hobbit"
+    id="0x70066D31"
+    name="Return to Lyndelby"
+    EN={label="Lyndelby", zone="Wells of Langflood"}
+    DE={label="Lyndelby", zone="Quellen des Langflut"}
+    FR={label="Lyndelby", zone="Puits du Long Fleuve"}
+    ES={label="Lyndelby", zone="Wells of Langflood"}
+    RU={label="Линдельби", zone="Истоки Долгой реки"}
+    map=[{type="RHOVANION", x=155, y=165}]
+    level=1.3
+
+[[gen]]
+    id="0x700256BA"
+    name="Return Home"
+    EN={}
+    DE={label="1. Markstein"}
+    FR={label="Point de repère 1"}
+    ES={}
+    RU={}
+    map=[{type="NONE", x=-1, y=-1}]
+    level=1
+
+[[gen]]
+    id="0x70025792"
+    name="Return Home 2"
+    EN={}
+    DE={label="2. Markstein"}
+    FR={label="Point de repère 2"}
+    ES={}
+    RU={}
+    map=[{type="NONE", x=-1, y=-1}]
+    store=true
+    level=1
+
+[[gen]]
+    id="0x70025793"
+    name="Return Home 3"
+    EN={}
+    DE={label="3. Markstein"}
+    FR={label="Point de repère 3"}
+    ES={}
+    RU={}
+    map=[{type="NONE", x=-1, y=-1}]
+    store=true
+    level=1
+
+[[gen]]
+    id="0x70025794"
+    name="Return Home 4"
+    EN={}
+    DE={label="4. Markstein"}
+    FR={label="Point de repère 4"}
+    ES={}
+    RU={}
+    map=[{type="NONE", x=-1, y=-1}]
+    store=true
+    level=1
+
+[[gen]]
+    id="0x70025795"
+    name="Return Home 5"
+    EN={}
+    DE={label="5. Markstein"}
+    FR={label="Point de repère 5"}
+    ES={}
+    RU={}
+    map=[{type="NONE", x=-1, y=-1}]
+    store=true
+    level=1
+
+[[gen]]
+    id="0x70025796"
+    name="Return Home 6"
+    EN={}
+    DE={label="6. Markstein"}
+    FR={label="Point de repère 6"}
+    ES={}
+    RU={}
+    map=[{type="NONE", x=-1, y=-1}]
+    store=true
+    level=1
+
+[[gen]]
+    id="0x7002FF62"
+    name="Return Home 7"
+    EN={}
+    DE={label="7. Markstein"}
+    FR={label="Point de repère 7"}
+    ES={}
+    RU={}
+    map=[{type="NONE", x=-1, y=-1}]
+    store=true
+    level=1
+
+[[gen]]
+    id="0x7002FF61"
+    name="Return Home 8"
+    EN={}
+    DE={label="8. Markstein"}
+    FR={label="Point de repère 8"}
+    ES={}
+    RU={}
+    map=[{type="NONE", x=-1, y=-1}]
+    store=true
+    level=1
+
+[[gen]]
+    id="0x7002FF60"
+    name="Return Home 9"
+    EN={}
+    DE={label="9. Markstein"}
+    FR={label="Point de repère 9"}
+    ES={}
+    RU={}
+    map=[{type="NONE", x=-1, y=-1}]
+    store=true
+    level=1
+
+[[gen]]
+    id="0x7002FF5F"
+    name="Return Home 10"
+    EN={}
+    DE={label="10. Markstein"}
+    FR={label="Point de repère 10"}
+    ES={}
+    RU={}
+    map=[{type="NONE", x=-1, y=-1}]
+    store=true
+    level=1
+
+[[gen]]
+    id="0x7002FF63"
+    name="Return Home 11"
+    EN={}
+    DE={label="11. Markstein"}
+    FR={label="Point de repère 11"}
+    ES={}
+    RU={}
+    map=[{type="NONE", x=-1, y=-1}]
+    store=true
+    level=1
+
+[[gen]]
+    id="0x7000D046"
+    name="Travel to Personal House"
+    EN={label="Personal House"}
+    DE={label="Eigenes Heim"}
+    FR={label="Maison personnelle"}
+    ES={label="Personal House"}
+    RU={label="Частный дом"}
+    map=[{type="NONE", x=-1, y=-1}]
+    level=1
+    [gen.acquire_desc]
+        EN="Buy a House and earn the Novice trait"
+        DE="Kaufe ein Haus und erlange die Eigenschaft \"Novize\""
+        FR="Achetez une maison et gagnez le trait Novice"
+        ES="Buy a House and earn the Novice trait"
+        RU="Купите дом и получите талант новичка"
+
+[[gen]]
+    id="0x70046EE4"
+    name="Travel to Premium House"
+    EN={label="Premium House"}
+    DE={label="Premiumheim"}
+    FR={label="Maison premium"}
+    ES={label="Premium House"}
+    RU={label="Престижный дом"}
+    map=[{type="NONE", x=-1, y=-1}]
+    level=1
+    [gen.acquire_desc]
+        EN="Buy a Premium House and earn the Novice trait"
+        DE="Kaufe ein Premiumhaus und erlange die Eigenschaft \"Novize\""
+        FR="Achetez une maison premium et gagnez le trait Novice"
+        ES="Buy a Premium House and earn the Novice trait"
+        RU="Купите престижный дом и получите талант новичка"
+
+[[gen]]
+    id="0x7000D047"
+    name="Travel to Kinship House"
+    EN={label="Kinship House"}
+    DE={label="Heim Eurer Sippe"}
+    FR={label="Maison de confrérie"}
+    ES={label="Kinship House"}
+    RU={label="Дом содружества"}
+    map=[{type="NONE", x=-1, y=-1}]
+    level=1
+    [gen.acquire_desc]
+        EN="Become a member of a kinship that has a kinship house"
+        DE="Werde Mitglied einer Sippe, die ein Sippenhaus hat"
+        FR="Devenez membre d’une confrérie qui a une maison de confrérie"
+        ES="Become a member of a kinship that has a kinship house"
+        RU="Станьте членом содружества, у которого есть дом"
+
+[[gen]]
+    id="0x70057C36"
+    name="Travel to Kinship Member's House"
+    EN={label="Kinship Member's House"}
+    DE={label="Heim des Sippenmitglieds"}
+    FR={label="Maison d'un membre de confrérie"}
+    ES={label="Kinship Member's House"}
+    RU={label="Дом участника содружества"}
+    map=[{type="NONE", x=-1, y=-1}]
+    level=1
+    [gen.acquire_desc]
+        EN="Become a member of a kinship"
+        DE="Werde Mitglied einer Sippe"
+        FR="Devenir membre d’une confrérie"
+        ES="Become a member of a kinship"
+        RU="Станьте членом содружества"
+
+[[rep]]
+    id="0x70023262"
+    name="Return to Michel Delving"
+    EN={label="Michel Delving", tag="Store", zone="Shire"}
+    DE={label="Michelbinge", tag="Shop", zone="Auenland"}
+    FR={label="Grand'Cave", tag="Shop", zone="Comté"}
+    ES={label="Michel Delving", tag="Store", zone="Shire"}
+    RU={label="Занорье", tag="Лавка", zone="Шир"}
+    map=[{type="ERIADOR", x=375, y=440}]
+    store=true
+    level=1
+
+[[rep]]
+    id="0x7001BF91"
+    name="Return to Thorin's Gate"
+    EN={label="Thorin's Gate", zone="Ered Luin"}
+    DE={label="Thorins Tor", zone="Ered Luin"}
+    FR={label="Porte de Thorin", zone="Ered Luin"}
+    ES={label="Thorin's Gate", zone="Ered Luin"}
+    RU={label="Врата Торина", zone="Эред Луин"}
+    map=[{type="ERIADOR", x=345, y=310}]
+    store=true
+    level=1.1
+
+[[rep]]
+    id="0x7001BF90"
+    name="Return to Bree"
+    EN={label="Bree", zlabel="West Gate", zone="Bree"}
+    DE={label="Bree", zlabel="Westtor", zone="Bree"}
+    FR={label="Bree", zlabel="Porte Ouest", zone="Bree"}
+    ES={label="Bree", zlabel="West Gate", zone="Bree"}
+    RU={label="Бри", zlabel="Западные ворота", zone="Бри"}
+    map=[{type="ERIADOR", x=555, y=335}]
+    store=true
+    level=5
+
+[[rep]]
+    id="0x700364B1"
+    name="Return to Lalia's Market"
+    EN={label="Lalia's Market", zone="Bree"}
+    DE={label="Lalias Markt", zone="Bree"}
+    FR={label="Marché de Lalia", zone="Bree"}
+    ES={label="Lalia's Market", zone="Bree"}
+    RU={label="Рынок Лалии", zone="Бри"}
+    tag="Mithril"
+    map=[{type="ERIADOR", x=630, y=360}]
+    level=5.1
+
+[[rep]]
+    id="0x70064F47"
+    name="Return to Clegur"
+    EN={label="Clegur", zone="Swanfleet"}
+    DE={label="Clegur", zone="Schwanenfleet"}
+    FR={label="Clegur", zone="Noues des cygnes"}
+    ES={label="Clegur", zone="Swanfleet"}
+    RU={label="Клегур", zone="Swanfleet"}
+    map=[{type="ERIADOR", x=725, y=555}]
+    level=7
+
+[[rep]]
+    id="0x700634A4"
+    name="Return to Swanfleet"
+    EN={label="Swanfleet", detail="Lhan Garan", zone="Swanfleet"}
+    DE={label="Schwanenfleet", detail="Lhan Garan", zone="Schwanenfleet"}
+    FR={label="Noues des cygnes", detail="Lhan Garan", zone="Noues des cygnes"}
+    ES={label="Swanfleet", detail="Lhan Garan", zone="Swanfleet"}
+    RU={label="Лебедянь", detail="Лхан-Гаран", zone="Лебедянь"}
+    map=[{type="ERIADOR", x=795, y=490}]
+    level=10
+
+[[rep]]
+    id="0x700634AE"
+    name="Return to Cardolan"
+    EN={label="Cardolan", detail="Herne", zone="Cardolan"}
+    DE={label="Cardolan", detail="Herne", zone="Cardolan"}
+    FR={label="Cardolan", detail="Herne", zone="Cardolan"}
+    ES={label="Cardolan", detail="Herne", zone="Cardolan"}
+    RU={label="Кардолан", detail="Хэрне", zone="Кардолан"}
+    map=[{type="ERIADOR", x=590, y=495}]
+    level=15
+
+[[rep]]
+    id="0x7006323D"
+    name="Return to Andrath"
+    EN={label="Andrath", zone="Cardolan"}
+    DE={label="Andrath", zone="Cardolan"}
+    FR={label="Andrath", zone="Cardolan"}
+    ES={label="Andrath", zone="Cardolan"}
+    RU={label="Андрат", zone="Кардолан"}
+    map=[{type="ERIADOR", x=550, y=465}]
+    level=17
+
+[[rep]]
+    id="0x70061340"
+    name="Return to Nobottle"
+    EN={label="Nobottle", zone="Yondershire"}
+    DE={label="Neuhausen", zone="Ferne Auen"}
+    FR={label="Bourdeneuve", zone="Comté lointain"}
+    ES={label="Nobottle", zone="Yondershire"}
+    RU={label="Новодворье", zone="Дальний Шир"}
+    map=[{type="ERIADOR", x=410, y=350}]
+    level=20
+
+[[rep]]
+    id="0x70020441"
+    name="Return to Ost Guruth"
+    EN={label="Ost Guruth", zone="Lone-lands"}
+    DE={label="Feste Guruth", zone="Einsame Lande"}
+    FR={label="Ost Guruth", zone="Terres Solitaires"}
+    ES={label="Ost Guruth", zone="Lone-lands"}
+    RU={label="Ост Гурут", zone="Пустоши"}
+    map=[{type="ERIADOR", x=725, y=400}]
+    store=true
+    level=25
+
+[[rep]]
+    id="0x70060EA8"
+    name="Return to Tornhad"
+    EN={label="Tornhad", zone="Angle of Mitheithel"}
+    DE={label="Tornhad", zone="Der Bogen von Mitheithel"}
+    FR={label="Tornhad", zone="L'Angle de Mitheithel"}
+    ES={label="Tornhad", zone="Angle of Mitheithel"}
+    RU={label="Торнхад", zone="Митейтельская стрелка"}
+    map=[{type="ERIADOR", x=745, y=435}]
+    level=40
+
+[[rep]]
+    id="0x70023263"
+    name="Return to Rivendell"
+    EN={label="Rivendell", tag="Store", zone="Trollshaws"}
+    DE={label="Bruchtal", tag="Shop", zone="Die Trollhöhen"}
+    FR={label="Fondcombe", tag="Shop", zone="Trouée des Trolls"}
+    ES={label="Rivendell", tag="Store", zone="Trollshaws"}
+    RU={label="Ривенделл", tag="Лавка", zone="Троллистая пуща"}
+    map=[{type="ERIADOR", x=835, y=410}]
+    store=true
+    level=40.1
+
+[[rep]]
+    id="0x700634A5"
+    name="Return to the Tracery Archives in Rivendell"
+    EN={label="Tracery Archive", zone="Trollshaws"}
+    DE={label="Filigranmuster-Archiv", zone="Die Trollhöhen"}
+    FR={label="Archives de gravures", zone="Trouée des Trolls"}
+    ES={label="Tracery Archive", zone="Trollshaws"}
+    RU={label="Архив узоров Ривенделла", zone="Троллистая пуща"}
+    tag="Delving"
+    map=[{type="ERIADOR", x=905, y=345}]
+    level=40.11
+    [rep.acquire_desc]
+        EN="Delving Reward Box (any tier)"
+        DE="Erkunderbelohnungskiste (jede Stufe)"
+        FR="Boîte de récompenses de fouille (n'importe quel niveau)"
+        ES="Delving Reward Box (any tier)"
+        RU="Ящик с наградами погружений (любой уровень)"
+
+[[rep]]
+    id="0x7005B38E"
+    name="Return to Glân Vraig"
+    EN={label="Glân Vraig", tag="Quest", zone="Ettenmoors"}
+    DE={label="Glân Vraig", tag="Aufgabe", zone="Die Ettenöden"}
+    FR={label="Glân Vraig", tag="Quête", zone="Les Landes d'Etten"}
+    ES={label="Glân Vraig", tag="Quest", zone="Ettenmoors"}
+    RU={label="Глан Врайг", tag="Задание", zone="Эттенские высоты"}
+    map=[{type="ERIADOR", x=835, y=245}]
+    level=40.12
+
+[[rep]]
+    id="0x70059D12"
+    name="Return to Trestlebridge"
+    EN={label="Trestlebridge", zone="North Downs"}
+    DE={label="Schragen", zone="Nordhöhen"}
+    FR={label="Pont-à-Tréteaux", zone="Hauts du Nord"}
+    ES={label="Trestlebridge", zone="North Downs"}
+    RU={label="Примостье", zone="Северное нагорье"}
+    map=[{type="ERIADOR", x=560, y=285}]
+    level=40.3
+
+[[rep]]
+    id="0x70059D0E"
+    name="Return to Trader's Wharf"
+    EN={label="Trader's Wharf", zone="Evendim"}
+    DE={label="Händlerkai", zone="Evendim"}
+    FR={label="Quai des marchands", zone="Evendim"}
+    ES={label="Trader's Wharf", zone="Evendim"}
+    RU={label="Торговая пристань", zone="Эвендим"}
+    map=[{type="ERIADOR", x=515, y=275}]
+    level=40.4
+
+[[rep]]
+    id="0x7001F374"
+    name="Return to Mirkwood"
+    EN={label="Mirkwood", detail="Ost Galadh", zone="Mirkwood"}
+    DE={label="Düsterwald", detail="Feste Galadh", zone="Düsterwald"}
+    FR={label="Forêt Noire", detail="Ost Galadh", zone="Forêt Noire"}
+    ES={label="Mirkwood", detail="Ost Galadh", zone="Mirkwood"}
+    RU={label="Лихолесье", detail="Ост Галад", zone="Лихолесье"}
+    map=[{type="RHOVANION", x=335, y=630}]
+    store=true
+    level=61
+
+[[rep]]
+    id="0x70021FA2"
+    name="Return to Enedwaith"
+    EN={label="Enedwaith", detail="Lhanuch", zone="Enedwaith"}
+    DE={label="Enedwaith", detail="Lhanuch", zone="Enedwaith"}
+    FR={label="Enedwaith", detail="Lhanuch", zone="Enedwaith"}
+    ES={label="Enedwaith", detail="Lhanuch", zone="Enedwaith"}
+    RU={label="Энедвайт", detail="Лханух", zone="Энедвайт"}
+    map=[{type="ERIADOR", x=765, y=620}]
+    store=true
+    level=62
+
+[[rep]]
+    id="0x7002C647"
+    name="Return to Galtrev"
+    EN={label="Galtrev", zone="Dunland"}
+    DE={label="Galtrev", zone="Dunland"}
+    FR={label="Galtrev", zone="Pays de Dun"}
+    ES={label="Galtrev", zone="Dunland"}
+    RU={label="Галтрев", zone="Дунланд"}
+    map=[{type="ERIADOR", x=780, y=715}]
+    store=true
+    level=65
+
+[[rep]]
+    id="0x7002C65D"
+    name="Return to Stangard"
+    EN={label="Stangard", zone="Great River"}
+    DE={label="Stangard", zone="Großer Fluss"}
+    FR={label="Stangarde", zone="Grand Fleuve"}
+    ES={label="Stangard", zone="Great River"}
+    RU={label="Стангард", zone="Великая река"}
+    map=[{type="RHOVANION", x=170, y=720},{type="ROHAN", x=515, y=90}]
+    store=true
+    level=75
+
+[[rep]]
+    id="0x70031A46"
+    name="Return to Snowbourn"
+    EN={label="Snowbourn", zone="East Rohan"}
+    DE={label="Schneegrenze", zone="Ost-Rohan"}
+    FR={label="Neigebronne", zone="Rohan est"}
+    ES={label="Snowbourn", zone="East Rohan"}
+    RU={label="Сноуборн", zone="Восточный Рохан"}
+    map=[{type="ROHAN", x=485, y=500}]
+    level=85
+
+[[rep]]
+    id="0x70036B5E"
+    name="Return to Forlaw"
+    EN={label="Forlaw", zone="Wildermore"}
+    DE={label="Forlach", zone="Wildermark"}
+    FR={label="Forloi", zone="Landes farouches"}
+    ES={label="Forlaw", zone="Wildermore"}
+    RU={label="Форлоу", zone="Вилдермор"}
+    map=[{type="ROHAN", x=480, y=175}]
+    level=85
+
+[[rep]]
+    id="0x7003DC81"
+    name="Return to Aldburg"
+    EN={label="Aldburg", zone="West Rohan"}
+    DE={label="Aldburg", zone="West-Rohan"}
+    FR={label="Aldburg", zone="Rohan de l'Ouest"}
+    ES={label="Aldburg", zone="West Rohan"}
+    RU={label="Альдбург", zone="Западный Рохан"}
+    map=[{type="ROHAN", x=540, y=640}]
+    level=88
+
+[[rep]]
+    id="0x7003DC82"
+    name="Return to Helm's Deep"
+    EN={label="Helm's Deep", zone="West Rohan"}
+    DE={label="Helms Klamm", zone="West-Rohan"}
+    FR={label="Gouffre de Helm", zone="Rohan de l'Ouest"}
+    ES={label="Helm's Deep", zone="West Rohan"}
+    RU={label="Хельмова Падь", zone="Западный Рохан"}
+    map=[{type="ROHAN", x=245, y=565}]
+    level=90
+
+[[rep]]
+    id="0x7004128F"
+    name="Return to Derndingle"
+    EN={label="Derndingle", zone="West Rohan"}
+    DE={label="Geheimnistal", zone="West-Rohan"}
+    FR={label="Derunant", zone="Rohan de l'Ouest"}
+    ES={label="Derndingle", zone="West Rohan"}
+    RU={label="Заколдованная балка", zone="Западный Рохан"}
+    map=[{type="RHOVANION", x=45, y=720},{type="ROHAN", x=295, y=275}]
+    level=90.1
+
+[[rep]]
+    id="0x700411AC"
+    name="Return to Dol Amroth"
+    EN={label="Dol Amroth", zone="Western Gondor"}
+    DE={label="Dol Amroth", zone="West-Gondor"}
+    FR={label="Dol Amroth", zone="Gondor de l'Ouest"}
+    ES={label="Dol Amroth", zone="Western Gondor"}
+    RU={label="Дол Амрот", zone="Западный Гондор"}
+    map=[{type="GONDOR", x=195, y=550}]
+    level=98
+
+[[rep]]
+    id="0x70043A6A"
+    name="Return to Arnach"
+    EN={label="Arnach", zone="Eastern Gondor"}
+    DE={label="Arnach", zone="Ost-Gondor"}
+    FR={label="Arnach", zone="Gondor de l'Ouest"}
+    ES={label="Arnach", zone="Eastern Gondor"}
+    RU={label="Арнах", zone="Восточный Гондор"}
+    map=[{type="GONDOR", x=685, y=425}]
+    level=100
+
+[[rep]]
+    id="0x7004497E"
+    name="Return to Minas Tirith"
+    EN={label="Minas Tirith", zone="Old Anórien"}
+    DE={label="Minas Tirith", zone="Alt-Anórien"}
+    FR={label="Minas Tirith", zone="Ancien Anórien"}
+    ES={label="Minas Tirith", zone="Old Anórien"}
+    RU={label="Минас Тирит", zone="Старый Анориен"}
+    map=[{type="GONDOR", x=700, y=345}]
+    level=100.1
+
+[[rep]]
+    id="0x700459A9"
+    name="Return to the War-stead"
+    EN={label="War-stead", zone="Far Anórien"}
+    DE={label="Kriegslager der Rohirrim", zone="Fernes Anórien"}
+    FR={label="Camp militaire", zone="Lointain Anórien"}
+    ES={label="War-stead", zone="Far Anórien"}
+    RU={label="Военный лагерь Рохиррим", zone="Дальний Анориен"}
+    map=[{type="GONDOR", x=635, y=140}]
+    level=102
+
+[[rep]]
+    id="0x70046CC0"
+    name="Return to after-battle Minas Tirith"
+    EN={label="Minas Tirith after-battle", zone="Anórien"}
+    DE={label="Minas Tirith nach der Schlacht", zone="Anórien"}
+    FR={label="Minas Tirith après la bataille", zone="Anórien"}
+    ES={label="Minas Tirith after-battle", zone="Anórien"}
+    RU={label="Минас Тирит (после битвы)", zone="Анориен"}
+    map=[{type="GONDOR", x=700, y=375}]
+    level=105
+
+[[rep]]
+    id="0x7004707D"
+    name="Return to after-battle Osgiliath"
+    EN={label="Osgiliath after-battle", zone="Anórien"}
+    DE={label="Osgiliath nach der Schlacht", zone="Anórien"}
+    FR={label="Osgiliath après la bataille", zone="Anórien"}
+    ES={label="Osgiliath after-battle", zone="Anórien"}
+    RU={label="Осгилиат (после битвы)", zone="Анориен"}
+    map=[{type="GONDOR", x=825, y=335}]
+    level=105.1
+
+[[rep]]
+    id="0x70047080"
+    name="Return to Henneth Annûn"
+    EN={label="Henneth Annûn", zone="Ithilien"}
+    DE={label="Henneth Annûn", zone="Ithilien"}
+    FR={label="Henneth Annûn", zone="Ithilien"}
+    ES={label="Henneth Annûn", zone="Ithilien"}
+    RU={label="Хеннет Аннун", zone="Итилиен"}
+    map=[{type="GONDOR", x=845, y=385}]
+    level=105.2
+
+[[rep]]
+    id="0x70047BF4"
+    name="Return to the Camp of the Host"
+    EN={label="Camp of the Host", zone="The Wastes"}
+    DE={label="Lager des Heeres", zone="Das Ödland"}
+    FR={label="Camp de l'armée", zone="Les Landes désertiques"}
+    ES={label="Camp of the Host", zone="The Wastes"}
+    RU={label="Лагерь Воинства Запада", zone="Гиблые земли"}
+    map=[{type="GONDOR", x=775, y=170}]
+    level=105.3
+
+[[rep]]
+    id="0x70047C1B"
+    name="Return to Haerondir"
+    EN={label="Haerondir", zone="The Wastes"}
+    DE={label="Haerondir", zone="Das Ödland"}
+    FR={label="Haerondir", zone="Les Landes désertiques"}
+    ES={label="Haerondir", zone="The Wastes"}
+    RU={label="Хаэрондир", zone="Гиблые земли"}
+    map=[{type="GONDOR", x=825, y=100}]
+    level=105.4
+
+[[rep]]
+    id="0x7004AE1D"
+    name="Return to the Udûn Foothold"
+    EN={label="Udûn Foothold", zone="Mordor"}
+    DE={label="Udûn-Brückenkopf", zone="Mordor"}
+    FR={label="Fort d'Udûn", zone="Mordor"}
+    ES={label="Udûn Foothold", zone="Mordor"}
+    RU={label="Застава Удуна", zone="Мордор"}
+    map=[{type="GONDOR", x=895, y=230}]
+    level=106
+
+[[rep]]
+    id="0x7004B8C2"
+    name="Journey to the Court of Lothlórien"
+    EN={label="Court of Lothlórien", tag="Quest", zone="Lothlórien"}
+    DE={label="Hof von Lothlórien", tag="Aufgabe", zone="Lothlórien"}
+    FR={label="Cour de Lothlórien", tag="Quête", zone="Lothlórien"}
+    ES={label="Court of Lothlórien", tag="Quest", zone="Lothlórien"}
+    RU={label="Двор Лотлориэна", tag="Задание", zone="Лотлориэн"}
+    map=[{type="RHOVANION", x=140, y=585}]
+    level=110
+
+[[rep]]
+    id="0x7004B8C3"
+    name="Journey to the Hall of the King"
+    EN={label="Hall of the King", tag="Quest", zone="Old Anórien"}
+    DE={label="Halle des Königs", tag="Aufgabe", zone="Alt-Anórien"}
+    FR={label="Palais du roi", tag="Quête", zone="Ancien Anórien"}
+    ES={label="Hall of the King", tag="Quest", zone="Old Anórien"}
+    RU={label="Зал королей", tag="Задание", zone="Старый Анориен"}
+    map=[{type="GONDOR", x=740, y=310}]
+    level=110.1
+
+[[rep]]
+    id="0x7004B8C4"
+    name="Journey to the Hall Under the Mountain"
+    EN={label="Hall Under the Mountain", tag="Quest", zone="Ered Mithrin"}
+    DE={label="Halle unter dem Berg", tag="Aufgabe", zone="Ered Mithrin"}
+    FR={label="Palais sous la Montagne", tag="Quête", zone="Ered Mithrin"}
+    ES={label="Hall Under the Mountain", tag="Quest", zone="Ered Mithrin"}
+    RU={label="Чертог-под-Горой", tag="Задание", zone="Эред Митрин"}
+    map=[{type="RHOVANION", x=630, y=115}]
+    level=110.2
+
+[[rep]]
+    id="0x7004B8C5"
+    name="Journey to Bâr Thorenion"
+    EN={label="Bâr Thorenion", tag="Quest", zone="Ithilien"}
+    DE={label="Bâr Thorenion", tag="Aufgabe", zone="Ithilien"}
+    FR={label="Bâr Thorenion", tag="Quête", zone="Ithilien"}
+    ES={label="Bâr Thorenion", tag="Quest", zone="Ithilien"}
+    RU={label="Бар Торенион", tag="Задание", zone="Итилиен"}
+    map=[{type="GONDOR", x=965, y=370}]
+    level=110.3
+
+[[rep]]
+    id="0x7004D738"
+    name="Return to Dale"
+    EN={label="Dale", zone="Eryn Lasgalen"}
+    DE={label="Thal", zone="Eryn Lasgalen"}
+    FR={label="Dale", zone="Eryn Lasgalen"}
+    ES={label="Dale", zone="Eryn Lasgalen"}
+    RU={label="Дейл", zone="Эрин Ласгален"}
+    map=[{type="RHOVANION", x=690, y=215}]
+    level=115
+
+[[rep]]
+    id="0x7004FAC3"
+    name="Return to Járnfast"
+    EN={label="Járnfast", zone="The Ironfold"}
+    DE={label="Járnfast", zone="Der Eisenbruch"}
+    FR={label="Jarnfast", zone="La Crevasse de Fer"}
+    ES={label="Járnfast", zone="The Ironfold"}
+    RU={label="Ярнфаст", zone="Железное взгорье"}
+    map=[{type="RHOVANION", x=860, y=110}]
+    level=116
+
+[[rep]]
+    id="0x7004FAC5"
+    name="Return to Skarháld"
+    EN={label="Skarháld", zone="Ered Mithrin"}
+    DE={label="Skarháld", zone="Ered Mithrin"}
+    FR={label="Skarhald", zone="Ered Mithrin"}
+    ES={label="Skarháld", zone="Ered Mithrin"}
+    RU={label="Скархальд", zone="Эред Митрин"}
+    map=[{type="RHOVANION", x=400, y=90}]
+    level=117
+
+[[rep]]
+    id="0x70052F12"
+    name="Return to Beorninghús"
+    EN={label="Beorninghús", zone="Vales of Anduin"}
+    DE={label="Beorningerhús", zone="Die Täler des Anduin"}
+    FR={label="Beorninghus", zone="Val d'Anduin"}
+    ES={label="Beorninghús", zone="Vales of Anduin"}
+    RU={label="Беорнингус", zone="Долина Андуина"}
+    map=[{type="RHOVANION", x=360, y=300}]
+    level=120
+
+[[rep]]
+    id="0x70052F04"
+    name="Return to Hultvís"
+    EN={label="Hultvís", zone="Vales of Anduin"}
+    DE={label="Hultvís", zone="Die Täler des Anduin"}
+    FR={label="Hultvis", zone="Val d'Anduin"}
+    ES={label="Hultvís", zone="Vales of Anduin"}
+    RU={label="Хультвис", zone="Долина Андуина"}
+    map=[{type="RHOVANION", x=345, y=400}]
+    level=120.1
+
+[[rep]]
+    id="0x700551F8"
+    name="Return to Estolad Lân"
+    EN={label="Estolad Lân", zone="Imlad Morgul"}
+    DE={label="Estolad Lân", zone="Imlad Morgul"}
+    FR={label="Estolad Lân", zone="Imlad Morgul"}
+    ES={label="Estolad Lân", zone="Imlad Morgul"}
+    RU={label="Эстолад Лан", zone="Имлад Моргул"}
+    map=[{type="GONDOR", x=930, y=460}]
+    level=125
+
+[[rep]]
+    id="0x70057629"
+    name="Return to Limlók"
+    EN={label="Limlók", zone="Wells of Langflood"}
+    DE={label="Limlók", zone="Quellen des Langflut"}
+    FR={label="Limlok", zone="Puits du Long Fleuve"}
+    ES={label="Limlók", zone="Wells of Langflood"}
+    RU={label="Лимлок", zone="Истоки Долгой реки"}
+    map=[{type="RHOVANION", x=315, y=230}]
+    level=130
+
+[[rep]]
+    id="0x7005856F"
+    name="Return to Annâk-khurfu"
+    EN={label="Annâk-khurfu", zone="Elderslade"}
+    DE={label="Annâk-khurfu", zone="Elderslade"}
+    FR={label="Annâk-khurfu", zone="Elderslade"}
+    ES={label="Annâk-khurfu", zone="Elderslade"}
+    RU={label="Аннак-Курфу", zone="Долина предков"}
+    map=[{type="RHOVANION", x=300, y=90}]
+    level=130.1
+
+[[rep]]
+    id="0x7005AA90"
+    name="Return to Akrâz-zahar"
+    EN={label="Akrâz-zahar", zone="Eryn Lasgalen"}
+    DE={label="Akrâz-zahar", zone="Eryn Lasgalen"}
+    FR={label="Akrâz-zahar", zone="Eryn Lasgalen"}
+    ES={label="Akrâz-zahar", zone="Eryn Lasgalen"}
+    RU={label="Акраз-Захар", zone="Эрин Ласгален"}
+    map=[{type="RHOVANION", x=720, y=115}]
+    level=130.2
+
+[[rep]]
+    id="0x7005AA92"
+    name="Return to Azanulbizar"
+    EN={label="Azanulbizar", detail="Amdân", zone="Azanulbizar"}
+    DE={label="Azanulbizar", detail="Amdân", zone="Azanulbizar"}
+    FR={label="Azanulbizar", detail="Amdân", zone="Azanulbizar"}
+    ES={label="Azanulbizar", detail="Amdân", zone="Azanulbizar"}
+    RU={label="Азанулбизар", detail="Амдан", zone="Азанулбизар"}
+    map=[{type="RHOVANION", x=180, y=555}]
+    level=130.3
+
+[[rep]]
+    id="0x7005D47C"
+    name="Return to the Noble Gate"
+    EN={label="Noble Gate", zone="Gundabad"}
+    DE={label="Prachttor", zone="Gundabad"}
+    FR={label="Porte Noble", zone="Gundabad"}
+    ES={label="Noble Gate", zone="Gundabad"}
+    RU={label="Благородные врата", zone="Гундабад"}
+    map=[{type="RHOVANION", x=160, y=130}]
+    level=131
+
+[[rep]]
+    id="0x7005D484"
+    name="Return to Leitstáth"
+    EN={label="Leitstáth", zone="Gundabad"}
+    DE={label="Leitstáth", zone="Gundabad"}
+    FR={label="Leitstath", zone="Gundabad"}
+    ES={label="Leitstáth", zone="Gundabad"}
+    RU={label="Лейтстат", zone="Гундабад"}
+    map=[{type="RHOVANION", x=240, y=65}]
+    level=135
+
+[[rep]]
+    id="0x7005A596"
+    name="Journey to the Hall of Vérnozal"
+    EN={label="Vérnozal", tag="Quest", zone="Gundabad"}
+    DE={label="Vérnozal", tag="Aufgabe", zone="Gundabad"}
+    FR={label="Vérnozal", tag="Quête", zone="Gundabad"}
+    ES={label="Vérnozal", tag="Quest", zone="Gundabad"}
+    RU={label="Вернозал", tag="Задание", zone="Гундабад"}
+    map=[{type="RHOVANION", x=155, y=45}]
+    level=140
+
+[[rep]]
+    id="0x70064ACA"
+    name="Return to Carn Dûm"
+    EN={label="Carn Dûm", zone="Angmar"}
+    DE={label="Carn Dûm", zone="Angmar"}
+    FR={label="Carn Dûm", zone="Angmar"}
+    ES={label="Carn Dûm", zone="Angmar"}
+    RU={label="Карн-Дум", zone="Angmar"}
+    map=[{type="ERIADOR", x=705, y=100}]
+    level=140.1
+
+[[rep]]
+    id="0x700658EB"
+    name="Return to Pelargir"
+    EN={label="Pelargir", zone="King's Gondor"}
+    DE={label="Pelargir", zone="Königreich Gondor"}
+    FR={label="Pelargir", zone="Gondor royal"}
+    ES={label="Pelargir", zone="King's Gondor"}
+    RU={label="Пеларгир", zone="Королевский Гондор"}
+    map=[{type="GONDOR", x=640, y=625}]
+    level=141
+
+[[rep]]
+    id="0x70068700"
+    name="Return to Dol Amroth, King's Gondor"
+    EN={label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"}
+    DE={label="Königreich Dol Amroth", zlabel="Dol Amroth", zone="Königreich Gondor"}
+    FR={label="Dol Amroth royal", zlabel="Dol Amroth", zone="Gondor royal"}
+    ES={label="King's Dol Amroth", zlabel="Dol Amroth", zone="King's Gondor"}
+    RU={label="Королевский Дол Амрот", zlabel="Дол Амрот", zone="Королевский Гондор"}
+    map=[{type="GONDOR", x=180, y=485},{type="HARADWAITH", x=355, y=70}]
+    level=142
+
+[[rep]]
+    id="0x70068703"
+    name="Return to Lond Cirion"
+    EN={label="Lond Cirion", zone="Anfalas"}
+    DE={label="Lond Cirion", zone="Anfalas"}
+    FR={label="Lond Cirion", zone="Anfalas"}
+    ES={label="Lond Cirion", zone="Anfalas"}
+    RU={label="Лонд-Кирион", zone="Анфалас"}
+    map=[{type="GONDOR", x=225, y=420},{type="HARADWAITH", x=200, y=20}]
+    level=143
+
+[[rep]]
+    id="0x70068702"
+    name="Return to Halrax"
+    EN={label="Halrax", zone="Shield Isles"}
+    DE={label="Halrax", zone="Die Schildinseln"}
+    FR={label="Halrax", zone="Les îles du Bouclier"}
+    ES={label="Halrax", zone="Shield Isles"}
+    RU={label="Халракс", zone="Острова Щита"}
+    map=[{type="HARADWAITH", x=245, y=260}]
+    level=145
+
+[[rep]]
+    id="0x70068701"
+    name="Return to Jax Phanâl"
+    EN={label="Jax Phanâl", zone="Umbar"}
+    DE={label="Jax Phanâl", zone="Umbar"}
+    FR={label="Jax Phanâl", zone="Umbar"}
+    ES={label="Jax Phanâl", zone="Umbar"}
+    RU={label="Джакс-Фанал", zone="Умбар"}
+    map=[{type="HARADWAITH", x=335, y=315}]
+    level=146
+
+[[rep]]
+    id="0x7006A9C1"
+    name="Return to Bej Mâgha"
+    EN={label="Bej Mâgha", zone="Umbar"}
+    DE={label="Bej Mâgha", zone="Umbar"}
+    FR={label="Bej Mâgha", zone="Umbar"}
+    ES={label="Bej Mâgha", zone="Umbar"}
+    RU={label="Бедж-Магда", zone="Умбар"}
+    map=[{type="HARADWAITH", x=380, y=380}]
+    level=147
+
+[[rep]]
+    id="0x700686FF"
+    name="Return to Umbar"
+    EN={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    DE={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    FR={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    ES={label="Umbar", detail="Baharbêl", zone="Umbar"}
+    RU={label="Умбар", detail="Бахарбель", zone="Умбар"}
+    map=[{type="HARADWAITH", x=475, y=370}]
+    level=148
+
+[[rep]]
+    id="0x700697F2"
+    name="Return to the Bloody Eagle Tavern"
+    EN={label="Bloody Eagle Tavern", zone="Umbar"}
+    DE={label="Zum Blutigen Adler", zone="Umbar"}
+    FR={label="Taverne de l'Aigle Sanglant", zone="Umbar"}
+    ES={label="Bloody Eagle Tavern", zone="Umbar"}
+    RU={label="Таверна Кровавый Орёл", zone="Умбар"}
+    map=[{type="HARADWAITH", x=445, y=400}]
+    level=149
+
+[[rep]]
+    id="0x70068704"
+    name="Journey to the Ledger-keepers"
+    EN={label="Ledger-Keepers", tag="Quest", zone="Umbar"}
+    DE={label="Buchhüter", tag="Aufgabe", zone="Umbar"}
+    FR={label="Gardiens des écrits", tag="Quête", zone="Umbar"}
+    ES={label="Ledger-Keepers", tag="Quest", zone="Umbar"}
+    RU={label="Хранители книг", tag="Задание", zone="Умбар"}
+    map=[{type="HARADWAITH", x=415, y=340}]
+    level=150
+
+[[rep]]
+    id="0x700686FE"
+    name="Journey to the Order of the Eagle"
+    EN={label="Order of the Eagle", tag="Quest", zone="Umbar"}
+    DE={label="Orden des Adlers", tag="Aufgabe", zone="Umbar"}
+    FR={label="L'Ordre de l'Aigle", tag="Quête", zone="Umbar"}
+    ES={label="Order of the Eagle", tag="Quest", zone="Umbar"}
+    RU={label="Орден орла", tag="Задание", zone="Умбар"}
+    map=[{type="HARADWAITH", x=415, y=370}]
+    level=150
+
+[[rep]]
+    id="0x7006C3A1"
+    name="Return to Iridír"
+    EN={label="Iridír", zone="Ikorbân"}
+    DE={label="Iridír", zone="Ikorbân"}
+    FR={label="Iridír", zone="Ikorbân"}
+    ES={label="Iridír", zone="Ikorbân"}
+    RU={label="Iridír", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=585, y=325}]
+    level=150.1
+
+[[rep]]
+    id="0x7006C3C3"
+    name="Return to Jirush"
+    EN={label="Jirush", zone="Ikorbân"}
+    DE={label="Jirush", zone="Ikorbân"}
+    FR={label="Jirush", zone="Ikorbân"}
+    ES={label="Jirush", zone="Ikorbân"}
+    RU={label="Jirush", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=590, y=415}]
+    level=150.2
+
+[[rep]]
+    id="0x7006C3B0"
+    name="Return to Urmâkh"
+    EN={label="Urmâkh", zone="Ikorbân"}
+    DE={label="Urmâkh", zone="Ikorbân"}
+    FR={label="Urmâkh", zone="Ikorbân"}
+    ES={label="Urmâkh", zone="Ikorbân"}
+    RU={label="Urmâkh", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=670, y=410}]
+    level=150.3
+
+[[rep]]
+    id="0x7006C3BC"
+    name="Return to Maurûsh"
+    EN={label="Maurûsh", zone="Ikorbân"}
+    DE={label="Maurûsh", zone="Ikorbân"}
+    FR={label="Maurûsh", zone="Ikorbân"}
+    ES={label="Maurûsh", zone="Ikorbân"}
+    RU={label="Maurûsh", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=670, y=350}]
+    level=150.4
+
+[[rep]]
+    id="0x7006EA1C"
+    name="Return to Utug-bûr"
+    EN={label="Utug-bûr", zone="Ikorbân"}
+    DE={label="Utug-bûr", zone="Ikorbân"}
+    FR={label="Utug-bûr", zone="Ikorbân"}
+    ES={label="Utug-bûr", zone="Ikorbân"}
+    RU={label="Utug-bûr", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=700, y=310}]
+    level=150.5
+
+[[rep]]
+    id="0x7006FD4B"
+    name="Return to Dun Shûma"
+    EN={label="Dun Shûma", zone="Ikorbân"}
+    DE={label="Dun Shûma", zone="Ikorbân"}
+    FR={label="Dun Shûma", zone="Ikorbân"}
+    ES={label="Dun Shûma", zone="Ikorbân"}
+    RU={label="Dun Shûma", zone="Ikorbân"}
+    map=[{type="HARADWAITH", x=590, y=445}]
+    level=150.6
+
+[[rep]]
+    id="0x70070710"
+    name="Return to Ahâba"
+    EN={label="Ahâba", zone="Harad"}
+    DE={label="Ahâba", zone="Harad"}
+    FR={label="Ahâba", zone="Harad"}
+    ES={label="Ahâba", zone="Harad"}
+    RU={label="Ahâba", zone="Harad"}
+    map=[{type="HARADWAITH", x=560, y=540}]
+    level=150.7
+
+[[rep]]
+    id="0x70070702"
+    name="Return to Zajâna"
+    EN={label="Zajâna", zone="Harad"}
+    DE={label="Zajâna", zone="Harad"}
+    FR={label="Zajâna", zone="Harad"}
+    ES={label="Zajâna", zone="Harad"}
+    RU={label="Zajâna", zone="Harad"}
+    map=[{type="HARADWAITH", x=650, y=580}]
+    level=150.71
+
+[[rep]]
+    id="0x700706F7"
+    name="Return to Jiret-menêsh"
+    EN={label="Jiret-menêsh", zone="Harad"}
+    DE={label="Jiret-menêsh", zone="Harad"}
+    FR={label="Jiret-menêsh", zone="Harad"}
+    ES={label="Jiret-menêsh", zone="Harad"}
+    RU={label="Jiret-menêsh", zone="Harad"}
+    map=[{type="HARADWAITH", x=600, y=530}]
+    level=150.72
+
+[[rep]]
+    id="0x70070715"
+    name="Return to Sul Madásh"
+    EN={label="Sul Madásh", zone="Harad"}
+    DE={label="Sul Madásh", zone="Harad"}
+    FR={label="Sul Madásh", zone="Harad"}
+    ES={label="Sul Madásh", zone="Harad"}
+    RU={label="Sul Madásh", zone="Harad"}
+    map=[{type="HARADWAITH", x=780, y=470}]
+    level=150.73
+
+[[creep]]
+    id="0x70028BBC"
+    name="Return to Gramsfoot"
+    map=[{type="CREEPS", x=180, y=120}]
+    level=1
+
+[[creep]]
+    id="0x70028BC1"
+    name="Map to Gramsfoot"
+    map=[{type="CREEPS", x=215, y=120}]
+    level=1
+
+[[creep]]
+    id="0x7002A7B9"
+    name="Map to Gramsfoot"
+    map=[{type="CREEPS", x=245, y=120}]
+    level=1
+
+[[creep]]
+    id="0x70028BB3"
+    name="Crude Map to Isendeep"
+    map=[{type="CREEPS", x=700, y=200}]
+    level=1
+
+[[creep]]
+    id="0x70028BB6"
+    name="Crude Map to Tol Ascarnen"
+    map=[{type="CREEPS", x=350, y=440}]
+    level=1
+
+[[creep]]
+    id="0x70028BB7"
+    name="Crude Map to Lugazag"
+    map=[{type="CREEPS", x=180, y=380}]
+    level=1
+
+[[creep]]
+    id="0x70028BBE"
+    name="Crude Map to Tirith Rhaw"
+    map=[{type="CREEPS", x=500, y=295}]
+    level=1
+
+[[creep]]
+    id="0x70028BBF"
+    name="Crude Map to Grimwood"
+    map=[{type="CREEPS", x=340, y=510}]
+    level=1
+
+[[creep]]
+    id="0x70028BAF"
+    name="Poor Map to Isendeep"
+    map=[{type="CREEPS", x=610, y=300}]
+    level=1
+
+[[creep]]
+    id="0x70028BB1"
+    name="Poor Map to Tol Ascarnen"
+    map=[{type="CREEPS", x=435, y=365}]
+    level=1
+
+[[creep]]
+    id="0x70028BB2"
+    name="Poor Map to Lugazag"
+    map=[{type="CREEPS", x=180, y=270}]
+    level=1
+
+[[creep]]
+    id="0x70028BB4"
+    name="Poor Map to Tirith Rhaw"
+    map=[{type="CREEPS", x=625, y=365}]
+    level=1
+
+[[creep]]
+    id="0x70028BB9"
+    name="Poor Map to Grimwood"
+    map=[{type="CREEPS", x=380, y=540}]
+    level=1
+
+[[creep]]
+    id="0x70028BC0"
+    name="Good Map to Isendeep"
+    map=[{type="CREEPS", x=310, y=95}]
+    level=1
+
+[[creep]]
+    id="0x7002A7B7"
+    name="Good Map to Isendeep"
+    map=[{type="CREEPS", x=340, y=95}]
+    level=1
+
+[[creep]]
+    id="0x70028BC2"
+    name="Good Map to Tol Ascarnen"
+    map=[{type="CREEPS", x=375, y=480}]
+    level=1
+
+[[creep]]
+    id="0x7002A7B4"
+    name="Good Map to Tol Ascarnen"
+    map=[{type="CREEPS", x=405, y=480}]
+    level=1
+
+[[creep]]
+    id="0x70028BB5"
+    name="Good Map to Lugazag"
+    map=[{type="CREEPS", x=305, y=275}]
+    level=1
+
+[[creep]]
+    id="0x7002A7B6"
+    name="Good Map to Lugazag"
+    map=[{type="CREEPS", x=335, y=275}]
+    level=1
+
+[[creep]]
+    id="0x70028BB0"
+    name="Good Map to Tirith Rhaw"
+    map=[{type="CREEPS", x=555, y=470}]
+    level=1
+
+[[creep]]
+    id="0x7002A7B5"
+    name="Good Map to Tirith Rhaw"
+    map=[{type="CREEPS", x=585, y=470}]
+    level=1
+
+[[creep]]
+    id="0x70028BBD"
+    name="Good Map to Grimwood"
+    map=[{type="CREEPS", x=445, y=650}]
+    level=1
+
+[[creep]]
+    id="0x7002A7B3"
+    name="Good Map to Grimwood"
+    map=[{type="CREEPS", x=475, y=650}]
+    level=1
