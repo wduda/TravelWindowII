@@ -10,24 +10,19 @@ import "Turbine.UI.Lotro";
 Turbine.Language.Russian = 0x10000007 -- officially removed in Update 22 and again in Update 34
 Turbine.Language.Spanish = 0x10000008 -- fabricated
 
--- Add detection for the Russian and Spanish language clients
-Turbine.Engine._GetLanguage = Turbine.Engine.GetLanguage
-function Turbine.Engine.GetLanguage()
-    local language = Turbine.Engine._GetLanguage()
-    if language == Turbine.Language.English then
-        language = ({
-            --["Mushroom"] = Turbine.Language.English,
-            --["Pilz"] = Turbine.Language.German,
-            --["Champignon"] = Turbine.Language.French,
-            ["Hongo"] = Turbine.Language.Spanish,
-            ["Гриб"] = Turbine.Language.Russian,
+function GetClientLanguage()
+    local language = ({
+        ["Mushroom"] = Turbine.Language.English,
+        ["Pilz"] = Turbine.Language.German,
+        ["Champignon"] = Turbine.Language.French,
+        ["Hongo"] = Turbine.Language.Spanish,
+        ["Гриб"] = Turbine.Language.Russian,
         })[Turbine.UI.Lotro.Shortcut(Turbine.UI.Lotro.ShortcutType.Item,
             "0x0,0x700005C5"):GetItem():GetItemInfo():GetName()] or Turbine.Language.English
-    end
     return language
 end
 
-GLocale = Turbine.Engine.GetLanguage();
+GLocale = GetClientLanguage();
 
 local Locale = {
     [Turbine.Language.English] = {},
