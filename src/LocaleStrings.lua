@@ -10,7 +10,7 @@ import "Turbine.UI.Lotro";
 Turbine.Language.Russian = 0x10000007 -- officially removed in Update 22 and again in Update 34
 Turbine.Language.Spanish = 0x10000008 -- fabricated
 
-function GetClientLanguage()
+function Turbine.Engine.GetLanguage()
     local language = ({
         ["Mushroom"] = Turbine.Language.English,
         ["Pilz"] = Turbine.Language.German,
@@ -22,7 +22,7 @@ function GetClientLanguage()
     return language
 end
 
-GLocale = GetClientLanguage();
+GLocale = Turbine.Engine.GetLanguage()
 
 local Locale = {
     [Turbine.Language.English] = {},
