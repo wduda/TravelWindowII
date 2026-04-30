@@ -857,7 +857,7 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.TOKEN_OF_LAKE_AND_RIVERS}},
                 EN={vendor="Quartermaster (Men of Dale Rewards)"},
-                DE={vendor="Quartiermeister (Menschen aus Thal - Belohnungen)"},
+                DE={vendor="Quartiermeister (Menschen von Thal - Belohnungen)"},
                 FR={vendor="Intendant (Récompenses des hommes de Dale)"},
                 ES={vendor="Intendente (Men of Dale Rewards)"},
                 RU={vendor="Интендант (Люди Дейла - награды)"}},
@@ -1315,7 +1315,7 @@ function TravelDictionary:CreateDictionaries()
                 RU={vendor="Интендант Ордена орла"}},
             {cost={{amount=10, token=LC.token.LEDGER_KEEPER_MARK}},
                 EN={vendor="Aphamâr (Allegiance Barterer)"},
-                DE={vendor="Aphamâr (Bündnis-Tauschhändler)"},
+                DE={vendor="Aphamâr (Bündnis-Tauschhändlerin)"},
                 FR={vendor="Aphamâr (Négociante d'allégeance)"},
                 ES={vendor="Aphamâr (Allegiance Barterer)"},
                 RU={vendor="Афамар (Меновщик альянса)"}},
@@ -2260,7 +2260,7 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.TOKEN_OF_LAKE_AND_RIVERS}},
                 EN={vendor="Quartermaster (Men of Dale Rewards)"},
-                DE={vendor="Quartiermeister (Menschen aus Thal - Belohnungen)"},
+                DE={vendor="Quartiermeister (Menschen von Thal - Belohnungen)"},
                 FR={vendor="Intendant (Récompenses des hommes de Dale)"},
                 ES={vendor="Intendente (Men of Dale Rewards)"},
                 RU={vendor="Интендант (Люди Дейла - награды)"}},
@@ -2718,7 +2718,7 @@ function TravelDictionary:CreateDictionaries()
                 RU={vendor="Интендант Ордена орла"}},
             {cost={{amount=10, token=LC.token.LEDGER_KEEPER_MARK}},
                 EN={vendor="Aphamâr (Allegiance Barterer)"},
-                DE={vendor="Aphamâr (Bündnis-Tauschhändler)"},
+                DE={vendor="Aphamâr (Bündnis-Tauschhändlerin)"},
                 FR={vendor="Aphamâr (Négociante d'allégeance)"},
                 ES={vendor="Aphamâr (Allegiance Barterer)"},
                 RU={vendor="Афамар (Меновщик альянса)"}},
@@ -3174,7 +3174,7 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.TOKEN_OF_LAKE_AND_RIVERS}},
                 EN={vendor="Quartermaster (Men of Dale Rewards)"},
-                DE={vendor="Quartiermeister (Menschen aus Thal - Belohnungen)"},
+                DE={vendor="Quartiermeister (Menschen von Thal - Belohnungen)"},
                 FR={vendor="Intendant (Récompenses des hommes de Dale)"},
                 ES={vendor="Intendente (Men of Dale Rewards)"},
                 RU={vendor="Интендант (Люди Дейла - награды)"}},
@@ -4642,7 +4642,7 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=30, token=LC.token.TOKEN_OF_LAKE_AND_RIVERS}},
                 EN={vendor="Quartermaster (Men of Dale Rewards)"},
-                DE={vendor="Quartiermeister (Menschen aus Thal - Belohnungen)"},
+                DE={vendor="Quartiermeister (Menschen von Thal - Belohnungen)"},
                 FR={vendor="Intendant (Récompenses des hommes de Dale)"},
                 ES={vendor="Intendente (Men of Dale Rewards)"},
                 RU={vendor="Интендант (Люди Дейла - награды)"}},
