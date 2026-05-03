@@ -818,9 +818,6 @@ function OptionsPanel:AddSkillItemForEnabling(skill)
         if not self.disableUpdates then
             _G.travel:UpdateSettings();
         end
-        if _G.travel.mapWindow ~= nil then
-            _G.travel.mapWindow:UpdateShortcut(skill.id, sender:IsChecked());
-        end
     end
 end
 
