@@ -129,6 +129,7 @@ function TravelListTab:AddItem(shortcut)
         -- show the menu when right clicked
         self.quickslots[index].MouseClick = function(sender, args)
             if (args.Button == Turbine.UI.MouseButton.Right) then
+                Menu:AddRemoveQsOption(shortcut)
                 Menu:ShowMenu();
             else
                 if (Settings.hideOnTravel == 1) then

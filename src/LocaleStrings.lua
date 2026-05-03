@@ -188,6 +188,12 @@ LC_FR.buttonIconHorse = "Cheval"
 LC_ES.buttonIconHorse = "Horse"
 LC_RU.buttonIconHorse = "Лошадь"
 
+LC_EN.hideSkill = "Hide skill"
+LC_DE.hideSkill = "Versteck-Fähigkeit"
+LC_FR.hideSkill = "Compétence de dissimulation"
+LC_ES.hideSkill = "Habilidad de esconder"
+LC_RU.hideSkill = "Навык скрытия"
+
 LC_EN.pulldownTravel = "Travel when pulldown skill selected"
 LC_DE.pulldownTravel = "Reisen wenn Fertigkeits-Pulldown selektiert"
 LC_FR.pulldownTravel = "Voyager lorsque la compétence déroulante est sélectionnée"
