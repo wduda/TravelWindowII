@@ -61,6 +61,8 @@ function SettingsMenu:Constructor(parentWindow)
     buttonSizeItems:Add(self.buttonSize150)
     buttonSizeItems:Add(self.buttonSize200)
 
+    self.removeQsOption = Turbine.UI.MenuItem(LC.hideSkill)
+
     local MenuItems = self:GetItems()
     if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
         MenuItems:Add(Mode)
@@ -160,8 +162,34 @@ function SettingsMenu:Constructor(parentWindow)
         self:ApplyToggleButtonAppearance()
         self:RefreshAfterChange(false)
     end)
+    bindMenuItem(self.removeQsOption, function()
+        if self.shortcut ~= nil then
+            self.shortcut:SetEnabled(false)
+            self.parent.dirty = true
+            self.parent:UpdateSettings()
+            _G.options.Panel:EnableFromSettings()
+        end
+    end)
 
     self:SetSelections()
+end
+
+function SettingsMenu:AddRemoveQsOption(shortcut)
+    self.shortcut = shortcut
+    self.useRemoveQsOption = true
+end
+
+function SettingsMenu:ShowMenu()
+    local items = self:GetItems()
+    if self.useRemoveQsOption then
+        self.useRemoveQsOption = false
+        if items:IndexOf(self.removeQsOption) < 0 then
+            items:Insert(1, self.removeQsOption)
+        end
+    elseif items:IndexOf(self.removeQsOption) > 0 then
+        items:Remove(self.removeQsOption)
+    end
+    Turbine.UI.ContextMenu.ShowMenu(self)
 end
 
 function SettingsMenu:SetSelections()
