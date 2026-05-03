@@ -570,7 +570,7 @@ LC_RU.haradwaithMapName = "Харадвайта"
 LC_EN.acquired = "You have acquired the (.*) skill%."
 LC_DE.acquired = "Ihr habt Euch die Fertigkeit (.*) angeeignet%."
 LC_FR.acquired = "Vous avez acquis la compétence (.*)%."
-LC_ES.acquired = "You have acquired the (.*) skill%." -- FIXME
+LC_ES.acquired = "Has adquirido la habilidad (.*)%."
 LC_RU.acquired = "Вы приобрели умение <(.*)>%."
 
 LC_EN.store = "LOTRO Store"
