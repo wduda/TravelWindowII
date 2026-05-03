@@ -1,6 +1,7 @@
 import "Turbine.Gameplay"
 import "Turbine.UI"
 import "Turbine.UI.Lotro"
+import "TravelWindowII.src.DragDropCapture"
 import "TravelWindowII.src.extensions"
 import "TravelWindowII.src.utils.BitOps"
 
@@ -31,6 +32,21 @@ function TravelGridTab:Constructor(toplevel)
         self.minCols = 1
     else
         self.minCols = 4;
+    end
+
+    self.ddCapture = DragDropCapture()
+    self.ddCapture.DragDropInternal = function(_, args)
+        self:DragDrop(args)
+    end
+    self.ddCapture.DragDropExternal = function(_, args)
+        local shortcut = args.DragDropInfo:GetShortcut()
+        local srcSkill = GetTravelSkill(shortcut:GetData())
+        if srcSkill then
+            srcSkill.shortcut:SetEnabled(false)
+            self.parent.dirty = true
+            self.parent:UpdateSettings()
+            _G.options.Panel:EnableFromSettings()
+        end
     end
 
     -- a subwindow (now a control) for containing all the quickslots
@@ -273,6 +289,12 @@ function TravelGridTab:AddItem(shortcut, margin)
                 if (Settings.hideOnTravel == 1) then
                     self.parent:SetVisible(false)
                 end
+            end
+        end
+
+        qs.MouseDown = function(_, args)
+            if args.Button == Turbine.UI.MouseButton.Left then
+                self.ddCapture:Show(self.parent)
             end
         end
 

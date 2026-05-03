@@ -177,6 +177,7 @@ function TravelWindow:Constructor()
             if Settings.escapeToClose == 1 then
                 self:SetVisible(false)
             end
+            _G.travel.GridTab.ddCapture:SetVisible(false)
             _G.options:SetVisible(false)
             if (self.hidden == true) then
                 self.hidden = false
