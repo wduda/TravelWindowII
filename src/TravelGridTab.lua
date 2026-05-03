@@ -1,18 +1,17 @@
-import "Turbine.Gameplay";
-import "Turbine.UI";
-import "Turbine.UI.Lotro";
-import "TravelWindowII.src.extensions";
-import "TravelWindowII.src.utils.BitOps";
+import "Turbine.Gameplay"
+import "Turbine.UI"
+import "Turbine.UI.Lotro"
+import "TravelWindowII.src.extensions"
+import "TravelWindowII.src.utils.BitOps"
 
---[[ This is the window for the icon grid tab of the 	 ]] --
+--[[ This is the window for the icon grid tab of the     ]] --
 --[[ Travel UI.  It handles creating all UI controls on  ]] --
---[[ the tab, and updating the UI when the settings are	 ]] --
---[[ changed.											 ]] --
+--[[ the tab, and updating the UI when the settings are  ]] --
+--[[ changed.                                            ]] --
 
-TravelGridTab = class(Turbine.UI.Control);
-
+TravelGridTab = class(Turbine.UI.Control)
 function TravelGridTab:Constructor(toplevel)
-    Turbine.UI.Control.Constructor(self);
+    Turbine.UI.Control.Constructor(self)
 
     -- set the default values
     self.quickslots = {};
@@ -248,39 +247,41 @@ end
 -- function to add a single shortcut to the tab
 function TravelGridTab:AddItem(shortcut, margin)
 
-    local index = (self.row - 1) * self.numOfCols + self.col;
+    local index = (self.row - 1) * self.numOfCols + self.col
 
-    local x = margin + ((self.col - 1) * self.colWidth) - 1;
-    local y = ((self.row - 1) * self.colWidth - self.myScrollBar:GetValue()) - 1;
+    local x = margin + ((self.col - 1) * self.colWidth) - 1
+    local y = ((self.row - 1) * self.colWidth - self.myScrollBar:GetValue()) - 1
     if not(self.parent.dirty) then
-        self.quickslots[index]:SetPosition(x, y);
+        self.quickslots[index]:SetPosition(x, y)
     else
-        self.quickslots[index] = Turbine.UI.Lotro.Quickslot();
-        self.quickslots[index]:SetSize(36, 36);
-        self.quickslots[index]:SetPosition(x, y);
-        self.quickslots[index]:SetZOrder(90);
-        self.quickslots[index]:SetUseOnRightClick(false);
-        self.quickslots[index]:SetParent(self.SubWindow);
-        self.quickslots[index]:SetShortcut(shortcut);
-        self.quickslots[index]:SetAllowDrop(false);
-        self.quickslots[index]:SetVisible(true);
+        local qs = Turbine.UI.Lotro.Quickslot()
+        qs:SetSize(36, 36)
+        qs:SetPosition(x, y)
+        qs:SetZOrder(90)
+        qs:SetUseOnRightClick(false)
+        qs:SetParent(self.SubWindow)
+        qs:SetShortcut(shortcut)
+        qs:SetAllowDrop(false)
+        qs:SetVisible(true)
 
         -- show the menu when right clicked
-        self.quickslots[index].MouseClick = function(sender, args)
+        qs.MouseClick = function(_, args)
             if (args.Button == Turbine.UI.MouseButton.Right) then
                 Menu:AddRemoveQsOption(shortcut)
-                Menu:ShowMenu();
+                Menu:ShowMenu()
             else
                 if (Settings.hideOnTravel == 1) then
-                    self.parent:SetVisible(false);
+                    self.parent:SetVisible(false)
                 end
             end
         end
 
         -- handle the mouse wheel scroll
-        self.quickslots[index].MouseWheel = function(sender, args)
-            self:DoScroll(sender, args);
+        qs.MouseWheel = function(sender, args)
+            self:DoScroll(sender, args)
         end
+
+        self.quickslots[index] =  qs
     end
 
     -- increase the row number when the column
