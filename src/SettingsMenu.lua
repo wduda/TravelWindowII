@@ -9,7 +9,7 @@ function SettingsMenu:Constructor(parentWindow)
 
     self.parent = parentWindow
 
-    Filters = TravelWindowII.src.extensions.DMenuList(LC.menuFilters)
+    local Filters = TravelWindowII.src.extensions.DMenuList(LC.menuFilters)
     self.filterGen = Turbine.UI.MenuItem(LC.menuGen)
     self.filterRace = Turbine.UI.MenuItem(LC.menuRace)
     self.filterRep = Turbine.UI.MenuItem(LC.menuRep)
@@ -20,7 +20,7 @@ function SettingsMenu:Constructor(parentWindow)
     filterItems:Add(self.filterRep)
     filterItems:Add(self.filterClass)
 
-    Mode = TravelWindowII.src.extensions.DMenuList(LC.menuMode)
+    local Mode = TravelWindowII.src.extensions.DMenuList(LC.menuMode)
     self.menuList = Turbine.UI.MenuItem(LC.menuText)
     self.menuGrid = Turbine.UI.MenuItem(LC.menuIcon)
     self.menuCaro = Turbine.UI.MenuItem(LC.menuCaro)
@@ -61,7 +61,7 @@ function SettingsMenu:Constructor(parentWindow)
     buttonSizeItems:Add(self.buttonSize150)
     buttonSizeItems:Add(self.buttonSize200)
 
-    MenuItems = self:GetItems()
+    local MenuItems = self:GetItems()
     if (PlayerAlignment == Turbine.Gameplay.Alignment.MonsterPlayer) then
         MenuItems:Add(Mode)
         MenuItems:Add(ButtonMenu)
