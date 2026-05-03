@@ -100,8 +100,12 @@ function TravelGridTab:Constructor(toplevel)
         if srcSkill == nil then return end
         local x, y = self:GetMousePosition()
         local gridIndex = self:GetGridIndex(x, y)
+        local enableSkill = not srcSkill.shortcut:IsEnabled()
         local quickslot = self.quickslots[gridIndex]
-        if quickslot == nil then return end
+        if quickslot == nil then
+            quickslot = self.quickslots[#self.quickslots]
+            if quickslot == nil then return end
+        end
         shortcut = quickslot:GetShortcut()
         if shortcut == nil then return end
         local dstSkill = GetTravelSkill(shortcut:GetData())
@@ -110,7 +114,7 @@ function TravelGridTab:Constructor(toplevel)
         local srcIndex = srcSkill.shortcut.Index
         local dstIndex = dstSkill.shortcut.Index
         if srcIndex == dstIndex then return end
-        if srcIndex > dstIndex then
+        if srcIndex > dstIndex and not enableSkill then
             while dstIndex - 1 >= 1 do
                 if TravelShortcuts[dstIndex - 1].found then
                     break
@@ -139,8 +143,12 @@ function TravelGridTab:Constructor(toplevel)
         end
 
         -- update the main window shortcuts and settings
-        _G.options.Panel:AddSortList();
-        self.parent:UpdateSettings();
+        if enableSkill then
+            srcSkill.shortcut:SetEnabled(true)
+            _G.options.Panel:EnableFromSettings()
+        end
+        _G.options.Panel:AddSortList()
+        self.parent:UpdateSettings()
     end
 end
 
