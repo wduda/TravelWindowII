@@ -28,7 +28,7 @@ function DragDropCapture:Constructor()
 end
 
 function DragDropCapture:Show(watch)
-    if watch == nil then return end
+    if watch == nil or self.watch then return end
     self:SetSize(Turbine.UI.Display.GetSize())
     self:SetVisible(true)
     self.watch = watch
