@@ -137,27 +137,36 @@ function TravelGridTab:Constructor(toplevel)
 
         local srcIndex = srcSkill.shortcut.Index
         local dstIndex = dstSkill.shortcut.Index
-        if srcIndex == dstIndex then return end
-        if srcIndex > dstIndex and not enableSkill then
+        if srcIndex > dstIndex then
+            -- move towards the back of the list
             while dstIndex - 1 >= 1 do
                 if TravelShortcuts[dstIndex - 1].found then
                     break
                 end
                 dstIndex = dstIndex - 1
             end
+
             while srcIndex > dstIndex do
                 SwapTravelSkill(srcIndex, srcIndex - 1)
                 srcIndex = srcIndex - 1
             end
-        end
-
-        if srcIndex < dstIndex then
+        else
+            -- move towards the front of the list
             local maxIndex = #TravelShortcuts
-            while dstIndex + 1 <= maxIndex do
-                if TravelShortcuts[dstIndex + 1].found then
-                    break
+            if enableSkill and gridIndex <= #self.quickslots then
+                while dstIndex - 1 >= 1 do
+                    dstIndex = dstIndex - 1
+                    if TravelShortcuts[dstIndex].found then
+                        break
+                    end
                 end
-                dstIndex = dstIndex + 1
+            else
+                while dstIndex + 1 <= maxIndex do
+                    if TravelShortcuts[dstIndex + 1].found then
+                        break
+                    end
+                    dstIndex = dstIndex + 1
+                end
             end
 
             while srcIndex < dstIndex do
