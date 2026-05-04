@@ -289,14 +289,13 @@ function TravelGridTab:AddItem(shortcut, margin)
         qs:SetAllowDrop(false)
         qs:SetVisible(true)
 
-        -- show the menu when right clicked
         qs.MouseClick = function(_, args)
             self.qsSelected = false
-            if (args.Button == Turbine.UI.MouseButton.Right) then
+            if args.Button == Turbine.UI.MouseButton.Right then
                 Menu:AddRemoveQsOption(shortcut)
                 Menu:ShowMenu()
             else
-                if (Settings.hideOnTravel == 1) then
+                if Settings.hideOnTravel == 1 then
                     self.parent:SetVisible(false)
                 end
             end
@@ -306,7 +305,6 @@ function TravelGridTab:AddItem(shortcut, margin)
             self.qsSelected = true
         end
 
-        -- handle the mouse wheel scroll
         qs.MouseWheel = function(sender, args)
             self:DoScroll(sender, args)
         end
