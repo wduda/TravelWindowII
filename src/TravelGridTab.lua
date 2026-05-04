@@ -39,6 +39,8 @@ function TravelGridTab:Constructor(toplevel)
         self:DragDrop(args)
     end
     self.ddCapture.DragDropExternal = function(_, args)
+        if BlockUIChange(self) then return end
+
         local shortcut = args.DragDropInfo:GetShortcut()
         local srcSkill = GetTravelSkill(shortcut:GetData())
         if srcSkill then
@@ -46,6 +48,13 @@ function TravelGridTab:Constructor(toplevel)
             self.parent.dirty = true
             self.parent:UpdateSettings()
             _G.options.Panel:EnableFromSettings()
+        end
+    end
+    self.DragEnter = function(_, _)
+        if self.qsSelected then
+            -- only allow removal if quickslot is moved from the travel quickslot
+            self.qsSelected = false
+            self.ddCapture:Show(self.parent)
         end
     end
 
@@ -282,6 +291,7 @@ function TravelGridTab:AddItem(shortcut, margin)
 
         -- show the menu when right clicked
         qs.MouseClick = function(_, args)
+            self.qsSelected = false
             if (args.Button == Turbine.UI.MouseButton.Right) then
                 Menu:AddRemoveQsOption(shortcut)
                 Menu:ShowMenu()
@@ -293,9 +303,7 @@ function TravelGridTab:AddItem(shortcut, margin)
         end
 
         qs.MouseDown = function(_, args)
-            if args.Button == Turbine.UI.MouseButton.Left then
-                self.ddCapture:Show(self.parent)
-            end
+            self.qsSelected = true
         end
 
         -- handle the mouse wheel scroll
