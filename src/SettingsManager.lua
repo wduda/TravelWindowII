@@ -173,7 +173,10 @@ end
 function InitDefaultSettings()
     -- set all settings to default values
     Settings = {}
+
+    -- account-wide defaults
     Settings.lastLoadedVersion = Plugins["Travel Window II"]:GetVersion()
+    Settings.hideUpdateNotify = 0
 
     for k, v in pairs(SettingsConfig) do
         if v.defValue ~= nil then
@@ -406,10 +409,6 @@ function SetSettings(settingsArg, scope, importOldSettings)
         settingsArg = {}
     end
 
-    if (not settingsArg.lastLoadedVersion or settingsArg.lastLoadedVersion == "nil") then
-        settingsArg.lastLoadedVersion = tostring(Plugins["Travel Window II"]:GetVersion())
-    end
-
     UpgradeDeprecatedSettings(settingsArg)
 
     for k, v in pairs(SettingsConfig) do
@@ -464,6 +463,10 @@ function SetSettings(settingsArg, scope, importOldSettings)
     end
 
     if scope == Turbine.DataScope.Account then
+        -- set account-wide settings
+        InitStringSetting(settingsArg, "lastLoadedVersion", Settings.lastLoadedVersion)
+        InitNumberSetting(settingsArg, "hideUpdateNotify", Settings.hideUpdateNotify)
+
         -- settingsArg.enabled/order should keep the racial id tag
         settingsArg.enabled = TableCopy(LoadEnabled)
 
@@ -500,10 +503,11 @@ function SaveSettings(scope)
 
     local settingsStrings = {}
 
-    -- Only save lastLoadedVersion for Account scope (account-wide behavior)
+    -- add account-wide only settings
     if scope == Turbine.DataScope.Account then
         -- Use the version from Settings (may be old if user clicked "Show Again Later")
         settingsStrings.lastLoadedVersion = Settings.lastLoadedVersion or Plugins["Travel Window II"]:GetVersion()
+        settingsStrings.hideUpdateNotify = tostring(Settings.hideUpdateNotify)
     end
 
     for k, v in pairs(SettingsConfig) do

@@ -657,6 +657,12 @@ LC_FR.updateDefaultMessage = "Travel Window II a été mis à jour vers"
 LC_ES.updateDefaultMessage = "Travel Window II se ha actualizado a"
 LC_RU.updateDefaultMessage = "Travel Window II обновлён до"
 
+LC_EN.hideCheck = "Hide update notifications"
+LC_DE.hideCheck = "Aktualisierungsbenachrichtigungen ausblenden"
+LC_FR.hideCheck = "Masquer les notifications de mise à jour"
+LC_ES.hideCheck = "Ocultar notificaciones de actualización"
+LC_RU.hideCheck = "Скрыть уведомления об обновлениях"
+
 -- Verify matched locale keys
 for lang, _ in pairs(Locale) do
     for k, _ in pairs(Locale[lang]) do
