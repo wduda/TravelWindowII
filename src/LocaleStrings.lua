@@ -217,6 +217,12 @@ LC_FR.hideOnCombat = "Masquer la fenêtre à l'entrée en combat"
 LC_ES.hideOnCombat = "Ocultar ventana principal al entrar en combate"
 LC_RU.hideOnCombat = "Убрать основное окно во время боя"
 
+LC_EN.showUpdateWindow = "Show update window"
+LC_DE.showUpdateWindow = "Anzeige-Aktualisierungsfenster"
+LC_FR.showUpdateWindow = "Fenêtre de mise à jour de l’affichage"
+LC_ES.showUpdateWindow = "Ventana de actualización de mostrar"
+LC_RU.showUpdateWindow = "Окно обновления показа"
+
 LC_EN.genericLabel = "Generic Skills"
 LC_DE.genericLabel = "Allgemeine Fertigkeiten"
 LC_FR.genericLabel = "Compétences générales"
