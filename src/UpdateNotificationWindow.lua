@@ -51,7 +51,7 @@ function UpdateNotificationWindow:Constructor(currentVersion, lastVersion, onClo
     if self.isMinWindow then
         self.titleBarHeight = 20
         self.contentTopOffset = 25
-        self.backColor = Turbine.UI.Color(1, 0, 0, 0)  -- Transparent
+        self.backColor = Turbine.UI.Color(1, 0, 0, 0)
     else
         self.titleBarHeight = 0
         self.contentTopOffset = 45
@@ -76,18 +76,17 @@ function UpdateNotificationWindow:Constructor(currentVersion, lastVersion, onClo
     -- Format changelog from data table
     local changelogText = self:FormatChangelog(lastVersion, currentVersion)
 
-    -- Custom title label for minimal window mode
-    self.titleLabel = Turbine.UI.Label()
-    self.titleLabel:SetParent(self)
-    self.titleLabel:SetVisible(self.isMinWindow)
-    self.titleLabel:SetPosition(0, 0)
-    self.titleLabel:SetSize(self.width, self.titleBarHeight)
-    self.titleLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter)
-    self.titleLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro15)
-    self.titleLabel:SetText(LC.updateTitle .. " " .. currentVersion)
-
-    -- Enable dragging on title label in minimal mode
     if self.isMinWindow then
+        self.titleLabel = Turbine.UI.Label()
+        self.titleLabel:SetParent(self)
+        self.titleLabel:SetVisible(true)
+        self.titleLabel:SetPosition(0, 0)
+        self.titleLabel:SetSize(self.width, self.titleBarHeight)
+        self.titleLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter)
+        self.titleLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro15)
+        self.titleLabel:SetText(LC.updateTitle .. " " .. currentVersion)
+
+        -- Enable dragging on title label in minimal mode
         self.titleLabel.MouseDown = function(_, args)
             if args.Button == Turbine.UI.MouseButton.Left then
                 self.titleLabel.isDragging = true
