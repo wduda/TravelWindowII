@@ -62,8 +62,8 @@ end
 
 -- handle unload event and save settings
 plugin.Unload = function()
-    SaveSettings(Turbine.DataScope.Account);  -- Save account-wide settings (including lastLoadedVersion)
-    SaveSettings()  -- Save character-specific settings
+    SaveSettings()
+    SaveSettingsStrings(Turbine.DataScope.Account, AccountSettingsStrings)
 end
 
 -- create a new command line command for the travel window
