@@ -751,6 +751,17 @@ function OptionsPanel:SetupGeneralTab()
             SyncUIFromSettings()
         end
     end
+
+    -- show update notify window button
+    self.updateNotifyButton = Turbine.UI.Lotro.Button()
+    self.updateNotifyButton:SetSize(220, 20)
+    self.updateNotifyButton:SetPosition(20, self:NextY(30))
+    self.updateNotifyButton:SetText(LC.showUpdateWindow)
+    self.updateNotifyButton:SetParent(self.GeneralTab)
+    self.updateNotifyButton:SetVisible(true)
+    self.updateNotifyButton.Click = function(sender, args)
+        ShowUpdateNotification(true)
+    end
 end
 
 function OptionsPanel:UpdateOptions()
