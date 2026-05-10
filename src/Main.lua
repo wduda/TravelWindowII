@@ -33,6 +33,8 @@ TravelInfo = TravelDictionary()
 -- load the player saved settings
 LoadSettings()
 
+ShowUpdateNotification()
+
 TravelInfo:SetSkillLabels()
 
 -- set up all the shortcuts
@@ -80,24 +82,7 @@ function TravelCommand:Execute(command, arguments)
     elseif (arguments == "scan") then
         _G.travel:ManualSkillScan();
     elseif (arguments == "update") then
-        -- Show update notification window
-        local currentVersion = tostring(Plugins["Travel Window II"]:GetVersion())
-        local lastVersion = Settings.lastLoadedVersion or currentVersion
-
-        _G.update = TravelWindowII.src.UpdateNotificationWindow(
-            currentVersion,
-            lastVersion,
-            function()
-                -- "Close" button clicked - save new version (account-wide)
-                Settings.lastLoadedVersion = currentVersion
-                SaveSettings(Turbine.DataScope.Account)
-                _G.update = nil
-            end,
-            function()
-                -- "Show Again Later" clicked - do nothing
-                _G.update = nil
-            end
-        )
+        ShowUpdateNotification(true)
     elseif (arguments == "debug") then
         TravelDebugEnabled = not TravelDebugEnabled
         _G.travel.MapTab:UpdateDebugLabelVisibility()

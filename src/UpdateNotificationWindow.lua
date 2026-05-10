@@ -4,6 +4,18 @@ import "TravelWindowII.src.ChangelogData"  -- For changelog data
 
 UpdateNotificationWindow = class(Turbine.UI.Lotro.Window)
 
+function ShowUpdateNotification(force)
+    if not force and Settings.hideUpdateNotify then return end
+    local currentVersion = tostring(Plugins["Travel Window II"]:GetVersion())
+    local lastVersion = Settings.lastLoadedVersion or currentVersion
+    local lastVersionNum = GetVersionNumber(Settings.lastLoadedVersion)
+    local currentVersionNum = GetVersionNumber(currentVersion)
+
+    if force or lastVersionNum < currentVersionNum then
+        _G.update = TravelWindowII.src.UpdateNotificationWindow(currentVersion, lastVersion)
+    end
+end
+
 -- Filter and format changelog data for display
 function UpdateNotificationWindow:FormatChangelog(lastVersion, currentVersion)
     if not ChangelogData or #ChangelogData == 0 then
@@ -38,7 +50,7 @@ function UpdateNotificationWindow:FormatChangelog(lastVersion, currentVersion)
     end
 end
 
-function UpdateNotificationWindow:Constructor(currentVersion, lastVersion, onClose, onRemindLater)
+function UpdateNotificationWindow:Constructor(currentVersion, lastVersion)
     if Settings.useMinWindow == 1 then
         Turbine.UI.Window.Constructor(self)
     else
@@ -132,7 +144,7 @@ function UpdateNotificationWindow:Constructor(currentVersion, lastVersion, onClo
     self.remindButton:SetText(LC.updateRemindLater)
     self.remindButton.Click = function()
         self:SetVisible(false)
-        if onRemindLater then onRemindLater() end
+        _G.update = nil
     end
 
     -- Create "Close" button (saves version) - far right
@@ -143,7 +155,9 @@ function UpdateNotificationWindow:Constructor(currentVersion, lastVersion, onClo
     self.closeButton:SetText(LC.updateClose)
     self.closeButton.Click = function()
         self:SetVisible(false)
-        if onClose then onClose() end
+        Settings.lastLoadedVersion = currentVersion
+        AccountSettingsStrings.lastLoadedVersion = Settings.lastLoadedVersion
+        _G.update = nil
     end
 
     self:SetVisible(true)

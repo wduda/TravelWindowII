@@ -406,43 +406,8 @@ function SetSettings(settingsArg, scope, importOldSettings)
         settingsArg = {}
     end
 
-    local currentVersion = tostring(Plugins["Travel Window II"]:GetVersion())
-
     if (not settingsArg.lastLoadedVersion or settingsArg.lastLoadedVersion == "nil") then
-        -- First time loading - no notification
-        settingsArg.lastLoadedVersion = currentVersion
-    else
-        -- Check if version changed (only show notification for Account scope - account-wide behavior)
-        if scope == Turbine.DataScope.Account then
-            local lastVersionNum = GetVersionNumber(settingsArg.lastLoadedVersion)
-            local currentVersionNum = GetVersionNumber(currentVersion)
-
-            if lastVersionNum < currentVersionNum then
-                -- Version updated - show notification window
-                _G.update = TravelWindowII.src.UpdateNotificationWindow(
-                    currentVersion,
-                    settingsArg.lastLoadedVersion,  -- Pass lastVersion for filtering
-                    function()
-                        -- "Close" button clicked - save new version (account-wide)
-                        settingsArg.lastLoadedVersion = currentVersion
-                        Settings.lastLoadedVersion = currentVersion
-                        _G.update = nil
-                        -- Settings will be saved automatically on plugin unload
-                    end,
-                    function()
-                        -- "Show Again Later" clicked - don't save version
-                        -- Do nothing, version stays as old value
-                        _G.update = nil
-                    end
-                )
-            else
-                -- Version same or downgraded (shouldn't happen) - no notification
-                settingsArg.lastLoadedVersion = currentVersion
-            end
-        else
-            -- For Character scope, just update the version without showing notification
-            settingsArg.lastLoadedVersion = currentVersion
-        end
+        settingsArg.lastLoadedVersion = tostring(Plugins["Travel Window II"]:GetVersion())
     end
 
     UpgradeDeprecatedSettings(settingsArg)
@@ -473,11 +438,6 @@ function SetSettings(settingsArg, scope, importOldSettings)
 
     if not settingsArg.mapTrayOrder then
         settingsArg.mapTrayOrder = {}
-    end
-
-    -- Only set Settings.lastLoadedVersion from Account scope (account-wide behavior)
-    if scope == Turbine.DataScope.Account then
-        Settings.lastLoadedVersion = settingsArg.lastLoadedVersion
     end
 
     LoadEnabled = {}
@@ -529,6 +489,10 @@ function SetSettings(settingsArg, scope, importOldSettings)
     return settingsArg
 end
 
+function SaveSettingsStrings(scope, settingsStrings)
+    PatchDataSave(scope, "TravelWindowIISettings", settingsStrings)
+end
+
 function SaveSettings(scope)
     if scope == nil then
         scope = Turbine.DataScope.Character
@@ -560,8 +524,7 @@ function SaveSettings(scope)
         AccountSettingsStrings = settingsStrings
     end
 
-    -- save the settings
-    PatchDataSave(scope, "TravelWindowIISettings", settingsStrings)
+    SaveSettingsStrings(scope, settingsStrings)
 end
 
 function ClearLoaders()
