@@ -39,26 +39,31 @@ local LC_ES = Locale[Turbine.Language.Spanish]
 local LC_RU = Locale[Turbine.Language.Russian]
 
 
-LC_EN.help = "Travel\n\ntrav show: Display the Travel Window\n" ..
-"trav hide: Hides the Travel Window\n" ..
-"trav toggle: Toggle the Travel Window\n" ..
-"trav update: Show the update notification window\n"
-LC_DE.help = "Travel\n\ntrav show: Zeigt das Travel-Fenster an\n" ..
-"trav hide: Versteckt das Travel-Fenster\n" ..
-"trav toggle: Schaltet das Travel-Fenster um\n" ..
-"trav update: Update-Fenster anzeigen\n"
-LC_FR.help = "Travel\n\ntrav show: Afficher Travel Window\n" ..
-"trav hide: Masquer Travel Window\n" ..
-"trav toggle: Toggle the Travel Window\n" ..
-"trav update: Afficher la fenêtre de actualisation\n"
-LC_ES.help = "Travel\n\ntrav show: Mostrar la Ventana de Viaje\n" ..
-"trav hide: Ocultar la Ventana de Viaje\n" ..
-"trav toggle: Alternar la Ventana de Viaje\n" ..
-"trav update: Mostrar la ventana de notificación de actualización\n"
-LC_RU.help = "Travel\n\ntrav show: Показать Travel Window\n" ..
-"trav hide: Спрятать Travel Window\n" ..
-"trav toggle: Переключить показ Travel Window\n" ..
-"trav update: Показать окно Обновление\n"
+LC_EN.help = "Travel Window II:\n" ..
+" trav show: Display the Travel Window\n" ..
+" trav hide: Hides the Travel Window\n" ..
+" trav toggle: Toggle the Travel Window\n" ..
+" trav update: Show the update notification window\n"
+LC_DE.help = "Travel Window II:\n" ..
+" trav show: Zeigt das Travel-Fenster an\n" ..
+" trav hide: Versteckt das Travel-Fenster\n" ..
+" trav toggle: Schaltet das Travel-Fenster um\n" ..
+" trav update: Update-Fenster anzeigen\n"
+LC_FR.help = "Travel Window II:\n" ..
+" trav show: Afficher Travel Window\n" ..
+" trav hide: Masquer Travel Window\n" ..
+" trav toggle: Toggle the Travel Window\n" ..
+" trav update: Afficher la fenêtre de actualisation\n"
+LC_ES.help = "Travel Window II:\n" ..
+" trav show: Mostrar la Ventana de Viaje\n" ..
+" trav hide: Ocultar la Ventana de Viaje\n" ..
+" trav toggle: Alternar la Ventana de Viaje\n" ..
+" trav update: Mostrar la ventana de notificación de actualización\n"
+LC_RU.help = "Travel Window II:\n" ..
+" trav show: Показать Travel Window\n" ..
+" trav hide: Спрятать Travel Window\n" ..
+" trav toggle: Переключить показ Travel Window\n" ..
+" trav update: Показать окно Обновление\n"
 
 -- window title strings
 LC_EN.mainTitle = "Travel"
