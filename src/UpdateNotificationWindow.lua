@@ -5,10 +5,10 @@ import "TravelWindowII.src.ChangelogData"  -- For changelog data
 UpdateNotificationWindow = class(Turbine.UI.Lotro.Window)
 
 function ShowUpdateNotification(force)
-    if not force and Settings.hideUpdateNotify then return end
-    local currentVersion = tostring(Plugins["Travel Window II"]:GetVersion())
+    if not force and Settings.hideUpdateNotify > 0 then return end
+    local currentVersion = Plugins["Travel Window II"]:GetVersion()
     local lastVersion = Settings.lastLoadedVersion or currentVersion
-    local lastVersionNum = GetVersionNumber(Settings.lastLoadedVersion)
+    local lastVersionNum = GetVersionNumber(lastVersion)
     local currentVersionNum = GetVersionNumber(currentVersion)
 
     if force or lastVersionNum < currentVersionNum then
@@ -31,8 +31,10 @@ function UpdateNotificationWindow:FormatChangelog(lastVersion, currentVersion)
     for _, entry in ipairs(ChangelogData) do
         local versionNum = GetVersionNumber(entry.version)
 
-        -- Include if version is between lastVersion (exclusive) and currentVersion (inclusive)
-        if versionNum > lastVersionNum and versionNum <= currentVersionNum then
+        -- Include if the version is equal to the currentVersion or
+        -- if the version is between lastVersion (exclusive) and currentVersion (inclusive)
+        if (versionNum == currentVersionNum) or
+                (versionNum > lastVersionNum and versionNum <= currentVersionNum) then
             -- Format this version section
             local section = "== " .. entry.version .. " ==\n"
             for _, change in ipairs(entry.changes) do
@@ -122,7 +124,7 @@ function UpdateNotificationWindow:Constructor(currentVersion, lastVersion)
     self.textBox = Turbine.UI.Lotro.TextBox()
     self.textBox:SetParent(self)
     self.textBox:SetPosition(10, self.contentTopOffset)
-    self.textBox:SetSize(self.width - 30, self.height - self.contentTopOffset - 55)
+    self.textBox:SetSize(self.width - 30, self.height - self.contentTopOffset - 85)
     self.textBox:SetMultiline(true)
     self.textBox:SetReadOnly(true)
     self.textBox:SetText(changelogText)
@@ -136,6 +138,14 @@ function UpdateNotificationWindow:Constructor(currentVersion, lastVersion)
     self.scrollBar:SetSize(10, self.height - self.contentTopOffset - 55)
     self.textBox:SetVerticalScrollBar(self.scrollBar)
 
+    self.hideCheck = Turbine.UI.Lotro.CheckBox()
+    self.hideCheck:SetParent(self)
+    self.hideCheck:SetPosition(10, self.height - 90)
+    self.hideCheck:SetWidth(300)
+    self.hideCheck:SetText(" " .. LC.hideCheck)
+    self.hideCheck:SetChecked(Settings.hideUpdateNotify > 0)
+    self.hideCheck:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleLeft)
+
     -- Create "Show Again Later" button (doesn't save version) - far left
     self.remindButton = Turbine.UI.Lotro.Button()
     self.remindButton:SetParent(self)
@@ -144,6 +154,7 @@ function UpdateNotificationWindow:Constructor(currentVersion, lastVersion)
     self.remindButton:SetText(LC.updateRemindLater)
     self.remindButton.Click = function()
         self:SetVisible(false)
+        self:UpdateNotifySetting()
         _G.update = nil
     end
 
@@ -157,8 +168,18 @@ function UpdateNotificationWindow:Constructor(currentVersion, lastVersion)
         self:SetVisible(false)
         Settings.lastLoadedVersion = currentVersion
         AccountSettingsStrings.lastLoadedVersion = Settings.lastLoadedVersion
+        self:UpdateNotifySetting()
         _G.update = nil
     end
 
     self:SetVisible(true)
+end
+
+function UpdateNotificationWindow:UpdateNotifySetting()
+    if self.hideCheck:IsChecked() then
+        Settings.hideUpdateNotify = 1
+    else
+        Settings.hideUpdateNotify = 0
+    end
+    AccountSettingsStrings.hideUpdateNotify = tostring(Settings.hideUpdateNotify)
 end
