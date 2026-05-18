@@ -281,14 +281,65 @@ end
 -- function to add a single shortcut to the tab
 function TravelGridTab:AddItem(shortcut, margin)
 
-    local index = (self.row - 1) * self.numOfCols + self.col
+    local width = 2
+    local height = 32
+    local offset = 2
 
+    local index = (self.row - 1) * self.numOfCols + self.col
     local x = margin + ((self.col - 1) * self.colWidth) - 1
     local y = ((self.row - 1) * self.colWidth - self.myScrollBar:GetValue()) - 1
     if not(self.parent.dirty) then
         self.quickslots[index]:SetPosition(x, y)
+        self.quickslots[index].left:SetPosition(x + offset, y + offset)
+        self.quickslots[index].top:SetPosition(x + offset, y + offset)
+        self.quickslots[index].right:SetPosition(x + height + offset, y + offset)
+        self.quickslots[index].bottom:SetPosition(x + offset, y + height + offset)
     else
+        local zorder = 89
+        local left = Turbine.UI.Control()
+        local top = Turbine.UI.Control()
+        local right = Turbine.UI.Control()
+        local bottom = Turbine.UI.Control()
+        local color = Turbine.UI.Color(0, 0, 0)
+        if shortcut:GetTravelType() == FilterId.CLASS then
+            color = Turbine.UI.Color(0.51,0,0)
+            zorder = 91
+        end
+        left:SetBackColor(color)
+        top:SetBackColor(color)
+        right:SetBackColor(color)
+        bottom:SetBackColor(color)
+
+        left:SetSize(width, height)
+        top:SetSize(height, width)
+        right:SetSize(width, height + 2)
+        bottom:SetSize(height, width)
+
+        left:SetPosition(x + offset, y + offset)
+        top:SetPosition(x + offset, y + offset)
+        right:SetPosition(x + height + offset, y + offset)
+        bottom:SetPosition(x + offset, y + height + offset)
+
+        left:SetParent(self.SubWindow)
+        top:SetParent(self.SubWindow)
+        right:SetParent(self.SubWindow)
+        bottom:SetParent(self.SubWindow)
+
+        left:SetMouseVisible(false)
+        top:SetMouseVisible(false)
+        right:SetMouseVisible(false)
+        bottom:SetMouseVisible(false)
+
+        left:SetZOrder(zorder)
+        top:SetZOrder(zorder)
+        right:SetZOrder(zorder)
+        bottom:SetZOrder(zorder)
+
         local qs = Turbine.UI.Lotro.Quickslot()
+        qs.left = left
+        qs.top = top
+        qs.right = right
+        qs.bottom = bottom
         qs:SetSize(36, 36)
         qs:SetPosition(x, y)
         qs:SetZOrder(90)
