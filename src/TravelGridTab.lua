@@ -239,7 +239,7 @@ function TravelGridTab:SetItems()
             -- make sure skill is trained and enabled
             if shortcut.found and shortcut:IsEnabled() then
                 -- apply skill type filter if set in options
-                if hasbit(Settings.filters, bit(shortcut:GetTravelType())) then
+                if shortcut:TravelTypeEnabled() then
                     table.insert(self.selected, shortcut);
                 end
             end

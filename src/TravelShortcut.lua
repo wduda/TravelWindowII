@@ -116,12 +116,8 @@ function TravelShortcut:GetIndex()
     return self.Index;
 end
 
-function TravelShortcut:SetTravelType(type)
-    -- for future use
-end
-
-function TravelShortcut:GetTravelType()
-    return self.travelType;
+function TravelShortcut:TravelTypeEnabled()
+    return hasbit(Settings.filters, bit(self.travelType))
 end
 
 function TravelShortcut:GetAcquireText()
@@ -169,7 +165,7 @@ function TravelShortcut:InitAcquireText(item)
     local text = ""
     if item.store then
         text = LC.source .. LC.store .. "\n"
-        if self.travelType == 1 then
+        if self.travelType == FilterId.GEN then
             return text .. LC.cost .. "350 " .. LC.token.LOTRO_POINT, 2
         else
             return text .. LC.cost .. "295 " .. LC.token.LOTRO_POINT, 2
