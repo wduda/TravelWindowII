@@ -113,7 +113,7 @@ LC_RU.rep.WOODCUTTERS_BROTHERHOOD = "Братство дровосеков"
 LC_EN.rep.DEFENDERS_OF_ANGLE = "Defenders of The Angle"
 LC_DE.rep.DEFENDERS_OF_ANGLE = "Verteidiger des Bogens"
 LC_FR.rep.DEFENDERS_OF_ANGLE = "Défenseurs de l'Angle"
-LC_ES.rep.DEFENDERS_OF_ANGLE = "Defensores de El Ángulo"
+LC_ES.rep.DEFENDERS_OF_ANGLE = "Defensores del Ángulo"
 LC_RU.rep.DEFENDERS_OF_ANGLE = "Защитники Стрелки"
 
 LC_EN.rep.YONDER_WATCH = "The Yonder-watch"
@@ -593,7 +593,7 @@ LC_RU.token.IRON_COIN_OF_CARDOLAN = "Железная монета Кардол�
 LC_EN.token.GREYFLOOD_MARK = "Greyflood Mark"
 LC_DE.token.GREYFLOOD_MARK = "Grauflut-Zeichen"
 LC_FR.token.GREYFLOOD_MARK = "Marque du Flot Gris"
-LC_ES.token.GREYFLOOD_MARK = "Marca de Flotagris"
+LC_ES.token.GREYFLOOD_MARK = "Marca del Aguagrís"
 LC_RU.token.GREYFLOOD_MARK = "Марка Седой реки"
 
 LC_EN.token.SARSKILLIN = "Sárskillin"
