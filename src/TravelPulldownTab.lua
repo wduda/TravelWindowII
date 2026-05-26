@@ -123,7 +123,7 @@ function TravelPulldownTab:SetItems()
     -- add the shortcuts to the combo box
     for i = 1, #TravelShortcuts, 1 do
         if TravelShortcuts[i].found and TravelShortcuts[i]:IsEnabled() then
-            if (hasbit(Settings.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
+            if TravelShortcuts[i]:TravelTypeEnabled() then
                 self.pulldown:AddItem(TravelShortcuts[i], i);
             end
         end

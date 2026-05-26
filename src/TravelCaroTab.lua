@@ -101,7 +101,7 @@ function TravelCaroTab:SetItems()
     for i = 1, #TravelShortcuts, 1 do
         if (TravelShortcuts[i]:IsEnabled()) then
             -- apply skill type filter if set in options
-            if (hasbit(Settings.filters, bit(TravelShortcuts[i]:GetTravelType()))) then
+            if TravelShortcuts[i]:TravelTypeEnabled() then
                 -- make sure skill is trained, lookup by ingame name
                 if TravelShortcuts[i].found then
                     table.insert(self.shortcuts, TravelShortcuts[i]);
