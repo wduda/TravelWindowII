@@ -4,6 +4,18 @@
 
 ChangelogData = {
     {
+        version = "v4.8.0",
+        changes = {
+            "feat: major ES translation support - all skills and most of the interface should be translated, bug reports welcome",
+            "feat: minor RU translation added",
+            "feat: minor DE translations added",
+            "feat: skills now have a \"Hide Skill\" option in their context menu in Text List and Icon Grid view (more views to get that later)",
+            "feat: added option to hide update notification window permanently",
+            "feat: changelog window can now be opened from the general settings tab",
+            "fix: global settings were being replaced by character settings on close",
+        }
+    },
+    {
         version = "v4.7.0",
         changes = {
             "feat: updated vendor names in the Find Tab and refreshed RU skill and source translations up to U47.1",

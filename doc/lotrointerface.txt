@@ -42,16 +42,18 @@ Travel Window II has two authors who develop it actively. If you can provide imp
 
 Version history:
 
-v4.7.0
+v4.8.0
 
-- feat: updated vendor names in the Find Tab and refreshed RU skill and source translations up to U47.1
-- fix: fixed travel to kinship member's house in FR after unannounced renaming of skill by SSG
-- fix: sorting of travel skills should now always behave correctly again
-- fix: plugin now loads again for creep characters when travel skills have no acquisition data
-- fix: more stable handling of localized skill data under the hood
+- feat: major ES translation support - all skills and most of the interface should be translated, bug reports welcome
+- feat: minor RU translation added
+- feat: minor DE translations added
+- feat: skills now have a "Hide Skill" option in their context menu in Text List and Icon Grid view (more views to get that later)
+- feat: added option to hide update notification window permanently
+- feat: changelog window can now be opened from the general settings tab
+- fix: global settings were being replaced by character settings on close
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/master/CHANGELOG.md"]here[/URL].
 
-Help with further translations for DE, FR and RU clients is always welcome. Ideally submitted as pull requests on GitHub, but any way can be accomodated really.
+Help with further translations for DE, FR, ES and RU clients is always welcome. Ideally submitted as pull requests on GitHub, but any way can be accomodated really.
 
 Other than contacting here on lotrointerface, you can also do that on the [url=https://forums.lotro.com/index.php?threads/plugin-travel-window-ii.1400/]official forums thread[/url], on [url=https://github.com/wduda/TravelWindowII/discussions]GitHub[/url] where you will also find the source code, and I also monitor a post on the official [url=https://discord.com/channels/1253092003218985092/1339975894902505523]LOTRO Discord[/url].
