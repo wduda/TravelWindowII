@@ -422,6 +422,13 @@ function TravelMapTab:ClearRegionHotspots()
     self.regionHotspots = {}
 end
 
+function TravelMapTab:ShowQuickslotMenu(travelShortcut)
+    if travelShortcut ~= nil then
+        Menu:AddRemoveQsOption(travelShortcut)
+    end
+    Menu:ShowMenu()
+end
+
 function TravelMapTab:ToggleHotspotOverlay(index, visible)
     local overlay = self.regionHotspotOverlays[index]
     if overlay ~= nil then
@@ -611,7 +618,7 @@ function TravelMapTab:AddRacialLocation()
         if IsShortcutTrained(id) then
             local sType = Turbine.UI.Lotro.ShortcutType.Skill
             local shortcut = Turbine.UI.Lotro.Shortcut(sType, id)
-            self:AddSingleShortcut(racial.map[1], shortcut)
+            self:AddSingleShortcut(racial.map[1], shortcut, racial.shortcut)
         end
     end
 end
@@ -624,7 +631,7 @@ function TravelMapTab:AddCreepShortcuts()
         local map = creep.skills[i].map
         local id = creep.skills[i].id
         if map and #map > 0 then
-            self:AddSingleShortcut(map[1], Turbine.UI.Lotro.Shortcut(sType, id))
+            self:AddSingleShortcut(map[1], Turbine.UI.Lotro.Shortcut(sType, id), creep.skills[i].shortcut)
         end
     end
 end
@@ -640,7 +647,7 @@ function TravelMapTab:AddLocations(skills)
                 if item ~= nil and #item == 3 and self.currentRegion == item[1] then
                     local id = skill.id
                     if skill.shortcut:IsEnabled() then
-                        self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id))
+                        self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id), skill.shortcut)
                     end
                 end
             end
@@ -649,7 +656,7 @@ function TravelMapTab:AddLocations(skills)
 end
 
 -- Add a single shortcut to the map
-function TravelMapTab:AddSingleShortcut(location, shortcut)
+function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
     local index = #self.quickslots + 1
     local qs = Turbine.UI.Lotro.Quickslot()
     qs:SetShortcut(shortcut)
@@ -666,7 +673,7 @@ function TravelMapTab:AddSingleShortcut(location, shortcut)
 
     qs.MouseClick = function(_, args)
         if args.Button == Turbine.UI.MouseButton.Right then
-            Menu:ShowMenu()
+            self:ShowQuickslotMenu(travelShortcut)
         else
             if Settings.hideOnTravel == 1 then
                 self.parent:SetVisible(false)
@@ -723,7 +730,7 @@ function TravelMapTab:AddPanelQuickslots()
 
         qs.MouseClick = function(_, args)
             if args.Button == Turbine.UI.MouseButton.Right then
-                Menu:ShowMenu()
+                self:ShowQuickslotMenu(skills[i].shortcut)
             else
                 if Settings.hideOnTravel == 1 then
                     self.parent:SetVisible(false)
