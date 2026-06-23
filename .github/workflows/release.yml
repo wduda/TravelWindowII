@@ -43,7 +43,7 @@ jobs:
           directory: '.'
           path: 'TravelWindowII'
           filename: 'TravelWindowII-${{ github.event.inputs.tag }}.zip'
-          exclusions: '*.git* *.github* *.vscode* *.gitignore* TravelWindowII/doc/* TravelWindowII/screenshots/*'
+          exclusions: '*.git* *.github* *.vscode* *.gitignore* TravelWindowII/data/* TravelWindowII/doc/* TravelWindowII/plans/* TravelWindowII/screenshots/*'
 
       # parse changelog to set release description
       - name: extract latest changelog entry
