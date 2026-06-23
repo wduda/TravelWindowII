@@ -752,7 +752,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Guide vers Osgiliath après la bataille", label="Osgiliath après la bataille", zone="Anórien"},
         ES={name="Guía a Osgiliath después de la batalla", label="Osgiliath after-battle", zone="Anórien"},
         RU={name="Путь в Осгилиат (после битвы)", label="Осгилиат (после битвы)", zone="Анориен"},
-        map={{MapType.GONDOR, 855, 335}},
+        map={{MapType.GONDOR, 875, 385}},
         overlap={"0x7004707D"},
         acquire={
             {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER_PIECE}},
@@ -772,7 +772,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Guide vers Henneth Annûn", label="Henneth Annûn", zone="Ithilien"},
         ES={name="Guía a Henneth Annûn", label="Henneth Annûn", zone="Ithilien"},
         RU={name="Путь в Хеннет Аннун", label="Хеннет Аннун", zone="Итилиен"},
-        map={{MapType.GONDOR, 875, 385}},
+        map={{MapType.GONDOR, 855, 335}},
         overlap={"0x70047080"},
         acquire={
             {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER_PIECE}},
@@ -2155,7 +2155,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Rassemblement : Osgiliath après la bataille", label="Osgiliath après la bataille", zone="Anórien"},
         ES={name="Acantonarse en Osgiliath después de la batalla", label="Osgiliath after-battle", zone="Anórien"},
         RU={name="Сбор в Осгилиате (после битвы)", label="Осгилиат (после битвы)", zone="Анориен"},
-        map={{MapType.GONDOR, 855, 335}},
+        map={{MapType.GONDOR, 875, 385}},
         overlap={"0x7004707D"},
         acquire={
             {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER_PIECE}},
@@ -2175,7 +2175,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Rassemblement : Henneth Annûn", label="Henneth Annûn", zone="Ithilien"},
         ES={name="Acantonarse en Henneth Annûn", label="Henneth Annûn", zone="Ithilien"},
         RU={name="Сбор в Хеннет Аннун", label="Хеннет Аннун", zone="Итилиен"},
-        map={{MapType.GONDOR, 875, 385}},
+        map={{MapType.GONDOR, 855, 335}},
         overlap={"0x70047080"},
         acquire={
             {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER_PIECE}},
@@ -3149,7 +3149,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Naviguer vers Osgiliath après la bataille", label="Osgiliath après la bataille", zone="Anórien"},
         ES={name="Navegar a Osgiliath después de la batalla", label="Osgiliath after-battle", zone="Anórien"},
         RU={name="Отплытие в Осгилиат (после битвы)", label="Осгилиат (после битвы)", zone="Анориен"},
-        map={{MapType.GONDOR, 855, 335}},
+        map={{MapType.GONDOR, 875, 385}},
         overlap={"0x7004707D"},
         acquire={
             {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER_PIECE}},
@@ -4471,7 +4471,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Retour à Osgiliath après la bataille", label="Osgiliath après la bataille", zone="Anórien"},
         ES={name="Volver a Osgiliath después de la batalla", label="Osgiliath after-battle", zone="Anórien"},
         RU={name="Возвращение в Осгилиат (после битвы)", label="Осгилиат (после битвы)", zone="Анориен"},
-        map={{MapType.GONDOR, 825, 335}},
+        map={{MapType.GONDOR, 845, 385}},
         acquire={
             {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER_PIECE}},
                 EN={vendor="Quartermaster (Host of the West)"},
@@ -4490,7 +4490,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Retour à Henneth Annûn", label="Henneth Annûn", zone="Ithilien"},
         ES={name="Volver a Henneth Annûn", label="Henneth Annûn", zone="Ithilien"},
         RU={name="Возвращение в Хеннет Аннун", label="Хеннет Аннун", zone="Итилиен"},
-        map={{MapType.GONDOR, 845, 385}},
+        map={{MapType.GONDOR, 825, 335}},
         acquire={
             {cost={{amount=20, token=LC.token.HOST_OF_WEST_SILVER_PIECE}},
                 EN={vendor="Quartermaster (Host of the West)"},
