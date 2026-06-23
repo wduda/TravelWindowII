@@ -615,7 +615,7 @@ function TravelMapTab:AddRacialLocation()
     end
     if racial.map[1][1] == self.currentRegion then
         local id = racial.id
-        if IsShortcutTrained(id) then
+        if racial.shortcut ~= nil and racial.shortcut:IsEnabled() and IsShortcutTrained(id) then
             local sType = Turbine.UI.Lotro.ShortcutType.Skill
             local shortcut = Turbine.UI.Lotro.Shortcut(sType, id)
             self:AddSingleShortcut(racial.map[1], shortcut, racial.shortcut)
