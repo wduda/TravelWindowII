@@ -470,7 +470,7 @@
     FR={label="Osgiliath après la bataille", zone="Anórien"}
     ES={label="Osgiliath after-battle", zone="Anórien"}
     RU={label="Осгилиат (после битвы)", zone="Анориен"}
-    map=[{type="GONDOR", x=855, y=335}]
+    map=[{type="GONDOR", x=875, y=385}]
     overlap=["0x7004707D"]
     level=105.1
 
@@ -482,7 +482,7 @@
     FR={label="Henneth Annûn", zone="Ithilien"}
     ES={label="Henneth Annûn", zone="Ithilien"}
     RU={label="Хеннет Аннун", zone="Итилиен"}
-    map=[{type="GONDOR", x=875, y=385}]
+    map=[{type="GONDOR", x=855, y=335}]
     overlap=["0x70047080"]
     level=105.2
 
@@ -1244,7 +1244,7 @@
     FR={label="Osgiliath après la bataille", zone="Anórien"}
     ES={label="Osgiliath after-battle", zone="Anórien"}
     RU={label="Осгилиат (после битвы)", zone="Анориен"}
-    map=[{type="GONDOR", x=855, y=335}]
+    map=[{type="GONDOR", x=875, y=385}]
     overlap=["0x7004707D"]
     level=105.1
 
@@ -1256,7 +1256,7 @@
     FR={label="Henneth Annûn", zone="Ithilien"}
     ES={label="Henneth Annûn", zone="Ithilien"}
     RU={label="Хеннет Аннун", zone="Итилиен"}
-    map=[{type="GONDOR", x=875, y=385}]
+    map=[{type="GONDOR", x=855, y=335}]
     overlap=["0x70047080"]
     level=105.2
 
@@ -1802,7 +1802,7 @@
     FR={label="Osgiliath après la bataille", zone="Anórien"}
     ES={label="Osgiliath after-battle", zone="Anórien"}
     RU={label="Осгилиат (после битвы)", zone="Анориен"}
-    map=[{type="GONDOR", x=855, y=335}]
+    map=[{type="GONDOR", x=875, y=385}]
     overlap=["0x7004707D"]
     level=105.1
 
@@ -2636,7 +2636,7 @@
     FR={label="Osgiliath après la bataille", zone="Anórien"}
     ES={label="Osgiliath after-battle", zone="Anórien"}
     RU={label="Осгилиат (после битвы)", zone="Анориен"}
-    map=[{type="GONDOR", x=825, y=335}]
+    map=[{type="GONDOR", x=845, y=385}]
     level=105.1
 
 [[rep]]
@@ -2647,7 +2647,7 @@
     FR={label="Henneth Annûn", zone="Ithilien"}
     ES={label="Henneth Annûn", zone="Ithilien"}
     RU={label="Хеннет Аннун", zone="Итилиен"}
-    map=[{type="GONDOR", x=845, y=385}]
+    map=[{type="GONDOR", x=825, y=335}]
     level=105.2
 
 [[rep]]
