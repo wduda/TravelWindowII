@@ -2,165 +2,143 @@
     This is an extension of the Turbine Control class used to create
     a button composed of 3 images that can be used on a tab panel.
 ]] --
-import "Turbine.UI";
-import "Turbine.UI.Lotro";
+import "Turbine.UI"
+import "Turbine.UI.Lotro"
 
-DTabButton = class(Turbine.UI.Control);
+DTabButton = class(Turbine.UI.Control)
 
 function DTabButton:Constructor()
-    Turbine.UI.Control.Constructor(self);
+    Turbine.UI.Control.Constructor(self)
 
-    --[[ instance variables ]] --
-    self.selected = false;
-    self.mouseOver = false;
-    self.index = 0;
-    self.lastTime = 0;
+    self.selected = false
+    self.mouseOver = false
+    self.index = 0
+    self.lastTime = 0
+    self.imagePathsSet = false
+    self.leftImage = nil
+    self.centerImage = nil
+    self.rightImage = nil
+    self.leftHighlightImage = nil
+    self.centerHighlightImage = nil
+    self.rightHighlightImage = nil
 
-    -- Set the window to recieve update messages
-    self:SetWantsUpdates(true);
-    self:SetAllowDrop(true);
+    -- Create the 3 buttons that will be used to hold the images
+    self.left = Turbine.UI.Button()
+    self.left:SetBlendMode(Turbine.UI.BlendMode.AlphaBlend)
+    self.left:SetSize(12, 29)
+    self.left:SetPosition(0, 0)
+    self.left:SetParent(self)
 
-    -- Create the 3 buttons that will be used to hold
-    -- the images
-    self.left = Turbine.UI.Button();
-    self.left:SetBlendMode(Turbine.UI.BlendMode.AlphaBlend);
-    self.left:SetSize(12, 29);
-    self.left:SetPosition(0, 0);
-    self.left:SetZOrder(1);
-    self.left:SetParent(self);
+    self.center = Turbine.UI.Button()
+    self.center:SetBlendMode(Turbine.UI.BlendMode.AlphaBlend)
+    self.center:SetSize(self:GetWidth() - 28, 29)
+    self.center:SetPosition(12, 0)
+    self.center:SetParent(self)
+    self.center:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter)
 
-    self.center = Turbine.UI.Button();
-    self.center:SetBlendMode(Turbine.UI.BlendMode.AlphaBlend);
-    self.center:SetSize(self:GetWidth() - 28, 29);
-    self.center:SetPosition(12, 0);
-    self.center:SetZOrder(2);
-    self.center:SetParent(self);
-    self.center:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
+    self.right = Turbine.UI.Button()
+    self.right:SetBlendMode(Turbine.UI.BlendMode.AlphaBlend)
+    self.right:SetPosition(self:GetWidth() - 18, 0)
+    self.right:SetSize(16, 29)
+    self.right:SetParent(self)
 
-    self.right = Turbine.UI.Button();
-    self.right:SetBlendMode(Turbine.UI.BlendMode.AlphaBlend);
-    self.right:SetPosition(self:GetWidth() - 18, 0);
-    self.right:SetSize(16, 29);
-    self.right:SetZOrder(3);
-    self.right:SetParent(self);
-
-    --[[ Mouse Click Event Handlers ]] --
-    self.left.MouseClick = function(sender, args)
-        myParent = self:GetParent();
-        myParent:TabMouseClick(self);
+    local MouseEnter = function(_, _)
+        self.mouseOver = true
+        self:UpdateVisual()
     end
-    self.center.MouseClick = function(sender, args)
-        myParent = self:GetParent();
-        myParent:TabMouseClick(self);
+    local MouseLeave = function(_, _)
+        self.mouseOver = false
+        self:UpdateVisual()
     end
-    self.right.MouseClick = function(sender, args)
-        myParent = self:GetParent();
-        myParent:TabMouseClick(self);
+    self.left.MouseEnter = MouseEnter
+    self.center.MouseEnter = MouseEnter
+    self.right.MouseEnter = MouseEnter
+
+    self.left.MouseLeave = MouseLeave
+    self.center.MouseLeave = MouseLeave
+    self.right.MouseLeave = MouseLeave
+
+    self.SizeChanged = function(_, _)
+        self.center:SetSize(self:GetWidth() - 28, 29)
+        self.right:SetPosition(self:GetWidth() - 18, 0)
     end
+end
 
-    --[[ Mouse Over Event Handlers ]] --
-    self.left.MouseEnter = function(sender, args) self.mouseOver = true; end
-    self.center.MouseEnter = function(sender, args) self.mouseOver = true; end
-    self.right.MouseEnter = function(sender, args) self.mouseOver = true; end
+function DTabButton:SetMouseClickedEvent(event)
+    self.left.MouseClick = event
+    self.center.MouseClick = event
+    self.right.MouseClick = event
+end
 
-    --[[ Mouse Leave Event Handlers ]] --
-    self.left.MouseLeave = function(sender, args) self.mouseOver = false; end
-    self.center.MouseLeave = function(sender, args) self.mouseOver = false; end
-    self.right.MouseLeave = function(sender, args) self.mouseOver = false; end
-
-    --[[ Drag Events ]] --
-    self.DragEnter = function(sender, args)
-        pcall(function()
-            myParent = self:GetParent();
-            myParent:DragEnter(self, args);
-        end)
-    end
-
-    self.DragDrop = function(sender, args)
-        pcall(function()
-            myParent = self:GetParent();
-            myParent:DragDrop(self, args);
-        end)
-    end
+function DTabButton:SetButtonBackground(a, b, c, d, e, f)
+    self.imagePathsSet = false
+    if not a or not b or not c or not d or not e or not f then return end
+    self.leftImage = a
+    self.centerImage = b
+    self.rightImage = c
+    self.leftHighlightImage = d
+    self.centerHighlightImage = e
+    self.rightHighlightImage = f
+    self.imagePathsSet = true
+    self:UpdateVisual()
 end
 
 function DTabButton:SetSelected(value)
-    if (type(value) ~= "boolean") then
-        self.selected = nil;
+    if type(value) ~= "boolean" then
+        self.selected = nil
         error(
-            string.format("Invalid input %q for DTabButton:SetSelected", value));
-        return;
+            string.format("Invalid input %q for DTabButton:SetSelected", value))
+        return
     end
 
-    self.selected = value;
+    self.selected = value
+    self:UpdateVisual()
 end
 
-function DTabButton:IsSelected() return self.selected; end
+function DTabButton:IsSelected() return self.selected end
 
 function DTabButton:SetIndex(value)
-    -- make sure to accept only numbers
-    if (type(value) ~= "number") then
-        self.index = 0;
+    if type(value) ~= "number" then
+        self.index = 0
         error(string.format("Invalid input arg for DTabButton:SetIndex.  %q",
-                            value));
-        return;
+                            value))
+        return
     end
 
-    -- make sure the index is not negative
-    if (value < 0) then
-        self.index = 0;
+    if value < 0 then
+        self.index = 0
         error(string.format(
-                  "Input for DTabButton:SetIndex should not be negative"));
-        return;
+                  "Input for DTabButton:SetIndex should not be negative"))
+        return
     end
 
-    self.index = value;
+    self.index = value
 end
 
-function DTabButton:GetIndex() return self.index; end
+function DTabButton:GetIndex() return self.index end
 
 function DTabButton:SetText(value)
-    if (type(value) ~= "string") then
-        self.center:SetText("Error");
+    if type(value) ~= "string" then
+        self.center:SetText("Error")
         error(string.format("Invalid arguement for DTabButton:SetText.  %q",
-                            value));
-        return;
+                            value))
+        return
     end
 
-    self.center:SetText(value);
+    self.center:SetText(value)
 end
 
-function DTabButton:GetText() return self.center:GetText(); end
+function DTabButton:GetText() return self.center:GetText() end
 
-function DTabButton:Update(sender, args)
-
-    -- exit if the button is not visible
-    if (not self:IsVisible()) then
-        return;
-    elseif (Turbine.Engine.GetGameTime() - self.lastTime > 0.1) then
-        self.lastTime = Turbine.Engine.GetGameTime();
-
-        -- set the size and position of the button
-        self.center:SetSize(self:GetWidth() - 28, 29);
-        self.right:SetPosition(self:GetWidth() - 18, 0);
-
-        -- set the image of the button depending if the mouse is over or the
-        -- button is the selected tab.
-        if (self.selected or self.mouseOver) then
-            self.left:SetBackground(
-                "TravelWindowII/src/extensions/Resources/tab_tier1_middle_front_w.tga");
-            self.center:SetBackground(
-                "TravelWindowII/src/extensions/Resources/tab_tier1_middle_front_n.tga");
-            self.right:SetBackground(
-                "TravelWindowII/src/extensions/Resources/tab_tier1_middle_front_e.tga");
-        else
-            self.left:SetBackground(
-                "TravelWindowII/src/extensions/Resources/tab_tier1_middle_back_w.tga");
-            self.center:SetBackground(
-                "TravelWindowII/src/extensions/Resources/tab_tier1_middle_back_n.tga");
-            self.right:SetBackground(
-                "TravelWindowII/src/extensions/Resources/tab_tier1_middle_back_e.tga");
-        end
+function DTabButton:UpdateVisual()
+    if not self.imagePathsSet then return end
+    if self.selected or self.mouseOver then
+        self.left:SetBackground(self.leftHighlightImage)
+        self.center:SetBackground(self.centerHighlightImage)
+        self.right:SetBackground(self.rightHighlightImage)
+    else
+        self.left:SetBackground(self.leftImage)
+        self.center:SetBackground(self.centerImage)
+        self.right:SetBackground(self.rightImage)
     end
 end
-

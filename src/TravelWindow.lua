@@ -94,7 +94,7 @@ function TravelWindow:Constructor()
     self.ListTab.numOfRows = Settings.listRows
     self.PullTab.pixelWidth = Settings.pullWidth
 
-    self.MainPanel:SetTab(Settings.mode)
+    self.MainPanel:SelectTab(Settings.mode)
     self:SetInitialPosition()
     self.GridTab:SetAllowDrop(true)
     self.MapTab:SetAllowDrop(true)
@@ -423,7 +423,7 @@ function TravelWindow:Constructor()
         self.resizeLabel:SetBackColor(Turbine.UI.Color(0, 0, 0, 0))
     end
 
-    self.SizeChanged = function(sender, args)
+    self.SizeChanged = function(_, _)
         if Settings.mode == TabId.LIST then
             Settings.listWidth = self.ListTab.pixelWidth
             Settings.listRows = self.ListTab.numOfRows
@@ -617,7 +617,7 @@ end
 function TravelWindow:UpdateSettings()
 
     -- set which page of the tab panel to show
-    self.MainPanel:SetTab(Settings.mode)
+    self.MainPanel:SelectTab(Settings.mode)
     self:UpdateMinimum()
     self:SetInitialPosition()
     self:SetItems()

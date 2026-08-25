@@ -93,6 +93,14 @@ function OptionsPanel:Constructor()
     self.OptionTabs:SetBlendMode(Turbine.UI.BlendMode.Overlay);
     self.OptionTabs:SetBackColor(Turbine.UI.Color(DefAlpha, 0, 0, 0));
     self.OptionTabs:SetVisible(true);
+    self.OptionTabs:SetButtonBackground(
+        "TravelWindowII/src/extensions/Resources/tab_tier1_middle_back_w.tga",
+        "TravelWindowII/src/extensions/Resources/tab_tier1_middle_back_n.tga",
+        "TravelWindowII/src/extensions/Resources/tab_tier1_middle_back_e.tga",
+        "TravelWindowII/src/extensions/Resources/tab_tier1_middle_front_w.tga",
+        "TravelWindowII/src/extensions/Resources/tab_tier1_middle_front_n.tga",
+        "TravelWindowII/src/extensions/Resources/tab_tier1_middle_front_e.tga"
+    )
 
     -- create the tabs
     self.GeneralTab = Turbine.UI.Control()

@@ -1,153 +1,135 @@
-import "Turbine.Gameplay";
-import "Turbine.UI";
-import "Turbine.UI.Lotro";
-import "TravelWindowII.src.extensions";
+import "Turbine.Gameplay"
+import "Turbine.UI"
+import "Turbine.UI.Lotro"
+import "TravelWindowII.src.extensions"
 
---[[
-    This is an extension of the scrollable control
-    It will allow the creation of a panel that can
-    contain its own controls
-]] --
-
-DPanel = class(Turbine.UI.Control);
+DPanel = class(Turbine.UI.Control)
 
 function DPanel:Constructor()
-    Turbine.UI.Control.Constructor(self);
+    Turbine.UI.Control.Constructor(self)
 
-    --[[ initial settings ]] --
-    self:SetOpacity(1);
-    self:SetWantsUpdates(true);
-
-    --[[ instance variables ]] --
-    self.tabButtons = {};
-    self.tabPages = {};
-    self.pageCount = 0;
-    self.selectedPage = 0;
-    self.lastPage = 0;
-    self.showButtons = true;
-
-    self.lastTime = 0;
+    self.tabButtons = {}
+    self.tabPages = {}
+    self.pageCount = 0
+    self.selectedPage = 0
+    self.lastPage = 0
+    self.showButtons = true
+    self.imagePathsSet = false
+    self.lastTime = 0
+    self.UpdateLayout = nil
 end
 
--- handle updating the panel
-function DPanel:Update(sender, args)
+function DPanel:SetButtonBackground(l, c, r, lh, ch, rh)
+    self.imagePathsSet = false
+    if not l or not c or not r or not lh or not ch or not rh then return end
+    self.left = l
+    self.center = c
+    self.right = r
+    self.leftHighlight = lh
+    self.centerHighlight = ch
+    self.rightHighlight = rh
+    self.imagePathsSet = true
+end
 
-    -- only update if the selected tab has changed
-    if (self.lastPage ~= self.selectedPage) then
+function DPanel:SizeChanged(sender, args)
+    if not self.selectedPage then return end
+    local panel = self.tabPages[self.selectedPage]
+    if panel and self.UpdateLayout then
+        self:UpdateLayout(panel)
+    end
+    self:UpdateTabs()
+end
 
-        -- if the last selected tab is valid, disable it
-        if (self.pageCount > 0) then
-            if (self.lastPage > 0) then
-                self.tabButtons[self.lastPage]:SetSelected(false);
-                self.tabPages[self.lastPage]:SetVisible(false);
-                self.tabPages[self.lastPage]:SetOpacity(0);
+function DPanel:SelectTab(value)
+    self.selectedPage = value
+    if self.lastPage ~= self.selectedPage then
+        if self.pageCount > 0 then
+            if self.lastPage > 0 then
+                -- disable the last selected tab
+                self.tabButtons[self.lastPage]:SetSelected(false)
+                self.tabPages[self.lastPage]:SetVisible(false)
             end
 
             -- enable the selected tab
-            self.tabButtons[self.selectedPage]:SetSelected(true);
-            self.tabPages[self.selectedPage]:SetVisible(true);
-            self.tabPages[self.selectedPage]:SetOpacity(1);
+            self.tabButtons[self.selectedPage]:SetSelected(true)
+            local panel = self.tabPages[self.selectedPage]
+            panel:SetVisible(true)
+            if self.UpdateLayout then
+                self:UpdateLayout(panel)
+            end
+            if self.imagePathsSet then
+                self:UpdateTabs()
+            end
 
-            -- set the currect tab as the last tab
-            self.lastPage = self.selectedPage;
+            self.lastPage = self.selectedPage
         end
     end
 end
 
---[[ 
-    This is the function that is called when
-    when a DTabButton registers a Mouse
-    Click Event
-]] --
-function DPanel:TabMouseClick(sender) self.selectedPage = sender:GetIndex(); end
-
--- function to programmatically change which tab is visible
-function DPanel:SetTab(value) self.selectedPage = value; end
-
---[[
-    Call this function to add a page to
-    the tab panel. Use a TextBox as a panel
-]] --
 function DPanel:AddTab(Tab)
-    self.pageCount = self.pageCount + 1;
+    if Tab == nil then return end
+    self.pageCount = self.pageCount + 1
 
-    -- set the standard page settings
-    Tab:SetVisible(true);
-    Tab:SetZOrder(10);
-    Tab:SetParent(self);
-    Tab:SetPosition(0, 25);
-    Tab:SetSize(self:GetWidth(), self:GetHeight() - 25);
+    Tab:SetVisible(true)
+    Tab:SetParent(self)
+    Tab:SetPosition(0, 25)
+    Tab:SetSize(self:GetWidth(), self:GetHeight() - 25)
 
-    -- set the standard button settings
-    myButton = TravelWindowII.src.extensions.DTabButton();
-    myButton:SetParent(self);
-    myButton:SetZOrder(10);
-    myButton:SetIndex(self.pageCount);
+    local btn = TravelWindowII.src.extensions.DTabButton()
+    btn:SetParent(self)
+    btn:SetIndex(self.pageCount)
+    btn:SetMouseClickedEvent(function(_, _)
+        self:SelectTab(btn:GetIndex())
+    end)
+    if self.selectedPage == 0 then
+        self.selectedPage = 1
+        btn:SetSelected(true)
+    end
+    btn:SetButtonBackground(
+        self.left, self.center, self.right,
+        self.leftHighlight, self.centerHighlight, self.rightHighlight
+    )
 
-    -- insert the text box and buttons into the tables
-    table.insert(self.tabButtons, myButton);
-    table.insert(self.tabPages, Tab);
+    table.insert(self.tabButtons, btn)
+    table.insert(self.tabPages, Tab)
 
-    -- update
-    self.selectedPage = 1;
-    self:UpdateTabs();
+    self:UpdateTabs()
 end
 
---[[
-    This function will go through each button
-    in the list and adjust them based on how
-    wide the panel is, and on how many panels
-    are in the tabbed panel
-]] --
 function DPanel:UpdateTabs()
-
-    -- loop through each tab
     for i = 1, self.pageCount, 1 do
-        -- check if the buttons are showing
-        if (self.showButtons) then
-            self.tabPages[i]:SetSize(self:GetWidth(), self:GetHeight() - 25);
-            self.tabPages[i]:SetPosition(0, 25);
+        if self.showButtons then
+            self.tabPages[i]:SetSize(self:GetWidth(), self:GetHeight() - 25)
+            self.tabPages[i]:SetPosition(0, 25)
             self.tabButtons[i]:SetPosition(
-                (i - 1) * (self:GetWidth() / self.pageCount), 0);
-            self.tabButtons[i]:SetWidth(self:GetWidth() / self.pageCount);
-            self.tabButtons[i]:SetHeight(25);
-            self.tabButtons[i]:SetVisible(true);
+                (i - 1) * (self:GetWidth() / self.pageCount), 0)
+            self.tabButtons[i]:SetWidth(self:GetWidth() / self.pageCount)
+            self.tabButtons[i]:SetHeight(25)
+            self.tabButtons[i]:SetVisible(true)
         else
-            self.tabPages[i]:SetSize(self:GetSize());
-            self.tabPages[i]:SetPosition(0, 0);
-            self.tabButtons[i]:SetVisible(false);
+            self.tabPages[i]:SetSize(self:GetSize())
+            self.tabPages[i]:SetPosition(0, 0)
+            self.tabButtons[i]:SetVisible(false)
         end
 
-        self.tabButtons[i]:SetSelected(false);
-        self.tabPages[i]:SetVisible(false);
+        self.tabButtons[i]:SetSelected(false)
+        self.tabPages[i]:SetVisible(false)
     end
 
-    if (self.selectedPage ~= 0) then
-        self.tabPages[self.selectedPage]:SetVisible(true);
-        self.tabButtons[self.selectedPage]:SetSelected(true);
-        self:SetVisible(false);
-        self:SetVisible(true);
+    if self.selectedPage ~= 0 then
+        self.tabPages[self.selectedPage]:SetVisible(true)
+        self.tabButtons[self.selectedPage]:SetSelected(true)
+        self:SetVisible(false)
+        self:SetVisible(true)
     end
 end
 
--- function for changing the button visibility
 function DPanel:SetButtonsVisible(value)
-    self.showButtons = value;
-    self:UpdateTabs();
+    self.showButtons = value
+    self:UpdateTabs()
 end
 
--- function to set the text on a tab button
 function DPanel:SetTabText(index, value)
-    self.tabButtons[index]:SetText(value);
-    self:UpdateTabs();
-end
-
--- function to handle drag drop event
-function DPanel:DragDrop(sender, args)
-    pcall(function() self.tabPages[sender:GetIndex()]:DragDrop(self, args); end)
-end
-
--- function to handle drag enter events
-function DPanel:DragEnter(sender, args)
-    pcall(function() self.tabPages[sender:GetIndex()]:DragEnter(self, args); end)
+    self.tabButtons[index]:SetText(value)
+    self:UpdateTabs()
 end
