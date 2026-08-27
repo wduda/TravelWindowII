@@ -1,10 +1,6 @@
-import "Turbine.Gameplay";
-import "Turbine.UI";
-import "Turbine.UI.Lotro";
-import "TravelWindowII.src.extensions";
+import "TravelWindowII.src.utils"
+import "TravelWindowII.src.extensions"
 import "TravelWindowII.src.TravelGridTab"
-import "TravelWindowII.src.utils.FontMetric";
-import "TravelWindowII.src.utils.BitOps";
 
 --[[ This is the window for the text list tab of the 	]] --
 --[[ Travel UI.  It handles creating all UI controls on ]] --

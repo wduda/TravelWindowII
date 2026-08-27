@@ -1,3 +1,6 @@
+import "Turbine.Gameplay"
+import "Turbine.UI"
+import "Turbine.UI.Lotro"
 import "TravelWindowII.src.OldTurbineUtil.Class"
 import "TravelWindowII.src.SettingsManager"
 import "TravelWindowII.src.TravelWindow"
