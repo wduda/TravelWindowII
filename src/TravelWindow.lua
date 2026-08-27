@@ -1,8 +1,5 @@
-import "Turbine.Gameplay"
-import "Turbine.UI"
-import "Turbine.UI.Lotro"
+import "TravelWindowII.src.utils"
 import "TravelWindowII.src.extensions"
-import "TravelWindowII.src.utils.BitOps"
 import "TravelWindowII.src.VindarPatch"
 import "TravelWindowII.src.EuroNormalize"
 
@@ -665,19 +662,6 @@ function FilterTravelSkills(message)
     if skillName ~= nil then
         CheckSkill(skillName)
     end
-end
-
-function AddCallback(object, event, callback)
-    if (object[event] == nil) then
-        object[event] = callback
-    else
-        if (type(object[event]) == "table") then
-            table.insert(object[event], callback)
-        else
-            object[event] = {object[event], callback}
-        end
-    end
-    return callback
 end
 
 -- for debug purposes

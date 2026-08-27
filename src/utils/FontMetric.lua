@@ -1,7 +1,3 @@
-import "Turbine.Gameplay"
-import "Turbine.UI"
-import "Turbine.UI.Lotro"
-
 -- FontMetric is copied from Garan's MoorMap
 FontMetric = class( Turbine.UI.Label );
 function FontMetric:Constructor()
