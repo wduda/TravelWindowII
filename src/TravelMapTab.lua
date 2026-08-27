@@ -518,11 +518,27 @@ function TravelMapTab:GetGridIndex(x, y)
     return index
 end
 
+function TravelMapTab:UpdateMapQuickslot(qs)
+    local scale = Settings.mapViewScale or 1
+    local x = qs.posX * scale
+    local y = qs.posY * scale - 15
+    local colWidth = self.colWidth * scale
+    qs:SetPosition(x, y)
+    qs:SetStretchMode(1)
+    qs:SetSize(colWidth, colWidth)
+end
+
 function TravelMapTab:UpdateMapSize(width, height)
     local mapX = width - self.navOffsetW
     local mapY = height - self.navPanelHeight
     self.mapLabel:SetPosition(self.navOffsetX, 0)
     self.mapLabel:SetSize(mapX, mapY)
+
+    for i = 1, #self.quickslots do
+        local qs = self.quickslots[i]
+        self:UpdateMapQuickslot(qs)
+    end
+    self.mapLabel.stretched = true
 end
 
 function TravelMapTab:UpdateNavPanelLayout(width, height)
@@ -547,9 +563,9 @@ function TravelMapTab:UpdateNavPanelLayout(width, height)
     for i = 1, #self.panelQuickslots do
         local qs = self.panelQuickslots[i]
         local posX = self.startQsX + ((i - 1) * self.colWidth)
+        qs:SetPosition(posX, self.startQsY)
         qs:SetStretchMode(1)
         qs:SetSize(self.colWidth, self.colWidth)
-        qs:SetPosition(posX, self.startQsY)
     end
 end
 
@@ -659,15 +675,15 @@ end
 function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
     local index = #self.quickslots + 1
     local qs = Turbine.UI.Lotro.Quickslot()
+    qs.posX = location[2]
+    qs.posY = location[3]
+    qs:SetParent(self)
     qs:SetShortcut(shortcut)
     qs:SetOpacity(1)
-    qs:SetParent(self.mapLabel)
     qs:SetMouseVisible(true)
     qs:SetUseOnRightClick(false)
     qs:SetAllowDrop(false)
-    qs:SetStretchMode(1)
-    qs:SetSize(self.colWidth, self.colWidth)
-    qs:SetPosition(location[2], location[3])
+    self:UpdateMapQuickslot(qs)
     qs:SetZOrder(98)
     qs:SetVisible(true)
 
@@ -710,21 +726,18 @@ function TravelMapTab:AddPanelQuickslots()
     local skills = GetNavPanelSkills()
 
     -- Calculate centered layout
-    self.totalWidth = (#skills * self.colWidth) + #skills - 1
+    self.totalWidth = #skills * (self.colWidth + 1) - 1
     self.startQsY = self.regionButtons[1]:GetHeight() + 11
 
     -- Create quickslots
     for i = 1, #skills do
         local qs = Turbine.UI.Lotro.Quickslot()
-
+        qs:SetParent(self.navPanel)
         qs:SetShortcut(skills[i].shortcut)
         qs:SetOpacity(1)
-        qs:SetParent(self.navPanel)
         qs:SetMouseVisible(true)
         qs:SetUseOnRightClick(false)
         qs:SetAllowDrop(false)
-        qs:SetStretchMode(1)
-        qs:SetSize(self.colWidth, self.colWidth)
         qs:SetZOrder(98)
         qs:SetVisible(true)
 
@@ -739,7 +752,9 @@ function TravelMapTab:AddPanelQuickslots()
         end
         self.panelQuickslots[i] = qs
     end
-    self:UpdateNavPanelLayout(self:GetSize())
+    local width, height = self:GetSize()
+    self:UpdateMapSize(width, height)
+    self:UpdateNavPanelLayout(width, height)
 end
 
 function TravelMapTab:SetSize(width, height)
