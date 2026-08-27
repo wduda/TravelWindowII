@@ -739,7 +739,7 @@ function TravelMapTab:AddPanelQuickslots()
         end
         self.panelQuickslots[i] = qs
     end
-    self:UpdateNavPanelLayout(self.parent:GetSize())
+    self:UpdateNavPanelLayout(self:GetSize())
 end
 
 function TravelMapTab:SetSize(width, height)
