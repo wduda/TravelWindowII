@@ -464,7 +464,7 @@ function TravelMapTab:CreateRegionHotspotsForCurrentMap()
             overlay:SetOpacity(1)
             overlay:SetBackground(MAP_CONNECTOR_BLANK_ASSET)
             overlay:SetBackColor(Turbine.UI.Color(0, 0, 0, 0))
-            overlay:SetBackColorBlendMode(8)
+            overlay:SetBackColorBlendMode(Turbine.UI.BlendMode.None)
             overlay:SetBlendMode(Turbine.UI.BlendMode.Overlay)
             overlay:SetMouseVisible(false)
             overlay:SetZOrder(97)
@@ -509,7 +509,7 @@ end
 function TravelMapTab:GetGridIndex(x, y)
     local col = math.floor((x - self.startQsX) / self.colWidth) + 1
     local row = math.floor((y - self.startQsY) / self.colWidth)
-    local numOfCols = math.floor(self.totalWidth / self.colWidth);
+    local numOfCols = math.floor(self.totalWidth / self.colWidth)
     if row < 0 then row = 0 end
     local index = row * numOfCols + col
     if index > #self.panelQuickslots then
@@ -520,8 +520,8 @@ end
 
 function TravelMapTab:UpdateMapQuickslot(qs)
     local scale = Settings.mapViewScale or 1
-    local x = qs.posX * scale
-    local y = qs.posY * scale - 15
+    local x = math.floor(qs.posX * scale)
+    local y = math.floor(qs.posY * scale) - 15
     local colWidth = self.colWidth * scale
     qs:SetPosition(x, y)
     qs:SetStretchMode(1)
