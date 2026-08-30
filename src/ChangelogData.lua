@@ -4,6 +4,18 @@
 
 ChangelogData = {
     {
+        version = "v4.9.0",
+        changes = {
+            "feat: map-view skills can now be hidden through their context menu",
+            "fix: release archives no longer include non-runtime repository folders",
+            "fix: disabled racial travel skills no longer appear in map view",
+            "fix: corrected map positions for After-battle Osgiliath and Henneth Annun",
+            "fix: corrected the Spanish translation for Mark of the Angle",
+            "fix: map quickslots now scale correctly with the map",
+            "fix: map navigation rows no longer shift after acquiring a travel skill",
+        }
+    },
+    {
         version = "v4.8.0",
         changes = {
             "feat: major ES translation support - all skills and most of the interface should be translated, bug reports welcome",
