@@ -14,6 +14,9 @@ TravelMapTab = class(Turbine.UI.Control)
 local MAP_CONNECTOR_HOVER_ASSET = 0x410081a2 -- MoorMap map-connector hover art
 local MAP_CONNECTOR_BLANK_ASSET = "TravelWindowII/src/resources/MapConnector_blank.tga"
 local MAP_CONNECTOR_SIZE = 63
+local MAP_SHORTCUT_BORDER_WIDTH = 1
+local MAP_SHORTCUT_LEARNED_BORDER_COLOR = Turbine.UI.Color(1, 0x60 / 255, 0xC4 / 255, 0x76 / 255)
+local MAP_SHORTCUT_UNLEARNED_BORDER_COLOR = Turbine.UI.Color(1, 0xD9 / 255, 0, 0)
 
 -- Hotspot data is intentionally incremental. Add entries as coordinates are
 -- provided by the developer during in-game calibration.
@@ -163,6 +166,7 @@ function TravelMapTab:Constructor(toplevel)
     self.navOffsetW = (not self.parent.isMinWindow) and 20 or 0
     self.totalWidth = 0
     self.quickslots = {}
+    self.quickslotBorders = {}
     self.panelQuickslots = {}  -- For milestone/housing skills in nav panel
     self.regionHotspots = {}
     self.regionHotspotOverlays = {}
@@ -518,14 +522,23 @@ function TravelMapTab:GetGridIndex(x, y)
     return index
 end
 
+function TravelMapTab:GetMapShortcutBorderColor(isLearned)
+    if isLearned then
+        return MAP_SHORTCUT_LEARNED_BORDER_COLOR
+    end
+    return MAP_SHORTCUT_UNLEARNED_BORDER_COLOR
+end
+
 function TravelMapTab:UpdateMapQuickslot(qs)
     local scale = Settings.mapViewScale or 1
-    local x = math.floor(qs.posX * scale)
-    local y = math.floor(qs.posY * scale) - 15
-    local colWidth = self.colWidth * scale
-    qs:SetPosition(x, y)
-    qs:SetStretchMode(1)
-    qs:SetSize(colWidth, colWidth)
+    local scaledBorderWidth = MAP_SHORTCUT_BORDER_WIDTH * scale
+    local frameSize = self.colWidth + (MAP_SHORTCUT_BORDER_WIDTH * 2)
+    local scaledFrameSize = math.floor((frameSize * scale) + 0.5)
+    local x = math.floor(qs.posX * scale) - scaledBorderWidth
+    local y = math.floor(qs.posY * scale) - 15 - scaledBorderWidth
+
+    qs.border:SetPosition(x, y)
+    qs.border:SetSize(scaledFrameSize, scaledFrameSize)
 end
 
 function TravelMapTab:UpdateMapSize(width, height)
@@ -603,6 +616,11 @@ function TravelMapTab:ClearItems()
         self.quickslots[i]:SetParent(nil)
     end
     self.quickslots = {}
+    for i = 1, #self.quickslotBorders do
+        self.quickslotBorders[i]:SetVisible(false)
+        self.quickslotBorders[i]:SetParent(nil)
+    end
+    self.quickslotBorders = {}
     -- Note: panelQuickslots are NOT cleared here, only in AddPanelQuickslots when dirty
 end
 
@@ -634,7 +652,7 @@ function TravelMapTab:AddRacialLocation()
         if racial.shortcut ~= nil and racial.shortcut:IsEnabled() and IsShortcutTrained(id) then
             local sType = Turbine.UI.Lotro.ShortcutType.Skill
             local shortcut = Turbine.UI.Lotro.Shortcut(sType, id)
-            self:AddSingleShortcut(racial.map[1], shortcut, racial.shortcut)
+            self:AddSingleShortcut(racial.map[1], shortcut, racial.shortcut, true)
         end
     end
 end
@@ -647,7 +665,7 @@ function TravelMapTab:AddCreepShortcuts()
         local map = creep.skills[i].map
         local id = creep.skills[i].id
         if map and #map > 0 then
-            self:AddSingleShortcut(map[1], Turbine.UI.Lotro.Shortcut(sType, id), creep.skills[i].shortcut)
+            self:AddSingleShortcut(map[1], Turbine.UI.Lotro.Shortcut(sType, id), creep.skills[i].shortcut, true)
         end
     end
 end
@@ -663,7 +681,8 @@ function TravelMapTab:AddLocations(skills)
                 if item ~= nil and #item == 3 and self.currentRegion == item[1] then
                     local id = skill.id
                     if skill.shortcut:IsEnabled() then
-                        self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id), skill.shortcut)
+                        self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id), skill.shortcut,
+                            skill.shortcut.found == true)
                     end
                 end
             end
@@ -672,22 +691,36 @@ function TravelMapTab:AddLocations(skills)
 end
 
 -- Add a single shortcut to the map
-function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
+function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut, isLearned)
     local index = #self.quickslots + 1
+    local frameSize = self.colWidth + (MAP_SHORTCUT_BORDER_WIDTH * 2)
+    local border = Turbine.UI.Control()
+    border:SetParent(self)
+    border:SetBackColor(self:GetMapShortcutBorderColor(isLearned))
+    border:SetSize(frameSize, frameSize)
+    border:SetZOrder(98)
+
     local qs = Turbine.UI.Lotro.Quickslot()
     qs.posX = location[2]
     qs.posY = location[3]
-    qs:SetParent(self)
+    qs.border = border
+    qs:SetParent(border)
     qs:SetShortcut(shortcut)
     qs:SetOpacity(1)
     qs:SetMouseVisible(true)
     qs:SetUseOnRightClick(false)
     qs:SetAllowDrop(false)
-    self:UpdateMapQuickslot(qs)
     qs:SetZOrder(98)
+    qs:SetPosition(MAP_SHORTCUT_BORDER_WIDTH, MAP_SHORTCUT_BORDER_WIDTH)
+    qs:SetSize(self.colWidth, self.colWidth)
+
+    -- Stretch the complete frame after its native-size border and quickslot are in place.
+    border:SetStretchMode(1)
+    self:UpdateMapQuickslot(qs)
+    border:SetVisible(true)
     qs:SetVisible(true)
 
-    qs.MouseClick = function(_, args)
+    local onClick = function(_, args)
         if args.Button == Turbine.UI.MouseButton.Right then
             self:ShowQuickslotMenu(travelShortcut)
         else
@@ -696,6 +729,10 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
             end
         end
     end
+    qs.MouseClick = onClick
+    border.MouseClick = onClick
+
+    self.quickslotBorders[index] = border
     self.quickslots[index] = qs
 end
 
@@ -782,6 +819,9 @@ function TravelMapTab:SetOpacityItems(value)
     -- the parent; update them here
     for i = 1, #self.quickslots do
         self.quickslots[i]:SetOpacity(value)
+    end
+    for i = 1, #self.quickslotBorders do
+        self.quickslotBorders[i]:SetOpacity(value)
     end
     -- Also update panel quickslots
     for i = 1, #self.panelQuickslots do
