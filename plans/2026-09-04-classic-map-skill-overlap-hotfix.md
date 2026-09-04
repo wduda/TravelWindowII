@@ -43,4 +43,5 @@ Fix the Galtrev travel-skill quickslot overlapping the bottom row of buttons in 
 
 ## Review adjustment
 
-- Use a mode-aware offset: 15px for minimal mode and 55px for classic mode, matching the respective window padding while preserving the existing minimal-mode behavior.
+- The 55px value was rejected by in-game evidence because it moves every marker upward; `hPadding` is outer-window layout padding, not a map-coordinate offset.
+- Map quickslots should instead use the actual rendered map-label width and height, preserving each marker's relative map position without a hard-coded Y offset.

@@ -519,14 +519,15 @@ function TravelMapTab:GetGridIndex(x, y)
 end
 
 function TravelMapTab:UpdateMapQuickslot(qs)
-    local scale = Settings.mapViewScale or 1
-    -- The offset compensates for the window-specific layout padding above
-    -- the map. This preserves the 15px minimal-mode offset and gives classic
-    -- mode its corresponding 55px adjustment.
-    local mapOffsetY = self.parent.hPadding - 5
-    local x = math.floor(qs.posX * scale)
-    local y = math.floor(qs.posY * scale) - mapOffsetY
-    local colWidth = math.floor(self.colWidth * scale + 0.5)
+    -- Map quickslots are parented to the tab rather than the stretched map
+    -- label, so derive their position and size from the actual rendered map
+    -- rectangle. This preserves map coordinates in both window modes without
+    -- applying a window-chrome offset to every marker.
+    local scaleX = self.mapLabel:GetWidth() / self.mapWidth
+    local scaleY = self.mapLabel:GetHeight() / self.mapHeight
+    local x = self.navOffsetX + math.floor(qs.posX * scaleX)
+    local y = math.floor(qs.posY * scaleY)
+    local colWidth = math.floor(self.colWidth * scaleX + 0.5)
     qs:SetPosition(x, y)
     qs:SetStretchMode(1)
     qs:SetSize(colWidth, colWidth)
