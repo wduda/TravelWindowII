@@ -532,11 +532,10 @@ end
 
 function TravelMapTab:UpdateMapQuickslot(qs)
     local scale = Settings.mapViewScale or 1
-    local scaledBorderWidth = math.max(1, math.floor((MAP_SHORTCUT_BORDER_WIDTH * scale) + 0.5))
-    local frameSize = self.colWidth + (MAP_SHORTCUT_BORDER_WIDTH * 2)
+    local frameSize = self.colWidth
     local scaledFrameSize = math.floor((frameSize * scale) + 0.5)
-    local x = math.floor(qs.posX * scale) - scaledBorderWidth
-    local y = math.floor(qs.posY * scale) - 15 - scaledBorderWidth
+    local x = math.floor(qs.posX * scale)
+    local y = math.floor(qs.posY * scale) - 15
 
     qs.border:SetPosition(x, y)
     qs.border:SetSize(scaledFrameSize, scaledFrameSize)
@@ -694,10 +693,9 @@ end
 -- Add a single shortcut to the map
 function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut, isLearned)
     local index = #self.quickslots + 1
-    local frameSize = self.colWidth + (MAP_SHORTCUT_BORDER_WIDTH * 2)
+    local frameSize = self.colWidth
     local border = Turbine.UI.Control()
     border:SetParent(self)
-    border:SetBackColor(self:GetMapShortcutBorderColor(isLearned))
     border:SetSize(frameSize, frameSize)
     border:SetZOrder(98)
 
@@ -712,11 +710,27 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut, isLe
     qs:SetUseOnRightClick(false)
     qs:SetAllowDrop(false)
     qs:SetZOrder(98)
-    qs:SetPosition(MAP_SHORTCUT_BORDER_WIDTH + MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET,
-        MAP_SHORTCUT_BORDER_WIDTH + MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET)
+    qs:SetPosition(MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET, MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET)
     qs:SetSize(self.colWidth, self.colWidth)
 
-    -- Stretch the complete frame after its native-size border and quickslot are in place.
+    local borderColor = self:GetMapShortcutBorderColor(isLearned)
+    local edges = {
+        {x = 0, y = 0, width = frameSize, height = MAP_SHORTCUT_BORDER_WIDTH},
+        {x = 0, y = frameSize - MAP_SHORTCUT_BORDER_WIDTH, width = frameSize, height = MAP_SHORTCUT_BORDER_WIDTH},
+        {x = 0, y = 0, width = MAP_SHORTCUT_BORDER_WIDTH, height = frameSize},
+        {x = frameSize - MAP_SHORTCUT_BORDER_WIDTH, y = 0, width = MAP_SHORTCUT_BORDER_WIDTH, height = frameSize},
+    }
+    for _, edge in ipairs(edges) do
+        local control = Turbine.UI.Control()
+        control:SetParent(border)
+        control:SetPosition(edge.x, edge.y)
+        control:SetSize(edge.width, edge.height)
+        control:SetBackColor(borderColor)
+        control:SetMouseVisible(false)
+        control:SetZOrder(99)
+    end
+
+    -- Stretch the complete frame after its native-size quickslot and border edges are in place.
     border:SetStretchMode(1)
     self:UpdateMapQuickslot(qs)
     border:SetVisible(true)

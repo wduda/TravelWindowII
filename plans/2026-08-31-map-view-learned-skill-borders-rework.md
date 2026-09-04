@@ -33,6 +33,9 @@ unit when map scaling changes.
    based on in-game visual comparison at the default map scale.
    Do not resize or reposition the child after stretching its parent: the
    parent control scales the complete native-size composition exactly once.
+   Use four explicit one-pixel edge controls in the shared frame rather than a
+   colored frame background, so the quickslot skin cannot add a second visible
+   layer of padding.
 4. Keep wrappers with the map quickslot lifecycle so region changes clear them
    together, without modifying navigation-panel shortcuts.
 5. Treat creeps and displayed racial skills as learned; use the existing
@@ -46,5 +49,6 @@ unit when map scaling changes.
 - Confirm each scaled icon has equal border padding on all four sides.
 - Confirm the rendered quickslot artwork, not only its control bounds, is centered.
 - Confirm map scaling keeps all four border edges visible around each icon.
+- Confirm the visible border is one pixel at the native map scale.
 - Confirm map quickslot clicks and the Hide Skill context menu still work.
 - Confirm navigation-panel shortcuts have no learned/unlearned border.
