@@ -39,9 +39,10 @@ Fix the Galtrev travel-skill quickslot overlapping the bottom row of buttons in 
 - Map quickslots are parented to the full tab because child controls did not scale reliably with the stretched map label.
 - The current reparented positioning applies a hard-coded `-15` Y offset.
 - Review of commit `6842cff` confirms that this offset was introduced with the reparenting change after v4.8.0.
-- The fix should preserve the existing scale calculation and adjust only the Y offset for classic versus minimal window padding.
+- The fix should preserve the existing scale calculation and adjust only the affected classic-mode marker when it would cross the map boundary.
 
 ## Review adjustment
 
 - The 55px value was rejected by in-game evidence because it moves every marker upward; `hPadding` is outer-window layout padding, not a map-coordinate offset.
-- Map quickslots should instead use the actual rendered map-label width and height, preserving each marker's relative map position without a hard-coded Y offset.
+- The geometry remapping was also rejected by in-game evidence because it changes every marker's location.
+- Preserve the existing v4.9 coordinate and scale calculations, and constrain only a classic-mode marker that would cross the rendered map's bottom edge.
