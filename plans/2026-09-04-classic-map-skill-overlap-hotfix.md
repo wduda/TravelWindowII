@@ -28,3 +28,7 @@ Fix the Galtrev travel-skill quickslot overlapping the bottom row of buttons in 
 - Minimal Map view remains unchanged or is verified not to regress.
 - Positioning remains correct across relevant `Settings.mapViewScale` values and at the reported 1920x1080 resolution.
 - The implementation is documented in the changelog only when the fix is ready for release; issue creation and code fix remain separately reviewable.
+
+## Tracking
+
+- GitHub issue: [#306](https://github.com/wduda/TravelWindowII/issues/306)
