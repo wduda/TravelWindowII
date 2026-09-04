@@ -29,7 +29,8 @@ unit when map scaling changes.
    wrapper, its border, and its native-size quickslot will then scale together.
    Derive the final frame size, quickslot size, and inset from the same rounded
    pixel values so fractional map scales cannot shift the icon within its frame.
-   Apply a one-pixel top-left visual-origin correction for the quickslot artwork.
+   Apply a two-pixel top-left visual-origin correction for the quickslot artwork,
+   based on in-game visual comparison at the default map scale.
 4. Keep wrappers with the map quickslot lifecycle so region changes clear them
    together, without modifying navigation-panel shortcuts.
 5. Treat creeps and displayed racial skills as learned; use the existing

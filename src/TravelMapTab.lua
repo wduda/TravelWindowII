@@ -15,7 +15,7 @@ local MAP_CONNECTOR_HOVER_ASSET = 0x410081a2 -- MoorMap map-connector hover art
 local MAP_CONNECTOR_BLANK_ASSET = "TravelWindowII/src/resources/MapConnector_blank.tga"
 local MAP_CONNECTOR_SIZE = 63
 local MAP_SHORTCUT_BORDER_WIDTH = 1
-local MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET = -1
+local MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET = -2
 local MAP_SHORTCUT_LEARNED_BORDER_COLOR = Turbine.UI.Color(1, 0x60 / 255, 0xC4 / 255, 0x76 / 255)
 local MAP_SHORTCUT_UNLEARNED_BORDER_COLOR = Turbine.UI.Color(1, 0xD9 / 255, 0, 0)
 
