@@ -15,6 +15,7 @@ local MAP_CONNECTOR_HOVER_ASSET = 0x410081a2 -- MoorMap map-connector hover art
 local MAP_CONNECTOR_BLANK_ASSET = "TravelWindowII/src/resources/MapConnector_blank.tga"
 local MAP_CONNECTOR_SIZE = 63
 local MAP_SHORTCUT_BORDER_WIDTH = 1
+local MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET = -1
 local MAP_SHORTCUT_LEARNED_BORDER_COLOR = Turbine.UI.Color(1, 0x60 / 255, 0xC4 / 255, 0x76 / 255)
 local MAP_SHORTCUT_UNLEARNED_BORDER_COLOR = Turbine.UI.Color(1, 0xD9 / 255, 0, 0)
 
@@ -539,7 +540,8 @@ function TravelMapTab:UpdateMapQuickslot(qs)
 
     qs.border:SetPosition(x, y)
     qs.border:SetSize(scaledFrameSize, scaledFrameSize)
-    qs:SetPosition(scaledBorderWidth, scaledBorderWidth)
+    qs:SetPosition(scaledBorderWidth + MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET,
+        scaledBorderWidth + MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET)
     qs:SetSize(scaledQuickslotSize, scaledQuickslotSize)
 end
 
@@ -713,7 +715,8 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut, isLe
     qs:SetUseOnRightClick(false)
     qs:SetAllowDrop(false)
     qs:SetZOrder(98)
-    qs:SetPosition(MAP_SHORTCUT_BORDER_WIDTH, MAP_SHORTCUT_BORDER_WIDTH)
+    qs:SetPosition(MAP_SHORTCUT_BORDER_WIDTH + MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET,
+        MAP_SHORTCUT_BORDER_WIDTH + MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET)
     qs:SetSize(self.colWidth, self.colWidth)
 
     -- Stretch the complete frame after its native-size border and quickslot are in place.

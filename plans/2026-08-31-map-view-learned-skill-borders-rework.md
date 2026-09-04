@@ -29,6 +29,7 @@ unit when map scaling changes.
    wrapper, its border, and its native-size quickslot will then scale together.
    Derive the final frame size, quickslot size, and inset from the same rounded
    pixel values so fractional map scales cannot shift the icon within its frame.
+   Apply a one-pixel top-left visual-origin correction for the quickslot artwork.
 4. Keep wrappers with the map quickslot lifecycle so region changes clear them
    together, without modifying navigation-panel shortcuts.
 5. Treat creeps and displayed racial skills as learned; use the existing
@@ -40,5 +41,6 @@ unit when map scaling changes.
 - Confirm learned skills are green and unlearned skills are red.
 - Confirm changing map scale keeps each border aligned with its icon.
 - Confirm each scaled icon has equal border padding on all four sides.
+- Confirm the rendered quickslot artwork, not only its control bounds, is centered.
 - Confirm map quickslot clicks and the Hide Skill context menu still work.
 - Confirm navigation-panel shortcuts have no learned/unlearned border.
