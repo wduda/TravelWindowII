@@ -27,6 +27,8 @@ unit when map scaling changes.
    background forms the border and its child quickslot is inset by one pixel.
 3. Put the wrapper in stretch mode before resizing it for map scale. The
    wrapper, its border, and its native-size quickslot will then scale together.
+   Derive the final frame size, quickslot size, and inset from the same rounded
+   pixel values so fractional map scales cannot shift the icon within its frame.
 4. Keep wrappers with the map quickslot lifecycle so region changes clear them
    together, without modifying navigation-panel shortcuts.
 5. Treat creeps and displayed racial skills as learned; use the existing
@@ -37,5 +39,6 @@ unit when map scaling changes.
 - Confirm each map quickslot has exactly one colored border wrapper.
 - Confirm learned skills are green and unlearned skills are red.
 - Confirm changing map scale keeps each border aligned with its icon.
+- Confirm each scaled icon has equal border padding on all four sides.
 - Confirm map quickslot clicks and the Hide Skill context menu still work.
 - Confirm navigation-panel shortcuts have no learned/unlearned border.
