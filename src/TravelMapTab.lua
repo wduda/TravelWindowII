@@ -533,16 +533,13 @@ end
 function TravelMapTab:UpdateMapQuickslot(qs)
     local scale = Settings.mapViewScale or 1
     local scaledBorderWidth = math.max(1, math.floor((MAP_SHORTCUT_BORDER_WIDTH * scale) + 0.5))
-    local scaledQuickslotSize = math.floor((self.colWidth * scale) + 0.5)
-    local scaledFrameSize = scaledQuickslotSize + (scaledBorderWidth * 2)
+    local frameSize = self.colWidth + (MAP_SHORTCUT_BORDER_WIDTH * 2)
+    local scaledFrameSize = math.floor((frameSize * scale) + 0.5)
     local x = math.floor(qs.posX * scale) - scaledBorderWidth
     local y = math.floor(qs.posY * scale) - 15 - scaledBorderWidth
 
     qs.border:SetPosition(x, y)
     qs.border:SetSize(scaledFrameSize, scaledFrameSize)
-    qs:SetPosition(scaledBorderWidth + MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET,
-        scaledBorderWidth + MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET)
-    qs:SetSize(scaledQuickslotSize, scaledQuickslotSize)
 end
 
 function TravelMapTab:UpdateMapSize(width, height)
