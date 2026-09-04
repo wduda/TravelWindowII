@@ -530,6 +530,13 @@ function TravelMapTab:GetMapShortcutBorderColor(isLearned)
     return MAP_SHORTCUT_UNLEARNED_BORDER_COLOR
 end
 
+function TravelMapTab:ShouldShowMapShortcutBorder(isLearned)
+    if isLearned then
+        return Settings.showLearnedMapBorders == 1
+    end
+    return Settings.showUnlearnedMapBorders == 1
+end
+
 function TravelMapTab:UpdateMapQuickslot(qs)
     local scale = Settings.mapViewScale or 1
     local frameSize = self.colWidth
@@ -713,21 +720,23 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut, isLe
     qs:SetPosition(MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET, MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET)
     qs:SetSize(self.colWidth, self.colWidth)
 
-    local borderColor = self:GetMapShortcutBorderColor(isLearned)
-    local edges = {
-        {x = 0, y = 0, width = frameSize, height = MAP_SHORTCUT_BORDER_WIDTH},
-        {x = 0, y = frameSize - MAP_SHORTCUT_BORDER_WIDTH, width = frameSize, height = MAP_SHORTCUT_BORDER_WIDTH},
-        {x = 0, y = 0, width = MAP_SHORTCUT_BORDER_WIDTH, height = frameSize},
-        {x = frameSize - MAP_SHORTCUT_BORDER_WIDTH, y = 0, width = MAP_SHORTCUT_BORDER_WIDTH, height = frameSize},
-    }
-    for _, edge in ipairs(edges) do
-        local control = Turbine.UI.Control()
-        control:SetParent(border)
-        control:SetPosition(edge.x, edge.y)
-        control:SetSize(edge.width, edge.height)
-        control:SetBackColor(borderColor)
-        control:SetMouseVisible(false)
-        control:SetZOrder(99)
+    if self:ShouldShowMapShortcutBorder(isLearned) then
+        local borderColor = self:GetMapShortcutBorderColor(isLearned)
+        local edges = {
+            {x = 0, y = 0, width = frameSize, height = MAP_SHORTCUT_BORDER_WIDTH},
+            {x = 0, y = frameSize - MAP_SHORTCUT_BORDER_WIDTH, width = frameSize, height = MAP_SHORTCUT_BORDER_WIDTH},
+            {x = 0, y = 0, width = MAP_SHORTCUT_BORDER_WIDTH, height = frameSize},
+            {x = frameSize - MAP_SHORTCUT_BORDER_WIDTH, y = 0, width = MAP_SHORTCUT_BORDER_WIDTH, height = frameSize},
+        }
+        for _, edge in ipairs(edges) do
+            local control = Turbine.UI.Control()
+            control:SetParent(border)
+            control:SetPosition(edge.x, edge.y)
+            control:SetSize(edge.width, edge.height)
+            control:SetBackColor(borderColor)
+            control:SetMouseVisible(false)
+            control:SetZOrder(99)
+        end
     end
 
     -- Stretch the complete frame after its native-size quickslot and border edges are in place.

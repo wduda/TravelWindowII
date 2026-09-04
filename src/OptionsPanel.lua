@@ -701,6 +701,24 @@ function OptionsPanel:SetupGeneralTab()
             _G.travel.ListTab:ReloadLabels()
             _G.travel.PullTab.pulldown:ReloadLabels()
         end)
+    self:AddCheckBoxOption("showLearnedMapBorders", self.DEFAULT_X, self.DEFAULT_NEXTY,
+        function(sender, args)
+            if sender:IsChecked() then
+                Settings.showLearnedMapBorders = 1
+            else
+                Settings.showLearnedMapBorders = 0
+            end
+            _G.travel.MapTab:SetItems()
+        end)
+    self:AddCheckBoxOption("showUnlearnedMapBorders", self.DEFAULT_X, self.DEFAULT_NEXTY,
+        function(sender, args)
+            if sender:IsChecked() then
+                Settings.showUnlearnedMapBorders = 1
+            else
+                Settings.showUnlearnedMapBorders = 0
+            end
+            _G.travel.MapTab:SetItems()
+        end)
     self:AddShortcutLabelFontOption()
 
     -- enable changed methods until after all options are initialized
