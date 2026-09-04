@@ -521,11 +521,9 @@ end
 function TravelMapTab:UpdateMapQuickslot(qs)
     local scale = Settings.mapViewScale or 1
     local x = math.floor(qs.posX * scale)
-    local y = math.floor(qs.posY * scale) - 15
-    local colWidth = math.floor(self.colWidth * scale + 0.5)
-    if not self.parent.isMinWindow and y + colWidth > self.mapLabel:GetHeight() then
-        y = self.mapLabel:GetHeight() - colWidth
-    end
+    local mapOffsetY = self.parent.isMinWindow and 15 or 0
+    local y = math.floor(qs.posY * scale) - mapOffsetY
+    local colWidth = self.colWidth * scale
     qs:SetPosition(x, y)
     qs:SetStretchMode(1)
     qs:SetSize(colWidth, colWidth)
