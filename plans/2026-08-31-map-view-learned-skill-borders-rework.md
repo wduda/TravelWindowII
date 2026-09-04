@@ -7,9 +7,10 @@ Scope: Map quickslots only; navigation-panel quickslots remain unchanged
 
 ## Objective
 
-Implement #297 with a green border for learned map skills and a red border for
-unlearned map skills. The border must scale with the quickslot as one visual
-unit when map scaling changes.
+Implement #297 with independently configurable green borders for learned map
+skills and red borders for unlearned map skills. Both border types are enabled
+by default and must scale with the quickslot as one visual unit when map
+scaling changes.
 
 ## Branch Resolution
 
@@ -40,6 +41,20 @@ unit when map scaling changes.
    together, without modifying navigation-panel shortcuts.
 5. Treat creeps and displayed racial skills as learned; use the existing
    shortcut `found` state for class and reputation skills.
+6. Add two persisted, character-scoped settings through `SettingsConfig`, both
+   defaulting to `1` so existing border behavior remains unchanged:
+   `showLearnedMapBorders` and `showUnlearnedMapBorders`.
+7. Add separate localized checkboxes to the general options UI for learned and
+   unlearned map borders. Each checkbox updates only its own setting, so users
+   can show green borders, red borders, both, or neither. Add the required
+   locale strings for every supported language.
+8. When either option changes, rebuild or refresh the active map shortcuts so
+   the matching border edges appear or disappear immediately without requiring
+   a plugin reload. Keep the quickslots themselves clickable and visible when
+   their border type is disabled.
+9. Create learned edge controls only when `showLearnedMapBorders` is enabled
+   and unlearned edge controls only when `showUnlearnedMapBorders` is enabled.
+   Do not add a color-picker or a combined master toggle in this scope.
 
 ## Verification
 
@@ -52,3 +67,11 @@ unit when map scaling changes.
 - Confirm the visible border is one pixel at the native map scale.
 - Confirm map quickslot clicks and the Hide Skill context menu still work.
 - Confirm navigation-panel shortcuts have no learned/unlearned border.
+- Confirm the new learned-border and unlearned-border options are both enabled
+  by default for an existing character without saved values.
+- Confirm disabling learned borders hides only green borders, while red borders
+  and all map quickslots remain visible and functional.
+- Confirm disabling unlearned borders hides only red borders, while green
+  borders and all map quickslots remain visible and functional.
+- Confirm either option applies immediately to an open map at native and
+  enlarged map scales, then persists across a refresh or plugin reload.
