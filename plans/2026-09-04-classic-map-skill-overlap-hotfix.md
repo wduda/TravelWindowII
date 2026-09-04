@@ -37,5 +37,10 @@ Fix the Galtrev travel-skill quickslot overlapping the bottom row of buttons in 
 
 - Galtrev map locations use `y = 715` and map quickslots are 32x32 at native scale.
 - Map quickslots are parented to the full tab because child controls did not scale reliably with the stretched map label.
-- The current reparented positioning applies a hard-coded `-15` Y offset and omits the classic map label's X inset.
-- The fix should derive both coordinates and quickslot size from the actual stretched map-label dimensions, keeping the navigation panel outside the map coordinate space.
+- The current reparented positioning applies a hard-coded `-15` Y offset.
+- Review of commit `6842cff` confirms that this offset was introduced with the reparenting change after v4.8.0.
+- The fix should preserve the existing scale calculation and adjust only the Y offset for classic versus minimal window padding.
+
+## Review adjustment
+
+- Use a mode-aware offset: 15px for minimal mode and 55px for classic mode, matching the respective window padding while preserving the existing minimal-mode behavior.
