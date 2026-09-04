@@ -32,3 +32,10 @@ Fix the Galtrev travel-skill quickslot overlapping the bottom row of buttons in 
 ## Tracking
 
 - GitHub issue: [#306](https://github.com/wduda/TravelWindowII/issues/306)
+
+## Investigation findings
+
+- Galtrev map locations use `y = 715` and map quickslots are 32x32 at native scale.
+- Map quickslots are parented to the full tab because child controls did not scale reliably with the stretched map label.
+- The current reparented positioning applies a hard-coded `-15` Y offset and omits the classic map label's X inset.
+- The fix should derive both coordinates and quickslot size from the actual stretched map-label dimensions, keeping the navigation panel outside the map coordinate space.

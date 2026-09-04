@@ -519,10 +519,15 @@ function TravelMapTab:GetGridIndex(x, y)
 end
 
 function TravelMapTab:UpdateMapQuickslot(qs)
-    local scale = Settings.mapViewScale or 1
-    local x = math.floor(qs.posX * scale)
-    local y = math.floor(qs.posY * scale) - 15
-    local colWidth = self.colWidth * scale
+    -- Map quickslots are parented to the tab rather than the stretched map
+    -- label, so apply the map label's actual scale and position explicitly.
+    -- This keeps them in map coordinates in classic mode, where the
+    -- navigation panel occupies the area below the map.
+    local scaleX = self.mapLabel:GetWidth() / self.mapWidth
+    local scaleY = self.mapLabel:GetHeight() / self.mapHeight
+    local x = self.navOffsetX + math.floor(qs.posX * scaleX)
+    local y = math.floor(qs.posY * scaleY)
+    local colWidth = math.floor(self.colWidth * scaleX + 0.5)
     qs:SetPosition(x, y)
     qs:SetStretchMode(1)
     qs:SetSize(colWidth, colWidth)
