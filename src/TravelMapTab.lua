@@ -764,17 +764,37 @@ function TravelMapTab:SetSize(width, height)
     self:UpdateDebugLabelVisibility()
 end
 
-function TravelMapTab:GetMinPixelSize()
-    local width = self.mapWidth + self.navOffsetW
-    local height = self.mapHeight + self.navPanelHeight
+function TravelMapTab:GetMapScale()
+    local mapWidth = self:GetWidth() - self.navOffsetW - self.navOffsetX
+    return mapWidth / self.mapWidth
+end
+
+function TravelMapTab:GetScaledPixelSize(scale)
+    local width = math.floor(self.mapWidth * scale) + self.parent.wPadding + self.navOffsetW + self.navOffsetX
+    local height = math.floor(self.mapHeight * scale) + self.parent.hPadding + self.navPanelHeight
     return width, height
+end
+
+function TravelMapTab:GetMinPixelSize()
+    return self:GetScaledPixelSize(1)
 end
 
 function TravelMapTab:GetPixelSize()
     local scale = Settings.mapViewScale or 1
-    local width = math.floor(self.mapWidth * scale + 0.5) + self.navOffsetW
-    local height = math.floor(self.mapHeight * scale + 0.5) + self.navPanelHeight
-    return width, height
+    return self:GetScaledPixelSize(scale)
+end
+
+function TravelMapTab:FitToPixels(sX, sY)
+    local w = sX - self.parent.wPadding - self.navOffsetW - self.navOffsetX
+    local h = sY - self.parent.hPadding - self.navPanelHeight
+    local scaleW = w / self.mapWidth
+    local scaleH = h / self.mapHeight
+    if scaleW < scaleH then
+        sY = self.mapHeight * scaleW + self.parent.hPadding + self.navPanelHeight
+    else
+        sX = self.mapWidth * scaleH + self.parent.wPadding + self.navOffsetW + self.navOffsetX
+    end
+    return sX, sY
 end
 
 function TravelMapTab:SetOpacityItems(value)
