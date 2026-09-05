@@ -188,6 +188,9 @@ function TravelListTab:FitToPixels(width, height)
     local rowHeight = self.itemHeight;
     local minHeight = rowHeight * 6;
     local maxHeight = rowHeight * #self.selected;
+    if maxHeight < minHeight then
+        minHeight = maxHeight
+    end
     height = height - self.parent.hPadding;
     local dy = height % rowHeight;
     if dy < rowHeight / 2 then
