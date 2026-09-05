@@ -86,8 +86,7 @@ function TravelCaroTab:DoScroll(sender, args)
     self:SetShortcuts()
 end
 
-function TravelCaroTab:SetItems()
-
+function TravelCaroTab:UpdateLayout()
     if self.tabId ~= self.parent.MainPanel.selectedPage or not(self.parent.dirty) then
         return
     end
@@ -204,6 +203,9 @@ end
 
 -- function to adjust the size of the tab and all items in the tab
 function TravelCaroTab:SetSize(width, height)
+    if self.tabId ~= self.parent.MainPanel.selectedPage then
+        return
+    end
 
     Turbine.UI.Control.SetSize(self, width, height);
     local offset = 40;

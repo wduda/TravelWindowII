@@ -105,8 +105,7 @@ function TravelPulldownTab:DoScroll(sender, args)
     -- nothing to do for now
 end
 
-function TravelPulldownTab:SetItems()
-
+function TravelPulldownTab:UpdateLayout()
     if self.tabId ~= self.parent.MainPanel.selectedPage then
         return
     end
@@ -139,6 +138,9 @@ end
 
 -- function to adjust the size of the tab and all items in the tab
 function TravelPulldownTab:SetSize(width, height)
+    if self.tabId ~= self.parent.MainPanel.selectedPage then
+        return
+    end
 
     -- set the size of the tab
     Turbine.UI.Control.SetSize(self, width, height);
@@ -146,6 +148,9 @@ function TravelPulldownTab:SetSize(width, height)
     -- set the size of the labels
     self.scrollLabel:SetSize(self:GetWidth(), self:GetHeight());
     self.pulldown:SetSize(self:GetWidth() - 58 + self.wPadding * 2, 30);
+
+    self.pixelWidth = width
+    Settings.pullWidth = self.pixelWidth
 end
 
 function TravelPulldownTab:SetOpacity(value)

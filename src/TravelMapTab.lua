@@ -293,6 +293,12 @@ function TravelMapTab:Constructor(toplevel)
         self:UpdateNavPanelLayout(self:GetInternalPixelSize(self:GetMinPixelSize()))
     end
 
+    self.SizeChanged = function(_, _)
+        for i = 1, #self.quickslots do
+            local qs = self.quickslots[i]
+            self:UpdateMapQuickslot(qs)
+        end
+    end
     -- Load the initial map
     self:LoadMap()
 end
@@ -306,9 +312,8 @@ function TravelMapTab:SwitchRegion(newRegion)
     self.currentRegion = newRegion
     Settings.mapViewRegion = self.currentRegion
 
-    -- Reload map and shortcuts (SetItems will clear old ones)
     self:LoadMap()
-    self:SetItems()
+    self:UpdateLayout()
 end
 
 -- Load the map background for current region
@@ -540,11 +545,6 @@ function TravelMapTab:UpdateMapSize(width, height)
     local mapH = height - self.navPanelHeight
     self.mapLabel:SetPosition(self.navOffsetX, 0)
     self.mapLabel:SetSize(mapW, mapH)
-
-    for i = 1, #self.quickslots do
-        local qs = self.quickslots[i]
-        self:UpdateMapQuickslot(qs)
-    end
 end
 
 function TravelMapTab:UpdateNavPanelLayout(width, height)
@@ -576,7 +576,7 @@ function TravelMapTab:UpdateNavPanelLayout(width, height)
 end
 
 -- Add shortcuts to the map
-function TravelMapTab:SetItems()
+function TravelMapTab:UpdateLayout()
     if self.tabId ~= self.parent.MainPanel.selectedPage then
         return
     end
@@ -764,10 +764,15 @@ function TravelMapTab:AddPanelQuickslots()
 end
 
 function TravelMapTab:SetSize(width, height)
+    if self.tabId ~= self.parent.MainPanel.selectedPage then
+        return
+    end
+
     Turbine.UI.Control.SetSize(self, width, height)
     self:UpdateMapSize(width, height)
     self:UpdateNavPanelLayout(width, height)
     self:UpdateDebugLabelVisibility()
+    Settings.mapViewScale = self:GetMapScale()
 end
 
 function TravelMapTab:GetMapScale()
