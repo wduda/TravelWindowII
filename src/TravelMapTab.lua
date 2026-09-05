@@ -153,14 +153,15 @@ function TravelMapTab:Constructor(toplevel)
     self.parent = toplevel
 
     -- Map configuration
+    local isMinWindow = self.parent.isMinWindow
     local buttonWidth = 195
     local buttonHeight = 25
     self.mapWidth = 1024
     self.mapHeight = 768
     self.colWidth = 32
     self.navPanelHeight = buttonHeight + self.colWidth + 10
-    self.navOffsetX = (not self.parent.isMinWindow) and 5 or 0
-    self.navOffsetW = (not self.parent.isMinWindow) and 20 or 0
+    self.navOffsetX = (not isMinWindow) and 10 or 0
+    self.navOffsetW = (not isMinWindow) and 20 or 0
     self.totalWidth = 0
     self.quickslots = {}
     self.panelQuickslots = {}  -- For milestone/housing skills in nav panel
@@ -203,7 +204,7 @@ function TravelMapTab:Constructor(toplevel)
     self.mapLabel.MouseLeave = function()
         self:HideDebugMouseCoordinates()
     end
-    self:UpdateMapSize(self:GetMinPixelSize())
+    self:UpdateMapSize(self:GetInternalPixelSize(self:GetMinPixelSize()))
 
     if self.navPanelHeight > 0 then
         -- Create navigation panel below the map
@@ -289,7 +290,7 @@ function TravelMapTab:Constructor(toplevel)
             end
             self.regionButtons[i] = button
         end
-        self:UpdateNavPanelLayout(self:GetPixelSize())
+        self:UpdateNavPanelLayout(self:GetInternalPixelSize(self:GetMinPixelSize()))
     end
 
     -- Load the initial map
@@ -387,8 +388,8 @@ function TravelMapTab:UpdateDebugMouseCoordinates(args)
         return
     end
 
-    local mapX = math.floor((args.X * self.mapWidth / mapW) + 0.5)
-    local mapY = math.floor((args.Y * self.mapHeight / mapH) + 0.5)
+    local mapX = math.floor(args.X * self.mapWidth / mapW)
+    local mapY = math.floor(args.Y * self.mapHeight / mapH)
     if mapX < 0 then mapX = 0 end
     if mapY < 0 then mapY = 0 end
     if mapX > self.mapWidth then mapX = self.mapWidth end
@@ -528,17 +529,22 @@ function TravelMapTab:UpdateMapQuickslot(qs)
     qs:SetSize(colWidth, colWidth)
 end
 
+function TravelMapTab:GetInternalPixelSize(width, height)
+    width = width - self.parent.wPadding
+    height = height - self.parent.hPadding
+    return width, height
+end
+
 function TravelMapTab:UpdateMapSize(width, height)
-    local mapX = width - self.navOffsetW
-    local mapY = height - self.navPanelHeight
+    local mapW = width - self.navOffsetX - self.navOffsetW
+    local mapH = height - self.navPanelHeight
     self.mapLabel:SetPosition(self.navOffsetX, 0)
-    self.mapLabel:SetSize(mapX, mapY)
+    self.mapLabel:SetSize(mapW, mapH)
 
     for i = 1, #self.quickslots do
         local qs = self.quickslots[i]
         self:UpdateMapQuickslot(qs)
     end
-    self.mapLabel.stretched = true
 end
 
 function TravelMapTab:UpdateNavPanelLayout(width, height)
