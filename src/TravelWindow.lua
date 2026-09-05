@@ -26,9 +26,9 @@ function TravelWindow:Constructor()
     self.isResizing = false
     self.isMinWindow = Settings.useMinWindow == 1
     if self.isMinWindow then
-        self.wPos = -1
+        self.wPos = 0
         self.hPos = 20
-        self.wPadding = -1
+        self.wPadding = 0
         self.hPadding = 20
         self.resizeLabelSize = 15
         self.backColor = Turbine.UI.Color(1, 0, 0, 0)
@@ -367,6 +367,15 @@ function TravelWindow:Constructor()
             local mX, mY = self:GetMousePosition()
             sX = self.resizeStartX + (mX - self.dragStartX)
             sY = self.resizeStartY + (mY - self.dragStartY)
+
+            -- TODO: adjust for Window:GetScale() when it gets added
+            local offX, offY = self:GetPosition()
+            local maxX, maxY = Turbine.UI.Display.GetSize()
+            maxX = maxX - offX
+            maxY = maxY - offY
+            if sX > maxX then sX = maxX end
+            if sY > maxY then sY = maxY end
+
             if Settings.mode == TabId.LIST then
                 sX, sY = self.ListTab:FitToPixels(sX, sY)
             elseif Settings.mode == TabId.GRID then
@@ -375,19 +384,7 @@ function TravelWindow:Constructor()
                 sY = self:GetHeight()
                 self.PullTab.pixelWidth = sX
             elseif Settings.mode == TabId.MAP then
-                -- resize map mode proportionately
-                local offX, offY = self:GetPosition()
-                local maxX, maxY = Turbine.UI.Display.GetSize()
-                maxX = maxX - offX
-                maxY = maxY - offY
-                if sX > maxX then sX = maxX end
-                local widthDelta = sX - self.resizeStartX
-                sY = self.resizeStartY + widthDelta * (768 / 1024)
-                if sY > maxY then
-                    sY = maxY
-                    local heightDelta = sY - self.resizeStartY
-                    sX = self.resizeStartX + heightDelta / (768 / 1024)
-                end
+                sX, sY = self.MapTab:FitToPixels(sX, sY)
             end
             self:SetSize(sX, sY)
         end
@@ -421,22 +418,6 @@ function TravelWindow:Constructor()
     end
 
     self.SizeChanged = function(_, _)
-        if Settings.mode == TabId.LIST then
-            Settings.listWidth = self.ListTab.pixelWidth
-            Settings.listRows = self.ListTab.numOfRows
-        elseif Settings.mode == TabId.GRID then
-            Settings.gridCols = self.GridTab.numOfCols
-            Settings.gridRows = self.GridTab.numOfRows
-        elseif Settings.mode == TabId.PULL then
-            Settings.pullWidth = self.PullTab.pixelWidth
-        elseif Settings.mode == TabId.MAP then
-            local mapWidth = self:GetWidth() - self.MapTab.navOffsetW
-            if self.MapTab.mapWidth > 0 then
-                Settings.mapViewScale = mapWidth / self.MapTab.mapWidth
-            else
-                Settings.mapViewScale = 1
-            end
-        end
         self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding)
         self.MainPanel:UpdateTabs()
         self.titleLabel:SetSize(self:GetWidth(), 20)
@@ -455,6 +436,17 @@ function TravelWindow:Constructor()
             else
                 self:SetText(LC.mainTitle)
             end
+        end
+        if Settings.mode == TabId.LIST then
+            Settings.listWidth = self.ListTab.pixelWidth
+            Settings.listRows = self.ListTab.numOfRows
+        elseif Settings.mode == TabId.GRID then
+            Settings.gridCols = self.GridTab.numOfCols
+            Settings.gridRows = self.GridTab.numOfRows
+        elseif Settings.mode == TabId.PULL then
+            Settings.pullWidth = self.PullTab.pixelWidth
+        elseif Settings.mode == TabId.MAP then
+            Settings.mapViewScale = self.MapTab:GetMapScale()
         end
     end
     self:SizeChanged() -- explicitly call to ensure correct positioning
@@ -535,11 +527,9 @@ function TravelWindow:UpdateMinimum()
 
     if Settings.mode == TabId.CARO then
         self:SetSize(self.minWidth, self.minHeight)
-    end
-    if Settings.mode == TabId.PULL then
+    elseif Settings.mode == TabId.PULL then
         self:SetSize(self.PullTab.pixelWidth, self.minHeight)
-    end
-    if Settings.mode == TabId.MAP then
+    elseif Settings.mode == TabId.MAP then
         self:SetSize(self.MapTab:GetPixelSize())
     end
 end

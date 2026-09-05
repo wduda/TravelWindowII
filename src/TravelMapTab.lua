@@ -153,14 +153,15 @@ function TravelMapTab:Constructor(toplevel)
     self.parent = toplevel
 
     -- Map configuration
+    local isMinWindow = self.parent.isMinWindow
     local buttonWidth = 195
     local buttonHeight = 25
     self.mapWidth = 1024
     self.mapHeight = 768
     self.colWidth = 32
     self.navPanelHeight = buttonHeight + self.colWidth + 10
-    self.navOffsetX = (not self.parent.isMinWindow) and 5 or 0
-    self.navOffsetW = (not self.parent.isMinWindow) and 20 or 0
+    self.navOffsetX = (not isMinWindow) and 10 or 0
+    self.navOffsetW = (not isMinWindow) and 20 or 0
     self.totalWidth = 0
     self.quickslots = {}
     self.panelQuickslots = {}  -- For milestone/housing skills in nav panel
@@ -203,7 +204,7 @@ function TravelMapTab:Constructor(toplevel)
     self.mapLabel.MouseLeave = function()
         self:HideDebugMouseCoordinates()
     end
-    self:UpdateMapSize(self:GetMinPixelSize())
+    self:UpdateMapSize(self:GetInternalPixelSize(self:GetMinPixelSize()))
 
     if self.navPanelHeight > 0 then
         -- Create navigation panel below the map
@@ -289,7 +290,7 @@ function TravelMapTab:Constructor(toplevel)
             end
             self.regionButtons[i] = button
         end
-        self:UpdateNavPanelLayout(self:GetPixelSize())
+        self:UpdateNavPanelLayout(self:GetInternalPixelSize(self:GetMinPixelSize()))
     end
 
     -- Load the initial map
@@ -387,8 +388,8 @@ function TravelMapTab:UpdateDebugMouseCoordinates(args)
         return
     end
 
-    local mapX = math.floor((args.X * self.mapWidth / mapW) + 0.5)
-    local mapY = math.floor((args.Y * self.mapHeight / mapH) + 0.5)
+    local mapX = math.floor(args.X * self.mapWidth / mapW)
+    local mapY = math.floor(args.Y * self.mapHeight / mapH)
     if mapX < 0 then mapX = 0 end
     if mapY < 0 then mapY = 0 end
     if mapX > self.mapWidth then mapX = self.mapWidth end
@@ -521,24 +522,29 @@ end
 function TravelMapTab:UpdateMapQuickslot(qs)
     local scale = Settings.mapViewScale or 1
     local x = math.floor(qs.posX * scale)
-    local y = math.floor(qs.posY * scale) - 15
+    local y = math.floor(qs.posY * scale)
     local colWidth = self.colWidth * scale
     qs:SetPosition(x, y)
     qs:SetStretchMode(1)
     qs:SetSize(colWidth, colWidth)
 end
 
+function TravelMapTab:GetInternalPixelSize(width, height)
+    width = width - self.parent.wPadding
+    height = height - self.parent.hPadding
+    return width, height
+end
+
 function TravelMapTab:UpdateMapSize(width, height)
-    local mapX = width - self.navOffsetW
-    local mapY = height - self.navPanelHeight
+    local mapW = width - self.navOffsetX - self.navOffsetW
+    local mapH = height - self.navPanelHeight
     self.mapLabel:SetPosition(self.navOffsetX, 0)
-    self.mapLabel:SetSize(mapX, mapY)
+    self.mapLabel:SetSize(mapW, mapH)
 
     for i = 1, #self.quickslots do
         local qs = self.quickslots[i]
         self:UpdateMapQuickslot(qs)
     end
-    self.mapLabel.stretched = true
 end
 
 function TravelMapTab:UpdateNavPanelLayout(width, height)
@@ -675,7 +681,7 @@ end
 function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
     local index = #self.quickslots + 1
     local qs = Turbine.UI.Lotro.Quickslot()
-    qs.posX = location[2]
+    qs.posX = location[2] + self.navOffsetX
     qs.posY = location[3]
     qs:SetParent(self)
     qs:SetShortcut(shortcut)
@@ -764,17 +770,37 @@ function TravelMapTab:SetSize(width, height)
     self:UpdateDebugLabelVisibility()
 end
 
-function TravelMapTab:GetMinPixelSize()
-    local width = self.mapWidth + self.navOffsetW
-    local height = self.mapHeight + self.navPanelHeight
+function TravelMapTab:GetMapScale()
+    local mapWidth = self:GetWidth() - self.navOffsetW - self.navOffsetX
+    return mapWidth / self.mapWidth
+end
+
+function TravelMapTab:GetScaledPixelSize(scale)
+    local width = math.floor(self.mapWidth * scale) + self.parent.wPadding + self.navOffsetW + self.navOffsetX
+    local height = math.floor(self.mapHeight * scale) + self.parent.hPadding + self.navPanelHeight
     return width, height
+end
+
+function TravelMapTab:GetMinPixelSize()
+    return self:GetScaledPixelSize(1)
 end
 
 function TravelMapTab:GetPixelSize()
     local scale = Settings.mapViewScale or 1
-    local width = math.floor(self.mapWidth * scale + 0.5) + self.navOffsetW
-    local height = math.floor(self.mapHeight * scale + 0.5) + self.navPanelHeight
-    return width, height
+    return self:GetScaledPixelSize(scale)
+end
+
+function TravelMapTab:FitToPixels(sX, sY)
+    local w = sX - self.parent.wPadding - self.navOffsetW - self.navOffsetX
+    local h = sY - self.parent.hPadding - self.navPanelHeight
+    local scaleW = w / self.mapWidth
+    local scaleH = h / self.mapHeight
+    if scaleW < scaleH then
+        sY = self.mapHeight * scaleW + self.parent.hPadding + self.navPanelHeight
+    else
+        sX = self.mapWidth * scaleH + self.parent.wPadding + self.navOffsetW + self.navOffsetX
+    end
+    return sX, sY
 end
 
 function TravelMapTab:SetOpacityItems(value)
