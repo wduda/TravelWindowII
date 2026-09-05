@@ -30,7 +30,9 @@ function TravelListTab:Constructor(toplevel)
     self.scrollChunk = self.itemHeight;
 
     self.minWidth = 225
-    self.minHeight = 75
+    self.minHeight = 30
+    self.hSubPadding = 6
+    self.pixelWidth = 0
 
     self.itemAlpha = DefAlpha;
     if self.parent.isMinWindow then
@@ -56,11 +58,11 @@ function TravelListTab:Constructor(toplevel)
     -- sub window when the value of the
     -- scrollbar is changed.
     self.myScrollBar.ValueChanged = function(sender, args)
-        self:UpdateSubWindow();
+        self:UpdateSubWindow()
     end
 end
 
-function TravelListTab:SetItems()
+function TravelListTab:UpdateLayout()
     if self.tabId ~= self.parent.MainPanel.selectedPage then
         return
     end
@@ -69,7 +71,12 @@ function TravelListTab:SetItems()
     self.itemHeight = fontCfg.height
     self.scrollChunk = self.itemHeight
     self.itemWidth = self:GetWidth() - self.itemWidthPadding;
-    TravelGridTab.SetItems(self);
+    TravelGridTab.UpdateLayout(self);
+end
+
+function TravelListTab:SaveSize()
+    Settings.listWidth = self.pixelWidth
+    Settings.listRows = self.numOfRows
 end
 
 function TravelGridTab:ClearItems()
@@ -78,7 +85,6 @@ function TravelGridTab:ClearItems()
 end
 
 function TravelListTab:AddItem(shortcut)
-
     -- set the index value based on the row and column
     local index = (self.row - 1) + self.col;
     local x = 10 + ((self.col - 1) * (self.itemWidth + 2));
@@ -183,11 +189,12 @@ function TravelListTab:FitToPixels(width, height)
     if width < self.minWidth then
         width = self.minWidth
     end
+    local numOfShortcuts = #self.selected
     local minWidth = width - self.itemWidthPadding - self.parent.wPadding
     self.scrollChunk = self.itemHeight
-    local rowHeight = self.itemHeight;
-    local minHeight = rowHeight * 6;
-    local maxHeight = rowHeight * #self.selected;
+    local rowHeight = self.itemHeight
+    local minHeight = rowHeight * 6
+    local maxHeight = rowHeight * numOfShortcuts
     if maxHeight < minHeight then
         minHeight = maxHeight
     end
@@ -203,25 +210,16 @@ function TravelListTab:FitToPixels(width, height)
     elseif height > maxHeight then
         height = maxHeight;
     end
-    self.pixelWidth = width;
-    self.numOfRows = math.floor(height / rowHeight);
-    return width, height + self.parent.hPadding;
-end
-
-function TravelListTab:UpdateBounds()
-    -- set the maximum value of the scrollbar
-    -- based on the number of rows in the subwindow
-    local numOfShortcuts = #self.selected;
-    local height = self.parent:GetHeight() - self.parent.hPadding;
-    self.maxScroll = numOfShortcuts * self.itemHeight - height;
+    self.maxScroll = numOfShortcuts * rowHeight - height
     if self.maxScroll < 0 then
         -- the maxScroll cannot be less than one
         self.maxScroll = 0;
-        self.numOfRows = #self.selected;
+        self.numOfRows = numOfShortcuts
     elseif self.maxScroll > 0 then
-        self.numOfRows = math.floor(height / self.itemHeight);
+        self.numOfRows = math.floor(height / rowHeight)
     end
-    self.pixelWidth = self.parent:GetWidth();
+    self.pixelWidth = width;
+    return width, height + self.parent.hPadding + self.hSubPadding;
 end
 
 function TravelListTab:GetMargin(numOfShortcuts)
@@ -237,13 +235,4 @@ function TravelListTab:UpdateSubWindow()
         self.quickslots[i]:SetTop((i - 1) * self.itemHeight - self.myScrollBar:GetValue());
         self.labels[i]:SetTop((i - 1) * self.itemHeight - self.myScrollBar:GetValue());
     end
-end
-
--- function to adjust the size of the tab and all items in the tab
-function TravelListTab:SetSize(width, height)
-
-    -- set the size of the tab
-    Turbine.UI.Control.SetSize(self, width, height);
-
-    self:SetItems();
 end

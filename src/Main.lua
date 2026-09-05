@@ -51,7 +51,8 @@ _G.travel = TravelWindow()
 
 NewShortcutEvent = function()
     _G.travel.dirty = true -- reset list of shortcuts
-    _G.travel:SetItems() -- redraw current window
+    _G.travel:UpdateSelectedSkills()
+    _G.travel:UpdateLayout() -- redraw current window
     _G.options.Panel:AddFindTreeShortcuts()
 end
 

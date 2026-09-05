@@ -91,18 +91,10 @@ function TravelWindow:Constructor()
     self.ListTab.numOfRows = Settings.listRows
     self.PullTab.pixelWidth = Settings.pullWidth
 
-    self.MainPanel:SelectTab(Settings.mode)
-    self:SetInitialPosition()
     self.GridTab:SetAllowDrop(true)
     self.MapTab:SetAllowDrop(true)
-    self:SetItems()
-    self:UpdateMinimum()
-    -- Map view always uses max opacity
-    if Settings.mode == TabId.MAP then
-        self:SetOpacity(Settings.mainMaxOpacity)
-    else
-        self:SetOpacity(Settings.mainMinOpacity)
-    end
+
+    self:UpdateSettings()
 
     -- track the hidden state of the UI, manage previous states for window and
     -- the button
@@ -367,26 +359,7 @@ function TravelWindow:Constructor()
             local mX, mY = self:GetMousePosition()
             sX = self.resizeStartX + (mX - self.dragStartX)
             sY = self.resizeStartY + (mY - self.dragStartY)
-
-            -- TODO: adjust for Window:GetScale() when it gets added
-            local offX, offY = self:GetPosition()
-            local maxX, maxY = Turbine.UI.Display.GetSize()
-            maxX = maxX - offX
-            maxY = maxY - offY
-            if sX > maxX then sX = maxX end
-            if sY > maxY then sY = maxY end
-
-            if Settings.mode == TabId.LIST then
-                sX, sY = self.ListTab:FitToPixels(sX, sY)
-            elseif Settings.mode == TabId.GRID then
-                sX, sY = self.GridTab:FitToPixels(sX, sY)
-            elseif Settings.mode == TabId.PULL then
-                sY = self:GetHeight()
-                self.PullTab.pixelWidth = sX
-            elseif Settings.mode == TabId.MAP then
-                sX, sY = self.MapTab:FitToPixels(sX, sY)
-            end
-            self:SetSize(sX, sY)
+            self:SetSize(self:GetAdjustedSize(sX, sY))
         end
     end
     self.MouseUp = function(sender, args)
@@ -419,7 +392,6 @@ function TravelWindow:Constructor()
 
     self.SizeChanged = function(_, _)
         self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding)
-        self.MainPanel:UpdateTabs()
         self.titleLabel:SetSize(self:GetWidth(), 20)
         self.closeButton:SetPosition(self:GetWidth() - 15, 2)
         self.resizeLabel:SetPosition(self:GetWidth() - self.resizeLabel:GetWidth(),
@@ -437,26 +409,34 @@ function TravelWindow:Constructor()
                 self:SetText(LC.mainTitle)
             end
         end
-        if Settings.mode == TabId.LIST then
-            Settings.listWidth = self.ListTab.pixelWidth
-            Settings.listRows = self.ListTab.numOfRows
-        elseif Settings.mode == TabId.GRID then
-            Settings.gridCols = self.GridTab.numOfCols
-            Settings.gridRows = self.GridTab.numOfRows
-        elseif Settings.mode == TabId.PULL then
-            Settings.pullWidth = self.PullTab.pixelWidth
-        elseif Settings.mode == TabId.MAP then
-            Settings.mapViewScale = self.MapTab:GetMapScale()
-        end
     end
+
     self:SizeChanged() -- explicitly call to ensure correct positioning
-    if Settings.mode == TabId.LIST then
-        self:SetSize(self.ListTab:FitToPixels(self:GetSize()))
-    elseif Settings.mode == TabId.GRID then
-        self:SetSize(self.GridTab:FitToPixels(self:GetSize()))
-    elseif Settings.mode == TabId.PULL then
-        self.PullTab.pixelWidth = self:GetWidth()
+end
+
+function TravelWindow:GetAdjustedSize(sX, sY)
+    -- TODO: pull logic into a "best fit" or a parented FitToPixels() call for reuse elsewhere
+    -- TODO: adjust for Window:GetScale() when it gets added
+    local offX, offY = self:GetPosition()
+    local maxX, maxY = Turbine.UI.Display.GetSize()
+    if maxX ~= nil and maxY ~= nil then
+        maxX = maxX - offX
+        maxY = maxY - offY
+        if sX > maxX then sX = maxX end
+        if sY > maxY then sY = maxY end
     end
+
+    if Settings.mode == TabId.LIST then
+        sX, sY = self.ListTab:FitToPixels(sX, sY)
+    elseif Settings.mode == TabId.GRID then
+        sX, sY = self.GridTab:FitToPixels(sX, sY)
+    elseif Settings.mode == TabId.PULL then
+        sY = self.minHeight
+    elseif Settings.mode == TabId.MAP then
+        sX, sY = self.MapTab:FitToPixels(sX, sY)
+    end
+
+    return sX, sY
 end
 
 function TravelWindow:SetMaxOpacity()
@@ -475,23 +455,47 @@ function TravelWindow:FadeOut()
     self:SetWantsUpdates(true)
 end
 
-function TravelWindow:SetItems()
+function TravelWindow:GetPixelSize()
     if Settings.mode == TabId.LIST then
-        self:SetSize(self.ListTab:GetPixelSize())
-        self.ListTab:SetItems()
-        self:SetSize(self.ListTab:FitToPixels(self:GetSize()))
+        return self.ListTab:GetPixelSize()
     elseif Settings.mode == TabId.GRID then
-        self:SetSize(self.GridTab:GetPixelSize())
-        self.GridTab:SetItems()
-        self:SetSize(self.GridTab:FitToPixels(self:GetSize()))
+        return self.GridTab:GetPixelSize()
     elseif Settings.mode == TabId.CARO then
-        self.CaroTab:SetItems()
+        return self.minWidth, self.minHeight
     elseif Settings.mode == TabId.PULL then
-        self.PullTab:SetItems()
-        self.PullTab.pixelWidth = self:GetWidth()
+        return self.PullTab.pixelWidth, self.minHeight
     elseif Settings.mode == TabId.MAP then
-        self:SetSize(self.MapTab:GetPixelSize())
-        self.MapTab:SetItems()
+        return self.MapTab:GetPixelSize()
+    end
+    Turbine.Shell.WriteLine("Unhandled size calculation!")
+end
+
+function TravelWindow:UpdateLayout()
+    self:SetSize(self:GetAdjustedSize(self:GetPixelSize()))
+    if Settings.mode == TabId.LIST then
+        self.ListTab:UpdateLayout()
+    elseif Settings.mode == TabId.GRID then
+        self.GridTab:UpdateLayout()
+    elseif Settings.mode == TabId.CARO then
+        self.CaroTab:UpdateLayout()
+    elseif Settings.mode == TabId.PULL then
+        self.PullTab:UpdateLayout()
+    elseif Settings.mode == TabId.MAP then
+        self.MapTab:UpdateLayout()
+    end
+end
+
+function TravelWindow:UpdateSelectedSkills()
+    if Settings.mode == TabId.LIST then
+        self.ListTab:UpdateSelectedSkills()
+    elseif Settings.mode == TabId.GRID then
+        self.GridTab:UpdateSelectedSkills()
+    elseif Settings.mode == TabId.CARO then
+
+    elseif Settings.mode == TabId.PULL then
+
+    elseif Settings.mode == TabId.MAP then
+
     end
 end
 
@@ -519,19 +523,11 @@ function TravelWindow:UpdateMinimum()
     elseif Settings.mode == TabId.MAP then
         self.minWidth, self.minHeight = self.MapTab:GetMinPixelSize()
     else
-        self.minWidth = 40
-        self.minHeight = 40
+        self.minWidth = 36
+        self.minHeight = 36
     end
 
     self:SetMinimumSize(self.minWidth, self.minHeight)
-
-    if Settings.mode == TabId.CARO then
-        self:SetSize(self.minWidth, self.minHeight)
-    elseif Settings.mode == TabId.PULL then
-        self:SetSize(self.PullTab.pixelWidth, self.minHeight)
-    elseif Settings.mode == TabId.MAP then
-        self:SetSize(self.MapTab:GetPixelSize())
-    end
 end
 
 function TravelWindow:ValidateBoundaries(posX, posY, winWidth, winHeight, screenWidth, screenHeight)
@@ -602,12 +598,10 @@ function TravelWindow:SetOpacity(value)
 end
 
 function TravelWindow:UpdateSettings()
-
-    -- set which page of the tab panel to show
     self.MainPanel:SelectTab(Settings.mode)
+    self:UpdateSelectedSkills()
     self:UpdateMinimum()
     self:SetInitialPosition()
-    self:SetItems()
 
     -- Update opacity based on mode
     if Settings.mode == TabId.MAP then
@@ -615,9 +609,7 @@ function TravelWindow:UpdateSettings()
     else
         self:SetOpacity(Settings.mainMinOpacity)
     end
-
-    self.MainPanel:SetSize(self:GetWidth() - self.wPadding, self:GetHeight() - self.hPadding)
-    self.MainPanel:UpdateTabs()
+    self:UpdateLayout()
 end
 
 function TravelWindow:ResetSettings()
@@ -642,7 +634,6 @@ function SyncUIFromSettings()
     _G.options.Panel:EnableFromSettings()
     _G.options.Panel:AddSortList()
     Menu:SetSelections()
-    _G.travel:SetInitialPosition()
     _G.travel.dirty = true
     _G.travel:UpdateSettings()
 end
