@@ -522,7 +522,7 @@ end
 function TravelMapTab:UpdateMapQuickslot(qs)
     local scale = Settings.mapViewScale or 1
     local x = math.floor(qs.posX * scale)
-    local y = math.floor(qs.posY * scale) - 15
+    local y = math.floor(qs.posY * scale)
     local colWidth = self.colWidth * scale
     qs:SetPosition(x, y)
     qs:SetStretchMode(1)
@@ -681,7 +681,7 @@ end
 function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
     local index = #self.quickslots + 1
     local qs = Turbine.UI.Lotro.Quickslot()
-    qs.posX = location[2]
+    qs.posX = location[2] + self.navOffsetX
     qs.posY = location[3]
     qs:SetParent(self)
     qs:SetShortcut(shortcut)
