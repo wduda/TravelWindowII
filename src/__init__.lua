@@ -22,3 +22,10 @@ import "TravelWindowII.src.OptionsPanel"
 import "TravelWindowII.src.ChangelogData"
 import "TravelWindowII.src.UpdateNotificationWindow"
 -- import "TravelWindowII.src.TravelTests";
+
+function GetStandardEdges()
+    return Turbine.UI.EdgeAttachmentType.Same,
+            Turbine.UI.EdgeAttachmentType.Same,
+            Turbine.UI.EdgeAttachmentType.Opposite,
+            Turbine.UI.EdgeAttachmentType.Opposite
+end
