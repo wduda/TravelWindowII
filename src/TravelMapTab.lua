@@ -334,6 +334,9 @@ function TravelMapTab:LoadMap()
     end
 
     self.mapLabel:SetStretchMode(1)
+    self.mapLabel:AttachEdges(
+            Turbine.UI.EdgeAttachmentType.Same, Turbine.UI.EdgeAttachmentType.Same,
+            Turbine.UI.EdgeAttachmentType.Opposite, Turbine.UI.EdgeAttachmentType.Opposite)
     self:RebuildRegionHotspots()
     self:UpdateDebugLabelVisibility()
 
