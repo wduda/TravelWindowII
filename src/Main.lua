@@ -96,6 +96,17 @@ function TravelCommand:Execute(command, arguments)
         TravelDebugEnabled = false
         _G.travel.MapTab:UpdateDebugLabelVisibility()
         Turbine.Shell.WriteLine("Travel debug mode: off")
+    elseif arguments == "debug found" then
+        for i = 1, #TravelShortcuts do
+            local shortcut = TravelShortcuts[i]
+            if not shortcut.found then
+                shortcut.found = true
+                if NewShortcutEvent then
+                    NewShortcutEvent()
+                end
+                return
+            end
+        end
     elseif (arguments ~= nil) then
         TravelCommand:GetHelp()
     end
