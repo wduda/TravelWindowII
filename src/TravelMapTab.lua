@@ -339,6 +339,7 @@ function TravelMapTab:LoadMap()
     end
 
     self.mapLabel:SetStretchMode(1)
+    self.mapLabel:AttachEdges(GetStandardEdges())
     self:RebuildRegionHotspots()
     self:UpdateDebugLabelVisibility()
 
@@ -593,6 +594,7 @@ function TravelMapTab:UpdateNavPanelLayout(width, height)
         local posX = self.startQsX + ((i - 1) * self.colWidth)
         qs:SetPosition(posX, self.startQsY)
         qs:SetStretchMode(1)
+        qs:AttachEdges(GetStandardEdges())
         qs:SetSize(self.colWidth, self.colWidth)
     end
 end
@@ -713,7 +715,6 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
     local quickslotSize = frameSize + 2 * inset
     local border = Turbine.UI.Control()
     border:SetParent(self)
-    border:SetSize(quickslotSize, quickslotSize)
     border:SetZOrder(98)
 
     local qs = Turbine.UI.Lotro.Quickslot()
@@ -756,6 +757,8 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
 
     -- Stretch the complete frame after its native-size quickslot and border edges are in place.
     border:SetStretchMode(1)
+    border:AttachEdges(GetStandardEdges())
+    border:SetSize(quickslotSize, quickslotSize)
     self:UpdateMapQuickslot(qs)
     border:SetVisible(true)
     qs:SetVisible(true)

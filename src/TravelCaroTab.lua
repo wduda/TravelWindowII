@@ -168,36 +168,31 @@ function TravelCaroTab:SetShortcuts()
     self:SetSize(self:GetWidth(), self:GetHeight());
 end
 
+-- create the 5 carousel quickslots
 function TravelCaroTab:CreateQuickslots()
-
-    -- loop through the 5 quickslots to be created
     for i = 1, 5, 1 do
-        -- set all the standard setting on all quickslots
-        self.quickslots[i] = Turbine.UI.Lotro.Quickslot();
-        self.quickslots[i]:SetVisible(true);
-        self.quickslots[i]:SetZOrder(100);
-        self.quickslots[i]:SetOpacity(1);
-        self.quickslots[i]:SetParent(self);
-        self.quickslots[i]:SetAllowDrop(false);
-        self.quickslots[i]:SetStretchMode(1);
-        self.quickslots[i]:SetMouseVisible(false);
+        local qs = Turbine.UI.Lotro.Quickslot()
+        qs:SetVisible(true)
+        qs:SetZOrder(100)
+        qs:SetOpacity(1)
+        qs:SetParent(self)
+        qs:SetAllowDrop(false)
+        qs:SetMouseVisible(false)
 
-        -- set the handler for mouse wheel event
-        self.quickslots[i].MouseWheel = function(sender, args)
+        qs.MouseWheel = function(sender, args)
             self:DoScroll(sender, args);
         end
 
-        -- set the handler for mouse click events, show the menu
-        -- when right clicked
-        self.quickslots[i].MouseClick = function(sender, args)
-            if (args.Button == Turbine.UI.MouseButton.Right) then
+        qs.MouseClick = function(sender, args)
+            if args.Button == Turbine.UI.MouseButton.Right then
                 Menu:ShowMenu();
             else
-                if (Settings.hideOnTravel == 1) then
-                    self.parent:SetVisible(false);
+                if Settings.hideOnTravel == 1 then
+                    self.parent:SetVisible(false)
                 end
             end
         end
+        self.quickslots[i] = qs
     end
 end
 
@@ -212,10 +207,12 @@ function TravelCaroTab:SetSize(width, height)
 
     -- adjust the size and location of the 5 quickslots
     self.quickslots[1]:SetStretchMode(1);
+    self.quickslots[1]:AttachEdges(GetStandardEdges())
     self.quickslots[1]:SetSize(22, 22);
     self.quickslots[1]:SetPosition(self:GetWidth() / 2 - 71 + self.wPadding, (self:GetHeight() - offset) / 2);
 
     self.quickslots[2]:SetStretchMode(1);
+    self.quickslots[2]:AttachEdges(GetStandardEdges())
     self.quickslots[2]:SetSize(28, 28);
     self.quickslots[2]:SetPosition(self:GetWidth() / 2 - 49 + self.wPadding, (self:GetHeight() - offset) / 2 + 3);
 
@@ -223,10 +220,12 @@ function TravelCaroTab:SetSize(width, height)
     self.quickslots[3]:SetPosition(self:GetWidth() / 2 - 22 + self.wPadding, (self:GetHeight() - offset) / 2 + 5);
 
     self.quickslots[4]:SetStretchMode(1);
+    self.quickslots[4]:AttachEdges(GetStandardEdges())
     self.quickslots[4]:SetSize(28, 28);
     self.quickslots[4]:SetPosition(self:GetWidth() / 2 + 13 + self.wPadding, (self:GetHeight() - offset) / 2 + 3);
 
     self.quickslots[5]:SetStretchMode(1);
+    self.quickslots[5]:AttachEdges(GetStandardEdges())
     self.quickslots[5]:SetSize(22, 22);
     self.quickslots[5]:SetPosition(self:GetWidth() / 2 + 40 + self.wPadding, (self:GetHeight() - offset) / 2);
 end
