@@ -17,6 +17,7 @@ function TravelWindow:Constructor()
         Turbine.UI.Lotro.Window.Constructor(self)
     end
 
+    self.disableUpdates = false
     self.fadeOut = false
     self.levelUpdate = false
     self.reloadGVMap = false
@@ -589,6 +590,7 @@ function TravelWindow:SetOpacity(value)
 end
 
 function TravelWindow:UpdateSettings()
+    if self.disableUpdates then return end
     self:UpdateSelectedSkills()
     self.MainPanel:SelectTab(Settings.mode)
     self:UpdateMinimum()
