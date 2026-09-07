@@ -186,8 +186,9 @@ function TravelGridTab:Constructor(toplevel)
     end
 
     self.SizeChanged = function(_, _)
-       self:UpdateLayout()
-       self:SaveSize()
+        if self.tabId ~= self.parent.MainPanel.selectedPage then return end
+        self:UpdateLayout()
+        self:SaveSize()
     end
 end
 

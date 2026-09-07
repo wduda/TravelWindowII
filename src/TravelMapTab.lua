@@ -294,6 +294,7 @@ function TravelMapTab:Constructor(toplevel)
     end
 
     self.SizeChanged = function(_, _)
+        if self.tabId ~= self.parent.MainPanel.selectedPage then return end
         for i = 1, #self.quickslots do
             local qs = self.quickslots[i]
             self:UpdateMapQuickslot(qs)
