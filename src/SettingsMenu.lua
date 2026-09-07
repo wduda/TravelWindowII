@@ -226,7 +226,9 @@ function SettingsMenu:RefreshAfterChange(shouldUpdateMainWindow)
     self:SetSelections()
 
     if _G.options ~= nil and _G.options.Panel ~= nil then
+        self.parent.disableUpdates = true
         _G.options.Panel:UpdateOptions()
+        self.parent.disableUpdates = false
     end
 
     if shouldUpdateMainWindow then
