@@ -91,10 +91,9 @@ function TravelWindow:Constructor()
     self.ListTab.numOfRows = Settings.listRows
     self.PullTab.pixelWidth = Settings.pullWidth
 
+    self:UpdateSettings()
     self.GridTab:SetAllowDrop(true)
     self.MapTab:SetAllowDrop(true)
-
-    self:UpdateSettings()
 
     -- track the hidden state of the UI, manage previous states for window and
     -- the button
@@ -598,8 +597,8 @@ function TravelWindow:SetOpacity(value)
 end
 
 function TravelWindow:UpdateSettings()
-    self.MainPanel:SelectTab(Settings.mode)
     self:UpdateSelectedSkills()
+    self.MainPanel:SelectTab(Settings.mode)
     self:UpdateMinimum()
     self:SetInitialPosition()
 
