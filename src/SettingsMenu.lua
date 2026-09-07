@@ -166,8 +166,8 @@ function SettingsMenu:Constructor(parentWindow)
         if self.shortcut ~= nil then
             self.shortcut:SetEnabled(false)
             self.parent.dirty = true
-            self.parent:UpdateSettings()
             _G.options.Panel:EnableFromSettings()
+            self.parent:UpdateSettings()
         end
     end)
 
