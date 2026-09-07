@@ -138,24 +138,16 @@ function TravelWindow:Constructor()
     self:SetWantsKeyEvents(true)
 
     -- check if our position has changed, and save the settings if so
-    self.PositionChanged = function(_, _)
-        if BlockUIChange(self) then
-            if self.posLockX ~= nil then
-                self:SetPosition(self.posLockX, self.posLockY)
-            end
-        else
-            self.posLockX = nil
-        end
-
-        local w, h = self:GetPosition()
+    self.SetPosition = function(_, x, y)
         local sw, sh = Turbine.UI.Display.GetSize()
         if Settings.mode == TabId.MAP then
-            Settings.mapPositionRelativeX = w / sw
-            Settings.mapPositionRelativeY = h / sh
+            Settings.mapPositionRelativeX = x / sw
+            Settings.mapPositionRelativeY = y / sh
         else
-            Settings.positionRelativeX = w / sw
-            Settings.positionRelativeY = h / sh
+            Settings.positionRelativeX = x / sw
+            Settings.positionRelativeY = y / sh
         end
+        Turbine.UI.Control.SetPosition(self, x, y)
         self.PullTab:ClosePulldown()
     end
 
@@ -555,11 +547,11 @@ function TravelWindow:SetInitialPosition()
     local positionX, positionY
 
     if Settings.mode == TabId.MAP then
-        positionX = screenW * Settings.mapPositionRelativeX
-        positionY = screenH * Settings.mapPositionRelativeY
+        positionX = math.floor(screenW * Settings.mapPositionRelativeX, 0.5)
+        positionY = math.floor(screenH * Settings.mapPositionRelativeY, 0.5)
     else
-        positionX = screenW * Settings.positionRelativeX
-        positionY = screenH * Settings.positionRelativeY
+        positionX = math.floor(screenW * Settings.positionRelativeX, 0.5)
+        positionY = math.floor(screenH * Settings.positionRelativeY, 0.5)
     end
 
     -- Apply boundary validation
