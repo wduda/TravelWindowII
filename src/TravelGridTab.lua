@@ -69,9 +69,21 @@ function TravelGridTab:Constructor(toplevel)
     self.myScrollBar = Turbine.UI.Lotro.ScrollBar();
     self.myScrollBar:SetOrientation(Turbine.UI.Orientation.Vertical);
     self.myScrollBar:SetMinimum(0);
-    self.myScrollBar:SetLargeChange(self.scrollChunk);
-    self.myScrollBar:SetSmallChange(self.scrollChunk);
     self.myScrollBar:SetVisible(false);
+    self.myScrollBar.SetValue = function(_, value)
+        local current = self.myScrollBar:GetValue()
+        if current < value then
+            value = math.ceil(value / self.scrollChunk) * self.scrollChunk
+        elseif current < value then
+            value = math.floor(value / self.scrollChunk) * self.scrollChunk
+        end
+        if value < self.myScrollBar:GetMinimum() then
+            value = self.myScrollBar:GetMinimum()
+        elseif value > self.myScrollBar:GetMaximum() then
+            value = self.myScrollBar:GetMaximum()
+        end
+        Turbine.UI.ScrollBar.SetValue(self.myScrollBar, value)
+    end
 
     self.myScrollBar.MouseClick = function(sender, args)
         if (args.Button == Turbine.UI.MouseButton.Right) then
@@ -194,17 +206,12 @@ end
 
 -- function to handle mouse scrollwheel events
 function TravelGridTab:DoScroll(sender, args)
-    -- calculate how far to move the scrollbar
-    local newValue = self.myScrollBar:GetValue() - args.Direction * self.scrollChunk;
+    local newValue = self.myScrollBar:GetValue() - args.Direction * self.scrollChunk
 
-    -- make sure the value does not go below zero
     if newValue < 0 then
-        newValue = 0;
+        newValue = 0
     end
-    self.myScrollBar:SetValue(newValue);
-
-    -- hide the scrollbar if the max value is 0, we don't need it
-    self.myScrollBar:SetVisible(self.maxScroll > 0);
+    self.myScrollBar:SetValue(newValue)
 end
 
 -- function to force the tab to update the subwindow control
@@ -249,23 +256,15 @@ function TravelGridTab:UpdateLayout()
         self.controlList:Clear()
         self:ClearItems()
 
-        -- update controls
-        self.SubWindow:SetSize(self:GetWidth(), self:GetHeight() - self.hSubPadding)
         self.myScrollBar:SetParent(self.SubWindow)
-        self.myScrollBar:SetSize(10, self:GetHeight() - 10)
-        self.myScrollBar:SetPosition(self:GetWidth() - 10, 0)
-        self.myScrollBar:SetMaximum(self.maxScroll)
-        self.myScrollBar:SetVisible(self.maxScroll > 0)
         self.myLabel:SetParent(self.SubWindow)
-        self.myLabel:SetSize(self:GetWidth() - 10, self:GetHeight())
-    else
-        self.SubWindow:SetSize(self:GetWidth(), self:GetHeight() - self.hSubPadding)
-        self.myScrollBar:SetSize(10, self:GetHeight() - 10)
-        self.myScrollBar:SetPosition(self:GetWidth() - 10, 0)
-        self.myScrollBar:SetMaximum(self.maxScroll)
-        self.myScrollBar:SetVisible(self.maxScroll > 0)
-        self.myLabel:SetSize(self:GetWidth() - 10, self:GetHeight())
     end
+    self.SubWindow:SetSize(self:GetWidth(), self:GetHeight() - self.hSubPadding)
+    self.myScrollBar:SetSize(10, self:GetHeight() - 10)
+    self.myScrollBar:SetPosition(self:GetWidth() - 10, 0)
+    self.myScrollBar:SetMaximum(self.maxScroll)
+    self.myScrollBar:SetVisible(self.maxScroll > 0)
+    self.myLabel:SetSize(self:GetWidth() - 10, self:GetHeight())
 
     local margin = self:GetMargin(#self.selected)
     for i = 1, #self.selected, 1 do
@@ -359,47 +358,31 @@ function TravelGridTab:FitToPixels(width, height)
 end
 
 function TravelGridTab:GetGridDims(width, height)
-    if width < self.minCols * self.colWidth then
-        width = self.minCols * self.colWidth
-    end
-    if height < self.colWidth then
-        height = self.colWidth
-    end
-
-    local scrollHeight = height
     width = width + self.colWidth / 2
     height = height + self.colWidth / 2
-    local numOfShortcuts =  #self.selected;
-    local numOfCols = math.floor(width / self.colWidth);
-    local numOfRows = math.ceil(numOfShortcuts / numOfCols);
-
-    -- set the maximum scroll of the scrollbar
-    local maxScroll = numOfRows * self.colWidth - scrollHeight
-    if maxScroll < self.colWidth then
-        maxScroll = 0;
-    elseif self.parent.isMinWindow and maxScroll > 0 then
-        -- include scrollbar width
-        numOfCols = math.floor((width - 10) / self.colWidth);
-        numOfRows = math.ceil(numOfShortcuts / numOfCols);
-        maxScroll = numOfRows * self.colWidth - scrollHeight
-    end
-
-    -- set min/max bounds
-    if maxScroll < 0 then
-        maxScroll = 0;
-    elseif maxScroll > 0 then
-        numOfRows = math.floor(height / self.colWidth);
-    end
-    if numOfRows < 1 then
-        numOfRows = 1;
-    end
-    if numOfCols > #self.selected then
-        numOfCols = #self.selected
+    local numOfShortcuts =  #self.selected
+    local numOfCols = math.floor(width / self.colWidth)
+    if numOfCols > numOfShortcuts then
+        numOfCols = numOfShortcuts
     end
     if numOfCols < self.minCols then
-        numOfCols = self.minCols;
+        numOfCols = self.minCols
     end
-    return numOfCols, numOfRows, maxScroll;
+    local maxNumOfRows = math.ceil(numOfShortcuts / numOfCols)
+    local scrolledNumOfRows = math.floor(height / self.colWidth)
+    if scrolledNumOfRows < maxNumOfRows then
+        numOfRows = scrolledNumOfRows
+    else
+        numOfRows = maxNumOfRows
+    end
+    if numOfRows < 1 then
+        numOfRows = 1
+    end
+    local maxScroll = maxNumOfRows * self.colWidth - scrolledNumOfRows * self.colWidth
+    if maxScroll < 0 then
+        maxScroll = 0
+    end
+    return numOfCols, numOfRows, maxScroll
 end
 
 function TravelGridTab:GetMargin(numOfShortcuts)
