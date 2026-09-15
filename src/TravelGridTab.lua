@@ -337,24 +337,23 @@ function TravelGridTab:AddItem(shortcut, margin)
 end
 
 function TravelGridTab:GetPixelSize()
-    local width = self.numOfCols * self.colWidth + self.parent.wPadding + 10
-    local height = self.numOfRows * self.colWidth + self.parent.hPadding
-    return width, height;
+    local wPadding = self.parent.wPadding
+    if not self.parent.isMinWindow or self.maxScroll > 0 then
+        wPadding = wPadding + 10
+    end
+    local width = self.numOfCols * self.colWidth + wPadding
+    local height = self.numOfRows * self.colWidth + self.parent.hPadding + 1
+    return width, height
 end
 
 function TravelGridTab:FitToPixels(width, height)
-    local wPadding = self.parent.wPadding;
-    local hPadding = self.parent.hPadding;
-    local cols, rows, maxScroll = self:GetGridDims(width - wPadding, height - hPadding);
-    if not self.parent.isMinWindow or maxScroll > 0 then
-        wPadding = wPadding + 10;
-    end
-    self.numOfCols = cols;
-    self.numOfRows = rows;
-    self.maxScroll = maxScroll;
-    local sX = cols * self.colWidth + wPadding;
-    local sY = rows * self.colWidth + hPadding;
-    return sX, sY;
+    local wPadding = self.parent.wPadding
+    local hPadding = self.parent.hPadding
+    local cols, rows, maxScroll = self:GetGridDims(width - wPadding, height - hPadding - 1)
+    self.numOfCols = cols
+    self.numOfRows = rows
+    self.maxScroll = maxScroll
+    return self:GetPixelSize()
 end
 
 function TravelGridTab:GetGridDims(width, height)
