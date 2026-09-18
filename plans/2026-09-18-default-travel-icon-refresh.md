@@ -6,7 +6,7 @@
 
 ## Goal
 
-Replace the default Travel Window II travel button artwork with the new signpost-and-horse icon while preserving the existing size variants and all button behavior.
+Replace the default Travel Window II travel button artwork with the new signpost-and-dwarf-rune icon while preserving the existing size variants and all button behavior.
 
 ## Plan
 
@@ -17,4 +17,4 @@ Replace the default Travel Window II travel button artwork with the new signpost
 
 ## Expected result
 
-The `Default` travel button style uses the new signpost-and-horse artwork at all supported button sizes.
+The `Default` travel button style uses the new signpost-and-dwarf-rune artwork at all supported button sizes.
