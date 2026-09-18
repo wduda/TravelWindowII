@@ -15,7 +15,7 @@ function TravelButton:Constructor()
     -- set defaults
     self:SetBackColorBlendMode(Turbine.UI.BlendMode.Multiply);
     self:SetBackColor(Turbine.UI.Color(0, 0.5, 0.5, 0.5));
-    self:SetZOrder(1);
+    self:SetZOrder(0)
     self:ApplyAppearance()
     self:SetVisible(Settings.showButton == 1);
     self:SetOpacity(Settings.toggleMinOpacity);
