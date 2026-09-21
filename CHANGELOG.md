@@ -4,6 +4,7 @@
 
 - feat: Map View now has an option to include learned and unlearned skill borders
 - fix: German UI terminology is now more consistent
+- fix: French UI terminology is now more consistent
 - fix: Map View travel shortcuts no longer overlap the bottom controls in classic window mode
 - fix: Map View and navigation panel positioning stays correct when switching layouts and resizing
 - fix: grid and list views now recalculate layout and scroll ranges correctly after resizing or changing skill counts
