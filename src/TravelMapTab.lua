@@ -667,7 +667,7 @@ function TravelMapTab:AddRacialLocation()
         if racial.shortcut ~= nil and racial.shortcut:IsEnabled() and IsShortcutTrained(id) then
             local sType = Turbine.UI.Lotro.ShortcutType.Skill
             local shortcut = Turbine.UI.Lotro.Shortcut(sType, id)
-            self:AddSingleShortcut(racial.map[1], shortcut, racial.shortcut, true)
+            self:AddSingleShortcut(racial.map[1], shortcut, racial.shortcut)
         end
     end
 end
@@ -680,7 +680,7 @@ function TravelMapTab:AddCreepShortcuts()
         local map = creep.skills[i].map
         local id = creep.skills[i].id
         if map and #map > 0 then
-            self:AddSingleShortcut(map[1], Turbine.UI.Lotro.Shortcut(sType, id), creep.skills[i].shortcut, true)
+            self:AddSingleShortcut(map[1], Turbine.UI.Lotro.Shortcut(sType, id), creep.skills[i].shortcut)
         end
     end
 end
@@ -696,8 +696,7 @@ function TravelMapTab:AddLocations(skills)
                 if item ~= nil and #item == 3 and self.currentRegion == item[1] then
                     local id = skill.id
                     if skill.shortcut:IsEnabled() then
-                        self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id), skill.shortcut,
-                            skill.shortcut.found == true)
+                        self:AddSingleShortcut(item, Turbine.UI.Lotro.Shortcut(sType, id), skill.shortcut)
                     end
                 end
             end
@@ -706,7 +705,8 @@ function TravelMapTab:AddLocations(skills)
 end
 
 -- Add a single shortcut to the map
-function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut, isLearned)
+function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
+    local isLearned = travelShortcut.found == true
     local index = #self.quickslots + 1
     local frameSize = self.colWidth
     local inset = -MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET
