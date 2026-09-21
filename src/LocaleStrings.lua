@@ -397,6 +397,18 @@ LC_FR.useTagInListTab = "Utiliser la balise Skill dans la mise en page de texte"
 LC_ES.useTagInListTab = "Usar etiqueta de Habilidad en el diseño de Texto"
 LC_RU.useTagInListTab = "Использование тега навыка в макете текста"
 
+LC_EN.showLearnedMapBorders = "Show learned skill borders on map"
+LC_DE.showLearnedMapBorders = "Rahmen gelernter Fertigkeiten auf Karte anzeigen"
+LC_FR.showLearnedMapBorders = "Afficher les bordures des competences apprises sur la carte"
+LC_ES.showLearnedMapBorders = "Mostrar bordes de habilidades aprendidas en el mapa"
+LC_RU.showLearnedMapBorders = "Показывать рамки изученных навыков на карте"
+
+LC_EN.showUnlearnedMapBorders = "Show unlearned skill borders on map"
+LC_DE.showUnlearnedMapBorders = "Rahmen ungelernter Fertigkeiten auf Karte anzeigen"
+LC_FR.showUnlearnedMapBorders = "Afficher les bordures des competences non apprises sur la carte"
+LC_ES.showUnlearnedMapBorders = "Mostrar bordes de habilidades no aprendidas en el mapa"
+LC_RU.showUnlearnedMapBorders = "Показывать рамки неизученных навыков на карте"
+
 LC_EN.shortcutLabelFontSize = "Skill Label Font Size"
 LC_DE.shortcutLabelFontSize = "Schriftgröße der Fertigkeitsbezeichnungen"
 LC_FR.shortcutLabelFontSize = "Taille de police pour boutons de compétence"
