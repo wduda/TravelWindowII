@@ -4,19 +4,10 @@ v4.10.0
 
 - feat: Map View now has an option to include learned and unlearned skill borders
 - fix: German UI terminology is now more consistent
+- fix: French UI terminology is now more consistent
 - fix: Map View travel shortcuts no longer overlap the bottom controls in classic mode
 - fix: Map View and navigation panel positioning stay correct when switching layouts and resizing
 - fix: grid and list views now recalculate layout and scroll ranges correctly after resizing or changing skill counts
-
-v4.9.0
-
-- feat: map-view skills can now be hidden through their context menu
-- fix: release archives no longer include non-runtime repository folders
-- fix: disabled racial travel skills no longer appear in map view
-- fix: corrected map positions for After-battle Osgiliath and Henneth Annun
-- fix: corrected the Spanish translation for Mark of the Angle
-- fix: map quickslots now scale correctly with the map
-- fix: map navigation rows no longer shift after acquiring a travel skill
 
 Help with further translations for DE, FR, ES and RU clients is always welcome. Ideally submitted as pull requests on GitHub, but almost any way can be accomodated really.
 

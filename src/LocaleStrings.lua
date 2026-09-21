@@ -52,8 +52,8 @@ LC_DE.help = "Travel Window II:\n" ..
 LC_FR.help = "Travel Window II:\n" ..
 " trav show: Afficher Travel Window\n" ..
 " trav hide: Masquer Travel Window\n" ..
-" trav toggle: Toggle the Travel Window\n" ..
-" trav update: Afficher la fenêtre de actualisation\n"
+" trav toggle: Basculer Travel Window\n" ..
+" trav update: Afficher la fenêtre de mise à jour\n"
 LC_ES.help = "Travel Window II:\n" ..
 " trav show: Mostrar la Ventana de Viaje\n" ..
 " trav hide: Ocultar la Ventana de Viaje\n" ..
@@ -92,7 +92,7 @@ LC_RU.optionsTitle = "Настройки Travel"
 
 LC_EN.skillNotTrained = "Skills not trained: "
 LC_DE.skillNotTrained = "Nicht erlernte Fertigkeiten: "
-LC_FR.skillNotTrained = "Compétences non utilisée: "
+LC_FR.skillNotTrained = "Compétences non apprises : "
 LC_ES.skillNotTrained = "Habilidades no aprendidas: "
 LC_RU.skillNotTrained = "Навыки не изучены: "
 
@@ -117,7 +117,7 @@ LC_RU.sortTab = "Сортировка"
 
 LC_EN.hide = "Hide Travel Window at startup"
 LC_DE.hide = "Beim Start ausblenden"
-LC_FR.hide = "Cacher Travel Window au démarrage"
+LC_FR.hide = "Masquer Travel Window au démarrage"
 LC_ES.hide = "Ocultar la Ventana de Viaje al inicio"
 LC_RU.hide = "Убрать Travel Window при старте"
 
@@ -129,19 +129,19 @@ LC_RU.findTab = "Поиск навыков"
 
 LC_EN.hideOnStart = "Hide Travel Window at startup"
 LC_DE.hideOnStart = "Beim Start ausblenden"
-LC_FR.hideOnStart = "Masquer Travel Window au début"
+LC_FR.hideOnStart = "Masquer Travel Window au démarrage"
 LC_ES.hideOnStart = "Ocultar la Ventana de Viaje al inicio"
 LC_RU.hideOnStart = "Убрать окно Travel при старте"
 
 LC_EN.showButton = "Show Travel Button"
 LC_DE.showButton = "Travel-Knopf anzeigen"
-LC_FR.showButton = "Montrer le bouton Travel"
+LC_FR.showButton = "Afficher le bouton Travel"
 LC_ES.showButton = "Mostrar el Botón de Viaje"
 LC_RU.showButton = "Показать кнопку Travel"
 
 LC_EN.buttonIcon = "Travel Button Icon"
 LC_DE.buttonIcon = "Symbol des Travel-Knopfs"
-LC_FR.buttonIcon = "Icone du bouton Travel"
+LC_FR.buttonIcon = "Icône du bouton Travel"
 LC_ES.buttonIcon = "Icono del Botón de Viaje"
 LC_RU.buttonIcon = "Travel Button icon"
 
@@ -171,7 +171,7 @@ LC_RU.buttonSize200 = "200%"
 
 LC_EN.buttonIconDefault = "Default"
 LC_DE.buttonIconDefault = "Standard"
-LC_FR.buttonIconDefault = "Defaut"
+LC_FR.buttonIconDefault = "Défaut"
 LC_ES.buttonIconDefault = "Por defecto"
 LC_RU.buttonIconDefault = "По умолчанию"
 
@@ -201,25 +201,25 @@ LC_RU.hideSkill = "Скрыть навык"
 
 LC_EN.pulldownTravel = "Travel when pulldown skill selected"
 LC_DE.pulldownTravel = "Bei Fertigkeitsauswahl reisen"
-LC_FR.pulldownTravel = "Voyager lorsque la compétence déroulante est sélectionnée"
+LC_FR.pulldownTravel = "Voyager lors de la sélection"
 LC_ES.pulldownTravel = "Viajar al seleccionar habilidad en el menú desplegable"
 LC_RU.pulldownTravel = "Путешествуйте по выбранному навыку"
 
 LC_EN.hideOnTravel = "Hide main window on travel"
 LC_DE.hideOnTravel = "Beim Reisen ausblenden"
-LC_FR.hideOnTravel = "Masquer la fenêtre quand une compétence est utilisée"
+LC_FR.hideOnTravel = "Masquer la fenêtre pendant le voyage"
 LC_ES.hideOnTravel = "Ocultar ventana principal al viajar"
 LC_RU.hideOnTravel = "Убрать основное окно во время путешествия"
 
 LC_EN.hideOnCombat = "Hide main window when entering combat"
 LC_DE.hideOnCombat = "Bei Kampfbeginn ausblenden"
-LC_FR.hideOnCombat = "Masquer la fenêtre à l'entrée en combat"
+LC_FR.hideOnCombat = "Masquer la fenêtre en combat"
 LC_ES.hideOnCombat = "Ocultar ventana principal al entrar en combate"
 LC_RU.hideOnCombat = "Убрать основное окно во время боя"
 
 LC_EN.showUpdateWindow = "Show update window"
 LC_DE.showUpdateWindow = "Update-Fenster anzeigen"
-LC_FR.showUpdateWindow = "Fenêtre de mise à jour de l’affichage"
+LC_FR.showUpdateWindow = "Afficher la fenêtre de mise à jour"
 LC_ES.showUpdateWindow = "Ventana de actualización de mostrar"
 LC_RU.showUpdateWindow = "Окно обновления показа"
 
@@ -261,13 +261,13 @@ LC_RU.moveDown = "Вниз"
 
 LC_EN.moveUpChunk = "Move Up 10"
 LC_DE.moveUpChunk = "Um 10 nach oben"
-LC_FR.moveUpChunk = "Vers le haut 10"
+LC_FR.moveUpChunk = "Monter de 10"
 LC_ES.moveUpChunk = "Mover Arriba 10"
 LC_RU.moveUpChunk = "Вверх на 10"
 
 LC_EN.moveDownChunk = "Move Down 10"
 LC_DE.moveDownChunk = "Um 10 nach unten"
-LC_FR.moveDownChunk = "Vers le bas 10"
+LC_FR.moveDownChunk = "Descendre de 10"
 LC_ES.moveDownChunk = "Mover Abajo 10"
 LC_RU.moveDownChunk = "Вниз на 10"
 
@@ -285,13 +285,13 @@ LC_RU.moveBottom = "В конец списка"
 
 LC_EN.toggleSliders = "Travel Button Opacity"
 LC_DE.toggleSliders = "Knopftransparenz"
-LC_FR.toggleSliders = "Modifier l'opacité du bouton Travel"
+LC_FR.toggleSliders = "Opacité du bouton Travel"
 LC_ES.toggleSliders = "Opacidad del Botón de Viaje"
 LC_RU.toggleSliders = "Прозрачность кнопки"
 
 LC_EN.mainSliders = "Travel Window Opacity"
 LC_DE.mainSliders = "Fenstertransparenz"
-LC_FR.mainSliders = "Modifier l'opacité de Travel Window"
+LC_FR.mainSliders = "Opacité de Travel Window"
 LC_ES.mainSliders = "Opacidad de la Ventana de Viaje"
 LC_RU.mainSliders = "Прозрачность основного Travel Window"
 
@@ -309,31 +309,31 @@ LC_RU.max = "Макс: "
 
 LC_EN.resetSettings = "Reset to Default"
 LC_DE.resetSettings = "Rücksetzen auf Standard"
-LC_FR.resetSettings = "Réinitialiser par défaut"
+LC_FR.resetSettings = "Réinitialiser"
 LC_ES.resetSettings = "Restablecer a por defecto"
 LC_RU.resetSettings = "Сброс настроек"
 
 LC_EN.saveGlobalDefaults = "Save Global Defaults"
 LC_DE.saveGlobalDefaults = "Globale Standardwerte speichern"
-LC_FR.saveGlobalDefaults = "Enregistrer par défaut globales"
+LC_FR.saveGlobalDefaults = "Enregistrer les valeurs par défaut"
 LC_ES.saveGlobalDefaults = "Guardar valores por defecto globales"
 LC_RU.saveGlobalDefaults = "Сохранить настройки"
 
 LC_EN.loadGlobalDefaults = "Load Global Defaults"
 LC_DE.loadGlobalDefaults = "Globale Standardwerte laden"
-LC_FR.loadGlobalDefaults = "Charger par défaut globales"
+LC_FR.loadGlobalDefaults = "Charger les valeurs par défaut"
 LC_ES.loadGlobalDefaults = "Cargar valores por defecto globales"
 LC_RU.loadGlobalDefaults = "Загрузить настройки"
 
 LC_EN.defaultSort = "Reset to Default"
 LC_DE.defaultSort = "Rücksetzen auf Standard"
-LC_FR.defaultSort = "Réinitialiser par défaut"
+LC_FR.defaultSort = "Réinitialiser"
 LC_ES.defaultSort = "Restablecer a por defecto"
 LC_RU.defaultSort = "Сброс"
 
 LC_EN.sortName = "Sort by Name"
 LC_DE.sortName = "Nach Namen sortieren"
-LC_FR.sortName = "Trier par Nom"
+LC_FR.sortName = "Trier par nom"
 LC_ES.sortName = "Ordenar por Nombre"
 LC_RU.sortName = "По имени"
 
@@ -351,13 +351,13 @@ LC_RU.sortLevel = "По уровню"
 
 LC_EN.enableRepSkills = "Enable Overlapping"
 LC_DE.enableRepSkills = "Überlappungen aktivieren"
-LC_FR.enableRepSkills = "Activer le chevauchement"
+LC_FR.enableRepSkills = "Activer les chevauchements"
 LC_ES.enableRepSkills = "Habilitar Superposición"
 LC_RU.enableRepSkills = "Разрешить дубликаты"
 
 LC_EN.disableRepSkills = "Disable Overlapping"
 LC_DE.disableRepSkills = "Überlappungen deaktivieren"
-LC_FR.disableRepSkills = "Désactiver le chevauchement"
+LC_FR.disableRepSkills = "Désactiver les chevauchements"
 LC_ES.disableRepSkills = "Deshabilitar Superposición"
 LC_RU.disableRepSkills = "Убрать дубликаты"
 
@@ -381,37 +381,37 @@ LC_RU.lockUI = "Зафиксировать интерфейс"
 
 LC_EN.useZoneNames = "Use zone names"
 LC_DE.useZoneNames = "Zonennamen anzeigen"
-LC_FR.useZoneNames = "Utiliser les noms de zone"
+LC_FR.useZoneNames = "Afficher les noms de zone"
 LC_ES.useZoneNames = "Usar nombres de Zona"
 LC_RU.useZoneNames = "Использовать название зон"
 
 LC_EN.useSkillNames = "Use skill names"
 LC_DE.useSkillNames = "Fertigkeitsnamen anzeigen"
-LC_FR.useSkillNames = "Utiliser les noms de compétence"
+LC_FR.useSkillNames = "Afficher les noms de compétences"
 LC_ES.useSkillNames = "Usar nombres de Habilidad"
 LC_RU.useSkillNames = "Использовать названия навыков"
 
 LC_EN.useTagInListTab = "Use skill tag in text layout"
 LC_DE.useTagInListTab = "Fertigkeits-Tag verwenden"
-LC_FR.useTagInListTab = "Utiliser la balise Skill dans la mise en page de texte"
+LC_FR.useTagInListTab = "Utiliser le tag de compétence"
 LC_ES.useTagInListTab = "Usar etiqueta de Habilidad en el diseño de Texto"
 LC_RU.useTagInListTab = "Использование тега навыка в макете текста"
 
 LC_EN.showLearnedMapBorders = "Show learned skill borders on map"
 LC_DE.showLearnedMapBorders = "Rahmen gelernter Fertigkeiten"
-LC_FR.showLearnedMapBorders = "Afficher les bordures des competences apprises sur la carte"
+LC_FR.showLearnedMapBorders = "Bordures des compétences apprises"
 LC_ES.showLearnedMapBorders = "Mostrar bordes de habilidades aprendidas en el mapa"
 LC_RU.showLearnedMapBorders = "Показывать рамки изученных навыков на карте"
 
 LC_EN.showUnlearnedMapBorders = "Show unlearned skill borders on map"
 LC_DE.showUnlearnedMapBorders = "Rahmen ungelernter Fertigkeiten"
-LC_FR.showUnlearnedMapBorders = "Afficher les bordures des competences non apprises sur la carte"
+LC_FR.showUnlearnedMapBorders = "Bordures des compétences non apprises"
 LC_ES.showUnlearnedMapBorders = "Mostrar bordes de habilidades no aprendidas en el mapa"
 LC_RU.showUnlearnedMapBorders = "Показывать рамки неизученных навыков на карте"
 
 LC_EN.shortcutLabelFontSize = "Skill Label Font Size"
 LC_DE.shortcutLabelFontSize = "Schriftgröße der Fertigkeitsnamen"
-LC_FR.shortcutLabelFontSize = "Taille de police pour boutons de compétence"
+LC_FR.shortcutLabelFontSize = "Taille des libellés de compétences"
 LC_ES.shortcutLabelFontSize = "Tamaño de fuente de la etiqueta de Habilidad"
 LC_RU.shortcutLabelFontSize = "Размер шрифта меток быстрого доступа"
 
@@ -435,13 +435,13 @@ LC_RU.fontSizeLarge = "Большой"
 
 LC_EN.unlockKeyPress = "Hold Shift to unlock"
 LC_DE.unlockKeyPress = "Umschalttaste zum Entsperren"
-LC_FR.unlockKeyPress = "Maintenez la touche Maj enfoncée pour déverrouiller"
+LC_FR.unlockKeyPress = "Maintenir Maj pour déverrouiller"
 LC_ES.unlockKeyPress = "Mantener Shift para desbloquear"
 LC_RU.unlockKeyPress = "Передвигать с нажатым Shift"
 
 LC_EN.escapeToClose = "Escape closes Travel Window"
 LC_DE.escapeToClose = "Escape schließt das Travel-Fenster"
-LC_FR.escapeToClose = "Escape fermer Travel Window"
+LC_FR.escapeToClose = "Escape ferme Travel Window"
 LC_ES.escapeToClose = "ESC cierra la Ventana de Viaje"
 LC_RU.escapeToClose = "ESC закрывает главное окно"
 
@@ -453,13 +453,13 @@ LC_RU.useMinWindow = "Использовать мини-окно"
 
 LC_EN.fadeOutSteps = "Fade Window speed"
 LC_DE.fadeOutSteps = "Ausblendgeschwindigkeit"
-LC_FR.fadeOutSteps = "Fondu de la vitesse de Travel Window"
+LC_FR.fadeOutSteps = "Vitesse d'estompage"
 LC_ES.fadeOutSteps = "Velocidad de desvanecimiento de ventana"
 LC_RU.fadeOutSteps = "Fade Window Speed"
 
 LC_EN.fadeOutDelay = "Fade Window delay"
 LC_DE.fadeOutDelay = "Ausblendverzögerung"
-LC_FR.fadeOutDelay = "Délai de la fenêtre de fondu"
+LC_FR.fadeOutDelay = "Délai d'estompage"
 LC_ES.fadeOutDelay = "Retraso de desvanecimiento de ventana"
 LC_RU.fadeOutDelay = "Fade Window Delay"
 
@@ -472,25 +472,25 @@ LC_RU.menuFilters = "Фильтры"
 
 LC_EN.menuGen = "Show Generic Travels"
 LC_DE.menuGen = "Allgemeine Fertigkeiten anzeigen"
-LC_FR.menuGen = "Voir les voyages génériques"
+LC_FR.menuGen = "Afficher les compétences générales"
 LC_ES.menuGen = "Mostrar Viajes Genéricos"
 LC_RU.menuGen = "Показать общие путешествия"
 
 LC_EN.menuRace = "Show Racial Travels"
 LC_DE.menuRace = "Rassenfertigkeiten anzeigen"
-LC_FR.menuRace = "Voir les voyages raciaux"
+LC_FR.menuRace = "Afficher les compétences raciales"
 LC_ES.menuRace = "Mostrar Viajes Raciales"
 LC_RU.menuRace = "Показать расовые путешествия"
 
 LC_EN.menuRep = "Show Reputation Travels"
 LC_DE.menuRep = "Ruf-Fertigkeiten anzeigen"
-LC_FR.menuRep = "Voir les voyages de réputation"
+LC_FR.menuRep = "Afficher les compétences de réputation"
 LC_ES.menuRep = "Mostrar Viajes de Reputación"
 LC_RU.menuRep = "Показать путешествия за репутацию"
 
 LC_EN.menuClass = "Show Class Travels"
 LC_DE.menuClass = "Klassenfertigkeiten anzeigen"
-LC_FR.menuClass = "Voir les voyages de classe"
+LC_FR.menuClass = "Afficher les compétences de classe"
 LC_ES.menuClass = "Mostrar Viajes de Clase"
 LC_RU.menuClass = "Показать классовые путешествия"
 
@@ -502,25 +502,25 @@ LC_RU.menuMode = "Режим"
 
 LC_EN.menuText = "Text List"
 LC_DE.menuText = "Textliste"
-LC_FR.menuText = "Liste de texte"
+LC_FR.menuText = "Liste textuelle"
 LC_ES.menuText = "Lista de Texto"
 LC_RU.menuText = "Список текстом"
 
 LC_EN.menuIcon = "Icon Grid"
 LC_DE.menuIcon = "Symbolraster"
-LC_FR.menuIcon = "Grille d'icône"
+LC_FR.menuIcon = "Grille d'icônes"
 LC_ES.menuIcon = "Cuadrícula de Iconos"
 LC_RU.menuIcon = "Сетка иконок"
 
 LC_EN.menuCaro = "Carousel"
 LC_DE.menuCaro = "Karussell"
-LC_FR.menuCaro = "Caroussel"
+LC_FR.menuCaro = "Carrousel"
 LC_ES.menuCaro = "Carrusel"
 LC_RU.menuCaro = "Карусель"
 
 LC_EN.menuPull = "Pulldown"
 LC_DE.menuPull = "Pulldown-Liste"
-LC_FR.menuPull = "Déroulant"
+LC_FR.menuPull = "Liste déroulante"
 LC_ES.menuPull = "Desplegar"
 LC_RU.menuPull = "Выпадающий"
 
@@ -544,7 +544,7 @@ LC_RU.menuButton = "Button"
 
 LC_EN.menuButtonIcon = "Icon"
 LC_DE.menuButtonIcon = "Symbol"
-LC_FR.menuButtonIcon = "Icone"
+LC_FR.menuButtonIcon = "Icône"
 LC_ES.menuButtonIcon = "Icono"
 LC_RU.menuButtonIcon = "Icon"
 
@@ -658,7 +658,7 @@ LC_RU.minLevel = "Минимальный уровень "
 
 LC_EN.updateTitle = "Travel Window II Update"
 LC_DE.updateTitle = "Travel Window II-Aktualisierung"
-LC_FR.updateTitle = "Travel Window II Actualización"
+LC_FR.updateTitle = "Mise à jour de Travel Window II"
 LC_ES.updateTitle = "Travel Window II Update"
 LC_RU.updateTitle = "Travel Window II Обновление"
 
@@ -670,13 +670,13 @@ LC_RU.updateClose = "Закрыть"
 
 LC_EN.updateRemindLater = "Show Again Later"
 LC_DE.updateRemindLater = "Später wieder anzeigen"
-LC_FR.updateRemindLater = "Rappeler plus tard"
+LC_FR.updateRemindLater = "Afficher plus tard"
 LC_ES.updateRemindLater = "Mostrar más tarde"
 LC_RU.updateRemindLater = "Показать позже"
 
 LC_EN.updateDefaultMessage = "Travel Window II has been updated to"
 LC_DE.updateDefaultMessage = "Travel Window II wurde aktualisiert auf"
-LC_FR.updateDefaultMessage = "Travel Window II a été mis à jour vers"
+LC_FR.updateDefaultMessage = "Travel Window II a été mis à jour vers la version"
 LC_ES.updateDefaultMessage = "Travel Window II se ha actualizado a"
 LC_RU.updateDefaultMessage = "Travel Window II обновлён до"
 
