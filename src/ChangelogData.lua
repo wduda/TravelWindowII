@@ -4,6 +4,15 @@
 
 ChangelogData = {
     {
+        version = "v4.10.0",
+        changes = {
+            "feat: Map View now has an option to include learned and unlearned skill borders",
+            "fix: Map View travel shortcuts no longer overlap the bottom controls in classic mode",
+            "fix: Map View and navigation panel positioning stay correct when switching layouts and resizing",
+            "fix: grid and list views now recalculate layout and scroll ranges correctly after resizing or changing skill counts",
+        }
+    },
+    {
         version = "v4.9.0",
         changes = {
             "feat: map-view skills can now be hidden through their context menu",
