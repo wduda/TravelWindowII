@@ -64,7 +64,7 @@ function OptionsPanel:Constructor()
 
     -- set size of window
     self.width = 800;
-    self.height = 920;
+    self.height = 1000
     self.windowWidth, self.windowHeight = Turbine.UI.Display:GetSize();
     if self.height + 40 > self.windowHeight then
         self.height = self.windowHeight - 20;
@@ -700,6 +700,24 @@ function OptionsPanel:SetupGeneralTab()
             TravelInfo:SetSkillLabels()
             _G.travel.ListTab:ReloadLabels()
             _G.travel.PullTab.pulldown:ReloadLabels()
+        end)
+    self:AddCheckBoxOption("showLearnedMapBorders", self.DEFAULT_X, self.DEFAULT_NEXTY,
+        function(sender, args)
+            if sender:IsChecked() then
+                Settings.showLearnedMapBorders = 1
+            else
+                Settings.showLearnedMapBorders = 0
+            end
+            _G.travel.MapTab:UpdateLayout()
+        end)
+    self:AddCheckBoxOption("showUnlearnedMapBorders", self.DEFAULT_X, self.DEFAULT_NEXTY,
+        function(sender, args)
+            if sender:IsChecked() then
+                Settings.showUnlearnedMapBorders = 1
+            else
+                Settings.showUnlearnedMapBorders = 0
+            end
+            _G.travel.MapTab:UpdateLayout()
         end)
     self:AddShortcutLabelFontOption()
 

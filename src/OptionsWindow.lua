@@ -27,7 +27,7 @@ function OptionsWindow:Constructor()
     end
 
     self.width = 800;
-    self.height = 920;
+    self.height = 1000
     self.windowWidth, self.windowHeight = Turbine.UI.Display:GetSize();
     if self.height + 40 > self.windowHeight then
         self.height = self.windowHeight - 20;
