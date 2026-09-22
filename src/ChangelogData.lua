@@ -4,6 +4,10 @@
 
 ChangelogData = {
     {
+        version = "v4.11.0",
+        changes = {}
+    },
+    {
         version = "v4.10.0",
         changes = {
             "feat: Map View now has an option to include learned and unlearned skill borders",

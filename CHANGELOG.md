@@ -1,5 +1,7 @@
 # CHANGELOG
 
+## v4.11.0
+
 ## v4.10.0
 
 - feat: Map View now has an option to include learned and unlearned skill borders
