@@ -31,6 +31,39 @@
 - Travel activation, hide-on-travel, and right-click context menus.
 - Dragging out of skills where supported; dropping onto fixed map skills remains disabled. Navigation-panel reordering remains unchanged.
 
+## Selected correction
+
+Issue: https://github.com/wduda/TravelWindowII/issues/324
+
+The concrete source defect is fractional outline geometry inside a stretched
+parent. For example, scale 1.25 transforms a 1px edge to 1.25px at a 2.5px
+inset. Its relationship to the reported state-dependent green/yellow fragments
+is a working hypothesis, not an in-game reproduction.
+
+Keep the parent unstretched and scale the native Quickslot itself, initialized
+once at its native size. Lay out the optional outline controls in final integer
+pixels using the same rounded frame bounds, inset, and edge thickness. Retain
+the existing placement convention, colors, preferences, event handlers, and
+drop policy. No custom hover state or texture substitution is needed.
+
 ## Results
 
-Investigation and implementation pending.
+- Implemented in `src/TravelMapTab.lua`: the parent remains unstretched, the
+  native Quickslot uses stretch mode initialized once at 36px, and the four
+  optional outline controls receive final integer geometry from
+  `UpdateMapQuickslot`.
+- A temporary Lua 5.1 harness executed the actual source with mocked UI
+  controls. All 9,648 cases passed: 201 scales (1.00 through 3.00), two window
+  offsets, three map positions (including Forochel and Thorin's Hall), both
+  learned states, and all four border-option combinations.
+- Checks cover effective whole-pixel edge geometry, outline continuity and
+  containment, original scale-1 geometry, color/preferences, mouse transparency,
+  preserved shortcut/drop policy, click/context-menu and hide-on-travel routing,
+  repeated size updates, and cleanup. The baseline fails the effective
+  whole-pixel edge check at scale 1.02.
+- Lua 5.1 loading/syntax and `git diff --check` passed. The existing
+  `Turbine.Testing` tests require the game client and were not run.
+- Mocks do not implement LOTRO rendering, native hover/tooltips, activation,
+  opacity composition, or drag/drop. All in-game acceptance above remains
+  pending; use a draft PR until the reported artefacts and these interactions
+  have been checked in the client.
