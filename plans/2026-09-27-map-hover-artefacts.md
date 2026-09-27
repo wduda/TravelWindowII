@@ -70,6 +70,19 @@ drop policy. No custom hover state or texture substitution is needed.
 
 ## In-game feedback and follow-up
 
+- Scaling acceptance remains pending. A user-supplied LOTRO developer report
+  describes `SetStretchMode` returning stale dimensions until multiple update
+  passes have elapsed, and restoring correct stretch sizing only after a
+  delayed `SetStretchMode(1)` / `SetSize` sequence. The report's author had not
+  verified behavior under varied scaling settings or the latest client.
+- In game, check first load and reopen, then drag-resize slowly and quickly
+  through multiple map scales. Repeat shrinking and enlarging the window and
+  verify skill icons and learned/unlearned outline edges stay aligned and crisp.
+  Toggle each border preference at minimum, intermediate, and maximum tested
+  scales; repeat after a tab switch. Watch for one-frame stale size, clipping,
+  disappearing borders, or artefacts returning. Record client version and the
+  approximate minimum / intermediate / maximum scales tested.
+
 - User testing of `b1cf67f` confirmed the original artefacts are gone, but both
   learned/unlearned borders are invisible regardless of settings. Acceptance
   therefore failed; the initial mock checks did not model native drawing order.
