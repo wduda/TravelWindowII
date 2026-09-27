@@ -569,6 +569,11 @@ function TravelMapTab:UpdateMapQuickslot(qs)
         qs.borderEdges[3]:SetSize(borderWidth, outlineSize)
         qs.borderEdges[4]:SetPosition(farEdge, scaledInset)
         qs.borderEdges[4]:SetSize(borderWidth, outlineSize)
+        -- Ordinary controls can render behind a stretched Quickslot despite their Z-order.
+        -- Initialize at the final size so the outline is rendered without fractional scaling.
+        for _, edge in ipairs(qs.borderEdges) do
+            edge:SetStretchMode(1)
+        end
     end
 end
 
@@ -758,6 +763,7 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
             control:SetBackColor(borderColor)
             control:SetMouseVisible(false)
             control:SetZOrder(99)
+            control:SetVisible(true)
             qs.borderEdges[edge] = control
         end
     end
@@ -886,10 +892,16 @@ function TravelMapTab:FitToPixels(sX, sY)
 end
 
 function TravelMapTab:SetOpacityItems(value)
-    -- quickslots in stretch mode do not get updated opacity from
+    -- Quickslots and border edges in stretch mode do not get updated opacity from
     -- the parent; update them here
     for i = 1, #self.quickslots do
-        self.quickslots[i]:SetOpacity(value)
+        local qs = self.quickslots[i]
+        qs:SetOpacity(value)
+        if qs.borderEdges then
+            for _, edge in ipairs(qs.borderEdges) do
+                edge:SetOpacity(value)
+            end
+        end
     end
     for i = 1, #self.quickslotBorders do
         self.quickslotBorders[i]:SetOpacity(value)
