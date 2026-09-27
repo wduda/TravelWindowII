@@ -67,3 +67,25 @@ drop policy. No custom hover state or texture substitution is needed.
   opacity composition, or drag/drop. All in-game acceptance above remains
   pending; use a draft PR until the reported artefacts and these interactions
   have been checked in the client.
+
+## In-game feedback and follow-up
+
+- User testing of `b1cf67f` confirmed the original artefacts are gone, but both
+  learned/unlearned borders are invisible regardless of settings. Acceptance
+  therefore failed; the initial mock checks did not model native drawing order.
+- Working diagnosis: the stretched Quickslot draws over ordinary sibling
+  border controls despite their higher Z-order. This matches the historical
+  SetStretchMode overlay behavior reported by plugin author Garan:
+  https://www.lotrointerface.com/forums/showthread.php?t=1604
+- On the same implementation branch, initialize each edge's stretch mode after
+  its final integer position/size is assigned. This puts the outline in the
+  same rendering mode without fractionally scaling a shared parent. Explicitly
+  show edges and propagate opacity because stretched controls do not reliably
+  inherit it. Recheck geometry and opacity plumbing, then repeat in-game tests
+  for visible learned/unlearned borders and absence of the original artefacts.
+- Runtime confirmation of the follow-up remains pending.
+- Follow-up checks: Lua 5.1 loaded the updated source and all 9,648 mocked cases
+  passed, including explicit edge visibility, matching stretch-mode setup at
+  final pixel size, and opacity values 0/0.25/0.75/1. The previous fix fails the
+  newly added configuration check. This verifies API calls and geometry only,
+  not native draw order. `git diff --check` passed.
