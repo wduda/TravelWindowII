@@ -83,9 +83,14 @@ drop policy. No custom hover state or texture substitution is needed.
   show edges and propagate opacity because stretched controls do not reliably
   inherit it. Recheck geometry and opacity plumbing, then repeat in-game tests
   for visible learned/unlearned borders and absence of the original artefacts.
-- Runtime confirmation of the follow-up remains pending.
+- User confirmed in-game on the follow-up version that learned and unlearned
+  borders are visible, each setting toggles its border independently, and the
+  Quickslots remain free of the reported artefacts. This accepts the reported
+  rendering behavior for code review.
 - Follow-up checks: Lua 5.1 loaded the updated source and all 9,648 mocked cases
   passed, including explicit edge visibility, matching stretch-mode setup at
   final pixel size, and opacity values 0/0.25/0.75/1. The previous fix fails the
   newly added configuration check. This verifies API calls and geometry only,
   not native draw order. `git diff --check` passed.
+- PR #325 was draft while the border regression was under in-game test. User
+  acceptance above resolves that hold; prepare the existing PR for review.
