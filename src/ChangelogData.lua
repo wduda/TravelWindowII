@@ -5,7 +5,9 @@
 ChangelogData = {
     {
         version = "v4.11.0",
-        changes = {}
+        changes = {
+            "fix: Map View skill borders remain visible while scaled Quickslots stay free of colored edge artefacts",
+        }
     },
     {
         version = "v4.10.0",

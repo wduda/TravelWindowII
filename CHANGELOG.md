@@ -2,6 +2,8 @@
 
 ## v4.11.0
 
+- fix: Map View skill borders remain visible while scaled Quickslots stay free of colored edge artefacts
+
 ## v4.10.0
 
 - feat: Map View now has an option to include learned and unlearned skill borders

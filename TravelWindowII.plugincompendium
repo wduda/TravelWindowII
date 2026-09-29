@@ -3,6 +3,7 @@
   <Id>1113</Id>
   <Name>Travel Window II</Name>
   <Version>v4.11.0</Version>
+  <Description>fix: Map View skill borders remain visible while scaled Quickslots stay free of colored edge artefacts.</Description>
   <Author>Hyos and WhiteRabbit963</Author>
   <InfoUrl>http://www.lotrointerface.com/downloads/info1113</InfoUrl>
   <DownloadUrl>http://www.lotrointerface.com/downloads/download1113</DownloadUrl>
