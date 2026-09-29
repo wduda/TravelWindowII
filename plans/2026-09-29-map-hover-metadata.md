@@ -12,7 +12,7 @@
 1. Read current `v4.11.0` release metadata and preserve the established ordering and file formats.
 2. Add the same concise `fix:` entry to `CHANGELOG.md`, `src/ChangelogData.lua`, `TravelWindowII.plugin`, `TravelWindowII.plugincompendium`, `doc/lotroforums.txt`, and `doc/lotrointerface.txt`.
 3. Commit this plan before editing release metadata.
-4. Check that all six surfaces describe the same accepted behavior, validate XML/Lua syntax where available, inspect the diff, and stage those six files only.
+4. Check that all six surfaces describe the same accepted behavior, validate XML/Lua syntax where available, inspect the diff, and commit those six files to the existing review branch so they are included after merge.
 
 ## Planned entry
 
@@ -23,5 +23,6 @@
 Plan committed before metadata changes. Added the same `fix:` entry to all six
 required release metadata files. Version values remain unchanged. Both XML
 manifests parse successfully, the shared entry is present across all six
-surfaces, and `git diff --check` passes. The six metadata files are staged
-without a commit; the pre-existing `AGENTS.md` edit is untouched and unstaged.
+surfaces, and `git diff --check` passes. The six metadata files are committed to
+the existing review branch; the pre-existing `AGENTS.md` edit is untouched and
+unstaged.

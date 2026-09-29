@@ -9,6 +9,8 @@
 It is a further development of Travel Window, that has been worked on by multiple authors before.
 
 Please report bugs and feature requests at Lotrointeface or GitHub.
+
+fix: Map View skill borders remain visible while scaled Quickslots stay free of colored edge artefacts.
         </Description>
         <Image>TravelWindowII/src/resources/travel_32x32.tga</Image>
     </Information>
