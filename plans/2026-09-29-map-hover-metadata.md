@@ -20,4 +20,8 @@
 
 ## Results
 
-Plan committed before metadata changes. Metadata edits pending.
+Plan committed before metadata changes. Added the same `fix:` entry to all six
+required release metadata files. Version values remain unchanged. Both XML
+manifests parse successfully, the shared entry is present across all six
+surfaces, and `git diff --check` passes. The six metadata files are staged
+without a commit; the pre-existing `AGENTS.md` edit is untouched and unstaged.
