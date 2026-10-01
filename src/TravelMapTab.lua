@@ -554,6 +554,27 @@ function TravelMapTab:UpdateMapQuickslot(qs)
 
     qs.border:SetPosition(x, y)
     qs.border:SetSize(scaledFrameSize, scaledFrameSize)
+    qs:SetSize(scaledFrameSize, scaledFrameSize)
+
+    -- Keep colored edges on whole pixels instead of stretching them with the native hover frame.
+    if qs.borderEdges then
+        local borderWidth = math.max(1, math.floor((MAP_SHORTCUT_BORDER_WIDTH * scale) + 0.5))
+        local outlineSize = scaledFrameSize - scaledInset
+        local farEdge = scaledFrameSize - borderWidth
+        qs.borderEdges[1]:SetPosition(scaledInset, scaledInset)
+        qs.borderEdges[1]:SetSize(outlineSize, borderWidth)
+        qs.borderEdges[2]:SetPosition(scaledInset, farEdge)
+        qs.borderEdges[2]:SetSize(outlineSize, borderWidth)
+        qs.borderEdges[3]:SetPosition(scaledInset, scaledInset)
+        qs.borderEdges[3]:SetSize(borderWidth, outlineSize)
+        qs.borderEdges[4]:SetPosition(farEdge, scaledInset)
+        qs.borderEdges[4]:SetSize(borderWidth, outlineSize)
+        -- Ordinary controls can render behind a stretched Quickslot despite their Z-order.
+        -- Initialize at the final size so the outline is rendered without fractional scaling.
+        for _, edge in ipairs(qs.borderEdges) do
+            edge:SetStretchMode(1)
+        end
+    end
 end
 
 function TravelMapTab:GetInternalPixelSize(width, height)
@@ -731,31 +752,22 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
     -- The parent position compensates for the native visual inset.
     qs:SetPosition(0, 0)
     qs:SetSize(quickslotSize, quickslotSize)
+    qs:SetStretchMode(1)
 
     if self:ShouldShowMapShortcutBorder(isLearned) then
         local borderColor = self:GetMapShortcutBorderColor(isLearned)
-        -- Align the outline with the native icon inside the full quickslot.
-        local outlineInset = inset
-        local outlineSize = frameSize + 2 * MAP_SHORTCUT_BORDER_WIDTH
-        local edges = {
-            {x = 0, y = 0, width = outlineSize, height = MAP_SHORTCUT_BORDER_WIDTH},
-            {x = 0, y = outlineSize - MAP_SHORTCUT_BORDER_WIDTH, width = outlineSize, height = MAP_SHORTCUT_BORDER_WIDTH},
-            {x = 0, y = 0, width = MAP_SHORTCUT_BORDER_WIDTH, height = outlineSize},
-            {x = outlineSize - MAP_SHORTCUT_BORDER_WIDTH, y = 0, width = MAP_SHORTCUT_BORDER_WIDTH, height = outlineSize},
-        }
-        for _, edge in ipairs(edges) do
+        qs.borderEdges = {}
+        for edge = 1, 4 do
             local control = Turbine.UI.Control()
             control:SetParent(border)
-            control:SetPosition(outlineInset + edge.x, outlineInset + edge.y)
-            control:SetSize(edge.width, edge.height)
             control:SetBackColor(borderColor)
             control:SetMouseVisible(false)
             control:SetZOrder(99)
+            control:SetVisible(true)
+            qs.borderEdges[edge] = control
         end
     end
 
-    -- Stretch the complete frame after its native-size quickslot and border edges are in place.
-    border:SetStretchMode(1)
     self:UpdateMapQuickslot(qs)
     border:SetVisible(true)
     qs:SetVisible(true)
@@ -880,10 +892,16 @@ function TravelMapTab:FitToPixels(sX, sY)
 end
 
 function TravelMapTab:SetOpacityItems(value)
-    -- quickslots in stretch mode do not get updated opacity from
+    -- Quickslots and border edges in stretch mode do not get updated opacity from
     -- the parent; update them here
     for i = 1, #self.quickslots do
-        self.quickslots[i]:SetOpacity(value)
+        local qs = self.quickslots[i]
+        qs:SetOpacity(value)
+        if qs.borderEdges then
+            for _, edge in ipairs(qs.borderEdges) do
+                edge:SetOpacity(value)
+            end
+        end
     end
     for i = 1, #self.quickslotBorders do
         self.quickslotBorders[i]:SetOpacity(value)
