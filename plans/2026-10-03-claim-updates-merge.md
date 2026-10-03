@@ -17,4 +17,6 @@
 
 ## Results
 
-In progress. The current source head is `b0a82dc` and target is `6494e8d`. The source touches `TravelCaroTab.lua`, `TravelMapTab.lua`, and `__init__.lua`; the map shortcut block needs a manual merge to preserve the target's newer border rendering fix. The backup branch remains unchanged.
+The current source head was `b0a82dc` and target was `6494e8d`. The merge touched `TravelCaroTab.lua`, `TravelMapTab.lua`, and `__init__.lua`. I resolved the map shortcut overlap by preserving the release branch's sized, unstretched border parent and directly stretched native Quickslot, then adding the standard edge attachment to that Quickslot. The scaling edge attachments and shared helper are included; the accepted artefact-free border rendering path remains intact.
+
+`git diff --cached --check` passed before commit. No LOTRO client rendering test was available in this session. Local merge commit: `d2d7ef1`. Publishing this commit and verifying PR #323 closure as merged remain pending. The three earlier plan commits are still preserved on `codex/pre-push-v4.11.0-backup` and were not cherry-picked.
