@@ -339,6 +339,7 @@ function TravelMapTab:LoadMap()
     end
 
     self.mapLabel:SetStretchMode(1)
+    self.mapLabel:AttachEdges(GetStandardEdges())
     self:RebuildRegionHotspots()
     self:UpdateDebugLabelVisibility()
 
@@ -614,6 +615,7 @@ function TravelMapTab:UpdateNavPanelLayout(width, height)
         local posX = self.startQsX + ((i - 1) * self.colWidth)
         qs:SetPosition(posX, self.startQsY)
         qs:SetStretchMode(1)
+        qs:AttachEdges(GetStandardEdges())
         qs:SetSize(self.colWidth, self.colWidth)
     end
 end
@@ -753,6 +755,7 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
     qs:SetPosition(0, 0)
     qs:SetSize(quickslotSize, quickslotSize)
     qs:SetStretchMode(1)
+    qs:AttachEdges(GetStandardEdges())
 
     if self:ShouldShowMapShortcutBorder(isLearned) then
         local borderColor = self:GetMapShortcutBorderColor(isLearned)
