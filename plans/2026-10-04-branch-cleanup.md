@@ -16,4 +16,13 @@
 
 ## Results
 
-In progress. The backup branch exists locally at `eb885fd`; no same-named ref appears in the current origin heads. Its three unique commits change only `plans/2026-10-03-claim-updates-merge.md`, whose content is already on `v4.11.0`.
+Deleted local `codex/pre-push-v4.11.0-backup` at `eb885fd`. No same-named branch existed on origin, so no remote delete was needed. Its three unique commits changed only `plans/2026-10-03-claim-updates-merge.md`, whose updated content is already on `v4.11.0`.
+
+Other review candidates (left untouched):
+
+- `scaling-updates` exists locally and on origin; PR #323 is merged, and the remote ref is already an ancestor of `v4.11.0`.
+- `codex/map-hover-artefacts` exists locally and on origin; PR #325 is merged. The branch ref is not an ancestor of `v4.11.0`, consistent with a squash-style integration, so verify its residual diff before deleting.
+- `scrolling-update` and `map-view-learned-skill-borders` are local-only with deleted upstreams; PRs #313 and #310 respectively are merged, but both local branch tips retain large diffs against `v4.11.0`. Keep until the residual changes are reviewed.
+- `class_indicator` exists only on origin and has no open PR in the current PR list; purpose is unknown. `milestone-management-research` is local-only research, and the two `archive/*` branches are explicit archives. No action taken on these refs.
+
+The plan commit is the only unpublished commit on `v4.11.0`; push it so the local release checkout remains aligned with origin.
