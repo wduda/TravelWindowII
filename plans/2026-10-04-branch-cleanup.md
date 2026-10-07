@@ -91,3 +91,9 @@ The user authorized deleting local `archive/map-borders-before-squash-055b46f`, 
 2. Commit this plan update.
 3. Delete only the three named local refs.
 4. Verify the local branch list, clean worktree, and alignment with `origin/v4.11.0`.
+
+### Results
+
+- Deleted local `archive/map-borders-before-squash-055b46f` (tip `055b46f`), `archive/pr310-before-squash-c5586aa` (tip `c5586aa`), and `scaling-updates` (tip `f0ef172`).
+- No remote refs were changed in this follow-up; `origin/scaling-updates` had already been deleted above.
+- `v4.11.0` remained clean; pushed this result so local and remote `v4.11.0` stay aligned.
