@@ -59,3 +59,15 @@ Other review candidates (left untouched):
 - `origin/scaling-updates` (`b0a82dc`) is already contained in `v4.11.0`. Local `scaling-updates` has two additional commits (`7dbb90d` and `f0ef172`); `f0ef172` adds three lines in `src/TravelMapTab.lua` and is absent from `v4.11.0`. Preserve the local branch pending review of that change. The remote `scaling-updates` ref is a cleanup candidate, but was left in place.
 - `class_indicator` is a remote-only branch at `fad1245`; its purpose remains unclear, so leave it untouched.
 - Committed this audit update on `v4.11.0` and pushed it to `origin` to keep the release checkout aligned.
+
+## Follow-up: remove scaling-updates remote ref and review local history (2026-10-07)
+
+The user authorized deleting `origin/scaling-updates` and confirmed that future fixes should proceed on `v4.11.0`. Keep the local `scaling-updates` branch while reviewing its commits. Explain the purpose and contents of the two `archive/*` branches, then inspect the local scaling branch's commits and differences against `v4.11.0`. Do not delete the local scaling branch or archives as part of this request.
+
+### Steps
+
+1. Confirm a clean `v4.11.0` checkout and verify `origin/scaling-updates` exists.
+2. Commit this plan update before deleting the remote ref.
+3. Delete only `origin/scaling-updates` and prune its remote-tracking ref.
+4. Inspect archive branch ancestry and the local scaling branch's commits and patch.
+5. Record what the archives preserve, the local commits' changes, and any remaining branch cleanup candidates.
