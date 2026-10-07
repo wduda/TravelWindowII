@@ -12,6 +12,18 @@ The user authorized deleting `codex/map-hover-artefacts` locally and on `origin`
 4. Delete the matching `origin` ref if it exists and authentication permits.
 5. Verify local and remote refs are absent and report any blocked operation.
 
+## Follow-up: remove stale local-only branches and inspect stashes (2026-10-07)
+
+The user authorized deleting local `scrolling-update` and `map-view-learned-skill-borders`. Both have deleted upstreams, and their related PRs (#313 and #310) were previously reported merged; their branch trees nevertheless differ substantially from `v4.11.0`. This removes the named local branch refs only. Check current refs and stashes, record this plan before deleting, then audit remaining branches and report any unique history or other cleanup candidates. Do not drop stashes or delete other refs.
+
+### Steps
+
+1. Confirm clean `v4.11.0`; inspect both branches against it and list stashes.
+2. Commit this plan update before deleting the two named local refs.
+3. Delete only local `scrolling-update` and `map-view-learned-skill-borders`.
+4. Audit local branches, remote heads, stale tracking refs, and stashes.
+5. Record results and keep `v4.11.0` aligned with origin.
+
 ## Scope and branch
 
 - Work from `v4.11.0` and keep it aligned with `origin/v4.11.0`.
@@ -34,7 +46,7 @@ Other review candidates (left untouched):
 
 - `scaling-updates` exists locally and on origin; PR #323 is merged, and the remote ref is already an ancestor of `v4.11.0`.
 - `codex/map-hover-artefacts` existed locally and on origin; PR #325 is merged. Its commits have different IDs from the rebase-merged commits on `v4.11.0`; the fix is included. The user later authorized deletion; see the follow-up above.
-- `scrolling-update` and `map-view-learned-skill-borders` are local-only with deleted upstreams; PRs #313 and #310 respectively are merged, but both local branch tips retain large diffs against `v4.11.0`. Keep until the residual changes are reviewed.
+- `scrolling-update` and `map-view-learned-skill-borders` were local-only with deleted upstreams; the user authorized deleting these local refs in the follow-up above.
 - `class_indicator` exists only on origin and has no open PR in the current PR list; purpose is unknown. `milestone-management-research` is local-only research, and the two `archive/*` branches are explicit archives. No action taken on these refs.
 
 The plan commit is the only unpublished commit on `v4.11.0`; push it so the local release checkout remains aligned with origin.
