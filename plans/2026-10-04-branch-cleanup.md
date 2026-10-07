@@ -44,9 +44,18 @@ Deleted local `codex/pre-push-v4.11.0-backup` at `eb885fd`. No same-named branch
 
 Other review candidates (left untouched):
 
-- `scaling-updates` exists locally and on origin; PR #323 is merged, and the remote ref is already an ancestor of `v4.11.0`.
-- `codex/map-hover-artefacts` existed locally and on origin; PR #325 is merged. Its commits have different IDs from the rebase-merged commits on `v4.11.0`; the fix is included. The user later authorized deletion; see the follow-up above.
+- `scaling-updates` exists locally and on origin; PR #323 is merged, and the remote ref is already an ancestor of `v4.11.0`. The local branch has two additional commits and needs review before removal.
+- `codex/map-hover-artefacts` was deleted locally by user request. Its stale remote-tracking ref was pruned; the live origin has no matching branch. PR #325's fix is included on `v4.11.0`.
 - `scrolling-update` and `map-view-learned-skill-borders` were local-only with deleted upstreams; the user authorized deleting these local refs in the follow-up above.
 - `class_indicator` exists only on origin and has no open PR in the current PR list; purpose is unknown. `milestone-management-research` is local-only research, and the two `archive/*` branches are explicit archives. No action taken on these refs.
 
-The plan commit is the only unpublished commit on `v4.11.0`; push it so the local release checkout remains aligned with origin.
+## Results: stale local branches and stash audit (2026-10-07)
+
+- Deleted local `scrolling-update` (tip `830f5ab`) and `map-view-learned-skill-borders` (tip `435019d`) as requested. No corresponding live origin branches existed.
+- The stash list is empty; no stash was changed.
+- Pruned stale tracking ref `origin/codex/map-hover-artefacts`; live `origin` has no branch of that name.
+- Remaining local branches: `main`, `v4.11.0`, `scaling-updates`, `milestone-management-research`, and the two explicitly named `archive/*` refs. Keep the core, research, and archive branches.
+- Remaining origin heads: `main`, `v4.11.0`, `scaling-updates`, and `class_indicator`.
+- `origin/scaling-updates` (`b0a82dc`) is already contained in `v4.11.0`. Local `scaling-updates` has two additional commits (`7dbb90d` and `f0ef172`); `f0ef172` adds three lines in `src/TravelMapTab.lua` and is absent from `v4.11.0`. Preserve the local branch pending review of that change. The remote `scaling-updates` ref is a cleanup candidate, but was left in place.
+- `class_indicator` is a remote-only branch at `fad1245`; its purpose remains unclear, so leave it untouched.
+- Committed this audit update on `v4.11.0` and pushed it to `origin` to keep the release checkout aligned.
