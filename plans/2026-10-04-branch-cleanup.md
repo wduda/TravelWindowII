@@ -44,7 +44,7 @@ Deleted local `codex/pre-push-v4.11.0-backup` at `eb885fd`. No same-named branch
 
 Other review candidates (left untouched):
 
-- `scaling-updates` exists locally and on origin; PR #323 is merged, and the remote ref is already an ancestor of `v4.11.0`. The local branch has two additional commits and needs review before removal.
+- `origin/scaling-updates` was deleted at the user's request; its former tip `b0a82dc` was already contained in `v4.11.0`. The local `scaling-updates` ref remains for review.
 - `codex/map-hover-artefacts` was deleted locally by user request. Its stale remote-tracking ref was pruned; the live origin has no matching branch. PR #325's fix is included on `v4.11.0`.
 - `scrolling-update` and `map-view-learned-skill-borders` were local-only with deleted upstreams; the user authorized deleting these local refs in the follow-up above.
 - `class_indicator` exists only on origin and has no open PR in the current PR list; purpose is unknown. `milestone-management-research` is local-only research, and the two `archive/*` branches are explicit archives. No action taken on these refs.
@@ -71,3 +71,12 @@ The user authorized deleting `origin/scaling-updates` and confirmed that future 
 3. Delete only `origin/scaling-updates` and prune its remote-tracking ref.
 4. Inspect archive branch ancestry and the local scaling branch's commits and patch.
 5. Record what the archives preserve, the local commits' changes, and any remaining branch cleanup candidates.
+
+### Results
+
+- Deleted remote `origin/scaling-updates` at `b0a82dc`; that remote tip was already included in `v4.11.0`. The local branch was retained.
+- `archive/map-borders-before-squash-055b46f` preserves the original multi-commit learned/unlearned map-border work through the final outline-alignment commit `055b46f`, before it was squashed to a single commit for PR #310. It is a local recovery pointer, not an active feature branch.
+- `archive/pr310-before-squash-c5586aa` preserves the PR #310 working branch after merging `v4.10.0` and resolving the resulting conflicts, before the squash. It is a separate recovery point for the conflict-resolved tree.
+- The two unique commits on local `scaling-updates` are `7dbb90d` and `f0ef172`. `7dbb90d` is an empty preparation commit. `f0ef172` adds explicit `Same, Same, Opposite, Opposite` edge attachments to the map label. Current `v4.11.0` makes the same call through `GetStandardEdges()`, whose helper returns those same four values. The reviewed code change is therefore already represented in `v4.11.0`; keep the local branch until the user decides whether its history should also be discarded.
+- The broader local branch diff is mostly its older base and tree, not additional unique implementation beyond those two commits. No source files were changed during this review.
+- Pushed this plan update to `origin/v4.11.0` after the review.
