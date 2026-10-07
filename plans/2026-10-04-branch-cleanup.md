@@ -80,3 +80,14 @@ The user authorized deleting `origin/scaling-updates` and confirmed that future 
 - The two unique commits on local `scaling-updates` are `7dbb90d` and `f0ef172`. `7dbb90d` is an empty preparation commit. `f0ef172` adds explicit `Same, Same, Opposite, Opposite` edge attachments to the map label. Current `v4.11.0` makes the same call through `GetStandardEdges()`, whose helper returns those same four values. The reviewed code change is therefore already represented in `v4.11.0`; keep the local branch until the user decides whether its history should also be discarded.
 - The broader local branch diff is mostly its older base and tree, not additional unique implementation beyond those two commits. No source files were changed during this review.
 - Pushed this plan update to `origin/v4.11.0` after the review.
+
+## Follow-up: delete local archives and reviewed scaling branch (2026-10-07)
+
+The user authorized deleting local `archive/map-borders-before-squash-055b46f`, `archive/pr310-before-squash-c5586aa`, and `scaling-updates`. Work from `v4.11.0`, commit this plan update before deleting the refs, then verify the three refs are absent. Keep remote `main`, `v4.11.0`, and `class_indicator` unchanged.
+
+### Steps
+
+1. Confirm clean `v4.11.0` and that the three named local refs still exist.
+2. Commit this plan update.
+3. Delete only the three named local refs.
+4. Verify the local branch list, clean worktree, and alignment with `origin/v4.11.0`.
