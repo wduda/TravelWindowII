@@ -7,14 +7,11 @@ if the plan is updated based on my fedback make sure to patch the .md file for t
 
 ## skills
 
-use the skills found in the `.skills` directory
-
-use the `lotro-plugins-development-skill` only for main plugin implementation work
-(Lua source, XML UI/layout, plugin runtime behavior)
+If the `lotro-plugin-development` skill is available, use it for main plugin implementation work (Lua source, XML UI/layout, plugin runtime behavior). Read its `SKILL.md` before implementation and resolve its supporting files relative to the skill directory.
 
 for repository infrastructure tasks (for example GitHub Actions, CI/CD, docs, release automation, tooling), do not use that skill unless explicitly requested
 
-default rule: if a task does not modify plugin Lua/XML behavior, do not apply `lotro-plugins-development-skill`
+default rule: if a task does not modify plugin Lua/XML behavior, do not apply `lotro-plugin-development`
 
 ## code style
 
