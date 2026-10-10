@@ -547,7 +547,7 @@ end
 
 function TravelMapTab:UpdateMapQuickslot(qs)
     local scale = Settings.mapViewScale or 1
-    local frameSize = self.colWidth - 2 * MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET
+    local frameSize = self.colWidth - 2
     local scaledFrameSize = math.floor((frameSize * scale) + 0.5)
     local scaledInset = math.floor((-MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET * scale) + 0.5)
     local x = math.floor(qs.posX * scale) - scaledInset
@@ -710,7 +710,7 @@ end
 function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
     local isLearned = travelShortcut.found == true
     local index = #self.quickslots + 1
-    local frameSize = self.colWidth
+    local frameSize = self.colWidth - 2
     local inset = -MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET
     local quickslotSize = frameSize + 2 * inset
     local border = Turbine.UI.Control()
@@ -730,7 +730,7 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
     qs:SetZOrder(98)
     -- Keep the entire native control inside its parent to avoid clipping.
     -- The parent position compensates for the native visual inset.
-    qs:SetPosition(0, 0)
+    qs:SetPosition(-1, -1)
     qs:SetSize(quickslotSize, quickslotSize)
 
     if self:ShouldShowMapShortcutBorder(isLearned) then
@@ -756,9 +756,9 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
     end
 
     -- Stretch the complete frame after its native-size quickslot and border edges are in place.
+    border:SetSize(quickslotSize, quickslotSize)
     border:SetStretchMode(1)
     border:AttachEdges(GetStandardEdges())
-    border:SetSize(quickslotSize, quickslotSize)
     self:UpdateMapQuickslot(qs)
     border:SetVisible(true)
     qs:SetVisible(true)
