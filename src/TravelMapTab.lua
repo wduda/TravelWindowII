@@ -553,7 +553,12 @@ function TravelMapTab:UpdateMapQuickslot(qs)
     local x = math.floor(qs.posX * scale) - scaledInset
     local y = math.floor(qs.posY * scale) - scaledInset
 
+    local inset = -MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET
+    local quickslotSize = frameSize + 2 * inset
     qs.border:SetPosition(x, y)
+    qs.border:SetStretchMode(nil)
+    qs.border:SetSize(quickslotSize, quickslotSize)
+    qs.border:SetStretchMode(1)
     qs.border:SetSize(scaledFrameSize, scaledFrameSize)
 end
 
@@ -566,7 +571,9 @@ end
 function TravelMapTab:UpdateMapSize(width, height)
     local mapW = width - self.navOffsetX - self.navOffsetW
     local mapH = height - self.navPanelHeight
-    self.mapLabel:SetPosition(self.navOffsetX, 0)
+    self.mapLabel:SetStretchMode(nil)
+    self.mapLabel:SetSize(1024, 768)
+    self.mapLabel:SetStretchMode(1)
     self.mapLabel:SetSize(mapW, mapH)
 end
 
@@ -757,8 +764,8 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
 
     -- Stretch the complete frame after its native-size quickslot and border edges are in place.
     border:SetSize(quickslotSize, quickslotSize)
-    border:SetStretchMode(1)
     border:AttachEdges(GetStandardEdges())
+    border:SetStretchMode(1)
     self:UpdateMapQuickslot(qs)
     border:SetVisible(true)
     qs:SetVisible(true)
