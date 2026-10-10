@@ -335,8 +335,10 @@ function TravelWindow:Constructor()
     end
     self.MouseMove = function(sender, args)
         if self.isDragging then
+            local scale = self:GetScale()
             local maxX, maxY = Turbine.UI.Display.GetSize()
-            maxX, maxY = maxX - self:GetWidth(), maxY - self:GetHeight()
+            maxX = maxX - math.floor(self:GetWidth() * scale + 0.5)
+            maxY = maxY - math.floor(self:GetHeight() * scale + 0.5)
             local left, top = self:GetPosition()
             local mX, mY = self:GetMousePosition()
             local x = left + (mX - self.dragStartX)
@@ -407,13 +409,12 @@ function TravelWindow:Constructor()
 end
 
 function TravelWindow:GetAdjustedSize(sX, sY)
-    -- TODO: pull logic into a "best fit" or a parented FitToPixels() call for reuse elsewhere
-    -- TODO: adjust for Window:GetScale() when it gets added
+    local scale = self:GetScale()
     local offX, offY = self:GetPosition()
     local maxX, maxY = Turbine.UI.Display.GetSize()
     if maxX ~= nil and maxY ~= nil then
-        maxX = maxX - offX
-        maxY = maxY - offY
+        maxX = math.floor((maxX - offX) / scale + 0.5)
+        maxY = math.floor((maxY - offY) / scale + 0.5)
         if sX > maxX then sX = maxX end
         if sY > maxY then sY = maxY end
     end
@@ -546,7 +547,7 @@ end
 function TravelWindow:SetInitialPosition()
     local screenW, screenH = Turbine.UI.Display.GetSize()
     local positionX, positionY
-
+    -- TODO: add scaling conversions to accurately clamp the position to the available screen
     if Settings.mode == TabId.MAP then
         positionX = math.floor(screenW * Settings.mapPositionRelativeX, 0.5)
         positionY = math.floor(screenH * Settings.mapPositionRelativeY, 0.5)
