@@ -890,6 +890,7 @@ function TravelMapTab:FitToPixels(sX, sY)
 end
 
 function TravelMapTab:SetOpacityItems(value)
+    self.mapLabel:SetOpacity(value)
     -- quickslots in stretch mode do not get updated opacity from
     -- the parent; update them here
     for i = 1, #self.quickslots do

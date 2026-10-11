@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v4.11.0
+
+- feature: Travel Window now supports scaling with the global UI scale - set the checkbox in the ingame plugin manager for this to take effect
+- fix: Map View background now follows the Travel Window opacity setting
+
 ## v4.10.0
 
 - feat: Map View now has an option to include learned and unlearned skill borders
