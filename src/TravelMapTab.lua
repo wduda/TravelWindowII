@@ -15,7 +15,6 @@ local MAP_CONNECTOR_HOVER_ASSET = 0x410081a2 -- MoorMap map-connector hover art
 local MAP_CONNECTOR_BLANK_ASSET = "TravelWindowII/src/resources/MapConnector_blank.tga"
 local MAP_CONNECTOR_SIZE = 63
 local MAP_SHORTCUT_BORDER_WIDTH = 1
-local MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET = -2
 local MAP_SHORTCUT_LEARNED_BORDER_COLOR = Turbine.UI.Color(1, 0x60 / 255, 0xC4 / 255, 0x76 / 255)
 local MAP_SHORTCUT_UNLEARNED_BORDER_COLOR = Turbine.UI.Color(1, 0xD9 / 255, 0, 0)
 
@@ -547,19 +546,17 @@ end
 
 function TravelMapTab:UpdateMapQuickslot(qs)
     local scale = Settings.mapViewScale or 1
-    local frameSize = self.colWidth - 2
-    local scaledFrameSize = math.floor((frameSize * scale) + 0.5)
-    local scaledInset = math.floor((-MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET * scale) + 0.5)
-    local x = math.floor(qs.posX * scale) - scaledInset
-    local y = math.floor(qs.posY * scale) - scaledInset
+    local frameSize = self.colWidth + 2
+    local scaledFrameSize = math.floor((frameSize - 3) * scale)
+    local x = math.floor(qs.posX * scale)
+    local y = math.floor(qs.posY * scale)
 
-    local inset = -MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET
-    local quickslotSize = frameSize + 2 * inset
     qs.border:SetPosition(x, y)
     qs.border:SetStretchMode(nil)
-    qs.border:SetSize(quickslotSize, quickslotSize)
+    qs.border:SetSize(frameSize, frameSize)
     qs.border:SetStretchMode(1)
     qs.border:SetSize(scaledFrameSize, scaledFrameSize)
+    qs.border:SetOpacity(self.parent:GetOpacity())
 end
 
 function TravelMapTab:GetInternalPixelSize(width, height)
@@ -717,12 +714,11 @@ end
 function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
     local isLearned = travelShortcut.found == true
     local index = #self.quickslots + 1
-    local frameSize = self.colWidth - 2
-    local inset = -MAP_SHORTCUT_VISUAL_ORIGIN_OFFSET
-    local quickslotSize = frameSize + 2 * inset
+    local frameSize = self.colWidth + 2
     local border = Turbine.UI.Control()
     border:SetParent(self)
     border:SetZOrder(98)
+    border:SetBackColor(Turbine.UI.Color(0, 0, 0 , 0))
 
     local qs = Turbine.UI.Lotro.Quickslot()
     qs.posX = location[2] + self.navOffsetX
@@ -737,14 +733,12 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
     qs:SetZOrder(98)
     -- Keep the entire native control inside its parent to avoid clipping.
     -- The parent position compensates for the native visual inset.
-    qs:SetPosition(-1, -1)
-    qs:SetSize(quickslotSize, quickslotSize)
+    qs:SetPosition(-3, -3)
 
     if self:ShouldShowMapShortcutBorder(isLearned) then
         local borderColor = self:GetMapShortcutBorderColor(isLearned)
         -- Align the outline with the native icon inside the full quickslot.
-        local outlineInset = inset
-        local outlineSize = frameSize + 2 * MAP_SHORTCUT_BORDER_WIDTH
+        local outlineSize = frameSize - 2 * MAP_SHORTCUT_BORDER_WIDTH
         local edges = {
             {x = 0, y = 0, width = outlineSize, height = MAP_SHORTCUT_BORDER_WIDTH},
             {x = 0, y = outlineSize - MAP_SHORTCUT_BORDER_WIDTH, width = outlineSize, height = MAP_SHORTCUT_BORDER_WIDTH},
@@ -754,7 +748,7 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
         for _, edge in ipairs(edges) do
             local control = Turbine.UI.Control()
             control:SetParent(border)
-            control:SetPosition(outlineInset + edge.x, outlineInset + edge.y)
+            control:SetPosition(edge.x, edge.y)
             control:SetSize(edge.width, edge.height)
             control:SetBackColor(borderColor)
             control:SetMouseVisible(false)
@@ -763,9 +757,7 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
     end
 
     -- Stretch the complete frame after its native-size quickslot and border edges are in place.
-    border:SetSize(quickslotSize, quickslotSize)
     border:AttachEdges(GetStandardEdges())
-    border:SetStretchMode(1)
     self:UpdateMapQuickslot(qs)
     border:SetVisible(true)
     qs:SetVisible(true)
