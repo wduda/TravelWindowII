@@ -332,6 +332,24 @@ LC_FR.rep.HAMAT_RENEWED = "Le Nouveau Hamât"
 LC_ES.rep.HAMAT_RENEWED = "Hamât renovado"
 LC_RU.rep.HAMAT_RENEWED = "Возрождённый Хамат"
 
+LC_EN.rep.SCOUTS_OF_DRAUGARDH = "Scouts of Draugardh"
+LC_DE.rep.SCOUTS_OF_DRAUGARDH = "Scouts of Draugardh"
+LC_FR.rep.SCOUTS_OF_DRAUGARDH = "Scouts of Draugardh"
+LC_ES.rep.SCOUTS_OF_DRAUGARDH = "TBD Scouts"
+LC_RU.rep.SCOUTS_OF_DRAUGARDH = "TBD Scouts"
+
+LC_EN.rep.TETIKIR = "Têtikir"
+LC_DE.rep.TETIKIR = "Têtikir"
+LC_FR.rep.TETIKIR = "Têtikir"
+LC_ES.rep.TETIKIR = "Têtikir"
+LC_RU.rep.TETIKIR = "Têtikir"
+
+LC_EN.rep.KHEMOZEL_CLAN = "Khemozêl Clan"
+LC_DE.rep.KHEMOZEL_CLAN = "Khemozêl Clan"
+LC_FR.rep.KHEMOZEL_CLAN = "Khemozêl Clan"
+LC_ES.rep.KHEMOZEL_CLAN = "Clan Khemozêl"
+LC_RU.rep.KHEMOZEL_CLAN = "Khemozêl Clan"
+
 LC_EN.token = {}
 LC_DE.token = {}
 LC_FR.token = {}
@@ -649,3 +667,9 @@ LC_DE.token.MUR_GHALA_SARZ = "Sârz von Mûr Ghala"
 LC_FR.token.MUR_GHALA_SARZ = "Sârz de Mûr Ghala"
 LC_ES.token.MUR_GHALA_SARZ = "Mûr Ghala Sârz"
 LC_RU.token.MUR_GHALA_SARZ = "Мур-гальский сарз"
+
+LC_EN.token.TETIKIR_GUSHOKH = "Têtikir Gushokh"
+LC_DE.token.TETIKIR_GUSHOKH = "Têtikir Gushokh"
+LC_FR.token.TETIKIR_GUSHOKH = "Têtikir Gushokh"
+LC_ES.token.TETIKIR_GUSHOKH = "Têtikir Gushokh"
+LC_RU.token.TETIKIR_GUSHOKH = "Têtikir Gushokh"
