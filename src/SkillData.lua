@@ -1558,6 +1558,132 @@ function TravelDictionary:CreateDictionaries()
         minLevel=150,
         level=150.73
     })
+    self.hunter:AddSkill({
+        id="0x70076A1D",
+        EN={name="Guide to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        DE={name="Guide to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        FR={name="Guide to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        ES={name="Guide to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        RU={name="Guide to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A0D"},
+        acquire={
+            {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                DE={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                FR={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                ES={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                RU={vendor="Glenniel (Scouts of Draugardh Quartermaster)"}}},
+        rep=LC.rep.SCOUTS_OF_DRAUGARDH, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=151,
+        level=151.11
+    })
+    self.hunter:AddSkill({
+        id="0x70076A20",
+        EN={name="Guide to Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        DE={name="Guide to Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        FR={name="Guide to Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        ES={name="Guide to Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        RU={name="Guide to Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A19"},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Niyoz (Têtikir Quartermaster)"},
+                DE={vendor="Niyoz (Têtikir Quartermaster)"},
+                FR={vendor="Niyoz (Têtikir Quartermaster)"},
+                ES={vendor="Niyoz (Têtikir Quartermaster)"},
+                RU={vendor="Niyoz (Têtikir Quartermaster)"}},
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Têtikir Quartermaster"},
+                DE={vendor="Têtikir Quartermaster"},
+                FR={vendor="Têtikir Quartermaster"},
+                ES={vendor="Têtikir Quartermaster"},
+                RU={vendor="Têtikir Quartermaster"}}},
+        rep=LC.rep.TETIKIR, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=151,
+        level=151.12
+    })
+    self.hunter:AddSkill({
+        id="0x70076A23",
+        EN={name="Guide to Urotar", label="Urotar", zone="Mordor"},
+        DE={name="Guide to Urotar", label="Urotar", zone="Mordor"},
+        FR={name="Guide to Urotar", label="Urotar", zone="Mordor"},
+        ES={name="Guide to Urotar", label="Urotar", zone="Mordor"},
+        RU={name="Guide to Urotar", label="Urotar", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A34"},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                DE={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                FR={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                ES={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                RU={vendor="Glenniel (Scouts of Draugardh Quartermaster)"}}},
+        rep=LC.rep.SCOUTS_OF_DRAUGARDH, repLevel=LC.repLevel.FRIEND,
+        minLevel=151,
+        level=151.13
+    })
+    self.hunter:AddSkill({
+        id="0x70076A2D",
+        EN={name="Guide to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        DE={name="Guide to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        FR={name="Guide to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        ES={name="Guide to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        RU={name="Guide to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A22"},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                DE={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                FR={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                ES={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                RU={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"}}},
+        rep=LC.rep.KHEMOZEL_CLAN, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=151,
+        level=151.14
+    })
+    self.hunter:AddSkill({
+        id="0x70076A40",
+        EN={name="Guide to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        DE={name="Guide to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        FR={name="Guide to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        ES={name="Guide to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        RU={name="Guide to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A10"},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                DE={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                FR={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                ES={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                RU={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"}}},
+        rep=LC.rep.KHEMOZEL_CLAN, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=151,
+        level=151.15
+    })
+    self.hunter:AddSkill({
+        id="0x70076A46",
+        EN={name="Guide to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        DE={name="Guide to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        FR={name="Guide to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        ES={name="Guide to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        RU={name="Guide to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A26"},
+        acquire={
+            {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                DE={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                FR={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                ES={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                RU={vendor="Glenniel (Scouts of Draugardh Quartermaster)"}}},
+        rep=LC.rep.SCOUTS_OF_DRAUGARDH, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=151,
+        level=151.16
+    })
     -- add the warden skills
     self.warden:AddLabelTag({EN="Muster", DE="Appell", FR="Rassemblement", ES="Reunión", RU="Сбор"})
     self.warden:AddSkill({
@@ -2961,6 +3087,132 @@ function TravelDictionary:CreateDictionaries()
         minLevel=150,
         level=150.73
     })
+    self.warden:AddSkill({
+        id="0x70076A08",
+        EN={name="Muster at Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        DE={name="Muster at Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        FR={name="Muster at Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        ES={name="Muster at Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        RU={name="Muster at Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A0D"},
+        acquire={
+            {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                DE={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                FR={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                ES={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                RU={vendor="Glenniel (Scouts of Draugardh Quartermaster)"}}},
+        rep=LC.rep.SCOUTS_OF_DRAUGARDH, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=151,
+        level=151.11
+    })
+    self.warden:AddSkill({
+        id="0x70076A12",
+        EN={name="Muster at Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        DE={name="Muster at Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        FR={name="Muster at Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        ES={name="Muster at Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        RU={name="Muster at Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A10"},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                DE={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                FR={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                ES={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                RU={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"}}},
+        rep=LC.rep.KHEMOZEL_CLAN, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=151,
+        level=151.12
+    })
+    self.warden:AddSkill({
+        id="0x70076A32",
+        EN={name="Muster at Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        DE={name="Muster at Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        FR={name="Muster at Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        ES={name="Muster at Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        RU={name="Muster at Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A26"},
+        acquire={
+            {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                DE={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                FR={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                ES={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                RU={vendor="Glenniel (Scouts of Draugardh Quartermaster)"}}},
+        rep=LC.rep.SCOUTS_OF_DRAUGARDH, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=151,
+        level=151.13
+    })
+    self.warden:AddSkill({
+        id="0x70076A35",
+        EN={name="Muster at Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        DE={name="Muster at Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        FR={name="Muster at Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        ES={name="Muster at Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        RU={name="Muster at Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A22"},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                DE={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                FR={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                ES={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                RU={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"}}},
+        rep=LC.rep.KHEMOZEL_CLAN, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=151,
+        level=151.14
+    })
+    self.warden:AddSkill({
+        id="0x70076A3B",
+        EN={name="Sail to Urotar", label="Urotar", zone="Mordor"},
+        DE={name="Sail to Urotar", label="Urotar", zone="Mordor"},
+        FR={name="Sail to Urotar", label="Urotar", zone="Mordor"},
+        ES={name="Sail to Urotar", label="Urotar", zone="Mordor"},
+        RU={name="Sail to Urotar", label="Urotar", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A34"},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                DE={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                FR={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                ES={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                RU={vendor="Glenniel (Scouts of Draugardh Quartermaster)"}}},
+        rep=LC.rep.SCOUTS_OF_DRAUGARDH, repLevel=LC.repLevel.FRIEND,
+        minLevel=151,
+        level=151.15
+    })
+    self.warden:AddSkill({
+        id="0x70076A3D",
+        EN={name="Muster at Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        DE={name="Muster at Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        FR={name="Muster at Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        ES={name="Muster at Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        RU={name="Muster at Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A19"},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Niyoz (Têtikir Quartermaster)"},
+                DE={vendor="Niyoz (Têtikir Quartermaster)"},
+                FR={vendor="Niyoz (Têtikir Quartermaster)"},
+                ES={vendor="Niyoz (Têtikir Quartermaster)"},
+                RU={vendor="Niyoz (Têtikir Quartermaster)"}},
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Têtikir Quartermaster"},
+                DE={vendor="Têtikir Quartermaster"},
+                FR={vendor="Têtikir Quartermaster"},
+                ES={vendor="Têtikir Quartermaster"},
+                RU={vendor="Têtikir Quartermaster"}}},
+        rep=LC.rep.TETIKIR, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=151,
+        level=151.16
+    })
     -- add the mariner skills
     self.mariner:AddLabelTag({EN="Sail", DE="Segeln", FR="Naviguer", ES="Navegar", RU="Плаванье"})
     self.mariner:AddSkill({
@@ -3497,6 +3749,106 @@ function TravelDictionary:CreateDictionaries()
         rep=LC.rep.KINTAI_OF_SUL_MADASH, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=150,
         level=150.52
+    })
+    self.mariner:AddSkill({
+        id="0x70076A06",
+        EN={name="Sail to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        DE={name="Sail to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        FR={name="Sail to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        ES={name="Sail to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        RU={name="Sail to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A0D"},
+        acquire={
+            {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                DE={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                FR={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                ES={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                RU={vendor="Glenniel (Scouts of Draugardh Quartermaster)"}}},
+        rep=LC.rep.SCOUTS_OF_DRAUGARDH, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=151,
+        level=151.11
+    })
+    self.mariner:AddSkill({
+        id="0x70076A09",
+        EN={name="Sail to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        DE={name="Sail to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        FR={name="Sail to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        ES={name="Sail to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        RU={name="Sail to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A10"},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                DE={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                FR={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                ES={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                RU={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"}}},
+        rep=LC.rep.KHEMOZEL_CLAN, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=151,
+        level=151.12
+    })
+    self.mariner:AddSkill({
+        id="0x70076A0A",
+        EN={name="Sail to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        DE={name="Sail to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        FR={name="Sail to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        ES={name="Sail to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        RU={name="Sail to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A22"},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                DE={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                FR={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                ES={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                RU={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"}}},
+        rep=LC.rep.KHEMOZEL_CLAN, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=151,
+        level=151.13
+    })
+    self.mariner:AddSkill({
+        id="0x70076A0B",
+        EN={name="Sail to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        DE={name="Sail to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        FR={name="Sail to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        ES={name="Sail to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        RU={name="Sail to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A26"},
+        acquire={
+            {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                DE={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                FR={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                ES={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                RU={vendor="Glenniel (Scouts of Draugardh Quartermaster)"}}},
+        rep=LC.rep.SCOUTS_OF_DRAUGARDH, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=151,
+        level=151.14
+    })
+    self.mariner:AddSkill({
+        id="0x70076A37",
+        EN={name="Muster at Urotar", label="Urotar", zone="Mordor"},
+        DE={name="Muster at Urotar", label="Urotar", zone="Mordor"},
+        FR={name="Muster at Urotar", label="Urotar", zone="Mordor"},
+        ES={name="Muster at Urotar", label="Urotar", zone="Mordor"},
+        RU={name="Muster at Urotar", label="Urotar", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        overlap={"0x70076A34"},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                DE={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                FR={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                ES={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                RU={vendor="Glenniel (Scouts of Draugardh Quartermaster)"}}},
+        rep=LC.rep.SCOUTS_OF_DRAUGARDH, repLevel=LC.repLevel.FRIEND,
+        minLevel=151,
+        level=151.15
     })
     -- add the racials skills
     self.racials:AddLabelTag({EN="Racial", DE="Rasse", FR="Race", ES="Raza", RU="Расовые"})
@@ -5366,6 +5718,126 @@ function TravelDictionary:CreateDictionaries()
         rep=LC.rep.KINTAI_OF_SUL_MADASH, repLevel=LC.repLevel.ACQUAINTANCE,
         minLevel=150,
         level=150.73
+    })
+    self.rep:AddSkill({
+        id="0x70076A0D",
+        EN={name="Return to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        DE={name="Return to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        FR={name="Return to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        ES={name="Return to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        RU={name="Return to Khos Ujir", label="Khos Ujir", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                DE={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                FR={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                ES={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                RU={vendor="Glenniel (Scouts of Draugardh Quartermaster)"}}},
+        rep=LC.rep.SCOUTS_OF_DRAUGARDH, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=151,
+        level=151.11
+    })
+    self.rep:AddSkill({
+        id="0x70076A10",
+        EN={name="Return to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        DE={name="Return to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        FR={name="Return to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        ES={name="Return to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        RU={name="Return to Dhol Têg", label="Dhol Têg", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                DE={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                FR={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                ES={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                RU={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"}}},
+        rep=LC.rep.KHEMOZEL_CLAN, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=151,
+        level=151.12
+    })
+    self.rep:AddSkill({
+        id="0x70076A19",
+        EN={name="Return to Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        DE={name="Return to Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        FR={name="Return to Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        ES={name="Return to Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        RU={name="Return to Kol Sákla", label="Kol Sákla", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Niyoz (Têtikir Quartermaster)"},
+                DE={vendor="Niyoz (Têtikir Quartermaster)"},
+                FR={vendor="Niyoz (Têtikir Quartermaster)"},
+                ES={vendor="Niyoz (Têtikir Quartermaster)"},
+                RU={vendor="Niyoz (Têtikir Quartermaster)"}},
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Têtikir Quartermaster"},
+                DE={vendor="Têtikir Quartermaster"},
+                FR={vendor="Têtikir Quartermaster"},
+                ES={vendor="Têtikir Quartermaster"},
+                RU={vendor="Têtikir Quartermaster"}}},
+        rep=LC.rep.TETIKIR, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=151,
+        level=151.13
+    })
+    self.rep:AddSkill({
+        id="0x70076A22",
+        EN={name="Return to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        DE={name="Return to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        FR={name="Return to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        ES={name="Return to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        RU={name="Return to Kûs Chela", label="Kûs Chela", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                DE={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                FR={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                ES={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
+                RU={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"}}},
+        rep=LC.rep.KHEMOZEL_CLAN, repLevel=LC.repLevel.NEUTRAL,
+        minLevel=151,
+        level=151.14
+    })
+    self.rep:AddSkill({
+        id="0x70076A26",
+        EN={name="Return to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        DE={name="Return to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        FR={name="Return to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        ES={name="Return to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        RU={name="Return to Khel Wêro", label="Khel Wêro", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        acquire={
+            {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                DE={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                FR={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                ES={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                RU={vendor="Glenniel (Scouts of Draugardh Quartermaster)"}}},
+        rep=LC.rep.SCOUTS_OF_DRAUGARDH, repLevel=LC.repLevel.ACQUAINTANCE,
+        minLevel=151,
+        level=151.15
+    })
+    self.rep:AddSkill({
+        id="0x70076A34",
+        EN={name="Return to Urotar", label="Urotar", zone="Mordor"},
+        DE={name="Return to Urotar", label="Urotar", zone="Mordor"},
+        FR={name="Return to Urotar", label="Urotar", zone="Mordor"},
+        ES={name="Return to Urotar", label="Urotar", zone="Mordor"},
+        RU={name="Return to Urotar", label="Urotar", zone="Mordor"},
+        map={{MapType.GONDOR, -1, -1}},
+        acquire={
+            {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
+                EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                DE={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                FR={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                ES={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
+                RU={vendor="Glenniel (Scouts of Draugardh Quartermaster)"}}},
+        rep=LC.rep.SCOUTS_OF_DRAUGARDH, repLevel=LC.repLevel.FRIEND,
+        minLevel=151,
+        level=151.16
     })
 end
 
