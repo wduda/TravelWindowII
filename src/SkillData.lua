@@ -474,7 +474,7 @@ function TravelDictionary:CreateDictionaries()
         EN={name="Guide to Mirk-eaves", label="Mirk-eaves", zone="Mirkwood"},
         DE={name="Führer zur Dunkelsenke", label="Dunkelsenke", zone="Düsterwald"},
         FR={name="Guide vers l'Orée noire", label="Orée noire", zone="Forêt Noire"},
-        ES={name="Guiar a los Lindes del Bosque Negro", label="Mirk-eaves", zone="Mirkwood"},
+        ES={name="Guiar a los Lindes Oscuros", label="Mirk-eaves", zone="Mirkwood"},
         RU={name="Путь в Черную рощу", label="Черная роща", zone="Лихолесье"},
         map={{MapType.RHOVANION, 365, 630}},
         acquire={
@@ -857,7 +857,7 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.TOKEN_OF_LAKE_AND_RIVERS}},
                 EN={vendor="Quartermaster (Men of Dale Rewards)"},
-                DE={vendor="Quartiermeister (Menschen aus Thal - Belohnungen)"},
+                DE={vendor="Quartiermeister (Menschen von Thal - Belohnungen)"},
                 FR={vendor="Intendant (Récompenses des hommes de Dale)"},
                 ES={vendor="Intendente (Recompensas de los hombres de Valle)"},
                 RU={vendor="Интендант (Люди Дейла - награды)"}},
@@ -1315,7 +1315,7 @@ function TravelDictionary:CreateDictionaries()
                 RU={vendor="Интендант Ордена орла"}},
             {cost={{amount=10, token=LC.token.LEDGER_KEEPER_MARK}},
                 EN={vendor="Aphamâr (Allegiance Barterer)"},
-                DE={vendor="Aphamâr (Bündnis-Tauschhändler)"},
+                DE={vendor="Aphamâr (Bündnis-Tauschhändlerin)"},
                 FR={vendor="Aphamâr (Négociante d'allégeance)"},
                 ES={vendor="Aphamâr (Negociante de lealtad)"},
                 RU={vendor="Афамар (Меновщик альянса)"}},
@@ -1448,7 +1448,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Hamâti Quartermaster", deed="Tales of the Crown of Hamât"},
                 DE={vendor="Hamâti-Quartiermeisterin", deed="Geschichten der Krone von Hamât"},
                 FR={vendor="Intendante des Hamâti", deed="Contes de la Couronne du Hamât"},
-                ES={vendor="Intendenta de los Hamâti", deed="Tales of the Crown of Hamât"},
+                ES={vendor="Intendenta de los Hamâti", deed="Relatos de la Corona de Hamât"},
                 RU={vendor="Хаматский интендант", deed="Истории Короны Хамата"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
@@ -1466,8 +1466,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Aralath (Quartermaster)"},
-                DE={vendor="Aralath (Quartiermeister)"},
-                FR={vendor="Aralath (Intendant)"},
+                DE={vendor="Aralath (Quartiermeister von Sul Madásh)"},
+                FR={vendor="Aralath (Intendant de Sul Madash)"},
                 ES={vendor="Aralath (Intendente)"},
                 RU={vendor="Аралат (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -1492,8 +1492,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Lumgâna (Quartermaster)"},
-                DE={vendor="Lumgâna (Quartiermeisterin)"},
-                FR={vendor="Lumgâna (Intendante)"},
+                DE={vendor="Lumgâna (Quartiermeisterin des Erneuerten Hamât)"},
+                FR={vendor="Lumgâna (Intendante du Nouveau Hamât)"},
                 ES={vendor="Lumgâna (Intendente)"},
                 RU={vendor="Лумгана (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -1518,8 +1518,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Alahamâr (Quartermaster)"},
-                DE={vendor="Alahamâr (Quartiermeister)"},
-                FR={vendor="Alahamâr (Intendant)"},
+                DE={vendor="Alahamâr (Quartiermeister von Zajâna)"},
+                FR={vendor="Alahamâr (Intendant de Zajâna)"},
                 ES={vendor="Alahamâr (Intendente)"},
                 RU={vendor="Алахамар (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -1544,8 +1544,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Semanísi (Quartermaster)"},
-                DE={vendor="Semanísi (Quartiermeister)"},
-                FR={vendor="Semanisi (Intendant)"},
+                DE={vendor="Semanísi (Quartiermeister von Jiret-menêsh)"},
+                FR={vendor="Semanisi (Intendant de Jiret-menêsh)"},
                 ES={vendor="Semanísi (Intendente)"},
                 RU={vendor="Семаниси (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -1877,7 +1877,7 @@ function TravelDictionary:CreateDictionaries()
         EN={name="Muster in Mirk-eaves", label="Mirk-Eaves", zone="Mirkwood"},
         DE={name="Appell in der Dunkelsenke", label="Dunkelsenke", zone="Düsterwald"},
         FR={name="Rassemblement : L'Orée noire", label="Orée noire", zone="Forêt Noire"},
-        ES={name="Acantonarse en los lindes del Bosque Negro", label="Mirk-Eaves", zone="Mirkwood"},
+        ES={name="Acantonarse en los Lindes Oscuros", label="Mirk-Eaves", zone="Mirkwood"},
         RU={name="Сбор в Черной роще", label="Черная роща", zone="Лихолесье"},
         map={{MapType.RHOVANION, 365, 630}},
         acquire={
@@ -2260,7 +2260,7 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.TOKEN_OF_LAKE_AND_RIVERS}},
                 EN={vendor="Quartermaster (Men of Dale Rewards)"},
-                DE={vendor="Quartiermeister (Menschen aus Thal - Belohnungen)"},
+                DE={vendor="Quartiermeister (Menschen von Thal - Belohnungen)"},
                 FR={vendor="Intendant (Récompenses des hommes de Dale)"},
                 ES={vendor="Intendente (Recompensas de los hombres de Valle)"},
                 RU={vendor="Интендант (Люди Дейла - награды)"}},
@@ -2718,7 +2718,7 @@ function TravelDictionary:CreateDictionaries()
                 RU={vendor="Интендант Ордена орла"}},
             {cost={{amount=10, token=LC.token.LEDGER_KEEPER_MARK}},
                 EN={vendor="Aphamâr (Allegiance Barterer)"},
-                DE={vendor="Aphamâr (Bündnis-Tauschhändler)"},
+                DE={vendor="Aphamâr (Bündnis-Tauschhändlerin)"},
                 FR={vendor="Aphamâr (Négociante d'allégeance)"},
                 ES={vendor="Aphamâr (Negociante de lealtad)"},
                 RU={vendor="Афамар (Меновщик альянса)"}},
@@ -2851,7 +2851,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Hamâti Quartermaster", deed="Tales of the Crown of Hamât"},
                 DE={vendor="Hamâti-Quartiermeisterin", deed="Geschichten der Krone von Hamât"},
                 FR={vendor="Intendante des Hamâti", deed="Contes de la Couronne du Hamât"},
-                ES={vendor="Intendenta de los Hamâti", deed="Tales of the Crown of Hamât"},
+                ES={vendor="Intendenta de los Hamâti", deed="Relatos de la Corona de Hamât"},
                 RU={vendor="Хаматский интендант", deed="Истории Короны Хамата"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
@@ -2869,8 +2869,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Semanísi (Quartermaster)"},
-                DE={vendor="Semanísi (Quartiermeister)"},
-                FR={vendor="Semanisi (Intendant)"},
+                DE={vendor="Semanísi (Quartiermeister von Jiret-menêsh)"},
+                FR={vendor="Semanisi (Intendant de Jiret-menêsh)"},
                 ES={vendor="Semanísi (Intendente)"},
                 RU={vendor="Семаниси (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -2895,8 +2895,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Lumgâna (Quartermaster)"},
-                DE={vendor="Lumgâna (Quartiermeisterin)"},
-                FR={vendor="Lumgâna (Intendante)"},
+                DE={vendor="Lumgâna (Quartiermeisterin des Erneuerten Hamât)"},
+                FR={vendor="Lumgâna (Intendante du Nouveau Hamât)"},
                 ES={vendor="Lumgâna (Intendente)"},
                 RU={vendor="Лумгана (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -2921,8 +2921,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Aralath (Quartermaster)"},
-                DE={vendor="Aralath (Quartiermeister)"},
-                FR={vendor="Aralath (Intendant)"},
+                DE={vendor="Aralath (Quartiermeister von Sul Madásh)"},
+                FR={vendor="Aralath (Intendant de Sul Madash)"},
                 ES={vendor="Aralath (Intendente)"},
                 RU={vendor="Аралат (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -2947,8 +2947,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Alahamâr (Quartermaster)"},
-                DE={vendor="Alahamâr (Quartiermeister)"},
-                FR={vendor="Alahamâr (Intendant)"},
+                DE={vendor="Alahamâr (Quartiermeister von Zajâna)"},
+                FR={vendor="Alahamâr (Intendant de Zajâna)"},
                 ES={vendor="Alahamâr (Intendente)"},
                 RU={vendor="Алахамар (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -3068,7 +3068,7 @@ function TravelDictionary:CreateDictionaries()
         EN={name="Sail to the Mirk-eaves", label="Mirk-eaves", zone="Mirkwood"},
         DE={name="Segelt zur Dunkelsenke", label="Dunkelsenke", zone="Düsterwald"},
         FR={name="Naviguer vers l'Orée Noire", label="Orée Noire", zone="Forêt Noire"},
-        ES={name="Navegar a los lindes del Bosque Negro", label="Mirk-eaves", zone="Mirkwood"},
+        ES={name="Navegar a los Lindes Oscuros", label="Mirk-eaves", zone="Mirkwood"},
         RU={name="Отплытие к Чёрной роще", label="Черная роща", zone="Лихолесье"},
         map={{MapType.RHOVANION, 365, 630}},
         acquire={
@@ -3174,7 +3174,7 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.TOKEN_OF_LAKE_AND_RIVERS}},
                 EN={vendor="Quartermaster (Men of Dale Rewards)"},
-                DE={vendor="Quartiermeister (Menschen aus Thal - Belohnungen)"},
+                DE={vendor="Quartiermeister (Menschen von Thal - Belohnungen)"},
                 FR={vendor="Intendant (Récompenses des hommes de Dale)"},
                 ES={vendor="Intendente (Recompensas de los hombres de Valle)"},
                 RU={vendor="Интендант (Люди Дейла - награды)"}},
@@ -3432,8 +3432,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Alahamâr (Quartermaster)"},
-                DE={vendor="Alahamâr (Quartiermeister)"},
-                FR={vendor="Alahamâr (Intendant)"},
+                DE={vendor="Alahamâr (Quartiermeister von Zajâna)"},
+                FR={vendor="Alahamâr (Intendant de Zajâna)"},
                 ES={vendor="Alahamâr (Intendente)"},
                 RU={vendor="Алахамар (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -3458,8 +3458,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Semanísi (Quartermaster)"},
-                DE={vendor="Semanísi (Quartiermeister)"},
-                FR={vendor="Semanisi (Intendant)"},
+                DE={vendor="Semanísi (Quartiermeister von Jiret-menêsh)"},
+                FR={vendor="Semanisi (Intendant de Jiret-menêsh)"},
                 ES={vendor="Semanísi (Intendente)"},
                 RU={vendor="Семаниси (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -3484,8 +3484,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Aralath (Quartermaster)"},
-                DE={vendor="Aralath (Quartiermeister)"},
-                FR={vendor="Aralath (Intendant)"},
+                DE={vendor="Aralath (Quartiermeister von Sul Madásh)"},
+                FR={vendor="Aralath (Intendant de Sul Madash)"},
                 ES={vendor="Aralath (Intendente)"},
                 RU={vendor="Аралат (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -4572,7 +4572,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={allegiance="The Court of Lothlórien", quest="Chapter 1: A Council Waiting"},
                 DE={allegiance="Der Hof von Lothlórien", quest="Kapitel 1: Der wartende Rat"},
                 FR={allegiance="La Cour de Lothlórien", quest="Chapitre 1 : L'attente du Conseil"},
-                ES={allegiance="La Corte de Lothlórien", quest="Chapter 1: A Council Waiting"},
+                ES={allegiance="La Corte de Lothlórien", quest="Capítulo 1: La Espera del Consejo"},
                 RU={allegiance="Двор Лотлориэна", quest="Глава 1: Ожидание Совета"}}},
         minLevel=110,
         level=110
@@ -4590,7 +4590,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={allegiance="The Kingdom of Gondor", quest="Chapter 1: The King and the Steward"},
                 DE={allegiance="Das Königreich Gondor", quest="Kapitel 1: Der König und der Truchsess"},
                 FR={allegiance="Le royaume du Gondor", quest="Chapitre 1 : Le roi et l'intendant"},
-                ES={allegiance="El Reino de Gondor", quest="Chapter 1: The King and the Steward"},
+                ES={allegiance="El Reino de Gondor", quest="Capítulo 1: El Rey y el Senescal"},
                 RU={allegiance="Королевство Гондор", quest="Глава 1: Король и Наместник"}}},
         minLevel=110,
         level=110.1
@@ -4608,7 +4608,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={allegiance="Durin's Folk", quest="Chapter 1: Beneath the Lonely Mountain"},
                 DE={allegiance="Durins Volk", quest="Kapitel 1: Unter dem Einsamen Berg"},
                 FR={allegiance="Le peuple de Durin", quest="Chapitre 1 : sous le Mont Solitaire"},
-                ES={allegiance="Pueblo de Durin", quest="Chapter 1: Beneath the Lonely Mountain"},
+                ES={allegiance="Pueblo de Durin", quest="Capítulo 1: Bajo la Montaña Solitaria"},
                 RU={allegiance="Народ Дарина", quest="Глава 1: Под Одинокой горой"}}},
         minLevel=110,
         level=110.2
@@ -4642,7 +4642,7 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=30, token=LC.token.TOKEN_OF_LAKE_AND_RIVERS}},
                 EN={vendor="Quartermaster (Men of Dale Rewards)"},
-                DE={vendor="Quartiermeister (Menschen aus Thal - Belohnungen)"},
+                DE={vendor="Quartiermeister (Menschen von Thal - Belohnungen)"},
                 FR={vendor="Intendant (Récompenses des hommes de Dale)"},
                 ES={vendor="Intendente (Recompensas de los hombres de Valle)"},
                 RU={vendor="Интендант (Люди Дейла - награды)"}},
@@ -4902,7 +4902,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={allegiance="The Zhélruka Clan", quest="Chapter 1: The Rightful Claim"},
                 DE={allegiance="Die Zhélruka-Sippe", quest="Kapitel 1: Der rechtmäßige Anspruch"},
                 FR={allegiance="Le clan des Zhelruka", quest="Chapitre 1 : Une prétention légitime"},
-                ES={allegiance="El clan Zhélruka", quest="Chapter 1: The Rightful Claim"},
+                ES={allegiance="El clan Zhélruka", quest="Capítulo 1: La reclamación legítima"},
                 RU={allegiance="Клан Желруков", quest="Глава 1: Законное требование"}}},
         minLevel=20,
         level=140
@@ -5098,7 +5098,7 @@ function TravelDictionary:CreateDictionaries()
                 RU={vendor="Интендант Ордена орла"}},
             {cost={{amount=10, token=LC.token.LEDGER_KEEPER_MARK}},
                 EN={vendor="Aphamâr (Allegiance Barterer)"},
-                DE={vendor="Aphamâr (Bündnis-Tauschhändler)"},
+                DE={vendor="Aphamâr (Bündnis-Tauschhändlerin)"},
                 FR={vendor="Aphamâr (Négociante d'allégeance)"},
                 ES={vendor="Aphamâr (Negociante de lealtad)"},
                 RU={vendor="Афамар (Меновщик альянса)"}},
@@ -5261,7 +5261,7 @@ function TravelDictionary:CreateDictionaries()
                 EN={vendor="Hamâti Quartermaster", deed="Tales of the Crown of Hamât"},
                 DE={vendor="Hamâti-Quartiermeisterin", deed="Geschichten der Krone von Hamât"},
                 FR={vendor="Intendante des Hamâti", deed="Contes de la Couronne du Hamât"},
-                ES={vendor="Intendenta de los Hamâti", deed="Tales of the Crown of Hamât"},
+                ES={vendor="Intendenta de los Hamâti", deed="Relatos de la Corona de Hamât"},
                 RU={vendor="Хаматский интендант", deed="Истории Короны Хамата"}}},
         rep=LC.rep.IKORBANI, repLevel=LC.repLevel.NEUTRAL,
         minLevel=140,
@@ -5278,8 +5278,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Lumgâna (Quartermaster)"},
-                DE={vendor="Lumgâna (Quartiermeisterin)"},
-                FR={vendor="Lumgâna (Intendante)"},
+                DE={vendor="Lumgâna (Quartiermeisterin des Erneuerten Hamât)"},
+                FR={vendor="Lumgâna (Intendante du Nouveau Hamât)"},
                 ES={vendor="Lumgâna (Intendente)"},
                 RU={vendor="Лумгана (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -5303,8 +5303,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Alahamâr (Quartermaster)"},
-                DE={vendor="Alahamâr (Quartiermeister)"},
-                FR={vendor="Alahamâr (Intendant)"},
+                DE={vendor="Alahamâr (Quartiermeister von Zajâna)"},
+                FR={vendor="Alahamâr (Intendant de Zajâna)"},
                 ES={vendor="Alahamâr (Intendente)"},
                 RU={vendor="Алахамар (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -5328,8 +5328,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Semanísi (Quartermaster)"},
-                DE={vendor="Semanísi (Quartiermeister)"},
-                FR={vendor="Semanisi (Intendant)"},
+                DE={vendor="Semanísi (Quartiermeister von Jiret-menêsh)"},
+                FR={vendor="Semanisi (Intendant de Jiret-menêsh)"},
                 ES={vendor="Semanísi (Intendente)"},
                 RU={vendor="Семаниси (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -5353,8 +5353,8 @@ function TravelDictionary:CreateDictionaries()
         acquire={
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
                 EN={vendor="Aralath (Quartermaster)"},
-                DE={vendor="Aralath (Quartiermeister)"},
-                FR={vendor="Aralath (Intendant)"},
+                DE={vendor="Aralath (Quartiermeister von Sul Madásh)"},
+                FR={vendor="Aralath (Intendant de Sul Madash)"},
                 ES={vendor="Aralath (Intendente)"},
                 RU={vendor="Аралат (Интендант)"}},
             {cost={{amount=10, token=LC.token.MUR_GHALA_SARZ}},
@@ -5406,7 +5406,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={name="Crude Map to Isendeep"},
         DE={name="Kartenskizze zur Isenbinge"},
         FR={name="Carte grossière pour aller au Gouffre d'Isen"},
-        ES={name="Mapa rudimentario para ir a Isendeep"},
+        ES={name="Mapa rudimentario para ir a Abismo del Isen"},
         RU={name="Грубая карта пути в Изендип"},
         map={{MapType.CREEPS, 700, 200}},
         level=1
@@ -5433,7 +5433,7 @@ function TravelDictionary:CreateCreepDictionary()
     })
     self.creep:AddSkill({
         id="0x70028BBE",
-        EN={name="Crude Map to Tirith Rhaw"},
+        EN={name="Crude Map to Tírith Rhaw"},
         DE={name="Grobe Karte zur Feste Tirith Rhaw"},
         FR={name="Carte grossière pour aller à Tirith Rhaw"},
         ES={name="Mapa tosco para ir a Tirith Rhaw"},
@@ -5456,7 +5456,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={name="Poor Map to Isendeep"},
         DE={name="Minderwertige Karte zur Isenbinge"},
         FR={name="Piètre carte pour aller au Gouffre d'Isen"},
-        ES={name="Mapa pobre para ir a Isendeep"},
+        ES={name="Mapa pobre para ir a Abismo del Isen"},
         RU={name="Неважная карта пути в Изендип"},
         map={{MapType.CREEPS, 610, 300}},
         level=1
@@ -5483,7 +5483,7 @@ function TravelDictionary:CreateCreepDictionary()
     })
     self.creep:AddSkill({
         id="0x70028BB4",
-        EN={name="Poor Map to Tirith Rhaw"},
+        EN={name="Poor Map to Tírith Rhaw"},
         DE={name="Minderwertige Karte zur Feste Tirith Rhaw"},
         FR={name="Piètre carte pour aller à Tirith Rhaw"},
         ES={name="Mapa pobre para ir a Tirith Rhaw"},
@@ -5506,7 +5506,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={name="Good Map to Isendeep"},
         DE={name="Gute Karte zur Isenbinge"},
         FR={name="Bonne carte pour aller au Gouffre d'Isen"},
-        ES={name="Buen mapa para ir a Isendeep"},
+        ES={name="Buen mapa para ir a Abismo del Isen"},
         RU={name="Хорошая карта пути в Изендип"},
         map={{MapType.CREEPS, 310, 95}},
         level=1
@@ -5516,7 +5516,7 @@ function TravelDictionary:CreateCreepDictionary()
         EN={name="Good Map to Isendeep"},
         DE={name="Gute Karte zur Isenbinge"},
         FR={name="Bonne carte pour aller au Gouffre d'Isen"},
-        ES={name="Buen mapa para ir a Isendeep"},
+        ES={name="Buen mapa para ir a Abismo del Isen"},
         RU={name="Хорошая карта пути в Изендип"},
         map={{MapType.CREEPS, 340, 95}},
         level=1
@@ -5563,7 +5563,7 @@ function TravelDictionary:CreateCreepDictionary()
     })
     self.creep:AddSkill({
         id="0x70028BB0",
-        EN={name="Good Map to Tirith Rhaw"},
+        EN={name="Good Map to Tírith Rhaw"},
         DE={name="Gute Karte zur Feste Tirith Rhaw"},
         FR={name="Bonne carte pour aller à Tirith Rhaw"},
         ES={name="Buen mapa para ir a Tirith Rhaw"},
@@ -5573,7 +5573,7 @@ function TravelDictionary:CreateCreepDictionary()
     })
     self.creep:AddSkill({
         id="0x7002A7B5",
-        EN={name="Good Map to Tirith Rhaw"},
+        EN={name="Good Map to Tírith Rhaw"},
         DE={name="Gute Karte zur Feste Tirith Rhaw"},
         FR={name="Bonne carte pour aller à Tirith Rhaw"},
         ES={name="Buen mapa para ir a Tirith Rhaw"},
