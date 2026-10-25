@@ -894,6 +894,78 @@
     overlap=["0x700706F7"]
     level=150.73
 
+[[hunter]]
+    id="0x70076A1D"
+    name="Guide to Khos Ujir"
+    EN={label="Khos Ujir", zone="Mordor"}
+    DE={label="Khos Ujir", zone="Mordor"}
+    FR={label="Khos Ujir", zone="Mordor"}
+    ES={label="Khos Ujir", zone="Mordor"}
+    RU={label="Khos Ujir", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=70}]
+    overlap=["0x70076A0D"]
+    level=151.11
+
+[[hunter]]
+    id="0x70076A20"
+    name="Guide to Kol Sákla"
+    EN={label="Kol Sákla", zone="Mordor"}
+    DE={label="Kol Sákla", zone="Mordor"}
+    FR={label="Kol Sákla", zone="Mordor"}
+    ES={label="Kol Sákla", zone="Mordor"}
+    RU={label="Kol Sákla", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=100}]
+    overlap=["0x70076A19"]
+    level=151.12
+
+[[hunter]]
+    id="0x70076A23"
+    name="Guide to Urotar"
+    EN={label="Urotar", zone="Mordor"}
+    DE={label="Urotar", zone="Mordor"}
+    FR={label="Urotar", zone="Mordor"}
+    ES={label="Urotar", zone="Mordor"}
+    RU={label="Urotar", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=130}]
+    overlap=["0x70076A34"]
+    level=151.13
+
+[[hunter]]
+    id="0x70076A2D"
+    name="Guide to Kûs Chela"
+    EN={label="Kûs Chela", zone="Mordor"}
+    DE={label="Kûs Chela", zone="Mordor"}
+    FR={label="Kûs Chela", zone="Mordor"}
+    ES={label="Kûs Chela", zone="Mordor"}
+    RU={label="Kûs Chela", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=160}]
+    overlap=["0x70076A22"]
+    level=151.14
+
+[[hunter]]
+    id="0x70076A40"
+    name="Guide to Dhol Têg"
+    EN={label="Dhol Têg", zone="Mordor"}
+    DE={label="Dhol Têg", zone="Mordor"}
+    FR={label="Dhol Têg", zone="Mordor"}
+    ES={label="Dhol Têg", zone="Mordor"}
+    RU={label="Dhol Têg", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=190}]
+    overlap=["0x70076A10"]
+    level=151.15
+
+[[hunter]]
+    id="0x70076A46"
+    name="Guide to Khel Wêro"
+    EN={label="Khel Wêro", zone="Mordor"}
+    DE={label="Khel Wêro", zone="Mordor"}
+    FR={label="Khel Wêro", zone="Mordor"}
+    ES={label="Khel Wêro", zone="Mordor"}
+    RU={label="Khel Wêro", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=220}]
+    overlap=["0x70076A26"]
+    level=151.16
+
 [[warden]]
     id="0x70064F4D"
     name="Muster at Clegur"
@@ -1668,6 +1740,78 @@
     overlap=["0x70070702"]
     level=150.73
 
+[[warden]]
+    id="0x70076A08"
+    name="Muster at Khos Ujir"
+    EN={label="Khos Ujir", zone="Mordor"}
+    DE={label="Khos Ujir", zone="Mordor"}
+    FR={label="Khos Ujir", zone="Mordor"}
+    ES={label="Khos Ujir", zone="Mordor"}
+    RU={label="Khos Ujir", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=70}]
+    overlap=["0x70076A0D"]
+    level=151.11
+
+[[warden]]
+    id="0x70076A12"
+    name="Muster at Dhol Têg"
+    EN={label="Dhol Têg", zone="Mordor"}
+    DE={label="Dhol Têg", zone="Mordor"}
+    FR={label="Dhol Têg", zone="Mordor"}
+    ES={label="Dhol Têg", zone="Mordor"}
+    RU={label="Dhol Têg", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=190}]
+    overlap=["0x70076A10"]
+    level=151.12
+
+[[warden]]
+    id="0x70076A32"
+    name="Muster at Khel Wêro"
+    EN={label="Khel Wêro", zone="Mordor"}
+    DE={label="Khel Wêro", zone="Mordor"}
+    FR={label="Khel Wêro", zone="Mordor"}
+    ES={label="Khel Wêro", zone="Mordor"}
+    RU={label="Khel Wêro", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=220}]
+    overlap=["0x70076A26"]
+    level=151.13
+
+[[warden]]
+    id="0x70076A35"
+    name="Muster at Kûs Chela"
+    EN={label="Kûs Chela", zone="Mordor"}
+    DE={label="Kûs Chela", zone="Mordor"}
+    FR={label="Kûs Chela", zone="Mordor"}
+    ES={label="Kûs Chela", zone="Mordor"}
+    RU={label="Kûs Chela", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=160}]
+    overlap=["0x70076A22"]
+    level=151.14
+
+[[warden]]
+    id="0x70076A3B"
+    name="Sail to Urotar"
+    EN={label="Urotar", zone="Mordor"}
+    DE={label="Urotar", zone="Mordor"}
+    FR={label="Urotar", zone="Mordor"}
+    ES={label="Urotar", zone="Mordor"}
+    RU={label="Urotar", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=130}]
+    overlap=["0x70076A34"]
+    level=151.15
+
+[[warden]]
+    id="0x70076A3D"
+    name="Muster at Kol Sákla"
+    EN={label="Kol Sákla", zone="Mordor"}
+    DE={label="Kol Sákla", zone="Mordor"}
+    FR={label="Kol Sákla", zone="Mordor"}
+    ES={label="Kol Sákla", zone="Mordor"}
+    RU={label="Kol Sákla", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=100}]
+    overlap=["0x70076A19"]
+    level=151.16
+
 [[mariner]]
     id="0x70066100"
     name="Sail to Celondim"
@@ -1985,6 +2129,66 @@
     map=[{type="HARADWAITH", x=810, y=470}]
     overlap=["0x70070715"]
     level=150.52
+
+[[mariner]]
+    id="0x70076A06"
+    name="Sail to Khos Ujir"
+    EN={label="Khos Ujir", zone="Mordor"}
+    DE={label="Khos Ujir", zone="Mordor"}
+    FR={label="Khos Ujir", zone="Mordor"}
+    ES={label="Khos Ujir", zone="Mordor"}
+    RU={label="Khos Ujir", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=70}]
+    overlap=["0x70076A0D"]
+    level=151.11
+
+[[mariner]]
+    id="0x70076A09"
+    name="Sail to Dhol Têg"
+    EN={label="Dhol Têg", zone="Mordor"}
+    DE={label="Dhol Têg", zone="Mordor"}
+    FR={label="Dhol Têg", zone="Mordor"}
+    ES={label="Dhol Têg", zone="Mordor"}
+    RU={label="Dhol Têg", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=190}]
+    overlap=["0x70076A10"]
+    level=151.12
+
+[[mariner]]
+    id="0x70076A0A"
+    name="Sail to Kûs Chela"
+    EN={label="Kûs Chela", zone="Mordor"}
+    DE={label="Kûs Chela", zone="Mordor"}
+    FR={label="Kûs Chela", zone="Mordor"}
+    ES={label="Kûs Chela", zone="Mordor"}
+    RU={label="Kûs Chela", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=160}]
+    overlap=["0x70076A22"]
+    level=151.13
+
+[[mariner]]
+    id="0x70076A0B"
+    name="Sail to Khel Wêro"
+    EN={label="Khel Wêro", zone="Mordor"}
+    DE={label="Khel Wêro", zone="Mordor"}
+    FR={label="Khel Wêro", zone="Mordor"}
+    ES={label="Khel Wêro", zone="Mordor"}
+    RU={label="Khel Wêro", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=220}]
+    overlap=["0x70076A26"]
+    level=151.14
+
+[[mariner]]
+    id="0x70076A37"
+    name="Muster at Urotar"
+    EN={label="Urotar", zone="Mordor"}
+    DE={label="Urotar", zone="Mordor"}
+    FR={label="Urotar", zone="Mordor"}
+    ES={label="Urotar", zone="Mordor"}
+    RU={label="Urotar", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=130}]
+    overlap=["0x70076A34"]
+    level=151.15
 
 [[racials]]
     race="man"
@@ -3100,6 +3304,72 @@
     RU={label="Sul Madásh", zone="Harad"}
     map=[{type="HARADWAITH", x=780, y=470}]
     level=150.73
+
+[[rep]]
+    id="0x70076A0D"
+    name="Return to Khos Ujir"
+    EN={label="Khos Ujir", zone="Mordor"}
+    DE={label="Khos Ujir", zone="Mordor"}
+    FR={label="Khos Ujir", zone="Mordor"}
+    ES={label="Khos Ujir", zone="Mordor"}
+    RU={label="Khos Ujir", zone="Мордор"}
+    map=[{type="GONDOR", x=990, y=70}]
+    level=151.11
+
+[[rep]]
+    id="0x70076A10"
+    name="Return to Dhol Têg"
+    EN={label="Dhol Têg", zone="Mordor"}
+    DE={label="Dhol Têg", zone="Mordor"}
+    FR={label="Dhol Têg", zone="Mordor"}
+    ES={label="Dhol Têg", zone="Mordor"}
+    RU={label="Dhol Têg", zone="Мордор"}
+    map=[{type="GONDOR", x=990, y=190}]
+    level=151.12
+
+[[rep]]
+    id="0x70076A19"
+    name="Return to Kol Sákla"
+    EN={label="Kol Sákla", zone="Mordor"}
+    DE={label="Kol Sákla", zone="Mordor"}
+    FR={label="Kol Sákla", zone="Mordor"}
+    ES={label="Kol Sákla", zone="Mordor"}
+    RU={label="Kol Sákla", zone="Мордор"}
+    map=[{type="GONDOR", x=990, y=100}]
+    level=151.13
+
+[[rep]]
+    id="0x70076A22"
+    name="Return to Kûs Chela"
+    EN={label="Kûs Chela", zone="Mordor"}
+    DE={label="Kûs Chela", zone="Mordor"}
+    FR={label="Kûs Chela", zone="Mordor"}
+    ES={label="Kûs Chela", zone="Mordor"}
+    RU={label="Kûs Chela", zone="Мордор"}
+    map=[{type="GONDOR", x=990, y=160}]
+    level=151.14
+
+[[rep]]
+    id="0x70076A26"
+    name="Return to Khel Wêro"
+    EN={label="Khel Wêro", zone="Mordor"}
+    DE={label="Khel Wêro", zone="Mordor"}
+    FR={label="Khel Wêro", zone="Mordor"}
+    ES={label="Khel Wêro", zone="Mordor"}
+    RU={label="Khel Wêro", zone="Мордор"}
+    map=[{type="GONDOR", x=990, y=220}]
+    level=151.15
+
+[[rep]]
+    id="0x70076A34"
+    name="Return to Urotar"
+    EN={label="Urotar", zone="Mordor"}
+    DE={label="Urotar", zone="Mordor"}
+    FR={label="Urotar", zone="Mordor"}
+    ES={label="Urotar", zone="Mordor"}
+    RU={label="Urotar", zone="Мордор"}
+    map=[{type="GONDOR", x=990, y=130}]
+    level=151.16
 
 [[creep]]
     id="0x70028BBC"
