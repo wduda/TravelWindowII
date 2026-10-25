@@ -1,7 +1,7 @@
 --[[ This is an extension of the Turbine Shortcut item 	]] --
 --[[ that will maintain some extra data, such as name, type, index ]] --
 --[[ and enabled status	]] --
-TravelShortcut = class(Turbine.UI.Lotro.Shortcut);
+TravelShortcut = class(Turbine.UI.Lotro.Shortcut)
 
 local NextDefaultIndex = 1
 local NextDefaultMapIndex = 1

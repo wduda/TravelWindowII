@@ -712,6 +712,10 @@ end
 
 -- Add a single shortcut to the map
 function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
+    local qs = Turbine.UI.Lotro.Quickslot()
+    local success = pcall(Turbine.UI.Lotro.Quickslot.SetShortcut, qs, shortcut)
+    if not success then return end
+
     local isLearned = travelShortcut.found == true
     local index = #self.quickslots + 1
     local frameSize = self.colWidth + 2
@@ -719,13 +723,10 @@ function TravelMapTab:AddSingleShortcut(location, shortcut, travelShortcut)
     border:SetParent(self)
     border:SetZOrder(98)
     border:SetBackColor(Turbine.UI.Color(0, 0, 0 , 0))
-
-    local qs = Turbine.UI.Lotro.Quickslot()
     qs.posX = location[2] + self.navOffsetX
     qs.posY = location[3]
     qs.border = border
     qs:SetParent(border)
-    qs:SetShortcut(shortcut)
     qs:SetOpacity(1)
     qs:SetMouseVisible(true)
     qs:SetUseOnRightClick(false)
