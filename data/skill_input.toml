@@ -902,7 +902,7 @@
     FR={label="Khos Ujir", zone="Mordor"}
     ES={label="Khos Ujir", zone="Mordor"}
     RU={label="Khos Ujir", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=70}]
     overlap=["0x70076A0D"]
     level=151.11
 
@@ -914,7 +914,7 @@
     FR={label="Kol Sákla", zone="Mordor"}
     ES={label="Kol Sákla", zone="Mordor"}
     RU={label="Kol Sákla", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=100}]
     overlap=["0x70076A19"]
     level=151.12
 
@@ -926,7 +926,7 @@
     FR={label="Urotar", zone="Mordor"}
     ES={label="Urotar", zone="Mordor"}
     RU={label="Urotar", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=130}]
     overlap=["0x70076A34"]
     level=151.13
 
@@ -938,7 +938,7 @@
     FR={label="Kûs Chela", zone="Mordor"}
     ES={label="Kûs Chela", zone="Mordor"}
     RU={label="Kûs Chela", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=160}]
     overlap=["0x70076A22"]
     level=151.14
 
@@ -950,7 +950,7 @@
     FR={label="Dhol Têg", zone="Mordor"}
     ES={label="Dhol Têg", zone="Mordor"}
     RU={label="Dhol Têg", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=190}]
     overlap=["0x70076A10"]
     level=151.15
 
@@ -962,7 +962,7 @@
     FR={label="Khel Wêro", zone="Mordor"}
     ES={label="Khel Wêro", zone="Mordor"}
     RU={label="Khel Wêro", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=220}]
     overlap=["0x70076A26"]
     level=151.16
 
@@ -1748,7 +1748,7 @@
     FR={label="Khos Ujir", zone="Mordor"}
     ES={label="Khos Ujir", zone="Mordor"}
     RU={label="Khos Ujir", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=70}]
     overlap=["0x70076A0D"]
     level=151.11
 
@@ -1760,7 +1760,7 @@
     FR={label="Dhol Têg", zone="Mordor"}
     ES={label="Dhol Têg", zone="Mordor"}
     RU={label="Dhol Têg", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=190}]
     overlap=["0x70076A10"]
     level=151.12
 
@@ -1772,7 +1772,7 @@
     FR={label="Khel Wêro", zone="Mordor"}
     ES={label="Khel Wêro", zone="Mordor"}
     RU={label="Khel Wêro", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=220}]
     overlap=["0x70076A26"]
     level=151.13
 
@@ -1784,7 +1784,7 @@
     FR={label="Kûs Chela", zone="Mordor"}
     ES={label="Kûs Chela", zone="Mordor"}
     RU={label="Kûs Chela", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=160}]
     overlap=["0x70076A22"]
     level=151.14
 
@@ -1796,7 +1796,7 @@
     FR={label="Urotar", zone="Mordor"}
     ES={label="Urotar", zone="Mordor"}
     RU={label="Urotar", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=130}]
     overlap=["0x70076A34"]
     level=151.15
 
@@ -1808,7 +1808,7 @@
     FR={label="Kol Sákla", zone="Mordor"}
     ES={label="Kol Sákla", zone="Mordor"}
     RU={label="Kol Sákla", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=100}]
     overlap=["0x70076A19"]
     level=151.16
 
@@ -2138,7 +2138,7 @@
     FR={label="Khos Ujir", zone="Mordor"}
     ES={label="Khos Ujir", zone="Mordor"}
     RU={label="Khos Ujir", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=70}]
     overlap=["0x70076A0D"]
     level=151.11
 
@@ -2150,7 +2150,7 @@
     FR={label="Dhol Têg", zone="Mordor"}
     ES={label="Dhol Têg", zone="Mordor"}
     RU={label="Dhol Têg", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=190}]
     overlap=["0x70076A10"]
     level=151.12
 
@@ -2162,7 +2162,7 @@
     FR={label="Kûs Chela", zone="Mordor"}
     ES={label="Kûs Chela", zone="Mordor"}
     RU={label="Kûs Chela", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=160}]
     overlap=["0x70076A22"]
     level=151.13
 
@@ -2174,7 +2174,7 @@
     FR={label="Khel Wêro", zone="Mordor"}
     ES={label="Khel Wêro", zone="Mordor"}
     RU={label="Khel Wêro", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=220}]
     overlap=["0x70076A26"]
     level=151.14
 
@@ -2186,7 +2186,7 @@
     FR={label="Urotar", zone="Mordor"}
     ES={label="Urotar", zone="Mordor"}
     RU={label="Urotar", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=960, y=130}]
     overlap=["0x70076A34"]
     level=151.15
 
@@ -3313,7 +3313,7 @@
     FR={label="Khos Ujir", zone="Mordor"}
     ES={label="Khos Ujir", zone="Mordor"}
     RU={label="Khos Ujir", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=990, y=70}]
     level=151.11
 
 [[rep]]
@@ -3324,7 +3324,7 @@
     FR={label="Dhol Têg", zone="Mordor"}
     ES={label="Dhol Têg", zone="Mordor"}
     RU={label="Dhol Têg", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=990, y=190}]
     level=151.12
 
 [[rep]]
@@ -3335,7 +3335,7 @@
     FR={label="Kol Sákla", zone="Mordor"}
     ES={label="Kol Sákla", zone="Mordor"}
     RU={label="Kol Sákla", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=990, y=100}]
     level=151.13
 
 [[rep]]
@@ -3346,7 +3346,7 @@
     FR={label="Kûs Chela", zone="Mordor"}
     ES={label="Kûs Chela", zone="Mordor"}
     RU={label="Kûs Chela", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=990, y=160}]
     level=151.14
 
 [[rep]]
@@ -3357,7 +3357,7 @@
     FR={label="Khel Wêro", zone="Mordor"}
     ES={label="Khel Wêro", zone="Mordor"}
     RU={label="Khel Wêro", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=990, y=220}]
     level=151.15
 
 [[rep]]
@@ -3368,7 +3368,7 @@
     FR={label="Urotar", zone="Mordor"}
     ES={label="Urotar", zone="Mordor"}
     RU={label="Urotar", zone="Мордор"}
-    map=[{type="GONDOR", x=-1, y=-1}]
+    map=[{type="GONDOR", x=990, y=130}]
     level=151.16
 
 [[creep]]

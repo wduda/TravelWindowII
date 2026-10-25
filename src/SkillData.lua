@@ -1565,7 +1565,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Guide to Khos Ujir", label="Khos Ujir", zone="Mordor"},
         ES={name="Guide to Khos Ujir", label="Khos Ujir", zone="Mordor"},
         RU={name="Guide to Khos Ujir", label="Khos Ujir", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 70}},
         overlap={"0x70076A0D"},
         acquire={
             {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
@@ -1585,7 +1585,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Guide to Kol Sákla", label="Kol Sákla", zone="Mordor"},
         ES={name="Guide to Kol Sákla", label="Kol Sákla", zone="Mordor"},
         RU={name="Guide to Kol Sákla", label="Kol Sákla", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 100}},
         overlap={"0x70076A19"},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
@@ -1611,7 +1611,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Guide to Urotar", label="Urotar", zone="Mordor"},
         ES={name="Guide to Urotar", label="Urotar", zone="Mordor"},
         RU={name="Guide to Urotar", label="Urotar", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 130}},
         overlap={"0x70076A34"},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
@@ -1630,8 +1630,8 @@ function TravelDictionary:CreateDictionaries()
         DE={name="Guide to Kûs Chela", label="Kûs Chela", zone="Mordor"},
         FR={name="Guide to Kûs Chela", label="Kûs Chela", zone="Mordor"},
         ES={name="Guide to Kûs Chela", label="Kûs Chela", zone="Mordor"},
-        map={{MapType.GONDOR, -1, -1}},
         RU={name="Guide to Kûs Chela", label="Kûs Chela", zone="Мордор"},
+        map={{MapType.GONDOR, 960, 160}},
         overlap={"0x70076A22"},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
@@ -1651,7 +1651,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Guide to Dhol Têg", label="Dhol Têg", zone="Mordor"},
         ES={name="Guide to Dhol Têg", label="Dhol Têg", zone="Mordor"},
         RU={name="Guide to Dhol Têg", label="Dhol Têg", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 190}},
         overlap={"0x70076A10"},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
@@ -1671,7 +1671,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Guide to Khel Wêro", label="Khel Wêro", zone="Mordor"},
         ES={name="Guide to Khel Wêro", label="Khel Wêro", zone="Mordor"},
         RU={name="Guide to Khel Wêro", label="Khel Wêro", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 220}},
         overlap={"0x70076A26"},
         acquire={
             {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
@@ -3094,7 +3094,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Muster at Khos Ujir", label="Khos Ujir", zone="Mordor"},
         ES={name="Muster at Khos Ujir", label="Khos Ujir", zone="Mordor"},
         RU={name="Muster at Khos Ujir", label="Khos Ujir", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 70}},
         overlap={"0x70076A0D"},
         acquire={
             {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
@@ -3114,7 +3114,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Muster at Dhol Têg", label="Dhol Têg", zone="Mordor"},
         ES={name="Muster at Dhol Têg", label="Dhol Têg", zone="Mordor"},
         RU={name="Muster at Dhol Têg", label="Dhol Têg", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 190}},
         overlap={"0x70076A10"},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
@@ -3134,7 +3134,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Muster at Khel Wêro", label="Khel Wêro", zone="Mordor"},
         ES={name="Muster at Khel Wêro", label="Khel Wêro", zone="Mordor"},
         RU={name="Muster at Khel Wêro", label="Khel Wêro", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 220}},
         overlap={"0x70076A26"},
         acquire={
             {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
@@ -3154,7 +3154,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Muster at Kûs Chela", label="Kûs Chela", zone="Mordor"},
         ES={name="Muster at Kûs Chela", label="Kûs Chela", zone="Mordor"},
         RU={name="Muster at Kûs Chela", label="Kûs Chela", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 160}},
         overlap={"0x70076A22"},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
@@ -3174,7 +3174,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Sail to Urotar", label="Urotar", zone="Mordor"},
         ES={name="Sail to Urotar", label="Urotar", zone="Mordor"},
         RU={name="Sail to Urotar", label="Urotar", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 130}},
         overlap={"0x70076A34"},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
@@ -3194,7 +3194,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Muster at Kol Sákla", label="Kol Sákla", zone="Mordor"},
         ES={name="Muster at Kol Sákla", label="Kol Sákla", zone="Mordor"},
         RU={name="Muster at Kol Sákla", label="Kol Sákla", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 100}},
         overlap={"0x70076A19"},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
@@ -3757,7 +3757,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Sail to Khos Ujir", label="Khos Ujir", zone="Mordor"},
         ES={name="Sail to Khos Ujir", label="Khos Ujir", zone="Mordor"},
         RU={name="Sail to Khos Ujir", label="Khos Ujir", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 70}},
         overlap={"0x70076A0D"},
         acquire={
             {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
@@ -3777,7 +3777,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Sail to Dhol Têg", label="Dhol Têg", zone="Mordor"},
         ES={name="Sail to Dhol Têg", label="Dhol Têg", zone="Mordor"},
         RU={name="Sail to Dhol Têg", label="Dhol Têg", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 190}},
         overlap={"0x70076A10"},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
@@ -3797,7 +3797,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Sail to Kûs Chela", label="Kûs Chela", zone="Mordor"},
         ES={name="Sail to Kûs Chela", label="Kûs Chela", zone="Mordor"},
         RU={name="Sail to Kûs Chela", label="Kûs Chela", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 160}},
         overlap={"0x70076A22"},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
@@ -3817,7 +3817,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Sail to Khel Wêro", label="Khel Wêro", zone="Mordor"},
         ES={name="Sail to Khel Wêro", label="Khel Wêro", zone="Mordor"},
         RU={name="Sail to Khel Wêro", label="Khel Wêro", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 220}},
         overlap={"0x70076A26"},
         acquire={
             {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
@@ -3837,7 +3837,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Muster at Urotar", label="Urotar", zone="Mordor"},
         ES={name="Muster at Urotar", label="Urotar", zone="Mordor"},
         RU={name="Muster at Urotar", label="Urotar", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 960, 130}},
         overlap={"0x70076A34"},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
@@ -5726,7 +5726,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Return to Khos Ujir", label="Khos Ujir", zone="Mordor"},
         ES={name="Return to Khos Ujir", label="Khos Ujir", zone="Mordor"},
         RU={name="Return to Khos Ujir", label="Khos Ujir", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 990, 70}},
         acquire={
             {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
                 EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
@@ -5745,7 +5745,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Return to Dhol Têg", label="Dhol Têg", zone="Mordor"},
         ES={name="Return to Dhol Têg", label="Dhol Têg", zone="Mordor"},
         RU={name="Return to Dhol Têg", label="Dhol Têg", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 990, 190}},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
                 EN={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
@@ -5764,7 +5764,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Return to Kol Sákla", label="Kol Sákla", zone="Mordor"},
         ES={name="Return to Kol Sákla", label="Kol Sákla", zone="Mordor"},
         RU={name="Return to Kol Sákla", label="Kol Sákla", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 990, 100}},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
                 EN={vendor="Niyoz (Têtikir Quartermaster)"},
@@ -5789,7 +5789,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Return to Kûs Chela", label="Kûs Chela", zone="Mordor"},
         ES={name="Return to Kûs Chela", label="Kûs Chela", zone="Mordor"},
         RU={name="Return to Kûs Chela", label="Kûs Chela", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 990, 160}},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
                 EN={vendor="Sêkh-buri-Wêp (Khemozêl Quartermaster)"},
@@ -5808,7 +5808,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Return to Khel Wêro", label="Khel Wêro", zone="Mordor"},
         ES={name="Return to Khel Wêro", label="Khel Wêro", zone="Mordor"},
         RU={name="Return to Khel Wêro", label="Khel Wêro", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 990, 220}},
         acquire={
             {cost={{amount=10, token=LC.token.TETIKIR_GUSHOKH}},
                 EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
@@ -5827,7 +5827,7 @@ function TravelDictionary:CreateDictionaries()
         FR={name="Return to Urotar", label="Urotar", zone="Mordor"},
         ES={name="Return to Urotar", label="Urotar", zone="Mordor"},
         RU={name="Return to Urotar", label="Urotar", zone="Мордор"},
-        map={{MapType.GONDOR, -1, -1}},
+        map={{MapType.GONDOR, 990, 130}},
         acquire={
             {cost={{amount=15, token=LC.token.TETIKIR_GUSHOKH}},
                 EN={vendor="Glenniel (Scouts of Draugardh Quartermaster)"},
