@@ -5,6 +5,8 @@
 for every new task I provide, go into plan mode, prepare a plan without executing, ask in which branch to execute the changes, checkout that branch, commit the plan into an .md file in the `plans` folder, named with the date in ISO 8601 format and an abbreviated description of the feature
 if the plan is updated based on my fedback make sure to patch the .md file for the plan as well
 
+metadata-only release tasks do not require a plan file
+
 ## skills
 
 use the skills found in the `.skills` directory
@@ -37,6 +39,8 @@ for release metadata tasks, always update and stage (without committing unless e
 - `doc/lotrointerface.txt`
 
 build release notes from commits since the last release tag and keep changelog prefixes to `major:`, `feat:`, `fix:`
+
+in `doc/lotroforums.txt` and `doc/lotrointerface.txt`, include release notes only for the latest version; link to `CHANGELOG.md` for older release history instead of repeating it
 
 ## LOTRO Lua limits
 

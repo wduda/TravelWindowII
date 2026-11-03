@@ -4,6 +4,15 @@
 
 ChangelogData = {
     {
+        version = "v4.12.0",
+        changes = {
+            "feat: added U50 travel skills with translations and map locations",
+            "feat: updated travel skill and reputation translations",
+            "fix: improved Map View quickslot border drawing",
+            "fix: Map View now skips skills whose shortcuts cannot be loaded",
+        }
+    },
+    {
         version = "v4.11.0",
         changes = {
             "feature: Travel Window now supports scaling with the global UI scale - set the checkbox in the ingame plugin manager for this to take effect",
