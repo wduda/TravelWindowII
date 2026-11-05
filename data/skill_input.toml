@@ -1789,18 +1789,6 @@
     level=151.14
 
 [[warden]]
-    id="0x70076A3B"
-    name="Sail to Urotar"
-    EN={label="Urotar", zone="Mordor"}
-    DE={label="Urotar", zone="Mordor"}
-    FR={label="Urotar", zone="Mordor"}
-    ES={label="Urotar", zone="Mordor"}
-    RU={label="Urotar", zone="Мордор"}
-    map=[{type="GONDOR", x=960, y=130}]
-    overlap=["0x70076A34"]
-    level=151.15
-
-[[warden]]
     id="0x70076A3D"
     name="Muster at Kol Sákla"
     EN={label="Kol Sákla", zone="Mordor"}
@@ -1811,6 +1799,18 @@
     map=[{type="GONDOR", x=960, y=100}]
     overlap=["0x70076A19"]
     level=151.16
+
+[[warden]]
+    id="0x70076A37"
+    name="Muster at Urotar"
+    EN={label="Urotar", zone="Mordor"}
+    DE={label="Urotar", zone="Mordor"}
+    FR={label="Urotar", zone="Mordor"}
+    ES={label="Urotar", zone="Mordor"}
+    RU={label="Urotar", zone="Мордор"}
+    map=[{type="GONDOR", x=960, y=130}]
+    overlap=["0x70076A34"]
+    level=151.15
 
 [[mariner]]
     id="0x70066100"
@@ -2179,8 +2179,8 @@
     level=151.14
 
 [[mariner]]
-    id="0x70076A37"
-    name="Muster at Urotar"
+    id="0x70076A3B"
+    name="Sail to Urotar"
     EN={label="Urotar", zone="Mordor"}
     DE={label="Urotar", zone="Mordor"}
     FR={label="Urotar", zone="Mordor"}
