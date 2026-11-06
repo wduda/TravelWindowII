@@ -42,12 +42,12 @@ Travel Window II has two authors who develop it actively. If you can provide imp
 
 Version history:
 
-v4.12.0
+v4.12.1
 
-- feat: added U50 travel skills with translations and map locations
-- feat: updated travel skill and reputation translations
-- fix: improved Map View quickslot border drawing
-- fix: Map View now skips skills whose shortcuts cannot be loaded
+- feat: updated travel skill data and translations for U50.1
+- fix: corrected the Warden and Mariner skill assignments for Urotar
+- fix: completed German and French translations for U50.1 skills and barter data
+- fix: corrected German translations for Tírith Rhaw maps
 
 Rest of changelog found [URL="https://github.com/wduda/TravelWindowII/blob/main/CHANGELOG.md"]here[/URL].
 

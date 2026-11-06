@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v4.12.1
+
+- feat: updated travel skill data and translations for U50.1
+- fix: corrected the Warden and Mariner skill assignments for Urotar
+- fix: completed German and French translations for U50.1 skills and barter data
+- fix: corrected German translations for Tírith Rhaw maps
+
 ## v4.12.0
 
 - feat: added U50 travel skills with translations and map locations

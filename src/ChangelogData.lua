@@ -4,6 +4,15 @@
 
 ChangelogData = {
     {
+        version = "v4.12.1",
+        changes = {
+            "feat: updated travel skill data and translations for U50.1",
+            "fix: corrected the Warden and Mariner skill assignments for Urotar",
+            "fix: completed German and French translations for U50.1 skills and barter data",
+            "fix: corrected German translations for Tírith Rhaw maps",
+        }
+    },
+    {
         version = "v4.12.0",
         changes = {
             "feat: added U50 travel skills with translations and map locations",
