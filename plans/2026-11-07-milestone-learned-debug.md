@@ -11,9 +11,9 @@ On the clean `main` baseline, add a first, non-persistent milestone feature slic
 - Display the prompt text “Pick newly set milestone skill” and one clickable quickslot per currently learned milestone skill, including gapped skill sets.
 - Match the plugin's established window style for the active Classic or Mini setting.
 - On picker click, write an unambiguous debug chat line identifying the selected milestone skill, then close the prompt.
-- Observe clicks on TWII milestone quickslots in its List, Grid, Carousel, Pulldown, and map-tray views. Keep the pending skill identity and timestamp in memory only.
+- Observe clicks on TWII milestone quickslots in its List, Grid, Carousel, Pulldown, and map-tray views. Capture the specific shortcut in each click callback rather than resolving it through a completed loop index. Keep the pending skill identity and timestamp in memory only.
 - Parse the successful-use message after travel succeeds, retain the full destination phrase and parenthetical region, correlate it with the recent TWII milestone quickslot click, print a line such as “Milestone 3 is mapped to Ingarûma (The Hatokáli Fells),” and clear the pending click.
-- Clear pending correlation when debug mode is turned off or the plugin unloads; ignore successful-use messages without a recent TWII milestone click or without a recognized destination.
+- Keep the click-to-success window to 30 seconds, as the travel animation and loading screen take several seconds. Clear pending correlation when debug mode is turned off or the plugin unloads; ignore successful-use messages without a recent TWII milestone click or without a recognized destination.
 - Keep the slice transient: no saved binding, location capture, tracking record, or other persistence.
 
 ## Out of scope
@@ -32,7 +32,7 @@ Persistent binding/location tracking, map/text-view integration, use-based repai
 - With debug mode off, bind confirmations and skill-use messages do not open the picker or emit feature diagnostics.
 - With debug mode on, the bind-confirmation opens one prompt showing the requested instruction and exactly the milestone skills learned by that character, even when slot numbers have gaps; unrelated skill-acquired messages do not open it.
 - Each displayed quickslot selects its corresponding skill; selection emits one clear debug chat line and closes the prompt.
-- A recent click on a TWII milestone quickslot followed by a recognized successful-use message emits one mapping line with the correct milestone number and destination; unrelated chat, expired/missing clicks, and unrecognized messages do not produce a mapping.
+- A click on each TWII milestone map-tray quickslot is correlated to that exact shortcut; a recognized successful-use message within 30 seconds emits one mapping line with the correct milestone number and destination. Unrelated chat, expired/missing clicks, and unrecognized messages do not produce a mapping.
 - Turning debug mode off or unloading clears the prompt and pending correlation.
 - The prompt follows the plugin's active Classic/Mini window style and all state disappears when closed or the plugin unloads.
 - No persistent data is written or loaded for this feature.
