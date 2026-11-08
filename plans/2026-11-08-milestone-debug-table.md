@@ -10,7 +10,7 @@ Add a separate debug window alongside the existing chat diagnostics. It shows th
 - Match the active Classic/Mini window styling.
 - Make picker quickslot clicks select-only: show the skill icons, but intercept the click so choosing a bound skill never activates travel.
 - Render a basic table with one row per learned milestone skill, showing the milestone number/name and its latest identified location. Show an empty marker until a successful-use message has been correlated.
-- On a correlated successful-use message, update the row for that skill and keep the existing debug chat mapping message.
+- Parse the successful-use line from its Player Combat chat event as well as other chat categories. Locate the `Return to` destination and parenthetical region without depending on a UI timestamp or an actor prefix in the event message. On a correlated successful-use message, update the row for that skill and keep the existing debug chat mapping message.
 - Keep observations in a module-local, in-memory table keyed by stable milestone skill ID. Two different milestone skills can retain two different locations simultaneously. A later success for the same skill replaces that row's location.
 - Refresh the table when learned milestone skills change and when a successful-use observation arrives.
 
@@ -29,7 +29,7 @@ Saving or loading observations, binding/location persistence, location correctio
 ## Acceptance checks
 
 - Debug mode on shows a separate table with all currently learned milestone skills and an empty location for skills without a successful-use observation.
-- A successful-use message updates the correct skill row and still emits the existing chat diagnostic; parsing works whether the chat UI timestamp is present in the event string or not.
+- A successful-use message delivered through Player Combat updates the correct skill row and still emits the existing chat diagnostic; parsing works with or without a UI timestamp or actor prefix in the event string.
 - Selecting a skill in the bind picker closes it and logs the selection without activating the milestone skill.
 - Two successful-use messages for different milestone skills retain two distinct locations at the same time.
 - A later message for the same milestone skill replaces only that skill's location.
