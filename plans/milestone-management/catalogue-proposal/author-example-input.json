@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "source": "Stakeholder-supplied message from LotroCompanion datamining author, received 2026-11-14",
+  "sourceScope": "Author example, not a newly read character export",
+  "name": "Ilzag Khûl",
+  "nameLanguage": "en",
+  "nameStatus": "reportedByCompanionAuthorFromTravelRegistry",
+  "travelType": 3,
+  "position": {
+    "kind": "reportedCharacterAnchor",
+    "worldRegion": 5,
+    "latitude": -26.551659,
+    "longitude": -61.44319,
+    "zoneId": "1879487057"
+  },
+  "localArea": {
+    "id": "1879487057",
+    "name": "Paths of Khegûl",
+    "iconId": "1092947644"
+  },
+  "territory": {
+    "id": "1879487114",
+    "name": "Urash Dâr"
+  },
+  "nativeSkillLabel": "Return to Ilzag Khûl (Urash Dâr)",
+  "candidateMarkerId": "1450876936",
+  "markerAssociationStatus": "spatialCandidateNotExplicitUpstreamLink",
+  "markerDistanceCoordinateUnits": 0.0396142591120944
+}

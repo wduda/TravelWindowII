@@ -14,3 +14,7 @@ Branch: `codex/milestone-learning-debug`, continuing the authorized catalogue pr
 ## Acceptance
 
 All 351 markers have reviewable geography and a display label, with the evidence class explicit. Exact destination-name coverage must not be inflated by geographic fallbacks. Missing or placeholder source names remain documented rather than invented.
+
+## Implementation handover
+
+Completed the typed join and generated catalogue version 2: 44 area, five dungeon and six territory fallback labels, with all prior names/IDs/positions preserved. Both pinned source XML hashes were verified against fresh public downloads. See the [developer report](milestone-management/2026-11-14-geographic-catalogue-enrichment.md) and [fallback review queue](milestone-management/catalogue-proposal/geographic-fallbacks.md). Offline Lua/capture/storage checks pass, including exclusion of all 55 fallback records from exact destination prediction. In-game checks of the new labels remain pending; only this plan's initial version was committed.

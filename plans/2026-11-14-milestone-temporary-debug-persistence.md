@@ -15,3 +15,7 @@ Branch: `codex/milestone-learning-debug`, continuing the authorized prototype an
 ## Boundaries
 
 No new chat listener, normal travel activation changes, production import/store, physical deletion API, or global settings modification. Keep the ID ledger. Clear removes current-character experimental records through a tombstone; physical file deletion remains a manual/probed follow-up. Leave implementation uncommitted for review. In-game disk/callback behavior is not established by mocks.
+
+## Implementation handover
+
+The adapter and model/command integration are implemented. See [usage and validation](milestone-management/2026-11-14-debug-persistence.md). The wire binding dictionary is keyed by decimal skill-ID strings to avoid raw numeric table keys. Explicit initialization is clear, await acknowledgement, then load; there is no first-run empty-file assumption. Offline tests cover the async/write-order failure cases and the previous picker/travel paths; live disk/callback acceptance is pending.

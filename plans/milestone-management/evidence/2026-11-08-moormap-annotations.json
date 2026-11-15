@@ -1,0 +1,3482 @@
+[
+  {
+    "file": "MapData_10.lua",
+    "map": "10",
+    "mapName": " Bree-land Homesteads",
+    "region": "1",
+    "lat": "-34.8",
+    "lon": "-46.1",
+    "textid": "2",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_112.lua",
+    "map": "112",
+    "mapName": " Wildermore ,0x411375a9,0x411375ad",
+    "region": "2",
+    "lat": "-39.47",
+    "lon": "-60.83",
+    "textid": "59",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_112.lua",
+    "map": "112",
+    "mapName": " Wildermore ,0x411375a9,0x411375ad",
+    "region": "2",
+    "lat": "-35.41",
+    "lon": "-69.78",
+    "textid": "185",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_113.lua",
+    "map": "113",
+    "mapName": " Forlaw ,0x41137a01,0x411379fd",
+    "region": "2",
+    "lat": "-39.47",
+    "lon": "-60.83",
+    "textid": "59",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_115.lua",
+    "map": "115",
+    "mapName": "kingstead ,0x41142C3D,0x41142C4F",
+    "region": "2",
+    "lat": "-56.15",
+    "lon": "-65.82",
+    "textid": "12",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_115.lua",
+    "map": "115",
+    "mapName": "kingstead ,0x41142C3D,0x41142C4F",
+    "region": "2",
+    "lat": "-53.51",
+    "lon": "-72.93",
+    "textid": "25",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_115.lua",
+    "map": "115",
+    "mapName": "kingstead ,0x41142C3D,0x41142C4F",
+    "region": "2",
+    "lat": "-60.6",
+    "lon": "-74.19",
+    "textid": "37",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_115.lua",
+    "map": "115",
+    "mapName": "kingstead ,0x41142C3D,0x41142C4F",
+    "region": "2",
+    "lat": "-65.51",
+    "lon": "-73.15",
+    "textid": "75",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_115.lua",
+    "map": "115",
+    "mapName": "kingstead ,0x41142C3D,0x41142C4F",
+    "region": "2",
+    "lat": "-67.33",
+    "lon": "-73.7",
+    "textid": "76",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_115.lua",
+    "map": "115",
+    "mapName": "kingstead ,0x41142C3D,0x41142C4F",
+    "region": "2",
+    "lat": "-70.31",
+    "lon": "-71.52",
+    "textid": "84",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_116.lua",
+    "map": "116",
+    "mapName": " broadacres ,0x41142C4E,0x41142C3F",
+    "region": "2",
+    "lat": "-45.22",
+    "lon": "-67.12",
+    "textid": "18",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_116.lua",
+    "map": "116",
+    "mapName": " broadacres ,0x41142C4E,0x41142C3F",
+    "region": "2",
+    "lat": "-49.13",
+    "lon": "-69.5",
+    "textid": "31",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_117.lua",
+    "map": "117",
+    "mapName": " eastfold ,0x41142C42,0x41142C3C",
+    "region": "2",
+    "lat": "-69.48",
+    "lon": "-57.11",
+    "textid": "8",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_117.lua",
+    "map": "117",
+    "mapName": " eastfold ,0x41142C42,0x41142C3C",
+    "region": "2",
+    "lat": "-66.55",
+    "lon": "-57.43",
+    "textid": "27",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_117.lua",
+    "map": "117",
+    "mapName": " eastfold ,0x41142C42,0x41142C3C",
+    "region": "2",
+    "lat": "-68.68",
+    "lon": "-63.86",
+    "textid": "43",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_118.lua",
+    "map": "118",
+    "mapName": " stonedeans ,0x41142C51,0x41142C3E",
+    "region": "2",
+    "lat": "-47.55",
+    "lon": "-79.07",
+    "textid": "32",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_118.lua",
+    "map": "118",
+    "mapName": " stonedeans ,0x41142C51,0x41142C3E",
+    "region": "2",
+    "lat": "-50.72",
+    "lon": "-77.65",
+    "textid": "38",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_118.lua",
+    "map": "118",
+    "mapName": " stonedeans ,0x41142C51,0x41142C3E",
+    "region": "2",
+    "lat": "-53.76",
+    "lon": "-84.16",
+    "textid": "57",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_119.lua",
+    "map": "119",
+    "mapName": " helm's deep ,0x41142C38,0x41142C4D",
+    "region": "2",
+    "lat": "-63.8",
+    "lon": "-89.45",
+    "textid": "4",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_12.lua",
+    "map": "12",
+    "mapName": " Enedwaith ,nil,nil",
+    "region": "1",
+    "lat": "-58.5",
+    "lon": "-14.6",
+    "textid": "3",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_12.lua",
+    "map": "12",
+    "mapName": " Enedwaith ,nil,nil",
+    "region": "1",
+    "lat": "-65.7",
+    "lon": "-8.6",
+    "textid": "25",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_12.lua",
+    "map": "12",
+    "mapName": " Enedwaith ,nil,nil",
+    "region": "1",
+    "lat": "-72.7",
+    "lon": "-14.8",
+    "textid": "87",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_12.lua",
+    "map": "12",
+    "mapName": " Enedwaith ,nil,nil",
+    "region": "1",
+    "lat": "-62.3",
+    "lon": "-23.1",
+    "textid": "119",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_12.lua",
+    "map": "12",
+    "mapName": " Enedwaith ,nil,nil",
+    "region": "1",
+    "lat": "-66.6",
+    "lon": "-21.5",
+    "textid": "143",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_12.lua",
+    "map": "12",
+    "mapName": " Enedwaith ,nil,nil",
+    "region": "1",
+    "lat": "-66.5",
+    "lon": "-17.2",
+    "textid": "165",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_120.lua",
+    "map": "120",
+    "mapName": " westfold ,0x41142C52,0x41142C55",
+    "region": "2",
+    "lat": "-62.47",
+    "lon": "-82.06",
+    "textid": "16",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_120.lua",
+    "map": "120",
+    "mapName": " westfold ,0x41142C52,0x41142C55",
+    "region": "2",
+    "lat": "-63.3",
+    "lon": "-82.1",
+    "textid": "28",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_120.lua",
+    "map": "120",
+    "mapName": " westfold ,0x41142C52,0x41142C55",
+    "region": "2",
+    "lat": "-63.8",
+    "lon": "-89.45",
+    "textid": "35",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_121.lua",
+    "map": "121",
+    "mapName": " edoras ,0x41142C3A,0x41142C54",
+    "region": "2",
+    "lat": "-60.6",
+    "lon": "-74.19",
+    "textid": "2",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_123.lua",
+    "map": "123",
+    "mapName": " isengard (flooded)",
+    "region": "2",
+    "lat": "-47.69",
+    "lon": "-89.66",
+    "textid": "3",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_126.lua",
+    "map": "126",
+    "mapName": " blackroot vale",
+    "region": "3",
+    "lat": "-60.92",
+    "lon": "-69.57",
+    "textid": "19",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_126.lua",
+    "map": "126",
+    "mapName": " blackroot vale",
+    "region": "3",
+    "lat": "-58.55",
+    "lon": "-68.62",
+    "textid": "29",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_126.lua",
+    "map": "126",
+    "mapName": " blackroot vale",
+    "region": "3",
+    "lat": "-56.87",
+    "lon": "-67.5",
+    "textid": "49",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_126.lua",
+    "map": "126",
+    "mapName": " blackroot vale",
+    "region": "3",
+    "lat": "-58.17",
+    "lon": "-62.99",
+    "textid": "74",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_127.lua",
+    "map": "127",
+    "mapName": " havens of belfalas",
+    "region": "3",
+    "lat": "-75.38",
+    "lon": "-72.15",
+    "textid": "21",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_127.lua",
+    "map": "127",
+    "mapName": " havens of belfalas",
+    "region": "3",
+    "lat": "-74.89",
+    "lon": "-65.74",
+    "textid": "159",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_127.lua",
+    "map": "127",
+    "mapName": " havens of belfalas",
+    "region": "3",
+    "lat": "-74.06",
+    "lon": "-62.3",
+    "textid": "170",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_128.lua",
+    "map": "128",
+    "mapName": " dol amroth",
+    "region": "3",
+    "lat": "-75.38",
+    "lon": "-72.15",
+    "textid": "21",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_129.lua",
+    "map": "129",
+    "mapName": " lamedon",
+    "region": "3",
+    "lat": "-63.21",
+    "lon": "-59.36",
+    "textid": "17",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_129.lua",
+    "map": "129",
+    "mapName": " lamedon",
+    "region": "3",
+    "lat": "-67.02",
+    "lon": "-55.89",
+    "textid": "50",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_13.lua",
+    "map": "13",
+    "mapName": " Ered Luin",
+    "region": "1",
+    "lat": "-28.3",
+    "lon": "-92.1",
+    "textid": "41",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_13.lua",
+    "map": "13",
+    "mapName": " Ered Luin",
+    "region": "1",
+    "lat": "-24.9",
+    "lon": "-90.7",
+    "textid": "74",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_13.lua",
+    "map": "13",
+    "mapName": " Ered Luin",
+    "region": "1",
+    "lat": "-24.3",
+    "lon": "-93.2",
+    "textid": "91",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_13.lua",
+    "map": "13",
+    "mapName": " Ered Luin",
+    "region": "1",
+    "lat": "-15.7",
+    "lon": "-104.8",
+    "textid": "138",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_13.lua",
+    "map": "13",
+    "mapName": " Ered Luin",
+    "region": "1",
+    "lat": "-20.2",
+    "lon": "-97",
+    "textid": "155",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_133.lua",
+    "map": "133",
+    "mapName": " Ringlo",
+    "region": "3",
+    "lat": "-72.03",
+    "lon": "-50.23",
+    "textid": "19",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_134.lua",
+    "map": "134",
+    "mapName": " Lebennin",
+    "region": "3",
+    "lat": "-83.62",
+    "lon": "-34",
+    "textid": "22",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_134.lua",
+    "map": "134",
+    "mapName": " Lebennin",
+    "region": "3",
+    "lat": "-80.71",
+    "lon": "-45.67",
+    "textid": "39",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_134.lua",
+    "map": "134",
+    "mapName": " Lebennin",
+    "region": "3",
+    "lat": "-79.29",
+    "lon": "-39.1",
+    "textid": "94",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_135.lua",
+    "map": "135",
+    "mapName": " Pelargir",
+    "region": "3",
+    "lat": "-83.62",
+    "lon": "-34",
+    "textid": "22",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_136.lua",
+    "map": "136",
+    "mapName": " Dor-en-ernil",
+    "region": "3",
+    "lat": "-80.71",
+    "lon": "-45.67",
+    "textid": "21",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_137.lua",
+    "map": "137",
+    "mapName": " Grimbeorn's House",
+    "region": "2",
+    "lat": "13.580",
+    "lon": "-53.250",
+    "textid": "12",
+    "label": "Milestone:Milestone"
+  },
+  {
+    "file": "MapData_138.lua",
+    "map": "138",
+    "mapName": " Eastern Gondor",
+    "region": "3",
+    "lat": "-76.62",
+    "lon": "-24.09",
+    "textid": "34",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_138.lua",
+    "map": "138",
+    "mapName": " Eastern Gondor",
+    "region": "3",
+    "lat": "-73.24",
+    "lon": "-12.29",
+    "textid": "107",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_138.lua",
+    "map": "138",
+    "mapName": " Eastern Gondor",
+    "region": "3",
+    "lat": "-65.14",
+    "lon": "-6.07",
+    "textid": "124",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_138.lua",
+    "map": "138",
+    "mapName": " Eastern Gondor",
+    "region": "3",
+    "lat": "-77.54",
+    "lon": "-29.15",
+    "textid": "167",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_138.lua",
+    "map": "138",
+    "mapName": " Eastern Gondor",
+    "region": "3",
+    "lat": "-80.69",
+    "lon": "-29.61",
+    "textid": "199",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_139.lua",
+    "map": "139",
+    "mapName": " Upper Lebennin",
+    "region": "3",
+    "lat": "-77.54",
+    "lon": "-29.15",
+    "textid": "8",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_139.lua",
+    "map": "139",
+    "mapName": " Upper Lebennin",
+    "region": "3",
+    "lat": "-80.69",
+    "lon": "-29.61",
+    "textid": "40",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_140.lua",
+    "map": "140",
+    "mapName": " South Ithilien",
+    "region": "3",
+    "lat": "-73.24",
+    "lon": "-12.29",
+    "textid": "22",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_140.lua",
+    "map": "140",
+    "mapName": " South Ithilien",
+    "region": "3",
+    "lat": "-65.14",
+    "lon": "-6.07",
+    "textid": "39",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_141.lua",
+    "map": "141",
+    "mapName": " Lossarnach",
+    "region": "3",
+    "lat": "-76.62",
+    "lon": "-24.09",
+    "textid": "34",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_144.lua",
+    "map": "144",
+    "mapName": " Talath Anor",
+    "region": "3",
+    "lat": "-54.35",
+    "lon": "-16.35",
+    "textid": "15",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_145.lua",
+    "map": "145",
+    "mapName": " Minas Tirith",
+    "region": "3",
+    "lat": "-64.79",
+    "lon": "-17.96",
+    "textid": "211",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_145.lua",
+    "map": "145",
+    "mapName": " Minas Tirith",
+    "region": "3",
+    "lat": "-65.1",
+    "lon": "-18.8",
+    "textid": "267",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_145.lua",
+    "map": "145",
+    "mapName": " Minas Tirith",
+    "region": "3",
+    "lat": "-65.41",
+    "lon": "-16.74",
+    "textid": "269",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_146.lua",
+    "map": "146",
+    "mapName": " Pelennor",
+    "region": "3",
+    "lat": "-64.79",
+    "lon": "-17.96",
+    "textid": "214",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_146.lua",
+    "map": "146",
+    "mapName": " Pelennor",
+    "region": "3",
+    "lat": "-65.1",
+    "lon": "-18.8",
+    "textid": "270",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_146.lua",
+    "map": "146",
+    "mapName": " Pelennor",
+    "region": "3",
+    "lat": "-65.41",
+    "lon": "-16.74",
+    "textid": "272",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_148.lua",
+    "map": "148",
+    "mapName": " Far Anorien",
+    "region": "3",
+    "lat": "-51.76",
+    "lon": "-25.9",
+    "textid": "7",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_148.lua",
+    "map": "148",
+    "mapName": " Far Anorien",
+    "region": "3",
+    "lat": "-45.47",
+    "lon": "-27.3",
+    "textid": "29",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_148.lua",
+    "map": "148",
+    "mapName": " Far Anorien",
+    "region": "3",
+    "lat": "-47.95",
+    "lon": "-37.28",
+    "textid": "66",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_149.lua",
+    "map": "149",
+    "mapName": " Beacon Hills",
+    "region": "3",
+    "lat": "-47.95",
+    "lon": "-37.28",
+    "textid": "22",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_15.lua",
+    "map": "15",
+    "mapName": " Thorin's Gate",
+    "region": "1",
+    "lat": "-15.7",
+    "lon": "-104.8",
+    "textid": "4",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_150.lua",
+    "map": "150",
+    "mapName": " Taur Druadan",
+    "region": "3",
+    "lat": "-51.76",
+    "lon": "-25.9",
+    "textid": "7",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_150.lua",
+    "map": "150",
+    "mapName": " Taur Druadan",
+    "region": "3",
+    "lat": "-45.47",
+    "lon": "-27.3",
+    "textid": "29",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_153.lua",
+    "map": "153",
+    "mapName": " Pelennor after battle",
+    "region": "4",
+    "lat": "-62.91",
+    "lon": "-7.16",
+    "textid": "9",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_153.lua",
+    "map": "153",
+    "mapName": " Pelennor after battle",
+    "region": "4",
+    "lat": "-65.41",
+    "lon": "-16.73",
+    "textid": "184",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_153.lua",
+    "map": "153",
+    "mapName": " Pelennor after battle",
+    "region": "4",
+    "lat": "-65.47",
+    "lon": "-14.7",
+    "textid": "234",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_154.lua",
+    "map": "154",
+    "mapName": " North Ithilien",
+    "region": "4",
+    "lat": "-62.91",
+    "lon": "-7.16",
+    "textid": "9",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_154.lua",
+    "map": "154",
+    "mapName": " North Ithilien",
+    "region": "4",
+    "lat": "-65.41",
+    "lon": "-16.73",
+    "textid": "184",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_154.lua",
+    "map": "154",
+    "mapName": " North Ithilien",
+    "region": "4",
+    "lat": "-65.47",
+    "lon": "-14.7",
+    "textid": "234",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_154.lua",
+    "map": "154",
+    "mapName": " North Ithilien",
+    "region": "4",
+    "lat": "-48.07",
+    "lon": "-8.08",
+    "textid": "275",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_154.lua",
+    "map": "154",
+    "mapName": " North Ithilien",
+    "region": "4",
+    "lat": "-40.96",
+    "lon": "-10.34",
+    "textid": "295",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_155.lua",
+    "map": "155",
+    "mapName": " March of the king",
+    "region": "4",
+    "lat": "-62.91",
+    "lon": "-7.16",
+    "textid": "9",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_155.lua",
+    "map": "155",
+    "mapName": " March of the king",
+    "region": "4",
+    "lat": "-65.41",
+    "lon": "-16.73",
+    "textid": "184",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_155.lua",
+    "map": "155",
+    "mapName": " March of the king",
+    "region": "4",
+    "lat": "-65.47",
+    "lon": "-14.7",
+    "textid": "234",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_155.lua",
+    "map": "155",
+    "mapName": " March of the king",
+    "region": "4",
+    "lat": "-48.07",
+    "lon": "-8.08",
+    "textid": "275",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_155.lua",
+    "map": "155",
+    "mapName": " March of the king",
+    "region": "4",
+    "lat": "-40.96",
+    "lon": "-10.34",
+    "textid": "295",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_156.lua",
+    "map": "156",
+    "mapName": " Osgiliath after battle",
+    "region": "4",
+    "lat": "-62.91",
+    "lon": "-7.16",
+    "textid": "9",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_157.lua",
+    "map": "157",
+    "mapName": " Minas Tirith after battle",
+    "region": "4",
+    "lat": "-65.41",
+    "lon": "-16.73",
+    "textid": "184",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_159.lua",
+    "map": "159",
+    "mapName": " Wastes",
+    "region": "4",
+    "lat": "-40.96",
+    "lon": "-10.33",
+    "textid": "83",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_159.lua",
+    "map": "159",
+    "mapName": " Wastes",
+    "region": "4",
+    "lat": "-36.56",
+    "lon": "-8.9",
+    "textid": "100",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_159.lua",
+    "map": "159",
+    "mapName": " Wastes",
+    "region": "4",
+    "lat": "-34.42",
+    "lon": "-3.5",
+    "textid": "130",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_163.lua",
+    "map": "163",
+    "mapName": " Udun",
+    "region": "4",
+    "lat": "-41.250",
+    "lon": "-0.580",
+    "textid": "12",
+    "label": "Milestone:Milestone"
+  },
+  {
+    "file": "MapData_164.lua",
+    "map": "164",
+    "mapName": " Lhingris",
+    "region": "4",
+    "lat": "-50.7",
+    "lon": "6.3",
+    "textid": "7",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_164.lua",
+    "map": "164",
+    "mapName": " Lhingris",
+    "region": "4",
+    "lat": "-61.7",
+    "lon": "10.5",
+    "textid": "14",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_165.lua",
+    "map": "165",
+    "mapName": " Talath Urui",
+    "region": "4",
+    "lat": "-59.9",
+    "lon": "24.2",
+    "textid": "22",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_165.lua",
+    "map": "165",
+    "mapName": " Talath Urui",
+    "region": "4",
+    "lat": "-53.09",
+    "lon": "10.67",
+    "textid": "24",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_166.lua",
+    "map": "166",
+    "mapName": " Agarnaith",
+    "region": "4",
+    "lat": "-56.46",
+    "lon": "26.98",
+    "textid": "14",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_167.lua",
+    "map": "167",
+    "mapName": " Dor Amarth",
+    "region": "4",
+    "lat": "-48.07",
+    "lon": "8.6",
+    "textid": "16",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_17.lua",
+    "map": "17",
+    "mapName": " Eregion ,nil,0x410f5e2f,0x411012D8",
+    "region": "1",
+    "lat": "-50.5",
+    "lon": "-7.8",
+    "textid": "16",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_17.lua",
+    "map": "17",
+    "mapName": " Eregion ,nil,0x410f5e2f,0x411012D8",
+    "region": "1",
+    "lat": "-46.9",
+    "lon": "-12.5",
+    "textid": "64",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_17.lua",
+    "map": "17",
+    "mapName": " Eregion ,nil,0x410f5e2f,0x411012D8",
+    "region": "1",
+    "lat": "-40",
+    "lon": "-16.2",
+    "textid": "100",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_17.lua",
+    "map": "17",
+    "mapName": " Eregion ,nil,0x410f5e2f,0x411012D8",
+    "region": "1",
+    "lat": "-52.5",
+    "lon": "-16.7",
+    "textid": "129",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_171.lua",
+    "map": "171",
+    "mapName": " Eryn Lasgalen (North Mirkwood)",
+    "region": "2",
+    "lat": "28.99",
+    "lon": "-25.66",
+    "textid": "10",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_171.lua",
+    "map": "171",
+    "mapName": " Eryn Lasgalen (North Mirkwood)",
+    "region": "2",
+    "lat": "20.33",
+    "lon": "-36.75",
+    "textid": "32",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_171.lua",
+    "map": "171",
+    "mapName": " Eryn Lasgalen (North Mirkwood)",
+    "region": "2",
+    "lat": "15.21",
+    "lon": "-32.35",
+    "textid": "45",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_171.lua",
+    "map": "171",
+    "mapName": " Eryn Lasgalen (North Mirkwood)",
+    "region": "2",
+    "lat": "17.16",
+    "lon": "-27.31",
+    "textid": "97",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_171.lua",
+    "map": "171",
+    "mapName": " Eryn Lasgalen (North Mirkwood)",
+    "region": "2",
+    "lat": "25.06",
+    "lon": "-25.76",
+    "textid": "195",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_171.lua",
+    "map": "171",
+    "mapName": " Eryn Lasgalen (North Mirkwood)",
+    "region": "2",
+    "lat": "25.27",
+    "lon": "-25.69",
+    "textid": "196",
+    "label": "The Jolly Bell: The Jolly Bell"
+  },
+  {
+    "file": "MapData_171.lua",
+    "map": "171",
+    "mapName": " Eryn Lasgalen (North Mirkwood)",
+    "region": "2",
+    "lat": "24.09",
+    "lon": "-24.91",
+    "textid": "211",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_175.lua",
+    "map": "175",
+    "mapName": " Dale",
+    "region": "2",
+    "lat": "25.06",
+    "lon": "-25.76",
+    "textid": "27",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_175.lua",
+    "map": "175",
+    "mapName": " Dale",
+    "region": "2",
+    "lat": "25.27",
+    "lon": "-25.69",
+    "textid": "28",
+    "label": "The Jolly Bell: The Jolly Bell"
+  },
+  {
+    "file": "MapData_175.lua",
+    "map": "175",
+    "mapName": " Dale",
+    "region": "2",
+    "lat": "24.09",
+    "lon": "-24.91",
+    "textid": "43",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_176.lua",
+    "map": "176",
+    "mapName": " Laketown",
+    "region": "2",
+    "lat": "17.16",
+    "lon": "-27.31",
+    "textid": "3",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_177.lua",
+    "map": "177",
+    "mapName": " ered mithrin",
+    "region": "2",
+    "lat": "34.26",
+    "lon": "-45.23",
+    "textid": "31",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_178.lua",
+    "map": "178",
+    "mapName": " iron hills",
+    "region": "2",
+    "lat": "28.44",
+    "lon": "-3.72",
+    "textid": "33",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_178.lua",
+    "map": "178",
+    "mapName": " iron hills",
+    "region": "2",
+    "lat": "30.9",
+    "lon": "-12.21",
+    "textid": "72",
+    "label": "Stable-master: Stable-master"
+  },
+  {
+    "file": "MapData_181.lua",
+    "map": "181",
+    "mapName": " erebor",
+    "region": "2",
+    "lat": "14.39",
+    "lon": "-136.14",
+    "textid": "13",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_19.lua",
+    "map": "19",
+    "mapName": " Evendim",
+    "region": "1",
+    "lat": "-19.1",
+    "lon": "-71",
+    "textid": "27",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_19.lua",
+    "map": "19",
+    "mapName": " Evendim",
+    "region": "1",
+    "lat": "-12.6",
+    "lon": "-67.2",
+    "textid": "90",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_19.lua",
+    "map": "19",
+    "mapName": " Evendim",
+    "region": "1",
+    "lat": "-13.9",
+    "lon": "-64.1",
+    "textid": "121",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_19.lua",
+    "map": "19",
+    "mapName": " Evendim",
+    "region": "1",
+    "lat": "-7.4",
+    "lon": "-64.3",
+    "textid": "175",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_19.lua",
+    "map": "19",
+    "mapName": " Evendim",
+    "region": "1",
+    "lat": "-6",
+    "lon": "-71.8",
+    "textid": "211",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_19.lua",
+    "map": "19",
+    "mapName": " Evendim",
+    "region": "1",
+    "lat": "-21.2",
+    "lon": "-64.4",
+    "textid": "249",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_19.lua",
+    "map": "19",
+    "mapName": " Evendim",
+    "region": "1",
+    "lat": "-23.2",
+    "lon": "-67.3",
+    "textid": "275",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_199.lua",
+    "map": "199",
+    "mapName": " Vales of Anduin",
+    "region": "2",
+    "lat": "13.58",
+    "lon": "-53.25",
+    "textid": "19",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_199.lua",
+    "map": "199",
+    "mapName": " Vales of Anduin",
+    "region": "2",
+    "lat": "7.64",
+    "lon": "-58.51",
+    "textid": "37",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_199.lua",
+    "map": "199",
+    "mapName": " Vales of Anduin",
+    "region": "2",
+    "lat": "4.95",
+    "lon": "-54.67",
+    "textid": "61",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_199.lua",
+    "map": "199",
+    "mapName": " Vales of Anduin",
+    "region": "2",
+    "lat": "-1.66",
+    "lon": "-55.16",
+    "textid": "82",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_199.lua",
+    "map": "199",
+    "mapName": " Vales of Anduin",
+    "region": "2",
+    "lat": "-5.8",
+    "lon": "-61.19",
+    "textid": "91",
+    "label": "Door: Door"
+  },
+  {
+    "file": "MapData_20.lua",
+    "map": "20",
+    "mapName": " Annuminas",
+    "region": "1",
+    "lat": "-19.1",
+    "lon": "-71",
+    "textid": "19",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_202.lua",
+    "map": "202",
+    "mapName": " Morgul Vale",
+    "region": "4",
+    "lat": "-65.04",
+    "lon": "4.12",
+    "textid": "31",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_202.lua",
+    "map": "202",
+    "mapName": " Morgul Vale",
+    "region": "4",
+    "lat": "-66.88",
+    "lon": "5.86",
+    "textid": "48",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_202.lua",
+    "map": "202",
+    "mapName": " Morgul Vale",
+    "region": "4",
+    "lat": "-65.41",
+    "lon": "0.75",
+    "textid": "54",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_202.lua",
+    "map": "202",
+    "mapName": " Morgul Vale",
+    "region": "4",
+    "lat": "-61.88",
+    "lon": "-0.52",
+    "textid": "59",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_202.lua",
+    "map": "202",
+    "mapName": " Morgul Vale",
+    "region": "4",
+    "lat": "-64.5",
+    "lon": "-2.16",
+    "textid": "70",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_203.lua",
+    "map": "203",
+    "mapName": " Minas Morgul",
+    "region": "4",
+    "lat": "-65.41",
+    "lon": "0.75",
+    "textid": "2",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_204.lua",
+    "map": "204",
+    "mapName": " Mordor Besieged - not sure why this is a child of Dor Amarth but that's where the game takes you if you right click on the built-in version...",
+    "region": "4",
+    "lat": "-97.5",
+    "lon": "-131.39",
+    "textid": "14",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_204.lua",
+    "map": "204",
+    "mapName": " Mordor Besieged - not sure why this is a child of Dor Amarth but that's where the game takes you if you right click on the built-in version...",
+    "region": "4",
+    "lat": "-98.62",
+    "lon": "-126.36",
+    "textid": "45",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_204.lua",
+    "map": "204",
+    "mapName": " Mordor Besieged - not sure why this is a child of Dor Amarth but that's where the game takes you if you right click on the built-in version...",
+    "region": "4",
+    "lat": "-96.24",
+    "lon": "-127.59",
+    "textid": "57",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_204.lua",
+    "map": "204",
+    "mapName": " Mordor Besieged - not sure why this is a child of Dor Amarth but that's where the game takes you if you right click on the built-in version...",
+    "region": "4",
+    "lat": "-95.32",
+    "lon": "-119.95",
+    "textid": "77",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_205.lua",
+    "map": "205",
+    "mapName": " Torech Ungol",
+    "region": "4",
+    "lat": "33.77",
+    "lon": "13.44",
+    "textid": "37",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_21.lua",
+    "map": "21",
+    "mapName": " Forochel",
+    "region": "1",
+    "lat": "19.1",
+    "lon": "-70.9",
+    "textid": "50",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_21.lua",
+    "map": "21",
+    "mapName": " Forochel",
+    "region": "1",
+    "lat": "3",
+    "lon": "-58",
+    "textid": "100",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_21.lua",
+    "map": "21",
+    "mapName": " Forochel",
+    "region": "1",
+    "lat": "11.3",
+    "lon": "-69.8",
+    "textid": "125",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_21.lua",
+    "map": "21",
+    "mapName": " Forochel",
+    "region": "1",
+    "lat": "19.5",
+    "lon": "-83.8",
+    "textid": "142",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_21.lua",
+    "map": "21",
+    "mapName": " Forochel",
+    "region": "1",
+    "lat": "9.3",
+    "lon": "-81.1",
+    "textid": "168",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_23.lua",
+    "map": "23",
+    "mapName": " Lone-lands",
+    "region": "1",
+    "lat": "-34.1",
+    "lon": "-40.8",
+    "textid": "4",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_23.lua",
+    "map": "23",
+    "mapName": " Lone-lands",
+    "region": "1",
+    "lat": "-31.4",
+    "lon": "-29.5",
+    "textid": "75",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_24.lua",
+    "map": "24",
+    "mapName": " Misty Mountains",
+    "region": "1",
+    "lat": "-24.8",
+    "lon": "-4.1",
+    "textid": "7",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_24.lua",
+    "map": "24",
+    "mapName": " Misty Mountains",
+    "region": "1",
+    "lat": "-23.3",
+    "lon": "4.3",
+    "textid": "77",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_242.lua",
+    "map": "242",
+    "mapName": " Wells of Langflood",
+    "region": "2",
+    "lat": "20.89",
+    "lon": "-55.95",
+    "textid": "38",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_242.lua",
+    "map": "242",
+    "mapName": " Wells of Langflood",
+    "region": "2",
+    "lat": "26.59",
+    "lon": "-65.41",
+    "textid": "66",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_242.lua",
+    "map": "242",
+    "mapName": " Wells of Langflood",
+    "region": "2",
+    "lat": "25.98",
+    "lon": "-58.37",
+    "textid": "77",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_242.lua",
+    "map": "242",
+    "mapName": " Wells of Langflood",
+    "region": "2",
+    "lat": "30.41",
+    "lon": "-59.21",
+    "textid": "84",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_249.lua",
+    "map": "249",
+    "mapName": " MT Midsummer (wedding)",
+    "region": "4",
+    "lat": "22.6",
+    "lon": "-53.55",
+    "textid": "13",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_25.lua",
+    "map": "25",
+    "mapName": " North Downs",
+    "region": "1",
+    "lat": "-18",
+    "lon": "-53.7",
+    "textid": "7",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_25.lua",
+    "map": "25",
+    "mapName": " North Downs",
+    "region": "1",
+    "lat": "-9.6",
+    "lon": "-42.1",
+    "textid": "197",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_26.lua",
+    "map": "26",
+    "mapName": " The Shire",
+    "region": "1",
+    "lat": "-36.5",
+    "lon": "-73.2",
+    "textid": "15",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_26.lua",
+    "map": "26",
+    "mapName": " The Shire",
+    "region": "1",
+    "lat": "-33.5",
+    "lon": "-75.2",
+    "textid": "92",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_26.lua",
+    "map": "26",
+    "mapName": " The Shire",
+    "region": "1",
+    "lat": "-31.8",
+    "lon": "-76.7",
+    "textid": "118",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_26.lua",
+    "map": "26",
+    "mapName": " The Shire",
+    "region": "1",
+    "lat": "-31.4",
+    "lon": "-71.1",
+    "textid": "157",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_26.lua",
+    "map": "26",
+    "mapName": " The Shire",
+    "region": "1",
+    "lat": "-31.3",
+    "lon": "-66.1",
+    "textid": "306",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_26.lua",
+    "map": "26",
+    "mapName": " The Shire",
+    "region": "1",
+    "lat": "-27.4",
+    "lon": "-67.6",
+    "textid": "345",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_264.lua",
+    "map": "264",
+    "mapName": " Elderslade WoTP",
+    "region": "2",
+    "lat": "-100.78",
+    "lon": "-17.29",
+    "textid": "11",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_267.lua",
+    "map": "267",
+    "mapName": " Annuk-khurfu lower oz<=-64.76",
+    "region": "2",
+    "lat": "68.97",
+    "lon": "47.54",
+    "textid": "11",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_28.lua",
+    "map": "28",
+    "mapName": " Trollshaws",
+    "region": "1",
+    "lat": "-31.7",
+    "lon": "-14.9",
+    "textid": "38",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_28.lua",
+    "map": "28",
+    "mapName": " Trollshaws",
+    "region": "1",
+    "lat": "-37.2",
+    "lon": "-13.9",
+    "textid": "75",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_28.lua",
+    "map": "28",
+    "mapName": " Trollshaws",
+    "region": "1",
+    "lat": "-30.06",
+    "lon": "-4.43",
+    "textid": "151",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_28.lua",
+    "map": "28",
+    "mapName": " Trollshaws",
+    "region": "1",
+    "lat": "-34.75",
+    "lon": "-22.13",
+    "textid": "267",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_28.lua",
+    "map": "28",
+    "mapName": " Trollshaws",
+    "region": "1",
+    "lat": "-42.45",
+    "lon": "-23.32",
+    "textid": "284",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_28.lua",
+    "map": "28",
+    "mapName": " Trollshaws",
+    "region": "1",
+    "lat": "-38.63",
+    "lon": "-17.22",
+    "textid": "314",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_29.lua",
+    "map": "29",
+    "mapName": " new rivendell",
+    "region": "1",
+    "lat": "-30.06",
+    "lon": "-4.43",
+    "textid": "45",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_293.lua",
+    "map": "293",
+    "mapName": "Gundabad - Mattugard",
+    "region": "2",
+    "lat": "-49.26",
+    "lon": "-111.88",
+    "textid": "24",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_293.lua",
+    "map": "293",
+    "mapName": "Gundabad - Mattugard",
+    "region": "2",
+    "lat": "-45.73",
+    "lon": "-114.72",
+    "textid": "48",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_293.lua",
+    "map": "293",
+    "mapName": "Gundabad - Mattugard",
+    "region": "2",
+    "lat": "-45.34",
+    "lon": "-115",
+    "textid": "92",
+    "label": "Milestone: There is a Milestone in Vernozal."
+  },
+  {
+    "file": "MapData_293.lua",
+    "map": "293",
+    "mapName": "Gundabad - Mattugard",
+    "region": "2",
+    "lat": "-46.03",
+    "lon": "-112.18",
+    "textid": "96",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_293.lua",
+    "map": "293",
+    "mapName": "Gundabad - Mattugard",
+    "region": "2",
+    "lat": "-48.97",
+    "lon": "-115.08",
+    "textid": "110",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_294.lua",
+    "map": "294",
+    "mapName": "Gundabad - Pit of Stonejaws",
+    "region": "2",
+    "lat": "-44.18",
+    "lon": "-113.75",
+    "textid": "23",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_294.lua",
+    "map": "294",
+    "mapName": "Gundabad - Pit of Stonejaws",
+    "region": "2",
+    "lat": "-44.12",
+    "lon": "-113.72",
+    "textid": "24",
+    "label": "Mailbox: Mailbox"
+  },
+  {
+    "file": "MapData_295.lua",
+    "map": "295",
+    "mapName": "Gundabad - Deepscrave",
+    "region": "2",
+    "lat": "-50.06",
+    "lon": "-117.08",
+    "textid": "25",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_296.lua",
+    "map": "296",
+    "mapName": "Gundabad - Clovengap",
+    "region": "2",
+    "lat": "-36.94",
+    "lon": "-120.21",
+    "textid": "37",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_296.lua",
+    "map": "296",
+    "mapName": "Gundabad - Clovengap",
+    "region": "2",
+    "lat": "-40.79",
+    "lon": "-120.16",
+    "textid": "54",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_297.lua",
+    "map": "297",
+    "mapName": "Gundabad - Gloomingtarn",
+    "region": "2",
+    "lat": "-47.68",
+    "lon": "-121.86",
+    "textid": "20",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_298.lua",
+    "map": "298",
+    "mapName": "Car Bronach",
+    "region": "2",
+    "lat": "50.19",
+    "lon": "-68.55",
+    "textid": "34",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_298.lua",
+    "map": "298",
+    "mapName": "Car Bronach",
+    "region": "2",
+    "lat": "46.98",
+    "lon": "-64.98",
+    "textid": "52",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_299.lua",
+    "map": "299",
+    "mapName": "Welkin-lofts",
+    "region": "2",
+    "lat": "49.41",
+    "lon": "-74.45",
+    "textid": "32",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_302.lua",
+    "map": "302",
+    "mapName": " vernozal",
+    "region": "2",
+    "lat": "60.59",
+    "lon": "49.65",
+    "textid": "31",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_31.lua",
+    "map": "31",
+    "mapName": " Lothl rien",
+    "region": "2",
+    "lat": "-15.71",
+    "lon": "-67.88",
+    "textid": "40",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_31.lua",
+    "map": "31",
+    "mapName": " Lothl rien",
+    "region": "2",
+    "lat": "-11.53",
+    "lon": "-78.38",
+    "textid": "105",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_31.lua",
+    "map": "31",
+    "mapName": " Lothl rien",
+    "region": "2",
+    "lat": "-14.17",
+    "lon": "-73.14",
+    "textid": "148",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_31.lua",
+    "map": "31",
+    "mapName": " Lothl rien",
+    "region": "2",
+    "lat": "-17.26",
+    "lon": "-64.12",
+    "textid": "226",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_32.lua",
+    "map": "32",
+    "mapName": " Caras Galadhon",
+    "region": "2",
+    "lat": "-15.71",
+    "lon": "-67.88",
+    "textid": "37",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_33.lua",
+    "map": "33",
+    "mapName": " mirkwood",
+    "region": "2",
+    "lat": "-12.9",
+    "lon": "-46.3",
+    "textid": "5",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_33.lua",
+    "map": "33",
+    "mapName": " mirkwood",
+    "region": "2",
+    "lat": "-14.3",
+    "lon": "-51.2",
+    "textid": "37",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_33.lua",
+    "map": "33",
+    "mapName": " mirkwood",
+    "region": "2",
+    "lat": "-13.36",
+    "lon": "-56.09",
+    "textid": "148",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_33.lua",
+    "map": "33",
+    "mapName": " mirkwood",
+    "region": "2",
+    "lat": "-17",
+    "lon": "-54.95",
+    "textid": "194",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_33.lua",
+    "map": "33",
+    "mapName": " mirkwood",
+    "region": "2",
+    "lat": "-15.27",
+    "lon": "-61.23",
+    "textid": "231",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_34.lua",
+    "map": "34",
+    "mapName": " moria",
+    "region": "2",
+    "lat": "-5.21",
+    "lon": "-111.95",
+    "textid": "51",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_34.lua",
+    "map": "34",
+    "mapName": " moria",
+    "region": "2",
+    "lat": "-3.9",
+    "lon": "-105.73",
+    "textid": "95",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_34.lua",
+    "map": "34",
+    "mapName": " moria",
+    "region": "2",
+    "lat": "-3.43",
+    "lon": "-103.32",
+    "textid": "107",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_34.lua",
+    "map": "34",
+    "mapName": " moria",
+    "region": "2",
+    "lat": "-13.32",
+    "lon": "-108.05",
+    "textid": "160",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_34.lua",
+    "map": "34",
+    "mapName": " moria",
+    "region": "2",
+    "lat": "-13.01",
+    "lon": "-101.67",
+    "textid": "239",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_34.lua",
+    "map": "34",
+    "mapName": " moria",
+    "region": "2",
+    "lat": "-8.09",
+    "lon": "-116.12",
+    "textid": "342",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_34.lua",
+    "map": "34",
+    "mapName": " moria",
+    "region": "2",
+    "lat": "-8.58",
+    "lon": "-112.27",
+    "textid": "385",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_34.lua",
+    "map": "34",
+    "mapName": " moria",
+    "region": "2",
+    "lat": "-9.87",
+    "lon": "-112.74",
+    "textid": "422",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_34.lua",
+    "map": "34",
+    "mapName": " moria",
+    "region": "2",
+    "lat": "-15.07",
+    "lon": "-112.07",
+    "textid": "463",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_34.lua",
+    "map": "34",
+    "mapName": " moria",
+    "region": "2",
+    "lat": "-5.81",
+    "lon": "-105.15",
+    "textid": "518",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_34.lua",
+    "map": "34",
+    "mapName": " moria",
+    "region": "2",
+    "lat": "-11.12",
+    "lon": "-106.64",
+    "textid": "616",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_35.lua",
+    "map": "35",
+    "mapName": " Durin's Way",
+    "region": "2",
+    "lat": "-5.21",
+    "lon": "-111.95",
+    "textid": "40",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_35.lua",
+    "map": "35",
+    "mapName": " Durin's Way",
+    "region": "2",
+    "lat": "-3.9",
+    "lon": "-105.73",
+    "textid": "84",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_35.lua",
+    "map": "35",
+    "mapName": " Durin's Way",
+    "region": "2",
+    "lat": "-3.43",
+    "lon": "-103.32",
+    "textid": "96",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_356.lua",
+    "map": "356",
+    "mapName": " The Angle of Mitheithel",
+    "region": "1",
+    "lat": "-34.75",
+    "lon": "-22.13",
+    "textid": "4",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_356.lua",
+    "map": "356",
+    "mapName": " The Angle of Mitheithel",
+    "region": "1",
+    "lat": "-42.45",
+    "lon": "-23.32",
+    "textid": "21",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_356.lua",
+    "map": "356",
+    "mapName": " The Angle of Mitheithel",
+    "region": "1",
+    "lat": "-38.63",
+    "lon": "-17.22",
+    "textid": "51",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_36.lua",
+    "map": "36",
+    "mapName": " Flaming Deeps",
+    "region": "2",
+    "lat": "-13.32",
+    "lon": "-108.05",
+    "textid": "43",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_361.lua",
+    "map": "361",
+    "mapName": " yondershire",
+    "region": "1",
+    "lat": "-26.91",
+    "lon": "-78.92",
+    "textid": "84",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_368.lua",
+    "map": "368",
+    "mapName": " swanfleet",
+    "region": "1",
+    "lat": "-47.22",
+    "lon": "-18.98",
+    "textid": "34",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_368.lua",
+    "map": "368",
+    "mapName": " swanfleet",
+    "region": "1",
+    "lat": "-60.56",
+    "lon": "-34.58",
+    "textid": "51",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_368.lua",
+    "map": "368",
+    "mapName": " swanfleet",
+    "region": "1",
+    "lat": "-64.86",
+    "lon": "-29.03",
+    "textid": "71",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_368.lua",
+    "map": "368",
+    "mapName": " swanfleet",
+    "region": "1",
+    "lat": "-62.39",
+    "lon": "-25.87",
+    "textid": "94",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_368.lua",
+    "map": "368",
+    "mapName": " swanfleet",
+    "region": "1",
+    "lat": "-61.57",
+    "lon": "-24.33",
+    "textid": "109",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_368.lua",
+    "map": "368",
+    "mapName": " swanfleet",
+    "region": "1",
+    "lat": "-55.05",
+    "lon": "-27.39",
+    "textid": "154",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_368.lua",
+    "map": "368",
+    "mapName": " swanfleet",
+    "region": "1",
+    "lat": "-52.81",
+    "lon": "-22.51",
+    "textid": "168",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_369.lua",
+    "map": "369",
+    "mapName": " cardolan",
+    "region": "1",
+    "lat": "-48.03",
+    "lon": "-55.73",
+    "textid": "22",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_369.lua",
+    "map": "369",
+    "mapName": " cardolan",
+    "region": "1",
+    "lat": "-54.23",
+    "lon": "-40.09",
+    "textid": "31",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_369.lua",
+    "map": "369",
+    "mapName": " cardolan",
+    "region": "1",
+    "lat": "-50.22",
+    "lon": "-44.79",
+    "textid": "62",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_369.lua",
+    "map": "369",
+    "mapName": " cardolan",
+    "region": "1",
+    "lat": "-43.34",
+    "lon": "-33.49",
+    "textid": "117",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_369.lua",
+    "map": "369",
+    "mapName": " cardolan",
+    "region": "1",
+    "lat": "-37.61",
+    "lon": "-49.76",
+    "textid": "129",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_369.lua",
+    "map": "369",
+    "mapName": " cardolan",
+    "region": "1",
+    "lat": "-45.01",
+    "lon": "-39.4",
+    "textid": "146",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_37.lua",
+    "map": "37",
+    "mapName": " Foundations of Stone",
+    "region": "2",
+    "lat": "-13.01",
+    "lon": "-101.67",
+    "textid": "59",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_387.lua",
+    "map": "387",
+    "mapName": " Lossarnach",
+    "region": "4",
+    "lat": "-72.78",
+    "lon": "-19.8",
+    "textid": "22",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_387.lua",
+    "map": "387",
+    "mapName": " Lossarnach",
+    "region": "4",
+    "lat": "-76.62",
+    "lon": "-24.1",
+    "textid": "73",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_387.lua",
+    "map": "387",
+    "mapName": " Lossarnach",
+    "region": "4",
+    "lat": "-73.34",
+    "lon": "-23.75",
+    "textid": "84",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_388.lua",
+    "map": "388",
+    "mapName": " Upper Lebennin",
+    "region": "4",
+    "lat": "-81.63",
+    "lon": "-26.4",
+    "textid": "11",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_388.lua",
+    "map": "388",
+    "mapName": " Upper Lebennin",
+    "region": "4",
+    "lat": "-80.65",
+    "lon": "-29.6",
+    "textid": "36",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_388.lua",
+    "map": "388",
+    "mapName": " Upper Lebennin",
+    "region": "4",
+    "lat": "-77.54",
+    "lon": "-29.15",
+    "textid": "49",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_389.lua",
+    "map": "389",
+    "mapName": " Lower Lebennin",
+    "region": "4",
+    "lat": "-79.8",
+    "lon": "-32.82",
+    "textid": "22",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_389.lua",
+    "map": "389",
+    "mapName": " Lower Lebennin",
+    "region": "4",
+    "lat": "-77.67",
+    "lon": "-34.66",
+    "textid": "25",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_389.lua",
+    "map": "389",
+    "mapName": " Lower Lebennin",
+    "region": "4",
+    "lat": "-79.29",
+    "lon": "-39.08",
+    "textid": "48",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_389.lua",
+    "map": "389",
+    "mapName": " Lower Lebennin",
+    "region": "4",
+    "lat": "-83.82",
+    "lon": "-39.87",
+    "textid": "63",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_389.lua",
+    "map": "389",
+    "mapName": " Lower Lebennin",
+    "region": "4",
+    "lat": "-80.37",
+    "lon": "-42.58",
+    "textid": "74",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_389.lua",
+    "map": "389",
+    "mapName": " Lower Lebennin",
+    "region": "4",
+    "lat": "-81.96",
+    "lon": "-45.13",
+    "textid": "83",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_39.lua",
+    "map": "39",
+    "mapName": " Redhorn Lodes",
+    "region": "2",
+    "lat": "-11.12",
+    "lon": "-106.64",
+    "textid": "25",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_390.lua",
+    "map": "390",
+    "mapName": " Pelegir",
+    "region": "4",
+    "lat": "-83.1",
+    "lon": "-32.2",
+    "textid": "20",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_390.lua",
+    "map": "390",
+    "mapName": " Pelegir",
+    "region": "4",
+    "lat": "-83.18",
+    "lon": "-34.42",
+    "textid": "44",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_393.lua",
+    "map": "393",
+    "mapName": " Ringlo Vale (King's Gondor)",
+    "region": "4",
+    "lat": "-72.03",
+    "lon": "-50.23",
+    "textid": "11",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_394.lua",
+    "map": "394",
+    "mapName": " Lamedon (King's Gondor)",
+    "region": "4",
+    "lat": "-67.02",
+    "lon": "-55.9",
+    "textid": "26",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_394.lua",
+    "map": "394",
+    "mapName": " Lamedon (King's Gondor)",
+    "region": "4",
+    "lat": "-64.17",
+    "lon": "-56.81",
+    "textid": "50",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_395.lua",
+    "map": "395",
+    "mapName": " Dor-en-Ernil (King's Gondor)",
+    "region": "4",
+    "lat": "-80.24",
+    "lon": "-51.16",
+    "textid": "22",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_396.lua",
+    "map": "396",
+    "mapName": " Blackroot Vale (King's Gondor)",
+    "region": "4",
+    "lat": "-58.17",
+    "lon": "-62.99",
+    "textid": "17",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_396.lua",
+    "map": "396",
+    "mapName": " Blackroot Vale (King's Gondor)",
+    "region": "4",
+    "lat": "-56.87",
+    "lon": "-67.5",
+    "textid": "36",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_396.lua",
+    "map": "396",
+    "mapName": " Blackroot Vale (King's Gondor)",
+    "region": "4",
+    "lat": "-58.56",
+    "lon": "-68.61",
+    "textid": "61",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_396.lua",
+    "map": "396",
+    "mapName": " Blackroot Vale (King's Gondor)",
+    "region": "4",
+    "lat": "-60.92",
+    "lon": "-69.56",
+    "textid": "73",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_397.lua",
+    "map": "397",
+    "mapName": " Belfalas (King's Gondor)",
+    "region": "4",
+    "lat": "-75.38",
+    "lon": "-72.15",
+    "textid": "104",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_397.lua",
+    "map": "397",
+    "mapName": " Belfalas (King's Gondor)",
+    "region": "4",
+    "lat": "-74.06",
+    "lon": "-62.3",
+    "textid": "125",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_397.lua",
+    "map": "397",
+    "mapName": " Belfalas (King's Gondor)",
+    "region": "4",
+    "lat": "-74.88",
+    "lon": "-65.73",
+    "textid": "140",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_398.lua",
+    "map": "398",
+    "mapName": " Dol Amroth (King's Gondor)",
+    "region": "4",
+    "lat": "-75.38",
+    "lon": "-72.15",
+    "textid": "2",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_399.lua",
+    "map": "399",
+    "mapName": " Outer Gondor",
+    "region": "4",
+    "lat": "-69.03",
+    "lon": "-77.38",
+    "textid": "33",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_399.lua",
+    "map": "399",
+    "mapName": " Outer Gondor",
+    "region": "4",
+    "lat": "-67.11",
+    "lon": "-81.56",
+    "textid": "53",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_399.lua",
+    "map": "399",
+    "mapName": " Outer Gondor",
+    "region": "4",
+    "lat": "-69.97",
+    "lon": "-89.3",
+    "textid": "94",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_399.lua",
+    "map": "399",
+    "mapName": " Outer Gondor",
+    "region": "4",
+    "lat": "-68.73",
+    "lon": "-88.97",
+    "textid": "110",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_399.lua",
+    "map": "399",
+    "mapName": " Outer Gondor",
+    "region": "4",
+    "lat": "-60.47",
+    "lon": "-93.74",
+    "textid": "145",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_399.lua",
+    "map": "399",
+    "mapName": " Outer Gondor",
+    "region": "4",
+    "lat": "-52.55",
+    "lon": "-84.13",
+    "textid": "165",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_399.lua",
+    "map": "399",
+    "mapName": " Outer Gondor",
+    "region": "4",
+    "lat": "-57.64",
+    "lon": "-81.61",
+    "textid": "209",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_4.lua",
+    "map": "4",
+    "mapName": " Angmar",
+    "region": "1",
+    "lat": "0.12",
+    "lon": "-39.9",
+    "textid": "54",
+    "label": "Milestone: Aughaire milestone."
+  },
+  {
+    "file": "MapData_4.lua",
+    "map": "4",
+    "mapName": " Angmar",
+    "region": "1",
+    "lat": "12.1",
+    "lon": "-31.8",
+    "textid": "94",
+    "label": "Milestone: Carn D\\195\\187m Milestone"
+  },
+  {
+    "file": "MapData_4.lua",
+    "map": "4",
+    "mapName": " Angmar",
+    "region": "1",
+    "lat": "-3.5",
+    "lon": "-26.5",
+    "textid": "123",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_4.lua",
+    "map": "4",
+    "mapName": " Angmar",
+    "region": "1",
+    "lat": "6.8",
+    "lon": "-25.9",
+    "textid": "162",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_4.lua",
+    "map": "4",
+    "mapName": " Angmar",
+    "region": "1",
+    "lat": "10.9",
+    "lon": "-23.9",
+    "textid": "210",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_400.lua",
+    "map": "400",
+    "mapName": " Pinnath Gelin",
+    "region": "4",
+    "lat": "-60.47",
+    "lon": "-93.74",
+    "textid": "27",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_400.lua",
+    "map": "400",
+    "mapName": " Pinnath Gelin",
+    "region": "4",
+    "lat": "-52.55",
+    "lon": "-84.13",
+    "textid": "47",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_400.lua",
+    "map": "400",
+    "mapName": " Pinnath Gelin",
+    "region": "4",
+    "lat": "-57.64",
+    "lon": "-81.61",
+    "textid": "91",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_401.lua",
+    "map": "401",
+    "mapName": " Anfalas",
+    "region": "4",
+    "lat": "-69.03",
+    "lon": "-77.38",
+    "textid": "33",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_401.lua",
+    "map": "401",
+    "mapName": " Anfalas",
+    "region": "4",
+    "lat": "-67.11",
+    "lon": "-81.56",
+    "textid": "53",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_401.lua",
+    "map": "401",
+    "mapName": " Anfalas",
+    "region": "4",
+    "lat": "-69.97",
+    "lon": "-89.3",
+    "textid": "94",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_401.lua",
+    "map": "401",
+    "mapName": " Anfalas",
+    "region": "4",
+    "lat": "-68.73",
+    "lon": "-88.97",
+    "textid": "110",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_403.lua",
+    "map": "403",
+    "mapName": " Zirar Tarka - Shield Isles",
+    "region": "5",
+    "lat": "-13.46",
+    "lon": "-120.58",
+    "textid": "38",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_403.lua",
+    "map": "403",
+    "mapName": " Zirar Tarka - Shield Isles",
+    "region": "5",
+    "lat": "-10.19",
+    "lon": "-126.28",
+    "textid": "57",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_403.lua",
+    "map": "403",
+    "mapName": " Zirar Tarka - Shield Isles",
+    "region": "5",
+    "lat": "-4.32",
+    "lon": "-130.69",
+    "textid": "110",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_403.lua",
+    "map": "403",
+    "mapName": " Zirar Tarka - Shield Isles",
+    "region": "5",
+    "lat": "-0.79",
+    "lon": "-130.2",
+    "textid": "150",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_403.lua",
+    "map": "403",
+    "mapName": " Zirar Tarka - Shield Isles",
+    "region": "5",
+    "lat": "0.5",
+    "lon": "-134.75",
+    "textid": "161",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_404.lua",
+    "map": "404",
+    "mapName": " Cape of Umbar",
+    "region": "5",
+    "lat": "-20.64",
+    "lon": "-95.77",
+    "textid": "168",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_404.lua",
+    "map": "404",
+    "mapName": " Cape of Umbar",
+    "region": "5",
+    "lat": "-18.99",
+    "lon": "-98.65",
+    "textid": "279",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_404.lua",
+    "map": "404",
+    "mapName": " Cape of Umbar",
+    "region": "5",
+    "lat": "-19.26",
+    "lon": "-107.91",
+    "textid": "298",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_404.lua",
+    "map": "404",
+    "mapName": " Cape of Umbar",
+    "region": "5",
+    "lat": "-25.55",
+    "lon": "-116.22",
+    "textid": "304",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_404.lua",
+    "map": "404",
+    "mapName": " Cape of Umbar",
+    "region": "5",
+    "lat": "-14.25",
+    "lon": "-114.54",
+    "textid": "333",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_405.lua",
+    "map": "405",
+    "mapName": " Umbar Baharbel",
+    "region": "5",
+    "lat": "-18.99",
+    "lon": "-98.65",
+    "textid": "109",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_405.lua",
+    "map": "405",
+    "mapName": " Umbar Baharbel",
+    "region": "5",
+    "lat": "-20.64",
+    "lon": "-95.77",
+    "textid": "168",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_408.lua",
+    "map": "408",
+    "mapName": " khabarkhad",
+    "region": "5",
+    "lat": "-117.34",
+    "lon": "-140.98",
+    "textid": "15",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_408.lua",
+    "map": "408",
+    "mapName": " khabarkhad",
+    "region": "5",
+    "lat": "-119.66",
+    "lon": "-140.23",
+    "textid": "21",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_409.lua",
+    "map": "409",
+    "mapName": " kamrabezur",
+    "region": "5",
+    "lat": "-113.57",
+    "lon": "-139.24",
+    "textid": "14",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_409.lua",
+    "map": "409",
+    "mapName": " kamrabezur",
+    "region": "5",
+    "lat": "-116.01",
+    "lon": "-137.73",
+    "textid": "28",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_41.lua",
+    "map": "41",
+    "mapName": " The Great Delving",
+    "region": "2",
+    "lat": "-8.09",
+    "lon": "-116.12",
+    "textid": "26",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_41.lua",
+    "map": "41",
+    "mapName": " The Great Delving",
+    "region": "2",
+    "lat": "-8.58",
+    "lon": "-112.27",
+    "textid": "69",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_410.lua",
+    "map": "410",
+    "mapName": " dil-irmiz",
+    "region": "5",
+    "lat": "-122.33",
+    "lon": "-141.31",
+    "textid": "19",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_410.lua",
+    "map": "410",
+    "mapName": " dil-irmiz",
+    "region": "5",
+    "lat": "-121.46",
+    "lon": "-143.65",
+    "textid": "32",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_411.lua",
+    "map": "411",
+    "mapName": " ilmabiri",
+    "region": "5",
+    "lat": "-114.34",
+    "lon": "-142.59",
+    "textid": "17",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_411.lua",
+    "map": "411",
+    "mapName": " ilmabiri",
+    "region": "5",
+    "lat": "-115.71",
+    "lon": "-142.36",
+    "textid": "29",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_412.lua",
+    "map": "412",
+    "mapName": " takhdar",
+    "region": "5",
+    "lat": "-115.68",
+    "lon": "-141.15",
+    "textid": "24",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_412.lua",
+    "map": "412",
+    "mapName": " takhdar",
+    "region": "5",
+    "lat": "-114.14",
+    "lon": "-140.76",
+    "textid": "38",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_412.lua",
+    "map": "412",
+    "mapName": " takhdar",
+    "region": "5",
+    "lat": "-113.43",
+    "lon": "-141.78",
+    "textid": "46",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_42.lua",
+    "map": "42",
+    "mapName": " The Silvertine Lodes",
+    "region": "2",
+    "lat": "-9.87",
+    "lon": "-112.74",
+    "textid": "27",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_420.lua",
+    "map": "420",
+    "mapName": " ambarul",
+    "region": "5",
+    "lat": "-21.83",
+    "lon": "-81.02",
+    "textid": "65",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_420.lua",
+    "map": "420",
+    "mapName": " ambarul",
+    "region": "5",
+    "lat": "-27.51",
+    "lon": "-77.43",
+    "textid": "95",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_420.lua",
+    "map": "420",
+    "mapName": " ambarul",
+    "region": "5",
+    "lat": "-25.57",
+    "lon": "-84.66",
+    "textid": "103",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_421.lua",
+    "map": "421",
+    "mapName": " urash dar",
+    "region": "5",
+    "lat": "-26.52",
+    "lon": "-61.43",
+    "textid": "75",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_421.lua",
+    "map": "421",
+    "mapName": " urash dar",
+    "region": "5",
+    "lat": "-18.32",
+    "lon": "-56.34",
+    "textid": "81",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_421.lua",
+    "map": "421",
+    "mapName": " urash dar",
+    "region": "5",
+    "lat": "-16.57",
+    "lon": "-62.49",
+    "textid": "91",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_422.lua",
+    "map": "422",
+    "mapName": " khud zagin",
+    "region": "5",
+    "lat": "-31.51",
+    "lon": "-91.44",
+    "textid": "42",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_422.lua",
+    "map": "422",
+    "mapName": " khud zagin",
+    "region": "5",
+    "lat": "-37.64",
+    "lon": "-79.93",
+    "textid": "56",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_422.lua",
+    "map": "422",
+    "mapName": " khud zagin",
+    "region": "5",
+    "lat": "-37.63",
+    "lon": "-80.07",
+    "textid": "57",
+    "label": "Stable-master (Jirush): Jirush Stable-master"
+  },
+  {
+    "file": "MapData_423.lua",
+    "map": "423",
+    "mapName": " imhular",
+    "region": "5",
+    "lat": "-38.83",
+    "lon": "-61.73",
+    "textid": "50",
+    "label": "Stable-master: Stable-master"
+  },
+  {
+    "file": "MapData_423.lua",
+    "map": "423",
+    "mapName": " imhular",
+    "region": "5",
+    "lat": "-37.67",
+    "lon": "-66.36",
+    "textid": "58",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_43.lua",
+    "map": "43",
+    "mapName": " The Waterworks",
+    "region": "2",
+    "lat": "-15.07",
+    "lon": "-112.07",
+    "textid": "29",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_44.lua",
+    "map": "44",
+    "mapName": " Zelem Melek",
+    "region": "2",
+    "lat": "-5.81",
+    "lon": "-105.15",
+    "textid": "39",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_44.lua",
+    "map": "44",
+    "mapName": " Zelem Melek",
+    "region": "2",
+    "lat": "-11.12",
+    "lon": "-106.64",
+    "textid": "137",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_441.lua",
+    "map": "441",
+    "mapName": " idagal",
+    "region": "5",
+    "lat": "-49.32",
+    "lon": "-96.03",
+    "textid": "23",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_441.lua",
+    "map": "441",
+    "mapName": " idagal",
+    "region": "5",
+    "lat": "-65.41",
+    "lon": "-87.36",
+    "textid": "86",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_442.lua",
+    "map": "442",
+    "mapName": " emax dul",
+    "region": "5",
+    "lat": "-65.41",
+    "lon": "-87.36",
+    "textid": "17",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_443.lua",
+    "map": "443",
+    "mapName": " an sheru",
+    "region": "5",
+    "lat": "-56.92",
+    "lon": "-71.86",
+    "textid": "35",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_443.lua",
+    "map": "443",
+    "mapName": " an sheru",
+    "region": "5",
+    "lat": "-51.14",
+    "lon": "-66.93",
+    "textid": "37",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_443.lua",
+    "map": "443",
+    "mapName": " an sheru",
+    "region": "5",
+    "lat": "-52.38",
+    "lon": "-76.7",
+    "textid": "57",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_444.lua",
+    "map": "444",
+    "mapName": " kighan",
+    "region": "5",
+    "lat": "-62.32",
+    "lon": "-62.29",
+    "textid": "43",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_444.lua",
+    "map": "444",
+    "mapName": " kighan",
+    "region": "5",
+    "lat": "-61.31",
+    "lon": "-56.79",
+    "textid": "150",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_444.lua",
+    "map": "444",
+    "mapName": " kighan",
+    "region": "5",
+    "lat": "-56.87",
+    "lon": "-53.34",
+    "textid": "172",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_444.lua",
+    "map": "444",
+    "mapName": " kighan",
+    "region": "5",
+    "lat": "-55.7",
+    "lon": "-63.27",
+    "textid": "185",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_445.lua",
+    "map": "445",
+    "mapName": " zajana",
+    "region": "5",
+    "lat": "-62.32",
+    "lon": "-62.29",
+    "textid": "43",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_446.lua",
+    "map": "446",
+    "mapName": " adagim",
+    "region": "5",
+    "lat": "-39.39",
+    "lon": "-46.36",
+    "textid": "26",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_446.lua",
+    "map": "446",
+    "mapName": " adagim",
+    "region": "5",
+    "lat": "-48.17",
+    "lon": "-44.87",
+    "textid": "42",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_446.lua",
+    "map": "446",
+    "mapName": " adagim",
+    "region": "5",
+    "lat": "-52.33",
+    "lon": "-35.85",
+    "textid": "47",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_446.lua",
+    "map": "446",
+    "mapName": " adagim",
+    "region": "5",
+    "lat": "-46.72",
+    "lon": "-36.36",
+    "textid": "54",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_447.lua",
+    "map": "447",
+    "mapName": " the fearwater",
+    "region": "5",
+    "lat": "-23.66",
+    "lon": "-44.17",
+    "textid": "9",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_447.lua",
+    "map": "447",
+    "mapName": " the fearwater",
+    "region": "5",
+    "lat": "-30.36",
+    "lon": "-30.7",
+    "textid": "18",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_458.lua",
+    "map": "458",
+    "mapName": " hatokali fells",
+    "region": "5",
+    "lat": "-69.84",
+    "lon": "-89.29",
+    "textid": "39",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_46.lua",
+    "map": "46",
+    "mapName": " Thorin's Hall main floor >=-214.04",
+    "region": "1",
+    "lat": "75.83",
+    "lon": "47.62",
+    "textid": "10",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_5.lua",
+    "map": "5",
+    "mapName": " Bree-land",
+    "region": "1",
+    "lat": "-34.8",
+    "lon": "-46.1",
+    "textid": "10",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_5.lua",
+    "map": "5",
+    "mapName": " Bree-land",
+    "region": "1",
+    "lat": "-28.4",
+    "lon": "-49.5",
+    "textid": "73",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_5.lua",
+    "map": "5",
+    "mapName": " Bree-land",
+    "region": "1",
+    "lat": "-25.1",
+    "lon": "-48.9",
+    "textid": "112",
+    "label": "Archet Milestone: Archet Milestone."
+  },
+  {
+    "file": "MapData_5.lua",
+    "map": "5",
+    "mapName": " Bree-land",
+    "region": "1",
+    "lat": "-29.2",
+    "lon": "-53.9",
+    "textid": "154",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_5.lua",
+    "map": "5",
+    "mapName": " Bree-land",
+    "region": "1",
+    "lat": "-33.3",
+    "lon": "-62.7",
+    "textid": "388",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_5.lua",
+    "map": "5",
+    "mapName": " Bree-land",
+    "region": "1",
+    "lat": "-29.73",
+    "lon": "-51.28",
+    "textid": "553",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_5.lua",
+    "map": "5",
+    "mapName": " Bree-land",
+    "region": "1",
+    "lat": "-32.09",
+    "lon": "-50.28",
+    "textid": "554",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_6.lua",
+    "map": "6",
+    "mapName": " Archet ,0x4101E0A1,0x4101e0ba",
+    "region": "1",
+    "lat": "-25.1",
+    "lon": "-48.9",
+    "textid": "10",
+    "label": "Archet Milestone: Archet Milestone."
+  },
+  {
+    "file": "MapData_9.lua",
+    "map": "9",
+    "mapName": " Bree",
+    "region": "1",
+    "lat": "-29.73",
+    "lon": "-51.28",
+    "textid": "200",
+    "label": "Milestone: Milestone"
+  },
+  {
+    "file": "MapData_9.lua",
+    "map": "9",
+    "mapName": " Bree",
+    "region": "1",
+    "lat": "-32.09",
+    "lon": "-50.28",
+    "textid": "201",
+    "label": "Milestone: Milestone"
+  }
+]

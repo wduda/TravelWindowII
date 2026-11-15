@@ -1,0 +1,25 @@
+{
+  "distributionRevision": "527341b7176a0ee1e55f35b7648b83a5c4a9acbc",
+  "archive": "lotro-companion/lib/delta-lotro-memory-5.19.jar",
+  "sha256": "629B6FEDDFAE8B35F096AEEBC440BF664D1D530D6A3C9E430DBEFD2B477AA449",
+  "method": "ZIP entry inventory and printable constant/symbol inspection; library not executed",
+  "currentApplicationDependency": "delta-lotro-memory 6.8.1",
+  "publishedBinaryVersion": "5.19",
+  "javaSourceEntries": 0,
+  "inspectedClass": "delta/games/lotro/memory/extraction/TravelsDataExtractor.class",
+  "relevantSymbols": [
+    "travelRegistryObj",
+    "travelRegistry",
+    "ALdelta/games/lotro/character/status/travels/AnchorsStatusManager;",
+    ">Ldelta/games/lotro/extractors/travels/TravelRegistryExtractor;",
+    "updateAnchors",
+    "o(Ldelta/games/lotro/character/CharacterFile;Ldelta/games/lotro/character/status/travels/AnchorsStatusManager;)Z",
+    "TravelsDataExtractor.java",
+    "75162281",
+    "?delta/games/lotro/character/status/travels/AnchorsStatusManager",
+    "<delta/games/lotro/extractors/travels/TravelRegistryExtractor",
+    "D(Ldelta/games/lotro/character/status/travels/AnchorsStatusManager;)V",
+    "=delta/games/lotro/character/status/travels/io/AnchorsStatusIo"
+  ],
+  "limitation": "Older binary symbols corroborate a connection, not the complete control flow or current 6.8.1 implementation. No public source repository for the memory dependency was found in the inspected organization and maintainer public listings."
+}

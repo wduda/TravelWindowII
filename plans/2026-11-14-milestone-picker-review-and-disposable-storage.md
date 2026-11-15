@@ -16,3 +16,9 @@ Branch: `codex/milestone-learning-debug`, continuing the approved debug iteratio
 - The badge is decorative, not an input interceptor, and its number comes from skill identity rather than display order. Keep ordinary travel shortcuts untouched.
 - Native hover/MouseDown alias-dispatch timing remains an unverified in-game experiment; static review cannot establish absence of a client-side cast.
 - Commit this plan before runtime edits. Leave implementation and research output uncommitted for review.
+
+## Completed
+
+Both requested subagents delivered their scoped work. The focused [review](milestone-management/2026-11-14-picker-review.md) records the picker change, existing-listener/lookup reuse, redundant membership-set removal and parse-result reuse. [Disposable persistence research](milestone-management/2026-11-14-disposable-debug-storage.md) recommends manual checkpoints in one isolated Character-scope key, with explicit logical cleanup after any in-flight write; physical deletion still needs a client probe. Persistence remains unimplemented.
+
+Lua 5.1 syntax and targeted offline checks pass for all 42 plugin files and the milestone UI/state paths. Native badge readability, mouse pass-through and popup alias-dispatch behavior still need in-game testing.

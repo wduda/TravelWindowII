@@ -11,3 +11,7 @@ Branch: `codex/milestone-learning-debug`, continuing the authorized debug iterat
 4. Run targeted Lua 5.1 checks for the predicted Hobbiton label, shared result updates, stable retry, reopen behavior and prior travel reconciliation. Record the stakeholder's hover/badge/Alias observations separately from unverified native dispatch.
 
 No persistence, numeric-ID changes, normal-view modifications, new chat listener or production integration. Leave implementation uncommitted for review. This trial may require two physical clicks in the current client; offline validation cannot establish native first-click dispatch.
+
+## Runtime result
+
+Stakeholder report, 2026-11-14: the picker requires two clicks and works; the debug window receives the data and identifies the correct location. Record the two-click capture/result path as verified by that report. Automatic picker closure, exact event ordering, other locales and edge-case acceptance were not explicitly confirmed. No additional code change follows from this report.

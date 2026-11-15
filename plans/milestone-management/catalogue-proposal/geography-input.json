@@ -1,0 +1,2575 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "7097ff870cdeace51b7b34debc38b6a9969ae0c4",
+  "sourceFiles": [
+    "lore/geoAreas.xml",
+    "lore/dungeons.xml"
+  ],
+  "sourceSha256": {
+    "lore/geoAreas.xml": "56016a45641aa65f5694e8fe4f48839bd16efbd3a4ab96913b91f338c86a9b2b",
+    "lore/dungeons.xml": "2a8af3a4291905db8cf6d40d6354750f0253fddf3f003fa0fab3a10748aa93bf"
+  },
+  "note": "Relevant parent chains and all used coordinate regions. XML element tags supply kind. Dungeon parent is position.zoneID. Coordinate worlds must not be inferred from ancestry. Geographic names are not native milestone destination names.",
+  "entities": [
+    {
+      "id": "3",
+      "kind": "region",
+      "name": "Gondor",
+      "sourceFile": "lore/geoAreas.xml",
+      "worldCode": 3
+    },
+    {
+      "id": "14",
+      "kind": "region",
+      "name": "Tales of Yore",
+      "sourceFile": "lore/geoAreas.xml",
+      "worldCode": 14
+    },
+    {
+      "id": "1879048295",
+      "kind": "dungeon",
+      "name": "Thorin's Hall",
+      "sourceFile": "lore/dungeons.xml",
+      "basemapId": "1090542895",
+      "parentId": "1879063932",
+      "parentRelation": "dungeonPosition.zoneID"
+    },
+    {
+      "id": "1879048586",
+      "kind": "dungeon",
+      "name": "Gath Forthnír",
+      "sourceFile": "lore/dungeons.xml",
+      "basemapId": "1090542579",
+      "parentId": "1879063966",
+      "parentRelation": "dungeonPosition.zoneID"
+    },
+    {
+      "id": "1879049792",
+      "kind": "territory",
+      "name": "Bree-land",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879049816",
+      "kind": "region",
+      "name": "Eriador",
+      "sourceFile": "lore/geoAreas.xml",
+      "worldCode": 1
+    },
+    {
+      "id": "1879051583",
+      "kind": "territory",
+      "name": "The Shire",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879061048",
+      "kind": "territory",
+      "name": "Ered Luin",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879062345",
+      "kind": "territory",
+      "name": "The Lone-lands",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879063884",
+      "kind": "territory",
+      "name": "Angmar",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879063919",
+      "kind": "area",
+      "name": "Unexplored Territory",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049792",
+      "nameStatus": "sourcePlaceholder"
+    },
+    {
+      "id": "1879063922",
+      "kind": "area",
+      "name": "Low Lands",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879061048",
+      "iconId": "1091632748"
+    },
+    {
+      "id": "1879063924",
+      "kind": "area",
+      "name": "Falathlorn",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879061048",
+      "iconId": "1091632748"
+    },
+    {
+      "id": "1879063929",
+      "kind": "area",
+      "name": "Celondim",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879061048",
+      "iconId": "1091632748"
+    },
+    {
+      "id": "1879063932",
+      "kind": "area",
+      "name": "Thorin's Gate",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879061048",
+      "iconId": "1091632748"
+    },
+    {
+      "id": "1879063935",
+      "kind": "area",
+      "name": "Bruinen Gorges",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879072246",
+      "iconId": "1091632766"
+    },
+    {
+      "id": "1879063939",
+      "kind": "area",
+      "name": "Rivendell Valley",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879072246",
+      "iconId": "1091632766"
+    },
+    {
+      "id": "1879063941",
+      "kind": "area",
+      "name": "Bruinen Source West",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879072227",
+      "iconId": "1091632757"
+    },
+    {
+      "id": "1879063947",
+      "kind": "area",
+      "name": "Annunlos",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879062345",
+      "iconId": "1091632754"
+    },
+    {
+      "id": "1879063949",
+      "kind": "area",
+      "name": "Nain Enidh",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879062345",
+      "iconId": "1091632754"
+    },
+    {
+      "id": "1879063961",
+      "kind": "area",
+      "name": "Carn Dûm",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879063884",
+      "iconId": "1091632744"
+    },
+    {
+      "id": "1879063964",
+      "kind": "area",
+      "name": "Eastern Malenhad",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879063884",
+      "iconId": "1091632744"
+    },
+    {
+      "id": "1879063965",
+      "kind": "area",
+      "name": "Imlad Balchorth",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879063884",
+      "iconId": "1091632744"
+    },
+    {
+      "id": "1879063966",
+      "kind": "area",
+      "name": "Himbar",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879063884",
+      "iconId": "1091632744"
+    },
+    {
+      "id": "1879063972",
+      "kind": "area",
+      "name": "Trestlebridge",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879072154",
+      "iconId": "1091632759"
+    },
+    {
+      "id": "1879063987",
+      "kind": "area",
+      "name": "Esteldín",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879072154",
+      "iconId": "1091632759"
+    },
+    {
+      "id": "1879063994",
+      "kind": "area",
+      "name": "Buckland",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049792",
+      "iconId": "1091632745"
+    },
+    {
+      "id": "1879064009",
+      "kind": "area",
+      "name": "The Horsefields",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049792",
+      "iconId": "1091632745"
+    },
+    {
+      "id": "1879064012",
+      "kind": "area",
+      "name": "Combe",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049792",
+      "iconId": "1091632745"
+    },
+    {
+      "id": "1879064014",
+      "kind": "area",
+      "name": "Archet",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049792",
+      "iconId": "1091632745"
+    },
+    {
+      "id": "1879064015",
+      "kind": "area",
+      "name": "Bree",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049792",
+      "iconId": "1091632745"
+    },
+    {
+      "id": "1879064016",
+      "kind": "area",
+      "name": "The Delving Fields",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879051583",
+      "iconId": "1091632765"
+    },
+    {
+      "id": "1879064017",
+      "kind": "area",
+      "name": "Hobbiton-Bywater",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879051583",
+      "iconId": "1091632765"
+    },
+    {
+      "id": "1879064023",
+      "kind": "area",
+      "name": "Greenfields",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879051583",
+      "iconId": "1091632765"
+    },
+    {
+      "id": "1879064024",
+      "kind": "area",
+      "name": "Bridgefields",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879051583",
+      "iconId": "1091632765"
+    },
+    {
+      "id": "1879072154",
+      "kind": "territory",
+      "name": "The North Downs",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879072227",
+      "kind": "territory",
+      "name": "The Misty Mountains",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879072246",
+      "kind": "territory",
+      "name": "The Trollshaws",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879078401",
+      "kind": "area",
+      "name": "Southern Bree-fields",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049792",
+      "iconId": "1091632745"
+    },
+    {
+      "id": "1879086545",
+      "kind": "territory",
+      "name": "Evendim",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879086546",
+      "kind": "area",
+      "name": "Annúminas",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879086545",
+      "iconId": "1091632751"
+    },
+    {
+      "id": "1879086552",
+      "kind": "area",
+      "name": "Tyrn Fornech",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879086545",
+      "iconId": "1091632751"
+    },
+    {
+      "id": "1879086553",
+      "kind": "area",
+      "name": "Parth Aduial",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879086545",
+      "iconId": "1091632751"
+    },
+    {
+      "id": "1879086554",
+      "kind": "area",
+      "name": "Northern Emyn Uial",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879086545",
+      "iconId": "1091632751"
+    },
+    {
+      "id": "1879086555",
+      "kind": "area",
+      "name": "Bullroarer's Sward",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879086545",
+      "iconId": "1091632751"
+    },
+    {
+      "id": "1879093998",
+      "kind": "area",
+      "name": "The Rift of Nûrz Ghâshu",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879063884",
+      "iconId": "1091632744"
+    },
+    {
+      "id": "1879094891",
+      "kind": "area",
+      "name": "Tâl Bruinen",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879072246",
+      "iconId": "1091632766"
+    },
+    {
+      "id": "1879094892",
+      "kind": "area",
+      "name": "Northern High Pass",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879072227",
+      "iconId": "1091632757"
+    },
+    {
+      "id": "1879098738",
+      "kind": "area",
+      "name": "Bree-land Homesteads",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049792",
+      "iconId": "1091632745"
+    },
+    {
+      "id": "1879102448",
+      "kind": "area",
+      "name": "Talvi-mûri",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879102453",
+      "iconId": "1091632752"
+    },
+    {
+      "id": "1879102449",
+      "kind": "area",
+      "name": "Jä-rannit",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879102453",
+      "iconId": "1091632752"
+    },
+    {
+      "id": "1879102450",
+      "kind": "area",
+      "name": "Itä-mâ",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879102453",
+      "iconId": "1091632752"
+    },
+    {
+      "id": "1879102451",
+      "kind": "area",
+      "name": "Länsi-mâ",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879102453",
+      "iconId": "1091632752"
+    },
+    {
+      "id": "1879102452",
+      "kind": "area",
+      "name": "Taur Orthon",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879102453",
+      "iconId": "1091632752"
+    },
+    {
+      "id": "1879102453",
+      "kind": "territory",
+      "name": "Forochel",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879103883",
+      "kind": "area",
+      "name": "Aughaire",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879063884",
+      "iconId": "1091632744"
+    },
+    {
+      "id": "1879106663",
+      "kind": "area",
+      "name": "Glâd Ereg",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879112781",
+      "iconId": "1091632749"
+    },
+    {
+      "id": "1879106664",
+      "kind": "area",
+      "name": "High Hollin",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879112781",
+      "iconId": "1091632749"
+    },
+    {
+      "id": "1879106668",
+      "kind": "area",
+      "name": "Nan Sirannon",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879112781",
+      "iconId": "1091632749"
+    },
+    {
+      "id": "1879106671",
+      "kind": "area",
+      "name": "Mirobel",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879112781",
+      "iconId": "1091632749"
+    },
+    {
+      "id": "1879109900",
+      "kind": "area",
+      "name": "Durin's Way",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109970",
+      "iconId": "1091632758"
+    },
+    {
+      "id": "1879109901",
+      "kind": "area",
+      "name": "The Great Delving",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109970",
+      "iconId": "1091632758"
+    },
+    {
+      "id": "1879109904",
+      "kind": "area",
+      "name": "Silvertine Lodes",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109970",
+      "iconId": "1091632758"
+    },
+    {
+      "id": "1879109905",
+      "kind": "area",
+      "name": "Redhorn Lodes",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109970",
+      "iconId": "1091632758"
+    },
+    {
+      "id": "1879109906",
+      "kind": "area",
+      "name": "The Water-works",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109970",
+      "iconId": "1091632758"
+    },
+    {
+      "id": "1879109907",
+      "kind": "area",
+      "name": "The Flaming Deeps",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109970",
+      "iconId": "1091632758"
+    },
+    {
+      "id": "1879109908",
+      "kind": "area",
+      "name": "The Foundations of Stone",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109970",
+      "iconId": "1091632758"
+    },
+    {
+      "id": "1879109910",
+      "kind": "area",
+      "name": "Nanduhirion",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109972",
+      "iconId": "1091632755"
+    },
+    {
+      "id": "1879109916",
+      "kind": "area",
+      "name": "Egladil",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109972",
+      "iconId": "1091632755"
+    },
+    {
+      "id": "1879109970",
+      "kind": "territory",
+      "name": "Moria",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879109971",
+      "kind": "region",
+      "name": "Rhovanion",
+      "sourceFile": "lore/geoAreas.xml",
+      "worldCode": 2
+    },
+    {
+      "id": "1879109972",
+      "kind": "territory",
+      "name": "Lothlórien",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879112702",
+      "kind": "area",
+      "name": "Nimrodel",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109972",
+      "iconId": "1091632755"
+    },
+    {
+      "id": "1879112703",
+      "kind": "area",
+      "name": "Caras Galadhon",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109972",
+      "iconId": "1091632755"
+    },
+    {
+      "id": "1879112781",
+      "kind": "territory",
+      "name": "Eregion",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879144909",
+      "kind": "area",
+      "name": "The Fanged Pit",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109970",
+      "iconId": "1091632758"
+    },
+    {
+      "id": "1879149395",
+      "kind": "territory",
+      "name": "Dunland",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879152193",
+      "kind": "area",
+      "name": "Mirk-eaves",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879152206",
+      "iconId": "1091632756"
+    },
+    {
+      "id": "1879152194",
+      "kind": "area",
+      "name": "The Dourstocks",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879152206",
+      "iconId": "1091632756"
+    },
+    {
+      "id": "1879152195",
+      "kind": "area",
+      "name": "The Drownholt",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879152206",
+      "iconId": "1091632756"
+    },
+    {
+      "id": "1879152199",
+      "kind": "area",
+      "name": "Gathbúrz",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879152206",
+      "iconId": "1091632756"
+    },
+    {
+      "id": "1879152200",
+      "kind": "area",
+      "name": "Ashenslades",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879152206",
+      "iconId": "1091632756"
+    },
+    {
+      "id": "1879152206",
+      "kind": "territory",
+      "name": "Mirkwood",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879181891",
+      "kind": "area",
+      "name": "Mournshaws",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879181899",
+      "iconId": "1091632747"
+    },
+    {
+      "id": "1879181892",
+      "kind": "area",
+      "name": "Thrór's Coomb",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879181899",
+      "iconId": "1091632747"
+    },
+    {
+      "id": "1879181893",
+      "kind": "area",
+      "name": "Lich Bluffs",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879181899",
+      "iconId": "1091632747"
+    },
+    {
+      "id": "1879181894",
+      "kind": "area",
+      "name": "Nan Laeglin",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879181899",
+      "iconId": "1091632747"
+    },
+    {
+      "id": "1879181895",
+      "kind": "area",
+      "name": "Fordirith",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879181899",
+      "iconId": "1091632747"
+    },
+    {
+      "id": "1879181896",
+      "kind": "area",
+      "name": "Gloomglens",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879181899",
+      "iconId": "1091632747"
+    },
+    {
+      "id": "1879181899",
+      "kind": "territory",
+      "name": "Enedwaith",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879191197",
+      "kind": "area",
+      "name": "The Twenty-first Hall",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109970",
+      "iconId": "1091632758"
+    },
+    {
+      "id": "1879192014",
+      "kind": "area",
+      "name": "Bonevales",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    {
+      "id": "1879192015",
+      "kind": "area",
+      "name": "Trum Dreng",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    {
+      "id": "1879192017",
+      "kind": "area",
+      "name": "Gravenwood",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    {
+      "id": "1879192020",
+      "kind": "area",
+      "name": "Carreglyn",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    {
+      "id": "1879192400",
+      "kind": "area",
+      "name": "Emyn Lûm",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879152206",
+      "iconId": "1091632756"
+    },
+    {
+      "id": "1879196939",
+      "kind": "area",
+      "name": "Frostbluff",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879200209",
+      "iconId": "1091632752"
+    },
+    {
+      "id": "1879200209",
+      "kind": "territory",
+      "name": "Festival Grounds",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879201772",
+      "kind": "area",
+      "name": "Nan Curunír",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    {
+      "id": "1879201773",
+      "kind": "area",
+      "name": "Heathfells",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    {
+      "id": "1879201774",
+      "kind": "area",
+      "name": "Starkmoor",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    {
+      "id": "1879201775",
+      "kind": "area",
+      "name": "Isendale",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    {
+      "id": "1879214905",
+      "kind": "area",
+      "name": "South Gravenwood",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    {
+      "id": "1879218506",
+      "kind": "area",
+      "name": "Galtrev",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    {
+      "id": "1879221596",
+      "kind": "area",
+      "name": "Lhan Rhos",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    {
+      "id": "1879222973",
+      "kind": "area",
+      "name": "Wailing Hills",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879227786",
+      "iconId": "1091696541"
+    },
+    {
+      "id": "1879222975",
+      "kind": "area",
+      "name": "The Rushgore",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879227786",
+      "iconId": "1091696541"
+    },
+    {
+      "id": "1879222976",
+      "kind": "area",
+      "name": "Parth Celebrant",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879227786",
+      "iconId": "1091696541"
+    },
+    {
+      "id": "1879222977",
+      "kind": "area",
+      "name": "Brown Lands",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879227786",
+      "iconId": "1091696541"
+    },
+    {
+      "id": "1879222979",
+      "kind": "area",
+      "name": "Thinglad",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879227786",
+      "iconId": "1091696541"
+    },
+    {
+      "id": "1879227786",
+      "kind": "territory",
+      "name": "Great River",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879231075",
+      "kind": "area",
+      "name": "The East Wall",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500897",
+      "iconId": "1091755679"
+    },
+    {
+      "id": "1879231077",
+      "kind": "area",
+      "name": "The Entwash Vale",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500895",
+      "iconId": "1091755679"
+    },
+    {
+      "id": "1879231078",
+      "kind": "area",
+      "name": "Norcrofts",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500897",
+      "iconId": "1091755679"
+    },
+    {
+      "id": "1879231079",
+      "kind": "area",
+      "name": "Sutcrofts",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500897",
+      "iconId": "1091755679"
+    },
+    {
+      "id": "1879231080",
+      "kind": "area",
+      "name": "The Wold",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500896",
+      "iconId": "1091755679"
+    },
+    {
+      "id": "1879232928",
+      "kind": "area",
+      "name": "Stangard",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879227786",
+      "iconId": "1091696541"
+    },
+    {
+      "id": "1879252019",
+      "kind": "area",
+      "name": "Edoras",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500898",
+      "iconId": "1091841000"
+    },
+    {
+      "id": "1879256451",
+      "kind": "area",
+      "name": "Harwick",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500896",
+      "iconId": "1091755679"
+    },
+    {
+      "id": "1879256452",
+      "kind": "area",
+      "name": "Snowbourn",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500897",
+      "iconId": "1091755679"
+    },
+    {
+      "id": "1879256895",
+      "kind": "area",
+      "name": "Stonedeans",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500900",
+      "iconId": "1091841000"
+    },
+    {
+      "id": "1879256896",
+      "kind": "area",
+      "name": "Westfold",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500900",
+      "iconId": "1091841000"
+    },
+    {
+      "id": "1879256897",
+      "kind": "area",
+      "name": "Broadacres",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500895",
+      "iconId": "1091841000"
+    },
+    {
+      "id": "1879256898",
+      "kind": "area",
+      "name": "Eastfold",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500898",
+      "iconId": "1091841000"
+    },
+    {
+      "id": "1879256900",
+      "kind": "area",
+      "name": "Kingstead",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500898",
+      "iconId": "1091841000"
+    },
+    {
+      "id": "1879257201",
+      "kind": "area",
+      "name": "Balewood",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500899",
+      "iconId": "1091755679"
+    },
+    {
+      "id": "1879257203",
+      "kind": "area",
+      "name": "Writhendowns",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879501130",
+      "iconId": "1091755679"
+    },
+    {
+      "id": "1879257204",
+      "kind": "area",
+      "name": "Forlaw",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879501130",
+      "iconId": "1091755679"
+    },
+    {
+      "id": "1879257362",
+      "kind": "territory",
+      "name": "Rohan - Westemnet",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879263803",
+      "kind": "territory",
+      "name": "Erebor",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879272837",
+      "kind": "area",
+      "name": "Helm's Deep",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500900",
+      "iconId": "1091841000"
+    },
+    {
+      "id": "1879303317",
+      "kind": "area",
+      "name": "Nan Curunír",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879257362",
+      "iconId": "1091632746"
+    },
+    {
+      "id": "1879305736",
+      "kind": "area",
+      "name": "Dol Amroth",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508855",
+      "iconId": "1091917459"
+    },
+    {
+      "id": "1879305737",
+      "kind": "area",
+      "name": "Lamedon",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508856",
+      "iconId": "1091917459"
+    },
+    {
+      "id": "1879305739",
+      "kind": "area",
+      "name": "The Havens of Belfalas",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508855",
+      "iconId": "1091917459"
+    },
+    {
+      "id": "1879305741",
+      "kind": "area",
+      "name": "Blackroot Vale",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508856",
+      "iconId": "1091917459"
+    },
+    {
+      "id": "1879314943",
+      "kind": "area",
+      "name": "The Noman-lands",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879314959",
+      "iconId": "1092244376"
+    },
+    {
+      "id": "1879314959",
+      "kind": "territory",
+      "name": "The Wastes",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879314982",
+      "kind": "area",
+      "name": "Pelargir",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508859",
+      "iconId": "1091918887"
+    },
+    {
+      "id": "1879314983",
+      "kind": "area",
+      "name": "Dor-en-Ernil",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508855",
+      "iconId": "1091918887"
+    },
+    {
+      "id": "1879314984",
+      "kind": "area",
+      "name": "Lower Lebennin",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508859",
+      "iconId": "1091918887"
+    },
+    {
+      "id": "1879314985",
+      "kind": "area",
+      "name": "Ringló Vale",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879514657",
+      "iconId": "1091918887"
+    },
+    {
+      "id": "1879315609",
+      "kind": "area",
+      "name": "Meadhollow",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879384441",
+      "iconId": "1092453926"
+    },
+    {
+      "id": "1879320841",
+      "kind": "area",
+      "name": "Lossarnach",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508858",
+      "iconId": "1091969716"
+    },
+    {
+      "id": "1879320842",
+      "kind": "area",
+      "name": "South Ithilien",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508863",
+      "iconId": "1091969716"
+    },
+    {
+      "id": "1879320843",
+      "kind": "area",
+      "name": "Upper Lebennin",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508859",
+      "iconId": "1091969716"
+    },
+    {
+      "id": "1879326883",
+      "kind": "area",
+      "name": "Talath Anor",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879509660",
+      "iconId": "1091979405"
+    },
+    {
+      "id": "1879326884",
+      "kind": "area",
+      "name": "Minas Tirith",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879509660",
+      "iconId": "1091979405"
+    },
+    {
+      "id": "1879330412",
+      "kind": "area",
+      "name": "Taur Drúadan",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879509660",
+      "iconId": "1091998404"
+    },
+    {
+      "id": "1879330418",
+      "kind": "area",
+      "name": "Beacon Hills",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879509660",
+      "iconId": "1091998404"
+    },
+    {
+      "id": "1879334675",
+      "kind": "area",
+      "name": "Minas Tirith (After-battle)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879509660",
+      "iconId": "1092172948"
+    },
+    {
+      "id": "1879334677",
+      "kind": "area",
+      "name": "Osgiliath (After-battle)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879338732",
+      "iconId": "1092172948"
+    },
+    {
+      "id": "1879334685",
+      "kind": "area",
+      "name": "North Ithilien",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879338732",
+      "iconId": "1092172948"
+    },
+    {
+      "id": "1879334686",
+      "kind": "territory",
+      "name": "Anórien (After Battle)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879334687",
+      "kind": "area",
+      "name": "The Pelennor Fields (After-battle)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879509660",
+      "iconId": "1092172948"
+    },
+    {
+      "id": "1879338148",
+      "kind": "area",
+      "name": "Udûn",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879345115",
+      "iconId": "1092282116"
+    },
+    {
+      "id": "1879338150",
+      "kind": "area",
+      "name": "Dor Amarth",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879345115",
+      "iconId": "1092282116"
+    },
+    {
+      "id": "1879338151",
+      "kind": "area",
+      "name": "Agarnaith",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508857",
+      "iconId": "1092282116"
+    },
+    {
+      "id": "1879338152",
+      "kind": "area",
+      "name": "Lhingris",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508860",
+      "iconId": "1092282116"
+    },
+    {
+      "id": "1879338732",
+      "kind": "territory",
+      "name": "Ithilien",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879339822",
+      "kind": "area",
+      "name": "The Slag-hills",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879314959",
+      "iconId": "1092244376"
+    },
+    {
+      "id": "1879341996",
+      "kind": "area",
+      "name": "Talath Úrui",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879345115",
+      "iconId": "1092282116"
+    },
+    {
+      "id": "1879342010",
+      "kind": "area",
+      "name": "Torech Ungol",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879345115",
+      "iconId": "1092282116"
+    },
+    {
+      "id": "1879345115",
+      "kind": "territory",
+      "name": "Mordor",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879360095",
+      "kind": "area",
+      "name": "Wistmead",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879200209",
+      "iconId": "1091632765"
+    },
+    {
+      "id": "1879362289",
+      "kind": "territory",
+      "name": "Strongholds of the North",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879362292",
+      "kind": "area",
+      "name": "The Dale-lands",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879362289",
+      "iconId": "1092343234"
+    },
+    {
+      "id": "1879362293",
+      "kind": "area",
+      "name": "Dale",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879362289",
+      "iconId": "1092343234"
+    },
+    {
+      "id": "1879362295",
+      "kind": "area",
+      "name": "Eryn Lasgalen",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879362289",
+      "iconId": "1092343234"
+    },
+    {
+      "id": "1879362296",
+      "kind": "area",
+      "name": "Lake-town",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879362289",
+      "iconId": "1092343234"
+    },
+    {
+      "id": "1879368351",
+      "kind": "territory",
+      "name": "The Dwarf-holds",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879368364",
+      "kind": "area",
+      "name": "The Ironfold",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879368351",
+      "iconId": "1092373657"
+    },
+    {
+      "id": "1879368366",
+      "kind": "area",
+      "name": "Ered Mithrin",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879368351",
+      "iconId": "1092373657"
+    },
+    {
+      "id": "1879375474",
+      "kind": "area",
+      "name": "Tumnu-dûm, the Dwelling-halls",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879263803",
+      "iconId": "1091755679"
+    },
+    {
+      "id": "1879384441",
+      "kind": "territory",
+      "name": "The Vales of Anduin",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879384444",
+      "kind": "area",
+      "name": "Laerlad",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879384441",
+      "iconId": "1092453926"
+    },
+    {
+      "id": "1879384447",
+      "kind": "area",
+      "name": "Woodsedge",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879384441",
+      "iconId": "1092453926"
+    },
+    {
+      "id": "1879384450",
+      "kind": "area",
+      "name": "Duskenvale",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879384441",
+      "iconId": "1092453926"
+    },
+    {
+      "id": "1879384456",
+      "kind": "area",
+      "name": "Wolf-denes",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879384441",
+      "iconId": "1092453926"
+    },
+    {
+      "id": "1879389181",
+      "kind": "area",
+      "name": "Cirith Ungol",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879389717",
+      "iconId": "1092282116"
+    },
+    {
+      "id": "1879389182",
+      "kind": "area",
+      "name": "Rath Duath",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879389717",
+      "iconId": "1092282116"
+    },
+    {
+      "id": "1879389185",
+      "kind": "area",
+      "name": "Minas Morgul",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879389717",
+      "iconId": "1092282116"
+    },
+    {
+      "id": "1879389717",
+      "kind": "territory",
+      "name": "Imlad Morgul",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879389718",
+      "kind": "territory",
+      "name": "Mordor Besieged",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879389728",
+      "kind": "area",
+      "name": "Parth Daenath",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879389718",
+      "iconId": "1092282116"
+    },
+    {
+      "id": "1879391947",
+      "kind": "area",
+      "name": "Arandor",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879389718",
+      "iconId": "1092282116"
+    },
+    {
+      "id": "1879400512",
+      "kind": "area",
+      "name": "Elderslade",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879407757",
+      "iconId": "1092557729"
+    },
+    {
+      "id": "1879400521",
+      "kind": "area",
+      "name": "Floodfells",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879400530",
+      "iconId": "1092453926"
+    },
+    {
+      "id": "1879400530",
+      "kind": "territory",
+      "name": "Wells of Langflood",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879400537",
+      "kind": "area",
+      "name": "Misthallow",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879400530",
+      "iconId": "1092453926"
+    },
+    {
+      "id": "1879407601",
+      "kind": "area",
+      "name": "Minas Tirith (Midsummer)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879334686",
+      "iconId": "1091979405"
+    },
+    {
+      "id": "1879407741",
+      "kind": "area",
+      "name": "The War of Three Peaks",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879407757",
+      "iconId": "1092557729"
+    },
+    {
+      "id": "1879407757",
+      "kind": "territory",
+      "name": "Elderslade",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879409238",
+      "kind": "dungeon",
+      "name": "Annâk-khurfu",
+      "sourceFile": "lore/dungeons.xml",
+      "basemapId": "1092561557",
+      "parentId": "1879400512",
+      "parentRelation": "dungeonPosition.zoneID"
+    },
+    {
+      "id": "1879410817",
+      "kind": "area",
+      "name": "Máttugard",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879416091",
+      "iconId": "1092667033"
+    },
+    {
+      "id": "1879410818",
+      "kind": "area",
+      "name": "Deepscrave",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879416091",
+      "iconId": "1092667033"
+    },
+    {
+      "id": "1879410819",
+      "kind": "area",
+      "name": "Pit of Stonejaws",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879416091",
+      "iconId": "1092667033"
+    },
+    {
+      "id": "1879410820",
+      "kind": "area",
+      "name": "Gloomingtarn",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879416091",
+      "iconId": "1092667033"
+    },
+    {
+      "id": "1879410821",
+      "kind": "area",
+      "name": "Clovengap",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879416091",
+      "iconId": "1092667033"
+    },
+    {
+      "id": "1879410822",
+      "kind": "area",
+      "name": "Welkin-lofts",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879416091",
+      "iconId": "1092667033"
+    },
+    {
+      "id": "1879410823",
+      "kind": "area",
+      "name": "Câr Bronach",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879416091",
+      "iconId": "1092667033"
+    },
+    {
+      "id": "1879413511",
+      "kind": "area",
+      "name": "Azanulbizar, T.A. 2799",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879413536",
+      "iconId": "1091632758"
+    },
+    {
+      "id": "1879413536",
+      "kind": "territory",
+      "name": "Tales of Yore: Azanulbizar",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879416091",
+      "kind": "territory",
+      "name": "Gundabad",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879417581",
+      "kind": "dungeon",
+      "name": "Hall of Vérnozal",
+      "sourceFile": "lore/dungeons.xml",
+      "basemapId": "1092667829",
+      "parentId": "1879410817",
+      "parentRelation": "dungeonPosition.zoneID"
+    },
+    {
+      "id": "1879439521",
+      "kind": "area",
+      "name": "The Angle of Mitheithel",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879072246",
+      "iconId": "1091632766"
+    },
+    {
+      "id": "1879442885",
+      "kind": "area",
+      "name": "Yondershire",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879051583",
+      "iconId": "1091632765"
+    },
+    {
+      "id": "1879445907",
+      "kind": "area",
+      "name": "South Downs",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879446029",
+      "iconId": "1092711993"
+    },
+    {
+      "id": "1879445909",
+      "kind": "area",
+      "name": "Southern Andrath",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879446029",
+      "iconId": "1092711993"
+    },
+    {
+      "id": "1879445911",
+      "kind": "area",
+      "name": "Ruddymore",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879446029",
+      "iconId": "1092711993"
+    },
+    {
+      "id": "1879445912",
+      "kind": "area",
+      "name": "Sedgemead",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879446029",
+      "iconId": "1092711993"
+    },
+    {
+      "id": "1879445914",
+      "kind": "area",
+      "name": "Wadewater",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879446043",
+      "iconId": "1092711994"
+    },
+    {
+      "id": "1879445915",
+      "kind": "area",
+      "name": "Caras Gelebren",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879446043",
+      "iconId": "1092711994"
+    },
+    {
+      "id": "1879445916",
+      "kind": "area",
+      "name": "Western Eregion",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879446043",
+      "iconId": "1092711994"
+    },
+    {
+      "id": "1879445918",
+      "kind": "area",
+      "name": "Stoor-vales",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879446043",
+      "iconId": "1092819258"
+    },
+    {
+      "id": "1879446029",
+      "kind": "territory",
+      "name": "Cardolan",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879446043",
+      "kind": "territory",
+      "name": "Swanfleet",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879449484",
+      "kind": "area",
+      "name": "Mossward",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879446043",
+      "iconId": "1092711994"
+    },
+    {
+      "id": "1879456561",
+      "kind": "area",
+      "name": "Blackroot Vale (King's Gondor)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508856",
+      "iconId": "1092778819"
+    },
+    {
+      "id": "1879456562",
+      "kind": "area",
+      "name": "Dol Amroth (King's Gondor)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508855",
+      "iconId": "1092778819"
+    },
+    {
+      "id": "1879456563",
+      "kind": "area",
+      "name": "The Havens of Belfalas (King's Gondor)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508855",
+      "iconId": "1092778819"
+    },
+    {
+      "id": "1879456564",
+      "kind": "area",
+      "name": "Lamedon (King's Gondor)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508856",
+      "iconId": "1092778819"
+    },
+    {
+      "id": "1879456568",
+      "kind": "area",
+      "name": "Dor-en-Ernil (King's Gondor)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508855",
+      "iconId": "1092778819"
+    },
+    {
+      "id": "1879456569",
+      "kind": "area",
+      "name": "Lower Lebennin (King's Gondor)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508859",
+      "iconId": "1092778819"
+    },
+    {
+      "id": "1879456570",
+      "kind": "area",
+      "name": "Ringló Vale (King's Gondor)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508858",
+      "iconId": "1092778819"
+    },
+    {
+      "id": "1879456571",
+      "kind": "area",
+      "name": "Pelargir (King's Gondor)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508859",
+      "iconId": "1092778819"
+    },
+    {
+      "id": "1879456572",
+      "kind": "area",
+      "name": "Upper Lebennin (King's Gondor)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508859",
+      "iconId": "1092778819"
+    },
+    {
+      "id": "1879456573",
+      "kind": "area",
+      "name": "Lossarnach (King's Gondor)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879456581",
+      "iconId": "1092778819"
+    },
+    {
+      "id": "1879456581",
+      "kind": "territory",
+      "name": "King's Gondor",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879457087",
+      "kind": "territory",
+      "name": "Angmar",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879457088",
+      "kind": "area",
+      "name": "Ephel Angren",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879457087",
+      "iconId": "1091632744"
+    },
+    {
+      "id": "1879462982",
+      "kind": "area",
+      "name": "Tumladen (King's Gondor)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508858",
+      "iconId": "1092778819"
+    },
+    {
+      "id": "1879462983",
+      "kind": "area",
+      "name": "Imloth Melui (King's Gondor)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508858",
+      "iconId": "1092778819"
+    },
+    {
+      "id": "1879462984",
+      "kind": "area",
+      "name": "Lebennin Valley (King's Gondor)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879508858",
+      "iconId": "1092778819"
+    },
+    {
+      "id": "1879466303",
+      "kind": "region",
+      "name": "Haradwaith",
+      "sourceFile": "lore/geoAreas.xml",
+      "worldCode": 5
+    },
+    {
+      "id": "1879466304",
+      "kind": "region",
+      "name": "Gondor (After Battle)",
+      "sourceFile": "lore/geoAreas.xml",
+      "worldCode": 4
+    },
+    {
+      "id": "1879466306",
+      "kind": "area",
+      "name": "Northern Pinnath Gelin",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466324",
+      "iconId": "1092825776"
+    },
+    {
+      "id": "1879466307",
+      "kind": "area",
+      "name": "Emyn Terch",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466315",
+      "iconId": "1092825772"
+    },
+    {
+      "id": "1879466308",
+      "kind": "area",
+      "name": "Central Anfalas",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466315",
+      "iconId": "1092825772"
+    },
+    {
+      "id": "1879466314",
+      "kind": "area",
+      "name": "Tûm Rost",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466324",
+      "iconId": "1092825776"
+    },
+    {
+      "id": "1879466315",
+      "kind": "territory",
+      "name": "Anfalas",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466304"
+    },
+    {
+      "id": "1879466322",
+      "kind": "area",
+      "name": "Eryn Ethuil",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466324",
+      "iconId": "1092825776"
+    },
+    {
+      "id": "1879466324",
+      "kind": "territory",
+      "name": "Pinnath Gelin",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466304"
+    },
+    {
+      "id": "1879470529",
+      "kind": "area",
+      "name": "Jeb Khâtel",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879475241",
+      "iconId": "1092906789"
+    },
+    {
+      "id": "1879470530",
+      "kind": "area",
+      "name": "Bakhjâd",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879475241",
+      "iconId": "1092906789"
+    },
+    {
+      "id": "1879470531",
+      "kind": "area",
+      "name": "Zamarzîr",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879475241",
+      "iconId": "1092906789"
+    },
+    {
+      "id": "1879470532",
+      "kind": "area",
+      "name": "Aradâr",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879475261",
+      "iconId": "1092906791"
+    },
+    {
+      "id": "1879470533",
+      "kind": "area",
+      "name": "Khaphâr",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879475261",
+      "iconId": "1092906791"
+    },
+    {
+      "id": "1879470534",
+      "kind": "area",
+      "name": "Umbar Baharbêl, City of the Corsairs",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879475261",
+      "iconId": "1092906786"
+    },
+    {
+      "id": "1879474985",
+      "kind": "area",
+      "name": "Bej Mâgha",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879475261",
+      "iconId": "1092906791"
+    },
+    {
+      "id": "1879475241",
+      "kind": "territory",
+      "name": "The Shield Isles",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466303"
+    },
+    {
+      "id": "1879475261",
+      "kind": "territory",
+      "name": "Umbar",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466303"
+    },
+    {
+      "id": "1879479245",
+      "kind": "area",
+      "name": "TBD - HITHAEGLIR WEST",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879498008",
+      "iconId": "1092997750",
+      "nameStatus": "sourcePlaceholder"
+    },
+    {
+      "id": "1879479246",
+      "kind": "area",
+      "name": "TBD - HITHAEGLIR CENTRAL NORTH",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879498008",
+      "iconId": "1092997750",
+      "nameStatus": "sourcePlaceholder"
+    },
+    {
+      "id": "1879481854",
+      "kind": "area",
+      "name": "Khabârkhad, The Crypts",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879481884",
+      "iconId": "1092945731"
+    },
+    {
+      "id": "1879481855",
+      "kind": "area",
+      "name": "Ilmabiri, The Wells",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879481884",
+      "iconId": "1092945731"
+    },
+    {
+      "id": "1879481856",
+      "kind": "area",
+      "name": "Tâkhdar, The Cellars",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879481884",
+      "iconId": "1092945731"
+    },
+    {
+      "id": "1879481857",
+      "kind": "area",
+      "name": "Dil-irmíz, The Berths",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879481884",
+      "iconId": "1092945731"
+    },
+    {
+      "id": "1879481858",
+      "kind": "area",
+      "name": "Kamrabezûr, The Vaults",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879481884",
+      "iconId": "1092945731"
+    },
+    {
+      "id": "1879481884",
+      "kind": "territory",
+      "name": "Umbar-môkh",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466303"
+    },
+    {
+      "id": "1879487043",
+      "kind": "area",
+      "name": "Fields of Duragâr",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879487081",
+      "iconId": "1092947623"
+    },
+    {
+      "id": "1879487045",
+      "kind": "area",
+      "name": "Kidûru Marshes",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879487081",
+      "iconId": "1092947623"
+    },
+    {
+      "id": "1879487046",
+      "kind": "area",
+      "name": "Sang Dûshu",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879487092",
+      "iconId": "1092947630"
+    },
+    {
+      "id": "1879487047",
+      "kind": "area",
+      "name": "Imênki Waste",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879487092",
+      "iconId": "1092947630"
+    },
+    {
+      "id": "1879487048",
+      "kind": "area",
+      "name": "Tûl Kesh",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879487092",
+      "iconId": "1092947630"
+    },
+    {
+      "id": "1879487049",
+      "kind": "area",
+      "name": "Barrens of Ubâd",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879487092",
+      "iconId": "1092947630"
+    },
+    {
+      "id": "1879487051",
+      "kind": "area",
+      "name": "Tir Khûl",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879487103",
+      "iconId": "1092947637"
+    },
+    {
+      "id": "1879487054",
+      "kind": "area",
+      "name": "Clefts of Gal-harân",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879487114",
+      "iconId": "1092947644"
+    },
+    {
+      "id": "1879487055",
+      "kind": "area",
+      "name": "Ningûdu",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879487114",
+      "iconId": "1092947644"
+    },
+    {
+      "id": "1879487056",
+      "kind": "area",
+      "name": "Sûr Akil",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879487114",
+      "iconId": "1092947644"
+    },
+    {
+      "id": "1879487057",
+      "kind": "area",
+      "name": "Paths of Khegûl",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879487114",
+      "iconId": "1092947644"
+    },
+    {
+      "id": "1879487081",
+      "kind": "territory",
+      "name": "Ambarûl",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466303"
+    },
+    {
+      "id": "1879487092",
+      "kind": "territory",
+      "name": "Khûd Zagin",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466303"
+    },
+    {
+      "id": "1879487103",
+      "kind": "territory",
+      "name": "Imhûlar",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466303"
+    },
+    {
+      "id": "1879487114",
+      "kind": "territory",
+      "name": "Urash Dâr",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466303"
+    },
+    {
+      "id": "1879494957",
+      "kind": "dungeon",
+      "name": "Vestibule of Utug-bûr",
+      "sourceFile": "lore/dungeons.xml",
+      "basemapId": "1092984910",
+      "parentId": "1879487056",
+      "parentRelation": "dungeonPosition.zoneID"
+    },
+    {
+      "id": "1879498008",
+      "kind": "territory",
+      "name": "Hithaeglir",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879049816"
+    },
+    {
+      "id": "1879500785",
+      "kind": "area",
+      "name": "Padugâsha",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500861",
+      "iconId": "1093002153"
+    },
+    {
+      "id": "1879500788",
+      "kind": "area",
+      "name": "Ruins of Kasukhín",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500862",
+      "iconId": "1093002183"
+    },
+    {
+      "id": "1879500799",
+      "kind": "area",
+      "name": "Hoards of Koratíya",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500864",
+      "iconId": "1093002170"
+    },
+    {
+      "id": "1879500805",
+      "kind": "area",
+      "name": "Nabir Crags",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500864",
+      "iconId": "1093002170"
+    },
+    {
+      "id": "1879500806",
+      "kind": "area",
+      "name": "The Slopes of Idân",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500865",
+      "iconId": "1093002157"
+    },
+    {
+      "id": "1879500813",
+      "kind": "area",
+      "name": "Ghun Shâna",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500863",
+      "iconId": "1093002177"
+    },
+    {
+      "id": "1879500821",
+      "kind": "area",
+      "name": "Downs of Farad Shóta",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500865",
+      "iconId": "1093002157"
+    },
+    {
+      "id": "1879500822",
+      "kind": "area",
+      "name": "Fields of Sârhazai",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500863",
+      "iconId": "1093002177"
+    },
+    {
+      "id": "1879500823",
+      "kind": "area",
+      "name": "The Gated Vale of Zajâna",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500863",
+      "iconId": "1093002177"
+    },
+    {
+      "id": "1879500833",
+      "kind": "area",
+      "name": "Mashâli Barrens",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500861",
+      "iconId": "1093002153"
+    },
+    {
+      "id": "1879500838",
+      "kind": "area",
+      "name": "The Drenchmead",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500865",
+      "iconId": "1093002157"
+    },
+    {
+      "id": "1879500843",
+      "kind": "area",
+      "name": "Thar Tashúl",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500865",
+      "iconId": "1093002157"
+    },
+    {
+      "id": "1879500845",
+      "kind": "area",
+      "name": "Hills of Haramûl",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500861",
+      "iconId": "1093002153"
+    },
+    {
+      "id": "1879500849",
+      "kind": "area",
+      "name": "The Warden's Lands",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500864",
+      "iconId": "1093002170"
+    },
+    {
+      "id": "1879500850",
+      "kind": "area",
+      "name": "The Gnawnshore",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879500862",
+      "iconId": "1093002183"
+    },
+    {
+      "id": "1879500861",
+      "kind": "territory",
+      "name": "An Shêru, the Height of the Sky",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466303"
+    },
+    {
+      "id": "1879500862",
+      "kind": "territory",
+      "name": "Sûg Nidar, the Fearwater",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466303"
+    },
+    {
+      "id": "1879500863",
+      "kind": "territory",
+      "name": "Kighân, the Shornvale",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466303"
+    },
+    {
+      "id": "1879500864",
+      "kind": "territory",
+      "name": "Idagâl, the Dry-whelm",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466303"
+    },
+    {
+      "id": "1879500865",
+      "kind": "territory",
+      "name": "Adagím, the Moulder-wood",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466303"
+    },
+    {
+      "id": "1879500895",
+      "kind": "territory",
+      "name": "Entwash",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879500896",
+      "kind": "territory",
+      "name": "Wold",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879500897",
+      "kind": "territory",
+      "name": "Croftlands",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879500898",
+      "kind": "territory",
+      "name": "Eastfold",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879500899",
+      "kind": "territory",
+      "name": "Fangorn",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879500900",
+      "kind": "territory",
+      "name": "Westfold",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879501130",
+      "kind": "territory",
+      "name": "Wildermore",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879501383",
+      "kind": "area",
+      "name": "Furtherholm (Zír Aktar)",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879200209",
+      "iconId": "1092906789"
+    },
+    {
+      "id": "1879508855",
+      "kind": "territory",
+      "name": "Belfalas & Dor-en-Ernil",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879508856",
+      "kind": "territory",
+      "name": "Western Gondor",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879508857",
+      "kind": "territory",
+      "name": "Agarnaith",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879508858",
+      "kind": "territory",
+      "name": "Lossarnach",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879508859",
+      "kind": "territory",
+      "name": "Lebennin",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879508860",
+      "kind": "territory",
+      "name": "Lhingris",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879508863",
+      "kind": "territory",
+      "name": "Eastern Gondor",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879509660",
+      "kind": "territory",
+      "name": "Anórien",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879514657",
+      "kind": "territory",
+      "name": "Ringló Vale",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879109971"
+    },
+    {
+      "id": "1879521035",
+      "kind": "territory",
+      "name": "The Hatokáli Fells",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879466303"
+    },
+    {
+      "id": "1879521038",
+      "kind": "area",
+      "name": "Nêr Abatu",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879521035",
+      "iconId": "1093066121"
+    },
+    {
+      "id": "1879521058",
+      "kind": "area",
+      "name": "Kupu-shagâm",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879521035",
+      "iconId": "1093066121"
+    },
+    {
+      "id": "1879524632",
+      "kind": "area",
+      "name": "Imlad Drúnos",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879524658",
+      "iconId": "1093134572"
+    },
+    {
+      "id": "1879524634",
+      "kind": "area",
+      "name": "The Tinder-lands",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879524658",
+      "iconId": "1093134572"
+    },
+    {
+      "id": "1879524636",
+      "kind": "area",
+      "name": "Shalar Bayan",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879524651",
+      "iconId": "1093134573"
+    },
+    {
+      "id": "1879524647",
+      "kind": "area",
+      "name": "Gonnath Anwar",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879524659",
+      "iconId": "1093134575"
+    },
+    {
+      "id": "1879524651",
+      "kind": "territory",
+      "name": "Parth Rhavas, the Lothfold",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879524677"
+    },
+    {
+      "id": "1879524655",
+      "kind": "area",
+      "name": "Dath Nagolath",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879524658",
+      "iconId": "1093134572"
+    },
+    {
+      "id": "1879524658",
+      "kind": "territory",
+      "name": "Heledhris, Rift of Shornshards",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879524677"
+    },
+    {
+      "id": "1879524659",
+      "kind": "territory",
+      "name": "Nan Ogol, the Fell-vale",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879524677"
+    },
+    {
+      "id": "1879524671",
+      "kind": "area",
+      "name": "Fen Thorlam",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879524659",
+      "iconId": "1093134575"
+    },
+    {
+      "id": "1879524677",
+      "kind": "region",
+      "name": "Mordor (Outer)",
+      "sourceFile": "lore/geoAreas.xml",
+      "worldCode": 6
+    },
+    {
+      "id": "1879524681",
+      "kind": "area",
+      "name": "Otózen-dala",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879524651",
+      "iconId": "1093134573"
+    },
+    {
+      "id": "1879524682",
+      "kind": "area",
+      "name": "Khirat",
+      "sourceFile": "lore/geoAreas.xml",
+      "parentId": "1879524651",
+      "iconId": "1093134573"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "catalogueVersion": 2,
+  "sourceRevisions": {
+    "lotroData": "7097ff870cdeace51b7b34debc38b6a9969ae0c4",
+    "lotroMapsDb": "2e707ebf14162607f586ecf2948f97fc212090d0"
+  },
+  "geographySource": {
+    "sourceRevision": "7097ff870cdeace51b7b34debc38b6a9969ae0c4",
+    "sourceFiles": [
+      "lore/geoAreas.xml",
+      "lore/dungeons.xml"
+    ],
+    "sourceSha256": {
+      "lore/geoAreas.xml": "56016a45641aa65f5694e8fe4f48839bd16efbd3a4ab96913b91f338c86a9b2b",
+      "lore/dungeons.xml": "2a8af3a4291905db8cf6d40d6354750f0253fddf3f003fa0fab3a10748aa93bf"
+    }
+  },
+  "counts": {
+    "markers": 351,
+    "withObservedOrReportedName": 38,
+    "withWikiLabelOnly": 258,
+    "withGeographicLabelOnly": 55,
+    "geographicLabelClasses": {
+      "geoAreaFallback": 44,
+      "geoDungeonFallback": 5,
+      "geoTerritoryFallback": 6
+    },
+    "zoneTypes": {
+      "area": 346,
+      "dungeon": 5
+    },
+    "withIcon": 349,
+    "coordinateRegionDiffersFromAncestor": 81
+  },
+  "nativeNameRule": "Only existing observed/reported names populate inventory.names. Wiki labels and geography do not increase that coverage.",
+  "placeholderMarkerIds": [
+    "446148608",
+    "429891592",
+    "502972429",
+    "305029134",
+    "428007424",
+    "429473812"
+  ],
+  "fallbackDestinationIds": [
+    1,
+    4,
+    7,
+    11,
+    18,
+    19,
+    30,
+    32,
+    34,
+    35,
+    39,
+    57,
+    62,
+    64,
+    82,
+    83,
+    85,
+    92,
+    102,
+    109,
+    115,
+    116,
+    118,
+    130,
+    153,
+    164,
+    171,
+    173,
+    177,
+    185,
+    187,
+    191,
+    197,
+    200,
+    209,
+    215,
+    224,
+    230,
+    231,
+    240,
+    248,
+    249,
+    255,
+    274,
+    277,
+    292,
+    293,
+    294,
+    309,
+    310,
+    320,
+    334,
+    339,
+    343,
+    347
+  ]
+}

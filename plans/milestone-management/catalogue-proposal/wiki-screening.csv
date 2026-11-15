@@ -1,0 +1,310 @@
+observationId,label,outerHeading,heading,secondColumn,coordinate,status,candidateMarkerIds,candidateWorldCodes
+collapsibleTable1-row-2,Aughaire,Milestone Locations in Eriador,Milestone Locations in Angmar,Aughaire,"[0.1N, 39.9W]",oneSpatialCandidate,412463128,1
+collapsibleTable1-row-3,Bail Avarc,Milestone Locations in Eriador,Milestone Locations in Angmar,Ephel Angren,"[70.3N, 28.0W]",oneSpatialCandidate,435433493,1
+collapsibleTable1-row-4,Gabilshathûr,Milestone Locations in Eriador,Milestone Locations in Angmar,Eastern Malenhad,"[3.5S, 26.5W]",oneSpatialCandidate,429289473,1
+collapsibleTable1-row-5,Gath Forthnír,Milestone Locations in Eriador,Milestone Locations in Angmar,Himbar,"[10.9N, 23.9W]",noNearbyMarker,,
+collapsibleTable1-row-6,Iorelen's Camp,Milestone Locations in Eriador,Milestone Locations in Angmar,The Rift of Nûrz Ghâshu,"[10.7N, 15.5W]",oneSpatialCandidate,446988340,1
+collapsibleTable1-row-7,Myrkworth,Milestone Locations in Eriador,Milestone Locations in Angmar,Imlad Balchorth,"[6.8N, 25.9W]",oneSpatialCandidate,430391297,1
+collapsibleTable1-row-8,Tármunn Súrsa,Milestone Locations in Eriador,Milestone Locations in Angmar,Carn Dûm,"[12.1N, 31.8W]",oneSpatialCandidate,414162956,1
+collapsibleTable2-row-2,Archet,Milestone Locations in Eriador,Milestone Locations in Bree-land,Archet Dale,"[25.1S, 48.9W]",oneSpatialCandidate,393920553,1
+collapsibleTable2-row-3,Bree,Milestone Locations in Eriador,Milestone Locations in Bree-land,Bree,"[32.1S, 50.3W]",oneSpatialCandidate,393752629,1
+collapsibleTable2-row-4,Bree-land Homesteads,Milestone Locations in Eriador,Milestone Locations in Bree-land,Bree-land Homesteads,"[34.8S, 46.1W]",oneSpatialCandidate,393080841,1
+collapsibleTable2-row-5,Buckland,Milestone Locations in Eriador,Milestone Locations in Bree-land,Buckland,"[33.3S, 62.7W]",oneSpatialCandidate,377032734,1
+collapsibleTable2-row-6,Combe,Milestone Locations in Eriador,Milestone Locations in Bree-land,Combe,"[28.5S, 49.5W]",oneSpatialCandidate,393834532,1
+collapsibleTable2-row-7,Festival Grounds,Milestone Locations in Eriador,Milestone Locations in Bree-land,The Horsefields,"[24.5S, 51.6W]",noNearbyMarker,,
+collapsibleTable2-row-8,The Prancing Pony,Milestone Locations in Eriador,Milestone Locations in Bree-land,Bree,"[29.7S, 51.3W]",oneSpatialCandidate,393699330,1
+collapsibleTable2-row-9,Southern Bree-fields,Milestone Locations in Eriador,Milestone Locations in Bree-land,Southern Bree-fields,"[29.2S, 53.9W]",oneSpatialCandidate,393506820,1
+collapsibleTable3-row-2,Andrath,Milestone Locations in Eriador,Milestone Locations in Cardolan,Andrath,"[37.6S , 49.8W ]",oneSpatialCandidate,392806408,1
+collapsibleTable3-row-3,Caranost,Milestone Locations in Eriador,Milestone Locations in Cardolan,South Downs,"[45.0S , 39.4W ]",oneSpatialCandidate,409350144,1
+collapsibleTable3-row-4,Herne,Milestone Locations in Eriador,Milestone Locations in Cardolan,Ruddymore,"[50.2S , 44.8W ]",oneSpatialCandidate,392151049,1
+collapsibleTable3-row-5,Sarn Ford,Milestone Locations in Eriador,Milestone Locations in Cardolan,Ruddymore,"[48.0S , 55.7W ]",oneSpatialCandidate,391245825,1
+collapsibleTable3-row-6,Scurloc Farm,Milestone Locations in Eriador,Milestone Locations in Cardolan,South Downs,"[43.3S , 33.5W ]",oneSpatialCandidate,409817103,1
+collapsibleTable3-row-7,Stonecrop Encampment,Milestone Locations in Eriador,Milestone Locations in Cardolan,Sedgemead,"[54.2S, 40.1W]",oneSpatialCandidate,408252416,1
+collapsibleTable4-row-2,Avardin,Milestone Locations in Eriador,"Milestone Locations in Dunland Overview: Dunland, Gap of Rohan and Nan Curunír",Starkmoor,"[83.1S, 20.6W]",oneSpatialCandidate,423440388,1
+collapsibleTable4-row-3,Barnavon,Milestone Locations in Eriador,"Milestone Locations in Dunland Overview: Dunland, Gap of Rohan and Nan Curunír",Carreglyn,"[84.9S, 16.8W]",oneSpatialCandidate,439488538,1
+collapsibleTable4-row-4,Dagoras' Camp,Milestone Locations in Eriador,"Milestone Locations in Dunland Overview: Dunland, Gap of Rohan and Nan Curunír",Nan Curunír,"[84.8S, 3.5W]",oneSpatialCandidate,456331267,1
+collapsibleTable4-row-5,Echad Naeglanc,Milestone Locations in Eriador,"Milestone Locations in Dunland Overview: Dunland, Gap of Rohan and Nan Curunír",Bonevales,"[77.4S, 15.8W]",oneSpatialCandidate,439590917,1
+collapsibleTable4-row-6,Forthbrond,Milestone Locations in Eriador,"Milestone Locations in Dunland Overview: Dunland, Gap of Rohan and Nan Curunír",Heathfells,"[86.9S, 7.5W]",oneSpatialCandidate,439279628,1
+collapsibleTable4-row-7,Galtrev,Milestone Locations in Eriador,"Milestone Locations in Dunland Overview: Dunland, Gap of Rohan and Nan Curunír",Pren Gwydh,"[80.2S, 16.8W]",oneSpatialCandidate,439513113,1
+collapsibleTable4-row-8,Gravenwood,Milestone Locations in Eriador,"Milestone Locations in Dunland Overview: Dunland, Gap of Rohan and Nan Curunír",Gravenwood,"[77.9S, 10.3W]",oneSpatialCandidate,440049666,1
+collapsibleTable4-row-9,Grimbold's Camp,Milestone Locations in Eriador,"Milestone Locations in Dunland Overview: Dunland, Gap of Rohan and Nan Curunír",Heathfells,"[87.7S, 3.9W]",oneSpatialCandidate,455266307,1
+collapsibleTable4-row-10,Lhan Rhos,Milestone Locations in Eriador,"Milestone Locations in Dunland Overview: Dunland, Gap of Rohan and Nan Curunír",Dunbog,"[87.2S, 23.2W]",oneSpatialCandidate,422240257,1
+collapsibleTable4-row-11,Lhan Tarren,Milestone Locations in Eriador,"Milestone Locations in Dunland Overview: Dunland, Gap of Rohan and Nan Curunír",Trum Dreng,"[75.2S, 22.3W]",oneSpatialCandidate,423350282,1
+collapsibleTable4-row-12,Nan Curunír,Milestone Locations in Eriador,"Milestone Locations in Dunland Overview: Dunland, Gap of Rohan and Nan Curunír",Nan Curunír (After-battle),"[47.7S, 89.7W]",oneSpatialCandidate,609742850,2
+collapsibleTable4-row-13,Ox-clan Merchant Camp,Milestone Locations in Eriador,"Milestone Locations in Dunland Overview: Dunland, Gap of Rohan and Nan Curunír",Nan Curunír,"[79.9S, 0.2E]",oneSpatialCandidate,456618021,1
+collapsibleTable4-row-14,Rohirrim Scout-camp,Milestone Locations in Eriador,"Milestone Locations in Dunland Overview: Dunland, Gap of Rohan and Nan Curunír",Gravenwood,"[81.0S, 10.6W]",oneSpatialCandidate,440033303,1
+collapsibleTable5-row-2,Echad Daervunn,Milestone Locations in Eriador,Milestone Locations in Enedwaith,Mournshaws,"[66.6S, 21.5W]",oneSpatialCandidate,424443912,1
+collapsibleTable5-row-3,Echad Dagoras,Milestone Locations in Eriador,Milestone Locations in Enedwaith,Fordirith,"[58.5S, 14.6W]",oneSpatialCandidate,441786383,1
+collapsibleTable5-row-4,Harndirion,Milestone Locations in Eriador,Milestone Locations in Enedwaith,Thrór's Coomb,"[69.3S, 13.7W]",oneSpatialCandidate,440811523,1
+collapsibleTable5-row-5,Lhanuch,Milestone Locations in Eriador,Milestone Locations in Enedwaith,Nan Laeglin,"[66.5S, 17.2W]",oneSpatialCandidate,440500225,1
+collapsibleTable5-row-6,Lich Bluffs,Milestone Locations in Eriador,Milestone Locations in Enedwaith,Lich Bluffs,"[72.7S, 14.8W]",oneSpatialCandidate,440729607,1
+collapsibleTable5-row-7,Maur Tulhau,Milestone Locations in Eriador,Milestone Locations in Enedwaith,Gloomglens,"[62.3S, 23.1W]",oneSpatialCandidate,424333324,1
+collapsibleTable5-row-8,Nár's Peak,Milestone Locations in Eriador,Milestone Locations in Enedwaith,Thrór's Coomb,"[65.7S, 8.6W]",oneSpatialCandidate,441225223,1
+collapsibleTable6-row-2,Celondim,Milestone Locations in Eriador,Milestone Locations in Ered Luin,Celondim,"[28.3S, 92.1W]",oneSpatialCandidate,343179313,1
+collapsibleTable6-row-3,Duillond,Milestone Locations in Eriador,Milestone Locations in Ered Luin,Falathlorn,"[24.3S, 93.2W]",oneSpatialCandidate,343134257,1
+collapsibleTable6-row-4,Falathlorn,Milestone Locations in Eriador,Milestone Locations in Ered Luin,Falathlorn,"[24.9S, 90.7W]",oneSpatialCandidate,343326721,1
+collapsibleTable6-row-5,Gondamon,Milestone Locations in Eriador,Milestone Locations in Ered Luin,Low Lands,"[20.2S, 97.0W]",oneSpatialCandidate,328081419,1
+collapsibleTable6-row-6,Thorin's Gate,Milestone Locations in Eriador,Milestone Locations in Ered Luin,Thorin's Gate,"[15.7S, 104.8W]",oneSpatialCandidate,327446529,1
+collapsibleTable6-row-7,Thorin's Hall - The Great Hall,Milestone Locations in Eriador,Milestone Locations in Ered Luin,Thorin's Hall,"[13.7S, 103.2W]",noNearbyMarker,,
+collapsibleTable7-row-2,Echad Dúnann,Milestone Locations in Eriador,Milestone Locations Eregion,Nan Sirannon,"[50.5S, 7.8W]",oneSpatialCandidate,442351640,1
+collapsibleTable7-row-3,Echad Eregion,Milestone Locations in Eriador,Milestone Locations Eregion,High Hollin,"[46.9S, 12.5W]",oneSpatialCandidate,442957825,1
+collapsibleTable7-row-4,Echad Mirobel,Milestone Locations in Eriador,Milestone Locations Eregion,Mirobel,"[52.5S, 16.7W]",oneSpatialCandidate,441618454,1
+collapsibleTable7-row-5,Gwingris,Milestone Locations in Eriador,Milestone Locations Eregion,Glâd Ereg,"[40.0S, 16.2W]",oneSpatialCandidate,442732547,1
+collapsibleTable8-row-2,Annúminas,Milestone Locations in Eriador,Milestone Locations in Evendim,Annúminas,"[19.1S, 71.0W]",oneSpatialCandidate,361639942,1
+collapsibleTable8-row-3,The Eavespires,Milestone Locations in Eriador,Milestone Locations in Evendim,Northern Emyn Uial,"[6.1S, 71.8W]",oneSpatialCandidate,362622980,1
+collapsibleTable8-row-4,Glass-blowers' Camp,Milestone Locations in Eriador,Milestone Locations in Evendim,Bullroarer's Sward,"[21.2S, 64.4W]",oneSpatialCandidate,377884678,1
+collapsibleTable8-row-5,High King's Crossing,Milestone Locations in Eriador,Milestone Locations in Evendim,Parth Aduial,"[13.9S, 64.1W]",oneSpatialCandidate,377987074,1
+collapsibleTable8-row-6,Oatbarton,Milestone Locations in Eriador,Milestone Locations in Evendim,Bullroarer's Sward,"[23.1S, 67.3W]",oneSpatialCandidate,376692767,1
+collapsibleTable8-row-7,Ost Forod,Milestone Locations in Eriador,Milestone Locations in Evendim,Tyrn Fornech,"[7.4S, 64.3W]",oneSpatialCandidate,379002909,1
+collapsibleTable8-row-8,Tinnudir,Milestone Locations in Eriador,Milestone Locations in Evendim,Tinnudir,"[12.7S, 67.2W]",oneSpatialCandidate,377729033,1
+collapsibleTable9-row-2,Kauppa-kohta,Milestone Locations in Eriador,Milestone Locations in Forochel,Taur Orthon,"[3.0N, 58.0W]",oneSpatialCandidate,379580421,1
+collapsibleTable9-row-3,Kuru-leiri,Milestone Locations in Eriador,Milestone Locations in Forochel,Talvi-mûri,"[19.5N, 83.8W]",oneSpatialCandidate,348008471,1
+collapsibleTable9-row-4,Pynti-peldot,Milestone Locations in Eriador,Milestone Locations in Forochel,Itä-mâ,"[11.3N, 69.8W]",oneSpatialCandidate,379621379,1
+collapsibleTable9-row-5,Sûri-kylä,Milestone Locations in Eriador,Milestone Locations in Forochel,Jä-rannit,"[19.1N, 70.9W]",oneSpatialCandidate,364785679,1
+collapsibleTable9-row-6,Zigilgund,Milestone Locations in Eriador,Milestone Locations in Forochel,Länsi-mâ,"[9.3N, 81.1W]",oneSpatialCandidate,362967042,1
+collapsibleTable10-row-2,Ost Guruth,Milestone Locations in Eriador,Milestone Locations in Lone-lands,Nain Enidh,"[31.4S, 29.5W]",oneSpatialCandidate,426917946,1
+collapsibleTable10-row-3,The Forsaken Inn,Milestone Locations in Eriador,Milestone Locations in Lone-lands,Annunlos,"[34.1S, 40.7W]",oneSpatialCandidate,410255376,1
+collapsibleTable11-row-2,Glóin's Camp,Milestone Locations in Eriador,Milestone Locations in Misty Mountains,Bruinen Source West,"[24.8S, 4.1W]",oneSpatialCandidate,460505090,1
+collapsibleTable11-row-3,Vindurhal,Milestone Locations in Eriador,Milestone Locations in Misty Mountains,Northern High Pass,"[23.3S, 4.3E]",oneSpatialCandidate,461168655,1
+collapsibleTable12-row-2,Esteldín,Milestone Locations in Eriador,Milestone Locations in North Downs,Esteldín,"[9.6S, 42.1W]",oneSpatialCandidate,411234310,1
+collapsibleTable12-row-3,Trestlebridge,Milestone Locations in Eriador,Milestone Locations in North Downs,Trestlebridge,"[18.0S, 53.7W]",oneSpatialCandidate,394543108,1
+collapsibleTable13-row-2,Caras Gelebren,Milestone Locations in Eriador,Milestone Locations in Swanfleet,Caras Gelebren,"[52.8S , 22.5W ]",oneSpatialCandidate,425431042,1
+collapsibleTable13-row-3,Clegur,Milestone Locations in Eriador,Milestone Locations in Swanfleet,Stoor-vales,"[64.9S , 29.0W ]",oneSpatialCandidate,423862272,1
+collapsibleTable13-row-4,Glyn Helyg,Milestone Locations in Eriador,Milestone Locations in Swanfleet,Stoor-vales,"[62.4S , 25.9W]",oneSpatialCandidate,424136705,1
+collapsibleTable13-row-5,Idhobel,Milestone Locations in Eriador,Milestone Locations in Swanfleet,Western Eregion,"[47.2S , 18.9W ]",oneSpatialCandidate,426704901,1
+collapsibleTable13-row-6,Lhan Garan,Milestone Locations in Eriador,Milestone Locations in Swanfleet,Wadewater,"[55.1S , 27.4W ]",oneSpatialCandidate,425025562,1
+collapsibleTable13-row-7,Lintrev,Milestone Locations in Eriador,Milestone Locations in Swanfleet,Stoor-vales,"[ 61.6S , 24.3W ]",oneSpatialCandidate,424271873,1
+collapsibleTable13-row-8,Mossward,Milestone Locations in Eriador,Milestone Locations in Swanfleet,Western Old South Road,"[60.6S, 34.6W]",oneSpatialCandidate,407695360,1
+collapsibleTable14-row-2,Brockenborings,Milestone Locations in Eriador,Milestone Locations in the Shire,Greenfields,"[27.4S, 67.7W]",oneSpatialCandidate,376606797,1
+collapsibleTable14-row-3,Budgeford,Milestone Locations in Eriador,Milestone Locations in the Shire,Bridgefields,"[31.3S, 66.1W]",oneSpatialCandidate,376717359,1
+collapsibleTable14-row-4,The Delving Fields,Milestone Locations in Eriador,Milestone Locations in the Shire,The Delving Fields,"[36.5S, 73.1W]",oneSpatialCandidate,359452672,1
+collapsibleTable14-row-5,Hobbiton,Milestone Locations in Eriador,Milestone Locations in the Shire,Hobbiton-Bywater,"[31.4S, 71.1W]",oneSpatialCandidate,360595483,1
+collapsibleTable14-row-6,Little Delving,Milestone Locations in Eriador,Milestone Locations in the Shire,The Delving Fields,"[31.8S, 76.7W]",oneSpatialCandidate,360132610,1
+collapsibleTable14-row-7,Michel Delving,Milestone Locations in Eriador,Milestone Locations in the Shire,The Delving Fields,"[33.5S, 75.2W]",oneSpatialCandidate,360255540,1
+collapsibleTable14-row-8,Nobottle,Milestone Locations in Eriador,Milestone Locations in the Shire,The Yondershire,"[26.9S, 78.9W]",oneSpatialCandidate,359960582,1
+collapsibleTable15-row-2,Echad Candelleth,Milestone Locations in Eriador,Milestone Locations in Trollshaws,Tâl Bruinen,"[37.2S, 13.9W]",oneSpatialCandidate,442941443,1
+collapsibleTable15-row-3,Gaerond,Milestone Locations in Eriador,Milestone Locations in Trollshaws,The Angle of Mitheithel,"[34.7S, 22.1W]",oneSpatialCandidate,427491336,1
+collapsibleTable15-row-4,Rivendell,Milestone Locations in Eriador,Milestone Locations in Trollshaws,Rivendell,"[30.1S, 4.4W]",oneSpatialCandidate,460410880,1
+collapsibleTable15-row-5,Tham Lumren,Milestone Locations in Eriador,Milestone Locations in Trollshaws,The Angle of Mitheithel,"[38.6S, 17.2W]",oneSpatialCandidate,442609667,1
+collapsibleTable15-row-6,Thorenhad,Milestone Locations in Eriador,Milestone Locations in Trollshaws,Bruinen Gorges,"[31.7S, 15.0W]",oneSpatialCandidate,443822081,1
+collapsibleTable15-row-7,Tornhad,Milestone Locations in Eriador,Milestone Locations in Trollshaws,The Angle of Mitheithel,"[42.5S, 23.3W]",oneSpatialCandidate,426401800,1
+collapsibleTable17-row-2,"Amdân, the Threshold",Milestone Locations in Rhovanion,"Milestone Locations in Azanulbizar, T.A. 2799","Azanulbizar, T.A. 2799","[63.4N, 135.2W]",oneSpatialCandidate,-521232370,14
+collapsibleTable18-row-2,Annâk-khurfu,Milestone Locations in Rhovanion,Milestone Locations in Elderslade and the War of Three Peaks,Elderslade,"[32.8N, 61.2W]",noNearbyMarker,,
+collapsibleTable18-row-3,Drenghól,Milestone Locations in Rhovanion,Milestone Locations in Elderslade and the War of Three Peaks,The War of Three Peaks,"[ 94.9S , 19.8W]",oneSpatialCandidate,690896910,2
+collapsibleTable18-row-4,Zarkul-sulûn,Milestone Locations in Rhovanion,Milestone Locations in Elderslade and the War of Three Peaks,The War of Three Peaks,"[100.8S, 17.3W]",oneSpatialCandidate,705810437,2
+collapsibleTable19-row-2,Skarhald,Milestone Locations in Rhovanion,Milestone Locations in Ered Mithrin and the Withered Heath,Ered Mithrin,"[ 34.3N , 45.2W]",oneSpatialCandidate,667836419,2
+collapsibleTable20-row-2,Dale,Milestone Locations in Rhovanion,Milestone Locations in Eryn Lasgalen and the Dale-lands,Dale,"[ 25.1N , 25.8W]",oneSpatialCandidate,699899929,2
+collapsibleTable20-row-3,Dale,Milestone Locations in Rhovanion,Milestone Locations in Eryn Lasgalen and the Dale-lands,Dale,"[ 24.1N , 24.9W]",oneSpatialCandidate,699961364,2
+collapsibleTable20-row-4,Erebor,Milestone Locations in Rhovanion,Milestone Locations in Eryn Lasgalen and the Dale-lands,Erebor,"[14.4N, 136.1W]",oneSpatialCandidate,548261894,2
+collapsibleTable20-row-5,Erebor,Milestone Locations in Rhovanion,Milestone Locations in Eryn Lasgalen and the Dale-lands,Erebor,"[29.0N, 25.7W]",oneSpatialCandidate,699920421,2
+collapsibleTable20-row-6,Felegoth,Milestone Locations in Rhovanion,Milestone Locations in Eryn Lasgalen and the Dale-lands,Felegoth,"[ 20.3N, 36.7W]",oneSpatialCandidate,683229184,2
+collapsibleTable20-row-7,Lake-town,Milestone Locations in Rhovanion,Milestone Locations in Eryn Lasgalen and the Dale-lands,Lake-town,"[17.2N, 27.3W]",oneSpatialCandidate,699727918,2
+collapsibleTable20-row-8,Loeglond,Milestone Locations in Rhovanion,Milestone Locations in Eryn Lasgalen and the Dale-lands,Eryn Lasgalen,"[ 15.2N, 32.4W]",oneSpatialCandidate,682614785,2
+collapsibleTable20-row-9,Tham Taerdol,Milestone Locations in Rhovanion,Milestone Locations in Eryn Lasgalen and the Dale-lands,Eryn Lasgalen,"[ 12.2N, 46.2W]",oneSpatialCandidate,665690116,2
+collapsibleTable21-row-2,Asbaj-khîrfin,Milestone Locations in Rhovanion,Milestone Locations in Gundabad,Mattugard,"[46.0S, 112.2W]",oneSpatialCandidate,577441801,2
+collapsibleTable21-row-3,Aslíf,Milestone Locations in Rhovanion,Milestone Locations in Gundabad,Deepscrave,"[50.1S, 117.1W]",oneSpatialCandidate,576045057,2
+collapsibleTable21-row-4,Bárgstad,Milestone Locations in Rhovanion,Milestone Locations in Gundabad,Pit of Stonejaws,"[44.2S, 113.7W]",oneSpatialCandidate,577323021,2
+collapsibleTable21-row-5,Bazanmanar,Milestone Locations in Rhovanion,Milestone Locations in Gundabad,Clovengap,"[36.9S, 120.2W]",oneSpatialCandidate,576835589,2
+collapsibleTable21-row-6,Fellgát,Milestone Locations in Rhovanion,Milestone Locations in Gundabad,Welkin-lofts,"[49.4N, 74.5W]",oneSpatialCandidate,635080716,2
+collapsibleTable21-row-7,Grúmachath,Milestone Locations in Rhovanion,Milestone Locations in Gundabad,Câr Bronach,"[50.2N, 68.5W]",oneSpatialCandidate,651272195,2
+collapsibleTable21-row-8,Hagbuth,Milestone Locations in Rhovanion,Milestone Locations in Gundabad,Clovengap,"[40.8S, 120.2W]",oneSpatialCandidate,576815109,2
+collapsibleTable21-row-9,"Ibdêkh-buzru, the Thing-fold",Milestone Locations in Rhovanion,Milestone Locations in Gundabad,Welkin-lofts,"[45.7N, 73.0W]",oneSpatialCandidate,635191306,2
+collapsibleTable21-row-10,Imrêkh-guthlu,Milestone Locations in Rhovanion,Milestone Locations in Gundabad,Mattugard,"[49.0S, 115.1W]",oneSpatialCandidate,576184320,2
+collapsibleTable21-row-11,Leitstáth,Milestone Locations in Rhovanion,Milestone Locations in Gundabad,Câr Bronach,"[47.0N, 65.0W]",oneSpatialCandidate,651583488,2
+collapsibleTable21-row-12,"Maergrind, the Noble Gate",Milestone Locations in Rhovanion,Milestone Locations in Gundabad,Mattugard,"[49.4S, 112.0W]",noNearbyMarker,,
+collapsibleTable21-row-13,Vérnozal,Milestone Locations in Rhovanion,Milestone Locations in Gundabad,Mattugard,"[45.3S, 115.0W]",noNearbyMarker,,
+collapsibleTable21-row-14,Watchers' Roost,Milestone Locations in Rhovanion,Milestone Locations in Gundabad,Gloomingtarn,"[47.7S, 121.9W]",oneSpatialCandidate,559935501,2
+collapsibleTable21-row-15,"Zidir-nesad, the Steepset",Milestone Locations in Rhovanion,Milestone Locations in Gundabad,Mattugard,"[45.7S, 114.7W]",oneSpatialCandidate,577249284,2
+collapsibleTable22-row-2,Hammerstead,Milestone Locations in Rhovanion,Milestone Locations in Iron Hills,The Ironfold,"[30.9N, 12.2W]",oneSpatialCandidate,717758466,2
+collapsibleTable22-row-3,Jarnfast,Milestone Locations in Rhovanion,Milestone Locations in Iron Hills,The Ironfold,"[28.4N, 3.7W]",oneSpatialCandidate,733147152,2
+collapsibleTable23-row-2,Caras Galadhon,Milestone Locations in Rhovanion,Milestone Locations in Lothlórien,Caras Galadhon,"[15.7S, 67.9W]",oneSpatialCandidate,646082575,2
+collapsibleTable23-row-3,Echad Andestel,Milestone Locations in Rhovanion,Milestone Locations in Lothlórien,Nimrodel,"[14.2S, 73.1W]",oneSpatialCandidate,629968912,2
+collapsibleTable23-row-4,Imlad Lalaith,Milestone Locations in Rhovanion,Milestone Locations in Lothlórien,Egladil,"[17.3S, 64.1W]",oneSpatialCandidate,646402053,2
+collapsibleTable23-row-5,Mekhem-bizru,Milestone Locations in Rhovanion,Milestone Locations in Lothlórien,Nanduhirion,"[11.5S, 78.4W]",oneSpatialCandidate,629526528,2
+collapsibleTable24-row-2,Echad Sirion,Milestone Locations in Rhovanion,Milestone Locations in Mirkwood,Mirk-eaves,"[15.3S, 61.2W]",oneSpatialCandidate,646610947,2
+collapsibleTable24-row-3,Estolad Mernael,Milestone Locations in Rhovanion,Milestone Locations in Mirkwood,The Drownholt,"[17.0S, 55.0W]",noNearbyMarker,,
+collapsibleTable24-row-4,The Haunted Inn,Milestone Locations in Rhovanion,Milestone Locations in Mirkwood,Dourstocks,"[13.4S, 56.1W]",oneSpatialCandidate,662806530,2
+collapsibleTable24-row-5,Mithechad,Milestone Locations in Rhovanion,Milestone Locations in Mirkwood,Ashenslades,"[17.6S, 48.2W]",oneSpatialCandidate,663441416,2
+collapsibleTable24-row-6,Ost Galadh,Milestone Locations in Rhovanion,Milestone Locations in Mirkwood,Emyn Lûm,"[14.3S, 51.2W]",oneSpatialCandidate,663195663,2
+collapsibleTable24-row-7,Thangúlhad,Milestone Locations in Rhovanion,Milestone Locations in Mirkwood,Gathbúrz,"[12.9S, 46.3W]",oneSpatialCandidate,663597066,2
+collapsibleTable25-row-2,Anazârmekhem,Milestone Locations in Rhovanion,Milestone Locations in Moria,The Flaming Deeps,"[13.3S, 108.0W]",oneSpatialCandidate,595632132,2
+collapsibleTable25-row-3,The Chamber of the Cross-roads,Milestone Locations in Rhovanion,Milestone Locations in Moria,Durin's Way,"[5.2S, 111.9W]",oneSpatialCandidate,580599830,2
+collapsibleTable25-row-4,Deep Descent,Milestone Locations in Rhovanion,Milestone Locations in Moria,The Silvertine Lodes,"[9.9S, 112.7W]",oneSpatialCandidate,579530754,2
+collapsibleTable25-row-5,Dolven-view,Milestone Locations in Rhovanion,Milestone Locations in Moria,The Great Delving,"[8.6S, 112.3W]",oneSpatialCandidate,580583448,2
+collapsibleTable25-row-6,Durin's Threshold,Milestone Locations in Rhovanion,Milestone Locations in Moria,The Great Delving,"[8.1S, 116.1W]",oneSpatialCandidate,580259860,2
+collapsibleTable25-row-7,The Fanged Pit camp,Milestone Locations in Rhovanion,Milestone Locations in Moria,Durin's Way,"[3.4S, 103.3W]",oneSpatialCandidate,597061635,2
+collapsibleTable25-row-8,Jazârgund,Milestone Locations in Rhovanion,Milestone Locations in Moria,Durin's Way,"[3.9S, 105.7W]",oneSpatialCandidate,596860951,2
+collapsibleTable25-row-9,The Orc-watch,Milestone Locations in Rhovanion,Milestone Locations in Moria,Redhorn Lodes,"[11.1S, 106.6W]",oneSpatialCandidate,595775488,2
+collapsibleTable25-row-10,The Rotting Cellar,Milestone Locations in Rhovanion,Milestone Locations in Moria,The Water-works,"[15.1S, 112.1W]",oneSpatialCandidate,579567620,2
+collapsibleTable25-row-11,The Shadowed Refuge,Milestone Locations in Rhovanion,Milestone Locations in Moria,Foundations of Stone,"[13.0S, 101.7W]",oneSpatialCandidate,596160516,2
+collapsibleTable25-row-12,The Twenty-first Hall,Milestone Locations in Rhovanion,Milestone Locations in Moria,Zelem-melek,"[5.8S, 105.1W]",oneSpatialCandidate,596918273,2
+collapsibleTable26-row-2,Arhaim,Milestone Locations in Rhovanion,Milestone Locations in Vales of Anduin,Duskenvale,"[5.8S, 61.2W]",oneSpatialCandidate,647708685,2
+collapsibleTable26-row-3,Beorninghús,Milestone Locations in Rhovanion,Milestone Locations in Vales of Anduin,Meadhollow,"[13.6N, 53.3W]",oneSpatialCandidate,665108541,2
+collapsibleTable26-row-4,Blómgard,Milestone Locations in Rhovanion,Milestone Locations in Vales of Anduin,Laerlad,"[1.7N, 55.2W]",noNearbyMarker,,
+collapsibleTable26-row-5,Hultvis,Milestone Locations in Rhovanion,Milestone Locations in Vales of Anduin,Woodsedge,"[4.9N, 54.7W]",oneSpatialCandidate,664997889,2
+collapsibleTable26-row-6,Vegbár,Milestone Locations in Rhovanion,Milestone Locations in Vales of Anduin,Wolf-denes,"[7.6N, 58.5W]",oneSpatialCandidate,648957955,2
+collapsibleTable27-row-2,Hlithseld,Milestone Locations in Rhovanion,Milestone Locations in Wells of Langflood,Misthallow,"[30.4N, 59.2W]",oneSpatialCandidate,650973199,2
+collapsibleTable27-row-3,Limlók,Milestone Locations in Rhovanion,Milestone Locations in Wells of Langflood,Floodfells,"[20.9N, 56.0W]",oneSpatialCandidate,665931778,2
+collapsibleTable27-row-4,Lyndelby,Milestone Locations in Rhovanion,Milestone Locations in Wells of Langflood,Misthallow,"[26.6N, 65.4W]",oneSpatialCandidate,649445396,2
+collapsibleTable27-row-5,Thokvist,Milestone Locations in Rhovanion,Milestone Locations in Wells of Langflood,Misthallow,"[26.0N, 58.4W]",oneSpatialCandidate,650031119,2
+collapsibleTable29-row-2,Cliving,Milestone Locations in Rohan,Milestone Locations in Croftlands,Norcrofts,"[43.4S, 56.5W]",oneSpatialCandidate,660623360,2
+collapsibleTable29-row-3,Elthengels,Milestone Locations in Rohan,Milestone Locations in Croftlands,Norcrofts,"[48.9S, 52.4W]",oneSpatialCandidate,660004867,2
+collapsibleTable29-row-4,Faldham,Milestone Locations in Rohan,Milestone Locations in Croftlands,Norcrofts,"[54.5S, 57.3W]",oneSpatialCandidate,643788810,2
+collapsibleTable29-row-5,Garsfeld,Milestone Locations in Rohan,Milestone Locations in Croftlands,Sutcrofts,"[54.7S, 61.7W]",oneSpatialCandidate,643461120,2
+collapsibleTable29-row-6,Hytbold,Milestone Locations in Rohan,Milestone Locations in Croftlands,Sutcrofts,"[57.4S, 55.4W]",oneSpatialCandidate,659697759,2
+collapsibleTable29-row-7,Mansig's Encampment,Milestone Locations in Rohan,Milestone Locations in Croftlands,The East Wall,"[52.0S, 51.2W]",oneSpatialCandidate,660054021,2
+collapsibleTable29-row-8,Parth Galen,Milestone Locations in Rohan,Milestone Locations in Croftlands,The East Wall,"[58.7S, 47.7W]",oneSpatialCandidate,660283394,2
+collapsibleTable29-row-9,Snowbourn,Milestone Locations in Rohan,Milestone Locations in Croftlands,Sutcrofts,"[60.6S, 61.7W]",oneSpatialCandidate,642445327,2
+collapsibleTable29-row-10,Walstow,Milestone Locations in Rohan,Milestone Locations in Croftlands,Sutcrofts,"[62.3S, 54.2W]",oneSpatialCandidate,658755588,2
+collapsibleTable30-row-2,Aldburg,Milestone Locations in Rohan,Milestone Locations in Eastfold,Eastfold,"[68.7S, 63.9W]",oneSpatialCandidate,642207745,2
+collapsibleTable30-row-3,Beaconwatch,Milestone Locations in Rohan,Milestone Locations in Eastfold,Eastfold,"[69.5S, 57.1W]",oneSpatialCandidate,658522114,2
+collapsibleTable30-row-4,Dunharrow,Milestone Locations in Rohan,Milestone Locations in Eastfold,Kingstead,"[70.3S, 71.5W]",oneSpatialCandidate,625881090,2
+collapsibleTable30-row-5,Edoras,Milestone Locations in Rohan,Milestone Locations in Eastfold,Kingstead,"[60.6S, 74.2W]",oneSpatialCandidate,625668097,2
+collapsibleTable30-row-6,Entwade,Milestone Locations in Rohan,Milestone Locations in Eastfold,Kingstead,"[56.2S, 65.8W]",oneSpatialCandidate,643125249,2
+collapsibleTable30-row-7,Fenmarch,Milestone Locations in Rohan,Milestone Locations in Eastfold,Eastfold,"[66.5S, 57.4W]",oneSpatialCandidate,642744328,2
+collapsibleTable30-row-8,Underharrow,Milestone Locations in Rohan,Milestone Locations in Eastfold,Kingstead,"[67.3S, 73.3W]",noNearbyMarker,,
+collapsibleTable30-row-9,Upbourn,Milestone Locations in Rohan,Milestone Locations in Eastfold,Kingstead,"[65.5S, 73.1W]",oneSpatialCandidate,625774593,2
+collapsibleTable31-row-2,Eaworth,Milestone Locations in Rohan,Milestone Locations in Entwash,Entwash Vale,"[47.7S, 63.9W]",oneSpatialCandidate,643297280,2
+collapsibleTable31-row-3,Thornhope,Milestone Locations in Rohan,Milestone Locations in Entwash,Entwash Vale,"[42.5S, 67.6W]",oneSpatialCandidate,644046849,2
+collapsibleTable31-row-4,Oserley,Milestone Locations in Rohan,Milestone Locations in Entwash,Broadacres,"[45.2S, 67.1W]",oneSpatialCandidate,644030464,2
+collapsibleTable31-row-5,Stoke,Milestone Locations in Rohan,Milestone Locations in Entwash,Broadacres,"[49.1S, 69.5W]",oneSpatialCandidate,642834432,2
+collapsibleTable32-row-2,Aculf's Camp,Milestone Locations in Rohan,Milestone Locations in Great River,Rushgore,"[29.1S, 55.2W]",oneSpatialCandidate,661811221,2
+collapsibleTable32-row-3,The Cuthstan,Milestone Locations in Rohan,Milestone Locations in Great River,Eorlsmead,"[25.7S, 66.0W]",oneSpatialCandidate,645246998,2
+collapsibleTable32-row-4,Etheburg,Milestone Locations in Rohan,Milestone Locations in Great River,Brown Lands,"[31.2S, 52.2W]",oneSpatialCandidate,662061074,2
+collapsibleTable32-row-5,Haldirith,Milestone Locations in Rohan,Milestone Locations in Great River,Thinglad,"[21.4S, 63.5W]",oneSpatialCandidate,646447104,2
+collapsibleTable32-row-6,Parth Celebrant,Milestone Locations in Rohan,Milestone Locations in Great River,Parth Celebrant,"[26.6S, 58.3W]",oneSpatialCandidate,645832720,2
+collapsibleTable32-row-7,Stangard,Milestone Locations in Rohan,Milestone Locations in Great River,Stangard,"[26.3S, 63.8W]",oneSpatialCandidate,645373954,2
+collapsibleTable33-row-2,Brockbridge,Milestone Locations in Rohan,Milestone Locations in Westfold,Stonedeans,"[50.7S, 77.6W]",oneSpatialCandidate,626442245,2
+collapsibleTable33-row-3,Gapholt,Milestone Locations in Rohan,Milestone Locations in Westfold,Stonedeans,"[53.8S, 84.2W]",oneSpatialCandidate,610172938,2
+collapsibleTable33-row-4,Grimslade,Milestone Locations in Rohan,Milestone Locations in Westfold,Westfold,"[62.5S, 82.1W]",oneSpatialCandidate,625004545,2
+collapsibleTable33-row-5,Helm's Deep,Milestone Locations in Rohan,Milestone Locations in Westfold,Helm's Deep,"[63.8S, 89.4W]",oneSpatialCandidate,608677901,2
+collapsibleTable33-row-6,Woodhurst,Milestone Locations in Rohan,Milestone Locations in Westfold,Stonedeans,"[47.6S, 79.1W]",oneSpatialCandidate,627310592,2
+collapsibleTable34-row-2,Cerdic's Camp,Milestone Locations in Rohan,Milestone Locations in Wildermore,Whitshaws,"[35.4S, 69.8W]",oneSpatialCandidate,643887111,2
+collapsibleTable34-row-3,Forlaw,Milestone Locations in Rohan,Milestone Locations in Wildermore,Forlaw,"[39.5S, 60.8W]",oneSpatialCandidate,644587528,2
+collapsibleTable34-row-4,Scylfig,Milestone Locations in Rohan,Milestone Locations in Wildermore,Writhendowns,"[33.8S, 60.1W]",oneSpatialCandidate,645664780,2
+collapsibleTable35-row-2,Floodwend,Milestone Locations in Rohan,Milestone Locations in Wold,The Wold,"[45.5S, 48.2W]",oneSpatialCandidate,661331978,2
+collapsibleTable35-row-3,Harwick,Milestone Locations in Rohan,Milestone Locations in Wold,The Wold,"[39.2S, 52.3W]",oneSpatialCandidate,661037056,2
+collapsibleTable35-row-4,Langhold,Milestone Locations in Rohan,Milestone Locations in Wold,The Wold,"[36.2S, 53.5W]",oneSpatialCandidate,660922368,2
+collapsibleTable37-row-2,Ethring,Milestone Locations in Gondor,Milestone Locations in Central Gondor,Ringló Vale,"[72.0S, 50.2W]",ambiguousSpatialCandidates,1195905030|927469582,4|3
+collapsibleTable37-row-3,Linhir,Milestone Locations in Gondor,Milestone Locations in Central Gondor,Dor-en-Ernil,"[80.7S, 45.7W]",oneSpatialCandidate,926834702,3
+collapsibleTable37-row-4,Ost Anglebed,Milestone Locations in Gondor,Milestone Locations in Central Gondor,Lebennin,"[79.3S, 39.1W]",ambiguousSpatialCandidates,943095812|1211531265,3|4
+collapsibleTable37-row-5,Pelargir,Milestone Locations in Gondor,Milestone Locations in Central Gondor,Pelargir,"[83.6S, 34.0W]",oneSpatialCandidate,943529990,3
+collapsibleTable38-row-2,Arnach,Milestone Locations in Gondor,Milestone Locations in Eastern Gondor,Lossarnach,"[76.6S, 24.1W]",ambiguousSpatialCandidates,960081921|1228517376,3|4
+collapsibleTable38-row-3,Bâr Húrin,Milestone Locations in Gondor,Milestone Locations in Eastern Gondor,South Ithilien,"[73.2S, 12.3W]",oneSpatialCandidate,976809996,3
+collapsibleTable38-row-4,Faramir's Look-out,Milestone Locations in Gondor,Milestone Locations in Eastern Gondor,South Ithilien,"[65.1S, 6.1W]",oneSpatialCandidate,978296843,3
+collapsibleTable38-row-5,Glaniath,Milestone Locations in Gondor,Milestone Locations in Eastern Gondor,Upper Lebennin,"[80.7S, 29.6W]",ambiguousSpatialCandidates,959602710|1228038145,3|4
+collapsibleTable38-row-6,Imloth Melui,Milestone Locations in Gondor,Milestone Locations in Eastern Gondor,Lossarnach,"[72.8S, 24.0W]",noNearbyMarker,,
+collapsibleTable38-row-7,Tumladen,Milestone Locations in Gondor,Milestone Locations in Eastern Gondor,Upper Lebennin,"[77.5S, 29.2W]",ambiguousSpatialCandidates,1228120067|959684609,4|3
+collapsibleTable39-row-2,Dru Bhuta,Milestone Locations in Gondor,Milestone Locations in Far Anórien,Taur Drúadan,"[51.8S, 26.0W]",oneSpatialCandidate,962043906,3
+collapsibleTable39-row-3,Ost Rimmon,Milestone Locations in Gondor,Milestone Locations in Far Anórien,The Beacon Hills,"[47.9S, 37.3W]",oneSpatialCandidate,945352704,3
+collapsibleTable39-row-4,War-stead of the Rohirrim,Milestone Locations in Gondor,Milestone Locations in Far Anórien,Taur Drúadan,"[45.6S, 27.7W]",noNearbyMarker,,
+collapsibleTable40-row-2,Aerthir (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Lower Lebennin (King's Gondor),"[83.8S, 39.9W]",oneSpatialCandidate,1211441157,4
+collapsibleTable40-row-3,Alagrant (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Blackroot Vale (King's Gondor),"[58.6S, 68.6W]",ambiguousSpatialCandidates,1179721729|911286292,4|3
+collapsibleTable40-row-4,Arnach (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Lossarnach (King's Gondor),"[76.6S, 24.1W]",ambiguousSpatialCandidates,960081921|1228517376,3|4
+collapsibleTable40-row-5,Barad Rill (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Dor-en-Ernil (King's Gondor),"[85.8S, 50.5W]",oneSpatialCandidate,1194852364,4
+collapsibleTable40-row-6,Calembel (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Lamedon (King's Gondor),"[67.0S, 55.9W]",ambiguousSpatialCandidates,1195470848|927035394,4|3
+collapsibleTable40-row-7,Dínadab (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Lamedon (King's Gondor),"[63.2S, 54.9W]",noNearbyMarker,,
+collapsibleTable40-row-8,Dol Amroth (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Belfalas (King's Gondor),"[75.4S, 72.1W]",ambiguousSpatialCandidates,1161678852|893243404,4|3
+collapsibleTable40-row-9,Erynos (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Lower Lebennin (King's Gondor),"[79.8S, 32.8W]",oneSpatialCandidate,1212051471,4
+collapsibleTable40-row-10,Ethring (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Ringló Vale (King's Gondor),"[72.0S, 50.2W]",ambiguousSpatialCandidates,1195905030|927469582,4|3
+collapsibleTable40-row-11,Furukzahar,Milestone Locations in Gondor,Milestone Locations in King's Gondor,Lebennin Valley,"[70.8S, 34.9W]",oneSpatialCandidate,1212882952,4
+collapsibleTable40-row-12,Glaniath (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Upper Lebennin (King's Gondor),"[80.7S, 29.6W]",ambiguousSpatialCandidates,959602710|1228038145,3|4
+collapsibleTable40-row-13,Halach (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Upper Lebennin (King's Gondor),"[81.6S, 26.4W]",oneSpatialCandidate,1228296214,4
+collapsibleTable40-row-14,The Harlond (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Lossarnach (King's Gondor),"[72.8S, 19.8W]",oneSpatialCandidate,1229848583,4
+collapsibleTable40-row-15,Imloth Melui (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Lossarnach (King's Gondor),"[73.4S, 23.8W]",oneSpatialCandidate,1228533760,4
+collapsibleTable40-row-16,Lancrath (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Blackroot Vale (King's Gondor),"[58.2S, 63.2W]",noNearbyMarker,,
+collapsibleTable40-row-17,Linhir (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Lower Lebennin (King's Gondor),"[81.9S, 45.1W]",oneSpatialCandidate,1195331587,4
+collapsibleTable40-row-18,Lothgobel (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Lamedon (King's Gondor),"[64.2S, 50.9W]",noNearbyMarker,,
+collapsibleTable40-row-19,Malbarth (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Lower Lebennin (King's Gondor),"[80.4S, 42.6W]",oneSpatialCandidate,1211265029,4
+collapsibleTable40-row-20,Morlad (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Blackroot Vale (King's Gondor),"[56.9S, 67.5W]",ambiguousSpatialCandidates,1179861012|911425559,4|3
+collapsibleTable40-row-21,Ost Anglebed (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Lower Lebennin (King's Gondor),"[79.8S, 39.1W]",noNearbyMarker,,
+collapsibleTable40-row-22,Ost Lontir (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Belfalas (King's Gondor),"[74.9S, 65.7W]",ambiguousSpatialCandidates,1177931793|909496324,4|3
+collapsibleTable40-row-23,Parth Rest,Milestone Locations in Gondor,Milestone Locations in King's Gondor,Dor-en-Ernil (King's Gondor),"[80.2S, 51.2W]",oneSpatialCandidate,1194815505,4
+collapsibleTable40-row-24,Pelargir (King's Gondor) - East,Milestone Locations in Gondor,Milestone Locations in King's Gondor,Pelargir (King's Gondor),"[81.3S, 32.2W]",noNearbyMarker,,
+collapsibleTable40-row-25,Pelargir (King's Gondor) - West,Milestone Locations in Gondor,Milestone Locations in King's Gondor,Pelargir (King's Gondor),"[83.2S, 34.4W]",oneSpatialCandidate,1211904009,4
+collapsibleTable40-row-26,Sardol (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Blackroot Vale (King's Gondor),"[60.9S, 69.6W]",ambiguousSpatialCandidates,1178660865|910225413,4|3
+collapsibleTable40-row-27,Tadrent (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Belfalas (King's Gondor),"[74.9S, 65.7W]",ambiguousSpatialCandidates,1177931793|909496324,4|3
+collapsibleTable40-row-28,Tumladen (King's Gondor),Milestone Locations in Gondor,Milestone Locations in King's Gondor,Upper Lebennin (King's Gondor),"[74.1S, 62.3W]",ambiguousSpatialCandidates,1178198030|909762569,4|3
+collapsibleTable40-row-29,Zarsatrâd,Milestone Locations in Gondor,Milestone Locations in King's Gondor,Lebennin Valley,"[77.7S, 34.7W]",oneSpatialCandidate,1211932688,4
+collapsibleTable41-row-2,Aragorn's Pavilion,Milestone Locations in Gondor,Milestone Locations in March of the King: Anórien (After Battle) and North Ithilien,The Pelennor Fields (After-battle),"[65.5S, 14.7W]",oneSpatialCandidate,1246072930,4
+collapsibleTable41-row-3,Henneth Annûn,Milestone Locations in Gondor,Milestone Locations in March of the King: Anórien (After Battle) and North Ithilien,North Ithilien,"[48.1S, 8.1W]",oneSpatialCandidate,1247670280,4
+collapsibleTable41-row-4,Minas Tirith (After-battle),Milestone Locations in Gondor,Milestone Locations in March of the King: Anórien (After Battle) and North Ithilien,Minas Tirith (After-battle),"[65.4S, 16.7W]",ambiguousSpatialCandidates,977440777|1245876233,3|4
+collapsibleTable41-row-5,Osgiliath (After Battle),Milestone Locations in Gondor,Milestone Locations in March of the King: Anórien (After Battle) and North Ithilien,Osgiliath (After Battle),"[62.9S, 7.2W]",oneSpatialCandidate,1246674951,4
+collapsibleTable42-row-2,Crithost,Milestone Locations in Gondor,Milestone Locations in Old Anórien,Talath Anor,"[54.3S, 16.4W]",oneSpatialCandidate,978546705,3
+collapsibleTable42-row-3,Minas Tirith,Milestone Locations in Gondor,Milestone Locations in Old Anórien,"Minas Tirith, first tier","[65.4S, 16.7W]",ambiguousSpatialCandidates,977440777|1245876233,3|4
+collapsibleTable42-row-4,Minas Tirith,Milestone Locations in Gondor,Milestone Locations in Old Anórien,"Minas Tirith, third tier","[64.8S, 18.0W]",oneSpatialCandidate,977379332,3
+collapsibleTable42-row-5,Minas Tirith,Milestone Locations in Gondor,Milestone Locations in Old Anórien,"Minas Tirith, fifth tier","[65.1S, 18.8W]",oneSpatialCandidate,977313792,3
+collapsibleTable42-row-6,Minas Tirith (Midsummer),Milestone Locations in Gondor,Milestone Locations in Old Anórien,Minas Tirith (Midsummer),"[22.6N, 53.6W]",oneSpatialCandidate,1203007488,4
+collapsibleTable43-row-2,Barad Faen,Milestone Locations in Gondor,Milestone Locations in Outer Gondor: Anfalas and Pinnath Gelin,Central Anfalas,"[67.1S, 81.6W]",oneSpatialCandidate,1161916416,4
+collapsibleTable43-row-3,Iáphel,Milestone Locations in Gondor,Milestone Locations in Outer Gondor: Anfalas and Pinnath Gelin,Tûm Rost,"[60.5S, 93.7W]",oneSpatialCandidate,1145237504,4
+collapsibleTable43-row-4,Lond Cirion,Milestone Locations in Gondor,Milestone Locations in Outer Gondor: Anfalas and Pinnath Gelin,Central Anfalas,"[68.7S, 89.0W]",oneSpatialCandidate,1145589769,4
+collapsibleTable43-row-5,Lond Cirion,Milestone Locations in Gondor,Milestone Locations in Outer Gondor: Anfalas and Pinnath Gelin,Central Anfalas,"[70.0S, 89.3W]",oneSpatialCandidate,1145520133,4
+collapsibleTable43-row-6,Melgobas,Milestone Locations in Gondor,Milestone Locations in Outer Gondor: Anfalas and Pinnath Gelin,Emyn Terch,"[69.0S, 77.4W]",oneSpatialCandidate,1162235904,4
+collapsibleTable43-row-7,Mereham,Milestone Locations in Gondor,Milestone Locations in Outer Gondor: Anfalas and Pinnath Gelin,Eryn Ethuil,"[57.6S, 81.6W]",oneSpatialCandidate,1162948613,4
+collapsibleTable43-row-8,Ost Arndír,Milestone Locations in Gondor,Milestone Locations in Outer Gondor: Anfalas and Pinnath Gelin,Northern Pinnath Gelin,"[52.6S, 84.1W]",oneSpatialCandidate,1147047946,4
+collapsibleTable44-row-2,Camp of the Host,Milestone Locations in Gondor,Milestone Locations in the Wastes,The Noman-lands,"[41.0S, 10.3W]",oneSpatialCandidate,1248493578,4
+collapsibleTable44-row-3,Haerondir,Milestone Locations in Gondor,Milestone Locations in the Wastes,The Noman-lands,"[36.6S, 8.9W]",oneSpatialCandidate,1248645130,4
+collapsibleTable44-row-4,Small Ranger Camp,Milestone Locations in Gondor,Milestone Locations in the Wastes,Slag-hills,"[34.4S, 3.5W]",oneSpatialCandidate,1265827841,4
+collapsibleTable45-row-2,Alagrant,Milestone Locations in Gondor,Milestone Locations in Western Gondor,Blackroot Vale,"[58.6S, 68.6W]",ambiguousSpatialCandidates,1179721729|911286292,4|3
+collapsibleTable45-row-3,Calembel,Milestone Locations in Gondor,Milestone Locations in Western Gondor,Lamedon,"[67.0S, 55.9W]",ambiguousSpatialCandidates,1195470848|927035394,4|3
+collapsibleTable45-row-4,Dínadab,Milestone Locations in Gondor,Milestone Locations in Western Gondor,Lamedon,"[63.2S, 59.4W]",ambiguousSpatialCandidates,1179500555|911065093,4|3
+collapsibleTable45-row-5,Dol Amroth,Milestone Locations in Gondor,Milestone Locations in Western Gondor,Havens of Belfalas,"[75.4S, 72.1W]",ambiguousSpatialCandidates,1161678852|893243404,4|3
+collapsibleTable45-row-6,Lancrath,Milestone Locations in Gondor,Milestone Locations in Western Gondor,Blackroot Vale,"[58.2S, 63.0W]",ambiguousSpatialCandidates,1180180496|911745045,4|3
+collapsibleTable45-row-7,Morlad,Milestone Locations in Gondor,Milestone Locations in Western Gondor,Blackroot Vale,"[56.9S, 67.5W]",ambiguousSpatialCandidates,1179861012|911425559,4|3
+collapsibleTable45-row-8,Ost Lontir,Milestone Locations in Gondor,Milestone Locations in Western Gondor,Havens of Belfalas,"[74.9S, 65.7W]",ambiguousSpatialCandidates,1177931793|909496324,4|3
+collapsibleTable45-row-9,Sardol,Milestone Locations in Gondor,Milestone Locations in Western Gondor,Blackroot Vale,"[60.9S, 69.6W]",ambiguousSpatialCandidates,1178660865|910225413,4|3
+collapsibleTable45-row-10,Tadrent,Milestone Locations in Gondor,Milestone Locations in Western Gondor,Havens of Belfalas,"[74.1S, 62.3W]",ambiguousSpatialCandidates,1178198030|909762569,4|3
+collapsibleTable47-row-2,Adambel,Milestone Locations in Mordor,Milestone Locations in Mordor Besieged,Parth Daenath,"[97.6S, 126.4W]",noNearbyMarker,,
+collapsibleTable47-row-3,Barthost,Milestone Locations in Mordor,Milestone Locations in Mordor Besieged,Parth Daenath,"[95.3S, 119.9W]",oneSpatialCandidate,1109475335,4
+collapsibleTable47-row-4,Díngarth,Milestone Locations in Mordor,Milestone Locations in Mordor Besieged,Arandor,"[97.5S, 131.5W]",oneSpatialCandidate,1092816897,4
+collapsibleTable47-row-5,Echad-in-Edhil,Milestone Locations in Mordor,Milestone Locations in Mordor Besieged,Arandor,"[97.6S, 127.6W]",noNearbyMarker,,
+collapsibleTable48-row-2,Echad Taerdim,Milestone Locations in Mordor,Milestone Locations in the Morgul Vale,Cirith Ungol,"[61.9S, 0.5W]",oneSpatialCandidate,1262936064,4
+collapsibleTable48-row-3,Echad Uial,Milestone Locations in Mordor,Milestone Locations in the Morgul Vale,Rath Dúath,"[65.0S, 4.1E]",oneSpatialCandidate,1263312899,4
+collapsibleTable48-row-4,Estolad Lân,Milestone Locations in Mordor,Milestone Locations in the Morgul Vale,Cirith Ungol,"[64.5S, 2.2W]",oneSpatialCandidate,1262788610,4
+collapsibleTable48-row-5,Taen Orwath,Milestone Locations in Mordor,Milestone Locations in the Morgul Vale,Rath Dúath,"[66.9S, 5.9E]",oneSpatialCandidate,1263431692,4
+collapsibleTable49-row-2,Agarnaith Ranger Camp,Milestone Locations in Mordor,Milestone Locations in Plateau of Gorgoroth,Agarnaith,"[56.5S, 27.0E]",oneSpatialCandidate,1297694734,4
+collapsibleTable49-row-3,Bhol Rûdh,Milestone Locations in Mordor,Milestone Locations in Plateau of Gorgoroth,Agarnaith,"[54.5S, 32.1E]",oneSpatialCandidate,1298100227,4
+collapsibleTable49-row-4,Iant Angos,Milestone Locations in Mordor,Milestone Locations in Plateau of Gorgoroth,Lhingris,"[61.7S, 10.5E]",oneSpatialCandidate,1279582208,4
+collapsibleTable49-row-5,Magh Ashtu,Milestone Locations in Mordor,Milestone Locations in Plateau of Gorgoroth,Talath Úrui,"[53.1S, 10.7E]",oneSpatialCandidate,1280610322,4
+collapsibleTable49-row-6,Talath Úrui,Milestone Locations in Mordor,Milestone Locations in Plateau of Gorgoroth,Talath Úrui,"[59.9S, 24.2E]",oneSpatialCandidate,1297416193,4
+collapsibleTable49-row-7,Rath Cail,Milestone Locations in Mordor,Milestone Locations in Plateau of Gorgoroth,Lhingris,"[50.7S, 6.3E]",oneSpatialCandidate,1264566274,4
+collapsibleTable49-row-8,Ruins of Díngarth,Milestone Locations in Mordor,Milestone Locations in Plateau of Gorgoroth,Dor Amarth,"[48.07S, 8.6E]",oneSpatialCandidate,1280503825,4
+collapsibleTable49-row-9,Udûn,Milestone Locations in Mordor,Milestone Locations in Plateau of Gorgoroth,Udûn,"[41.3S, 0.6W]",oneSpatialCandidate,1265004582,4
+collapsibleTable51-row-2,Aradâr,Milestone Locations in Haradwaith,Milestone Locations in Cape of Umbar,Aradâr,"[23.1S, 94.6W]",oneSpatialCandidate,1416749078,5
+collapsibleTable51-row-3,The Fisherfold,Milestone Locations in Haradwaith,Milestone Locations in Cape of Umbar,Umbar Baharbêl,"[19.0S, 98.6W]",oneSpatialCandidate,1401696257,5
+collapsibleTable51-row-4,Jax Phanâl,Milestone Locations in Haradwaith,Milestone Locations in Cape of Umbar,Khaphâr,"[14.2S, 114.5W]",oneSpatialCandidate,1384681483,5
+collapsibleTable51-row-5,Khûtra,Milestone Locations in Haradwaith,Milestone Locations in Cape of Umbar,Bej Mâgha,"[19.3S, 107.9W]",oneSpatialCandidate,1400909826,5
+collapsibleTable51-row-6,Rakhatâb,Milestone Locations in Haradwaith,Milestone Locations in Cape of Umbar,Khaphâr,"[25.6S, 116.2W]",oneSpatialCandidate,1383510044,5
+collapsibleTable51-row-7,Swain's Guild-hall,Milestone Locations in Haradwaith,Milestone Locations in Cape of Umbar,Umbar Baharbêl,"[21.3S, 97.2W]",oneSpatialCandidate,1401749510,5
+collapsibleTable51-row-8,"Umbar Baharbêl, City of the Corsairs",Milestone Locations in Haradwaith,Milestone Locations in Cape of Umbar,Umbar Baharbêl,"[20.6S, 95.8W]",oneSpatialCandidate,1401884676,5
+collapsibleTable52-row-2,Bel Inzûl,Milestone Locations in Haradwaith,Milestone Locations in the Shield Isles,Zamarzîr,"[13.5S, 120.6W]",oneSpatialCandidate,1384161285,5
+collapsibleTable52-row-3,Halrax,Milestone Locations in Haradwaith,Milestone Locations in the Shield Isles,Zamarzîr,"[10.2S, 126.3W]",oneSpatialCandidate,1367990274,5
+collapsibleTable52-row-4,Kafagur,Milestone Locations in Haradwaith,Milestone Locations in the Shield Isles,Jeb Khâtel,"[0.5S, 134.7W]",noNearbyMarker,,
+collapsibleTable52-row-5,Mâr Naphra,Milestone Locations in Haradwaith,Milestone Locations in the Shield Isles,Bakhjâd,"[4.3S, 130.7W]",oneSpatialCandidate,1368678426,5
+collapsibleTable52-row-6,Voyage's End,Milestone Locations in Haradwaith,Milestone Locations in the Shield Isles,Jeb Khâtel,"[0.8S, 130.2W]",oneSpatialCandidate,1368694786,5
+collapsibleTable53-row-2,Beneath Dâr Laja,Milestone Locations in Haradwaith,Milestone Locations in Umbar-môkh,Tâkhdar,"[114.1S, 140.8W]",oneSpatialCandidate,1342685190,5
+collapsibleTable53-row-3,The Dûlkar,Milestone Locations in Haradwaith,Milestone Locations in Umbar-môkh,"Dil-irmíz, the Berths","[122.3S, 141.3W]",oneSpatialCandidate,1342578691,5
+collapsibleTable53-row-4,Hêbatokh,Milestone Locations in Haradwaith,Milestone Locations in Umbar-môkh,"Ilmabiri, The Wells","[115.7S, 142.4W]",oneSpatialCandidate,1342545927,5
+collapsibleTable53-row-5,Hulzidâr,Milestone Locations in Haradwaith,Milestone Locations in Umbar-môkh,Kamrabezûr,"[116.0S, 137.7W]",oneSpatialCandidate,1342939136,5
+collapsibleTable53-row-6,Itekh-kên,Milestone Locations in Haradwaith,Milestone Locations in Umbar-môkh,Khabârkhad,"[117.3S, 141.0W]",oneSpatialCandidate,1342668803,5
+collapsibleTable53-row-7,Jadambor,Milestone Locations in Haradwaith,Milestone Locations in Umbar-môkh,"Dil-irmíz, the Berths","[121.5S, 143.6W]",oneSpatialCandidate,1342386178,5
+collapsibleTable53-row-8,Kên Taghlim,Milestone Locations in Haradwaith,Milestone Locations in Umbar-môkh,Kamrabezûr,"[113.6S, 139.2W]",oneSpatialCandidate,1342820352,5
+collapsibleTable53-row-9,Kheb Hanût,Milestone Locations in Haradwaith,Milestone Locations in Umbar-môkh,Tâkhdar,"[113.4S, 141.8W]",oneSpatialCandidate,1342623745,5
+collapsibleTable53-row-10,Kruha-sûrja,Milestone Locations in Haradwaith,Milestone Locations in Umbar-môkh,"Ilmabiri, The Wells","[114.3S, 142.6W]",oneSpatialCandidate,1342554118,5
+collapsibleTable53-row-11,Mekab-kuphâr,Milestone Locations in Haradwaith,Milestone Locations in Umbar-môkh,Khabârkhad,"[119.7S, 140.2W]",oneSpatialCandidate,1342722054,5
+collapsibleTable53-row-12,Tilmakhím,Milestone Locations in Haradwaith,Milestone Locations in Umbar-môkh,Tâkhdar,"[115.7S, 141.2W]",oneSpatialCandidate,1342676999,5
+collapsibleTable54-row-2,Gha Nêkha,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Kidûru Marshes,"[25.6S, 84.7W]",oneSpatialCandidate,1417523213,5
+collapsibleTable54-row-3,Ghalbûru,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Tûl Kesh,"[37.0S, 73.4W]",noNearbyMarker,,
+collapsibleTable54-row-4,Ilzag Khûl,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Paths of Khegûl,"[26.5S, 61.4W]",oneSpatialCandidate,1450876936,5
+collapsibleTable54-row-5,Iridír,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Fields of Duragâr,"[21.8S, 81.0W]",oneSpatialCandidate,1434583049,5
+collapsibleTable54-row-6,Jirush,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Tûl Kesh,"[37.6S, 79.9W]",oneSpatialCandidate,1432600593,5
+collapsibleTable54-row-7,Kûr Anzar,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Tir Khûl,"[38.8S, 61.7W]",oneSpatialCandidate,1449828353,5
+collapsibleTable54-row-8,Malgâma,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Paths of Khegûl,"[26.6S, 52.9W]",noNearbyMarker,,
+collapsibleTable54-row-9,Maurûsh,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Ningûdu,"[23.2S, 62.2W]",oneSpatialCandidate,1450827787,5
+collapsibleTable54-row-10,Nêruzig,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Sûr Akil,"[18.3S, 56.3W]",oneSpatialCandidate,1468088325,5
+collapsibleTable54-row-11,Shengarâsh,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Clefts of Gal-harân,"[16.6S, 62.5W]",oneSpatialCandidate,1451843589,5
+collapsibleTable54-row-12,Shonith,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Barrens of Ubâd,"[45.5S, 73.4W]",oneSpatialCandidate,1433083905,5
+collapsibleTable54-row-13,Sûru,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Fields of Duragâr,"[21.8S, 81.0W]",oneSpatialCandidate,1434583049,5
+collapsibleTable54-row-14,Urmâkh,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Tir Khûl,"[37.7S, 66.4W]",oneSpatialCandidate,1449443343,5
+collapsibleTable54-row-15,Vartúlin,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Tir Khûl,"[42.1S, 64.4W]",oneSpatialCandidate,1449615363,5
+collapsibleTable54-row-16,Zadûru,Milestone Locations in Haradwaith,"Milestone Locations in Valley of Ikorbân: Ambarûl, Imhûlar, Khûd Zagin and Urash Dâr",Sang Dûshu,"[31.6S, 91.6W]",noNearbyMarker,,

@@ -1,0 +1,1300 @@
+{
+  "schemaVersion": 1,
+  "researchDate": "2026-11-08",
+  "dataRevision": "7097ff870cdeace51b7b34debc38b6a9969ae0c4",
+  "mapRevision": "2e707ebf14162607f586ecf2948f97fc212090d0",
+  "sourceFiles": [
+    {
+      "key": "toon-00001",
+      "anchorPath": "toon-00001/anchors.xml",
+      "anchorSha256": "260B9AB8989189087A6D21E5C133FC6451939B6D69EE84CF21374440C0D32F75",
+      "anchorFileModifiedLocal": "2026-02-07T14:28:45",
+      "skillsSha256": "39D365728879FD0013E0B18F07E737F233EC71DFC6F49E58B1D527C94A4FA61F",
+      "gameObservationTime": null
+    },
+    {
+      "key": "toon-00002",
+      "anchorPath": "toon-00002/anchors.xml",
+      "anchorSha256": "DD97156ADFAD993922BAB798AF09B1BCB26D2F4B4EE2CC0DAEA7CB10A97732D0",
+      "anchorFileModifiedLocal": "2026-09-10T14:15:54",
+      "skillsSha256": "193787A0EBF289B969D2BFB4C131BCBF143E9F40EDD188359BBA6162F3DFEF25",
+      "gameObservationTime": null
+    },
+    {
+      "key": "toon-00004",
+      "anchorPath": "toon-00004/anchors.xml",
+      "anchorSha256": "2BAD63ED8595019C6238228C5BDD075B98F4F1230B66AB0C440FCE3CBED8B303",
+      "anchorFileModifiedLocal": "2025-03-30T22:52:16",
+      "skillsSha256": "0261DA64665228A339418C44F0A1F56E4146F488A1EBFE32449B518154DF6193",
+      "gameObservationTime": null
+    },
+    {
+      "key": "toon-00005",
+      "anchorPath": "toon-00005/anchors.xml",
+      "anchorSha256": "B95C5849C40D0FE742D04CA7E566E702C868B3DAE70A38EA6CC303BDE2B2ECE0",
+      "anchorFileModifiedLocal": "2025-03-30T22:23:24",
+      "skillsSha256": "12EC6116256254789EB3A6AC6BE559B89FAD01273172D795FE536143583AD8A7",
+      "gameObservationTime": null
+    },
+    {
+      "key": "toon-00007",
+      "anchorPath": "toon-00007/anchors.xml",
+      "anchorSha256": "DB75310F81B7436635F2C10E4C742D0C66FEBD12CD765A3E859A6F35729B43A4",
+      "anchorFileModifiedLocal": "2026-01-07T14:22:41",
+      "skillsSha256": "D57636C3F075E552F3B8F9800505D4560CCC03955B19F2B0E0A83584B3D9F4E4",
+      "gameObservationTime": null
+    },
+    {
+      "key": "toon-00008",
+      "anchorPath": "toon-00008/anchors.xml",
+      "anchorSha256": "BC26DFD3F4B1565360EB6D19E003BBAEB9C0D5A9836DB651C5F2F9E8B44FD0CF",
+      "anchorFileModifiedLocal": "2026-01-07T14:14:32",
+      "skillsSha256": "9A89544F8ADFA0CB740F2A2607F50ADE74B4FDF8AA4D6C984F32D50F2142A4B1",
+      "gameObservationTime": null
+    },
+    {
+      "key": "toon-00009",
+      "anchorPath": "toon-00009/anchors.xml",
+      "anchorSha256": "409BB7715ABDBE0B3EA7A9C5E0191559B0D929199EBF3D9A718612A124B814D0",
+      "anchorFileModifiedLocal": "2026-02-19T10:00:36",
+      "skillsSha256": "B4CC7901A0451E4C40E965BF837F724ED860EB45676BEA14B380AFA2133F74B7",
+      "gameObservationTime": null
+    },
+    {
+      "key": "toon-00010",
+      "anchorPath": "toon-00010/anchors.xml",
+      "anchorSha256": "C11194D176AA5BA53A5CC3F30845A35FBB3B84AB3E46FABB6C0489BBC902D859",
+      "anchorFileModifiedLocal": "2025-03-30T23:36:23",
+      "skillsSha256": "581D0A3BBB1241A0D7789B06F17DFA3EBBECFDC48C43233C285D7694528D109E",
+      "gameObservationTime": null
+    },
+    {
+      "key": "toon-00011",
+      "anchorPath": "toon-00011/anchors.xml",
+      "anchorSha256": "8A22B9B5EB3B1A34E3FCD0110EE3483D0C44441A0B6E43FC29D21C7782581BE2",
+      "anchorFileModifiedLocal": "2025-03-30T23:43:44",
+      "skillsSha256": "2D05ADA2E61719E484D6F6DBFD75B87F648438BFDB8F65C02845AF06E080F887",
+      "gameObservationTime": null
+    },
+    {
+      "key": "toon-00012",
+      "anchorPath": "toon-00012/anchors.xml",
+      "anchorSha256": "1A04978792B4E08B7B2DE9CB079890BC509B7669491B7F8AD92AF102C6BF76B9",
+      "anchorFileModifiedLocal": "2025-03-30T23:41:27",
+      "skillsSha256": "D9CE259854EF9C8DE36A19309BB9F5DEBBEAE579CBABBB167166BA70089399D0",
+      "gameObservationTime": null
+    },
+    {
+      "key": "toon-00018",
+      "anchorPath": "toon-00018/anchors.xml",
+      "anchorSha256": "7134E27B3B4A6799298E74EB874AC804A65F4E6659218F173C4CE1AF24BB6CF8",
+      "anchorFileModifiedLocal": "2025-03-31T00:03:37",
+      "skillsSha256": "7B55BF8A96EAD28387B24F43FD507BD4C27E9AEAFD1CCB777F180CB152D60F7A",
+      "gameObservationTime": null
+    },
+    {
+      "key": "toon-00022",
+      "anchorPath": "toon-00022/anchors.xml",
+      "anchorSha256": "DCE28D326A0EF87596BCF81BC8054056255FD7198A0D29948904C872D860337D",
+      "anchorFileModifiedLocal": "2026-01-07T13:53:49",
+      "skillsSha256": "D68BFC3EF0D929B94868E739C35311FF4F823DED7B882A5F4CB5924DC2161610",
+      "gameObservationTime": null
+    }
+  ],
+  "exportScanSummary": {
+    "characterFiles": 12,
+    "namedAnchorObservations": 42,
+    "nonMilestoneAnchorsSkipped": 25,
+    "missingMilestoneNamesSkipped": 0,
+    "unavailableSkillsSkipped": 0
+  },
+  "anchorObservations": [
+    {
+      "sourceKey": "toon-00002",
+      "name": "Ghun Shâna",
+      "language": "en",
+      "worldRegion": "5",
+      "latitude": "-56.860756",
+      "longitude": "-53.336834",
+      "zoneId": "1879500813",
+      "travelType": "3",
+      "skillId": "1879201466",
+      "referenceSkillName": "Return Home",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00002",
+      "name": "Khanâg Gur",
+      "language": "en",
+      "worldRegion": "5",
+      "latitude": "-56.901375",
+      "longitude": "-71.84996",
+      "zoneId": "1879500785",
+      "travelType": "15",
+      "skillId": "1879201682",
+      "referenceSkillName": "Return Home 2",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00002",
+      "name": "The Twenty-first Hall",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "-5.809121",
+      "longitude": "-105.15842",
+      "zoneId": "1879191197",
+      "travelType": "16",
+      "skillId": "1879201683",
+      "referenceSkillName": "Return Home 3",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00002",
+      "name": "Grúmachath",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "50.192303",
+      "longitude": "-68.56364",
+      "zoneId": "1879410823",
+      "travelType": "17",
+      "skillId": "1879201684",
+      "referenceSkillName": "Return Home 4",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00002",
+      "name": "Gadim-ûn",
+      "language": "en",
+      "worldRegion": "5",
+      "latitude": "-51.135002",
+      "longitude": "-66.934135",
+      "zoneId": "1879500833",
+      "travelType": "18",
+      "skillId": "1879201685",
+      "referenceSkillName": "Return Home 5",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00002",
+      "name": "Nashûbu",
+      "language": "en",
+      "worldRegion": "5",
+      "latitude": "-65.42276",
+      "longitude": "-87.36572",
+      "zoneId": "1879500799",
+      "travelType": "19",
+      "skillId": "1879201686",
+      "referenceSkillName": "Return Home 6",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00002",
+      "name": "Hobbiton-Bywater",
+      "language": "en",
+      "worldRegion": "1",
+      "latitude": "-31.400469",
+      "longitude": "-71.09149",
+      "zoneId": "1879064017",
+      "travelType": "20",
+      "skillId": "1879244643",
+      "referenceSkillName": "Return Home 11",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00002",
+      "name": "Beorninghús",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "13.5758295",
+      "longitude": "-53.26165",
+      "zoneId": "1879315609",
+      "travelType": "26",
+      "skillId": "1879244642",
+      "referenceSkillName": "Return Home 7",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00002",
+      "name": "The Dawn-warden",
+      "language": "en",
+      "worldRegion": "5",
+      "latitude": "-49.331253",
+      "longitude": "-96.05713",
+      "zoneId": "1879500849",
+      "travelType": "27",
+      "skillId": "1879244641",
+      "referenceSkillName": "Return Home 8",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00002",
+      "name": "Swain's Guild-hall",
+      "language": "en",
+      "worldRegion": "5",
+      "latitude": "-21.305595",
+      "longitude": "-97.24255",
+      "zoneId": "1879470534",
+      "travelType": "28",
+      "skillId": "1879244640",
+      "referenceSkillName": "Return Home 9",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00002",
+      "name": "Ingarûma",
+      "language": "en",
+      "worldRegion": "5",
+      "latitude": "-74.96585",
+      "longitude": "-85.31062",
+      "zoneId": "1879521058",
+      "travelType": "29",
+      "skillId": "1879244639",
+      "referenceSkillName": "Return Home 10",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00004",
+      "name": "Swain's Guild-hall",
+      "language": "en",
+      "worldRegion": "5",
+      "latitude": "-21.285595",
+      "longitude": "-97.23023",
+      "zoneId": "1879470534",
+      "travelType": "3",
+      "skillId": "1879201466",
+      "referenceSkillName": "Return Home",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00005",
+      "name": "Beorninghús",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "13.576133",
+      "longitude": "-53.2703",
+      "zoneId": "1879315609",
+      "travelType": "15",
+      "skillId": "1879201682",
+      "referenceSkillName": "Return Home 2",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00007",
+      "name": "Stoke",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "-49.129974",
+      "longitude": "-69.501076",
+      "zoneId": "1879256897",
+      "travelType": "3",
+      "skillId": "1879201466",
+      "referenceSkillName": "Return Home",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00007",
+      "name": "Mead Hall of Hytbold",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "-57.389965",
+      "longitude": "-55.411934",
+      "zoneId": "1879231079",
+      "travelType": "15",
+      "skillId": "1879201682",
+      "referenceSkillName": "Return Home 2",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00007",
+      "name": "Ox-clan Merchant Camp",
+      "language": "en",
+      "worldRegion": "1",
+      "latitude": "-79.942505",
+      "longitude": "0.22197264",
+      "zoneId": "1879201772",
+      "travelType": "16",
+      "skillId": "1879201683",
+      "referenceSkillName": "Return Home 3",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00007",
+      "name": "Nan Curunír",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "-47.699585",
+      "longitude": "-89.670975",
+      "zoneId": "1879303317",
+      "travelType": "17",
+      "skillId": "1879201684",
+      "referenceSkillName": "Return Home 4",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00007",
+      "name": "Imlad Lalaith",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "-17.267206",
+      "longitude": "-64.089615",
+      "zoneId": "1879109916",
+      "travelType": "18",
+      "skillId": "1879201685",
+      "referenceSkillName": "Return Home 5",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00007",
+      "name": "Morlad",
+      "language": "en",
+      "worldRegion": "3",
+      "latitude": "-56.873524",
+      "longitude": "-67.505005",
+      "zoneId": "1879305741",
+      "travelType": "19",
+      "skillId": "1879201686",
+      "referenceSkillName": "Return Home 6",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00007",
+      "name": "Dol Amroth",
+      "language": "en",
+      "worldRegion": "3",
+      "latitude": "-75.37286",
+      "longitude": "-72.12006",
+      "zoneId": "1879305736",
+      "travelType": "26",
+      "skillId": "1879244642",
+      "referenceSkillName": "Return Home 7",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00007",
+      "name": "Ethring",
+      "language": "en",
+      "worldRegion": "3",
+      "latitude": "-72.037704",
+      "longitude": "-50.228855",
+      "zoneId": "1879314985",
+      "travelType": "27",
+      "skillId": "1879244641",
+      "referenceSkillName": "Return Home 8",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00008",
+      "name": "The Twenty-first Hall",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "-5.803359",
+      "longitude": "-105.15685",
+      "zoneId": "1879191197",
+      "travelType": "3",
+      "skillId": "1879201466",
+      "referenceSkillName": "Return Home",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00008",
+      "name": "The Rotting Cellar",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "-15.065771",
+      "longitude": "-112.055084",
+      "zoneId": "1879109906",
+      "travelType": "17",
+      "skillId": "1879201684",
+      "referenceSkillName": "Return Home 4",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00008",
+      "name": "Dolven-view",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "-8.578027",
+      "longitude": "-112.264435",
+      "zoneId": "1879109901",
+      "travelType": "18",
+      "skillId": "1879201685",
+      "referenceSkillName": "Return Home 5",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00009",
+      "name": "The Deep Descent",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "-9.864658",
+      "longitude": "-112.73567",
+      "zoneId": "1879109904",
+      "travelType": "3",
+      "skillId": "1879201466",
+      "referenceSkillName": "Return Home",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00009",
+      "name": "Swain's Guild-hall",
+      "language": "en",
+      "worldRegion": "5",
+      "latitude": "-21.31126",
+      "longitude": "-97.24379",
+      "zoneId": "1879470534",
+      "travelType": "15",
+      "skillId": "1879201682",
+      "referenceSkillName": "Return Home 2",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00010",
+      "name": "Durin's Threshold",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "-8.0583105",
+      "longitude": "-116.138275",
+      "zoneId": "1879109901",
+      "travelType": "3",
+      "skillId": "1879201466",
+      "referenceSkillName": "Return Home",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00010",
+      "name": "Trestlebridge",
+      "language": "en",
+      "worldRegion": "1",
+      "latitude": "-18.023848",
+      "longitude": "-53.694756",
+      "zoneId": "1879063972",
+      "travelType": "15",
+      "skillId": "1879201682",
+      "referenceSkillName": "Return Home 2",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00011",
+      "name": "Aughaire",
+      "language": "en",
+      "worldRegion": "1",
+      "latitude": "0.09111328",
+      "longitude": "-39.901962",
+      "zoneId": "1879103883",
+      "travelType": "3",
+      "skillId": "1879201466",
+      "referenceSkillName": "Return Home",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00012",
+      "name": "Durin's Threshold",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "-8.080546",
+      "longitude": "-116.11646",
+      "zoneId": "1879109901",
+      "travelType": "3",
+      "skillId": "1879201466",
+      "referenceSkillName": "Return Home",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00018",
+      "name": "Clegur",
+      "language": "en",
+      "worldRegion": "1",
+      "latitude": "-64.8381",
+      "longitude": "-29.018984",
+      "zoneId": "1879445918",
+      "travelType": "3",
+      "skillId": "1879201466",
+      "referenceSkillName": "Return Home",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00022",
+      "name": "Galtrev",
+      "language": "en",
+      "worldRegion": "1",
+      "latitude": "-80.15963",
+      "longitude": "-16.770859",
+      "zoneId": "1879218506",
+      "travelType": "3",
+      "skillId": "1879201466",
+      "referenceSkillName": "Return Home",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00022",
+      "name": "The Twenty-first Hall",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "-5.8104978",
+      "longitude": "-105.1419",
+      "zoneId": "1879191197",
+      "travelType": "15",
+      "skillId": "1879201682",
+      "referenceSkillName": "Return Home 2",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00022",
+      "name": "Nár's Peak",
+      "language": "en",
+      "worldRegion": "1",
+      "latitude": "-65.67932",
+      "longitude": "-8.575175",
+      "zoneId": "1879181892",
+      "travelType": "16",
+      "skillId": "1879201683",
+      "referenceSkillName": "Return Home 3",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00022",
+      "name": "The Haunted Inn",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "-13.370645",
+      "longitude": "-56.093075",
+      "zoneId": "1879152194",
+      "travelType": "17",
+      "skillId": "1879201684",
+      "referenceSkillName": "Return Home 4",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00022",
+      "name": "Haldirith",
+      "language": "en",
+      "worldRegion": "2",
+      "latitude": "-21.442226",
+      "longitude": "-63.47413",
+      "zoneId": "1879222979",
+      "travelType": "18",
+      "skillId": "1879201685",
+      "referenceSkillName": "Return Home 5",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00022",
+      "name": "Grimbold's Camp",
+      "language": "en",
+      "worldRegion": "1",
+      "latitude": "-87.727104",
+      "longitude": "-3.936123",
+      "zoneId": "1879201773",
+      "travelType": "19",
+      "skillId": "1879201686",
+      "referenceSkillName": "Return Home 6",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00022",
+      "name": "Rohirrim Scout-camp",
+      "language": "en",
+      "worldRegion": "1",
+      "latitude": "-80.97013",
+      "longitude": "-10.615546",
+      "zoneId": "1879214905",
+      "travelType": "20",
+      "skillId": "1879244643",
+      "referenceSkillName": "Return Home 11",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00022",
+      "name": "Bail Avarc",
+      "language": "en",
+      "worldRegion": "1",
+      "latitude": "70.26375",
+      "longitude": "-27.963573",
+      "zoneId": "1879457088",
+      "travelType": "26",
+      "skillId": "1879244642",
+      "referenceSkillName": "Return Home 7",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00022",
+      "name": "Avardin",
+      "language": "en",
+      "worldRegion": "1",
+      "latitude": "-83.10468",
+      "longitude": "-20.589502",
+      "zoneId": "1879201774",
+      "travelType": "27",
+      "skillId": "1879244641",
+      "referenceSkillName": "Return Home 8",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00022",
+      "name": "Forthbrond",
+      "language": "en",
+      "worldRegion": "1",
+      "latitude": "-86.921715",
+      "longitude": "-7.4506445",
+      "zoneId": "1879201775",
+      "travelType": "28",
+      "skillId": "1879244640",
+      "referenceSkillName": "Return Home 9",
+      "evidenceKind": "exportedCharacterAnchor"
+    },
+    {
+      "sourceKey": "toon-00022",
+      "name": "Gravenwood",
+      "language": "en",
+      "worldRegion": "1",
+      "latitude": "-77.86647",
+      "longitude": "-10.2821",
+      "zoneId": "1879192017",
+      "travelType": "29",
+      "skillId": "1879244639",
+      "referenceSkillName": "Return Home 10",
+      "evidenceKind": "exportedCharacterAnchor"
+    }
+  ],
+  "additionalObservations": [
+    {
+      "name": "Echad Vothui",
+      "language": "en",
+      "worldRegion": "6",
+      "zoneId": "1879524632",
+      "latitude": "-56.250523",
+      "longitude": "-100.052185",
+      "evidenceKind": "reportedSuccessAndNamedLandmark",
+      "nameEvidence": "Stakeholder successful-use message reported 2026-11-08",
+      "reportedTerritory": "Heledhris, Rift of Shornshards",
+      "landmarkMarkerId": "1666863112",
+      "landmarkDid": "1879527912",
+      "sourceFile": "markers/markers-6-3-5.xml",
+      "positionKind": "namedLandmark",
+      "mapRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+    }
+  ],
+  "geographicEntities": {
+    "14": {
+      "id": "14",
+      "kind": "region",
+      "name": "Tales of Yore",
+      "code": "14"
+    },
+    "1879049816": {
+      "id": "1879049816",
+      "kind": "region",
+      "name": "Eriador",
+      "code": "1"
+    },
+    "1879051583": {
+      "id": "1879051583",
+      "kind": "territory",
+      "name": "The Shire",
+      "parentId": "1879049816"
+    },
+    "1879063884": {
+      "id": "1879063884",
+      "kind": "territory",
+      "name": "Angmar",
+      "parentId": "1879049816"
+    },
+    "1879063972": {
+      "id": "1879063972",
+      "kind": "area",
+      "name": "Trestlebridge",
+      "parentId": "1879072154",
+      "iconId": "1091632759"
+    },
+    "1879064017": {
+      "id": "1879064017",
+      "kind": "area",
+      "name": "Hobbiton-Bywater",
+      "parentId": "1879051583",
+      "iconId": "1091632765"
+    },
+    "1879072154": {
+      "id": "1879072154",
+      "kind": "territory",
+      "name": "The North Downs",
+      "parentId": "1879049816"
+    },
+    "1879103883": {
+      "id": "1879103883",
+      "kind": "area",
+      "name": "Aughaire",
+      "parentId": "1879063884",
+      "iconId": "1091632744"
+    },
+    "1879109901": {
+      "id": "1879109901",
+      "kind": "area",
+      "name": "The Great Delving",
+      "parentId": "1879109970",
+      "iconId": "1091632758"
+    },
+    "1879109904": {
+      "id": "1879109904",
+      "kind": "area",
+      "name": "Silvertine Lodes",
+      "parentId": "1879109970",
+      "iconId": "1091632758"
+    },
+    "1879109906": {
+      "id": "1879109906",
+      "kind": "area",
+      "name": "The Water-works",
+      "parentId": "1879109970",
+      "iconId": "1091632758"
+    },
+    "1879109916": {
+      "id": "1879109916",
+      "kind": "area",
+      "name": "Egladil",
+      "parentId": "1879109972",
+      "iconId": "1091632755"
+    },
+    "1879109970": {
+      "id": "1879109970",
+      "kind": "territory",
+      "name": "Moria",
+      "parentId": "1879109971"
+    },
+    "1879109971": {
+      "id": "1879109971",
+      "kind": "region",
+      "name": "Rhovanion",
+      "code": "2"
+    },
+    "1879109972": {
+      "id": "1879109972",
+      "kind": "territory",
+      "name": "Lothlórien",
+      "parentId": "1879109971"
+    },
+    "1879149395": {
+      "id": "1879149395",
+      "kind": "territory",
+      "name": "Dunland",
+      "parentId": "1879049816"
+    },
+    "1879152194": {
+      "id": "1879152194",
+      "kind": "area",
+      "name": "The Dourstocks",
+      "parentId": "1879152206",
+      "iconId": "1091632756"
+    },
+    "1879152206": {
+      "id": "1879152206",
+      "kind": "territory",
+      "name": "Mirkwood",
+      "parentId": "1879109971"
+    },
+    "1879181892": {
+      "id": "1879181892",
+      "kind": "area",
+      "name": "Thrór's Coomb",
+      "parentId": "1879181899",
+      "iconId": "1091632747"
+    },
+    "1879181899": {
+      "id": "1879181899",
+      "kind": "territory",
+      "name": "Enedwaith",
+      "parentId": "1879049816"
+    },
+    "1879191197": {
+      "id": "1879191197",
+      "kind": "area",
+      "name": "The Twenty-first Hall",
+      "parentId": "1879109970",
+      "iconId": "1091632758"
+    },
+    "1879192017": {
+      "id": "1879192017",
+      "kind": "area",
+      "name": "Gravenwood",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    "1879201772": {
+      "id": "1879201772",
+      "kind": "area",
+      "name": "Nan Curunír",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    "1879201773": {
+      "id": "1879201773",
+      "kind": "area",
+      "name": "Heathfells",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    "1879201774": {
+      "id": "1879201774",
+      "kind": "area",
+      "name": "Starkmoor",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    "1879201775": {
+      "id": "1879201775",
+      "kind": "area",
+      "name": "Isendale",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    "1879214905": {
+      "id": "1879214905",
+      "kind": "area",
+      "name": "South Gravenwood",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    "1879218506": {
+      "id": "1879218506",
+      "kind": "area",
+      "name": "Galtrev",
+      "parentId": "1879149395",
+      "iconId": "1091632746"
+    },
+    "1879222979": {
+      "id": "1879222979",
+      "kind": "area",
+      "name": "Thinglad",
+      "parentId": "1879227786",
+      "iconId": "1091696541"
+    },
+    "1879227786": {
+      "id": "1879227786",
+      "kind": "territory",
+      "name": "Great River",
+      "parentId": "1879109971"
+    },
+    "1879231079": {
+      "id": "1879231079",
+      "kind": "area",
+      "name": "Sutcrofts",
+      "parentId": "1879500897",
+      "iconId": "1091755679"
+    },
+    "1879256897": {
+      "id": "1879256897",
+      "kind": "area",
+      "name": "Broadacres",
+      "parentId": "1879500895",
+      "iconId": "1091841000"
+    },
+    "1879257362": {
+      "id": "1879257362",
+      "kind": "territory",
+      "name": "Rohan - Westemnet",
+      "parentId": "1879109971"
+    },
+    "1879303317": {
+      "id": "1879303317",
+      "kind": "area",
+      "name": "Nan Curunír",
+      "parentId": "1879257362",
+      "iconId": "1091632746"
+    },
+    "1879305736": {
+      "id": "1879305736",
+      "kind": "area",
+      "name": "Dol Amroth",
+      "parentId": "1879508855",
+      "iconId": "1091917459"
+    },
+    "1879305741": {
+      "id": "1879305741",
+      "kind": "area",
+      "name": "Blackroot Vale",
+      "parentId": "1879508856",
+      "iconId": "1091917459"
+    },
+    "1879314985": {
+      "id": "1879314985",
+      "kind": "area",
+      "name": "Ringló Vale",
+      "parentId": "1879514657",
+      "iconId": "1091918887"
+    },
+    "1879315609": {
+      "id": "1879315609",
+      "kind": "area",
+      "name": "Meadhollow",
+      "parentId": "1879384441",
+      "iconId": "1092453926"
+    },
+    "1879384441": {
+      "id": "1879384441",
+      "kind": "territory",
+      "name": "The Vales of Anduin",
+      "parentId": "1879109971"
+    },
+    "1879410823": {
+      "id": "1879410823",
+      "kind": "area",
+      "name": "Câr Bronach",
+      "parentId": "1879416091",
+      "iconId": "1092667033"
+    },
+    "1879416091": {
+      "id": "1879416091",
+      "kind": "territory",
+      "name": "Gundabad",
+      "parentId": "1879109971"
+    },
+    "1879445918": {
+      "id": "1879445918",
+      "kind": "area",
+      "name": "Stoor-vales",
+      "parentId": "1879446043",
+      "iconId": "1092819258"
+    },
+    "1879446043": {
+      "id": "1879446043",
+      "kind": "territory",
+      "name": "Swanfleet",
+      "parentId": "1879049816"
+    },
+    "1879457087": {
+      "id": "1879457087",
+      "kind": "territory",
+      "name": "Angmar",
+      "parentId": "1879049816"
+    },
+    "1879457088": {
+      "id": "1879457088",
+      "kind": "area",
+      "name": "Ephel Angren",
+      "parentId": "1879457087",
+      "iconId": "1091632744"
+    },
+    "1879466303": {
+      "id": "1879466303",
+      "kind": "region",
+      "name": "Haradwaith",
+      "code": "5"
+    },
+    "1879466304": {
+      "id": "1879466304",
+      "kind": "region",
+      "name": "Gondor (After Battle)",
+      "code": "4"
+    },
+    "1879470534": {
+      "id": "1879470534",
+      "kind": "area",
+      "name": "Umbar Baharbêl, City of the Corsairs",
+      "parentId": "1879475261",
+      "iconId": "1092906786"
+    },
+    "1879475261": {
+      "id": "1879475261",
+      "kind": "territory",
+      "name": "Umbar",
+      "parentId": "1879466303"
+    },
+    "1879500785": {
+      "id": "1879500785",
+      "kind": "area",
+      "name": "Padugâsha",
+      "parentId": "1879500861",
+      "iconId": "1093002153"
+    },
+    "1879500799": {
+      "id": "1879500799",
+      "kind": "area",
+      "name": "Hoards of Koratíya",
+      "parentId": "1879500864",
+      "iconId": "1093002170"
+    },
+    "1879500813": {
+      "id": "1879500813",
+      "kind": "area",
+      "name": "Ghun Shâna",
+      "parentId": "1879500863",
+      "iconId": "1093002177"
+    },
+    "1879500833": {
+      "id": "1879500833",
+      "kind": "area",
+      "name": "Mashâli Barrens",
+      "parentId": "1879500861",
+      "iconId": "1093002153"
+    },
+    "1879500849": {
+      "id": "1879500849",
+      "kind": "area",
+      "name": "The Warden's Lands",
+      "parentId": "1879500864",
+      "iconId": "1093002170"
+    },
+    "1879500861": {
+      "id": "1879500861",
+      "kind": "territory",
+      "name": "An Shêru, the Height of the Sky",
+      "parentId": "1879466303"
+    },
+    "1879500863": {
+      "id": "1879500863",
+      "kind": "territory",
+      "name": "Kighân, the Shornvale",
+      "parentId": "1879466303"
+    },
+    "1879500864": {
+      "id": "1879500864",
+      "kind": "territory",
+      "name": "Idagâl, the Dry-whelm",
+      "parentId": "1879466303"
+    },
+    "1879500895": {
+      "id": "1879500895",
+      "kind": "territory",
+      "name": "Entwash",
+      "parentId": "1879109971"
+    },
+    "1879500897": {
+      "id": "1879500897",
+      "kind": "territory",
+      "name": "Croftlands",
+      "parentId": "1879109971"
+    },
+    "1879508855": {
+      "id": "1879508855",
+      "kind": "territory",
+      "name": "Belfalas & Dor-en-Ernil",
+      "parentId": "1879109971"
+    },
+    "1879508856": {
+      "id": "1879508856",
+      "kind": "territory",
+      "name": "Western Gondor",
+      "parentId": "1879109971"
+    },
+    "1879514657": {
+      "id": "1879514657",
+      "kind": "territory",
+      "name": "Ringló Vale",
+      "parentId": "1879109971"
+    },
+    "1879521035": {
+      "id": "1879521035",
+      "kind": "territory",
+      "name": "The Hatokáli Fells",
+      "parentId": "1879466303"
+    },
+    "1879521058": {
+      "id": "1879521058",
+      "kind": "area",
+      "name": "Kupu-shagâm",
+      "parentId": "1879521035",
+      "iconId": "1093066121"
+    },
+    "1879524632": {
+      "id": "1879524632",
+      "kind": "area",
+      "name": "Imlad Drúnos",
+      "parentId": "1879524658",
+      "iconId": "1093134572"
+    },
+    "1879524658": {
+      "id": "1879524658",
+      "kind": "territory",
+      "name": "Heledhris, Rift of Shornshards",
+      "parentId": "1879524677"
+    },
+    "1879524677": {
+      "id": "1879524677",
+      "kind": "region",
+      "name": "Mordor (Outer)",
+      "code": "6"
+    },
+    "3": {
+      "id": "3",
+      "kind": "region",
+      "name": "Gondor",
+      "code": "3"
+    }
+  },
+  "landmarkNameMatches": [
+    {
+      "id": "1879063668",
+      "name": "Aughaire",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879134440",
+      "name": "The Rotting Cellar",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879134445",
+      "name": "The Twenty-first Hall",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879134451",
+      "name": "The Deep Descent",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879134456",
+      "name": "Dolven-view",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879134472",
+      "name": "Durin's Threshold",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879152495",
+      "name": "Imlad Lalaith",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879154404",
+      "name": "The Haunted Inn",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879185244",
+      "name": "Nár's Peak",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879211709",
+      "name": "Rohirrim Scout-camp",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879212252",
+      "name": "Avardin",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879212434",
+      "name": "Grimbold's Camp",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879222119",
+      "name": "Forthbrond",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879228039",
+      "name": "Ox-clan Merchant Camp",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879232450",
+      "name": "Haldirith",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879253515",
+      "name": "Mead Hall of Hytbold",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879291164",
+      "name": "Stoke",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879309776",
+      "name": "Morlad",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879312749",
+      "name": "Dol Amroth",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879315076",
+      "name": "Ethring",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879384514",
+      "name": "Beorninghús",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879422047",
+      "name": "Grúmachath",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879448555",
+      "name": "Clegur",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879458777",
+      "name": "Bail Avarc",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879465672",
+      "name": "Morlad",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879466352",
+      "name": "Dol Amroth",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879466411",
+      "name": "Ethring",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879477129",
+      "name": "Swain's Guild-hall",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879509521",
+      "name": "Gadim-ûn",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879509526",
+      "name": "Khanâg Gur",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879509563",
+      "name": "Nashûbu",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879509590",
+      "name": "The Dawn-warden",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879524175",
+      "name": "Ingarûma",
+      "association": "exactEnglishNameOnly"
+    },
+    {
+      "id": "1879527912",
+      "name": "Echad Vothui",
+      "association": "exactEnglishNameOnly"
+    }
+  ],
+  "limitations": [
+    "File modification times are not game observation times.",
+    "No character/server identities are inferred or included.",
+    "Names come from snapshots or supplied successful-use text, not inferred nearest-place labels."
+  ]
+}

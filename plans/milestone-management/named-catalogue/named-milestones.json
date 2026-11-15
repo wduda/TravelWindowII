@@ -1,0 +1,3037 @@
+{
+  "schemaVersion": 1,
+  "researchDate": "2026-11-08",
+  "purpose": "Named milestone research database; not an approved plugin runtime catalogue",
+  "sourceRevisions": {
+    "lotroData": "7097ff870cdeace51b7b34debc38b6a9969ae0c4",
+    "lotroMapsDb": "2e707ebf14162607f586ecf2948f97fc212090d0"
+  },
+  "identityPolicy": "Locally allocated research IDs persisted in identity-ledger.json. Upstream marker IDs and exact-name landmark candidates are separate identities.",
+  "matchingPolicy": {
+    "status": "Research screening only; not a calibrated production tolerance",
+    "maximumSeparation": 0.1,
+    "minimumRunnerUpRatio": 3.0,
+    "requireSameWorldAndZone": true
+  },
+  "summary": {
+    "sourceMarkerCount": 351,
+    "sourceCharacterFiles": 12,
+    "importedNamedObservations": 42,
+    "additionalNamedObservations": 1,
+    "includedDestinations": 37,
+    "omittedMarkerCount": 314,
+    "observationOmissions": {
+      "incompleteObservation": 0,
+      "missingGeography": 0,
+      "ambiguousSpatialMatch": 0
+    }
+  },
+  "records": [
+    {
+      "id": "milestone-fbdf9335-eec0-4389-b351-c90845e1bbf0",
+      "name": "Aughaire",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Aughaire",
+      "worldRegion": {
+        "code": "1",
+        "geographicEntityId": "1879049816",
+        "name": "Eriador"
+      },
+      "zone": {
+        "id": "1879103883",
+        "kind": "area",
+        "name": "Aughaire",
+        "parentId": "1879063884",
+        "iconId": "1091632744"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879103883",
+          "kind": "area",
+          "name": "Aughaire",
+          "parentId": "1879063884",
+          "iconId": "1091632744"
+        },
+        {
+          "id": "1879063884",
+          "kind": "territory",
+          "name": "Angmar",
+          "parentId": "1879049816"
+        },
+        {
+          "id": "1879049816",
+          "kind": "region",
+          "name": "Eriador",
+          "code": "1"
+        }
+      ],
+      "marker": {
+        "sourceId": "412463128",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": 0.07962891,
+        "longitude": -39.892567,
+        "sourceLatitude": "0.07962891",
+        "sourceLongitude": "-39.892567",
+        "zoneId": "1879103883",
+        "sourceFile": "markers/markers-1-8-9.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.01483768106197391,
+        "minimumRunnerUpSeparation": 9.924736728508876,
+        "minimumRunnerUpRatio": 668.8873205358245
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": 0.09111328,
+          "longitude": -39.901962,
+          "sourceLatitude": "0.09111328",
+          "sourceLongitude": "-39.901962",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00011",
+          "travelType": "3",
+          "skillId": "1879201466",
+          "referenceSkillName": "Return Home"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879063668",
+          "name": "Aughaire",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-07dfb1a5-66bd-4dde-96cc-4c9f53cc846d",
+      "name": "Avardin",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Avardin",
+      "worldRegion": {
+        "code": "1",
+        "geographicEntityId": "1879049816",
+        "name": "Eriador"
+      },
+      "zone": {
+        "id": "1879201774",
+        "kind": "area",
+        "name": "Starkmoor",
+        "parentId": "1879149395",
+        "iconId": "1091632746"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879201774",
+          "kind": "area",
+          "name": "Starkmoor",
+          "parentId": "1879149395",
+          "iconId": "1091632746"
+        },
+        {
+          "id": "1879149395",
+          "kind": "territory",
+          "name": "Dunland",
+          "parentId": "1879049816"
+        },
+        {
+          "id": "1879049816",
+          "kind": "region",
+          "name": "Eriador",
+          "code": "1"
+        }
+      ],
+      "marker": {
+        "sourceId": "423440388",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": -83.108376,
+        "longitude": -20.58373,
+        "sourceLatitude": "-83.108376",
+        "sourceLongitude": "-20.58373",
+        "zoneId": "1879201774",
+        "sourceFile": "markers/markers-1-9-3.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.006853933177383699,
+        "minimumRunnerUpSeparation": 4.186607605826101,
+        "minimumRunnerUpRatio": 610.8328601219633
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -83.10468,
+          "longitude": -20.589502,
+          "sourceLatitude": "-83.10468",
+          "sourceLongitude": "-20.589502",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00022",
+          "travelType": "27",
+          "skillId": "1879244641",
+          "referenceSkillName": "Return Home 8"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879212252",
+          "name": "Avardin",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-8adb9a96-5d4f-41a3-885c-b4fac46797ff",
+      "name": "Bail Avarc",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Bail Avarc",
+      "worldRegion": {
+        "code": "1",
+        "geographicEntityId": "1879049816",
+        "name": "Eriador"
+      },
+      "zone": {
+        "id": "1879457088",
+        "kind": "area",
+        "name": "Ephel Angren",
+        "parentId": "1879457087",
+        "iconId": "1091632744"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879457088",
+          "kind": "area",
+          "name": "Ephel Angren",
+          "parentId": "1879457087",
+          "iconId": "1091632744"
+        },
+        {
+          "id": "1879457087",
+          "kind": "territory",
+          "name": "Angmar",
+          "parentId": "1879049816"
+        },
+        {
+          "id": "1879049816",
+          "kind": "region",
+          "name": "Eriador",
+          "code": "1"
+        }
+      ],
+      "marker": {
+        "sourceId": "435433493",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": 70.259514,
+        "longitude": -27.97369,
+        "sourceLatitude": "70.259514",
+        "sourceLongitude": "-27.97369",
+        "zoneId": "1879457088",
+        "sourceFile": "markers/markers-1-9-15.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.010968016456956612,
+        "minimumRunnerUpSeparation": 56.66403032751892,
+        "minimumRunnerUpRatio": 5166.296982676297
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": 70.26375,
+          "longitude": -27.963573,
+          "sourceLatitude": "70.26375",
+          "sourceLongitude": "-27.963573",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00022",
+          "travelType": "26",
+          "skillId": "1879244642",
+          "referenceSkillName": "Return Home 7"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879458777",
+          "name": "Bail Avarc",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-c792c645-4839-48f1-8a55-5ccde8ba3186",
+      "name": "Beorninghús",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Beorninghús",
+      "worldRegion": {
+        "code": "2",
+        "geographicEntityId": "1879109971",
+        "name": "Rhovanion"
+      },
+      "zone": {
+        "id": "1879315609",
+        "kind": "area",
+        "name": "Meadhollow",
+        "parentId": "1879384441",
+        "iconId": "1092453926"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879315609",
+          "kind": "area",
+          "name": "Meadhollow",
+          "parentId": "1879384441",
+          "iconId": "1092453926"
+        },
+        {
+          "id": "1879384441",
+          "kind": "territory",
+          "name": "The Vales of Anduin",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "665108541",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": 13.582559,
+        "longitude": -53.257713,
+        "sourceLatitude": "13.582559",
+        "sourceLongitude": "-53.257713",
+        "zoneId": "1879315609",
+        "sourceFile": "markers/markers-2-7-10.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.01413244653270976,
+        "minimumRunnerUpSeparation": 7.21023420304225,
+        "minimumRunnerUpRatio": 510.79468680474815
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": 13.5758295,
+          "longitude": -53.26165,
+          "sourceLatitude": "13.5758295",
+          "sourceLongitude": "-53.26165",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00002",
+          "travelType": "26",
+          "skillId": "1879244642",
+          "referenceSkillName": "Return Home 7"
+        },
+        {
+          "kind": "importedAnchor",
+          "latitude": 13.576133,
+          "longitude": -53.2703,
+          "sourceLatitude": "13.576133",
+          "sourceLongitude": "-53.2703",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00005",
+          "travelType": "15",
+          "skillId": "1879201682",
+          "referenceSkillName": "Return Home 2"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879384514",
+          "name": "Beorninghús",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-3f767e66-a5a5-47cb-9540-e8da1b7ca8ad",
+      "name": "Clegur",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Clegur",
+      "worldRegion": {
+        "code": "1",
+        "geographicEntityId": "1879049816",
+        "name": "Eriador"
+      },
+      "zone": {
+        "id": "1879445918",
+        "kind": "area",
+        "name": "Stoor-vales",
+        "parentId": "1879446043",
+        "iconId": "1092819258"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879445918",
+          "kind": "area",
+          "name": "Stoor-vales",
+          "parentId": "1879446043",
+          "iconId": "1092819258"
+        },
+        {
+          "id": "1879446043",
+          "kind": "territory",
+          "name": "Swanfleet",
+          "parentId": "1879049816"
+        },
+        {
+          "id": "1879049816",
+          "kind": "region",
+          "name": "Eriador",
+          "code": "1"
+        }
+      ],
+      "marker": {
+        "sourceId": "423862272",
+        "templateDid": "1879063401",
+        "category": 55,
+        "latitude": -64.860146,
+        "longitude": -29.037754,
+        "sourceLatitude": "-64.860146",
+        "sourceLongitude": "-29.037754",
+        "zoneId": "1879445918",
+        "sourceFile": "markers/markers-1-9-4.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.028954084616857355,
+        "minimumRunnerUpSeparation": 3.978488866088228,
+        "minimumRunnerUpRatio": 137.4068259706581
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -64.8381,
+          "longitude": -29.018984,
+          "sourceLatitude": "-64.8381",
+          "sourceLongitude": "-29.018984",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00018",
+          "travelType": "3",
+          "skillId": "1879201466",
+          "referenceSkillName": "Return Home"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879448555",
+          "name": "Clegur",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-59ba621c-6d8e-4902-9254-0d35ffda7c78",
+      "name": "Dol Amroth",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Dol Amroth",
+      "worldRegion": {
+        "code": "3",
+        "geographicEntityId": "3",
+        "name": "Gondor"
+      },
+      "zone": {
+        "id": "1879305736",
+        "kind": "area",
+        "name": "Dol Amroth",
+        "parentId": "1879508855",
+        "iconId": "1091917459"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879305736",
+          "kind": "area",
+          "name": "Dol Amroth",
+          "parentId": "1879508855",
+          "iconId": "1091917459"
+        },
+        {
+          "id": "1879508855",
+          "kind": "territory",
+          "name": "Belfalas & Dor-en-Ernil",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "893243404",
+        "templateDid": "1879313700",
+        "category": 55,
+        "latitude": -75.35916,
+        "longitude": -72.14425,
+        "sourceLatitude": "-75.35916",
+        "sourceLongitude": "-72.14425",
+        "zoneId": "1879305736",
+        "sourceFile": "markers/markers-3-5-3.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.027800109712017556,
+        "minimumRunnerUpSeparation": 6.4026178137474306,
+        "minimumRunnerUpRatio": 230.30908439111946
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -75.37286,
+          "longitude": -72.12006,
+          "sourceLatitude": "-75.37286",
+          "sourceLongitude": "-72.12006",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00007",
+          "travelType": "26",
+          "skillId": "1879244642",
+          "referenceSkillName": "Return Home 7"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879312749",
+          "name": "Dol Amroth",
+          "association": "exactEnglishNameOnly"
+        },
+        {
+          "id": "1879466352",
+          "name": "Dol Amroth",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-738914d6-777f-40ca-9d1a-3d70500f8b7e",
+      "name": "Dolven-view",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Dolven-view",
+      "worldRegion": {
+        "code": "2",
+        "geographicEntityId": "1879109971",
+        "name": "Rhovanion"
+      },
+      "zone": {
+        "id": "1879109901",
+        "kind": "area",
+        "name": "The Great Delving",
+        "parentId": "1879109970",
+        "iconId": "1091632758"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879109901",
+          "kind": "area",
+          "name": "The Great Delving",
+          "parentId": "1879109970",
+          "iconId": "1091632758"
+        },
+        {
+          "id": "1879109970",
+          "kind": "territory",
+          "name": "Moria",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "580583448",
+        "templateDid": "1879063371",
+        "category": 55,
+        "latitude": -8.587812,
+        "longitude": -112.26266,
+        "sourceLatitude": "-8.587812",
+        "sourceLongitude": "-112.26266",
+        "zoneId": "1879109901",
+        "sourceFile": "markers/markers-2-2-9.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.009944689537638362,
+        "minimumRunnerUpSeparation": 1.3804221974602515,
+        "minimumRunnerUpRatio": 138.8099841866024
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -8.578027,
+          "longitude": -112.264435,
+          "sourceLatitude": "-8.578027",
+          "sourceLongitude": "-112.264435",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00008",
+          "travelType": "18",
+          "skillId": "1879201685",
+          "referenceSkillName": "Return Home 5"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879134456",
+          "name": "Dolven-view",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-0f63c106-a2bb-45f2-b943-e358817d2848",
+      "name": "Durin's Threshold",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Durin's Threshold",
+      "worldRegion": {
+        "code": "2",
+        "geographicEntityId": "1879109971",
+        "name": "Rhovanion"
+      },
+      "zone": {
+        "id": "1879109901",
+        "kind": "area",
+        "name": "The Great Delving",
+        "parentId": "1879109970",
+        "iconId": "1091632758"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879109901",
+          "kind": "area",
+          "name": "The Great Delving",
+          "parentId": "1879109970",
+          "iconId": "1091632758"
+        },
+        {
+          "id": "1879109970",
+          "kind": "territory",
+          "name": "Moria",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "580259860",
+        "templateDid": "1879063371",
+        "category": 55,
+        "latitude": -8.090664,
+        "longitude": -116.12204,
+        "sourceLatitude": "-8.090664",
+        "sourceLongitude": "-116.12204",
+        "zoneId": "1879109901",
+        "sourceFile": "markers/markers-2-2-9.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.036198400341035705,
+        "minimumRunnerUpSeparation": 3.824875363175254,
+        "minimumRunnerUpRatio": 106.48488747337426
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -8.0583105,
+          "longitude": -116.138275,
+          "sourceLatitude": "-8.0583105",
+          "sourceLongitude": "-116.138275",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00010",
+          "travelType": "3",
+          "skillId": "1879201466",
+          "referenceSkillName": "Return Home"
+        },
+        {
+          "kind": "importedAnchor",
+          "latitude": -8.080546,
+          "longitude": -116.11646,
+          "sourceLatitude": "-8.080546",
+          "sourceLongitude": "-116.11646",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00012",
+          "travelType": "3",
+          "skillId": "1879201466",
+          "referenceSkillName": "Return Home"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879134472",
+          "name": "Durin's Threshold",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-8a9c41ca-37f0-4765-962c-e4c10ed0b173",
+      "name": "Echad Vothui",
+      "nameLanguage": "en",
+      "nameStatus": "reportedSuccessfulUse",
+      "companionDisplayLabel": "Return to Echad Vothui",
+      "worldRegion": {
+        "code": "6",
+        "geographicEntityId": "1879524677",
+        "name": "Mordor (Outer)"
+      },
+      "zone": {
+        "id": "1879524632",
+        "kind": "area",
+        "name": "Imlad Drúnos",
+        "parentId": "1879524658",
+        "iconId": "1093134572"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879524632",
+          "kind": "area",
+          "name": "Imlad Drúnos",
+          "parentId": "1879524658",
+          "iconId": "1093134572"
+        },
+        {
+          "id": "1879524658",
+          "kind": "territory",
+          "name": "Heledhris, Rift of Shornshards",
+          "parentId": "1879524677"
+        },
+        {
+          "id": "1879524677",
+          "kind": "region",
+          "name": "Mordor (Outer)",
+          "code": "6"
+        }
+      ],
+      "marker": {
+        "sourceId": "1666863107",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": -56.29513,
+        "longitude": -100.04626,
+        "sourceLatitude": "-56.29513",
+        "sourceLongitude": "-100.04626",
+        "zoneId": "1879524632",
+        "sourceFile": "markers/markers-6-3-5.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.044998778583421745,
+        "minimumRunnerUpSeparation": 6.119572209799803,
+        "minimumRunnerUpRatio": 135.99418478559215
+      },
+      "positionObservations": [
+        {
+          "kind": "namedLandmark",
+          "latitude": -56.250523,
+          "longitude": -100.052185,
+          "sourceLatitude": "-56.250523",
+          "sourceLongitude": "-100.052185",
+          "evidenceKind": "reportedSuccessAndNamedLandmark",
+          "landmarkMarkerId": "1666863112",
+          "landmarkDid": "1879527912",
+          "nameEvidence": "Stakeholder successful-use message reported 2026-11-08",
+          "sourceFile": "markers/markers-6-3-5.xml",
+          "reportedTerritory": "Heledhris, Rift of Shornshards"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879527912",
+          "name": "Echad Vothui",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-bc562f36-6b50-4fa1-9a17-fe861f4f7332",
+      "name": "Ethring",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Ethring",
+      "worldRegion": {
+        "code": "3",
+        "geographicEntityId": "3",
+        "name": "Gondor"
+      },
+      "zone": {
+        "id": "1879314985",
+        "kind": "area",
+        "name": "Ringló Vale",
+        "parentId": "1879514657",
+        "iconId": "1091918887"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879314985",
+          "kind": "area",
+          "name": "Ringló Vale",
+          "parentId": "1879514657",
+          "iconId": "1091918887"
+        },
+        {
+          "id": "1879514657",
+          "kind": "territory",
+          "name": "Ringló Vale",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "927469582",
+        "templateDid": "1879314524",
+        "category": 55,
+        "latitude": -72.02618,
+        "longitude": -50.239697,
+        "sourceLatitude": "-72.02618",
+        "sourceLongitude": "-50.239697",
+        "zoneId": "1879314985",
+        "sourceFile": "markers/markers-3-7-4.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.015822501066523102,
+        "minimumRunnerUpSeparation": 7.5832271224919126,
+        "minimumRunnerUpRatio": 479.26854867062303
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -72.037704,
+          "longitude": -50.228855,
+          "sourceLatitude": "-72.037704",
+          "sourceLongitude": "-50.228855",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00007",
+          "travelType": "27",
+          "skillId": "1879244641",
+          "referenceSkillName": "Return Home 8"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879315076",
+          "name": "Ethring",
+          "association": "exactEnglishNameOnly"
+        },
+        {
+          "id": "1879466411",
+          "name": "Ethring",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-0385d5b2-462c-4c1d-8646-05ca0e792c70",
+      "name": "Forthbrond",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Forthbrond",
+      "worldRegion": {
+        "code": "1",
+        "geographicEntityId": "1879049816",
+        "name": "Eriador"
+      },
+      "zone": {
+        "id": "1879201775",
+        "kind": "area",
+        "name": "Isendale",
+        "parentId": "1879149395",
+        "iconId": "1091632746"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879201775",
+          "kind": "area",
+          "name": "Isendale",
+          "parentId": "1879149395",
+          "iconId": "1091632746"
+        },
+        {
+          "id": "1879149395",
+          "kind": "territory",
+          "name": "Dunland",
+          "parentId": "1879049816"
+        },
+        {
+          "id": "1879049816",
+          "kind": "region",
+          "name": "Eriador",
+          "code": "1"
+        }
+      ],
+      "marker": {
+        "sourceId": "439279628",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": -86.92972,
+        "longitude": -7.4597263,
+        "sourceLatitude": "-86.92972",
+        "sourceLongitude": "-7.4597263",
+        "zoneId": "1879201775",
+        "sourceFile": "markers/markers-1-10-2.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.012106160259964714,
+        "minimumRunnerUpSeparation": 3.600186078150267,
+        "minimumRunnerUpRatio": 297.3846373119763
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -86.921715,
+          "longitude": -7.4506445,
+          "sourceLatitude": "-86.921715",
+          "sourceLongitude": "-7.4506445",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00022",
+          "travelType": "28",
+          "skillId": "1879244640",
+          "referenceSkillName": "Return Home 9"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879222119",
+          "name": "Forthbrond",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-fc228292-b6d0-4c54-99de-39f7ae146554",
+      "name": "Gadim-ûn",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Gadim-ûn",
+      "worldRegion": {
+        "code": "5",
+        "geographicEntityId": "1879466303",
+        "name": "Haradwaith"
+      },
+      "zone": {
+        "id": "1879500833",
+        "kind": "area",
+        "name": "Mashâli Barrens",
+        "parentId": "1879500861",
+        "iconId": "1093002153"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879500833",
+          "kind": "area",
+          "name": "Mashâli Barrens",
+          "parentId": "1879500861",
+          "iconId": "1093002153"
+        },
+        {
+          "id": "1879500861",
+          "kind": "territory",
+          "name": "An Shêru, the Height of the Sky",
+          "parentId": "1879466303"
+        },
+        {
+          "id": "1879466303",
+          "kind": "region",
+          "name": "Haradwaith",
+          "code": "5"
+        }
+      ],
+      "marker": {
+        "sourceId": "1448325125",
+        "templateDid": "1879475051",
+        "category": 55,
+        "latitude": -51.148872,
+        "longitude": -66.93312,
+        "sourceLatitude": "-51.148872",
+        "sourceLongitude": "-66.93312",
+        "zoneId": "1879500833",
+        "sourceFile": "markers/markers-5-6-5.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.013907089019629946,
+        "minimumRunnerUpSeparation": 5.858333725545685,
+        "minimumRunnerUpRatio": 421.248020867387
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -51.135002,
+          "longitude": -66.934135,
+          "sourceLatitude": "-51.135002",
+          "sourceLongitude": "-66.934135",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00002",
+          "travelType": "18",
+          "skillId": "1879201685",
+          "referenceSkillName": "Return Home 5"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879509521",
+          "name": "Gadim-ûn",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-634a8c38-f6a8-4e18-bae1-b28211776073",
+      "name": "Galtrev",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Galtrev",
+      "worldRegion": {
+        "code": "1",
+        "geographicEntityId": "1879049816",
+        "name": "Eriador"
+      },
+      "zone": {
+        "id": "1879218506",
+        "kind": "area",
+        "name": "Galtrev",
+        "parentId": "1879149395",
+        "iconId": "1091632746"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879218506",
+          "kind": "area",
+          "name": "Galtrev",
+          "parentId": "1879149395",
+          "iconId": "1091632746"
+        },
+        {
+          "id": "1879149395",
+          "kind": "territory",
+          "name": "Dunland",
+          "parentId": "1879049816"
+        },
+        {
+          "id": "1879049816",
+          "kind": "region",
+          "name": "Eriador",
+          "code": "1"
+        }
+      ],
+      "marker": {
+        "sourceId": "439513113",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": -80.16045,
+        "longitude": -16.78375,
+        "sourceLatitude": "-80.16045",
+        "sourceLongitude": "-16.78375",
+        "zoneId": "1879218506",
+        "sourceFile": "markers/markers-1-10-3.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.012917053882367215,
+        "minimumRunnerUpSeparation": 2.9051037577512315,
+        "minimumRunnerUpRatio": 224.9045164793285
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -80.15963,
+          "longitude": -16.770859,
+          "sourceLatitude": "-80.15963",
+          "sourceLongitude": "-16.770859",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00022",
+          "travelType": "3",
+          "skillId": "1879201466",
+          "referenceSkillName": "Return Home"
+        }
+      ]
+    },
+    {
+      "id": "milestone-674a958b-0c8a-4ddd-ae2d-563942d9ad2a",
+      "name": "Ghun Shâna",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Ghun Shâna",
+      "worldRegion": {
+        "code": "5",
+        "geographicEntityId": "1879466303",
+        "name": "Haradwaith"
+      },
+      "zone": {
+        "id": "1879500813",
+        "kind": "area",
+        "name": "Ghun Shâna",
+        "parentId": "1879500863",
+        "iconId": "1093002177"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879500813",
+          "kind": "area",
+          "name": "Ghun Shâna",
+          "parentId": "1879500863",
+          "iconId": "1093002177"
+        },
+        {
+          "id": "1879500863",
+          "kind": "territory",
+          "name": "Kighân, the Shornvale",
+          "parentId": "1879466303"
+        },
+        {
+          "id": "1879466303",
+          "kind": "region",
+          "name": "Haradwaith",
+          "code": "5"
+        }
+      ],
+      "marker": {
+        "sourceId": "1465139207",
+        "templateDid": "1879496037",
+        "category": 55,
+        "latitude": -56.868732,
+        "longitude": -53.345722,
+        "sourceLatitude": "-56.868732",
+        "sourceLongitude": "-53.345722",
+        "zoneId": "1879500813",
+        "sourceFile": "markers/markers-5-7-5.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.011942073521795512,
+        "minimumRunnerUpSeparation": 5.637294774725906,
+        "minimumRunnerUpRatio": 472.0532631487542
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -56.860756,
+          "longitude": -53.336834,
+          "sourceLatitude": "-56.860756",
+          "sourceLongitude": "-53.336834",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00002",
+          "travelType": "3",
+          "skillId": "1879201466",
+          "referenceSkillName": "Return Home"
+        }
+      ]
+    },
+    {
+      "id": "milestone-823f4470-1926-48b4-b616-ab07e5f812bd",
+      "name": "Gravenwood",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Gravenwood",
+      "worldRegion": {
+        "code": "1",
+        "geographicEntityId": "1879049816",
+        "name": "Eriador"
+      },
+      "zone": {
+        "id": "1879192017",
+        "kind": "area",
+        "name": "Gravenwood",
+        "parentId": "1879149395",
+        "iconId": "1091632746"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879192017",
+          "kind": "area",
+          "name": "Gravenwood",
+          "parentId": "1879149395",
+          "iconId": "1091632746"
+        },
+        {
+          "id": "1879149395",
+          "kind": "territory",
+          "name": "Dunland",
+          "parentId": "1879049816"
+        },
+        {
+          "id": "1879049816",
+          "kind": "region",
+          "name": "Eriador",
+          "code": "1"
+        }
+      ],
+      "marker": {
+        "sourceId": "440049666",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": -77.87586,
+        "longitude": -10.267246,
+        "sourceLatitude": "-77.87586",
+        "sourceLongitude": "-10.267246",
+        "zoneId": "1879192017",
+        "sourceFile": "markers/markers-1-10-3.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.017573087833386607,
+        "minimumRunnerUpSeparation": 3.122000634952526,
+        "minimumRunnerUpRatio": 177.65805671449078
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -77.86647,
+          "longitude": -10.2821,
+          "sourceLatitude": "-77.86647",
+          "sourceLongitude": "-10.2821",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00022",
+          "travelType": "29",
+          "skillId": "1879244639",
+          "referenceSkillName": "Return Home 10"
+        }
+      ]
+    },
+    {
+      "id": "milestone-7f4c2a56-6cfd-49ed-802a-37d32151e5ad",
+      "name": "Grimbold's Camp",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Grimbold's Camp",
+      "worldRegion": {
+        "code": "1",
+        "geographicEntityId": "1879049816",
+        "name": "Eriador"
+      },
+      "zone": {
+        "id": "1879201773",
+        "kind": "area",
+        "name": "Heathfells",
+        "parentId": "1879149395",
+        "iconId": "1091632746"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879201773",
+          "kind": "area",
+          "name": "Heathfells",
+          "parentId": "1879149395",
+          "iconId": "1091632746"
+        },
+        {
+          "id": "1879149395",
+          "kind": "territory",
+          "name": "Dunland",
+          "parentId": "1879049816"
+        },
+        {
+          "id": "1879049816",
+          "kind": "region",
+          "name": "Eriador",
+          "code": "1"
+        }
+      ],
+      "marker": {
+        "sourceId": "455266307",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": -87.73514,
+        "longitude": -3.9435546,
+        "sourceLatitude": "-87.73514",
+        "sourceLongitude": "-3.9435546",
+        "zoneId": "1879201773",
+        "sourceFile": "markers/markers-1-11-2.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.010945591558251724,
+        "minimumRunnerUpSeparation": 2.924114007014872,
+        "minimumRunnerUpRatio": 267.1499289419789
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -87.727104,
+          "longitude": -3.936123,
+          "sourceLatitude": "-87.727104",
+          "sourceLongitude": "-3.936123",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00022",
+          "travelType": "19",
+          "skillId": "1879201686",
+          "referenceSkillName": "Return Home 6"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879212434",
+          "name": "Grimbold's Camp",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-33a00795-542e-460c-b1d5-e31dcbde531b",
+      "name": "Grúmachath",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Grúmachath",
+      "worldRegion": {
+        "code": "2",
+        "geographicEntityId": "1879109971",
+        "name": "Rhovanion"
+      },
+      "zone": {
+        "id": "1879410823",
+        "kind": "area",
+        "name": "Câr Bronach",
+        "parentId": "1879416091",
+        "iconId": "1092667033"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879410823",
+          "kind": "area",
+          "name": "Câr Bronach",
+          "parentId": "1879416091",
+          "iconId": "1092667033"
+        },
+        {
+          "id": "1879416091",
+          "kind": "territory",
+          "name": "Gundabad",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "651272195",
+        "templateDid": "1879063371",
+        "category": 55,
+        "latitude": 50.19701,
+        "longitude": -68.548615,
+        "sourceLatitude": "50.19701",
+        "sourceLongitude": "-68.548615",
+        "zoneId": "1879410823",
+        "sourceFile": "markers/markers-2-6-13.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.015745046014547563,
+        "minimumRunnerUpSeparation": 4.805576269022899,
+        "minimumRunnerUpRatio": 305.21195457814537
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": 50.192303,
+          "longitude": -68.56364,
+          "sourceLatitude": "50.192303",
+          "sourceLongitude": "-68.56364",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00002",
+          "travelType": "17",
+          "skillId": "1879201684",
+          "referenceSkillName": "Return Home 4"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879422047",
+          "name": "Grúmachath",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-871e69d2-3c97-400b-a6fa-51672e5d7465",
+      "name": "Haldirith",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Haldirith",
+      "worldRegion": {
+        "code": "2",
+        "geographicEntityId": "1879109971",
+        "name": "Rhovanion"
+      },
+      "zone": {
+        "id": "1879222979",
+        "kind": "area",
+        "name": "Thinglad",
+        "parentId": "1879227786",
+        "iconId": "1091696541"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879222979",
+          "kind": "area",
+          "name": "Thinglad",
+          "parentId": "1879227786",
+          "iconId": "1091696541"
+        },
+        {
+          "id": "1879227786",
+          "kind": "territory",
+          "name": "Great River",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "646447104",
+        "templateDid": "1879063393",
+        "category": 55,
+        "latitude": -21.446367,
+        "longitude": -63.48789,
+        "sourceLatitude": "-21.446367",
+        "sourceLongitude": "-63.48789",
+        "zoneId": "1879222979",
+        "sourceFile": "markers/markers-2-6-8.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.014369602673696807,
+        "minimumRunnerUpSeparation": 4.229542493590647,
+        "minimumRunnerUpRatio": 294.3395575809982
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -21.442226,
+          "longitude": -63.47413,
+          "sourceLatitude": "-21.442226",
+          "sourceLongitude": "-63.47413",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00022",
+          "travelType": "18",
+          "skillId": "1879201685",
+          "referenceSkillName": "Return Home 5"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879232450",
+          "name": "Haldirith",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-8ad147a8-7222-4689-af6d-7b7ee246ee2c",
+      "name": "Hobbiton-Bywater",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Hobbiton-Bywater",
+      "worldRegion": {
+        "code": "1",
+        "geographicEntityId": "1879049816",
+        "name": "Eriador"
+      },
+      "zone": {
+        "id": "1879064017",
+        "kind": "area",
+        "name": "Hobbiton-Bywater",
+        "parentId": "1879051583",
+        "iconId": "1091632765"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879064017",
+          "kind": "area",
+          "name": "Hobbiton-Bywater",
+          "parentId": "1879051583",
+          "iconId": "1091632765"
+        },
+        {
+          "id": "1879051583",
+          "kind": "territory",
+          "name": "The Shire",
+          "parentId": "1879049816"
+        },
+        {
+          "id": "1879049816",
+          "kind": "region",
+          "name": "Eriador",
+          "code": "1"
+        }
+      ],
+      "marker": {
+        "sourceId": "360595483",
+        "templateDid": "1879063401",
+        "category": 55,
+        "latitude": -31.402401,
+        "longitude": -71.10068,
+        "sourceLatitude": "-31.402401",
+        "sourceLongitude": "-71.10068",
+        "zoneId": "1879064017",
+        "sourceFile": "markers/markers-1-5-7.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.00939088515530193,
+        "minimumRunnerUpSeparation": 4.636547562661802,
+        "minimumRunnerUpRatio": 493.7284916155202
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -31.400469,
+          "longitude": -71.09149,
+          "sourceLatitude": "-31.400469",
+          "sourceLongitude": "-71.09149",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00002",
+          "travelType": "20",
+          "skillId": "1879244643",
+          "referenceSkillName": "Return Home 11"
+        }
+      ]
+    },
+    {
+      "id": "milestone-c3024a1e-8d3e-4942-ad33-2af31afa4938",
+      "name": "Imlad Lalaith",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Imlad Lalaith",
+      "worldRegion": {
+        "code": "2",
+        "geographicEntityId": "1879109971",
+        "name": "Rhovanion"
+      },
+      "zone": {
+        "id": "1879109916",
+        "kind": "area",
+        "name": "Egladil",
+        "parentId": "1879109972",
+        "iconId": "1091632755"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879109916",
+          "kind": "area",
+          "name": "Egladil",
+          "parentId": "1879109972",
+          "iconId": "1091632755"
+        },
+        {
+          "id": "1879109972",
+          "kind": "territory",
+          "name": "Lothlórien",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "646402053",
+        "templateDid": "1879063393",
+        "category": 55,
+        "latitude": -17.263193,
+        "longitude": -64.12583,
+        "sourceLatitude": "-17.263193",
+        "sourceLongitude": "-64.12583",
+        "zoneId": "1879109916",
+        "sourceFile": "markers/markers-2-6-8.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.03643666277254133,
+        "minimumRunnerUpSeparation": 3.4911601523311675,
+        "minimumRunnerUpRatio": 95.81448702162992
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -17.267206,
+          "longitude": -64.089615,
+          "sourceLatitude": "-17.267206",
+          "sourceLongitude": "-64.089615",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00007",
+          "travelType": "18",
+          "skillId": "1879201685",
+          "referenceSkillName": "Return Home 5"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879152495",
+          "name": "Imlad Lalaith",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-fa77f71a-1881-4b80-9bd4-08a7eca7c1a5",
+      "name": "Ingarûma",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Ingarûma",
+      "worldRegion": {
+        "code": "5",
+        "geographicEntityId": "1879466303",
+        "name": "Haradwaith"
+      },
+      "zone": {
+        "id": "1879521058",
+        "kind": "area",
+        "name": "Kupu-shagâm",
+        "parentId": "1879521035",
+        "iconId": "1093066121"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879521058",
+          "kind": "area",
+          "name": "Kupu-shagâm",
+          "parentId": "1879521035",
+          "iconId": "1093066121"
+        },
+        {
+          "id": "1879521035",
+          "kind": "territory",
+          "name": "The Hatokáli Fells",
+          "parentId": "1879466303"
+        },
+        {
+          "id": "1879466303",
+          "kind": "region",
+          "name": "Haradwaith",
+          "code": "5"
+        }
+      ],
+      "marker": {
+        "sourceId": "1413271558",
+        "templateDid": "1879496037",
+        "category": 55,
+        "latitude": -75.00425,
+        "longitude": -85.313934,
+        "sourceLatitude": "-75.00425",
+        "sourceLongitude": "-85.313934",
+        "zoneId": "1879521058",
+        "sourceFile": "markers/markers-5-4-3.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.03854273726656808,
+        "minimumRunnerUpSeparation": 6.486393318516853,
+        "minimumRunnerUpRatio": 168.29093568668623
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -74.96585,
+          "longitude": -85.31062,
+          "sourceLatitude": "-74.96585",
+          "sourceLongitude": "-85.31062",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00002",
+          "travelType": "29",
+          "skillId": "1879244639",
+          "referenceSkillName": "Return Home 10"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879524175",
+          "name": "Ingarûma",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-fa25cb0e-04ce-415c-a0ce-565d6300dd61",
+      "name": "Khanâg Gur",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Khanâg Gur",
+      "worldRegion": {
+        "code": "5",
+        "geographicEntityId": "1879466303",
+        "name": "Haradwaith"
+      },
+      "zone": {
+        "id": "1879500785",
+        "kind": "area",
+        "name": "Padugâsha",
+        "parentId": "1879500861",
+        "iconId": "1093002153"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879500785",
+          "kind": "area",
+          "name": "Padugâsha",
+          "parentId": "1879500861",
+          "iconId": "1093002153"
+        },
+        {
+          "id": "1879500861",
+          "kind": "territory",
+          "name": "An Shêru, the Height of the Sky",
+          "parentId": "1879466303"
+        },
+        {
+          "id": "1879466303",
+          "kind": "region",
+          "name": "Haradwaith",
+          "code": "5"
+        }
+      ],
+      "marker": {
+        "sourceId": "1432174607",
+        "templateDid": "1879475051",
+        "category": 55,
+        "latitude": -56.921413,
+        "longitude": -71.85386,
+        "sourceLatitude": "-56.921413",
+        "sourceLongitude": "-71.85386",
+        "zoneId": "1879500785",
+        "sourceFile": "markers/markers-5-5-5.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.02041400117566359,
+        "minimumRunnerUpSeparation": 6.629511394373272,
+        "minimumRunnerUpRatio": 324.75316021224677
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -56.901375,
+          "longitude": -71.84996,
+          "sourceLatitude": "-56.901375",
+          "sourceLongitude": "-71.84996",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00002",
+          "travelType": "15",
+          "skillId": "1879201682",
+          "referenceSkillName": "Return Home 2"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879509526",
+          "name": "Khanâg Gur",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-ea6d347f-ad8f-4f28-8d3b-461015e4dd8f",
+      "name": "Mead Hall of Hytbold",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Mead Hall of Hytbold",
+      "worldRegion": {
+        "code": "2",
+        "geographicEntityId": "1879109971",
+        "name": "Rhovanion"
+      },
+      "zone": {
+        "id": "1879231079",
+        "kind": "area",
+        "name": "Sutcrofts",
+        "parentId": "1879500897",
+        "iconId": "1091755679"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879231079",
+          "kind": "area",
+          "name": "Sutcrofts",
+          "parentId": "1879500897",
+          "iconId": "1091755679"
+        },
+        {
+          "id": "1879500897",
+          "kind": "territory",
+          "name": "Croftlands",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "659697759",
+        "templateDid": "1879232038",
+        "category": 55,
+        "latitude": -57.3752,
+        "longitude": -55.41027,
+        "sourceLatitude": "-57.3752",
+        "sourceLongitude": "-55.41027",
+        "zoneId": "1879231079",
+        "sourceFile": "markers/markers-2-7-5.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.014858469672208162,
+        "minimumRunnerUpSeparation": 3.4541608312679912,
+        "minimumRunnerUpRatio": 232.4708336369783
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -57.389965,
+          "longitude": -55.411934,
+          "sourceLatitude": "-57.389965",
+          "sourceLongitude": "-55.411934",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00007",
+          "travelType": "15",
+          "skillId": "1879201682",
+          "referenceSkillName": "Return Home 2"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879253515",
+          "name": "Mead Hall of Hytbold",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-32bd7eca-a154-4caf-af89-197f7914d861",
+      "name": "Morlad",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Morlad",
+      "worldRegion": {
+        "code": "3",
+        "geographicEntityId": "3",
+        "name": "Gondor"
+      },
+      "zone": {
+        "id": "1879305741",
+        "kind": "area",
+        "name": "Blackroot Vale",
+        "parentId": "1879508856",
+        "iconId": "1091917459"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879305741",
+          "kind": "area",
+          "name": "Blackroot Vale",
+          "parentId": "1879508856",
+          "iconId": "1091917459"
+        },
+        {
+          "id": "1879508856",
+          "kind": "territory",
+          "name": "Western Gondor",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "911425559",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": -56.86777,
+        "longitude": -67.49797,
+        "sourceLatitude": "-56.86777",
+        "sourceLongitude": "-67.49797",
+        "zoneId": "1879305741",
+        "sourceFile": "markers/markers-3-6-5.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.009088439965145996,
+        "minimumRunnerUpSeparation": 2.021312657047643,
+        "minimumRunnerUpRatio": 222.4047982711379
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -56.873524,
+          "longitude": -67.505005,
+          "sourceLatitude": "-56.873524",
+          "sourceLongitude": "-67.505005",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00007",
+          "travelType": "19",
+          "skillId": "1879201686",
+          "referenceSkillName": "Return Home 6"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879309776",
+          "name": "Morlad",
+          "association": "exactEnglishNameOnly"
+        },
+        {
+          "id": "1879465672",
+          "name": "Morlad",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-09e0b1c1-af1c-41ad-bd6d-7fb586156963",
+      "name": "Nan Curunír",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Nan Curunír",
+      "worldRegion": {
+        "code": "2",
+        "geographicEntityId": "1879109971",
+        "name": "Rhovanion"
+      },
+      "zone": {
+        "id": "1879303317",
+        "kind": "area",
+        "name": "Nan Curunír",
+        "parentId": "1879257362",
+        "iconId": "1091632746"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879303317",
+          "kind": "area",
+          "name": "Nan Curunír",
+          "parentId": "1879257362",
+          "iconId": "1091632746"
+        },
+        {
+          "id": "1879257362",
+          "kind": "territory",
+          "name": "Rohan - Westemnet",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "609742850",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": -47.693813,
+        "longitude": -89.664276,
+        "sourceLatitude": "-47.693813",
+        "sourceLongitude": "-89.664276",
+        "zoneId": "1879303317",
+        "sourceFile": "markers/markers-2-4-5.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.008842657123284338,
+        "minimumRunnerUpSeparation": 8.197395560441498,
+        "minimumRunnerUpRatio": 927.0285442659822
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -47.699585,
+          "longitude": -89.670975,
+          "sourceLatitude": "-47.699585",
+          "sourceLongitude": "-89.670975",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00007",
+          "travelType": "17",
+          "skillId": "1879201684",
+          "referenceSkillName": "Return Home 4"
+        }
+      ]
+    },
+    {
+      "id": "milestone-250f9284-da34-499a-9b45-a4339138fe1a",
+      "name": "Nár's Peak",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Nár's Peak",
+      "worldRegion": {
+        "code": "1",
+        "geographicEntityId": "1879049816",
+        "name": "Eriador"
+      },
+      "zone": {
+        "id": "1879181892",
+        "kind": "area",
+        "name": "Thrór's Coomb",
+        "parentId": "1879181899",
+        "iconId": "1091632747"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879181892",
+          "kind": "area",
+          "name": "Thrór's Coomb",
+          "parentId": "1879181899",
+          "iconId": "1091632747"
+        },
+        {
+          "id": "1879181899",
+          "kind": "territory",
+          "name": "Enedwaith",
+          "parentId": "1879049816"
+        },
+        {
+          "id": "1879049816",
+          "kind": "region",
+          "name": "Eriador",
+          "code": "1"
+        }
+      ],
+      "marker": {
+        "sourceId": "441225223",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": -65.675896,
+        "longitude": -8.585986,
+        "sourceLatitude": "-65.675896",
+        "sourceLongitude": "-8.585986",
+        "zoneId": "1879181892",
+        "sourceFile": "markers/markers-1-10-4.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.011340260005840852,
+        "minimumRunnerUpSeparation": 6.321779091953542,
+        "minimumRunnerUpRatio": 557.4633287682541
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -65.67932,
+          "longitude": -8.575175,
+          "sourceLatitude": "-65.67932",
+          "sourceLongitude": "-8.575175",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00022",
+          "travelType": "16",
+          "skillId": "1879201683",
+          "referenceSkillName": "Return Home 3"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879185244",
+          "name": "Nár's Peak",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-e3f64ae7-5147-4e37-8fd4-4cc5e401a363",
+      "name": "Nashûbu",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Nashûbu",
+      "worldRegion": {
+        "code": "5",
+        "geographicEntityId": "1879466303",
+        "name": "Haradwaith"
+      },
+      "zone": {
+        "id": "1879500799",
+        "kind": "area",
+        "name": "Hoards of Koratíya",
+        "parentId": "1879500864",
+        "iconId": "1093002170"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879500799",
+          "kind": "area",
+          "name": "Hoards of Koratíya",
+          "parentId": "1879500864",
+          "iconId": "1093002170"
+        },
+        {
+          "id": "1879500864",
+          "kind": "territory",
+          "name": "Idagâl, the Dry-whelm",
+          "parentId": "1879466303"
+        },
+        {
+          "id": "1879466303",
+          "kind": "region",
+          "name": "Haradwaith",
+          "code": "5"
+        }
+      ],
+      "marker": {
+        "sourceId": "1414172678",
+        "templateDid": "1879518893",
+        "category": 55,
+        "latitude": -65.4071,
+        "longitude": -87.37451,
+        "sourceLatitude": "-65.4071",
+        "sourceLongitude": "-87.37451",
+        "zoneId": "1879500799",
+        "sourceFile": "markers/markers-5-4-4.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.017958276643374946,
+        "minimumRunnerUpSeparation": 4.814717767263208,
+        "minimumRunnerUpRatio": 268.1057800186759
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -65.42276,
+          "longitude": -87.36572,
+          "sourceLatitude": "-65.42276",
+          "sourceLongitude": "-87.36572",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00002",
+          "travelType": "19",
+          "skillId": "1879201686",
+          "referenceSkillName": "Return Home 6"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879509563",
+          "name": "Nashûbu",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-742b4c05-992a-4819-a383-90ffc76ca2c6",
+      "name": "Ox-clan Merchant Camp",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Ox-clan Merchant Camp",
+      "worldRegion": {
+        "code": "1",
+        "geographicEntityId": "1879049816",
+        "name": "Eriador"
+      },
+      "zone": {
+        "id": "1879201772",
+        "kind": "area",
+        "name": "Nan Curunír",
+        "parentId": "1879149395",
+        "iconId": "1091632746"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879201772",
+          "kind": "area",
+          "name": "Nan Curunír",
+          "parentId": "1879149395",
+          "iconId": "1091632746"
+        },
+        {
+          "id": "1879149395",
+          "kind": "territory",
+          "name": "Dunland",
+          "parentId": "1879049816"
+        },
+        {
+          "id": "1879049816",
+          "kind": "region",
+          "name": "Eriador",
+          "code": "1"
+        }
+      ],
+      "marker": {
+        "sourceId": "456618021",
+        "templateDid": "1879222089",
+        "category": 55,
+        "latitude": -79.93731,
+        "longitude": 0.22933593,
+        "sourceLatitude": "-79.93731",
+        "sourceLongitude": "0.22933593",
+        "zoneId": "1879201772",
+        "sourceFile": "markers/markers-1-11-3.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.00901144076294713,
+        "minimumRunnerUpSeparation": 6.138853996453687,
+        "minimumRunnerUpRatio": 681.2289131051244
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -79.942505,
+          "longitude": 0.22197264,
+          "sourceLatitude": "-79.942505",
+          "sourceLongitude": "0.22197264",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00007",
+          "travelType": "16",
+          "skillId": "1879201683",
+          "referenceSkillName": "Return Home 3"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879228039",
+          "name": "Ox-clan Merchant Camp",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-b974ff88-0393-4def-8472-0eee3a611d2b",
+      "name": "Rohirrim Scout-camp",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Rohirrim Scout-camp",
+      "worldRegion": {
+        "code": "1",
+        "geographicEntityId": "1879049816",
+        "name": "Eriador"
+      },
+      "zone": {
+        "id": "1879214905",
+        "kind": "area",
+        "name": "South Gravenwood",
+        "parentId": "1879149395",
+        "iconId": "1091632746"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879214905",
+          "kind": "area",
+          "name": "South Gravenwood",
+          "parentId": "1879149395",
+          "iconId": "1091632746"
+        },
+        {
+          "id": "1879149395",
+          "kind": "territory",
+          "name": "Dunland",
+          "parentId": "1879049816"
+        },
+        {
+          "id": "1879049816",
+          "kind": "region",
+          "name": "Eriador",
+          "code": "1"
+        }
+      ],
+      "marker": {
+        "sourceId": "440033303",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": -80.96934,
+        "longitude": -10.627188,
+        "sourceLatitude": "-80.96934",
+        "sourceLongitude": "-10.627188",
+        "zoneId": "1879214905",
+        "sourceFile": "markers/markers-1-10-3.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.011668773028900493,
+        "minimumRunnerUpSeparation": 3.1138111251166096,
+        "minimumRunnerUpRatio": 266.8499179309183
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -80.97013,
+          "longitude": -10.615546,
+          "sourceLatitude": "-80.97013",
+          "sourceLongitude": "-10.615546",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00022",
+          "travelType": "20",
+          "skillId": "1879244643",
+          "referenceSkillName": "Return Home 11"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879211709",
+          "name": "Rohirrim Scout-camp",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-cc7865fa-54d5-48d9-a948-094ac6b28889",
+      "name": "Stoke",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Stoke",
+      "worldRegion": {
+        "code": "2",
+        "geographicEntityId": "1879109971",
+        "name": "Rhovanion"
+      },
+      "zone": {
+        "id": "1879256897",
+        "kind": "area",
+        "name": "Broadacres",
+        "parentId": "1879500895",
+        "iconId": "1091841000"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879256897",
+          "kind": "area",
+          "name": "Broadacres",
+          "parentId": "1879500895",
+          "iconId": "1091841000"
+        },
+        {
+          "id": "1879500895",
+          "kind": "territory",
+          "name": "Entwash",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "642834432",
+        "templateDid": "1879232038",
+        "category": 55,
+        "latitude": -49.129032,
+        "longitude": -69.491295,
+        "sourceLatitude": "-49.129032",
+        "sourceLongitude": "-69.491295",
+        "zoneId": "1879256897",
+        "sourceFile": "markers/markers-2-6-5.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.009826256917059772,
+        "minimumRunnerUpSeparation": 4.5831871779790925,
+        "minimumRunnerUpRatio": 466.42248586254965
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -49.129974,
+          "longitude": -69.501076,
+          "sourceLatitude": "-49.129974",
+          "sourceLongitude": "-69.501076",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00007",
+          "travelType": "3",
+          "skillId": "1879201466",
+          "referenceSkillName": "Return Home"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879291164",
+          "name": "Stoke",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-f1aa1811-972e-4363-b78c-4e59ec075fe2",
+      "name": "Swain's Guild-hall",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Swain's Guild-hall",
+      "worldRegion": {
+        "code": "5",
+        "geographicEntityId": "1879466303",
+        "name": "Haradwaith"
+      },
+      "zone": {
+        "id": "1879470534",
+        "kind": "area",
+        "name": "Umbar Baharbêl, City of the Corsairs",
+        "parentId": "1879475261",
+        "iconId": "1092906786"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879470534",
+          "kind": "area",
+          "name": "Umbar Baharbêl, City of the Corsairs",
+          "parentId": "1879475261",
+          "iconId": "1092906786"
+        },
+        {
+          "id": "1879475261",
+          "kind": "territory",
+          "name": "Umbar",
+          "parentId": "1879466303"
+        },
+        {
+          "id": "1879466303",
+          "kind": "region",
+          "name": "Haradwaith",
+          "code": "5"
+        }
+      ],
+      "marker": {
+        "sourceId": "1401749510",
+        "templateDid": "1879475051",
+        "category": 55,
+        "latitude": -21.303007,
+        "longitude": -97.22839,
+        "sourceLatitude": "-21.303007",
+        "sourceLongitude": "-97.22839",
+        "zoneId": "1879470534",
+        "sourceFile": "markers/markers-5-3-8.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.017508950396868804,
+        "minimumRunnerUpSeparation": 1.597031099437016,
+        "minimumRunnerUpRatio": 91.21226933869318
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -21.305595,
+          "longitude": -97.24255,
+          "sourceLatitude": "-21.305595",
+          "sourceLongitude": "-97.24255",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00002",
+          "travelType": "28",
+          "skillId": "1879244640",
+          "referenceSkillName": "Return Home 9"
+        },
+        {
+          "kind": "importedAnchor",
+          "latitude": -21.285595,
+          "longitude": -97.23023,
+          "sourceLatitude": "-21.285595",
+          "sourceLongitude": "-97.23023",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00004",
+          "travelType": "3",
+          "skillId": "1879201466",
+          "referenceSkillName": "Return Home"
+        },
+        {
+          "kind": "importedAnchor",
+          "latitude": -21.31126,
+          "longitude": -97.24379,
+          "sourceLatitude": "-21.31126",
+          "sourceLongitude": "-97.24379",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00009",
+          "travelType": "15",
+          "skillId": "1879201682",
+          "referenceSkillName": "Return Home 2"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879477129",
+          "name": "Swain's Guild-hall",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-5c2ac9d3-0441-4285-8f0b-e42ef016d667",
+      "name": "The Dawn-warden",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to The Dawn-warden",
+      "worldRegion": {
+        "code": "5",
+        "geographicEntityId": "1879466303",
+        "name": "Haradwaith"
+      },
+      "zone": {
+        "id": "1879500849",
+        "kind": "area",
+        "name": "The Warden's Lands",
+        "parentId": "1879500864",
+        "iconId": "1093002170"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879500849",
+          "kind": "area",
+          "name": "The Warden's Lands",
+          "parentId": "1879500864",
+          "iconId": "1093002170"
+        },
+        {
+          "id": "1879500864",
+          "kind": "territory",
+          "name": "Idagâl, the Dry-whelm",
+          "parentId": "1879466303"
+        },
+        {
+          "id": "1879466303",
+          "kind": "region",
+          "name": "Haradwaith",
+          "code": "5"
+        }
+      ],
+      "marker": {
+        "sourceId": "1398788114",
+        "templateDid": "1879518893",
+        "category": 55,
+        "latitude": -49.31718,
+        "longitude": -96.04137,
+        "sourceLatitude": "-49.31718",
+        "sourceLongitude": "-96.04137",
+        "zoneId": "1879500849",
+        "sourceFile": "markers/markers-5-3-5.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.021128817501220948,
+        "minimumRunnerUpSeparation": 14.448794169163877,
+        "minimumRunnerUpRatio": 683.8430105389921
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -49.331253,
+          "longitude": -96.05713,
+          "sourceLatitude": "-49.331253",
+          "sourceLongitude": "-96.05713",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00002",
+          "travelType": "27",
+          "skillId": "1879244641",
+          "referenceSkillName": "Return Home 8"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879509590",
+          "name": "The Dawn-warden",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-5a87fbda-4fc3-4adc-b9e4-436572be3133",
+      "name": "The Deep Descent",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to The Deep Descent",
+      "worldRegion": {
+        "code": "2",
+        "geographicEntityId": "1879109971",
+        "name": "Rhovanion"
+      },
+      "zone": {
+        "id": "1879109904",
+        "kind": "area",
+        "name": "Silvertine Lodes",
+        "parentId": "1879109970",
+        "iconId": "1091632758"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879109904",
+          "kind": "area",
+          "name": "Silvertine Lodes",
+          "parentId": "1879109970",
+          "iconId": "1091632758"
+        },
+        {
+          "id": "1879109970",
+          "kind": "territory",
+          "name": "Moria",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "579530754",
+        "templateDid": "1879063371",
+        "category": 55,
+        "latitude": -9.874531,
+        "longitude": -112.7384,
+        "sourceLatitude": "-9.874531",
+        "sourceLongitude": "-112.7384",
+        "zoneId": "1879109904",
+        "sourceFile": "markers/markers-2-2-8.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.010243487150378856,
+        "minimumRunnerUpSeparation": 1.361643921080693,
+        "minimumRunnerUpRatio": 132.92777167493517
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -9.864658,
+          "longitude": -112.73567,
+          "sourceLatitude": "-9.864658",
+          "sourceLongitude": "-112.73567",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00009",
+          "travelType": "3",
+          "skillId": "1879201466",
+          "referenceSkillName": "Return Home"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879134451",
+          "name": "The Deep Descent",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-b36cf8d3-02ac-4722-84a6-71d6176b7672",
+      "name": "The Haunted Inn",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to The Haunted Inn",
+      "worldRegion": {
+        "code": "2",
+        "geographicEntityId": "1879109971",
+        "name": "Rhovanion"
+      },
+      "zone": {
+        "id": "1879152194",
+        "kind": "area",
+        "name": "The Dourstocks",
+        "parentId": "1879152206",
+        "iconId": "1091632756"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879152194",
+          "kind": "area",
+          "name": "The Dourstocks",
+          "parentId": "1879152206",
+          "iconId": "1091632756"
+        },
+        {
+          "id": "1879152206",
+          "kind": "territory",
+          "name": "Mirkwood",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "662806530",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": -13.354502,
+        "longitude": -56.092304,
+        "sourceLatitude": "-13.354502",
+        "sourceLongitude": "-56.092304",
+        "zoneId": "1879152194",
+        "sourceFile": "markers/markers-2-7-8.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.01616140123875361,
+        "minimumRunnerUpSeparation": 3.866002289564893,
+        "minimumRunnerUpRatio": 239.21207279320322
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -13.370645,
+          "longitude": -56.093075,
+          "sourceLatitude": "-13.370645",
+          "sourceLongitude": "-56.093075",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00022",
+          "travelType": "17",
+          "skillId": "1879201684",
+          "referenceSkillName": "Return Home 4"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879154404",
+          "name": "The Haunted Inn",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-35246084-90e3-4669-87b5-da188945d2d1",
+      "name": "The Rotting Cellar",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to The Rotting Cellar",
+      "worldRegion": {
+        "code": "2",
+        "geographicEntityId": "1879109971",
+        "name": "Rhovanion"
+      },
+      "zone": {
+        "id": "1879109906",
+        "kind": "area",
+        "name": "The Water-works",
+        "parentId": "1879109970",
+        "iconId": "1091632758"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879109906",
+          "kind": "area",
+          "name": "The Water-works",
+          "parentId": "1879109970",
+          "iconId": "1091632758"
+        },
+        {
+          "id": "1879109970",
+          "kind": "territory",
+          "name": "Moria",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "579567620",
+        "templateDid": "1879063371",
+        "category": 55,
+        "latitude": -15.063086,
+        "longitude": -112.06177,
+        "sourceLatitude": "-15.063086",
+        "sourceLongitude": "-112.06177",
+        "zoneId": "1879109906",
+        "sourceFile": "markers/markers-2-2-8.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.0072049858431522396,
+        "minimumRunnerUpSeparation": 4.372849517833872,
+        "minimumRunnerUpRatio": 606.9199319787581
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -15.065771,
+          "longitude": -112.055084,
+          "sourceLatitude": "-15.065771",
+          "sourceLongitude": "-112.055084",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00008",
+          "travelType": "17",
+          "skillId": "1879201684",
+          "referenceSkillName": "Return Home 4"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879134440",
+          "name": "The Rotting Cellar",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-710acf4b-610a-401c-81b0-719c87018674",
+      "name": "The Twenty-first Hall",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to The Twenty-first Hall",
+      "worldRegion": {
+        "code": "2",
+        "geographicEntityId": "1879109971",
+        "name": "Rhovanion"
+      },
+      "zone": {
+        "id": "1879191197",
+        "kind": "area",
+        "name": "The Twenty-first Hall",
+        "parentId": "1879109970",
+        "iconId": "1091632758"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879191197",
+          "kind": "area",
+          "name": "The Twenty-first Hall",
+          "parentId": "1879109970",
+          "iconId": "1091632758"
+        },
+        {
+          "id": "1879109970",
+          "kind": "territory",
+          "name": "Moria",
+          "parentId": "1879109971"
+        },
+        {
+          "id": "1879109971",
+          "kind": "region",
+          "name": "Rhovanion",
+          "code": "2"
+        }
+      ],
+      "marker": {
+        "sourceId": "596918273",
+        "templateDid": "1879063371",
+        "category": 55,
+        "latitude": -5.810576,
+        "longitude": -105.146645,
+        "sourceLatitude": "-5.810576",
+        "sourceLongitude": "-105.146645",
+        "zoneId": "1879191197",
+        "sourceFile": "markers/markers-2-3-9.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.012499084526475508,
+        "minimumRunnerUpSeparation": 1.9892600902193989,
+        "minimumRunnerUpRatio": 159.1524632068658
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -5.809121,
+          "longitude": -105.15842,
+          "sourceLatitude": "-5.809121",
+          "sourceLongitude": "-105.15842",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00002",
+          "travelType": "16",
+          "skillId": "1879201683",
+          "referenceSkillName": "Return Home 3"
+        },
+        {
+          "kind": "importedAnchor",
+          "latitude": -5.803359,
+          "longitude": -105.15685,
+          "sourceLatitude": "-5.803359",
+          "sourceLongitude": "-105.15685",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00008",
+          "travelType": "3",
+          "skillId": "1879201466",
+          "referenceSkillName": "Return Home"
+        },
+        {
+          "kind": "importedAnchor",
+          "latitude": -5.8104978,
+          "longitude": -105.1419,
+          "sourceLatitude": "-5.8104978",
+          "sourceLongitude": "-105.1419",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00022",
+          "travelType": "15",
+          "skillId": "1879201682",
+          "referenceSkillName": "Return Home 2"
+        }
+      ],
+      "relatedLandmarkNameCandidates": [
+        {
+          "id": "1879134445",
+          "name": "The Twenty-first Hall",
+          "association": "exactEnglishNameOnly"
+        }
+      ]
+    },
+    {
+      "id": "milestone-5efdcaac-426d-49de-a9cb-61ed535cee4d",
+      "name": "Trestlebridge",
+      "nameLanguage": "en",
+      "nameStatus": "observedInCharacterSnapshot",
+      "companionDisplayLabel": "Return to Trestlebridge",
+      "worldRegion": {
+        "code": "1",
+        "geographicEntityId": "1879049816",
+        "name": "Eriador"
+      },
+      "zone": {
+        "id": "1879063972",
+        "kind": "area",
+        "name": "Trestlebridge",
+        "parentId": "1879072154",
+        "iconId": "1091632759"
+      },
+      "geographicHierarchy": [
+        {
+          "id": "1879063972",
+          "kind": "area",
+          "name": "Trestlebridge",
+          "parentId": "1879072154",
+          "iconId": "1091632759"
+        },
+        {
+          "id": "1879072154",
+          "kind": "territory",
+          "name": "The North Downs",
+          "parentId": "1879049816"
+        },
+        {
+          "id": "1879049816",
+          "kind": "region",
+          "name": "Eriador",
+          "code": "1"
+        }
+      ],
+      "marker": {
+        "sourceId": "394543108",
+        "templateDid": "1879063534",
+        "category": 55,
+        "latitude": -18.025312,
+        "longitude": -53.68782,
+        "sourceLatitude": "-18.025312",
+        "sourceLongitude": "-53.68782",
+        "zoneId": "1879063972",
+        "sourceFile": "markers/markers-1-7-8.xml",
+        "sourceRevision": "2e707ebf14162607f586ecf2948f97fc212090d0"
+      },
+      "markerAssociation": {
+        "status": "spatialCandidateNotExplicitUpstreamLink",
+        "allObservationsMatchWorldAndZone": true,
+        "maximumSeparation": 0.007088821622804535,
+        "minimumRunnerUpSeparation": 6.951059195762687,
+        "minimumRunnerUpRatio": 980.5662443813411
+      },
+      "positionObservations": [
+        {
+          "kind": "importedAnchor",
+          "latitude": -18.023848,
+          "longitude": -53.694756,
+          "sourceLatitude": "-18.023848",
+          "sourceLongitude": "-53.694756",
+          "evidenceKind": "exportedCharacterAnchor",
+          "sourceKey": "toon-00010",
+          "travelType": "15",
+          "skillId": "1879201682",
+          "referenceSkillName": "Return Home 2"
+        }
+      ]
+    }
+  ]
+}

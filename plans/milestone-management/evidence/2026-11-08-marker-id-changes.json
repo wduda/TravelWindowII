@@ -1,0 +1,44 @@
+[
+  {
+    "oldId": "536060218",
+    "newId": "536060182",
+    "region": 1,
+    "coordinateMatchCount": 1
+  },
+  {
+    "oldId": "343179312",
+    "newId": "343179313",
+    "region": 1,
+    "coordinateMatchCount": 1
+  },
+  {
+    "oldId": "360595494",
+    "newId": "360595483",
+    "region": 1,
+    "coordinateMatchCount": 1
+  },
+  {
+    "oldId": "393752627",
+    "newId": "393752629",
+    "region": 1,
+    "coordinateMatchCount": 1
+  },
+  {
+    "oldId": "699727910",
+    "newId": "699727918",
+    "region": 2,
+    "coordinateMatchCount": 1
+  },
+  {
+    "oldId": "1161678855",
+    "newId": "1161678852",
+    "region": 4,
+    "coordinateMatchCount": 1
+  },
+  {
+    "oldId": "1432600576",
+    "newId": "1432600593",
+    "region": 5,
+    "coordinateMatchCount": 1
+  }
+]

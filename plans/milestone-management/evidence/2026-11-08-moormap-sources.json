@@ -1,0 +1,35 @@
+{
+  "version": "1.66",
+  "sourceRoot": "C:\\Users\\wojci\\OneDrive\\Dokumente\\The Lord of the Rings Online\\Plugins\\GaranStuff\\MoorMap",
+  "reviewDate": "2026-11-08",
+  "fingerprints": [
+    {
+      "file": "Defaults.lua",
+      "sha256": "6DAE9CBC72D4E8798AA1EB03A67FD2E60F66A9092D781D9A2DE4022C9E8EEAD0"
+    },
+    {
+      "file": "AnnotationsWindow.lua",
+      "sha256": "96D036EF98E3F754ACF2595BD0EC6062FC81B182AB8F4037868A364A20B0B922"
+    },
+    {
+      "file": "Main.lua",
+      "sha256": "158F4BFE56C73C2299B48DCCF524C63C4E4AD068FA7ED1F5ADE953228973241F"
+    },
+    {
+      "file": "Version History.txt",
+      "sha256": "211379425D79ECEF8E1170A538D0155363FF894716FCF2A6ABF4D08ADA54FDDE"
+    },
+    {
+      "file": "Data/MapData_5.lua",
+      "sha256": "0DF7FD5C99FF052C303C724FE0879231B6C7A7F9315FD90B21CF956E613B1854"
+    },
+    {
+      "file": "Data/MapData_6.lua",
+      "sha256": "3CF657B4A6B723BC21A92AFAED943C3D7514477F9B6B7B688A9E9ED7D3A51644"
+    },
+    {
+      "file": "Data/MapData_4.lua",
+      "sha256": "71401D42F123E39EEAEEADA9C6175173FB067C140C7FD8FEA38BFEA2898CCC54"
+    }
+  ]
+}

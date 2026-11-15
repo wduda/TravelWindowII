@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "researchDate": "2026-11-14",
+  "purpose": "Offline screening demonstration only; no wiki names promoted to canonical native names",
+  "wiki": {
+    "url": "https://lotro-wiki.com/wiki/Milestone?oldid=2078902",
+    "revision": 2078902,
+    "snapshotSha256": "86f46eafc365a03b8a7060638e23f32b662a6acf88af82d2cbb13b0d1a736a6c",
+    "locationTables": 49,
+    "rowsWithCoordinates": 309,
+    "incompleteRows": [],
+    "recoveredRowShapes": [
+      {
+        "id": "collapsibleTable40-row-29",
+        "originalCellCount": 5,
+        "action": "ignored trailing empty cells only"
+      }
+    ],
+    "rowsWithReplacementCharacter": []
+  },
+  "markers": {
+    "count": 351,
+    "worldCounts": {
+      "1": 96,
+      "2": 98,
+      "3": 25,
+      "4": 61,
+      "5": 58,
+      "6": 12,
+      "14": 1
+    },
+    "templateDidCount": 14,
+    "withPreviouslyObservedName": 37,
+    "withoutPreviouslyObservedName": 314,
+    "withoutObservedOrReportedName": 313,
+    "additionalAuthorExampleNames": 1,
+    "withObservedOrReportedName": 38
+  },
+  "screening": {
+    "allWorldsCompared": true,
+    "maximumDistanceCoordinateUnits": 0.15,
+    "approvedRuntimeTolerance": false,
+    "counts": {
+      "oneSpatialCandidate": 260,
+      "ambiguousSpatialCandidates": 27,
+      "noNearbyMarker": 22
+    },
+    "distinctMarkersReferenced": 289,
+    "distinctMarkersWithOneCandidateWikiRow": 259,
+    "multipleWikiLabelsForSameSingleCandidate": {
+      "1434583049": [
+        "Iridír",
+        "Sûru"
+      ]
+    }
+  },
+  "authorExampleAssociation": {
+    "markerId": "1450876936",
+    "sameWorldAndZone": true,
+    "distanceCoordinateUnits": 0.03961425911209436,
+    "status": "spatialCandidateNotExplicitUpstreamLink"
+  }
+}

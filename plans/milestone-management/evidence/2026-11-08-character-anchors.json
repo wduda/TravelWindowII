@@ -1,0 +1,149 @@
+{
+  "source": "D:\\LOTRO Exports\\characters\\toon-00002",
+  "anchorFileLastModified": "2026-09-10T14:15:54",
+  "gameObservationTime": null,
+  "identity": "Not established from anchors.xml; do not assume this is the character in later live chat reports",
+  "bindings": [
+    {
+      "slot": 1,
+      "id": "1879201466",
+      "name": "Return Home",
+      "travelType": "3",
+      "destination": "Ghun Shâna",
+      "region": "5",
+      "latitude": "-56.860756",
+      "longitude": "-53.336834",
+      "zoneID": "1879500813"
+    },
+    {
+      "slot": 2,
+      "id": "1879201682",
+      "name": "Return Home 2",
+      "travelType": "15",
+      "destination": "Khanâg Gur",
+      "region": "5",
+      "latitude": "-56.901375",
+      "longitude": "-71.84996",
+      "zoneID": "1879500785"
+    },
+    {
+      "slot": 3,
+      "id": "1879201683",
+      "name": "Return Home 3",
+      "travelType": "16",
+      "destination": "The Twenty-first Hall",
+      "region": "2",
+      "latitude": "-5.809121",
+      "longitude": "-105.15842",
+      "zoneID": "1879191197"
+    },
+    {
+      "slot": 4,
+      "id": "1879201684",
+      "name": "Return Home 4",
+      "travelType": "17",
+      "destination": "Grúmachath",
+      "region": "2",
+      "latitude": "50.192303",
+      "longitude": "-68.56364",
+      "zoneID": "1879410823"
+    },
+    {
+      "slot": 5,
+      "id": "1879201685",
+      "name": "Return Home 5",
+      "travelType": "18",
+      "destination": "Gadim-ûn",
+      "region": "5",
+      "latitude": "-51.135002",
+      "longitude": "-66.934135",
+      "zoneID": "1879500833"
+    },
+    {
+      "slot": 6,
+      "id": "1879201686",
+      "name": "Return Home 6",
+      "travelType": "19",
+      "destination": "Nashûbu",
+      "region": "5",
+      "latitude": "-65.42276",
+      "longitude": "-87.36572",
+      "zoneID": "1879500799"
+    },
+    {
+      "slot": 7,
+      "id": "1879244642",
+      "name": "Return Home 7",
+      "travelType": "26",
+      "destination": "Beorninghús",
+      "region": "2",
+      "latitude": "13.5758295",
+      "longitude": "-53.26165",
+      "zoneID": "1879315609"
+    },
+    {
+      "slot": 8,
+      "id": "1879244641",
+      "name": "Return Home 8",
+      "travelType": "27",
+      "destination": "The Dawn-warden",
+      "region": "5",
+      "latitude": "-49.331253",
+      "longitude": "-96.05713",
+      "zoneID": "1879500849"
+    },
+    {
+      "slot": 9,
+      "id": "1879244640",
+      "name": "Return Home 9",
+      "travelType": "28",
+      "destination": "Swain's Guild-hall",
+      "region": "5",
+      "latitude": "-21.305595",
+      "longitude": "-97.24255",
+      "zoneID": "1879470534"
+    },
+    {
+      "slot": 10,
+      "id": "1879244639",
+      "name": "Return Home 10",
+      "travelType": "29",
+      "destination": "Ingarûma",
+      "region": "5",
+      "latitude": "-74.96585",
+      "longitude": "-85.31062",
+      "zoneID": "1879521058"
+    },
+    {
+      "slot": 11,
+      "id": "1879244643",
+      "name": "Return Home 11",
+      "travelType": "20",
+      "destination": "Hobbiton-Bywater",
+      "region": "1",
+      "latitude": "-31.400469",
+      "longitude": "-71.09149",
+      "zoneID": "1879064017"
+    }
+  ],
+  "otherAnchors": [
+    {
+      "type": 1,
+      "enumName": "PrivateEncounter",
+      "name": null,
+      "region": 5,
+      "longitude": "-85.94772",
+      "latitude": "-74.69244",
+      "zoneID": "1879521058"
+    },
+    {
+      "type": 13,
+      "enumName": "NeighborhoodEntrance",
+      "name": null,
+      "region": 3,
+      "longitude": "-69.22298",
+      "latitude": "-84.34218",
+      "zoneID": "1879338115"
+    }
+  ]
+}
